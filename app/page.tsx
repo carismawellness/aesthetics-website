@@ -3,7 +3,6 @@ import ServicesMarquee from "@/components/home/ServicesMarquee";
 import WhyUs from "@/components/home/WhyUs";
 import BookConsultation from "@/components/home/BookConsultation";
 import Reviews from "@/components/home/Reviews";
-import DoctorsSection from "@/components/home/DoctorsSection";
 import AwardSection from "@/components/home/AwardSection";
 
 export default function HomePage() {
@@ -14,7 +13,6 @@ export default function HomePage() {
       <WhyUs />
       <BookConsultation />
       <Reviews />
-      <DoctorsSection />
       <AwardSection />
     </>
   );

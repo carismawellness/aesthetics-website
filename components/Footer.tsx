@@ -1,6 +1,11 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { CONTACT } from "@/lib/site";
 import Reveal from "@/components/Reveal";
+import DoctorsSection from "@/components/home/DoctorsSection";
+import BookConsultation from "@/components/home/BookConsultation";
 
 function Ig({ size = 20 }: { size?: number }) {
   return (
@@ -65,8 +70,13 @@ function ContactItem({
   href: string;
 }) {
   return (
-    <a href={href} className="flex items-center gap-3 group">
-      <span style={{ color: "#9b8d83" }}>{icon}</span>
+    <a href={href} className="flex items-center gap-4 group">
+      <span
+        className="shrink-0 inline-flex items-center justify-center"
+        style={{ width: "42px", height: "42px", borderRadius: "50%", border: "1px solid var(--teal)", color: "var(--teal)" }}
+      >
+        {icon}
+      </span>
       <span className="flex flex-col">
         <span className="font-display" style={labelStyle}>{label}</span>
         <span style={valueStyle} className="group-hover:underline">{value}</span>
@@ -76,11 +86,19 @@ function ContactItem({
 }
 
 export default function Footer() {
+  const isHome = usePathname() === "/";
+
   return (
     <footer>
+      {/* Book Your Consultation (same design) — homepage already has it mid-page */}
+      {!isHome && <BookConsultation />}
+
+      {/* Doctors introduction (exact homepage design) */}
+      <DoctorsSection />
+
       {/* Discover banners */}
       <section className="container" style={{ padding: "60px 20px" }}>
-        <Reveal className="grid gap-6 md:grid-cols-2">
+        <Reveal className="grid gap-6 grid-cols-1 mx-auto" style={{ maxWidth: "920px" }}>
           <a href="https://www.carismaspa.com" target="_blank" rel="noopener noreferrer" className="relative block overflow-hidden rounded-lg group">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/assets/banner-spa.png" alt="Discover our spas" className="w-full h-auto transition-transform duration-500 group-hover:scale-105" />
@@ -125,42 +143,36 @@ export default function Footer() {
         </div>
       </section>
 
-      {/* Light contact row */}
-      <section style={{ backgroundColor: "var(--white)", padding: "28px 0", borderTop: "1px solid var(--line)" }}>
+      {/* Contact row — two columns (Phone/Email | Instagram/Facebook) */}
+      <section style={{ backgroundColor: "var(--white)", padding: "32px 0 28px" }}>
         <div className="container">
-          <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-6">
-            <ContactItem icon={<Phone />} label="Phone" value={CONTACT.phone} href={`tel:${CONTACT.tel}`} />
-            <ContactItem icon={<Mail />} label="Email" value={CONTACT.email} href={`mailto:${CONTACT.email}`} />
-            <ContactItem icon={<Ig />} label="Instagram" value={CONTACT.instagramHandle} href={CONTACT.instagram} />
-            <ContactItem icon={<Fb />} label="Facebook" value={CONTACT.facebookName} href={CONTACT.facebook} />
+          <div className="grid gap-x-10 gap-y-7 sm:grid-cols-2" style={{ maxWidth: "900px" }}>
+            <div className="space-y-7">
+              <ContactItem icon={<Phone />} label="Phone" value={CONTACT.phone} href={`tel:${CONTACT.tel}`} />
+              <ContactItem icon={<Mail />} label="Email" value={CONTACT.email} href={`mailto:${CONTACT.email}`} />
+            </div>
+            <div className="space-y-7">
+              <ContactItem icon={<Ig />} label="Instagram" value={CONTACT.instagramHandle} href={CONTACT.instagram} />
+              <ContactItem icon={<Fb />} label="Facebook" value={CONTACT.facebookName} href={CONTACT.facebook} />
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Thin dark bottom bar */}
-      <div style={{ backgroundColor: "var(--ink)", color: "#cfcabf" }}>
-        <div className="container" style={{ padding: "22px 20px" }}>
-          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/assets/logo.png" alt="Carisma Aesthetics" style={{ height: "26px", width: "auto", filter: "brightness(0) invert(1)" }} />
-
-            <div className="flex items-center gap-5">
-              <a href={`tel:${CONTACT.tel}`} aria-label="Phone" className="hover:text-white transition-colors"><Phone size={18} /></a>
-              <a href={CONTACT.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="hover:text-white transition-colors"><Ig size={18} /></a>
-              <a href={CONTACT.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:text-white transition-colors"><Fb size={18} /></a>
+      {/* Light rounded bottom bar — copyright + legal links */}
+      <section style={{ backgroundColor: "var(--white)", padding: "0 0 40px" }}>
+        <div className="container">
+          <div style={{ background: "linear-gradient(180deg,#eef3f3,#e6eded)", borderRadius: "12px", padding: "18px 28px" }}>
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-3" style={{ fontSize: "12px", letterSpacing: "0.06em", color: "var(--label)" }}>
+              <span>© 2026 - Carisma AESTHETICS All Rights reserved.</span>
+              <div className="flex items-center gap-8">
+                <Link href="/privacy-policy" className="hover:text-ink transition-colors" style={{ textDecoration: "underline" }}>PRIVACY Policy</Link>
+                <Link href="/terms-conditions" className="hover:text-ink transition-colors" style={{ textDecoration: "underline" }}>TERMS &amp; CONDITION</Link>
+              </div>
             </div>
-
-            <div className="flex items-center gap-6" style={{ fontSize: "12px", letterSpacing: "0.06em" }}>
-              <Link href="/privacy-policy" className="hover:text-white transition-colors" style={{ textDecoration: "underline" }}>PRIVACY Policy</Link>
-              <Link href="/terms-conditions" className="hover:text-white transition-colors" style={{ textDecoration: "underline" }}>TERMS &amp; CONDITION</Link>
-            </div>
-          </div>
-
-          <div className="text-center" style={{ marginTop: "18px", fontSize: "12px", letterSpacing: "0.06em" }}>
-            © 2026 - Carisma AESTHETICS All Rights reserved.
           </div>
         </div>
-      </div>
+      </section>
     </footer>
   );
 }

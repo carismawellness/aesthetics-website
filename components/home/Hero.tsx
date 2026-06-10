@@ -8,12 +8,11 @@ export default function Hero() {
         <div
           style={{
             borderRadius: "26px",
-            background:
-              "linear-gradient(165deg, #cfdcdc 0%, #dde7e7 30%, #eef3f3 65%, #f6f9f9 100%)",
+            background: "url('/assets/bg-gradient.png') center/cover no-repeat",
             padding: "clamp(28px,4vw,56px)",
           }}
         >
-          <div className="grid gap-10 lg:grid-cols-2 items-center">
+          <div className="grid gap-10 lg:grid-cols-2 items-start">
             {/* Form (left) */}
             <div>
               <h1
@@ -32,8 +31,9 @@ export default function Hero() {
               <ConsultationForm />
             </div>
 
-            {/* Video (right) with teal offset corner accents */}
-            <div className="relative" style={{ padding: "14px" }}>
+            {/* Right column: video + awards badge + scroll cue */}
+            <div>
+              <div className="relative" style={{ padding: "14px" }}>
               {/* top-left teal accent */}
               <span
                 aria-hidden
@@ -80,15 +80,24 @@ export default function Hero() {
                 playsInline
                 aria-label="Carisma Aesthetics clinic in Malta"
               />
+              </div>
+
+              {/* Awards badge + #1 voted (under the video) */}
+              <div className="flex items-center gap-4" style={{ marginTop: "26px" }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/assets/awards-logo.png" alt="Malta Healthcare, Wellness, Beauty & Best Spa Awards" style={{ height: "72px", width: "auto" }} />
+                <span className="font-display" style={{ fontSize: "16px", color: "var(--gold)", letterSpacing: "0.1em", lineHeight: 1.4 }}>#1 Voted Med-Aesthetics Clinic in Malta</span>
+              </div>
+
+              {/* Scroll down (under the video) — centered */}
+              <div style={{ marginTop: "30px", textAlign: "center" }}>
+                <p className="font-display" style={{ fontSize: "14px", color: "var(--gold)", letterSpacing: "0.14em", lineHeight: 1.5 }}>Scroll down to learn more</p>
+                <div className="flex justify-center" style={{ width: "32px", height: "50px", border: "1.5px solid var(--gold)", borderRadius: "16px", margin: "16px auto 0", paddingTop: "9px" }}>
+                  <svg className="animate-bounce" width="12" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" strokeWidth="2"><path d="M12 4v12M6 12l6 6 6-6" /></svg>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-
-        <div className="text-center" style={{ marginTop: "34px" }}>
-          <p className="font-display" style={{ fontSize: "12px", color: "var(--muted)", letterSpacing: "0.18em" }}>scroll down to learn more</p>
-          <svg className="mx-auto mt-3 animate-bounce" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" strokeWidth="2">
-            <path d="M6 9l6 6 6-6" />
-          </svg>
         </div>
       </div>
     </section>

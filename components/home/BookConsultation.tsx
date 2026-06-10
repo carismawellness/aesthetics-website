@@ -3,24 +3,29 @@ import Reveal from "@/components/Reveal";
 
 export default function BookConsultation() {
   return (
-    <section style={{ backgroundColor: "var(--beige)", padding: "20px 0 80px" }}>
+    // White section: a CONTAINED beige heading block, with the grey form
+    // panel narrower + centered below, overlapping the beige's bottom edge.
+    <section style={{ backgroundColor: "var(--white)", padding: "48px 0 80px" }}>
       <div className="container">
-        <Reveal className="grid gap-10 lg:grid-cols-2 items-center">
-          {/* Heading + decorative wave (left) */}
-          <div>
-            <h2 className="font-display" style={{ fontSize: "clamp(28px,4.4vw,44px)", color: "var(--ink)", letterSpacing: "0.06em", lineHeight: 1.2 }}>
+        {/* Beige heading block (contained, not full-width) */}
+        <Reveal className="mx-auto" style={{ maxWidth: "960px" }}>
+          <div className="relative" style={{ backgroundColor: "var(--beige)", padding: "52px clamp(28px,5vw,60px)", overflow: "hidden" }}>
+            {/* faint wave across the band */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/assets/wave-gold.png" alt="" aria-hidden style={{ position: "absolute", left: 0, bottom: 0, width: "100%", height: "auto", opacity: 0.45, pointerEvents: "none" }} />
+            <h2
+              className="relative font-display"
+              style={{ zIndex: 1, fontSize: "clamp(28px,4vw,44px)", color: "var(--gold)", textTransform: "uppercase", fontWeight: 300, letterSpacing: "0.04em", lineHeight: 1.15 }}
+            >
               Book Your<br />Consultation
             </h2>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/assets/wave-gold.png" alt="" aria-hidden style={{ width: "260px", maxWidth: "80%", height: "auto", marginTop: "24px" }} />
-            <p style={{ marginTop: "20px", color: "var(--ink-soft)", fontSize: "15px", lineHeight: 1.8, maxWidth: "420px" }}>
-              Every consultation begins with listening to your story, then shaping a conservative, personalised plan with one of our medically qualified doctors.
-            </p>
           </div>
+        </Reveal>
 
-          {/* Form (right) */}
-          <div className="bg-white rounded-lg" style={{ padding: "clamp(24px,4vw,40px)", boxShadow: "0 20px 50px rgba(0,0,0,0.06)" }}>
-            <ConsultationForm submitLabel="book your Consultation" />
+        {/* Grey-teal form panel — narrower, centered, overlapping up into the beige */}
+        <Reveal delay={120} className="relative mx-auto" style={{ maxWidth: "780px", marginTop: "-28px", zIndex: 1 }}>
+          <div style={{ background: "#e6eded", borderRadius: "24px", padding: "clamp(28px,4vw,40px)", boxShadow: "0 18px 45px rgba(0,0,0,0.06)" }}>
+            <ConsultationForm stacked submitLabel="Submit" />
           </div>
         </Reveal>
       </div>

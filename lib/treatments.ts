@@ -7,7 +7,7 @@ import { FACE_LINKS, BODY_LINKS, PACKAGE_LINKS, type NavLink } from "./site";
 
 export type PriceItem = { label: string; price: string };
 export type InfoItem = { metric: string; detail: string };
-export type AreaItem = { name: string; desc: string };
+export type AreaItem = { name: string; desc: string; zone?: string; icon?: string };
 export type Step = { title: string; desc: string; image?: string };
 export type BeforeAfter = { before: string; after: string; label?: string };
 
@@ -21,11 +21,15 @@ export type Treatment = {
     prices?: PriceItem[];
     cta?: string;
     image?: string;
+    imageRatio?: string;
+    bgImage?: string;
+    productTabs?: string[];
+    heroForm?: boolean;
   };
   info?: InfoItem[];
   beforeAfterTitle?: string;
   beforeAfter?: BeforeAfter[];
-  precision?: { title: string; intro?: string; areas?: AreaItem[]; additional?: string };
+  precision?: { title: string; intro?: string; areas?: AreaItem[]; additional?: string; additionalTitle?: string; additionalIntro?: string };
   suitability?: { title: string; intro?: string; suitableFor?: string[]; notIdeal?: string[] };
   experience?: { title: string; steps: Step[] };
   /** true when full content has not yet been extracted from the live page */
@@ -48,6 +52,7 @@ export const TREATMENTS: Record<string, Treatment> = {
       ],
       cta: "BOOK YOUR SESSION NOW",
       image: "/assets/treatments/botox-hero.jpg",
+      heroForm: true,
     },
     info: [
       { metric: "Procedure Time", detail: "15-30 Minutes" },
@@ -59,18 +64,24 @@ export const TREATMENTS: Record<string, Treatment> = {
     beforeAfterTitle: "BOTOX RESULTS",
     beforeAfter: [
       { before: "/assets/treatments/botox-before.png", after: "/assets/treatments/botox-after.png", label: "Crow's Feet" },
+      { before: "/assets/treatments/botox-r1-before.png", after: "/assets/treatments/botox-r1-after.png" },
+      { before: "/assets/treatments/botox-r2-before.png", after: "/assets/treatments/botox-r2-after.png" },
+      { before: "/assets/treatments/botox-r3-before.png", after: "/assets/treatments/botox-r3-after.png" },
+      { before: "/assets/treatments/botox-r4-before.png", after: "/assets/treatments/botox-r4-after.png" },
     ],
     precision: {
       title: "PRECISION AREAS OF REFINEMENT",
       intro:
         "Each botox treatment is carefully applied to specific anatomical areas by our doctors. Below are the most commonly treated zones at our Malta clinic.",
       areas: [
-        { name: "Forehead", desc: "Botox smooths horizontal lines across the forehead while preserving natural movement and expression" },
-        { name: "Brow", desc: "Botox softens the vertical creases between the brows that can create a tired or tense appearance" },
-        { name: "Eyes (Crow's Feet)", desc: "Botox relaxes the fine lines at the outer corners of the eyes for a refreshed, rested look" },
-        { name: "Neck (Nefertiti Lift)", desc: "Botox refines the jawline and neck contour by relaxing the platysmal bands that pull downward" },
+        { zone: "Forehead", icon: "forehead", name: "Forehead Lines", desc: "Botox smooths horizontal lines across the forehead while preserving natural movement and expression" },
+        { zone: "Brow", icon: "brow", name: "Frown Lines", desc: "Botox softens the vertical creases between the brows that can create a tired or tense appearance." },
+        { zone: "Eyes", icon: "eyes", name: "Crow's Feet", desc: "Botox relaxes the fine lines at the outer corners of the eyes for a refreshed, rested look." },
+        { zone: "Neck", icon: "neck", name: "Nefertiti Lift", desc: "Botox refines the jawline and neck contour by relaxing the platysmal bands that pull downward." },
       ],
-      additional: "Lip flip, gummy smile, chin dimpling, bunny lines, brow lift, jaw slimming, hyperhidrosis",
+      additionalTitle: "Additional Botox Treatment Areas",
+      additionalIntro: "These areas can also be treated with botox following a personalised consultation with one of our doctors.",
+      additional: "Lip Flip, Gummy Smile, Chin Dimpling, Bunny Lines, Brow Lift, Jaw Slimming, Hyperhidrosis",
     },
     suitability: {
       title: "IS THIS SUITABLE FOR YOU?",
@@ -430,7 +441,9 @@ export const TREATMENTS: Record<string, Treatment> = {
         { label: "2 sessions (€125/session)", price: "from €249" },
         { label: "3 sessions (€117/session)", price: "from €349" },
       ],
-      cta: "BOOK YOUR SESSION NOW",
+      cta: "book your fat dissolving session now",
+      image: "/assets/treatments/fat-dissolving-hero.jpg",
+      productTabs: ["AQUALYX", "LEMON BOTTLE"],
     },
     info: [
       { metric: "Procedure Time", detail: "20-30 minutes" },
@@ -440,6 +453,9 @@ export const TREATMENTS: Record<string, Treatment> = {
       { metric: "Anaesthetic", detail: "None" },
     ],
     beforeAfterTitle: "fat dissolving results",
+    beforeAfter: [
+      { before: "/assets/treatments/fat-dissolving-before.jpg", after: "/assets/treatments/fat-dissolving-after.jpg", label: "Under Chin Fat Reduction" },
+    ],
     precision: {
       title: "precision areas of refinement",
       intro: "This treatment targets localised fat deposits that resist diet and exercise. Below are the areas most commonly treated.",
@@ -472,10 +488,10 @@ export const TREATMENTS: Record<string, Treatment> = {
     experience: {
       title: "your treatment experience",
       steps: [
-        { title: "personalised consultation", desc: "We assess your facial anatomy, skin condition, medical history, and botox goals with one of our doctors." },
-        { title: "Structured Plan", desc: "Your doctor designs a medically guided botox plan tailored to your facial structure and desired outcome." },
-        { title: "Targeted Treatments", desc: "Your doctor administers botox using fine, precise injections, quick, comfortable, and no downtime." },
-        { title: "Ongoing Review & Adjustment", desc: "Your doctor monitors your response and refines the plan to ensure natural botox results over time." },
+        { title: "personalised consultation", desc: "We assess your facial anatomy, skin condition, medical history, and botox goals with one of our doctors.", image: "/assets/treatments/botox-step1.png" },
+        { title: "Structured Plan", desc: "Your doctor designs a medically guided botox plan tailored to your facial structure and desired outcome.", image: "/assets/treatments/botox-step2.png" },
+        { title: "Targeted Treatments", desc: "Your doctor administers botox using fine, precise injections, quick, comfortable, and no downtime.", image: "/assets/treatments/botox-step3.png" },
+        { title: "Ongoing Review & Adjustment", desc: "Your doctor monitors your response and refines the plan to ensure natural botox results over time.", image: "/assets/treatments/botox-step4.png" },
       ],
     },
   },

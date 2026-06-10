@@ -17,9 +17,11 @@ type Status = "idle" | "loading" | "success" | "error";
 export default function ConsultationForm({
   showMessage = false,
   submitLabel = "Submit",
+  stacked = false,
 }: {
   showMessage?: boolean;
   submitLabel?: string;
+  stacked?: boolean;
 }) {
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState("");
@@ -76,7 +78,7 @@ export default function ConsultationForm({
 
   return (
     <form className="space-y-4" onSubmit={onSubmit}>
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className={stacked ? "space-y-4" : "grid gap-4 sm:grid-cols-2"}>
         <div>
           <label htmlFor="cf-firstName" style={fieldLabelStyle}>First Name</label>
           <input id="cf-firstName" className="form-field" name="firstName" type="text" placeholder="Enter your first name" required />

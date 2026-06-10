@@ -72,9 +72,9 @@ export default function Header() {
                   <div
                     className="absolute left-1/2 -translate-x-1/2 top-full hidden group-hover:grid bg-white shadow-xl z-50"
                     style={{
-                      gridTemplateColumns: m.items.length > 7 ? "1fr 1fr" : "1fr",
-                      minWidth: m.items.length > 7 ? "440px" : "260px",
-                      padding: "14px",
+                      gridTemplateColumns: "1fr",
+                      minWidth: "330px",
+                      padding: "16px 0",
                       borderTop: "2px solid var(--gold)",
                     }}
                   >
@@ -82,8 +82,8 @@ export default function Header() {
                       <Link
                         key={it.href}
                         href={it.href}
-                        className="block hover:bg-cream transition-colors"
-                        style={{ padding: "9px 16px", fontSize: "13.5px", color: "var(--ink-soft)" }}
+                        className="block hover:bg-cream transition-colors text-center"
+                        style={{ padding: "9px 24px", fontSize: "11px", color: "var(--label)", textTransform: "uppercase", letterSpacing: "0.08em" }}
                       >
                         {it.label}
                       </Link>
@@ -135,7 +135,7 @@ export default function Header() {
                     {expanded === m.label && (
                       <div className="pb-2">
                         {m.items.map((it) => (
-                          <Link key={it.href} href={it.href} onClick={() => setOpen(false)} className="block" style={{ padding: "8px 12px", fontSize: "14px", color: "var(--ink-soft)" }}>
+                          <Link key={it.href} href={it.href} onClick={() => setOpen(false)} className="block" style={{ padding: "8px 12px", fontSize: "14px", color: "var(--label)" }}>
                             {it.label}
                           </Link>
                         ))}
