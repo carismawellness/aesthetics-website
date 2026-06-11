@@ -1150,6 +1150,10 @@ const FAQS: Faq[] = [
     a: "If you qualify and follow the programme, our patients lose on average around 1 kg per week. Clinical trials show average weight loss of 10–15% of body weight with Ozempic and 15–22% with Mounjaro over 12–18 months. Your results depend on starting weight, body composition, health, programme length, and plan adherence. We track progress with body scans and measurements, not just the scale.",
   },
   {
+    q: "What exactly happens in the medical assessment? Is it safe if I have existing health issues?",
+    a: "In your assessment you sit with our doctor and go through your medical history, medications, past diets, and hormonal or metabolic concerns. We take clinical measurements and perform a body composition scan. If needed, we may recommend blood tests, blood pressure checks, or food intolerance tests. Many clients already have conditions like high blood pressure, thyroid issues, or early diabetes, that's exactly why we screen properly and adapt your Ozempic or Mounjaro plan around your safety.",
+  },
+  {
     q: "Will I have to follow a strict meal plan, or can I still eat bread, pasta, wine?",
     a: "You will have structure, not prison. We use a Mediterranean-style framework with enough protein, vegetables, and healthy fats, then fit it to your culture and lifestyle. We plan for weekends, events, and eating out. No food is automatically banned. The focus is on what you can consistently follow, especially important while on Ozempic or Mounjaro, where appetite is reduced and every meal needs to count nutritionally.",
   },
