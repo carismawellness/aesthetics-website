@@ -11,7 +11,17 @@ function Serif({ children, style }: { children: React.ReactNode; style?: React.C
   return <h2 className="font-serif text-center" style={{ fontSize: "clamp(22px,3vw,30px)", color: "var(--gold-deep)", letterSpacing: "0.06em", fontWeight: 400, lineHeight: 1.3, ...style }}>{children}</h2>;
 }
 function Cta({ label }: { label: string }) {
-  return <Link href="/consultation" className="btn btn-teal" style={{ fontSize: "13px", padding: "15px 32px", letterSpacing: "0.1em" }}>{label}</Link>;
+  return <Link href="/consultation" className="btn btn-teal" style={{ fontSize: "13px", padding: "15px 32px", letterSpacing: "0.1em" }}>{label} <span aria-hidden style={{ marginLeft: "4px" }}>›</span></Link>;
+}
+function GoogleRating() {
+  return (
+    <div className="flex items-center gap-2" style={{ marginTop: "20px" }}>
+      <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.27-4.74 3.27-8.1z" /><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.26 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84A11 11 0 0 0 12 23z" /><path fill="#FBBC05" d="M5.84 14.1a6.6 6.6 0 0 1 0-4.2V7.06H2.18a11 11 0 0 0 0 9.88l3.66-2.84z" /><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84C6.71 7.3 9.14 5.38 12 5.38z" /></svg>
+      <span style={{ fontWeight: 600, fontSize: "13px", color: "var(--label)" }}>4.9</span>
+      <span className="flex" style={{ color: "var(--teal)" }}>{[0, 1, 2, 3, 4].map((i) => (<svg key={i} width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>))}</span>
+      <span className="font-display" style={{ fontSize: "11px", color: "var(--teal)", letterSpacing: "0.08em" }}>TOP-RATED CLINIC IN MALTA</span>
+    </div>
+  );
 }
 function Dot() { return <span style={{ color: "var(--teal)", fontSize: "11px", lineHeight: 1.8, flexShrink: 0 }}>●</span>; }
 
@@ -76,11 +86,11 @@ const REDEFINED = [
 ];
 
 const PRICES = [
-  { size: "xs", price: "€ 79" },
-  { size: "small", price: "€ 99" },
-  { size: "medium", price: "€ 149" },
-  { size: "large", price: "€ 199" },
-  { size: "xl", price: "from € 249" },
+  { size: "xs", price: "€ 79", icon: "pico-pr-xs.png" },
+  { size: "small", price: "€ 99", icon: "pico-pr-small.png" },
+  { size: "medium", price: "€ 149", icon: "pico-pr-medium.png" },
+  { size: "large", price: "€ 199", icon: "pico-pr-large.png" },
+  { size: "xl", price: "from € 249", icon: "pico-pr-xl.png" },
 ];
 
 const EXPECT = [
@@ -121,6 +131,7 @@ export default function PicoLaserPage() {
               <p className="font-display" style={{ fontSize: "16px", color: "var(--gold-deep)", letterSpacing: "0.04em", marginTop: "22px" }}>Total Value: €335 – <span style={{ color: "var(--teal)" }}>Today: €99 Only</span></p>
               <p style={{ fontSize: "11px", color: "var(--muted)", lineHeight: 1.6, marginTop: "8px" }}>Due to high demand, packages are offered based on availability and may not always be guaranteed. Please inquire for current options.</p>
               <div style={{ marginTop: "22px" }}><Cta label="Book Now & Save 50%" /></div>
+              <GoogleRating />
             </Reveal>
             <Reveal delay={120}>
               <div className="grid grid-cols-2 gap-4">
@@ -129,9 +140,19 @@ export default function PicoLaserPage() {
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={`${A}/pico-redefined.png`} alt="" className="w-full rounded-xl" style={{ display: "block", objectFit: "cover", aspectRatio: "1 / 1", boxShadow: "0 14px 34px rgba(0,0,0,0.12)" }} />
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={`${A}/pico-hero2.png`} alt="" className="w-full rounded-xl" style={{ display: "block", objectFit: "cover", aspectRatio: "1 / 1", boxShadow: "0 14px 34px rgba(0,0,0,0.12)" }} />
+                <img src={`${A}/pico-fade.png`} alt="" className="w-full rounded-xl" style={{ display: "block", objectFit: "cover", aspectRatio: "1 / 1", boxShadow: "0 14px 34px rgba(0,0,0,0.12)" }} />
               </div>
             </Reveal>
+          </div>
+          {/* trust strip */}
+          <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-4 text-center" style={{ marginTop: "44px" }}>
+            {["MALTA'S LEADING WELLNESS CHAIN", "30+ YEARS OF EXPERTISE", "MEDICALLY QUALIFIED"].map((t) => (
+              <span key={t} className="flex items-center gap-2.5">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={`${A}/laser-ic-check.png`} alt="" style={{ width: "22px", height: "22px" }} />
+                <span className="font-display" style={{ fontSize: "12px", color: "var(--gold-deep)", letterSpacing: "0.1em" }}>{t}</span>
+              </span>
+            ))}
           </div>
         </div>
       </section>
@@ -141,12 +162,16 @@ export default function PicoLaserPage() {
         <section style={{ padding: "70px 0" }}>
           <div className="container">
             <Serif>precision tattoo removal in malta</Serif>
-            <div className="grid gap-6 md:grid-cols-2 mx-auto" style={{ maxWidth: "1040px", marginTop: "40px" }}>
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 mx-auto" style={{ maxWidth: "1160px", marginTop: "40px" }}>
               {REVIEWS.map((r, i) => (
-                <Reveal key={r.name} delay={(i % 2) * 80} style={{ background: "rgba(255,255,255,0.55)", border: "1px solid var(--line)", borderRadius: "16px", padding: "28px 26px", boxShadow: "0 12px 30px rgba(0,0,0,0.05)" }}>
-                  <span className="flex" style={{ color: "var(--teal)", marginBottom: "12px" }}>{[0, 1, 2, 3, 4].map((s) => (<svg key={s} width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>))}</span>
-                  <p style={{ fontSize: "13.5px", color: "var(--label)", lineHeight: 1.7 }}>{r.text}</p>
-                  <p className="font-display" style={{ fontSize: "13px", color: "var(--gold-deep)", letterSpacing: "0.04em", marginTop: "16px" }}>— {r.name}</p>
+                <Reveal key={r.name} delay={(i % 4) * 70} className="overflow-hidden flex flex-col" style={{ background: "rgba(255,255,255,0.6)", border: "1px solid var(--line)", borderRadius: "16px", boxShadow: "0 12px 30px rgba(0,0,0,0.05)" }}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={`${A}/pico-rev${i + 1}.png`} alt="Tattoo removal result" className="w-full" style={{ display: "block", aspectRatio: "16 / 9", objectFit: "cover" }} />
+                  <div style={{ padding: "20px 22px 24px" }}>
+                    <p style={{ fontSize: "13px", color: "var(--label)", lineHeight: 1.7, display: "-webkit-box", WebkitLineClamp: 4, WebkitBoxOrient: "vertical", overflow: "hidden" }}>{r.text}</p>
+                    <p className="font-display" style={{ fontSize: "12px", color: "var(--teal)", letterSpacing: "0.04em", marginTop: "10px" }}>Read more</p>
+                    <p className="font-display" style={{ fontSize: "13px", color: "var(--gold-deep)", letterSpacing: "0.04em", marginTop: "14px" }}>- {r.name}</p>
+                  </div>
                 </Reveal>
               ))}
             </div>
@@ -155,18 +180,24 @@ export default function PicoLaserPage() {
 
         {/* DO YOU HAVE A TATTOO */}
         <section style={{ padding: "60px 0" }}>
-          <div className="container text-center">
-            <Kicker>so your skin feels like yours again- confidently.</Kicker>
-            <Serif style={{ marginTop: "8px" }}>Do you have a tattoo you no longer want to carry?</Serif>
-            <div className="mx-auto" style={{ maxWidth: "820px", marginTop: "22px" }}>
-              {["Whether it no longer reflects who you are, has faded over time, or you want to lighten it for a cover-up, unwanted ink can feel frustrating. You’re not alone — and safe, gradual tattoo fading is possible with the right technology and care.",
-                "With our advanced Pico Laser Tattoo Removal treatment, ultra-short laser pulses target unwanted tattoo pigment beneath the skin, helping break the ink into tiny particles so your body can naturally clear them over time.",
-                "Every tattoo is different. Your treatment plan is personalised based on your tattoo size, colour, depth, age, skin type, and removal goals to support safer fading and better-looking results.",
-                "Your skin has a new story to tell. Let’s help you begin it with confidence."].map((p, i) => (
-                <p key={i} style={{ fontSize: "14.5px", color: "var(--label)", lineHeight: 1.8, marginTop: i ? "14px" : 0 }}>{p}</p>
-              ))}
+          <div className="container">
+            <div className="grid gap-12 lg:grid-cols-2 items-center">
+              <div>
+                <p className="font-display" style={{ fontSize: "18px", color: "var(--gold-deep)", letterSpacing: "0.02em" }}>so your skin feels like yours again- confidently.</p>
+                <h2 className="font-serif" style={{ fontSize: "clamp(22px,3vw,30px)", color: "var(--gold-deep)", letterSpacing: "0.06em", fontWeight: 400, lineHeight: 1.3, marginTop: "8px" }}>Do you have a tattoo you no longer want to carry?</h2>
+                {["Whether it no longer reflects who you are, has faded over time, or you want to lighten it for a cover-up, unwanted ink can feel frustrating. You’re not alone — and safe, gradual tattoo fading is possible with the right technology and care.",
+                  "With our advanced Pico Laser Tattoo Removal treatment, ultra-short laser pulses target unwanted tattoo pigment beneath the skin, helping break the ink into tiny particles so your body can naturally clear them over time.",
+                  "Every tattoo is different. Your treatment plan is personalised based on your tattoo size, colour, depth, age, skin type, and removal goals to support safer fading and better-looking results.",
+                  "Your skin has a new story to tell. Let’s help you begin it with confidence."].map((p, i) => (
+                  <p key={i} style={{ fontSize: "14.5px", color: "var(--label)", lineHeight: 1.8, marginTop: i === 0 ? "20px" : "14px" }}>{p}</p>
+                ))}
+                <div style={{ marginTop: "26px" }}><Cta label="Grab This Limited Offer 50% Off" /></div>
+              </div>
+              <Reveal delay={120}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={`${A}/pico-hero2.png`} alt="Tattoo fading over multiple Pico laser sessions" className="w-full rounded-xl" style={{ display: "block", objectFit: "cover", boxShadow: "0 16px 40px rgba(0,0,0,0.12)" }} />
+              </Reveal>
             </div>
-            <div style={{ marginTop: "26px" }}><Cta label="Grab This Limited Offer 50% Off" /></div>
           </div>
         </section>
 
@@ -175,6 +206,12 @@ export default function PicoLaserPage() {
           <div className="container text-center">
             <Serif>malta’s trusted clinic for safe, precise tattoo removal</Serif>
             <p className="mx-auto" style={{ maxWidth: "740px", fontSize: "14px", color: "var(--label)", lineHeight: 1.7, marginTop: "16px" }}>Advanced Pico laser technology, personalised treatment plans, and medically guided care for unwanted ink.</p>
+            <div className="flex flex-wrap items-center justify-center" style={{ gap: "30px", marginTop: "30px" }}>
+              {["/assets/press/lovin-malta.jpeg", "/assets/press/malta-daily.png", "/assets/press/bay.jpeg", "/assets/press/times-of-malta.png", "/assets/press/malta-today.jpg"].map((l) => (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img key={l} src={l} alt="" style={{ height: "30px", width: "auto", objectFit: "contain" }} />
+              ))}
+            </div>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4" style={{ marginTop: "44px" }}>
               {FEATURES.map((f, i) => (
                 <Reveal key={f.label} delay={(i % 4) * 70} className="text-center" style={{ background: "rgba(255,255,255,0.5)", border: "1px solid var(--line)", borderRadius: "16px 40px 16px 40px", padding: "28px 22px", boxShadow: "0 12px 30px rgba(0,0,0,0.05)" }}>
@@ -197,7 +234,7 @@ export default function PicoLaserPage() {
               {BECAUSE.map((b) => (<li key={b} className="flex items-start gap-3" style={{ marginBottom: "14px", textAlign: "left" }}><Dot /><span style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.6 }}>{b}</span></li>))}
             </ul>
             <Serif style={{ marginTop: "20px" }}>safe, confident tattoo removal starts here.</Serif>
-            <div style={{ marginTop: "24px" }}><Cta label="Claim Tattoo Removal Over 50% Off" /></div>
+            <div style={{ marginTop: "24px" }}><Cta label="ClaimTatto Removal Over 50% Off" /></div>
           </div>
         </section>
 
@@ -219,7 +256,7 @@ export default function PicoLaserPage() {
                 </ul>
               </div>
             </div>
-            <div className="text-center" style={{ marginTop: "36px" }}><Cta label="Get My First Tattoo Removal Session" /></div>
+            <div className="text-center" style={{ marginTop: "36px" }}><Cta label="Get My First Tatto removal Session" /></div>
           </div>
         </section>
 
@@ -234,7 +271,7 @@ export default function PicoLaserPage() {
                 "No rushed promises — just safe guidance, realistic expectations, and expert care from start to finish."].map((p, i) => (
                 <p key={i} style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.8, marginTop: i ? "12px" : "18px" }}>{p}</p>
               ))}
-              <div style={{ marginTop: "26px" }}><Cta label="book your tattoo removal now" /></div>
+              <div style={{ marginTop: "26px" }}><Cta label="book your tatto removal now" /></div>
             </div>
           </div>
         </section>
@@ -272,13 +309,18 @@ export default function PicoLaserPage() {
         {/* PRICING */}
         <section style={{ padding: "60px 0" }}>
           <div className="container text-center">
-            <Serif>pico laser tattoo removal pricing</Serif>
+            <Serif>pico laser tatto removal pricing</Serif>
             <p className="mx-auto" style={{ maxWidth: "760px", fontSize: "14px", color: "var(--label)", lineHeight: 1.7, marginTop: "16px" }}>Choose the package that best fits your needs and goals. Every option is crafted to deliver exceptional results and a premium experience.</p>
-            <div className="grid gap-5 sm:grid-cols-3 lg:grid-cols-5" style={{ marginTop: "40px" }}>
+            <div className="flex flex-wrap justify-center mx-auto" style={{ gap: "22px", marginTop: "40px", maxWidth: "710px" }}>
               {PRICES.map((p, i) => (
-                <Reveal key={p.size} delay={(i % 5) * 60} className="text-center" style={{ background: "rgba(255,255,255,0.6)", border: "1px solid var(--line)", borderRadius: "14px", padding: "28px 18px", boxShadow: "0 12px 30px rgba(0,0,0,0.05)" }}>
-                  <div className="font-display" style={{ fontSize: "14px", color: "var(--label)", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: "10px" }}>{p.size}</div>
-                  <div className="font-serif" style={{ fontSize: "22px", color: "var(--gold-deep)", letterSpacing: "0.02em" }}>{p.price}</div>
+                <Reveal key={p.size} delay={(i % 5) * 60} className="text-center relative" style={{ width: "200px", background: "linear-gradient(160deg,#b6ac95 0%, #a89e86 100%)", borderRadius: "14px", padding: "44px 18px 26px", marginTop: "26px", boxShadow: "0 12px 30px rgba(0,0,0,0.10)" }}>
+                  <span className="inline-flex items-center justify-center" style={{ position: "absolute", top: "-26px", left: "50%", transform: "translateX(-50%)", width: "56px", height: "56px", borderRadius: "12px", backgroundColor: "#8e836b" }}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={`${A}/${p.icon}`} alt="" style={{ width: "30px", height: "30px" }} />
+                  </span>
+                  <div className="font-serif" style={{ fontSize: "20px", color: "#fff", letterSpacing: "0.08em", textTransform: "uppercase" }}>{p.size}</div>
+                  <div style={{ width: "60px", height: "1px", background: "rgba(255,255,255,0.6)", margin: "12px auto" }} />
+                  <div className="font-serif" style={{ fontSize: "24px", color: "#fff", letterSpacing: "0.02em" }}>{p.price}</div>
                 </Reveal>
               ))}
             </div>
@@ -291,14 +333,16 @@ export default function PicoLaserPage() {
             <Serif>what to expect during your pico laser tattoo removal treatment?</Serif>
             <div className="grid gap-8 md:grid-cols-3" style={{ marginTop: "44px" }}>
               {EXPECT.map((e, i) => (
-                <Reveal key={e.label} delay={(i % 3) * 80} style={{ background: "rgba(255,255,255,0.55)", border: "1px solid var(--line)", borderRadius: "20px 56px 20px 56px", overflow: "hidden", boxShadow: "0 12px 30px rgba(0,0,0,0.05)" }}>
+                <Reveal key={e.label} delay={(i % 3) * 80} className="flex flex-col">
+                  <h3 className="font-display text-center" style={{ fontSize: "14px", color: "var(--gold-deep)", letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: "16px" }}>{e.label}</h3>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={`${A}/${e.image}`} alt={e.label} className="w-full" style={{ display: "block", aspectRatio: "5 / 4", objectFit: "cover" }} />
-                  <div style={{ padding: "24px" }}>
-                    <h3 className="font-display" style={{ fontSize: "14px", color: "var(--gold-deep)", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "14px" }}>{e.label}</h3>
-                    <ul className="space-y-3">
-                      {e.points.map((p) => (<li key={p} className="flex items-start gap-2"><Dot /><span style={{ fontSize: "13px", color: "var(--label)", lineHeight: 1.65 }}>{p}</span></li>))}
-                    </ul>
+                  <img src={`${A}/${e.image}`} alt={e.label} className="w-full rounded-xl" style={{ display: "block", aspectRatio: "5 / 4", objectFit: "cover", boxShadow: "0 12px 30px rgba(0,0,0,0.08)" }} />
+                  <div className="space-y-3" style={{ marginTop: "16px" }}>
+                    {e.points.map((p) => (
+                      <div key={p} style={{ background: "rgba(255,255,255,0.6)", borderLeft: "3px solid var(--teal)", borderRadius: "6px", padding: "14px 16px" }}>
+                        <span style={{ fontSize: "13px", color: "var(--label)", lineHeight: 1.65 }}>{p}</span>
+                      </div>
+                    ))}
                   </div>
                 </Reveal>
               ))}
@@ -309,8 +353,14 @@ export default function PicoLaserPage() {
         {/* FAQ */}
         <section style={{ padding: "50px 0" }}>
           <div className="container">
-            <h2 className="font-serif text-center" style={{ fontSize: "clamp(22px,3vw,30px)", color: "var(--gold-deep)", letterSpacing: "0.06em", fontWeight: 400, marginBottom: "40px" }}>Frequently asked questions</h2>
-            <FaqAccordion items={FAQS} />
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mx-auto" style={{ maxWidth: "1080px", marginBottom: "36px" }}>
+              <h2 className="font-serif" style={{ fontSize: "clamp(22px,3vw,30px)", color: "var(--gold-deep)", letterSpacing: "0.06em", fontWeight: 400 }}>Frequently asked questions</h2>
+              <span className="relative" style={{ width: "260px", maxWidth: "100%" }}>
+                <input type="search" aria-label="Search FAQs" placeholder="Looking for something?" style={{ width: "100%", padding: "10px 38px 10px 16px", border: "none", borderBottom: "1px solid var(--line)", background: "transparent", fontSize: "13px", color: "var(--label)" }} />
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gold-deep)" strokeWidth="1.6" style={{ position: "absolute", right: "10px", top: "50%", transform: "translateY(-50%)" }}><circle cx="11" cy="11" r="7" /><path d="m21 21-4.3-4.3" /></svg>
+              </span>
+            </div>
+            <FaqAccordion items={FAQS} uppercase={false} />
             <div className="text-center" style={{ marginTop: "36px" }}><Cta label="CLAIM MY SPOT NOW" /></div>
           </div>
         </section>

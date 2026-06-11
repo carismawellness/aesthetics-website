@@ -4,7 +4,7 @@ import { useState } from "react";
 
 export type Faq = { q: string; a: string };
 
-export default function FaqAccordion({ items }: { items: Faq[] }) {
+export default function FaqAccordion({ items, uppercase = true }: { items: Faq[]; uppercase?: boolean }) {
   const [open, setOpen] = useState<number | null>(null);
   return (
     <div className="mx-auto" style={{ maxWidth: "1080px" }}>
@@ -19,7 +19,7 @@ export default function FaqAccordion({ items }: { items: Faq[] }) {
               style={{ padding: "22px 4px", background: "transparent", border: "none", cursor: "pointer", gap: "20px" }}
               aria-expanded={isOpen}
             >
-              <span className="font-display" style={{ fontSize: "16px", color: "var(--gold-deep)", letterSpacing: "0.06em", lineHeight: 1.4 }}>
+              <span className="font-display" style={{ fontSize: "16px", color: "var(--gold-deep)", letterSpacing: "0.06em", lineHeight: 1.4, textTransform: uppercase ? undefined : "none" }}>
                 {it.q}
               </span>
               <span
