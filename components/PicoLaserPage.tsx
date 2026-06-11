@@ -233,12 +233,20 @@ export default function PicoLaserPage() {
 
         {/* BECAUSE */}
         <section style={{ padding: "60px 0" }}>
-          <div className="container text-center">
-            <ul className="mx-auto" style={{ maxWidth: "760px" }}>
-              {BECAUSE.map((b) => (<li key={b} className="flex items-start gap-3" style={{ marginBottom: "14px", textAlign: "left" }}><Dot /><span style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.6 }}>{b}</span></li>))}
-            </ul>
-            <Serif style={{ marginTop: "20px" }}>safe, confident tattoo removal starts here.</Serif>
-            <div style={{ marginTop: "24px" }}><Cta label="ClaimTatto Removal Over 50% Off" /></div>
+          <div className="container">
+            <div className="grid gap-12 lg:grid-cols-2 items-center">
+              <div>
+                <ul>
+                  {BECAUSE.map((b) => (<li key={b} className="flex items-start gap-3" style={{ marginBottom: "14px" }}><Dot /><span style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.6 }}>{b}</span></li>))}
+                </ul>
+                <h2 className="font-serif" style={{ fontSize: "clamp(22px,3vw,30px)", color: "var(--gold-deep)", letterSpacing: "0.06em", fontWeight: 400, lineHeight: 1.3, marginTop: "22px" }}>safe, confident tattoo removal starts here.</h2>
+                <div style={{ marginTop: "24px" }}><Cta label="ClaimTatto Removal Over 50% Off" /></div>
+              </div>
+              <Reveal delay={120}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={`${A}/pico-fade.png`} alt="Client considering tattoo removal" className="w-full rounded-xl" style={{ display: "block", objectFit: "cover", aspectRatio: "1 / 1", boxShadow: "0 16px 40px rgba(0,0,0,0.12)" }} />
+              </Reveal>
+            </div>
           </div>
         </section>
 
@@ -267,28 +275,42 @@ export default function PicoLaserPage() {
         {/* SECURE CONSULTATION */}
         <section style={{ padding: "30px 0 60px" }}>
           <div className="container">
-            <div className="mx-auto text-center" style={{ maxWidth: "880px", background: "rgba(255,255,255,0.5)", border: "1px solid var(--line)", borderRadius: "24px", padding: "clamp(30px,4vw,52px)" }}>
-              <Serif>SECURE YOUR PICO LASER TATTOO REMOVAL CONSULTATION TODAY</Serif>
-              {["Our professional tattoo removal consultation is available for a limited time — once appointments are filled, the next available slots may be later.",
-                "Whether you want to fade an old tattoo, prepare for a cover-up, or remove unwanted ink over time, our Pico Laser treatment is designed to target tattoo pigment with focused precision.",
-                "During your consultation, we assess your tattoo size, ink colour, depth, skin type, and goals before creating a personalised treatment plan.",
-                "No rushed promises — just safe guidance, realistic expectations, and expert care from start to finish."].map((p, i) => (
-                <p key={i} style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.8, marginTop: i ? "12px" : "18px" }}>{p}</p>
-              ))}
-              <div style={{ marginTop: "26px" }}><Cta label="book your tatto removal now" /></div>
+            <div className="grid gap-12 lg:grid-cols-2 items-center">
+              <div>
+                <Serif style={{ textAlign: "left" }}>SECURE YOUR PICO LASER TATTOO REMOVAL CONSULTATION TODAY</Serif>
+                {["Our professional tattoo removal consultation is available for a limited time — once appointments are filled, the next available slots may be later.",
+                  "Whether you want to fade an old tattoo, prepare for a cover-up, or remove unwanted ink over time, our Pico Laser treatment is designed to target tattoo pigment with focused precision.",
+                  "During your consultation, we assess your tattoo size, ink colour, depth, skin type, and goals before creating a personalised treatment plan.",
+                  "No rushed promises — just safe guidance, realistic expectations, and expert care from start to finish."].map((p, i) => (
+                  <p key={i} style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.8, marginTop: i ? "12px" : "18px" }}>{p}</p>
+                ))}
+                <div style={{ marginTop: "26px" }}><Cta label="book your tatto removal now" /></div>
+              </div>
+              <Reveal delay={120}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={`${A}/pico-secure.png`} alt="Pico laser tattoo removal consultation" className="w-full rounded-xl" style={{ display: "block", objectFit: "cover", aspectRatio: "1 / 1", boxShadow: "0 16px 40px rgba(0,0,0,0.12)" }} />
+              </Reveal>
             </div>
           </div>
         </section>
 
         {/* FADE UNWANTED INK */}
         <section style={{ padding: "50px 0" }}>
-          <div className="container text-center">
-            <Serif>FADE UNWANTED INK. FEEL MORE LIKE YOU.</Serif>
-            <p className="mx-auto" style={{ maxWidth: "760px", fontSize: "14px", color: "var(--label)", lineHeight: 1.7, marginTop: "16px" }}>Advanced Pico Laser tattoo removal designed for safer fading, precise targeting, and personalised results.</p>
-            <ul className="mx-auto grid gap-3 sm:grid-cols-2 text-left" style={{ maxWidth: "820px", marginTop: "28px" }}>
-              {FADE.map((f) => (<li key={f} className="flex items-start gap-3"><Dot /><span style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.6 }}>{f}</span></li>))}
-            </ul>
-            <div style={{ marginTop: "28px" }}><Cta label="Claim 50% Off Tattoo Removal" /></div>
+          <div className="container">
+            <div className="grid gap-12 lg:grid-cols-2 items-center">
+              <div>
+                <h2 className="font-serif" style={{ fontSize: "clamp(22px,3vw,30px)", color: "var(--gold-deep)", letterSpacing: "0.06em", fontWeight: 400, lineHeight: 1.3 }}>FADE UNWANTED INK. FEEL MORE LIKE YOU.</h2>
+                <p style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.7, marginTop: "16px" }}>Advanced Pico Laser tattoo removal designed for safer fading, precise targeting, and personalised results.</p>
+                <ul className="space-y-3" style={{ marginTop: "24px" }}>
+                  {FADE.map((f) => (<li key={f} className="flex items-start gap-3"><Dot /><span style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.6 }}>{f}</span></li>))}
+                </ul>
+                <div style={{ marginTop: "28px" }}><Cta label="Claim 50% Off Tattoo Removal" /></div>
+              </div>
+              <Reveal delay={120}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={`${A}/pico-fadeink.png`} alt="Tattoo before Pico laser removal" className="w-full rounded-xl" style={{ display: "block", objectFit: "cover", aspectRatio: "4 / 5", boxShadow: "0 16px 40px rgba(0,0,0,0.12)" }} />
+              </Reveal>
+            </div>
           </div>
         </section>
 
