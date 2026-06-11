@@ -174,60 +174,6 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
         </div>
       </section>
 
-      {/* Trusted clinic — AS SEEN ON + image cluster + trust points */}
-      {t.trusted && (
-        <section style={{ padding: "70px 0 84px" }}>
-          <div className="container">
-            <h2 className="font-serif text-center" style={{ fontSize: "clamp(24px,3.4vw,38px)", color: "var(--gold)", letterSpacing: "0.04em" }}>{t.trusted.title}</h2>
-            {t.trusted.subtitle && (
-              <p className="font-display text-center" style={{ fontSize: "14px", color: "var(--label)", letterSpacing: "0.14em", textTransform: "uppercase", marginTop: "12px" }}>{t.trusted.subtitle}</p>
-            )}
-            {t.trusted.asSeenOn && t.trusted.asSeenOn.length > 0 && (
-              <div className="text-center" style={{ marginTop: "28px" }}>
-                <p className="font-display" style={{ fontSize: "11px", color: "var(--gold-deep)", letterSpacing: "0.18em", textTransform: "uppercase", marginBottom: "14px" }}>As seen on</p>
-                <div className="flex flex-wrap items-center justify-center" style={{ gap: "26px" }}>
-                  {t.trusted.asSeenOn.map((logo) => (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img key={logo} src={logo} alt="" style={{ height: "26px", width: "auto", objectFit: "contain" }} />
-                  ))}
-                </div>
-              </div>
-            )}
-
-            <Reveal className="mx-auto" style={{ marginTop: "40px", maxWidth: "1100px", borderRadius: "32px", background: "linear-gradient(135deg,#eef4f5 0%, #ffffff 45%, #e6eef0 100%)", border: "1px solid var(--line)", padding: "clamp(28px,4vw,52px)" }}>
-              <div className="grid gap-10 lg:grid-cols-2 items-center">
-                {/* image cluster — flower of 4 leaf-corner photos */}
-                <div className="grid grid-cols-2" style={{ gap: "10px", maxWidth: "470px" }}>
-                  {t.trusted.images.slice(0, 4).map((src, i) => {
-                    const radii = ["64px 16px 16px 16px", "16px 64px 16px 16px", "16px 16px 16px 64px", "16px 16px 64px 16px"];
-                    return (
-                      <div key={src} className="overflow-hidden" style={{ borderRadius: radii[i] }}>
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src={src} alt="" style={{ display: "block", width: "100%", aspectRatio: "1 / 1", objectFit: "cover" }} />
-                      </div>
-                    );
-                  })}
-                </div>
-                {/* trust points */}
-                <ul className="space-y-6">
-                  {t.trusted.points.map((p) => (
-                    <li key={p.title} className="flex items-start gap-4">
-                      <span className="shrink-0 inline-flex items-center justify-center" style={{ width: "34px", height: "34px", borderRadius: "50%", background: "#e3eded", color: "var(--teal)", marginTop: "2px" }}>
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12.5l4.5 4.5L19 7" /></svg>
-                      </span>
-                      <div>
-                        <h3 className="font-display" style={{ fontSize: "15px", color: "var(--gold)", letterSpacing: "0.04em", textTransform: "uppercase", marginBottom: "4px" }}>{p.title}</h3>
-                        <p style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.6 }}>{p.desc}</p>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </Reveal>
-          </div>
-        </section>
-      )}
-
       {/* Before / after — real photo pair (matches live carousel) */}
       {(t.beforeAfter || t.beforeAfterTitle) && (
         <section style={{ padding: "70px 0", backgroundColor: "var(--cream)" }}>
@@ -419,6 +365,60 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                 </Reveal>
               ))}
             </div>
+          </div>
+        </section>
+      )}
+
+      {/* Trusted clinic — AS SEEN ON + image cluster + trust points */}
+      {t.trusted && (
+        <section style={{ padding: "70px 0 84px" }}>
+          <div className="container">
+            <h2 className="font-serif text-center" style={{ fontSize: "clamp(24px,3.4vw,38px)", color: "var(--gold)", letterSpacing: "0.04em" }}>{t.trusted.title}</h2>
+            {t.trusted.subtitle && (
+              <p className="font-display text-center" style={{ fontSize: "14px", color: "var(--label)", letterSpacing: "0.14em", textTransform: "uppercase", marginTop: "12px" }}>{t.trusted.subtitle}</p>
+            )}
+            {t.trusted.asSeenOn && t.trusted.asSeenOn.length > 0 && (
+              <div className="text-center" style={{ marginTop: "28px" }}>
+                <p className="font-display" style={{ fontSize: "11px", color: "var(--gold-deep)", letterSpacing: "0.18em", textTransform: "uppercase", marginBottom: "14px" }}>As seen on</p>
+                <div className="flex flex-wrap items-center justify-center" style={{ gap: "26px" }}>
+                  {t.trusted.asSeenOn.map((logo) => (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img key={logo} src={logo} alt="" style={{ height: "26px", width: "auto", objectFit: "contain" }} />
+                  ))}
+                </div>
+              </div>
+            )}
+
+            <Reveal className="mx-auto" style={{ marginTop: "40px", maxWidth: "1100px", borderRadius: "32px", background: "linear-gradient(135deg,#eef4f5 0%, #ffffff 45%, #e6eef0 100%)", border: "1px solid var(--line)", padding: "clamp(28px,4vw,52px)" }}>
+              <div className="grid gap-10 lg:grid-cols-2 items-center">
+                {/* image cluster — flower of 4 leaf-corner photos */}
+                <div className="grid grid-cols-2" style={{ gap: "10px", maxWidth: "470px" }}>
+                  {t.trusted.images.slice(0, 4).map((src, i) => {
+                    const radii = ["64px 16px 16px 16px", "16px 64px 16px 16px", "16px 16px 16px 64px", "16px 16px 64px 16px"];
+                    return (
+                      <div key={src} className="overflow-hidden" style={{ borderRadius: radii[i] }}>
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src={src} alt="" style={{ display: "block", width: "100%", aspectRatio: "1 / 1", objectFit: "cover" }} />
+                      </div>
+                    );
+                  })}
+                </div>
+                {/* trust points */}
+                <ul className="space-y-6">
+                  {t.trusted.points.map((p) => (
+                    <li key={p.title} className="flex items-start gap-4">
+                      <span className="shrink-0 inline-flex items-center justify-center" style={{ width: "34px", height: "34px", borderRadius: "50%", background: "#e3eded", color: "var(--teal)", marginTop: "2px" }}>
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12.5l4.5 4.5L19 7" /></svg>
+                      </span>
+                      <div>
+                        <h3 className="font-display" style={{ fontSize: "15px", color: "var(--gold)", letterSpacing: "0.04em", textTransform: "uppercase", marginBottom: "4px" }}>{p.title}</h3>
+                        <p style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.6 }}>{p.desc}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </Reveal>
           </div>
         </section>
       )}
