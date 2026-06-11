@@ -1086,8 +1086,13 @@ function Difference() {
             </ul>
           </Reveal>
           <Reveal delay={100}>
-            <div style={{ position: "relative" }}>
-              <Image src={`${A}/difference-photo.png`} alt="" width={678} height={610} style={{ width: "100%", height: "auto", borderRadius: "10px" }} />
+            <div style={{ position: "relative", borderRadius: "10px", overflow: "hidden", boxShadow: "0 16px 38px rgba(0,0,0,0.10)", minHeight: "420px" }}>
+              <iframe
+                title="Carisma Aesthetics location"
+                src="https://maps.google.com/maps?q=Carisma%20Aesthetics%20Malta&z=14&output=embed"
+                loading="lazy"
+                style={{ border: 0, width: "100%", height: "100%", minHeight: "420px", display: "block" }}
+              />
               <div
                 className="flex items-center"
                 style={{ gap: "10px", position: "absolute", bottom: "16px", left: "16px", background: "var(--white)", padding: "10px 16px", borderRadius: "8px", boxShadow: "0 8px 22px rgba(0,0,0,0.14)" }}
