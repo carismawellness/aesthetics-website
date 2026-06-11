@@ -216,7 +216,7 @@ export default function LaserHairRemovalPage() {
           <div className="container">
             <SerifHeading>never shave again. guaranteed.</SerifHeading>
             <div className="grid gap-12 lg:grid-cols-2 items-center" style={{ marginTop: "44px" }}>
-              <CompositeSlideshow images={[`${IMG}/laser-before-after.png`]} />
+              <CompositeSlideshow images={[`${IMG}/laser-ba1.png`, `${IMG}/laser-ba2.png`, `${IMG}/laser-ba3.png`, `${IMG}/laser-ba4.png`]} />
               <div>
                 <p style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.85 }}>We're so confident in our technology that we guarantee visible hair reduction after <b style={{ color: "var(--label)", fontWeight: 600 }}>just 3 sessions</b> — or your <b style={{ color: "var(--label)", fontWeight: 600 }}>next one is free</b>.</p>
                 <p style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.85, marginTop: "16px" }}>And when we say it's <b style={{ color: "var(--label)", fontWeight: 600 }}>virtually painless</b>, we mean it. Our patented <b style={{ color: "var(--label)", fontWeight: 600 }}>SHR® and ICE Plus™ technology</b> make this one of the most comfortable laser experiences available today.</p>
