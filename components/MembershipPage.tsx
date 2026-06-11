@@ -18,9 +18,12 @@ function Cta({ label, href = "/consultation" }: { label: string; href?: string }
 }
 
 const STEPS = [
-  { n: "1", title: "contribute", sub: "Select your monthly contribution amount", desc: "Choose an amount you would like to deposit each month into your Glow balance.", eg: "E.g.: If you choose to subscribe at €40, and you will automatically be investing this amount each month", icon: (<><circle cx="12" cy="12" r="8" /><path d="M12 8v8M9.5 10.2c0-1 1.1-1.7 2.5-1.7s2.5.7 2.5 1.7-1.1 1.6-2.5 1.6-2.5.7-2.5 1.7 1.1 1.7 2.5 1.7 2.5-.7 2.5-1.7" /></>) },
-  { n: "2", title: "save", sub: "Grow your balance", desc: "Let your balance grow with your monthly contributions as you save up to spend on any of our services and products", eg: "E.g.: Your Glow balance will grow over time, accumulating for example €240 in 6 months if you deposit €40 each month", icon: (<><path d="M19 10c0-3-3-5-7-5s-7 2-7 5c0 1.4.7 2.6 1.8 3.5V17a1 1 0 0 0 1 1h1.4a1 1 0 0 0 1-1v-.5h3.6V17a1 1 0 0 0 1 1H17a1 1 0 0 0 1-1v-3.5c.6-.5 1-1.2 1-3.5z" /><path d="M9 8h3" /><circle cx="16" cy="10" r="0.6" fill="currentColor" /></>) },
-  { n: "3", title: "enjoy exclusive 20% off", sub: "", desc: "Enjoy your member exclusive 10% discount on all services and 15% on all products as you spend your Glow credit.", eg: "E.g.: Purchase your mid-yearly botox session at a 10% discount without having to pay the full amount at once", icon: (<><path d="M20.6 13.4 13.4 20.6a2 2 0 0 1-2.8 0l-6.6-6.6V4h10l6.6 6.6a2 2 0 0 1 0 2.8z" /><circle cx="8" cy="8" r="1.3" /></>) },
+  { n: "1", word: "contribute", sub: "Select your monthly contribution amount", desc: "Choose an amount you would like to deposit each month into your Glow balance.", eg: "E.g.: If you choose to subscribe at €40, and you will automatically be investing this amount each month",
+    icon: (<><path d="M3 13c1.6-1.4 3.3-1.4 5 0 1.7 1.4 3.4 1.4 5 0" /><path d="M3 17c1.6-1.4 3.3-1.4 5 0 1.7 1.4 3.4 1.4 5 0" /><path d="M14.5 14.5 20 12a1.6 1.6 0 0 0-1-3l-5 1.4" /><circle cx="13" cy="5" r="3" /><path d="M13 3.6v2.8M11.9 4.4c0-.5.5-.8 1.1-.8s1.1.3 1.1.8-.5.7-1.1.7-1.1.3-1.1.8.5.8 1.1.8 1.1-.3 1.1-.8" /></>) },
+  { n: "2", word: "save", sub: "Grow your balance", desc: "Let your balance grow with your monthly contributions as you save up to spend on any of our services and products", eg: "E.g.: Your Glow balance will grow over time, accumulating for example €240 in 6 months if you deposit €40 each month",
+    icon: (<><path d="M19.5 11.2c0-3.1-3.1-5.2-7-5.2-1.2 0-2.3.2-3.3.6L6.8 5.3 6.4 8C5.2 9 4.5 10 4.5 11.2c0 1.5.9 2.8 2.3 3.7V17a1 1 0 0 0 1 1h1.1a1 1 0 0 0 1-1v-.2c.5.1 1 .2 1.6.2s1.1-.1 1.6-.2V17a1 1 0 0 0 1 1h1.1a1 1 0 0 0 1-1v-2.1c1.4-.9 2.2-2.2 2.2-3.7z" /><path d="M9 9.5h3" /><circle cx="16.5" cy="11" r="0.5" fill="currentColor" /><path d="M19.6 11.5c.7 0 1.1-.6 1.1-1.4s-.6-1.1-1.1-1.1" /></>) },
+  { n: "3", word: "spend", sub: "enjoy exclusive 20% off", desc: "Enjoy your member exclusive 10% discount on all services and 15% on all products as you spend your Glow credit.", eg: "E.g.: Purchase your mid-yearly botox session at a 10% discount without having to pay the full amount at once",
+    icon: (<><path d="M5 20c0-4 2.5-7 7-7s7 3 7 7" /><circle cx="12" cy="8" r="4.5" /><path d="M10 8h4M12 6.5c1.6 0 1.6 1.5 3.2 1.5" /><path d="m16.5 3.5 4 4M18 2l4 4-2 2-4-4z" /></>) },
 ];
 
 const STATUS = [
@@ -102,17 +105,23 @@ export default function MembershipPage() {
       <section style={{ padding: "70px 0" }}>
         <div className="container">
           <Serif>how it works</Serif><Rule />
-          <div className="grid gap-10 md:grid-cols-3" style={{ marginTop: "50px" }}>
+          <div className="grid gap-10 md:grid-cols-3" style={{ marginTop: "56px" }}>
             {STEPS.map((s, i) => (
-              <Reveal key={s.n} delay={(i % 3) * 80} className="text-center flex flex-col items-center">
-                <div className="flex items-center gap-3" style={{ marginBottom: "18px" }}>
-                  <span className="font-serif flex items-center justify-center" style={{ width: "54px", height: "54px", background: BLUE, color: "#fff", fontSize: "26px", borderRadius: "8px" }}>{s.n}</span>
-                  <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke={GOLD} strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round">{s.icon}</svg>
+              <Reveal key={s.n} delay={(i % 3) * 80}>
+                {/* icon floating above the band, on the right */}
+                <div style={{ position: "relative", height: "72px" }}>
+                  <svg width="76" height="72" viewBox="0 0 24 24" fill="none" stroke="#c2cccc" strokeWidth="1.1" strokeLinecap="round" strokeLinejoin="round" style={{ position: "absolute", right: "8%", bottom: 0 }}>{s.icon}</svg>
                 </div>
-                <h3 className="font-serif" style={{ fontSize: "20px", color: GOLD, letterSpacing: "0.1em", textTransform: "uppercase" }}>{s.title}</h3>
-                {s.sub && <p className="font-display" style={{ fontSize: "12px", color: BLUE, letterSpacing: "0.06em", marginTop: "10px", textTransform: "uppercase" }}>{s.sub}</p>}
-                <p style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.7, marginTop: "16px" }}>{s.desc}</p>
-                <p style={{ fontSize: "13px", color: "var(--muted)", lineHeight: 1.6, marginTop: "14px", fontStyle: "italic" }}>{s.eg}</p>
+                {/* pale band with the number box overlapping + step word */}
+                <div className="flex items-center" style={{ position: "relative", background: "#e3ecec", height: "62px" }}>
+                  <span className="font-serif flex items-center justify-center" style={{ width: "70px", height: "88px", marginTop: "-13px", flexShrink: 0, background: "#96b2b2", color: "#fff", fontSize: "44px", lineHeight: 1 }}>{s.n}</span>
+                  <span className="font-serif" style={{ fontSize: "28px", color: "#a7b6b6", letterSpacing: "0.1em", textTransform: "uppercase", marginLeft: "18px" }}>{s.word}</span>
+                </div>
+                {/* subtitle + divider + copy */}
+                <h3 className="font-display" style={{ fontSize: "15px", color: GOLD, letterSpacing: "0.08em", textTransform: "uppercase", lineHeight: 1.5, margin: "26px 0 0" }}>{s.sub}</h3>
+                <div style={{ height: "1px", background: BLUE, opacity: 0.4, margin: "16px 0 18px" }} />
+                <p style={{ fontSize: "14.5px", color: "var(--label)", lineHeight: 1.8, textAlign: "justify" }}>{s.desc}</p>
+                <p style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.8, marginTop: "16px", textAlign: "justify" }}><u style={{ textUnderlineOffset: "2px" }}>E.g.:</u>{s.eg.replace(/^E\.g\.:/, "")}</p>
               </Reveal>
             ))}
           </div>
