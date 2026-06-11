@@ -45,7 +45,7 @@ const BODY = 'Roboto, sans-serif';
 
 /* ---------- shared assets ---------- */
 const W = '/wix/';
-const HERO_BG = W + '87fc13_f0e92ac188af4582a4dcab0d17d5d2ed~mv2.png';
+const HERO_BG = '/assets/hero-bg.png'; // Carisma Aesthetics brand background (cool blue + wave lines)
 const BADGE = W + 'f940f0_c4008d16bc3245f7bc8663f5b60d7a82~mv2.png';
 const GOOGLE = W + '87fc13_c507b5f7e86f4eed970b757bc84a8ec4~mv2.png';
 const CHECK = W + '87fc13_59346c1121b34e759ebf20eba3054c8c~mv2.png';
