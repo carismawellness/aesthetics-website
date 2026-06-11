@@ -37,6 +37,7 @@ export type Treatment = {
   trusted?: { title: string; subtitle?: string; asSeenOn?: string[]; images: string[]; points: { title: string; desc: string }[] };
   difference?: { kicker?: string; title: string; commitmentTitle: string; commitment: string[]; whyTitle: string; why: string[]; mapQuery: string };
   bookingForm?: { title: string };
+  recommended?: { title: string; items: { label: string; href: string; image: string }[] };
   /** true when full content has not yet been extracted from the live page */
   pending?: boolean;
 };
@@ -164,6 +165,15 @@ export const TREATMENTS: Record<string, Treatment> = {
       mapQuery: "Carisma Aesthetics, Malta",
     },
     bookingForm: { title: "Book Your Botox Appointment Today" },
+    recommended: {
+      title: "Recommended with Botox",
+      items: [
+        { label: "Dermal Fillers", href: "/dermal-fillers-malta", image: "/assets/treatments/rec-dermal-fillers.jpg" },
+        { label: "Platelet Rich Plasma", href: "/prp-malta", image: "/assets/treatments/rec-prp.jpg" },
+        { label: "Microneedling", href: "/microneedling-malta", image: "/assets/treatments/rec-microneedling.jpg" },
+        { label: "Mesotherapy", href: "/mesotherapy-malta", image: "/assets/treatments/rec-mesotherapy.jpg" },
+      ],
+    },
   },
 
   "lip-fillers-malta": {

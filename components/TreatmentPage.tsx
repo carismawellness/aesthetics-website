@@ -492,6 +492,27 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
         </section>
       )}
 
+      {/* Recommended with — cross-sell cards */}
+      {t.recommended && (
+        <section style={{ padding: "20px 0 84px" }}>
+          <div className="container">
+            <h2 className="font-serif text-center" style={{ fontSize: "clamp(24px,3.4vw,38px)", color: "var(--gold)", letterSpacing: "0.04em", marginBottom: "48px" }}>{t.recommended.title}</h2>
+            <div className="grid gap-8 sm:grid-cols-2 mx-auto" style={{ maxWidth: "920px" }}>
+              {t.recommended.items.map((it, i) => (
+                <Reveal key={it.href} delay={(i % 2) * 90}>
+                  <div className="overflow-hidden" style={{ borderRadius: "24px 24px 60px 24px", boxShadow: "0 14px 34px rgba(0,0,0,0.10)" }}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={it.image} alt={it.label} style={{ display: "block", width: "100%", aspectRatio: "3 / 2", objectFit: "cover" }} />
+                  </div>
+                  <h3 className="font-display" style={{ fontSize: "14px", color: "var(--label)", letterSpacing: "0.1em", textTransform: "uppercase", margin: "18px 4px 14px" }}>{it.label}</h3>
+                  <Link href={it.href} className="block text-center font-display" style={{ background: "linear-gradient(180deg,#a9c2c2 0%, #8fb0b0 100%)", color: "#fff", padding: "15px", fontSize: "13px", letterSpacing: "0.16em", textTransform: "uppercase", borderRadius: "8px" }}>Explore</Link>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Closing CTA */}
       <section style={{ padding: "70px 0", textAlign: "center", backgroundColor: "var(--cream)" }}>
         <div className="container">
