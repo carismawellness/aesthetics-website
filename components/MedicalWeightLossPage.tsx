@@ -221,78 +221,69 @@ function Hero() {
 
 const RESULTS = [
   {
-    name: "ANNA LINDSTRÖM",
-    snippet:
-      "My issue wasn't just weight, it was how heavy my body felt to carry. Walking, …",
-  },
-  {
+    image: `${A}/result-nicole.png`,
     name: "NICOLE FARRUGIA",
-    snippet:
-      "I struggled with my weight for a long time and it was affecting my confidence and…",
+    quote:
+      "I struggled with my weight for a long time and it was affecting my confidence and energy and after this journey I feel lighter in my body and happier when I look at myself.",
   },
   {
+    image: `${A}/result-laura.png`,
     name: "LAURA BENNETT",
-    snippet: "I had tried dieting on and … my weight always came back…",
+    quote:
+      "I had tried dieting on and off for years but my weight always came back. This helped me reset my habits and feel more comfortable in my body again.",
+  },
+  {
+    image: `${A}/result-mary.png`,
+    name: "MARY KOWALSKA",
+    quote:
+      "My goal was not to be skinny but to feel healthier and more toned. The change has been gradual but very motivating and I finally feel like myself again.",
+  },
+  {
+    image: `${A}/result-anna.png`,
+    name: "ANNA LINDSTRÖM",
+    quote:
+      "My issue wasn't just weight, it was how heavy my body felt to carry. Walking, standing for long periods, even basic daily things felt tiring. I felt rounded and compressed, especially through my middle and back. Seeing this change feels like relief. I move easier, my posture is better, and I finally feel balanced in my body again.",
   },
 ];
 
-function ResultCard({ name, snippet }: { name: string; snippet: string }) {
+function ResultCard({ image, name, quote }: { image: string; name: string; quote: string }) {
+  const [open, setOpen] = useState(false);
   return (
-    <div
-      style={{
-        background: "var(--white)",
-        borderRadius: "10px",
-        border: "1px solid var(--line)",
-        overflow: "hidden",
-        boxShadow: "0 8px 24px rgba(0,0,0,0.06)",
-      }}
-    >
-      {/* BEFORE | AFTER split photo — images not recovered from the live Wix Pro
-          Gallery (lazy canvas/blob); rendered as a clearly-marked placeholder. */}
-      <div className="grid grid-cols-2">
-        {(["BEFORE", "AFTER"] as const).map((lbl) => (
-          <div
-            key={lbl}
-            style={{
-              position: "relative",
-              aspectRatio: "3 / 5",
-              background: "var(--cream)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <span
-              className="font-display"
-              style={{
-                position: "absolute",
-                top: "10px",
-                left: "10px",
-                background: "rgba(255,255,255,0.9)",
-                color: "var(--ink)",
-                fontSize: "9px",
-                letterSpacing: "0.12em",
-                padding: "4px 8px",
-                borderRadius: "3px",
-              }}
-            >
-              {lbl}
-            </span>
-            <span style={{ fontSize: "11px", color: "var(--muted)" }}>{lbl} photo</span>
-          </div>
-        ))}
-      </div>
-      <div style={{ padding: "20px" }}>
-        <p style={{ fontSize: "13.5px", color: "var(--label)", lineHeight: 1.7, marginBottom: "10px" }}>
-          &ldquo;{snippet}&rdquo;
+    <div style={{ background: "#fff", borderRadius: "16px", padding: "16px 12px", boxShadow: "0 10px 28px rgba(120,140,140,0.12)" }}>
+      <Image
+        src={image}
+        alt={`Before and after Ozempic / Mounjaro weight-loss result — ${name}, Carisma Aesthetics Malta`}
+        width={4037}
+        height={2560}
+        style={{ width: "100%", height: "auto", borderRadius: "16px", display: "block", position: "relative", zIndex: 1 }}
+      />
+      <div
+        style={{
+          background: "linear-gradient(178deg, #F8F6F2 42%, #CDDADA 100%)",
+          borderRadius: "16px",
+          padding: "18px 16px",
+          marginTop: "10px",
+        }}
+      >
+        <p
+          style={{
+            fontSize: "14px",
+            color: "#9B8C81",
+            lineHeight: 1.6,
+            marginBottom: "6px",
+            ...(open ? {} : { display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }),
+          }}
+        >
+          {quote}
         </p>
         <button
           type="button"
-          style={{ background: "transparent", border: "none", padding: 0, cursor: "pointer", color: "var(--teal)", fontSize: "13px", fontWeight: 600 }}
+          onClick={() => setOpen((v) => !v)}
+          style={{ background: "transparent", border: "none", padding: 0, cursor: "pointer", color: "#9B8C81", fontSize: "14px", textDecoration: "underline" }}
         >
-          Read more
+          {open ? "Read less" : "Read more"}
         </button>
-        <p className="font-display" style={{ fontSize: "14px", color: "var(--ink)", letterSpacing: "0.08em", marginTop: "16px" }}>
+        <p style={{ fontSize: "16px", fontWeight: 600, color: "#9B8C81", letterSpacing: "0.04em", marginTop: "22px" }}>
           {name}
         </p>
       </div>
@@ -309,24 +300,24 @@ function Results() {
   return (
     <section id="results" style={{ background: "var(--white)", padding: "72px 0" }}>
       <div className="container text-center">
-        <H2>ozempic &amp; mounjaro results</H2>
+        <h2 className="font-serif" style={{ fontSize: "clamp(22px,3.2vw,30px)", color: "var(--teal)", letterSpacing: "0.08em", textTransform: "uppercase", lineHeight: 1.3 }}>
+          ozempic &amp; mounjaro results
+        </h2>
+        <div style={{ width: "150px", height: "1px", background: "var(--teal)", opacity: 0.4, margin: "16px auto 44px" }} />
         <Reveal>
           <div className="relative" style={{ maxWidth: "1080px", margin: "0 auto" }}>
             <div
               className="grid"
               style={{ gridTemplateColumns: "repeat(3, minmax(0,1fr))", gap: "24px", textAlign: "left" }}
             >
-              {ordered.map((r) => (
-                <ResultCard key={r.name} name={r.name} snippet={r.snippet} />
+              {ordered.slice(0, 3).map((r) => (
+                <ResultCard key={r.name} image={r.image} name={r.name} quote={r.quote} />
               ))}
             </div>
             <CarouselArrow dir="left" onClick={() => go(-1)} />
             <CarouselArrow dir="right" onClick={() => go(1)} />
           </div>
         </Reveal>
-        <p style={{ fontSize: "12px", color: "var(--muted)", marginTop: "20px" }}>
-          Before / after photos are sourced individually from each patient&rsquo;s consented case file.
-        </p>
       </div>
     </section>
   );
