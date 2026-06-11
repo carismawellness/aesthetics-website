@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
-import ConsultationForm from "@/components/ConsultationForm";
 import CompositeSlideshow from "@/components/CompositeSlideshow";
 import FaqAccordion, { type Faq } from "@/components/FaqAccordion";
 
@@ -60,9 +59,9 @@ const PRICES = [
 ];
 
 const TIERS = [
-  { image: "laser-member-bronze.png", name: "bronze membership", sessions: "6 Sessions | 15 min each", price: "139 EUR" },
-  { image: "laser-member-silver.png", name: "silver membership", sessions: "6 Sessions | 30 min each", price: "245 EUR" },
-  { image: "laser-member-gold.png", name: "gold membership", sessions: "6 Sessions | 60 min each", price: "399 EUR" },
+  { image: "laser-member-bronze.png", name: "bronze membership", sessions: "6 Sessions | 15 min each", price: "139 EUR", tags: ["upper lip", "nose"] },
+  { image: "laser-member-silver.png", name: "silver membership", sessions: "6 Sessions | 30 min each", price: "245 EUR", tags: [] as string[] },
+  { image: "laser-member-gold.png", name: "gold membership", sessions: "6 Sessions | 60 min each", price: "399 EUR", tags: [] as string[] },
 ];
 
 const SUITABLE = [
@@ -148,18 +147,19 @@ export default function LaserHairRemovalPage() {
                   </li>
                 ))}
               </ul>
-              <div style={{ marginTop: "30px", background: "rgba(255,255,255,0.55)", borderRadius: "16px", padding: "clamp(22px,3vw,30px)", border: "1px solid var(--line)" }}>
-                <ConsultationForm stacked submitLabel="Submit" />
-              </div>
             </Reveal>
 
-            {/* RIGHT — image collage + captions */}
+            {/* RIGHT — video + image collage + captions */}
             <Reveal delay={120}>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="overflow-hidden rounded-xl" style={{ boxShadow: "0 20px 50px rgba(0,0,0,0.14)" }}>
+                {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
+                <video src={`${IMG}/laser-hero-video.mp4`} autoPlay muted loop playsInline className="w-full" style={{ display: "block", aspectRatio: "16 / 10", objectFit: "cover" }} />
+              </div>
+              <div className="grid grid-cols-2 gap-4" style={{ marginTop: "16px" }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={`${IMG}/laser-hero.png`} alt="Alma Soprano Platinum laser hair removal machine" className="w-full rounded-xl" style={{ display: "block", objectFit: "cover", aspectRatio: "3 / 4", boxShadow: "0 18px 44px rgba(0,0,0,0.12)" }} />
+                <img src={`${IMG}/laser-hero.png`} alt="Alma Soprano Platinum laser hair removal machine" className="w-full rounded-xl" style={{ display: "block", objectFit: "cover", aspectRatio: "1 / 1", boxShadow: "0 14px 34px rgba(0,0,0,0.12)" }} />
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={`${IMG}/laser-hero-photo2.png`} alt="Laser hair removal results" className="w-full rounded-xl" style={{ display: "block", objectFit: "cover", aspectRatio: "3 / 4", boxShadow: "0 18px 44px rgba(0,0,0,0.12)" }} />
+                <img src={`${IMG}/laser-hero-photo2.png`} alt="Laser hair removal results" className="w-full rounded-xl" style={{ display: "block", objectFit: "cover", aspectRatio: "1 / 1", boxShadow: "0 14px 34px rgba(0,0,0,0.12)" }} />
               </div>
               <p className="font-display text-center" style={{ fontSize: "12px", color: "var(--gold-deep)", letterSpacing: "0.1em", marginTop: "18px", lineHeight: 1.5 }}>Experience the triple wavelength laser hair removal difference</p>
               <div className="text-center" style={{ marginTop: "20px" }}>
@@ -172,6 +172,13 @@ export default function LaserHairRemovalPage() {
                     ))}
                   </span>
                   <span className="font-display" style={{ fontSize: "12px", color: "var(--gold-deep)", letterSpacing: "0.08em" }}>3,000+ 5 star reviews</span>
+                </div>
+                {/* scroll down cue */}
+                <div className="flex flex-col items-center" style={{ marginTop: "28px" }}>
+                  <span className="font-display" style={{ fontSize: "11px", color: "var(--gold-deep)", letterSpacing: "0.14em" }}>scroll down</span>
+                  <span className="flex items-start justify-center" style={{ width: "26px", height: "42px", border: "1.5px solid var(--gold-deep)", borderRadius: "14px", marginTop: "10px", paddingTop: "7px" }}>
+                    <svg className="animate-bounce" width="11" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--gold-deep)" strokeWidth="2"><path d="M12 4v12M6 12l6 6 6-6" /></svg>
+                  </span>
                 </div>
               </div>
             </Reveal>
@@ -306,6 +313,13 @@ export default function LaserHairRemovalPage() {
                     <img src={`${IMG}/laser-ic-euro.png`} alt="" style={{ width: "20px", height: "20px" }} />
                     <span className="font-serif" style={{ fontSize: "20px", color: "var(--gold-deep)" }}>{t.price}</span>
                   </div>
+                  {t.tags.length > 0 && (
+                    <div className="flex flex-wrap justify-center gap-2" style={{ marginTop: "16px" }}>
+                      {t.tags.map((tag) => (
+                        <span key={tag} className="font-display" style={{ fontSize: "11px", color: "var(--white)", background: "var(--gold)", letterSpacing: "0.06em", padding: "6px 14px", borderRadius: "999px" }}>{tag}</span>
+                      ))}
+                    </div>
+                  )}
                 </Reveal>
               ))}
             </div>
@@ -453,8 +467,10 @@ export default function LaserHairRemovalPage() {
                 <p style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.85, marginTop: "14px" }}>Traditional lasers shock the skin with painful pulses—our <span style={{ color: "var(--gold-deep)", fontWeight: 600 }}>Super Hair Removal (SHR) technology</span> gradually heats the hair follicles for a virtually painless experience. This prevents regrowth and avoids injury to the surrounding tissue often seen with single pulse lasers.</p>
                 <p style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.85, marginTop: "14px" }}><span style={{ color: "var(--gold-deep)", fontWeight: 600 }}>The patented ICE Plus™ cooling system</span> keeps skin comfortable throughout treatment. This cooling technology can bring the contact temparature as low as -4°C making this is the most comfortable laser available in the market.</p>
               </div>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={`${IMG}/laser-alma-machine.webp`} alt="Alma Soprano laser machine" className="mx-auto rounded-xl" style={{ display: "block", width: "100%", maxWidth: "340px", boxShadow: "0 16px 40px rgba(0,0,0,0.12)" }} />
+              <div className="mx-auto overflow-hidden rounded-xl" style={{ width: "100%", maxWidth: "440px", boxShadow: "0 16px 40px rgba(0,0,0,0.12)" }}>
+                {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
+                <video src={`${IMG}/laser-painfree-video.mp4`} autoPlay muted loop playsInline className="w-full" style={{ display: "block", aspectRatio: "4 / 3", objectFit: "cover" }} />
+              </div>
             </div>
 
             {/* safe */}
@@ -480,8 +496,14 @@ export default function LaserHairRemovalPage() {
         {/* ---- FAQ ---- */}
         <section style={SECTION}>
           <div className="container">
-            <h2 className="font-serif text-center" style={{ fontSize: "clamp(24px,3.2vw,32px)", color: "var(--gold-deep)", letterSpacing: "0.06em", fontWeight: 400, marginBottom: "40px" }}>Frequently asked questions</h2>
-            <FaqAccordion items={FAQS} />
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mx-auto" style={{ maxWidth: "1080px", marginBottom: "36px" }}>
+              <h2 className="font-serif" style={{ fontSize: "clamp(24px,3.2vw,32px)", color: "var(--gold-deep)", letterSpacing: "0.06em", fontWeight: 400 }}>Frequently asked questions</h2>
+              <span className="relative" style={{ width: "260px", maxWidth: "100%" }}>
+                <input type="search" aria-label="Search FAQs" placeholder="Looking for something?" style={{ width: "100%", padding: "10px 38px 10px 16px", border: "none", borderBottom: "1px solid var(--line)", background: "transparent", fontSize: "13px", color: "var(--label)" }} />
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gold-deep)" strokeWidth="1.6" style={{ position: "absolute", right: "10px", top: "50%", transform: "translateY(-50%)" }}><circle cx="11" cy="11" r="7" /><path d="m21 21-4.3-4.3" /></svg>
+              </span>
+            </div>
+            <FaqAccordion items={FAQS} uppercase={false} />
           </div>
         </section>
 
