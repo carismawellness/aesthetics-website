@@ -37,12 +37,35 @@ function Chevron() {
   );
 }
 
-function CtaButton({ children }: { children: string }) {
+function CtaButton({ children, href }: { children: string; href: string }) {
+  const external = /^https?:\/\//.test(href);
+  const style = { padding: "15px 34px", borderRadius: "3px" } as const;
+  if (external) {
+    return (
+      <a href={href} target="_blank" rel="noopener noreferrer" className="btn btn-teal" style={style}>
+        {children}
+        <Chevron />
+      </a>
+    );
+  }
   return (
-    <Link href="/consultation" className="btn btn-teal" style={{ padding: "15px 34px", borderRadius: "3px" }}>
+    <Link href={href} className="btn btn-teal" style={style}>
       {children}
       <Chevron />
     </Link>
+  );
+}
+
+/* social-share row shown under the open FAQ answer (matches the live Ricos FAQ) */
+function FaqShare() {
+  const ic = { width: 17, height: 17, viewBox: "0 0 24 24" } as const;
+  return (
+    <div className="flex items-center" style={{ gap: "18px", color: "var(--muted)", paddingBottom: "24px" }}>
+      <svg {...ic} fill="currentColor" aria-label="Share on Facebook"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.4v7A10 10 0 0 0 22 12z" /></svg>
+      <svg {...ic} fill="currentColor" aria-label="Share on X"><path d="M18.9 2H22l-7 8 8.3 12h-6.5l-5-7.4L6 22H3l7.5-8.6L2 2h6.6l4.6 6.8L18.9 2zm-1.1 18h1.7L7.3 4H5.4l12.4 16z" /></svg>
+      <svg {...ic} fill="currentColor" aria-label="Share on LinkedIn"><path d="M4.98 3.5A2.5 2.5 0 1 0 5 8.5a2.5 2.5 0 0 0-.02-5zM3 9h4v12H3V9zm6 0h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.4c0-1.3 0-2.95-1.8-2.95-1.8 0-2.08 1.4-2.08 2.86V21H9V9z" /></svg>
+      <svg {...ic} fill="none" stroke="currentColor" strokeWidth="1.8" aria-label="Copy link"><path d="M10 13a5 5 0 0 0 7 0l2-2a5 5 0 0 0-7-7l-1 1" /><path d="M14 11a5 5 0 0 0-7 0l-2 2a5 5 0 0 0 7 7l1-1" /></svg>
+    </div>
   );
 }
 
@@ -103,6 +126,23 @@ function StatIcon({ metric }: { metric: string }) {
   return (<svg {...common}><path d="M18 2l4 4-9 9-4 1 1-4z" /><path d="M14 6l4 4" /></svg>);
 }
 
+function TestimonialCard({ t }: { t: { img: string; quote: string; name: string } }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div style={{ background: "var(--white)", border: "1px solid var(--line)", borderRadius: "8px", overflow: "hidden", boxShadow: "0 10px 26px rgba(0,0,0,0.05)" }}>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={t.img} alt="" style={{ display: "block", width: "100%", aspectRatio: "4 / 3", objectFit: "cover" }} />
+      <div style={{ padding: "18px 18px 20px" }}>
+        <p style={{ fontSize: "12.5px", color: "var(--label)", lineHeight: 1.6, ...(open ? {} : { display: "-webkit-box", WebkitLineClamp: 4, WebkitBoxOrient: "vertical", overflow: "hidden" }) }}>{t.quote}</p>
+        <button onClick={() => setOpen((v) => !v)} style={{ fontSize: "12px", color: "var(--teal)", marginTop: "10px", background: "none", cursor: "pointer", padding: 0 }}>
+          {open ? "Read less" : "Read more"}
+        </button>
+        <p style={{ fontSize: "13px", color: "var(--ink-soft)", marginTop: "12px", fontWeight: 600 }}>- {t.name}</p>
+      </div>
+    </div>
+  );
+}
+
 export default function PackageFunnel({ data }: { data: PackageData }) {
   const [openFaq, setOpenFaq] = useState(0);
   const [tab, setTab] = useState(data.redefined?.tabs ? data.redefined.tabs.length - 1 : 0);
@@ -138,7 +178,7 @@ export default function PackageFunnel({ data }: { data: PackageData }) {
                 ))}
                 {h.disclaimer && <p style={{ fontSize: "12.5px", color: "var(--muted)", lineHeight: 1.6, marginTop: "16px", fontStyle: "italic" }}>{h.disclaimer}</p>}
 
-                <div style={{ marginTop: "26px" }}><CtaButton>{h.cta}</CtaButton></div>
+                <div style={{ marginTop: "26px" }}><CtaButton href={data.bookHref}>{h.cta}</CtaButton></div>
 
                 <div className="flex items-center flex-wrap gap-x-2 gap-y-1" style={{ marginTop: "24px", fontSize: "13px", color: "var(--label)" }}>
                   <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.27-4.74 3.27-8.1z" /><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.26 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84A11 11 0 0 0 12 23z" /><path fill="#FBBC05" d="M5.84 14.1a6.6 6.6 0 0 1 0-4.2V7.06H2.18a11 11 0 0 0 0 9.88l3.66-2.84z" /><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84C6.71 7.3 9.14 5.38 12 5.38z" /></svg>
@@ -177,16 +217,10 @@ export default function PackageFunnel({ data }: { data: PackageData }) {
       <section style={{ background: "var(--beige)", padding: "60px 0" }}>
         <div className="container">
           <SerifHeading text={data.testimonialsHeading} size={data.testimonialsHeadingTwoLine ? "clamp(19px,2.4vw,26px)" : "clamp(18px,2.4vw,26px)"} style={data.testimonialsHeadingTwoLine ? undefined : { textTransform: "none" }} />
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4" style={{ marginTop: "40px" }}>
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4 items-start" style={{ marginTop: "40px" }}>
             {data.testimonials.map((t, i) => (
-              <Reveal key={t.name} delay={(i % 4) * 70} style={{ background: "var(--white)", border: "1px solid var(--line)", borderRadius: "8px", overflow: "hidden", boxShadow: "0 10px 26px rgba(0,0,0,0.05)" }}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={t.img} alt="" style={{ display: "block", width: "100%", aspectRatio: "4 / 3", objectFit: "cover" }} />
-                <div style={{ padding: "18px 18px 20px" }}>
-                  <p style={{ fontSize: "12.5px", color: "var(--label)", lineHeight: 1.6, display: "-webkit-box", WebkitLineClamp: 4, WebkitBoxOrient: "vertical", overflow: "hidden" }}>{t.quote}</p>
-                  <p style={{ fontSize: "12px", color: "var(--teal)", marginTop: "10px" }}>Read more</p>
-                  <p style={{ fontSize: "13px", color: "var(--ink-soft)", marginTop: "12px", fontWeight: 600 }}>- {t.name}</p>
-                </div>
+              <Reveal key={t.name} delay={(i % 4) * 70}>
+                <TestimonialCard t={t} />
               </Reveal>
             ))}
           </div>
@@ -284,7 +318,7 @@ export default function PackageFunnel({ data }: { data: PackageData }) {
                 </ul>
               </Reveal>
             </div>
-            {data.commitment.cta && <div className="text-center" style={{ marginTop: "44px" }}><CtaButton>{data.commitment.cta}</CtaButton></div>}
+            {data.commitment.cta && <div className="text-center" style={{ marginTop: "44px" }}><CtaButton href={data.commitment.ctaHref ?? data.bookHref}>{data.commitment.cta}</CtaButton></div>}
           </div>
         </section>
       )}
@@ -410,10 +444,15 @@ export default function PackageFunnel({ data }: { data: PackageData }) {
                   <span style={{ fontSize: "16px", color: "var(--gold)" }}>{f.q}</span>
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" strokeWidth="1.6" style={{ flexShrink: 0, transform: openFaq === i ? "rotate(180deg)" : "none", transition: "transform 0.25s" }}><path d="M6 9l6 6 6-6" /></svg>
                 </button>
-                {openFaq === i && f.a && (<p style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.8, padding: "0 0 24px" }}>{f.a}</p>)}
+                {openFaq === i && f.a && (
+                  <>
+                    <p style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.8, padding: "0 0 16px" }}>{f.a}</p>
+                    <FaqShare />
+                  </>
+                )}
               </div>
             ))}
-            <div className="text-center" style={{ marginTop: "44px" }}><CtaButton>{h.cta}</CtaButton></div>
+            <div className="text-center" style={{ marginTop: "44px" }}><CtaButton href={data.faqHref}>{h.cta}</CtaButton></div>
           </div>
         </div>
       </section>

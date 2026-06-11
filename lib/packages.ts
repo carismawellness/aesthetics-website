@@ -10,8 +10,17 @@ export type Faq = { q: string; a?: string };
 export type RecCard = { label: string; img: string; href: string };
 export type Testimonial = { img: string; quote: string; name: string };
 
+// Real CTA targets from the live pages.
+const FRESHA = (oiid: string) =>
+  `https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2800348&oiid=sv%3A${oiid}&share=true&pId=2708191`;
+const PRODUCT = (slug: string) => `https://www.carismaaesthetics.com/product-page/${slug}`;
+
 export type PackageData = {
   slug: string;
+  /** Fresha booking link — hero "CLAIM MY SPOT NOW" button. */
+  bookHref: string;
+  /** FAQ-bottom "CLAIM MY SPOT NOW" target (product page where one exists, else Fresha). */
+  faqHref: string;
   hero: {
     title: string;
     lead?: string;
@@ -36,7 +45,7 @@ export type PackageData = {
   trusted?: { heading: string; headingTwoLine?: boolean; subtitle: string; benefits: Benefit[] };
   createdFor?: { heading: string; reasons: string[]; image: string };
   yearsDivider?: string;
-  commitment?: { items: string[]; whyTitle: string; why: string[]; cta?: string };
+  commitment?: { items: string[]; whyTitle: string; why: string[]; cta?: string; ctaHref?: string };
   offer?: { heading: string; paras: string[]; image: string; imageRatio?: string };
   getBack?: { heading: string; subtitle: string; bullets: string[]; image: string };
   redefined?: {
@@ -61,6 +70,8 @@ export const PACKAGES: Record<string, PackageData> = {
   // ===================== SNATCH YOUR JAWLINE =====================
   "snatch-your-jawline": {
     slug: "snatch-your-jawline",
+    bookHref: FRESHA("25781412"),
+    faqHref: PRODUCT("snatch-your-jawline"),
     hero: {
       title: "snatch your jawline",
       subtitle:
@@ -138,6 +149,7 @@ export const PACKAGES: Record<string, PackageData> = {
         "A legacy of results and client satisfaction",
       ],
       cta: "CLAIM YOUR SPOT NOW",
+      ctaHref: PRODUCT("snatch-your-jawline"),
     },
     offer: {
       heading: "SECURE YOUR EXCLUSIVE|JAWLINE SCULPTING OFFER NOW",
@@ -222,6 +234,8 @@ export const PACKAGES: Record<string, PackageData> = {
   // ===================== 4-IN-1 HYDRAFACIAL GLOW =====================
   "4-in-1-hydrafacial-glow": {
     slug: "4-in-1-hydrafacial-glow",
+    bookHref: FRESHA("25781423"),
+    faqHref: PRODUCT("4-in-1-hydrafacial-glow"),
     hero: {
       title: "4-in-1 hydrafacial glow",
       subtitle: "Clogged pores, dull skin, and products that just don't work? If your glow's gone quiet, you're not alone. This is for Maltese skin that's ready for real results.",
@@ -297,6 +311,7 @@ export const PACKAGES: Record<string, PackageData> = {
         "A legacy of care, safety, and radiant transformations.",
       ],
       cta: "Get My First Session for €99",
+      ctaHref: FRESHA("25781423"),
     },
     offer: {
       heading: "SECURE YOUR EXCLUSIVE HYDRAFACIAL GLOW OFFER TODAY",
@@ -377,6 +392,8 @@ export const PACKAGES: Record<string, PackageData> = {
   // ===================== EXOSOME GLOW LIFT =====================
   "exosome-glowlift": {
     slug: "exosome-glowlift",
+    bookHref: FRESHA("25781430"),
+    faqHref: FRESHA("25781430"),
     hero: {
       title: "EXOSOME GLOW LIFT",
       subtitle: "When facials stop working and your glow fades, Exosomes offer the next step — real regeneration for smoother, firmer, brighter skin.",
@@ -446,6 +463,8 @@ export const PACKAGES: Record<string, PackageData> = {
   // ===================== ULTIMATE FACELIFT =====================
   "ultimate-facelift": {
     slug: "ultimate-facelift",
+    bookHref: FRESHA("25781408"),
+    faqHref: FRESHA("25781408"),
     hero: {
       title: "ultimate facelift",
       lead: "Reverse visible aging — no knife, no downtime.",
