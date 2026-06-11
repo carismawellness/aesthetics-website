@@ -2,6 +2,7 @@ import Link from "next/link";
 import { CONTACT } from "@/lib/site";
 import Reveal from "@/components/Reveal";
 import DoctorsSection from "@/components/home/DoctorsSection";
+import GoogleReviews from "@/components/GoogleReviews";
 
 function Ig({ size = 20 }: { size?: number }) {
   return (
@@ -84,6 +85,9 @@ function ContactItem({
 export default function Footer() {
   return (
     <footer>
+      {/* Google reviews — live via Places API when configured, else curated real reviews */}
+      <GoogleReviews />
+
       {/* Doctors introduction (exact homepage design) */}
       <DoctorsSection />
 
