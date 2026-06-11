@@ -253,10 +253,29 @@ export default function MembershipPage() {
       </section>
 
       {/* ===== JOIN THE CLUB ===== */}
-      <section style={{ padding: "30px 0 90px" }}>
-        <div className="container text-center">
-          <Serif>Join the Club</Serif>
-          <div style={{ marginTop: "28px" }}><Cta label="sign up now ›" /></div>
+      <section style={{ padding: "50px 0 96px" }}>
+        <div className="container text-center" style={{ maxWidth: "760px" }}>
+          {/* ornamented title */}
+          <div className="flex items-center justify-center" style={{ gap: "20px" }}>
+            <span className="flex items-center" style={{ flex: 1, maxWidth: "150px" }}>
+              <span style={{ width: "7px", height: "7px", background: "#9fb5b5", transform: "rotate(45deg)", flexShrink: 0 }} />
+              <span style={{ flex: 1, height: "1px", background: "#9fb5b5" }} />
+            </span>
+            <h2 className="font-serif" style={{ fontSize: "clamp(24px,4vw,40px)", color: "#9fb5b5", letterSpacing: "0.32em", fontWeight: 400, whiteSpace: "nowrap" }}>JOIN THE CLUB</h2>
+            <span className="flex items-center" style={{ flex: 1, maxWidth: "150px" }}>
+              <span style={{ flex: 1, height: "1px", background: "#9fb5b5" }} />
+              <span style={{ width: "7px", height: "7px", background: "#9fb5b5", transform: "rotate(45deg)", flexShrink: 0 }} />
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#9fb5b5" strokeWidth="2" style={{ marginLeft: "-2px" }}><path d="M5 12h13M13 6l6 6-6 6" /></svg>
+            </span>
+          </div>
+          {/* gold script subtitle */}
+          <p style={{ fontFamily: "'Pinyon Script', cursive", fontSize: "clamp(34px,5vw,46px)", color: "var(--gold)", marginTop: "14px", lineHeight: 1.1 }}>Glow with Confidence</p>
+          {/* SIGN UP NOW on a centered line */}
+          <Link href="/consultation" className="flex items-center" style={{ marginTop: "44px", gap: "22px" }}>
+            <span style={{ flex: 1, height: "1px", background: "#cfcabf" }} />
+            <span className="font-display" style={{ fontSize: "14px", color: "#9fb5b5", letterSpacing: "0.22em", textTransform: "uppercase", whiteSpace: "nowrap" }}>sign up now</span>
+            <span style={{ flex: 1, height: "1px", background: "#cfcabf" }} />
+          </Link>
         </div>
       </section>
     </>
