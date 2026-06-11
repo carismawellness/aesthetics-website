@@ -476,6 +476,22 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
         </section>
       )}
 
+      {/* Booking form — teal banner + consultation form */}
+      {t.bookingForm && (
+        <section style={{ padding: "30px 0 84px" }}>
+          <div className="container">
+            <div className="mx-auto" style={{ maxWidth: "840px" }}>
+              <div style={{ background: "linear-gradient(180deg,#c0d2d2 0%, #9fb9b9 100%)", borderRadius: "18px 56px 18px 18px", padding: "clamp(26px,3vw,40px) 32px", textAlign: "center", position: "relative", zIndex: 1, boxShadow: "0 14px 30px rgba(0,0,0,0.08)" }}>
+                <h2 style={{ fontSize: "clamp(20px,3vw,33px)", color: "#fff", letterSpacing: "0.04em", textTransform: "uppercase", fontWeight: 400 }}>{t.bookingForm.title}</h2>
+              </div>
+              <div className="mx-auto" style={{ background: "#e6eded", borderRadius: "16px", padding: "clamp(28px,4vw,44px)", marginTop: "-8px", maxWidth: "94%", position: "relative" }}>
+                <ConsultationForm stacked submitLabel="Submit" />
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Closing CTA */}
       <section style={{ padding: "70px 0", textAlign: "center", backgroundColor: "var(--cream)" }}>
         <div className="container">

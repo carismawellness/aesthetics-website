@@ -36,6 +36,7 @@ export type Treatment = {
   patientVideos?: { title: string; intro?: string; videos: string[] };
   trusted?: { title: string; subtitle?: string; asSeenOn?: string[]; images: string[]; points: { title: string; desc: string }[] };
   difference?: { kicker?: string; title: string; commitmentTitle: string; commitment: string[]; whyTitle: string; why: string[]; mapQuery: string };
+  bookingForm?: { title: string };
   /** true when full content has not yet been extracted from the live page */
   pending?: boolean;
 };
@@ -162,6 +163,7 @@ export const TREATMENTS: Record<string, Treatment> = {
       ],
       mapQuery: "Carisma Aesthetics, Malta",
     },
+    bookingForm: { title: "Book Your Botox Appointment Today" },
   },
 
   "lip-fillers-malta": {
