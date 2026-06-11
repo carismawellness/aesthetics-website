@@ -21,6 +21,8 @@ export type PackageData = {
   bookHref: string;
   /** FAQ-bottom "CLAIM MY SPOT NOW" target (product page where one exists, else Fresha). */
   faqHref: string;
+  /** Label for the full-width teal CTA banners (defaults to "Book Your Consultation Now"). */
+  ctaBanner?: string;
   hero: {
     title: string;
     lead?: string;
@@ -236,6 +238,7 @@ export const PACKAGES: Record<string, PackageData> = {
     slug: "4-in-1-hydrafacial-glow",
     bookHref: FRESHA("25781423"),
     faqHref: PRODUCT("4-in-1-hydrafacial-glow"),
+    ctaBanner: "Claim Your Glow for €99 Now",
     hero: {
       title: "4-in-1 hydrafacial glow",
       subtitle: "Clogged pores, dull skin, and products that just don't work? If your glow's gone quiet, you're not alone. This is for Maltese skin that's ready for real results.",

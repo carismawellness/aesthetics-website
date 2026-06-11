@@ -58,7 +58,7 @@ function CtaButton({ children, href }: { children: string; href: string }) {
 
 /* Full-width "BOOK YOUR CONSULTATION NOW" block with the limited-time savings
    subtext + customer-review rating — appears under the persuasion sections. */
-function BookCta({ href, save }: { href: string; save: number | null }) {
+function BookCta({ href, save, label }: { href: string; save: number | null; label?: string }) {
   return (
     <div style={{ marginTop: "34px" }}>
       <a
@@ -68,10 +68,10 @@ function BookCta({ href, save }: { href: string; save: number | null }) {
         className="block text-center"
         style={{ background: "var(--teal)", color: "#fff", padding: "16px 24px", borderRadius: "0px", boxShadow: "0 12px 28px rgba(0,0,0,0.08)" }}
       >
-        <span className="font-display" style={{ display: "block", fontSize: "15px", letterSpacing: "0.08em", textTransform: "uppercase" }}>Book Your Consultation Now</span>
+        <span className="font-display" style={{ display: "block", fontSize: "15px", letterSpacing: "0.08em", textTransform: "uppercase" }}>{label ?? "Book Your Consultation Now"}</span>
         {save != null && (
           <span className="font-display" style={{ display: "block", fontSize: "10px", letterSpacing: "0.1em", textTransform: "uppercase", marginTop: "5px", opacity: 0.92 }}>
-            Limited-Time Offer: Save up to €{save}
+            Limited-Time Offer — Save €{save}
           </span>
         )}
       </a>
@@ -371,7 +371,7 @@ export default function PackageFunnel({ data }: { data: PackageData }) {
             <div className="grid gap-12 lg:grid-cols-2 items-center" style={{ marginTop: "44px" }}>
               <Reveal>
                 <ul>{data.createdFor.reasons.map((r) => <Bullet key={r}>{r}</Bullet>)}</ul>
-                <BookCta href={data.bookHref} save={saveAmt} />
+                <BookCta href={data.bookHref} save={saveAmt} label={data.ctaBanner} />
               </Reveal>
               <Reveal delay={120}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -422,7 +422,7 @@ export default function PackageFunnel({ data }: { data: PackageData }) {
                 <div style={{ marginTop: "22px", fontSize: "15px", color: "var(--label)", lineHeight: 1.8 }}>
                   {data.offer.paras.map((p, i) => (<p key={i} style={{ marginTop: i === 0 ? 0 : "16px" }}>{p}</p>))}
                 </div>
-                <BookCta href={data.bookHref} save={saveAmt} />
+                <BookCta href={data.bookHref} save={saveAmt} label={data.ctaBanner} />
               </Reveal>
               <Reveal delay={120}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -442,7 +442,7 @@ export default function PackageFunnel({ data }: { data: PackageData }) {
                 <SerifHeading text={data.getBack.heading} align="left" size="clamp(20px,2.6vw,28px)" />
                 <p style={{ marginTop: "18px", fontSize: "15px", color: "var(--label)", lineHeight: 1.7 }}>{data.getBack.subtitle}</p>
                 <ul style={{ marginTop: "20px" }}>{data.getBack.bullets.map((b) => <Bullet key={b}>{b}</Bullet>)}</ul>
-                <BookCta href={data.bookHref} save={saveAmt} />
+                <BookCta href={data.bookHref} save={saveAmt} label={data.ctaBanner} />
               </Reveal>
               <Reveal delay={120}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -468,7 +468,7 @@ export default function PackageFunnel({ data }: { data: PackageData }) {
                 <ul style={{ marginTop: "18px" }}>
                   {data.redefined.bullets.map((p) => (<li key={p} className="flex items-start gap-3" style={{ padding: "4px 0" }}><span style={{ color: "var(--muted)", fontSize: "12px", lineHeight: 1.8 }}>•</span><span style={{ fontSize: "13.5px", color: "var(--muted)", lineHeight: 1.6 }}>{p}</span></li>))}
                 </ul>
-                <BookCta href={data.bookHref} save={saveAmt} />
+                <BookCta href={data.bookHref} save={saveAmt} label={data.ctaBanner} />
               </Reveal>
             </div>
 
