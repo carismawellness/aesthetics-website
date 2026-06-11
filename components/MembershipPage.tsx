@@ -26,10 +26,20 @@ const STEPS = [
     icon: (<><path d="M5 20c0-4 2.5-7 7-7s7 3 7 7" /><circle cx="12" cy="8" r="4.5" /><path d="M10 8h4M12 6.5c1.6 0 1.6 1.5 3.2 1.5" /><path d="m16.5 3.5 4 4M18 2l4 4-2 2-4-4z" /></>) },
 ];
 
+const SAGE = "#96b2b2";
 const STATUS = [
-  { name: "signature STATUS", reward: "Carisma Spa Day for two", spend: "with €1000+ spend" },
-  { name: "elite STATUS", reward: "Signature Massage", spend: "with €2500+ spend" },
-  { name: "platinum STATUS", reward: "€300 Aesthetics voucher", spend: "with €5000+ spend" },
+  {
+    name: "signature STATUS", reward: "Carisma Spa Day for two", spend: "with €1000+ spend",
+    icon: (<svg width="50" height="50" viewBox="0 0 48 48" aria-hidden><path d="M23 7a17 17 0 0 0 0 34z" fill={SAGE} /><path d="M25 7a17 17 0 0 1 0 34z" fill="#b79e61" /></svg>),
+  },
+  {
+    name: "elite STATUS", reward: "Signature Massage", spend: "with €2500+ spend",
+    icon: (<svg width="54" height="50" viewBox="0 0 56 48" aria-hidden><path d="M18 6 26 24 18 42 10 24z" fill={SAGE} /><path d="M38 6 46 24 38 42 30 24z" fill={SAGE} opacity="0.78" /></svg>),
+  },
+  {
+    name: "platinum STATUS", reward: "€300 Aesthetics voucher", spend: "with €5000+ spend",
+    icon: (<svg width="56" height="50" viewBox="0 0 56 48" aria-hidden><path d="M11 18 18 9 38 9 45 18 28 41z" fill={SAGE} /><path d="M11 18H45M18 9 28 41M38 9 28 41M18 9 22 18M38 9 34 18" stroke="#fff" strokeWidth="0.9" fill="none" opacity="0.55" /></svg>),
+  },
 ];
 
 const SAVINGS = [
@@ -75,9 +85,6 @@ const FAQS: Faq[] = [
   { q: "How do I cancel my membership?", a: "You have two convenient options to cancel your membership. You can either send an email to info@carismaaesthetics.com or access the cancellation feature on the membership portal. We aim to make the cancellation process as simple as possible for your convenience." },
 ];
 
-function Gem() {
-  return <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke={BLUE} strokeWidth="1.3" strokeLinejoin="round"><path d="M6 3h12l3 5-9 13L3 8z" /><path d="M3 8h18M9 3l-1 5 4 13 4-13-1-5M8 8l4 4 4-4" /></svg>;
-}
 
 export default function MembershipPage() {
   return (
@@ -146,14 +153,15 @@ export default function MembershipPage() {
         <div className="container text-center">
           <Serif>build your status and unlock<br />additional rewards</Serif><Rule />
           <p className="mx-auto" style={{ maxWidth: "760px", fontSize: "14px", color: "var(--label)", lineHeight: 1.8, marginTop: "20px" }}>Unlock additional rewards as you continue to contribute towards your Glow balance. Enjoy exclusive benefits as your lifetime contributions grow.</p>
-          <div className="grid gap-8 md:grid-cols-3 mx-auto" style={{ maxWidth: "1000px", marginTop: "44px" }}>
+          <div className="grid gap-10 md:grid-cols-3 mx-auto" style={{ maxWidth: "980px", marginTop: "48px" }}>
             {STATUS.map((s, i) => (
-              <Reveal key={s.name} delay={(i % 3) * 80} className="text-center" style={{ background: CARD, border: "1px solid var(--line)", borderRadius: "16px", padding: "32px 26px" }}>
-                <div className="flex justify-center" style={{ marginBottom: "16px" }}><Gem /></div>
-                <h3 className="font-display" style={{ fontSize: "14px", color: BLUE, letterSpacing: "0.12em", textTransform: "uppercase" }}>{s.name}</h3>
-                <p style={{ fontSize: "13px", color: "var(--label)", marginTop: "14px" }}>Complimentary</p>
-                <p className="font-serif" style={{ fontSize: "17px", color: GOLD, letterSpacing: "0.04em", marginTop: "4px" }}>{s.reward}</p>
-                <p className="font-display" style={{ fontSize: "12px", color: BLUE, letterSpacing: "0.06em", marginTop: "12px", textTransform: "uppercase" }}>{s.spend}</p>
+              <Reveal key={s.name} delay={(i % 3) * 80} className="text-center flex flex-col items-center">
+                <div style={{ height: "56px", display: "flex", alignItems: "flex-end" }}>{s.icon}</div>
+                <h3 className="font-display" style={{ fontSize: "16px", color: "#8fa0a0", letterSpacing: "0.1em", textTransform: "uppercase", marginTop: "22px" }}>{s.name}</h3>
+                <div style={{ width: "210px", maxWidth: "80%", height: "1px", background: "var(--line)", margin: "14px 0 18px" }} />
+                <p style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.7 }}>Complimentary</p>
+                <p style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.7 }}>{s.reward}</p>
+                <p style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.7 }}>{s.spend}</p>
               </Reveal>
             ))}
           </div>
