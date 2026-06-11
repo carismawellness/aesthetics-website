@@ -12,7 +12,7 @@
   before/after results carousel are interactive (hence "use client").
 */
 
-import { useState, type ReactNode } from "react";
+import { useRef, useState, type ReactNode } from "react";
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import FaqAccordion, { type Faq } from "@/components/FaqAccordion";
@@ -125,10 +125,21 @@ export default function MedicalWeightLossPage() {
 
 function Hero() {
   const bullets = [
-    "Calmer appetite: Ozempic and Mounjaro mimic natural fullness signals so you feel satisfied with smaller portions and less food noise.",
-    "Doctor monitored: Full eligibility assessment, body scan, blood work, safety screening, and regular reviews to manage side effects and adjust your dose.",
-    "Part of a full plan: Your GLP-1 prescription is paired with nutrition, movement, accountability, and body contouring treatments — never used on its own.",
+    { lead: "Calmer appetite:", text: "Ozempic and Mounjaro mimic natural fullness signals so you feel satisfied with smaller portions and less food noise." },
+    { lead: "Doctor monitored:", text: "Full eligibility assessment, body scan, blood work, safety screening, and regular reviews to manage side effects and adjust your dose." },
+    { lead: "Part of a full plan:", text: "Your GLP-1 prescription is paired with nutrition, movement, accountability, and body contouring treatments — never used on its own." },
   ];
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [showPlay, setShowPlay] = useState(true);
+  const playWithSound = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    v.muted = false;
+    v.volume = 1;
+    void v.play().catch(() => {});
+    setShowPlay(false);
+  };
+
   return (
     <section
       id="hero"
@@ -143,19 +154,24 @@ function Hero() {
       <div className="container" style={{ paddingTop: "64px", paddingBottom: "64px" }}>
         <div
           className="grid items-center"
-          style={{ gridTemplateColumns: "minmax(0,1fr) minmax(0,405px)", gap: "48px" }}
+          style={{ gridTemplateColumns: "minmax(0,1fr) minmax(0,460px)", gap: "48px" }}
         >
           {/* LEFT — copy */}
           <Reveal>
-            <Eyebrow>Ozempic &amp; Mounjaro in Malta</Eyebrow>
+            <p className="font-display" style={{ fontSize: "12px", color: "var(--gold)", letterSpacing: "0.14em", textTransform: "uppercase", marginBottom: "16px" }}>
+              Ozempic &amp; Mounjaro in Malta
+            </p>
             <h1
-              className="font-display"
-              style={{ fontSize: "clamp(24px,3.2vw,30px)", color: "var(--ink)", lineHeight: 1.25, marginBottom: "16px" }}
+              className="font-serif"
+              style={{ fontSize: "clamp(26px,3.4vw,34px)", color: "var(--teal)", textTransform: "uppercase", letterSpacing: "0.05em", lineHeight: 1.3, marginBottom: "16px" }}
             >
               doctor-led ozempic &amp; mounjaro in malta
             </h1>
-            <p style={{ fontSize: "14px", color: "var(--ink-soft)", fontWeight: 600, marginBottom: "10px" }}>
-              Considering Ozempic or Mounjaro for weight loss?
+            <div style={{ width: "150px", height: "1px", background: "var(--gold)", opacity: 0.55, marginBottom: "20px" }} />
+            <p className="font-display" style={{ fontSize: "13.5px", color: "var(--gold)", fontWeight: 600, letterSpacing: "0.04em", textTransform: "uppercase", marginBottom: "18px" }}>
+              Considering <strong style={{ color: "var(--ink-soft)", fontWeight: 700 }}>Ozempic</strong> or{" "}
+              <strong style={{ color: "var(--ink-soft)", fontWeight: 700 }}>Mounjaro</strong> for{" "}
+              <strong style={{ color: "var(--ink-soft)", fontWeight: 700 }}>weight loss</strong>?
             </p>
             <p style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.75, marginBottom: "20px" }}>
               At Carisma Aesthetics, GLP-1 medications are never prescribed in isolation. Our doctor-led programme
@@ -164,43 +180,58 @@ function Hero() {
             </p>
             <ul style={{ marginBottom: "24px" }}>
               {bullets.map((b) => (
-                <Bullet key={b} kind="check">
-                  {b}
-                </Bullet>
+                <li key={b.lead} className="flex items-start" style={{ gap: "10px", marginBottom: "12px" }}>
+                  <span style={{ flexShrink: 0, color: "var(--gold)", fontSize: "13px", lineHeight: 1.6 }}>&bull;</span>
+                  <span style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.65 }}>
+                    <strong style={{ color: "var(--ink-soft)", fontWeight: 700 }}>{b.lead}</strong> {b.text}
+                  </span>
+                </li>
               ))}
             </ul>
-            <Cta />
 
-            <div className="flex items-center" style={{ gap: "22px", margin: "26px 0 22px" }}>
+            <div className="flex items-center" style={{ gap: "22px", marginBottom: "24px" }}>
               <Image src={`${A}/ozempic-wordmark.png`} alt="Ozempic Semaglutide" width={176} height={51} style={{ height: "38px", width: "auto" }} />
               <Image src={`${A}/mounjaro-wordmark.png`} alt="Mounjaro tirzepatide" width={152} height={51} style={{ height: "38px", width: "auto" }} />
             </div>
 
-            <div className="flex items-center" style={{ gap: "26px", flexWrap: "wrap" }}>
+            <a
+              href={BOOK_HREF}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-display"
+              style={{ display: "block", textAlign: "center", background: "var(--teal)", color: "#fff", padding: "16px", borderRadius: "8px", letterSpacing: "0.12em", textTransform: "uppercase", fontSize: "13px" }}
+            >
+              book your medical consultation
+            </a>
+
+            <div className="flex items-center" style={{ marginTop: "22px" }}>
               <Image src={`${A}/google-reviews-bar.png`} alt="G 4.9 — TOP-RATED CLINIC IN MALTA" width={313} height={20} style={{ height: "20px", width: "auto" }} />
-              <div className="flex items-center" style={{ gap: "10px" }}>
-                <Image src={`${A}/award-badge.png`} alt="Malta Healthcare, Wellness, Beauty & Best Spa Awards" width={114} height={72} style={{ height: "44px", width: "auto" }} />
-                <span className="font-display" style={{ fontSize: "11px", color: "var(--ink)", letterSpacing: "0.1em", maxWidth: "120px", lineHeight: 1.3 }}>
-                  #1 Voted Clinic in Malta
-                </span>
-              </div>
             </div>
+
+            <p style={{ fontSize: "11px", color: "var(--muted)", lineHeight: 1.6, marginTop: "20px" }}>
+              Eligibility and exact costs depend on your health, lab results, and the dose you need. You will always
+              receive a clear plan and pricing in your consultation before starting. Important: Ozempic and Mounjaro are
+              prescription-only and not suitable for everyone. This programme is offered only after a full medical
+              assessment by our doctor.
+            </p>
           </Reveal>
 
-          {/* RIGHT — portrait video box */}
+          {/* RIGHT — portrait video (leaf frame) + award */}
           <Reveal delay={120}>
             <div
+              className="relative"
               style={{
                 width: "100%",
-                maxWidth: "405px",
-                aspectRatio: "405 / 560",
+                maxWidth: "460px",
+                aspectRatio: "405 / 540",
                 marginInline: "auto",
-                borderRadius: "10px",
+                borderRadius: "80px 24px 80px 24px",
                 overflow: "hidden",
                 boxShadow: "0 20px 50px rgba(0,0,0,0.18)",
               }}
             >
               <video
+                ref={videoRef}
                 src={`${A}/hero.mp4`}
                 poster={`${A}/hero-doctor.png`}
                 autoPlay
@@ -209,6 +240,27 @@ function Hero() {
                 playsInline
                 style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
               />
+              {showPlay && (
+                <button
+                  type="button"
+                  onClick={playWithSound}
+                  aria-label="Play video with sound"
+                  className="absolute inset-0 flex items-center justify-center"
+                  style={{ background: "transparent", border: "none", cursor: "pointer" }}
+                >
+                  <span className="flex items-center justify-center" style={{ width: "66px", height: "66px", borderRadius: "50%", border: "2px solid rgba(255,255,255,0.9)", background: "rgba(0,0,0,0.18)" }}>
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff" aria-hidden style={{ marginLeft: "3px" }}>
+                      <path d="M8 5v14l11-7z" />
+                    </svg>
+                  </span>
+                </button>
+              )}
+            </div>
+            <div className="flex items-center justify-center" style={{ gap: "14px", marginTop: "24px" }}>
+              <Image src={`${A}/award-badge.png`} alt="Malta Healthcare, Wellness, Beauty & Best Spa Awards" width={114} height={72} style={{ height: "58px", width: "auto" }} />
+              <span className="font-serif" style={{ fontSize: "15px", color: "var(--label)", letterSpacing: "0.08em", textTransform: "uppercase", lineHeight: 1.35, maxWidth: "150px" }}>
+                #1 Voted Clinic in Malta
+              </span>
             </div>
           </Reveal>
         </div>
