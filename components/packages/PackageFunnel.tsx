@@ -39,7 +39,7 @@ function Chevron() {
 
 function CtaButton({ children, href }: { children: string; href: string }) {
   const external = /^https?:\/\//.test(href);
-  const style = { padding: "15px 34px", borderRadius: "3px" } as const;
+  const style = { padding: "12px 34px", borderRadius: "0px" } as const;
   if (external) {
     return (
       <a href={href} target="_blank" rel="noopener noreferrer" className="btn btn-teal" style={style}>
@@ -69,11 +69,11 @@ function FaqShare() {
   );
 }
 
+// Standard disc bullet in the muted-taupe label colour (matches the live Wix lists).
 function Bullet({ children }: { children: React.ReactNode }) {
   return (
-    <li className="flex items-start gap-3" style={{ padding: "5px 0" }}>
-      <span style={{ color: "var(--teal)", fontSize: "11px", lineHeight: 1.9 }}>●</span>
-      <span style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.6 }}>{children}</span>
+    <li style={{ display: "list-item", listStyleType: "disc", marginLeft: "20px", padding: "3px 0", color: "var(--label)", fontSize: "14px", lineHeight: 1.5 }}>
+      {children}
     </li>
   );
 }
@@ -100,7 +100,7 @@ function withBold(text: string, bold?: string[]) {
       const idx = node.indexOf(b);
       if (idx === -1) return next.push(node);
       next.push(node.slice(0, idx));
-      next.push(<strong key={`${bi}-${idx}`} style={{ color: "var(--teal-deep)", fontWeight: 600 }}>{b}</strong>);
+      next.push(<strong key={`${bi}-${idx}`} style={{ fontWeight: 700 }}>{b}</strong>);
       next.push(node.slice(idx + b.length));
     });
     nodes = next;
@@ -156,27 +156,27 @@ export default function PackageFunnel({ data }: { data: PackageData }) {
           <div style={{ borderRadius: "26px", background: "linear-gradient(160deg,#e8f0f0 0%, #f6fafa 45%, #eef4f4 100%)", border: "1px solid var(--line)", padding: "clamp(26px,3.5vw,48px)", boxShadow: "0 20px 60px rgba(0,0,0,0.05)" }}>
             <div className="grid gap-10 lg:grid-cols-2 items-center">
               <Reveal>
-                <h1 className="font-serif" style={{ fontSize: "clamp(30px,4.6vw,50px)", color: "var(--gold)", letterSpacing: "0.06em", textTransform: "uppercase" }}>
+                <h1 className="font-serif" style={{ fontSize: "clamp(28px,3.4vw,34px)", color: "var(--teal)", letterSpacing: "normal", textTransform: "uppercase", lineHeight: 1.4 }}>
                   {h.title}
                 </h1>
-                {h.lead && <p style={{ fontSize: "16px", color: "var(--teal-deep)", lineHeight: 1.5, marginTop: "16px", fontWeight: 600 }}>{h.lead}</p>}
-                <p style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.6, marginTop: h.lead ? "12px" : "18px" }}>
+                {h.lead && <p style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.4, marginTop: "16px", fontWeight: 700, textAlign: "justify" }}>{h.lead}</p>}
+                <p style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.4, marginTop: h.lead ? "12px" : "18px", textAlign: "justify" }}>
                   {withBold(h.subtitle, h.subtitleBold)}
                 </p>
                 {h.bodyParas?.map((p, i) => (
-                  <p key={i} style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.6, marginTop: "12px" }}>{p}</p>
+                  <p key={i} style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.4, marginTop: "12px", textAlign: "justify" }}>{p}</p>
                 ))}
 
-                <p style={{ fontSize: "15px", color: "var(--ink-soft)", fontWeight: 600, marginTop: "24px", marginBottom: "10px" }}>{h.includedTitle}</p>
+                <p style={{ fontSize: "14px", color: "var(--label)", fontWeight: 700, marginTop: "24px", marginBottom: "10px" }}>{h.includedTitle}</p>
                 <ul>
                   {h.included.map((it) => <Bullet key={it}>{it}</Bullet>)}
                 </ul>
-                <p style={{ fontSize: "15px", color: "var(--ink-soft)", fontWeight: 600, marginTop: "16px" }}>{h.total}</p>
-                {h.note && <p style={{ fontSize: "14px", color: "var(--teal-deep)", marginTop: "8px", fontWeight: 600 }}>{h.note}</p>}
+                <p style={{ fontSize: "14px", color: "var(--label)", fontWeight: 700, marginTop: "16px" }}>{h.total}</p>
+                {h.note && <p style={{ fontSize: "14px", color: "var(--label)", marginTop: "8px", fontWeight: 700 }}>{h.note}</p>}
                 {h.footnotes?.map((f) => (
-                  <p key={f} style={{ fontSize: "12px", color: "var(--muted)", lineHeight: 1.5, marginTop: "6px" }}>{f}</p>
+                  <p key={f} style={{ fontSize: "12px", color: "var(--label)", lineHeight: 1.5, marginTop: "6px" }}>{f}</p>
                 ))}
-                {h.disclaimer && <p style={{ fontSize: "12.5px", color: "var(--muted)", lineHeight: 1.6, marginTop: "16px", fontStyle: "italic" }}>{h.disclaimer}</p>}
+                {h.disclaimer && <p style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.4, marginTop: "16px" }}>{h.disclaimer}</p>}
 
                 <div style={{ marginTop: "26px" }}><CtaButton href={data.bookHref}>{h.cta}</CtaButton></div>
 
