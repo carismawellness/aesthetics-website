@@ -33,10 +33,10 @@ import {
 import { testimonials as TESTIMONIALS, Testimonial } from '@/lib/bodypkg/testimonials';
 
 /* ---------- palette / fonts (shared with the site) ---------- */
-const GREEN = '#b79e61';
-const BLUE = '#6391AB';
+const GREEN = '#b79e61';   // gold — section headings, tags, efficacy titles
+const BLUE = '#6391AB';    // Carisma Aesthetics blue — eyebrows, sub-labels, CTAs
 const TAUPE = '#9B8D83';
-const TAUPE_DK = '#7C7268';
+const TAUPE_DK = '#6391AB'; // repurposed: bold uppercase sub-labels now render blue
 const TAUPE_LT = '#AFA39D';
 
 const SERIF = 'Trajan Pro, "Trajan Pro Regular", Georgia, serif';
@@ -65,7 +65,7 @@ const CONTAINER: React.CSSProperties = { maxWidth: 1040, marginLeft: 'auto', mar
 /* ---------- shared pieces ---------- */
 function Eyebrow({ children, align = 'center' }: { children: React.ReactNode; align?: 'center' | 'left' }) {
   return (
-    <p style={{ color: TAUPE, fontFamily: WIDE, fontSize: 13, fontWeight: 400, letterSpacing: 'normal', textTransform: 'uppercase', textAlign: align, margin: 0 }}>
+    <p style={{ color: BLUE, fontFamily: WIDE, fontSize: 13, fontWeight: 400, letterSpacing: 'normal', textTransform: 'uppercase', textAlign: align, margin: 0 }}>
       {children}
     </p>
   );
@@ -199,7 +199,7 @@ export default function PackagePage({ content: c }: { content: PackageContent })
                 {c.heroTitle}
               </h1>
               <div style={{ width: 300, maxWidth: '70%', height: 1, backgroundColor: '#d9d2ca', margin: '12px 0 18px' }} />
-              <p style={{ color: TAUPE, fontFamily: WIDE, fontWeight: 400, fontSize: 15, letterSpacing: 'normal', margin: '0 0 16px' }}>{c.heroSubheading}</p>
+              <p style={{ color: BLUE, fontFamily: WIDE, fontWeight: 400, fontSize: 15, letterSpacing: 'normal', margin: '0 0 16px' }}>{c.heroSubheading}</p>
               <p style={{ color: TAUPE, fontFamily: BODY, fontWeight: 400, fontSize: 14, lineHeight: 1.55, margin: '0 0 22px' }}>{c.heroDescription}</p>
 
               <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 24px', display: 'flex', flexDirection: 'column', gap: 14 }}>
@@ -281,7 +281,7 @@ export default function PackagePage({ content: c }: { content: PackageContent })
         </div>
 
         <div style={{ ...CONTAINER, marginTop: 56 }}>
-          <p style={{ color: TAUPE, fontFamily: WIDE, fontSize: 16, letterSpacing: '0.5px', textTransform: 'uppercase', textAlign: 'center', margin: 0 }}>{c.secretSubheading}</p>
+          <p style={{ color: BLUE, fontFamily: WIDE, fontSize: 16, letterSpacing: '0.5px', textTransform: 'uppercase', textAlign: 'center', margin: 0 }}>{c.secretSubheading}</p>
 
           <div style={{ display: 'grid', gridTemplateColumns: '0.9fr 1.1fr', gap: 48, alignItems: 'center', marginTop: 40 }} className="fr-2col">
             {/* eslint-disable-next-line @next/next/no-img-element */}
