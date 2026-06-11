@@ -33,7 +33,8 @@ import {
 import { testimonials as TESTIMONIALS, Testimonial } from '@/lib/bodypkg/testimonials';
 
 /* ---------- palette / fonts (shared with the site) ---------- */
-const GREEN = '#b79e61';   // gold — section headings, tags, efficacy titles
+const GREEN = '#6391AB';   // now BLUE — every card accent (CTAs, pills, prices, tags, evidence, stars, arrows)
+const GOLD = '#b79e61';    // reserved for the big section headings + hero title only
 const BLUE = '#6391AB';    // Carisma Aesthetics blue — eyebrows, sub-labels, CTAs
 const TAUPE = '#9B8D83';
 const TAUPE_DK = '#6391AB'; // repurposed: bold uppercase sub-labels now render blue
@@ -73,7 +74,7 @@ function Eyebrow({ children, align = 'center' }: { children: React.ReactNode; al
 
 function SectionHeading({ children, align = 'center', size = 28 }: { children: React.ReactNode; align?: 'center' | 'left'; size?: number }) {
   return (
-    <h2 style={{ color: GREEN, fontFamily: SERIF, fontWeight: 400, fontSize: size, lineHeight: 1.4, letterSpacing: 'normal', textTransform: 'uppercase', textAlign: align, margin: 0 }}>
+    <h2 style={{ color: GOLD, fontFamily: SERIF, fontWeight: 400, fontSize: size, lineHeight: 1.4, letterSpacing: 'normal', textTransform: 'uppercase', textAlign: align, margin: 0 }}>
       {children}
     </h2>
   );
@@ -195,7 +196,7 @@ export default function PackagePage({ content: c }: { content: PackageContent })
           <div style={{ display: 'grid', gridTemplateColumns: '1.05fr 0.95fr', gap: 48, alignItems: 'center' }} className="fr-hero-grid">
             <div>
               <Eyebrow align="left">{c.heroEyebrow}</Eyebrow>
-              <h1 style={{ color: GREEN, fontFamily: SERIF, fontWeight: 400, fontSize: 28, lineHeight: 1.4, letterSpacing: 'normal', textTransform: 'uppercase', margin: '12px 0 0' }}>
+              <h1 style={{ color: GOLD, fontFamily: SERIF, fontWeight: 400, fontSize: 28, lineHeight: 1.4, letterSpacing: 'normal', textTransform: 'uppercase', margin: '12px 0 0' }}>
                 {c.heroTitle}
               </h1>
               <div style={{ width: 300, maxWidth: '70%', height: 1, backgroundColor: '#d9d2ca', margin: '12px 0 18px' }} />
