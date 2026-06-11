@@ -20,9 +20,9 @@ export default function ConsultationPage() {
       </section>
 
       <section style={{ padding: "60px 0" }}>
-        <div className="container grid gap-12 lg:grid-cols-2">
+        <div className="container grid gap-12 lg:grid-cols-[1.7fr_1fr]">
           {/* Form */}
-          <div className="bg-white rounded-lg" style={{ padding: "36px", boxShadow: "0 20px 50px rgba(0,0,0,0.06)", border: "1px solid var(--line)" }}>
+          <div>
             <h2 className="font-serif" style={{ fontSize: "26px", color: "var(--ink)", textTransform: "none", fontWeight: 500, marginBottom: "20px" }}>Personalised Form</h2>
             <ConsultationForm showMessage submitLabel="book your Consultation" />
           </div>

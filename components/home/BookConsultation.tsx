@@ -22,11 +22,9 @@ export default function BookConsultation() {
           </div>
         </Reveal>
 
-        {/* Grey-teal form panel — narrower, centered, overlapping up into the beige */}
-        <Reveal delay={120} className="relative mx-auto" style={{ maxWidth: "780px", marginTop: "-28px", zIndex: 1 }}>
-          <div style={{ background: "#e6eded", borderRadius: "24px", padding: "clamp(28px,4vw,40px)", boxShadow: "0 18px 45px rgba(0,0,0,0.06)" }}>
-            <ConsultationForm stacked submitLabel="Submit" />
-          </div>
+        {/* GHL form — full width, no background panel */}
+        <Reveal delay={120} className="relative mx-auto" style={{ maxWidth: "1040px", marginTop: "-12px", zIndex: 1 }}>
+          <ConsultationForm stacked submitLabel="Submit" />
         </Reveal>
       </div>
     </section>
