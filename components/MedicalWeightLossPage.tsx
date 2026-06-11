@@ -12,10 +12,10 @@ function Serif({ children, style }: { children: React.ReactNode; style?: React.C
   return <h2 className="font-serif text-center" style={{ fontSize: "clamp(22px,3vw,30px)", color: "var(--gold-deep)", letterSpacing: "0.06em", fontWeight: 400, lineHeight: 1.3, ...style }}>{children}</h2>;
 }
 function Book() {
-  return <Link href="/consultation" className="btn btn-teal" style={{ fontSize: "13px", padding: "15px 34px", letterSpacing: "0.12em" }}>{CTA}</Link>;
+  return <Link href="/consultation" style={{ display: "inline-block", background: "#6391AB", color: "#fff", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "13px", letterSpacing: "0.12em", textTransform: "uppercase", padding: "15px 34px", borderRadius: "10px" }}>{CTA}</Link>;
 }
-function Dot() { return <span style={{ color: "var(--teal)", fontSize: "11px", lineHeight: 1.8, flexShrink: 0 }}>●</span>; }
-function Tick() { return <svg className="shrink-0" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ marginTop: "1px" }}><path d="M5 12.5l4.5 4.5L19 7" /></svg>; }
+function Dot() { return <span style={{ color: "var(--gold-deep)", fontSize: "11px", lineHeight: 1.8, flexShrink: 0 }}>●</span>; }
+function Tick() { return <svg className="shrink-0" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--gold-deep)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ marginTop: "1px" }}><path d="M5 12.5l4.5 4.5L19 7" /></svg>; }
 function Ex() { return <svg className="shrink-0" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#b3a98f" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" style={{ marginTop: "1px" }}><path d="M7 7l10 10M17 7L7 17" /></svg>; }
 
 const HELPS = ["Appetite regulation and feeling full sooner", "Craving reduction and less “food noise”", "Better control and adherence to your plan", "Better blood sugar control & metabolic support"];
@@ -213,7 +213,7 @@ export default function MedicalWeightLossPage() {
                 <h3 className="font-serif" style={{ fontSize: "22px", color: "var(--gold-deep)", letterSpacing: "0.04em", marginBottom: "16px" }}>Dr Zaid Teebi</h3>
                 <p style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.8 }}>Dr Zaid Teebi is a medical doctor at Carisma with over 30+ years of clinical experience and an evidence-based focus on GLP-1 prescribing and metabolic health. A graduate of Imperial College London, he combines medical rigour with a calm, human approach.</p>
                 <p style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.8, marginTop: "14px" }}>His Ozempic and Mounjaro consultations are structured and personalised, with safety screening, clear expectations, and ongoing monitoring. Where clinically appropriate, he prescribes GLP-1 support as part of a wider programme that includes nutrition structure, habit-based strength training to protect metabolism, and a long-term maintenance plan.</p>
-                <blockquote style={{ borderLeft: "3px solid var(--teal)", paddingLeft: "20px", margin: "24px 0", fontStyle: "italic", color: "var(--gold-deep)", fontSize: "15px", lineHeight: 1.7 }}>&ldquo;Prescribing Ozempic or Mounjaro is the easy part. Building a programme that works after the medication stops, that&apos;s the real work.&rdquo;<br /><span style={{ fontStyle: "normal", fontSize: "13px" }}>— Dr. Teebi</span></blockquote>
+                <blockquote style={{ borderLeft: "3px solid var(--gold-deep)", paddingLeft: "20px", margin: "24px 0", fontStyle: "italic", color: "var(--gold-deep)", fontSize: "15px", lineHeight: 1.7 }}>&ldquo;Prescribing Ozempic or Mounjaro is the easy part. Building a programme that works after the medication stops, that&apos;s the real work.&rdquo;<br /><span style={{ fontStyle: "normal", fontSize: "13px" }}>— Dr. Teebi</span></blockquote>
                 <Book />
               </div>
             </div>
@@ -225,7 +225,7 @@ export default function MedicalWeightLossPage() {
           <div className="container text-center">
             <Kicker>Our promise</Kicker>
             <Serif style={{ marginTop: "8px" }}>up to 1kg per week</Serif>
-            <p className="font-display" style={{ fontSize: "14px", color: "var(--teal)", letterSpacing: "0.1em", marginTop: "10px", textTransform: "uppercase" }}>measured. verified. comitted.</p>
+            <p className="font-display" style={{ fontSize: "14px", color: "var(--gold-deep)", letterSpacing: "0.1em", marginTop: "10px", textTransform: "uppercase" }}>measured. verified. comitted.</p>
             <div className="mx-auto" style={{ maxWidth: "820px", marginTop: "28px", background: "rgba(255,255,255,0.55)", border: "1px solid var(--line)", borderRadius: "20px", padding: "clamp(26px,3vw,40px)", textAlign: "left" }}>
               <p className="font-display" style={{ fontSize: "14px", color: "var(--gold-deep)", letterSpacing: "0.03em", lineHeight: 1.6, marginBottom: "16px" }}>Only clinic in Malta to offer an extended care commitment on Ozempic & Mounjaro programmes</p>
               <p style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.8 }}>We are selective about who we prescribe Ozempic or Mounjaro to. We only accept those we genuinely believe we can help reach their healthy weight.</p>
@@ -293,7 +293,7 @@ export default function MedicalWeightLossPage() {
               <div className="flex flex-col sm:flex-row items-center justify-between gap-6" style={{ marginTop: "40px" }}>
                 <Book />
                 <div className="flex items-center gap-3">
-                  <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden><path fill="none" stroke="var(--teal)" strokeWidth="1.4" d="M12 22s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z" /><text x="12" y="13.5" textAnchor="middle" fontSize="9" fill="var(--teal)" fontWeight="700">P</text></svg>
+                  <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden><path fill="none" stroke="var(--gold-deep)" strokeWidth="1.4" d="M12 22s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z" /><text x="12" y="13.5" textAnchor="middle" fontSize="9" fill="var(--gold-deep)" fontWeight="700">P</text></svg>
                   <span className="font-display" style={{ fontSize: "12px", color: "var(--label)", letterSpacing: "0.08em", textTransform: "uppercase" }}>Complimentary on-site parking</span>
                 </div>
               </div>
@@ -331,9 +331,9 @@ export default function MedicalWeightLossPage() {
                   )}
                   <div style={{ padding: "24px" }}>
                     <h3 className="font-display" style={{ fontSize: "13px", color: "var(--gold-deep)", letterSpacing: "0.04em", marginBottom: "14px", lineHeight: 1.4 }}>{c.title}</h3>
-                    <p className="font-display" style={{ fontSize: "10px", color: "var(--teal)", letterSpacing: "0.1em", marginBottom: "6px" }}>WHAT IT DOES</p>
+                    <p className="font-display" style={{ fontSize: "10px", color: "var(--gold-deep)", letterSpacing: "0.1em", marginBottom: "6px" }}>WHAT IT DOES</p>
                     <p style={{ fontSize: "13px", color: "var(--label)", lineHeight: 1.65, marginBottom: "14px" }}>{c.whatItDoes}</p>
-                    <p className="font-display" style={{ fontSize: "10px", color: "var(--teal)", letterSpacing: "0.1em", marginBottom: "6px" }}>KEY RESULTS</p>
+                    <p className="font-display" style={{ fontSize: "10px", color: "var(--gold-deep)", letterSpacing: "0.1em", marginBottom: "6px" }}>KEY RESULTS</p>
                     <ul className="space-y-2">{c.keyResults.map((k) => (<li key={k} className="flex items-start gap-2"><Dot /><span style={{ fontSize: "12.5px", color: "var(--label)", lineHeight: 1.6 }}>{k}</span></li>))}</ul>
                     <p className="font-display" style={{ fontSize: "11px", color: "var(--gold-deep)", letterSpacing: "0.06em", marginTop: "16px", textTransform: "uppercase" }}>{c.evidence}</p>
                   </div>
