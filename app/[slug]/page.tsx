@@ -1,6 +1,8 @@
 import { notFound } from "next/navigation";
 import TreatmentPage from "@/components/TreatmentPage";
-import SnatchYourJawline from "@/components/packages/SnatchYourJawline";
+import LaserHairRemovalPage from "@/components/LaserHairRemovalPage";
+import PackageFunnel from "@/components/packages/PackageFunnel";
+import { PACKAGES } from "@/lib/packages";
 import { getTreatment, ALL_TREATMENT_SLUGS } from "@/lib/treatments";
 
 export function generateStaticParams() {
@@ -11,6 +13,13 @@ export const dynamicParams = false;
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
+  const pkg = PACKAGES[slug];
+  if (pkg) {
+    return {
+      title: `${pkg.hero.title} | Carisma Aesthetics Malta`,
+      description: pkg.hero.subtitle,
+    };
+  }
   const t = getTreatment(slug);
   if (!t) return {};
   return {
@@ -21,7 +30,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  if (slug === "snatch-your-jawline") return <SnatchYourJawline />;
+  const pkg = PACKAGES[slug];
+  if (pkg) return <PackageFunnel data={pkg} />;
+  if (slug === "laser-hair-removal-malta") return <LaserHairRemovalPage />;
   const t = getTreatment(slug);
   if (!t) notFound();
   return <TreatmentPage t={t} />;
