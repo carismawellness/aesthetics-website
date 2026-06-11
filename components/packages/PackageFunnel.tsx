@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import type { PackageData } from "@/lib/packages";
@@ -126,6 +126,66 @@ function StatIcon({ metric }: { metric: string }) {
   return (<svg {...common}><path d="M18 2l4 4-9 9-4 1 1-4z" /><path d="M14 6l4 4" /></svg>);
 }
 
+/* Hero video with a customer-facing mute / unmute toggle.
+   Autoplay requires the video to start muted; the button lets the visitor turn sound on. */
+function HeroVideo({ poster, src, ratio }: { poster: string; src?: string; ratio: string }) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [muted, setMuted] = useState(true);
+
+  const toggle = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    const next = !v.muted;
+    v.muted = next;
+    if (!next) {
+      v.volume = 1;
+      // a user-gesture unmute may need an explicit play() in some browsers
+      void v.play().catch(() => {});
+    }
+    setMuted(next);
+  };
+
+  return (
+    <div className="relative" style={{ borderRadius: "18px", overflow: "hidden", boxShadow: "0 24px 60px rgba(0,0,0,0.14)" }}>
+      <video ref={videoRef} poster={poster} autoPlay muted loop playsInline className="w-full" style={{ display: "block", aspectRatio: ratio, objectFit: "cover" }}>
+        {src && <source src={src} type="video/mp4" />}
+      </video>
+      <button
+        type="button"
+        onClick={toggle}
+        aria-label={muted ? "Unmute video" : "Mute video"}
+        aria-pressed={!muted}
+        className="absolute inline-flex items-center justify-center"
+        style={{
+          right: "14px",
+          bottom: "14px",
+          width: "42px",
+          height: "42px",
+          borderRadius: "50%",
+          background: "rgba(20,40,40,0.55)",
+          backdropFilter: "blur(2px)",
+          color: "#fff",
+          border: "1px solid rgba(255,255,255,0.55)",
+          cursor: "pointer",
+          transition: "background 0.2s ease",
+        }}
+      >
+        {muted ? (
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+            <path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor" stroke="none" />
+            <path d="M22 9l-6 6M16 9l6 6" />
+          </svg>
+        ) : (
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+            <path d="M11 5 6 9H3v6h3l5 4z" fill="currentColor" stroke="none" />
+            <path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13" />
+          </svg>
+        )}
+      </button>
+    </div>
+  );
+}
+
 function TestimonialCard({ t }: { t: { img: string; quote: string; name: string } }) {
   const [open, setOpen] = useState(false);
   return (
@@ -202,11 +262,7 @@ export default function PackageFunnel({ data }: { data: PackageData }) {
               </Reveal>
 
               <Reveal delay={120}>
-                <div style={{ borderRadius: "18px", overflow: "hidden", boxShadow: "0 24px 60px rgba(0,0,0,0.14)" }}>
-                  <video poster={h.poster} autoPlay muted loop playsInline className="w-full" style={{ display: "block", aspectRatio: h.posterRatio ?? "317 / 394", objectFit: "cover" }}>
-                    {h.video && <source src={h.video} type="video/mp4" />}
-                  </video>
-                </div>
+                <HeroVideo poster={h.poster} src={h.video} ratio={h.posterRatio ?? "317 / 394"} />
               </Reveal>
             </div>
           </div>
