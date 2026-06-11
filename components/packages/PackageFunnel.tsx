@@ -56,6 +56,33 @@ function CtaButton({ children, href }: { children: string; href: string }) {
   );
 }
 
+/* Full-width "BOOK YOUR CONSULTATION NOW" block with the limited-time savings
+   subtext + customer-review rating — appears under the persuasion sections. */
+function BookCta({ href, save }: { href: string; save: number | null }) {
+  return (
+    <div style={{ marginTop: "34px" }}>
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="block text-center"
+        style={{ background: "var(--teal)", color: "#fff", padding: "16px 24px", borderRadius: "0px", boxShadow: "0 12px 28px rgba(0,0,0,0.08)" }}
+      >
+        <span className="font-display" style={{ display: "block", fontSize: "15px", letterSpacing: "0.08em", textTransform: "uppercase" }}>Book Your Consultation Now</span>
+        {save != null && (
+          <span className="font-display" style={{ display: "block", fontSize: "10px", letterSpacing: "0.1em", textTransform: "uppercase", marginTop: "5px", opacity: 0.92 }}>
+            Limited-Time Offer: Save up to €{save}
+          </span>
+        )}
+      </a>
+      <div className="flex items-center gap-2" style={{ marginTop: "13px" }}>
+        <span style={{ color: "#f5b50a", fontSize: "15px", letterSpacing: "1px" }} aria-hidden>★★★★★</span>
+        <span style={{ fontSize: "13px", color: "var(--label)" }}>4,9/5 from over 200 customer reviews</span>
+      </div>
+    </div>
+  );
+}
+
 /* social-share row shown under the open FAQ answer (matches the live Ricos FAQ) */
 function FaqShare() {
   const ic = { width: 17, height: 17, viewBox: "0 0 24 24" } as const;
@@ -207,6 +234,11 @@ export default function PackageFunnel({ data }: { data: PackageData }) {
   const [openFaq, setOpenFaq] = useState(0);
   const [tab, setTab] = useState(data.redefined?.tabs ? data.redefined.tabs.length - 1 : 0);
   const h = data.hero;
+  // Savings shown on the "Book your consultation" buttons = (total value − today's price).
+  const saveAmt = (() => {
+    const nums = (h.total.match(/€\s*[\d.,]+/g) || []).map((s) => parseInt(s.replace(/[^\d]/g, ""), 10));
+    return nums.length >= 2 ? nums[0] - nums[1] : null;
+  })();
 
   return (
     <>
@@ -339,6 +371,7 @@ export default function PackageFunnel({ data }: { data: PackageData }) {
             <div className="grid gap-12 lg:grid-cols-2 items-center" style={{ marginTop: "44px" }}>
               <Reveal>
                 <ul>{data.createdFor.reasons.map((r) => <Bullet key={r}>{r}</Bullet>)}</ul>
+                <BookCta href={data.bookHref} save={saveAmt} />
               </Reveal>
               <Reveal delay={120}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -389,6 +422,7 @@ export default function PackageFunnel({ data }: { data: PackageData }) {
                 <div style={{ marginTop: "22px", fontSize: "15px", color: "var(--label)", lineHeight: 1.8 }}>
                   {data.offer.paras.map((p, i) => (<p key={i} style={{ marginTop: i === 0 ? 0 : "16px" }}>{p}</p>))}
                 </div>
+                <BookCta href={data.bookHref} save={saveAmt} />
               </Reveal>
               <Reveal delay={120}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -408,6 +442,7 @@ export default function PackageFunnel({ data }: { data: PackageData }) {
                 <SerifHeading text={data.getBack.heading} align="left" size="clamp(20px,2.6vw,28px)" />
                 <p style={{ marginTop: "18px", fontSize: "15px", color: "var(--label)", lineHeight: 1.7 }}>{data.getBack.subtitle}</p>
                 <ul style={{ marginTop: "20px" }}>{data.getBack.bullets.map((b) => <Bullet key={b}>{b}</Bullet>)}</ul>
+                <BookCta href={data.bookHref} save={saveAmt} />
               </Reveal>
               <Reveal delay={120}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
