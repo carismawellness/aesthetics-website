@@ -468,6 +468,7 @@ export default function PackageFunnel({ data }: { data: PackageData }) {
                 <ul style={{ marginTop: "18px" }}>
                   {data.redefined.bullets.map((p) => (<li key={p} className="flex items-start gap-3" style={{ padding: "4px 0" }}><span style={{ color: "var(--muted)", fontSize: "12px", lineHeight: 1.8 }}>•</span><span style={{ fontSize: "13.5px", color: "var(--muted)", lineHeight: 1.6 }}>{p}</span></li>))}
                 </ul>
+                <BookCta href={data.bookHref} save={saveAmt} />
               </Reveal>
             </div>
 
