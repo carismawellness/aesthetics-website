@@ -656,7 +656,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
             <div className="mx-auto" style={{ maxWidth: "820px" }}>
               {t.faq.map((f) => (
                 <details key={f.q} style={{ background: "#fff", border: "1px solid var(--line)", borderRadius: "12px", marginBottom: "12px", padding: "0 22px" }}>
-                  <summary className="font-display flex items-center justify-between gap-4" style={{ cursor: "pointer", padding: "18px 0", fontSize: "15px", color: "var(--gold-deep)", letterSpacing: "0.02em" }}>
+                  <summary className="flex items-center justify-between gap-4" style={{ cursor: "pointer", padding: "18px 0", fontSize: "15px", fontWeight: 500, color: "var(--gold-deep)", letterSpacing: "0.01em" }}>
                     <span>{f.q}</span>
                     <span className="faq-plus shrink-0" style={{ color: "var(--teal)", fontSize: "22px", lineHeight: 1 }}>+</span>
                   </summary>
