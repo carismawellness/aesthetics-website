@@ -1,23 +1,12 @@
-import Link from "next/link";
 import type { Metadata } from "next";
+import MembershipPage from "@/components/MembershipPage";
 
 export const metadata: Metadata = {
-  title: "Membership | Carisma Aesthetics Malta",
+  title: "The Glow Club Membership | Carisma Aesthetics Malta",
+  description:
+    "Join The Glow Club — Carisma Aesthetics' membership: save monthly into your Glow balance and enjoy 10% off services, 15% off products, priority booking and exclusive rewards.",
 };
 
-export default function MembershipPage() {
-  return (
-    <section style={{ backgroundColor: "var(--cream)", padding: "80px 0" }}>
-      <div className="container text-center">
-        <h1 className="font-display" style={{ fontSize: "clamp(28px,5vw,44px)", color: "var(--ink)", letterSpacing: "0.08em" }}>Membership</h1>
-        <p className="font-serif mx-auto" style={{ fontSize: "19px", color: "var(--ink-soft)", textTransform: "none", fontStyle: "italic", marginTop: "16px", maxWidth: "640px" }}>
-          Exclusive member benefits on treatments at Carisma Aesthetics.
-        </p>
-        <p className="mx-auto" style={{ fontSize: "14px", color: "var(--muted)", marginTop: "18px", maxWidth: "640px", fontStyle: "italic" }}>
-          {/* QA flag */}Membership tiers and pricing pending extraction from the live site.
-        </p>
-        <Link href="/consultation" className="btn btn-teal" style={{ marginTop: "32px" }}>enquire now</Link>
-      </div>
-    </section>
-  );
+export default function Page() {
+  return <MembershipPage />;
 }
