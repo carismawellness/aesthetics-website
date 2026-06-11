@@ -603,6 +603,7 @@ export const TREATMENTS: Record<string, Treatment> = {
       cta: "book your fat dissolving session now",
       image: "/assets/treatments/fat-dissolving-hero.jpg",
       productTabs: ["AQUALYX", "LEMON BOTTLE"],
+      heroForm: true,
     },
     info: [
       { metric: "Procedure Time", detail: "20-30 minutes" },
