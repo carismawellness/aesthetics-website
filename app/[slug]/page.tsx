@@ -1,6 +1,8 @@
 import { notFound } from "next/navigation";
 import TreatmentPage from "@/components/TreatmentPage";
 import LaserHairRemovalPage from "@/components/LaserHairRemovalPage";
+import ProtocolPage from "@/components/ProtocolPage";
+import { PROTOCOLS } from "@/lib/protocols";
 import PackageFunnel from "@/components/packages/PackageFunnel";
 import { PACKAGES } from "@/lib/packages";
 import { getTreatment, ALL_TREATMENT_SLUGS } from "@/lib/treatments";
@@ -33,6 +35,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
   const pkg = PACKAGES[slug];
   if (pkg) return <PackageFunnel data={pkg} />;
   if (slug === "laser-hair-removal-malta") return <LaserHairRemovalPage />;
+  if (PROTOCOLS[slug]) return <ProtocolPage d={PROTOCOLS[slug]} />;
   const t = getTreatment(slug);
   if (!t) notFound();
   return <TreatmentPage t={t} />;

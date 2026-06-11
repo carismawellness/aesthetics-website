@@ -1,0 +1,180 @@
+import type { ProtocolData } from "@/lib/protocols";
+
+const A = "/assets/treatments";
+const PRESS = ["/assets/press/malta-daily.png", "/assets/press/bay.jpeg", "/assets/press/lovin-malta.jpeg", "/assets/press/times-of-malta.png", "/assets/press/malta-today.jpg"];
+
+const PACKAGE = [
+  { label: "4x Skin tightening sessions with the VelaShape", price: "€400" },
+  { label: "4x access to spa & fitness facilities", price: "€140" },
+  { label: "Tanita Body Composition Analysis", price: "€60" },
+  { label: "€25 Carisma Aesthetics credit", price: "€25" },
+  { label: "Complimentary Parking Validation", price: "" },
+];
+
+export const skinTightening: ProtocolData = {
+  slug: "skin-tightening-1",
+  hero: {
+    kicker: "VELASHAPE III IN MALTA",
+    title: "4 in 1 skin tightening protocol",
+    tagline: "Smoother, firmer, and tighter skin in 4 focused sessions.",
+    intro: "Our 4 in 1 course with the VelaShape III uses radiofrequency, infrared heat, vacuum and mechanical massage together to stimulate collagen to tighten and smoothen your skin.",
+    items: PACKAGE,
+    totalValue: "TOTAL VALUE: €625",
+    today: "TODAY: €199 for 4 sessions",
+    individualNote: "€100 for individual sessions",
+    cta: "claim your spot now",
+    finePrint: [
+      "* Includes four sessions to be followed over the course of 2-4 weeks",
+      "** Additional sessions of Velashape III may be booked at €100 per session",
+      "*** Due to high demand, packages are offered based on availability and may not always be guaranteed. Please inquire for current options.",
+    ],
+    video: `${A}/vid-skin-tightening-1.mp4`,
+  },
+  secret: {
+    heading: "the secret to a more defined, confident look",
+    sub: "tighten loose skin and smooth stubborn areas without surgery",
+    image: `${A}/st-secret.png`,
+    paragraphs: [
+      "You’ve done the hard part. You’re close to your goal weight, eating better, moving more yet certain areas still don’t look the way you want. Loose skin around the tummy, hips or bum can linger, even when the scale says you’re doing everything right.",
+      "If this sounds familiar, it’s not a lack of effort. Skin laxity and cellulite often need targeted stimulation, not more dieting. Our 4-in-1 VelaShape III Skin Tightening Protocol combines advanced technologies to stimulate collagen, improve firmness, and smooth texture helping your skin finally reflect the progress you’ve already made.",
+    ],
+    bullets: [
+      "You’ve lost weight, but mild loose or uneven skin remains",
+      "Cellulite makes skin look bumpy or less firm in certain areas",
+      "You want visible tightening without surgery or downtime",
+      "You’re tired of being told to “just wait” or “work out more”",
+    ],
+    cta: "claim your spot now",
+  },
+  trusted: {
+    heading: "malta’s trusted clinic for",
+    headingSub: "non surgical fat reduction",
+    pressLogos: PRESS,
+    features: [
+      { icon: `${A}/st-feat1.png`, label: "TARGETED SKIN TIGHTENING", desc: "Focus on your biggest trouble spot first so love handles, lower belly or double chin start to look smoother in clothes and photos." },
+      { icon: `${A}/st-feat2.png`, label: "4-IN-1 TECHNOLOGY APPROACH", desc: "We focus on the areas that concern you most tummy, hips, bum or thighs  using targeted technology to improve firmness and skin texture where it matters most." },
+      { icon: `${A}/st-feat3.png`, label: "expert DESIGNED PLAN", desc: "Your in-person consultation determines the right areas to treat, how sessions are scheduled, and what realistic tightening results you can expect." },
+      { icon: `${A}/st-feat4.png`, label: "SAFE AND CLINICALLY CERTIFIED", desc: "All treatments are performed by trained medical professionals using EU-approved, clinically tested technology with no surgery and no downtime." },
+    ],
+  },
+  eligibility: {
+    kicker: "eligibility criteria",
+    heading: "selective by intention successful by design",
+    image: `${A}/st-eligibility.png`,
+    areasIntro: "Treat visible fat bulges in 7 areas of the body",
+    areas: ["TUMMY / ABDOMEN", "NECK", "ARMS", "BUTTOCKS AND UNDER-BUTT CREASE", "THIGHS (FRONT, BACK, INNER AND OUTER)"],
+  },
+  modality: {
+    kicker: "our technology",
+    heading: "internationally renowned, fda-approved modalities",
+    name: "VELASHAPE III",
+    tag: "Smooths cellulite, tightens skin and improves contour in one comfortable treatment.",
+    tagSub: "Muscle strengthening, tone & metabolic support",
+    baImage: `${A}/st-ba.png`,
+    intro: "VelaShape III combines four technologies in a single session: radiofrequency, infrared heat, vacuum suction and mechanical rollers. The heat stimulates collagen, the suction boosts circulation and lymph flow, and the mechanical massage smooths the surface of the skin. Over the next weeks your skin becomes firmer, tighter and more even looking.",
+    bullets: [
+      "Proven efficacy: Shown to reduce the appearance of cellulite and improve skin firmness in clinical studies.",
+      "Visible smoothing: Skin can look more even and refined after a short series of treatments.",
+      "Gentle tightening: Helps mild loose skin from weight loss, pregnancy or natural ageing.",
+      "Non invasive: No needles, no surgery and no downtime for most people.",
+      "Comfortable sessions: Feels like a warm, deep massage with each treatment lasting about 30 minutes.",
+    ],
+  },
+  difference1: {
+    kicker: "the carisma difference",
+    heading: "we are not another diet clinic.",
+    intro: "We’re a doctor led transformation program that blends medical insight, sustainable nutrition, and modern body tech into one high touch system, so you don’t just lose weight, you step into your strongest form.",
+    bullets: [
+      "Doctor led: full medical check and body scan",
+      "One integrated program: medical, diet, movement and treatments together",
+      "Real gym included: Technogym facility, semi-private classes and PT",
+      "High touch support: weekly check ins, progress reports and WhatsApp follow up",
+      "Evidence based devices: Emsculpt NEO, coolsculpting and RF skin tightening",
+      "Selective entry and measurable weight loss results guaranteed",
+    ],
+  },
+  starterPack: {
+    heading: "malta’s most effective 4-in-1 skin tightening starter protocol",
+    cols: [
+      { title: "Targeted SKIN TIGHTENING", desc: "Four focused VelaShape III sessions designed to treat one or more priority areas such as the tummy, hips, thighs or bum, depending on your goals." },
+      { title: "Visible, NOTICEABLE IMPROVEMENT", desc: "Skin feels firmer and smoother over the course of treatments, with improvements you can see in clothes and feel to the touch — not just on a machine." },
+      { title: "COLLAGEN-STIMULATING TECHNOLOGY", desc: "Radiofrequency and infrared energy work together with vacuum and mechanical massage to support collagen production and improve skin texture." },
+    ],
+    items: PACKAGE,
+    totalValue: "Total Value: €625",
+    today: "Today: €199 Only",
+    finePrint: [
+      "* Includes four sessions to be followed over the course of 2 weeks",
+      "** Additional sessions of Velashape III may be booked at €100 per session",
+      "*** Due to high demand, packages are offered based on availability and may not always be guaranteed. Please inquire for current options.",
+    ],
+    cta: "claim your spot now",
+  },
+  difference2: {
+    kicker: "the carisma difference",
+    heading: "malta’s #1 leading wellness chain",
+    commitmentTitle: "our commitment",
+    commitment: [
+      "Visible inch loss and shape change, not vague promises",
+      "Plans that work with your age, hormones and metabolism",
+      "No crash diets, no banned foods, no endless hours of cardio",
+      "Medical grade technology and treatments delivered by trained professionals",
+    ],
+    whyTitle: "WHY MALTA CHOOSES Carisma",
+    why: [
+      "Created by the team behind Malta’s leading spa and medical aesthetics centres",
+      "Doctor led medical slimming, not a beauty salon “diet program”",
+      "All in one approach: assessment, nutrition, movement and treatments",
+      "High touch support with weekly check ins and WhatsApp coaching",
+    ],
+    cta: "Claim your spot now",
+    parking: "Complimentary on-site parking",
+  },
+  faq: [
+    { q: "1. What is included in the 4-in-1 Skin Tightening Protocol?", a: "The protocol includes four VelaShape III sessions combining radiofrequency, infrared heat, vacuum suction, and mechanical massage. Together, these technologies work to tighten skin, smooth uneven texture, and improve firmness." },
+    { q: "2. Who is this treatment best suited for?", a: "This treatment is ideal for people who are close to their goal weight but have mild loose or uneven skin around areas such as the tummy, hips, thighs, or bum, often after weight loss or pregnancy." },
+    { q: "3. Does VelaShape III help with weight loss?", a: "No. VelaShape III is not a weight-loss treatment. It is designed to tighten skin, smooth texture, and improve firmness, rather than reduce overall body weight." },
+    { q: "4. How does VelaShape III tighten the skin?", a: "VelaShape III gently heats the deeper layers of the skin using radiofrequency and infrared energy. This stimulates collagen remodelling while vacuum and mechanical massage improve circulation, helping the skin look firmer and smoother over time." },
+    { q: "5. Does the treatment hurt?", a: "The treatment is generally comfortable. Most clients describe a warm, deep massage sensation. Intensity can be adjusted to ensure comfort throughout the session." },
+    { q: "6. Is there any downtime after treatment?", a: "No downtime is required. You can return to normal activities immediately after your session. Mild redness or warmth may occur temporarily but usually resolves quickly." },
+    { q: "7. When will I start seeing results?", a: "Some people notice smoother skin after the first few sessions. Visible tightening and improved firmness typically develop gradually over the course of the treatment plan and continue to improve in the weeks following completion." },
+    { q: "8. How long do the results last?", a: "Results can be long-lasting when supported by a healthy lifestyle and stable weight. Maintenance sessions may be recommended depending on individual skin quality and goals." },
+    { q: "9. Is VelaShape III safe?", a: "Yes. VelaShape III is a clinically proven, non-invasive treatment with a strong safety profile when performed by trained professionals. A consultation is carried out beforehand to ensure suitability." },
+    { q: "10. Can VelaShape III help with cellulite?", a: "VelaShape III can help smooth the appearance of mild cellulite by improving circulation and skin texture. It does not remove cellulite completely but can make the skin look more even and refined." },
+  ],
+  research: {
+    heading: "CLINICAL RESEARCH: BASIS OF OUR METhODOLOGY",
+    sub: "evidence based approach",
+    cards: [
+      {
+        image: `${A}/st-research1.png`,
+        title: "radiofrequency & infrared for skin tightening",
+        whatItDoes: "Uses a combination of radiofrequency (RF) energy and infrared light to gently heat the deeper layers of the skin. This controlled heating supports collagen remodeling and improved tissue firmness, helping skin appear tighter and smoother over time.",
+        keyResults: ["Supports natural collagen remodeling", "Gradual improvement in skin firmness", "Non-surgical approach to mild skin laxity"],
+        evidence: "MODERATE EVIDENCE",
+      },
+      {
+        image: `${A}/st-research2.png`,
+        title: "circumference reduction & body contouring",
+        whatItDoes: "Combines heat, vacuum suction, and mechanical massage to enhance circulation and support lymphatic drainage in treated areas. This process can contribute to temporary fluid reduction and gradual improvements in body contour appearance.",
+        keyResults: ["Supports visible contour refinement", "Measurements often improve without weight loss", "Commonly used on abdomen, thighs, and hips"],
+        evidence: "MODERATE EVIDENCE",
+      },
+      {
+        image: `${A}/st-research3.png`,
+        title: "cellulite appearance smoothing",
+        whatItDoes: "Mechanical massage rollers and vacuum technology work together with heat energy to temporarily improve circulation and tissue mobility in areas affected by cellulite, helping the skin surface appear smoother.",
+        keyResults: ["Helps smooth the look of dimpled skin", "Commonly treated areas include thighs and buttocks", "Gradual improvement over multiple sessions"],
+        evidence: "MODERATE EVIDENCE",
+      },
+      {
+        image: `${A}/st-research4.png`,
+        title: "non-surgical treatment with minimal downtime",
+        whatItDoes: "Delivers controlled energy and mechanical stimulation without surgery, needles, or incisions. Treatments are designed to be comfortable, allowing most people to return to normal daily activities immediately afterward.",
+        keyResults: ["No surgery or needles", "Most people return to normal activity right away", "Side effects are usually mild and temporary"],
+        evidence: "STRONG SAFETY PROFILE",
+      },
+    ],
+    cta: "CLAIM MY SPOT NOW",
+  },
+};
