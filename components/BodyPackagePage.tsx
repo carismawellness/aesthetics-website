@@ -122,7 +122,7 @@ function TestimonialCard({ t }: { t: Testimonial }) {
     <div style={{ background: '#fff', borderRadius: 16, padding: '20px 10px', margin: '0 10px', boxSizing: 'border-box' }}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src={t.image} alt={`${t.name} before and after`} style={{ width: '100%', borderRadius: 16, display: 'block' }} />
-      <div style={{ background: 'linear-gradient(178deg, #eef4f9 42%, #cdd9e6 100%)', borderRadius: 16, padding: '15px', paddingTop: 70, marginTop: -91 }}>
+      <div style={{ background: 'linear-gradient(178deg, #eef5fb 42%, #a8c8e0 100%)', borderRadius: 16, padding: '15px', paddingTop: 70, marginTop: -91 }}>
         <p
           style={{
             color: '#9B8C81', fontFamily: BODY, fontSize: 14, lineHeight: 1.5, margin: '0 0 5px',
@@ -328,7 +328,7 @@ export default function PackagePage({ content: c }: { content: PackageContent })
         <div style={{ ...CONTAINER, maxWidth: 1180 }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 22 }} className="fr-benefits">
             {c.benefits.map((b) => (
-              <div key={b.title} style={{ background: 'linear-gradient(150deg, #eaf0f6 0%, #eaf0f6 100%)', borderRadius: '22px 22px 0 22px', padding: '28px 24px 34px' }}>
+              <div key={b.title} style={{ background: 'linear-gradient(150deg, #eef5fb 0%, #a8c8e0 100%)', borderRadius: '22px 22px 0 22px', padding: '28px 24px 34px' }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={b.icon} alt="" style={{ width: 52, height: 52, objectFit: 'contain', marginBottom: 18 }} />
                 <h3 style={{ color: TAUPE_DK, fontFamily: WIDE, fontWeight: 700, fontSize: 15, letterSpacing: '0.5px', textTransform: 'uppercase', margin: '0 0 12px', lineHeight: 1.3 }}>{b.title}</h3>
@@ -368,7 +368,7 @@ export default function PackagePage({ content: c }: { content: PackageContent })
       {/* ===== 4c. COMMITMENT PANEL ("35+ years delivering results") ===== */}
       {c.commitmentPanel && (
       <section style={{ ...CONTAINER, maxWidth: 1120, paddingTop: 40, paddingBottom: 56 }}>
-        <div style={{ position: 'relative', overflow: 'hidden', background: 'linear-gradient(160deg, #eef3f8 0%, #eaf0f6 100%)', borderRadius: 24, padding: '48px 48px 44px' }}>
+        <div style={{ position: 'relative', overflow: 'hidden', background: 'linear-gradient(160deg, #eef5fb 0%, #a8c8e0 100%)', borderRadius: 24, padding: '48px 48px 44px' }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={WELL_BG} alt="" aria-hidden style={{ position: 'absolute', left: '50%', top: '46%', transform: 'translate(-50%, -50%)', width: 560, opacity: 0.28, pointerEvents: 'none', zIndex: 0 }} />
           <div style={{ position: 'relative', zIndex: 1 }}>
@@ -434,7 +434,7 @@ export default function PackagePage({ content: c }: { content: PackageContent })
           <div style={{ marginTop: 10 }}><SectionHeading>we are not<br />another diet clinic.</SectionHeading></div>
           <p style={{ ...body, textAlign: 'center', maxWidth: 720, margin: '18px auto 0' }}>{SHARED_DIFFERENCE_INTRO}</p>
 
-          <div style={{ marginTop: 36, marginLeft: 'auto', marginRight: 'auto', maxWidth: 560, background: 'linear-gradient(150deg, #eaf0f6 0%, #eaf0f6 100%)', borderRadius: 18, padding: '34px 36px' }}>
+          <div style={{ marginTop: 36, marginLeft: 'auto', marginRight: 'auto', maxWidth: 560, background: 'linear-gradient(150deg, #eef5fb 0%, #a8c8e0 100%)', borderRadius: 18, padding: '34px 36px' }}>
             <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: 16 }}>
               {differenceBullets.map((d) => (
                 <li key={d} style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
@@ -454,7 +454,7 @@ export default function PackagePage({ content: c }: { content: PackageContent })
           <Eyebrow>{c.ptEyebrow}</Eyebrow>
           <div style={{ marginTop: 8 }}><SectionHeading>{c.ptHeading}</SectionHeading></div>
 
-          <div style={{ marginTop: 36, background: 'linear-gradient(150deg, #eef3f8 0%, #eaf0f6 100%)', borderRadius: 20, padding: 36, display: 'grid', gridTemplateColumns: '0.85fr 1.15fr', gap: 40, alignItems: 'center' }} className="fr-2col">
+          <div style={{ marginTop: 36, background: 'linear-gradient(150deg, #eef5fb 0%, #a8c8e0 100%)', borderRadius: 20, padding: 36, display: 'grid', gridTemplateColumns: '0.85fr 1.15fr', gap: 40, alignItems: 'center' }} className="fr-2col">
             <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={c.ptImage} alt="Before and after" style={{ width: '100%', borderRadius: 12, display: 'block' }} />
@@ -489,7 +489,7 @@ export default function PackagePage({ content: c }: { content: PackageContent })
         <div style={CONTAINER}>
           <SectionHeading>{c.dualHeading.map((l, i) => (<span key={i}>{l}{i < c.dualHeading.length - 1 && <br />}</span>))}</SectionHeading>
 
-          <div style={{ marginTop: 36, background: 'linear-gradient(150deg, #eaf0f6 0%, #eaf0f6 100%)', borderRadius: 22, padding: 22, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 22 }} className="fr-2col">
+          <div style={{ marginTop: 36, background: 'linear-gradient(150deg, #eef5fb 0%, #a8c8e0 100%)', borderRadius: 22, padding: 22, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 22 }} className="fr-2col">
             <div style={{ backgroundColor: '#fff', borderRadius: 16, padding: '34px 30px', display: 'flex', flexDirection: 'column', gap: 26, justifyContent: 'center' }}>
               {c.dualMini.map((m) => (
                 <div key={m.title} style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>
@@ -513,7 +513,7 @@ export default function PackagePage({ content: c }: { content: PackageContent })
                   </li>
                 ))}
               </ul>
-              <div style={{ background: 'linear-gradient(150deg, #eaf0f6 0%, #eaf0f6 100%)', borderRadius: 12, padding: '18px 20px' }}>
+              <div style={{ background: 'linear-gradient(150deg, #eef5fb 0%, #a8c8e0 100%)', borderRadius: 12, padding: '18px 20px' }}>
                 <p style={{ color: TAUPE_DK, fontFamily: WIDE, fontWeight: 700, fontSize: 15, letterSpacing: '0.5px', textTransform: 'uppercase', margin: '0 0 12px' }}>
                   TOTAL VALUE: {c.dualTotalValue} TODAY: <span style={{ color: GREEN }}>{c.dualTodayPrice}</span>
                 </p>
@@ -544,7 +544,7 @@ export default function PackagePage({ content: c }: { content: PackageContent })
           </div>
 
           {/* pricing card */}
-          <div style={{ marginTop: 40, background: 'linear-gradient(150deg, #eef3f8 0%, #eaf0f6 100%)', borderRadius: 22, padding: 22, display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: 22, alignItems: 'stretch' }} className="fr-2col">
+          <div style={{ marginTop: 40, background: 'linear-gradient(150deg, #eef5fb 0%, #a8c8e0 100%)', borderRadius: 22, padding: 22, display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: 22, alignItems: 'stretch' }} className="fr-2col">
             <div style={{ backgroundColor: '#fff', borderRadius: 16, padding: '32px 30px' }}>
               <p style={{ color: TAUPE_DK, fontFamily: WIDE, fontWeight: 700, fontSize: 15, letterSpacing: '0.5px', textTransform: 'uppercase', margin: '0 0 8px' }}>{c.offer.tagline}</p>
               <p style={{ ...body, fontSize: 13.5, marginBottom: 18 }}>{c.offer.subline}</p>
@@ -571,7 +571,7 @@ export default function PackagePage({ content: c }: { content: PackageContent })
       {/* ===================== 9. WELLNESS CHAIN + MAP ===================== */}
       {!hidden.wellness && (
       <section style={{ ...CONTAINER, maxWidth: 1120, paddingTop: 40, paddingBottom: 56 }}>
-        <div style={{ position: 'relative', overflow: 'hidden', background: 'linear-gradient(160deg, #eef3f8 0%, #eaf0f6 100%)', borderRadius: 24, padding: '48px 48px 44px' }}>
+        <div style={{ position: 'relative', overflow: 'hidden', background: 'linear-gradient(160deg, #eef5fb 0%, #a8c8e0 100%)', borderRadius: 24, padding: '48px 48px 44px' }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={WELL_BG} alt="" aria-hidden style={{ position: 'absolute', left: '50%', top: '46%', transform: 'translate(-50%, -50%)', width: 560, opacity: 0.28, pointerEvents: 'none', zIndex: 0 }} />
           <div style={{ position: 'relative', zIndex: 1 }}>
@@ -651,7 +651,7 @@ export default function PackagePage({ content: c }: { content: PackageContent })
                     <span style={{ position: 'absolute', top: -14, left: 18, backgroundColor: '#fff', color: GREEN, fontFamily: WIDE, fontWeight: 600, fontSize: 12, letterSpacing: '0.5px', textTransform: 'uppercase', padding: '7px 18px', borderRadius: 30, border: `2px solid ${GREEN}`, whiteSpace: 'nowrap' }}>{e.tag}</span>
                   </div>
                   {/* gradient card sitting behind the lower part of the image */}
-                  <div style={{ background: 'linear-gradient(180deg, #eef4f9 0%, #eaf0f6 100%)', borderRadius: 16, marginTop: -70, padding: '92px 30px 30px', position: 'relative', zIndex: 1 }}>
+                  <div style={{ background: 'linear-gradient(180deg, #eef5fb 0%, #a8c8e0 100%)', borderRadius: 16, marginTop: -70, padding: '92px 30px 30px', position: 'relative', zIndex: 1 }}>
                     <h3 style={{ color: GREEN, fontFamily: SERIF, fontWeight: 400, fontSize: 20, lineHeight: 1.3, textTransform: 'uppercase', textAlign: 'center', margin: 0 }}>{e.title}</h3>
                     <div style={{ width: 90, height: 1, backgroundColor: '#cfc8bf', margin: '16px auto 20px' }} />
                     <p style={{ color: TAUPE_DK, fontFamily: WIDE, fontWeight: 700, fontSize: 12, letterSpacing: '1px', textTransform: 'uppercase', margin: '0 0 8px' }}>What it does</p>
