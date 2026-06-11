@@ -34,6 +34,7 @@ export type Treatment = {
   experience?: { title: string; steps: Step[] };
   prepAftercare?: { kicker?: string; title: string; intro?: string; cards: { icon?: string; label: string; lead: string; points: string[] }[] };
   patientVideos?: { title: string; intro?: string; videos: string[] };
+  trusted?: { title: string; subtitle?: string; asSeenOn?: string[]; images: string[]; points: { title: string; desc: string }[] };
   /** true when full content has not yet been extracted from the live page */
   pending?: boolean;
 };
@@ -127,6 +128,19 @@ export const TREATMENTS: Record<string, Treatment> = {
       title: "Real Patients, Real Confidence",
       intro: "Every face is unique. Every story is personal. Discover how our botox patients describe their journey to refined, natural results at Carisma Aesthetics in Malta.",
       videos: ["/assets/treatments/botox-video1.mp4", "/assets/treatments/botox-video2.mp4", "/assets/treatments/botox-video3.mp4"],
+    },
+    trusted: {
+      title: "Malta's Trusted Clinic for Botox",
+      subtitle: "Doctor-Led Botox in Malta",
+      asSeenOn: ["/assets/press/lovin-malta.jpeg", "/assets/press/malta-daily.png", "/assets/press/bay.jpeg", "/assets/press/times-of-malta.png", "/assets/press/malta-today.jpg"],
+      images: ["/assets/treatments/botox-hero.jpg", "/assets/treatments/botox-step1.png", "/assets/doctor-giovanni.png", "/assets/doctor-francesca.png"],
+      points: [
+        { title: "Medically Qualified Practitioners", desc: "Every botox treatment is performed by a qualified doctor." },
+        { title: "Advanced Facial Anatomy Expertise", desc: "Precision botox techniques tailored to your unique facial anatomy." },
+        { title: "Personalised Treatment Plans", desc: "Your botox plan is designed to enhance, never overcorrect." },
+        { title: "Clinically Approved Products", desc: "Clinically Approved Products — CE-marked, clinically approved botox and evidence-based protocols." },
+        { title: "Thousands of Treatments Performed", desc: "Experience and results you can trust, right here in Malta." },
+      ],
     },
   },
 
