@@ -82,13 +82,8 @@ function ContactItem({
 }
 
 export default function Footer() {
-  const isHome = usePathname() === "/";
-
   return (
     <footer>
-      {/* Book Your Consultation (same design) — homepage already has it mid-page */}
-      {!isHome && <BookConsultation />}
-
       {/* Doctors introduction (exact homepage design) */}
       <DoctorsSection />
 
