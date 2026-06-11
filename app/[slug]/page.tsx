@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import TreatmentPage from "@/components/TreatmentPage";
+import SnatchYourJawline from "@/components/packages/SnatchYourJawline";
 import { getTreatment, ALL_TREATMENT_SLUGS } from "@/lib/treatments";
 
 export function generateStaticParams() {
@@ -20,6 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
+  if (slug === "snatch-your-jawline") return <SnatchYourJawline />;
   const t = getTreatment(slug);
   if (!t) notFound();
   return <TreatmentPage t={t} />;
