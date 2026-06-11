@@ -74,10 +74,10 @@ export const TREATMENTS: Record<string, Treatment> = {
       intro:
         "Each botox treatment is carefully applied to specific anatomical areas by our doctors. Below are the most commonly treated zones at our Malta clinic.",
       areas: [
-        { zone: "Forehead", icon: "forehead", name: "Forehead Lines", desc: "Botox smooths horizontal lines across the forehead while preserving natural movement and expression" },
-        { zone: "Brow", icon: "brow", name: "Frown Lines", desc: "Botox softens the vertical creases between the brows that can create a tired or tense appearance." },
-        { zone: "Eyes", icon: "eyes", name: "Crow's Feet", desc: "Botox relaxes the fine lines at the outer corners of the eyes for a refreshed, rested look." },
-        { zone: "Neck", icon: "neck", name: "Nefertiti Lift", desc: "Botox refines the jawline and neck contour by relaxing the platysmal bands that pull downward." },
+        { zone: "Forehead", icon: "/assets/treatments/icon-forehead.png", name: "Forehead Lines", desc: "Botox smooths horizontal lines across the forehead while preserving natural movement and expression" },
+        { zone: "Brow", icon: "/assets/treatments/icon-brow.png", name: "Frown Lines", desc: "Botox softens the vertical creases between the brows that can create a tired or tense appearance." },
+        { zone: "Eyes", icon: "/assets/treatments/icon-eyes.png", name: "Crow's Feet", desc: "Botox relaxes the fine lines at the outer corners of the eyes for a refreshed, rested look." },
+        { zone: "Neck", icon: "/assets/treatments/icon-neck.png", name: "Nefertiti Lift", desc: "Botox refines the jawline and neck contour by relaxing the platysmal bands that pull downward." },
       ],
       additionalTitle: "Additional Botox Treatment Areas",
       additionalIntro: "These areas can also be treated with botox following a personalised consultation with one of our doctors.",

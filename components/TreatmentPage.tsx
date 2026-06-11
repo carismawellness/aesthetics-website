@@ -6,31 +6,12 @@ import BeforeAfterCarousel from "@/components/BeforeAfterCarousel";
 
 const ANNOUNCE = "⭐ Highest rated clinic in Malta ⭐ · Medically qualified doctors · #1 voted med-aesthetics clinic in malta";
 
-function PrecisionIcon({ name }: { name?: string }) {
-  const p = { width: 46, height: 46, viewBox: "0 0 48 48", fill: "none", stroke: "var(--teal)", strokeWidth: 1.5, strokeLinecap: "round" as const, strokeLinejoin: "round" as const };
-  switch (name) {
-    case "forehead":
-      return (<svg {...p}><path d="M15 31c0-9 4-15 9-15s9 6 9 15c0 5-3 8-9 8s-9-3-9-8z" /><line x1="20" y1="21" x2="28" y2="21" /><line x1="19" y1="25" x2="29" y2="25" /><line x1="20" y1="29" x2="28" y2="29" /></svg>);
-    case "brow":
-      return (<svg {...p}><path d="M11 29q5-4 10 0" /><path d="M25 29q5-4 10 0" /><line x1="29" y1="13" x2="37" y2="21" /><line x1="34" y1="11" x2="39" y2="16" /><line x1="31" y1="18" x2="33" y2="20" /></svg>);
-    case "eyes":
-      return (<svg {...p}><path d="M11 24c4-6 13-6 17 0c-4 6-13 6-17 0z" /><circle cx="19.5" cy="24" r="3" /><line x1="31" y1="20" x2="38" y2="18" /><line x1="32" y1="24" x2="39" y2="24" /><line x1="31" y1="28" x2="38" y2="30" /></svg>);
-    case "neck":
-      return (<svg {...p}><path d="M17 12q7 9 14 0" /><path d="M19 14v8q5 4 10 0v-8" /><line x1="22" y1="29" x2="22" y2="37" /><line x1="26" y1="29" x2="26" y2="37" /></svg>);
-    default:
-      return null;
-  }
-}
 
 function CheckIcon({ ok }: { ok: boolean }) {
-  return ok ? (
-    <span className="shrink-0 inline-flex items-center justify-center rounded-full" style={{ width: "24px", height: "24px", backgroundColor: "var(--teal)" }}>
-      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="3"><path d="M20 6L9 17l-5-5" /></svg>
-    </span>
-  ) : (
-    <span className="shrink-0 inline-flex items-center justify-center rounded-full" style={{ width: "24px", height: "24px", border: "1.5px solid #c9c9c9" }}>
-      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#9a9a9a" strokeWidth="3"><path d="M6 6l12 12M18 6L6 18" /></svg>
-    </span>
+  return (
+    <svg className="shrink-0" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" style={{ marginTop: "1px" }}>
+      {ok ? <path d="M5 12.5l4.5 4.5L19 7" /> : <path d="M7 7l10 10M17 7L7 17" />}
+    </svg>
   );
 }
 
@@ -223,7 +204,12 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
               <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4" style={{ marginTop: "44px" }}>
                 {t.precision.areas.map((a, i) => (
                   <Reveal key={a.name} delay={(i % 4) * 70} className="text-center" style={{ background: "linear-gradient(150deg, #ffffff 0%, #eef4f5 55%, #dde8ea 100%)", padding: "32px 24px", borderRadius: "10px 40px 10px 40px", border: "1px solid var(--line)", boxShadow: "0 12px 30px rgba(0,0,0,0.05)" }}>
-                    {a.icon && <div className="flex justify-center" style={{ marginBottom: "16px" }}><PrecisionIcon name={a.icon} /></div>}
+                    {a.icon && (
+                      <div className="flex justify-center" style={{ marginBottom: "16px" }}>
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src={a.icon} alt={a.zone ?? a.name} style={{ height: "70px", width: "auto" }} />
+                      </div>
+                    )}
                     {a.zone && <div className="font-display" style={{ fontSize: "11px", color: "var(--teal)", letterSpacing: "0.16em", marginBottom: "10px" }}>{a.zone}</div>}
                     <h3 className="font-display" style={{ fontSize: "15px", color: "var(--gold-deep)", letterSpacing: "0.05em", marginBottom: a.desc ? "12px" : "0" }}>{a.name}</h3>
                     {a.desc && <p style={{ fontSize: "13.5px", color: "var(--ink-soft)", lineHeight: 1.7 }}>{a.desc}</p>}
@@ -250,57 +236,67 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
       {t.suitability && (
         <section style={{ padding: "80px 0", backgroundColor: "var(--cream)" }}>
           <div className="container">
-            <h2 className="font-display text-center" style={{ fontSize: "clamp(20px,3vw,30px)", color: "var(--label)" }}>{t.suitability.title}</h2>
+            <h2 className="font-serif text-center" style={{ fontSize: "clamp(24px,3.4vw,38px)", color: "var(--gold)", letterSpacing: "0.04em" }}>{t.suitability.title}</h2>
             {t.suitability.intro && (
-              <p className="text-center mx-auto" style={{ fontSize: "15px", color: "var(--muted)", lineHeight: 1.8, marginTop: "16px", maxWidth: "760px" }}>{t.suitability.intro}</p>
+              <p className="text-center mx-auto" style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.8, marginTop: "18px", maxWidth: "880px" }}>{t.suitability.intro}</p>
             )}
-            <div className="grid gap-10 md:grid-cols-2" style={{ marginTop: "44px" }}>
-              {t.suitability.suitableFor && t.suitability.suitableFor.length > 0 && (
-                <Reveal className="bg-white rounded-lg" style={{ padding: "32px", border: "1px solid var(--line)" }}>
-                  <h3 className="font-display" style={{ fontSize: "14px", color: "var(--ink)", marginBottom: "18px", letterSpacing: "0.1em" }}>Suitable for you if</h3>
-                  <ul className="space-y-4">
-                    {t.suitability.suitableFor.map((s) => (
-                      <li key={s} className="flex items-start gap-3"><CheckIcon ok /><span style={{ fontSize: "15px", color: "var(--ink-soft)" }}>{s}</span></li>
+            <Reveal
+              className="mx-auto"
+              style={{ marginTop: "48px", maxWidth: "1040px", border: "1px solid var(--line)", borderRadius: "32px 90px 32px 90px", background: "linear-gradient(170deg,#ffffff 0%, #f1f6f7 60%, #e3ecee 100%)", overflow: "hidden" }}
+            >
+              <div className="grid md:grid-cols-2">
+                <div style={{ padding: "clamp(32px,3.5vw,48px)", borderRight: "1px solid var(--line)" }}>
+                  <h3 className="font-display" style={{ fontSize: "14px", color: "var(--label)", marginBottom: "26px", letterSpacing: "0.12em", textTransform: "uppercase" }}>Suitable for you if</h3>
+                  <ul className="space-y-6">
+                    {(t.suitability.suitableFor ?? []).map((s) => (
+                      <li key={s} className="flex items-start gap-4"><CheckIcon ok /><span style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.55 }}>{s}</span></li>
                     ))}
                   </ul>
-                </Reveal>
-              )}
-              {t.suitability.notIdeal && t.suitability.notIdeal.length > 0 && (
-                <Reveal delay={120} className="bg-white rounded-lg" style={{ padding: "32px", border: "1px solid var(--line)" }}>
-                  <h3 className="font-display" style={{ fontSize: "14px", color: "var(--ink)", marginBottom: "18px", letterSpacing: "0.1em" }}>May not be ideal if</h3>
-                  <ul className="space-y-4">
-                    {t.suitability.notIdeal.map((s) => (
-                      <li key={s} className="flex items-start gap-3"><CheckIcon ok={false} /><span style={{ fontSize: "15px", color: "var(--muted)" }}>{s}</span></li>
+                </div>
+                <div style={{ padding: "clamp(32px,3.5vw,48px)" }}>
+                  <h3 className="font-display" style={{ fontSize: "14px", color: "var(--label)", marginBottom: "26px", letterSpacing: "0.12em", textTransform: "uppercase" }}>May not be ideal if</h3>
+                  <ul className="space-y-6">
+                    {(t.suitability.notIdeal ?? []).map((s) => (
+                      <li key={s} className="flex items-start gap-4"><CheckIcon ok={false} /><span style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.55 }}>{s}</span></li>
                     ))}
                   </ul>
-                </Reveal>
-              )}
-            </div>
+                </div>
+              </div>
+            </Reveal>
           </div>
         </section>
       )}
 
-      {/* Treatment experience — timeline with per-step photo (matches live) */}
+      {/* Treatment experience — dashed timeline + STEP number + photo card */}
       {t.experience && (
         <section style={{ padding: "80px 0" }}>
           <div className="container">
-            <h2 className="font-display text-center" style={{ fontSize: "clamp(20px,3vw,30px)", color: "var(--label)", marginBottom: "48px" }}>{t.experience.title}</h2>
-            <div className="mx-auto" style={{ maxWidth: "920px" }}>
+            <h2 className="font-serif text-center" style={{ fontSize: "clamp(24px,3.4vw,38px)", color: "var(--gold)", letterSpacing: "0.06em", marginBottom: "56px" }}>{t.experience.title}</h2>
+            <div className="relative mx-auto" style={{ maxWidth: "760px" }}>
+              {/* continuous dashed timeline */}
+              <span aria-hidden style={{ position: "absolute", left: "22px", top: "46px", bottom: "46px", borderLeft: "1px dashed #c2d3d3", zIndex: 0 }} />
               {t.experience.steps.map((s, i) => (
-                <Reveal key={s.title || i} delay={i * 80} className="grid gap-6 md:grid-cols-2 items-center" style={{ marginBottom: i === t.experience!.steps.length - 1 ? 0 : "36px" }}>
-                  <div className="flex gap-5">
-                    <div className="shrink-0 font-display flex items-center justify-center rounded-full text-white" style={{ width: "44px", height: "44px", backgroundColor: "var(--teal)", fontSize: "16px" }}>{i + 1}</div>
-                    <div>
-                      {s.title && <h3 className="font-display" style={{ fontSize: "15px", color: "var(--ink)", marginBottom: s.desc ? "6px" : "0" }}>{s.title}</h3>}
-                      {s.desc && <p style={{ fontSize: "14.5px", color: "var(--muted)", lineHeight: 1.7 }}>{s.desc}</p>}
+                <Reveal key={s.title || i} delay={i * 80} className="relative grid items-center" style={{ gridTemplateColumns: "44px 84px minmax(0, 440px)", columnGap: "22px", marginBottom: i === t.experience!.steps.length - 1 ? 0 : "40px" }}>
+                  {/* timeline node */}
+                  <div className="flex justify-center" style={{ position: "relative", zIndex: 1 }}>
+                    <span style={{ width: "18px", height: "18px", borderRadius: "50%", background: "var(--teal)", boxShadow: "0 0 0 5px #dde8e8" }} />
+                  </div>
+                  {/* STEP + number */}
+                  <div className="text-center">
+                    <div className="font-serif" style={{ fontSize: "17px", color: "var(--gold)", letterSpacing: "0.14em" }}>STEP</div>
+                    <div className="font-serif" style={{ fontSize: "clamp(30px,4vw,46px)", color: "var(--gold)", opacity: 0.5, lineHeight: 1.1 }}>{i + 1}</div>
+                  </div>
+                  {/* photo card */}
+                  <div style={{ borderRadius: "20px 56px 20px 56px", background: "linear-gradient(180deg,#ffffff 0%, #e7eff0 100%)", padding: "10px", boxShadow: "0 16px 38px rgba(0,0,0,0.07)" }}>
+                    {s.image && (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img src={s.image} alt={s.title} style={{ display: "block", width: "100%", aspectRatio: "9 / 4", objectFit: "cover", borderRadius: "20px 56px 20px 56px" }} />
+                    )}
+                    <div style={{ padding: "16px clamp(14px,2vw,22px) 14px" }}>
+                      {s.title && <h3 className="font-display text-center" style={{ fontSize: "15px", color: "var(--label)", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: s.desc ? "12px" : "0" }}>{s.title}</h3>}
+                      {s.desc && <p style={{ fontSize: "14.5px", color: "var(--label)", lineHeight: 1.7 }}>{s.desc}</p>}
                     </div>
                   </div>
-                  {s.image && (
-                    <div className="overflow-hidden rounded-xl" style={{ border: "1px solid var(--line)" }}>
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={s.image} alt={s.title} className="w-full h-full object-cover" style={{ aspectRatio: "16/9" }} />
-                    </div>
-                  )}
                 </Reveal>
               ))}
             </div>
