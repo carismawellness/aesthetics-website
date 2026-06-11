@@ -476,11 +476,19 @@ function Trusted() {
           </div>
         </Reveal>
 
-        <div className="grid" style={{ gridTemplateColumns: "repeat(4, minmax(0,1fr))", gap: "32px" }}>
+        <div className="grid" style={{ gridTemplateColumns: "repeat(4, minmax(0,1fr))", gap: "28px" }}>
           {DIFFERENTIATORS.map((d, i) => (
             <Reveal key={d.label} delay={i * 80}>
-              <div className="text-center">
-                <Image src={d.icon} alt="" width={74} height={74} style={{ height: "62px", width: "auto", margin: "0 auto 18px" }} />
+              <div
+                style={{
+                  height: "100%",
+                  background: "linear-gradient(150deg, #ffffff 0%, #f1f5f5 100%)",
+                  borderRadius: "26px 26px 92px 26px",
+                  boxShadow: "0 18px 40px rgba(120,140,140,0.12)",
+                  padding: "30px 28px 38px",
+                }}
+              >
+                <Image src={d.icon} alt="" width={74} height={74} style={{ height: "58px", width: "auto", marginBottom: "22px" }} />
                 <p className="font-serif" style={{ color: "var(--gold)", fontSize: "13px", fontWeight: 700, letterSpacing: "0.06em", marginBottom: "12px", textTransform: "uppercase" }}>
                   {d.label}
                 </p>
