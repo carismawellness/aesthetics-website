@@ -50,10 +50,10 @@
   --gold: #b0a68f;          /* primary cool taupe-gold (headings, nav, prices) */
   --gold-deep: #b79e61;     /* richer gold for star accents */
   --label: #9b8d83;         /* muted label / bio taupe */
-  --teal: #96b2b2;          /* PRIMARY accent — buttons, highlights */
-  --teal-deep: #7f9f9f;     /* teal hover */
-  --teal-200: #d1dbdb;      /* light teal */
-  --teal-100: #e8eeee;      /* lightest teal tint */
+  --teal: #6391ab;          /* PRIMARY accent — Carisma Aesthetics BLUE (buttons, highlights) */
+  --teal-deep: #50798f;     /* blue hover */
+  --teal-200: #cad8e2;      /* light blue */
+  --teal-100: #eaeff3;      /* lightest blue tint */
   --ink: #0c0b0b;           /* near-black (footer / award) */
   --ink-soft: #2b2b2b;
   --muted: #8f8f8f;         /* secondary text */
