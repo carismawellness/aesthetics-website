@@ -134,13 +134,17 @@ export default function PicoLaserPage() {
               <GoogleRating />
             </Reveal>
             <Reveal delay={120}>
-              <div className="grid grid-cols-2 gap-4">
+              {/* layered, sage-framed collage (matches live) */}
+              <div className="relative mx-auto" style={{ maxWidth: "540px", aspectRatio: "1 / 1.04" }}>
+                {/* arm being lasered — top-left, large */}
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={`${A}/pico-hero.png`} alt="Pico laser tattoo removal" className="w-full rounded-xl col-span-2" style={{ display: "block", objectFit: "cover", aspectRatio: "16 / 10", boxShadow: "0 18px 44px rgba(0,0,0,0.14)" }} />
+                <img src={`${A}/pico-collage-arm.png`} alt="Pico laser tattoo removal in progress" style={{ position: "absolute", top: 0, left: 0, width: "60%", filter: "drop-shadow(0 16px 34px rgba(0,0,0,0.14))" }} />
+                {/* neck tattoo — right, offset down, overlapping */}
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={`${A}/pico-redefined.png`} alt="" className="w-full rounded-xl" style={{ display: "block", objectFit: "cover", aspectRatio: "1 / 1", boxShadow: "0 14px 34px rgba(0,0,0,0.12)" }} />
+                <img src={`${A}/pico-collage-neck.png`} alt="Tattoo before removal" style={{ position: "absolute", top: "16%", right: 0, width: "46%", filter: "drop-shadow(0 16px 34px rgba(0,0,0,0.16))" }} />
+                {/* before / after composite — bottom-left */}
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={`${A}/pico-fade.png`} alt="" className="w-full rounded-xl" style={{ display: "block", objectFit: "cover", aspectRatio: "1 / 1", boxShadow: "0 14px 34px rgba(0,0,0,0.12)" }} />
+                <img src={`${A}/pico-collage-ba.png`} alt="Tattoo fading before and after" style={{ position: "absolute", bottom: 0, left: "3%", width: "44%", filter: "drop-shadow(0 14px 30px rgba(0,0,0,0.16))" }} />
               </div>
             </Reveal>
           </div>
