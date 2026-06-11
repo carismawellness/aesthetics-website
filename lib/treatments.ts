@@ -35,6 +35,7 @@ export type Treatment = {
   prepAftercare?: { kicker?: string; title: string; intro?: string; cards: { icon?: string; label: string; lead: string; points: string[] }[] };
   patientVideos?: { title: string; intro?: string; videos: string[] };
   trusted?: { title: string; subtitle?: string; asSeenOn?: string[]; images: string[]; points: { title: string; desc: string }[] };
+  difference?: { kicker?: string; title: string; commitmentTitle: string; commitment: string[]; whyTitle: string; why: string[]; mapQuery: string };
   /** true when full content has not yet been extracted from the live page */
   pending?: boolean;
 };
@@ -141,6 +142,25 @@ export const TREATMENTS: Record<string, Treatment> = {
         { title: "Clinically Approved Products", desc: "Clinically Approved Products — CE-marked, clinically approved botox and evidence-based protocols." },
         { title: "Thousands of Treatments Performed", desc: "Experience and results you can trust, right here in Malta." },
       ],
+    },
+    difference: {
+      kicker: "The Carisma Difference",
+      title: "Malta's #1 Leading Wellness Chain",
+      commitmentTitle: "Our Commitment",
+      commitment: [
+        "Natural, refined botox results, never overdone, never frozen",
+        "Doctor-led treatments with advanced facial anatomy expertise",
+        "Safe, ethical care using clinically approved products",
+        "A personalised journey from consultation to aftercare",
+      ],
+      whyTitle: "Why Malta Chooses Carisma for Botox",
+      why: [
+        "Created by the team behind Malta's leading spa and medical aesthetics centres",
+        "Doctor-led botox treatments with a focus on safety and long-term results",
+        "A personalised journey from consultation to aftercare",
+        "Seamless experience with ongoing support and guidance",
+      ],
+      mapQuery: "Carisma Aesthetics, Malta",
     },
   },
 

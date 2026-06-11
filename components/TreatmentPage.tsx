@@ -423,6 +423,59 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
         </section>
       )}
 
+      {/* The Carisma Difference — commitment + why + map */}
+      {t.difference && (
+        <section style={{ padding: "10px 0 84px" }}>
+          <div className="container">
+            <div className="mx-auto" style={{ maxWidth: "1120px", borderRadius: "36px", background: "linear-gradient(160deg,#eef4f5 0%, #ffffff 50%, #e6eef0 100%)", border: "1px solid var(--line)", padding: "clamp(32px,4vw,60px)" }}>
+              {t.difference.kicker && (
+                <div className="text-center">
+                  <p className="font-display" style={{ fontSize: "11px", color: "var(--teal)", letterSpacing: "0.18em", textTransform: "uppercase" }}>{t.difference.kicker}</p>
+                  <div className="mx-auto" style={{ width: "80px", height: "1px", background: "var(--teal)", margin: "10px auto 0" }} />
+                </div>
+              )}
+              <h2 className="font-serif text-center" style={{ fontSize: "clamp(24px,3.4vw,38px)", color: "#8fa3a0", letterSpacing: "0.04em", marginTop: "20px" }}>{t.difference.title}</h2>
+
+              <div className="grid gap-12 lg:grid-cols-2 items-stretch" style={{ marginTop: "44px" }}>
+                {/* left: commitment + why */}
+                <div>
+                  <h3 className="font-display" style={{ fontSize: "13px", color: "var(--label)", letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: "18px" }}>{t.difference.commitmentTitle}</h3>
+                  <ul className="space-y-3">
+                    {t.difference.commitment.map((it) => (
+                      <li key={it} className="flex items-start gap-3"><span style={{ color: "var(--label)", fontSize: "12px", lineHeight: 1.7 }}>•</span><span style={{ fontSize: "14.5px", color: "var(--label)", lineHeight: 1.6 }}>{it}</span></li>
+                    ))}
+                  </ul>
+                  <h3 className="font-display" style={{ fontSize: "13px", color: "var(--label)", letterSpacing: "0.12em", textTransform: "uppercase", margin: "34px 0 18px" }}>{t.difference.whyTitle}</h3>
+                  <ul className="space-y-3">
+                    {t.difference.why.map((it) => (
+                      <li key={it} className="flex items-start gap-3"><span style={{ color: "var(--label)", fontSize: "12px", lineHeight: 1.7 }}>•</span><span style={{ fontSize: "14.5px", color: "var(--label)", lineHeight: 1.6 }}>{it}</span></li>
+                    ))}
+                  </ul>
+                </div>
+                {/* right: map */}
+                <div style={{ borderRadius: "44px 16px 44px 16px", overflow: "hidden", boxShadow: "0 16px 38px rgba(0,0,0,0.10)", minHeight: "380px" }}>
+                  <iframe
+                    title="Carisma Aesthetics location"
+                    src={`https://maps.google.com/maps?q=${encodeURIComponent(t.difference.mapQuery)}&z=14&output=embed`}
+                    loading="lazy"
+                    style={{ border: 0, width: "100%", height: "100%", minHeight: "380px", display: "block" }}
+                  />
+                </div>
+              </div>
+
+              {/* bottom: CTA + parking */}
+              <div className="flex flex-col sm:flex-row items-center justify-between gap-6" style={{ marginTop: "48px" }}>
+                <Link href="/consultation" className="btn btn-teal" style={{ minWidth: "300px", textAlign: "center" }}>Book Your Free Consultation</Link>
+                <div className="flex items-center gap-3">
+                  <svg width="30" height="30" viewBox="0 0 24 24" aria-hidden><path fill="none" stroke="var(--teal)" strokeWidth="1.4" d="M12 22s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z" /><text x="12" y="13.5" textAnchor="middle" fontSize="9" fill="var(--teal)" fontWeight="700">P</text></svg>
+                  <span className="font-display" style={{ fontSize: "13px", color: "var(--label)", letterSpacing: "0.08em", textTransform: "uppercase" }}>Complimentary On-Site Parking</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Closing CTA */}
       <section style={{ padding: "70px 0", textAlign: "center", backgroundColor: "var(--cream)" }}>
         <div className="container">
