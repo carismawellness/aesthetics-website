@@ -304,6 +304,43 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
         </section>
       )}
 
+      {/* Preparation & Aftercare — before / during / after cards */}
+      {t.prepAftercare && (
+        <section style={{ padding: "80px 0" }}>
+          <div className="container">
+            {t.prepAftercare.kicker && (
+              <p className="font-display text-center" style={{ fontSize: "11px", color: "var(--teal)", letterSpacing: "0.18em", textTransform: "uppercase", marginBottom: "14px" }}>{t.prepAftercare.kicker}</p>
+            )}
+            <h2 className="font-serif text-center" style={{ fontSize: "clamp(24px,3.4vw,38px)", color: "var(--gold)", letterSpacing: "0.04em" }}>{t.prepAftercare.title}</h2>
+            {t.prepAftercare.intro && (
+              <p className="text-center mx-auto" style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.8, marginTop: "18px", maxWidth: "760px" }}>{t.prepAftercare.intro}</p>
+            )}
+            <div className="grid gap-6 md:grid-cols-3" style={{ marginTop: "48px" }}>
+              {t.prepAftercare.cards.map((c, i) => (
+                <Reveal key={c.label} delay={(i % 3) * 90} style={{ borderRadius: "20px 56px 20px 56px", background: "linear-gradient(170deg,#ffffff 0%, #f1f6f7 60%, #e3ecee 100%)", border: "1px solid var(--line)", boxShadow: "0 12px 30px rgba(0,0,0,0.05)", padding: "clamp(26px,3vw,34px)" }}>
+                  <div className="flex items-center gap-3" style={{ marginBottom: "16px" }}>
+                    {c.icon && (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img src={c.icon} alt={c.label} style={{ height: "40px", width: "auto" }} />
+                    )}
+                    <span className="font-display" style={{ fontSize: "14px", color: "var(--label)", letterSpacing: "0.14em", textTransform: "uppercase" }}>{c.label}</span>
+                  </div>
+                  <p style={{ fontSize: "14.5px", color: "var(--label)", lineHeight: 1.65, marginBottom: "18px" }}>{c.lead}</p>
+                  <ul className="space-y-4">
+                    {c.points.map((p) => (
+                      <li key={p} className="flex items-start gap-3">
+                        <span style={{ color: "var(--teal)", fontSize: "12px", lineHeight: 1.7 }}>●</span>
+                        <span style={{ fontSize: "13.5px", color: "var(--label)", lineHeight: 1.55 }}>{p}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Closing CTA */}
       <section style={{ padding: "70px 0", textAlign: "center", backgroundColor: "var(--cream)" }}>
         <div className="container">

@@ -32,6 +32,7 @@ export type Treatment = {
   precision?: { title: string; intro?: string; areas?: AreaItem[]; additional?: string; additionalTitle?: string; additionalIntro?: string };
   suitability?: { title: string; intro?: string; suitableFor?: string[]; notIdeal?: string[] };
   experience?: { title: string; steps: Step[] };
+  prepAftercare?: { kicker?: string; title: string; intro?: string; cards: { icon?: string; label: string; lead: string; points: string[] }[] };
   /** true when full content has not yet been extracted from the live page */
   pending?: boolean;
 };
@@ -109,6 +110,16 @@ export const TREATMENTS: Record<string, Treatment> = {
         { title: "Structured Botox Plan", desc: "Your doctor designs a precise, conservative plan mapped to the areas you want to refine.", image: "/assets/treatments/botox-step2.png" },
         { title: "The Treatment", desc: "A quick, comfortable session with minimal downtime, performed by a qualified doctor.", image: "/assets/treatments/botox-step3.png" },
         { title: "Review & Aftercare", desc: "We review your results as they settle and guide you through simple aftercare.", image: "/assets/treatments/botox-step4.png" },
+      ],
+    },
+    prepAftercare: {
+      kicker: "Preparation & Aftercare",
+      title: "Your Session, Step by Step",
+      intro: "A smooth botox experience begins with a few simple steps. Here is what to know before, during, and after your session at our Malta clinic.",
+      cards: [
+        { icon: "/assets/treatments/icon-prep-glow.png", label: "Before", lead: "Arrive informed and ready for a comfortable session.", points: ["Share your concerns and medical history", "Disclose all medications and supplements", "Avoid alcohol and blood thinners for 24 hours", "Pause strenuous exercise the day before"] },
+        { icon: "/assets/treatments/icon-prep-exam.png", label: "During", lead: "Treatment is quick, precise, and guided by your comfort.", points: ["Targeted areas are marked before injection by your doctor", "Fine needles deliver precise, controlled doses of botox", "Mild pressure is normal — communicate freely", "Session takes 15–30 minutes"] },
+        { icon: "/assets/treatments/icon-prep-glow.png", label: "After", lead: "A few precautions help your results settle beautifully.", points: ["No touching or massaging for 24 hours", "Avoid exercise, alcohol, and saunas for 24 hours", "Stay upright for the first 4 hours", "Results appear in 3–5 days, full effect at 2 weeks"] },
       ],
     },
   },
