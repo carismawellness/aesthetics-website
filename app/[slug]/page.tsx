@@ -3,6 +3,7 @@ import TreatmentPage from "@/components/TreatmentPage";
 import LaserHairRemovalPage from "@/components/LaserHairRemovalPage";
 import ProtocolPage from "@/components/ProtocolPage";
 import MedicalWeightLossPage from "@/components/MedicalWeightLossPage";
+import PicoLaserPage from "@/components/PicoLaserPage";
 import { PROTOCOLS } from "@/lib/protocols";
 import PackageFunnel from "@/components/packages/PackageFunnel";
 import { PACKAGES } from "@/lib/packages";
@@ -38,6 +39,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
   if (slug === "laser-hair-removal-malta") return <LaserHairRemovalPage />;
   if (PROTOCOLS[slug]) return <ProtocolPage d={PROTOCOLS[slug]} />;
   if (slug === "medical-weight-loss") return <MedicalWeightLossPage />;
+  if (slug === "pico-laser-tattoo-removal") return <PicoLaserPage />;
   const t = getTreatment(slug);
   if (!t) notFound();
   return <TreatmentPage t={t} />;
