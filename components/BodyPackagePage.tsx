@@ -191,7 +191,7 @@ export default function PackagePage({ content: c }: { content: PackageContent })
     <div style={{ backgroundColor: '#ffffff', fontFamily: BODY }}>
       {/* ===================== 1. HERO ===================== */}
       <section style={{ ...CONTAINER, maxWidth: 1180, paddingTop: 24, paddingBottom: 24 }}>
-        <div style={{ backgroundImage: `url(${HERO_BG})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundColor: '#f1f0eb', borderRadius: 28, padding: '48px 52px' }}>
+        <div style={{ backgroundImage: `url(${HERO_BG})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundColor: '#eef1f7', borderRadius: 28, padding: '48px 52px' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1.05fr 0.95fr', gap: 48, alignItems: 'center' }} className="fr-hero-grid">
             <div>
               <Eyebrow align="left">{c.heroEyebrow}</Eyebrow>
@@ -232,7 +232,7 @@ export default function PackagePage({ content: c }: { content: PackageContent })
               {c.heroVideo ? (
                 <div style={{ position: 'relative', width: '100%', maxWidth: 360 }}>
                   <video ref={heroVideoRef} src={c.heroVideo} poster={c.heroImage} autoPlay muted loop playsInline aria-label={c.heroSubheading}
-                    style={{ width: '100%', aspectRatio: c.heroImageRatio ?? '398 / 682', objectFit: 'cover', borderRadius: 18, display: 'block', backgroundColor: '#f1ece2' }} />
+                    style={{ width: '100%', aspectRatio: c.heroImageRatio ?? '398 / 682', objectFit: 'cover', borderRadius: 18, display: 'block', backgroundColor: '#eaf0f6' }} />
                   <button
                     type="button"
                     onClick={toggleHeroSound}
@@ -414,7 +414,7 @@ export default function PackagePage({ content: c }: { content: PackageContent })
               <p style={{ color: TAUPE_DK, fontFamily: WIDE, fontWeight: 700, fontSize: 15, letterSpacing: '0.5px', textTransform: 'uppercase', margin: '0 0 20px', lineHeight: 1.4 }}>{c.eligIntro}</p>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
                 {c.areas.map((a, i) => (
-                  <div key={a} style={{ gridColumn: i === c.areas.length - 1 && c.areas.length % 2 === 1 ? '1 / -1' : 'auto', backgroundColor: '#f1ece2', borderRadius: 8, padding: '14px 16px', textAlign: 'center', color: TAUPE, fontFamily: WIDE, fontSize: 12.5, letterSpacing: '0.5px', textTransform: 'uppercase' }}>{a}</div>
+                  <div key={a} style={{ gridColumn: i === c.areas.length - 1 && c.areas.length % 2 === 1 ? '1 / -1' : 'auto', backgroundColor: '#eaf0f6', borderRadius: 8, padding: '14px 16px', textAlign: 'center', color: TAUPE, fontFamily: WIDE, fontSize: 12.5, letterSpacing: '0.5px', textTransform: 'uppercase' }}>{a}</div>
                 ))}
               </div>
             </div>
