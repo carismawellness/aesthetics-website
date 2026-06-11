@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import FaqAccordion, { type Faq } from "@/components/FaqAccordion";
+import MwlStepper from "@/components/MwlStepper";
 
 const A = "/assets/treatments";
 const CTA = "book your medical consultation";
@@ -27,11 +28,6 @@ const FEATURES = [
   { icon: "mwl-feat3.png", label: "Body composition, not weight", desc: "We track what actually matters: fat loss while protecting lean mass. You see progress through body composition trends, measurements, and strength progression — not just a number on the scale." },
   { icon: "mwl-feat4.png", label: "Programme, not prescription", desc: "An Ozempic or Mounjaro prescription alone is not a solution. Results come from phases, milestones, and a defined maintenance plan. We guide you through a structured start, progress targets, and an exit strategy." },
 ];
-
-const SUITABLE = ["You are 28–60 with 5–20 kg to lose", "Your body has changed with age, hormones or menopause", "You want a doctor-led approach with Ozempic or Mounjaro, not another fad diet", "You want to lose weight while still eating real food", "You are willing to follow a clear plan with weekly check-ins", "You are ready to invest time, energy and budget into your health", "Committed to attend all scheduled appointments and sessions"];
-const NOTSUITABLE = ["You are pregnant, or breastfeeding", "You want a rapid, extreme “crash diet” style solution", "You are not willing to follow a structured plan", "You cannot commit to weekly check-ins or scheduled appointments", "You want results without changing routines, eating habits, or lifestyle basics", "You are currently dealing with an unmanaged medical condition, or you’re on medication that requires medical clearance (we’ll screen this in the consultation)"];
-
-const CONSULT = ["Go through your goals, your reasons for changing and your timeline", "Review your health history, medications and past diets", "Look at your current capacity for food changes, movement and clinic visits", "Share real before and after cases that match your age, body type and situation", "Explain exactly how our Ozempic or Mounjaro programme works and what support you receive", "Tell you honestly whether GLP-1 medication is right for you"];
 
 const PROMISE_RULES = ["Attend all scheduled in clinic sessions and weekly check ins", "Follow your personalised food plan consistently and tell us when you struggle", "Complete your agreed physical activities & discuss any pain or obstacles", "Use only the treatments and medications recommended by our medical team", "Inform us of any major health (e.g., heart disease) or medication changes", "Avoid crash diets, extreme restriction or outside weight loss treatments that could affect your results"];
 
@@ -180,22 +176,11 @@ export default function MedicalWeightLossPage() {
           </div>
         </section>
 
-        {/* HOW IT WORKS — consultation */}
+        {/* HOW IT WORKS — 5-step programme stepper */}
         <section style={{ padding: "60px 0" }}>
           <div className="container">
             <Serif>how it works</Serif>
-            <div className="mx-auto" style={{ maxWidth: "900px", marginTop: "36px", background: "rgba(255,255,255,0.55)", border: "1px solid var(--line)", borderRadius: "20px", padding: "clamp(26px,3vw,40px)" }}>
-              <h3 className="font-display" style={{ fontSize: "16px", color: "var(--gold-deep)", letterSpacing: "0.04em", marginBottom: "16px" }}>Your Ozempic & Mounjaro consultation</h3>
-              <p style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.8 }}>Every programme starts with a full in-clinic consultation. This is where we determine if Ozempic or Mounjaro is clinically appropriate for you. Because we stand behind your results, we are selective about who we prescribe to.</p>
-              <ul className="space-y-3" style={{ margin: "20px 0" }}>
-                {CONSULT.map((c) => (<li key={c} className="flex items-start gap-3"><Dot /><span style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.6 }}>{c}</span></li>))}
-              </ul>
-              <p style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.8 }}>If we do not believe we can deliver real, measurable change, we will not enrol you. If we do accept you, it is because we are prepared to stand behind your results.</p>
-              <div className="grid gap-10 md:grid-cols-2" style={{ marginTop: "28px" }}>
-                <div><h4 className="font-display" style={{ fontSize: "13px", color: "var(--gold-deep)", letterSpacing: "0.08em", marginBottom: "16px" }}>SUITABLE FOR</h4><List items={SUITABLE} ok /></div>
-                <div><h4 className="font-display" style={{ fontSize: "13px", color: "var(--label)", letterSpacing: "0.08em", marginBottom: "16px" }}>NOT SUITABLE FOR</h4><List items={NOTSUITABLE} ok={false} /></div>
-              </div>
-            </div>
+            <MwlStepper />
           </div>
         </section>
 
