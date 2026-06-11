@@ -216,3 +216,8 @@ a {
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
 }
+/* FAQ accordion (native <details>) */
+summary { list-style: none; }
+summary::-webkit-details-marker { display: none; }
+.faq-plus { transition: transform 0.2s ease; }
+details[open] .faq-plus { transform: rotate(45deg); }

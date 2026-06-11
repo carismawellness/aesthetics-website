@@ -3,6 +3,7 @@ import type { Treatment } from "@/lib/treatments";
 import Reveal from "@/components/Reveal";
 import ConsultationForm from "@/components/ConsultationForm";
 import BeforeAfterCarousel from "@/components/BeforeAfterCarousel";
+import CompositeSlideshow from "@/components/CompositeSlideshow";
 
 const ANNOUNCE = "⭐ Highest rated clinic in Malta ⭐ · Medically qualified doctors · #1 voted med-aesthetics clinic in malta";
 
@@ -62,14 +63,31 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
               <h1 className="font-serif" style={{ fontSize: "clamp(28px,4.4vw,46px)", color: "var(--gold)", letterSpacing: "0.04em", textAlign: hasImage ? "left" : "center" }}>
                 {t.hero.title}
               </h1>
+              {t.hero.benefits && t.hero.benefits.length > 0 && (
+                <ul className="space-y-3" style={{ marginTop: "20px", maxWidth: hasImage ? "100%" : "560px", marginInline: hasImage ? undefined : "auto", textAlign: "left" }}>
+                  {t.hero.benefits.map((b) => (
+                    <li key={b} className="flex items-start gap-3">
+                      <span className="shrink-0 inline-flex items-center justify-center" style={{ width: "22px", height: "22px", borderRadius: "50%", background: "#e3eded", color: "var(--teal)", marginTop: "1px" }}>
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12.5l4.5 4.5L19 7" /></svg>
+                      </span>
+                      <span style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.5 }}>{b}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
               {t.hero.subtitle && (
-                <p style={{ fontSize: "15px", color: "var(--label)", textTransform: "uppercase", letterSpacing: "0.06em", marginTop: "14px", lineHeight: 1.5, textAlign: hasImage ? "left" : "center", maxWidth: hasImage ? undefined : "720px", marginInline: hasImage ? undefined : "auto" }}>
+                <p style={{ fontSize: "15px", color: "var(--label)", textTransform: "uppercase", letterSpacing: "0.06em", marginTop: "22px", lineHeight: 1.5, textAlign: hasImage ? "left" : "center", maxWidth: hasImage ? undefined : "720px", marginInline: hasImage ? undefined : "auto" }}>
                   {t.hero.subtitle}
                 </p>
               )}
               {t.hero.body && (
                 <p style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.8, marginTop: "18px", textAlign: hasImage ? "justify" : "center", maxWidth: hasImage ? undefined : "760px", marginInline: hasImage ? undefined : "auto" }}>
                   {t.hero.body}
+                </p>
+              )}
+              {t.hero.location && (
+                <p className="font-display" style={{ fontSize: "12px", color: "var(--teal)", letterSpacing: "0.14em", textTransform: "uppercase", marginTop: "14px", textAlign: hasImage ? "left" : "center" }}>
+                  {t.hero.location}
                 </p>
               )}
               {t.hero.prices && t.hero.prices.length > 0 && (
@@ -93,6 +111,11 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
               <div style={{ marginTop: "30px", textAlign: hasImage ? "left" : "center" }}>
                 <Link href="/consultation" className="btn btn-teal">{t.hero.cta ?? "BOOK YOUR CONSULTATION"}</Link>
               </div>
+              {t.hero.note && (
+                <p style={{ marginTop: "16px", fontSize: "12px", color: "var(--muted)", lineHeight: 1.6, textAlign: hasImage ? "left" : "center", maxWidth: hasImage ? undefined : "620px", marginInline: hasImage ? undefined : "auto" }}>
+                  {t.hero.note}
+                </p>
+              )}
               {t.hero.heroForm && (
                 <div style={{ marginTop: "22px", background: "#e6eded", borderRadius: "18px", padding: "clamp(22px,3vw,32px)" }}>
                   <ConsultationForm stacked submitLabel="Submit" />
@@ -173,6 +196,65 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
           )}
         </div>
       </section>
+
+      {/* Education — "what is all the hype?" + technology diagram + suitability chart */}
+      {t.education && (
+        <section style={{ padding: "80px 0", backgroundColor: "var(--cream)" }}>
+          <div className="container">
+            <h2 className="font-serif text-center" style={{ fontSize: "clamp(24px,3.4vw,38px)", color: "var(--gold)", letterSpacing: "0.04em", textTransform: "uppercase" }}>{t.education.title}</h2>
+            {t.education.subtitle && (
+              <p className="font-display text-center" style={{ fontSize: "14px", color: "var(--label)", letterSpacing: "0.14em", textTransform: "uppercase", marginTop: "12px" }}>{t.education.subtitle}</p>
+            )}
+            <div className="mx-auto" style={{ marginTop: "26px", maxWidth: "820px" }}>
+              {t.education.paragraphs.map((p, i) => (
+                <p key={i} style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.85, marginTop: i === 0 ? 0 : "16px", textAlign: "center" }}>{p}</p>
+              ))}
+            </div>
+            {t.education.image && (
+              <figure className="mx-auto text-center" style={{ marginTop: "48px", maxWidth: "760px" }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={t.education.image} alt={t.education.imageCaption ?? "Laser technology diagram"} className="w-full" style={{ display: "block", borderRadius: "14px" }} />
+                {t.education.imageCaption && (
+                  <figcaption style={{ fontSize: "13px", color: "var(--muted)", lineHeight: 1.6, marginTop: "14px" }}>{t.education.imageCaption}</figcaption>
+                )}
+              </figure>
+            )}
+            {t.education.chart && (
+              <figure className="mx-auto text-center" style={{ marginTop: "44px", maxWidth: "520px" }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={t.education.chart} alt={t.education.chartCaption ?? "Skin tone and hair colour suitability chart"} className="w-full" style={{ display: "block", borderRadius: "14px" }} />
+                {t.education.chartCaption && (
+                  <figcaption style={{ fontSize: "13px", color: "var(--muted)", lineHeight: 1.6, marginTop: "14px" }}>{t.education.chartCaption}</figcaption>
+                )}
+              </figure>
+            )}
+          </div>
+        </section>
+      )}
+
+      {/* Guarantee — "never shave again. guaranteed." + before/after slideshow */}
+      {t.guarantee && (
+        <section style={{ padding: "80px 0" }}>
+          <div className="container">
+            <h2 className="font-serif text-center" style={{ fontSize: "clamp(24px,3.4vw,38px)", color: "var(--gold)", letterSpacing: "0.04em", textTransform: "uppercase" }}>{t.guarantee.title}</h2>
+            <div className="mx-auto" style={{ marginTop: "24px", maxWidth: "780px" }}>
+              {t.guarantee.paragraphs.map((p, i) => (
+                <p key={i} style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.85, marginTop: i === 0 ? 0 : "16px", textAlign: "center" }}>{p}</p>
+              ))}
+            </div>
+            {t.guarantee.cta && (
+              <div className="text-center" style={{ marginTop: "30px" }}>
+                <Link href="/consultation" className="btn btn-teal">{t.guarantee.cta}</Link>
+              </div>
+            )}
+            {t.guarantee.beforeAfter && t.guarantee.beforeAfter.length > 0 && (
+              <div style={{ marginTop: "52px" }}>
+                <CompositeSlideshow images={t.guarantee.beforeAfter} title={t.guarantee.beforeAfterTitle} />
+              </div>
+            )}
+          </div>
+        </section>
+      )}
 
       {/* Before / after — real photo pair (matches live carousel) */}
       {(t.beforeAfter || t.beforeAfterTitle) && (
@@ -492,6 +574,59 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
         </section>
       )}
 
+      {/* Pricing grid — per-area pricing cards (rendered after the process timeline) */}
+      {t.pricingGrid && (
+        <section style={{ padding: "80px 0", backgroundColor: "var(--cream)" }}>
+          <div className="container">
+            <h2 className="font-serif text-center" style={{ fontSize: "clamp(24px,3.4vw,38px)", color: "var(--gold)", letterSpacing: "0.04em", textTransform: "uppercase" }}>{t.pricingGrid.title}</h2>
+            {t.pricingGrid.intro && (
+              <p className="text-center mx-auto" style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.8, marginTop: "16px", maxWidth: "760px" }}>{t.pricingGrid.intro}</p>
+            )}
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3" style={{ marginTop: "44px" }}>
+              {t.pricingGrid.items.map((it, i) => (
+                <Reveal key={it.name} delay={(i % 3) * 70} className="text-center" style={{ background: "linear-gradient(150deg, #ffffff 0%, #eef4f5 55%, #dde8ea 100%)", padding: "32px 26px", borderRadius: "10px 40px 10px 40px", border: "1px solid var(--line)", boxShadow: "0 12px 30px rgba(0,0,0,0.05)" }}>
+                  <h3 className="font-display" style={{ fontSize: "16px", color: "var(--gold-deep)", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "8px" }}>{it.name}</h3>
+                  <div className="font-display" style={{ fontSize: "13px", color: "var(--teal)", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: "16px" }}>{it.price}</div>
+                  <p style={{ fontSize: "13.5px", color: "var(--ink-soft)", lineHeight: 1.7 }}>{it.desc}</p>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Membership tiers — Bronze / Silver / Gold cards */}
+      {t.membership && (
+        <section style={{ padding: "80px 0" }}>
+          <div className="container">
+            <h2 className="font-serif text-center" style={{ fontSize: "clamp(24px,3.4vw,38px)", color: "var(--gold)", letterSpacing: "0.04em", textTransform: "uppercase" }}>{t.membership.title}</h2>
+            {t.membership.intro && (
+              <p className="text-center mx-auto" style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.8, marginTop: "18px", maxWidth: "880px" }}>{t.membership.intro}</p>
+            )}
+            <div className="grid gap-8 md:grid-cols-3 mx-auto" style={{ marginTop: "48px", maxWidth: "1040px" }}>
+              {t.membership.tiers.map((tier, i) => (
+                <Reveal key={tier.name} delay={(i % 3) * 90} className="text-center" style={{ background: "linear-gradient(170deg,#ffffff 0%, #f1f6f7 60%, #e3ecee 100%)", border: "1px solid var(--line)", borderRadius: "20px 56px 20px 56px", boxShadow: "0 12px 30px rgba(0,0,0,0.05)", padding: "clamp(24px,3vw,32px)" }}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src={tier.image} alt={tier.name} className="mx-auto" style={{ display: "block", width: "100%", maxWidth: "280px", borderRadius: "14px", boxShadow: "0 10px 26px rgba(0,0,0,0.12)" }} />
+                  <h3 className="font-display" style={{ fontSize: "16px", color: "var(--gold-deep)", letterSpacing: "0.12em", textTransform: "uppercase", marginTop: "22px" }}>{tier.name}</h3>
+                  <div className="flex items-center justify-center gap-2" style={{ marginTop: "14px" }}>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9" /><path d="M5 12.5l4.5 4.5L19 7" /></svg>
+                    <span style={{ fontSize: "14px", color: "var(--label)" }}>{tier.sessions}</span>
+                  </div>
+                  <div className="flex items-center justify-center gap-2" style={{ marginTop: "12px" }}>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" strokeWidth="1.7"><circle cx="12" cy="12" r="9" /><path d="M15 9a3.5 3.5 0 0 0-3-1.6c-1.9 0-3 1.3-3 2.6s1.1 2.6 3 2.6 3 1.3 3 2.6-1.1 2.6-3 2.6A3.5 3.5 0 0 1 9 15M12 6v12" /></svg>
+                    <span className="font-display" style={{ fontSize: "18px", color: "var(--teal)", letterSpacing: "0.06em" }}>{tier.price}</span>
+                  </div>
+                  <div style={{ marginTop: "22px" }}>
+                    <Link href="/consultation" className="btn btn-teal" style={{ fontSize: "12px" }}>book your session</Link>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Recommended with — cross-sell cards */}
       {t.recommended && (
         <section style={{ padding: "20px 0 84px" }}>
@@ -513,14 +648,25 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
         </section>
       )}
 
-      {/* Closing CTA */}
-      <section style={{ padding: "70px 0", textAlign: "center", backgroundColor: "var(--cream)" }}>
-        <div className="container">
-          <h2 className="font-display" style={{ fontSize: "clamp(20px,3vw,28px)", color: "var(--label)", marginBottom: "10px" }}>Ready to begin?</h2>
-          <p style={{ color: "var(--muted)", fontSize: "15px", marginBottom: "28px" }}>Book a free consultation with one of our medically qualified doctors.</p>
-          <Link href="/consultation" className="btn btn-teal">free consultation</Link>
-        </div>
-      </section>
+      {/* FAQ accordion */}
+      {t.faq && t.faq.length > 0 && (
+        <section style={{ padding: "70px 0 90px", backgroundColor: "var(--cream)" }}>
+          <div className="container">
+            <h2 className="font-serif text-center" style={{ fontSize: "clamp(24px,3.4vw,38px)", color: "var(--gold)", letterSpacing: "0.04em", marginBottom: "44px" }}>Frequently Asked Questions</h2>
+            <div className="mx-auto" style={{ maxWidth: "820px" }}>
+              {t.faq.map((f) => (
+                <details key={f.q} style={{ background: "#fff", border: "1px solid var(--line)", borderRadius: "12px", marginBottom: "12px", padding: "0 22px" }}>
+                  <summary className="font-display flex items-center justify-between gap-4" style={{ cursor: "pointer", padding: "18px 0", fontSize: "15px", color: "var(--gold-deep)", letterSpacing: "0.02em" }}>
+                    <span>{f.q}</span>
+                    <span className="faq-plus shrink-0" style={{ color: "var(--teal)", fontSize: "22px", lineHeight: 1 }}>+</span>
+                  </summary>
+                  <p style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.8, padding: "0 0 20px" }}>{f.a}</p>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
     </>
   );
 }

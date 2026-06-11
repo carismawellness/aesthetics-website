@@ -1,11 +1,7 @@
-"use client";
-
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { CONTACT } from "@/lib/site";
 import Reveal from "@/components/Reveal";
 import DoctorsSection from "@/components/home/DoctorsSection";
-import BookConsultation from "@/components/home/BookConsultation";
 
 function Ig({ size = 20 }: { size?: number }) {
   return (

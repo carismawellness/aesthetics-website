@@ -18,6 +18,12 @@ export type Treatment = {
     title: string;
     subtitle?: string;
     body?: string;
+    /** teal-dot benefit bullets shown under the hero copy (e.g. laser hair removal) */
+    benefits?: string[];
+    /** small disclaimer line beneath the hero CTA */
+    note?: string;
+    /** location strapline shown under the hero body */
+    location?: string;
     prices?: PriceItem[];
     cta?: string;
     image?: string;
@@ -27,6 +33,32 @@ export type Treatment = {
     heroForm?: boolean;
   };
   info?: InfoItem[];
+  /** "what is all the hype?" educational block with optional diagram + suitability chart */
+  education?: {
+    title: string;
+    subtitle?: string;
+    paragraphs: string[];
+    image?: string;
+    imageCaption?: string;
+    chart?: string;
+    chartCaption?: string;
+  };
+  /** guarantee band + before/after composite slideshow */
+  guarantee?: {
+    title: string;
+    paragraphs: string[];
+    cta?: string;
+    beforeAfter?: string[];
+    beforeAfterTitle?: string;
+  };
+  /** standalone pricing grid rendered after the process timeline */
+  pricingGrid?: { title: string; intro?: string; items: { name: string; price: string; desc: string }[] };
+  /** membership tier cards (Bronze / Silver / Gold) */
+  membership?: {
+    title: string;
+    intro?: string;
+    tiers: { image: string; name: string; sessions: string; price: string }[];
+  };
   beforeAfterTitle?: string;
   beforeAfter?: BeforeAfter[];
   precision?: { title: string; intro?: string; areas?: AreaItem[]; additional?: string; additionalTitle?: string; additionalIntro?: string };
@@ -38,6 +70,7 @@ export type Treatment = {
   difference?: { kicker?: string; title: string; commitmentTitle: string; commitment: string[]; whyTitle: string; why: string[]; mapQuery: string };
   bookingForm?: { title: string };
   recommended?: { title: string; items: { label: string; href: string; image: string }[] };
+  faq?: { q: string; a: string }[];
   /** true when full content has not yet been extracted from the live page */
   pending?: boolean;
 };
@@ -174,6 +207,18 @@ export const TREATMENTS: Record<string, Treatment> = {
         { label: "Mesotherapy", href: "/mesotherapy-malta", image: "/assets/treatments/rec-mesotherapy.jpg" },
       ],
     },
+    faq: [
+      { q: "What is botox and how does it work?", a: "Botox is a purified protein that temporarily relaxes specific facial muscles. By blocking the nerve signals that cause muscle contraction, it smooths dynamic wrinkles — such as forehead lines, frown lines, and crow's feet. The result is smoother skin and a naturally refreshed appearance, without altering your unique expressions. Botox has been used safely for over 30 years and is one of the most popular cosmetic treatments in Malta." },
+      { q: "What are the common cosmetic uses of botox?", a: "Botox treatments are designed to relax specific facial muscles, reducing the appearance of dynamic wrinkles and expression lines. Common treatment areas include forehead lines, frown lines between the eyebrows, and crow's feet around the eyes. Botox can also be used for a lip flip, gummy smile correction, chin dimpling, bunny lines, brow lift, jawline slimming, and the nefertiti neck lift — resulting in a smoother, more refreshed look." },
+      { q: "How long do botox results last?", a: "The effects of botox typically last between 3 to 4 months. As muscle activity gradually returns, expression lines may begin to reappear — at which point a follow-up treatment can help maintain results. With consistent botox treatments over time, some patients notice longer-lasting results as the targeted muscles become trained to relax." },
+      { q: "Are there any side effects or risks associated with botox?", a: "When performed by a qualified doctor, botox is very safe. However, as with any injectable procedure, some temporary side effects may occur — such as mild redness, swelling, or tenderness at the injection site. These typically resolve within a day or two. A thorough consultation with one of our doctors at Carisma ensures the treatment is appropriate for you and minimises any potential risks." },
+      { q: "Is botox painful?", a: "Most patients find botox very tolerable. The injections are performed using a fine needle, and the sensation is often described as a brief pinch. To ensure your comfort, a topical numbing cream can be applied beforehand if needed. Our doctors guide you through each step with care and precision — it is one of the reasons patients rate Carisma as the best botox clinic in Malta for comfort." },
+      { q: "How long does it take to see botox results?", a: "You may begin to notice a visible softening of lines within 3-5 days, with full botox results typically settling in after 7 to 14 days. The treated area gradually appears smoother and more relaxed, revealing a naturally refreshed look." },
+      { q: "Can botox be combined with other treatments?", a: "Yes, botox can be safely combined with other aesthetic treatments — such as dermal fillers, skin boosters, microneedling, chemical peels, or PRP — to enhance overall results. This allows multiple concerns to be addressed in a single, personalised plan. During your consultation at our Malta clinic, our doctors will tailor a treatment strategy that aligns with your goals and ensures optimal safety and results." },
+      { q: "Who is a suitable candidate for botox?", a: "Botox is suitable for most healthy adults looking to soften the appearance of dynamic lines and wrinkles. It is also popular for preventative use in patients in their twenties and thirties. However, botox may not be recommended for individuals who are pregnant, breastfeeding, or have certain medical conditions. A detailed consultation with one of our doctors is essential to ensure the treatment is both safe and right for you." },
+      { q: "How much does botox cost in Malta?", a: "Botox at Carisma starts from €59 for targeted treatments like a lip flip, gummy smile, or chin. Single-area treatments such as forehead lines, frown lines, or crow's feet start from €139. Full upper face botox or a nefertiti neck lift starts from €249. Hyperhidrosis treatment starts from €399. Book a free consultation at our St. Julian's clinic for a personalised quote." },
+      { q: "What should I avoid after botox?", a: "After your botox treatment, avoid strenuous exercise for 24 hours, do not lie flat for 4 hours, and avoid rubbing or massaging the treated areas for 24 hours. Also avoid excessive heat such as saunas for 48 hours. Most patients can return to normal activities immediately. Your doctor at Carisma will provide detailed aftercare instructions specific to the areas treated." },
+    ],
   },
 
   "lip-fillers-malta": {
@@ -418,19 +463,50 @@ export const TREATMENTS: Record<string, Treatment> = {
     category: "Body",
     hero: {
       title: "laser hair removal",
-      body: "World-renowned Alma Soprano for the first time in Malta",
-      cta: "book your session",
-    },
-    precision: {
-      title: "Laser Hair Removal pricing",
-      areas: [
-        { name: "Arms | from 35 EUR", desc: "Say goodbye to daily shaving and irritation. Our laser hair removal solutions ensure smooth skin from shoulder to fingertip, helping you maintain a well-groomed appearance with minimal effort." },
-        { name: "Bikini | from 39 EUR", desc: "Prepare for beach season all year round with our expert bikini laser treatments. We offer a variety of options, from a standard bikini line to a full Brazilian, ensuring optimal comfort and confidence." },
-        { name: "Legs | from 109 EUR", desc: "Enjoy effortlessly smooth legs with our professional laser hair removal services. Whether you prefer full or half-leg treatments, we provide long-lasting results, eliminating the need for frequent shaving." },
-        { name: "Face | from 25 EUR", desc: "Achieve a flawless, hair-free complexion with our professional laser hair removal services. We target unwanted facial hair, from eyebrows to the chin, ensuring smooth and long-lasting results." },
-        { name: "Body | from 49 EUR", desc: "Experience the confidence of a smooth, hair-free torso. Our advanced laser treatments effectively remove unwanted hair from various areas of the body, providing a sleek and polished look." },
-        { name: "Men's | from 25 EUR", desc: "Enhance your grooming routine with our customized laser hair removal solutions for men. We target common areas such as the back, shoulders, chest, and abs, ensuring a refined and polished appearance." },
+      benefits: [
+        "Painless sessions with patented ICE Plus™ Cooling",
+        "Permanently reduce 10-15% of hair per treatment",
+        "No more waxing, shaving, or ingrowns",
+        "Safe for all skin types - even tanned",
       ],
+      subtitle: "Permanently Smooth, Hair-Free Skin with our Virtually Painfree SHR® guarantee:",
+      body: "World-renowned Alma Soprano for the first time in Malta. Experience the triple wavelength laser hair removal difference.",
+      location: "intercontinental hotel | st. julian's",
+      note: "Minors may undergo this procedure only with the presence of a parent or legal guardian during the session.",
+      cta: "book your session",
+      image: "/assets/treatments/laser-hero.png",
+      imageRatio: "1812 / 2398",
+    },
+    info: [
+      { metric: "Procedure Time", detail: "15-30 Minutes" },
+      { metric: "Downtime", detail: "None" },
+      { metric: "Treatment Course", detail: "6-8 Sessions" },
+      { metric: "Results Visible In", detail: "2-3 Sessions" },
+      { metric: "Technology", detail: "Triple-Wavelength SHR®" },
+    ],
+    education: {
+      title: "laser hair removal In Malta",
+      subtitle: "what is all the hype?",
+      paragraphs: [
+        "Laser hair removal is a popular alternative to waxing and shaving. This is largely due to the fact that laser hair removal provides permanent results and is less expensive than maintaining a waxing and shaving routine for a lifetime.",
+        "Additionally, there's no recovery time needed after a treatment—so no more doing the waxing-waddle or battling razor burn.",
+        "Our treatments are safe, and all of our procedures are performed by Authorized Alma Practitioners. We use CE & FDA-cleared lasers that are tailored to your specific skin type & hair color.",
+      ],
+      image: "/assets/treatments/laser-comparison.png",
+      imageCaption: "Alma Soprano's triple-wavelength technology targets every depth of follicle — for the first time in Malta.",
+      chart: "/assets/treatments/laser-suitability-chart.png",
+      chartCaption: "Safe and effective across all skin tones and hair colours.",
+    },
+    guarantee: {
+      title: "never shave again. guaranteed.",
+      paragraphs: [
+        "We're so confident in our technology that we guarantee visible hair reduction after just 3 sessions — or your next one is free.",
+        "And when we say it's virtually painless, we mean it. Our patented SHR® and ICE Plus™ technology make this one of the most comfortable laser experiences available today.",
+        "Book your free consultation today and feel the difference for yourself.",
+      ],
+      cta: "book your session",
+      beforeAfterTitle: "Real results, real skin",
+      beforeAfter: ["/assets/treatments/laser-before-after.png"],
     },
     experience: {
       title: "our process",
@@ -439,6 +515,26 @@ export const TREATMENTS: Record<string, Treatment> = {
         { title: "Custom Treatment Plan", desc: "Based on your hair growth patterns and skin tone, we create a tailored plan designed to maximize results in the fewest sessions possible. We'll walk you through the timeline, pre- and post-care, and answer any questions. Most plans span 6–8 sessions spaced a few weeks apart." },
         { title: "Virtually Painless Laser Sessions", desc: "Using triple-wavelength technology and ICE Plus™ cooling, each session is designed to be comfortable and efficient. Treatments take as little as 15–30 minutes, with no downtime—you can return to your day immediately. Our system cools the skin to as low as –4°C to keep treatments truly pain-free." },
         { title: "Ongoing Monitoring & Adjustments", desc: "We check in throughout your treatment course to monitor progress and adjust settings for optimal results. Our goal is not just smooth skin—but results that last. Most clients report visible reduction after just 2–3 sessions." },
+      ],
+    },
+    pricingGrid: {
+      title: "Laser Hair Removal pricing",
+      items: [
+        { name: "arms", price: "from 35 EUR", desc: "Say goodbye to daily shaving and irritation. Our laser hair removal solutions ensure smooth skin from shoulder to fingertip, helping you maintain a well-groomed appearance with minimal effort." },
+        { name: "bikini", price: "from 39 EUR", desc: "Prepare for beach season all year round with our expert bikini laser treatments. We offer a variety of options, from a standard bikini line to a full Brazilian, ensuring optimal comfort and confidence." },
+        { name: "legs", price: "from 109 EUR", desc: "Enjoy effortlessly smooth legs with our professional laser hair removal services. Whether you prefer full or half-leg treatments, we provide long-lasting results, eliminating the need for frequent shaving." },
+        { name: "face", price: "from 25 EUR", desc: "Achieve a flawless, hair-free complexion with our professional laser hair removal services. We target unwanted facial hair, from eyebrows to the chin, ensuring smooth and long-lasting results." },
+        { name: "body", price: "FROM 49 EUR", desc: "Experience the confidence of a smooth, hair-free torso. Our advanced laser treatments effectively remove unwanted hair from various areas of the body, providing a sleek and polished look." },
+        { name: "men's", price: "from 25 EUR", desc: "Enhance your grooming routine with our customized laser hair removal solutions for men. We target common areas such as the back, shoulders, chest, and abs, ensuring a refined and polished appearance." },
+      ],
+    },
+    membership: {
+      title: "Laser Hair Removal Memberships",
+      intro: "Choose from three tailored membership tiers — Bronze, Silver, or Gold — based on your treatment duration and coverage needs. Each option offers six sessions at exclusive pricing, making it easier than ever to commit to smooth, hair-free skin on your terms.",
+      tiers: [
+        { image: "/assets/treatments/laser-member-bronze.png", name: "bronze membership", sessions: "6 Sessions | 15 min each", price: "139 EUR" },
+        { image: "/assets/treatments/laser-member-silver.png", name: "silver membership", sessions: "6 Sessions | 30 min each", price: "245 EUR" },
+        { image: "/assets/treatments/laser-member-gold.png", name: "gold membership", sessions: "6 Sessions | 60 min each", price: "399 EUR" },
       ],
     },
   },
