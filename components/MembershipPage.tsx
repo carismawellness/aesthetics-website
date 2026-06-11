@@ -169,20 +169,35 @@ export default function MembershipPage() {
       </section>
 
       {/* ===== EXCLUSIVE 10% MEMBER DISCOUNT ===== */}
-      <section style={{ padding: "60px 0" }}>
+      <section style={{ padding: "60px 0 36px" }}>
         <div className="container text-center">
           <Serif>exclusive 10% member discount</Serif><Rule />
-          <div className="grid gap-7 md:grid-cols-3 mx-auto" style={{ maxWidth: "1000px", marginTop: "44px" }}>
-            {SAVINGS.map((s, i) => (
-              <Reveal key={s.spend} delay={(i % 3) * 70} className="text-center" style={{ background: CARD, border: "1px solid var(--line)", borderRadius: "14px", padding: "30px 24px" }}>
-                <p className="font-display" style={{ fontSize: "13px", color: "var(--label)", letterSpacing: "0.1em", textTransform: "uppercase", lineHeight: 1.6 }}>{s.spend}<br /><span style={{ color: BLUE }}>spend on services</span></p>
-                <svg className="mx-auto" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke={BLUE} strokeWidth="1.6" style={{ margin: "16px auto" }}><path d="M6 9l6 6 6-6" /></svg>
-                <p className="font-display" style={{ fontSize: "15px", color: GOLD, letterSpacing: "0.06em", textTransform: "uppercase" }}>{s.save}<br /><span style={{ fontSize: "13px", color: "var(--label)" }}>annually</span></p>
-              </Reveal>
-            ))}
-          </div>
-          <p className="font-display" style={{ fontSize: "11px", color: "var(--muted)", letterSpacing: "0.1em", textTransform: "uppercase", marginTop: "24px" }}>*prices may vary over time</p>
         </div>
+      </section>
+      {/* full-width pale band with white cards */}
+      <div style={{ background: "#f6f5f3", padding: "44px 0" }}>
+        <div className="container">
+          <div className="grid gap-7 md:grid-cols-3 mx-auto" style={{ maxWidth: "1000px" }}>
+            {SAVINGS.map((s, i) => {
+              const [, amount] = s.spend.split(/(EUR.*)$/);
+              const [, saveAmt] = s.save.split(/(Eur.*)$/);
+              return (
+                <Reveal key={s.spend} delay={(i % 3) * 70} className="text-center" style={{ background: "#fff", borderRadius: "2px", padding: "34px 24px", boxShadow: "0 10px 30px rgba(0,0,0,0.05)" }}>
+                  <p className="font-display" style={{ fontSize: "14px", letterSpacing: "0.16em", textTransform: "uppercase", lineHeight: 1.7, color: "#c0bbb2" }}>
+                    with <span style={{ color: "#8a8278" }}>{amount}</span><br /><span style={{ fontSize: "13px", letterSpacing: "0.18em", color: "#b6b1a8" }}>spend on services</span>
+                  </p>
+                  <svg className="mx-auto" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke={GOLD} strokeWidth="1.4" style={{ margin: "18px auto" }}><path d="M6 9l6 6 6-6" /></svg>
+                  <p className="font-display" style={{ fontSize: "15px", letterSpacing: "0.1em", textTransform: "uppercase", lineHeight: 1.6, color: "#b6b1a8" }}>
+                    save <span style={{ color: "#8a8278" }}>{saveAmt}</span><br /><span style={{ color: "#b6b1a8" }}>annually</span>
+                  </p>
+                </Reveal>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+      <section style={{ padding: "26px 0 50px" }}>
+        <p className="font-display text-center" style={{ fontSize: "11px", color: "var(--muted)", letterSpacing: "0.14em", textTransform: "uppercase" }}>*prices may vary over time</p>
       </section>
 
       {/* ===== BENEFITS ===== */}
