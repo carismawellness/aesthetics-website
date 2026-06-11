@@ -108,6 +108,7 @@ export default function MedicalWeightLossPage() {
       <Clarity />
       <Trusted />
       <HowItWorks />
+      <ExpertCare />
       <Promise />
       <Safety />
       <Methodology />
@@ -548,17 +549,59 @@ function Eligibility() {
 
 /* ---------- S5 HOW IT WORKS — 5-step stepper ---------- */
 
-type StepPanel = { num: number; title: string; icon: string; body: ReactNode };
+type StepPanel = { num: number; title: string; icon: string; body: ReactNode; aside?: ReactNode };
 
-function CheckCol({ title, items, kind }: { title: string; items: string[]; kind: "check" | "cross" }) {
+function NumberedList({ items }: { items: string[] }) {
   return (
-    <div>
-      <h4 className="font-display" style={{ fontSize: "14px", color: "var(--ink)", marginBottom: "16px" }}>{title}</h4>
+    <ol style={{ listStyle: "none", margin: "4px 0 18px" }}>
+      {items.map((it, i) => (
+        <li key={it} className="flex items-start" style={{ gap: "10px", marginBottom: "11px" }}>
+          <span className="font-display" style={{ flexShrink: 0, color: "var(--gold)", fontWeight: 700, fontSize: "14px", lineHeight: 1.6 }}>{i + 1}.</span>
+          <span style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.65 }}>{it}</span>
+        </li>
+      ))}
+    </ol>
+  );
+}
+
+function CheckMark({ kind }: { kind: "check" | "cross" }) {
+  return kind === "check" ? (
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+      <path d="M4 12.5l5 5L20 6" />
+    </svg>
+  ) : (
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#b3a98f" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+      <path d="M6 6l12 12M18 6L6 18" />
+    </svg>
+  );
+}
+
+function SuitColumn({ kind, title, items, style }: { kind: "check" | "cross"; title: string; items: string[]; style?: React.CSSProperties }) {
+  return (
+    <div style={style}>
+      <div className="flex items-center" style={{ gap: "12px", marginBottom: "22px" }}>
+        <CheckMark kind={kind} />
+        <span className="font-display" style={{ fontSize: "14px", letterSpacing: "0.06em", textTransform: "uppercase", color: kind === "check" ? "var(--gold)" : "var(--label)" }}>{title}</span>
+      </div>
       <ul>
         {items.map((it) => (
-          <Bullet key={it} kind={kind}>{it}</Bullet>
+          <li key={it} className="flex items-start" style={{ gap: "10px", marginBottom: "13px" }}>
+            <span style={{ flexShrink: 0, color: "var(--gold)", fontSize: "12px", lineHeight: 1.6 }}>&bull;</span>
+            <span style={{ fontSize: "13.5px", color: "var(--label)", lineHeight: 1.6 }}>{it}</span>
+          </li>
         ))}
       </ul>
+    </div>
+  );
+}
+
+function Suitability({ suitable, notSuitable }: { suitable: string[]; notSuitable: string[] }) {
+  return (
+    <div style={{ background: "var(--white)", borderRadius: "14px", boxShadow: "0 14px 34px rgba(120,140,140,0.10)", padding: "clamp(24px,3vw,36px)", height: "100%" }}>
+      <div className="grid" style={{ gridTemplateColumns: "minmax(0,1fr) minmax(0,1fr)", gap: "0" }}>
+        <SuitColumn kind="check" title="Suitable for" items={suitable} style={{ paddingRight: "26px" }} />
+        <SuitColumn kind="cross" title="Not suitable for" items={notSuitable} style={{ paddingLeft: "26px", borderLeft: "1px solid var(--line)" }} />
+      </div>
     </div>
   );
 }
@@ -593,8 +636,7 @@ const STEPS: StepPanel[] = [
           is clinically appropriate for you. Because we stand behind your results, we are selective about who we
           prescribe to.
         </P>
-        <P bold>We will:</P>
-        <LeadList
+        <NumberedList
           items={[
             "Go through your goals, your reasons for changing and your timeline",
             "Review your health history, medications and past diets",
@@ -604,15 +646,15 @@ const STEPS: StepPanel[] = [
             "Tell you honestly whether GLP-1 medication is right for you",
           ]}
         />
-        <P bold>
+        <P>
           If we do not believe we can deliver real, measurable change, we will not enrol you. If we do accept you, it is
           because we are prepared to stand behind your results.
         </P>
-        <div className="grid" style={{ gridTemplateColumns: "repeat(2, minmax(0,1fr))", gap: "32px", marginTop: "26px" }}>
-          <CheckCol
-            kind="check"
-            title="SUITABLE FOR"
-            items={[
+      </>
+    ),
+    aside: (
+      <Suitability
+        suitable={[
               "You are 28–60 with 5–20 kg to lose",
               "Your body has changed with age, hormones or menopause",
               "You want a doctor-led approach with Ozempic or Mounjaro, not another fad diet",
@@ -621,21 +663,15 @@ const STEPS: StepPanel[] = [
               "You are ready to invest time, energy and budget into your health",
               "Committed to attend all scheduled appointments and sessions",
             ]}
-          />
-          <CheckCol
-            kind="cross"
-            title="NOT SUITABLE FOR"
-            items={[
+        notSuitable={[
               "You are pregnant, or breastfeeding",
               "You want a rapid, extreme “crash diet” style solution",
               "You are not willing to follow a structured plan",
               "You cannot commit to weekly check-ins or scheduled appointments",
               "You want results without changing routines, eating habits, or lifestyle basics",
               "You are currently dealing with an unmanaged medical condition, or you're on medication that requires medical clearance (we'll screen this in the consultation)",
-            ]}
-          />
-        </div>
-      </>
+        ]}
+      />
     ),
   },
   {
@@ -800,43 +836,6 @@ const STEPS: StepPanel[] = [
           Every treatment plan is based on your medical assessment and body goals, not a &ldquo;one area fits
           all&rdquo; offer.
         </P>
-
-        <div
-          className="grid items-center"
-          style={{ gridTemplateColumns: "minmax(0,300px) minmax(0,1fr)", gap: "32px", marginTop: "32px", paddingTop: "32px", borderTop: "1px solid var(--line)" }}
-        >
-          <Image
-            src={`${A}/drteebi-stepper.jpeg`}
-            alt="Dr Zaid Teebi — Ozempic and Mounjaro prescribing doctor at Carisma Aesthetics Malta"
-            width={448}
-            height={479}
-            style={{ width: "100%", height: "auto", borderRadius: "10px" }}
-          />
-          <div>
-            <h4 className="font-display" style={{ fontSize: "18px", color: "var(--ink)", marginBottom: "14px" }}>Dr Zaid Teebi</h4>
-            <P>
-              Dr Zaid Teebi is a medical doctor at Carisma with over 30+ years of clinical experience and an
-              evidence-based focus on GLP-1 prescribing and metabolic health. A graduate of Imperial College London, he
-              combines medical rigour with a calm, human approach. His Ozempic and Mounjaro consultations are structured
-              and personalised, with safety screening, clear expectations, and ongoing monitoring. Where clinically
-              appropriate, he prescribes GLP-1 support as part of a wider programme that includes nutrition structure,
-              habit-based strength training to protect metabolism, and a long-term maintenance plan.
-            </P>
-          </div>
-        </div>
-
-        <blockquote
-          className="font-serif"
-          style={{ fontSize: "clamp(18px,2.2vw,25px)", color: "var(--ink)", lineHeight: 1.5, textAlign: "center", margin: "36px auto 0", maxWidth: "860px" }}
-        >
-          &ldquo;Prescribing Ozempic or Mounjaro is the easy part. Building a programme that works after the medication
-          stops, that&rsquo;s the real work.&rdquo;
-          <footer style={{ fontSize: "14px", color: "var(--label)", marginTop: "14px", letterSpacing: "0.04em" }}>— Dr. Teebi</footer>
-        </blockquote>
-
-        <div className="text-center" style={{ marginTop: "32px" }}>
-          <Cta />
-        </div>
       </>
     ),
   },
@@ -845,12 +844,16 @@ const STEPS: StepPanel[] = [
 function HowItWorks() {
   const [active, setActive] = useState(0);
   return (
-    <section id="how-it-works" style={{ background: "var(--cream)", padding: "72px 0" }}>
+    <section id="how-it-works" style={{ background: "var(--white)", padding: "72px 0" }}>
       <div className="container">
-        <H2>how it works</H2>
+        <div className="text-center" style={{ marginBottom: "34px" }}>
+          <span className="font-display" style={{ display: "inline-block", fontSize: "15px", letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--label)", paddingBottom: "12px", borderBottom: "1px solid var(--line)" }}>
+            how it works
+          </span>
+        </div>
 
-        {/* tab row */}
-        <div className="flex items-center justify-center" style={{ gap: "10px", flexWrap: "wrap", marginBottom: "40px" }}>
+        {/* step tabs */}
+        <div className="flex items-center mx-auto" style={{ maxWidth: "1000px", justifyContent: "space-between", flexWrap: "wrap", gap: "12px", marginBottom: "26px", padding: "0 8px" }}>
           {STEPS.map((s, i) => {
             const on = i === active;
             return (
@@ -859,16 +862,16 @@ function HowItWorks() {
                 type="button"
                 onClick={() => setActive(i)}
                 aria-pressed={on}
-                className="font-display"
+                className="font-serif"
                 style={{
-                  fontSize: "12px",
-                  letterSpacing: "0.12em",
-                  padding: "11px 22px",
-                  borderRadius: "2px",
-                  border: `1px solid ${on ? "var(--teal)" : "var(--line)"}`,
-                  background: on ? "var(--teal)" : "var(--white)",
-                  color: on ? "var(--white)" : "var(--ink-soft)",
+                  background: "none",
                   cursor: "pointer",
+                  fontSize: "clamp(13px,1.6vw,16px)",
+                  letterSpacing: "0.18em",
+                  textTransform: "uppercase",
+                  color: on ? "var(--ink)" : "var(--label)",
+                  paddingBottom: "8px",
+                  borderBottom: on ? "2px solid var(--gold)" : "2px solid transparent",
                   transition: "all 0.2s ease",
                 }}
               >
@@ -878,32 +881,89 @@ function HowItWorks() {
           })}
         </div>
 
-        {/* panels — all in DOM; only active is visible */}
+        {/* gradient panel holding the white card(s); all panels in DOM, only active visible */}
         <Reveal key={active}>
           <div
+            className="mx-auto"
             style={{
-              background: "var(--white)",
-              border: "1px solid var(--line)",
-              borderRadius: "12px",
-              padding: "clamp(24px,4vw,44px)",
-              maxWidth: "1000px",
-              margin: "0 auto",
+              maxWidth: "1120px",
+              borderRadius: "18px",
+              padding: "clamp(16px,2.4vw,30px)",
+              background: "linear-gradient(180deg, #f3f7f7 0%, #d4e3e3 100%)",
             }}
           >
             {STEPS.map((s, i) => (
               <div key={s.num} hidden={i !== active}>
-                <div className="flex items-center" style={{ gap: "16px", marginBottom: "22px" }}>
-                  <Image src={s.icon} alt="" width={56} height={56} style={{ width: "48px", height: "48px", objectFit: "contain" }} />
-                  <div>
-                    <p className="font-display" style={{ fontSize: "12px", color: "var(--teal)", letterSpacing: "0.14em" }}>STEP {s.num}</p>
-                    <h3 className="font-display" style={{ fontSize: "clamp(17px,2.2vw,20px)", color: "var(--ink)" }}>{s.title}</h3>
+                <div
+                  className="grid"
+                  style={
+                    s.aside
+                      ? { gridTemplateColumns: "minmax(0,1.12fr) minmax(0,1fr)", gap: "22px", alignItems: "stretch" }
+                      : { gridTemplateColumns: "minmax(0,1fr)" }
+                  }
+                >
+                  <div style={{ background: "var(--white)", borderRadius: "14px", boxShadow: "0 14px 34px rgba(120,140,140,0.10)", padding: "clamp(24px,3vw,38px)" }}>
+                    <div className="flex items-center" style={{ gap: "16px", marginBottom: "20px" }}>
+                      <Image src={s.icon} alt="" width={56} height={56} style={{ width: "46px", height: "46px", objectFit: "contain", flexShrink: 0 }} />
+                      <h3 className="font-serif" style={{ fontSize: "clamp(16px,2vw,19px)", color: "var(--gold)", letterSpacing: "0.04em", textTransform: "uppercase", lineHeight: 1.3 }}>{s.title}</h3>
+                    </div>
+                    {s.body}
                   </div>
+                  {s.aside}
                 </div>
-                {s.body}
               </div>
             ))}
           </div>
         </Reveal>
+      </div>
+    </section>
+  );
+}
+
+/* ---------- S5b LED BY EXPERTISE (Dr Zaid Teebi) ---------- */
+
+function ExpertCare() {
+  return (
+    <section id="expert-care" style={{ background: "var(--white)", padding: "64px 0 80px" }}>
+      <div className="container">
+        <Reveal>
+          <h2 className="font-serif" style={{ textAlign: "center", fontSize: "clamp(22px,3.2vw,30px)", color: "var(--teal)", letterSpacing: "0.12em", textTransform: "uppercase", lineHeight: 1.4, marginBottom: "48px" }}>
+            led by expertise.<br />driven by results.
+          </h2>
+        </Reveal>
+        <div className="grid" style={{ gridTemplateColumns: "minmax(0,440px) minmax(0,1fr)", gap: "56px", alignItems: "center", maxWidth: "1080px", margin: "0 auto" }}>
+          <Reveal>
+            <Image
+              src={`${A}/drteebi-stepper.jpeg`}
+              alt="Dr Zaid Teebi — Ozempic and Mounjaro prescribing doctor at Carisma Aesthetics Malta"
+              width={448}
+              height={479}
+              style={{ width: "100%", height: "auto", borderRadius: "18px 18px 80px 18px" }}
+            />
+          </Reveal>
+          <Reveal delay={100}>
+            <h3 className="font-display" style={{ fontSize: "18px", color: "var(--teal)", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: "16px" }}>Dr Zaid Teebi</h3>
+            <P>
+              Dr Zaid Teebi is a medical doctor at Carisma with over 30+ years of clinical experience and an
+              evidence-based focus on GLP-1 prescribing and metabolic health. A graduate of Imperial College London, he
+              combines medical rigour with a calm, human approach.
+            </P>
+            <P>
+              His Ozempic and Mounjaro consultations are structured and personalised, with safety screening, clear
+              expectations, and ongoing monitoring. Where clinically appropriate, he prescribes GLP-1 support as part of
+              a wider programme that includes nutrition structure, habit-based strength training to protect metabolism,
+              and a long-term maintenance plan.
+            </P>
+            <blockquote className="font-serif" style={{ fontStyle: "italic", fontSize: "clamp(18px,2.4vw,24px)", color: "var(--label)", lineHeight: 1.5, margin: "8px 0 24px" }}>
+              &ldquo;Prescribing Ozempic or Mounjaro is the easy part. Building a programme that works after the
+              medication stops, that&rsquo;s the real work.&rdquo;
+              <span style={{ display: "block", fontStyle: "normal", fontSize: "15px", marginTop: "10px" }}>&mdash; Dr. Teebi</span>
+            </blockquote>
+            <a href={BOOK_HREF} target="_blank" rel="noopener noreferrer" className="font-display" style={{ display: "block", textAlign: "center", background: "var(--teal)", color: "#fff", padding: "16px", borderRadius: "8px", letterSpacing: "0.12em", textTransform: "uppercase", fontSize: "13px" }}>
+              book your medical consultation
+            </a>
+          </Reveal>
+        </div>
       </div>
     </section>
   );
@@ -916,35 +976,63 @@ function Promise() {
     <section id="promise" style={{ background: "var(--white)", padding: "80px 0" }}>
       <div className="container">
         <Reveal>
+          <div className="text-center" style={{ marginBottom: "12px" }}>
+            <span className="font-serif" style={{ display: "inline-block", fontSize: "13px", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--gold)", paddingBottom: "10px", borderBottom: "1px solid var(--line)" }}>
+              our promise
+            </span>
+          </div>
           <h2
             className="font-serif"
-            style={{ textAlign: "center", fontSize: "clamp(30px,5vw,48px)", color: "var(--ink)", textTransform: "lowercase", lineHeight: 1.25, marginBottom: "48px" }}
+            style={{ textAlign: "center", fontSize: "clamp(24px,3.8vw,36px)", color: "var(--teal)", textTransform: "uppercase", letterSpacing: "0.1em", lineHeight: 1.45, marginBottom: "48px" }}
           >
-            up to 1kg per week measured. verified. comitted.
+            up to 1kg per week<br />measured. verified. comitted.
           </h2>
         </Reveal>
-        <div className="grid" style={{ gridTemplateColumns: "minmax(0,1fr) minmax(0,1.2fr)", gap: "48px", alignItems: "start" }}>
+        <div className="grid" style={{ gridTemplateColumns: "minmax(0,1fr) minmax(0,1.25fr)", gap: "48px", alignItems: "start" }}>
           <Reveal>
-            <p className="font-serif" style={{ fontSize: "clamp(20px,2.6vw,26px)", color: "var(--ink)", lineHeight: 1.45 }}>
-              Only clinic in Malta to offer an extended care commitment on Ozempic &amp; Mounjaro programmes
-            </p>
+            <div
+              style={{
+                background: "linear-gradient(150deg, #ffffff 0%, #e6eeee 100%)",
+                borderRadius: "24px 24px 24px 96px",
+                boxShadow: "0 18px 40px rgba(120,140,140,0.12)",
+                padding: "clamp(30px,4vw,52px)",
+                minHeight: "300px",
+                display: "flex",
+                alignItems: "center",
+              }}
+            >
+              <p className="font-serif" style={{ fontSize: "clamp(19px,2.4vw,26px)", letterSpacing: "0.03em", textTransform: "uppercase", lineHeight: 1.45 }}>
+                <span style={{ color: "var(--teal)", fontWeight: 700 }}>Only clinic in Malta</span>{" "}
+                <span style={{ color: "var(--gold)" }}>to offer an extended care commitment on Ozempic &amp; Mounjaro programmes</span>
+              </p>
+            </div>
           </Reveal>
           <Reveal delay={100}>
-            <p style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.8, marginBottom: "24px" }}>
+            <p style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.8, marginBottom: "20px" }}>
               We are selective about who we prescribe Ozempic or Mounjaro to. We only accept those we genuinely believe
-              we can help reach their healthy weight. If you qualify and complete your programme and do not hit your
-              target weight, we will extend your programme at no extra fee until we achieve your desired result.
+              we can help reach their healthy weight.
             </p>
-            <p style={{ fontSize: "14px", color: "var(--ink-soft)", fontWeight: 600, marginBottom: "16px" }}>
+            <p style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.8, marginBottom: "24px" }}>
+              If you qualify and complete your programme and do not hit your target weight, we will extend your programme
+              at no extra fee until we achieve your desired result.
+            </p>
+            <p style={{ fontSize: "14px", color: "var(--gold)", fontWeight: 600, marginBottom: "16px" }}>
               *To ensure results remain measurable and medically valid, patients must:
             </p>
             <ul>
-              <Bullet kind="check">Attend all scheduled in clinic sessions and weekly check ins</Bullet>
-              <Bullet kind="check">Follow your personalised food plan consistently and tell us when you struggle</Bullet>
-              <Bullet kind="check">Complete your agreed physical activities &amp; discuss any pain or obstacles</Bullet>
-              <Bullet kind="check">Use only the treatments and medications recommended by our medical team</Bullet>
-              <Bullet kind="check">Inform us of any major health (e.g., heart disease) or medication changes</Bullet>
-              <Bullet kind="check">Avoid crash diets, extreme restriction or outside weight loss treatments that could affect your results</Bullet>
+              {[
+                "Attend all scheduled in clinic sessions and weekly check ins",
+                "Follow your personalised food plan consistently and tell us when you struggle",
+                "Complete your agreed physical activities & discuss any pain or obstacles",
+                "Use only the treatments and medications recommended by our medical team",
+                "Inform us of any major health (e.g., heart disease) or medication changes",
+                "Avoid crash diets, extreme restriction or outside weight loss treatments that could affect your results",
+              ].map((it) => (
+                <li key={it} className="flex items-start" style={{ gap: "10px", marginBottom: "12px" }}>
+                  <span style={{ flexShrink: 0, color: "var(--gold)", fontSize: "12px", lineHeight: 1.7 }}>&bull;</span>
+                  <span style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.6 }}>{it}</span>
+                </li>
+              ))}
             </ul>
           </Reveal>
         </div>
