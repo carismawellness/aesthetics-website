@@ -33,6 +33,7 @@ export type Treatment = {
   suitability?: { title: string; intro?: string; suitableFor?: string[]; notIdeal?: string[] };
   experience?: { title: string; steps: Step[] };
   prepAftercare?: { kicker?: string; title: string; intro?: string; cards: { icon?: string; label: string; lead: string; points: string[] }[] };
+  patientVideos?: { title: string; intro?: string; videos: string[] };
   /** true when full content has not yet been extracted from the live page */
   pending?: boolean;
 };
@@ -121,6 +122,11 @@ export const TREATMENTS: Record<string, Treatment> = {
         { icon: "/assets/treatments/icon-prep-exam.png", label: "During", lead: "Treatment is quick, precise, and guided by your comfort.", points: ["Targeted areas are marked before injection by your doctor", "Fine needles deliver precise, controlled doses of botox", "Mild pressure is normal — communicate freely", "Session takes 15–30 minutes"] },
         { icon: "/assets/treatments/icon-prep-glow.png", label: "After", lead: "A few precautions help your results settle beautifully.", points: ["No touching or massaging for 24 hours", "Avoid exercise, alcohol, and saunas for 24 hours", "Stay upright for the first 4 hours", "Results appear in 3–5 days, full effect at 2 weeks"] },
       ],
+    },
+    patientVideos: {
+      title: "Real Patients, Real Confidence",
+      intro: "Every face is unique. Every story is personal. Discover how our botox patients describe their journey to refined, natural results at Carisma Aesthetics in Malta.",
+      videos: ["/assets/treatments/botox-video1.mp4", "/assets/treatments/botox-video2.mp4", "/assets/treatments/botox-video3.mp4"],
     },
   },
 

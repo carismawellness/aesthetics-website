@@ -341,6 +341,34 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
         </section>
       )}
 
+      {/* Real patients — autoplay video reels */}
+      {t.patientVideos && (
+        <section style={{ padding: "80px 0" }}>
+          <div className="container">
+            <h2 className="font-serif text-center" style={{ fontSize: "clamp(24px,3.4vw,38px)", color: "var(--gold)", letterSpacing: "0.04em" }}>{t.patientVideos.title}</h2>
+            {t.patientVideos.intro && (
+              <p className="text-center mx-auto" style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.8, marginTop: "18px", maxWidth: "820px" }}>{t.patientVideos.intro}</p>
+            )}
+            <div className="grid gap-6 md:grid-cols-3 mx-auto" style={{ marginTop: "44px", maxWidth: "1040px" }}>
+              {t.patientVideos.videos.map((src, i) => (
+                <Reveal key={src} delay={(i % 3) * 90} style={{ borderRadius: "28px 64px 28px 64px", overflow: "hidden", boxShadow: "0 16px 38px rgba(0,0,0,0.10)" }}>
+                  {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
+                  <video
+                    src={src}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="w-full"
+                    style={{ display: "block", aspectRatio: "4 / 5", objectFit: "cover" }}
+                  />
+                </Reveal>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Closing CTA */}
       <section style={{ padding: "70px 0", textAlign: "center", backgroundColor: "var(--cream)" }}>
         <div className="container">
