@@ -58,6 +58,35 @@ Email: ${email || "—"}
 Treatment: ${treatment || "—"}
 Message: ${message || "—"}`;
 
+  // 0) Forward to GoHighLevel via an Inbound Webhook (set GHL_WEBHOOK_URL).
+  //    Primary delivery — the lead lands directly in the GHL pipeline.
+  const GHL_WEBHOOK_URL = process.env.GHL_WEBHOOK_URL;
+  if (GHL_WEBHOOK_URL) {
+    try {
+      const res = await fetch(GHL_WEBHOOK_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          first_name: firstName,
+          last_name: lastName,
+          full_name: `${firstName} ${lastName}`.trim(),
+          email,
+          phone,
+          interested_services: treatment,
+          treatment,
+          message,
+          source: "carismaaesthetics.com",
+          submitted_at: submission.receivedAt,
+        }),
+      });
+      if (!res.ok) throw new Error(`GHL webhook responded ${res.status}`);
+      return NextResponse.json({ ok: true, delivery: "ghl" });
+    } catch (err) {
+      console.error("[consultation] GHL webhook failed:", err);
+      // fall through to email / local capture so the lead is never lost
+    }
+  }
+
   // 1) Email via Resend if configured (no SDK needed — REST API).
   const RESEND_API_KEY = process.env.RESEND_API_KEY;
   if (RESEND_API_KEY) {
