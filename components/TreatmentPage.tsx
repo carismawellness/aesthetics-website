@@ -57,7 +57,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
           </p>
 
           <div style={t.hero.bgImage ? { borderRadius: "26px", backgroundImage: `linear-gradient(rgba(255,255,255,0.62), rgba(255,255,255,0.72)), url('${t.hero.bgImage}')`, backgroundSize: "cover", backgroundPosition: "center", padding: "clamp(24px,3.5vw,48px)" } : undefined}>
-          <div className={hasImage ? "grid gap-10 lg:grid-cols-2 items-start" : ""}>
+          <div className={hasImage ? "grid gap-8 lg:grid-cols-[1.15fr_0.85fr] items-start" : ""}>
             {/* Left: content */}
             <Reveal>
               <h1 className="font-serif" style={{ fontSize: "clamp(28px,4.4vw,46px)", color: "var(--gold)", letterSpacing: "0.04em", textAlign: hasImage ? "left" : "center" }}>
@@ -562,7 +562,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
       {t.bookingForm && (
         <section style={{ padding: "30px 0 84px" }}>
           <div className="container">
-            <div className="mx-auto" style={{ maxWidth: "1040px" }}>
+            <div className="mx-auto" style={{ maxWidth: "1120px" }}>
               <div style={{ background: "linear-gradient(180deg,#c0d2d2 0%, #9fb9b9 100%)", borderRadius: "18px 56px 18px 18px", padding: "clamp(26px,3vw,40px) 32px", textAlign: "center", position: "relative", zIndex: 1, boxShadow: "0 14px 30px rgba(0,0,0,0.08)" }}>
                 <h2 style={{ fontSize: "clamp(20px,3vw,33px)", color: "#fff", letterSpacing: "0.04em", textTransform: "uppercase", fontWeight: 400 }}>{t.bookingForm.title}</h2>
               </div>

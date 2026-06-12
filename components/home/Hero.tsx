@@ -18,15 +18,15 @@ export default function Hero() {
               <h1
                 className="font-serif"
                 style={{
-                  fontSize: "clamp(26px,3.4vw,40px)",
-                  color: "#9b8d83",
+                  fontSize: "clamp(24px,2.6vw,30px)",
+                  color: "#96b2b2",
                   textTransform: "uppercase",
                   letterSpacing: "0.06em",
                   fontWeight: 500,
                   marginBottom: "22px",
                 }}
               >
-                Personalised Form
+                personalised form
               </h1>
               <ConsultationForm />
             </div>
@@ -86,14 +86,16 @@ export default function Hero() {
               <div className="flex items-center gap-4" style={{ marginTop: "26px" }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="/assets/awards-logo.png" alt="Malta Healthcare, Wellness, Beauty & Best Spa Awards" style={{ height: "72px", width: "auto" }} />
-                <span className="font-display" style={{ fontSize: "16px", color: "var(--gold)", letterSpacing: "0.1em", lineHeight: 1.4 }}>#1 Voted Med-Aesthetics Clinic in Malta</span>
+                <span className="font-display" style={{ fontSize: "15px", fontWeight: 700, color: "var(--gold)", letterSpacing: "0.1em", lineHeight: 1.4 }}>#1 Voted Med-Aesthetics Clinic in Malta</span>
               </div>
 
-              {/* Scroll down (under the video) — centered */}
-              <div style={{ marginTop: "30px", textAlign: "center" }}>
-                <p className="font-display" style={{ fontSize: "14px", color: "var(--gold)", letterSpacing: "0.14em", lineHeight: 1.5 }}>Scroll down to learn more</p>
-                <div className="flex justify-center" style={{ width: "32px", height: "50px", border: "1.5px solid var(--gold)", borderRadius: "16px", margin: "16px auto 0", paddingTop: "9px" }}>
-                  <svg className="animate-bounce" width="12" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" strokeWidth="2"><path d="M12 4v12M6 12l6 6 6-6" /></svg>
+              {/* Scroll down (under the video) — left-aligned column, taupe */}
+              <div className="inline-flex flex-col items-center" style={{ marginTop: "30px" }}>
+                <p className="font-display text-center" style={{ fontSize: "15px", fontWeight: 700, color: "#9b8d83", letterSpacing: "0.14em", lineHeight: 1.5 }}>
+                  scroll down<br />to learn more
+                </p>
+                <div className="flex justify-center" style={{ width: "32px", height: "50px", border: "1.5px solid #9b8d83", borderRadius: "16px", marginTop: "16px", paddingTop: "9px" }}>
+                  <svg className="animate-bounce" width="12" height="14" viewBox="0 0 24 24" fill="none" stroke="#9b8d83" strokeWidth="2"><path d="M12 4v12M6 12l6 6 6-6" /></svg>
                 </div>
               </div>
             </div>

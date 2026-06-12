@@ -4,6 +4,7 @@ export const metadata: Metadata = {
   title: "Privacy Policy | Carisma Aesthetics",
 };
 
+/* Verbatim live copy — carismaaesthetics.com/privacy-policy */
 const SECTIONS = [
   {
     h: "Information Collection and Use",
@@ -19,18 +20,55 @@ const SECTIONS = [
   },
 ];
 
+const bodyStyle: React.CSSProperties = {
+  fontSize: "16px",
+  color: "var(--label)",
+  lineHeight: 1.5,
+  margin: "0 0 20px",
+};
+
 export default function PrivacyPolicy() {
   return (
-    <section style={{ padding: "70px 0" }}>
-      <div className="container" style={{ maxWidth: "820px" }}>
-        <h1 className="font-display" style={{ fontSize: "clamp(26px,4vw,38px)", color: "var(--ink)", marginBottom: "24px" }}>privacy policy</h1>
-        <p style={{ fontSize: "16px", color: "var(--ink-soft)", lineHeight: 1.8, marginBottom: "36px" }}>
+    <section style={{ padding: "56px 0 150px" }}>
+      <div className="container" style={{ maxWidth: "960px" }}>
+        <div style={{ textAlign: "center", marginBottom: "54px" }}>
+          <h1
+            className="font-serif"
+            style={{
+              display: "inline-block",
+              fontSize: "clamp(30px,4vw,42px)",
+              fontWeight: 400,
+              color: "var(--gold)",
+              textTransform: "uppercase",
+              letterSpacing: "0.06em",
+              lineHeight: 1.2,
+              paddingBottom: "14px",
+              borderBottom: "1px solid var(--gold)",
+            }}
+          >
+            privacy policy
+          </h1>
+        </div>
+        <p style={bodyStyle}>
           This privacy policy outlines how we collect, use, and protect personal data that patients provide us in relation to med-aesthetic services.
         </p>
         {SECTIONS.map((s) => (
-          <div key={s.h} style={{ marginBottom: "30px" }}>
-            <h2 className="font-display" style={{ fontSize: "16px", color: "var(--ink)", letterSpacing: "0.08em", marginBottom: "12px" }}>{s.h}</h2>
-            <p style={{ fontSize: "15.5px", color: "var(--muted)", lineHeight: 1.8 }}>{s.p}</p>
+          <div key={s.h}>
+            <h2
+              style={{
+                fontFamily: '"Roboto Local", Roboto, sans-serif',
+                fontSize: "22px",
+                fontWeight: 300,
+                color: "var(--gold)",
+                textTransform: "uppercase",
+                letterSpacing: "0.02em",
+                lineHeight: 1.35,
+                margin: "0 0 16px",
+              }}
+            >
+              {s.h}
+            </h2>
+            <p style={bodyStyle}>{s.p}</p>
           </div>
         ))}
       </div>

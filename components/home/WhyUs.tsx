@@ -9,16 +9,16 @@ export default function WhyUs() {
         <Reveal>
           <p
             className="font-display text-center mx-auto"
-            style={{ fontSize: "clamp(19px,2.6vw,28px)", letterSpacing: "0.08em", lineHeight: 1.5, maxWidth: "780px", marginBottom: "56px", color: "#bcb0a0" }}
+            style={{ fontSize: "clamp(19px,2.6vw,30px)", letterSpacing: "0.08em", lineHeight: 1.55, maxWidth: "780px", marginBottom: "56px", color: "var(--gold)", fontWeight: 400 }}
           >
-            <span style={{ color: "#8c7e6d", fontWeight: 700 }}>#1 Award Winning</span> Chain in Malta with
+            <span style={{ fontWeight: 700 }}>#1 award winning</span> chain in Malta with
             <br />
-            <span style={{ color: "#8c7e6d", fontWeight: 700 }}>30+ Years</span> in Wellness
+            <span style={{ fontWeight: 700 }}>30+ years</span> in wellness
           </p>
         </Reveal>
 
         {/* Card with offset double-frame + bottom notch + faint wave */}
-        <Reveal delay={120} className="relative mx-auto" style={{ maxWidth: "720px" }}>
+        <Reveal delay={120} className="relative mx-auto" style={{ maxWidth: "640px" }}>
           {/* offset frame peeking bottom-right */}
           <span aria-hidden style={{ position: "absolute", inset: 0, transform: "translate(16px, 16px)", border: "1px solid var(--gold)", zIndex: 0 }} />
 
@@ -28,7 +28,7 @@ export default function WhyUs() {
             <img src="/assets/wave-gold.png" alt="" aria-hidden style={{ position: "absolute", left: 0, bottom: "18px", width: "100%", height: "auto", opacity: 0.5, zIndex: 0, pointerEvents: "none" }} />
 
             <div className="relative" style={{ zIndex: 1 }}>
-              <h2 className="font-display text-center" style={{ fontSize: "clamp(20px,3vw,28px)", color: "var(--gold)", letterSpacing: "0.1em", fontWeight: 400 }}>
+              <h2 className="font-display text-center" style={{ fontSize: "clamp(20px,3vw,30px)", color: "var(--gold)", letterSpacing: "0.1em", fontWeight: 400 }}>
                 why carisma aesthetics ?
               </h2>
               <div className="mx-auto" style={{ width: "120px", height: "1px", background: "var(--gold)", margin: "18px auto 34px" }} />
@@ -36,7 +36,7 @@ export default function WhyUs() {
                 {WHY_POINTS.map((p) => (
                   <li key={p} className="flex items-start gap-3">
                     <span style={{ color: "var(--gold)", fontSize: "14px", lineHeight: 1.6 }}>●</span>
-                    <span className="font-display" style={{ fontSize: "13px", color: "var(--label)", letterSpacing: "0.06em", lineHeight: 1.5 }}>{p}</span>
+                    <span className="font-display" style={{ fontSize: "14px", fontWeight: 400, color: "var(--gold)", letterSpacing: "0.06em", lineHeight: 1.5 }}>{p}</span>
                   </li>
                 ))}
               </ul>
@@ -49,6 +49,11 @@ export default function WhyUs() {
             style={{ position: "absolute", left: "50%", bottom: "-9px", transform: "translateX(-50%)", width: 0, height: 0, borderLeft: "9px solid transparent", borderRight: "9px solid transparent", borderTop: "9px solid var(--gold)", zIndex: 2 }}
           />
         </Reveal>
+
+        {/* Live site carries this near-invisible SEO paragraph (8px, beige-on-beige) below the card */}
+        <p style={{ marginTop: "120px", fontSize: "8px", color: "#f6efe3", lineHeight: 1.5 }}>
+          Relieve excessive sweating with Botox. Dermal fillers, chemical peels, and botulinum toxin type injections enhance appearance. Slight headaches post-treatment subside quickly. Botox targets nerve impulses for natural-looking results. Treat various areas for overall facial harmony. Trust a professional for the best results. Say goodbye to sweating and embrace a revitalized appearance with Botox.
+        </p>
       </div>
     </section>
   );

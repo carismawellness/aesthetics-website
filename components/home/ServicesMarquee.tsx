@@ -7,10 +7,10 @@ export default function ServicesMarquee() {
     <section style={{ padding: "70px 0" }}>
       <div className="container">
         <Reveal>
-          <h2 className="font-display text-center" style={{ fontSize: "clamp(20px,3vw,30px)", color: "var(--gold)", fontWeight: 400, letterSpacing: "0.14em" }}>
+          <h2 className="font-display text-center" style={{ fontSize: "clamp(22px,3vw,35px)", color: "var(--gold)", fontWeight: 400, letterSpacing: "0.1em" }}>
             medical aesthetics procedures
           </h2>
-          <div className="mx-auto" style={{ width: "110px", height: "2px", background: "var(--teal)", marginTop: "16px", marginBottom: "48px" }} />
+          <div className="mx-auto" style={{ width: "205px", height: "1.5px", background: "#96b2b2", marginTop: "16px", marginBottom: "48px" }} />
         </Reveal>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4" style={{ columnGap: "20px", rowGap: "44px" }}>
@@ -24,7 +24,7 @@ export default function ServicesMarquee() {
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={s.image} alt={s.label} className="relative w-full h-full object-contain transition-transform duration-300 group-hover:scale-105" />
                 </div>
-                <span className="font-display" style={{ marginTop: "14px", fontSize: "12.5px", color: "var(--muted)", letterSpacing: "0.12em" }}>
+                <span className="font-display" style={{ marginTop: "14px", fontSize: "14px", color: "#9b8d83", letterSpacing: "0.1em" }}>
                   {s.label}
                 </span>
               </Link>

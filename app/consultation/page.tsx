@@ -20,7 +20,7 @@ export default function ConsultationPage() {
       </section>
 
       <section style={{ padding: "60px 0" }}>
-        <div className="container grid gap-12 lg:grid-cols-[1.7fr_1fr]">
+        <div className="container grid gap-12 lg:grid-cols-[2fr_1fr]">
           {/* Form */}
           <div>
             <h2 className="font-serif" style={{ fontSize: "26px", color: "var(--ink)", textTransform: "none", fontWeight: 500, marginBottom: "20px" }}>Personalised Form</h2>
