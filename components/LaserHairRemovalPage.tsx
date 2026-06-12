@@ -2,6 +2,7 @@ import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import CompositeSlideshow from "@/components/CompositeSlideshow";
 import FaqAccordion, { type Faq } from "@/components/FaqAccordion";
+import ConsultationForm from "@/components/ConsultationForm";
 
 const IMG = "/assets/treatments";
 
@@ -147,6 +148,12 @@ export default function LaserHairRemovalPage() {
                   </li>
                 ))}
               </ul>
+
+              {/* GHL consultation form — embedded in the hero, under the heading & benefits */}
+              <div style={{ marginTop: "30px", background: "var(--white)", borderRadius: "14px", padding: "20px clamp(16px,2.4vw,26px) 8px", boxShadow: "0 16px 40px rgba(0,0,0,0.10)" }}>
+                <p className="font-display" style={{ fontSize: "16px", color: "var(--gold-deep)", letterSpacing: "0.08em", textTransform: "uppercase", textAlign: "center", marginBottom: "6px" }}>book your free consultation</p>
+                <ConsultationForm />
+              </div>
             </Reveal>
 
             {/* RIGHT — video + image collage + captions */}
