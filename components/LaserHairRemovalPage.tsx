@@ -150,7 +150,7 @@ export default function LaserHairRemovalPage() {
               </ul>
 
               {/* GHL consultation form — embedded in the hero, under the heading & benefits */}
-              <div style={{ marginTop: "30px", background: "var(--white)", borderRadius: "14px", padding: "20px clamp(16px,2.4vw,26px) 8px", boxShadow: "0 16px 40px rgba(0,0,0,0.10)" }}>
+              <div style={{ marginTop: "30px" }}>
                 <p className="font-display" style={{ fontSize: "16px", color: "var(--gold-deep)", letterSpacing: "0.08em", textTransform: "uppercase", textAlign: "center", marginBottom: "6px" }}>book your free consultation</p>
                 <ConsultationForm />
               </div>
