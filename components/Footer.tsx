@@ -97,15 +97,15 @@ export default function Footer() {
 
       {/* Discover banners */}
       <section className="container" style={{ padding: "60px 20px" }}>
-        <Reveal className="grid gap-6 grid-cols-1 mx-auto" style={{ maxWidth: "920px" }}>
-          <a href="https://www.carismaspa.com" target="_blank" rel="noopener noreferrer" className="relative block overflow-hidden rounded-lg group">
+        <Reveal className="grid gap-6 grid-cols-1 mx-auto" style={{ maxWidth: "920px", minWidth: 0 }}>
+          <a href="https://www.carismaspa.com" target="_blank" rel="noopener noreferrer" className="relative block overflow-hidden rounded-lg group" style={{ minWidth: 0 }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/assets/banner-spa.png" alt="Discover our spas" className="w-full h-auto transition-transform duration-500 group-hover:scale-105" />
             <span className="font-display" style={{ position: "absolute", right: "22px", bottom: "20px", background: "rgba(255,255,255,0.92)", color: "var(--ink)", fontSize: "11px", letterSpacing: "0.12em", padding: "10px 18px", borderRadius: "4px", display: "inline-flex", alignItems: "center", gap: "8px" }}>
               Discover our Spa <span aria-hidden>→</span>
             </span>
           </a>
-          <a href="https://www.carismaslimming.com" target="_blank" rel="noopener noreferrer" className="relative block overflow-hidden rounded-lg group">
+          <a href="https://www.carismaslimming.com" target="_blank" rel="noopener noreferrer" className="relative block overflow-hidden rounded-lg group" style={{ minWidth: 0 }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/assets/banner-slimming.png" alt="Discover Body Slimming" className="w-full h-auto transition-transform duration-500 group-hover:scale-105" />
             <span className="font-display" style={{ position: "absolute", right: "22px", bottom: "20px", background: "rgba(255,255,255,0.92)", color: "var(--ink)", fontSize: "11px", letterSpacing: "0.12em", padding: "10px 18px", borderRadius: "4px", display: "inline-flex", alignItems: "center", gap: "8px" }}>
