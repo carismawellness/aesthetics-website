@@ -1,8 +1,16 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Script from "next/script";
+import { Pinyon_Script } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+
+const pinyonScript = Pinyon_Script({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-pinyon",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Carisma Aesthetics | #1 Voted Med-Aesthetics Clinic in Malta",
@@ -17,11 +25,11 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className="h-full antialiased">
+    <html lang="en" className={`h-full antialiased ${pinyonScript.variable}`}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap" />
+        {/* Preload critical self-hosted fonts */}
+        <link rel="preload" as="font" href="/assets/fonts/novecento-wide-book.woff2" type="font/woff2" crossOrigin="" />
+        <link rel="preload" as="font" href="/assets/fonts/trajan-pro.woff2" type="font/woff2" crossOrigin="" />
 
         {/* Google Tag Manager */}
         <Script id="gtm-head" strategy="afterInteractive">{`

@@ -269,7 +269,7 @@ export default function MembershipPage() {
             </span>
           </div>
           {/* gold script subtitle */}
-          <p style={{ fontFamily: "'Pinyon Script', cursive", fontSize: "clamp(34px,5vw,46px)", color: "var(--gold)", marginTop: "14px", lineHeight: 1.1 }}>Glow with Confidence</p>
+          <p style={{ fontFamily: "var(--font-pinyon), cursive", fontSize: "clamp(34px,5vw,46px)", color: "var(--gold)", marginTop: "14px", lineHeight: 1.1 }}>Glow with Confidence</p>
           {/* SIGN UP NOW on a centered line */}
           <Link href="/consultation" className="flex items-center" style={{ marginTop: "44px", gap: "22px" }}>
             <span style={{ flex: 1, height: "1px", background: "#cfcabf" }} />
