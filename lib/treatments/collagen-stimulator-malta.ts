@@ -57,7 +57,7 @@ const t: Treatment = {
     ],
   },
   experience: {
-    title: "YOUR TREATMENT EXPERIENCE",
+    title: "YOUR TREATMENT EXPERIENCE", cta: "BOOK YOUR FREE CONSULTATION",
     steps: [
       { title: "personalised consultation", desc: "We assess your facial anatomy, skin condition, medical history, and botox goals with one of our doctors.", image: "/assets/treatments/botox-step1.png" },
       { title: "Structured Plan", desc: "Your doctor designs a medically guided botox plan tailored to your facial structure and desired outcome.", image: "/assets/treatments/botox-step2.png" },
@@ -157,6 +157,7 @@ const t: Treatment = {
       { label: "PRP", href: "/prp-malta", image: "/assets/treatments/collagen-stimulator-malta-rec-prp.png" },
     ],
   },
+  faqTitle: "faqs about collagen stimulators in malta",
   faq: [
     { q: "What is a collagen stimulator treatment?", a: "Collagen stimulator treatment is a non-surgical procedure that stimulates the body's natural collagen production. It involves the use of specialized techniques or products to enhance skin elasticity, reduce wrinkles, and promote a more youthful appearance." },
     { q: "How does collagen stimulator treatment work?", a: "Collagen stimulator treatments work by introducing substances, such as injectable fillers or laser treatments, that stimulate the production of collagen in the deeper layers of the skin. This increased collagen production helps to improve skin texture, firmness, and reduce the signs of aging." },

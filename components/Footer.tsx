@@ -2,7 +2,8 @@ import Link from "next/link";
 import { CONTACT } from "@/lib/site";
 import Reveal from "@/components/Reveal";
 import DoctorsSection from "@/components/home/DoctorsSection";
-import GoogleReviews from "@/components/GoogleReviews";
+import Reviews from "@/components/home/Reviews";
+import AwardSection from "@/components/home/AwardSection";
 
 function Ig({ size = 20 }: { size?: number }) {
   return (
@@ -85,11 +86,14 @@ function ContactItem({
 export default function Footer() {
   return (
     <footer>
-      {/* Google reviews — live via Places API when configured, else curated real reviews */}
-      <GoogleReviews />
+      {/* Google reviews — static recreation of the live widget (real content) */}
+      <Reviews />
 
       {/* Doctors introduction (exact homepage design) */}
       <DoctorsSection />
+
+      {/* Award blurb — "#1 Voted Med-Aesthetics Clinic in Malta" (live shows it after the doctors on every page) */}
+      <AwardSection />
 
       {/* Discover banners */}
       <section className="container" style={{ padding: "60px 20px" }}>

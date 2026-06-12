@@ -14,6 +14,7 @@ const t: Treatment = {
     ],
     cta: "BOOK YOUR MICRONEEDLING+MESOTHERAPY NOW",
     image: "/assets/treatments/microneedling-malta-hero.png",
+    brandLogos: ["/assets/treatments/microneedling-malta-logo-bcn.png", "/assets/treatments/microneedling-malta-logo-fillmed.png"],
     imageRatio: "450 / 358",
     heroForm: true,
   },
@@ -157,6 +158,7 @@ const t: Treatment = {
       { label: "prp", href: "/prp-malta", image: "/assets/treatments/microneedling-malta-rec-prp.png" },
     ],
   },
+  faqTitle: "faqs about microneedling in malta",
   faq: [
     {
       q: "What is microneedling, and how does it work?",

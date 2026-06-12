@@ -13,6 +13,7 @@ const t: Treatment = {
     prices: [{ label: "1ml", price: "from €249/ml" }],
     cta: "BOOK YOUR SESSION NOW",
     image: "/assets/treatments/polynucleotides-salmon-dna-hero.webp",
+    brandLogos: ["/assets/treatments/polynucleotides-salmon-dna-ameela.png"],
     imageRatio: "450 / 358",
     heroForm: true,
   },
@@ -154,6 +155,7 @@ const t: Treatment = {
       { label: "PRp", href: "/prp-malta", image: "/assets/treatments/polynucleotides-salmon-dna-rec-prp.avif" },
     ],
   },
+  faqTitle: "faqs about polynucleotides in malta",
   faq: [
     { q: "What exactly are polynucleotides (Salmon DNA)?", a: "Polynucleotides are purified DNA molecules that stimulate skin repair, hydration, and collagen production. They work by helping your skin regenerate naturally — without altering your facial features." },
     { q: "Is the treatment safe?", a: "Yes. Polynucleotides are clinically proven, biocompatible, and widely used in regenerative aesthetics. They are injected in small amounts and are suitable even for delicate areas such as the under-eyes." },

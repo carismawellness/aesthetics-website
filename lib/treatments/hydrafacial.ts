@@ -190,6 +190,7 @@ const t: Treatment = {
       { label: "MFU Ultight", href: "/skin-tightening-1", image: "/assets/treatments/hydrafacial-rec-mfu.png" },
     ],
   },
+  faqTitle: "faqs about hydrafacial in malta",
   faq: [
     { q: "Who can benefit from Hydrafacial?", a: "Anyone looking to combat dryness, dullness, or dehydration in their skin can benefit from Hydrafacial. The treatments are suitable for various skin types and concerns." },
     { q: "How does Hydrafacial work?", a: "Hydrafacial work by delivering potent hydration deep into the skin using specialized techniques like dermal infusion, hyaluronic acid infusion, and custom serums. These treatments help improve skin texture, elasticity, and overall radiance." },

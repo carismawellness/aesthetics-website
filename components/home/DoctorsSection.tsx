@@ -30,7 +30,7 @@ export default function DoctorsSection() {
                 </h3>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="/assets/wave-gold.png" alt="" aria-hidden style={{ height: "18px", width: "auto", margin: "12px 0 14px", opacity: 0.85 }} />
-                <p style={{ fontSize: "14px", color: "#9b8d83", lineHeight: 1.85, textAlign: "justify" }}>{d.bio}</p>
+                <p style={{ fontSize: "14px", color: "#9b8d83", lineHeight: 1.85, textAlign: "justify" }}>{d.bio.map((p, j) => (<span key={j} style={{ display: "block", marginTop: j ? "14px" : 0 }}>{p}</span>))}</p>
               </div>
             </Reveal>
           );

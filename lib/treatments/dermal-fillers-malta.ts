@@ -15,7 +15,7 @@ const t: Treatment = {
     cta: "BOOK YOUR SESSION NOW",
     image: "/assets/treatments/dermal-fillers-malta-hero.png",
     imageRatio: "5 / 4",
-    productTabs: ["JUVÉDERM", "CROMA", "TEOXANE"],
+    productTabs: ["/assets/treatments/dermal-fillers-malta-logo-juvederm.png", "/assets/treatments/dermal-fillers-malta-logo-croma.png", "/assets/treatments/dermal-fillers-malta-logo-teoxane.png"],
     heroForm: true,
   },
   info: [
@@ -61,7 +61,7 @@ const t: Treatment = {
     ],
   },
   experience: {
-    title: "your treatment experience",
+    title: "your treatment experience", cta: "BOOK YOUR FREE CONSULTATION",
     steps: [
       { title: "personalised consultation", desc: "We assess your facial anatomy, skin condition, medical history, and botox goals with one of our doctors.", image: "/assets/treatments/botox-step1.png" },
       { title: "Structured Plan", desc: "Your doctor designs a medically guided botox plan tailored to your facial structure and desired outcome.", image: "/assets/treatments/botox-step2.png" },
@@ -165,6 +165,7 @@ const t: Treatment = {
       { label: "mesotherapy", href: "/mesotherapy-malta", image: "/assets/treatments/rec-mesotherapy.jpg" },
     ],
   },
+  faqTitle: "faqs about dermal fillers in malta",
   faq: [
     {
       q: "What are dermal fillers, and how do they work?",

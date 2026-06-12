@@ -15,6 +15,7 @@ const t: Treatment = {
     ],
     cta: "BOOK YOUR SESSION NOW",
     image: "/assets/treatments/profhilo-hero.avif",
+    brandLogos: ["/assets/treatments/profhilo-logo.png"],
     imageRatio: "450 / 358",
     bgImage: "/assets/treatments/profhilo-hero-bg.png",
     heroForm: true,
@@ -62,7 +63,7 @@ const t: Treatment = {
     ],
   },
   experience: {
-    title: "your treatment experience",
+    title: "your treatment experience", cta: "BOOK YOUR FREE CONSULTATION",
     steps: [
       { title: "personalised consultation", desc: "We assess your facial anatomy, skin condition, medical history, and botox goals with one of our doctors.", image: "/assets/treatments/profhilo-step1.png" },
       { title: "Structured Plan", desc: "Your doctor designs a medically guided botox plan tailored to your facial structure and desired outcome.", image: "/assets/treatments/profhilo-step2.png" },
@@ -160,6 +161,7 @@ const t: Treatment = {
   // NOTE: the live page's FAQ widget shows the "PICO Pigmentation" tab content by
   // default — these are the question/answer pairs actually visible on the live
   // /profhilo page, reproduced verbatim.
+  faqTitle: "faqs about profhilo in malta",
   faq: [
     { q: "What is Pico Laser pigmentation treatment?", a: "Pico Laser treatment uses ultra-short laser pulses to target unwanted pigment beneath the skin. The pigment is broken into smaller particles, which the body can gradually clear over time." },
     { q: "What pigmentation concerns can it treat?", a: "It may help improve the appearance of sun spots, freckles, age spots, post-inflammatory pigmentation, uneven skin tone, and selected types of melasma. Suitability is confirmed during consultation." },

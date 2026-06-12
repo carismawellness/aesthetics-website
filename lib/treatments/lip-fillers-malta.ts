@@ -15,6 +15,7 @@ const t: Treatment = {
     prices: [{ label: "1ml", price: "from €219/ml" }],
     cta: "BOOK YOUR SESSION NOW",
     image: "/assets/treatments/lip-fillers-malta-hero.png",
+    brandLogos: ["/assets/treatments/lip-fillers-malta-logo-teoxane.png", "/assets/treatments/lip-fillers-malta-logo-juvederm.png", "/assets/treatments/lip-fillers-malta-logo-croma.png"],
     imageRatio: "2494 / 1988",
     heroForm: true,
   },
@@ -61,7 +62,7 @@ const t: Treatment = {
     ],
   },
   experience: {
-    title: "your treatment experience",
+    title: "your treatment experience", cta: "BOOK YOUR FREE CONSULTATION",
     steps: [
       { title: "personalised consultation", desc: "We assess your facial anatomy, skin condition, medical history, and botox goals with one of our doctors.", image: "/assets/treatments/botox-step1.png" },
       { title: "Structured Plan", desc: "Your doctor designs a medically guided botox plan tailored to your facial structure and desired outcome.", image: "/assets/treatments/botox-step2.png" },
@@ -161,6 +162,7 @@ const t: Treatment = {
       { label: "collagen stimulator", href: "/collagen-stimulator-malta", image: "/assets/treatments/lip-fillers-malta-rec-collagen.png" },
     ],
   },
+  faqTitle: "faqs about lip-fillers in malta",
   faq: [
     { q: "What are lip fillers, and how do they work?", a: "Lip fillers are a cosmetic treatment that involves injecting a dermal filler, typically made of hyaluronic acid, into the lips to add volume and enhance their shape. Hyaluronic acid is a naturally occurring substance in the body that helps to hydrate and plump the skin, and it can be used to add volume to the lips, smooth fine lines and wrinkles around the mouth, and improve lip symmetry." },
     { q: "What are the benefits of lip fillers?", a: "Lip fillers can improve the appearance of the lips in many ways, including adding volume, enhancing their shape, smoothing fine lines and wrinkles around the mouth, and improving lip symmetry." },

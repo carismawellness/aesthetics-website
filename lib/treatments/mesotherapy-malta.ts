@@ -16,7 +16,7 @@ const t: Treatment = {
     image: "/assets/treatments/mesotherapy-malta-hero.png",
     imageRatio: "468 / 373",
     bgImage: "/assets/treatments/mesotherapy-malta-hero-bg.png",
-    productTabs: ["INSTITUTE BCN", "TEOXANE", "FILLMED", "CROMA"],
+    productTabs: ["/assets/treatments/mesotherapy-malta-logo-bcn.png", "/assets/treatments/mesotherapy-malta-logo-teoxane.png", "/assets/treatments/mesotherapy-malta-logo-fillmed.png", "/assets/treatments/mesotherapy-malta-logo-croma.png"],
     heroForm: true,
   },
   info: [
@@ -62,7 +62,7 @@ const t: Treatment = {
     ],
   },
   experience: {
-    title: "your treatment experience",
+    title: "your treatment experience", cta: "BOOK YOUR FREE CONSULTATION",
     steps: [
       { title: "personalised consultation", desc: "We assess your facial anatomy, skin condition, medical history, and botox goals with one of our doctors.", image: "/assets/treatments/botox-step1.png" },
       { title: "Structured Plan", desc: "Your doctor designs a medically guided botox plan tailored to your facial structure and desired outcome.", image: "/assets/treatments/botox-step2.png" },
@@ -166,6 +166,7 @@ const t: Treatment = {
       { label: "chemical peels", href: "/chemical-peels-malta", image: "/assets/treatments/mesotherapy-malta-rec-chemical-peels.avif" },
     ],
   },
+  faqTitle: "faqs about mesotherapy in malta",
   faq: [
     {
       q: "What is mesotherapy, and how does it work?",

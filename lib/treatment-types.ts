@@ -25,7 +25,10 @@ export type Treatment = {
     image?: string;
     imageRatio?: string;
     bgImage?: string;
+    /** brand tabs under the hero image; entries starting with "/" render as logo images */
     productTabs?: string[];
+    /** brand logo row rendered between the hero image and the treatment-info card */
+    brandLogos?: string[];
     heroForm?: boolean;
   };
   info?: InfoItem[];
@@ -59,13 +62,17 @@ export type Treatment = {
   beforeAfter?: BeforeAfter[];
   precision?: { title: string; intro?: string; areas?: AreaItem[]; additional?: string; additionalTitle?: string; additionalIntro?: string };
   suitability?: { title: string; intro?: string; suitableFor?: string[]; notIdeal?: string[] };
-  experience?: { title: string; steps: Step[] };
+  experience?: { title: string; steps: Step[]; cta?: string };
   prepAftercare?: { kicker?: string; title: string; intro?: string; cards: { icon?: string; label: string; lead: string; points: string[] }[] };
   patientVideos?: { title: string; intro?: string; videos: string[] };
   trusted?: { title: string; subtitle?: string; asSeenOn?: string[]; images: string[]; points: { title: string; desc: string }[] };
   difference?: { kicker?: string; title: string; commitmentTitle: string; commitment: string[]; whyTitle: string; why: string[]; mapQuery: string };
   bookingForm?: { title: string };
   recommended?: { title: string; items: { label: string; href: string; image: string }[] };
+  /** small kicker above the FAQ heading (e.g. "hair loss treatment FAQs") */
+  faqKicker?: string;
+  /** treatment-specific FAQ heading (falls back to "Frequently Asked Questions") */
+  faqTitle?: string;
   faq?: { q: string; a: string }[];
   /** true when full content has not yet been extracted from the live page */
   pending?: boolean;

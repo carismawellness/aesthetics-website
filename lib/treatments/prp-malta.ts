@@ -158,6 +158,7 @@ const t: Treatment = {
       { label: "mesotherapy", href: "/mesotherapy-malta", image: "/assets/treatments/rec-mesotherapy.jpg" },
     ],
   },
+  faqTitle: "faqs about prp treatment in malta",
   faq: [
     {
       q: "What is PRP, and how does it work?",

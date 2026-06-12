@@ -148,6 +148,8 @@ const t: Treatment = {
   },
 
   // Live section 10: "hair loss treatment FAQs / you asked we answered".
+  faqKicker: "hair loss treatment FAQs",
+  faqTitle: "you asked we answered",
   faq: [
     {
       q: "What exactly is the Hair Reset Program?",

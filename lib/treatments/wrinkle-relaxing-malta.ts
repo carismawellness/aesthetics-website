@@ -136,6 +136,7 @@ const t: Treatment = {
       { label: "Mesotherapy", href: "/mesotherapy-malta", image: "/assets/treatments/wrinkle-relaxing-malta-rec-mesotherapy.png" },
     ],
   },
+  faqTitle: "faqs about botox in malta",
   faq: [
     { q: "What is botox and how does it work?", a: "Botox is a purified protein that temporarily relaxes specific facial muscles. By blocking the nerve signals that cause muscle contraction, it smooths dynamic wrinkles, such as forehead lines, frown lines, and crow's feet. The result is smoother skin and a naturally refreshed appearance, without altering your unique expressions. Botox has been used safely for over 30 years and is one of the most popular cosmetic treatments in Malta." },
     { q: "What are the common cosmetic uses of botox?", a: "Botox treatments are designed to relax specific facial muscles, reducing the appearance of dynamic wrinkles and expression lines. Common treatment areas include forehead lines, frown lines between the eyebrows, and crow's feet around the eyes. Botox can also be used for a lip flip, gummy smile correction, chin dimpling, bunny lines, brow lift, jawline slimming, and the nefertiti neck lift, resulting in a smoother, more refreshed look." },

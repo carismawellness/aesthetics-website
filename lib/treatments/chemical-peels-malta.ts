@@ -14,7 +14,7 @@ const t: Treatment = {
     ],
     cta: "BOOK YOUR SESSION NOW",
     image: "/assets/treatments/chemical-peels-malta-hero.png",
-    productTabs: ["MED PEEL", "MESOESTETIC"],
+    productTabs: ["/assets/treatments/chemical-peels-malta-logo-medpeel.png", "/assets/treatments/chemical-peels-malta-logo-mesoestetic.png"],
     heroForm: true,
   },
   info: [
@@ -62,7 +62,7 @@ const t: Treatment = {
     ],
   },
   experience: {
-    title: "YOUR TREATMENT EXPERIENCE",
+    title: "YOUR TREATMENT EXPERIENCE", cta: "BOOK YOUR FREE CONSULTATION",
     steps: [
       { title: "Personalised Consultation", desc: "We assess your facial anatomy, skin condition, medical history, and botox goals with one of our doctors.", image: "/assets/treatments/botox-step1.png" },
       { title: "Structured Plan", desc: "Your doctor designs a medically guided botox plan tailored to your facial structure and desired outcome.", image: "/assets/treatments/botox-step2.png" },
@@ -166,6 +166,7 @@ const t: Treatment = {
       { label: "HydraFacial", href: "/hydrafacial", image: "/assets/treatments/chemical-peels-malta-rec-hydrafacial.png" },
     ],
   },
+  faqTitle: "faqs about chemical peels in malta",
   faq: [
     { q: "What is a chemical peel, and how does it work?", a: "A chemical peel is a cosmetic procedure that involves applying a solution to the skin to exfoliate the outermost layer, promoting cell turnover and revealing smoother, more radiant skin. The solution contains various types and strengths of acids, such as alpha-hydroxy acid (AHA), beta-hydroxy acid (BHA), or trichloroacetic acid (TCA), which penetrate the skin at different levels depending on the strength and type of peel used." },
     { q: "What are the benefits of a chemical peel?", a: "A chemical peel can improve the appearance of the skin in many ways, including reducing the appearance of fine lines and wrinkles, improving skin texture and tone, reducing hyperpigmentation and dark spots, and minimizing the appearance of acne scars." },

@@ -136,7 +136,22 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                 {t.hero.productTabs && t.hero.productTabs.length > 0 && (
                   <div className="flex gap-3" style={{ marginTop: "14px" }}>
                     {t.hero.productTabs.map((tab) => (
-                      <span key={tab} className="font-display" style={{ flex: 1, textAlign: "center", padding: "11px 14px", border: "1px solid var(--line)", borderRadius: "6px", fontSize: "12px", letterSpacing: "0.1em", color: "var(--ink)", background: "var(--white)" }}>{tab}</span>
+                      <span key={tab} className="font-display inline-flex items-center justify-center" style={{ flex: 1, textAlign: "center", padding: "11px 14px", border: "1px solid var(--line)", borderRadius: "6px", fontSize: "12px", letterSpacing: "0.1em", color: "var(--ink)", background: "var(--white)" }}>
+                        {tab.startsWith("/") ? (
+                          // eslint-disable-next-line @next/next/no-img-element
+                          <img src={tab} alt="" style={{ height: "30px", width: "auto", maxWidth: "100%", objectFit: "contain" }} />
+                        ) : (
+                          tab
+                        )}
+                      </span>
+                    ))}
+                  </div>
+                )}
+                {t.hero.brandLogos && t.hero.brandLogos.length > 0 && (
+                  <div className="flex items-center justify-center" style={{ marginTop: "14px", gap: "26px", background: "var(--white)", border: "1px solid var(--line)", borderRadius: "10px", padding: "14px 18px" }}>
+                    {t.hero.brandLogos.map((logo) => (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img key={logo} src={logo} alt="" style={{ height: "28px", width: "auto", objectFit: "contain" }} />
                     ))}
                   </div>
                 )}
@@ -419,6 +434,11 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                 </Reveal>
               ))}
             </div>
+            {t.experience!.cta && (
+              <div className="text-center" style={{ marginTop: "48px" }}>
+                <Link href="/consultation" className="btn btn-teal">{t.experience!.cta}</Link>
+              </div>
+            )}
           </div>
         </section>
       )}
@@ -431,7 +451,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
             {t.patientVideos.intro && (
               <p className="text-center mx-auto" style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.8, marginTop: "18px", maxWidth: "820px" }}>{t.patientVideos.intro}</p>
             )}
-            <div className="grid gap-6 md:grid-cols-3 mx-auto" style={{ marginTop: "44px", maxWidth: "1040px" }}>
+            <div className={`grid gap-6 mx-auto ${t.patientVideos.videos.length === 1 ? "" : "md:grid-cols-3"}`} style={{ marginTop: "44px", maxWidth: t.patientVideos.videos.length === 1 ? "340px" : "1040px" }}>
               {t.patientVideos.videos.map((src, i) => (
                 <Reveal key={src} delay={(i % 3) * 90} style={{ borderRadius: "28px 64px 28px 64px", overflow: "hidden", boxShadow: "0 16px 38px rgba(0,0,0,0.10)" }}>
                   {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
@@ -473,18 +493,25 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
 
             <Reveal className="mx-auto" style={{ marginTop: "40px", maxWidth: "1100px", borderRadius: "32px", background: "linear-gradient(135deg,#eef4f5 0%, #ffffff 45%, #e6eef0 100%)", border: "1px solid var(--line)", padding: "clamp(28px,4vw,52px)" }}>
               <div className="grid gap-10 lg:grid-cols-2 items-center">
-                {/* image cluster — flower of 4 leaf-corner photos */}
-                <div className="grid grid-cols-2" style={{ gap: "10px", maxWidth: "470px" }}>
-                  {t.trusted.images.slice(0, 4).map((src, i) => {
-                    const radii = ["64px 16px 16px 16px", "16px 64px 16px 16px", "16px 16px 16px 64px", "16px 16px 64px 16px"];
-                    return (
-                      <div key={src} className="overflow-hidden" style={{ borderRadius: radii[i] }}>
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img src={src} alt="" style={{ display: "block", width: "100%", aspectRatio: "1 / 1", objectFit: "cover" }} />
-                      </div>
-                    );
-                  })}
-                </div>
+                {/* image cluster — flower of 4 leaf-corner photos, or a single composite image */}
+                {t.trusted.images.length === 1 ? (
+                  <div className="overflow-hidden" style={{ borderRadius: "32px", maxWidth: "470px" }}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={t.trusted.images[0]} alt="" style={{ display: "block", width: "100%", height: "auto" }} />
+                  </div>
+                ) : (
+                  <div className="grid grid-cols-2" style={{ gap: "10px", maxWidth: "470px" }}>
+                    {t.trusted.images.slice(0, 4).map((src, i) => {
+                      const radii = ["64px 16px 16px 16px", "16px 64px 16px 16px", "16px 16px 16px 64px", "16px 16px 64px 16px"];
+                      return (
+                        <div key={src} className="overflow-hidden" style={{ borderRadius: radii[i] }}>
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img src={src} alt="" style={{ display: "block", width: "100%", aspectRatio: "1 / 1", objectFit: "cover" }} />
+                        </div>
+                      );
+                    })}
+                  </div>
+                )}
                 {/* trust points */}
                 <ul className="space-y-6">
                   {t.trusted.points.map((p) => (
@@ -652,7 +679,10 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
       {t.faq && t.faq.length > 0 && (
         <section style={{ padding: "70px 0 90px", backgroundColor: "var(--cream)" }}>
           <div className="container">
-            <h2 className="font-serif text-center" style={{ fontSize: "clamp(24px,3.4vw,38px)", color: "var(--gold)", letterSpacing: "0.04em", marginBottom: "44px" }}>Frequently Asked Questions</h2>
+            {t.faqKicker && (
+              <p className="font-display text-center" style={{ fontSize: "12px", color: "var(--teal)", letterSpacing: "0.16em", textTransform: "uppercase", marginBottom: "10px" }}>{t.faqKicker}</p>
+            )}
+            <h2 className="font-serif text-center" style={{ fontSize: "clamp(24px,3.4vw,38px)", color: "var(--gold)", letterSpacing: "0.04em", marginBottom: "44px" }}>{t.faqTitle ?? "Frequently Asked Questions"}</h2>
             <div className="mx-auto" style={{ maxWidth: "820px" }}>
               {t.faq.map((f) => (
                 <details key={f.q} style={{ background: "#fff", border: "1px solid var(--line)", borderRadius: "12px", marginBottom: "12px", padding: "0 22px" }}>
