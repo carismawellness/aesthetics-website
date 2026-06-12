@@ -20,7 +20,7 @@ export default function FadeInk() {
               className="font-serif"
               style={{
                 fontSize: "clamp(22px,3vw,30px)",
-                color: "var(--gold-deep)",
+                color: "#98afb2",
                 letterSpacing: "0.06em",
                 fontWeight: 400,
                 lineHeight: 1.3,

@@ -39,7 +39,7 @@ const REVIEWS = [
 export default function Reviews() {
   return (
     <section style={{ padding: "70px 24px" }}>
-      <Serif style={{ fontSize: "clamp(18px,2.4vw,22px)", letterSpacing: "0.12em" }}>
+      <Serif style={{ fontSize: "clamp(22px,3vw,30px)", letterSpacing: "0.1em" }}>
         precision tattoo removal in malta
       </Serif>
 
@@ -52,9 +52,9 @@ export default function Reviews() {
             key={r.name}
             className="flex flex-col"
             style={{
-              borderRadius: "16px",
+              borderRadius: "14px",
               background: "rgba(255,255,255,0.6)",
-              border: "1px solid var(--line)",
+              border: "1px solid rgba(120,160,165,0.5)",
               boxShadow: "0 12px 30px rgba(0,0,0,0.05)",
               overflow: "hidden",
             }}
@@ -79,7 +79,7 @@ export default function Reviews() {
                   fontStyle: "italic",
                   margin: 0,
                   display: "-webkit-box",
-                  WebkitLineClamp: 4,
+                  WebkitLineClamp: 3,
                   WebkitBoxOrient: "vertical",
                   overflow: "hidden",
                   textOverflow: "ellipsis",
@@ -89,23 +89,22 @@ export default function Reviews() {
               </p>
 
               <span
-                className="font-display"
                 style={{
-                  fontSize: "12px",
-                  color: "var(--teal)",
-                  letterSpacing: "0.04em",
+                  fontSize: "13px",
+                  color: "#8a847b",
                   marginTop: "10px",
+                  textDecoration: "underline",
+                  textUnderlineOffset: "2px",
                 }}
               >
                 Read more
               </span>
 
               <span
-                className="font-display"
                 style={{
                   fontSize: "13px",
-                  color: "var(--gold-deep)",
-                  letterSpacing: "0.04em",
+                  fontWeight: 600,
+                  color: "#4a4a4a",
                   marginTop: "14px",
                 }}
               >

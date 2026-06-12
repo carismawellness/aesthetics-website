@@ -48,7 +48,7 @@ export default function TrustedFeatures() {
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={`${A}/${f.icon}`} alt={f.label} style={{ maxHeight: "48px", width: "auto" }} />
               </div>
-              <h3 className="font-display" style={{ fontSize: "13px", color: "var(--gold-deep)", letterSpacing: "0.06em", marginBottom: "10px" }}>{f.label}</h3>
+              <h3 className="font-display" style={{ fontSize: "13px", color: "#98afb2", letterSpacing: "0.06em", marginBottom: "10px" }}>{f.label}</h3>
               <p style={{ fontSize: "13px", color: "var(--label)", lineHeight: 1.65 }}>{f.desc}</p>
             </div>
           ))}

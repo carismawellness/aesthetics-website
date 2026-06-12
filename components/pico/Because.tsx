@@ -16,7 +16,7 @@ export default function Because() {
           className="font-serif text-center"
           style={{
             fontSize: "clamp(22px,3vw,30px)",
-            color: "var(--teal)",
+            color: "#98afb2",
             letterSpacing: "0.06em",
             lineHeight: 1.3,
             fontWeight: 400,

@@ -49,7 +49,7 @@ export default function Faq() {
           >
             <h2
               className="font-serif"
-              style={{ fontSize: "clamp(22px,3vw,30px)", color: "var(--gold-deep)", letterSpacing: "0.06em", fontWeight: 400, textTransform: "uppercase", margin: 0, lineHeight: 1.3 }}
+              style={{ fontSize: "clamp(22px,3vw,30px)", color: "#98afb2", letterSpacing: "0.06em", fontWeight: 400, textTransform: "uppercase", margin: 0, lineHeight: 1.3 }}
             >
               Frequently asked questions
             </h2>

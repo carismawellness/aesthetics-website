@@ -6,16 +6,29 @@ import Link from "next/link";
 
 export const A = "/assets/treatments";
 
+// Live design tokens sampled from carismaaesthetics.com/pico-laser-tattoo-removal
+export const TEAL_HEAD = "#98afb2"; // muted grey-teal — all section headings & kickers
+export const SAGE = "#96b2b2";      // muted sage — all CTA buttons
+
 export function Kicker({ children }: { children: React.ReactNode }) {
-  return <p className="font-display text-center" style={{ fontSize: "18px", color: "var(--gold-deep)", letterSpacing: "0.02em" }}>{children}</p>;
+  return <p className="font-display text-center" style={{ fontSize: "18px", color: TEAL_HEAD, letterSpacing: "0.02em" }}>{children}</p>;
 }
 
 export function Serif({ children, style }: { children: React.ReactNode; style?: React.CSSProperties }) {
-  return <h2 className="font-serif text-center" style={{ fontSize: "clamp(22px,3vw,30px)", color: "var(--gold-deep)", letterSpacing: "0.06em", fontWeight: 400, lineHeight: 1.3, ...style }}>{children}</h2>;
+  return <h2 className="font-serif text-center" style={{ fontSize: "clamp(22px,3vw,30px)", color: TEAL_HEAD, letterSpacing: "0.06em", fontWeight: 400, lineHeight: 1.3, ...style }}>{children}</h2>;
 }
 
+// Full-width muted sage button matching the live page CTAs.
 export function Cta({ label }: { label: string }) {
-  return <Link href="/consultation" className="btn btn-teal" style={{ fontSize: "13px", padding: "15px 32px", letterSpacing: "0.1em" }}>{label} <span aria-hidden style={{ marginLeft: "4px" }}>›</span></Link>;
+  return (
+    <Link
+      href="/consultation"
+      className="font-display flex items-center justify-center"
+      style={{ width: "100%", maxWidth: "470px", background: SAGE, color: "#fff", fontSize: "13px", letterSpacing: "0.12em", textTransform: "uppercase", padding: "15px 24px", borderRadius: "4px" }}
+    >
+      {label} <span aria-hidden style={{ marginLeft: "8px" }}>›</span>
+    </Link>
+  );
 }
 
 export function Dot() {

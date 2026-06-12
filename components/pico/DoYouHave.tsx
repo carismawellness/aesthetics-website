@@ -10,20 +10,20 @@ export default function DoYouHave() {
           {/* LEFT — text block */}
           <div>
             <p
-              className="font-display"
-              style={{ fontSize: "18px", color: "var(--gold-deep)", letterSpacing: "0.02em" }}
+              className="font-serif"
+              style={{ fontSize: "clamp(20px,2.6vw,26px)", color: "#98afb2", letterSpacing: "0.06em", textTransform: "uppercase", fontWeight: 400, lineHeight: 1.25 }}
             >
               so your skin feels like yours again- confidently.
             </p>
             <h2
               className="font-serif"
               style={{
-                fontSize: "clamp(22px,3vw,30px)",
-                color: "var(--gold-deep)",
-                letterSpacing: "0.06em",
+                fontSize: "18px",
+                color: "#98afb2",
+                letterSpacing: "0.02em",
                 fontWeight: 400,
                 lineHeight: 1.3,
-                marginTop: "8px",
+                marginTop: "12px",
               }}
             >
               Do you have a tattoo you no longer want to carry?
