@@ -11,7 +11,7 @@ import { FACE_LINKS, BODY_LINKS } from "@/lib/site";
  */
 const TREATMENTS = [...FACE_LINKS, ...BODY_LINKS];
 
-const LABEL = "#5b5249";
+const LABEL = "#b79e61"; // Carisma gold — form labels
 const FIELD: React.CSSProperties = {
   width: "100%",
   padding: "13px 14px",
