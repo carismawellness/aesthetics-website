@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import FaqAccordion, { type Faq } from "@/components/FaqAccordion";
+import ConsultationForm from "@/components/ConsultationForm";
 
 const A = "/assets/treatments";
 
@@ -117,39 +118,48 @@ const FAQS: Faq[] = [
 export default function PicoLaserPage() {
   return (
     <>
-      {/* HERO */}
+      {/* HERO — sage gradient panel, content left, collage + consultation form right (matches live) */}
       <section style={{ background: "url('/assets/hero-bg.png') center / cover no-repeat", padding: "40px 0 56px" }}>
         <div className="container">
-          <div className="grid gap-12 lg:grid-cols-2 items-center">
-            <Reveal>
-              <h1 className="font-serif" style={{ fontSize: "clamp(30px,4.4vw,46px)", color: "var(--gold-deep)", letterSpacing: "0.04em", textTransform: "uppercase" }}>pico laser tattoo removal</h1>
-              <p style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.7, marginTop: "16px" }}>Advanced laser technology to safely fade unwanted tattoos with precision, comfort, and clinically guided care.</p>
-              <p className="font-display" style={{ fontSize: "14px", color: "var(--gold-deep)", letterSpacing: "0.04em", margin: "22px 0 12px" }}>What’s Included:</p>
-              <ul className="space-y-2.5">
-                {INCLUDED.map((it) => (<li key={it} className="flex items-start gap-3"><Dot /><span style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.55 }}>{it}</span></li>))}
-              </ul>
-              <p className="font-display" style={{ fontSize: "16px", color: "var(--gold-deep)", letterSpacing: "0.04em", marginTop: "22px" }}>Total Value: €335 – <span style={{ color: "var(--teal)" }}>Today: €99 Only</span></p>
-              <p style={{ fontSize: "11px", color: "var(--muted)", lineHeight: 1.6, marginTop: "8px" }}>Due to high demand, packages are offered based on availability and may not always be guaranteed. Please inquire for current options.</p>
-              <div style={{ marginTop: "22px" }}><Cta label="Book Now & Save 50%" /></div>
-              <GoogleRating />
-            </Reveal>
-            <Reveal delay={120}>
-              {/* layered, sage-framed collage (matches live) */}
-              <div className="relative mx-auto" style={{ maxWidth: "540px", aspectRatio: "1 / 1.04" }}>
-                {/* arm being lasered — top-left, large */}
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={`${A}/pico-collage-arm.png`} alt="Pico laser tattoo removal in progress" style={{ position: "absolute", top: 0, left: 0, width: "60%", filter: "drop-shadow(0 16px 34px rgba(0,0,0,0.14))" }} />
-                {/* neck tattoo — right, offset down, overlapping */}
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={`${A}/pico-collage-neck.png`} alt="Tattoo before removal" style={{ position: "absolute", top: "16%", right: 0, width: "46%", filter: "drop-shadow(0 16px 34px rgba(0,0,0,0.16))" }} />
-                {/* before / after composite — bottom-left */}
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={`${A}/pico-collage-ba.png`} alt="Tattoo fading before and after" style={{ position: "absolute", bottom: 0, left: "3%", width: "44%", filter: "drop-shadow(0 14px 30px rgba(0,0,0,0.16))" }} />
-              </div>
-            </Reveal>
+          <div style={{ borderRadius: "26px", background: "linear-gradient(135deg,#d2e0db 0%, #e7efe9 48%, #cddcd5 100%)", padding: "clamp(26px,3.4vw,48px)" }}>
+            <div className="grid gap-8 lg:grid-cols-[0.95fr_1.25fr] items-start">
+              {/* Left: copy */}
+              <Reveal>
+                <h1 className="font-serif" style={{ fontSize: "clamp(28px,3.6vw,42px)", color: "var(--gold-deep)", letterSpacing: "0.05em", textTransform: "uppercase", lineHeight: 1.15 }}>pico laser tattoo removal</h1>
+                <p style={{ fontSize: "14.5px", color: "var(--label)", lineHeight: 1.7, marginTop: "16px" }}>Advanced laser technology to safely fade unwanted tattoos with precision, comfort, and clinically guided care.</p>
+                <p className="font-display" style={{ fontSize: "14px", color: "var(--gold-deep)", letterSpacing: "0.04em", margin: "22px 0 12px" }}>What’s Included:</p>
+                <ul className="space-y-2.5">
+                  {INCLUDED.map((it) => (<li key={it} className="flex items-start gap-3"><Dot /><span style={{ fontSize: "13.5px", color: "var(--label)", lineHeight: 1.55 }}>{it}</span></li>))}
+                </ul>
+                <p className="font-display" style={{ fontSize: "16px", color: "var(--gold-deep)", letterSpacing: "0.04em", marginTop: "22px" }}>Total Value: €335 – <span style={{ color: "var(--teal)" }}>Today: €99 Only</span></p>
+                <p style={{ fontSize: "11px", color: "var(--muted)", lineHeight: 1.6, marginTop: "8px" }}>Due to high demand, packages are offered based on availability and may not always be guaranteed. Please inquire for current options.</p>
+                <div style={{ marginTop: "22px" }}><Cta label="Book Now & Save 50%" /></div>
+                <GoogleRating />
+              </Reveal>
+
+              {/* Right: image collage + consultation form (matches live) */}
+              <Reveal delay={120}>
+                <div className="grid gap-5 lg:grid-cols-[0.82fr_1fr] items-start">
+                  {/* layered collage */}
+                  <div className="relative" style={{ aspectRatio: "1 / 1.18", minHeight: "300px" }}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={`${A}/pico-collage-arm.png`} alt="Pico laser tattoo removal in progress" style={{ position: "absolute", top: 0, left: 0, width: "74%", borderRadius: "8px", filter: "drop-shadow(0 16px 34px rgba(0,0,0,0.14))" }} />
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={`${A}/pico-collage-neck.png`} alt="Tattoo before removal" style={{ position: "absolute", top: "20%", right: 0, width: "52%", borderRadius: "8px", filter: "drop-shadow(0 16px 34px rgba(0,0,0,0.16))" }} />
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={`${A}/pico-collage-ba.png`} alt="Tattoo fading before and after" style={{ position: "absolute", bottom: 0, left: 0, width: "62%", borderRadius: "8px", filter: "drop-shadow(0 14px 30px rgba(0,0,0,0.16))" }} />
+                  </div>
+                  {/* consultation form card */}
+                  <div className="bg-white" style={{ borderRadius: "14px", overflow: "hidden", boxShadow: "0 22px 50px rgba(0,0,0,0.16)" }}>
+                    <ConsultationForm height={760} />
+                  </div>
+                </div>
+              </Reveal>
+            </div>
           </div>
+
           {/* trust strip */}
-          <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-4 text-center" style={{ marginTop: "44px" }}>
+          <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-4 text-center" style={{ marginTop: "40px" }}>
             {["MALTA'S LEADING WELLNESS CHAIN", "30+ YEARS OF EXPERTISE", "MEDICALLY QUALIFIED"].map((t) => (
               <span key={t} className="flex items-center gap-2.5">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -391,14 +401,32 @@ export default function PicoLaserPage() {
           </div>
         </section>
 
-        {/* WHY CARISMA */}
-        <section style={{ padding: "40px 0 90px" }}>
-          <div className="container text-center">
-            <Serif>#1 award winning chain in Malta with 30+ years in wellness</Serif>
-            <h3 className="font-display" style={{ fontSize: "16px", color: "var(--gold-deep)", letterSpacing: "0.06em", margin: "26px 0 22px" }}>why carisma aesthetics ?</h3>
-            <ul className="mx-auto grid gap-3 sm:grid-cols-2 text-left" style={{ maxWidth: "760px" }}>
-              {WHY_CARISMA.map((w) => (<li key={w} className="flex items-start gap-3"><Dot /><span style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.6 }}>{w}</span></li>))}
-            </ul>
+        {/* WHY CARISMA — gold double-frame card (matches live) */}
+        <section style={{ padding: "50px 0 96px" }}>
+          <div className="container">
+            <Reveal>
+              <p className="font-display text-center mx-auto" style={{ fontSize: "clamp(19px,2.6vw,30px)", letterSpacing: "0.08em", lineHeight: 1.55, maxWidth: "780px", marginBottom: "52px", color: "var(--gold-deep)", fontWeight: 400 }}>
+                <span style={{ fontWeight: 700 }}>#1 award winning</span> chain in Malta with
+                <br />
+                <span style={{ fontWeight: 700 }}>30+ years</span> in wellness
+              </p>
+            </Reveal>
+            <Reveal delay={120} className="relative mx-auto" style={{ maxWidth: "640px" }}>
+              <span aria-hidden style={{ position: "absolute", inset: 0, transform: "translate(16px, 16px)", border: "1px solid var(--gold-deep)", zIndex: 0 }} />
+              <div className="relative bg-white" style={{ border: "1px solid var(--gold-deep)", padding: "clamp(36px,5vw,56px)", zIndex: 1, overflow: "hidden" }}>
+                <h2 className="font-display text-center" style={{ fontSize: "clamp(20px,3vw,30px)", color: "var(--gold-deep)", letterSpacing: "0.1em", fontWeight: 400 }}>why carisma aesthetics ?</h2>
+                <div className="mx-auto" style={{ width: "120px", height: "1px", background: "var(--gold-deep)", margin: "18px auto 34px" }} />
+                <ul className="space-y-5">
+                  {WHY_CARISMA.map((w) => (
+                    <li key={w} className="flex items-start gap-3">
+                      <span style={{ color: "var(--gold-deep)", fontSize: "14px", lineHeight: 1.6 }}>●</span>
+                      <span className="font-display" style={{ fontSize: "14px", fontWeight: 400, color: "var(--gold-deep)", letterSpacing: "0.06em", lineHeight: 1.5 }}>{w}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <span aria-hidden style={{ position: "absolute", left: "50%", bottom: "-9px", transform: "translateX(-50%)", width: 0, height: 0, borderLeft: "9px solid transparent", borderRight: "9px solid transparent", borderTop: "9px solid var(--gold-deep)", zIndex: 2 }} />
+            </Reveal>
           </div>
         </section>
       </div>
