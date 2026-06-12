@@ -26,12 +26,13 @@ export default function Hero() {
       }}
     >
       <div className="container">
-        {/* Sage rounded panel */}
+        {/* Blue-grey gradient panel (no green tint) — same backdrop as the other treatment heroes */}
         <div
           className="hero-panel"
           style={{
-            background:
-              "linear-gradient(135deg, #d2e0db 0%, #e7efe9 48%, #cddcd5 100%)",
+            backgroundImage: "url(/assets/bg-gradient.png)",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
             borderRadius: "26px",
             padding: "clamp(26px, 3.5vw, 48px)",
           }}
