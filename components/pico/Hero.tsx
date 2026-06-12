@@ -1,5 +1,5 @@
-import { A, Cta, Dot, GoogleRating } from "./_shared";
-import ConsultationForm from "@/components/ConsultationForm";
+import Link from "next/link";
+import { A, Dot, GoogleRating } from "./_shared";
 
 const INCLUDED = [
   "Personal tattoo and skin assessment before treatment",
@@ -15,6 +15,10 @@ const TRUST = [
   "MEDICALLY QUALIFIED",
 ];
 
+// live design tokens sampled from carismaaesthetics.com/pico-laser-tattoo-removal
+const TEAL = "#98afb2";   // muted grey-teal heading
+const BTN = "#96b2b2";    // muted sage-teal button fill
+
 export default function Hero() {
   return (
     <section
@@ -26,7 +30,7 @@ export default function Hero() {
       }}
     >
       <div className="container">
-        {/* Blue-grey gradient panel (no green tint) — same backdrop as the other treatment heroes */}
+        {/* Blue-grey gradient panel (no green) */}
         <div
           className="hero-panel"
           style={{
@@ -34,21 +38,21 @@ export default function Hero() {
             backgroundSize: "cover",
             backgroundPosition: "center",
             borderRadius: "26px",
-            padding: "clamp(26px, 3.5vw, 48px)",
+            padding: "clamp(28px, 3.6vw, 56px)",
           }}
         >
-          <div className="hero-grid grid gap-10">
+          <div className="hero-grid grid gap-10 items-start">
             {/* LEFT: copy stack */}
             <div className="hero-copy">
               <h1
                 className="font-serif"
                 style={{
-                  fontSize: "clamp(26px, 3.4vw, 38px)",
-                  color: "var(--gold-deep)",
-                  letterSpacing: "0.05em",
+                  fontSize: "clamp(28px, 3.6vw, 44px)",
+                  color: TEAL,
+                  letterSpacing: "0.04em",
                   textTransform: "uppercase",
                   fontWeight: 400,
-                  lineHeight: 1.15,
+                  lineHeight: 1.12,
                   margin: 0,
                 }}
               >
@@ -57,8 +61,9 @@ export default function Hero() {
 
               <p
                 style={{
-                  color: "var(--label)",
+                  color: "var(--ink-soft)",
                   fontSize: "14px",
+                  fontWeight: 600,
                   lineHeight: 1.7,
                   marginTop: "16px",
                   maxWidth: "440px",
@@ -71,9 +76,10 @@ export default function Hero() {
               <p
                 className="font-display"
                 style={{
-                  color: "var(--gold-deep)",
-                  fontSize: "15px",
-                  letterSpacing: "0.04em",
+                  color: "var(--ink-soft)",
+                  fontSize: "14px",
+                  fontWeight: 600,
+                  letterSpacing: "0.02em",
                   marginTop: "22px",
                   marginBottom: "10px",
                 }}
@@ -101,14 +107,14 @@ export default function Hero() {
               <p
                 className="font-display"
                 style={{
-                  color: "var(--gold-deep)",
+                  color: "var(--ink-soft)",
                   fontSize: "15px",
-                  letterSpacing: "0.04em",
+                  fontWeight: 600,
+                  letterSpacing: "0.02em",
                   marginTop: "22px",
                 }}
               >
-                Total Value: €335 –{" "}
-                <span style={{ color: "var(--teal)" }}>Today: €99 Only</span>
+                Total Value: €335 – Today: €99 Only
               </p>
 
               <p
@@ -116,7 +122,7 @@ export default function Hero() {
                   color: "var(--muted)",
                   fontSize: "11px",
                   lineHeight: 1.6,
-                  marginTop: "10px",
+                  marginTop: "12px",
                   maxWidth: "440px",
                 }}
               >
@@ -124,88 +130,52 @@ export default function Hero() {
                 may not always be guaranteed. Please inquire for current options.
               </p>
 
-              <div style={{ marginTop: "22px" }}>
-                <Cta label="Book Now & Save 50%" />
-              </div>
+              {/* full-width muted sage button (matches live) */}
+              <Link
+                href="/consultation"
+                className="font-display flex items-center justify-center"
+                style={{
+                  marginTop: "24px",
+                  width: "100%",
+                  maxWidth: "470px",
+                  background: BTN,
+                  color: "#fff",
+                  fontSize: "14px",
+                  letterSpacing: "0.12em",
+                  textTransform: "uppercase",
+                  padding: "16px 24px",
+                  borderRadius: "4px",
+                }}
+              >
+                Book Now &amp; Save 50% <span aria-hidden style={{ marginLeft: "8px" }}>›</span>
+              </Link>
 
               <GoogleRating />
             </div>
 
-            {/* RIGHT: collage + form */}
-            <div className="hero-right grid gap-5">
-              {/* Collage */}
-              <div className="hero-collage" style={{ position: "relative" }}>
-                <img
-                  src={`${A}/pico-hero-collage-arm.png`}
-                  alt="Pico laser tattoo removal in progress on an arm"
-                  style={{
-                    width: "100%",
-                    borderRadius: "8px",
-                    display: "block",
-                    filter: "drop-shadow(0 14px 32px rgba(0,0,0,0.15))",
-                  }}
-                />
-                <img
-                  src={`${A}/pico-hero-collage-portrait.png`}
-                  alt="Tattoo before removal"
-                  style={{
-                    position: "absolute",
-                    top: "8%",
-                    right: "-6%",
-                    width: "38%",
-                    borderRadius: "8px",
-                    filter: "drop-shadow(0 14px 30px rgba(0,0,0,0.16))",
-                  }}
-                />
-                <img
-                  src={`${A}/pico-hero-collage-tile1.png`}
-                  alt="Tattoo fading detail"
-                  style={{
-                    position: "absolute",
-                    bottom: "18%",
-                    right: "4%",
-                    width: "30%",
-                    borderRadius: "8px",
-                    filter: "drop-shadow(0 12px 28px rgba(0,0,0,0.15))",
-                  }}
-                />
-                <img
-                  src={`${A}/pico-hero-collage-tile2.png`}
-                  alt="Tattoo fading detail"
-                  style={{
-                    position: "absolute",
-                    bottom: "2%",
-                    left: "4%",
-                    width: "26%",
-                    borderRadius: "8px",
-                    filter: "drop-shadow(0 12px 28px rgba(0,0,0,0.15))",
-                  }}
-                />
-                <img
-                  src={`${A}/pico-hero-collage-ba.png`}
-                  alt="Tattoo fading before and after"
-                  style={{
-                    position: "absolute",
-                    bottom: "-4%",
-                    left: "30%",
-                    width: "44%",
-                    borderRadius: "8px",
-                    filter: "drop-shadow(0 14px 32px rgba(0,0,0,0.16))",
-                  }}
-                />
-              </div>
-
-              {/* Consultation form card */}
-              <div
-                style={{
-                  background: "#fff",
-                  borderRadius: "14px",
-                  boxShadow: "0 22px 50px rgba(0,0,0,0.16)",
-                  overflow: "hidden",
-                }}
-              >
-                <ConsultationForm height={760} />
-              </div>
+            {/* RIGHT: image collage only (no form) — tiles carry sage backings + rose marks */}
+            <div className="hero-collage" style={{ position: "relative", aspectRatio: "1 / 1.08" }}>
+              {/* arm being lasered — top-left */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={`${A}/pico-hero-collage-arm.png`}
+                alt="Pico laser tattoo removal in progress on an arm"
+                style={{ position: "absolute", top: 0, left: 0, width: "62%", borderRadius: "4px", filter: "drop-shadow(0 14px 30px rgba(0,0,0,0.14))" }}
+              />
+              {/* neck tattoo portrait — right, taller, overlapping */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={`${A}/pico-hero-collage-tile1.png`}
+                alt="Geometric neck tattoo before removal"
+                style={{ position: "absolute", top: "20%", right: 0, width: "47%", borderRadius: "4px", filter: "drop-shadow(0 16px 34px rgba(0,0,0,0.16))" }}
+              />
+              {/* before / after composite — bottom-left */}
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={`${A}/pico-hero-collage-ba.png`}
+                alt="Tattoo fading before and after"
+                style={{ position: "absolute", bottom: 0, left: "2%", width: "45%", borderRadius: "4px", filter: "drop-shadow(0 14px 30px rgba(0,0,0,0.16))" }}
+              />
             </div>
           </div>
         </div>
@@ -217,6 +187,7 @@ export default function Hero() {
         >
           {TRUST.map((label) => (
             <div key={label} className="flex items-center gap-2">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={`${A}/laser-ic-check.png`}
                 alt=""
@@ -227,7 +198,7 @@ export default function Hero() {
                 className="font-display"
                 style={{
                   fontSize: "12px",
-                  color: "var(--gold-deep)",
+                  color: "var(--label)",
                   letterSpacing: "0.1em",
                   textTransform: "uppercase",
                 }}
@@ -242,8 +213,7 @@ export default function Hero() {
       {/* eslint-disable-next-line */}
       <style>{`
         @media (min-width: 1024px) {
-          .hero-grid { grid-template-columns: 0.95fr 1.25fr; align-items: start; }
-          .hero-right { grid-template-columns: 0.82fr 1fr; align-items: start; }
+          .hero-grid { grid-template-columns: 1.12fr 0.88fr; }
         }
       `}</style>
     </section>
