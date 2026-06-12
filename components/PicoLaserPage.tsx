@@ -1,4 +1,3 @@
-import { A } from "@/components/pico/_shared";
 import Hero from "@/components/pico/Hero";
 import Reviews from "@/components/pico/Reviews";
 import DoYouHave from "@/components/pico/DoYouHave";
@@ -26,8 +25,8 @@ export default function PicoLaserPage() {
     <>
       <Hero />
 
-      {/* shared marble texture behind the rest of the page (matches live) */}
-      <div style={{ background: `url('${A}/laser-marble.jpg') top center / cover` }}>
+      {/* flat soft blue-grey behind the rest of the page (matches live) */}
+      <div style={{ background: "#eaeff3" }}>
         <Reviews />
         <DoYouHave />
         <TrustedFeatures />
