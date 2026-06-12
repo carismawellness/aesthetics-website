@@ -500,16 +500,24 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                     <img src={t.trusted.images[0]} alt="" style={{ display: "block", width: "100%", height: "auto" }} />
                   </div>
                 ) : (
-                  <div className="grid grid-cols-2" style={{ gap: "10px", maxWidth: "470px" }}>
-                    {t.trusted.images.slice(0, 4).map((src, i) => {
-                      const radii = ["64px 16px 16px 16px", "16px 64px 16px 16px", "16px 16px 16px 64px", "16px 16px 64px 16px"];
-                      return (
-                        <div key={src} className="overflow-hidden" style={{ borderRadius: radii[i] }}>
-                          {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img src={src} alt="" style={{ display: "block", width: "100%", aspectRatio: "1 / 1", objectFit: "cover" }} />
-                        </div>
-                      );
-                    })}
+                  /* Clover/flower layout — 4 images, outer corners only rounded, no gap.
+                     Teal bracket sits behind, offset bottom-right to peek out. */
+                  <div className="relative" style={{ maxWidth: "470px", width: "100%" }}>
+                    {/* teal bracket */}
+                    <div aria-hidden style={{ position: "absolute", inset: 0, borderRadius: "36px", background: "var(--teal-200)", transform: "translate(12px, 12px)", zIndex: 0 }} />
+                    <div className="relative grid grid-cols-2" style={{ gap: 0, zIndex: 1 }}>
+                      {t.trusted.images.slice(0, 4).map((src, i) => {
+                        /* border-radius shorthand: TL TR BR BL */
+                        const R = "40%";
+                        const radii = [`${R} 0 0 0`, `0 ${R} 0 0`, `0 0 0 ${R}`, `0 0 ${R} 0`];
+                        return (
+                          <div key={src} className="overflow-hidden" style={{ borderRadius: radii[i] }}>
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img src={src} alt="" style={{ display: "block", width: "100%", aspectRatio: "1 / 1", objectFit: "cover" }} />
+                          </div>
+                        );
+                      })}
+                    </div>
                   </div>
                 )}
                 {/* trust points */}
