@@ -500,16 +500,13 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                     <img src={t.trusted.images[0]} alt="" style={{ display: "block", width: "100%", height: "auto" }} />
                   </div>
                 ) : (
-                  /* Clover/flower — 4 images touch at center, only outer corner rounded.
-                     Teal-200 bracket frames the cluster on all sides via inset: -10px. */
-                  <div className="relative mx-auto" style={{ maxWidth: "460px", width: "100%" }}>
-                    {/* teal bracket frame — peeks 10px outside the cluster on all edges */}
-                    <div aria-hidden style={{ position: "absolute", inset: "-10px", borderRadius: "42px", background: "var(--teal-200)", zIndex: 0 }} />
-                    {/* clover grid */}
-                    <div className="relative" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 0, zIndex: 1 }}>
+                  /* Clover/flower — images touch at center, only outer corner rounded.
+                     Bracket is a teal rounded-rect sitting behind via negative margin trick. */
+                  <div className="mx-auto" style={{ maxWidth: "460px", width: "100%", padding: "14px", background: "var(--teal-200)", borderRadius: "40px" }}>
+                    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 0 }}>
                       {t.trusted.images.slice(0, 4).map((src, i) => {
-                        /* border-radius: TL TR BR BL — only the outer corner is rounded */
-                        const R = "44%";
+                        /* border-radius: TL TR BR BL — only the outermost corner is rounded */
+                        const R = "46%";
                         const radii = [`${R} 0 0 0`, `0 ${R} 0 0`, `0 0 0 ${R}`, `0 0 ${R} 0`];
                         return (
                           <div key={src} style={{ overflow: "hidden", borderRadius: radii[i] }}>
