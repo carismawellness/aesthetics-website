@@ -500,18 +500,19 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                     <img src={t.trusted.images[0]} alt="" style={{ display: "block", width: "100%", height: "auto" }} />
                   </div>
                 ) : (
-                  /* Clover/flower layout — 4 images, outer corners only rounded, no gap.
-                     Teal bracket sits behind, offset bottom-right to peek out. */
-                  <div className="relative" style={{ maxWidth: "470px", width: "100%" }}>
-                    {/* teal bracket */}
-                    <div aria-hidden style={{ position: "absolute", inset: 0, borderRadius: "36px", background: "var(--teal-200)", transform: "translate(12px, 12px)", zIndex: 0 }} />
-                    <div className="relative grid grid-cols-2" style={{ gap: 0, zIndex: 1 }}>
+                  /* Clover/flower — 4 images touch at center, only outer corner rounded.
+                     Teal-200 bracket frames the cluster on all sides via inset: -10px. */
+                  <div className="relative mx-auto" style={{ maxWidth: "460px", width: "100%" }}>
+                    {/* teal bracket frame — peeks 10px outside the cluster on all edges */}
+                    <div aria-hidden style={{ position: "absolute", inset: "-10px", borderRadius: "42px", background: "var(--teal-200)", zIndex: 0 }} />
+                    {/* clover grid */}
+                    <div className="relative" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 0, zIndex: 1 }}>
                       {t.trusted.images.slice(0, 4).map((src, i) => {
-                        /* border-radius shorthand: TL TR BR BL */
-                        const R = "40%";
+                        /* border-radius: TL TR BR BL — only the outer corner is rounded */
+                        const R = "44%";
                         const radii = [`${R} 0 0 0`, `0 ${R} 0 0`, `0 0 0 ${R}`, `0 0 ${R} 0`];
                         return (
-                          <div key={src} className="overflow-hidden" style={{ borderRadius: radii[i] }}>
+                          <div key={src} style={{ overflow: "hidden", borderRadius: radii[i] }}>
                             {/* eslint-disable-next-line @next/next/no-img-element */}
                             <img src={src} alt="" style={{ display: "block", width: "100%", aspectRatio: "1 / 1", objectFit: "cover" }} />
                           </div>
