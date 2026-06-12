@@ -23,7 +23,7 @@ export default function BookConsultation() {
         </Reveal>
 
         {/* GHL form — full width, no background panel */}
-        <Reveal delay={120} className="relative mx-auto" style={{ maxWidth: "1120px", marginTop: "-12px", zIndex: 1 }}>
+        <Reveal delay={120} className="relative mx-auto" style={{ maxWidth: "1400px", marginTop: "-12px", zIndex: 1 }}>
           <ConsultationForm stacked submitLabel="Submit" />
         </Reveal>
       </div>

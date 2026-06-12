@@ -20,33 +20,26 @@ export default function ConsultationPage() {
       </section>
 
       <section style={{ padding: "60px 0" }}>
-        <div className="container grid gap-12 lg:grid-cols-[2fr_1fr]">
-          {/* Form */}
-          <div>
-            <h2 className="font-serif" style={{ fontSize: "26px", color: "var(--ink)", textTransform: "none", fontWeight: 500, marginBottom: "20px" }}>Personalised Form</h2>
+        <div className="container">
+          {/* Form — full width */}
+          <div className="mx-auto" style={{ maxWidth: "1400px" }}>
             <ConsultationForm showMessage submitLabel="book your Consultation" />
           </div>
 
-          {/* Contact */}
-          <div>
-            <h2 className="font-display" style={{ fontSize: "20px", color: "var(--ink)", marginBottom: "24px" }}>Get in touch</h2>
-            <div className="space-y-6">
-              <div>
-                <div className="font-display" style={{ fontSize: "12px", color: "var(--gold-deep)", letterSpacing: "0.14em", marginBottom: "6px" }}>Phone</div>
-                <a href={`tel:${CONTACT.tel}`} style={{ fontSize: "16px", color: "var(--ink-soft)" }}>{CONTACT.phone}</a>
-              </div>
-              <div>
-                <div className="font-display" style={{ fontSize: "12px", color: "var(--gold-deep)", letterSpacing: "0.14em", marginBottom: "6px" }}>Email</div>
-                <a href={`mailto:${CONTACT.email}`} style={{ fontSize: "16px", color: "var(--ink-soft)" }}>{CONTACT.email}</a>
-              </div>
-              <div>
-                <div className="font-display" style={{ fontSize: "12px", color: "var(--gold-deep)", letterSpacing: "0.14em", marginBottom: "6px" }}>Follow</div>
-                <a href={CONTACT.instagram} target="_blank" rel="noopener noreferrer" style={{ fontSize: "16px", color: "var(--ink-soft)", display: "block" }}>{CONTACT.instagramHandle}</a>
-                <a href={CONTACT.facebook} target="_blank" rel="noopener noreferrer" style={{ fontSize: "16px", color: "var(--ink-soft)" }}>{CONTACT.facebookName}</a>
-              </div>
+          {/* Contact strip below the form */}
+          <div className="mx-auto grid gap-6 sm:grid-cols-3 mt-12" style={{ maxWidth: "900px" }}>
+            <div className="text-center">
+              <div className="font-display" style={{ fontSize: "12px", color: "var(--gold-deep)", letterSpacing: "0.14em", marginBottom: "6px" }}>Phone</div>
+              <a href={`tel:${CONTACT.tel}`} style={{ fontSize: "16px", color: "var(--ink-soft)" }}>{CONTACT.phone}</a>
             </div>
-            <div className="rounded-lg mt-8 flex items-center justify-center" style={{ aspectRatio: "16/9", backgroundColor: "var(--cream)", border: "1px solid var(--line)", color: "var(--muted)", fontSize: "13px" }}>
-              Map — clinic location pending
+            <div className="text-center">
+              <div className="font-display" style={{ fontSize: "12px", color: "var(--gold-deep)", letterSpacing: "0.14em", marginBottom: "6px" }}>Email</div>
+              <a href={`mailto:${CONTACT.email}`} style={{ fontSize: "16px", color: "var(--ink-soft)" }}>{CONTACT.email}</a>
+            </div>
+            <div className="text-center">
+              <div className="font-display" style={{ fontSize: "12px", color: "var(--gold-deep)", letterSpacing: "0.14em", marginBottom: "6px" }}>Follow</div>
+              <a href={CONTACT.instagram} target="_blank" rel="noopener noreferrer" style={{ fontSize: "16px", color: "var(--ink-soft)", display: "block" }}>{CONTACT.instagramHandle}</a>
+              <a href={CONTACT.facebook} target="_blank" rel="noopener noreferrer" style={{ fontSize: "16px", color: "var(--ink-soft)" }}>{CONTACT.facebookName}</a>
             </div>
           </div>
         </div>
