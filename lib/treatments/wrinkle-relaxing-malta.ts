@@ -26,7 +26,6 @@ const t: Treatment = {
   ],
   beforeAfterTitle: "BOTOX RESULTS",
   beforeAfter: [
-    { before: "/assets/treatments/wrinkle-relaxing-malta-ba1-before.png", after: "/assets/treatments/wrinkle-relaxing-malta-ba1-after.png" },
     { before: "/assets/treatments/botox-r1-before.png", after: "/assets/treatments/botox-r1-after.png" },
     { before: "/assets/treatments/botox-r2-before.png", after: "/assets/treatments/botox-r2-after.png" },
     { before: "/assets/treatments/botox-r3-before.png", after: "/assets/treatments/botox-r3-after.png" },
