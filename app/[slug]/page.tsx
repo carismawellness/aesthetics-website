@@ -4,6 +4,7 @@ import LaserHairRemovalPage from "@/components/LaserHairRemovalPage";
 import ProtocolPage from "@/components/ProtocolPage";
 import MedicalWeightLossPage from "@/components/MedicalWeightLossPage";
 import PicoLaserPage from "@/components/PicoLaserPage";
+import HairRegrowthPage from "@/components/HairRegrowthPage";
 import BodyPackagePage from "@/components/BodyPackagePage";
 import { bodyPackages } from "@/lib/bodypkg";
 import { PROTOCOLS } from "@/lib/protocols";
@@ -43,6 +44,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
   if (PROTOCOLS[slug]) return <ProtocolPage d={PROTOCOLS[slug]} />;
   if (slug === "medical-weight-loss") return <MedicalWeightLossPage />;
   if (slug === "pico-laser-tattoo-removal") return <PicoLaserPage />;
+  if (slug === "hair-regrowth") return <HairRegrowthPage />;
   const t = getTreatment(slug);
   if (!t) notFound();
   return <TreatmentPage t={t} />;
