@@ -64,10 +64,10 @@ const t: Treatment = {
   experience: {
     title: "YOUR TREATMENT EXPERIENCE", cta: "BOOK YOUR FREE CONSULTATION",
     steps: [
-      { title: "Personalised Consultation", desc: "We assess your facial anatomy, skin condition, medical history, and botox goals with one of our doctors.", image: "/assets/treatments/botox-step1.png" },
-      { title: "Structured Plan", desc: "Your doctor designs a medically guided botox plan tailored to your facial structure and desired outcome.", image: "/assets/treatments/botox-step2.png" },
-      { title: "Targeted Treatments", desc: "Your doctor administers botox using fine, precise injections, quick, comfortable, and no downtime.", image: "/assets/treatments/botox-step3.png" },
-      { title: "Ongoing Review & Adjustment", desc: "Your doctor monitors your response and refines the plan to ensure natural botox results over time.", image: "/assets/treatments/botox-step4.png" },
+      { title: "Personalised Consultation", desc: "We assess your facial anatomy, skin condition, medical history, and botox goals with one of our doctors.", image: "/assets/treatments/chemical-peels-malta-step1.png" },
+      { title: "Structured Plan", desc: "Your doctor designs a medically guided botox plan tailored to your facial structure and desired outcome.", image: "/assets/treatments/chemical-peels-malta-step2.png" },
+      { title: "Targeted Treatments", desc: "Your doctor administers botox using fine, precise injections, quick, comfortable, and no downtime.", image: "/assets/treatments/chemical-peels-malta-step3.png" },
+      { title: "Ongoing Review & Adjustment", desc: "Your doctor monitors your response and refines the plan to ensure natural botox results over time.", image: "/assets/treatments/chemical-peels-malta-step4.png" },
     ],
   },
   prepAftercare: {
@@ -161,7 +161,7 @@ const t: Treatment = {
     title: "Recommended with Chemical Peel",
     items: [
       { label: "Mesotherapy", href: "/mesotherapy-malta", image: "/assets/treatments/rec-mesotherapy.jpg" },
-      { label: "Microneedling", href: "/microneedling-malta", image: "/assets/treatments/rec-microneedling.jpg" },
+      { label: "Microneedling", href: "/microneedling-skin-revival", image: "/assets/treatments/rec-microneedling.jpg" },
       { label: "Collagen Stimulator", href: "/collagen-stimulator-malta", image: "/assets/treatments/chemical-peels-malta-rec-collagen-stimulator.png" },
       { label: "HydraFacial", href: "/hydrafacial", image: "/assets/treatments/chemical-peels-malta-rec-hydrafacial.png" },
     ],
