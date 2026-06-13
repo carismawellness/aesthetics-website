@@ -28,7 +28,7 @@ export default function Hero() {
                 marginBottom: "22px",
               }}
             >
-              personalised form
+              personalised quiz
             </h1>
             <ConsultationForm />
           </div>
