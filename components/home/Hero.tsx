@@ -1,4 +1,3 @@
-import SkinQuiz from "@/components/home/SkinQuiz";
 
 export default function Hero() {
   return (
@@ -30,7 +29,12 @@ export default function Hero() {
             >
               personalised quiz
             </h1>
-            <SkinQuiz />
+            <iframe
+              src="https://smart-questionnaire-eight.vercel.app"
+              title="Personalised Quiz"
+              loading="lazy"
+              style={{ width: "100%", height: "720px", border: "none", display: "block", borderRadius: "8px" }}
+            />
           </div>
 
           {/* Right column: video + awards badge + scroll cue */}
