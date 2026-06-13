@@ -166,7 +166,7 @@ const t: Treatment = {
       { label: "chemical peels", href: "/chemical-peels-malta", image: "/assets/treatments/mesotherapy-malta-rec-chemical-peels.avif" },
     ],
   },
-  faqTitle: "faqs about mesotherapy in malta",
+  faqTitle: "Frequently asked questions",
   faq: [
     {
       q: "What is mesotherapy, and how does it work?",
