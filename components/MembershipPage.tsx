@@ -13,8 +13,15 @@ function Serif({ children, style }: { children: React.ReactNode; style?: React.C
 function Rule() {
   return <div className="mx-auto" style={{ width: "70px", height: "1px", background: BLUE, opacity: 0.5, margin: "14px auto 0" }} />;
 }
-function Cta({ label, href = "/consultation" }: { label: string; href?: string }) {
-  return <Link href={href} style={{ display: "inline-block", background: BLUE, color: "#fff", fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "13px", letterSpacing: "0.14em", textTransform: "uppercase", padding: "15px 38px", borderRadius: "8px" }}>{label}</Link>;
+function Cta({ label, href = "/sign-up" }: { label: string; href?: string }) {
+  return (
+    <div className="flex items-center justify-center" style={{ gap: "0px" }}>
+      <Link href={href} style={{ display: "inline-flex", alignItems: "center", border: `1.5px solid ${BLUE}`, borderRight: "none", color: BLUE, fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "11px", letterSpacing: "0.22em", textTransform: "uppercase", padding: "16px 36px", borderRadius: "4px 0 0 4px", background: "transparent", whiteSpace: "nowrap" }}>{label}</Link>
+      <Link href={href} aria-label="Begin your journey" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: "50px", height: "50px", background: BLUE, borderRadius: "50%", flexShrink: 0, marginLeft: "12px" }}>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.2"><path d="M5 12h13M13 6l6 6-6 6" /></svg>
+      </Link>
+    </div>
+  );
 }
 
 const STEPS = [
@@ -96,10 +103,27 @@ export default function MembershipPage() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={`${A}/mem-hero.jpg`} alt="The Glow Club membership" className="w-full" style={{ display: "block", aspectRatio: "3 / 2", objectFit: "cover" }} />
           </div>
-          <p className="font-serif" style={{ fontSize: "clamp(22px,3vw,30px)", color: GOLD, letterSpacing: "0.22em", textTransform: "uppercase", marginTop: "28px" }}>welcome to</p>
-          <p className="font-display" style={{ fontSize: "clamp(20px,2.6vw,26px)", color: BLUE, letterSpacing: "0.34em", textTransform: "uppercase", marginTop: "6px" }}>the glow club</p>
+
+          {/* "WELCOME TO" with ornamental diamond lines */}
+          <div className="flex items-center justify-center" style={{ gap: "14px", marginTop: "32px" }}>
+            <span className="flex items-center" style={{ flex: 1, maxWidth: "120px" }}>
+              <span style={{ width: "7px", height: "7px", background: "#b8a89a", transform: "rotate(45deg)", flexShrink: 0 }} />
+              <span style={{ flex: 1, height: "1px", background: "#b8a89a" }} />
+            </span>
+            <p className="font-serif" style={{ fontSize: "clamp(20px,2.8vw,28px)", color: GOLD, letterSpacing: "0.22em", textTransform: "uppercase", whiteSpace: "nowrap", margin: 0 }}>welcome to</p>
+            <span className="flex items-center" style={{ flex: 1, maxWidth: "120px" }}>
+              <span style={{ flex: 1, height: "1px", background: "#b8a89a" }} />
+              <span style={{ width: "7px", height: "7px", background: "#b8a89a", transform: "rotate(45deg)", flexShrink: 0 }} />
+            </span>
+          </div>
+
+          {/* "THE GLOW CLUB" on a faint teal background strip */}
+          <div style={{ background: "rgba(150,178,178,0.13)", padding: "10px 20px", margin: "8px auto 0", maxWidth: "440px", borderRadius: "2px" }}>
+            <p className="font-display" style={{ fontSize: "clamp(18px,2.6vw,24px)", color: BLUE, letterSpacing: "0.38em", textTransform: "uppercase", margin: 0 }}>the glow club</p>
+          </div>
+
           <div style={{ marginTop: "30px" }}>
-            <Cta label="begin your journey now ›" />
+            <Cta label="begin your journey now" />
           </div>
           <div className="flex flex-col items-center" style={{ marginTop: "34px" }}>
             <span className="font-display" style={{ fontSize: "11px", color: BLUE, letterSpacing: "0.16em" }}>scroll down<br />to learn more</span>
@@ -211,11 +235,11 @@ export default function MembershipPage() {
             </Reveal>
             <div>
               {BENEFITS.map((b) => (
-                <div key={b.big} className="flex items-baseline gap-4" style={{ padding: "16px 0", borderBottom: "1px solid var(--line)" }}>
-                  <span className="font-display" style={{ fontSize: "18px", color: GOLD, letterSpacing: "0.08em", textTransform: "uppercase", minWidth: "120px" }}>{b.big}</span>
-                  <span style={{ width: "1px", height: "20px", background: BLUE, opacity: 0.5 }} />
+                <div key={b.big} className="flex items-baseline gap-4" style={{ padding: "22px 0", borderBottom: "1px solid var(--line)" }}>
+                  <span className="font-display" style={{ fontSize: "clamp(20px,2.2vw,30px)", color: GOLD, letterSpacing: "0.08em", textTransform: "uppercase", minWidth: "140px" }}>{b.big}</span>
+                  <span style={{ width: "1px", height: "24px", background: BLUE, opacity: 0.5 }} />
                   <span>
-                    <span className="font-display" style={{ fontSize: "12px", color: BLUE, letterSpacing: "0.08em", textTransform: "uppercase" }}>{b.label}</span>
+                    <span className="font-display" style={{ fontSize: "13px", color: BLUE, letterSpacing: "0.08em", textTransform: "uppercase" }}>{b.label}</span>
                     {b.note && <span style={{ display: "block", fontSize: "11px", color: "var(--muted)", marginTop: "3px", fontStyle: "italic" }}>{b.note}</span>}
                   </span>
                 </div>
@@ -231,12 +255,10 @@ export default function MembershipPage() {
           <Serif>best selling treatments</Serif><Rule />
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 mx-auto" style={{ maxWidth: "1040px", marginTop: "44px" }}>
             {TREATMENTS.map((t, i) => (
-              <Reveal key={t.label} delay={(i % 4) * 70} className="overflow-hidden" style={{ borderRadius: "14px", boxShadow: "0 12px 30px rgba(0,0,0,0.08)" }}>
+              <Reveal key={t.label} delay={(i % 4) * 70} className="text-center overflow-hidden" style={{ borderRadius: "14px", boxShadow: "0 12px 30px rgba(0,0,0,0.08)" }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={`${A}/${t.img}`} alt={t.label} className="w-full" style={{ display: "block", aspectRatio: "6 / 7", objectFit: "cover" }} />
-                <div style={{ background: CARD, padding: "16px 18px" }}>
-                  <span className="font-display" style={{ fontSize: "13px", color: GOLD, letterSpacing: "0.1em", textTransform: "uppercase" }}>{t.label}</span>
-                </div>
+                <p className="font-display" style={{ fontSize: "13px", color: GOLD, letterSpacing: "0.12em", textTransform: "uppercase", padding: "14px 10px", background: "#fff" }}>{t.label}</p>
               </Reveal>
             ))}
           </div>
@@ -271,7 +293,7 @@ export default function MembershipPage() {
           {/* gold script subtitle */}
           <p style={{ fontFamily: "var(--font-pinyon), cursive", fontSize: "clamp(34px,5vw,46px)", color: "var(--gold)", marginTop: "14px", lineHeight: 1.1 }}>Glow with Confidence</p>
           {/* SIGN UP NOW on a centered line */}
-          <Link href="/consultation" className="flex items-center" style={{ marginTop: "44px", gap: "22px" }}>
+          <Link href="/sign-up" className="flex items-center" style={{ marginTop: "44px", gap: "22px" }}>
             <span style={{ flex: 1, height: "1px", background: "#cfcabf" }} />
             <span className="font-display" style={{ fontSize: "14px", color: "#9fb5b5", letterSpacing: "0.22em", textTransform: "uppercase", whiteSpace: "nowrap" }}>sign up now</span>
             <span style={{ flex: 1, height: "1px", background: "#cfcabf" }} />
