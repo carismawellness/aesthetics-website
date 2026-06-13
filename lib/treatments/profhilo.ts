@@ -153,26 +153,23 @@ const t: Treatment = {
     title: "recommended with mesotherapy",
     items: [
       { label: "collagen stimulator", href: "/collagen-stimulator-malta", image: "/assets/treatments/profhilo-rec-collagen-stimulator.png" },
-      { label: "platelet rich plasma", href: "/prp-malta", image: "/assets/treatments/profhilo-rec-prp.png" },
       { label: "Microneedling", href: "/microneedling-malta", image: "/assets/treatments/profhilo-rec-microneedling.png" },
+      { label: "platelet rich plasma", href: "/prp-malta", image: "/assets/treatments/profhilo-rec-prp.png" },
       { label: "chemical peels", href: "/chemical-peels-malta", image: "/assets/treatments/profhilo-rec-chemical-peels.png" },
     ],
   },
-  // NOTE: the live page's FAQ widget shows the "PICO Pigmentation" tab content by
-  // default — these are the question/answer pairs actually visible on the live
-  // /profhilo page, reproduced verbatim.
   faqTitle: "faqs about profhilo in malta",
   faq: [
-    { q: "What is Pico Laser pigmentation treatment?", a: "Pico Laser treatment uses ultra-short laser pulses to target unwanted pigment beneath the skin. The pigment is broken into smaller particles, which the body can gradually clear over time." },
-    { q: "What pigmentation concerns can it treat?", a: "It may help improve the appearance of sun spots, freckles, age spots, post-inflammatory pigmentation, uneven skin tone, and selected types of melasma. Suitability is confirmed during consultation." },
-    { q: "How many sessions will I need?", a: "The number of sessions depends on the pigmentation type, depth, treatment area, skin tone, and individual response. Some concerns may improve after a few sessions, while others require a longer plan." },
-    { q: "Is Pico Laser treatment painful?", a: "Most clients describe the sensation as quick snapping or mild warmth against the skin. Cooling and comfort measures may be used to make the treatment more comfortable." },
-    { q: "Is there any downtime after treatment?", a: "Downtime is usually minimal, although temporary redness, warmth, sensitivity, mild swelling, or darkening of the treated pigment may occur. Your specialist will explain what to expect." },
-    { q: "When will I see results?", a: "Visible improvement usually develops gradually as the treated pigment begins to fade. Results vary depending on the concern, skin type, treatment plan, and aftercare." },
-    { q: "Is Pico Laser suitable for every skin type?", a: "Pico Laser can be suitable for a range of skin tones, but treatment settings must be carefully personalised. A professional skin assessment is essential before beginning treatment." },
-    { q: "What should I avoid before my appointment?", a: "Avoid tanning, self-tanning products, and excessive sun exposure before treatment. You may also be advised to pause certain active skincare products for a short period." },
-    { q: "What aftercare is required?", a: "Keep the treated area clean, protected, and moisturised as advised. Avoid picking or rubbing the skin, and use broad-spectrum sun protection to reduce the risk of further pigmentation." },
-    { q: "Can pigmentation return after treatment?", a: "Pigmentation may return or new areas may develop due to sun exposure, hormones, inflammation, or other triggers. Consistent sun protection and appropriate skincare can help maintain your results." },
+    { q: "What is Profhilo?", a: "Profhilo is an injectable skin treatment made with hyaluronic acid that helps improve hydration, firmness, and overall skin quality. It is designed to refresh the skin naturally rather than change your facial features." },
+    { q: "What does Profhilo help with?", a: "Profhilo is commonly used to improve dullness, dehydration, early skin laxity, and the appearance of fine lines. It is ideal for people who want smoother, plumper, more radiant-looking skin." },
+    { q: "Is Profhilo a filler?", a: "No. Profhilo is not a traditional dermal filler. Instead of adding volume or changing facial shape, it works by deeply hydrating the skin and supporting a fresher, firmer appearance. This matches the clinic's emphasis on natural-looking rejuvenation." },
+    { q: "How many Profhilo sessions will I need?", a: "The clinic offers 1-session, 2-session, and 3-session options, and it notes that results are gradual and may require several sessions depending on your concern. The best treatment plan is usually confirmed during consultation." },
+    { q: "When will I see results from Profhilo?", a: "Results are not instant. Improvements are gradual, and timing depends on the concern being treated. Most people choose a course of sessions for better overall skin improvement." },
+    { q: "How long does a Profhilo appointment take?", a: "The procedure time is around 30 to 60 minutes, making it a convenient treatment for clients looking for minimal disruption to their routine." },
+    { q: "Is there any downtime after Profhilo?", a: "Downtime depends on the concern and your skin response, but the aftercare is simple. The clinic advises avoiding rubbing or massaging the area, exercise, alcohol, and saunas for at least 24 hours after treatment." },
+    { q: "Does Profhilo hurt?", a: "Anaesthetic cream is used, which helps make the treatment more comfortable. During the procedure, you can also communicate any discomfort or concerns to the practitioner." },
+    { q: "What should I avoid before Profhilo?", a: "Before treatment, the clinic advises avoiding alcohol, blood thinners, and aspirin for 24 hours, unless otherwise directed by a medical professional. You should also discuss any medical conditions, allergies, and medications during your consultation." },
+    { q: "Why choose Carisma Aesthetics for Profhilo in Malta?", a: "Carisma Aesthetics offers medically qualified practitioners, personalised treatment plans, flexible booking, a central and discreet location, and over 30 years in wellness. The clinic is highly rated and award-winning, positioned as Malta's leading provider of Profhilo." },
   ],
 };
 
