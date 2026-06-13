@@ -8,6 +8,9 @@ export const metadata = {
     "Book a free, no-pressure consultation with one of our medically qualified doctors at Carisma Aesthetics, Malta. Every plan begins with listening to your story.",
 };
 
+const FRESHA_CONSULT =
+  "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2800348&oiid=sv%3A25754425&share=true&pId=2708191";
+
 function PhoneIcon() {
   return (
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
@@ -86,11 +89,29 @@ function ContactItem({
   );
 }
 
+const STEPS = [
+  {
+    num: "01",
+    title: "We Listen",
+    body: "Your doctor takes time to understand your goals, concerns, and medical history — with no pressure and no rush.",
+  },
+  {
+    num: "02",
+    title: "We Plan",
+    body: "A personalised treatment plan is shaped around your anatomy and what you want to feel, never what you think you should want.",
+  },
+  {
+    num: "03",
+    title: "You Decide",
+    body: "You leave with a clear, honest proposal. There is no obligation — only clarity. When you are ready, we are here.",
+  },
+];
+
 export default function ConsultationPage() {
   return (
     <>
       {/* ===== HERO ===== */}
-      <section style={{ backgroundColor: "var(--cream)", padding: "72px 0 60px" }}>
+      <section style={{ backgroundColor: "var(--cream)", padding: "80px 0 72px" }}>
         <div className="container text-center">
           <Reveal>
             <p
@@ -99,7 +120,7 @@ export default function ConsultationPage() {
                 fontSize: "11px",
                 color: "var(--teal)",
                 letterSpacing: "0.18em",
-                marginBottom: "16px",
+                marginBottom: "18px",
               }}
             >
               free consultation
@@ -107,11 +128,11 @@ export default function ConsultationPage() {
             <h1
               className="font-display"
               style={{
-                fontSize: "clamp(26px,4vw,42px)",
+                fontSize: "clamp(28px,4.2vw,46px)",
                 color: "var(--ink)",
                 letterSpacing: "0.08em",
                 fontWeight: 600,
-                lineHeight: 1.2,
+                lineHeight: 1.15,
               }}
             >
               Book Your Free<br />Consultation
@@ -121,38 +142,177 @@ export default function ConsultationPage() {
                 width: "56px",
                 height: "2px",
                 background: "var(--teal)",
-                margin: "22px auto",
+                margin: "24px auto",
               }}
             />
             <p
               className="font-serif mx-auto"
               style={{
-                fontSize: "17px",
+                fontSize: "18px",
                 color: "var(--label)",
-                fontStyle: "italic",
                 fontWeight: 400,
-                lineHeight: 1.7,
-                maxWidth: "640px",
+                lineHeight: 1.75,
+                maxWidth: "620px",
               }}
             >
-              Every consultation begins with listening to your story — then shaping a conservative,
-              personalised plan with one of our doctors.
+              Every consultation begins with listening to your story — then
+              shaping a conservative, personalised plan with one of our doctors.
             </p>
+            <div style={{ marginTop: "32px" }}>
+              <a
+                href={FRESHA_CONSULT}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-teal"
+                style={{ fontSize: "12px", letterSpacing: "0.14em" }}
+              >
+                Book Instantly on Fresha
+              </a>
+              <p
+                className="font-display"
+                style={{
+                  fontSize: "10px",
+                  color: "var(--muted)",
+                  letterSpacing: "0.12em",
+                  marginTop: "12px",
+                }}
+              >
+                or complete the form below and we will be in touch
+              </p>
+            </div>
           </Reveal>
         </div>
       </section>
 
-      {/* ===== FORM ===== */}
-      <section style={{ backgroundColor: "var(--beige)", padding: "60px 0 80px" }}>
+      {/* ===== WHAT TO EXPECT ===== */}
+      <section style={{ backgroundColor: "var(--white)", padding: "72px 0 64px" }}>
         <div className="container">
-          <Reveal className="mx-auto" style={{ maxWidth: "960px" }}>
+          <Reveal>
+            <p
+              className="font-display text-center"
+              style={{
+                fontSize: "11px",
+                color: "var(--teal)",
+                letterSpacing: "0.18em",
+                marginBottom: "14px",
+              }}
+            >
+              your experience
+            </p>
+            <h2
+              className="font-display text-center"
+              style={{
+                fontSize: "clamp(20px,2.8vw,32px)",
+                color: "var(--ink)",
+                letterSpacing: "0.08em",
+                fontWeight: 600,
+                marginBottom: "52px",
+              }}
+            >
+              What Happens at Your Consultation
+            </h2>
+          </Reveal>
+
+          <div className="grid gap-10 sm:grid-cols-3 mx-auto" style={{ maxWidth: "960px" }}>
+            {STEPS.map((s, i) => (
+              <Reveal key={s.num} delay={i * 80}>
+                <div className="flex flex-col items-center text-center" style={{ gap: "16px" }}>
+                  <span
+                    className="font-display"
+                    style={{
+                      fontSize: "11px",
+                      letterSpacing: "0.22em",
+                      color: "var(--teal)",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: "10px",
+                    }}
+                  >
+                    <span
+                      style={{
+                        display: "inline-flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        width: "36px",
+                        height: "36px",
+                        borderRadius: "50%",
+                        border: "1px solid var(--teal)",
+                        fontSize: "11px",
+                        letterSpacing: "0.08em",
+                      }}
+                    >
+                      {s.num}
+                    </span>
+                  </span>
+                  <h3
+                    className="font-display"
+                    style={{
+                      fontSize: "14px",
+                      color: "var(--ink)",
+                      letterSpacing: "0.12em",
+                      fontWeight: 600,
+                    }}
+                  >
+                    {s.title}
+                  </h3>
+                  <p style={{ fontSize: "14px", color: "#5b5249", lineHeight: 1.75 }}>
+                    {s.body}
+                  </p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== FORM ===== */}
+      <section style={{ backgroundColor: "var(--beige)", padding: "64px 0 80px" }}>
+        <div className="container">
+          <Reveal>
+            <p
+              className="font-display text-center"
+              style={{
+                fontSize: "11px",
+                color: "var(--teal)",
+                letterSpacing: "0.18em",
+                marginBottom: "12px",
+              }}
+            >
+              request a consultation
+            </p>
+            <h2
+              className="font-display text-center"
+              style={{
+                fontSize: "clamp(20px,2.6vw,30px)",
+                color: "var(--ink)",
+                letterSpacing: "0.08em",
+                fontWeight: 600,
+                marginBottom: "8px",
+              }}
+            >
+              Fill in Your Details
+            </h2>
+            <p
+              className="text-center mx-auto"
+              style={{
+                fontSize: "14px",
+                color: "var(--label)",
+                lineHeight: 1.7,
+                maxWidth: "560px",
+                marginBottom: "40px",
+              }}
+            >
+              One of our team will reach out within 24 hours to confirm your appointment.
+            </p>
+          </Reveal>
+          <Reveal delay={80} className="mx-auto" style={{ maxWidth: "960px" }}>
             <ConsultationForm />
           </Reveal>
         </div>
       </section>
 
       {/* ===== CONTACT STRIP ===== */}
-      <section style={{ backgroundColor: "var(--white)", padding: "64px 0 72px" }}>
+      <section style={{ backgroundColor: "var(--cream)", padding: "64px 0 72px" }}>
         <div className="container">
           <Reveal>
             <p
