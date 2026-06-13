@@ -1,4 +1,4 @@
-import ConsultationForm from "@/components/ConsultationForm";
+import SkinQuiz from "@/components/home/SkinQuiz";
 
 export default function Hero() {
   return (
@@ -30,7 +30,7 @@ export default function Hero() {
             >
               personalised quiz
             </h1>
-            <ConsultationForm />
+            <SkinQuiz />
           </div>
 
           {/* Right column: video + awards badge + scroll cue */}
