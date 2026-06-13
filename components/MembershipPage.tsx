@@ -99,7 +99,7 @@ export default function MembershipPage() {
       {/* ===== HERO ===== */}
       <section style={{ background: "url('/assets/hero-bg.png') center / cover no-repeat", padding: "56px 0 64px" }}>
         <div className="container text-center" style={{ maxWidth: "640px" }}>
-          <div className="overflow-hidden mx-auto rounded-xl" style={{ maxWidth: "440px", boxShadow: "0 18px 44px rgba(0,0,0,0.14)" }}>
+          <div className="mx-auto" style={{ maxWidth: "600px" }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={`${A}/mem-hero.jpg`} alt="The Glow Club membership" className="w-full" style={{ display: "block", aspectRatio: "3 / 2", objectFit: "cover" }} />
           </div>
@@ -253,7 +253,7 @@ export default function MembershipPage() {
       <section style={{ padding: "60px 0" }}>
         <div className="container text-center">
           <Serif>best selling treatments</Serif><Rule />
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 mx-auto" style={{ maxWidth: "1040px", marginTop: "44px" }}>
+          <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 mx-auto" style={{ maxWidth: "1040px", marginTop: "44px" }}>
             {TREATMENTS.map((t, i) => (
               <Reveal key={t.label} delay={(i % 4) * 70} className="text-center overflow-hidden" style={{ borderRadius: "14px", boxShadow: "0 12px 30px rgba(0,0,0,0.08)" }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
