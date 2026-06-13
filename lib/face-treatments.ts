@@ -77,7 +77,7 @@ export const faceTreatments: FaceTreatment[] = [
     eyebrow: "Premium injectable artistry",
     heroSubhead: "A refined way to replace the volume that time quietly removes — lifting the cheeks, smoothing folds and rebalancing proportion so your face looks rested, not reworked.",
     heroImage: `${T}/dermal-fillers-malta-hero.png`,
-    cardImage: "/assets/service-dermal-fillers.png",
+    cardImage: "/assets/treatments/dermal-fillers-malta-hero.png",
     infoStats: [
       { label: "Procedure time", value: "30–45 minutes" },
       { label: "Downtime", value: "Minimal" },
@@ -112,7 +112,7 @@ export const faceTreatments: FaceTreatment[] = [
     eyebrow: "Collagen induction therapy",
     heroSubhead: "A controlled, regenerative treatment that prompts your skin to rebuild itself — smoothing texture, softening scarring and restoring a healthy, even glow from within.",
     heroImage: `${T}/microneedling-malta-hero.png`,
-    cardImage: "/assets/service-microneedling.png",
+    cardImage: "/assets/treatments/microneedling-malta-hero.png",
     infoStats: [
       { label: "Procedure time", value: "45–60 minutes" },
       { label: "Downtime", value: "24–48 hours" },
@@ -147,7 +147,7 @@ export const faceTreatments: FaceTreatment[] = [
     eyebrow: "Medical-grade resurfacing",
     heroSubhead: "A tailored exfoliating treatment that lifts away dull, damaged surface cells to reveal fresher, clearer, more even skin underneath — calibrated to your skin and your goals.",
     heroImage: `${T}/chemical-peels-malta-hero.png`,
-    cardImage: "/assets/service-chemical-peel.png",
+    cardImage: "/assets/treatments/chemical-peels-malta-hero.png",
     infoStats: [
       { label: "Procedure time", value: "30 minutes" },
       { label: "Downtime", value: "2–7 days" },
@@ -182,7 +182,7 @@ export const faceTreatments: FaceTreatment[] = [
     eyebrow: "Subtle lip enhancement",
     heroSubhead: "Considered enhancement that respects your natural shape — adding definition, hydration and balance without ever tipping into overdone.",
     heroImage: `${T}/lip-fillers-malta-hero.png`,
-    cardImage: "/assets/service-lip-fillers.png",
+    cardImage: "/assets/treatments/lip-fillers-malta-hero.png",
     infoStats: [
       { label: "Procedure time", value: "30 minutes" },
       { label: "Downtime", value: "1–3 days" },
@@ -217,7 +217,7 @@ export const faceTreatments: FaceTreatment[] = [
     eyebrow: "Bio-stimulating regeneration",
     heroSubhead: "Rather than simply filling, this treatment prompts your skin to produce its own new collagen — restoring firmness and structure slowly, for a result that looks entirely your own.",
     heroImage: `${T}/collagen-stimulator-malta-hero.png`,
-    cardImage: "/assets/service-collagen.png",
+    cardImage: "/assets/treatments/collagen-stimulator-malta-hero.png",
     infoStats: [
       { label: "Procedure time", value: "45 minutes" },
       { label: "Downtime", value: "Minimal" },
@@ -252,7 +252,7 @@ export const faceTreatments: FaceTreatment[] = [
     eyebrow: "Anti-wrinkle injectables",
     heroSubhead: "A precise, well-judged treatment that eases the lines created by movement — frown, forehead and crow's feet — while leaving your expression relaxed and entirely your own.",
     heroImage: `${T}/wrinkle-relaxing-malta-hero.jpg`,
-    cardImage: "/assets/service-botox.png",
+    cardImage: "/assets/treatments/wrinkle-relaxing-malta-hero.jpg",
     infoStats: [
       { label: "Procedure time", value: "15–20 minutes" },
       { label: "Downtime", value: "None" },
@@ -287,7 +287,7 @@ export const faceTreatments: FaceTreatment[] = [
     eyebrow: "Skin nutrition & glow",
     heroSubhead: "A nourishing treatment that delivers a bespoke blend of vitamins, antioxidants and hyaluronic acid directly into the skin — reviving radiance, hydration and tone.",
     heroImage: `${T}/mesotherapy-malta-hero.png`,
-    cardImage: "/assets/service-mesotherapy.png",
+    cardImage: "/assets/treatments/mesotherapy-malta-hero.png",
     infoStats: [
       { label: "Procedure time", value: "30–45 minutes" },
       { label: "Downtime", value: "Minimal" },
@@ -321,7 +321,7 @@ export const faceTreatments: FaceTreatment[] = [
     eyebrow: "Non-surgical lifting",
     heroSubhead: "Dissolvable threads gently reposition and support softening tissue, restoring a lifted, defined contour — and stimulating fresh collagen as they work — without surgery or lengthy recovery.",
     heroImage: `${T}/thread-lift-malta-hero.avif`,
-    cardImage: "/assets/service-thread-lift.png",
+    cardImage: "/assets/treatments/thread-lift-malta-hero.avif",
     infoStats: [
       { label: "Procedure time", value: "45–60 minutes" },
       { label: "Downtime", value: "3–7 days" },
