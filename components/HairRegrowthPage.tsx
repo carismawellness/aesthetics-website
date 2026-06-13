@@ -1,40 +1,57 @@
+"use client";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import hairRegrowth from "@/lib/treatments/hair-regrowth";
+import { useState } from "react";
 
 /*
-  Dedicated DARK landing page for /hair-regrowth — the live page is a bespoke
-  chalkboard/charcoal + gold design unlike the shared cream/teal TreatmentPage.
-  All copy is read verbatim from lib/treatments/hair-regrowth.ts so the data
-  module stays the single source of truth. The global Header/Footer (light)
-  wrap this via the layout, matching live (footer doctors/award are light).
+  Dedicated landing page for /hair-regrowth.
+  Live page: https://www.carismaaesthetics.com/hair-regrowth
+
+  Design: Dark charcoal hero + white/cream body sections.
+  Gold headings (#c9a96a), warm taupe body text (rgb(176,166,143)).
+  All section backgrounds: white (#fff).
+  Buttons: gold gradient.
+  FAQ: accordion (client component).
 */
 
 const A = "/assets/treatments";
 const t = hairRegrowth;
 
-// rich warm gold used across this page (distinct from the site's cool taupe --gold)
+// Gold shades
 const GOLD = "#c9a96a";
-const GOLD_SOFT = "#d8be86";
-const INK = "#181513";
-const INK_2 = "#211d19";
-const PAPER = "#efe9df";
+const GOLD_MID = "#b89a52";
+const WHITE = "#ffffff";
+const TAUPE = "rgb(176,166,143)"; // live body text color
+const INK = "#1a1712"; // dark text for buttons / hero
+const CHARCOAL = "#1c1a17"; // hero bg fallback
 
-function GoldBtn({ children, href = "/consultation", style }: { children: React.ReactNode; href?: string; style?: React.CSSProperties }) {
+function GoldBtn({
+  children,
+  href = "/consultation",
+  style,
+  fullWidth,
+}: {
+  children: React.ReactNode;
+  href?: string;
+  style?: React.CSSProperties;
+  fullWidth?: boolean;
+}) {
   return (
     <Link
       href={href}
       className="font-display inline-flex items-center justify-center"
       style={{
-        background: "linear-gradient(180deg,#e7cf96 0%, #c9a96a 52%, #b8965a 100%)",
+        background: `linear-gradient(180deg, #e2c97a 0%, ${GOLD} 50%, ${GOLD_MID} 100%)`,
         color: INK,
-        fontSize: "12px",
-        letterSpacing: "0.16em",
+        fontSize: "11px",
+        letterSpacing: "0.18em",
         textTransform: "uppercase",
         fontWeight: 600,
-        padding: "15px 34px",
+        padding: "14px 36px",
         borderRadius: "2px",
-        boxShadow: "0 8px 22px rgba(0,0,0,0.35)",
+        width: fullWidth ? "100%" : undefined,
+        textAlign: "center",
         ...style,
       }}
     >
@@ -43,18 +60,56 @@ function GoldBtn({ children, href = "/consultation", style }: { children: React.
   );
 }
 
-function Kicker({ children }: { children: React.ReactNode }) {
+function GoldLine() {
   return (
-    <div className="flex flex-col items-center" style={{ marginBottom: "14px" }}>
-      <span style={{ display: "block", width: "70px", height: "1px", background: GOLD, opacity: 0.7, marginBottom: "16px" }} />
-      <p className="font-display text-center" style={{ fontSize: "13px", color: GOLD, letterSpacing: "0.2em", textTransform: "uppercase" }}>{children}</p>
-    </div>
+    <div
+      style={{
+        width: "60px",
+        height: "1px",
+        background: GOLD,
+        margin: "0 auto 14px",
+      }}
+    />
   );
 }
 
-function Heading({ children, style }: { children: React.ReactNode; style?: React.CSSProperties }) {
+function SectionKicker({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className="font-serif text-center" style={{ fontSize: "clamp(24px,3.2vw,38px)", color: GOLD_SOFT, letterSpacing: "0.1em", fontWeight: 400, lineHeight: 1.3, textTransform: "uppercase", ...style }}>
+    <p
+      className="font-display text-center"
+      style={{
+        fontSize: "12px",
+        color: GOLD,
+        letterSpacing: "0.22em",
+        textTransform: "uppercase",
+        marginBottom: "10px",
+      }}
+    >
+      {children}
+    </p>
+  );
+}
+
+function SectionHeading({
+  children,
+  style,
+}: {
+  children: React.ReactNode;
+  style?: React.CSSProperties;
+}) {
+  return (
+    <h2
+      className="font-serif text-center"
+      style={{
+        fontSize: "clamp(20px,2.8vw,34px)",
+        color: GOLD,
+        letterSpacing: "0.08em",
+        fontWeight: 400,
+        lineHeight: 1.3,
+        textTransform: "uppercase",
+        ...style,
+      }}
+    >
       {children}
     </h2>
   );
@@ -62,99 +117,379 @@ function Heading({ children, style }: { children: React.ReactNode; style?: React
 
 function GoldCheck() {
   return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={GOLD} strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: "3px" }} aria-hidden>
-      <path d="M5 12.5l4.5 4.5L19 7" />
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={GOLD}
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      style={{ flexShrink: 0, marginTop: "2px" }}
+      aria-hidden
+    >
+      <circle cx="12" cy="12" r="9" />
+      <path d="M8.5 12.5l2.5 2.5 4.5-5" />
     </svg>
   );
 }
 
-// Split a verbatim package description into a lead line + inclusion bullets.
-function parsePackage(desc: string) {
-  const idx = desc.indexOf("Includes:");
-  if (idx === -1) return { intro: desc, includesLabel: "", bullets: [] as string[] };
-  const before = desc.slice(0, idx).trim();
-  // strip the green guarantee line (rendered separately) from the lead
-  const beforeClean = before.replace(/✅[^.]*\.\s*/g, "").trim();
-  // the plan label is the trailing few words before "Includes:" (e.g. "3-month plan")
-  const labelMatch = beforeClean.match(/([A-Za-z0-9-]+(?:\s+[A-Za-z0-9-]+){0,2})$/);
-  const includesLabel = (labelMatch ? labelMatch[1].trim() : "") + " Includes:";
-  const intro = labelMatch ? beforeClean.slice(0, beforeClean.length - labelMatch[1].length).trim() : beforeClean;
-  const rest = desc.slice(idx + "Includes:".length).trim();
-  // split into readable bullets on ". " before a capital/digit (keeps "Day 20:" intact)
+function XIcon() {
+  return (
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke={GOLD}
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      style={{ flexShrink: 0, marginTop: "2px" }}
+      aria-hidden
+    >
+      <circle cx="12" cy="12" r="9" />
+      <path d="M9 9l6 6M15 9l-6 6" />
+    </svg>
+  );
+}
+
+function FaqItem({ q, a }: { q: string; a: string }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div
+      style={{
+        borderBottom: "1px solid rgba(201,169,106,0.25)",
+      }}
+    >
+      <button
+        onClick={() => setOpen(!open)}
+        className="w-full flex items-center justify-between gap-4 text-left"
+        style={{
+          padding: "18px 0",
+          background: "none",
+          border: "none",
+          cursor: "pointer",
+        }}
+      >
+        <span
+          className="font-display"
+          style={{
+            fontSize: "11px",
+            color: GOLD,
+            letterSpacing: "0.14em",
+            textTransform: "uppercase",
+            lineHeight: 1.5,
+          }}
+        >
+          {q}
+        </span>
+        <span
+          style={{
+            color: GOLD,
+            fontSize: "18px",
+            flexShrink: 0,
+            lineHeight: 1,
+            transform: open ? "rotate(45deg)" : "rotate(0deg)",
+            transition: "transform 0.2s ease",
+          }}
+        >
+          +
+        </span>
+      </button>
+      {open && (
+        <p
+          style={{
+            fontSize: "13px",
+            color: TAUPE,
+            lineHeight: 1.8,
+            padding: "0 0 20px",
+          }}
+        >
+          {a}
+        </p>
+      )}
+    </div>
+  );
+}
+
+// Parse package description into lead + guarantee + bullets
+function parsePackage(name: string, desc: string) {
+  const hasGuarantee = desc.includes("Backed by the Carisma");
+  const incIdx = desc.indexOf("Includes:");
+  if (incIdx === -1) {
+    return {
+      lead: desc.replace(/✅[^.]+\.\s*/g, "").trim(),
+      hasGuarantee,
+      bullets: [] as string[],
+    };
+  }
+  const before = desc.slice(0, incIdx).replace(/✅[^.]+\.\s*/g, "").trim();
+  // Extract a clean lead sentence (first sentence)
+  const sentEnd = before.indexOf(". ");
+  const lead = sentEnd > -1 ? before.slice(0, sentEnd + 1).trim() : before;
+
+  const rest = desc.slice(incIdx + "Includes:".length).trim();
   const bullets = rest
-    .split(/[.)]\s+(?=[A-Z0-9])/)
-    .map((s) => s.trim().replace(/[.)]+$/, "").trim())
-    .filter((s) => s.length > 1);
-  return { intro, includesLabel, bullets };
+    .split(/\.\s+(?=[A-Z0-9])/)
+    .map((s) =>
+      s
+        .trim()
+        .replace(/[.)]+$/, "")
+        .trim()
+    )
+    .filter((s) => s.length > 2);
+
+  return { lead, hasGuarantee, bullets };
 }
 
 export default function HairRegrowthPage() {
   const pkg = t.pricingGrid!;
   const collage = t.trusted!;
-  const whyTitle = collage.points[0]?.title ?? "";
-  const whyBullets = collage.points.slice(1).filter((p) => p.title);
-  const whyNote = collage.points.find((p) => !p.title && p.desc)?.desc ?? "";
   const dr = t.experience!.steps[0];
-  // separate Dr Giovanni's pull-quote (the “…” sentence) from his bio
-  const quoteMatch = dr.desc.match(/“([^”]+)”\s*—\s*([^.]+)\.?\s*$/);
-  const drBio = quoteMatch ? dr.desc.slice(0, dr.desc.indexOf("“")).trim() : dr.desc;
+
+  // Split Dr Giovanni bio and quote
+  const quoteMatch = dr.desc.match(/"([^"]+)"\s*[–—-]+\s*([^.]+)\.?\s*$/);
+  const drBio = quoteMatch
+    ? dr.desc.slice(0, dr.desc.indexOf("“")).trim()
+    : dr.desc;
   const drQuote = quoteMatch ? quoteMatch[1] : "";
-  const drQuoteBy = quoteMatch ? quoteMatch[2] : "";
+  const drQuoteBy = quoteMatch ? quoteMatch[2].trim() : "";
+
+  // Collage: separate "why" heading, bullets, note
+  const whyTitle = collage.points[0]?.title ?? "";
+  const whyBullets = collage.points
+    .slice(1)
+    .filter((p) => p.title && p.title.length > 0);
+  const whyNote =
+    collage.points.find((p) => !p.title && p.desc)?.desc ?? "";
+
+  // Guarantee paragraphs
+  const gParas = t.guarantee!.paragraphs;
 
   return (
-    <div style={{ background: INK, color: PAPER }}>
-      {/* ---- HERO ---- */}
+    <div style={{ background: WHITE, color: INK }}>
+      {/* ───────────────────────────────────────────────────────
+          HERO — dark charcoal with background image + portrait video
+      ─────────────────────────────────────────────────────── */}
       <section
         style={{
-          backgroundImage: `linear-gradient(rgba(15,13,11,0.78), rgba(15,13,11,0.86)), url('${t.hero.bgImage}')`,
+          background: CHARCOAL,
+          backgroundImage: `linear-gradient(to right, rgba(20,18,14,0.92) 54%, rgba(20,18,14,0.55) 100%), url('${t.hero.bgImage}')`,
           backgroundSize: "cover",
-          backgroundPosition: "center",
-          padding: "clamp(48px,6vw,90px) 0",
+          backgroundPosition: "center top",
+          padding: "clamp(60px,7vw,110px) 0 clamp(50px,6vw,90px)",
         }}
       >
         <div className="container">
-          <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+          <div className="grid items-center gap-10 lg:grid-cols-[1fr_380px]">
             <Reveal>
-              {t.hero.subtitle && (
-                <p className="font-display" style={{ fontSize: "13px", color: GOLD, letterSpacing: "0.2em", textTransform: "uppercase", marginBottom: "16px" }}>{t.hero.subtitle}</p>
-              )}
-              <h1 className="font-serif" style={{ fontSize: "clamp(30px,4vw,52px)", color: "#fff", letterSpacing: "0.02em", lineHeight: 1.15, textTransform: "uppercase" }}>{t.hero.title}</h1>
-              <p style={{ fontSize: "15px", color: "#d8d2c9", lineHeight: 1.8, marginTop: "22px", maxWidth: "560px" }}>{t.hero.body}</p>
+              {/* Kicker */}
+              <p
+                className="font-display"
+                style={{
+                  fontSize: "11px",
+                  color: GOLD,
+                  letterSpacing: "0.22em",
+                  textTransform: "uppercase",
+                  marginBottom: "18px",
+                }}
+              >
+                {t.hero.subtitle}
+              </p>
+              {/* H1 */}
+              <h1
+                className="font-serif"
+                style={{
+                  fontSize: "clamp(28px,4.2vw,56px)",
+                  color: "#ffffff",
+                  letterSpacing: "0.02em",
+                  lineHeight: 1.12,
+                  textTransform: "uppercase",
+                  fontWeight: 400,
+                }}
+              >
+                {t.hero.title}
+              </h1>
+              {/* Body */}
+              <p
+                style={{
+                  fontSize: "14px",
+                  color: "#d4cfc6",
+                  lineHeight: 1.85,
+                  marginTop: "22px",
+                  maxWidth: "560px",
+                }}
+              >
+                {t.hero.body}
+              </p>
+              {/* Benefit list */}
               <ul className="space-y-3" style={{ marginTop: "26px" }}>
                 {(t.hero.benefits ?? []).map((b) => (
                   <li key={b} className="flex items-start gap-3">
                     <GoldCheck />
-                    <span style={{ fontSize: "14px", color: "#e7e2d8", lineHeight: 1.55 }}>{b}</span>
+                    <span
+                      style={{
+                        fontSize: "13.5px",
+                        color: "#e0dbd2",
+                        lineHeight: 1.6,
+                      }}
+                    >
+                      {b}
+                    </span>
                   </li>
                 ))}
               </ul>
+              {/* CTA */}
               <div style={{ marginTop: "32px" }}>
                 <GoldBtn>{t.hero.cta}</GoldBtn>
               </div>
-              <div className="flex items-center gap-3" style={{ marginTop: "20px" }}>
-                <span className="flex" style={{ color: GOLD }}>{[0, 1, 2, 3, 4].map((i) => (<svg key={i} width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>))}</span>
-                <span style={{ fontSize: "12px", color: "#cfc8bd", letterSpacing: "0.06em" }}>{t.hero.note}</span>
+              {/* Stars + note */}
+              <div className="flex items-center gap-3" style={{ marginTop: "18px" }}>
+                <span className="flex" style={{ color: GOLD }}>
+                  {[0, 1, 2, 3, 4].map((i) => (
+                    <svg
+                      key={i}
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      aria-hidden
+                    >
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                    </svg>
+                  ))}
+                </span>
+                <span
+                  style={{
+                    fontSize: "11px",
+                    color: "#c2bbb0",
+                    letterSpacing: "0.06em",
+                  }}
+                >
+                  {t.hero.note}
+                </span>
               </div>
+              {/* Location */}
+              {t.hero.location && (
+                <p
+                  style={{
+                    fontSize: "11px",
+                    color: "#9a9388",
+                    letterSpacing: "0.08em",
+                    marginTop: "8px",
+                  }}
+                >
+                  📍 {t.hero.location}
+                </p>
+              )}
             </Reveal>
 
-            <Reveal delay={120} className="mx-auto" style={{ width: "100%", maxWidth: "330px" }}>
-              <div style={{ borderRadius: "18px", overflow: "hidden", boxShadow: "0 24px 60px rgba(0,0,0,0.5)", border: `1px solid rgba(201,169,106,0.35)` }}>
+            {/* Portrait video reel */}
+            <Reveal delay={120} className="mx-auto" style={{ width: "100%", maxWidth: "360px" }}>
+              <div
+                style={{
+                  borderRadius: "16px",
+                  overflow: "hidden",
+                  boxShadow: "0 20px 50px rgba(0,0,0,0.55)",
+                  border: `1px solid rgba(201,169,106,0.3)`,
+                }}
+              >
                 {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
-                <video src={`${A}/vid-hair-regrowth.mp4`} autoPlay muted loop playsInline style={{ display: "block", width: "100%", aspectRatio: "9 / 16", objectFit: "cover" }} />
+                <video
+                  src={`${A}/vid-hair-regrowth.mp4`}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  style={{
+                    display: "block",
+                    width: "100%",
+                    aspectRatio: "9 / 16",
+                    objectFit: "cover",
+                  }}
+                />
               </div>
-              <p className="text-center" style={{ fontSize: "12px", color: "#bdb6ab", lineHeight: 1.6, marginTop: "16px" }}>Developed by Malta&rsquo;s leading hair-loss clinic with 20+ years experience</p>
+              <p
+                className="text-center"
+                style={{
+                  fontSize: "11px",
+                  color: "#9e9890",
+                  lineHeight: 1.6,
+                  marginTop: "14px",
+                  letterSpacing: "0.04em",
+                }}
+              >
+                Developed by Malta&rsquo;s leading hair-loss clinic with 20+
+                years experience
+              </p>
             </Reveal>
           </div>
         </div>
       </section>
 
-      {/* ---- BEFORE & AFTERS ---- */}
-      <section style={{ background: INK_2, padding: "clamp(56px,6vw,90px) 0" }}>
+      {/* ───────────────────────────────────────────────────────
+          TRUST BAR — 3 badges below hero (white bg)
+      ─────────────────────────────────────────────────────── */}
+      <section
+        style={{
+          background: WHITE,
+          borderBottom: "1px solid rgba(201,169,106,0.15)",
+          padding: "22px 0",
+        }}
+      >
         <div className="container">
-          <Kicker>{t.education!.subtitle}</Kicker>
-          <Heading>{t.education!.title}</Heading>
+          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-14">
+            {[
+              "Malta's Leading Wellness Chain",
+              "Medically Qualified Practitioners",
+              "35+ Years of Excellence",
+            ].map((badge) => (
+              <span
+                key={badge}
+                className="font-display"
+                style={{
+                  fontSize: "10px",
+                  color: GOLD,
+                  letterSpacing: "0.18em",
+                  textTransform: "uppercase",
+                }}
+              >
+                {badge}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ───────────────────────────────────────────────────────
+          BEFORE & AFTERS
+      ─────────────────────────────────────────────────────── */}
+      <section
+        style={{
+          background: WHITE,
+          padding: "clamp(60px,7vw,100px) 0",
+        }}
+      >
+        <div className="container" style={{ maxWidth: "860px" }}>
+          <GoldLine />
+          <SectionKicker>{t.education!.subtitle}</SectionKicker>
+          <SectionHeading>{t.education!.title}</SectionHeading>
           {t.education!.paragraphs.map((p) => (
-            <p key={p} className="text-center mx-auto" style={{ fontSize: "15px", color: "#d2ccc2", lineHeight: 1.85, marginTop: "26px", maxWidth: "820px" }}>{p}</p>
+            <p
+              key={p}
+              className="text-center mx-auto"
+              style={{
+                fontSize: "14px",
+                color: TAUPE,
+                lineHeight: 1.9,
+                marginTop: "28px",
+                maxWidth: "740px",
+              }}
+            >
+              {p}
+            </p>
           ))}
           <div className="text-center" style={{ marginTop: "36px" }}>
             <GoldBtn>CHECK IF YOU QUALIFY</GoldBtn>
@@ -162,119 +497,468 @@ export default function HairRegrowthPage() {
         </div>
       </section>
 
-      {/* ---- ELIGIBILITY ---- */}
-      <section style={{ background: INK, padding: "clamp(56px,6vw,90px) 0" }}>
+      {/* ───────────────────────────────────────────────────────
+          ELIGIBILITY — 2-column cards on white
+      ─────────────────────────────────────────────────────── */}
+      <section
+        style={{
+          background: WHITE,
+          padding: "clamp(60px,7vw,100px) 0",
+        }}
+      >
         <div className="container">
-          <Kicker>eligibility criteria</Kicker>
-          <Heading>{t.suitability!.title}</Heading>
-          <p className="text-center mx-auto" style={{ fontSize: "15px", color: "#cfc9bf", lineHeight: 1.85, marginTop: "26px", maxWidth: "860px" }}>{t.suitability!.intro}</p>
-          <div className="grid gap-6 md:grid-cols-2 mx-auto" style={{ marginTop: "44px", maxWidth: "940px" }}>
-            <div style={{ background: INK_2, border: `1px solid rgba(201,169,106,0.25)`, borderRadius: "14px", padding: "clamp(24px,3vw,34px)" }}>
-              <h3 className="font-display" style={{ fontSize: "14px", color: GOLD, letterSpacing: "0.14em", textTransform: "uppercase", marginBottom: "18px" }}>suitable for:</h3>
-              <ul className="space-y-4">
+          <GoldLine />
+          <SectionKicker>eligibility criteria</SectionKicker>
+          <SectionHeading>{t.suitability!.title}</SectionHeading>
+          <p
+            className="text-center mx-auto"
+            style={{
+              fontSize: "14px",
+              color: TAUPE,
+              lineHeight: 1.9,
+              marginTop: "28px",
+              maxWidth: "820px",
+            }}
+          >
+            {t.suitability!.intro}
+          </p>
+
+          <div
+            className="grid gap-6 md:grid-cols-2 mx-auto"
+            style={{ marginTop: "48px", maxWidth: "900px" }}
+          >
+            {/* Suitable for */}
+            <div
+              style={{
+                border: `1.5px solid rgba(201,169,106,0.4)`,
+                borderRadius: "8px",
+                padding: "clamp(24px,3vw,36px)",
+              }}
+            >
+              <h3
+                className="font-display"
+                style={{
+                  fontSize: "10px",
+                  color: GOLD,
+                  letterSpacing: "0.2em",
+                  textTransform: "uppercase",
+                  marginBottom: "22px",
+                }}
+              >
+                SUITABLE FOR:
+              </h3>
+              <ul className="space-y-5">
                 {t.suitability!.suitableFor!.map((s) => (
-                  <li key={s} className="flex items-start gap-3"><GoldCheck /><span style={{ fontSize: "14px", color: "#e2ddd3", lineHeight: 1.55 }}>{s}</span></li>
+                  <li key={s} className="flex items-start gap-3">
+                    <GoldCheck />
+                    <span
+                      style={{
+                        fontSize: "12px",
+                        color: TAUPE,
+                        lineHeight: 1.6,
+                        textTransform: "uppercase",
+                        letterSpacing: "0.06em",
+                      }}
+                    >
+                      {s}
+                    </span>
+                  </li>
                 ))}
               </ul>
             </div>
-            <div style={{ background: INK_2, border: `1px solid rgba(255,255,255,0.08)`, borderRadius: "14px", padding: "clamp(24px,3vw,34px)" }}>
-              <h3 className="font-display" style={{ fontSize: "14px", color: "#9b948a", letterSpacing: "0.14em", textTransform: "uppercase", marginBottom: "18px" }}>not suitable for:</h3>
-              <ul className="space-y-4">
+
+            {/* Not suitable for */}
+            <div
+              style={{
+                border: `1.5px solid rgba(201,169,106,0.25)`,
+                borderRadius: "8px",
+                padding: "clamp(24px,3vw,36px)",
+              }}
+            >
+              <h3
+                className="font-display"
+                style={{
+                  fontSize: "10px",
+                  color: GOLD,
+                  letterSpacing: "0.2em",
+                  textTransform: "uppercase",
+                  marginBottom: "22px",
+                }}
+              >
+                NOT SUITABLE FOR:
+              </h3>
+              <ul className="space-y-5">
                 {t.suitability!.notIdeal!.map((s) => (
-                  <li key={s} className="flex items-start gap-3"><span style={{ color: "#7c756b", fontSize: "15px", lineHeight: 1.4, flexShrink: 0 }}>—</span><span style={{ fontSize: "14px", color: "#b8b2a8", lineHeight: 1.55 }}>{s}</span></li>
+                  <li key={s} className="flex items-start gap-3">
+                    <XIcon />
+                    <span
+                      style={{
+                        fontSize: "12px",
+                        color: TAUPE,
+                        lineHeight: 1.6,
+                        textTransform: "uppercase",
+                        letterSpacing: "0.06em",
+                      }}
+                    >
+                      {s}
+                    </span>
+                  </li>
                 ))}
               </ul>
             </div>
           </div>
+
+          <div className="text-center" style={{ marginTop: "40px" }}>
+            <GoldBtn>CHECK YOUR ELIGIBILITY</GoldBtn>
+          </div>
         </div>
       </section>
 
-      {/* ---- THE SCIENCE ---- */}
-      <section style={{ background: INK_2, padding: "clamp(56px,6vw,90px) 0" }}>
-        <div className="container">
-          <Kicker>The Science Behind the Results</Kicker>
-          <Heading>{t.precision!.title}</Heading>
-          <p className="text-center mx-auto" style={{ fontSize: "15px", color: "#d2ccc2", lineHeight: 1.85, marginTop: "26px", maxWidth: "880px" }}>{t.precision!.intro}</p>
+      {/* ───────────────────────────────────────────────────────
+          THE SCIENCE BEHIND THE RESULTS
+      ─────────────────────────────────────────────────────── */}
+      <section
+        style={{
+          background: WHITE,
+          padding: "clamp(60px,7vw,100px) 0",
+        }}
+      >
+        <div className="container" style={{ maxWidth: "900px" }}>
+          <GoldLine />
+          <SectionKicker>The Science Behind the Results</SectionKicker>
+          <SectionHeading>{t.precision!.title}</SectionHeading>
+          <p
+            className="text-center mx-auto"
+            style={{
+              fontSize: "14px",
+              color: TAUPE,
+              lineHeight: 1.9,
+              marginTop: "28px",
+            }}
+          >
+            {t.precision!.intro}
+          </p>
         </div>
       </section>
 
-      {/* ---- EXPERT CARE (Dr Giovanni) ---- */}
-      <section style={{ background: INK, padding: "clamp(56px,6vw,90px) 0" }}>
+      {/* ───────────────────────────────────────────────────────
+          EXPERT CARE — Dr Giovanni
+      ─────────────────────────────────────────────────────── */}
+      <section
+        style={{
+          background: WHITE,
+          padding: "clamp(60px,7vw,100px) 0",
+        }}
+      >
         <div className="container">
-          <Kicker>expert care</Kicker>
-          <Heading>{t.experience!.title}</Heading>
-          <div className="grid items-center gap-10 lg:grid-cols-[0.8fr_1.2fr] mx-auto" style={{ marginTop: "44px", maxWidth: "980px" }}>
+          <GoldLine />
+          <SectionKicker>expert care</SectionKicker>
+          <SectionHeading>{t.experience!.title}</SectionHeading>
+
+          <div
+            className="grid items-start gap-10 lg:grid-cols-[340px_1fr] mx-auto"
+            style={{ marginTop: "50px", maxWidth: "960px" }}
+          >
             <Reveal>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={dr.image} alt={dr.title} style={{ display: "block", width: "100%", borderRadius: "16px", border: `1px solid rgba(201,169,106,0.3)` }} />
+              <img
+                src={dr.image}
+                alt={dr.title}
+                style={{
+                  display: "block",
+                  width: "100%",
+                  borderRadius: "8px",
+                }}
+              />
             </Reveal>
             <Reveal delay={100}>
-              <h3 className="font-serif" style={{ fontSize: "clamp(22px,2.6vw,30px)", color: GOLD_SOFT, letterSpacing: "0.04em" }}>{dr.title}</h3>
-              <p style={{ fontSize: "15px", color: "#d2ccc2", lineHeight: 1.85, marginTop: "18px" }}>{drBio}</p>
+              <h3
+                className="font-display"
+                style={{
+                  fontSize: "12px",
+                  color: GOLD,
+                  letterSpacing: "0.18em",
+                  textTransform: "uppercase",
+                  marginBottom: "18px",
+                }}
+              >
+                {dr.title}
+              </h3>
+              <p
+                style={{
+                  fontSize: "13.5px",
+                  color: TAUPE,
+                  lineHeight: 1.9,
+                }}
+              >
+                {drBio}
+              </p>
               {drQuote && (
-                <blockquote style={{ borderLeft: `2px solid ${GOLD}`, paddingLeft: "20px", marginTop: "24px" }}>
-                  <p className="font-serif" style={{ fontSize: "17px", color: "#e7e2d8", fontStyle: "italic", lineHeight: 1.6 }}>&ldquo;{drQuote}&rdquo;</p>
-                  {drQuoteBy && <cite style={{ display: "block", fontSize: "13px", color: GOLD, marginTop: "10px", fontStyle: "normal" }}>— {drQuoteBy}</cite>}
+                <blockquote
+                  style={{
+                    borderLeft: `2px solid ${GOLD}`,
+                    paddingLeft: "18px",
+                    marginTop: "24px",
+                  }}
+                >
+                  <p
+                    className="font-serif"
+                    style={{
+                      fontSize: "16px",
+                      color: "#8a7f72",
+                      fontStyle: "italic",
+                      lineHeight: 1.65,
+                    }}
+                  >
+                    &ldquo;{drQuote}&rdquo;
+                  </p>
+                  {drQuoteBy && (
+                    <cite
+                      style={{
+                        display: "block",
+                        fontSize: "11px",
+                        color: GOLD,
+                        marginTop: "10px",
+                        fontStyle: "normal",
+                        letterSpacing: "0.1em",
+                      }}
+                    >
+                      — {drQuoteBy}
+                    </cite>
+                  )}
                 </blockquote>
               )}
-              <div style={{ marginTop: "28px" }}><GoldBtn>MEET DR GIOVANNI</GoldBtn></div>
+              <div style={{ marginTop: "28px" }}>
+                <GoldBtn>MEET DR GIOVANNI</GoldBtn>
+              </div>
             </Reveal>
           </div>
         </div>
       </section>
 
-      {/* ---- GUARANTEE ---- */}
-      <section style={{ background: INK_2, padding: "clamp(56px,6vw,90px) 0" }}>
+      {/* ───────────────────────────────────────────────────────
+          OUR GUARANTEE
+      ─────────────────────────────────────────────────────── */}
+      <section
+        style={{
+          background: WHITE,
+          padding: "clamp(60px,7vw,100px) 0",
+        }}
+      >
         <div className="container">
-          <Kicker>Our guarantee</Kicker>
-          <Heading>{t.guarantee!.title}</Heading>
-          <div className="mx-auto" style={{ maxWidth: "860px", marginTop: "30px" }}>
-            {t.guarantee!.paragraphs.map((p, i) => {
-              const isBullet = i >= 4 && i <= 7;
-              if (isBullet) {
-                return (
-                  <div key={p} className="flex items-start gap-3" style={{ marginTop: "10px", paddingLeft: "8px" }}>
-                    <GoldCheck /><span style={{ fontSize: "14px", color: "#cfc9bf", lineHeight: 1.6 }}>{p}</span>
-                  </div>
-                );
-              }
-              const lead = i === 0;
-              return (
-                <p key={p} style={{ fontSize: lead ? "17px" : "14.5px", color: lead ? GOLD_SOFT : "#cfc9bf", lineHeight: 1.85, marginTop: i === 0 ? 0 : "18px", textAlign: lead ? "center" : "left", fontFamily: lead ? "var(--font-serif, serif)" : undefined }}>{p}</p>
-              );
-            })}
+          <GoldLine />
+          <SectionKicker>Our guarantee</SectionKicker>
+          <SectionHeading>{t.guarantee!.title}</SectionHeading>
+
+          {/* Gold badge card */}
+          <div
+            className="mx-auto text-center"
+            style={{
+              marginTop: "36px",
+              maxWidth: "340px",
+              background: `linear-gradient(145deg, #e2c97a 0%, ${GOLD} 50%, ${GOLD_MID} 100%)`,
+              borderRadius: "16px",
+              padding: "clamp(24px,3vw,36px) clamp(20px,3vw,32px)",
+            }}
+          >
+            <p
+              className="font-display"
+              style={{
+                fontSize: "12px",
+                color: "rgba(26,20,10,0.7)",
+                letterSpacing: "0.15em",
+                textTransform: "uppercase",
+                marginBottom: "10px",
+              }}
+            >
+              THE ONLY HAIR LOSS<br />TREATMENT CLINIC IN<br />MALTA TO OFFER
+            </p>
+            <p
+              className="font-display"
+              style={{
+                fontSize: "17px",
+                color: INK,
+                letterSpacing: "0.08em",
+                textTransform: "uppercase",
+                fontWeight: 700,
+                lineHeight: 1.3,
+              }}
+            >
+              A 100% PERFORMANCE<br />GUARANTEE*
+            </p>
           </div>
-          <div className="text-center" style={{ marginTop: "36px" }}><GoldBtn>{t.guarantee!.cta}</GoldBtn></div>
+
+          {/* Guarantee body text */}
+          <div
+            className="mx-auto"
+            style={{ maxWidth: "820px", marginTop: "44px" }}
+          >
+            {gParas.slice(0, 3).map((p, i) => (
+              <p
+                key={p}
+                style={{
+                  fontSize: i === 0 ? "15px" : "13.5px",
+                  color: i === 0 ? GOLD : TAUPE,
+                  lineHeight: 1.9,
+                  marginTop: i === 0 ? 0 : "20px",
+                  textAlign: i === 0 ? "center" : "left",
+                  fontFamily: i === 0 ? "var(--font-serif, serif)" : undefined,
+                  letterSpacing: i === 0 ? "0.02em" : undefined,
+                }}
+              >
+                {p}
+              </p>
+            ))}
+            <p
+              style={{
+                fontSize: "12px",
+                color: GOLD,
+                letterSpacing: "0.12em",
+                textTransform: "uppercase",
+                fontFamily: "var(--font-display)",
+                marginTop: "28px",
+                marginBottom: "12px",
+              }}
+            >
+              {gParas[3]}
+            </p>
+            <ul className="space-y-3">
+              {gParas.slice(4, 8).map((p) => (
+                <li key={p} className="flex items-start gap-3">
+                  <GoldCheck />
+                  <span
+                    style={{
+                      fontSize: "13px",
+                      color: TAUPE,
+                      lineHeight: 1.7,
+                    }}
+                  >
+                    {p}
+                  </span>
+                </li>
+              ))}
+            </ul>
+            {gParas[8] && (
+              <p
+                style={{
+                  fontSize: "13px",
+                  color: TAUPE,
+                  lineHeight: 1.8,
+                  marginTop: "20px",
+                  fontStyle: "italic",
+                }}
+              >
+                {gParas[8]}
+              </p>
+            )}
+          </div>
+
+          {/* CTA inside a bordered box */}
+          <div
+            className="mx-auto"
+            style={{
+              maxWidth: "640px",
+              marginTop: "40px",
+              border: `1px solid rgba(201,169,106,0.45)`,
+              borderRadius: "4px",
+              padding: "clamp(20px,3vw,30px)",
+              textAlign: "center",
+            }}
+          >
+            <GoldBtn fullWidth>{t.guarantee!.cta}</GoldBtn>
+          </div>
         </div>
       </section>
 
-      {/* ---- PACKAGES ---- */}
-      <section style={{ background: INK, padding: "clamp(56px,6vw,90px) 0" }}>
+      {/* ───────────────────────────────────────────────────────
+          OUR PACKAGES — 3 column list
+      ─────────────────────────────────────────────────────── */}
+      <section
+        style={{
+          background: WHITE,
+          padding: "clamp(60px,7vw,100px) 0",
+        }}
+      >
         <div className="container">
-          <Kicker>{pkg.intro}</Kicker>
-          <Heading>{pkg.title}</Heading>
-          <div className="grid gap-6 lg:grid-cols-3" style={{ marginTop: "48px" }}>
+          <GoldLine />
+          <SectionKicker>{pkg.intro}</SectionKicker>
+          <SectionHeading>{pkg.title}</SectionHeading>
+
+          <div
+            className="grid gap-6 lg:grid-cols-3"
+            style={{ marginTop: "52px" }}
+          >
             {pkg.items.map((item, i) => {
-              const { intro, includesLabel, bullets } = parsePackage(item.desc);
-              const featured = i === 1;
+              const { lead, hasGuarantee, bullets } = parsePackage(
+                item.name,
+                item.desc
+              );
               return (
-                <Reveal key={item.name} delay={i * 90} style={{ display: "flex", flexDirection: "column", background: INK_2, border: featured ? `1.5px solid ${GOLD}` : `1px solid rgba(201,169,106,0.22)`, borderRadius: "16px", overflow: "hidden", boxShadow: featured ? "0 18px 44px rgba(0,0,0,0.5)" : "0 12px 30px rgba(0,0,0,0.35)" }}>
-                  {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
-                  <video src={`${A}/vid-hair-regrowth-${i + 3}.mp4`} autoPlay muted loop playsInline style={{ display: "block", width: "100%", aspectRatio: "16 / 10", objectFit: "cover" }} />
-                  <div style={{ padding: "clamp(22px,2.4vw,30px)", display: "flex", flexDirection: "column", flex: 1 }}>
-                    <h3 className="font-display" style={{ fontSize: "20px", color: GOLD_SOFT, letterSpacing: "0.06em", textTransform: "uppercase" }}>{item.name}</h3>
-                    <p className="font-display" style={{ fontSize: "15px", color: "#fff", letterSpacing: "0.04em", marginTop: "8px" }}>{item.price}</p>
-                    {intro && <p style={{ fontSize: "13.5px", color: "#c4beb4", lineHeight: 1.7, marginTop: "14px" }}>{intro}</p>}
-                    {featured || i === 2 ? (
-                      <p style={{ fontSize: "13px", color: "#7fc08a", lineHeight: 1.6, marginTop: "12px" }}>✅ Backed by the Carisma Measurable Results Guarantee.</p>
-                    ) : null}
-                    {includesLabel && <p className="font-display" style={{ fontSize: "12px", color: GOLD, letterSpacing: "0.1em", textTransform: "uppercase", marginTop: "18px", marginBottom: "10px" }}>{includesLabel}</p>}
-                    <ul className="space-y-2.5" style={{ flex: 1 }}>
-                      {bullets.map((b) => (
-                        <li key={b} className="flex items-start gap-2.5"><span style={{ color: GOLD, fontSize: "10px", lineHeight: 1.9, flexShrink: 0 }}>●</span><span style={{ fontSize: "12.5px", color: "#b8b2a8", lineHeight: 1.55 }}>{b}</span></li>
-                      ))}
-                    </ul>
-                    <div style={{ marginTop: "24px" }}><GoldBtn style={{ width: "100%" }}>GET STARTED</GoldBtn></div>
+                <Reveal
+                  key={item.name}
+                  delay={i * 80}
+                  style={{ display: "flex", flexDirection: "column" }}
+                >
+                  <div
+                    style={{
+                      border: `1px solid rgba(201,169,106,0.35)`,
+                      borderRadius: "4px",
+                      padding: "clamp(24px,2.5vw,32px)",
+                      display: "flex",
+                      flexDirection: "column",
+                      flex: 1,
+                    }}
+                  >
+                    <h3
+                      className="font-display"
+                      style={{
+                        fontSize: "13px",
+                        color: GOLD,
+                        letterSpacing: "0.14em",
+                        textTransform: "uppercase",
+                      }}
+                    >
+                      {item.name}
+                    </h3>
+                    {lead && (
+                      <p
+                        style={{
+                          fontSize: "12px",
+                          color: TAUPE,
+                          lineHeight: 1.7,
+                          marginTop: "10px",
+                        }}
+                      >
+                        {lead}
+                      </p>
+                    )}
+                    <p
+                      className="font-display"
+                      style={{
+                        fontSize: "13px",
+                        color: INK,
+                        letterSpacing: "0.06em",
+                        marginTop: "12px",
+                      }}
+                    >
+                      {item.price}
+                    </p>
+                    {hasGuarantee && (
+                      <p
+                        style={{
+                          fontSize: "12px",
+                          color: "#5aaa6a",
+                          lineHeight: 1.5,
+                          marginTop: "10px",
+                        }}
+                      >
+                        ✅ Backed by the Carisma Measurable Results Guarantee.
+                      </p>
+                    )}
+                    <div style={{ flex: 1 }} />
+                    <div style={{ marginTop: "24px" }}>
+                      <GoldBtn fullWidth>GET STARTED</GoldBtn>
+                    </div>
                   </div>
                 </Reveal>
               );
@@ -283,52 +967,247 @@ export default function HairRegrowthPage() {
         </div>
       </section>
 
-      {/* ---- WE DON'T JUST TREAT HAIR LOSS (collage + why card) ---- */}
-      <section style={{ background: INK_2, padding: "clamp(56px,6vw,90px) 0" }}>
+      {/* ───────────────────────────────────────────────────────
+          COLLAGE — scattered photo grid
+      ─────────────────────────────────────────────────────── */}
+      <section
+        style={{
+          background: WHITE,
+          padding: "clamp(60px,7vw,100px) 0",
+        }}
+      >
         <div className="container">
-          <Kicker>we don&rsquo;t just treat hair loss</Kicker>
-          <Heading style={{ maxWidth: "880px", margin: "0 auto" }}>{collage.title}</Heading>
-          {collage.subtitle && <p className="text-center" style={{ fontSize: "15px", color: GOLD, letterSpacing: "0.04em", marginTop: "14px" }}>{collage.subtitle}</p>}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mx-auto" style={{ marginTop: "44px", maxWidth: "1000px" }}>
-            {collage.images.map((src) => (
-              <div key={src} className="overflow-hidden" style={{ borderRadius: "12px", border: `1px solid rgba(201,169,106,0.25)` }}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={src} alt="" style={{ display: "block", width: "100%", aspectRatio: "1 / 1", objectFit: "cover" }} />
-              </div>
-            ))}
+          {/* Title block */}
+          <div className="mx-auto" style={{ maxWidth: "820px" }}>
+            <GoldLine />
+            <SectionKicker>we don&rsquo;t just treat hair loss</SectionKicker>
+            <SectionHeading>{collage.title}</SectionHeading>
+            {collage.subtitle && (
+              <p
+                className="font-serif text-center"
+                style={{
+                  fontSize: "15px",
+                  color: GOLD,
+                  letterSpacing: "0.04em",
+                  marginTop: "12px",
+                  fontStyle: "italic",
+                }}
+              >
+                {collage.subtitle}
+              </p>
+            )}
           </div>
 
-          <div className="mx-auto" style={{ marginTop: "48px", maxWidth: "900px", background: INK, border: `1px solid rgba(201,169,106,0.25)`, borderRadius: "18px", padding: "clamp(30px,4vw,48px)" }}>
-            <h3 className="font-serif text-center" style={{ fontSize: "clamp(20px,2.4vw,28px)", color: GOLD_SOFT, letterSpacing: "0.04em", lineHeight: 1.35 }}>{whyTitle}</h3>
-            <ul className="space-y-4" style={{ marginTop: "28px" }}>
+          {/* Scattered/staggered photo collage */}
+          <div
+            className="relative mx-auto"
+            style={{ marginTop: "48px", maxWidth: "900px" }}
+          >
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+              {/* Row 1: 2 images side by side */}
+              <div className="overflow-hidden rounded-lg" style={{ aspectRatio: "4/3" }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={collage.images[0]}
+                  alt=""
+                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                />
+              </div>
+              <div className="overflow-hidden rounded-lg" style={{ aspectRatio: "4/3", marginTop: "40px" }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={collage.images[1]}
+                  alt=""
+                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                />
+              </div>
+              <div className="overflow-hidden rounded-lg" style={{ aspectRatio: "4/3" }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={collage.images[2]}
+                  alt=""
+                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                />
+              </div>
+              <div className="overflow-hidden rounded-lg" style={{ aspectRatio: "4/3", marginTop: "-20px" }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/assets/treatments/hair-regrowth-density-scan.png"
+                  alt=""
+                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                />
+              </div>
+              <div className="overflow-hidden rounded-lg" style={{ aspectRatio: "4/3", marginTop: "20px" }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={collage.images[3]}
+                  alt=""
+                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                />
+              </div>
+              <div className="overflow-hidden rounded-lg" style={{ aspectRatio: "4/3", marginTop: "-10px" }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/assets/treatments/hair-regrowth-scalp-imaging.png"
+                  alt=""
+                  style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                />
+              </div>
+            </div>
+          </div>
+
+          {/* Why Patients Choose card (taupe/grey rounded box) */}
+          <div
+            className="mx-auto"
+            style={{
+              marginTop: "52px",
+              maxWidth: "820px",
+              background: "rgba(176,166,143,0.12)",
+              border: `1px solid rgba(201,169,106,0.2)`,
+              borderRadius: "16px",
+              padding: "clamp(28px,4vw,48px)",
+            }}
+          >
+            <h3
+              className="font-serif"
+              style={{
+                fontSize: "clamp(16px,2vw,22px)",
+                color: GOLD,
+                letterSpacing: "0.06em",
+                textTransform: "uppercase",
+                lineHeight: 1.35,
+                marginBottom: "26px",
+              }}
+            >
+              {whyTitle}
+            </h3>
+            <ul className="space-y-4">
               {whyBullets.map((p) => (
-                <li key={p.title} className="flex items-start gap-3"><GoldCheck /><span style={{ fontSize: "14.5px", color: "#d2ccc2", lineHeight: 1.6 }}>{p.title}</span></li>
+                <li key={p.title} className="flex items-start gap-3">
+                  <GoldCheck />
+                  <span
+                    style={{
+                      fontSize: "13px",
+                      color: TAUPE,
+                      lineHeight: 1.65,
+                    }}
+                  >
+                    {p.title}
+                  </span>
+                </li>
               ))}
             </ul>
-            {whyNote && <p className="text-center" style={{ fontSize: "13px", color: "#a39c91", lineHeight: 1.7, marginTop: "28px", fontStyle: "italic" }}>{whyNote}</p>}
-            <div className="text-center" style={{ marginTop: "28px" }}><GoldBtn>Book Your Consultation</GoldBtn></div>
+            {whyNote && (
+              <p
+                style={{
+                  fontSize: "12px",
+                  color: TAUPE,
+                  lineHeight: 1.8,
+                  marginTop: "24px",
+                  fontStyle: "italic",
+                }}
+              >
+                {whyNote}
+              </p>
+            )}
+            <div style={{ marginTop: "28px" }}>
+              <GoldBtn>BOOK YOUR CONSULTATION</GoldBtn>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ---- FAQ ---- */}
-      <section style={{ background: INK, padding: "clamp(56px,6vw,90px) 0" }}>
+      {/* ───────────────────────────────────────────────────────
+          FAQ
+      ─────────────────────────────────────────────────────── */}
+      <section
+        style={{
+          background: WHITE,
+          padding: "clamp(60px,7vw,100px) 0",
+        }}
+      >
         <div className="container">
-          <Kicker>{t.faqKicker}</Kicker>
-          <Heading>{t.faqTitle}</Heading>
-          <div className="mx-auto" style={{ maxWidth: "820px", marginTop: "44px" }}>
+          <GoldLine />
+          <SectionKicker>{t.faqKicker}</SectionKicker>
+          <SectionHeading>{t.faqTitle}</SectionHeading>
+
+          {/* Search bar (cosmetic) */}
+          <div
+            className="mx-auto"
+            style={{ maxWidth: "760px", marginTop: "32px", marginBottom: "8px" }}
+          >
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                border: `1px solid rgba(201,169,106,0.3)`,
+                borderRadius: "4px",
+                padding: "10px 16px",
+              }}
+            >
+              <input
+                type="text"
+                placeholder="Looking for something?"
+                readOnly
+                style={{
+                  flex: 1,
+                  border: "none",
+                  outline: "none",
+                  fontSize: "13px",
+                  color: TAUPE,
+                  background: "transparent",
+                  cursor: "default",
+                }}
+              />
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={GOLD} strokeWidth="1.5" aria-hidden>
+                <circle cx="11" cy="11" r="8" />
+                <path d="M21 21l-4.35-4.35" />
+              </svg>
+            </div>
+          </div>
+
+          <div className="mx-auto" style={{ maxWidth: "760px" }}>
             {t.faq!.map((f) => (
-              <details key={f.q} style={{ background: INK_2, border: `1px solid rgba(201,169,106,0.22)`, borderRadius: "12px", marginBottom: "12px", padding: "0 22px" }}>
-                <summary className="flex items-center justify-between gap-4" style={{ cursor: "pointer", padding: "18px 0", fontSize: "15px", fontWeight: 500, color: GOLD_SOFT, letterSpacing: "0.01em", listStyle: "none" }}>
-                  <span>{f.q}</span>
-                  <span style={{ color: GOLD, fontSize: "22px", lineHeight: 1, flexShrink: 0 }}>+</span>
-                </summary>
-                <p style={{ fontSize: "14px", color: "#c4beb4", lineHeight: 1.75, padding: "0 0 20px" }}>{f.a}</p>
-              </details>
+              <FaqItem key={f.q} q={f.q} a={f.a} />
             ))}
           </div>
         </div>
       </section>
+
+      {/* ───────────────────────────────────────────────────────
+          CLINICAL RESEARCH — "Evidence Based Approach"
+          (Live: Wix blog widget — we render just the heading/kicker)
+      ─────────────────────────────────────────────────────── */}
+      <section
+        style={{
+          background: WHITE,
+          padding: "clamp(60px,7vw,100px) 0",
+        }}
+      >
+        <div className="container" style={{ maxWidth: "860px" }}>
+          <GoldLine />
+          <SectionKicker>CLINICAL RESEARCH</SectionKicker>
+          <SectionHeading>evidence based approach</SectionHeading>
+          <p
+            className="text-center mx-auto"
+            style={{
+              fontSize: "14px",
+              color: TAUPE,
+              lineHeight: 1.9,
+              marginTop: "28px",
+              maxWidth: "680px",
+            }}
+          >
+            Our treatments are grounded in peer-reviewed clinical research on
+            PRP, exosome therapy, and evidence-based prescription protocols for
+            hair loss.
+          </p>
+        </div>
+      </section>
+      {/*
+        "Real People, Real Reviews" and the Doctors section are rendered
+        by the global Footer (components/Footer.tsx) — no need to repeat here.
+      */}
     </div>
   );
 }
