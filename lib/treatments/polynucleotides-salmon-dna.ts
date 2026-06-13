@@ -67,6 +67,7 @@ const t: Treatment = {
       { title: "Targeted Treatments", desc: "Your doctor administers botox using fine, precise injections, quick, comfortable, and no downtime.", image: "/assets/treatments/botox-step3.png" },
       { title: "Ongoing Review & Adjustment", desc: "Your doctor monitors your response and refines the plan to ensure natural botox results over time.", image: "/assets/treatments/botox-step4.png" },
     ],
+    cta: "BOOK YOUR FREE CONSULTATION",
   },
   prepAftercare: {
     kicker: "Preparation & Aftercare",
@@ -150,12 +151,12 @@ const t: Treatment = {
     title: "recommended with salmon dna",
     items: [
       { label: "hydrafacial", href: "/hydrafacial", image: "/assets/treatments/polynucleotides-salmon-dna-rec-hydrafacial.avif" },
-      { label: "botox", href: "/wrinkle-relaxing-malta", image: "/assets/treatments/polynucleotides-salmon-dna-rec-botox.avif" },
       { label: "Microneedling", href: "/microneedling-malta", image: "/assets/treatments/polynucleotides-salmon-dna-rec-microneedling.png" },
+      { label: "botox", href: "/wrinkle-relaxing-malta", image: "/assets/treatments/polynucleotides-salmon-dna-rec-botox.avif" },
       { label: "PRp", href: "/prp-malta", image: "/assets/treatments/polynucleotides-salmon-dna-rec-prp.avif" },
     ],
   },
-  faqTitle: "faqs about polynucleotides in malta",
+  faqTitle: "Frequently asked questions",
   faq: [
     { q: "What exactly are polynucleotides (Salmon DNA)?", a: "Polynucleotides are purified DNA molecules that stimulate skin repair, hydration, and collagen production. They work by helping your skin regenerate naturally — without altering your facial features." },
     { q: "Is the treatment safe?", a: "Yes. Polynucleotides are clinically proven, biocompatible, and widely used in regenerative aesthetics. They are injected in small amounts and are suitable even for delicate areas such as the under-eyes." },
