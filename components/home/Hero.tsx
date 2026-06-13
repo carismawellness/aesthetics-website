@@ -35,7 +35,7 @@ export default function Hero() {
 
           {/* Right column: video + awards badge + scroll cue */}
           <div>
-            <div className="relative" style={{ padding: "14px" }}>
+            <div className="relative mx-auto" style={{ padding: "14px", maxWidth: "400px" }}>
               {/* top-left teal accent */}
               <span
                 aria-hidden
