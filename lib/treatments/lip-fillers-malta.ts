@@ -138,7 +138,7 @@ const t: Treatment = {
     title: "malta's #1 leading wellness chain",
     commitmentTitle: "our commitment",
     commitment: [
-      "Natural, refined lip fillers results, never overdone, never frozen",
+      "Natural, refined lip fillers results,  never overdone, never frozen",
       "Doctor-led treatments with advanced facial anatomy expertise",
       "Safe, ethical care using clinically approved products",
       "A personalised journey from consultation to aftercare",
