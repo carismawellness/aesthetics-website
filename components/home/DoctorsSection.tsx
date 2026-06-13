@@ -25,12 +25,12 @@ export default function DoctorsSection() {
 
               {/* Text */}
               <div className={flip ? "md:order-1" : "md:order-2"}>
-                <h3 className="font-display" style={{ fontSize: "clamp(20px,2.6vw,28px)", color: "var(--teal)", fontWeight: 400, letterSpacing: "0.08em", lineHeight: 1.25 }}>
+                <h2 className="font-display" style={{ fontSize: "clamp(22px,2.8vw,32px)", color: "var(--teal)", fontWeight: 400, letterSpacing: "0.08em", lineHeight: 1.25 }}>
                   {d.name}
-                </h3>
+                </h2>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="/assets/wave-gold.png" alt="" aria-hidden style={{ height: "18px", width: "auto", margin: "12px 0 14px", opacity: 0.85 }} />
-                <p style={{ fontSize: "14px", color: "#9b8d83", lineHeight: 1.85, textAlign: "justify" }}>{d.bio.map((p, j) => (<span key={j} style={{ display: "block", marginTop: j ? "14px" : 0 }}>{p}</span>))}</p>
+                <p style={{ fontSize: "14px", color: "#5b5249", lineHeight: 1.85, textAlign: "justify" }}>{d.bio.map((p, j) => (<span key={j} style={{ display: "block", marginTop: j ? "14px" : 0 }}>{p}</span>))}</p>
               </div>
             </Reveal>
           );

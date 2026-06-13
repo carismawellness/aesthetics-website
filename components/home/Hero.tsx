@@ -2,38 +2,40 @@ import ConsultationForm from "@/components/ConsultationForm";
 
 export default function Hero() {
   return (
-    <section style={{ padding: "36px 0 40px" }}>
-      <div className="container">
-        {/* Hero panel — rounded, soft teal gradient (matches live) */}
-        <div
-          style={{
-            borderRadius: "26px",
-            background: "url('/assets/bg-gradient.png') center/cover no-repeat",
-            padding: "clamp(28px,4vw,56px)",
-          }}
-        >
-          <div className="grid gap-10 lg:grid-cols-2 items-start">
-            {/* Form (left) */}
-            <div>
-              <h1
-                className="font-serif"
-                style={{
-                  fontSize: "clamp(24px,2.6vw,30px)",
-                  color: "#96b2b2",
-                  textTransform: "uppercase",
-                  letterSpacing: "0.06em",
-                  fontWeight: 500,
-                  marginBottom: "22px",
-                }}
-              >
-                personalised form
-              </h1>
-              <ConsultationForm />
-            </div>
+    /* Outer section — plain white, gives the side margins visible on live */
+    <section style={{ backgroundColor: "#fff", padding: "28px clamp(16px,3vw,40px)" }}>
+      {/* Contained panel with gradient background and rounded corners — matches live */}
+      <div
+        style={{
+          background: "url('/assets/bg-gradient.png') center/cover no-repeat",
+          borderRadius: "20px",
+          padding: "clamp(28px,4vw,56px) clamp(28px,5vw,64px)",
+          overflow: "hidden",
+          boxShadow: "0 2px 16px rgba(0,0,0,0.06)",
+        }}
+      >
+        <div className="grid gap-10 lg:grid-cols-2 items-start">
+          {/* Form (left) */}
+          <div>
+            <h1
+              className="font-serif"
+              style={{
+                fontSize: "clamp(24px,2.6vw,30px)",
+                color: "#d7d1c3",
+                textTransform: "uppercase",
+                letterSpacing: "0.06em",
+                fontWeight: 700,
+                marginBottom: "22px",
+              }}
+            >
+              personalised form
+            </h1>
+            <ConsultationForm />
+          </div>
 
-            {/* Right column: video + awards badge + scroll cue */}
-            <div>
-              <div className="relative" style={{ padding: "14px" }}>
+          {/* Right column: video + awards badge + scroll cue */}
+          <div>
+            <div className="relative" style={{ padding: "14px" }}>
               {/* top-left teal accent */}
               <span
                 aria-hidden
@@ -80,23 +82,22 @@ export default function Hero() {
                 playsInline
                 aria-label="Carisma Aesthetics clinic in Malta"
               />
-              </div>
+            </div>
 
-              {/* Awards badge + #1 voted (under the video) */}
-              <div className="flex items-center gap-4" style={{ marginTop: "26px" }}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/assets/awards-logo.png" alt="Malta Healthcare, Wellness, Beauty & Best Spa Awards" style={{ height: "72px", width: "auto" }} />
-                <span className="font-display" style={{ fontSize: "15px", fontWeight: 700, color: "var(--gold)", letterSpacing: "0.1em", lineHeight: 1.4 }}>#1 Voted Med-Aesthetics Clinic in Malta</span>
-              </div>
+            {/* Awards badge + #1 voted (under the video) */}
+            <div className="flex items-center gap-4" style={{ marginTop: "26px" }}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/assets/awards-logo.png" alt="Malta Healthcare, Wellness, Beauty & Best Spa Awards" style={{ height: "72px", width: "auto" }} />
+              <span className="font-display" style={{ fontSize: "15px", fontWeight: 700, color: "var(--gold)", letterSpacing: "0.1em", lineHeight: 1.4 }}>#1 Voted Med-Aesthetics Clinic in Malta</span>
+            </div>
 
-              {/* Scroll down (under the video) — left-aligned column, taupe */}
-              <div className="inline-flex flex-col items-center" style={{ marginTop: "30px" }}>
-                <p className="font-display text-center" style={{ fontSize: "15px", fontWeight: 700, color: "#9b8d83", letterSpacing: "0.14em", lineHeight: 1.5 }}>
-                  scroll down<br />to learn more
-                </p>
-                <div className="flex justify-center" style={{ width: "32px", height: "50px", border: "1.5px solid #9b8d83", borderRadius: "16px", marginTop: "16px", paddingTop: "9px" }}>
-                  <svg className="animate-bounce" width="12" height="14" viewBox="0 0 24 24" fill="none" stroke="#9b8d83" strokeWidth="2"><path d="M12 4v12M6 12l6 6 6-6" /></svg>
-                </div>
+            {/* Scroll down cue */}
+            <div className="inline-flex flex-col items-center" style={{ marginTop: "30px" }}>
+              <p className="font-display text-center" style={{ fontSize: "15px", fontWeight: 700, color: "#9b8d83", letterSpacing: "0.14em", lineHeight: 1.5 }}>
+                scroll down<br />to learn more
+              </p>
+              <div className="flex justify-center" style={{ width: "32px", height: "50px", border: "1.5px solid #9b8d83", borderRadius: "16px", marginTop: "16px", paddingTop: "9px" }}>
+                <svg className="animate-bounce" width="12" height="14" viewBox="0 0 24 24" fill="none" stroke="#9b8d83" strokeWidth="2"><path d="M12 4v12M6 12l6 6 6-6" /></svg>
               </div>
             </div>
           </div>

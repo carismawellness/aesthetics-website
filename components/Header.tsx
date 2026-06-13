@@ -11,7 +11,7 @@ import {
 } from "@/lib/site";
 
 const ANNOUNCE =
-  "#1 VOTED MED-AESTHETICS CLINIC IN MALTA ⭐ HIGHEST RATED CLINIC IN MALTA ⭐ MEDICALLY QUALIFIED DOCTORS";
+  "#1 voted med-aesthetics clinic in malta          ⭐ Highest rated clinic in Malta ⭐          Medically qualified doctors";
 
 type Dropdown = { label: string; href?: string; items?: NavLink[] };
 
@@ -53,11 +53,11 @@ export default function Header() {
 
       {/* Main nav */}
       <nav className="bg-white border-b" style={{ borderColor: "var(--line)" }}>
-        <div className="container flex items-center justify-between" style={{ height: "78px" }}>
+        <div className="container flex items-center justify-between" style={{ minHeight: "88px", padding: "12px 20px" }}>
           {/* Logo */}
           <Link href="/" className="flex items-center shrink-0">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/assets/logo.png" alt="Carisma Aesthetics" style={{ height: "34px", width: "auto" }} />
+            <img src="/assets/logo.png" alt="Carisma Aesthetics" style={{ height: "52px", width: "auto" }} />
           </Link>
 
           {/* Desktop menu */}
@@ -99,14 +99,14 @@ export default function Header() {
           </div>
 
           {/* Right side */}
-          <div className="hidden lg:flex items-center" style={{ gap: "22px" }}>
-            <a href={`tel:${CONTACT.tel}`} className="flex items-center gap-2" style={{ color: "var(--gold)" }}>
-              <PhoneIcon />
-              <span style={{ color: "var(--ink-soft)", letterSpacing: "1px", fontSize: "14px" }}>{CONTACT.phoneDigits}</span>
-            </a>
+          <div className="hidden lg:flex flex-col items-end" style={{ gap: "4px" }}>
             <Link href="/consultation" className="btn btn-teal">
               free consultation
             </Link>
+            <a href={`tel:${CONTACT.tel}`} className="flex items-center gap-1.5" style={{ color: "var(--gold)" }}>
+              <PhoneIcon />
+              <span style={{ color: "var(--ink-soft)", letterSpacing: "1px", fontSize: "13px" }}>{CONTACT.phoneDigits}</span>
+            </a>
           </div>
 
           {/* Mobile toggle */}

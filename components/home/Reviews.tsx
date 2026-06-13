@@ -97,7 +97,7 @@ function Stars({ size = 16 }: { size?: number }) {
 
 export default function Reviews() {
   return (
-    <section style={{ backgroundColor: "var(--white)", padding: "80px 0" }}>
+    <section style={{ backgroundColor: "#ffffff", padding: "80px 0" }}>
       <div className="container">
         <Reveal>
           <h2
@@ -124,25 +124,27 @@ export default function Reviews() {
             href="https://www.google.com/maps/search/?api=1&query=Carisma+Aesthetics+Malta"
             target="_blank"
             rel="noopener noreferrer"
+            className="font-display"
             style={{
-              background: "#4285F4",
+              background: "#96b2b2",
               color: "#fff",
-              fontSize: "13px",
+              fontSize: "11px",
               fontWeight: 600,
-              padding: "10px 20px",
-              borderRadius: "6px",
+              padding: "12px 22px",
+              borderRadius: "4px",
               display: "inline-flex",
               alignItems: "center",
               gap: "8px",
+              letterSpacing: "0.1em",
             }}
           >
             Review us on Google
           </a>
         </Reveal>
 
-        {/* Review cards */}
+        {/* Review cards — live shows 3 cards in one row */}
         <div className="grid gap-5 md:grid-cols-3 mx-auto" style={{ maxWidth: "1080px" }}>
-          {REVIEWS.map((r, i) => (
+          {REVIEWS.slice(0, 3).map((r, i) => (
             <Reveal
               key={r.name}
               delay={(i % 3) * 90}

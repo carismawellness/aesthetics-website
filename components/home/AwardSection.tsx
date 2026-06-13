@@ -21,7 +21,7 @@ export default function AwardSection() {
               #1 Voted Med-Aesthetics Clinic in Malta
             </h2>
             <p style={{ marginTop: "12px", fontSize: "14px", lineHeight: 1.85, color: "var(--gold)" }}>
-              At Carisma Aesthetics, we bring over 30 years of expertise in wellness and aesthetics. Guided by medical excellence and a passion for confidence, our treatments are designed to help you look and feel your best.&rdquo;
+              At Carisma Aesthetics, we bring over 30 years of expertise in wellness and aesthetics. Guided by medical excellence and a passion for confidence, our treatments are designed to help you look and feel your best.
             </p>
           </div>
         </div>

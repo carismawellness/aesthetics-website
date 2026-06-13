@@ -7,14 +7,14 @@ export default function WhyUs() {
       <div className="container">
         {/* Kicker — two lines, emphasis on "#1 Award Winning" and "30+ Years" */}
         <Reveal>
-          <p
+          <h2
             className="font-display text-center mx-auto"
             style={{ fontSize: "clamp(19px,2.6vw,30px)", letterSpacing: "0.08em", lineHeight: 1.55, maxWidth: "780px", marginBottom: "56px", color: "var(--gold)", fontWeight: 400 }}
           >
             <span style={{ fontWeight: 700 }}>#1 award winning</span> chain in Malta with
             <br />
             <span style={{ fontWeight: 700 }}>30+ years</span> in wellness
-          </p>
+          </h2>
         </Reveal>
 
         {/* Card with offset double-frame + bottom notch + faint wave */}
@@ -28,9 +28,9 @@ export default function WhyUs() {
             <img src="/assets/wave-gold.png" alt="" aria-hidden style={{ position: "absolute", left: 0, bottom: "18px", width: "100%", height: "auto", opacity: 0.5, zIndex: 0, pointerEvents: "none" }} />
 
             <div className="relative" style={{ zIndex: 1 }}>
-              <h2 className="font-display text-center" style={{ fontSize: "clamp(20px,3vw,30px)", color: "var(--gold)", letterSpacing: "0.1em", fontWeight: 400 }}>
+              <h3 className="font-display text-center" style={{ fontSize: "clamp(20px,3vw,30px)", color: "var(--gold)", letterSpacing: "0.1em", fontWeight: 400 }}>
                 why carisma aesthetics ?
-              </h2>
+              </h3>
               <div className="mx-auto" style={{ width: "120px", height: "1px", background: "var(--gold)", margin: "18px auto 34px" }} />
               <ul className="space-y-5">
                 {WHY_POINTS.map((p) => (

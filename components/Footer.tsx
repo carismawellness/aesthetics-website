@@ -76,7 +76,7 @@ function ContactItem({
         {icon}
       </span>
       <span className="flex flex-col">
-        <span className="font-display" style={labelStyle}>{label}</span>
+        <h4 className="font-display" style={labelStyle}>{label}</h4>
         <span style={valueStyle} className="group-hover:underline">{value}</span>
       </span>
     </a>
@@ -102,14 +102,14 @@ export default function Footer() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/assets/banner-spa.png" alt="Discover our spas" className="w-full h-auto transition-transform duration-500 group-hover:scale-105" />
             <span className="font-display" style={{ position: "absolute", right: "22px", bottom: "20px", background: "rgba(255,255,255,0.92)", color: "var(--ink)", fontSize: "11px", letterSpacing: "0.12em", padding: "10px 18px", borderRadius: "4px", display: "inline-flex", alignItems: "center", gap: "8px" }}>
-              Discover our Spa <span aria-hidden>→</span>
+              DISCOVER OUR SPA <span aria-hidden>›</span>
             </span>
           </a>
           <a href="https://www.carismaslimming.com" target="_blank" rel="noopener noreferrer" className="relative block overflow-hidden rounded-lg group" style={{ minWidth: 0 }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/assets/banner-slimming.png" alt="Discover Body Slimming" className="w-full h-auto transition-transform duration-500 group-hover:scale-105" />
             <span className="font-display" style={{ position: "absolute", right: "22px", bottom: "20px", background: "rgba(255,255,255,0.92)", color: "var(--ink)", fontSize: "11px", letterSpacing: "0.12em", padding: "10px 18px", borderRadius: "4px", display: "inline-flex", alignItems: "center", gap: "8px" }}>
-              Discover Body Slimming <span aria-hidden>→</span>
+              DISCOVER BODY SLIMMING <span aria-hidden>›</span>
             </span>
           </a>
         </Reveal>
@@ -163,9 +163,9 @@ export default function Footer() {
         <div className="container">
           <div style={{ background: "linear-gradient(180deg,#eef3f3,#e6eded)", borderRadius: "12px", padding: "18px 28px" }}>
             <div className="flex flex-col sm:flex-row items-center justify-between gap-3" style={{ fontSize: "12px", letterSpacing: "0.06em", color: "var(--label)" }}>
-              <span>© 2026 - Carisma AESTHETICS All Rights reserved.</span>
+              <span>© 2026 – CARISMA AESTHETICS ALL RIGHTS RESERVED.</span>
               <div className="flex items-center gap-8">
-                <Link href="/privacy-policy" className="hover:text-ink transition-colors" style={{ textDecoration: "underline" }}>PRIVACY Policy</Link>
+                <Link href="/privacy-policy" className="hover:text-ink transition-colors" style={{ textDecoration: "underline" }}>PRIVACY POLICY</Link>
                 <Link href="/terms-conditions" className="hover:text-ink transition-colors" style={{ textDecoration: "underline" }}>TERMS &amp; CONDITION</Link>
               </div>
             </div>

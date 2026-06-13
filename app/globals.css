@@ -47,13 +47,13 @@
   /* Brand palette — sampled from the live site via pixel QC.
      The live brand is COOL: muted teal accents + cool taupe + light teal
      backgrounds (not warm cream). */
-  --gold: #b0a68f;          /* primary cool taupe-gold (headings, nav, prices) */
+  --gold: #a99e8d;          /* primary taupe-gold (headings, nav, prices) — sampled from live */
   --gold-deep: #b79e61;     /* richer gold for star accents */
   --label: #9b8d83;         /* muted label / bio taupe */
-  --teal: #6391ab;          /* PRIMARY accent — Carisma Aesthetics BLUE (buttons, highlights) */
-  --teal-deep: #50798f;     /* blue hover */
-  --teal-200: #cad8e2;      /* light blue */
-  --teal-100: #eaeff3;      /* lightest blue tint */
+  --teal: #96b2b2;          /* PRIMARY accent — Carisma Aesthetics sage-teal (buttons, highlights) */
+  --teal-deep: #7a9e9e;     /* sage teal hover */
+  --teal-200: #c5d6d6;      /* light sage teal */
+  --teal-100: #eef3f3;      /* lightest teal tint */
   --ink: #0c0b0b;           /* near-black (footer / award) */
   --ink-soft: #2b2b2b;
   --muted: #8f8f8f;         /* secondary text */
