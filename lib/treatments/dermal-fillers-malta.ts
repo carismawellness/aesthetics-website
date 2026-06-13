@@ -165,7 +165,7 @@ const t: Treatment = {
       { label: "mesotherapy", href: "/mesotherapy-malta", image: "/assets/treatments/rec-mesotherapy.jpg" },
     ],
   },
-  faqTitle: "faqs about dermal fillers in malta",
+  faqTitle: "Frequently asked questions",
   faq: [
     {
       q: "What are dermal fillers, and how do they work?",
