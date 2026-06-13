@@ -18,7 +18,7 @@ function SerifHeading({ children, style }: { children: React.ReactNode; style?: 
   );
 }
 function BookButton({ label = "book your session" }: { label?: string }) {
-  return <Link href="/consultation" className="btn btn-gold" style={{ fontSize: "13px", padding: "15px 34px", letterSpacing: "0.12em" }}>{label}</Link>;
+  return <Link href="/consultation" className="btn btn-gold" style={{ fontSize: "13px", padding: "15px 34px", letterSpacing: "0.12em", borderRadius: "999px" }}>{label}</Link>;
 }
 function Check({ size = 26 }: { size?: number }) {
   return (
@@ -37,8 +37,8 @@ function Cross({ size = 26 }: { size?: number }) {
 
 /* ---------- data ---------- */
 const BENEFITS: { text: React.ReactNode }[] = [
-  { text: <>Permanently reduce <b style={{ color: "var(--gold-deep)", fontWeight: 600 }}>10-15%</b> of hair per treatment</> },
   { text: <>Painless sessions with patented <b style={{ color: "var(--gold-deep)", fontWeight: 600 }}>ICE Plus™ Cooling</b></> },
+  { text: <>Permanently reduce <b style={{ color: "var(--gold-deep)", fontWeight: 600 }}>10-15%</b> of hair per treatment</> },
   { text: <>No more waxing, shaving, or ingrowns</> },
   { text: <>Safe for all skin types - even tanned</> },
 ];
@@ -156,11 +156,14 @@ export default function LaserHairRemovalPage() {
               </div>
             </Reveal>
 
-            {/* RIGHT — video + image collage + captions */}
+            {/* RIGHT — framed video + image collage + captions */}
             <Reveal delay={120}>
-              <div className="overflow-hidden rounded-xl" style={{ boxShadow: "0 20px 50px rgba(0,0,0,0.14)" }}>
+              {/* Dark decorative frame wrapping the hero video */}
+              <div className="relative" style={{ boxShadow: "0 20px 50px rgba(0,0,0,0.14)" }}>
                 {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
-                <video src={`${IMG}/laser-hero-video.mp4`} autoPlay muted loop playsInline className="w-full" style={{ display: "block", aspectRatio: "16 / 10", objectFit: "cover" }} />
+                <video src={`${IMG}/laser-hero-video.mp4`} autoPlay muted loop playsInline style={{ display: "block", position: "absolute", top: "10%", left: "6%", width: "88%", height: "68%", objectFit: "cover", zIndex: 1 }} />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={`${IMG}/laser-hero-photo1.png`} alt="" aria-hidden style={{ display: "block", width: "100%", height: "auto", position: "relative", zIndex: 2, pointerEvents: "none" }} />
               </div>
               <div className="grid grid-cols-2 gap-4" style={{ marginTop: "16px" }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -336,7 +339,7 @@ export default function LaserHairRemovalPage() {
               </p>
               <p className="font-display text-center" style={{ fontSize: "13px", color: "var(--label)", letterSpacing: "0.04em", lineHeight: 1.7, marginTop: "12px" }}>BOOK YOUR <span style={{ color: "var(--gold-deep)" }}>PRIVATE CONSULTATION</span> TODAY AND DISCOVER THE<br />EFFORTLESS ELEGANCE OF LASTING SMOOTH SKIN.</p>
               <div style={{ marginTop: "24px" }}>
-                <Link href="/consultation" className="btn btn-gold" style={{ display: "block", width: "100%", fontSize: "13px", padding: "16px 34px", letterSpacing: "0.14em", borderRadius: "4px" }}>book your session</Link>
+                <Link href="/consultation" className="btn btn-gold" style={{ display: "block", width: "100%", fontSize: "13px", padding: "16px 34px", letterSpacing: "0.14em", borderRadius: "999px" }}>book your session</Link>
               </div>
             </div>
           </div>
@@ -476,9 +479,9 @@ export default function LaserHairRemovalPage() {
                 <p style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.85, marginTop: "14px" }}>Traditional lasers shock the skin with painful pulses—our <span style={{ color: "var(--gold-deep)", fontWeight: 600 }}>Super Hair Removal (SHR) technology</span> gradually heats the hair follicles for a virtually painless experience. This prevents regrowth and avoids injury to the surrounding tissue often seen with single pulse lasers.</p>
                 <p style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.85, marginTop: "14px" }}><span style={{ color: "var(--gold-deep)", fontWeight: 600 }}>The patented ICE Plus™ cooling system</span> keeps skin comfortable throughout treatment. This cooling technology can bring the contact temparature as low as -4°C making this is the most comfortable laser available in the market.</p>
               </div>
-              <div className="mx-auto overflow-hidden rounded-xl" style={{ width: "100%", maxWidth: "440px", boxShadow: "0 16px 40px rgba(0,0,0,0.12)" }}>
-                {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
-                <video src={`${IMG}/laser-painfree-video.mp4`} autoPlay muted loop playsInline className="w-full" style={{ display: "block", aspectRatio: "4 / 3", objectFit: "cover" }} />
+              <div className="mx-auto" style={{ width: "100%", maxWidth: "460px" }}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={`${IMG}/laser-alma-machine.webp`} alt="Alma Soprano Platinum laser hair removal machine" className="w-full" style={{ display: "block", height: "auto" }} />
               </div>
             </div>
 
@@ -519,8 +522,9 @@ export default function LaserHairRemovalPage() {
         {/* ---- IN SUMMARY ---- */}
         <section style={{ padding: "70px 0 90px" }}>
           <div className="container text-center">
-            <Kicker>in summary</Kicker>
-            <SerifHeading style={{ marginTop: "10px" }}>your journey to smooth, redefined by carisma</SerifHeading>
+            <p className="font-display text-center" style={{ fontSize: "18px", color: "var(--gold-deep)", letterSpacing: "0.02em" }}>in summary</p>
+            <div className="mx-auto" style={{ width: "min(500px, 80%)", height: "1px", background: "var(--gold-deep)", marginTop: "14px", marginBottom: "14px", opacity: 0.5 }} />
+            <SerifHeading style={{ marginTop: "6px" }}>your journey to smooth, redefined by carisma</SerifHeading>
             <p className="mx-auto" style={{ maxWidth: "900px", fontSize: "15px", color: "var(--label)", lineHeight: 1.85, marginTop: "22px" }}>Imagine the results you'd get if you removed hair every day for years—our team has performed thousands of treatments using the world's most advanced technology, refining every detail to deliver a laser hair removal experience that's truly unmatched.</p>
             <div className="grid gap-x-16 gap-y-12 sm:grid-cols-2 mx-auto" style={{ maxWidth: "880px", marginTop: "48px", textAlign: "left" }}>
               {SUMMARY.map((s, i) => (
@@ -538,8 +542,8 @@ export default function LaserHairRemovalPage() {
             </div>
             <div style={{ marginTop: "60px" }}>
               <SerifHeading style={{ marginBottom: "30px" }}>start your smooth skin journey today</SerifHeading>
-              {/* Full-width book button matching live */}
-              <Link href="/consultation" className="btn btn-gold" style={{ display: "block", width: "100%", maxWidth: "660px", margin: "0 auto", fontSize: "13px", padding: "18px 34px", letterSpacing: "0.14em", borderRadius: "4px" }}>book your session</Link>
+              {/* Full-width book button matching live — pill style */}
+              <Link href="/consultation" className="btn btn-gold" style={{ display: "block", width: "100%", maxWidth: "660px", margin: "0 auto", fontSize: "13px", padding: "18px 34px", letterSpacing: "0.14em", borderRadius: "999px" }}>book your session</Link>
             </div>
           </div>
         </section>
