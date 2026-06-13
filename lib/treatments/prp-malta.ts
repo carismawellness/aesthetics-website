@@ -38,7 +38,7 @@ const t: Treatment = {
       { zone: "Scalp", icon: "/assets/treatments/prp-malta-icon-scalp.png", name: "Hair Restoration", desc: "Delivers growth factors directly to thinning areas of the scalp to reactivate dormant follicles." },
       { zone: "Skin", icon: "/assets/treatments/prp-malta-icon-skin.png", name: "Vampire Facial", desc: "Combines PRP with microneedling for enhanced penetration and accelerated skin renewal." },
     ],
-    additionalTitle: "Your practitioner will recommend the most effective application method based on your goals",
+    additionalTitle: "Your practitioner will recommend the most effective application method based on your goals.",
     additional: "Neck, decolletage, hands, acne scars, stretch marks, surgical scars",
   },
   suitability: {
@@ -67,6 +67,7 @@ const t: Treatment = {
       { title: "Targeted Treatments", desc: "Your doctor draws a blood sample, processes it in a centrifuge, and delivers the concentrated PRP via precise injection: comfortable and approximately 35-45 minutes.", image: "/assets/treatments/prp-malta-step3.jpg" },
       { title: "Ongoing Review & Adjustment", desc: "Your doctor monitors your skin or hair response and adjusts the treatment protocol to maximise results across your course of sessions.", image: "/assets/treatments/prp-malta-step4.png" },
     ],
+    cta: "BOOK YOUR FREE CONSULTATION",
   },
   prepAftercare: {
     kicker: "Preparation & Aftercare",
