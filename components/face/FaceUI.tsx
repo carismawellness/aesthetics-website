@@ -47,14 +47,19 @@ export function TealButton({ href, children, small = false }: { href: string; ch
 // ---------- cards ----------
 export function TreatmentCard({ t, variant = "card" }: { t: { slug: string; name: string; tagline?: string; cardImage: string }; variant?: "card" | "explore" }) {
   return (
-    <Link href={`/face-treatments/${t.slug}`} className="group block" style={{ borderRadius: "10px", overflow: "hidden", background: "var(--white)", border: "1px solid var(--line)" }}>
-      <div style={{ position: "relative", width: "100%", aspectRatio: "4 / 5" }}>
-        <Image src={t.cardImage} alt={t.name} fill sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw" style={{ objectFit: "cover" }} className="transition-transform duration-500 group-hover:scale-[1.04]" />
+    <Link href={`/face-treatments/${t.slug}`} className="group block" style={{ borderRadius: "8px", overflow: "hidden", background: "var(--white)", border: "1px solid var(--line)", boxShadow: "0 2px 12px rgba(12,11,11,0.05)" }}>
+      <div style={{ position: "relative", width: "100%", aspectRatio: "3 / 4", overflow: "hidden" }}>
+        <Image src={t.cardImage} alt={t.name} fill sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw" style={{ objectFit: "cover" }} className="transition-transform duration-500 group-hover:scale-[1.05]" />
+        {/* Subtle gradient overlay at bottom for text legibility */}
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, transparent 55%, rgba(12,11,11,0.25) 100%)", pointerEvents: "none" }} />
       </div>
-      <div style={{ padding: "18px 18px 22px" }}>
-        <h3 className="font-display" style={{ fontSize: "clamp(14px,1.4vw,16px)", fontWeight: 600, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--ink)", marginBottom: "8px" }}>{t.name}</h3>
-        {variant === "card" && t.tagline && <p style={{ fontSize: "13.5px", color: "var(--muted)", lineHeight: 1.6, marginBottom: "12px" }}>{t.tagline}</p>}
-        <span className="font-display" style={{ fontSize: "11px", letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--teal)" }}>Explore &rarr;</span>
+      <div style={{ padding: "20px 20px 22px", borderTop: "1px solid var(--line)" }}>
+        <h3 className="font-display" style={{ fontSize: "clamp(13px,1.2vw,15px)", fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--ink)", marginBottom: variant === "card" && t.tagline ? "8px" : "0" }}>{t.name}</h3>
+        {variant === "card" && t.tagline && <p style={{ fontSize: "13px", color: "var(--muted)", lineHeight: 1.6, marginBottom: "14px" }}>{t.tagline}</p>}
+        <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
+          <span className="font-display" style={{ fontSize: "10px", letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--teal)" }}>Explore</span>
+          <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="var(--teal)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </div>
       </div>
     </Link>
   );
