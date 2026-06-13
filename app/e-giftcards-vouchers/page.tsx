@@ -39,22 +39,20 @@ export default function GiftsPage() {
             {/* left: white card with copy */}
             <Reveal>
               <div style={{ background: "#fff", padding: "44px 40px 48px", boxShadow: "0 18px 44px rgba(0,0,0,0.07)" }}>
-                <h1 className="font-serif" style={{ fontSize: "clamp(28px,3.6vw,40px)", color: GOLD, letterSpacing: "0.06em", fontWeight: 400, lineHeight: 1.25 }}>
+                <h1 className="font-display" style={{ fontSize: "clamp(26px,3.6vw,40px)", color: GOLD, letterSpacing: "0.08em", fontWeight: 400, lineHeight: 1.3, textTransform: "uppercase" }}>
                   give the gift of<br />aesthetics
                 </h1>
                 <div style={{ height: "1px", background: GOLD, opacity: 0.5, margin: "20px 0 22px" }} />
                 <p style={{ fontSize: "14.5px", color: "var(--label)", lineHeight: 1.8 }}>
-                  <b style={{ color: GOLD, fontWeight: 600 }}>In 3 easy steps,</b> you can invite your loved ones on a journey of relaxation and wellness that they will never forget.
+                  In 3 easy steps, you can invite your loved ones on a journey of relaxation and wellness that they will never forget.
                 </p>
-                <div style={{ marginTop: "24px", display: "flex", flexDirection: "column", gap: "8px" }}>
+                <div style={{ marginTop: "16px", display: "flex", flexDirection: "column", gap: "4px" }}>
                   {[
-                    { n: "Step 1", t: "Pick the Occasion" },
-                    { n: "Step 2", t: "Select Gift" },
-                    { n: "Step 3", t: "Customize your Message" },
+                    "Step 1 Pick the Occasion",
+                    "Step 2 Select Gift",
+                    "Step 3 Customize your Message",
                   ].map((s) => (
-                    <p key={s.n} style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.6 }}>
-                      <span className="font-display" style={{ color: GOLD, letterSpacing: "0.06em", fontSize: "12px" }}>{s.n}</span> {s.t}
-                    </p>
+                    <p key={s} style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.7 }}>{s}</p>
                   ))}
                 </div>
               </div>
@@ -73,7 +71,7 @@ export default function GiftsPage() {
       {/* ===== PICK YOUR OCCASION ===== */}
       <section style={{ padding: "30px 0 90px" }}>
         <div className="container">
-          <h2 className="font-serif text-center" style={{ fontSize: "clamp(22px,3vw,32px)", color: GOLD, letterSpacing: "0.1em", fontWeight: 400 }}>pick your occassion</h2>
+          <h2 className="font-display text-center" style={{ fontSize: "clamp(22px,3vw,32px)", color: GOLD, letterSpacing: "0.1em", fontWeight: 400 }}>pick your occassion</h2>
           <div className="mx-auto" style={{ width: "90px", height: "1px", background: "var(--teal)", opacity: 0.5, margin: "16px auto 0" }} />
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 mx-auto" style={{ maxWidth: "1120px", marginTop: "48px" }}>
             {OCCASIONS.map((o, i) => (
