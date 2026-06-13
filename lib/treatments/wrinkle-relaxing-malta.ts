@@ -26,10 +26,10 @@ const t: Treatment = {
   ],
   beforeAfterTitle: "BOTOX RESULTS",
   beforeAfter: [
+    { before: "/assets/treatments/wrinkle-relaxing-malta-ba1-before.png", after: "/assets/treatments/wrinkle-relaxing-malta-ba1-after.png" },
     { before: "/assets/treatments/botox-r1-before.png", after: "/assets/treatments/botox-r1-after.png" },
     { before: "/assets/treatments/botox-r2-before.png", after: "/assets/treatments/botox-r2-after.png" },
     { before: "/assets/treatments/botox-r3-before.png", after: "/assets/treatments/botox-r3-after.png" },
-    { before: "/assets/treatments/botox-r4-before.png", after: "/assets/treatments/botox-r4-after.png" },
   ],
   precision: {
     title: "PRECISION AREAS OF REFINEMENT",
@@ -130,8 +130,8 @@ const t: Treatment = {
     title: "Recommended with Botox",
     items: [
       { label: "Dermal Fillers", href: "/dermal-fillers-malta", image: "/assets/treatments/wrinkle-relaxing-malta-rec-dermal-fillers.jpg" },
-      { label: "Platelet Rich Plasma", href: "/prp-malta", image: "/assets/treatments/wrinkle-relaxing-malta-rec-prp.jpg" },
       { label: "Microneedling", href: "/microneedling-malta", image: "/assets/treatments/wrinkle-relaxing-malta-rec-microneedling.png" },
+      { label: "Platelet Rich Plasma", href: "/prp-malta", image: "/assets/treatments/wrinkle-relaxing-malta-rec-prp.jpg" },
       { label: "Mesotherapy", href: "/mesotherapy-malta", image: "/assets/treatments/wrinkle-relaxing-malta-rec-mesotherapy.png" },
     ],
   },
