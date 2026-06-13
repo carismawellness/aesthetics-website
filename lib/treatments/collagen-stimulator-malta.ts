@@ -152,12 +152,12 @@ const t: Treatment = {
     title: "Recommended with Collagen Stimulator",
     items: [
       { label: "Botox", href: "/wrinkle-relaxing-malta", image: "/assets/treatments/collagen-stimulator-malta-rec-botox.png" },
-      { label: "Dermal Fillers", href: "/dermal-fillers-malta", image: "/assets/treatments/collagen-stimulator-malta-rec-dermal-fillers.png" },
       { label: "Mesotherapy", href: "/mesotherapy-malta", image: "/assets/treatments/collagen-stimulator-malta-rec-mesotherapy.png" },
+      { label: "Dermal Fillers", href: "/dermal-fillers-malta", image: "/assets/treatments/collagen-stimulator-malta-rec-dermal-fillers.png" },
       { label: "PRP", href: "/prp-malta", image: "/assets/treatments/collagen-stimulator-malta-rec-prp.png" },
     ],
   },
-  faqTitle: "faqs about collagen stimulators in malta",
+  faqTitle: "Frequently asked questions",
   faq: [
     { q: "What is a collagen stimulator treatment?", a: "Collagen stimulator treatment is a non-surgical procedure that stimulates the body's natural collagen production. It involves the use of specialized techniques or products to enhance skin elasticity, reduce wrinkles, and promote a more youthful appearance." },
     { q: "How does collagen stimulator treatment work?", a: "Collagen stimulator treatments work by introducing substances, such as injectable fillers or laser treatments, that stimulate the production of collagen in the deeper layers of the skin. This increased collagen production helps to improve skin texture, firmness, and reduce the signs of aging." },
@@ -165,7 +165,7 @@ const t: Treatment = {
     { q: "How long do the results of collagen stimulator treatment last?", a: "Some immediate lifting effects can be seen right after the procedure due to the positioning of the threads. However, the full results of thread lifting become noticeable as swelling subsides and the body's collagen response kicks in. This process usually takes a few weeks, with optimal results becoming apparent within two to three months." },
     { q: "Is collagen stimulator treatment painful?", a: "Collagen stimulator treatments are typically well-tolerated, and discomfort is usually minimal. Depending on the specific procedure, a topical numbing cream or local anesthesia may be used to ensure your comfort during the treatment." },
     { q: "Are there any side effects of collagen stimulator treatment?", a: "Mild side effects such as temporary redness, swelling, or bruising may occur after the treatment, but these usually subside within a few days. Serious complications are rare, especially when the treatment is performed by a qualified professional." },
-    { q: "Who is a suitable candidate for collagen stimulator treatment?", a: "Collagen stimulator treatments are suitable for individuals who want to improve their skin's firmness, reduce wrinkles, and enhance overall skin texture. It's important to have a consultation with a qualified professional who can assess your skin condition, medical history, and discuss the expected outcomes of the treatment." },
+    { q: "Who is a suitable candidate for collagen stimulator treatment?", a: " Collagen stimulator treatments are suitable for individuals who want to improve their skin's firmness, reduce wrinkles, and enhance overall skin texture. It's important to have a consultation with a qualified professional who can assess your skin condition, medical history, and discuss the expected outcomes of the treatment." },
   ],
 };
 
