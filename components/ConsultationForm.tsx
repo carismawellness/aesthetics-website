@@ -1,5 +1,3 @@
-"use client";
-
 const QUIZ_URL = "https://smart-questionnaire-eight.vercel.app";
 
 export default function ConsultationForm({

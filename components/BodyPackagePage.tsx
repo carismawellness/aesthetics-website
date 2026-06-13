@@ -1,5 +1,3 @@
-'use client';
-
 /* ============================================================
    Data-driven slimming-package template — a pixel-faithful
    recreation of the shared carismaslimming.com treatment-page
@@ -21,7 +19,7 @@
      11 Evidence based approach (research cards)
    ============================================================ */
 
-import { useState, useRef } from 'react';
+import type { CSSProperties } from 'react';
 const BOOKING_URL = '/consultation';
 import {
   PackageContent,
@@ -30,7 +28,11 @@ import {
   SHARED_COMMITMENT,
   SHARED_WHY_MALTA,
 } from '@/lib/bodypkg/types';
-import { testimonials as TESTIMONIALS, Testimonial } from '@/lib/bodypkg/testimonials';
+import { testimonials as TESTIMONIALS } from '@/lib/bodypkg/testimonials';
+import HeroVideoPlayer from '@/components/bodypkg/HeroVideoPlayer';
+import TestimonialsSection from '@/components/bodypkg/TestimonialsSection';
+import PackageFaqAccordion from '@/components/bodypkg/PackageFaqAccordion';
+import PackageEvidenceGrid from '@/components/bodypkg/PackageEvidenceGrid';
 
 /* ---------- palette / fonts (shared with the site) ---------- */
 const GREEN = '#6391AB';   // now BLUE — every card accent (CTAs, pills, prices, tags, evidence, stars, arrows)
@@ -61,7 +63,7 @@ const PRESS = {
   mtToday: W + 'f940f0_0db6f1508426404eacea3b33b0e9112d~mv2.png',
 };
 
-const CONTAINER: React.CSSProperties = { maxWidth: 1040, marginLeft: 'auto', marginRight: 'auto', paddingLeft: 24, paddingRight: 24 };
+const CONTAINER: CSSProperties = { maxWidth: 1040, marginLeft: 'auto', marginRight: 'auto', paddingLeft: 24, paddingRight: 24 };
 
 /* ---------- shared pieces ---------- */
 function Eyebrow({ children, align = 'center' }: { children: React.ReactNode; align?: 'center' | 'left' }) {
@@ -96,7 +98,7 @@ function CTA({ variant = 'blue', children = 'Claim your spot now', full = false 
 
 function Tick({ size = 18 }: { size?: number }) {
   // eslint-disable-next-line @next/next/no-img-element
-  return <img src={CHECK} alt="" style={{ width: size, height: 'auto', flexShrink: 0, marginTop: 3 }} />;
+  return <img src={CHECK} alt="" loading="lazy" style={{ width: size, height: 'auto', flexShrink: 0, marginTop: 3 }} />;
 }
 
 function Stars({ size = 18, withGoogle = false }: { size?: number; withGoogle?: boolean }) {
@@ -104,7 +106,7 @@ function Stars({ size = 18, withGoogle = false }: { size?: number; withGoogle?: 
     <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6 }}>
       {withGoogle && (
         // eslint-disable-next-line @next/next/no-img-element
-        <img src={GOOGLE} alt="Google" style={{ width: size + 4, height: size + 4 }} />
+        <img src={GOOGLE} alt="Google" loading="lazy" style={{ width: size + 4, height: size + 4 }} />
       )}
       <span style={{ color: GREEN, fontSize: size, letterSpacing: 2, lineHeight: 1 }}>{'★'.repeat(5)}</span>
       <span style={{ color: TAUPE, fontFamily: BODY, fontSize: 14 }}>Over 200+ Reviews</span>
@@ -112,76 +114,9 @@ function Stars({ size = 18, withGoogle = false }: { size?: number; withGoogle?: 
   );
 }
 
-/* ---------- before/after testimonial carousel ----------
-   Faithful recreation of the live Wix HTML embed (Slick carousel):
-   each slide is a combined before/after image with an overlapping
-   quote card, three shown at a time on desktop. */
-function TestimonialCard({ t }: { t: Testimonial }) {
-  const [expanded, setExpanded] = useState(false);
-  return (
-    <div style={{ background: '#fff', borderRadius: 16, padding: '20px 10px', margin: '0 10px', boxSizing: 'border-box' }}>
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={t.image} alt={`${t.name} before and after`} style={{ width: '100%', borderRadius: 16, display: 'block' }} />
-      <div style={{ background: 'linear-gradient(178deg, #f0f5f5 42%, #bdd1d1 100%)', borderRadius: 16, padding: '15px', paddingTop: 70, marginTop: -91 }}>
-        <p
-          style={{
-            color: '#9B8C81', fontFamily: BODY, fontSize: 14, lineHeight: 1.5, margin: '0 0 5px',
-            ...(expanded ? {} : { display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }),
-          }}
-        >
-          {t.quote}
-        </p>
-        <button type="button" onClick={() => setExpanded((v) => !v)} style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', fontSize: 14, textDecoration: 'underline', color: '#9B8C81', fontFamily: BODY }}>
-          {expanded ? 'Read less' : 'Read more'}
-        </button>
-        <h3 style={{ fontSize: 16, fontWeight: 500, color: '#9B8C81', margin: '24px 0 5px', fontFamily: BODY }}>{t.name}</h3>
-      </div>
-    </div>
-  );
-}
-
-function TestimonialCarousel({ items }: { items: Testimonial[] }) {
-  const [start, setStart] = useState(0);
-  const n = items.length;
-  const per = Math.min(3, n);
-  const visible = Array.from({ length: per }, (_, i) => items[(start + i) % n]);
-  const arrow: React.CSSProperties = { position: 'absolute', top: '38%', transform: 'translateY(-50%)', width: 36, height: 36, borderRadius: '50%', border: 'none', cursor: 'pointer', background: 'rgba(0,0,0,0)', color: GREEN, fontSize: 24, lineHeight: 1, zIndex: 2 };
-  return (
-    <div style={{ position: 'relative', padding: '0 36px', marginTop: 36 }}>
-      <button type="button" aria-label="Previous" onClick={() => setStart((start - 1 + n) % n)} style={{ ...arrow, left: 0 }}>&#8249;</button>
-      <div className="fr-testi" style={{ display: 'flex' }}>
-        {visible.map((t, i) => (
-          <div key={`${start}-${i}`} style={{ flex: '1 1 0', minWidth: 0 }}>
-            <TestimonialCard t={t} />
-          </div>
-        ))}
-      </div>
-      <button type="button" aria-label="Next" onClick={() => setStart((start + 1) % n)} style={{ ...arrow, right: 0 }}>&#8250;</button>
-    </div>
-  );
-}
-
 /* ============================================================ */
 export default function PackagePage({ content: c }: { content: PackageContent }) {
-  const [openFaq, setOpenFaq] = useState<number | null>(0);
-  const [openEv, setOpenEv] = useState<number | null>(null);
-  const heroVideoRef = useRef<HTMLVideoElement>(null);
-  const [heroMuted, setHeroMuted] = useState(true);
-
-  const toggleHeroSound = () => {
-    const v = heroVideoRef.current;
-    if (!v) return;
-    const next = !v.muted;
-    v.muted = next;
-    if (!next) {
-      // unmuting: make sure it is audible and playing
-      v.volume = 1;
-      void v.play().catch(() => {});
-    }
-    setHeroMuted(next);
-  };
-
-  const body: React.CSSProperties = { color: TAUPE, fontFamily: BODY, fontSize: 15, lineHeight: 1.7, margin: 0 };
+  const body: CSSProperties = { color: TAUPE, fontFamily: BODY, fontSize: 15, lineHeight: 1.7, margin: 0 };
   const differenceBullets = c.differenceBullets ?? SHARED_DIFFERENCE_BULLETS;
   const commitment = c.commitment ?? SHARED_COMMITMENT;
   const whyMalta = c.whyMalta ?? SHARED_WHY_MALTA;
@@ -231,31 +166,12 @@ export default function PackagePage({ content: c }: { content: PackageContent })
 
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 16 }}>
               {c.heroVideo ? (
-                <div style={{ position: 'relative', width: '100%', maxWidth: 360 }}>
-                  <video ref={heroVideoRef} src={c.heroVideo} poster={c.heroImage} autoPlay muted loop playsInline aria-label={c.heroSubheading}
-                    style={{ width: '100%', aspectRatio: c.heroImageRatio ?? '398 / 682', objectFit: 'cover', borderRadius: 18, display: 'block', backgroundColor: '#eaf0f6' }} />
-                  <button
-                    type="button"
-                    onClick={toggleHeroSound}
-                    aria-label={heroMuted ? 'Unmute video' : 'Mute video'}
-                    title={heroMuted ? 'Tap to hear the doctor' : 'Mute'}
-                    style={{ position: 'absolute', bottom: 12, right: 12, width: 42, height: 42, borderRadius: '50%', border: 'none', cursor: 'pointer', backgroundColor: 'rgba(40,44,40,0.55)', backdropFilter: 'blur(2px)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', padding: 0 }}
-                  >
-                    {heroMuted ? (
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                        <path d="M11 5 6 9H2v6h4l5 4z" fill="currentColor" stroke="none" />
-                        <line x1="23" y1="9" x2="17" y2="15" />
-                        <line x1="17" y1="9" x2="23" y2="15" />
-                      </svg>
-                    ) : (
-                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                        <path d="M11 5 6 9H2v6h4l5 4z" fill="currentColor" stroke="none" />
-                        <path d="M15.54 8.46a5 5 0 0 1 0 7.07" />
-                        <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
-                      </svg>
-                    )}
-                  </button>
-                </div>
+                <HeroVideoPlayer
+                  src={c.heroVideo}
+                  poster={c.heroImage}
+                  ratio={c.heroImageRatio ?? '398 / 682'}
+                  alt={c.heroSubheading}
+                />
               ) : (
                 // eslint-disable-next-line @next/next/no-img-element
                 <img src={c.heroImage} alt={c.heroSubheading} style={{ width: '100%', maxWidth: 360, aspectRatio: c.heroImageRatio ?? '398 / 560', objectFit: 'cover', borderRadius: 18, display: 'block' }} />
@@ -277,7 +193,7 @@ export default function PackagePage({ content: c }: { content: PackageContent })
           <div style={{ width: 280, maxWidth: '60%', height: 1, backgroundColor: '#d9d2ca', margin: '18px auto 0' }} />
 
           {TESTIMONIALS[c.id] && TESTIMONIALS[c.id].length > 0 && (
-            <TestimonialCarousel items={TESTIMONIALS[c.id]} />
+            <TestimonialsSection items={TESTIMONIALS[c.id]} />
           )}
         </div>
 
@@ -286,7 +202,7 @@ export default function PackagePage({ content: c }: { content: PackageContent })
 
           <div style={{ display: 'grid', gridTemplateColumns: '0.9fr 1.1fr', gap: 48, alignItems: 'center', marginTop: 40 }} className="fr-2col">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={c.secretImage} alt={c.secretSubheading} style={{ width: '100%', borderRadius: 16, display: 'block' }} />
+            <img src={c.secretImage} alt={c.secretSubheading} loading="lazy" style={{ width: '100%', borderRadius: 16, display: 'block' }} />
             <div>
               <p style={{ ...body, marginBottom: 18 }}>{c.secretIntro}</p>
               <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 18px', display: 'flex', flexDirection: 'column', gap: 10 }}>
@@ -309,15 +225,15 @@ export default function PackagePage({ content: c }: { content: PackageContent })
           <SectionHeading size={24}>malta&rsquo;s trusted clinic for<br />non surgical fat reduction</SectionHeading>
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', gap: 40, marginTop: 28 }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={PRESS.maltaDaily} alt="Malta Daily" style={{ height: 38, width: 'auto' }} />
+            <img src={PRESS.maltaDaily} alt="Malta Daily" loading="lazy" style={{ height: 38, width: 'auto' }} />
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={PRESS.maltaToday} alt="Malta Today" style={{ height: 34, width: 'auto' }} />
+            <img src={PRESS.maltaToday} alt="Malta Today" loading="lazy" style={{ height: 34, width: 'auto' }} />
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={PRESS.lovin} alt="Lovin Malta" style={{ height: 40, width: 'auto' }} />
+            <img src={PRESS.lovin} alt="Lovin Malta" loading="lazy" style={{ height: 40, width: 'auto' }} />
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={PRESS.times} alt="Times of Malta" style={{ height: 38, width: 'auto' }} />
+            <img src={PRESS.times} alt="Times of Malta" loading="lazy" style={{ height: 38, width: 'auto' }} />
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={PRESS.mtToday} alt="MT Today" style={{ height: 38, width: 'auto' }} />
+            <img src={PRESS.mtToday} alt="MT Today" loading="lazy" style={{ height: 38, width: 'auto' }} />
           </div>
         </div>
       </section>
@@ -330,7 +246,7 @@ export default function PackagePage({ content: c }: { content: PackageContent })
             {c.benefits.map((b) => (
               <div key={b.title} style={{ background: 'linear-gradient(150deg, #f0f5f5 0%, #bdd1d1 100%)', borderRadius: '22px 22px 0 22px', padding: '28px 24px 34px' }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={b.icon} alt="" style={{ width: 52, height: 52, objectFit: 'contain', marginBottom: 18 }} />
+                <img src={b.icon} alt="" loading="lazy" style={{ width: 52, height: 52, objectFit: 'contain', marginBottom: 18 }} />
                 <h3 style={{ color: TAUPE_DK, fontFamily: WIDE, fontWeight: 700, fontSize: 15, letterSpacing: '0.5px', textTransform: 'uppercase', margin: '0 0 12px', lineHeight: 1.3 }}>{b.title}</h3>
                 <p style={{ color: TAUPE, fontFamily: BODY, fontSize: 14, lineHeight: 1.6, margin: 0 }}>{b.body}</p>
               </div>
@@ -359,7 +275,7 @@ export default function PackagePage({ content: c }: { content: PackageContent })
               <div style={{ marginTop: 18 }}><Stars withGoogle /></div>
             </div>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={c.valueProps.image} alt={c.valueProps.heading} style={{ width: '100%', borderRadius: 16, display: 'block' }} />
+            <img src={c.valueProps.image} alt={c.valueProps.heading} loading="lazy" style={{ width: '100%', borderRadius: 16, display: 'block' }} />
           </div>
         </div>
       </section>
@@ -370,7 +286,7 @@ export default function PackagePage({ content: c }: { content: PackageContent })
       <section style={{ ...CONTAINER, maxWidth: 1120, paddingTop: 40, paddingBottom: 56 }}>
         <div style={{ position: 'relative', overflow: 'hidden', background: 'linear-gradient(160deg, #f0f5f5 0%, #bdd1d1 100%)', borderRadius: 24, padding: '48px 48px 44px' }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={WELL_BG} alt="" aria-hidden style={{ position: 'absolute', left: '50%', top: '46%', transform: 'translate(-50%, -50%)', width: 560, opacity: 0.28, pointerEvents: 'none', zIndex: 0 }} />
+          <img src={WELL_BG} alt="" aria-hidden loading="lazy" style={{ position: 'absolute', left: '50%', top: '46%', transform: 'translate(-50%, -50%)', width: 560, opacity: 0.28, pointerEvents: 'none', zIndex: 0 }} />
           <div style={{ position: 'relative', zIndex: 1 }}>
             <Eyebrow>{c.commitmentPanel.eyebrow}</Eyebrow>
             <div style={{ width: 90, height: 1, backgroundColor: '#d9d2ca', margin: '10px auto 16px' }} />
@@ -391,7 +307,7 @@ export default function PackagePage({ content: c }: { content: PackageContent })
               <CTA variant="blue" />
               <span style={{ display: 'inline-flex', alignItems: 'center', gap: 10, color: TAUPE, fontFamily: WIDE, fontSize: 13, letterSpacing: '1px', textTransform: 'uppercase' }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={PARKING} alt="" style={{ width: 22, height: 'auto' }} />
+                <img src={PARKING} alt="" loading="lazy" style={{ width: 22, height: 'auto' }} />
                 Complimentary on-site parking
               </span>
             </div>
@@ -410,7 +326,7 @@ export default function PackagePage({ content: c }: { content: PackageContent })
 
           <div style={{ display: 'grid', gridTemplateColumns: '0.85fr 1.15fr', gap: 44, alignItems: 'center', marginTop: 36 }} className="fr-2col">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={c.eligImage} alt={c.eligHeading} style={{ width: '100%', borderRadius: 16, display: 'block' }} />
+            <img src={c.eligImage} alt={c.eligHeading} loading="lazy" style={{ width: '100%', borderRadius: 16, display: 'block' }} />
             <div>
               <p style={{ color: TAUPE_DK, fontFamily: WIDE, fontWeight: 700, fontSize: 15, letterSpacing: '0.5px', textTransform: 'uppercase', margin: '0 0 20px', lineHeight: 1.4 }}>{c.eligIntro}</p>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
@@ -428,7 +344,7 @@ export default function PackagePage({ content: c }: { content: PackageContent })
       {!hidden.difference && (
       <section style={{ position: 'relative', paddingTop: 48, paddingBottom: 64, overflow: 'hidden' }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={DIFF_BG} alt="" aria-hidden style={{ position: 'absolute', left: 0, top: '40%', width: '100%', opacity: 0.5, pointerEvents: 'none', zIndex: 0 }} />
+        <img src={DIFF_BG} alt="" aria-hidden loading="lazy" style={{ position: 'absolute', left: 0, top: '40%', width: '100%', opacity: 0.5, pointerEvents: 'none', zIndex: 0 }} />
         <div style={{ ...CONTAINER, position: 'relative', zIndex: 1 }}>
           <Eyebrow>the carisma difference</Eyebrow>
           <div style={{ marginTop: 10 }}><SectionHeading>we are not<br />another diet clinic.</SectionHeading></div>
@@ -457,10 +373,10 @@ export default function PackagePage({ content: c }: { content: PackageContent })
           <div style={{ marginTop: 36, background: 'linear-gradient(150deg, #f0f5f5 0%, #bdd1d1 100%)', borderRadius: 20, padding: 36, display: 'grid', gridTemplateColumns: '0.85fr 1.15fr', gap: 40, alignItems: 'center' }} className="fr-2col">
             <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={c.ptImage} alt="Before and after" style={{ width: '100%', borderRadius: 12, display: 'block' }} />
+              <img src={c.ptImage} alt="Before and after" loading="lazy" style={{ width: '100%', borderRadius: 12, display: 'block' }} />
               {c.ptImage2 && (
                 // eslint-disable-next-line @next/next/no-img-element
-                <img src={c.ptImage2} alt="" style={{ width: 150, height: 'auto', borderRadius: 12 }} />
+                <img src={c.ptImage2} alt="" loading="lazy" style={{ width: 150, height: 'auto', borderRadius: 12 }} />
               )}
             </div>
             <div>
@@ -495,7 +411,7 @@ export default function PackagePage({ content: c }: { content: PackageContent })
                 <div key={m.title} style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>
                   <span style={{ flexShrink: 0, width: 54, height: 54, border: '1px solid #cdd9e6', borderRadius: 12, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={m.icon} alt="" style={{ width: 24, height: 24, objectFit: 'contain' }} />
+                    <img src={m.icon} alt="" loading="lazy" style={{ width: 24, height: 24, objectFit: 'contain' }} />
                   </span>
                   <div>
                     <p style={{ color: GREEN, fontFamily: WIDE, fontWeight: 700, fontSize: 13, letterSpacing: '0.5px', textTransform: 'uppercase', margin: '4px 0 6px' }}>{m.title}</p>
@@ -536,7 +452,7 @@ export default function PackagePage({ content: c }: { content: PackageContent })
           <SectionHeading>{c.offer.introHeading}</SectionHeading>
           <div style={{ display: 'grid', gridTemplateColumns: '0.9fr 1.1fr', gap: 44, alignItems: 'center', marginTop: 36 }} className="fr-2col">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={c.offer.introImage} alt={c.offer.introHeading} style={{ width: '100%', borderRadius: 16, display: 'block' }} />
+            <img src={c.offer.introImage} alt={c.offer.introHeading} loading="lazy" style={{ width: '100%', borderRadius: 16, display: 'block' }} />
             <div>
               {c.offer.introParas.map((p) => (<p key={p} style={{ ...body, fontSize: 14, marginBottom: 14 }}>{p}</p>))}
               <div style={{ marginTop: 8 }}><CTA variant="blue" /></div>
@@ -562,7 +478,7 @@ export default function PackagePage({ content: c }: { content: PackageContent })
               <Stars withGoogle />
             </div>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={c.offer.cardImage} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 16, display: 'block' }} />
+            <img src={c.offer.cardImage} alt="" loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 16, display: 'block' }} />
           </div>
         </div>
       </section>
@@ -573,7 +489,7 @@ export default function PackagePage({ content: c }: { content: PackageContent })
       <section style={{ ...CONTAINER, maxWidth: 1120, paddingTop: 40, paddingBottom: 56 }}>
         <div style={{ position: 'relative', overflow: 'hidden', background: 'linear-gradient(160deg, #f0f5f5 0%, #bdd1d1 100%)', borderRadius: 24, padding: '48px 48px 44px' }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={WELL_BG} alt="" aria-hidden style={{ position: 'absolute', left: '50%', top: '46%', transform: 'translate(-50%, -50%)', width: 560, opacity: 0.28, pointerEvents: 'none', zIndex: 0 }} />
+          <img src={WELL_BG} alt="" aria-hidden loading="lazy" style={{ position: 'absolute', left: '50%', top: '46%', transform: 'translate(-50%, -50%)', width: 560, opacity: 0.28, pointerEvents: 'none', zIndex: 0 }} />
           <div style={{ position: 'relative', zIndex: 1 }}>
             <Eyebrow>the carisma difference</Eyebrow>
             <div style={{ width: 90, height: 1, backgroundColor: '#d9d2ca', margin: '10px auto 16px' }} />
@@ -599,7 +515,7 @@ export default function PackagePage({ content: c }: { content: PackageContent })
               <CTA variant="blue" />
               <span style={{ display: 'inline-flex', alignItems: 'center', gap: 10, color: TAUPE, fontFamily: WIDE, fontSize: 13, letterSpacing: '1px', textTransform: 'uppercase' }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={PARKING} alt="" style={{ width: 22, height: 'auto' }} />
+                <img src={PARKING} alt="" loading="lazy" style={{ width: 22, height: 'auto' }} />
                 Complimentary on-site parking
               </span>
             </div>
@@ -612,20 +528,7 @@ export default function PackagePage({ content: c }: { content: PackageContent })
       <section style={{ paddingTop: 56, paddingBottom: 56 }}>
         <div style={{ ...CONTAINER, maxWidth: 900 }}>
           <SectionHeading size={24}>Frequently asked questions</SectionHeading>
-          <div style={{ marginTop: 36 }}>
-            {c.faqs.map((f, i) => {
-              const open = openFaq === i;
-              return (
-                <div key={f.q} style={{ borderBottom: '1px solid #e6e1da' }}>
-                  <button onClick={() => setOpenFaq(open ? null : i)} style={{ width: '100%', background: 'none', border: 'none', cursor: 'pointer', padding: '20px 4px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 16, textAlign: 'left' }}>
-                    <span style={{ color: open ? GREEN : TAUPE_DK, fontFamily: WIDE, fontSize: 14, letterSpacing: '0.5px', textTransform: 'uppercase', lineHeight: 1.4 }}>{f.q}</span>
-                    <span style={{ color: TAUPE_LT, fontSize: 18, flexShrink: 0, transform: open ? 'rotate(180deg)' : 'none', transition: 'transform .2s' }}>&#8964;</span>
-                  </button>
-                  {open && <p style={{ ...body, padding: '0 4px 22px', maxWidth: 760 }}>{f.a}</p>}
-                </div>
-              );
-            })}
-          </div>
+          <PackageFaqAccordion faqs={c.faqs} />
         </div>
       </section>
 
@@ -635,43 +538,7 @@ export default function PackagePage({ content: c }: { content: PackageContent })
         <div style={{ ...CONTAINER, maxWidth: 1100 }}>
           <Eyebrow>{c.evidenceEyebrow}</Eyebrow>
           <div style={{ marginTop: 8 }}><SectionHeading size={25}>evidence based approach</SectionHeading></div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 24, marginTop: 40 }} className="fr-evgrid">
-            {c.evidence.map((e, i) => {
-              const open = openEv === i;
-              const centerLast = i === c.evidence.length - 1 && c.evidence.length % 2 === 1;
-              return (
-                <div key={e.title} style={{ position: 'relative', paddingTop: 16, gridColumn: centerLast ? '1 / -1' : 'auto', maxWidth: centerLast ? 560 : undefined, justifySelf: centerLast ? 'center' : 'stretch', width: centerLast ? '100%' : undefined }}>
-                  {/* petal-shaped, green-bordered image poking above the card, with overlapping tag pill */}
-                  <div style={{ position: 'relative', width: '92%', margin: '0 auto', zIndex: 2 }}>
-                    <div style={{ border: `2px solid ${GREEN}`, borderRadius: '20px 80px', overflow: 'hidden', backgroundColor: GREEN }}>
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={e.img} alt="" style={{ width: '100%', height: 186, objectFit: 'cover', display: 'block' }} />
-                    </div>
-                    <span style={{ position: 'absolute', top: -14, left: 18, backgroundColor: '#fff', color: GREEN, fontFamily: WIDE, fontWeight: 600, fontSize: 12, letterSpacing: '0.5px', textTransform: 'uppercase', padding: '7px 18px', borderRadius: 30, border: `2px solid ${GREEN}`, whiteSpace: 'nowrap' }}>{e.tag}</span>
-                  </div>
-                  {/* gradient card sitting behind the lower part of the image */}
-                  <div style={{ background: 'linear-gradient(180deg, #f0f5f5 0%, #bdd1d1 100%)', borderRadius: 16, marginTop: -70, padding: '92px 30px 30px', position: 'relative', zIndex: 1 }}>
-                    <h3 style={{ color: GREEN, fontFamily: SERIF, fontWeight: 400, fontSize: 20, lineHeight: 1.3, textTransform: 'uppercase', textAlign: 'center', margin: 0 }}>{e.title}</h3>
-                    <div style={{ width: 90, height: 1, backgroundColor: '#cfc8bf', margin: '16px auto 20px' }} />
-                    <p style={{ color: TAUPE_DK, fontFamily: WIDE, fontWeight: 700, fontSize: 12, letterSpacing: '1px', textTransform: 'uppercase', margin: '0 0 8px' }}>What it does</p>
-                    <p style={{ color: TAUPE, fontFamily: BODY, fontSize: 14, lineHeight: 1.6, margin: '0 0 6px', ...(open ? {} : { display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }) }}>{e.does}</p>
-                    {open && (
-                      <>
-                        <p style={{ color: TAUPE_DK, fontFamily: WIDE, fontWeight: 700, fontSize: 12, letterSpacing: '1px', textTransform: 'uppercase', margin: '14px 0 8px' }}>Key results</p>
-                        <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 14px', display: 'flex', flexDirection: 'column', gap: 10 }}>
-                          {e.results.map((r) => (<li key={r} style={{ display: 'flex', gap: 8, alignItems: 'flex-start' }}><span style={{ color: TAUPE_LT }}>&bull;</span><span style={{ ...body, fontSize: 13.5 }}>{r}</span></li>))}
-                        </ul>
-                        {e.foot && <p style={{ color: TAUPE_LT, fontFamily: BODY, fontSize: 12.5, lineHeight: 1.6, margin: 0 }}>{e.foot}</p>}
-                      </>
-                    )}
-                    <button onClick={() => setOpenEv(open ? null : i)} style={{ marginTop: open ? 14 : 8, background: 'none', border: 'none', cursor: 'pointer', color: TAUPE, fontFamily: BODY, fontSize: 15, fontStyle: 'italic', textDecoration: 'underline', padding: 0, display: 'block' }}>{open ? 'Read less' : 'Read more'}</button>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-
+          <PackageEvidenceGrid evidence={c.evidence} />
           <div style={{ display: 'flex', justifyContent: 'center', marginTop: 44 }}><CTA variant="blue">Claim my spot now</CTA></div>
         </div>
       </section>
