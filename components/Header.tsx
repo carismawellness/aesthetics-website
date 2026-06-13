@@ -70,20 +70,22 @@ export default function Header() {
                     <svg width="9" height="9" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.6"><path d="M2 4l4 4 4-4" /></svg>
                   </button>
                   <div
-                    className="absolute left-1/2 -translate-x-1/2 top-full hidden group-hover:grid bg-white shadow-xl z-50"
+                    className="absolute left-1/2 -translate-x-1/2 top-full hidden group-hover:block z-50"
                     style={{
-                      gridTemplateColumns: "1fr",
-                      minWidth: "330px",
-                      padding: "16px 0",
-                      borderTop: "2px solid var(--gold)",
+                      backgroundColor: "#fff",
+                      boxShadow: "0 8px 32px rgba(0,0,0,0.08)",
+                      minWidth: "300px",
+                      padding: "12px 0 18px",
                     }}
                   >
                     {m.items.map((it) => (
                       <Link
                         key={it.href}
                         href={it.href}
-                        className="block hover:bg-cream transition-colors text-center"
-                        style={{ padding: "9px 24px", fontSize: "11px", color: "var(--label)", textTransform: "uppercase", letterSpacing: "0.08em" }}
+                        className="block text-center font-display transition-colors"
+                        style={{ padding: "8px 32px", fontSize: "11px", color: "#9b8d83", textTransform: "uppercase", letterSpacing: "0.1em" }}
+                        onMouseEnter={e => (e.currentTarget.style.color = "var(--gold)")}
+                        onMouseLeave={e => (e.currentTarget.style.color = "#9b8d83")}
                       >
                         {it.label}
                       </Link>
