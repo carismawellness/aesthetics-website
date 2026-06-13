@@ -17,7 +17,7 @@ export default function BookConsultation() {
               className="relative font-display"
               style={{ zIndex: 1, fontSize: "clamp(28px,3.6vw,40px)", color: "var(--gold)", textTransform: "uppercase", fontWeight: 300, letterSpacing: "0.04em", lineHeight: 1.4 }}
             >
-              book your<br />Consultation
+              Your Personalised<br />Skin Quiz
             </h2>
           </div>
         </Reveal>
