@@ -66,6 +66,7 @@ const t: Treatment = {
       { title: "Targeted Treatments", desc: "Your aesthetician performs your personalised HydraFacial — cleansing, extracting, and infusing nourishing serums in a single comfortable session.", image: "/assets/treatments/hydrafacial-step3.jpg" },
       { title: "Ongoing Review & Adjustment", desc: "We review your skin's response and recommend the ideal maintenance frequency and booster adjustments to maximise your results over time.", image: "/assets/treatments/hydrafacial-step4.png" },
     ],
+    cta: "BOOK YOUR FREE CONSULTATION",
   },
   prepAftercare: {
     kicker: "PREPARATION & AFTERCARE",
@@ -158,7 +159,7 @@ const t: Treatment = {
       { title: "Advanced Facial Anatomy Expertise", desc: "with targeted serums and boosters selected for your skin type and concerns" },
       { title: "Personalised Treatment Plans", desc: "We use medical-grade serums, peptides, and antioxidants with advanced multi-step technology" },
       { title: "Complimentary Spa Experience", desc: "Every HydraFacial includes complimentary spa access and free parking at our clinic" },
-      { title: "Thousands of Treatments Performed", desc: "Experience and results you can trust, right here in Malta." },
+      { title: "Thousands of Treatments Performed", desc: " Experience and results you can trust, right here in Malta." },
     ],
   },
   difference: {
