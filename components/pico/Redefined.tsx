@@ -15,7 +15,7 @@ const BULLETS: { label: string; desc: string }[] = [
 
 export default function Redefined() {
   return (
-    <section style={{ padding: "70px 24px" }}>
+    <section style={{ padding: "70px 24px", background: "#ffffff" }}>
       <div
         className="grid items-center"
         style={{

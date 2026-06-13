@@ -47,7 +47,7 @@ export default function Hero() {
               <h1
                 className="font-serif"
                 style={{
-                  fontSize: "clamp(28px, 3.6vw, 44px)",
+                  fontSize: "clamp(20px, 2vw, 28px)",
                   color: TEAL,
                   letterSpacing: "0.04em",
                   textTransform: "uppercase",

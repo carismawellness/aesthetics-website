@@ -25,8 +25,8 @@ export default function PicoLaserPage() {
     <>
       <Hero />
 
-      {/* flat soft blue-grey behind the rest of the page (matches live) */}
-      <div style={{ background: "#eaeff3" }}>
+      {/* warm cream/beige behind the rest of the page (matches live) */}
+      <div style={{ background: "#f6efe3" }}>
         <Reviews />
         <DoYouHave />
         <TrustedFeatures />

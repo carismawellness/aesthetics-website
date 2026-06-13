@@ -22,7 +22,7 @@ const WHY_TRUST = [
 
 export default function Commitment() {
   return (
-    <section style={{ padding: "40px 0 60px" }}>
+    <section style={{ padding: "40px 0 60px", background: "#ffffff" }}>
       <div className="container">
         <Serif>35+ years helping malta feel confident.</Serif>
         <div className="grid gap-12 lg:grid-cols-2 mx-auto" style={{ maxWidth: "1000px", marginTop: "40px" }}>

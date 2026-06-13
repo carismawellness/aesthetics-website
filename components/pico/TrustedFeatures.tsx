@@ -21,7 +21,7 @@ const PRESS = [
 
 export default function TrustedFeatures() {
   return (
-    <section style={{ padding: "50px 0" }}>
+    <section style={{ padding: "50px 0", background: "#ffffff" }}>
       <div className="container text-center">
         <Serif>malta’s trusted clinic for safe, precise tattoo removal</Serif>
         <p className="mx-auto" style={{ maxWidth: "740px", fontSize: "14px", color: "var(--label)", lineHeight: 1.7, marginTop: "16px" }}>
