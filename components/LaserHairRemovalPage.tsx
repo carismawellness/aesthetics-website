@@ -136,7 +136,7 @@ export default function LaserHairRemovalPage() {
             <Reveal>
               <p className="font-display" style={{ fontSize: "12px", color: "var(--gold-deep)", letterSpacing: "0.12em" }}>World-renowned Alma Soprano for the first time in Malta</p>
               <h1 className="font-serif" style={{ fontSize: "clamp(32px,4.6vw,50px)", color: "var(--gold-deep)", letterSpacing: "0.04em", marginTop: "10px", textTransform: "uppercase" }}>Laser Hair Removal</h1>
-              <p style={{ fontFamily: "var(--font-display)", fontSize: "15px", fontWeight: 600, lineHeight: 1.5, marginTop: "16px", color: "var(--label)" }}>
+              <p className="font-display" style={{ fontSize: "13px", lineHeight: 1.6, marginTop: "16px", color: "var(--label)", letterSpacing: "0.06em" }}>
                 Permanently Smooth, Hair-Free Skin with our Virtually <span style={{ color: "var(--gold-deep)" }}>Painfree SHR® guarantee</span>:
               </p>
               <ul className="space-y-3" style={{ marginTop: "22px" }}>
@@ -144,7 +144,7 @@ export default function LaserHairRemovalPage() {
                   <li key={i} className="flex items-start gap-3">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src={`${IMG}/laser-ic-check.png`} alt="" style={{ width: "20px", height: "20px", marginTop: "2px", flexShrink: 0 }} />
-                    <span style={{ fontFamily: "var(--font-display)", fontSize: "15px", color: "var(--label)", lineHeight: 1.5 }}>{b.text}</span>
+                    <span style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.5 }}>{b.text}</span>
                   </li>
                 ))}
               </ul>
@@ -331,11 +331,13 @@ export default function LaserHairRemovalPage() {
               ))}
             </div>
             <div className="mx-auto" style={{ maxWidth: "820px", marginTop: "48px", background: "rgba(255,255,255,0.55)", border: "1px solid var(--line)", borderRadius: "16px", padding: "clamp(26px,3vw,38px)" }}>
-              <p className="font-display" style={{ fontSize: "15px", color: "var(--gold-deep)", letterSpacing: "0.02em", lineHeight: 1.7 }}>
-                <span style={{ fontWeight: 700 }}>We stand by our promise</span>: See visible results in <span style={{ fontWeight: 700 }}>3 sessions</span> or your <span style={{ fontWeight: 700 }}>next one is free.</span>
+              <p className="font-display text-center" style={{ fontSize: "14px", color: "var(--gold-deep)", letterSpacing: "0.04em", lineHeight: 1.7 }}>
+                WE STAND BY OUR PROMISE: SEE VISIBLE RESULTS IN <span style={{ fontWeight: 700 }}>3 SESSIONS</span><br />OR YOUR <span style={{ fontWeight: 700 }}>NEXT ONE IS FREE.</span>
               </p>
-              <p style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.7, marginTop: "12px" }}>Book your <span style={{ color: "var(--gold-deep)", fontWeight: 600 }}>private consultation</span> today and discover the effortless elegance of lasting smooth skin.</p>
-              <div style={{ marginTop: "24px" }}><BookButton /></div>
+              <p className="font-display text-center" style={{ fontSize: "13px", color: "var(--label)", letterSpacing: "0.04em", lineHeight: 1.7, marginTop: "12px" }}>BOOK YOUR <span style={{ color: "var(--gold-deep)" }}>PRIVATE CONSULTATION</span> TODAY AND DISCOVER THE<br />EFFORTLESS ELEGANCE OF LASTING SMOOTH SKIN.</p>
+              <div style={{ marginTop: "24px" }}>
+                <Link href="/consultation" className="btn btn-gold" style={{ display: "block", width: "100%", fontSize: "13px", padding: "16px 34px", letterSpacing: "0.14em", borderRadius: "4px" }}>book your session</Link>
+              </div>
             </div>
           </div>
         </section>
@@ -510,7 +512,7 @@ export default function LaserHairRemovalPage() {
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gold-deep)" strokeWidth="1.6" style={{ position: "absolute", right: "10px", top: "50%", transform: "translateY(-50%)" }}><circle cx="11" cy="11" r="7" /><path d="m21 21-4.3-4.3" /></svg>
               </span>
             </div>
-            <FaqAccordion items={FAQS} uppercase={false} />
+            <FaqAccordion items={FAQS} />
           </div>
         </section>
 
@@ -520,19 +522,24 @@ export default function LaserHairRemovalPage() {
             <Kicker>in summary</Kicker>
             <SerifHeading style={{ marginTop: "10px" }}>your journey to smooth, redefined by carisma</SerifHeading>
             <p className="mx-auto" style={{ maxWidth: "900px", fontSize: "15px", color: "var(--label)", lineHeight: 1.85, marginTop: "22px" }}>Imagine the results you'd get if you removed hair every day for years—our team has performed thousands of treatments using the world's most advanced technology, refining every detail to deliver a laser hair removal experience that's truly unmatched.</p>
-            <div className="grid gap-x-16 gap-y-10 sm:grid-cols-2 mx-auto" style={{ maxWidth: "880px", marginTop: "48px", textAlign: "left" }}>
+            <div className="grid gap-x-16 gap-y-12 sm:grid-cols-2 mx-auto" style={{ maxWidth: "880px", marginTop: "48px", textAlign: "left" }}>
               {SUMMARY.map((s, i) => (
-                <Reveal key={i} delay={(i % 2) * 80} className="flex items-center gap-5">
-                  <span className="font-serif" style={{ fontSize: "46px", color: "var(--gold-deep)", opacity: 0.5, lineHeight: 1 }}>{i + 1}</span>
+                <Reveal key={i} delay={(i % 2) * 80} className="flex flex-col items-center text-center">
+                  {/* icon on top */}
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={`${IMG}/${s.icon}`} alt="" style={{ height: "60px", width: "auto", flexShrink: 0 }} />
-                  <span className="font-display" style={{ fontSize: "15px", color: "var(--gold-deep)", letterSpacing: "0.02em", lineHeight: 1.45 }}>{s.text}</span>
+                  <img src={`${IMG}/${s.icon}`} alt="" style={{ height: "90px", width: "auto", flexShrink: 0, marginBottom: "18px" }} />
+                  {/* number + text row below */}
+                  <div className="flex items-start gap-4" style={{ textAlign: "left" }}>
+                    <span className="font-serif shrink-0" style={{ fontSize: "60px", color: "var(--gold-deep)", opacity: 0.6, lineHeight: 1 }}>{i + 1}</span>
+                    <span className="font-display" style={{ fontSize: "14px", color: "var(--gold-deep)", letterSpacing: "0.04em", lineHeight: 1.5, paddingTop: "8px" }}>{s.text}</span>
+                  </div>
                 </Reveal>
               ))}
             </div>
-            <div style={{ marginTop: "52px" }}>
-              <SerifHeading style={{ marginBottom: "26px" }}>start your smooth skin journey today</SerifHeading>
-              <BookButton />
+            <div style={{ marginTop: "60px" }}>
+              <SerifHeading style={{ marginBottom: "30px" }}>start your smooth skin journey today</SerifHeading>
+              {/* Full-width book button matching live */}
+              <Link href="/consultation" className="btn btn-gold" style={{ display: "block", width: "100%", maxWidth: "660px", margin: "0 auto", fontSize: "13px", padding: "18px 34px", letterSpacing: "0.14em", borderRadius: "4px" }}>book your session</Link>
             </div>
           </div>
         </section>
