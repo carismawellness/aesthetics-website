@@ -970,6 +970,11 @@ function ExpertCare() {
     <section id="expert-care" style={{ background: "var(--white)", padding: "64px 0 80px" }}>
       <div className="container">
         <Reveal>
+          <div className="text-center" style={{ marginBottom: "12px" }}>
+            <span className="font-display" style={{ display: "inline-block", fontSize: "13px", letterSpacing: "0.22em", textTransform: "uppercase", color: "var(--label)", paddingBottom: "10px", borderBottom: "1px solid var(--line)" }}>
+              expert care
+            </span>
+          </div>
           <h2 className="font-serif" style={{ textAlign: "center", fontSize: "clamp(22px,3.2vw,30px)", color: "var(--teal)", letterSpacing: "0.12em", textTransform: "uppercase", lineHeight: 1.4, marginBottom: "48px" }}>
             led by expertise.<br />driven by results.
           </h2>
@@ -1035,7 +1040,7 @@ function Promise() {
           <Reveal>
             <div
               style={{
-                background: "linear-gradient(150deg, #ffffff 0%, #e6eeee 100%)",
+                background: "linear-gradient(150deg, #a8c4c4 0%, #7aa4a4 100%)",
                 borderRadius: "24px 24px 24px 96px",
                 boxShadow: "0 18px 40px rgba(120,140,140,0.12)",
                 padding: "clamp(30px,4vw,52px)",
@@ -1044,9 +1049,8 @@ function Promise() {
                 alignItems: "center",
               }}
             >
-              <p className="font-serif" style={{ fontSize: "clamp(19px,2.4vw,26px)", letterSpacing: "0.03em", textTransform: "uppercase", lineHeight: 1.45 }}>
-                <span style={{ color: "var(--teal)", fontWeight: 700 }}>Only clinic in Malta</span>{" "}
-                <span style={{ color: "var(--gold)" }}>to offer an extended care commitment on Ozempic &amp; Mounjaro programmes</span>
+              <p className="font-serif" style={{ fontSize: "clamp(19px,2.4vw,26px)", letterSpacing: "0.03em", textTransform: "uppercase", lineHeight: 1.45, color: "#fff" }}>
+                Only clinic in Malta to offer an extended care commitment on Ozempic &amp; Mounjaro programmes
               </p>
             </div>
           </Reveal>
@@ -1091,7 +1095,7 @@ function Safety() {
     <section id="safety" style={{ background: "var(--cream)", padding: "72px 0" }}>
       <div className="container">
         <Reveal>
-          <H2>ozempic &amp; mounjaro: safety, side effects, &amp; our system</H2>
+          <H2>ozempic &amp; mounjaro:<br />safety, side effects, &amp; our system</H2>
         </Reveal>
         <div className="grid" style={{ gridTemplateColumns: "minmax(0,1fr) minmax(0,1.1fr)", gap: "44px", alignItems: "start", marginTop: "12px" }}>
           <Reveal>
@@ -1160,8 +1164,8 @@ function Methodology() {
     <section id="methodology" style={{ background: "var(--white)", padding: "72px 0" }}>
       <div className="container">
         <Reveal>
-          <Eyebrow center>4 core pillars of our Ozempic &amp; Mounjaro methodology</Eyebrow>
-          <H2 serif>a doctor-led glp-1 programme built to last</H2>
+          <Eyebrow center>4 core pillars of our<br />Ozempic &amp; Mounjaro methodology</Eyebrow>
+          <H2 serif>a doctor-led glp-1<br />programme built to last</H2>
         </Reveal>
         <div className="grid" style={{ gridTemplateColumns: "minmax(0,1fr) minmax(0,1fr)", gap: "48px", alignItems: "start", marginTop: "20px" }}>
           <Reveal>
@@ -1250,29 +1254,34 @@ function Difference() {
 /* ---------- S10 NOT ANOTHER DIET CLINIC ---------- */
 
 function NotAnotherClinic() {
-  const tiles = [`${A}/grid-1g.png`, `${A}/grid-2g.png`, `${A}/grid-3g.png`, `${A}/grid-4g.png`];
+  const tiles = [
+    { src: `${A}/grid-1g.png`, r: "50% 50% 50% 50% / 60% 60% 40% 40%" },
+    { src: `${A}/grid-2g.png`, r: "50% 50% 50% 50% / 40% 40% 60% 60%" },
+    { src: `${A}/grid-3g.png`, r: "50% 50% 50% 50% / 60% 60% 40% 40%" },
+    { src: `${A}/grid-4g.png`, r: "50% 50% 50% 50% / 40% 40% 60% 60%" },
+  ];
   return (
     <section id="not-another-clinic" style={{ background: "var(--white)", padding: "72px 0" }}>
-      <div className="container">
-        <div className="grid" style={{ gridTemplateColumns: "minmax(0,1fr) minmax(0,1fr)", gap: "48px", alignItems: "center" }}>
-          <Reveal>
-            <h2 className="font-display" style={{ fontSize: "clamp(22px,3vw,28px)", color: "var(--ink)", lineHeight: 1.25, marginBottom: "20px" }}>
-              we are not another diet clinic.
-            </h2>
-            <p style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.85 }}>
-              We&rsquo;re a doctor-led Ozempic and Mounjaro programme that blends medical insight, sustainable nutrition,
-              and modern body technology into one high-touch system, so you don&rsquo;t just lose weight, you step into
-              your strongest form.
-            </p>
-          </Reveal>
-          <Reveal delay={100}>
-            <div className="grid" style={{ gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
-              {tiles.map((src, i) => (
-                <Image key={i} src={src} alt="" width={284} height={299} style={{ width: "100%", height: "auto", borderRadius: "10px", objectFit: "cover" }} />
-              ))}
-            </div>
-          </Reveal>
-        </div>
+      <div className="container text-center">
+        <Reveal>
+          <h2 className="font-display" style={{ fontSize: "clamp(22px,3vw,28px)", color: "var(--ink)", lineHeight: 1.25, marginBottom: "20px" }}>
+            we are not another diet clinic.
+          </h2>
+          <p style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.85, maxWidth: "700px", margin: "0 auto 40px" }}>
+            We&rsquo;re a doctor-led Ozempic and Mounjaro programme that blends medical insight, sustainable nutrition,
+            and modern body technology into one high-touch system, so you don&rsquo;t just lose weight, you step into
+            your strongest form.
+          </p>
+        </Reveal>
+        <Reveal delay={100}>
+          <div className="grid mx-auto" style={{ gridTemplateColumns: "1fr 1fr", gap: "16px", maxWidth: "620px" }}>
+            {tiles.map((t, i) => (
+              <div key={i} style={{ borderRadius: t.r, overflow: "hidden", aspectRatio: "1 / 1" }}>
+                <Image src={t.src} alt="" width={284} height={284} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }} />
+              </div>
+            ))}
+          </div>
+        </Reveal>
       </div>
     </section>
   );
@@ -1339,15 +1348,42 @@ const FAQS: Faq[] = [
   },
 ];
 
+function FaqSearch({ value, onChange }: { value: string; onChange: (v: string) => void }) {
+  return (
+    <div className="flex items-center" style={{ gap: "10px", background: "var(--cream)", border: "1px solid var(--line)", borderRadius: "24px", padding: "8px 18px", minWidth: "220px" }}>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--label)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, opacity: 0.6 }}>
+        <circle cx="11" cy="11" r="8" /><path d="M21 21l-4.35-4.35" />
+      </svg>
+      <input
+        type="text"
+        placeholder="Looking for something?"
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        style={{ background: "transparent", border: "none", outline: "none", fontSize: "13px", color: "var(--label)", width: "100%" }}
+      />
+    </div>
+  );
+}
+
 function Faqs() {
+  const [search, setSearch] = useState("");
+  const filtered = search.trim()
+    ? FAQS.filter((f) => f.q.toLowerCase().includes(search.toLowerCase()) || f.a.toLowerCase().includes(search.toLowerCase()))
+    : FAQS;
+
   return (
     <section id="faqs" style={{ background: "var(--white)", padding: "72px 0" }}>
       <div className="container">
-        <h2 className="font-serif" style={{ textAlign: "center", fontSize: "clamp(20px,2.6vw,25px)", color: "var(--teal)", textTransform: "lowercase", marginBottom: "36px" }}>
-          faqs about ozempic &amp; mounjaro
-        </h2>
+        <div className="flex items-center justify-between" style={{ gap: "20px", marginBottom: "36px", flexWrap: "wrap" }}>
+          <h2 className="font-serif" style={{ fontSize: "clamp(20px,2.6vw,25px)", color: "var(--teal)", textTransform: "lowercase", margin: 0 }}>
+            faqs about ozempic &amp; mounjaro
+          </h2>
+          <FaqSearch value={search} onChange={setSearch} />
+        </div>
         <Reveal>
-          <FaqAccordion items={FAQS} uppercase={false} />
+          <div style={{ "--gold-deep": "var(--teal)" } as React.CSSProperties}>
+            <FaqAccordion items={filtered} uppercase={false} />
+          </div>
         </Reveal>
       </div>
     </section>
@@ -1480,7 +1516,18 @@ function Research() {
     <section id="research" style={{ background: "var(--cream)", padding: "72px 0" }}>
       <div className="container">
         <Reveal>
-          <Eyebrow center>CLINICAL RESEARCH: basis of our Ozempic &amp; Mounjaro methodology</Eyebrow>
+          <p
+            className="font-display"
+            style={{ textAlign: "center", fontSize: "12px", color: "var(--label)", letterSpacing: "0.18em", textTransform: "uppercase", marginBottom: "6px" }}
+          >
+            clinical research
+          </p>
+          <p
+            className="font-display"
+            style={{ textAlign: "center", fontSize: "12px", color: "var(--label)", letterSpacing: "0.10em", textTransform: "uppercase", marginBottom: "18px", opacity: 0.75 }}
+          >
+            basis of our Ozempic &amp; Mounjaro methodology
+          </p>
           <H2 serif style={{ fontSize: "clamp(24px,3.6vw,30px)" }}>evidence based approach</H2>
         </Reveal>
         <div className="grid" style={{ gridTemplateColumns: "repeat(2, minmax(0,1fr))", gap: "28px", maxWidth: "960px", margin: "0 auto" }}>
