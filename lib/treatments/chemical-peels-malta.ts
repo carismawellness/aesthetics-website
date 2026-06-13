@@ -123,12 +123,7 @@ const t: Treatment = {
     title: "Malta's Trusted Clinic for Chemical Peels",
     subtitle: "Doctor-Led Chemical Peel in Malta",
     asSeenOn: ["/assets/press/lovin-malta.jpeg", "/assets/press/malta-daily.png", "/assets/press/bay.jpeg", "/assets/press/times-of-malta.png", "/assets/press/malta-today.jpg"],
-    images: [
-      "/assets/treatments/chemical-peels-malta-trusted1.png",
-      "/assets/treatments/chemical-peels-malta-trusted2.png",
-      "/assets/treatments/chemical-peels-malta-trusted3.png",
-      "/assets/treatments/chemical-peels-malta-trusted4.png",
-    ],
+    images: ["/assets/treatments/trusted-clinic-collage.png"],
     points: [
       { title: "Medically Qualified Practitioners", desc: "Every chemical peel treatment is performed by a qualified doctor." },
       { title: "Advanced Facial Anatomy Expertise", desc: "Precision chemical peel techniques tailored to your unique facial anatomy." },

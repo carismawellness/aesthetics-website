@@ -111,12 +111,7 @@ const t: Treatment = {
     title: "Malta's Trusted Clinic for Thread Lift",
     subtitle: "Doctor-Led Thread Lift in Malta",
     asSeenOn: ["/assets/press/lovin-malta.jpeg", "/assets/press/malta-daily.png", "/assets/press/bay.jpeg", "/assets/press/times-of-malta.png", "/assets/press/malta-today.jpg"],
-    images: [
-      "/assets/treatments/thread-lift-malta-trusted1.png",
-      "/assets/treatments/thread-lift-malta-trusted2.png",
-      "/assets/treatments/thread-lift-malta-trusted3.png",
-      "/assets/treatments/thread-lift-malta-trusted4.png",
-    ],
+    images: ["/assets/treatments/trusted-clinic-collage.png"],
     points: [
       { title: "Medically Qualified Practitioners", desc: "Every thread lift treatment is performed by a qualified doctor." },
       { title: "Advanced Facial Anatomy Expertise", desc: "Precision thread lift techniques tailored to your unique facial anatomy." },

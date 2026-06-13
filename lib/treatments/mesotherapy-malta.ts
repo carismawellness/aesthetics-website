@@ -123,12 +123,7 @@ const t: Treatment = {
     title: "malta's trusted clinic for mesotherapy",
     subtitle: "DOCTOR-LED mesotherapy IN MALTA",
     asSeenOn: ["/assets/press/lovin-malta.jpeg", "/assets/press/malta-daily.png", "/assets/press/bay.jpeg", "/assets/press/times-of-malta.png", "/assets/press/malta-today.jpg"],
-    images: [
-      "/assets/treatments/mesotherapy-malta-trusted-1.png",
-      "/assets/treatments/mesotherapy-malta-trusted-2.png",
-      "/assets/treatments/mesotherapy-malta-trusted-3.png",
-      "/assets/treatments/mesotherapy-malta-trusted-4.png",
-    ],
+    images: ["/assets/treatments/trusted-clinic-collage.png"],
     points: [
       { title: "medically qualified practitioners", desc: "Every mesotherapy treatment is performed by a qualified doctor." },
       { title: "Advanced Facial Anatomy Expertise", desc: "Precision mesotherapy peel techniques tailored to your unique facial anatomy." },

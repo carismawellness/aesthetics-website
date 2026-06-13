@@ -122,12 +122,7 @@ const t: Treatment = {
     title: "malta's trusted clinic for dermal fillers",
     subtitle: "DOCTOR-LED dermal fillers IN MALTA",
     asSeenOn: ["/assets/press/lovin-malta.jpeg", "/assets/press/malta-daily.png", "/assets/press/bay.jpeg", "/assets/press/times-of-malta.png", "/assets/press/malta-today.jpg"],
-    images: [
-      "/assets/treatments/dermal-fillers-malta-trusted1.png",
-      "/assets/treatments/dermal-fillers-malta-trusted2.png",
-      "/assets/treatments/dermal-fillers-malta-trusted3.png",
-      "/assets/treatments/dermal-fillers-malta-trusted4.jpg",
-    ],
+    images: ["/assets/treatments/trusted-clinic-collage.png"],
     points: [
       { title: "medically qualified practitioners", desc: "Every dermal fillers treatment is performed by a qualified doctor." },
       { title: "Advanced Facial Anatomy Expertise", desc: "Precision dermal fillers techniques tailored to your unique facial anatomy." },

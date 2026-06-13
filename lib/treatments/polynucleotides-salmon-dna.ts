@@ -113,12 +113,7 @@ const t: Treatment = {
     title: "malta's trusted clinic for salmon dna",
     subtitle: "DOCTOR-LED salmon dna IN MALTA",
     asSeenOn: ["/assets/press/lovin-malta.jpeg", "/assets/press/malta-daily.png", "/assets/press/bay.jpeg", "/assets/press/times-of-malta.png", "/assets/press/malta-today.jpg"],
-    images: [
-      "/assets/treatments/polynucleotides-salmon-dna-trusted-1.png",
-      "/assets/treatments/polynucleotides-salmon-dna-trusted-2.png",
-      "/assets/treatments/polynucleotides-salmon-dna-trusted-3.png",
-      "/assets/treatments/polynucleotides-salmon-dna-trusted-4.png",
-    ],
+    images: ["/assets/treatments/trusted-clinic-collage.png"],
     points: [
       { title: "medically qualified practitioners", desc: "Every salmon dna treatment is performed by a qualified doctor." },
       { title: "Advanced Facial Anatomy Expertise", desc: "Precision salmon dna techniques tailored to your unique facial anatomy." },

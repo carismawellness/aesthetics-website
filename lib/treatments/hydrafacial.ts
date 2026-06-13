@@ -148,12 +148,7 @@ const t: Treatment = {
     title: "malta's trusted clinic for hydrafacial",
     subtitle: "DOCTOR-LED hydrafacial IN MALTA",
     asSeenOn: ["/assets/press/lovin-malta.jpeg", "/assets/press/malta-daily.png", "/assets/press/bay.jpeg", "/assets/press/times-of-malta.png", "/assets/press/malta-today.jpg"],
-    images: [
-      "/assets/treatments/hydrafacial-trusted-1.png",
-      "/assets/treatments/hydrafacial-trusted-2.png",
-      "/assets/treatments/hydrafacial-trusted-3.png",
-      "/assets/treatments/hydrafacial-trusted-4.png",
-    ],
+    images: ["/assets/treatments/trusted-clinic-collage.png"],
     points: [
       { title: "medically qualified practitioners", desc: "Every hydrafacial treatment is performed by a qualified doctor." },
       { title: "Advanced Facial Anatomy Expertise", desc: "with targeted serums and boosters selected for your skin type and concerns" },

@@ -115,12 +115,7 @@ const t: Treatment = {
     title: "malta's trusted clinic for profhilio",
     subtitle: "Doctor-Led profhilo in Malta",
     asSeenOn: ["/assets/press/lovin-malta.jpeg", "/assets/press/malta-daily.png", "/assets/press/bay.jpeg", "/assets/press/times-of-malta.png", "/assets/press/malta-today.jpg"],
-    images: [
-      "/assets/treatments/profhilo-trusted1.png",
-      "/assets/treatments/profhilo-trusted2.png",
-      "/assets/treatments/profhilo-trusted3.png",
-      "/assets/treatments/profhilo-trusted4.png",
-    ],
+    images: ["/assets/treatments/trusted-clinic-collage.png"],
     points: [
       { title: "medically qualified practitioners", desc: "Every profhilo treatment is performed by a qualified doctor." },
       { title: "Advanced Facial Anatomy Expertise", desc: "Precision profhilo techniques tailored to your unique facial anatomy." },

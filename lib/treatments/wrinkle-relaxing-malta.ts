@@ -92,7 +92,7 @@ const t: Treatment = {
     title: "Malta's Trusted Clinic for Botox",
     subtitle: "Doctor-Led Botox in Malta",
     asSeenOn: ["/assets/press/lovin-malta.jpeg", "/assets/press/malta-daily.png", "/assets/press/bay.jpeg", "/assets/press/times-of-malta.png", "/assets/press/malta-today.jpg"],
-    images: ["/assets/treatments/wr-trusted-collage.png"],
+    images: ["/assets/treatments/trusted-clinic-collage.png"],
     points: [
       { title: "Medically Qualified Practitioners", desc: "Every botox treatment is performed by a qualified doctor." },
       { title: "Advanced Facial Anatomy Expertise", desc: "Precision botox techniques tailored to your unique facial anatomy." },

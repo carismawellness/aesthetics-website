@@ -118,12 +118,7 @@ const t: Treatment = {
     title: "malta's trusted clinic for prp treatment",
     subtitle: "Doctor-Led PRP Treatment in Malta",
     asSeenOn: ["/assets/press/lovin-malta.jpeg", "/assets/press/malta-daily.png", "/assets/press/bay.jpeg", "/assets/press/times-of-malta.png", "/assets/press/malta-today.jpg"],
-    images: [
-      "/assets/treatments/prp-malta-trusted1.png",
-      "/assets/treatments/prp-malta-trusted2.png",
-      "/assets/treatments/prp-malta-trusted3.png",
-      "/assets/treatments/prp-malta-trusted4.png",
-    ],
+    images: ["/assets/treatments/trusted-clinic-collage.png"],
     points: [
       { title: "Medically Qualified Practitioners", desc: "Every treatment is performed by a qualified doctor." },
       { title: "Advanced Facial Anatomy Expertise", desc: "Precision PRP injection techniques tailored to your unique skin or scalp concerns." },

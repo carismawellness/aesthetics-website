@@ -119,12 +119,7 @@ const t: Treatment = {
     title: "malta's trusted clinic for lip fillers",
     subtitle: "DOCTOR-LED lip fillers IN MALTA",
     asSeenOn: ["/assets/press/lovin-malta.jpeg", "/assets/press/malta-daily.png", "/assets/press/bay.jpeg", "/assets/press/times-of-malta.png", "/assets/press/malta-today.jpg"],
-    images: [
-      "/assets/treatments/lip-fillers-malta-trusted1.png",
-      "/assets/treatments/lip-fillers-malta-trusted2.jpg",
-      "/assets/treatments/botox-step4.png",
-      "/assets/treatments/lip-fillers-malta-trusted3.jpg",
-    ],
+    images: ["/assets/treatments/trusted-clinic-collage.png"],
     points: [
       { title: "medically qualified practitioners", desc: "Every lip fillers treatment is performed by a qualified doctor." },
       { title: "Advanced Facial Anatomy Expertise", desc: "Precision lip fillers techniques tailored to your unique facial anatomy." },

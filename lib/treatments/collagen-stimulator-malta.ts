@@ -114,12 +114,7 @@ const t: Treatment = {
     title: "Malta's Trusted Clinic for Collagen Stimulator",
     subtitle: "Doctor-Led Collagen Stimulator in Malta",
     asSeenOn: ["/assets/press/lovin-malta.jpeg", "/assets/press/malta-daily.png", "/assets/press/bay.jpeg", "/assets/press/times-of-malta.png", "/assets/press/malta-today.jpg"],
-    images: [
-      "/assets/treatments/collagen-stimulator-malta-trusted1.png",
-      "/assets/treatments/collagen-stimulator-malta-trusted2.png",
-      "/assets/treatments/collagen-stimulator-malta-trusted3.png",
-      "/assets/treatments/collagen-stimulator-malta-trusted4.png",
-    ],
+    images: ["/assets/treatments/trusted-clinic-collage.png"],
     points: [
       { title: "Medically Qualified Practitioners", desc: "Every collagen stimulator treatment is performed by a qualified doctor." },
       { title: "Advanced Facial Anatomy Expertise", desc: "Precision collagen stimulator techniques tailored to your unique facial anatomy." },
