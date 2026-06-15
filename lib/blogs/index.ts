@@ -3,12 +3,24 @@ import type { BlogPost } from "@/lib/blog-types";
 // Individual blog files import themselves into this registry.
 // Pattern: each blog file does  BLOG_REGISTRY["my-slug"] = { ... }
 // before this module is evaluated (side-effect imports).
-// For now the registry starts empty; add blog files here as they are created:
-//
-//   import "@/lib/blogs/example-post";
-//
+// Add blog files here as they are created (side-effect imports populate the registry):
+import { post as whatToExpectLaserHairRemoval } from './what-to-expect-laser-hair-removal';
+import { post as completeGuideDermalFillersMalta } from './complete-guide-dermal-fillers-malta';
+import { post as hydrafacialVsTraditional } from './hydrafacial-vs-traditional-facials';
+import { post as howDoesPicoLaserTattooRemovalWork } from './how-does-pico-laser-tattoo-removal-work';
+import { post as hairRegrowthTreatmentsScience } from './hair-regrowth-treatments-science';
+import { post as antiWrinkleInjectionsGuide } from './anti-wrinkle-injections-guide';
+import { post as medicallyQualifiedAestheticsClinicMalta } from './medically-qualified-aesthetics-clinic-malta';
 
-export const BLOG_REGISTRY: Record<string, BlogPost> = {};
+export const BLOG_REGISTRY: Record<string, BlogPost> = {
+  [whatToExpectLaserHairRemoval.slug]: whatToExpectLaserHairRemoval,
+  [completeGuideDermalFillersMalta.slug]: completeGuideDermalFillersMalta,
+  [hydrafacialVsTraditional.slug]: hydrafacialVsTraditional,
+  [howDoesPicoLaserTattooRemovalWork.slug]: howDoesPicoLaserTattooRemovalWork,
+  [hairRegrowthTreatmentsScience.slug]: hairRegrowthTreatmentsScience,
+  [antiWrinkleInjectionsGuide.slug]: antiWrinkleInjectionsGuide,
+  [medicallyQualifiedAestheticsClinicMalta.slug]: medicallyQualifiedAestheticsClinicMalta,
+};
 
 export const ALL_BLOG_SLUGS: string[] = Object.keys(BLOG_REGISTRY);
 
