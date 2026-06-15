@@ -11,6 +11,7 @@ import { post as howDoesPicoLaserTattooRemovalWork } from './how-does-pico-laser
 import { post as hairRegrowthTreatmentsScience } from './hair-regrowth-treatments-science';
 import { post as antiWrinkleInjectionsGuide } from './anti-wrinkle-injections-guide';
 import { post as medicallyQualifiedAestheticsClinicMalta } from './medically-qualified-aesthetics-clinic-malta';
+import { post as medicalWeightLossMaltaGuide } from './medical-weight-loss-malta-guide';
 
 export const BLOG_REGISTRY: Record<string, BlogPost> = {
   [whatToExpectLaserHairRemoval.slug]: whatToExpectLaserHairRemoval,
@@ -20,6 +21,7 @@ export const BLOG_REGISTRY: Record<string, BlogPost> = {
   [hairRegrowthTreatmentsScience.slug]: hairRegrowthTreatmentsScience,
   [antiWrinkleInjectionsGuide.slug]: antiWrinkleInjectionsGuide,
   [medicallyQualifiedAestheticsClinicMalta.slug]: medicallyQualifiedAestheticsClinicMalta,
+  [medicalWeightLossMaltaGuide.slug]: medicalWeightLossMaltaGuide,
 };
 
 export const ALL_BLOG_SLUGS: string[] = Object.keys(BLOG_REGISTRY);
