@@ -5,7 +5,7 @@ const post: BlogPost = {
   title: 'Anti-Wrinkle Injections: Everything You Need to Know',
   metaTitle: 'Anti-Wrinkle Injections Malta | Carisma Aesthetics',
   metaDescription:
-    'Discover how anti-wrinkle injections work, what areas can be treated, how long results last, and what to expect at Carisma Aesthetics Malta. Book a free consult.',
+    'Discover how anti-wrinkle injections work, what areas can be treated, how long results last, and what to expect at Carisma Aesthetics Malta.',
   category: 'Anti-Wrinkle',
   publishDate: '2025-09-10',
   readTime: 7,
@@ -20,7 +20,7 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: 'Anti-wrinkle injections — commonly known as Botox — use a purified protein called botulinum toxin to temporarily relax specific facial muscles. When those muscles contract repeatedly over years of smiling, frowning, and squinting, they create dynamic wrinkles: the lines you see when your face is moving. By gently interrupting the nerve signals that tell those muscles to contract, anti-wrinkle injections smooth existing lines and prevent new ones from forming. The treatment has been used safely in clinical settings for more than 30 years and remains one of the most evidence-backed procedures in aesthetic medicine. At <a href="/anti-wrinkle-treatments" style="color:var(--teal);text-decoration:underline;">Anti-Wrinkle Treatments</a> at Carisma Aesthetics, every session is performed by a qualified doctor who specialises in facial anatomy — so your results are precise, natural, and never overdone.',
+      html: 'Anti-wrinkle injections — commonly known as Botox — use a purified protein called botulinum toxin to temporarily relax specific facial muscles. When those muscles contract repeatedly over years of smiling, frowning, and squinting, they create dynamic wrinkles: the lines you see when your face is moving. By gently interrupting the nerve signals that tell those muscles to contract, anti-wrinkle injections smooth existing lines and prevent new ones from forming. The treatment has been used safely in clinical settings for more than 30 years and remains one of the most evidence-backed procedures in aesthetic medicine. At <a href="/wrinkle-relaxing-malta" style="color:var(--teal);text-decoration:underline;">Anti-Wrinkle Treatments</a> at Carisma Aesthetics, every session is performed by a qualified doctor who specialises in facial anatomy — so your results are precise, natural, and never overdone.',
     },
     {
       type: 'heading',
@@ -58,7 +58,7 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: 'Treatment is always guided by a thorough assessment of your facial anatomy. At Carisma, our doctors never follow a one-size-fits-all approach. We map exactly where and how much product to use based on your unique muscle structure, the depth of your lines, and the look you want to achieve. If you are also considering volume enhancement alongside muscle relaxation, our <a href="/dermal-fillers" style="color:var(--teal);text-decoration:underline;">Dermal Fillers Malta</a> page explains how both treatments can be combined safely for a comprehensive facial refresh.',
+      html: 'Treatment is always guided by a thorough assessment of your facial anatomy. At Carisma, our doctors never follow a one-size-fits-all approach. We map exactly where and how much product to use based on your unique muscle structure, the depth of your lines, and the look you want to achieve. If you are also considering volume enhancement alongside muscle relaxation, our <a href="/dermal-fillers-malta" style="color:var(--teal);text-decoration:underline;">Dermal Fillers Malta</a> page explains how both treatments can be combined safely for a comprehensive facial refresh.',
     },
     {
       type: 'heading',
@@ -130,7 +130,7 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: 'Carisma Aesthetics is Malta\'s leading medical aesthetics clinic, trusted by thousands of patients for safe, natural-looking results. Every anti-wrinkle treatment is carried out by a fully qualified doctor with advanced expertise in facial anatomy — never a nurse or beautician working outside their scope. We use only CE-marked, clinically approved products administered via evidence-based injection protocols. Our ethos is simple: enhance, never overcorrect. From your first consultation through to your aftercare review, you are supported every step of the way. Explore our full range of <a href="/anti-wrinkle-treatments" style="color:var(--teal);text-decoration:underline;">Anti-Wrinkle Treatments</a> or take the first step and <a href="/consultation" style="color:var(--teal);text-decoration:underline;">Book a Free Consultation</a> with one of our doctors today — no commitment, no pressure, just honest expert advice.',
+      html: 'Carisma Aesthetics is Malta\'s leading medical aesthetics clinic, trusted by thousands of patients for safe, natural-looking results. Every anti-wrinkle treatment is carried out by a fully qualified doctor with advanced expertise in facial anatomy — never a nurse or beautician working outside their scope. We use only CE-marked, clinically approved products administered via evidence-based injection protocols. Our ethos is simple: enhance, never overcorrect. From your first consultation through to your aftercare review, you are supported every step of the way. Explore our full range of <a href="/wrinkle-relaxing-malta" style="color:var(--teal);text-decoration:underline;">Anti-Wrinkle Treatments</a> or take the first step and <a href="/consultation" style="color:var(--teal);text-decoration:underline;">Book a Free Consultation</a> with one of our doctors today — no commitment, no pressure, just honest expert advice.',
     },
     {
       type: 'cta',
@@ -141,12 +141,12 @@ const post: BlogPost = {
   internalLinks: [
     {
       anchorText: 'Anti-Wrinkle Treatments',
-      href: '/anti-wrinkle-treatments',
+      href: '/wrinkle-relaxing-malta',
       context: 'Introduced in the opening paragraph when explaining that every session at Carisma is doctor-led.',
     },
     {
       anchorText: 'Dermal Fillers Malta',
-      href: '/dermal-fillers',
+      href: '/dermal-fillers-malta',
       context: 'Referenced when explaining the difference between muscle relaxation and volume restoration.',
     },
     {
