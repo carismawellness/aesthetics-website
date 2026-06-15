@@ -21,6 +21,7 @@ const MENUS: Dropdown[] = [
   { label: "Packages", items: PACKAGE_LINKS },
   { label: "Membership", href: "/membership" },
   { label: "Gifts", href: "/e-giftcards-vouchers" },
+  { label: "Blog", href: "/blog" },
 ];
 
 function PhoneIcon() {
