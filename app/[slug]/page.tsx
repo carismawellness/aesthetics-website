@@ -9,7 +9,9 @@ import BodyPackagePage from "@/components/BodyPackagePage";
 import { bodyPackages } from "@/lib/bodypkg";
 import { PROTOCOLS } from "@/lib/protocols";
 import PackageFunnel from "@/components/packages/PackageFunnel";
+import SnatchJawlinePage from "@/components/packages/SnatchJawlinePage";
 import { PACKAGES } from "@/lib/packages";
+import { JAWLINE } from "@/lib/jawline-funnel";
 import { getTreatment, ALL_TREATMENT_SLUGS } from "@/lib/treatments";
 
 export function generateStaticParams() {
@@ -20,6 +22,27 @@ export const dynamicParams = false;
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
+  if (slug === "snatch-your-jawline") {
+    const s = JAWLINE.seo;
+    return {
+      title: s.metaTitle,
+      description: s.metaDescription,
+      alternates: { canonical: s.canonical },
+      openGraph: {
+        title: s.metaTitle,
+        description: s.metaDescription,
+        url: s.canonical,
+        type: "website",
+        images: [{ url: s.ogImage }],
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: s.metaTitle,
+        description: s.metaDescription,
+        images: [s.ogImage],
+      },
+    };
+  }
   const pkg = PACKAGES[slug];
   if (pkg) {
     return {
@@ -37,6 +60,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
+  if (slug === "snatch-your-jawline") return <SnatchJawlinePage />;
   const pkg = PACKAGES[slug];
   if (pkg) return <PackageFunnel data={pkg} />;
   if (slug === "laser-hair-removal-malta") return <LaserHairRemovalPage />;

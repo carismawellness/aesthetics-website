@@ -13,6 +13,7 @@ const pinyonScript = Pinyon_Script({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.carismaaesthetics.com"),
   title: "Carisma Aesthetics | #1 Voted Med-Aesthetics Clinic in Malta",
   description:
     "Carisma Aesthetics is the #1 voted med-aesthetics clinic in Malta. Medically qualified doctors, advanced treatments and personalised plans for face and body.",
