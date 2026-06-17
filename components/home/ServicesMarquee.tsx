@@ -18,10 +18,6 @@ export default function ServicesMarquee() {
             <Reveal key={s.href} delay={(i % 4) * 70} className="flex">
               <Link href={s.href} className="group flex flex-col items-center text-center w-full">
                 <div className="relative w-full" style={{ aspectRatio: "1 / 1", padding: "22px", maxWidth: "200px" }}>
-                  <span className="absolute" style={{ left: 0, top: 0, width: "38%", height: "38%", borderLeft: "1px solid var(--line)", borderTop: "1px solid var(--line)" }} />
-                  <span className="absolute" style={{ right: 0, top: 0, width: "38%", height: "38%", borderRight: "1px solid var(--line)", borderTop: "1px solid var(--line)" }} />
-                  <span className="absolute" style={{ left: 0, bottom: 0, width: "38%", height: "38%", borderLeft: "1px solid var(--line)", borderBottom: "1px solid var(--line)" }} />
-                  <span className="absolute" style={{ right: 0, bottom: 0, width: "38%", height: "38%", borderRight: "1px solid var(--line)", borderBottom: "1px solid var(--line)" }} />
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={s.image} alt={s.label} className="relative w-full h-full object-contain transition-transform duration-300 group-hover:scale-105" />
                 </div>
