@@ -20,11 +20,6 @@ export default function ServicesMarquee() {
             <Reveal key={s.href} delay={(i % 4) * 70}>
               <Link href={s.href} className="group block">
                 <div className="relative flex flex-col items-center" style={{ paddingTop: "24px", paddingBottom: "20px", gap: "14px" }}>
-                  {/* Corner brackets */}
-                  <span className="absolute" style={{ left: 0, top: 0, width: "30%", height: "25%", borderLeft: B, borderTop: B }} />
-                  <span className="absolute" style={{ right: 0, top: 0, width: "30%", height: "25%", borderRight: B, borderTop: B }} />
-                  <span className="absolute" style={{ left: 0, bottom: 0, width: "30%", height: "25%", borderLeft: B, borderBottom: B }} />
-                  <span className="absolute" style={{ right: 0, bottom: 0, width: "30%", height: "25%", borderRight: B, borderBottom: B }} />
                   {/* PNG image — resized to fit inside bracket */}
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
