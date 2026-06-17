@@ -335,35 +335,38 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
 
       {/* Suitability */}
       {t.suitability && (
-        <section style={{ padding: "80px 0", backgroundColor: "var(--cream)" }}>
+        <section style={{ padding: "80px 0", background: "#fff" }}>
           <div className="container">
             <h2 className="font-serif text-center" style={{ fontSize: "clamp(24px,3.4vw,38px)", color: "var(--gold)", letterSpacing: "0.04em" }}>{t.suitability.title}</h2>
             {t.suitability.intro && (
               <p className="text-center mx-auto" style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.8, marginTop: "18px", maxWidth: "880px" }}>{t.suitability.intro}</p>
             )}
-            <Reveal
-              className="mx-auto"
-              style={{ marginTop: "48px", maxWidth: "1040px", border: "1px solid var(--line)", borderRadius: "32px 90px 32px 90px", background: "linear-gradient(170deg,#ffffff 0%, #f1f6f7 60%, #e3ecee 100%)", overflow: "hidden" }}
-            >
-              <div className="grid md:grid-cols-2">
-                <div style={{ padding: "clamp(32px,3.5vw,48px)", borderRight: "1px solid var(--line)" }}>
-                  <h3 className="font-display" style={{ fontSize: "14px", color: "var(--label)", marginBottom: "26px", letterSpacing: "0.12em", textTransform: "uppercase" }}>Suitable for you if</h3>
-                  <ul className="space-y-6">
-                    {(t.suitability.suitableFor ?? []).map((s) => (
-                      <li key={s} className="flex items-start gap-4"><CheckIcon ok /><span style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.55 }}>{s}</span></li>
-                    ))}
-                  </ul>
-                </div>
-                <div style={{ padding: "clamp(32px,3.5vw,48px)" }}>
-                  <h3 className="font-display" style={{ fontSize: "14px", color: "var(--label)", marginBottom: "26px", letterSpacing: "0.12em", textTransform: "uppercase" }}>May not be ideal if</h3>
-                  <ul className="space-y-6">
-                    {(t.suitability.notIdeal ?? []).map((s) => (
-                      <li key={s} className="flex items-start gap-4"><CheckIcon ok={false} /><span style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.55 }}>{s}</span></li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </Reveal>
+            <div className="grid md:grid-cols-2 gap-6 mx-auto" style={{ marginTop: "48px", maxWidth: "1040px" }}>
+              {/* Suitable card */}
+              <Reveal style={{ background: "var(--cream)", borderRadius: "60px 16px 60px 16px", padding: "clamp(32px,3.5vw,48px)" }}>
+                <h3 className="font-display" style={{ fontSize: "13px", color: "var(--label)", marginBottom: "28px", letterSpacing: "0.14em" }}>SUITABLE FOR YOU IF</h3>
+                <ul className="space-y-5">
+                  {(t.suitability.suitableFor ?? []).map((s) => (
+                    <li key={s} className="flex items-start gap-4">
+                      <CheckIcon ok />
+                      <span style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.6 }}>{s}</span>
+                    </li>
+                  ))}
+                </ul>
+              </Reveal>
+              {/* Not ideal card */}
+              <Reveal delay={100} style={{ background: "var(--cream)", borderRadius: "16px 60px 16px 60px", padding: "clamp(32px,3.5vw,48px)" }}>
+                <h3 className="font-display" style={{ fontSize: "13px", color: "var(--label)", marginBottom: "28px", letterSpacing: "0.14em" }}>MAY NOT BE IDEAL IF</h3>
+                <ul className="space-y-5">
+                  {(t.suitability.notIdeal ?? []).map((s) => (
+                    <li key={s} className="flex items-start gap-4">
+                      <CheckIcon ok={false} />
+                      <span style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.6 }}>{s}</span>
+                    </li>
+                  ))}
+                </ul>
+              </Reveal>
+            </div>
           </div>
         </section>
       )}
