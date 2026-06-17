@@ -13,7 +13,7 @@ export default function ServicesMarquee() {
           <div className="mx-auto" style={{ width: "205px", height: "1.5px", background: "#96b2b2", marginTop: "16px", marginBottom: "48px" }} />
         </Reveal>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4" style={{ columnGap: "8px", rowGap: "8px" }}>
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4" style={{ columnGap: "2px", rowGap: "2px" }}>
           {HOME_SERVICES.map((s, i) => (
             <Reveal key={s.href} delay={(i % 4) * 70} className="flex">
               <Link href={s.href} className="group flex flex-col items-center text-center w-full">
