@@ -21,11 +21,6 @@ export default function ServicesMarquee() {
               <Link href={s.href} className="group flex justify-center">
                 {/* Bracket frame contains both the image and the label in the white space */}
                 <div className="relative flex flex-col items-center justify-center" style={{ width: "160px", height: "190px", gap: "10px", flexShrink: 0 }}>
-                  {/* Corner brackets */}
-                  <span className="absolute" style={{ left: 0, top: 0, width: "32%", height: "28%", borderLeft: BRACKET, borderTop: BRACKET }} />
-                  <span className="absolute" style={{ right: 0, top: 0, width: "32%", height: "28%", borderRight: BRACKET, borderTop: BRACKET }} />
-                  <span className="absolute" style={{ left: 0, bottom: 0, width: "32%", height: "28%", borderLeft: BRACKET, borderBottom: BRACKET }} />
-                  <span className="absolute" style={{ right: 0, bottom: 0, width: "32%", height: "28%", borderRight: BRACKET, borderBottom: BRACKET }} />
                   {/* Icon image */}
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
