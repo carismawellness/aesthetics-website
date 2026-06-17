@@ -1,271 +1,259 @@
-// Line-drawn SVG icon components for the home services grid.
-// Two-tone style: F (beige) for face/skin elements, T (teal) for instruments.
-
 type Props = { size?: number; className?: string };
 
-const F = "#c4b5a5";
-const T = "#96b2b2";
-const S = 1.3;
+const F = "#c4b5a5";  // face / beige
+const T = "#96b2b2";  // tool / teal
+const S = 1.4;
 
-// Shared front-facing face used by most icons
-function Face({ children }: { children?: React.ReactNode }) {
+function face() {
   return (
     <>
-      {/* Face outline */}
-      <path d="M50 18 C36 18 30 30 30 44 C30 59 37 70 50 72 C63 70 70 59 70 44 C70 30 64 18 50 18Z" stroke={F} strokeWidth={S} fill="none" />
+      {/* Hair strands */}
+      <path d="M36 42 C35 33 38 25 45 22" stroke={F} strokeWidth={S} fill="none" strokeLinecap="round" />
+      <path d="M50 38 C50 29 50 24 51 20" stroke={F} strokeWidth={S} fill="none" strokeLinecap="round" />
+      <path d="M57 40 C59 31 56 24 50 21" stroke={F} strokeWidth={S} fill="none" strokeLinecap="round" />
+      {/* Face oval */}
+      <path d="M34 53 C34 38 38 29 50 28 C62 29 66 38 66 53 C66 65 61 74 50 75 C39 74 34 65 34 53Z" stroke={F} strokeWidth={S} fill="none" />
       {/* Eyebrows */}
-      <path d="M39 38 C41 36 44 36 46 37" stroke={F} strokeWidth={S} fill="none" strokeLinecap="round" />
-      <path d="M54 37 C56 36 59 36 61 38" stroke={F} strokeWidth={S} fill="none" strokeLinecap="round" />
+      <path d="M39 44 C41 42 43.5 41.5 46 42.5" stroke={F} strokeWidth={S} fill="none" strokeLinecap="round" />
+      <path d="M54 42.5 C56.5 41.5 59 42 61 44" stroke={F} strokeWidth={S} fill="none" strokeLinecap="round" />
       {/* Eyes */}
-      <ellipse cx="43" cy="42" rx="4" ry="2.5" stroke={F} strokeWidth={S} />
-      <ellipse cx="57" cy="42" rx="4" ry="2.5" stroke={F} strokeWidth={S} />
+      <path d="M39 48 C40.5 45.5 44 45.5 45.5 48 C44 50.5 40.5 50.5 39 48Z" stroke={F} strokeWidth={S} fill="none" />
+      <path d="M54.5 48 C56 45.5 59.5 45.5 61 48 C59.5 50.5 56 50.5 54.5 48Z" stroke={F} strokeWidth={S} fill="none" />
       {/* Nose */}
-      <path d="M49 47 L48 53 M51 47 L52 53 M47 53 Q50 56 53 53" stroke={F} strokeWidth={S} fill="none" strokeLinecap="round" />
+      <path d="M48 52 L47 58 M52 52 L53 58 M46.5 58 Q50 61 53.5 58" stroke={F} strokeWidth={S} fill="none" strokeLinecap="round" />
       {/* Lips */}
-      <path d="M44 60 Q47 58 50 59 Q53 58 56 60 Q53 63 50 64 Q47 63 44 60Z" stroke={F} strokeWidth={S} fill="none" />
+      <path d="M43 63 Q46.5 61 50 62 Q53.5 61 57 63" stroke={F} strokeWidth={S} fill="none" strokeLinecap="round" />
+      <path d="M43 63 Q50 67.5 57 63" stroke={F} strokeWidth={S} fill="none" strokeLinecap="round" />
       {/* Neck */}
-      <line x1="45" y1="72" x2="44" y2="82" stroke={F} strokeWidth={S} strokeLinecap="round" />
-      <line x1="55" y1="72" x2="56" y2="82" stroke={F} strokeWidth={S} strokeLinecap="round" />
-      {children}
+      <line x1="45" y1="75" x2="44" y2="84" stroke={F} strokeWidth={S} strokeLinecap="round" />
+      <line x1="55" y1="75" x2="56" y2="84" stroke={F} strokeWidth={S} strokeLinecap="round" />
     </>
   );
 }
 
-// Small syringe helper: tip at (x,y), angle in degrees
-function Syringe({ x, y, angle = 0 }: { x: number; y: number; angle?: number }) {
+export function BotoxIcon({ size = 90, className }: Props) {
   return (
-    <g transform={`rotate(${angle} ${x} ${y})`} stroke={T} strokeWidth={S} strokeLinecap="round" fill="none">
-      <rect x={x - 1.5} y={y - 16} width="3" height="16" rx="1" stroke={T} fill="none" />
-      <path d={`M${x - 5} ${y - 16} h10`} />
-      <path d={`M${x - 5} ${y - 12} h10`} />
-      <rect x={x - 7} y={y - 22} width="14" height="7" rx="1" />
-      <line x1={x} y1={y} x2={x} y2={y + 6} strokeWidth="1" />
-    </g>
+    <svg width={size} height={size} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+      {face()}
+      {/* Horizontal syringe across forehead */}
+      <rect x="22" y="34" width="36" height="6" rx="1.5" stroke={T} strokeWidth={S} />
+      <line x1="58" y1="35" x2="64" y2="33" stroke={T} strokeWidth={S} strokeLinecap="round" />
+      <line x1="58" y1="40" x2="64" y2="38" stroke={T} strokeWidth={S} strokeLinecap="round" />
+      {/* Scale marks */}
+      <line x1="30" y1="34" x2="30" y2="32" stroke={T} strokeWidth="1" strokeLinecap="round" />
+      <line x1="36" y1="34" x2="36" y2="32" stroke={T} strokeWidth="1" strokeLinecap="round" />
+      <line x1="42" y1="34" x2="42" y2="32" stroke={T} strokeWidth="1" strokeLinecap="round" />
+      <line x1="48" y1="34" x2="48" y2="32" stroke={T} strokeWidth="1" strokeLinecap="round" />
+    </svg>
   );
 }
 
-export function BotoxIcon({ size = 80, className }: Props) {
+export function LipFillersIcon({ size = 90, className }: Props) {
   return (
     <svg width={size} height={size} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
-      <Face />
-      {/* Syringe angled at forehead */}
-      <g transform="rotate(-40 72 22)" stroke={T} strokeWidth={S} strokeLinecap="round" fill="none">
-        <rect x="68" y="10" width="8" height="20" rx="1.5" />
-        <line x1="72" y1="10" x2="72" y2="4" />
-        <line x1="68" y1="16" x2="76" y2="16" />
-        <line x1="68" y1="20" x2="76" y2="20" />
+      {/* Syringe angled from top */}
+      <g transform="rotate(-35 55 28)">
+        <rect x="49" y="10" width="10" height="30" rx="2" stroke={T} strokeWidth={S} fill="none" />
+        <rect x="46" y="8" width="16" height="6" rx="1" stroke={T} strokeWidth={S} fill="none" />
+        <line x1="54" y1="40" x2="54" y2="47" stroke={T} strokeWidth={S} strokeLinecap="round" />
+        <line x1="49" y1="22" x2="59" y2="22" stroke={T} strokeWidth={S} />
+        <line x1="49" y1="28" x2="59" y2="28" stroke={T} strokeWidth={S} />
+      </g>
+      {/* Lips - centred and large */}
+      <path d="M22 58 Q30 50 40 52 Q48 47 50 50 Q52 47 60 52 Q70 50 78 58 Q70 68 60 71 Q52 75 50 73 Q48 75 40 71 Q30 68 22 58Z" stroke={F} strokeWidth={S} fill="none" />
+      <path d="M22 58 Q36 64 50 62 Q64 64 78 58" stroke={F} strokeWidth={S} fill="none" />
+      <path d="M37 52 Q43 48 50 50 Q57 48 63 52" stroke={F} strokeWidth={S} fill="none" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+export function DermalFillersIcon({ size = 90, className }: Props) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+      {face()}
+      {/* Syringe at cheek from right */}
+      <g transform="rotate(-20 80 58)">
+        <rect x="68" y="44" width="10" height="28" rx="2" stroke={T} strokeWidth={S} fill="none" />
+        <rect x="65" y="42" width="16" height="5" rx="1" stroke={T} strokeWidth={S} fill="none" />
+        <line x1="73" y1="72" x2="73" y2="79" stroke={T} strokeWidth={S} strokeLinecap="round" />
+        <line x1="68" y1="55" x2="78" y2="55" stroke={T} strokeWidth={S} />
+        <line x1="68" y1="62" x2="78" y2="62" stroke={T} strokeWidth={S} />
       </g>
     </svg>
   );
 }
 
-export function LipFillersIcon({ size = 80, className }: Props) {
+export function CollagenBoostIcon({ size = 90, className }: Props) {
   return (
     <svg width={size} height={size} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
-      {/* Large lips centred */}
-      <path d="M25 48 Q32 42 40 44 Q48 40 50 43 Q52 40 60 44 Q68 42 75 48 Q68 56 60 58 Q52 62 50 60 Q48 62 40 58 Q32 56 25 48Z" stroke={F} strokeWidth={S} fill="none" />
-      <path d="M25 48 Q38 52 50 50 Q62 52 75 48" stroke={F} strokeWidth={S} fill="none" />
-      {/* Cupid's bow detail */}
-      <path d="M42 44 Q46 41 50 43 Q54 41 58 44" stroke={F} strokeWidth={S} fill="none" strokeLinecap="round" />
-      {/* Syringe approaching from right */}
-      <g transform="rotate(-20 82 30)" stroke={T} strokeWidth={S} strokeLinecap="round" fill="none">
-        <rect x="72" y="18" width="7" height="22" rx="1.5" />
-        <line x1="75.5" y1="18" x2="75.5" y2="10" />
-        <line x1="72" y1="26" x2="79" y2="26" />
-        <line x1="72" y1="30" x2="79" y2="30" />
+      {face()}
+      {/* Collagen device — thin pen with energy lines */}
+      <line x1="68" y1="30" x2="78" y2="18" stroke={T} strokeWidth={S} strokeLinecap="round" />
+      <rect x="73" y="10" width="9" height="18" rx="3" stroke={T} strokeWidth={S} fill="none" />
+      <line x1="77.5" y1="10" x2="77.5" y2="6" stroke={T} strokeWidth={S} strokeLinecap="round" />
+      {/* Energy rays from tip */}
+      <line x1="68" y1="30" x2="63" y2="33" stroke={T} strokeWidth="1" strokeLinecap="round" />
+      <line x1="67" y1="27" x2="62" y2="24" stroke={T} strokeWidth="1" strokeLinecap="round" />
+      <line x1="70" y1="33" x2="65" y2="38" stroke={T} strokeWidth="1" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+export function MicroneedlingIcon({ size = 90, className }: Props) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+      {face()}
+      {/* Microneedling pen from upper-left */}
+      <g transform="rotate(40 22 22)">
+        <rect x="14" y="8" width="12" height="26" rx="4" stroke={T} strokeWidth={S} fill="none" />
+        <line x1="16" y1="20" x2="26" y2="20" stroke={T} strokeWidth="1" />
+        {/* Needle tips */}
+        <line x1="16" y1="34" x2="15" y2="40" stroke={T} strokeWidth="1" strokeLinecap="round" />
+        <line x1="20" y1="34" x2="20" y2="41" stroke={T} strokeWidth="1" strokeLinecap="round" />
+        <line x1="24" y1="34" x2="25" y2="40" stroke={T} strokeWidth="1" strokeLinecap="round" />
       </g>
     </svg>
   );
 }
 
-export function DermalFillersIcon({ size = 80, className }: Props) {
+export function MesotherapyIcon({ size = 90, className }: Props) {
   return (
     <svg width={size} height={size} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
-      <Face />
-      {/* Syringe at cheek, angled */}
-      <g transform="rotate(30 80 55)" stroke={T} strokeWidth={S} strokeLinecap="round" fill="none">
-        <rect x="74" y="42" width="8" height="22" rx="1.5" />
-        <line x1="78" y1="42" x2="78" y2="34" />
-        <line x1="74" y1="50" x2="82" y2="50" />
-        <line x1="74" y1="54" x2="82" y2="54" />
+      {face()}
+      {/* Injection dots on face */}
+      <circle cx="43" cy="52" r="1.8" fill={T} />
+      <circle cx="50" cy="49" r="1.8" fill={T} />
+      <circle cx="57" cy="52" r="1.8" fill={T} />
+      <circle cx="46" cy="59" r="1.8" fill={T} />
+      <circle cx="54" cy="59" r="1.8" fill={T} />
+      {/* Syringe from right */}
+      <g transform="rotate(-45 82 32)">
+        <rect x="74" y="18" width="10" height="26" rx="2" stroke={T} strokeWidth={S} fill="none" />
+        <rect x="71" y="16" width="16" height="5" rx="1" stroke={T} strokeWidth={S} fill="none" />
+        <line x1="79" y1="44" x2="79" y2="50" stroke={T} strokeWidth={S} strokeLinecap="round" />
+        <line x1="74" y1="28" x2="84" y2="28" stroke={T} strokeWidth={S} />
+        <line x1="74" y1="34" x2="84" y2="34" stroke={T} strokeWidth={S} />
       </g>
     </svg>
   );
 }
 
-export function CollagenBoostIcon({ size = 80, className }: Props) {
+export function PRPIcon({ size = 90, className }: Props) {
   return (
     <svg width={size} height={size} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
-      <Face />
-      {/* Energy device beside face */}
+      {/* Hair strands */}
+      <path d="M42 40 C40 28 44 18 50 14" stroke={F} strokeWidth={S} fill="none" strokeLinecap="round" />
+      <path d="M50 38 C50 26 50 18 50 12" stroke={F} strokeWidth={S} fill="none" strokeLinecap="round" />
+      <path d="M58 40 C60 28 56 18 50 14" stroke={F} strokeWidth={S} fill="none" strokeLinecap="round" />
+      {/* Follicle bulb */}
+      <ellipse cx="50" cy="62" rx="14" ry="18" stroke={F} strokeWidth={S} />
+      <ellipse cx="50" cy="65" rx="6" ry="8" stroke={F} strokeWidth={S} />
+      {/* Syringe approaching */}
+      <g transform="rotate(30 22 70)">
+        <rect x="14" y="58" width="10" height="24" rx="2" stroke={T} strokeWidth={S} fill="none" />
+        <rect x="11" y="56" width="16" height="5" rx="1" stroke={T} strokeWidth={S} fill="none" />
+        <line x1="19" y1="82" x2="19" y2="88" stroke={T} strokeWidth={S} strokeLinecap="round" />
+        <line x1="14" y1="68" x2="24" y2="68" stroke={T} strokeWidth={S} />
+        <line x1="14" y1="74" x2="24" y2="74" stroke={T} strokeWidth={S} />
+      </g>
+    </svg>
+  );
+}
+
+export function ThreadLiftIcon({ size = 90, className }: Props) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+      {face()}
+      {/* Thread lift needle */}
+      <line x1="76" y1="26" x2="58" y2="62" stroke={T} strokeWidth={S} strokeLinecap="round" />
+      {/* Barbs on thread */}
+      <path d="M73 32 L78 28" stroke={T} strokeWidth="1" strokeLinecap="round" />
+      <path d="M70 38 L75 35" stroke={T} strokeWidth="1" strokeLinecap="round" />
+      <path d="M67 44 L72 41" stroke={T} strokeWidth="1" strokeLinecap="round" />
+      <path d="M64 50 L69 47" stroke={T} strokeWidth="1" strokeLinecap="round" />
+      <path d="M61 56 L66 53" stroke={T} strokeWidth="1" strokeLinecap="round" />
+      {/* Handle */}
+      <rect x="72" y="16" width="10" height="14" rx="3" stroke={T} strokeWidth={S} fill="none" />
+      <line x1="77" y1="16" x2="77" y2="12" stroke={T} strokeWidth={S} strokeLinecap="round" />
+    </svg>
+  );
+}
+
+export function ChemicalPeelIcon({ size = 90, className }: Props) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+      {face()}
+      {/* Bottle */}
+      <rect x="68" y="46" width="13" height="22" rx="2.5" stroke={T} strokeWidth={S} fill="none" />
+      <path d="M70 46 L70 38 Q74.5 33 79 38 L79 46" stroke={T} strokeWidth={S} fill="none" strokeLinecap="round" />
+      <line x1="74.5" y1="33" x2="74.5" y2="27" stroke={T} strokeWidth={S} strokeLinecap="round" />
+      {/* Drops falling */}
+      <path d="M66 58 C64 59.5 63 62 63 63.5 C63 66 64.5 67.5 66 67.5 C67.5 67.5 69 66 69 63.5 C69 62 68 59.5 66 58Z" stroke={T} strokeWidth="1" fill="none" />
+      <path d="M61 46 C59 47.5 58 50 58 51.5 C58 54 59.5 55.5 61 55.5 C62.5 55.5 64 54 64 51.5 C64 50 63 47.5 61 46Z" stroke={T} strokeWidth="1" fill="none" />
+    </svg>
+  );
+}
+
+export function FatDissolvingIcon({ size = 90, className }: Props) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
+      {face()}
+      {/* Chin / jaw area */}
+      <path d="M43 75 Q50 80 57 75" stroke={F} strokeWidth={S} fill="none" strokeLinecap="round" />
+      {/* Syringe at chin */}
+      <g transform="rotate(60 18 82)">
+        <rect x="10" y="70" width="10" height="24" rx="2" stroke={T} strokeWidth={S} fill="none" />
+        <rect x="7" y="68" width="16" height="5" rx="1" stroke={T} strokeWidth={S} fill="none" />
+        <line x1="15" y1="94" x2="15" y2="100" stroke={T} strokeWidth={S} strokeLinecap="round" />
+        <line x1="10" y1="80" x2="20" y2="80" stroke={T} strokeWidth={S} />
+        <line x1="10" y1="86" x2="20" y2="86" stroke={T} strokeWidth={S} />
+      </g>
+      {/* Dissolve arrows */}
       <g stroke={T} strokeWidth={S} strokeLinecap="round" fill="none">
-        <rect x="72" y="30" width="10" height="26" rx="2" />
-        <line x1="77" y1="30" x2="77" y2="24" />
-        <line x1="74" y1="37" x2="82" y2="37" />
-        {/* Energy rays */}
-        <line x1="72" y1="40" x2="67" y2="40" />
-        <line x1="72" y1="44" x2="66" y2="46" />
-        <line x1="72" y1="36" x2="66" y2="34" />
+        <line x1="42" y1="83" x2="42" y2="92" />
+        <polyline points="39,89 42,92 45,89" />
+        <line x1="58" y1="83" x2="58" y2="92" />
+        <polyline points="55,89 58,92 61,89" />
       </g>
     </svg>
   );
 }
 
-export function MicroneedlingIcon({ size = 80, className }: Props) {
+export function HydrafacialIcon({ size = 90, className }: Props) {
   return (
     <svg width={size} height={size} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
-      <Face />
-      {/* Microneedling pen */}
-      <g transform="rotate(-45 75 25)" stroke={T} strokeWidth={S} strokeLinecap="round" fill="none">
-        <rect x="70" y="10" width="10" height="24" rx="3" />
-        <line x1="72" y1="34" x2="71" y2="40" />
-        <line x1="75" y1="34" x2="75" y2="41" />
-        <line x1="78" y1="34" x2="79" y2="40" />
-        <line x1="70" y1="18" x2="80" y2="18" />
-      </g>
+      {face()}
+      {/* Hydrafacial machine / wand */}
+      <rect x="66" y="32" width="20" height="28" rx="3" stroke={T} strokeWidth={S} fill="none" />
+      <rect x="69" y="22" width="14" height="12" rx="2" stroke={T} strokeWidth={S} fill="none" />
+      <line x1="76" y1="22" x2="76" y2="16" stroke={T} strokeWidth={S} strokeLinecap="round" />
+      {/* Connector tube */}
+      <path d="M66 44 Q60 44 57 48" stroke={T} strokeWidth={S} fill="none" strokeLinecap="round" />
+      {/* Tip circle */}
+      <circle cx="54" cy="51" r="5" stroke={T} strokeWidth={S} />
+      <circle cx="54" cy="51" r="2" stroke={T} strokeWidth="1" />
+      <line x1="72" y1="38" x2="80" y2="38" stroke={T} strokeWidth="1" />
+      <line x1="72" y1="44" x2="80" y2="44" stroke={T} strokeWidth="1" />
     </svg>
   );
 }
 
-export function MesotherapyIcon({ size = 80, className }: Props) {
+export function LaserHairRemovalIcon({ size = 90, className }: Props) {
   return (
     <svg width={size} height={size} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
-      <Face />
-      {/* Small injection dots on face */}
-      <circle cx="43" cy="50" r="1.5" fill={T} />
-      <circle cx="50" cy="47" r="1.5" fill={T} />
-      <circle cx="57" cy="50" r="1.5" fill={T} />
-      <circle cx="46" cy="56" r="1.5" fill={T} />
-      <circle cx="54" cy="56" r="1.5" fill={T} />
-      {/* Syringe from side */}
-      <g transform="rotate(-50 80 20)" stroke={T} strokeWidth={S} strokeLinecap="round" fill="none">
-        <rect x="74" y="8" width="8" height="20" rx="1.5" />
-        <line x1="78" y1="8" x2="78" y2="2" />
-        <line x1="74" y1="15" x2="82" y2="15" />
-      </g>
-    </svg>
-  );
-}
-
-export function PRPIcon({ size = 80, className }: Props) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
-      {/* Hair follicle bulb */}
-      <ellipse cx="50" cy="65" rx="12" ry="16" stroke={F} strokeWidth={S} />
-      <path d="M50 49 C50 35 38 28 38 18" stroke={F} strokeWidth={S} fill="none" strokeLinecap="round" />
-      <path d="M50 52 C50 38 56 32 58 22" stroke={F} strokeWidth={S} fill="none" strokeLinecap="round" />
-      <ellipse cx="50" cy="68" rx="5" ry="6" stroke={F} strokeWidth={S} />
-      {/* Syringe approaching follicle */}
-      <g transform="rotate(30 20 60)" stroke={T} strokeWidth={S} strokeLinecap="round" fill="none">
-        <rect x="14" y="50" width="8" height="20" rx="1.5" />
-        <line x1="18" y1="50" x2="18" y2="43" />
-        <line x1="14" y1="57" x2="22" y2="57" />
-        <line x1="14" y1="61" x2="22" y2="61" />
-      </g>
-    </svg>
-  );
-}
-
-export function ThreadLiftIcon({ size = 80, className }: Props) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
-      <Face />
-      {/* Thread lift needle with barbs */}
-      <g stroke={T} strokeWidth={S} strokeLinecap="round" fill="none">
-        <line x1="72" y1="30" x2="55" y2="58" />
-        <line x1="55" y1="58" x2="53" y2="63" />
-        {/* Barbs on thread */}
-        <line x1="68" y1="36" x2="72" y2="33" />
-        <line x1="64" y1="42" x2="68" y2="39" />
-        <line x1="60" y1="48" x2="64" y2="45" />
-        {/* Needle handle */}
-        <rect x="70" y="22" width="8" height="14" rx="2" />
-      </g>
-    </svg>
-  );
-}
-
-export function ChemicalPeelIcon({ size = 80, className }: Props) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
-      <Face />
-      {/* Solution bottle */}
-      <g stroke={T} strokeWidth={S} strokeLinecap="round" fill="none">
-        <rect x="70" y="44" width="12" height="22" rx="2" />
-        <path d="M72 44 L72 38 Q76 34 80 38 L80 44" />
-        <line x1="76" y1="34" x2="76" y2="28" />
-        {/* Drops */}
-        <path d="M68 56 Q65 58 65 61 Q65 64 68 64 Q71 64 71 61 Q71 58 68 56Z" />
-        <path d="M64 44 Q61 46 61 49 Q61 52 64 52 Q67 52 67 49 Q67 46 64 44Z" />
-      </g>
-    </svg>
-  );
-}
-
-export function FatDissolvingIcon({ size = 80, className }: Props) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
-      <Face />
-      {/* Jaw/chin area highlight */}
-      <path d="M44 72 Q50 78 56 72" stroke={F} strokeWidth={S} fill="none" strokeLinecap="round" />
-      {/* Syringe pointing at chin */}
-      <g transform="rotate(70 20 80)" stroke={T} strokeWidth={S} strokeLinecap="round" fill="none">
-        <rect x="14" y="68" width="8" height="20" rx="1.5" />
-        <line x1="18" y1="68" x2="18" y2="61" />
-        <line x1="14" y1="75" x2="22" y2="75" />
-        <line x1="14" y1="79" x2="22" y2="79" />
-      </g>
-      {/* Dissolving arrows */}
-      <g stroke={T} strokeWidth={S} strokeLinecap="round" fill="none">
-        <line x1="38" y1="80" x2="38" y2="88" />
-        <line x1="36" y1="86" x2="38" y2="88" />
-        <line x1="40" y1="86" x2="38" y2="88" />
-        <line x1="62" y1="80" x2="62" y2="88" />
-        <line x1="60" y1="86" x2="62" y2="88" />
-        <line x1="64" y1="86" x2="62" y2="88" />
-      </g>
-    </svg>
-  );
-}
-
-export function HydrafacialIcon({ size = 80, className }: Props) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
-      <Face />
-      {/* Hydrafacial wand */}
-      <g stroke={T} strokeWidth={S} strokeLinecap="round" fill="none">
-        <line x1="72" y1="28" x2="80" y2="20" />
-        <rect x="76" y="12" width="10" height="14" rx="3" />
-        {/* Circular tip */}
-        <circle cx="68" cy="32" r="6" />
-        <circle cx="68" cy="32" r="3" />
-        {/* Suction lines */}
-        <line x1="62" y1="30" x2="58" y2="28" />
-        <line x1="62" y1="34" x2="57" y2="36" />
-        <line x1="64" y1="26" x2="62" y2="21" />
-      </g>
-    </svg>
-  );
-}
-
-export function LaserHairRemovalIcon({ size = 80, className }: Props) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
-      <Face />
-      {/* Laser device */}
-      <g stroke={T} strokeWidth={S} strokeLinecap="round" fill="none">
-        <rect x="68" y="36" width="18" height="12" rx="2" />
-        <rect x="72" y="28" width="10" height="10" rx="1" />
-        <line x1="77" y1="28" x2="77" y2="22" />
-        {/* Laser beam */}
-        <line x1="68" y1="42" x2="58" y2="42" />
-        {/* Beam rays */}
-        <line x1="62" y1="38" x2="58" y2="34" />
-        <line x1="62" y1="46" x2="58" y2="50" />
-        {/* Small stars/flash */}
-        <line x1="54" y1="42" x2="50" y2="42" />
-        <line x1="52" y1="38" x2="52" y2="46" />
-      </g>
+      {face()}
+      {/* Laser device — hair-dryer shape */}
+      <rect x="66" y="40" width="22" height="16" rx="3" stroke={T} strokeWidth={S} fill="none" />
+      <path d="M76 56 L80 68 L72 68 Z" stroke={T} strokeWidth={S} fill="none" strokeLinejoin="round" />
+      <rect x="70" y="30" width="12" height="12" rx="2" stroke={T} strokeWidth={S} fill="none" />
+      <line x1="76" y1="30" x2="76" y2="24" stroke={T} strokeWidth={S} strokeLinecap="round" />
+      {/* Laser beam */}
+      <line x1="66" y1="48" x2="56" y2="48" stroke={T} strokeWidth={S} strokeLinecap="round" />
+      {/* Flash/star at beam tip */}
+      <line x1="52" y1="48" x2="48" y2="48" stroke={T} strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="50" y1="44" x2="50" y2="52" stroke={T} strokeWidth="1.5" strokeLinecap="round" />
+      <line x1="47" y1="45" x2="53" y2="51" stroke={T} strokeWidth="1" strokeLinecap="round" />
+      <line x1="53" y1="45" x2="47" y2="51" stroke={T} strokeWidth="1" strokeLinecap="round" />
     </svg>
   );
 }
