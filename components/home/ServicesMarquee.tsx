@@ -13,12 +13,12 @@ export default function ServicesMarquee() {
           <div className="mx-auto" style={{ width: "205px", height: "1.5px", background: "#96b2b2", marginTop: "16px", marginBottom: "48px" }} />
         </Reveal>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4" style={{ columnGap: "20px", rowGap: "44px" }}>
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4" style={{ columnGap: "20px", rowGap: "36px" }}>
           {HOME_SERVICES.map((s, i) => (
             <Reveal key={s.href} delay={(i % 4) * 70} className="flex">
               <Link href={s.href} className="group flex flex-col items-center text-center w-full">
                 {/* Four-corner bracket frame (matches live) */}
-                <div className="relative w-full" style={{ aspectRatio: "1 / 1", padding: "22px", maxWidth: "240px" }}>
+                <div className="relative w-full" style={{ aspectRatio: "1 / 1", padding: "18px", maxWidth: "185px" }}>
                   <span className="absolute" style={{ left: 0, top: 0, width: "38%", height: "38%", borderLeft: "1px solid var(--line)", borderTop: "1px solid var(--line)" }} />
                   <span className="absolute" style={{ right: 0, top: 0, width: "38%", height: "38%", borderRight: "1px solid var(--line)", borderTop: "1px solid var(--line)" }} />
                   <span className="absolute" style={{ left: 0, bottom: 0, width: "38%", height: "38%", borderLeft: "1px solid var(--line)", borderBottom: "1px solid var(--line)" }} />
