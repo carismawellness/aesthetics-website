@@ -2,11 +2,11 @@ import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import { HOME_SERVICES } from "@/lib/site";
 
-const B = "1px solid #ddd8d2";
+const BRACKET = "1px solid #e0dbd5";
 
 export default function ServicesMarquee() {
   return (
-    <section style={{ padding: "70px 0", background: "#fff" }}>
+    <section style={{ padding: "70px 0", backgroundColor: "var(--white)" }}>
       <div className="container">
         <Reveal>
           <h2 className="font-display text-center" style={{ fontSize: "clamp(22px,3vw,35px)", color: "var(--gold)", fontWeight: 400, letterSpacing: "0.1em" }}>
@@ -15,21 +15,21 @@ export default function ServicesMarquee() {
           <div className="mx-auto" style={{ width: "205px", height: "1.5px", background: "#96b2b2", marginTop: "16px", marginBottom: "48px" }} />
         </Reveal>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4" style={{ gap: "28px" }}>
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4" style={{ columnGap: "24px", rowGap: "32px" }}>
           {HOME_SERVICES.map((s, i) => (
-            <Reveal key={s.href} delay={(i % 4) * 70}>
-              <Link href={s.href} className="group block">
-                <div className="relative flex flex-col items-center" style={{ paddingTop: "24px", paddingBottom: "20px", gap: "14px" }}>
-                  {/* PNG image — resized to fit inside bracket */}
+            <Reveal key={s.href} delay={(i % 4) * 70} className="flex justify-center">
+              <Link href={s.href} className="group flex justify-center">
+                {/* Bracket frame contains both the image and the label in the white space */}
+                {/* The PNG already has the bracket frame — just overlay the label inside */}
+                <div className="relative" style={{ width: "160px" }}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={s.image}
                     alt={s.label}
-                    style={{ width: "110px", height: "110px", objectFit: "contain" }}
+                    style={{ width: "100%", display: "block", objectFit: "contain" }}
                     className="transition-transform duration-300 group-hover:scale-105"
                   />
-                  {/* Label inside the bracket, below the icon */}
-                  <p className="font-display" style={{ fontSize: "clamp(10px,1vw,13px)", color: "#9b8d83", letterSpacing: "0.14em", fontWeight: 400, textAlign: "center", lineHeight: 1.4, textTransform: "uppercase" }}>
+                  <p className="font-display absolute" style={{ bottom: "14%", left: 0, right: 0, textAlign: "center", fontSize: "clamp(10px,0.9vw,12px)", color: "#9b8d83", letterSpacing: "0.14em", fontWeight: 400, textTransform: "uppercase", lineHeight: 1.3 }}>
                     {s.label}
                   </p>
                 </div>
