@@ -52,7 +52,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
   return (
     <>
       {/* Hero — 2-column (content left, media + info card right) matching live */}
-      <section style={{ backgroundImage: "url('/assets/hero-bg.png')", backgroundSize: "cover", backgroundPosition: "bottom center", padding: "44px 0 64px" }}>
+      <section style={{ backgroundImage: "url('/assets/hero-bg.png')", backgroundSize: "cover", backgroundPosition: "bottom center", padding: "44px 0 64px", borderRadius: "26px", overflow: "hidden", margin: "0 16px" }}>
         <div className="container">
           <p className="font-display text-center" style={{ fontSize: "11px", color: "var(--gold-deep)", letterSpacing: "0.16em", marginBottom: "26px" }}>
             {ANNOUNCE}
