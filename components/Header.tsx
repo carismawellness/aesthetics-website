@@ -75,8 +75,8 @@ export default function Header() {
                     style={{
                       backgroundColor: "#fff",
                       boxShadow: "0 8px 32px rgba(0,0,0,0.08)",
-                      minWidth: "300px",
-                      padding: "12px 0 18px",
+                      minWidth: "220px",
+                      padding: "8px 0 12px",
                     }}
                   >
                     {m.items.map((it) => (
@@ -84,7 +84,7 @@ export default function Header() {
                         key={it.href}
                         href={it.href}
                         className="block text-center font-display transition-colors"
-                        style={{ padding: "8px 32px", fontSize: "11px", color: "#9b8d83", textTransform: "uppercase", letterSpacing: "0.1em" }}
+                        style={{ padding: "5px 24px", fontSize: "10px", color: "#9b8d83", textTransform: "uppercase", letterSpacing: "0.08em" }}
                         onMouseEnter={e => (e.currentTarget.style.color = "var(--gold)")}
                         onMouseLeave={e => (e.currentTarget.style.color = "#9b8d83")}
                       >
