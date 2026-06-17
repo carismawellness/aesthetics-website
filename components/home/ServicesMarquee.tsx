@@ -1,27 +1,8 @@
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
-import {
-  BotoxIcon, LipFillersIcon, DermalFillersIcon, CollagenBoostIcon,
-  MicroneedlingIcon, MesotherapyIcon, PRPIcon, ThreadLiftIcon,
-  ChemicalPeelIcon, FatDissolvingIcon, HydrafacialIcon, LaserHairRemovalIcon,
-} from "@/components/home/TreatmentIcons";
+import { HOME_SERVICES } from "@/lib/site";
 
 const B = "1px solid #ddd8d2";
-
-const SERVICES = [
-  { label: "BOTOX",              href: "/wrinkle-relaxing-malta",    Icon: BotoxIcon },
-  { label: "LIP FILLERS",        href: "/lip-fillers-malta",         Icon: LipFillersIcon },
-  { label: "DERMAL FILLERS",     href: "/dermal-fillers-malta",      Icon: DermalFillersIcon },
-  { label: "COLLAGEN BOOST",     href: "/collagen-stimulator-malta", Icon: CollagenBoostIcon },
-  { label: "MICRONEEDLING",      href: "/microneedling-malta",       Icon: MicroneedlingIcon },
-  { label: "MESOTHERAPY",        href: "/mesotherapy-malta",         Icon: MesotherapyIcon },
-  { label: "PRP",                href: "/prp-malta",                 Icon: PRPIcon },
-  { label: "THREAD LIFT",        href: "/thread-lift-malta",         Icon: ThreadLiftIcon },
-  { label: "CHEMICAL PEEL",      href: "/chemical-peels-malta",      Icon: ChemicalPeelIcon },
-  { label: "FAT DISSOLVING",     href: "/fat-dissolving-malta",      Icon: FatDissolvingIcon },
-  { label: "HYDRAFACIAL",        href: "/hydrafacial",               Icon: HydrafacialIcon },
-  { label: "LASER HAIR REMOVAL", href: "/laser-hair-removal-malta",  Icon: LaserHairRemovalIcon },
-];
 
 export default function ServicesMarquee() {
   return (
@@ -35,21 +16,26 @@ export default function ServicesMarquee() {
         </Reveal>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4" style={{ gap: "28px" }}>
-          {SERVICES.map(({ label, href, Icon }, i) => (
-            <Reveal key={href} delay={(i % 4) * 70}>
-              <Link href={href} className="group block">
-                {/* Bracket frame — contains icon + label together */}
-                <div className="relative flex flex-col items-center" style={{ paddingTop: "28px", paddingBottom: "22px", gap: "16px" }}>
+          {HOME_SERVICES.map((s, i) => (
+            <Reveal key={s.href} delay={(i % 4) * 70}>
+              <Link href={s.href} className="group block">
+                <div className="relative flex flex-col items-center" style={{ paddingTop: "24px", paddingBottom: "20px", gap: "14px" }}>
                   {/* Corner brackets */}
                   <span className="absolute" style={{ left: 0, top: 0, width: "30%", height: "25%", borderLeft: B, borderTop: B }} />
                   <span className="absolute" style={{ right: 0, top: 0, width: "30%", height: "25%", borderRight: B, borderTop: B }} />
                   <span className="absolute" style={{ left: 0, bottom: 0, width: "30%", height: "25%", borderLeft: B, borderBottom: B }} />
                   <span className="absolute" style={{ right: 0, bottom: 0, width: "30%", height: "25%", borderRight: B, borderBottom: B }} />
-                  {/* Icon */}
-                  <Icon size={110} className="transition-transform duration-300 group-hover:scale-105" />
+                  {/* PNG image — resized to fit inside bracket */}
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={s.image}
+                    alt={s.label}
+                    style={{ width: "110px", height: "110px", objectFit: "contain" }}
+                    className="transition-transform duration-300 group-hover:scale-105"
+                  />
                   {/* Label inside the bracket, below the icon */}
-                  <p className="font-display" style={{ fontSize: "clamp(10px,1vw,13px)", color: "#9b8d83", letterSpacing: "0.14em", fontWeight: 400, textAlign: "center", lineHeight: 1.4 }}>
-                    {label}
+                  <p className="font-display" style={{ fontSize: "clamp(10px,1vw,13px)", color: "#9b8d83", letterSpacing: "0.14em", fontWeight: 400, textAlign: "center", lineHeight: 1.4, textTransform: "uppercase" }}>
+                    {s.label}
                   </p>
                 </div>
               </Link>
