@@ -17,10 +17,8 @@ export default function ServicesMarquee() {
           {HOME_SERVICES.map((s, i) => (
             <Reveal key={s.href} delay={(i % 4) * 70} className="flex">
               <Link href={s.href} className="group flex flex-col items-center text-center w-full">
-                <div className="relative w-full" style={{ aspectRatio: "1 / 1", padding: "22px", maxWidth: "200px" }}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={s.image} alt={s.label} className="relative w-full h-full object-contain transition-transform duration-300 group-hover:scale-105" />
-                </div>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={s.image} alt={s.label} style={{ width: "110px", height: "110px", objectFit: "contain" }} className="transition-transform duration-300 group-hover:scale-105" />
                 <h2 className="font-display" style={{ marginTop: "14px", fontSize: "15px", color: "#9b8d83", letterSpacing: "0.1em", fontWeight: 400 }}>
                   {s.label}
                 </h2>
