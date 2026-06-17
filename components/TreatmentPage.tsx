@@ -56,7 +56,9 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
             {ANNOUNCE}
           </p>
 
-          <div style={t.hero.bgImage ? { borderRadius: "26px", backgroundImage: `linear-gradient(rgba(255,255,255,0.62), rgba(255,255,255,0.72)), url('${t.hero.bgImage}')`, backgroundSize: "cover", backgroundPosition: "center", padding: "clamp(24px,3.5vw,48px)" } : undefined}>
+          <div style={t.hero.bgImage
+            ? { borderRadius: "26px", backgroundImage: `linear-gradient(rgba(255,255,255,0.62), rgba(255,255,255,0.72)), url('${t.hero.bgImage}')`, backgroundSize: "cover", backgroundPosition: "center", padding: "clamp(24px,3.5vw,48px)" }
+            : { borderRadius: "26px", background: "#fff", boxShadow: "0 4px 40px rgba(0,0,0,0.06)", padding: "clamp(28px,3.6vw,52px)" }}>
           <div className={hasImage ? "grid gap-8 lg:grid-cols-[1.15fr_0.85fr] items-start" : ""}>
             {/* Left: content */}
             <Reveal>
@@ -132,7 +134,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
             {hasImage && (
               <Reveal delay={120}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={t.hero.image} alt={t.hero.title} className="w-full rounded-xl" style={{ display: "block", boxShadow: "0 20px 50px rgba(0,0,0,0.10)", ...(t.hero.imageRatio ? { aspectRatio: t.hero.imageRatio, objectFit: "cover" } : {}) }} />
+                <img src={t.hero.image} alt={t.hero.title} className="w-full" style={{ display: "block", borderRadius: "20px", boxShadow: "0 20px 50px rgba(0,0,0,0.10)", ...(t.hero.imageRatio ? { aspectRatio: t.hero.imageRatio, objectFit: "cover" } : {}) }} />
                 {t.hero.productTabs && t.hero.productTabs.length > 0 && (
                   <div className="flex gap-3" style={{ marginTop: "14px" }}>
                     {t.hero.productTabs.map((tab) => (
