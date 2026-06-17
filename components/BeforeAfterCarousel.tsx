@@ -41,22 +41,25 @@ export default function BeforeAfterCarousel({ pairs, title }: { pairs: Pair[]; t
     <div className="container text-center">
       {title && <h2 className="font-display" style={{ fontSize: "clamp(20px,3vw,30px)", color: "var(--label)", marginBottom: "36px" }}>{title}</h2>}
 
-      <Reveal className="relative mx-auto" style={{ maxWidth: "760px" }}>
-        <div className="grid grid-cols-2 gap-4">
-          {([["BEFORE", ba.before], ["AFTER", ba.after]] as const).map(([lbl, src]) => (
-            <div key={lbl} className="relative overflow-hidden rounded-xl" style={{ border: "1px solid var(--line)" }}>
-              {src ? (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img src={src} alt={`${title ?? ""} ${lbl}`} className="w-full" style={{ display: "block", height: "auto" }} />
-              ) : (
-                <div className="flex items-center justify-center text-center" style={{ aspectRatio: "4 / 5", background: "var(--cream)", color: "var(--muted)", fontSize: "12px", padding: "16px" }}>
-                  {`${ba.label ?? ""} ${lbl}`.trim()} photo — drop file in
-                </div>
-              )}
-              <span className="font-display" style={{ position: "absolute", top: "12px", left: "12px", background: "rgba(255,255,255,0.9)", color: "var(--ink)", fontSize: "10px", letterSpacing: "0.12em", padding: "5px 10px", borderRadius: "3px" }}>{lbl}</span>
-            </div>
-          ))}
-        </div>
+      {/* Outer wrapper is position:relative so arrows can sit outside Reveal without stacking-context interference */}
+      <div className="relative mx-auto" style={{ maxWidth: "760px" }}>
+        <Reveal>
+          <div className="grid grid-cols-2 gap-4">
+            {([["BEFORE", ba.before], ["AFTER", ba.after]] as const).map(([lbl, src]) => (
+              <div key={lbl} className="relative overflow-hidden rounded-xl" style={{ border: "1px solid var(--line)" }}>
+                {src ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img src={src} alt={`${title ?? ""} ${lbl}`} className="w-full" style={{ display: "block", height: "auto" }} />
+                ) : (
+                  <div className="flex items-center justify-center text-center" style={{ aspectRatio: "4 / 5", background: "var(--cream)", color: "var(--muted)", fontSize: "12px", padding: "16px" }}>
+                    {`${ba.label ?? ""} ${lbl}`.trim()} photo — drop file in
+                  </div>
+                )}
+                <span className="font-display" style={{ position: "absolute", top: "12px", left: "12px", background: "rgba(255,255,255,0.9)", color: "var(--ink)", fontSize: "10px", letterSpacing: "0.12em", padding: "5px 10px", borderRadius: "3px" }}>{lbl}</span>
+              </div>
+            ))}
+          </div>
+        </Reveal>
 
         {n > 1 && (
           <>
@@ -64,7 +67,7 @@ export default function BeforeAfterCarousel({ pairs, title }: { pairs: Pair[]; t
             <button type="button" aria-label="Next" onClick={() => go(1)} style={{ ...arrowStyle, right: "-21px" }}><Chevron dir="right" /></button>
           </>
         )}
-      </Reveal>
+      </div>
 
       {ba.label && <p style={{ marginTop: "16px", fontSize: "13px", color: "var(--label)", letterSpacing: "0.04em" }}>{ba.label}</p>}
 
