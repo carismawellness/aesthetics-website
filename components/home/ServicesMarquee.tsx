@@ -1,6 +1,40 @@
 import Link from "next/link";
-import { HOME_SERVICES } from "@/lib/site";
 import Reveal from "@/components/Reveal";
+import {
+  BotoxIcon,
+  LipFillersIcon,
+  DermalFillersIcon,
+  CollagenBoostIcon,
+  MicroneedlingIcon,
+  MesotherapyIcon,
+  PRPIcon,
+  ThreadLiftIcon,
+  ChemicalPeelIcon,
+  FatDissolvingIcon,
+  HydrafacialIcon,
+  LaserHairRemovalIcon,
+} from "@/components/home/TreatmentIcons";
+
+type ServiceItem = {
+  label: string;
+  href: string;
+  Icon: React.ComponentType<{ size?: number; className?: string }>;
+};
+
+const SERVICES: ServiceItem[] = [
+  { label: "botox", href: "/wrinkle-relaxing-malta", Icon: BotoxIcon },
+  { label: "lip fillers", href: "/lip-fillers-malta", Icon: LipFillersIcon },
+  { label: "dermal fillers", href: "/dermal-fillers-malta", Icon: DermalFillersIcon },
+  { label: "collagen boost", href: "/collagen-stimulator-malta", Icon: CollagenBoostIcon },
+  { label: "microneedling", href: "/microneedling-malta", Icon: MicroneedlingIcon },
+  { label: "mesotherapy", href: "/mesotherapy-malta", Icon: MesotherapyIcon },
+  { label: "PRP", href: "/prp-malta", Icon: PRPIcon },
+  { label: "thread lift", href: "/thread-lift-malta", Icon: ThreadLiftIcon },
+  { label: "chemical peel", href: "/chemical-peels-malta", Icon: ChemicalPeelIcon },
+  { label: "fat dissolving", href: "/fat-dissolving-malta", Icon: FatDissolvingIcon },
+  { label: "hydrafacial", href: "/hydrafacial", Icon: HydrafacialIcon },
+  { label: "laser hair removal", href: "/laser-hair-removal-malta", Icon: LaserHairRemovalIcon },
+];
 
 export default function ServicesMarquee() {
   return (
@@ -14,20 +48,18 @@ export default function ServicesMarquee() {
         </Reveal>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4" style={{ columnGap: "16px", rowGap: "44px" }}>
-          {HOME_SERVICES.map((s, i) => (
-            <Reveal key={s.href} delay={(i % 4) * 70} className="flex">
-              <Link href={s.href} className="group flex flex-col items-center text-center w-full">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={s.image} alt={s.label} style={{ width: "80px", height: "80px", objectFit: "contain" }} className="transition-transform duration-300 group-hover:scale-105" />
-                <h2 className="font-display" style={{ marginTop: "14px", fontSize: "15px", color: "#9b8d83", letterSpacing: "0.1em", fontWeight: 400 }}>
-                  {s.label}
+          {SERVICES.map(({ label, href, Icon }, i) => (
+            <Reveal key={href} delay={(i % 4) * 70} className="flex">
+              <Link href={href} className="group flex flex-col items-center text-center w-full">
+                <Icon size={90} className="transition-transform duration-300 group-hover:scale-105" />
+                <h2 className="font-display" style={{ marginTop: "10px", fontSize: "15px", color: "#9b8d83", letterSpacing: "0.1em", fontWeight: 400 }}>
+                  {label}
                 </h2>
               </Link>
             </Reveal>
           ))}
         </div>
 
-        {/* Vertical divider line between services and next section (matches live) */}
         <div className="flex justify-center" style={{ paddingTop: "48px" }}>
           <div style={{ width: "1px", height: "80px", background: "var(--line)" }} />
         </div>
