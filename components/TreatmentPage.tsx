@@ -52,7 +52,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
   return (
     <>
       {/* Hero — 2-column (content left, media + info card right) matching live */}
-      <section style={{ background: "url('/assets/hero-bg.png') center / 100% 100% no-repeat", padding: "44px 0 64px" }}>
+      <section style={{ background: "#fff", padding: "44px 0 64px" }}>
         <div className="container">
           <p className="font-display text-center" style={{ fontSize: "11px", color: "var(--gold-deep)", letterSpacing: "0.16em", marginBottom: "26px" }}>
             {ANNOUNCE}
@@ -60,7 +60,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
 
           <div style={t.hero.bgImage
             ? { borderRadius: "26px", backgroundImage: `linear-gradient(rgba(255,255,255,0.62), rgba(255,255,255,0.72)), url('${t.hero.bgImage}')`, backgroundSize: "cover", backgroundPosition: "center", padding: "clamp(24px,3.5vw,48px)" }
-            : { borderRadius: "26px", background: "rgba(255,255,255,0.7)", boxShadow: "0 4px 40px rgba(0,0,0,0.06)", padding: "clamp(28px,3.6vw,52px)" }}>
+            : { borderRadius: "26px", background: "#fff", boxShadow: "0 4px 40px rgba(0,0,0,0.06)", padding: "clamp(28px,3.6vw,52px)" }}>
           <div className={hasImage ? "grid gap-8 lg:grid-cols-[1.15fr_0.85fr] items-start" : ""}>
             {/* Left: content */}
             <Reveal>
