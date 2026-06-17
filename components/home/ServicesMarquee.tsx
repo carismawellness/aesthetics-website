@@ -17,11 +17,9 @@ export default function ServicesMarquee() {
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4" style={{ columnGap: "15px", rowGap: "32px" }}>
           {HOME_SERVICES.map((s, i) => (
-            <Reveal key={s.href} delay={(i % 4) * 70} className="flex justify-center">
-              <Link href={s.href} className="group flex justify-center">
-                {/* Bracket frame contains both the image and the label in the white space */}
-                {/* The PNG already has the bracket frame — just overlay the label inside */}
-                <div className="relative" style={{ width: "160px" }}>
+            <Reveal key={s.href} delay={(i % 4) * 70}>
+              <Link href={s.href} className="group block w-full">
+                <div className="relative w-full">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={s.image}
