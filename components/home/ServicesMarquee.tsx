@@ -1,40 +1,6 @@
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
-import {
-  BotoxIcon,
-  LipFillersIcon,
-  DermalFillersIcon,
-  CollagenBoostIcon,
-  MicroneedlingIcon,
-  MesotherapyIcon,
-  PRPIcon,
-  ThreadLiftIcon,
-  ChemicalPeelIcon,
-  FatDissolvingIcon,
-  HydrafacialIcon,
-  LaserHairRemovalIcon,
-} from "@/components/home/TreatmentIcons";
-
-type ServiceItem = {
-  label: string;
-  href: string;
-  Icon: React.ComponentType<{ size?: number; className?: string }>;
-};
-
-const SERVICES: ServiceItem[] = [
-  { label: "botox", href: "/wrinkle-relaxing-malta", Icon: BotoxIcon },
-  { label: "lip fillers", href: "/lip-fillers-malta", Icon: LipFillersIcon },
-  { label: "dermal fillers", href: "/dermal-fillers-malta", Icon: DermalFillersIcon },
-  { label: "collagen boost", href: "/collagen-stimulator-malta", Icon: CollagenBoostIcon },
-  { label: "microneedling", href: "/microneedling-malta", Icon: MicroneedlingIcon },
-  { label: "mesotherapy", href: "/mesotherapy-malta", Icon: MesotherapyIcon },
-  { label: "PRP", href: "/prp-malta", Icon: PRPIcon },
-  { label: "thread lift", href: "/thread-lift-malta", Icon: ThreadLiftIcon },
-  { label: "chemical peel", href: "/chemical-peels-malta", Icon: ChemicalPeelIcon },
-  { label: "fat dissolving", href: "/fat-dissolving-malta", Icon: FatDissolvingIcon },
-  { label: "hydrafacial", href: "/hydrafacial", Icon: HydrafacialIcon },
-  { label: "laser hair removal", href: "/laser-hair-removal-malta", Icon: LaserHairRemovalIcon },
-];
+import { HOME_SERVICES } from "@/lib/site";
 
 const BRACKET = "1px solid #e0dbd5";
 
@@ -49,22 +15,30 @@ export default function ServicesMarquee() {
           <div className="mx-auto" style={{ width: "205px", height: "1.5px", background: "#96b2b2", marginTop: "16px", marginBottom: "48px" }} />
         </Reveal>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4" style={{ columnGap: "24px", rowGap: "48px" }}>
-          {SERVICES.map(({ label, href, Icon }, i) => (
-            <Reveal key={href} delay={(i % 4) * 70} className="flex justify-center">
-              <Link href={href} className="group flex flex-col items-center text-center">
-                {/* Corner-bracket frame — flex-centred so icon sits flush inside */}
-                <div className="relative flex items-center justify-center" style={{ width: "130px", height: "130px", flexShrink: 0 }}>
-                  <span className="absolute" style={{ left: 0, top: 0, width: "32%", height: "32%", borderLeft: BRACKET, borderTop: BRACKET }} />
-                  <span className="absolute" style={{ right: 0, top: 0, width: "32%", height: "32%", borderRight: BRACKET, borderTop: BRACKET }} />
-                  <span className="absolute" style={{ left: 0, bottom: 0, width: "32%", height: "32%", borderLeft: BRACKET, borderBottom: BRACKET }} />
-                  <span className="absolute" style={{ right: 0, bottom: 0, width: "32%", height: "32%", borderRight: BRACKET, borderBottom: BRACKET }} />
-                  <Icon size={96} className="transition-transform duration-300 group-hover:scale-105" />
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4" style={{ columnGap: "24px", rowGap: "32px" }}>
+          {HOME_SERVICES.map((s, i) => (
+            <Reveal key={s.href} delay={(i % 4) * 70} className="flex justify-center">
+              <Link href={s.href} className="group flex justify-center">
+                {/* Bracket frame contains both the image and the label in the white space */}
+                <div className="relative flex flex-col items-center justify-between" style={{ width: "160px", height: "190px", padding: "18px 14px 14px", flexShrink: 0 }}>
+                  {/* Corner brackets */}
+                  <span className="absolute" style={{ left: 0, top: 0, width: "32%", height: "28%", borderLeft: BRACKET, borderTop: BRACKET }} />
+                  <span className="absolute" style={{ right: 0, top: 0, width: "32%", height: "28%", borderRight: BRACKET, borderTop: BRACKET }} />
+                  <span className="absolute" style={{ left: 0, bottom: 0, width: "32%", height: "28%", borderLeft: BRACKET, borderBottom: BRACKET }} />
+                  <span className="absolute" style={{ right: 0, bottom: 0, width: "32%", height: "28%", borderRight: BRACKET, borderBottom: BRACKET }} />
+                  {/* Icon image in upper portion */}
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={s.image}
+                    alt={s.label}
+                    style={{ width: "110px", height: "110px", objectFit: "contain" }}
+                    className="transition-transform duration-300 group-hover:scale-105"
+                  />
+                  {/* Label in the white space at the bottom of the frame */}
+                  <p className="font-display" style={{ fontSize: "clamp(10px,0.9vw,12px)", color: "#9b8d83", letterSpacing: "0.14em", fontWeight: 400, textTransform: "uppercase", textAlign: "center", lineHeight: 1.3 }}>
+                    {s.label}
+                  </p>
                 </div>
-                {/* Label is outside and below the bracket frame */}
-                <h2 className="font-display" style={{ marginTop: "14px", fontSize: "clamp(11px,1vw,13px)", color: "#9b8d83", letterSpacing: "0.14em", fontWeight: 400, textTransform: "uppercase" }}>
-                  {label}
-                </h2>
               </Link>
             </Reveal>
           ))}
