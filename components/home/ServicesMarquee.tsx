@@ -20,21 +20,21 @@ export default function ServicesMarquee() {
             <Reveal key={s.href} delay={(i % 4) * 70} className="flex justify-center">
               <Link href={s.href} className="group flex justify-center">
                 {/* Bracket frame contains both the image and the label in the white space */}
-                <div className="relative flex flex-col items-center justify-between" style={{ width: "160px", height: "190px", padding: "18px 14px 14px", flexShrink: 0 }}>
+                <div className="relative flex flex-col items-center justify-center" style={{ width: "160px", height: "190px", gap: "10px", flexShrink: 0 }}>
                   {/* Corner brackets */}
                   <span className="absolute" style={{ left: 0, top: 0, width: "32%", height: "28%", borderLeft: BRACKET, borderTop: BRACKET }} />
                   <span className="absolute" style={{ right: 0, top: 0, width: "32%", height: "28%", borderRight: BRACKET, borderTop: BRACKET }} />
                   <span className="absolute" style={{ left: 0, bottom: 0, width: "32%", height: "28%", borderLeft: BRACKET, borderBottom: BRACKET }} />
                   <span className="absolute" style={{ right: 0, bottom: 0, width: "32%", height: "28%", borderRight: BRACKET, borderBottom: BRACKET }} />
-                  {/* Icon image in upper portion */}
+                  {/* Icon image */}
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={s.image}
                     alt={s.label}
-                    style={{ width: "110px", height: "110px", objectFit: "contain" }}
+                    style={{ width: "100px", height: "100px", objectFit: "contain" }}
                     className="transition-transform duration-300 group-hover:scale-105"
                   />
-                  {/* Label in the white space at the bottom of the frame */}
+                  {/* Label sits directly below the icon in the white space */}
                   <p className="font-display" style={{ fontSize: "clamp(10px,0.9vw,12px)", color: "#9b8d83", letterSpacing: "0.14em", fontWeight: 400, textTransform: "uppercase", textAlign: "center", lineHeight: 1.3 }}>
                     {s.label}
                   </p>
