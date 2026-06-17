@@ -319,7 +319,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
               </div>
             )}
             {t.precision.additional && (
-              <div className="mx-auto" style={{ marginTop: "44px", maxWidth: "760px", borderLeft: "3px solid var(--teal)", paddingLeft: "22px" }}>
+              <div className="mx-auto" style={{ marginTop: "44px", maxWidth: "760px", borderLeft: "3px solid var(--gold)", paddingLeft: "22px" }}>
                 <h3 className="font-display" style={{ fontSize: "14px", color: "var(--gold)", letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: "10px" }}>
                   {t.precision.additionalTitle ?? "Additional Treatment Areas"}
                 </h3>
