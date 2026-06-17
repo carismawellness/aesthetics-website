@@ -53,23 +53,16 @@ export default function ServicesMarquee() {
           {SERVICES.map(({ label, href, Icon }, i) => (
             <Reveal key={href} delay={(i % 4) * 70} className="flex justify-center">
               <Link href={href} className="group flex flex-col items-center text-center">
-                {/* Corner-bracket frame */}
-                <div className="relative" style={{ width: "160px", height: "160px" }}>
-                  {/* Top-left */}
-                  <span className="absolute" style={{ left: 0, top: 0, width: "34%", height: "34%", borderLeft: BRACKET, borderTop: BRACKET }} />
-                  {/* Top-right */}
-                  <span className="absolute" style={{ right: 0, top: 0, width: "34%", height: "34%", borderRight: BRACKET, borderTop: BRACKET }} />
-                  {/* Bottom-left */}
-                  <span className="absolute" style={{ left: 0, bottom: 0, width: "34%", height: "34%", borderLeft: BRACKET, borderBottom: BRACKET }} />
-                  {/* Bottom-right */}
-                  <span className="absolute" style={{ right: 0, bottom: 0, width: "34%", height: "34%", borderRight: BRACKET, borderBottom: BRACKET }} />
-                  {/* Icon centred inside frame */}
-                  <div style={{ position: "absolute", inset: 0, display: "flex", alignItems: "center", justifyContent: "center" }}>
-                    <Icon size={110} className="transition-transform duration-300 group-hover:scale-105" />
-                  </div>
+                {/* Corner-bracket frame — flex-centred so icon sits flush inside */}
+                <div className="relative flex items-center justify-center" style={{ width: "130px", height: "130px", flexShrink: 0 }}>
+                  <span className="absolute" style={{ left: 0, top: 0, width: "32%", height: "32%", borderLeft: BRACKET, borderTop: BRACKET }} />
+                  <span className="absolute" style={{ right: 0, top: 0, width: "32%", height: "32%", borderRight: BRACKET, borderTop: BRACKET }} />
+                  <span className="absolute" style={{ left: 0, bottom: 0, width: "32%", height: "32%", borderLeft: BRACKET, borderBottom: BRACKET }} />
+                  <span className="absolute" style={{ right: 0, bottom: 0, width: "32%", height: "32%", borderRight: BRACKET, borderBottom: BRACKET }} />
+                  <Icon size={96} className="transition-transform duration-300 group-hover:scale-105" />
                 </div>
-                {/* Label sits below the bracket frame */}
-                <h2 className="font-display" style={{ marginTop: "16px", fontSize: "clamp(11px,1vw,13px)", color: "#9b8d83", letterSpacing: "0.14em", fontWeight: 400, textTransform: "uppercase" }}>
+                {/* Label is outside and below the bracket frame */}
+                <h2 className="font-display" style={{ marginTop: "14px", fontSize: "clamp(11px,1vw,13px)", color: "#9b8d83", letterSpacing: "0.14em", fontWeight: 400, textTransform: "uppercase" }}>
                   {label}
                 </h2>
               </Link>
