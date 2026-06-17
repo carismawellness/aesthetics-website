@@ -29,7 +29,7 @@ export default function ServicesMarquee() {
                     style={{ width: "100%", display: "block", objectFit: "contain" }}
                     className="transition-transform duration-300 group-hover:scale-105"
                   />
-                  <p className="font-display absolute" style={{ bottom: "14%", left: 0, right: 0, textAlign: "center", fontSize: "clamp(10px,0.9vw,12px)", color: "#9b8d83", letterSpacing: "0.14em", fontWeight: 400, textTransform: "uppercase", lineHeight: 1.3 }}>
+                  <p className="font-display absolute" style={{ bottom: "14%", left: 0, right: 0, textAlign: "center", fontSize: "clamp(9px,0.8vw,11px)", color: "#9b8d83", letterSpacing: "0.12em", fontWeight: 400, textTransform: "uppercase", lineHeight: 1.3, whiteSpace: "nowrap" }}>
                     {s.label}
                   </p>
                 </div>
