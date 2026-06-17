@@ -311,9 +311,9 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                         <img src={a.icon} alt={a.zone ?? a.name} style={{ height: "70px", width: "auto" }} />
                       </div>
                     )}
-                    {a.zone && <div className="font-display" style={{ fontSize: "11px", color: "var(--teal)", letterSpacing: "0.16em", marginBottom: "10px" }}>{a.zone}</div>}
-                    <h3 className="font-display" style={{ fontSize: "15px", color: "var(--gold-deep)", letterSpacing: "0.05em", marginBottom: a.desc ? "12px" : "0" }}>{a.name}</h3>
-                    {a.desc && <p style={{ fontSize: "13.5px", color: "var(--ink-soft)", lineHeight: 1.7 }}>{a.desc}</p>}
+                    {a.zone && <div className="font-display" style={{ fontSize: "11px", color: "#96b2b2", letterSpacing: "0.16em", marginBottom: "10px" }}>{a.zone}</div>}
+                    <h3 className="font-display" style={{ fontSize: "15px", color: "var(--label)", letterSpacing: "0.05em", marginBottom: a.desc ? "12px" : "0" }}>{a.name}</h3>
+                    {a.desc && <p style={{ fontSize: "13.5px", color: "var(--label)", lineHeight: 1.7 }}>{a.desc}</p>}
                   </Reveal>
                 ))}
               </div>
