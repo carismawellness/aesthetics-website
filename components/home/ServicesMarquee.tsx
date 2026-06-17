@@ -18,7 +18,7 @@ export default function ServicesMarquee() {
             <Reveal key={s.href} delay={(i % 4) * 70} className="flex">
               <Link href={s.href} className="group flex flex-col items-center text-center w-full">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={s.image} alt={s.label} style={{ width: "110px", height: "110px", objectFit: "contain" }} className="transition-transform duration-300 group-hover:scale-105" />
+                <img src={s.image} alt={s.label} style={{ width: "80px", height: "80px", objectFit: "contain" }} className="transition-transform duration-300 group-hover:scale-105" />
                 <h2 className="font-display" style={{ marginTop: "14px", fontSize: "15px", color: "#9b8d83", letterSpacing: "0.1em", fontWeight: 400 }}>
                   {s.label}
                 </h2>
