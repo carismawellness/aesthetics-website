@@ -17,28 +17,30 @@ function CheckIcon({ ok }: { ok: boolean }) {
 }
 
 // small icon by metric keyword for the info card
+const INFO_COLOR = "#96b2b2";
+
 function MetricIcon({ metric }: { metric: string }) {
   const m = metric.toLowerCase();
-  const common = { width: 20, height: 20, viewBox: "0 0 24 24", fill: "none", stroke: "var(--teal)", strokeWidth: 1.6 } as const;
+  const common = { width: 28, height: 28, viewBox: "0 0 24 24", fill: "none", stroke: INFO_COLOR, strokeWidth: 1.4 } as const;
   if (m.includes("time") || m.includes("duration")) return (<svg {...common}><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg>);
-  if (m.includes("downtime") || m.includes("recovery")) return (<svg {...common}><path d="M3 12h4l2 5 4-10 2 5h6" /></svg>);
+  if (m.includes("downtime") || m.includes("recovery")) return (<svg {...common}><circle cx="12" cy="12" r="9" /><path d="M12 8v4" /><text x="8" y="15" fontSize="6" fill={INFO_COLOR} stroke="none">24</text></svg>);
   if (m.includes("last") || m.includes("results last")) return (<svg {...common}><rect x="3" y="4" width="18" height="17" rx="2" /><path d="M16 2v4M8 2v4M3 10h18" /></svg>);
-  if (m.includes("visible")) return (<svg {...common}><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7-10-7-10-7z" /><circle cx="12" cy="12" r="3" /></svg>);
-  if (m.includes("anaesth") || m.includes("anesth")) return (<svg {...common}><path d="M18 2l4 4-9 9-4 1 1-4z" /><path d="M14 6l4 4" /></svg>);
+  if (m.includes("visible")) return (<svg {...common}><circle cx="12" cy="16" r="5" /><path d="M12 3v5M8 5l2.5 2.5M16 5l-2.5 2.5" /></svg>);
+  if (m.includes("anaesth") || m.includes("anesth")) return (<svg {...common}><path d="M6 18l3-8 3 4 2-3 4 7" /><circle cx="18" cy="6" r="2" /></svg>);
   return (<svg {...common}><circle cx="12" cy="12" r="9" /></svg>);
 }
 
 function InfoCard({ info }: { info: NonNullable<Treatment["info"]> }) {
   return (
-    <div className="rounded-xl bg-white" style={{ border: "1px solid var(--line)", padding: "20px 24px", boxShadow: "0 14px 40px rgba(0,0,0,0.05)" }}>
-      <div className="font-display" style={{ fontSize: "12px", color: "var(--teal)", letterSpacing: "0.14em", marginBottom: "14px" }}>TREATMENT INFO</div>
+    <div className="rounded-2xl" style={{ background: "rgba(150,178,178,0.12)", border: "1px solid rgba(150,178,178,0.35)", padding: "22px 26px" }}>
+      <div className="font-display" style={{ fontSize: "12px", color: INFO_COLOR, letterSpacing: "0.14em", marginBottom: "18px" }}>TREATMENT INFO</div>
       {info.map((it, i) => (
-        <div key={it.metric} className="flex items-center justify-between gap-4" style={{ padding: "10px 0", borderTop: i === 0 ? "none" : "1px solid var(--line)" }}>
+        <div key={it.metric} className="flex items-center justify-between gap-4" style={{ padding: "11px 0", borderTop: i === 0 ? "none" : `1px solid rgba(150,178,178,0.25)` }}>
           <span className="flex items-center gap-3">
             <MetricIcon metric={it.metric} />
-            <span className="font-display" style={{ fontSize: "11px", color: "var(--ink-soft)", letterSpacing: "0.1em" }}>{it.metric}</span>
+            <span className="font-display" style={{ fontSize: "11px", color: INFO_COLOR, letterSpacing: "0.1em" }}>{it.metric}</span>
           </span>
-          <span style={{ fontSize: "13px", color: "var(--label)", textAlign: "right" }}>{it.detail}</span>
+          <span style={{ fontSize: "13px", color: INFO_COLOR, textAlign: "right" }}>{it.detail}</span>
         </div>
       ))}
     </div>
