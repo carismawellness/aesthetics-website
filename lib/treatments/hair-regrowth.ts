@@ -155,10 +155,10 @@ const t: Treatment = {
     title: "We restore confidence through doctor-led regenerative hair treatments",
     subtitle: "to make visible results the new standard in Malta",
     images: [
-      "/assets/treatments/hair-regrowth-consult-exam.png",
+      "/assets/treatments/hair-regrowth-scalp-marking.png",
       "/assets/treatments/hair-regrowth-density-mapping.png",
       "/assets/treatments/hair-regrowth-prp-centrifuge.png",
-      "/assets/treatments/hair-regrowth-prp-injection.png",
+      "/assets/treatments/hair-regrowth-scalp-injection.png",
     ],
     points: [
       { title: "Why Patients Choose Our Hair Loss Treatment Clinic in Malta", desc: "" },
