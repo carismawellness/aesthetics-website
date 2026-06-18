@@ -291,9 +291,6 @@ export default function HairRegrowthPage() {
       <section
         style={{
           background: "transparent",
-          backgroundImage: `linear-gradient(to right, rgba(20,18,14,0.92) 54%, rgba(20,18,14,0.55) 100%), url('${t.hero.bgImage}')`,
-          backgroundSize: "cover",
-          backgroundPosition: "center top",
           padding: "clamp(60px,7vw,110px) 0 clamp(50px,6vw,90px)",
         }}
       >
