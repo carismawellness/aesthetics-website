@@ -3,7 +3,6 @@ import Reveal from "@/components/Reveal";
 import CompositeSlideshow from "@/components/CompositeSlideshow";
 import FaqAccordion, { type Faq } from "@/components/FaqAccordion";
 import ConsultationForm from "@/components/ConsultationForm";
-import DarkTextureWrapper from "@/components/DarkTextureWrapper";
 
 const IMG = "/assets/treatments";
 
@@ -128,7 +127,7 @@ const SECTION = { padding: "70px 0" } as const;
 
 export default function LaserHairRemovalPage() {
   return (
-    <DarkTextureWrapper>
+    <div style={{ backgroundImage: `url('${IMG}/laser-marble-white.png')`, backgroundSize: "cover", backgroundAttachment: "fixed", backgroundPosition: "top center" }}>
       {/* ============ HERO ============ */}
       <section style={{ backgroundImage: "url('/assets/hero-bg.png')", backgroundSize: "cover", backgroundPosition: "bottom center", padding: "44px 0 64px", borderRadius: "26px", overflow: "hidden", margin: "0 16px" }}>
         <div className="container">
@@ -198,7 +197,7 @@ export default function LaserHairRemovalPage() {
       </section>
 
       {/* ============ TRUST BAR ============ */}
-      <section style={{ padding: "26px 0", borderTop: "1px solid var(--line)", borderBottom: "1px solid var(--line)" }}>
+      <section style={{ backgroundColor: "rgba(255,255,255,0.6)", padding: "26px 0", borderTop: "1px solid var(--line)", borderBottom: "1px solid var(--line)" }}>
         <div className="container">
           <div className="flex flex-wrap items-center justify-center gap-x-12 gap-y-4 text-center">
             {["malta's leading wellness chain", "medically qualified practitioners", "30+ years of excellence"].map((t) => (
@@ -213,7 +212,7 @@ export default function LaserHairRemovalPage() {
       </section>
 
       {/* ============ BODY ============ */}
-      <div>
+      <>
         {/* ---- EDUCATION ---- */}
         <section style={SECTION}>
           <div className="container text-center">
@@ -310,7 +309,7 @@ export default function LaserHairRemovalPage() {
             <p className="mx-auto" style={{ maxWidth: "900px", fontSize: "14px", color: "var(--label)", lineHeight: 1.8, marginTop: "20px" }}>Choose from three tailored membership tiers — Bronze, Silver, or Gold — based on your treatment duration and coverage needs. Each option offers six sessions at exclusive pricing, making it easier than ever to commit to smooth, hair-free skin on your terms.</p>
             <div className="grid gap-8 md:grid-cols-3 mx-auto" style={{ maxWidth: "1000px", marginTop: "44px" }}>
               {TIERS.map((t, i) => (
-                <Reveal key={t.name} delay={(i % 3) * 90} className="text-center" style={{ background: "rgba(255,255,255,0.05)", border: "1px solid var(--line)", borderRadius: "16px", padding: "26px 24px 30px", boxShadow: "0 12px 30px rgba(0,0,0,0.25)" }}>
+                <Reveal key={t.name} delay={(i % 3) * 90} className="text-center" style={{ background: "rgba(255,255,255,0.65)", border: "1px solid var(--line)", borderRadius: "16px", padding: "26px 24px 30px", boxShadow: "0 12px 30px rgba(0,0,0,0.06)" }}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={`${IMG}/${t.image}`} alt={t.name} className="mx-auto" style={{ display: "block", width: "100%", maxWidth: "260px", borderRadius: "10px", boxShadow: "0 8px 22px rgba(0,0,0,0.12)" }} />
                   <h3 className="font-serif" style={{ fontSize: "20px", color: "var(--gold-deep)", letterSpacing: "0.08em", textTransform: "uppercase", marginTop: "22px" }}>{t.name}</h3>
@@ -334,7 +333,7 @@ export default function LaserHairRemovalPage() {
                 </Reveal>
               ))}
             </div>
-            <div className="mx-auto" style={{ maxWidth: "820px", marginTop: "48px", background: "rgba(255,255,255,0.05)", border: "1px solid var(--line)", borderRadius: "16px", padding: "clamp(26px,3vw,38px)" }}>
+            <div className="mx-auto" style={{ maxWidth: "820px", marginTop: "48px", background: "rgba(255,255,255,0.65)", border: "1px solid var(--line)", borderRadius: "16px", padding: "clamp(26px,3vw,38px)" }}>
               <p className="font-display text-center" style={{ fontSize: "14px", color: "var(--gold-deep)", letterSpacing: "0.04em", lineHeight: 1.7 }}>
                 WE STAND BY OUR PROMISE: SEE VISIBLE RESULTS IN <span style={{ fontWeight: 700 }}>3 SESSIONS</span><br />OR YOUR <span style={{ fontWeight: 700 }}>NEXT ONE IS FREE.</span>
               </p>
@@ -400,7 +399,7 @@ export default function LaserHairRemovalPage() {
           <div className="container">
             <SerifHeading>#1 award winning chain in malta</SerifHeading>
             <div className="grid gap-12 lg:grid-cols-2 items-center mx-auto" style={{ maxWidth: "1040px", marginTop: "40px" }}>
-              <Reveal style={{ background: "rgba(255,255,255,0.05)", border: "1px solid var(--line)", borderRadius: "16px", padding: "clamp(28px,3.5vw,42px)", boxShadow: "0 12px 30px rgba(0,0,0,0.25)" }}>
+              <Reveal style={{ background: "rgba(255,255,255,0.65)", border: "1px solid var(--line)", borderRadius: "16px", padding: "clamp(28px,3.5vw,42px)", boxShadow: "0 12px 30px rgba(0,0,0,0.06)" }}>
                 <h3 className="font-display" style={{ fontSize: "20px", color: "var(--label)", letterSpacing: "0.04em", marginBottom: "22px" }}>why choose carisma?</h3>
                 <ul className="space-y-4">
                   {WHY.map((w) => (
@@ -548,7 +547,7 @@ export default function LaserHairRemovalPage() {
             </div>
           </div>
         </section>
-      </div>
-    </DarkTextureWrapper>
+      </>
+    </div>
   );
 }
