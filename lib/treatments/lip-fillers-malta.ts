@@ -28,8 +28,11 @@ const t: Treatment = {
   ],
   beforeAfterTitle: "lip fillers results",
   beforeAfter: [
-    { before: "/assets/treatments/lip-fillers-malta-ba1-before.jpg", after: "/assets/treatments/lip-fillers-malta-ba1-after.jpg" },
-    { before: "/assets/treatments/lip-fillers-malta-ba2-before.png", after: "/assets/treatments/lip-fillers-malta-ba2-after.png" },
+    { before: "/assets/treatments/lip-fillers-malta-ba1-before.png", after: "/assets/treatments/lip-fillers-malta-ba1-after.png", label: "Natural Enhancement" },
+    { before: "/assets/treatments/lip-fillers-malta-ba2-before.png", after: "/assets/treatments/lip-fillers-malta-ba2-after.png", label: "Volume & Definition" },
+    { before: "/assets/treatments/lip-fillers-malta-ba3-before.png", after: "/assets/treatments/lip-fillers-malta-ba3-after.png", label: "Fuller Lips" },
+    { before: "/assets/treatments/lip-fillers-malta-ba4-before.png", after: "/assets/treatments/lip-fillers-malta-ba4-after.png", label: "Lip Augmentation" },
+    { before: "/assets/treatments/lip-fillers-malta-ba5-before.png", after: "/assets/treatments/lip-fillers-malta-ba5-after.png", label: "Male Treatment" },
   ],
   precision: {
     title: "precision areas of refinement",
