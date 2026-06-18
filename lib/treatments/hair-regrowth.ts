@@ -62,6 +62,32 @@ const t: Treatment = {
     title: "no fads. only what works.",
     intro:
       "For years, advanced hair loss treatments like exosome therapy and medically supervised minoxidil and finasteride protocols were limited to elite clinics abroad. For the first time in Malta, Carisma's doctor-led hair loss clinic offers the same standard of care: PRP and exosome therapy performed in-clinic by our medical team, paired with a doctor-issued prescription for minoxidil, finasteride, and ketoconazole — dispensed by our licensed pharmacy partner, Melita Health & Beauty. One complete, results-guaranteed treatment system. Each component of the Hair Regrowth treatment plays a unique role in restoring your follicles to life.",
+    areas: [
+      {
+        zone: "01",
+        icon: "/assets/treatments/hair-regrowth-density-scan.png",
+        name: "AI-Powered Scalp Imaging & Density Mapping",
+        desc: "Establishes your clinical baseline: follicle density, thinning zones, and growth-potential mapping. Used at Day 0 and Day 90 to measure your real results in numbers — not just in the mirror.",
+      },
+      {
+        zone: "02",
+        icon: "/assets/treatments/hair-regrowth-scalp-imaging.png",
+        name: "Exosome Hair Treatment via HydroPen Delivery",
+        desc: "Lab-purified exosomes delivered deep into the scalp via the 36-pin HydroPen system. Amplifies follicle repair and accelerates hair regrowth at a cellular level — clinical studies show 25% greater results compared to PRP alone.",
+      },
+      {
+        zone: "03",
+        icon: "/assets/treatments/hair-regrowth-prp-centrifuge.png",
+        name: "PRP Hair Treatment (Follicle Reactivation Therapy)",
+        desc: "Growth factors concentrated from your own blood, injected precisely into the scalp to reactivate dormant follicles and stimulate new hair growth from within.",
+      },
+      {
+        zone: "04",
+        icon: "/assets/treatments/hair-regrowth-consult-tablet.png",
+        name: "ScalpRx Prescription Protocol",
+        desc: "A personalised prescription for minoxidil, finasteride, and ketoconazole — written by Dr. Giovanni, tailored to your hair loss pattern, and dispensed by our licensed pharmacy partner, Melita Health & Beauty.",
+      },
+    ],
   },
 
   // Live section 3: "eligibility criteria / selective by intention. successful by design."

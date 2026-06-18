@@ -491,6 +491,53 @@ export default function HairRegrowthPage() {
               {p}
             </p>
           ))}
+
+          {/* Before / After image pair */}
+          <div
+            className="grid grid-cols-2 gap-4 mx-auto"
+            style={{ maxWidth: "720px", marginTop: "44px" }}
+          >
+            {(
+              [
+                { label: "BEFORE", src: `${A}/mesotherapy-malta-ba-hair-before.png` },
+                { label: "AFTER", src: `${A}/mesotherapy-malta-ba-hair-after.png` },
+              ] as const
+            ).map(({ label, src }) => (
+              <div
+                key={label}
+                style={{
+                  position: "relative",
+                  borderRadius: "8px",
+                  overflow: "hidden",
+                  border: `1px solid rgba(201,169,106,0.3)`,
+                }}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={src}
+                  alt={`Hair regrowth ${label}`}
+                  style={{ display: "block", width: "100%", height: "auto" }}
+                />
+                <span
+                  className="font-display"
+                  style={{
+                    position: "absolute",
+                    top: "12px",
+                    left: "12px",
+                    background: "rgba(0,0,0,0.72)",
+                    color: GOLD,
+                    fontSize: "10px",
+                    letterSpacing: "0.14em",
+                    padding: "5px 10px",
+                    borderRadius: "3px",
+                  }}
+                >
+                  {label}
+                </span>
+              </div>
+            ))}
+          </div>
+
           <div className="text-center" style={{ marginTop: "36px" }}>
             <GoldBtn>CHECK IF YOU QUALIFY</GoldBtn>
           </div>
@@ -623,7 +670,7 @@ export default function HairRegrowthPage() {
           padding: "clamp(60px,7vw,100px) 0",
         }}
       >
-        <div className="container" style={{ maxWidth: "900px" }}>
+        <div className="container" style={{ maxWidth: "960px" }}>
           <GoldLine />
           <SectionKicker>The Science Behind the Results</SectionKicker>
           <SectionHeading>{t.precision!.title}</SectionHeading>
@@ -634,10 +681,85 @@ export default function HairRegrowthPage() {
               color: TAUPE,
               lineHeight: 1.9,
               marginTop: "28px",
+              maxWidth: "820px",
             }}
           >
             {t.precision!.intro}
           </p>
+
+          {t.precision!.areas && (
+            <div
+              className="grid gap-5 md:grid-cols-2"
+              style={{ marginTop: "52px" }}
+            >
+              {t.precision!.areas.map((area) => (
+                <div
+                  key={area.name}
+                  style={{
+                    border: `1px solid rgba(201,169,106,0.28)`,
+                    borderRadius: "8px",
+                    padding: "clamp(22px,2.5vw,32px)",
+                    display: "flex",
+                    gap: "18px",
+                    alignItems: "flex-start",
+                  }}
+                >
+                  <div
+                    style={{
+                      flexShrink: 0,
+                      width: "56px",
+                      height: "56px",
+                      borderRadius: "8px",
+                      overflow: "hidden",
+                    }}
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={area.icon}
+                      alt=""
+                      style={{ width: "100%", height: "100%", objectFit: "cover" }}
+                    />
+                  </div>
+                  <div style={{ flex: 1 }}>
+                    <p
+                      className="font-display"
+                      style={{
+                        fontSize: "10px",
+                        color: GOLD,
+                        letterSpacing: "0.2em",
+                        textTransform: "uppercase",
+                        marginBottom: "7px",
+                      }}
+                    >
+                      {area.zone}
+                    </p>
+                    <h3
+                      className="font-serif"
+                      style={{
+                        fontSize: "15px",
+                        color: GOLD,
+                        letterSpacing: "0.04em",
+                        lineHeight: 1.35,
+                        marginBottom: "10px",
+                        fontWeight: 400,
+                      }}
+                    >
+                      {area.name}
+                    </h3>
+                    <p
+                      style={{
+                        fontSize: "13px",
+                        color: TAUPE,
+                        lineHeight: 1.75,
+                      }}
+                    >
+                      {area.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
@@ -955,6 +1077,24 @@ export default function HairRegrowthPage() {
                         ✅ Backed by the Carisma Measurable Results Guarantee.
                       </p>
                     )}
+                    {bullets.length > 0 && (
+                      <ul className="space-y-2" style={{ marginTop: "18px" }}>
+                        {bullets.map((b) => (
+                          <li key={b} className="flex items-start gap-2">
+                            <GoldCheck />
+                            <span
+                              style={{
+                                fontSize: "11.5px",
+                                color: TAUPE,
+                                lineHeight: 1.6,
+                              }}
+                            >
+                              {b}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                     <div style={{ flex: 1 }} />
                     <div style={{ marginTop: "24px" }}>
                       <GoldBtn fullWidth>GET STARTED</GoldBtn>
@@ -1113,6 +1253,55 @@ export default function HairRegrowthPage() {
             <div style={{ marginTop: "28px" }}>
               <GoldBtn>BOOK YOUR CONSULTATION</GoldBtn>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ───────────────────────────────────────────────────────
+          PATIENT VIDEO REELS
+      ─────────────────────────────────────────────────────── */}
+      <section
+        style={{
+          background: WHITE,
+          padding: "clamp(60px,7vw,100px) 0",
+        }}
+      >
+        <div className="container">
+          <GoldLine />
+          <SectionKicker>real patients. real results.</SectionKicker>
+          <SectionHeading>hear from our patients</SectionHeading>
+
+          <div
+            className="grid grid-cols-2 md:grid-cols-4 gap-4"
+            style={{ marginTop: "48px" }}
+          >
+            {[2, 3, 4, 5].map((n) => (
+              <Reveal key={n} delay={(n - 2) * 60}>
+                <div
+                  style={{
+                    borderRadius: "12px",
+                    overflow: "hidden",
+                    border: `1px solid rgba(201,169,106,0.2)`,
+                    boxShadow: "0 4px 20px rgba(0,0,0,0.07)",
+                  }}
+                >
+                  {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
+                  <video
+                    src={`${A}/vid-hair-regrowth-${n}.mp4`}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    style={{
+                      display: "block",
+                      width: "100%",
+                      aspectRatio: "9 / 16",
+                      objectFit: "cover",
+                    }}
+                  />
+                </div>
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>
