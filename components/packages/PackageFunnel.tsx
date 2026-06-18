@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import type { PackageData } from "@/lib/packages";
@@ -231,10 +231,6 @@ function TestimonialCard({ t }: { t: { img: string; quote: string; name: string 
 }
 
 export default function PackageFunnel({ data }: { data: PackageData }) {
-  useEffect(() => {
-    document.body.classList.add("dark-texture-page");
-    return () => { document.body.classList.remove("dark-texture-page"); };
-  }, []);
   const [openFaq, setOpenFaq] = useState(0);
   const [tab, setTab] = useState(data.redefined?.tabs ? data.redefined.tabs.length - 1 : 0);
   const h = data.hero;

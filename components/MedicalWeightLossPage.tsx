@@ -12,7 +12,7 @@
   before/after results carousel are interactive (hence "use client").
 */
 
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useRef, useState, type ReactNode } from "react";
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import FaqAccordion, { type Faq } from "@/components/FaqAccordion";
@@ -101,10 +101,6 @@ function H2({
 /* =================================================================== */
 
 export default function MedicalWeightLossPage() {
-  useEffect(() => {
-    document.body.classList.add("dark-texture-page");
-    return () => { document.body.classList.remove("dark-texture-page"); };
-  }, []);
   return (
     <main style={{ overflowX: "hidden" }}>
       <Hero />

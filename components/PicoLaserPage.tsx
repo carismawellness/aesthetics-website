@@ -11,13 +11,11 @@ import Pricing from "@/components/pico/Pricing";
 import WhatToExpect from "@/components/pico/WhatToExpect";
 import Faq from "@/components/pico/Faq";
 import WhyCarisma from "@/components/pico/WhyCarisma";
-import DarkTextureWrapper from "@/components/DarkTextureWrapper";
-
 export default function PicoLaserPage() {
   return (
-    <DarkTextureWrapper>
+    <>
       <Hero />
-      <div style={{ background: "transparent" }}>
+      <div style={{ background: "#f6efe3" }}>
         <Reviews />
         <DoYouHave />
         <TrustedFeatures />
@@ -31,6 +29,6 @@ export default function PicoLaserPage() {
         <Faq />
         <WhyCarisma />
       </div>
-    </DarkTextureWrapper>
+    </>
   );
 }
