@@ -28,6 +28,9 @@ const t: Treatment = {
   beforeAfter: [
     { before: "/assets/treatments/polynucleotides-salmon-dna-ba1-before.png", after: "/assets/treatments/polynucleotides-salmon-dna-ba1-after.png" },
     { before: "/assets/treatments/polynucleotides-salmon-dna-ba2-before.png", after: "/assets/treatments/polynucleotides-salmon-dna-ba2-after.png" },
+    { before: "/assets/treatments/polynucleotides-salmon-dna-ba3-before.png", after: "/assets/treatments/polynucleotides-salmon-dna-ba3-after.png" },
+    { before: "/assets/treatments/polynucleotides-salmon-dna-ba4-before.png", after: "/assets/treatments/polynucleotides-salmon-dna-ba4-after.png" },
+    { before: "/assets/treatments/polynucleotides-salmon-dna-ba5-before.png", after: "/assets/treatments/polynucleotides-salmon-dna-ba5-after.png" },
   ],
   precision: {
     title: "precision areas of refinement",
