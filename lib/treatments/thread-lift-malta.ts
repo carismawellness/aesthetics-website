@@ -13,7 +13,6 @@ const t: Treatment = {
     ],
     cta: "BOOK YOUR SESSION NOW",
     image: "/assets/treatments/thread-lift-malta-hero.avif",
-    bgImage: "/assets/treatments/thread-lift-malta-hero-bg.png",
     productTabs: ["/assets/treatments/thread-lift-malta-logo-springthread.png"],
     heroForm: true,
   },
