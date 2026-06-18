@@ -26,8 +26,12 @@ const t: Treatment = {
   ],
   beforeAfterTitle: "CHEMICAL PEEL RESULTS",
   beforeAfter: [
-    { before: "/assets/treatments/chemical-peels-malta-ba2-before.jpg", after: "/assets/treatments/chemical-peels-malta-ba2-after.jpg" },
-    { before: "/assets/treatments/chemical-peels-malta-ba1-before.jpeg", after: "/assets/treatments/chemical-peels-malta-ba1-after.jpeg" },
+    { before: "/assets/treatments/chemical-peels-malta-ba2-before.jpg", after: "/assets/treatments/chemical-peels-malta-ba2-after.jpg", label: "Acne & Redness" },
+    { before: "/assets/treatments/chemical-peels-malta-ba3-before.jpg", after: "/assets/treatments/chemical-peels-malta-ba3-after.jpg", label: "Hyperpigmentation" },
+    { before: "/assets/treatments/chemical-peels-malta-ba4-before.jpg", after: "/assets/treatments/chemical-peels-malta-ba4-after.jpg", label: "Pigmentation Spots" },
+    { before: "/assets/treatments/chemical-peels-malta-ba5-before.jpg", after: "/assets/treatments/chemical-peels-malta-ba5-after.jpg", label: "Acne Scarring" },
+    { before: "/assets/treatments/chemical-peels-malta-ba6-before.jpg", after: "/assets/treatments/chemical-peels-malta-ba6-after.jpg", label: "Skin Brightening" },
+    { before: "/assets/treatments/chemical-peels-malta-ba1-before.jpeg", after: "/assets/treatments/chemical-peels-malta-ba1-after.jpeg", label: "Under-Eye Pigmentation" },
   ],
   precision: {
     title: "PRECISION AREAS OF REFINEMENT",
