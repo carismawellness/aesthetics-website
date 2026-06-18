@@ -140,7 +140,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                 {t.hero.productTabs && t.hero.productTabs.length > 0 && (
                   <div className="flex gap-3" style={{ marginTop: "14px" }}>
                     {t.hero.productTabs.map((tab) => (
-                      <span key={tab} className="font-display inline-flex items-center justify-center" style={{ flex: 1, textAlign: "center", padding: "11px 14px", border: "1px solid var(--line)", borderRadius: "6px", fontSize: "12px", letterSpacing: "0.1em", color: "var(--ink)", background: "var(--white)" }}>
+                      <span key={tab} className="font-display inline-flex items-center justify-center" style={{ flex: 1, textAlign: "center", padding: "11px 14px", border: "1px solid var(--teal)", borderRadius: "6px", fontSize: "12px", letterSpacing: "0.1em", color: "var(--ink)", background: "var(--teal-100)" }}>
                         {tab.startsWith("/") ? (
                           // eslint-disable-next-line @next/next/no-img-element
                           <img src={tab} alt="" style={{ height: "30px", width: "auto", maxWidth: "100%", objectFit: "contain" }} />
