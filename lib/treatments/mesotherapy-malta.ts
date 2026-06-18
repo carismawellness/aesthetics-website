@@ -15,7 +15,6 @@ const t: Treatment = {
     cta: "BOOK YOUR SESSION NOW",
     image: "/assets/treatments/mesotherapy-malta-hero.png",
     imageRatio: "468 / 373",
-    bgImage: "/assets/treatments/mesotherapy-malta-hero-bg.png",
     productTabs: ["/assets/treatments/mesotherapy-malta-logo-bcn.png", "/assets/treatments/mesotherapy-malta-logo-teoxane.png", "/assets/treatments/mesotherapy-malta-logo-fillmed.png", "/assets/treatments/mesotherapy-malta-logo-croma.png"],
     heroForm: true,
   },
