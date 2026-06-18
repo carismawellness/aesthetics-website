@@ -26,8 +26,11 @@ const t: Treatment = {
   ],
   beforeAfterTitle: "prp results",
   beforeAfter: [
-    { before: "/assets/treatments/prp-malta-ba1-before.png", after: "/assets/treatments/prp-malta-ba1-after.png" },
-    { before: "/assets/treatments/prp-malta-ba2-before.png", after: "/assets/treatments/prp-malta-ba2-after.png" },
+    { before: "/assets/treatments/prp-malta-ba1-before.png", after: "/assets/treatments/prp-malta-ba1-after.png", label: "Face Rejuvenation" },
+    { before: "/assets/treatments/prp-malta-ba2-before.png", after: "/assets/treatments/prp-malta-ba2-after.png", label: "Acne Scarring" },
+    { before: "/assets/treatments/prp-malta-ba3-before.png", after: "/assets/treatments/prp-malta-ba3-after.png", label: "Skin Quality" },
+    { before: "/assets/treatments/prp-malta-ba4-before.png", after: "/assets/treatments/prp-malta-ba4-after.png", label: "Hair Loss (Female)" },
+    { before: "/assets/treatments/prp-malta-ba5-before.png", after: "/assets/treatments/prp-malta-ba5-after.png", label: "Hair Loss (Male)" },
   ],
   precision: {
     title: "precision areas of refinement",
