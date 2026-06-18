@@ -277,7 +277,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
 
       {/* Before / after — real photo pair (matches live carousel) */}
       {(t.beforeAfter || t.beforeAfterTitle) && (
-        <section style={{ padding: "70px 0", backgroundColor: "var(--cream)" }}>
+        <section style={{ padding: "70px 0" }}>
           {t.beforeAfter && t.beforeAfter.length > 0 ? (
             <BeforeAfterCarousel pairs={t.beforeAfter} title={t.beforeAfterTitle} />
           ) : (
