@@ -637,52 +637,6 @@ export default function HairRegrowthPage() {
             </p>
           ))}
 
-          {/* Before / After image pair */}
-          <div
-            className="grid grid-cols-2 gap-4 mx-auto"
-            style={{ maxWidth: "720px", marginTop: "44px" }}
-          >
-            {(
-              [
-                { label: "BEFORE", src: `${A}/mesotherapy-malta-ba-hair-before.png` },
-                { label: "AFTER", src: `${A}/mesotherapy-malta-ba-hair-after.png` },
-              ] as const
-            ).map(({ label, src }) => (
-              <div
-                key={label}
-                style={{
-                  position: "relative",
-                  borderRadius: "8px",
-                  overflow: "hidden",
-                  border: `1px solid rgba(201,169,106,0.3)`,
-                }}
-              >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={src}
-                  alt={`Hair regrowth ${label}`}
-                  style={{ display: "block", width: "100%", height: "auto" }}
-                />
-                <span
-                  className="font-display"
-                  style={{
-                    position: "absolute",
-                    top: "12px",
-                    left: "12px",
-                    background: "rgba(0,0,0,0.72)",
-                    color: GOLD,
-                    fontSize: "10px",
-                    letterSpacing: "0.14em",
-                    padding: "5px 10px",
-                    borderRadius: "3px",
-                  }}
-                >
-                  {label}
-                </span>
-              </div>
-            ))}
-          </div>
-
           <div className="text-center" style={{ marginTop: "36px" }}>
             <GoldBtn>CHECK IF YOU QUALIFY</GoldBtn>
           </div>
