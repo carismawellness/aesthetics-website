@@ -221,3 +221,18 @@ summary { list-style: none; }
 summary::-webkit-details-marker { display: none; }
 .faq-plus { transition: transform 0.2s ease; }
 details[open] .faq-plus { transform: rotate(45deg); }
+
+/* ── Hair Regrowth page — full-page dark stone texture background ── */
+body.hair-regrowth-page {
+  background-image: url('/assets/treatments/hair-regrowth-bg-texture.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  background-color: #14120e;
+  background-position: center;
+}
+/* Make footer sections transparent so the texture shows through */
+body.hair-regrowth-page footer section,
+body.hair-regrowth-page footer > * {
+  background-color: transparent !important;
+  background: transparent !important;
+}

@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import hairRegrowth from "@/lib/treatments/hair-regrowth";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 /*
   Dedicated landing page for /hair-regrowth.
@@ -246,6 +246,12 @@ function parsePackage(name: string, desc: string) {
 }
 
 export default function HairRegrowthPage() {
+  // Apply texture background to entire page including header/footer
+  useEffect(() => {
+    document.body.classList.add("hair-regrowth-page");
+    return () => { document.body.classList.remove("hair-regrowth-page"); };
+  }, []);
+
   const pkg = t.pricingGrid!;
   const collage = t.trusted!;
   const dr = t.experience!.steps[0];
@@ -278,13 +284,13 @@ export default function HairRegrowthPage() {
   const eligClosing = mostIdx > -1 ? afterQ.slice(mostIdx).trim() : "";
 
   return (
-    <div style={{ background: DARK, color: TAUPE }}>
+    <div style={{ background: "transparent", color: TAUPE }}>
       {/* ───────────────────────────────────────────────────────
           HERO — dark charcoal with background image + portrait video
       ─────────────────────────────────────────────────────── */}
       <section
         style={{
-          background: CHARCOAL,
+          background: "transparent",
           backgroundImage: `linear-gradient(to right, rgba(20,18,14,0.92) 54%, rgba(20,18,14,0.55) 100%), url('${t.hero.bgImage}')`,
           backgroundSize: "cover",
           backgroundPosition: "center top",
@@ -444,7 +450,7 @@ export default function HairRegrowthPage() {
       ─────────────────────────────────────────────────────── */}
       <section
         style={{
-          background: DARK,
+          background: "transparent",
           padding: "clamp(60px,7vw,100px) 0",
         }}
       >
@@ -525,7 +531,7 @@ export default function HairRegrowthPage() {
       ─────────────────────────────────────────────────────── */}
       <section
         style={{
-          background: DARK,
+          background: "transparent",
           padding: "clamp(60px,7vw,100px) 0",
         }}
       >
@@ -660,7 +666,7 @@ export default function HairRegrowthPage() {
       ─────────────────────────────────────────────────────── */}
       <section
         style={{
-          background: DARK,
+          background: "transparent",
           padding: "clamp(60px,7vw,100px) 0",
         }}
       >
@@ -753,7 +759,7 @@ export default function HairRegrowthPage() {
       ─────────────────────────────────────────────────────── */}
       <section
         style={{
-          background: DARK,
+          background: "transparent",
           padding: "clamp(60px,7vw,100px) 0",
         }}
       >
@@ -848,7 +854,7 @@ export default function HairRegrowthPage() {
       ─────────────────────────────────────────────────────── */}
       <section
         style={{
-          background: DARK,
+          background: "transparent",
           padding: "clamp(60px,7vw,100px) 0",
         }}
       >
@@ -990,7 +996,7 @@ export default function HairRegrowthPage() {
       ─────────────────────────────────────────────────────── */}
       <section
         style={{
-          background: DARK,
+          background: "transparent",
           padding: "clamp(60px,7vw,100px) 0",
         }}
       >
@@ -1105,7 +1111,7 @@ export default function HairRegrowthPage() {
       ─────────────────────────────────────────────────────── */}
       <section
         style={{
-          background: DARK,
+          background: "transparent",
           padding: "clamp(60px,7vw,100px) 0",
         }}
       >
@@ -1255,7 +1261,7 @@ export default function HairRegrowthPage() {
       ─────────────────────────────────────────────────────── */}
       <section
         style={{
-          background: DARK,
+          background: "transparent",
           padding: "clamp(60px,7vw,100px) 0",
         }}
       >
@@ -1304,7 +1310,7 @@ export default function HairRegrowthPage() {
       ─────────────────────────────────────────────────────── */}
       <section
         style={{
-          background: DARK,
+          background: "transparent",
           padding: "clamp(60px,7vw,100px) 0",
         }}
       >
@@ -1362,7 +1368,7 @@ export default function HairRegrowthPage() {
       ─────────────────────────────────────────────────────── */}
       <section
         style={{
-          background: DARK,
+          background: "transparent",
           padding: "clamp(60px,7vw,100px) 0",
         }}
       >
