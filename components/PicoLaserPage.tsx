@@ -11,22 +11,13 @@ import Pricing from "@/components/pico/Pricing";
 import WhatToExpect from "@/components/pico/WhatToExpect";
 import Faq from "@/components/pico/Faq";
 import WhyCarisma from "@/components/pico/WhyCarisma";
+import DarkTextureWrapper from "@/components/DarkTextureWrapper";
 
-/*
-  Pico laser tattoo removal page — a section-faithful recreation of the live
-  carismaaesthetics.com/pico-laser-tattoo-removal page. Each section lives in its
-  own component under components/pico/ (built section-by-section against the live
-  page). Live order: hero, reviews, do-you-have-a-tattoo, trusted+features,
-  because, commitment, secure, fade-ink, redefined, pricing, what-to-expect,
-  faq, why-carisma. The global Header/Footer wrap this via the layout.
-*/
 export default function PicoLaserPage() {
   return (
-    <>
+    <DarkTextureWrapper>
       <Hero />
-
-      {/* warm cream/beige behind the rest of the page (matches live) */}
-      <div style={{ background: "#f6efe3" }}>
+      <div style={{ background: "transparent" }}>
         <Reviews />
         <DoYouHave />
         <TrustedFeatures />
@@ -40,6 +31,6 @@ export default function PicoLaserPage() {
         <Faq />
         <WhyCarisma />
       </div>
-    </>
+    </DarkTextureWrapper>
   );
 }

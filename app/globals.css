@@ -222,17 +222,32 @@ summary::-webkit-details-marker { display: none; }
 .faq-plus { transition: transform 0.2s ease; }
 details[open] .faq-plus { transform: rotate(45deg); }
 
-/* ── Hair Regrowth page — full-page dark stone texture background ── */
-body.hair-regrowth-page {
+/* ── Dark stone texture pages (hair-regrowth, pico-laser, medical-weight-loss, packages) ── */
+body.dark-texture-page {
   background-image: url('/assets/treatments/hair-regrowth-bg-texture.jpg');
   background-size: cover;
   background-attachment: fixed;
   background-color: #14120e;
   background-position: center;
 }
-/* Make footer sections transparent so the texture shows through */
-body.hair-regrowth-page footer section,
-body.hair-regrowth-page footer > * {
+/* Override design-system CSS vars so all var(--white/--cream/--beige) sections
+   become transparent and text stays readable on the dark stone background */
+body.dark-texture-page main,
+body.dark-texture-page footer {
+  --white:    transparent;
+  --cream:    transparent;
+  --cream-2:  transparent;
+  --beige:    transparent;
+  --beige-2:  transparent;
+  --ink:      #e8e3da;
+  --ink-soft: #d0c9bf;
+  --muted:    #b8b0a6;
+  --label:    #c9a96a;
+  --line:     rgba(255, 255, 255, 0.12);
+}
+/* Footer sections transparent so the texture shows through */
+body.dark-texture-page footer section,
+body.dark-texture-page footer > * {
   background-color: transparent !important;
   background: transparent !important;
 }

@@ -248,8 +248,8 @@ function parsePackage(name: string, desc: string) {
 export default function HairRegrowthPage() {
   // Apply texture background to entire page including header/footer
   useEffect(() => {
-    document.body.classList.add("hair-regrowth-page");
-    return () => { document.body.classList.remove("hair-regrowth-page"); };
+    document.body.classList.add("dark-texture-page");
+    return () => { document.body.classList.remove("dark-texture-page"); };
   }, []);
 
   const pkg = t.pricingGrid!;
