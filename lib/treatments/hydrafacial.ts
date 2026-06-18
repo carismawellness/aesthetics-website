@@ -23,7 +23,11 @@ const t: Treatment = {
   },
   beforeAfterTitle: "hydrafacial results",
   beforeAfter: [
-    { before: "/assets/treatments/hydrafacial-ba1-before.png", after: "/assets/treatments/hydrafacial-ba1-after.png" },
+    { before: "/assets/treatments/hydrafacial-ba1-before.png", after: "/assets/treatments/hydrafacial-ba1-after.png", label: "Acne & Skin Clarity" },
+    { before: "/assets/treatments/hydrafacial-ba2-before.png", after: "/assets/treatments/hydrafacial-ba2-after.png", label: "Radiance & Glow" },
+    { before: "/assets/treatments/hydrafacial-ba3-before.png", after: "/assets/treatments/hydrafacial-ba3-after.png", label: "Deep Hydration" },
+    { before: "/assets/treatments/hydrafacial-ba4-before.png", after: "/assets/treatments/hydrafacial-ba4-after.png", label: "Skin Texture" },
+    { before: "/assets/treatments/hydrafacial-ba5-before.png", after: "/assets/treatments/hydrafacial-ba5-after.png", label: "Pigmentation" },
   ],
   precision: {
     title: "precision areas of refinement",
