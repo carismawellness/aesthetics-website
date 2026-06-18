@@ -22,8 +22,11 @@ const t: Treatment = {
   ],
   beforeAfterTitle: "COLLAGEN STIMULATOR RESULTS",
   beforeAfter: [
-    { before: "/assets/treatments/collagen-stimulator-malta-ba1-before.jpg", after: "/assets/treatments/collagen-stimulator-malta-ba1-after.jpg" },
+    { before: "/assets/treatments/collagen-stimulator-malta-ba1-before.png", after: "/assets/treatments/collagen-stimulator-malta-ba1-after.png" },
     { before: "/assets/treatments/collagen-stimulator-malta-ba2-before.png", after: "/assets/treatments/collagen-stimulator-malta-ba2-after.png" },
+    { before: "/assets/treatments/collagen-stimulator-malta-ba3-before.png", after: "/assets/treatments/collagen-stimulator-malta-ba3-after.png" },
+    { before: "/assets/treatments/collagen-stimulator-malta-ba4-before.png", after: "/assets/treatments/collagen-stimulator-malta-ba4-after.png" },
+    { before: "/assets/treatments/collagen-stimulator-malta-ba5-before.png", after: "/assets/treatments/collagen-stimulator-malta-ba5-after.png" },
   ],
   precision: {
     title: "PRECISION AREAS OF REFINEMENT",
