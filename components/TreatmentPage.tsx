@@ -324,7 +324,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                   {t.precision.additionalTitle ?? "Additional Treatment Areas"}
                 </h3>
                 {t.precision.additionalIntro && (
-                  <p style={{ fontSize: "15px", color: "var(--ink-soft)", lineHeight: 1.7, marginBottom: "12px" }}>{t.precision.additionalIntro}</p>
+                  <p style={{ fontSize: "15px", color: "#b0a68f", lineHeight: 1.7, marginBottom: "12px" }}>{t.precision.additionalIntro}</p>
                 )}
                 <p className="font-display" style={{ fontSize: "13px", color: "#b0a68f", letterSpacing: "0.06em", textTransform: "uppercase" }}>{t.precision.additional}</p>
               </div>
