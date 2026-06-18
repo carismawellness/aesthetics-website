@@ -27,9 +27,29 @@ const t: Treatment = {
   beforeAfterTitle: "fat dissolving results",
   beforeAfter: [
     {
-      before: "/assets/treatments/fat-dissolving-before.jpg",
-      after: "/assets/treatments/fat-dissolving-after.jpg",
+      before: "/assets/treatments/fat-dissolving-malta-ba1-before.jpg",
+      after: "/assets/treatments/fat-dissolving-malta-ba1-after.jpg",
+      label: "Double Chin Reduction",
+    },
+    {
+      before: "/assets/treatments/fat-dissolving-malta-ba2-before.jpg",
+      after: "/assets/treatments/fat-dissolving-malta-ba2-after.jpg",
+      label: "Jawline Contouring",
+    },
+    {
+      before: "/assets/treatments/fat-dissolving-malta-ba3-before.jpg",
+      after: "/assets/treatments/fat-dissolving-malta-ba3-after.jpg",
       label: "Under Chin Fat Reduction",
+    },
+    {
+      before: "/assets/treatments/fat-dissolving-malta-ba4-before.jpg",
+      after: "/assets/treatments/fat-dissolving-malta-ba4-after.jpg",
+      label: "Chin & Neck Sculpting",
+    },
+    {
+      before: "/assets/treatments/fat-dissolving-malta-ba5-before.jpg",
+      after: "/assets/treatments/fat-dissolving-malta-ba5-after.jpg",
+      label: "Facial Contouring",
     },
   ],
   precision: {
