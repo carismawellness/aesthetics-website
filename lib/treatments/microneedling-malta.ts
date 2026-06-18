@@ -28,7 +28,10 @@ const t: Treatment = {
   beforeAfterTitle: "microneedling results",
   beforeAfter: [
     { before: "/assets/treatments/microneedling-malta-ba1-before.png", after: "/assets/treatments/microneedling-malta-ba1-after.png" },
-    { before: "/assets/treatments/microneedling-malta-ba2-before.jpg", after: "/assets/treatments/microneedling-malta-ba2-after.jpg" },
+    { before: "/assets/treatments/microneedling-malta-ba2-before.png", after: "/assets/treatments/microneedling-malta-ba2-after.png" },
+    { before: "/assets/treatments/microneedling-malta-ba3-before.png", after: "/assets/treatments/microneedling-malta-ba3-after.png" },
+    { before: "/assets/treatments/microneedling-malta-ba4-before.png", after: "/assets/treatments/microneedling-malta-ba4-after.png" },
+    { before: "/assets/treatments/microneedling-malta-ba5-before.png", after: "/assets/treatments/microneedling-malta-ba5-after.png" },
   ],
   precision: {
     title: "precision areas of refinement",
