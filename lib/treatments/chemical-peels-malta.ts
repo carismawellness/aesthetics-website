@@ -26,7 +26,7 @@ const t: Treatment = {
   ],
   beforeAfterTitle: "CHEMICAL PEEL RESULTS",
   beforeAfter: [
-    { before: "/assets/treatments/chemical-peels-malta-ba2-before.png", after: "/assets/treatments/chemical-peels-malta-ba2-after.png" },
+    { before: "/assets/treatments/chemical-peels-malta-ba2-before.jpg", after: "/assets/treatments/chemical-peels-malta-ba2-after.jpg" },
     { before: "/assets/treatments/chemical-peels-malta-ba1-before.jpeg", after: "/assets/treatments/chemical-peels-malta-ba1-after.jpeg" },
   ],
   precision: {
