@@ -10,7 +10,6 @@ const t: Treatment = {
     prices: [{ label: "", price: "From €399/vial" }],
     cta: "BOOK YOUR SESSION NOW",
     image: "/assets/treatments/collagen-stimulator-malta-hero.png",
-    bgImage: "/assets/treatments/collagen-stimulator-malta-hero-bg.png",
     productTabs: ["RADIESSE", "SCULPTRA"],
     heroForm: true,
   },
