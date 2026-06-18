@@ -247,7 +247,8 @@ body.dark-texture-page footer {
 }
 /* Footer sections transparent so the texture shows through */
 body.dark-texture-page footer section,
-body.dark-texture-page footer > * {
+body.dark-texture-page footer > *,
+body.dark-texture-page footer div[style*="background"] {
   background-color: transparent !important;
   background: transparent !important;
 }
