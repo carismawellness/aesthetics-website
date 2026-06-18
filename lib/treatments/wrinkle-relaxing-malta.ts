@@ -1,3 +1,4 @@
+// last updated: 2026-06-18
 import type { Treatment } from "../treatment-types";
 
 const t: Treatment = {
