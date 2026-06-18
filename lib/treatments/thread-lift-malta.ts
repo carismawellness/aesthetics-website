@@ -26,6 +26,9 @@ const t: Treatment = {
   beforeAfterTitle: "THREAD LIFT RESULTS",
   beforeAfter: [
     { before: "/assets/treatments/thread-lift-malta-ba1-before.png", after: "/assets/treatments/thread-lift-malta-ba1-after.png" },
+    { before: "/assets/treatments/thread-lift-malta-ba2-before.png", after: "/assets/treatments/thread-lift-malta-ba2-after.png" },
+    { before: "/assets/treatments/thread-lift-malta-ba3-before.png", after: "/assets/treatments/thread-lift-malta-ba3-after.png" },
+    { before: "/assets/treatments/thread-lift-malta-ba4-before.png", after: "/assets/treatments/thread-lift-malta-ba4-after.png" },
   ],
   precision: {
     title: "PRECISION AREAS OF REFINEMENT",
