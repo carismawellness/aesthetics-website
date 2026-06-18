@@ -27,8 +27,26 @@ const t: Treatment = {
   ],
   beforeAfterTitle: "dermal fillers results",
   beforeAfter: [
-    { before: "/assets/treatments/dermal-fillers-malta-ba1-before.png", after: "/assets/treatments/dermal-fillers-malta-ba1-after.png" },
-    { before: "/assets/treatments/dermal-fillers-malta-ba2-before.jpg", after: "/assets/treatments/dermal-fillers-malta-ba2-after.jpg" },
+    {
+      before: "/assets/treatments/dermal-fillers-malta-ba1-before.jpg",
+      after: "/assets/treatments/dermal-fillers-malta-ba1-after.jpg",
+      label: "Jaw & Cheek Contouring",
+    },
+    {
+      before: "/assets/treatments/dermal-fillers-malta-ba2-before.jpg",
+      after: "/assets/treatments/dermal-fillers-malta-ba2-after.jpg",
+      label: "Cheek Volume Restoration",
+    },
+    {
+      before: "/assets/treatments/dermal-fillers-malta-ba3-before.jpg",
+      after: "/assets/treatments/dermal-fillers-malta-ba3-after.jpg",
+      label: "Mid-Face Rejuvenation",
+    },
+    {
+      before: "/assets/treatments/dermal-fillers-malta-ba4-before.jpg",
+      after: "/assets/treatments/dermal-fillers-malta-ba4-after.jpg",
+      label: "Profile Enhancement",
+    },
   ],
   precision: {
     title: "precision areas of refinement",
