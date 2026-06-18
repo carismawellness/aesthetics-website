@@ -28,8 +28,11 @@ const t: Treatment = {
   ],
   beforeAfterTitle: "profhilo results",
   beforeAfter: [
-    { before: "/assets/treatments/profhilo-ba1-before.png", after: "/assets/treatments/profhilo-ba1-after.png" },
-    { before: "/assets/treatments/profhilo-ba2-before.jpg", after: "/assets/treatments/profhilo-ba2-after.jpg" },
+    { before: "/assets/treatments/profhilo-ba1-before.png", after: "/assets/treatments/profhilo-ba1-after.png", label: "Face Rejuvenation" },
+    { before: "/assets/treatments/profhilo-ba2-before.png", after: "/assets/treatments/profhilo-ba2-after.png", label: "Skin Quality" },
+    { before: "/assets/treatments/profhilo-ba3-before.png", after: "/assets/treatments/profhilo-ba3-after.png", label: "Skin Texture" },
+    { before: "/assets/treatments/profhilo-ba4-before.png", after: "/assets/treatments/profhilo-ba4-after.png", label: "Neck Treatment" },
+    { before: "/assets/treatments/profhilo-ba5-before.png", after: "/assets/treatments/profhilo-ba5-after.png", label: "Jawline & Neck" },
   ],
   precision: {
     title: "precision areas of refinement",
