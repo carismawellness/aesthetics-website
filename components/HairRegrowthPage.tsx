@@ -247,26 +247,22 @@ function parsePackage(name: string, desc: string) {
 
 const TESTIMONIALS = [
   {
-    before: `${A}/mesotherapy-malta-ba-hair-before.png`,
-    after: `${A}/mesotherapy-malta-ba-hair-after.png`,
+    image: `${A}/hair-regrowth-ba1.png`,
     name: "THOMAS B.",
     text: "It sounds dramatic, but this treatment gave me my confidence and happiness back. I'd been losing hair for years and tried everything. After 90 days on the full protocol I genuinely couldn't believe the difference in the mirror.",
   },
   {
-    before: `${A}/mesotherapy-malta-ba-hair-before.png`,
-    after: `${A}/mesotherapy-malta-ba-hair-after.png`,
+    image: `${A}/hair-regrowth-ba2.png`,
     name: "NADINE A.",
     text: "I used to check my pillow every morning, terrified of how much hair I'd lost overnight. Now, after three months, the shedding has almost completely stopped and I can see real regrowth at the hairline.",
   },
   {
-    before: `${A}/mesotherapy-malta-ba-hair-before.png`,
-    after: `${A}/mesotherapy-malta-ba-hair-after.png`,
+    image: `${A}/hair-regrowth-ba3.png`,
     name: "SARA C.",
     text: "After the second month, I noticed tiny new hairs around my temples — that moment made me emotional. The density scan confirmed a 24% improvement. I never thought something non-surgical could actually work this well.",
   },
   {
-    before: `${A}/mesotherapy-malta-ba-hair-before.png`,
-    after: `${A}/mesotherapy-malta-ba-hair-after.png`,
+    image: `${A}/hair-regrowth-ba4.png`,
     name: "RACHELLE A.",
     text: "I've tried every shampoo and supplement out there, but nothing worked. This was the first time a clinic actually measured my results with numbers. Seeing the before and after scans side by side was all the proof I needed.",
   },
@@ -274,7 +270,7 @@ const TESTIMONIALS = [
 
 const PREVIEW_LEN = 120;
 
-function ReviewCard({ before, after, name, text }: (typeof TESTIMONIALS)[0]) {
+function ReviewCard({ image, name, text }: (typeof TESTIMONIALS)[0]) {
   const [expanded, setExpanded] = useState(false);
   const truncated = text.length > PREVIEW_LEN && !expanded;
   return (
@@ -288,16 +284,10 @@ function ReviewCard({ before, after, name, text }: (typeof TESTIMONIALS)[0]) {
         minWidth: 0,
       }}
     >
-      {/* Before / after image side by side */}
-      <div style={{ display: "flex", height: "160px" }}>
-        <div style={{ flex: 1, overflow: "hidden" }}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={before} alt="before" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top" }} />
-        </div>
-        <div style={{ flex: 1, overflow: "hidden" }}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={after} alt="after" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top" }} />
-        </div>
+      {/* Combined before/after image */}
+      <div style={{ height: "160px", overflow: "hidden" }}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={image} alt="before and after" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center top" }} />
       </div>
       {/* Card body */}
       <div style={{ padding: "18px 20px 22px", flex: 1, display: "flex", flexDirection: "column" }}>
