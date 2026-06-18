@@ -17,7 +17,6 @@ const t: Treatment = {
     image: "/assets/treatments/profhilo-hero.avif",
     brandLogos: ["/assets/treatments/profhilo-logo.png"],
     imageRatio: "450 / 358",
-    bgImage: "/assets/treatments/profhilo-hero-bg.png",
     heroForm: true,
   },
   info: [
