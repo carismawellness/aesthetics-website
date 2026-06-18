@@ -637,6 +637,40 @@ export default function HairRegrowthPage() {
             </p>
           ))}
 
+          {/* B&A horizontal scroll */}
+          <div
+            style={{
+              display: "flex",
+              gap: "20px",
+              overflowX: "auto",
+              paddingBottom: "12px",
+              marginTop: "44px",
+              scrollSnapType: "x mandatory",
+            }}
+          >
+            {[
+              `${A}/hair-regrowth-ba1.png`,
+              `${A}/hair-regrowth-ba2.png`,
+              `${A}/hair-regrowth-ba3.png`,
+              `${A}/hair-regrowth-ba4.png`,
+              `${A}/hair-regrowth-ba5.png`,
+            ].map((src, i) => (
+              <div
+                key={i}
+                style={{
+                  flex: "0 0 auto",
+                  width: "clamp(280px, 45vw, 520px)",
+                  borderRadius: "10px",
+                  overflow: "hidden",
+                  scrollSnapAlign: "start",
+                }}
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={src} alt={`Hair regrowth result ${i + 1}`} style={{ display: "block", width: "100%", height: "auto" }} />
+              </div>
+            ))}
+          </div>
+
           <div className="text-center" style={{ marginTop: "36px" }}>
             <GoldBtn>CHECK IF YOU QUALIFY</GoldBtn>
           </div>
