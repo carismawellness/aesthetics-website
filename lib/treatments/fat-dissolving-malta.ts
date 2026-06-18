@@ -14,7 +14,7 @@ const t: Treatment = {
     ],
     cta: "book your fat dissolving session now",
     image: "/assets/treatments/fat-dissolving-hero.jpg",
-    productTabs: ["AQUALYX", "LEMON BOTTLE"],
+    productTabs: ["/assets/treatments/fd-logo-aqualyx.png", "/assets/treatments/fd-logo-lemon-bottle.png"],
     heroForm: true,
   },
   info: [
