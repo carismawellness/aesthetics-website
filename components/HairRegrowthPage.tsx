@@ -8,9 +8,8 @@ import { useState } from "react";
   Dedicated landing page for /hair-regrowth.
   Live page: https://www.carismaaesthetics.com/hair-regrowth
 
-  Design: Dark charcoal hero + white/cream body sections.
+  Design: Dark charcoal throughout — entire page uses DARK bg.
   Gold headings (#c9a96a), warm taupe body text (rgb(176,166,143)).
-  All section backgrounds: white (#fff).
   Buttons: gold gradient.
   FAQ: accordion (client component).
 */
@@ -21,7 +20,7 @@ const t = hairRegrowth;
 // Gold shades
 const GOLD = "#c9a96a";
 const GOLD_MID = "#b89a52";
-const WHITE = "#ffffff";
+const DARK = "#14120e"; // page background — matches live dark charcoal
 const TAUPE = "rgb(176,166,143)"; // live body text color
 const INK = "#1a1712"; // dark text for buttons / hero
 const CHARCOAL = "#1c1a17"; // hero bg fallback
@@ -185,18 +184,20 @@ function FaqItem({ q, a }: { q: string; a: string }) {
         >
           {q}
         </span>
-        <span
-          style={{
-            color: GOLD,
-            fontSize: "18px",
-            flexShrink: 0,
-            lineHeight: 1,
-            transform: open ? "rotate(45deg)" : "rotate(0deg)",
-            transition: "transform 0.2s ease",
-          }}
+        <svg
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke={GOLD}
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          style={{ flexShrink: 0, transform: open ? "rotate(180deg)" : "rotate(0deg)", transition: "transform 0.2s ease" }}
+          aria-hidden
         >
-          +
-        </span>
+          <path d="M6 9l6 6 6-6" />
+        </svg>
       </button>
       {open && (
         <p
@@ -268,8 +269,16 @@ export default function HairRegrowthPage() {
   // Guarantee paragraphs
   const gParas = t.guarantee!.paragraphs;
 
+  // Parse eligibility intro: first 3 "?" sentences become bullets, rest becomes paragraphs
+  const introRaw = t.suitability?.intro ?? "";
+  const eligBullets = (introRaw.match(/[^?]+\?/g) ?? []).slice(0, 3).map(s => s.trim());
+  const afterQ = introRaw.slice(eligBullets.join("").length + 1).trim();
+  const mostIdx = afterQ.indexOf("Most early-stage");
+  const eligParas = mostIdx > -1 ? afterQ.slice(0, mostIdx).trim() : afterQ;
+  const eligClosing = mostIdx > -1 ? afterQ.slice(mostIdx).trim() : "";
+
   return (
-    <div style={{ background: WHITE, color: INK }}>
+    <div style={{ background: DARK, color: TAUPE }}>
       {/* ───────────────────────────────────────────────────────
           HERO — dark charcoal with background image + portrait video
       ─────────────────────────────────────────────────────── */}
@@ -429,46 +438,13 @@ export default function HairRegrowthPage() {
         </div>
       </section>
 
-      {/* ───────────────────────────────────────────────────────
-          TRUST BAR — 3 badges below hero (white bg)
-      ─────────────────────────────────────────────────────── */}
-      <section
-        style={{
-          background: WHITE,
-          borderBottom: "1px solid rgba(201,169,106,0.15)",
-          padding: "22px 0",
-        }}
-      >
-        <div className="container">
-          <div className="flex flex-wrap items-center justify-center gap-6 md:gap-14">
-            {[
-              "Malta's Leading Wellness Chain",
-              "Medically Qualified Practitioners",
-              "35+ Years of Excellence",
-            ].map((badge) => (
-              <span
-                key={badge}
-                className="font-display"
-                style={{
-                  fontSize: "10px",
-                  color: GOLD,
-                  letterSpacing: "0.18em",
-                  textTransform: "uppercase",
-                }}
-              >
-                {badge}
-              </span>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* ───────────────────────────────────────────────────────
           BEFORE & AFTERS
       ─────────────────────────────────────────────────────── */}
       <section
         style={{
-          background: WHITE,
+          background: DARK,
           padding: "clamp(60px,7vw,100px) 0",
         }}
       >
@@ -549,7 +525,7 @@ export default function HairRegrowthPage() {
       ─────────────────────────────────────────────────────── */}
       <section
         style={{
-          background: WHITE,
+          background: DARK,
           padding: "clamp(60px,7vw,100px) 0",
         }}
       >
@@ -557,18 +533,21 @@ export default function HairRegrowthPage() {
           <GoldLine />
           <SectionKicker>eligibility criteria</SectionKicker>
           <SectionHeading>{t.suitability!.title}</SectionHeading>
-          <p
-            className="text-center mx-auto"
-            style={{
-              fontSize: "14px",
-              color: TAUPE,
-              lineHeight: 1.9,
-              marginTop: "28px",
-              maxWidth: "820px",
-            }}
-          >
-            {t.suitability!.intro}
-          </p>
+          {/* Bullet questions */}
+          <ul className="mx-auto" style={{ maxWidth: "820px", marginTop: "28px", listStyle: "none", padding: 0 }}>
+            {eligBullets.map(q => (
+              <li key={q} className="flex items-start gap-3" style={{ marginBottom: "14px" }}>
+                <span style={{ color: GOLD, flexShrink: 0, marginTop: "3px" }}>›</span>
+                <span style={{ fontSize: "14px", color: TAUPE, lineHeight: 1.8 }}>{q}</span>
+              </li>
+            ))}
+          </ul>
+          {/* Intro paragraphs */}
+          {eligParas && (
+            <p className="mx-auto" style={{ fontSize: "14px", color: TAUPE, lineHeight: 1.9, maxWidth: "820px", marginTop: "20px" }}>
+              {eligParas}
+            </p>
+          )}
 
           <div
             className="grid gap-6 md:grid-cols-2 mx-auto"
@@ -655,6 +634,21 @@ export default function HairRegrowthPage() {
             </div>
           </div>
 
+          {eligClosing && (
+            <p
+              className="text-center mx-auto"
+              style={{
+                fontSize: "13.5px",
+                color: TAUPE,
+                lineHeight: 1.9,
+                maxWidth: "820px",
+                marginTop: "32px",
+                fontStyle: "italic",
+              }}
+            >
+              {eligClosing}
+            </p>
+          )}
           <div className="text-center" style={{ marginTop: "40px" }}>
             <GoldBtn>CHECK YOUR ELIGIBILITY</GoldBtn>
           </div>
@@ -666,7 +660,7 @@ export default function HairRegrowthPage() {
       ─────────────────────────────────────────────────────── */}
       <section
         style={{
-          background: WHITE,
+          background: DARK,
           padding: "clamp(60px,7vw,100px) 0",
         }}
       >
@@ -689,7 +683,7 @@ export default function HairRegrowthPage() {
 
           {t.precision!.areas && (
             <div
-              className="grid gap-5 md:grid-cols-2"
+              className="grid gap-5 md:grid-cols-2 lg:grid-cols-4"
               style={{ marginTop: "52px" }}
             >
               {t.precision!.areas.map((area) => (
@@ -698,21 +692,12 @@ export default function HairRegrowthPage() {
                   style={{
                     border: `1px solid rgba(201,169,106,0.28)`,
                     borderRadius: "8px",
-                    padding: "clamp(22px,2.5vw,32px)",
+                    overflow: "hidden",
                     display: "flex",
-                    gap: "18px",
-                    alignItems: "flex-start",
+                    flexDirection: "column",
                   }}
                 >
-                  <div
-                    style={{
-                      flexShrink: 0,
-                      width: "56px",
-                      height: "56px",
-                      borderRadius: "8px",
-                      overflow: "hidden",
-                    }}
-                  >
+                  <div style={{ width: "100%", aspectRatio: "4/3", overflow: "hidden" }}>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       src={area.icon}
@@ -720,7 +705,7 @@ export default function HairRegrowthPage() {
                       style={{ width: "100%", height: "100%", objectFit: "cover" }}
                     />
                   </div>
-                  <div style={{ flex: 1 }}>
+                  <div style={{ padding: "clamp(18px,2vw,24px)", flex: 1, display: "flex", flexDirection: "column" }}>
                     <p
                       className="font-display"
                       style={{
@@ -736,7 +721,7 @@ export default function HairRegrowthPage() {
                     <h3
                       className="font-serif"
                       style={{
-                        fontSize: "15px",
+                        fontSize: "14px",
                         color: GOLD,
                         letterSpacing: "0.04em",
                         lineHeight: 1.35,
@@ -748,7 +733,7 @@ export default function HairRegrowthPage() {
                     </h3>
                     <p
                       style={{
-                        fontSize: "13px",
+                        fontSize: "12px",
                         color: TAUPE,
                         lineHeight: 1.75,
                       }}
@@ -768,7 +753,7 @@ export default function HairRegrowthPage() {
       ─────────────────────────────────────────────────────── */}
       <section
         style={{
-          background: WHITE,
+          background: DARK,
           padding: "clamp(60px,7vw,100px) 0",
         }}
       >
@@ -863,7 +848,7 @@ export default function HairRegrowthPage() {
       ─────────────────────────────────────────────────────── */}
       <section
         style={{
-          background: WHITE,
+          background: DARK,
           padding: "clamp(60px,7vw,100px) 0",
         }}
       >
@@ -872,122 +857,130 @@ export default function HairRegrowthPage() {
           <SectionKicker>Our guarantee</SectionKicker>
           <SectionHeading>{t.guarantee!.title}</SectionHeading>
 
-          {/* Gold badge card */}
+          {/* 2-column: gold badge LEFT, guarantee text RIGHT */}
           <div
-            className="mx-auto text-center"
-            style={{
-              marginTop: "36px",
-              maxWidth: "340px",
-              background: `linear-gradient(145deg, #e2c97a 0%, ${GOLD} 50%, ${GOLD_MID} 100%)`,
-              borderRadius: "16px",
-              padding: "clamp(24px,3vw,36px) clamp(20px,3vw,32px)",
-            }}
+            className="grid items-start gap-12 lg:grid-cols-[300px_1fr] mx-auto"
+            style={{ maxWidth: "960px", marginTop: "48px" }}
           >
-            <p
-              className="font-display"
+            {/* Gold badge card */}
+            <div
+              className="text-center"
               style={{
-                fontSize: "12px",
-                color: "rgba(26,20,10,0.7)",
-                letterSpacing: "0.15em",
-                textTransform: "uppercase",
-                marginBottom: "10px",
+                background: `linear-gradient(145deg, #e2c97a 0%, ${GOLD} 50%, ${GOLD_MID} 100%)`,
+                borderRadius: "16px",
+                padding: "clamp(24px,3vw,36px) clamp(20px,3vw,32px)",
               }}
             >
-              THE ONLY HAIR LOSS<br />TREATMENT CLINIC IN<br />MALTA TO OFFER
-            </p>
-            <p
-              className="font-display"
-              style={{
-                fontSize: "17px",
-                color: INK,
-                letterSpacing: "0.08em",
-                textTransform: "uppercase",
-                fontWeight: 700,
-                lineHeight: 1.3,
-              }}
-            >
-              A 100% PERFORMANCE<br />GUARANTEE*
-            </p>
-          </div>
+              <p
+                className="font-display"
+                style={{
+                  fontSize: "12px",
+                  color: "rgba(26,20,10,0.7)",
+                  letterSpacing: "0.15em",
+                  textTransform: "uppercase",
+                  marginBottom: "10px",
+                }}
+              >
+                THE ONLY HAIR LOSS<br />TREATMENT CLINIC IN<br />MALTA TO OFFER
+              </p>
+              <p
+                className="font-display"
+                style={{
+                  fontSize: "17px",
+                  color: INK,
+                  letterSpacing: "0.08em",
+                  textTransform: "uppercase",
+                  fontWeight: 700,
+                  lineHeight: 1.3,
+                }}
+              >
+                A 100% PERFORMANCE<br />GUARANTEE*
+              </p>
+            </div>
 
-          {/* Guarantee body text */}
-          <div
-            className="mx-auto"
-            style={{ maxWidth: "820px", marginTop: "44px" }}
-          >
-            {gParas.slice(0, 3).map((p, i) => (
-              <p
-                key={p}
-                style={{
-                  fontSize: i === 0 ? "15px" : "13.5px",
-                  color: i === 0 ? GOLD : TAUPE,
-                  lineHeight: 1.9,
-                  marginTop: i === 0 ? 0 : "20px",
-                  textAlign: i === 0 ? "center" : "left",
-                  fontFamily: i === 0 ? "var(--font-serif, serif)" : undefined,
-                  letterSpacing: i === 0 ? "0.02em" : undefined,
-                }}
-              >
-                {p}
-              </p>
-            ))}
-            <p
-              style={{
-                fontSize: "12px",
-                color: GOLD,
-                letterSpacing: "0.12em",
-                textTransform: "uppercase",
-                fontFamily: "var(--font-display)",
-                marginTop: "28px",
-                marginBottom: "12px",
-              }}
-            >
-              {gParas[3]}
-            </p>
-            <ul className="space-y-3">
-              {gParas.slice(4, 8).map((p) => (
-                <li key={p} className="flex items-start gap-3">
-                  <GoldCheck />
-                  <span
-                    style={{
-                      fontSize: "13px",
-                      color: TAUPE,
-                      lineHeight: 1.7,
-                    }}
-                  >
-                    {p}
-                  </span>
-                </li>
+            {/* Guarantee body text */}
+            <div>
+              {gParas.slice(0, 3).map((p, i) => (
+                <p
+                  key={p}
+                  style={{
+                    fontSize: i === 0 ? "15px" : "13.5px",
+                    color: i === 0 ? GOLD : TAUPE,
+                    lineHeight: 1.9,
+                    marginTop: i === 0 ? 0 : "20px",
+                    fontFamily: i === 0 ? "var(--font-serif, serif)" : undefined,
+                    letterSpacing: i === 0 ? "0.02em" : undefined,
+                  }}
+                >
+                  {p}
+                </p>
               ))}
-            </ul>
-            {gParas[8] && (
               <p
                 style={{
-                  fontSize: "13px",
-                  color: TAUPE,
-                  lineHeight: 1.8,
-                  marginTop: "20px",
-                  fontStyle: "italic",
+                  fontSize: "12px",
+                  color: GOLD,
+                  letterSpacing: "0.12em",
+                  textTransform: "uppercase",
+                  fontFamily: "var(--font-display)",
+                  marginTop: "28px",
+                  marginBottom: "12px",
                 }}
               >
-                {gParas[8]}
+                {gParas[3]}
               </p>
-            )}
+              <ul className="space-y-3">
+                {gParas.slice(4, 8).map((p) => (
+                  <li key={p} className="flex items-start gap-3">
+                    <GoldCheck />
+                    <span style={{ fontSize: "13px", color: TAUPE, lineHeight: 1.7 }}>
+                      {p}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+              {gParas[8] && (
+                <p
+                  style={{
+                    fontSize: "13px",
+                    color: TAUPE,
+                    lineHeight: 1.8,
+                    marginTop: "20px",
+                    fontStyle: "italic",
+                  }}
+                >
+                  {gParas[8]}
+                </p>
+              )}
+            </div>
           </div>
 
           {/* CTA inside a bordered box */}
           <div
             className="mx-auto"
             style={{
-              maxWidth: "640px",
-              marginTop: "40px",
+              maxWidth: "820px",
+              marginTop: "44px",
               border: `1px solid rgba(201,169,106,0.45)`,
               borderRadius: "4px",
               padding: "clamp(20px,3vw,30px)",
               textAlign: "center",
             }}
           >
-            <GoldBtn fullWidth>{t.guarantee!.cta}</GoldBtn>
+            <p
+              className="font-display mx-auto"
+              style={{
+                fontSize: "11px",
+                color: GOLD,
+                letterSpacing: "0.14em",
+                textTransform: "uppercase",
+                maxWidth: "640px",
+                lineHeight: 1.8,
+                marginBottom: "20px",
+              }}
+            >
+              Our guaranteed hair loss treatment programs are limited to 12 patients per month at our Malta clinic to ensure individual follow-up and measurable outcomes. Please inquire for the next available start date.
+            </p>
+            <GoldBtn>{t.guarantee!.cta}</GoldBtn>
           </div>
         </div>
       </section>
@@ -997,7 +990,7 @@ export default function HairRegrowthPage() {
       ─────────────────────────────────────────────────────── */}
       <section
         style={{
-          background: WHITE,
+          background: DARK,
           padding: "clamp(60px,7vw,100px) 0",
         }}
       >
@@ -1112,7 +1105,7 @@ export default function HairRegrowthPage() {
       ─────────────────────────────────────────────────────── */}
       <section
         style={{
-          background: WHITE,
+          background: DARK,
           padding: "clamp(60px,7vw,100px) 0",
         }}
       >
@@ -1262,7 +1255,7 @@ export default function HairRegrowthPage() {
       ─────────────────────────────────────────────────────── */}
       <section
         style={{
-          background: WHITE,
+          background: DARK,
           padding: "clamp(60px,7vw,100px) 0",
         }}
       >
@@ -1311,7 +1304,7 @@ export default function HairRegrowthPage() {
       ─────────────────────────────────────────────────────── */}
       <section
         style={{
-          background: WHITE,
+          background: DARK,
           padding: "clamp(60px,7vw,100px) 0",
         }}
       >
@@ -1369,7 +1362,7 @@ export default function HairRegrowthPage() {
       ─────────────────────────────────────────────────────── */}
       <section
         style={{
-          background: WHITE,
+          background: DARK,
           padding: "clamp(60px,7vw,100px) 0",
         }}
       >
