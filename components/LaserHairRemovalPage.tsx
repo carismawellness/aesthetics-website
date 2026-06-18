@@ -129,7 +129,7 @@ export default function LaserHairRemovalPage() {
   return (
     <>
       {/* ============ HERO ============ */}
-      <section style={{ background: "url('/assets/hero-bg.png') center / cover no-repeat", padding: "40px 0 60px" }}>
+      <section style={{ backgroundImage: "url('/assets/hero-bg.png')", backgroundSize: "cover", backgroundPosition: "bottom center", padding: "44px 0 64px", borderRadius: "26px", overflow: "hidden", margin: "0 16px" }}>
         <div className="container">
           <div className="grid gap-12 lg:grid-cols-2 items-start">
             {/* LEFT */}
