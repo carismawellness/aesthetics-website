@@ -245,6 +245,182 @@ function parsePackage(name: string, desc: string) {
   return { lead, hasGuarantee, bullets };
 }
 
+const TESTIMONIALS = [
+  {
+    before: `${A}/mesotherapy-malta-ba-hair-before.png`,
+    after: `${A}/mesotherapy-malta-ba-hair-after.png`,
+    name: "THOMAS B.",
+    text: "It sounds dramatic, but this treatment gave me my confidence and happiness back. I'd been losing hair for years and tried everything. After 90 days on the full protocol I genuinely couldn't believe the difference in the mirror.",
+  },
+  {
+    before: `${A}/mesotherapy-malta-ba-hair-before.png`,
+    after: `${A}/mesotherapy-malta-ba-hair-after.png`,
+    name: "NADINE A.",
+    text: "I used to check my pillow every morning, terrified of how much hair I'd lost overnight. Now, after three months, the shedding has almost completely stopped and I can see real regrowth at the hairline.",
+  },
+  {
+    before: `${A}/mesotherapy-malta-ba-hair-before.png`,
+    after: `${A}/mesotherapy-malta-ba-hair-after.png`,
+    name: "SARA C.",
+    text: "After the second month, I noticed tiny new hairs around my temples — that moment made me emotional. The density scan confirmed a 24% improvement. I never thought something non-surgical could actually work this well.",
+  },
+  {
+    before: `${A}/mesotherapy-malta-ba-hair-before.png`,
+    after: `${A}/mesotherapy-malta-ba-hair-after.png`,
+    name: "RACHELLE A.",
+    text: "I've tried every shampoo and supplement out there, but nothing worked. This was the first time a clinic actually measured my results with numbers. Seeing the before and after scans side by side was all the proof I needed.",
+  },
+];
+
+const PREVIEW_LEN = 120;
+
+function ReviewCard({ before, after, name, text }: (typeof TESTIMONIALS)[0]) {
+  const [expanded, setExpanded] = useState(false);
+  const truncated = text.length > PREVIEW_LEN && !expanded;
+  return (
+    <div
+      style={{
+        background: "#ffffff",
+        borderRadius: "14px",
+        overflow: "hidden",
+        display: "flex",
+        flexDirection: "column",
+        minWidth: 0,
+      }}
+    >
+      {/* Before / after image side by side */}
+      <div style={{ display: "flex", height: "160px" }}>
+        <div style={{ flex: 1, overflow: "hidden" }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={before} alt="before" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top" }} />
+        </div>
+        <div style={{ flex: 1, overflow: "hidden" }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={after} alt="after" style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "top" }} />
+        </div>
+      </div>
+      {/* Card body */}
+      <div style={{ padding: "18px 20px 22px", flex: 1, display: "flex", flexDirection: "column" }}>
+        <p className="font-display text-center" style={{ fontSize: "13px", color: "#1a1712", letterSpacing: "0.1em", fontWeight: 700, marginBottom: "8px" }}>
+          {name}
+        </p>
+        <div className="flex justify-center gap-1" style={{ marginBottom: "12px" }}>
+          {[0,1,2,3,4].map((i) => (
+            <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" aria-hidden>
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+            </svg>
+          ))}
+        </div>
+        <p className="text-center" style={{ fontSize: "13px", color: "#4a4540", lineHeight: 1.65, flex: 1 }}>
+          {truncated ? text.slice(0, PREVIEW_LEN) + "…" : text}
+        </p>
+        {text.length > PREVIEW_LEN && (
+          <button
+            type="button"
+            onClick={() => setExpanded(!expanded)}
+            className="text-center"
+            style={{ marginTop: "10px", background: "none", border: "none", cursor: "pointer", fontSize: "13px", color: GOLD, textDecoration: "underline", textUnderlineOffset: "2px" }}
+          >
+            {expanded ? "Show less" : "Read more"}
+          </button>
+        )}
+      </div>
+    </div>
+  );
+}
+
+function TestimonialsCarousel() {
+  const [idx, setIdx] = useState(0);
+  const [visible, setVisible] = useState(4);
+
+  useEffect(() => {
+    const update = () => setVisible(window.innerWidth < 640 ? 1 : window.innerWidth < 1024 ? 2 : 4);
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+
+  const max = TESTIMONIALS.length - visible;
+  const go = (d: number) => setIdx((i) => Math.max(0, Math.min(i + d, max)));
+
+  return (
+    <section style={{ background: "transparent", padding: "clamp(60px,7vw,100px) 0" }}>
+      <div className="container">
+        <div className="relative" style={{ maxWidth: "1100px", margin: "0 auto" }}>
+          {/* Cards */}
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: `repeat(${visible}, minmax(0, 1fr))`,
+              gap: "20px",
+            }}
+          >
+            {TESTIMONIALS.slice(idx, idx + visible).map((r) => (
+              <ReviewCard key={r.name} {...r} />
+            ))}
+          </div>
+
+          {/* Prev arrow */}
+          {idx > 0 && (
+            <button
+              type="button"
+              aria-label="Previous"
+              onClick={() => go(-1)}
+              style={{
+                position: "absolute",
+                top: "50%",
+                left: "-22px",
+                transform: "translateY(-50%)",
+                width: "42px",
+                height: "42px",
+                borderRadius: "50%",
+                background: "rgba(255,255,255,0.12)",
+                border: "1px solid rgba(255,255,255,0.2)",
+                color: "#fff",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                cursor: "pointer",
+                zIndex: 2,
+              }}
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M15 6l-6 6 6 6" /></svg>
+            </button>
+          )}
+
+          {/* Next arrow */}
+          {idx < max && (
+            <button
+              type="button"
+              aria-label="Next"
+              onClick={() => go(1)}
+              style={{
+                position: "absolute",
+                top: "50%",
+                right: "-22px",
+                transform: "translateY(-50%)",
+                width: "42px",
+                height: "42px",
+                borderRadius: "50%",
+                background: "rgba(255,255,255,0.12)",
+                border: "1px solid rgba(255,255,255,0.2)",
+                color: "#fff",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                cursor: "pointer",
+                zIndex: 2,
+              }}
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 6l6 6-6 6" /></svg>
+            </button>
+          )}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function HairRegrowthPage() {
   // Apply texture background to entire page including header/footer
   useEffect(() => {
@@ -522,6 +698,11 @@ export default function HairRegrowthPage() {
           </div>
         </div>
       </section>
+
+      {/* ───────────────────────────────────────────────────────
+          TESTIMONIALS CAROUSEL
+      ─────────────────────────────────────────────────────── */}
+      <TestimonialsCarousel />
 
       {/* ───────────────────────────────────────────────────────
           ELIGIBILITY — 2-column cards on white
