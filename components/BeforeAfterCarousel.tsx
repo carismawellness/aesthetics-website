@@ -46,7 +46,7 @@ export default function BeforeAfterCarousel({ pairs, title }: { pairs: Pair[]; t
         <Reveal>
           <div className="grid grid-cols-2 gap-4">
             {([["BEFORE", ba.before], ["AFTER", ba.after]] as const).map(([lbl, src]) => (
-              <div key={lbl} className="relative overflow-hidden rounded-xl" style={{ border: "1px solid var(--line)" }}>
+              <div key={lbl} className="relative overflow-hidden rounded-xl" style={{ border: "none", background: "transparent" }}>
                 {src ? (
                   // eslint-disable-next-line @next/next/no-img-element
                   <img src={src} alt={`${title ?? ""} ${lbl}`} className="w-full" style={{ display: "block", height: "auto" }} />
