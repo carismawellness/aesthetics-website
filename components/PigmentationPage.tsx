@@ -186,7 +186,7 @@ function DoYouHave() {
         <div className="grid gap-12 lg:grid-cols-2 items-center">
           <div>
             <p className="font-serif" style={{ fontSize: "clamp(20px,2.6vw,26px)", color: TEAL, letterSpacing: "0.06em", textTransform: "uppercase", fontWeight: 400, lineHeight: 1.25 }}>
-              so your skin looks like yours again — confidently.
+              so your skin looks like yours again -confidently.
             </p>
             <h2 className="font-serif" style={{ fontSize: "18px", color: TEAL, letterSpacing: "0.02em", fontWeight: 400, lineHeight: 1.3, marginTop: "12px" }}>
               Do you have pigmentation you no longer want to carry?
@@ -195,19 +195,19 @@ function DoYouHave() {
               Whether it comes from sun exposure, post-acne marks, melasma, or uneven skin tone, unwanted pigmentation can feel frustrating. You&rsquo;re not alone &mdash; and safe, gradual improvement is possible with the right technology and care.
             </p>
             <p style={{ fontSize: "14.5px", color: "var(--label)", lineHeight: 1.8, marginTop: "14px" }}>
-              With our advanced Pico Laser Pigmentation treatment, ultra-short laser pulses target excess pigment beneath the skin, helping break it into tiny particles so your body can gradually clear them over time.
+              With our advanced Pico Laser Pigmentation treatment, ultra-short laser pulses target excess pigment beneath the skin, helping break it into tiny particles so your body can naturally clear it over time.
             </p>
             <p style={{ fontSize: "14.5px", color: "var(--label)", lineHeight: 1.8, marginTop: "14px" }}>
-              Every pigmentation concern is different. Your treatment plan is personalised based on your skin tone, pigmentation type, depth, treatment area, and goals to support safer results and a brighter-looking complexion.
+              Every skin concern is different. Your treatment plan is personalised based on your pigmentation type, depth, skin tone, and skin goals to support safer treatment and more even-looking results.
             </p>
             <p style={{ fontSize: "14.5px", color: "var(--label)", lineHeight: 1.8, marginTop: "14px" }}>
-              Your skin deserves to feel like yours again. Let&rsquo;s help you get there with confidence.
+              Your skin can feel clearer, brighter, and more balanced again. Let&rsquo;s help you begin with confidence.
             </p>
-            <div style={{ marginTop: "28px" }}><Cta label="Claim My Pigmentation Consultation" /></div>
+            <div style={{ marginTop: "28px" }}><Cta label="Reserve Your Clearer-Skin Session" /></div>
           </div>
           <div>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={`${A}/pig-rev4.png`} alt="Arm pigmentation fading over multiple Pico laser sessions" className="rounded-xl"
+            <img src={`${A}/pig-redefined.png`} alt="Face pigmentation reducing over multiple Pico laser sessions — 1x to 4x progress" className="rounded-xl"
               style={{ width: "100%", objectFit: "cover", boxShadow: "0 16px 40px rgba(0,0,0,0.12)" }} />
           </div>
         </div>
