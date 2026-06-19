@@ -8,6 +8,7 @@ const t: Treatment = {
     subtitle: "Considering Ozempic or Mounjaro for weight loss?",
     body: "At Carisma Aesthetics, GLP-1 medications are never prescribed in isolation. Our doctor-led programme combines a full medical assessment, structured prescription support, nutrition guidance, and weekly monitoring to help you lose weight safely and sustain your results.",
     cta: "book your medical consultation",
+    heroBgColor: "url('/assets/treatments/medical-weight-loss-bg.png') center/cover no-repeat",
   },
   suitability: {
     title: "Ozempic & Mounjaro eligibility criteria",
