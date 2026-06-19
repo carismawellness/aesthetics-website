@@ -23,9 +23,6 @@ export default function Hero() {
   return (
     <section
       style={{
-        backgroundImage: `url(/assets/hero-bg.png)`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
         padding: "40px 0",
       }}
     >
