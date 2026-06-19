@@ -25,6 +25,8 @@ export type Treatment = {
     image?: string;
     imageRatio?: string;
     bgImage?: string;
+    /** CSS background value for hero card shown without any white overlay (e.g. a light-colored image) */
+    heroBgColor?: string;
     /** brand tabs under the hero image; entries starting with "/" render as logo images */
     productTabs?: string[];
     /** brand logo row rendered between the hero image and the treatment-info card */

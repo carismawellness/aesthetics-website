@@ -60,6 +60,8 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
 
           <div style={t.hero.bgImage
             ? { borderRadius: "26px", backgroundImage: `linear-gradient(rgba(255,255,255,0.62), rgba(255,255,255,0.72)), url('${t.hero.bgImage}')`, backgroundSize: "cover", backgroundPosition: "center", padding: "clamp(24px,3.5vw,48px)" }
+            : t.hero.heroBgColor
+            ? { borderRadius: "26px", background: t.hero.heroBgColor, backgroundSize: "cover", backgroundPosition: "center", padding: "clamp(24px,3.5vw,48px)" }
             : { padding: "clamp(28px,3.6vw,52px)" }}>
           <div className={hasImage ? "grid gap-8 lg:grid-cols-[1.15fr_0.85fr] items-start" : ""}>
             {/* Left: content */}

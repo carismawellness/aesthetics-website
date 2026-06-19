@@ -12,6 +12,8 @@ const t: Treatment = {
       { label: "Today", price: "€99 Only" },
     ],
     cta: "Book Now & Save 50%",
+    image: "/assets/treatments/pico-laser-tattoo-removal-hero.png",
+    heroBgColor: "url('/assets/treatments/pico-laser-tattoo-removal-bg.png') center/cover no-repeat",
   },
   precision: {
     title: "PRECISE INK TARGETING",
