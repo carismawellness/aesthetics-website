@@ -63,24 +63,24 @@ function Hero() {
               <h1 className="font-serif" style={{ fontSize: "clamp(20px,2vw,28px)", color: TEAL, letterSpacing: "0.04em", textTransform: "uppercase", fontWeight: 400, lineHeight: 1.12, margin: 0 }}>
                 pico laser pigmentation treatment
               </h1>
-              <p style={{ color: "var(--ink-soft)", fontSize: "14px", fontWeight: 600, lineHeight: 1.7, marginTop: "16px", maxWidth: "440px" }}>
+              <p style={{ color: "var(--gold-deep)", fontSize: "14px", fontWeight: 600, lineHeight: 1.7, marginTop: "16px", maxWidth: "440px" }}>
                 Advanced Pico laser technology to visibly reduce unwanted pigmentation and restore a clearer, brighter, more even-looking complexion.
               </p>
-              <p className="font-display" style={{ color: "var(--ink-soft)", fontSize: "14px", fontWeight: 600, letterSpacing: "0.02em", marginTop: "22px", marginBottom: "10px" }}>
+              <p className="font-display" style={{ color: "var(--gold-deep)", fontSize: "14px", fontWeight: 600, letterSpacing: "0.02em", marginTop: "22px", marginBottom: "10px" }}>
                 What&apos;s Included:
               </p>
               <ul className="space-y-2">
                 {INCLUDED.map((item) => (
                   <li key={item} className="flex items-start gap-3">
                     <Dot />
-                    <span style={{ color: "var(--label)", fontSize: "13.5px", lineHeight: 1.55 }}>{item}</span>
+                    <span style={{ color: "var(--gold-deep)", fontSize: "13.5px", lineHeight: 1.55 }}>{item}</span>
                   </li>
                 ))}
               </ul>
-              <p className="font-display" style={{ color: "var(--ink-soft)", fontSize: "15px", fontWeight: 600, letterSpacing: "0.02em", marginTop: "22px" }}>
+              <p className="font-display" style={{ color: "var(--gold-deep)", fontSize: "15px", fontWeight: 600, letterSpacing: "0.02em", marginTop: "22px" }}>
                 Total Value: €285 – Today: €79 Only
               </p>
-              <p style={{ color: "var(--muted)", fontSize: "11px", lineHeight: 1.6, marginTop: "12px", maxWidth: "440px" }}>
+              <p style={{ color: "var(--gold-deep)", fontSize: "11px", lineHeight: 1.6, marginTop: "12px", maxWidth: "440px", opacity: 0.75 }}>
                 Due to high demand, packages are offered based on availability and may not always be guaranteed. Please inquire for current options.
               </p>
               <Link href="/consultation" className="font-display flex items-center justify-center"

@@ -58,7 +58,7 @@ export default function Hero() {
 
               <p
                 style={{
-                  color: "var(--ink-soft)",
+                  color: "var(--gold-deep)",
                   fontSize: "14px",
                   fontWeight: 600,
                   lineHeight: 1.7,
@@ -73,7 +73,7 @@ export default function Hero() {
               <p
                 className="font-display"
                 style={{
-                  color: "var(--ink-soft)",
+                  color: "var(--gold-deep)",
                   fontSize: "14px",
                   fontWeight: 600,
                   letterSpacing: "0.02em",
@@ -90,7 +90,7 @@ export default function Hero() {
                     <Dot />
                     <span
                       style={{
-                        color: "var(--label)",
+                        color: "var(--gold-deep)",
                         fontSize: "13.5px",
                         lineHeight: 1.55,
                       }}
@@ -104,7 +104,7 @@ export default function Hero() {
               <p
                 className="font-display"
                 style={{
-                  color: "var(--ink-soft)",
+                  color: "var(--gold-deep)",
                   fontSize: "15px",
                   fontWeight: 600,
                   letterSpacing: "0.02em",
@@ -116,11 +116,12 @@ export default function Hero() {
 
               <p
                 style={{
-                  color: "var(--muted)",
+                  color: "var(--gold-deep)",
                   fontSize: "11px",
                   lineHeight: 1.6,
                   marginTop: "12px",
                   maxWidth: "440px",
+                  opacity: 0.75,
                 }}
               >
                 Due to high demand, packages are offered based on availability and
