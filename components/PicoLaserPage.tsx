@@ -13,22 +13,20 @@ import Faq from "@/components/pico/Faq";
 import WhyCarisma from "@/components/pico/WhyCarisma";
 export default function PicoLaserPage() {
   return (
-    <>
+    <div style={{ backgroundImage: "url('/assets/hero-bg.png')", backgroundSize: "cover", backgroundAttachment: "fixed", backgroundPosition: "top center" }}>
       <Hero />
-      <div style={{ background: "#f6efe3" }}>
-        <Reviews />
-        <DoYouHave />
-        <TrustedFeatures />
-        <Because />
-        <Commitment />
-        <Secure />
-        <FadeInk />
-        <Redefined />
-        <Pricing />
-        <WhatToExpect />
-        <Faq />
-        <WhyCarisma />
-      </div>
-    </>
+      <Reviews />
+      <DoYouHave />
+      <TrustedFeatures />
+      <Because />
+      <Commitment />
+      <Secure />
+      <FadeInk />
+      <Redefined />
+      <Pricing />
+      <WhatToExpect />
+      <Faq />
+      <WhyCarisma />
+    </div>
   );
 }
