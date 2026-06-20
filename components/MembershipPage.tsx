@@ -61,44 +61,21 @@ const STEPS = [
     sub: "Select your monthly contribution amount",
     desc: "Choose an amount you would like to deposit each month into your Glow balance.",
     eg: "If you choose to subscribe at €40, you will automatically be investing this amount each month.",
-    icon: (
-      <>
-        {/* coin */}
-        <circle cx="12" cy="7" r="3.5" />
-        <path d="M12 5.2v3.5M11 7c0-.5.4-.9 1-.9s1 .4 1 .9-.5.8-1 .8-1 .4-1 .9.5.9 1 .9 1-.4 1-.9" />
-        {/* cupped hands */}
-        <path d="M6 16c0-1.8 2.5-3 6-3s6 1.2 6 3" />
-        <path d="M4 18h16" />
-        <path d="M5 20h14" />
-      </>
-    ),
+    icon: "mem-icon-contribute.png",
   },
   {
     n: "2", word: "save",
     sub: "Grow your balance",
     desc: "Let your balance grow with your monthly contributions as you save up to spend on any of our services and products.",
     eg: "Your Glow balance will grow over time, accumulating €240 in 6 months if you deposit €40 each month.",
-    icon: (
-      <>
-        <path d="M19.5 11.2c0-3.1-3.1-5.2-7-5.2-1.2 0-2.3.2-3.3.6L6.8 5.3 6.4 8C5.2 9 4.5 10 4.5 11.2c0 1.5.9 2.8 2.3 3.7V17a1 1 0 0 0 1 1h1.1a1 1 0 0 0 1-1v-.2c.5.1 1 .2 1.6.2s1.1-.1 1.6-.2V17a1 1 0 0 0 1 1h1.1a1 1 0 0 0 1-1v-2.1c1.4-.9 2.2-2.2 2.2-3.7z" />
-        <path d="M9 9.5h3" />
-        <circle cx="16.5" cy="11" r="0.5" fill="currentColor" />
-      </>
-    ),
+    icon: "mem-icon-save.png",
   },
   {
     n: "3", word: "spend",
     sub: "enjoy exclusive member discounts",
     desc: "Enjoy your member exclusive 10% discount on all services and 15% on all products as you spend your Glow credit.",
     eg: "Purchase your mid-yearly botox session at a 10% discount without having to pay the full amount at once.",
-    icon: (
-      <>
-        <path d="M5 20c0-4 2.5-7 7-7s7 3 7 7" />
-        <circle cx="12" cy="8" r="4.5" />
-        <path d="M10 8h4M12 6.5c1.6 0 1.6 1.5 3.2 1.5" />
-        <path d="m16.5 3.5 4 4M18 2l4 4-2 2-4-4z" />
-      </>
-    ),
+    icon: "mem-icon-spend.png",
   },
 ];
 
@@ -266,14 +243,14 @@ export default function MembershipPage() {
               <div key={s.n}>
                 {/* icon row above band */}
                 <div style={{ position: "relative", height: "72px" }}>
-                  <svg
-                    width="76" height="72" viewBox="0 0 24 24"
-                    fill="none" stroke={SAGE} strokeWidth="1.1"
-                    strokeLinecap="round" strokeLinejoin="round"
-                    style={{ position: "absolute", right: "8%", bottom: 0 }}
-                  >
-                    {s.icon}
-                  </svg>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={`${A}/${s.icon}`}
+                    alt={s.word}
+                    width={76}
+                    height={72}
+                    style={{ position: "absolute", right: "8%", bottom: 0, objectFit: "contain" }}
+                  />
                 </div>
                 {/* number + step word band */}
                 <div className="flex items-center" style={{ position: "relative", background: "#e3ecec", height: "62px" }}>
