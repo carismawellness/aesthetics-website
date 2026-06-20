@@ -452,30 +452,32 @@ const BRIGHTER_BULLETS = [
 function Brighter() {
   return (
     <section style={{ padding: "70px 24px", background: "#ffffff" }}>
-      <div className="grid items-center" style={{ maxWidth: "1000px", margin: "0 auto", gridTemplateColumns: "minmax(0, 421px) 1fr", gap: "48px" }}>
+      <div className="pig-brighter-grid grid items-center" style={{ maxWidth: "1060px", margin: "0 auto", gap: "56px" }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={`${A}/pig-redefined.png`} alt="Pigmentation progress after 1 to 4 sessions of Pico laser" width={421} height={408}
-          style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "14px", boxShadow: "0 16px 40px rgba(0,0,0,0.12)" }} />
+        <img src={`${A}/pig-brighter.png`} alt="Woman with facial pigmentation — Pico laser before and after result"
+          style={{ width: "100%", aspectRatio: "9 / 10", objectFit: "cover", borderRadius: "14px", boxShadow: "0 16px 40px rgba(0,0,0,0.12)", display: "block" }} />
         <div>
           <h2 className="font-serif" style={{ fontSize: "clamp(22px,3vw,30px)", color: TEAL, letterSpacing: "0.06em", fontWeight: 400, lineHeight: 1.3, textTransform: "uppercase" }}>
             Your Skin — Brighter, Clearer.
           </h2>
-          <p style={{ color: "var(--teal)", fontSize: "14px", lineHeight: 1.7, marginTop: "14px" }}>
+          <p style={{ color: TEAL, fontSize: "14px", lineHeight: 1.7, marginTop: "14px" }}>
             See how advanced Pico Laser treatment helps reduce visible pigmentation with precision, care, and a personalised plan designed around your skin.
           </p>
-          <ul className="space-y-5" style={{ marginTop: "26px", listStyle: "none" }}>
+          <ul style={{ marginTop: "26px", listStyle: "disc", paddingLeft: "20px" }}>
             {BRIGHTER_BULLETS.map((b) => (
-              <li key={b.label} className="flex" style={{ gap: "10px" }}>
-                <span style={{ color: "var(--teal)", fontSize: "9px", lineHeight: 2, flexShrink: 0 }}>●</span>
-                <span style={{ fontSize: "14px", lineHeight: 1.6, color: "var(--label)" }}>
-                  <span style={{ color: "var(--gold-deep)", fontWeight: 600 }}>{b.label}</span> — {b.desc}
-                </span>
+              <li key={b.label} style={{ fontSize: "14px", lineHeight: 1.6, color: TEAL, marginBottom: "14px" }}>
+                <b style={{ fontWeight: 600 }}>{b.label}</b> — {b.desc}
               </li>
             ))}
           </ul>
           <div style={{ marginTop: "30px" }}><Cta label="Book Your Skin Transformation" /></div>
         </div>
       </div>
+      <style>{`
+        @media (min-width: 1024px) {
+          .pig-brighter-grid { grid-template-columns: 1fr 1fr; }
+        }
+      `}</style>
     </section>
   );
 }
