@@ -510,7 +510,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                 </div>
               </div>
             ) : (
-              <div className="grid gap-6 mx-auto grid-cols-1 md:grid-cols-3" style={{ marginTop: "44px", maxWidth: "1040px" }}>
+              <div style={{ marginTop: "44px", display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 320px))", justifyContent: "center", gap: "24px" }}>
                 {t.patientVideos.videos.map((src, i) => (
                   <Reveal key={src} delay={(i % 3) * 90} style={{ borderRadius: "28px 64px 28px 64px", overflow: "hidden", boxShadow: "0 16px 38px rgba(0,0,0,0.10)" }}>
                     {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
