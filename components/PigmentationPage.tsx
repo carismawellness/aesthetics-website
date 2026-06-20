@@ -402,37 +402,39 @@ const FADE = [
 
 function FadeUnwanted() {
   return (
-    <section style={{ padding: "50px 0" }}>
+    <section style={{ padding: "60px 0", background: "transparent" }}>
       <div className="container">
-        <div className="pig-fade-grid grid items-center gap-12">
+        <div className="pig-fade-grid grid items-center gap-10">
           <div>
-            <h2 className="font-serif" style={{ fontSize: "clamp(22px,3vw,30px)", color: TEAL, letterSpacing: "0.06em", fontWeight: 400, lineHeight: 1.3, textTransform: "uppercase" }}>
+            <h2 className="font-serif" style={{ fontSize: "clamp(26px,3.5vw,38px)", color: TEAL, letterSpacing: "0.06em", fontWeight: 400, lineHeight: 1.2, textTransform: "uppercase" }}>
               Fade Unwanted Pigment. Feel More Like You.
             </h2>
-            <p style={{ color: "var(--label)", fontSize: "14px", lineHeight: 1.7, marginTop: "16px" }}>
+            <p style={{ color: TEAL, fontSize: "14px", lineHeight: 1.7, marginTop: "18px" }}>
               Advanced Pico Laser pigmentation care designed for clearer, brighter-looking skin and personalised results.
             </p>
-            <ul className="space-y-3" style={{ marginTop: "20px" }}>
+            <ul className="space-y-3" style={{ marginTop: "22px", listStyle: "none", padding: 0 }}>
               {FADE.map((item) => (
                 <li key={item} className="flex items-start gap-3">
                   <Dot />
-                  <span style={{ color: "var(--label)", fontSize: "14px", lineHeight: 1.6 }}>{item}</span>
+                  <span style={{ color: TEAL, fontSize: "14px", lineHeight: 1.6 }}>{item}</span>
                 </li>
               ))}
             </ul>
-            <div style={{ marginTop: "28px" }}><Cta label="Treat Your Pigmentation Today" /></div>
+            <div style={{ marginTop: "32px" }}><Cta label="Treat Your Pigmentation Today" /></div>
             <Stars />
           </div>
-          <div>
+          <div className="pig-fade-imgs">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={`${A}/pig-rev2.png`} alt="Hand pigmentation treatment before and after" className="rounded-xl"
-              style={{ width: "100%", aspectRatio: "421 / 408", objectFit: "cover", boxShadow: "0 16px 40px rgba(0,0,0,0.12)" }} />
+            <img src={`${A}/pig-fade.png`} alt="Hand pigmentation before and after Pico laser treatment"
+              style={{ width: "100%", borderRadius: "12px", boxShadow: "0 16px 40px rgba(0,0,0,0.12)", display: "block" }} />
           </div>
         </div>
       </div>
       <style>{`
         @media (min-width: 1024px) {
-          .pig-fade-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+          .pig-fade-grid { grid-template-columns: 1fr 1fr; }
+          .pig-fade-imgs { align-self: stretch; }
+          .pig-fade-imgs img { height: 100%; object-fit: cover; }
         }
       `}</style>
     </section>
