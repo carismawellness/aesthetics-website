@@ -180,7 +180,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                   {/* Google rating */}
                   <div className="flex items-center flex-wrap gap-x-2 gap-y-1" style={{ fontSize: "13px", color: "var(--label)" }}>
                     <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.27-4.74 3.27-8.1z" /><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.26 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84A11 11 0 0 0 12 23z" /><path fill="#FBBC05" d="M5.84 14.1a6.6 6.6 0 0 1 0-4.2V7.06H2.18a11 11 0 0 0 0 9.88l3.66-2.84z" /><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84C6.71 7.3 9.14 5.38 12 5.38z" /></svg>
-                    <span style={{ fontWeight: 600 }}>4.9</span>
+                    <span style={{ fontWeight: 600 }}>4.7</span>
                     <span className="flex" style={{ color: "var(--teal)" }}>
                       {[0, 1, 2, 3, 4].map((i) => (
                         <svg key={i} width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>
@@ -390,7 +390,35 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
         <section style={{ padding: "80px 0" }}>
           <div className="container">
             <h2 className="font-serif text-center" style={{ fontSize: "clamp(24px,3.4vw,38px)", color: "var(--gold)", letterSpacing: "0.06em", marginBottom: "56px" }}>{t.experience.title}</h2>
-            <div className="relative mx-auto" style={{ maxWidth: "760px" }}>
+
+            {/* ── Mobile layout (< 768 px): stacked cards, step badge above each card ── */}
+            <div className="md:hidden" style={{ maxWidth: "480px", margin: "0 auto" }}>
+              {t.experience.steps.map((s, i) => (
+                <Reveal key={s.title || i} delay={i * 80} style={{ marginBottom: i === t.experience!.steps.length - 1 ? 0 : "32px" }}>
+                  {/* step badge */}
+                  <div className="flex items-center gap-3" style={{ marginBottom: "14px" }}>
+                    <span style={{ width: "18px", height: "18px", borderRadius: "50%", background: "var(--teal)", boxShadow: "0 0 0 5px #dde8e8", flexShrink: 0 }} />
+                    <span className="font-serif" style={{ fontSize: "15px", color: "var(--gold)", letterSpacing: "0.14em" }}>
+                      STEP <span style={{ fontSize: "clamp(22px,6vw,34px)", opacity: 0.5, lineHeight: 1 }}>{i + 1}</span>
+                    </span>
+                  </div>
+                  {/* photo card */}
+                  <div style={{ borderRadius: "20px 56px 20px 56px", background: "linear-gradient(180deg,#ffffff 0%, #e7eff0 100%)", padding: "10px", boxShadow: "0 16px 38px rgba(0,0,0,0.07)" }}>
+                    {s.image && (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img src={s.image} alt={s.title} style={{ display: "block", width: "100%", aspectRatio: "9 / 4", objectFit: "cover", borderRadius: "20px 56px 20px 56px" }} />
+                    )}
+                    <div style={{ padding: "16px clamp(14px,2vw,22px) 14px" }}>
+                      {s.title && <h3 className="font-display text-center" style={{ fontSize: "15px", color: "var(--label)", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: s.desc ? "12px" : "0" }}>{s.title}</h3>}
+                      {s.desc && <p style={{ fontSize: "14.5px", color: "var(--label)", lineHeight: 1.7 }}>{s.desc}</p>}
+                    </div>
+                  </div>
+                </Reveal>
+              ))}
+            </div>
+
+            {/* ── Desktop layout (>= 768 px): 3-column dashed timeline ── */}
+            <div className="relative mx-auto hidden md:block" style={{ maxWidth: "760px" }}>
               {/* continuous dashed timeline */}
               <span aria-hidden style={{ position: "absolute", left: "22px", top: "46px", bottom: "46px", borderLeft: "1px dashed #c2d3d3", zIndex: 0 }} />
               {t.experience.steps.map((s, i) => (
@@ -418,6 +446,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                 </Reveal>
               ))}
             </div>
+
           </div>
         </section>
       )}
@@ -686,7 +715,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
         <section style={{ padding: "20px 0 84px" }}>
           <div className="container">
             <h2 className="font-serif text-center" style={{ fontSize: "clamp(24px,3.4vw,38px)", color: "var(--gold)", letterSpacing: "0.04em", marginBottom: "48px" }}>{t.recommended.title}</h2>
-            <div className="grid gap-8 sm:grid-cols-2 mx-auto" style={{ maxWidth: "920px" }}>
+            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4 mx-auto" style={{ maxWidth: "1200px" }}>
               {t.recommended.items.map((it, i) => (
                 <Reveal key={it.href} delay={(i % 2) * 90}>
                   <div className="overflow-hidden" style={{ borderRadius: "24px 24px 60px 24px", boxShadow: "0 14px 34px rgba(0,0,0,0.10)" }}>
