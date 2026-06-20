@@ -312,7 +312,7 @@ const COMMITMENT: [string, string][] = [
 
 const WHY_TRUST = [
   "Trusted by clients seeking safer, professional pigmentation care in Malta.",
-  "Performed by qualified aesthetic specialists using advanced Pico laser technology.",
+  "Performed by qualified aesthetic specialists using advanced laser technology.",
   "Suitable for sun spots, freckles, post-acne marks, and uneven skin tone.",
   "A calm, medically guided experience from consultation to aftercare.",
 ];
@@ -321,35 +321,38 @@ function Commitment() {
   return (
     <section style={{ padding: "40px 0 60px", background: "#ffffff" }}>
       <div className="container">
-        <Serif>35+ years helping malta feel confident.</Serif>
-        <div className="grid gap-12 lg:grid-cols-2 mx-auto" style={{ maxWidth: "1000px", marginTop: "40px" }}>
+        <Serif style={{ textTransform: "uppercase" }}>35+ years helping malta feel confident.</Serif>
+        <div className="grid gap-12 lg:grid-cols-2" style={{ marginTop: "40px", alignItems: "start" }}>
+          {/* LEFT: text content */}
           <div>
-            <h3 className="font-display" style={{ fontSize: "14px", color: "var(--gold-deep)", letterSpacing: "0.08em", marginBottom: "18px" }}>OUR COMMITMENT</h3>
-            <ul className="space-y-4">
+            <h3 className="font-display" style={{ fontSize: "13px", color: TEAL, letterSpacing: "0.1em", marginBottom: "16px", textTransform: "uppercase" }}>Our Commitment</h3>
+            <ul style={{ listStyle: "disc", paddingLeft: "20px", marginBottom: "28px" }}>
               {COMMITMENT.map(([t, d]) => (
-                <li key={t} className="flex items-start gap-3">
-                  <Dot />
-                  <span style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.6 }}>
-                    <b style={{ color: "var(--gold-deep)", fontWeight: 600 }}>{t}</b> — {d}
-                  </span>
+                <li key={t} style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.6, marginBottom: "10px" }}>
+                  <b style={{ color: "var(--label)", fontWeight: 600 }}>{t}</b> — {d}
                 </li>
               ))}
             </ul>
-          </div>
-          <div>
-            <h3 className="font-display" style={{ fontSize: "14px", color: "var(--gold-deep)", letterSpacing: "0.08em", marginBottom: "18px" }}>WHY MALTA TRUSTS OUR PICO LASER TREATMENT</h3>
-            <ul className="space-y-4">
+            <h3 className="font-display" style={{ fontSize: "13px", color: TEAL, letterSpacing: "0.1em", marginBottom: "16px", textTransform: "uppercase" }}>Why Malta Trusts Our Pico Laser Treatment</h3>
+            <ul style={{ listStyle: "disc", paddingLeft: "20px", marginBottom: "28px" }}>
               {WHY_TRUST.map((w) => (
-                <li key={w} className="flex items-start gap-3">
-                  <Dot />
-                  <span style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.6 }}>{w}</span>
-                </li>
+                <li key={w} style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.6, marginBottom: "10px" }}>{w}</li>
               ))}
             </ul>
+            <Cta label="Get My First Pigmentation Session" />
           </div>
-        </div>
-        <div className="text-center" style={{ marginTop: "36px" }}>
-          <Cta label="Get My First Pigmentation Session" />
+          {/* RIGHT: Google Map */}
+          <div style={{ borderRadius: "12px", overflow: "hidden", boxShadow: "0 8px 32px rgba(0,0,0,0.12)", height: "480px" }}>
+            <iframe
+              title="Carisma Aesthetics Location"
+              src="https://maps.google.com/maps?q=St.+George%27s+Bay%2C+St+Julian%27s+STJ+3310%2C+Malta&hl=en&z=14&output=embed"
+              width="100%"
+              height="100%"
+              style={{ border: 0, display: "block" }}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
         </div>
       </div>
     </section>
