@@ -1364,6 +1364,7 @@ type ResearchCard = {
   pill: string;
   whatItDoes: string;
   keyResults: { text: string; cite: string }[];
+  imgHeight?: number;
 };
 
 const RESEARCH: ResearchCard[] = [
@@ -1422,6 +1423,7 @@ const RESEARCH: ResearchCard[] = [
     img: `${A}/research-4-safety.png`,
     title: "safety and tolerability of medically supervised ozempic & mounjaro use",
     pill: "High evidence",
+    imgHeight: 350,
     whatItDoes:
       "Ozempic and Mounjaro have been extensively studied for safety when prescribed appropriately and monitored by healthcare professionals, with dose titration used to improve tolerability.",
     keyResults: [
@@ -1439,9 +1441,10 @@ const RESEARCH: ResearchCard[] = [
 
 function ResearchCardView({ card }: { card: ResearchCard }) {
   const [open, setOpen] = useState(false);
+  const h = card.imgHeight ?? 220;
   return (
     <div style={{ background: "var(--white)", border: "1px solid var(--line)", borderRadius: "0 28px 28px 0", overflow: "hidden", boxShadow: "0 8px 24px rgba(0,0,0,0.05)" }}>
-      <Image src={card.img} alt="" width={381} height={220} style={{ width: "100%", height: "220px", objectFit: "cover", objectPosition: "center top", display: "block" }} />
+      <Image src={card.img} alt="" width={381} height={h} style={{ width: "100%", height: `${h}px`, objectFit: "cover", objectPosition: "center", display: "block" }} />
       <div style={{ padding: "24px" }}>
         <h3 className="font-display" style={{ fontSize: "16px", color: "#9B8C81", textAlign: "center", lineHeight: 1.4, marginBottom: "16px" }}>
           {card.title}
