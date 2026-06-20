@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import Image from "next/image";
 import Reveal from "@/components/Reveal";
 
 type Pair = { before: string; after: string; label?: string };
@@ -18,6 +19,20 @@ export default function BeforeAfterCarousel({ pairs, title }: { pairs: Pair[]; t
   const n = pairs.length;
   const ba = pairs[idx];
   const go = (d: number) => setIdx((i) => (i + d + n) % n);
+
+  // Prefetch adjacent slides into the browser cache before the user clicks
+  useEffect(() => {
+    if (n < 2) return;
+    const adjacent = [pairs[(idx + 1) % n], pairs[(idx - 1 + n) % n]];
+    adjacent.forEach(p => {
+      [p?.before, p?.after].forEach(src => {
+        if (src) {
+          const img = new window.Image();
+          img.src = src;
+        }
+      });
+    });
+  }, [idx, pairs, n]);
 
   const arrowBase: React.CSSProperties = {
     position: "absolute",
@@ -41,15 +56,22 @@ export default function BeforeAfterCarousel({ pairs, title }: { pairs: Pair[]; t
     <div className="container text-center">
       {title && <h2 className="font-display" style={{ fontSize: "clamp(20px,3vw,30px)", color: "var(--label)", marginBottom: "36px" }}>{title}</h2>}
 
-      {/* Outer wrapper — overflow:hidden clips arrows on mobile; md:overflow-visible restores desktop outset */}
       <div className="relative mx-auto overflow-hidden md:overflow-visible" style={{ maxWidth: "760px" }}>
         <Reveal>
           <div className="grid grid-cols-2 gap-4">
             {([["BEFORE", ba.before], ["AFTER", ba.after]] as const).map(([lbl, src]) => (
               <div key={lbl} className="relative overflow-hidden rounded-xl" style={{ border: "none", background: "transparent" }}>
                 {src ? (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img src={src} alt={`${title ?? ""} ${lbl}`} className="w-full" style={{ display: "block", height: "auto" }} />
+                  <Image
+                    src={src}
+                    alt={`${title ?? ""} ${lbl}`}
+                    width={800}
+                    height={1000}
+                    style={{ display: "block", width: "100%", height: "auto" }}
+                    sizes="(max-width: 640px) 45vw, 370px"
+                    priority={idx === 0}
+                    quality={80}
+                  />
                 ) : (
                   <div className="flex items-center justify-center text-center" style={{ aspectRatio: "4 / 5", background: "var(--cream)", color: "var(--muted)", fontSize: "12px", padding: "16px" }}>
                     {`${ba.label ?? ""} ${lbl}`.trim()} photo — drop file in
@@ -63,7 +85,6 @@ export default function BeforeAfterCarousel({ pairs, title }: { pairs: Pair[]; t
 
         {n > 1 && (
           <>
-            {/* On mobile (overflow:hidden clips -21px), use left:6px/right:6px inside. On md+ restore -21px outset via Tailwind classes */}
             <button type="button" aria-label="Previous" onClick={() => go(-1)} className="md:-left-[21px]" style={{ ...arrowBase, left: "6px" }}><Chevron dir="left" /></button>
             <button type="button" aria-label="Next" onClick={() => go(1)} className="md:-right-[21px]" style={{ ...arrowBase, right: "6px" }}><Chevron dir="right" /></button>
           </>
