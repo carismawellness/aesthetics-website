@@ -501,22 +501,36 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
             {t.patientVideos.intro && (
               <p className="text-center mx-auto" style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.8, marginTop: "18px", maxWidth: "820px" }}>{t.patientVideos.intro}</p>
             )}
-            <div className={`grid gap-6 mx-auto ${t.patientVideos.videos.length === 1 ? "" : "md:grid-cols-3"}`} style={{ marginTop: "44px", maxWidth: t.patientVideos.videos.length === 1 ? "340px" : "1040px" }}>
-              {t.patientVideos.videos.map((src, i) => (
-                <Reveal key={src} delay={(i % 3) * 90} style={{ borderRadius: "28px 64px 28px 64px", overflow: "hidden", boxShadow: "0 16px 38px rgba(0,0,0,0.10)" }}>
+            {/* Mobile: horizontal scroll row (prevents extreme vertical scroll from tall 4/5 videos stacked). md+: 3-column grid */}
+            {t.patientVideos.videos.length === 1 ? (
+              <div style={{ marginTop: "44px", maxWidth: "340px", marginInline: "auto" }}>
+                <div style={{ borderRadius: "28px 64px 28px 64px", overflow: "hidden", boxShadow: "0 16px 38px rgba(0,0,0,0.10)" }}>
                   {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
-                  <video
-                    src={src}
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    className="w-full"
-                    style={{ display: "block", aspectRatio: "4 / 5", objectFit: "cover" }}
-                  />
-                </Reveal>
-              ))}
-            </div>
+                  <video src={t.patientVideos.videos[0]} autoPlay muted loop playsInline className="w-full" style={{ display: "block", aspectRatio: "4 / 5", objectFit: "cover" }} />
+                </div>
+              </div>
+            ) : (
+              <>
+                {/* Mobile scroll row — hidden at md+ */}
+                <div className="md:hidden" style={{ marginTop: "44px", overflowX: "auto", display: "flex", gap: "12px", paddingBottom: "8px" }}>
+                  {t.patientVideos.videos.map((src) => (
+                    <div key={src} style={{ flexShrink: 0, width: "220px", borderRadius: "28px 64px 28px 64px", overflow: "hidden", boxShadow: "0 16px 38px rgba(0,0,0,0.10)" }}>
+                      {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
+                      <video src={src} autoPlay muted loop playsInline style={{ display: "block", width: "100%", aspectRatio: "4 / 5", objectFit: "cover" }} />
+                    </div>
+                  ))}
+                </div>
+                {/* md+ grid — hidden on mobile */}
+                <div className="hidden md:grid gap-6 mx-auto md:grid-cols-3" style={{ marginTop: "44px", maxWidth: "1040px" }}>
+                  {t.patientVideos.videos.map((src, i) => (
+                    <Reveal key={src} delay={(i % 3) * 90} style={{ borderRadius: "28px 64px 28px 64px", overflow: "hidden", boxShadow: "0 16px 38px rgba(0,0,0,0.10)" }}>
+                      {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
+                      <video src={src} autoPlay muted loop playsInline className="w-full" style={{ display: "block", aspectRatio: "4 / 5", objectFit: "cover" }} />
+                    </Reveal>
+                  ))}
+                </div>
+              </>
+            )}
           </div>
         </section>
       )}

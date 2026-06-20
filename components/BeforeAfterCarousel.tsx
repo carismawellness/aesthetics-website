@@ -19,7 +19,7 @@ export default function BeforeAfterCarousel({ pairs, title }: { pairs: Pair[]; t
   const ba = pairs[idx];
   const go = (d: number) => setIdx((i) => (i + d + n) % n);
 
-  const arrowStyle: React.CSSProperties = {
+  const arrowBase: React.CSSProperties = {
     position: "absolute",
     top: "50%",
     transform: "translateY(-50%)",
@@ -41,8 +41,8 @@ export default function BeforeAfterCarousel({ pairs, title }: { pairs: Pair[]; t
     <div className="container text-center">
       {title && <h2 className="font-display" style={{ fontSize: "clamp(20px,3vw,30px)", color: "var(--label)", marginBottom: "36px" }}>{title}</h2>}
 
-      {/* Outer wrapper is position:relative so arrows can sit outside Reveal without stacking-context interference */}
-      <div className="relative mx-auto" style={{ maxWidth: "760px" }}>
+      {/* Outer wrapper — overflow:hidden clips arrows on mobile; md:overflow-visible restores desktop outset */}
+      <div className="relative mx-auto overflow-hidden md:overflow-visible" style={{ maxWidth: "760px" }}>
         <Reveal>
           <div className="grid grid-cols-2 gap-4">
             {([["BEFORE", ba.before], ["AFTER", ba.after]] as const).map(([lbl, src]) => (
@@ -63,8 +63,9 @@ export default function BeforeAfterCarousel({ pairs, title }: { pairs: Pair[]; t
 
         {n > 1 && (
           <>
-            <button type="button" aria-label="Previous" onClick={() => go(-1)} style={{ ...arrowStyle, left: "-21px" }}><Chevron dir="left" /></button>
-            <button type="button" aria-label="Next" onClick={() => go(1)} style={{ ...arrowStyle, right: "-21px" }}><Chevron dir="right" /></button>
+            {/* On mobile (overflow:hidden clips -21px), use left:6px/right:6px inside. On md+ restore -21px outset via Tailwind classes */}
+            <button type="button" aria-label="Previous" onClick={() => go(-1)} className="md:-left-[21px]" style={{ ...arrowBase, left: "6px" }}><Chevron dir="left" /></button>
+            <button type="button" aria-label="Next" onClick={() => go(1)} className="md:-right-[21px]" style={{ ...arrowBase, right: "6px" }}><Chevron dir="right" /></button>
           </>
         )}
       </div>
