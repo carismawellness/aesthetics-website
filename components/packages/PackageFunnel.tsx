@@ -65,8 +65,8 @@ function BookCta({ href, save, label }: { href: string; save: number | null; lab
         href={href}
         target="_blank"
         rel="noopener noreferrer"
-        className="block text-center"
-        style={{ background: "var(--teal)", color: "#fff", padding: "16px 24px", borderRadius: "0px", boxShadow: "0 12px 28px rgba(0,0,0,0.08)" }}
+        className="block text-center cta-glow-teal"
+        style={{ color: "#fff", padding: "16px 24px", borderRadius: "0px" }}
       >
         <span className="font-display" style={{ display: "block", fontSize: "15px", letterSpacing: "0.08em", textTransform: "uppercase" }}>{label ?? "Book Your Consultation Now"}</span>
         {save != null && (

@@ -199,8 +199,8 @@ function Hero() {
               href={BOOK_HREF}
               target="_blank"
               rel="noopener noreferrer"
-              className="font-display"
-              style={{ display: "block", textAlign: "center", background: "var(--teal)", color: "#fff", padding: "16px", borderRadius: "8px", letterSpacing: "0.12em", textTransform: "uppercase", fontSize: "13px" }}
+              className="font-display cta-glow-teal"
+              style={{ display: "block", textAlign: "center", color: "#fff", padding: "16px", borderRadius: "8px", letterSpacing: "0.12em", textTransform: "uppercase", fontSize: "13px" }}
             >
               book your medical consultation
             </a>
@@ -1004,7 +1004,7 @@ function ExpertCare() {
               medication stops, that&rsquo;s the real work.&rdquo;
               <span style={{ display: "block", fontStyle: "normal", fontSize: "15px", marginTop: "10px" }}>&mdash; Dr. Teebi</span>
             </blockquote>
-            <a href={BOOK_HREF} target="_blank" rel="noopener noreferrer" className="font-display" style={{ display: "block", textAlign: "center", background: "var(--teal)", color: "#fff", padding: "16px", borderRadius: "8px", letterSpacing: "0.12em", textTransform: "uppercase", fontSize: "13px" }}>
+            <a href={BOOK_HREF} target="_blank" rel="noopener noreferrer" className="font-display cta-glow-teal" style={{ display: "block", textAlign: "center", color: "#fff", padding: "16px", borderRadius: "8px", letterSpacing: "0.12em", textTransform: "uppercase", fontSize: "13px" }}>
               book your medical consultation
             </a>
           </Reveal>

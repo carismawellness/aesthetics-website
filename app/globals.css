@@ -64,6 +64,12 @@
   --beige-2: #efe6d6;
   --white: #ffffff;
 
+  /* RGB channels for translucent brand glows (CTA halo effect) */
+  --teal-rgb: 150, 178, 178;       /* --teal  #96b2b2 */
+  --teal-deep-rgb: 122, 158, 158;  /* --teal-deep #7a9e9e */
+  --gold-rgb: 169, 158, 141;       /* --gold  #a99e8d */
+  --gold-deep-rgb: 183, 158, 97;   /* --gold-deep #b79e61 */
+
   --maxw: 1200px;
   --radius: 8px;
 }
@@ -135,19 +141,49 @@ a {
   transition: all 0.25s ease;
   cursor: pointer;
 }
-.btn-gold {
-  background: var(--gold);
-  color: var(--white);
-}
-.btn-gold:hover {
-  background: var(--gold-deep);
-}
+/* ── Brand CTA effect: soft brand-colour gradient + blurred glow halo
+   (adapted from the LaserAway treatment, in Carisma colours).
+   Each button keeps its own colour family — teal→teal glow, gold→gold glow.
+   `.cta-glow-*` are standalone utilities for inline-styled CTAs. ── */
+.btn-gold,
 .btn-teal {
-  background: var(--teal);
   color: var(--white);
 }
-.btn-teal:hover {
-  background: var(--teal-deep);
+.cta-glow-teal,
+.cta-glow-gold {
+  transition: all 0.25s ease;
+}
+
+.btn-gold,
+.cta-glow-gold {
+  background: linear-gradient(135deg, #c9bfae 0%, var(--gold) 52%, var(--gold-deep) 100%);
+  box-shadow:
+    0 0 22px rgba(var(--gold-rgb), 0.42),
+    0 8px 24px rgba(var(--gold-deep-rgb), 0.45);
+}
+.btn-gold:hover,
+.cta-glow-gold:hover {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-deep) 70%, var(--gold-deep) 100%);
+  box-shadow:
+    0 0 30px rgba(var(--gold-rgb), 0.58),
+    0 12px 30px rgba(var(--gold-deep-rgb), 0.6);
+  transform: translateY(-1px);
+}
+
+.btn-teal,
+.cta-glow-teal {
+  background: linear-gradient(135deg, var(--teal-200) 0%, var(--teal) 55%, var(--teal-deep) 100%);
+  box-shadow:
+    0 0 22px rgba(var(--teal-rgb), 0.45),
+    0 8px 24px rgba(var(--teal-rgb), 0.5);
+}
+.btn-teal:hover,
+.cta-glow-teal:hover {
+  background: linear-gradient(135deg, var(--teal) 0%, var(--teal-deep) 65%, var(--teal-deep) 100%);
+  box-shadow:
+    0 0 30px rgba(var(--teal-rgb), 0.62),
+    0 12px 30px rgba(var(--teal-rgb), 0.68);
+  transform: translateY(-1px);
 }
 .btn-outline {
   border: 1px solid var(--ink);
