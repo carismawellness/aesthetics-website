@@ -15,6 +15,7 @@ const t: Treatment = {
       { label: "TOTAL VALUE: €550 — TODAY: €199 ONLY", price: "€199" },
     ],
     cta: "Claim your spot now",
+    heroVideo: "/assets/treatments/fat-freezing-hero.mp4",
     note: "* Includes 3 fat freezing sessions, scheduled based on your clinical plan; additional areas charged at extra. Sessions may be spaced over multiple weeks depending on area and suitability. Due to high demand, packages are offered based on availability and may not always be guaranteed. Please inquire for current options.",
   },
 

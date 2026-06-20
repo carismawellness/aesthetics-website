@@ -49,6 +49,7 @@ function InfoCard({ info }: { info: NonNullable<Treatment["info"]> }) {
 
 export default function TreatmentPage({ t }: { t: Treatment }) {
   const hasImage = Boolean(t.hero.image);
+  const hasMedia = hasImage || Boolean(t.hero.heroVideo);
   return (
     <>
       {/* Hero — 2-column (content left, media + info card right) matching live */}
@@ -63,14 +64,14 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
           <div style={t.hero.bgImage
             ? { borderRadius: "26px", backgroundImage: `linear-gradient(rgba(255,255,255,0.62), rgba(255,255,255,0.72)), url('${t.hero.bgImage}')`, backgroundSize: "cover", backgroundPosition: "center", padding: "clamp(24px,3.5vw,48px)" }
             : { padding: "clamp(28px,3.6vw,52px)" }}>
-          <div className={hasImage ? "grid gap-8 lg:grid-cols-[1.15fr_0.85fr] items-start" : ""}>
+          <div className={hasMedia ? "grid gap-8 lg:grid-cols-[1.15fr_0.85fr] items-start" : ""}>
             {/* Left: content */}
             <Reveal>
-              <h1 className="font-serif" style={{ fontSize: "clamp(28px,4.4vw,46px)", color: "var(--gold)", letterSpacing: "0.04em", textAlign: hasImage ? "left" : "center" }}>
+              <h1 className="font-serif" style={{ fontSize: "clamp(28px,4.4vw,46px)", color: "var(--gold)", letterSpacing: "0.04em", textAlign: hasMedia ? "left" : "center" }}>
                 {t.hero.title}
               </h1>
               {t.hero.benefits && t.hero.benefits.length > 0 && (
-                <ul className="space-y-3" style={{ marginTop: "20px", maxWidth: hasImage ? "100%" : "560px", marginInline: hasImage ? undefined : "auto", textAlign: "left" }}>
+                <ul className="space-y-3" style={{ marginTop: "20px", maxWidth: hasMedia ? "100%" : "560px", marginInline: hasMedia ? undefined : "auto", textAlign: "left" }}>
                   {t.hero.benefits.map((b) => (
                     <li key={b} className="flex items-start gap-3">
                       <span className="shrink-0 inline-flex items-center justify-center" style={{ width: "22px", height: "22px", borderRadius: "50%", background: "#e3eded", color: "var(--teal)", marginTop: "1px" }}>
@@ -82,22 +83,22 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                 </ul>
               )}
               {t.hero.subtitle && (
-                <p style={{ fontSize: "15px", color: "var(--label)", textTransform: "uppercase", letterSpacing: "0.06em", marginTop: "22px", lineHeight: 1.5, textAlign: hasImage ? "left" : "center", maxWidth: hasImage ? undefined : "720px", marginInline: hasImage ? undefined : "auto" }}>
+                <p style={{ fontSize: "15px", color: "var(--label)", textTransform: "uppercase", letterSpacing: "0.06em", marginTop: "22px", lineHeight: 1.5, textAlign: hasMedia ? "left" : "center", maxWidth: hasMedia ? undefined : "720px", marginInline: hasMedia ? undefined : "auto" }}>
                   {t.hero.subtitle}
                 </p>
               )}
               {t.hero.body && (
-                <p style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.8, marginTop: "18px", textAlign: hasImage ? "justify" : "center", maxWidth: hasImage ? undefined : "760px", marginInline: hasImage ? undefined : "auto" }}>
+                <p style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.8, marginTop: "18px", textAlign: hasMedia ? "justify" : "center", maxWidth: hasMedia ? undefined : "760px", marginInline: hasMedia ? undefined : "auto" }}>
                   {t.hero.body}
                 </p>
               )}
               {t.hero.location && (
-                <p className="font-display" style={{ fontSize: "12px", color: "var(--teal)", letterSpacing: "0.14em", textTransform: "uppercase", marginTop: "14px", textAlign: hasImage ? "left" : "center" }}>
+                <p className="font-display" style={{ fontSize: "12px", color: "var(--teal)", letterSpacing: "0.14em", textTransform: "uppercase", marginTop: "14px", textAlign: hasMedia ? "left" : "center" }}>
                   {t.hero.location}
                 </p>
               )}
               {t.hero.prices && t.hero.prices.length > 0 && (
-                <ul style={{ marginTop: "26px", maxWidth: hasImage ? "100%" : "560px", marginInline: hasImage ? undefined : "auto" }}>
+                <ul style={{ marginTop: "26px", maxWidth: hasMedia ? "100%" : "560px", marginInline: hasMedia ? undefined : "auto" }}>
                   {t.hero.prices.map((p) => {
                     const m = p.price.match(/^(.*?)\s*(€\S+)\s*$/);
                     const prefix = m ? m[1] : p.price;
@@ -114,11 +115,11 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                   })}
                 </ul>
               )}
-              <div style={{ marginTop: "30px", textAlign: hasImage ? "left" : "center" }}>
+              <div style={{ marginTop: "30px", textAlign: hasMedia ? "left" : "center" }}>
                 <Link href="/consultation" className="btn btn-teal">{t.hero.cta ?? "BOOK YOUR CONSULTATION"}</Link>
               </div>
               {t.hero.note && (
-                <p style={{ marginTop: "16px", fontSize: "12px", color: "var(--muted)", lineHeight: 1.6, textAlign: hasImage ? "left" : "center", maxWidth: hasImage ? undefined : "620px", marginInline: hasImage ? undefined : "auto" }}>
+                <p style={{ marginTop: "16px", fontSize: "12px", color: "var(--muted)", lineHeight: 1.6, textAlign: hasMedia ? "left" : "center", maxWidth: hasMedia ? undefined : "620px", marginInline: hasMedia ? undefined : "auto" }}>
                   {t.hero.note}
                 </p>
               )}
@@ -128,17 +129,28 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                 </div>
               )}
               {t.pending && (
-                <p style={{ marginTop: "24px", fontSize: "12px", color: "var(--muted)", fontStyle: "italic", textAlign: hasImage ? "left" : "center" }}>
+                <p style={{ marginTop: "24px", fontSize: "12px", color: "var(--muted)", fontStyle: "italic", textAlign: hasMedia ? "left" : "center" }}>
                   Detailed treatment information for this page is being finalised.
                 </p>
               )}
             </Reveal>
 
             {/* Right: media + info card */}
-            {hasImage && (
+            {hasMedia && (
               <Reveal delay={120}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={t.hero.image} alt={t.hero.title} className="w-full" style={{ display: "block", borderRadius: "20px", boxShadow: "0 20px 50px rgba(0,0,0,0.10)", ...(t.hero.imageRatio ? { aspectRatio: t.hero.imageRatio, objectFit: "cover" } : {}) }} />
+                {t.hero.heroVideo ? (
+                  <video
+                    src={t.hero.heroVideo}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    style={{ display: "block", width: "100%", maxWidth: "398px", height: "617px", objectFit: "cover", borderRadius: "20px", boxShadow: "0 20px 50px rgba(0,0,0,0.10)", margin: "0 auto" }}
+                  />
+                ) : (
+                  /* eslint-disable-next-line @next/next/no-img-element */
+                  <img src={t.hero.image} alt={t.hero.title} className="w-full" style={{ display: "block", borderRadius: "20px", boxShadow: "0 20px 50px rgba(0,0,0,0.10)", ...(t.hero.imageRatio ? { aspectRatio: t.hero.imageRatio, objectFit: "cover" } : {}) }} />
+                )}
                 {t.hero.productTabs && t.hero.productTabs.length > 0 && (
                   <div className="flex gap-3" style={{ marginTop: "14px" }}>
                     {t.hero.productTabs.map((tab) => (
@@ -203,7 +215,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
           </div>
 
           {/* info bar fallback when no hero image */}
-          {!hasImage && t.info && (
+          {!hasMedia && t.info && (
             <div className="rounded-lg bg-white mx-auto" style={{ border: "1px solid var(--line)", padding: "22px 20px", marginTop: "32px", maxWidth: "900px", boxShadow: "0 14px 40px rgba(0,0,0,0.05)" }}>
               <div className="grid gap-6 text-center" style={{ gridTemplateColumns: `repeat(${Math.min(t.info.length, 5)}, minmax(0,1fr))` }}>
                 {t.info.map((it) => (
