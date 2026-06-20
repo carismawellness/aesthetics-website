@@ -139,17 +139,18 @@ function Hero() {
   };
 
   return (
-    <section
-      id="hero"
-      style={{
-        position: "relative",
-        backgroundImage: `url(${A}/hero-frame.png)`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundColor: "var(--cream)",
-      }}
-    >
-      <div className="container" style={{ paddingTop: "64px", paddingBottom: "64px" }}>
+    <section id="hero" style={{ padding: "32px 0", backgroundColor: "var(--cream)" }}>
+      <div className="container">
+      <div
+        style={{
+          backgroundImage: `url(${A}/hero-frame.png)`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          borderRadius: "26px",
+          padding: "64px clamp(24px, 4vw, 64px)",
+          overflow: "hidden",
+        }}
+      >
         <div
           className="grid items-center"
           style={{ gridTemplateColumns: "minmax(0,1fr) minmax(0,460px)", gap: "48px" }}
@@ -262,6 +263,7 @@ function Hero() {
             </div>
           </Reveal>
         </div>
+      </div>
       </div>
     </section>
   );
