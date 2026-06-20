@@ -78,14 +78,14 @@ function Hero() {
                 ))}
               </ul>
               <p className="font-display" style={{ color: "var(--gold-deep)", fontSize: "15px", fontWeight: 600, letterSpacing: "0.02em", marginTop: "22px" }}>
-                Total Value: €285 – Today: €79 Only
+                Treatments From €79 Per Session
               </p>
               <p style={{ color: "var(--gold-deep)", fontSize: "11px", lineHeight: 1.6, marginTop: "12px", maxWidth: "440px", opacity: 0.75 }}>
-                Due to high demand, packages are offered based on availability and may not always be guaranteed. Please inquire for current options.
+                Due to high demand, appointments are offered subject to availability. Results and the number of sessions required may vary depending on your skin type and pigmentation concern.
               </p>
               <Link href="/consultation" className="font-display flex items-center justify-center"
                 style={{ marginTop: "24px", width: "100%", maxWidth: "470px", background: SAGE, color: "#fff", fontSize: "14px", letterSpacing: "0.12em", textTransform: "uppercase", padding: "16px 24px", borderRadius: "4px" }}>
-                Book Now &amp; Save <span aria-hidden style={{ marginLeft: "8px" }}>›</span>
+                Reserve Your Pico Laser Session <span aria-hidden style={{ marginLeft: "8px" }}>›</span>
               </Link>
               <div className="flex items-center gap-2" style={{ marginTop: "20px" }}>
                 <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.27-4.74 3.27-8.1z" /><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.26 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84A11 11 0 0 0 12 23z" /><path fill="#FBBC05" d="M5.84 14.1a6.6 6.6 0 0 1 0-4.2V7.06H2.18a11 11 0 0 0 0 9.88l3.66-2.84z" /><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84C6.71 7.3 9.14 5.38 12 5.38z" /></svg>
@@ -130,27 +130,27 @@ function Hero() {
 const REVIEWS = [
   {
     img: `${A}/pig-rev1.png`,
-    alt: "Pigmentation before and after result",
-    body: "I had sun spots and post-acne marks on my cheeks for years. The team assessed my skin carefully and explained exactly how Pico laser works for pigmentation — gradual, safe, and personalised. After a few sessions I could already see a visible difference. The care and honesty throughout the whole process made me feel completely at ease.",
-    name: "Maria S.",
+    alt: "Face pigmentation before and after result",
+    body: "I had stubborn pigmentation across my cheek that makeup never fully covered. After my Pico laser treatment, the darker spots on my cheek became noticeably lighter, and the area looked smoother, clearer and more even. The practitioner explained every step and made the treatment feel comfortable. I now feel much more confident showing my skin without heavy makeup.",
+    name: "Marisa C.",
   },
   {
     img: `${A}/pig-rev2.png`,
     alt: "Hand pigmentation before and after result",
-    body: "I wanted to reduce age spots on my hands and was nervous about laser treatment. From the first consultation the team was honest, clear, and reassuring. They explained the timeline, what to expect, and how to care for my skin after each session. The results have been gradual but really noticeable. Very professional experience.",
-    name: "Daniela F.",
+    body: "I had noticeable sunspots and uneven pigmentation on the back of my hand, which made my hands look older than they felt. After my Pico laser treatments, the darker spots became much lighter and the skin on my hand looked clearer, smoother and more even. The treatment was quick, and the practitioner explained the process and aftercare clearly. I'm very happy with the visible improvement.",
+    name: "Daniela V.",
   },
   {
     img: `${A}/pig-rev3.png`,
-    alt: "Body pigmentation before and after result",
-    body: "I had uneven pigmentation on my back from years of sun exposure. The team created a plan specifically for my skin tone and the depth of my pigmentation. I appreciated how realistic they were about what could be achieved and how many sessions it might take. The treatment felt safe, calm, and professionally managed throughout.",
-    name: "Claire M.",
+    alt: "Arm pigmentation before and after result",
+    body: "I had uneven pigmentation and small dark spots across my forearm that became more noticeable over time. After my Pico laser treatments, the skin on my forearm looked clearer, smoother and much more even in tone. The treatment was comfortable, and the practitioner explained the aftercare clearly. I'm very pleased with how much brighter and more refined the area now looks.",
+    name: "Lara B.",
   },
   {
     img: `${A}/pig-rev4.png`,
-    alt: "Arm freckles before and after result",
-    body: "I wanted to reduce freckles and uneven pigmentation on my arms before the summer. Carisma gave me a realistic, personalised plan from the start. They explained the process clearly and checked my skin carefully at every visit. The results have been exactly what I hoped for — gradual, natural-looking, and without any harsh side effects.",
-    name: "Rachel B.",
+    alt: "Back pigmentation before and after result",
+    body: "I had uneven pigmentation and darker patches across my upper back and shoulders, which made me feel self-conscious in open-back clothing. After my Pico laser treatments, the area looked noticeably clearer, smoother and more even in tone. The practitioner made me feel comfortable throughout the treatment and gave me clear aftercare advice. I feel much more confident showing my back now.",
+    name: "Nicole F.",
   },
 ];
 
@@ -218,9 +218,9 @@ function DoYouHave() {
 
 // ─── TRUSTED FEATURES ─────────────────────────────────────────────────────────
 const FEATURES = [
-  { icon: "pico-trustedFeatures-feat1.png", label: "PRECISE PIGMENT TARGETING", desc: "Pico pulses target excess pigment beneath the skin with focused precision." },
-  { icon: "pico-trustedFeatures-feat2.png", label: "GENTLER TECHNOLOGY", desc: "Designed to break down pigment without relying on intense heat." },
-  { icon: "pico-trustedFeatures-feat3.png", label: "PERSONALISED SKIN PLANS", desc: "Tailored to your skin tone, concern, depth, and treatment area." },
+  { icon: "pico-trustedFeatures-feat1.png", label: "PRECISE PIGMENT TARGETING", desc: "Precisely targets excess pigment beneath the skin." },
+  { icon: "pico-trustedFeatures-feat2.png", label: "GENTLER SKIN RENEWAL", desc: "Designed to break down pigment without relying on intense heat." },
+  { icon: "pico-trustedFeatures-feat3.png", label: "PERSONALISED SKIN PLAN", desc: "Tailored to your pigmentation type, skin tone, depth, and goals." },
   { icon: "pico-trustedFeatures-feat4.png", label: "EXPERT AFTERCARE", desc: "Professional guidance before and after treatment for safer results." },
 ];
 
@@ -290,7 +290,7 @@ function Because() {
                 </li>
               ))}
             </ul>
-            <div style={{ marginTop: "24px" }}><Cta label="Claim Pigmentation Care Now" /></div>
+            <div style={{ marginTop: "24px" }}><Cta label="Claim Pigmentation Care" /></div>
             <Stars />
           </div>
           <div>
@@ -310,11 +310,11 @@ const COMMITMENT: [string, string][] = [
   ["Pico Laser Precision", "Targets excess pigment using ultra-short laser pulses."],
   ["Personalised Treatment Plans", "Every plan is based on your skin tone, concern, depth, and goals."],
   ["Honest Expectations", "We explain the process clearly, including the number of sessions you may need."],
-  ["Professional Aftercare", "Guidance before and after each session to support safe skin healing."],
+  ["Professional Aftercare", "Guidance before and after each session to support safe skin recovery."],
 ];
 
 const WHY_TRUST = [
-  "Trusted by clients looking for safer, professional pigmentation care in Malta.",
+  "Trusted by clients seeking safer, professional pigmentation care in Malta.",
   "Performed by qualified aesthetic specialists using advanced Pico laser technology.",
   "Suitable for sun spots, freckles, post-acne marks, and uneven skin tone.",
   "A calm, medically guided experience from consultation to aftercare.",
@@ -352,7 +352,7 @@ function Commitment() {
           </div>
         </div>
         <div className="text-center" style={{ marginTop: "36px" }}>
-          <Cta label="Book My Pigmentation Consultation" />
+          <Cta label="Get My First Pigmentation Session" />
         </div>
       </div>
     </section>
@@ -364,7 +364,7 @@ const SECURE_PARAS = [
   "Our professional pigmentation consultation is available for a limited time — once appointments are filled, the next available slots may be later.",
   "Whether you want to reduce sun spots, freckles, post-acne marks, or uneven skin tone, our Pico Laser treatment is designed to target unwanted pigment with focused precision.",
   "During your consultation, we assess your skin type, pigmentation depth, treatment area, and goals before creating a personalised treatment plan.",
-  "No rushed promises — just safe guidance, realistic expectations, and expert care from start to finish.",
+  "No rushed promises — just honest guidance, realistic expectations, and expert care from start to finish.",
 ];
 
 function Secure() {
@@ -377,7 +377,7 @@ function Secure() {
             {SECURE_PARAS.map((p, i) => (
               <p key={i} style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.8, marginTop: i ? "12px" : "18px" }}>{p}</p>
             ))}
-            <div style={{ marginTop: "26px" }}><Cta label="Book Your Pigmentation Consultation" /></div>
+            <div style={{ marginTop: "26px" }}><Cta label="Book Pigmentation Treatment Now" /></div>
           </div>
           <Reveal delay={120}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -394,8 +394,8 @@ function Secure() {
 const FADE = [
   "Targets excess pigment with ultra-short Pico laser pulses",
   "Helps reduce sun spots, freckles, and post-acne marks",
-  "Suitable for localised areas or uneven pigmentation across a zone",
-  "Personalised plan based on skin tone, concern, depth, and treatment area",
+  "Suitable for localised areas or uneven pigmentation",
+  "Personalised plan based on skin tone, concern, and depth",
   "Medically guided treatment with clear aftercare support",
   "Trusted aesthetic specialists across Malta",
 ];
@@ -420,7 +420,7 @@ function FadeUnwanted() {
                 </li>
               ))}
             </ul>
-            <div style={{ marginTop: "28px" }}><Cta label="Treat Your Pigmentation Now" /></div>
+            <div style={{ marginTop: "28px" }}><Cta label="Treat Your Pigmentation Today" /></div>
             <Stars />
           </div>
           <div>
@@ -471,7 +471,7 @@ function Brighter() {
               </li>
             ))}
           </ul>
-          <div style={{ marginTop: "30px" }}><Cta label="Get My Pigmentation Plan" /></div>
+          <div style={{ marginTop: "30px" }}><Cta label="Book Your Skin Transformation" /></div>
         </div>
       </div>
     </section>
@@ -539,9 +539,9 @@ const WTE_COLUMNS = [
     image: "pico-whatToExpect-at-session.png",
     alt: "Specialist performing Pico laser pigmentation treatment during a session",
     points: [
-      "Your specialist will begin by assessing your pigmentation type, depth, skin tone, and treatment area to personalise your Pico laser settings.",
-      "During the session, ultra-short Pico laser pulses target the excess pigment, helping break it into smaller particles the body can gradually clear.",
-      "You may feel a light snapping sensation on the skin. Cooling and comfort measures may be used throughout the treatment.",
+      "Your specialist will begin by assessing your pigmentation type, depth, skin tone, and treatment area to customise the Pico laser settings.",
+      "During the session, ultra-short Pico laser pulses target excess pigment, helping break it into smaller particles for natural clearance.",
+      "You may feel a quick snapping or warming sensation on the skin. Cooling and comfort measures may be used throughout treatment.",
     ],
   },
   {
@@ -549,9 +549,9 @@ const WTE_COLUMNS = [
     image: "pico-whatToExpect-after.png",
     alt: "Treated skin after Pico laser pigmentation treatment",
     points: [
-      "Mild redness, warmth, or temporary darkening of the treated pigment can be a normal part of the process after treatment.",
+      "Mild redness, warmth, sensitivity, or temporary darkening of the treated pigmentation can be normal after Pico laser treatment.",
       "Keep the area clean, protected, and moisturised as advised. Avoid picking, scratching, or rubbing the treated skin.",
-      "Protect the treated area from sun exposure and follow your aftercare plan to support healing and achieve the best possible results.",
+      "Protect your skin from sun exposure and follow your aftercare plan to support healing and achieve the best possible results.",
     ],
   },
 ];
@@ -590,16 +590,16 @@ function WhatToExpect() {
 
 // ─── FAQ ──────────────────────────────────────────────────────────────────────
 const FAQS = [
-  { q: "What is Pico Laser pigmentation treatment?", a: "Pico Laser pigmentation treatment uses ultra-short laser pulses to target unwanted pigment beneath the skin. The pigment is broken into smaller particles, which the body can gradually clear over time. Picosecond lasers are designed to target pigment with very short pulse durations, which may help improve results compared with older laser methods." },
+  { q: "What is Pico Laser pigmentation treatment?", a: "Pico Laser treatment uses ultra-short laser pulses to target unwanted pigment beneath the skin. The pigment is broken into smaller particles, which the body can gradually clear over time." },
   { q: "What pigmentation concerns can it treat?", a: "It may help improve the appearance of sun spots, freckles, age spots, post-inflammatory pigmentation (PIH), uneven skin tone, and selected types of melasma. Suitability is confirmed during consultation based on your skin type, pigmentation depth, and treatment area." },
-  { q: "How many sessions will I need?", a: "The number of sessions depends on your pigmentation type, depth, skin tone, and how your skin responds to treatment. Most concerns require multiple sessions, with gradual improvement after each visit. A consultation is the best way to estimate your treatment plan." },
-  { q: "Does it hurt?", a: "You may feel a light snapping or stinging sensation on the skin. Many clinics use cooling or comfort measures to make the treatment more manageable throughout the session." },
-  { q: "Is it safe for all skin tones?", a: "Pico laser can be used on a range of skin tones, but suitability varies depending on the pigmentation type and individual skin characteristics. Your specialist will assess your skin carefully before recommending treatment." },
-  { q: "What can I expect after my first session?", a: "Mild redness, warmth, or temporary darkening of the treated pigment is common after a session. This is part of the natural response. The skin gradually clears over the following weeks as the body processes the broken-down pigment." },
-  { q: "Can melasma be treated with Pico laser?", a: "Pico laser can be used for some types of melasma, but results vary. Melasma is complex and often requires a carefully managed treatment plan. Suitability and realistic expectations are discussed in full during your consultation." },
-  { q: "What aftercare should I follow?", a: "Keep the treated area clean, avoid picking or scratching, protect it from sun exposure with SPF, and follow the specific aftercare instructions given by your practitioner. Sun exposure and poor aftercare can increase the risk of pigmentation changes." },
-  { q: "Is there any downtime?", a: "There is usually minimal downtime, but the treated area may appear red, warm, or slightly swollen for a short time. Most clients can return to normal activities shortly after, following their aftercare guidance." },
-  { q: "Who is not suitable for Pico laser pigmentation treatment?", a: "Pico laser may not be suitable for everyone. People who are pregnant, breastfeeding, have active skin infections, poor wound healing, or certain medical conditions may need to avoid treatment or seek medical advice first. A professional consultation is required before starting." },
+  { q: "How many sessions will I need?", a: "The number of sessions depends on your pigmentation type, depth, skin tone, and how your skin responds to treatment. Most concerns require multiple sessions, with gradual improvement after each visit. A consultation is the best way to estimate your personalised treatment plan." },
+  { q: "Is Pico Laser treatment painful?", a: "You may feel a quick snapping or warming sensation on the skin during treatment. Cooling and comfort measures may be used throughout the session to keep you comfortable." },
+  { q: "Is there any downtime after treatment?", a: "There is usually minimal downtime. The treated area may appear red, warm, or slightly swollen for a short time. Most clients can return to normal activities shortly after, following their aftercare guidance." },
+  { q: "When will I see results?", a: "Results are gradual. You may begin to notice improvement over the weeks following each session as the body naturally clears the broken-down pigment. The number of sessions needed varies depending on the type and depth of pigmentation." },
+  { q: "Is Pico Laser suitable for every skin type?", a: "Pico laser can be used on a range of skin tones, but suitability varies depending on the pigmentation type and individual skin characteristics. Your specialist will assess your skin carefully during consultation before recommending treatment." },
+  { q: "What should I avoid before my appointment?", a: "Before your treatment, avoid direct sun exposure, tanning, or self-tanning products on the treatment area for at least a few days. Avoid harsh exfoliants, acids, retinoids, or active skincare before your session. Share your full medical history and any medications with your specialist." },
+  { q: "What aftercare is required?", a: "Keep the treated area clean and moisturised as advised. Avoid picking, scratching, or rubbing the treated skin. Protect it from sun exposure with SPF and follow all aftercare instructions given by your practitioner to support safe healing." },
+  { q: "Can pigmentation return after treatment?", a: "In some cases, pigmentation can recur — particularly with melasma or pigmentation triggered by ongoing sun exposure. Protecting your skin from the sun and following your aftercare plan can help maintain results. Your specialist will discuss realistic long-term expectations during consultation." },
 ];
 
 function ShareIcons() {
