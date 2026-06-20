@@ -12,7 +12,7 @@ const t: Treatment = {
       { label: "2 sessions", price: "from €349 (€175/session)" },
       { label: "3 sessions", price: "from €499 (€167/session)" },
     ],
-    cta: "BOOK YOUR SESSION NOW",
+    cta: "BOOK YOUR MESOTHERAPY SESSION NOW",
     image: "/assets/treatments/mesotherapy-malta-hero.png",
     imageRatio: "468 / 373",
     productTabs: ["/assets/treatments/mesotherapy-malta-logo-bcn.png", "/assets/treatments/mesotherapy-malta-logo-teoxane.png", "/assets/treatments/mesotherapy-malta-logo-fillmed.png", "/assets/treatments/mesotherapy-malta-logo-croma.png"],
@@ -86,10 +86,10 @@ const t: Treatment = {
   experience: {
     title: "your treatment experience", cta: "BOOK YOUR FREE CONSULTATION",
     steps: [
-      { title: "personalised consultation", desc: "We assess your facial anatomy, skin condition, medical history, and botox goals with one of our doctors.", image: "/assets/treatments/botox-step1.png" },
-      { title: "Structured Plan", desc: "Your doctor designs a medically guided botox plan tailored to your facial structure and desired outcome.", image: "/assets/treatments/botox-step2.png" },
-      { title: "Targeted Treatments", desc: "Your doctor administers botox using fine, precise injections, quick, comfortable, and no downtime.", image: "/assets/treatments/botox-step3.png" },
-      { title: "Ongoing Review & Adjustment", desc: "Your doctor monitors your response and refines the plan to ensure natural botox results over time.", image: "/assets/treatments/botox-step4.png" },
+      { title: "personalised consultation", desc: "We assess your facial anatomy, skin condition, medical history, and mesotherapy goals with one of our doctors.", image: "/assets/treatments/botox-step1.png" },
+      { title: "Structured Plan", desc: "Your doctor designs a medically guided mesotherapy plan tailored to your facial structure and desired outcome.", image: "/assets/treatments/botox-step2.png" },
+      { title: "Targeted Treatments", desc: "Your doctor administers mesotherapy with fine, precise injections, quick, comfortable, and no downtime.", image: "/assets/treatments/botox-step3.png" },
+      { title: "Ongoing Review & Adjustment", desc: "Your doctor monitors your response and refines the plan to ensure natural mesotherapy results over time.", image: "/assets/treatments/botox-step4.png" },
     ],
   },
   prepAftercare: {
@@ -159,12 +159,12 @@ const t: Treatment = {
     title: "malta’s #1 leading wellness chain",
     commitmentTitle: "our commitment",
     commitment: [
-      "Natural, refined mesotherapy results, never overdone, never frozen",
+      "Natural, refined mesotherapy results, never overdone",
       "Doctor-led treatments with advanced facial anatomy expertise",
       "Safe, ethical care using clinically approved products",
       "A personalised journey from consultation to aftercare",
     ],
-    whyTitle: "WHY MALTA CHOOSES Carisma for chemical peels",
+    whyTitle: "Why Malta Chooses Carisma for Mesotherapy",
     why: [
       "Created by the team behind Malta’s leading spa and medical aesthetics centres",
       "Doctor-led mesotherapy treatments with a focus on safety and long-term results",

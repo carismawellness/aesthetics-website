@@ -14,7 +14,7 @@ const t: Treatment = {
       { label: "Full Upper Face / Nefertiti neck lift", price: "from €249" },
       { label: "Underarms Sweating", price: "from €399" },
     ],
-    cta: "BOOK YOUR SESSION NOW",
+    cta: "BOOK YOUR BOTOX APPOINTMENT NOW",
     image: "/assets/treatments/wrinkle-relaxing-malta-hero.jpg",
     heroForm: true,
   },

@@ -12,7 +12,7 @@ const t: Treatment = {
       { label: "3 sessions", price: "from €399 (€133/session)" },
       { label: "5 sessions", price: "from €649 (€217/session)" },
     ],
-    cta: "BOOK YOUR SESSION NOW",
+    cta: "BOOK YOUR CHEMICAL PEEL SESSION NOW",
     image: "/assets/treatments/chemical-peels-malta-hero.png",
     productTabs: ["/assets/treatments/chemical-peels-malta-logo-medpeel.png", "/assets/treatments/chemical-peels-malta-logo-mesoestetic.png"],
     heroForm: true,
@@ -67,10 +67,10 @@ const t: Treatment = {
   experience: {
     title: "YOUR TREATMENT EXPERIENCE", cta: "BOOK YOUR FREE CONSULTATION",
     steps: [
-      { title: "Personalised Consultation", desc: "We assess your facial anatomy, skin condition, medical history, and botox goals with one of our doctors.", image: "/assets/treatments/chemical-peels-malta-step1.png" },
-      { title: "Structured Plan", desc: "Your doctor designs a medically guided botox plan tailored to your facial structure and desired outcome.", image: "/assets/treatments/chemical-peels-malta-step2.png" },
-      { title: "Targeted Treatments", desc: "Your doctor administers botox using fine, precise injections, quick, comfortable, and no downtime.", image: "/assets/treatments/chemical-peels-malta-step3.png" },
-      { title: "Ongoing Review & Adjustment", desc: "Your doctor monitors your response and refines the plan to ensure natural botox results over time.", image: "/assets/treatments/chemical-peels-malta-step4.png" },
+      { title: "Personalised Consultation", desc: "We assess your facial anatomy, skin condition, medical history, and chemical peel goals with one of our doctors.", image: "/assets/treatments/chemical-peels-malta-step1.png" },
+      { title: "Structured Plan", desc: "Your doctor designs a medically guided chemical peel plan tailored to your facial structure and desired outcome.", image: "/assets/treatments/chemical-peels-malta-step2.png" },
+      { title: "Targeted Treatments", desc: "Your doctor applies the chemical peel solution with precision and care, quick, comfortable, and no downtime.", image: "/assets/treatments/chemical-peels-malta-step3.png" },
+      { title: "Ongoing Review & Adjustment", desc: "Your doctor monitors your response and refines the plan to ensure natural chemical peel results over time.", image: "/assets/treatments/chemical-peels-malta-step4.png" },
     ],
   },
   prepAftercare: {
@@ -131,7 +131,7 @@ const t: Treatment = {
       { title: "Medically Qualified Practitioners", desc: "Every chemical peel treatment is performed by a qualified doctor." },
       { title: "Advanced Facial Anatomy Expertise", desc: "Precision chemical peel techniques tailored to your unique facial anatomy." },
       { title: "Personalised Treatment Plans", desc: "Your chemical peel plan is designed to enhance, never overcorrect." },
-      { title: "Clinically Approved Products", desc: "Clinically Approved Products — CE-marked, clinically approved chemical peel and evidence-based protocols." },
+      { title: "Clinically Approved Products", desc: "CE-marked, clinically approved chemical peel and evidence-based protocols." },
       { title: "Thousands of Treatments Performed", desc: "Experience and results you can trust, right here in Malta." },
     ],
   },

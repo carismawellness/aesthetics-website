@@ -10,9 +10,8 @@ const t: Treatment = {
     prices: [
       { label: "1ml", price: "from €269/ml" },
       { label: "2ml", price: "from €399 (€175/ml)" },
-      { label: "2ml ", price: "from €399 (€175/ml)" },
     ],
-    cta: "BOOK YOUR SESSION NOW",
+    cta: "BOOK YOUR DERMAL FILLER SESSION NOW",
     image: "/assets/treatments/dermal-fillers-malta-hero.png",
     imageRatio: "5 / 4",
     productTabs: ["/assets/treatments/dermal-fillers-malta-logo-juvederm.png", "/assets/treatments/dermal-fillers-malta-logo-croma.png", "/assets/treatments/dermal-fillers-malta-logo-teoxane.png"],
@@ -53,7 +52,7 @@ const t: Treatment = {
     intro: "Filler placement is guided by your facial anatomy and individual goals. Below are the four most commonly enhanced zones.",
     areas: [
       { zone: "Cheeks", icon: "/assets/treatments/dermal-fillers-malta-icon-cheeks.png", name: "Cheek Contour", desc: "Restores volume and defines the midface for a naturally lifted, sculpted appearance." },
-      { zone: "Jawline", icon: "/assets/treatments/dermal-fillers-malta-icon-jawline.png", name: "Jaw DefinitioN", desc: "Sharpens the jawline contour and strengthens the lower face profile with precise placement." },
+      { zone: "Jawline", icon: "/assets/treatments/dermal-fillers-malta-icon-jawline.png", name: "Jaw Definition", desc: "Sharpens the jawline contour and strengthens the lower face profile with precise placement." },
       { zone: "Folds", icon: "/assets/treatments/dermal-fillers-malta-icon-folds.png", name: "Nasolabial Folds", desc: "Softens the lines from nose to mouth that deepen with age, restoring a smoother transition." },
       { zone: "Chin", icon: "/assets/treatments/dermal-fillers-malta-icon-chin.png", name: "Chin Projection", desc: "Improves chin shape and projection to bring balance and proportion to the facial profile." },
     ],
@@ -81,10 +80,10 @@ const t: Treatment = {
   experience: {
     title: "your treatment experience", cta: "BOOK YOUR FREE CONSULTATION",
     steps: [
-      { title: "personalised consultation", desc: "We assess your facial anatomy, skin condition, medical history, and botox goals with one of our doctors.", image: "/assets/treatments/botox-step1.png" },
-      { title: "Structured Plan", desc: "Your doctor designs a medically guided botox plan tailored to your facial structure and desired outcome.", image: "/assets/treatments/botox-step2.png" },
-      { title: "Targeted Treatments", desc: "Your doctor administers botox using fine, precise injections, quick, comfortable, and no downtime.", image: "/assets/treatments/botox-step3.png" },
-      { title: "Ongoing Review & Adjustment", desc: "Your doctor monitors your response and refines the plan to ensure natural botox results over time.", image: "/assets/treatments/botox-step4.png" },
+      { title: "personalised consultation", desc: "We assess your facial anatomy, skin condition, medical history, and dermal filler goals with one of our doctors.", image: "/assets/treatments/dermal-fillers-malta-step1.png" },
+      { title: "Structured Plan", desc: "Your doctor designs a medically guided dermal filler plan tailored to your facial structure and desired outcome.", image: "/assets/treatments/dermal-fillers-malta-step2.png" },
+      { title: "Targeted Treatments", desc: "Your doctor administers dermal fillers with fine, precise injections, quick, comfortable, and no downtime.", image: "/assets/treatments/dermal-fillers-malta-step3.png" },
+      { title: "Ongoing Review & Adjustment", desc: "Your doctor monitors your response and refines the plan to ensure natural dermal filler results over time.", image: "/assets/treatments/dermal-fillers-malta-step4.png" },
     ],
   },
   prepAftercare: {
@@ -145,7 +144,7 @@ const t: Treatment = {
       { title: "medically qualified practitioners", desc: "Every dermal fillers treatment is performed by a qualified doctor." },
       { title: "Advanced Facial Anatomy Expertise", desc: "Precision dermal fillers techniques tailored to your unique facial anatomy." },
       { title: "Personalised Treatment Plans", desc: "Your dermal fillers plan is designed to enhance, never overcorrect." },
-      { title: "Clinically Approved Products", desc: "Clinically Approved Products — CE-marked, clinically approved botox and evidence-based protocols." },
+      { title: "Clinically Approved Products", desc: "Clinically Approved Products — CE-marked, clinically approved dermal filler and evidence-based protocols." },
       { title: "Thousands of Treatments Performed", desc: "Experience and results you can trust, right here in Malta." },
     ],
   },
@@ -172,7 +171,7 @@ const t: Treatment = {
   recommended: {
     title: "recommended with dermal fillers",
     items: [
-      { label: "Dermal fillers", href: "/dermal-fillers-malta", image: "/assets/treatments/rec-dermal-fillers.jpg" },
+      { label: "Lip Fillers", href: "/lip-fillers-malta", image: "/assets/treatments/lip-fillers-malta-hero.png" },
       { label: "Microneedling", href: "/microneedling-malta", image: "/assets/treatments/rec-microneedling.jpg" },
       { label: "platelet rich plasma", href: "/prp-malta", image: "/assets/treatments/rec-prp.jpg" },
       { label: "mesotherapy", href: "/mesotherapy-malta", image: "/assets/treatments/rec-mesotherapy.jpg" },

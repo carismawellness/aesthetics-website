@@ -121,7 +121,7 @@ export default async function GoogleReviews() {
         <div className="text-center" style={{ marginTop: "36px" }}>
           <a href={url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2" style={{ border: "1px solid var(--line)", borderRadius: "999px", padding: "11px 24px", fontSize: "13px", color: "var(--label)" }}>
             <GoogleG size={16} />
-            See all our reviews on Google
+            Review us on Google
           </a>
         </div>
       </div>
