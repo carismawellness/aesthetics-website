@@ -218,7 +218,7 @@ export default function MembershipPage() {
   return (
     <>
       {/* ════ HERO ════ */}
-      <section style={{ background: `url('${A}/mem-hero.jpg') center / cover no-repeat`, padding: "56px 0 64px" }}>
+      <section style={{ background: "url('/assets/hero-bg.png') center / cover no-repeat", padding: "56px 0 64px" }}>
         <div className="container text-center" style={{ maxWidth: "640px" }}>
           <div className="mx-auto" style={{ maxWidth: "600px" }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
