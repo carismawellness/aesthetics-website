@@ -37,7 +37,7 @@ function Stars() {
           <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
         </svg>
       ))}
-      <span style={{ fontSize: "12px", color: "var(--label)", marginLeft: "4px" }}>4.9/5 from over 200 customer reviews</span>
+      <span style={{ fontSize: "12px", color: "var(--label)", marginLeft: "4px" }}>4,9/5 from over 200 customer reviews</span>
     </div>
   );
 }
@@ -277,17 +277,14 @@ function Because() {
   return (
     <section style={{ background: "#ffffff", padding: "60px 0" }}>
       <div className="mx-auto" style={{ maxWidth: "1040px", padding: "0 24px" }}>
-        <h2 className="font-serif text-center" style={{ fontSize: "clamp(22px,3vw,30px)", color: TEAL, letterSpacing: "0.06em", lineHeight: 1.3, fontWeight: 400, marginBottom: "40px" }}>
-          safe, confident pigmentation care starts here.
+        <h2 className="font-serif text-center" style={{ fontSize: "clamp(22px,3vw,30px)", color: TEAL, letterSpacing: "0.06em", lineHeight: 1.3, fontWeight: 400, marginBottom: "40px", textTransform: "uppercase" }}>
+          Safe, Confident Pigmentation Care Starts Here.
         </h2>
         <div className="grid lg:grid-cols-2 items-center gap-12">
           <div>
-            <ul style={{ listStyle: "none", margin: 0, padding: 0 }}>
+            <ul style={{ listStyle: "disc", margin: 0, paddingLeft: "22px" }}>
               {BECAUSE.map((item) => (
-                <li key={item} className="flex items-start" style={{ gap: "12px", marginBottom: "14px" }}>
-                  <Dot />
-                  <span style={{ color: "var(--label)", fontSize: "15px", lineHeight: 1.6 }}>{item}</span>
-                </li>
+                <li key={item} style={{ color: "var(--gold-deep)", fontSize: "15px", lineHeight: 1.6, marginBottom: "12px" }}>{item}</li>
               ))}
             </ul>
             <div style={{ marginTop: "24px" }}><Cta label="Claim Pigmentation Care" /></div>
@@ -295,8 +292,8 @@ function Because() {
           </div>
           <div>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={`${A}/pig-rev1.png`} alt="Face pigmentation before and after Pico laser treatment"
-              style={{ width: "100%", aspectRatio: "1 / 1", objectFit: "cover", borderRadius: "12px", boxShadow: "0 16px 40px rgba(0,0,0,0.12)", display: "block" }} />
+            <img src={`${A}/pig-because.png`} alt="Woman with facial pigmentation looking down"
+              style={{ width: "100%", aspectRatio: "800 / 747", objectFit: "cover", borderRadius: "12px", boxShadow: "0 16px 40px rgba(0,0,0,0.12)", display: "block" }} />
           </div>
         </div>
       </div>
