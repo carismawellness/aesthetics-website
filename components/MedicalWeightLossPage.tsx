@@ -1423,7 +1423,6 @@ const RESEARCH: ResearchCard[] = [
     img: `${A}/research-4-safety.png`,
     title: "safety and tolerability of medically supervised ozempic & mounjaro use",
     pill: "High evidence",
-    imgHeight: 350,
     whatItDoes:
       "Ozempic and Mounjaro have been extensively studied for safety when prescribed appropriately and monitored by healthcare professionals, with dose titration used to improve tolerability.",
     keyResults: [
@@ -1441,11 +1440,12 @@ const RESEARCH: ResearchCard[] = [
 
 function ResearchCardView({ card, col }: { card: ResearchCard; col: "left" | "right" }) {
   const [open, setOpen] = useState(false);
-  const h = card.imgHeight ?? 220;
-  const radius = "0 28px 0 28px";
+  const h = card.imgHeight ?? 160;
   return (
-    <div style={{ background: "var(--white)", border: "1px solid var(--line)", borderRadius: radius, overflow: "hidden", boxShadow: "0 8px 24px rgba(0,0,0,0.05)" }}>
-      <Image src={card.img} alt="" width={381} height={h} style={{ width: "100%", height: `${h}px`, objectFit: "cover", objectPosition: "center", display: "block" }} />
+    <div style={{ background: "var(--white)", border: "1px solid var(--line)", borderRadius: "12px", boxShadow: "0 8px 24px rgba(0,0,0,0.05)" }}>
+      <div style={{ padding: "12px 12px 0" }}>
+        <Image src={card.img} alt="" width={381} height={h} style={{ width: "100%", height: `${h}px`, objectFit: "cover", objectPosition: "center", display: "block", borderRadius: "0 28px 0 28px" }} />
+      </div>
       <div style={{ padding: "24px" }}>
         <h3 className="font-display" style={{ fontSize: "16px", color: "#9B8C81", textAlign: "center", lineHeight: 1.4, marginBottom: "16px" }}>
           {card.title}
