@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   CONTACT,
   FACE_LINKS,
@@ -34,48 +34,99 @@ function PhoneIcon() {
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [expanded, setExpanded] = useState<string | null>(null);
+  const [scrolled, setScrolled] = useState(false);
+
+  // Scroll-aware: collapse the announcement strip and firm up the glass once
+  // the user scrolls past the hero edge.
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // Lock body scroll + close on Escape while the full-page mobile menu is open.
+  useEffect(() => {
+    if (!open) return;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
+    window.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = prev;
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [open]);
+
+  // Liquid-glass surface for the floating pill. More translucent over the hero,
+  // firmer once scrolled for legibility over light content.
+  const pillStyle: React.CSSProperties = {
+    background: scrolled ? "rgba(255,255,255,0.72)" : "rgba(255,255,255,0.55)",
+    backdropFilter: "blur(20px) saturate(180%)",
+    WebkitBackdropFilter: "blur(20px) saturate(180%)",
+    border: "1px solid rgba(255,255,255,0.65)",
+    borderRadius: "999px",
+    boxShadow: scrolled
+      ? "0 10px 34px rgba(28,30,30,0.16), inset 0 1px 0 rgba(255,255,255,0.85)"
+      : "0 8px 30px rgba(28,30,30,0.12), inset 0 1px 0 rgba(255,255,255,0.8)",
+    transition: "background 0.35s ease, box-shadow 0.35s ease",
+  };
 
   return (
-    <header className="sticky top-0 z-50">
-      {/* Announcement bar */}
+    <header className="fixed top-0 inset-x-0 z-50">
+      {/* Announcement strip — slides away on scroll */}
       <div
         className="w-full overflow-hidden"
-        style={{ backgroundColor: "var(--teal-100)", color: "var(--gold)", padding: "7px 0", fontSize: "11px" }}
+        style={{
+          backgroundColor: "var(--teal-100)",
+          color: "var(--gold)",
+          height: scrolled ? 0 : 28,
+          opacity: scrolled ? 0 : 1,
+          transition: "height 0.35s ease, opacity 0.25s ease",
+        }}
       >
         <div
           className="marquee-track font-display"
-          style={{ letterSpacing: "0.18em", fontWeight: 500 }}
+          style={{ letterSpacing: "0.18em", fontWeight: 500, fontSize: "11px", padding: "7px 0" }}
         >
           <span style={{ paddingRight: "60px" }}>{ANNOUNCE}</span>
           <span style={{ paddingRight: "60px" }}>{ANNOUNCE}</span>
         </div>
       </div>
 
-      {/* Main nav */}
-      <nav className="bg-white border-b" style={{ borderColor: "var(--line)" }}>
-        <div className="container flex items-center justify-between" style={{ minHeight: "88px", padding: "12px 20px" }}>
+      {/* Floating glass pill */}
+      <div style={{ padding: "12px clamp(12px,3vw,28px) 0" }}>
+        <nav
+          className="container flex items-center justify-between"
+          style={{ ...pillStyle, minHeight: "62px", padding: "8px 12px 8px 22px" }}
+        >
           {/* Logo */}
-          <Link href="/" className="flex items-center shrink-0">
+          <Link href="/" className="flex items-center shrink-0" onClick={() => setOpen(false)}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/assets/logo.png" alt="Carisma Aesthetics" style={{ height: "52px", width: "auto" }} />
+            <img src="/assets/logo.png" alt="Carisma Aesthetics" style={{ height: "40px", width: "auto" }} />
           </Link>
 
           {/* Desktop menu */}
-          <div className="hidden lg:flex items-center" style={{ gap: "34px" }}>
+          <div className="hidden lg:flex items-center" style={{ gap: "30px" }}>
             {MENUS.map((m) =>
               m.items ? (
                 <div key={m.label} className="relative group">
-                  <button className="font-display flex items-center gap-1" style={{ fontSize: "13px", letterSpacing: "0.12em", padding: "28px 0", color: "var(--label)" }}>
+                  <button className="font-display flex items-center gap-1" style={{ fontSize: "13px", letterSpacing: "0.12em", padding: "20px 0", color: "var(--label)" }}>
                     {m.label}
                     <svg width="9" height="9" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.6"><path d="M2 4l4 4 4-4" /></svg>
                   </button>
                   <div
                     className="absolute left-1/2 -translate-x-1/2 top-full hidden group-hover:block z-50"
                     style={{
-                      backgroundColor: "#fff",
-                      boxShadow: "0 8px 32px rgba(0,0,0,0.08)",
-                      minWidth: "270px",
-                      padding: "8px 0 12px",
+                      background: "rgba(255,255,255,0.78)",
+                      backdropFilter: "blur(22px) saturate(180%)",
+                      WebkitBackdropFilter: "blur(22px) saturate(180%)",
+                      border: "1px solid rgba(255,255,255,0.7)",
+                      borderRadius: "20px",
+                      boxShadow: "0 16px 40px rgba(28,30,30,0.16), inset 0 1px 0 rgba(255,255,255,0.85)",
+                      minWidth: "260px",
+                      padding: "10px 0 12px",
+                      marginTop: "6px",
                     }}
                   >
                     {m.items.map((it) => (
@@ -83,7 +134,7 @@ export default function Header() {
                         key={it.href}
                         href={it.href}
                         className="block text-center font-display transition-colors"
-                        style={{ padding: "6px 24px", fontSize: "11px", color: "#9b8d83", textTransform: "uppercase", letterSpacing: "0.08em", whiteSpace: "nowrap" }}
+                        style={{ padding: "7px 24px", fontSize: "11px", color: "#9b8d83", textTransform: "uppercase", letterSpacing: "0.08em", whiteSpace: "nowrap" }}
                         onMouseEnter={e => (e.currentTarget.style.color = "var(--gold)")}
                         onMouseLeave={e => (e.currentTarget.style.color = "#9b8d83")}
                       >
@@ -101,66 +152,125 @@ export default function Header() {
           </div>
 
           {/* Right side */}
-          <div className="hidden lg:flex flex-col items-end" style={{ gap: "4px" }}>
-            <Link href="/consultation" className="btn btn-teal">
-              free consultation
-            </Link>
+          <div className="hidden lg:flex items-center" style={{ gap: "18px" }}>
             <a href={`tel:${CONTACT.tel}`} className="flex items-center gap-1.5" style={{ color: "var(--gold)" }}>
               <PhoneIcon />
               <span style={{ color: "var(--ink-soft)", letterSpacing: "1px", fontSize: "13px" }}>{CONTACT.phoneDigits}</span>
             </a>
+            <Link href="/consultation" className="btn btn-teal" style={{ borderRadius: "999px" }}>
+              free consultation
+            </Link>
           </div>
 
-          {/* Mobile toggle */}
-          <button className="lg:hidden p-2" onClick={() => setOpen(!open)} aria-label="Menu">
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d={open ? "M6 18L18 6M6 6l12 12" : "M4 7h16M4 12h16M4 17h16"} />
+          {/* Mobile hamburger */}
+          <button className="lg:hidden flex items-center justify-center" style={{ width: 44, height: 44 }} onClick={() => setOpen(true)} aria-label="Open menu">
+            <svg className="w-6 h-6" fill="none" stroke="var(--ink-soft)" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M4 7h16M4 12h16M4 17h16" />
             </svg>
           </button>
-        </div>
+        </nav>
+      </div>
 
-        {/* Mobile menu */}
-        {open && (
-          <div className="lg:hidden border-t bg-white" style={{ borderColor: "var(--line)", maxHeight: "75vh", overflowY: "auto" }}>
-            <div className="container py-3">
-              {MENUS.map((m) =>
-                m.items ? (
-                  <div key={m.label} className="border-b" style={{ borderColor: "var(--line)" }}>
-                    <button
-                      className="w-full flex items-center justify-between font-display"
-                      style={{ padding: "13px 0", fontSize: "13px", letterSpacing: "0.12em" }}
-                      onClick={() => setExpanded(expanded === m.label ? null : m.label)}
-                    >
-                      {m.label}
-                      <span>{expanded === m.label ? "−" : "+"}</span>
-                    </button>
-                    {expanded === m.label && (
-                      <div className="pb-2">
-                        {m.items.map((it) => (
-                          <Link key={it.href} href={it.href} onClick={() => setOpen(false)} className="block" style={{ padding: "8px 12px", fontSize: "14px", color: "var(--label)" }}>
-                            {it.label}
-                          </Link>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                ) : (
-                  <Link key={m.label} href={m.href!} onClick={() => setOpen(false)} className="block border-b font-display" style={{ borderColor: "var(--line)", padding: "13px 0", fontSize: "13px", letterSpacing: "0.12em" }}>
-                    {m.label}
-                  </Link>
-                )
-              )}
-              <a href={`tel:${CONTACT.tel}`} className="flex items-center gap-2 py-4" style={{ color: "var(--gold)" }}>
-                <PhoneIcon />
-                <span style={{ color: "var(--ink-soft)", letterSpacing: "1px" }}>{CONTACT.phoneDigits}</span>
-              </a>
-              <Link href="/consultation" onClick={() => setOpen(false)} className="btn btn-gold w-full">
-                free consultation
-              </Link>
-            </div>
+      {/* Full-page liquid-glass mobile menu */}
+      {open && (
+        <div
+          className="lg:hidden fixed inset-0"
+          style={{
+            zIndex: 60,
+            background:
+              "linear-gradient(160deg, rgba(238,243,243,0.88) 0%, rgba(255,255,255,0.82) 55%, rgba(245,241,236,0.86) 100%)",
+            backdropFilter: "blur(30px) saturate(180%)",
+            WebkitBackdropFilter: "blur(30px) saturate(180%)",
+            animation: "glassIn 0.32s cubic-bezier(0.22,1,0.36,1)",
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
+          <style>{`@keyframes glassIn{from{opacity:0;transform:scale(1.03)}to{opacity:1;transform:scale(1)}}`}</style>
+
+          {/* Top row: logo + close */}
+          <div className="flex items-center justify-between shrink-0" style={{ padding: "16px clamp(16px,5vw,28px)" }}>
+            <Link href="/" onClick={() => setOpen(false)} className="flex items-center">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/assets/logo.png" alt="Carisma Aesthetics" style={{ height: "40px", width: "auto" }} />
+            </Link>
+            <button
+              onClick={() => setOpen(false)}
+              aria-label="Close menu"
+              className="flex items-center justify-center"
+              style={{
+                width: 46,
+                height: 46,
+                borderRadius: "999px",
+                background: "rgba(255,255,255,0.6)",
+                border: "1px solid rgba(255,255,255,0.7)",
+                boxShadow: "inset 0 1px 0 rgba(255,255,255,0.8)",
+              }}
+            >
+              <svg className="w-6 h-6" fill="none" stroke="var(--ink-soft)" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
           </div>
-        )}
-      </nav>
+
+          {/* Scrollable link area */}
+          <div style={{ flex: 1, overflowY: "auto", padding: "8px clamp(16px,5vw,28px) 28px" }}>
+            {MENUS.map((m) =>
+              m.items ? (
+                <div key={m.label} style={{ borderBottom: "1px solid rgba(155,141,131,0.18)" }}>
+                  <button
+                    className="w-full flex items-center justify-between font-display"
+                    style={{ padding: "18px 4px", fontSize: "19px", letterSpacing: "0.08em", color: "var(--ink-soft)" }}
+                    onClick={() => setExpanded(expanded === m.label ? null : m.label)}
+                  >
+                    {m.label}
+                    <span style={{ fontSize: "22px", color: "var(--gold)", lineHeight: 1 }}>{expanded === m.label ? "−" : "+"}</span>
+                  </button>
+                  {expanded === m.label && (
+                    <div style={{ paddingBottom: "10px" }}>
+                      {m.items.map((it) => (
+                        <Link
+                          key={it.href}
+                          href={it.href}
+                          onClick={() => setOpen(false)}
+                          className="block font-display"
+                          style={{ padding: "9px 12px", fontSize: "14px", color: "var(--label)", textTransform: "uppercase", letterSpacing: "0.06em" }}
+                        >
+                          {it.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ) : (
+                <Link
+                  key={m.label}
+                  href={m.href!}
+                  onClick={() => setOpen(false)}
+                  className="block font-display"
+                  style={{ padding: "18px 4px", fontSize: "19px", letterSpacing: "0.08em", color: "var(--ink-soft)", borderBottom: "1px solid rgba(155,141,131,0.18)" }}
+                >
+                  {m.label}
+                </Link>
+              )
+            )}
+
+            {/* Phone + CTA */}
+            <a href={`tel:${CONTACT.tel}`} className="flex items-center gap-2" style={{ padding: "22px 4px 8px", color: "var(--gold)" }}>
+              <PhoneIcon />
+              <span style={{ color: "var(--ink-soft)", letterSpacing: "1px", fontSize: "16px" }}>{CONTACT.phoneDigits}</span>
+            </a>
+            <Link
+              href="/consultation"
+              onClick={() => setOpen(false)}
+              className="btn btn-teal w-full"
+              style={{ borderRadius: "999px", marginTop: "10px", justifyContent: "center" }}
+            >
+              free consultation
+            </Link>
+          </div>
+        </div>
+      )}
     </header>
   );
 }
