@@ -1442,7 +1442,7 @@ const RESEARCH: ResearchCard[] = [
 function ResearchCardView({ card, col }: { card: ResearchCard; col: "left" | "right" }) {
   const [open, setOpen] = useState(false);
   const h = card.imgHeight ?? 220;
-  const radius = col === "left" ? "28px 0 0 28px" : "0 28px 28px 0";
+  const radius = "0 28px 0 28px";
   return (
     <div style={{ background: "var(--white)", border: "1px solid var(--line)", borderRadius: radius, overflow: "hidden", boxShadow: "0 8px 24px rgba(0,0,0,0.05)" }}>
       <Image src={card.img} alt="" width={381} height={h} style={{ width: "100%", height: `${h}px`, objectFit: "cover", objectPosition: "center", display: "block" }} />
