@@ -2,11 +2,10 @@ import Link from "next/link";
 import { A, Dot, GoogleRating } from "./_shared";
 
 const INCLUDED = [
-  "Personal tattoo and skin assessment before treatment",
-  "Advanced Pico laser technology for precise ink targeting",
-  "Ultra-short laser pulses designed to break down tattoo pigment",
-  "A personalised treatment plan based on your tattoo and skin type",
-  "Aftercare guidance to support safe healing and better results",
+  "Targets pigment (tattoo ink, melanin)",
+  "Uses ultra-short picosecond pulses",
+  "Works by using pressure instead of heat",
+  "Breaks ink for natural body clearance",
 ];
 
 const TRUST = [
@@ -145,7 +144,7 @@ export default function Hero() {
                   borderRadius: "4px",
                 }}
               >
-                Book Now &amp; Save 50% <span aria-hidden style={{ marginLeft: "8px" }}>›</span>
+                Book Now &amp; Save 70% <span aria-hidden style={{ marginLeft: "8px" }}>›</span>
               </Link>
 
               <GoogleRating />

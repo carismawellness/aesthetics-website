@@ -67,10 +67,10 @@ const t: Treatment = {
   experience: {
     title: "your treatment experience", cta: "BOOK YOUR FREE CONSULTATION",
     steps: [
-      { title: "personalised consultation", desc: "We assess your facial anatomy, skin condition, medical history, and botox goals with one of our doctors.", image: "/assets/treatments/botox-step1.png" },
-      { title: "Structured Plan", desc: "Your doctor designs a medically guided botox plan tailored to your facial structure and desired outcome.", image: "/assets/treatments/botox-step2.png" },
-      { title: "Targeted Treatments", desc: "Your doctor administers botox using fine, precise injections, quick, comfortable, and no downtime.", image: "/assets/treatments/botox-step3.png" },
-      { title: "Ongoing Review & Adjustment", desc: "Your doctor monitors your response and refines the plan to ensure natural botox results over time.", image: "/assets/treatments/botox-step4.png" },
+      { title: "personalised consultation", desc: "We assess your facial anatomy, skin condition, medical history, and lip filler goals with one of our doctors.", image: "/assets/treatments/botox-step1.png" },
+      { title: "Structured Plan", desc: "Your doctor designs a medically guided lip filler plan tailored to your facial structure and desired outcome.", image: "/assets/treatments/botox-step2.png" },
+      { title: "Targeted Treatments", desc: "Your doctor administers lip filler with fine, precise injections, quick, comfortable, and no downtime.", image: "/assets/treatments/botox-step3.png" },
+      { title: "Ongoing Review & Adjustment", desc: "Your doctor monitors your response and refines the plan to ensure natural lip filler results over time.", image: "/assets/treatments/botox-step4.png" },
     ],
   },
   prepAftercare: {
@@ -97,7 +97,7 @@ const t: Treatment = {
           "Topical numbing is applied before treatment",
           "Filler is placed with careful, measured technique",
           "Communicate your preferences throughout",
-          "Session takes approximately 30–45 minutes",
+          "Session takes approximately 20–30 minutes",
         ],
       },
       {
@@ -116,7 +116,7 @@ const t: Treatment = {
   patientVideos: {
     title: "real patients, real confidence",
     intro: "Every face is unique. Every story is personal. Discover how our lip fillers patients describe their journey to refined, natural results at Carisma Aesthetics in Malta.",
-    videos: ["/assets/treatments/botox-video1.mp4", "/assets/treatments/botox-video2.mp4", "/assets/treatments/botox-video3.mp4"],
+    videos: ["/assets/treatments/lip-fillers-malta-video1.mp4", "/assets/treatments/lip-fillers-malta-video2.mp4", "/assets/treatments/lip-fillers-malta-video3.mp4"],
   },
   trusted: {
     title: "malta's trusted clinic for lip fillers",
@@ -136,7 +136,7 @@ const t: Treatment = {
     title: "malta's #1 leading wellness chain",
     commitmentTitle: "our commitment",
     commitment: [
-      "Natural, refined lip fillers results,  never overdone, never frozen",
+      "Natural, refined lip fillers results, never overdone, never frozen",
       "Doctor-led treatments with advanced facial anatomy expertise",
       "Safe, ethical care using clinically approved products",
       "A personalised journey from consultation to aftercare",

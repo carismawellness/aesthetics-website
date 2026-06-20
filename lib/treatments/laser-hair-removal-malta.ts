@@ -79,6 +79,48 @@ const t: Treatment = {
       { image: "/assets/treatments/laser-member-gold.png", name: "gold membership", sessions: "6 Sessions | 60 min each", price: "399 EUR" },
     ],
   },
+  faq: [
+    {
+      q: "How does laser hair removal work?",
+      a: "SHR® (Super Hair Removal) uses a triple-wavelength laser system (755nm, 810nm, 1064nm) that targets melanin in the hair follicle. Controlled pulses of light heat the follicle and inhibit regrowth without damaging surrounding skin — effective across a wide range of skin tones and hair types.",
+    },
+    {
+      q: "How do I prepare for a laser hair removal treatment?",
+      a: "Avoid sun exposure and self-tanning products for at least 4 weeks before your session. Shave the area 24 hours beforehand. Do not wax, pluck, or use depilatory creams for at least 6 weeks prior — the laser needs the follicle intact. Remove any makeup, creams, or perfume from the treatment area on the day.",
+    },
+    {
+      q: "Who can't get laser hair removal?",
+      a: "Laser hair removal may not be suitable if you are pregnant or breastfeeding, have active skin infections in the treatment area, are taking photosensitive medications, or have very light blonde, red, or white hair with insufficient melanin for the laser to target. Your suitability will be confirmed in a medical consultation.",
+    },
+    {
+      q: "Why laser hair removal at Carisma?",
+      a: "Carisma Aesthetics uses the Alma Soprano Titanium — a medical-grade triple-wavelength SHR® device that is faster, safer, and more comfortable than older laser technologies. All treatments are performed by medically qualified practitioners, and we offer a visible results guarantee: see hair reduction in 3 sessions or your next one is free.",
+    },
+    {
+      q: "Is laser hair removal painful?",
+      a: "With the Alma Soprano Titanium's ICE Plus™ cooling technology, the skin surface is chilled to as low as –4°C throughout each session, making treatment virtually painless. Most clients describe the sensation as a mild warmth — far more comfortable than waxing. There is no numbing cream required.",
+    },
+    {
+      q: "How many sessions will I need?",
+      a: "Most clients achieve their desired results in 6–8 sessions spaced 4–8 weeks apart, depending on the treatment area and hair growth cycle. Finer or lighter hair may require additional sessions. A personalised treatment plan is created at your free consultation so you know exactly what to expect.",
+    },
+    {
+      q: "Is laser hair removal permanent?",
+      a: "Laser hair removal permanently destroys active hair follicles, reducing hair count by 80–90% over a full treatment course. Some follicles may eventually reactivate due to hormonal changes, so occasional top-up sessions every 1–2 years are recommended to maintain results long-term.",
+    },
+    {
+      q: "What should I do after a laser hair removal session?",
+      a: "Avoid sun exposure, sunbeds, and self-tanning products for at least 2 weeks after treatment. Do not use perfumed products, exfoliants, or heat treatments (saunas, hot baths) for 48 hours. Apply a gentle, fragrance-free moisturiser as needed. Any mild redness or warmth typically subsides within a few hours.",
+    },
+    {
+      q: "Is laser hair removal safe for darker or tanned skin?",
+      a: "Yes. The Alma Soprano Titanium's 1064nm Nd:YAG wavelength is specifically designed for darker skin tones and recently tanned skin, making it one of the safest options available for all Fitzpatrick skin types. During your consultation we assess your current skin tone and calibrate the device settings accordingly.",
+    },
+    {
+      q: "Can laser hair removal be done on any body area?",
+      a: "Laser hair removal can be performed on almost any area of the body, including the face, arms, underarms, bikini line, legs, chest, back, and shoulders. The only area avoided is directly over the eyelids. During your consultation we will confirm which areas are suitable for your skin and hair type.",
+    },
+  ],
 };
 
 export default t;

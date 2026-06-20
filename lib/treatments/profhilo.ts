@@ -13,7 +13,7 @@ const t: Treatment = {
       { label: "2 sessions", price: "from €449 (€224/session)" },
       { label: "3 sessions", price: "from €649 (€216/session)" },
     ],
-    cta: "BOOK YOUR SESSION NOW",
+    cta: "BOOK YOUR PROFHILO SESSION NOW",
     image: "/assets/treatments/profhilo-hero.avif",
     brandLogos: ["/assets/treatments/profhilo-logo.png"],
     imageRatio: "450 / 358",
@@ -36,7 +36,7 @@ const t: Treatment = {
   ],
   precision: {
     title: "precision areas of refinement",
-    intro: "Each botox treatment is carefully applied to specific anatomical areas by our doctors. Below are the most commonly treated zones at our Malta clinic.",
+    intro: "Each Profhilo treatment is carefully applied to specific anatomical areas by our doctors. Below are the most commonly treated zones at our Malta clinic.",
     areas: [
       { zone: "Face", icon: "/assets/treatments/profhilo-icon-face.png", name: "Full Face", desc: "Restores deep hydration and firmness across the face using five precise bio-injection points." },
       { zone: "Neck", icon: "/assets/treatments/profhilo-icon-neck.png", name: "Neck", desc: "Addresses crepey texture and laxity in the neck, an area that often reveals early ageing." },
@@ -67,10 +67,10 @@ const t: Treatment = {
   experience: {
     title: "your treatment experience", cta: "BOOK YOUR FREE CONSULTATION",
     steps: [
-      { title: "personalised consultation", desc: "We assess your facial anatomy, skin condition, medical history, and botox goals with one of our doctors.", image: "/assets/treatments/profhilo-step1.png" },
-      { title: "Structured Plan", desc: "Your doctor designs a medically guided botox plan tailored to your facial structure and desired outcome.", image: "/assets/treatments/profhilo-step2.png" },
-      { title: "Targeted Treatments", desc: "Your doctor administers botox using fine, precise injections, quick, comfortable, and no downtime.", image: "/assets/treatments/profhilo-step3.png" },
-      { title: "Ongoing Review & Adjustment", desc: "Your doctor monitors your response and refines the plan to ensure natural botox results over time.", image: "/assets/treatments/profhilo-step4.png" },
+      { title: "personalised consultation", desc: "We assess your facial anatomy, skin condition, medical history, and Profhilo treatment goals with one of our doctors.", image: "/assets/treatments/profhilo-step1.png" },
+      { title: "Structured Plan", desc: "Your doctor designs a medically guided Profhilo plan tailored to your facial structure and desired outcome.", image: "/assets/treatments/profhilo-step2.png" },
+      { title: "Targeted Treatments", desc: "Your doctor administers Profhilo with fine, precise injections, quick, comfortable, and no downtime.", image: "/assets/treatments/profhilo-step3.png" },
+      { title: "Ongoing Review & Adjustment", desc: "Your doctor monitors your response and refines the plan to ensure natural Profhilo results over time.", image: "/assets/treatments/profhilo-step4.png" },
     ],
   },
   prepAftercare: {
@@ -114,7 +114,7 @@ const t: Treatment = {
     ],
   },
   trusted: {
-    title: "malta's trusted clinic for profhilio",
+    title: "malta's trusted clinic for Profhilo",
     subtitle: "Doctor-Led profhilo in Malta",
     asSeenOn: ["/assets/press/lovin-malta.jpeg", "/assets/press/malta-daily.png", "/assets/press/bay.jpeg", "/assets/press/times-of-malta.png", "/assets/press/malta-today.jpg"],
     images: ["/assets/treatments/trusted-clinic-collage.png"],
@@ -136,7 +136,7 @@ const t: Treatment = {
       "Safe, ethical care using clinically approved products",
       "A personalised journey from consultation to aftercare",
     ],
-    whyTitle: "WHY MALTA CHOOSES Carisma for profhilio",
+    whyTitle: "WHY MALTA CHOOSES Carisma for Profhilo",
     why: [
       "Created by the team behind Malta’s leading spa and medical aesthetics centres",
       "Doctor-led profhilo treatments with a focus on safety and long-term results",

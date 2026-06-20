@@ -32,7 +32,7 @@ export default function Secure() {
               </p>
             ))}
             <div style={{ marginTop: "26px" }}>
-              <Cta label="book your tatto removal now" />
+              <Cta label="book your tattoo removal now" />
             </div>
           </div>
 

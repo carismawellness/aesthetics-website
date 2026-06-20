@@ -8,7 +8,7 @@ const t: Treatment = {
     subtitle: "Doctor-Led Microneedling with Mesotherapy — Restore Your Skin from Within",
     body: "Is uneven skin texture, scarring, or dull skin holding you back? Rediscover smoother, brighter, more confident skin with our expert microneedling and mesotherapy treatments in Malta. Every treatment is performed by qualified doctors who combine collagen induction therapy with personalised mesotherapy cocktails, delivering natural, lasting results that restore your skin from within.",
     prices: [
-      { label: "1 session", price: "from €149 (+€50 for Exosomes" },
+      { label: "1 session", price: "from €149 (+€50 for Exosomes)" },
       { label: "3 sessions", price: "from €359 (€120/session)" },
       { label: "5 sessions", price: "from €599 (€119/session)" },
     ],
@@ -21,7 +21,7 @@ const t: Treatment = {
   info: [
     { metric: "Procedure Time", detail: "1 hour" },
     { metric: "Downtime", detail: "2-3 days" },
-    { metric: "Results Last For", detail: "maintaince courses may be requierd" },
+    { metric: "Results Last For", detail: "Maintenance courses may be required" },
     { metric: "Results Visible In", detail: "Individual depending on the skin condition" },
     { metric: "Anaesthetic", detail: "anaesthetic cream" },
   ],
@@ -130,7 +130,7 @@ const t: Treatment = {
       { title: "medically qualified practitioners", desc: "Every microneedling treatment is performed by a qualified doctor." },
       { title: "Advanced Facial Anatomy Expertise", desc: "Precision microneedling with personalised mesotherapy tailored to your unique skin concerns." },
       { title: "Personalised Treatment Plans", desc: "Your microneedling plan is designed for gradual, natural improvement" },
-      { title: "Clinically Approved Products", desc: "Clinically Approved Products — CE-marked devices and medical-grade mesotherapy cocktails using evidence-based protocols." },
+      { title: "Clinically Approved Products", desc: "CE-marked devices and medical-grade mesotherapy cocktails using evidence-based protocols." },
       { title: "Thousands of Treatments Performed", desc: "Experience and results you can trust, right here in Malta." },
     ],
   },

@@ -13,7 +13,7 @@ export default function Pricing() {
   return (
     <section style={{ padding: "60px 0" }}>
       <div className="container text-center">
-        <Serif>pico laser tatto removal pricing</Serif>
+        <Serif>pico laser tattoo removal pricing</Serif>
         <p className="mx-auto" style={{ maxWidth: "760px", fontSize: "14px", color: "var(--label)", lineHeight: 1.7, marginTop: "16px" }}>
           Choose the package that best fits your needs and goals. Every option is crafted to deliver exceptional results and a premium experience.
         </p>

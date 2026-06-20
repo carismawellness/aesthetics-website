@@ -28,7 +28,7 @@ export default function Redefined() {
         {/* LEFT: portrait tattoo photo */}
         <img
           src={`${A}/pico-redefined-main.png`}
-          alt="pico laster tatto.png"
+          alt="pico laser tattoo removal"
           width={421}
           height={408}
           style={{
@@ -72,7 +72,7 @@ export default function Redefined() {
           </ul>
 
           <div style={{ marginTop: "30px" }}>
-            <Cta label="Get 50% Off Pico Laser" />
+            <Cta label="Get 70% Off Pico Laser" />
           </div>
         </div>
       </div>

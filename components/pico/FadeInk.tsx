@@ -44,7 +44,7 @@ export default function FadeInk() {
             </ul>
 
             <div style={{ marginTop: "28px" }}>
-              <Cta label="Claim 50% Off Tattoo Removal" />
+              <Cta label="Claim 70% Off Tattoo Removal" />
             </div>
 
             {/* Star rating row */}
@@ -62,7 +62,7 @@ export default function FadeInk() {
           <div>
             <img
               src={`${A}/pico-fadeInk-main-photo.png`}
-              alt="pico laster tatto.png"
+              alt="pico laser tattoo removal"
               className="rounded-xl"
               style={{
                 width: "100%",
