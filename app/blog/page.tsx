@@ -5,15 +5,22 @@ import { getAllBlogs } from "@/lib/blogs";
 import type { BlogPost } from "@/lib/blog-types";
 
 export const metadata: Metadata = {
-  title: "Blog | Carisma Aesthetics Malta",
+  title: "Carisma Aesthetics | Aesthetics Blog | #1 Award Winning Chain in Malta",
   description:
-    "Expert advice on med-aesthetic treatments, skincare, and beauty from the medically qualified team at Carisma Aesthetics, Malta's #1 voted clinic.",
+    "Botox, fillers or body contouring tips, Carisma Aesthetics' blog cover it all—Malta's trusted clinic for expert guidance in medical aesthetics.",
   openGraph: {
-    title: "Blog | Carisma Aesthetics Malta",
+    title: "Carisma Aesthetics | Aesthetics Blog | #1 Award Winning Chain in Malta",
     description:
-      "Expert advice on med-aesthetic treatments, skincare, and beauty from the medically qualified team at Carisma Aesthetics.",
+      "Botox, fillers or body contouring tips, Carisma Aesthetics' blog cover it all—Malta's trusted clinic for expert guidance in medical aesthetics.",
     url: "https://www.carismaaesthetics.com/blog",
+    siteName: "Carisma Aesthetics",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Carisma Aesthetics | Aesthetics Blog | #1 Award Winning Chain in Malta",
+    description:
+      "Botox, fillers or body contouring tips, Carisma Aesthetics' blog cover it all—Malta's trusted clinic for expert guidance in medical aesthetics.",
   },
 };
 

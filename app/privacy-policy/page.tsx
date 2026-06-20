@@ -2,6 +2,22 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | Carisma Aesthetics",
+  description:
+    "Check Privacy Policy of Carisma Aesthetics that outlines how we collect, use, and protect personal data that patients provide us in relation to med-aesthetic services.",
+  openGraph: {
+    title: "Privacy Policy | Carisma Aesthetics",
+    description:
+      "Check Privacy Policy of Carisma Aesthetics that outlines how we collect, use, and protect personal data that patients provide us in relation to med-aesthetic services.",
+    url: "https://www.carismaaesthetics.com/privacy-policy",
+    siteName: "Carisma Aesthetics",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Privacy Policy | Carisma Aesthetics",
+    description:
+      "Check Privacy Policy of Carisma Aesthetics that outlines how we collect, use, and protect personal data that patients provide us in relation to med-aesthetic services.",
+  },
 };
 
 /* Verbatim live copy — carismaaesthetics.com/privacy-policy */

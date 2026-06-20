@@ -5,6 +5,30 @@ export const metadata: Metadata = {
   title: "E-Gift Vouchers | Carisma Aesthetics - #1 Award Winning Chain in Malta",
   description:
     "Carisma Aesthetics' e-gift vouchers are the perfect present for any occasion. Our premier med aesthetic clinic in Malta offers a range of cosmetic treatments, from Botox and dermal fillers to body contouring and more. Contact us today to purchase your e-gift voucher and give the gift of confidence",
+  openGraph: {
+    title: "E-Gift Vouchers | Carisma Aesthetics - #1 Award Winning Chain in Malta",
+    description:
+      "Carisma Aesthetics' e-gift vouchers are the perfect present for any occasion. Our premier med aesthetic clinic in Malta offers a range of cosmetic treatments, from Botox and dermal fillers to body contouring and more. Contact us today to purchase your e-gift voucher and give the gift of confidence",
+    url: "https://www.carismaaesthetics.com/e-giftcards-vouchers",
+    siteName: "Carisma Aesthetics",
+    type: "website",
+    images: [
+      {
+        url: "https://static.wixstatic.com/media/f940f0_4d8a80555224470797bd8bb30fed27db~mv2.png/v1/fill/w_1032,h_906,al_c/f940f0_4d8a80555224470797bd8bb30fed27db~mv2.png",
+        width: 1032,
+        height: 906,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "E-Gift Vouchers | Carisma Aesthetics - #1 Award Winning Chain in Malta",
+    description:
+      "Carisma Aesthetics' e-gift vouchers are the perfect present for any occasion. Our premier med aesthetic clinic in Malta offers a range of cosmetic treatments, from Botox and dermal fillers to body contouring and more. Contact us today to purchase your e-gift voucher and give the gift of confidence",
+    images: [
+      "https://static.wixstatic.com/media/f940f0_4d8a80555224470797bd8bb30fed27db~mv2.png/v1/fill/w_1032,h_906,al_c/f940f0_4d8a80555224470797bd8bb30fed27db~mv2.png",
+    ],
+  },
 };
 
 const GOLD = "var(--gold)";

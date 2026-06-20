@@ -1,7 +1,23 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms & Condition | Carisma Aesthetics",
+  title: "Terms & Conditions | Carisma Aesthetics",
+  description:
+    "At our med-aesthetic clinic, we are committed to protecting the privacy & security of our patients' personal data. We comply with the General Data Protection Regulation (GDPR) & any applicable data protection laws.",
+  openGraph: {
+    title: "Terms & Conditions | Carisma Aesthetics",
+    description:
+      "At our med-aesthetic clinic, we are committed to protecting the privacy & security of our patients' personal data. We comply with the General Data Protection Regulation (GDPR) & any applicable data protection laws.",
+    url: "https://www.carismaaesthetics.com/terms-conditions",
+    siteName: "Carisma Aesthetics",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Terms & Conditions | Carisma Aesthetics",
+    description:
+      "At our med-aesthetic clinic, we are committed to protecting the privacy & security of our patients' personal data. We comply with the General Data Protection Regulation (GDPR) & any applicable data protection laws.",
+  },
 };
 
 /* Verbatim live copy — carismaaesthetics.com/terms-conditions */

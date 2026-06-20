@@ -13,12 +13,37 @@ const pinyonScript = Pinyon_Script({
 });
 
 export const metadata: Metadata = {
-  title: "Carisma Aesthetics | #1 Voted Med-Aesthetics Clinic in Malta",
+  metadataBase: new URL("https://www.carismaaesthetics.com"),
+  title: "Carisma Aesthetics | Medical Aesthetic Clinic Malta",
   description:
-    "Carisma Aesthetics is the #1 voted med-aesthetics clinic in Malta. Medically qualified doctors, advanced treatments and personalised plans for face and body.",
+    "Medical aesthetics in Malta led by medically qualified practitioners. Botox from €59, lip fillers from €219. Natural results, consultation-first approach. Book today.",
   keywords:
     "aesthetics Malta, botox Malta, dermal fillers Malta, lip fillers Malta, hydrafacial Malta, laser hair removal Malta, med-aesthetics clinic Malta",
   icons: { icon: "/assets/logo.png" },
+  openGraph: {
+    title: "Carisma Aesthetics | Medical Aesthetic Clinic Malta",
+    description:
+      "Medical aesthetics in Malta led by medically qualified practitioners. Botox from €59, lip fillers from €219. Natural results, consultation-first approach. Book today.",
+    url: "https://www.carismaaesthetics.com",
+    siteName: "Carisma Aesthetics",
+    type: "website",
+    images: [
+      {
+        url: "https://static.wixstatic.com/media/87fc13_9b11f1377c0d475ba944da47df67fb9d%7Emv2.png/v1/fit/w_2500,h_1330,al_c/87fc13_9b11f1377c0d475ba944da47df67fb9d%7Emv2.png",
+        width: 2500,
+        height: 1330,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Carisma Aesthetics | Medical Aesthetic Clinic Malta",
+    description:
+      "Medical aesthetics in Malta led by medically qualified practitioners. Botox from €59, lip fillers from €219. Natural results, consultation-first approach. Book today.",
+    images: [
+      "https://static.wixstatic.com/media/87fc13_9b11f1377c0d475ba944da47df67fb9d%7Emv2.png/v1/fit/w_2500,h_1330,al_c/87fc13_9b11f1377c0d475ba944da47df67fb9d%7Emv2.png",
+    ],
+  },
 };
 
 export default function RootLayout({
