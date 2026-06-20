@@ -125,7 +125,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
               )}
               {t.hero.heroForm && (
                 <div style={{ marginTop: "22px" }}>
-                  <ConsultationForm stacked submitLabel="Submit" />
+                  <ConsultationForm instanceId="hero" stacked submitLabel="Submit" />
                 </div>
               )}
               {t.pending && (
@@ -652,7 +652,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                 <h2 style={{ fontSize: "clamp(20px,3vw,33px)", color: "#fff", letterSpacing: "0.04em", textTransform: "uppercase", fontWeight: 400 }}>{t.bookingForm.title}</h2>
               </div>
               <div className="mx-auto" style={{ marginTop: "12px", position: "relative" }}>
-                <ConsultationForm stacked submitLabel="Submit" />
+                <ConsultationForm instanceId="booking" stacked submitLabel="Submit" />
               </div>
             </div>
           </div>
