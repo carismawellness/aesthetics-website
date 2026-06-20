@@ -66,8 +66,6 @@ export const HOME_SERVICES: Service[] = [
   { label: "fat Dissolving", href: "/fat-dissolving-malta", image: "/assets/service-fat-dissolving.png" },
   { label: "hydrafacial", href: "/hydrafacial", image: "/assets/service-hydrafacial.png" },
   { label: "laser hair removal", href: "/laser-hair-removal-malta", image: "/assets/service-laser.png" },
-  { label: "hair regrowth", href: "/hair-regrowth", image: "/assets/treatments/hair-regrowth-scalp-injection.png" },
-  { label: "polynucleotides", href: "/polynucleotides-salmon-dna", image: "/assets/treatments/polynucleotides-salmon-dna-hero.webp" },
 ];
 
 export const WHY_POINTS = [
