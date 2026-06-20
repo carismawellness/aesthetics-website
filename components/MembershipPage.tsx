@@ -86,7 +86,7 @@ const STEPS = [
   },
   {
     n: "3", word: "spend",
-    sub: "enjoy exclusive 20% off",
+    sub: "enjoy exclusive member discounts",
     desc: "Enjoy your member exclusive 10% discount on all services and 15% on all products as you spend your Glow credit.",
     eg: "Purchase your mid-yearly botox session at a 10% discount without having to pay the full amount at once.",
     icon: (
