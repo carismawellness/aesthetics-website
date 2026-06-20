@@ -218,10 +218,10 @@ function DoYouHave() {
 
 // ─── TRUSTED FEATURES ─────────────────────────────────────────────────────────
 const FEATURES = [
-  { icon: "pico-trustedFeatures-feat1.png", label: "PRECISE PIGMENT TARGETING", desc: "Precisely targets excess pigment beneath the skin." },
-  { icon: "pico-trustedFeatures-feat2.png", label: "GENTLER SKIN RENEWAL", desc: "Designed to break down pigment without relying on intense heat." },
-  { icon: "pico-trustedFeatures-feat3.png", label: "PERSONALISED SKIN PLAN", desc: "Tailored to your pigmentation type, skin tone, depth, and goals." },
-  { icon: "pico-trustedFeatures-feat4.png", label: "EXPERT AFTERCARE", desc: "Professional guidance before and after treatment for safer results." },
+  { icon: "pig-feat1.png", label: "PRECISE PIGMENT TARGETING", desc: "Precisely targets excess pigment beneath the skin." },
+  { icon: "pig-feat2.png", label: "GENTLER SKIN RENEWAL", desc: "Designed to break down pigment without relying on intense heat." },
+  { icon: "pig-feat3.png", label: "PERSONALISED SKIN PLAN", desc: "Tailored to your pigmentation type, skin tone, depth, and goals." },
+  { icon: "pig-feat4.png", label: "EXPERT AFTERCARE", desc: "Professional guidance before and after treatment for safer results." },
 ];
 
 const PRESS = [
@@ -249,10 +249,10 @@ function TrustedFeatures() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4" style={{ marginTop: "44px" }}>
           {FEATURES.map((f) => (
             <div key={f.label} className="text-center"
-              style={{ background: "rgba(255,255,255,0.5)", border: "1px solid var(--line)", borderRadius: "16px 40px 16px 40px", padding: "28px 22px", boxShadow: "0 12px 30px rgba(0,0,0,0.05)" }}>
-              <div className="flex justify-center" style={{ marginBottom: "14px", height: "52px", alignItems: "center" }}>
+              style={{ background: "#ffffff", border: `1px solid ${TEAL}`, borderRadius: "12px", padding: "28px 22px", boxShadow: "0 4px 16px rgba(0,0,0,0.06)" }}>
+              <div className="flex justify-center" style={{ marginBottom: "16px", height: "68px", alignItems: "center" }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={`${A}/${f.icon}`} alt={f.label} style={{ maxHeight: "48px", width: "auto" }} />
+                <img src={`${A}/${f.icon}`} alt={f.label} style={{ width: "68px", height: "68px", objectFit: "contain" }} />
               </div>
               <h3 className="font-display" style={{ fontSize: "13px", color: TEAL, letterSpacing: "0.06em", marginBottom: "10px" }}>{f.label}</h3>
               <p style={{ fontSize: "13px", color: "var(--label)", lineHeight: 1.65 }}>{f.desc}</p>
