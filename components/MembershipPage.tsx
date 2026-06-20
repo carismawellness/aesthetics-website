@@ -63,11 +63,13 @@ const STEPS = [
     eg: "If you choose to subscribe at €40, you will automatically be investing this amount each month.",
     icon: (
       <>
-        <path d="M3 13c1.6-1.4 3.3-1.4 5 0 1.7 1.4 3.4 1.4 5 0" />
-        <path d="M3 17c1.6-1.4 3.3-1.4 5 0 1.7 1.4 3.4 1.4 5 0" />
-        <path d="M14.5 14.5 20 12a1.6 1.6 0 0 0-1-3l-5 1.4" />
-        <circle cx="13" cy="5" r="3" />
-        <path d="M13 3.6v2.8M11.9 4.4c0-.5.5-.8 1.1-.8s1.1.3 1.1.8-.5.7-1.1.7-1.1.3-1.1.8.5.8 1.1.8 1.1-.3 1.1-.8" />
+        {/* coin */}
+        <circle cx="12" cy="7" r="3.5" />
+        <path d="M12 5.2v3.5M11 7c0-.5.4-.9 1-.9s1 .4 1 .9-.5.8-1 .8-1 .4-1 .9.5.9 1 .9 1-.4 1-.9" />
+        {/* cupped hands */}
+        <path d="M6 16c0-1.8 2.5-3 6-3s6 1.2 6 3" />
+        <path d="M4 18h16" />
+        <path d="M5 20h14" />
       </>
     ),
   },
