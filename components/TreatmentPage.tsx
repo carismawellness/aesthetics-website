@@ -717,7 +717,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
         <section style={{ padding: "20px 0 84px" }}>
           <div className="container">
             <h2 className="font-serif text-center" style={{ fontSize: "clamp(24px,3.4vw,38px)", color: "var(--gold)", letterSpacing: "0.04em", marginBottom: "48px" }}>{t.recommended.title}</h2>
-            <div className="mx-auto" style={{ maxWidth: "1200px", display: "grid", gap: "32px", gridTemplateColumns: "repeat(auto-fill, minmax(220px, 1fr))" }}>
+            <div className="mx-auto" style={{ maxWidth: "800px", display: "grid", gap: "32px", gridTemplateColumns: "repeat(2, 1fr)" }}>
               {t.recommended.items.map((it, i) => (
                 <Reveal key={it.href} delay={(i % 2) * 90}>
                   <div className="overflow-hidden" style={{ borderRadius: "24px 24px 60px 24px", boxShadow: "0 14px 34px rgba(0,0,0,0.10)" }}>
