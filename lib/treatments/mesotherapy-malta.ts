@@ -28,29 +28,14 @@ const t: Treatment = {
   beforeAfterTitle: "mesotherapy results",
   beforeAfter: [
     {
-      before: "/assets/treatments/mesotherapy-malta-ba1-before.jpg",
-      after: "/assets/treatments/mesotherapy-malta-ba1-after.jpg",
-      label: "Hair Thinning",
-    },
-    {
-      before: "/assets/treatments/mesotherapy-malta-ba2-before.jpg",
-      after: "/assets/treatments/mesotherapy-malta-ba2-after.jpg",
+      before: "/assets/treatments/mesotherapy-malta-ba-hair-before.png",
+      after: "/assets/treatments/mesotherapy-malta-ba-hair-after.png",
       label: "Hair Regrowth",
     },
     {
-      before: "/assets/treatments/mesotherapy-malta-ba3-before.jpg",
-      after: "/assets/treatments/mesotherapy-malta-ba3-after.jpg",
+      before: "/assets/treatments/mesotherapy-malta-ba-face-before.jpg",
+      after: "/assets/treatments/mesotherapy-malta-ba-face-after.jpg",
       label: "Skin Rejuvenation",
-    },
-    {
-      before: "/assets/treatments/mesotherapy-malta-ba4-before.jpg",
-      after: "/assets/treatments/mesotherapy-malta-ba4-after.jpg",
-      label: "Facial Redness",
-    },
-    {
-      before: "/assets/treatments/mesotherapy-malta-ba5-before.jpg",
-      after: "/assets/treatments/mesotherapy-malta-ba5-after.jpg",
-      label: "Acne Scar Reduction",
     },
   ],
   precision: {
