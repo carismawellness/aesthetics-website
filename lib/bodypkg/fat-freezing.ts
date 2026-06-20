@@ -27,7 +27,7 @@ export const fatFreezing: PackageContent = {
     '** Due to high demand, packages are offered based on availability and may not always be guaranteed. Please inquire for current options.',
   ],
   heroImage: W + '87fc13_0d95ebc4241644a88912c30f5f6fa882~mv2.jpg',
-  heroVideo: W + '87fc13_d455089124694edb96940d4cd650622a_720p.mp4',
+  heroVideo: 'https://video.wixstatic.com/video/87fc13_d455089124694edb96940d4cd650622a/720p/mp4/file.mp4',
   heroImageRatio: '398 / 682',
 
   secretHeading: ['the secret to a more defined,', 'confident look'],
