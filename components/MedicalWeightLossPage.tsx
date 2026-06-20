@@ -1440,8 +1440,8 @@ const RESEARCH: ResearchCard[] = [
 function ResearchCardView({ card }: { card: ResearchCard }) {
   const [open, setOpen] = useState(false);
   return (
-    <div style={{ background: "var(--white)", border: "1px solid var(--line)", borderRadius: "12px", overflow: "hidden", boxShadow: "0 8px 24px rgba(0,0,0,0.05)" }}>
-      <Image src={card.img} alt="" width={381} height={220} style={{ width: "100%", height: "220px", objectFit: "cover", objectPosition: "center top", display: "block", borderRadius: "0 12px 0 12px" }} />
+    <div style={{ background: "var(--white)", border: "1px solid var(--line)", borderRadius: "0 24px 12px 12px", overflow: "hidden", boxShadow: "0 8px 24px rgba(0,0,0,0.05)" }}>
+      <Image src={card.img} alt="" width={381} height={220} style={{ width: "100%", height: "220px", objectFit: "cover", objectPosition: "center top", display: "block" }} />
       <div style={{ padding: "24px" }}>
         <h3 className="font-display" style={{ fontSize: "16px", color: "#9B8C81", textAlign: "center", lineHeight: 1.4, marginBottom: "16px" }}>
           {card.title}
