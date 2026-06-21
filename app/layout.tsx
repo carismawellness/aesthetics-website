@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "./effects.css";
 import Script from "next/script";
 import { Pinyon_Script } from "next/font/google";
 import Header from "@/components/Header";

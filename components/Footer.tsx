@@ -4,6 +4,8 @@ import Reveal from "@/components/Reveal";
 import DoctorsSection from "@/components/home/DoctorsSection";
 import Reviews from "@/components/home/Reviews";
 import AwardSection from "@/components/home/AwardSection";
+import AmbientField from "@/components/fx/AmbientField";
+import Motif from "@/components/fx/Motif";
 
 function Ig({ size = 20 }: { size?: number }) {
   return (
@@ -142,7 +144,9 @@ export default function Footer() {
       </section>
 
       {/* Contact row — two columns (Phone/Email | Instagram/Facebook) */}
-      <section style={{ backgroundColor: "var(--white)", padding: "32px 0 28px" }}>
+      <section className="ambient-host" style={{ background: "linear-gradient(180deg, var(--white) 0%, var(--cream-2) 100%)", padding: "32px 0 28px" }}>
+        <AmbientField blob="top-left" tone="teal" soft dots />
+        <Motif mode="watermark" opacity={0.045} />
         <div className="container">
           <div className="grid gap-x-10 gap-y-7 sm:grid-cols-2" style={{ maxWidth: "900px" }}>
             <div className="space-y-7">
@@ -157,10 +161,12 @@ export default function Footer() {
         </div>
       </section>
 
-      {/* Light rounded bottom bar — copyright + legal links */}
-      <section style={{ backgroundColor: "var(--white)", padding: "0 0 40px" }}>
+      {/* Light rounded bottom bar — copyright + legal links (Liquid Gloss) */}
+      <section className="ambient-host" style={{ background: "linear-gradient(180deg, var(--cream-2) 0%, var(--teal-100) 100%)", padding: "26px 0 40px" }}>
+        <AmbientField blob="bottom-right" tone="teal" soft dots={false} />
         <div className="container">
-          <div style={{ background: "linear-gradient(180deg,#eef3f3,#e6eded)", borderRadius: "var(--radius-card)", padding: "18px 28px" }}>
+          <div className="lg lg--panel" style={{ position: "relative", overflow: "hidden", padding: "18px 28px" }}>
+            <Motif mode="watermark" opacity={0.06} />
             <div className="flex flex-col sm:flex-row items-center justify-between gap-3" style={{ fontSize: "12px", letterSpacing: "0.06em", color: "var(--label)" }}>
               <span>© 2026 – CARISMA AESTHETICS ALL RIGHTS RESERVED.</span>
               <div className="flex items-center gap-8">
