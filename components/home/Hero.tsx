@@ -1,4 +1,5 @@
 import Link from "next/link";
+import HeroBackdrop from "@/components/motion/HeroBackdrop";
 
 /* Five small filled stars (decorative) in brand gold. */
 function Stars({ size = 12 }: { size?: number }) {
@@ -36,8 +37,9 @@ const CHECKS = [
 
 export default function Hero() {
   return (
-    <section className="hero-fit" style={{ background: "var(--white)" }}>
-      <div className="container w-full">
+    <section className="hero-fit" style={{ background: "var(--white)", position: "relative", overflow: "hidden" }}>
+      <HeroBackdrop />
+      <div className="container w-full" style={{ position: "relative", zIndex: 1 }}>
         <div className="grid items-center gap-10 lg:grid-cols-[60fr_40fr]">
           {/* ── Left: copy ── */}
           <div>
