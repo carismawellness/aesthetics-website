@@ -21,7 +21,7 @@ function RenderBlock({ block }: { block: BlogBlock }) {
       return (
         <h3
           className="font-display mt-8 mb-3"
-          style={{ fontSize: "14px", color: "var(--teal)", letterSpacing: "0.12em" }}
+          style={{ fontSize: "14px", color: "var(--teal-text)", letterSpacing: "0.12em" }}
         >
           {block.text}
         </h3>
@@ -70,7 +70,7 @@ function RenderBlock({ block }: { block: BlogBlock }) {
             >
               <span
                 className="shrink-0 mt-1 rounded-full"
-                style={{ width: "6px", height: "6px", background: "var(--teal)", marginTop: "9px" }}
+                style={{ width: "6px", height: "6px", background: "var(--teal-deep)", marginTop: "9px" }}
               />
               {item}
             </li>
@@ -122,7 +122,7 @@ function RelatedCard({ post }: { post: BlogPost }) {
           style={{
             top: "12px",
             left: "14px",
-            background: "var(--teal)",
+            background: "var(--teal-deep)",
             color: "#fff",
             fontSize: "9px",
             letterSpacing: "0.14em",
@@ -138,7 +138,7 @@ function RelatedCard({ post }: { post: BlogPost }) {
       <div style={{ padding: "18px 20px 22px" }}>
         <p
           className="font-serif mb-2 leading-snug"
-          style={{ fontSize: "14px", color: "var(--teal)", letterSpacing: "0.02em" }}
+          style={{ fontSize: "14px", color: "var(--teal-text)", letterSpacing: "0.02em" }}
         >
           {post.title}
         </p>
@@ -147,7 +147,7 @@ function RelatedCard({ post }: { post: BlogPost }) {
         </p>
         <p
           className="font-display mt-3"
-          style={{ fontSize: "10px", color: "var(--teal)", letterSpacing: "0.14em" }}
+          style={{ fontSize: "10px", color: "var(--teal-text)", letterSpacing: "0.14em" }}
         >
           Read more &rarr;
         </p>
@@ -212,7 +212,7 @@ export default function BlogTemplate({ post }: { post: BlogPost }) {
           <span
             className="font-display mb-4 inline-block"
             style={{
-              background: "var(--teal)",
+              background: "var(--teal-deep)",
               color: "#fff",
               fontSize: "10px",
               letterSpacing: "0.18em",
@@ -256,7 +256,7 @@ export default function BlogTemplate({ post }: { post: BlogPost }) {
           <span style={{ color: "var(--line)" }}>|</span>
           <span className="font-display" style={{ fontSize: "10px" }}>{post.readTime} min read</span>
           <span style={{ color: "var(--line)" }}>|</span>
-          <span className="font-display" style={{ fontSize: "10px", color: "var(--teal)" }}>{post.category}</span>
+          <span className="font-display" style={{ fontSize: "10px", color: "var(--teal-text)" }}>{post.category}</span>
         </div>
       </div>
 
@@ -277,9 +277,9 @@ export default function BlogTemplate({ post }: { post: BlogPost }) {
             className="font-serif mb-10"
             style={{
               fontSize: "17px",
-              color: "var(--teal)",
+              color: "var(--teal-text)",
               lineHeight: 1.8,
-              borderLeft: "3px solid var(--teal)",
+              borderLeft: "3px solid var(--teal-deep)",
               paddingLeft: "20px",
               letterSpacing: "0.02em",
             }}
@@ -341,7 +341,7 @@ export default function BlogTemplate({ post }: { post: BlogPost }) {
               </p>
               <h2
                 className="font-serif"
-                style={{ fontSize: "clamp(20px, 3vw, 30px)", color: "var(--teal)", letterSpacing: "0.04em" }}
+                style={{ fontSize: "clamp(20px, 3vw, 30px)", color: "var(--teal-text)", letterSpacing: "0.04em" }}
               >
                 You Might Also Like
               </h2>
@@ -366,7 +366,7 @@ export default function BlogTemplate({ post }: { post: BlogPost }) {
       {/* ── Full-width CTA banner ─────────────────────────────── */}
       <section
         style={{
-          background: "linear-gradient(135deg, var(--teal) 0%, var(--teal-deep, #7a9e9e) 100%)",
+          background: "linear-gradient(135deg, var(--teal-deep) 0%, #466b6b 100%)",
           padding: "72px 20px",
           textAlign: "center",
         }}
@@ -405,7 +405,7 @@ export default function BlogTemplate({ post }: { post: BlogPost }) {
             className="btn"
             style={{
               background: "#fff",
-              color: "var(--teal)",
+              color: "var(--teal-deep)",
               fontSize: "12px",
               padding: "16px 40px",
               letterSpacing: "0.16em",

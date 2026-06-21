@@ -55,7 +55,7 @@ function BlogCard({ post }: { post: BlogPost }) {
           style={{
             top: "14px",
             left: "16px",
-            background: "var(--teal)",
+            background: "var(--teal-deep)",
             color: "#fff",
             fontSize: "9px",
             letterSpacing: "0.16em",
@@ -112,9 +112,9 @@ function BlogCard({ post }: { post: BlogPost }) {
           className="font-display"
           style={{
             fontSize: "10px",
-            color: "var(--teal)",
+            color: "var(--teal-text)",
             letterSpacing: "0.14em",
-            borderBottom: "1px solid var(--teal-200)",
+            borderBottom: "1px solid var(--teal-deep)",
             paddingBottom: "2px",
           }}
         >
@@ -178,7 +178,7 @@ export default function BlogIndexPage() {
           <div className="text-center" style={{ padding: "80px 0", color: "var(--muted)" }}>
             <p
               className="font-serif mb-4"
-              style={{ fontSize: "22px", color: "var(--teal-deep)" }}
+              style={{ fontSize: "22px", color: "var(--teal-text)" }}
             >
               Coming Soon
             </p>
@@ -208,7 +208,7 @@ export default function BlogIndexPage() {
       {/* ── Bottom CTA ──────────────────────────────── */}
       <section
         style={{
-          background: "linear-gradient(135deg, var(--teal) 0%, #466b6b 100%)",
+          background: "linear-gradient(135deg, var(--teal-deep) 0%, #466b6b 100%)",
           padding: "64px 20px",
           textAlign: "center",
         }}
@@ -240,7 +240,7 @@ export default function BlogIndexPage() {
             className="btn"
             style={{
               background: "#fff",
-              color: "var(--teal)",
+              color: "var(--teal-text)",
               fontSize: "12px",
               padding: "15px 36px",
               letterSpacing: "0.16em",

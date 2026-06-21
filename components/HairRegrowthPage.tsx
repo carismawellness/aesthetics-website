@@ -287,6 +287,9 @@ function ReviewCard({ image, name, text }: (typeof TESTIMONIALS)[0]) {
         minWidth: 0,
       }}
     >
+      {/* Dark-teal focus ring: the page-level light ring (#e8e3da) is invisible
+          on this white review card; override to #4f7373 (5.21:1 vs white). */}
+      <style>{`.hairreg-readmore-btn:focus-visible{outline:2px solid #4f7373!important;outline-offset:2px;border-radius:2px;}`}</style>
       {/* Combined before/after image */}
       <div style={{ height: "160px", overflow: "hidden" }}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -311,7 +314,7 @@ function ReviewCard({ image, name, text }: (typeof TESTIMONIALS)[0]) {
           <button
             type="button"
             onClick={() => setExpanded(!expanded)}
-            className="text-center"
+            className="text-center hairreg-readmore-btn"
             style={{ marginTop: "10px", background: "none", border: "none", cursor: "pointer", fontSize: "13px", color: "#6b5526", textDecoration: "underline", textUnderlineOffset: "2px" }}
           >
             {expanded ? "Show less" : "Read more"}
@@ -483,6 +486,7 @@ export default function HairRegrowthPage() {
         }
         .hrg-faq-search:focus,
         .hrg-faq-search:focus-visible { outline: none; }
+        .hrg-faq-search::placeholder { opacity: 1; }
         @media (prefers-reduced-motion: reduce) {
           .hrg-btn:hover, .hrg-btn:focus-visible,
           .hrg-card:hover { transform: none; }
@@ -596,7 +600,7 @@ export default function HairRegrowthPage() {
                 <p
                   style={{
                     fontSize: "11px",
-                    color: "#9a9388",
+                    color: "#bdb4a6",
                     letterSpacing: "0.08em",
                     marginTop: "8px",
                   }}
@@ -636,7 +640,7 @@ export default function HairRegrowthPage() {
                 className="text-center"
                 style={{
                   fontSize: "11px",
-                  color: "#9e9890",
+                  color: "#b2aba1",
                   lineHeight: 1.6,
                   marginTop: "14px",
                   letterSpacing: "0.04em",
@@ -1023,7 +1027,7 @@ export default function HairRegrowthPage() {
                     className="font-serif"
                     style={{
                       fontSize: "16px",
-                      color: "#8a7f72",
+                      color: "#b8af9c",
                       fontStyle: "italic",
                       lineHeight: 1.65,
                     }}
@@ -1275,7 +1279,7 @@ export default function HairRegrowthPage() {
                       <p
                         style={{
                           fontSize: "12px",
-                          color: "#5aaa6a",
+                          color: "#66bd78",
                           lineHeight: 1.5,
                           marginTop: "10px",
                         }}
@@ -1434,7 +1438,7 @@ export default function HairRegrowthPage() {
                   <span
                     style={{
                       fontSize: "13px",
-                      color: TAUPE,
+                      color: "#c5beb3",
                       lineHeight: 1.65,
                     }}
                   >
@@ -1447,7 +1451,7 @@ export default function HairRegrowthPage() {
               <p
                 style={{
                   fontSize: "12px",
-                  color: TAUPE,
+                  color: "#c5beb3",
                   lineHeight: 1.8,
                   marginTop: "24px",
                   fontStyle: "italic",

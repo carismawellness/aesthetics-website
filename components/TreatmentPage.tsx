@@ -8,9 +8,10 @@ import CompositeSlideshow from "@/components/CompositeSlideshow";
 const ANNOUNCE = "⭐ Highest rated clinic in Malta ⭐ · Medically qualified doctors · #1 voted med-aesthetics clinic in malta";
 
 
+// a11y: teal #96b2b2 = 1.85:1 on --cream #deebeb fails 1.4.11; teal-deep #4f7373 = 4.26:1 clears the 3:1 graphical-object bar. The ✓/✗ glyph itself is the non-colour cue for suitable vs not-ideal.
 function CheckIcon({ ok }: { ok: boolean }) {
   return (
-    <svg className="shrink-0" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" style={{ marginTop: "1px" }}>
+    <svg className="shrink-0" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--teal-deep)" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" style={{ marginTop: "1px" }}>
       {ok ? <path d="M5 12.5l4.5 4.5L19 7" /> : <path d="M7 7l10 10M17 7L7 17" />}
     </svg>
   );
@@ -109,8 +110,8 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                 </p>
               )}
               {t.hero.location && (
-                <p className="font-display" style={{ fontSize: "12px", color: "var(--teal-deep)", letterSpacing: "0.14em", textTransform: "uppercase", marginTop: "14px", textAlign: hasMedia ? "left" : "center" }}>
-                  {/* a11y: teal (4.03:1 over worst-case hero bg) fails AA at 12px; teal-deep is 5.55:1 */}
+                <p className="font-display" style={{ fontSize: "12px", color: "var(--teal-text)", letterSpacing: "0.14em", textTransform: "uppercase", marginTop: "14px", textAlign: hasMedia ? "left" : "center" }}>
+                  {/* a11y: teal-deep #4f7373 = 4.37:1 over worst-case hero overlay (#ebebeb) fails AA at 12px; teal-text #406060 = 5.76:1 */}
                   {t.hero.location}
                 </p>
               )}
@@ -125,8 +126,8 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                         <span style={{ color: "var(--teal-deep)", fontSize: "11px", lineHeight: 1.7 }}>●</span>
                         <span style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.5 }}>
                           {p.label} {prefix}{" "}
-                          {/* a11y: teal-deep (5.8:1 worst-case hero bg) + underline non-color cue so the price isn't distinguished by colour alone (1.4.1/1.4.3) */}
-                          {amount && <u style={{ color: "var(--teal-deep)", textUnderlineOffset: "2px", fontWeight: 600 }}>{amount}</u>}
+                          {/* a11y: teal-deep #4f7373 = 4.37:1 over worst-case hero overlay (#ebebeb) fails AA at 15px; teal-text #406060 = 5.76:1. Underline is the non-colour cue so the price isn't distinguished by colour alone (1.4.1) */}
+                          {amount && <u style={{ color: "var(--teal-text)", textUnderlineOffset: "2px", fontWeight: 600 }}>{amount}</u>}
                         </span>
                       </li>
                     );
@@ -167,9 +168,10 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                   <img src={t.hero.image} alt={t.hero.title} className="w-full" style={{ display: "block", maxWidth: "min(400px,100%)", maxHeight: "clamp(320px,48vh,500px)", margin: "0 auto", objectFit: "cover", borderRadius: "20px", boxShadow: "0 20px 50px rgba(0,0,0,0.10)", ...(t.hero.imageRatio ? { aspectRatio: t.hero.imageRatio } : {}) }} />
                 )}
                 {t.hero.productTabs && t.hero.productTabs.length > 0 && (
+                  // a11y: teal #96b2b2 border = 1.85:1 on --teal-100 #deebeb fails 1.4.11; teal-deep #4f7373 = 4.26:1 clears the 3:1 UI-component-boundary bar
                   <div className="flex gap-3" style={{ marginTop: "14px" }}>
                     {t.hero.productTabs.map((tab) => (
-                      <span key={tab} className="font-display inline-flex items-center justify-center" style={{ flex: 1, textAlign: "center", padding: "11px 14px", border: "1px solid var(--teal)", borderRadius: "var(--radius-card)", fontSize: "12px", letterSpacing: "0.1em", color: "var(--ink)", background: "var(--teal-100)" }}>
+                      <span key={tab} className="font-display inline-flex items-center justify-center" style={{ flex: 1, textAlign: "center", padding: "11px 14px", border: "1px solid var(--teal-deep)", borderRadius: "var(--radius-card)", fontSize: "12px", letterSpacing: "0.1em", color: "var(--ink)", background: "var(--teal-100)" }}>
                         {tab.startsWith("/") ? (
                           // eslint-disable-next-line @next/next/no-img-element
                           <img src={tab} alt="" style={{ height: "30px", width: "auto", maxWidth: "100%", objectFit: "contain" }} />
@@ -197,7 +199,8 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                       <svg key={i} width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>
                     ))}
                   </span>
-                  <span className="font-display" style={{ color: "var(--teal-deep)", fontSize: "11px", letterSpacing: "0.1em" }}>TOP-RATED CLINIC IN MALTA</span>
+                  {/* a11y: teal-deep #4f7373 = 4.37:1 over worst-case hero overlay (#ebebeb) fails AA at 11px; teal-text #406060 = 5.76:1 */}
+                  <span className="font-display" style={{ color: "var(--teal-text)", fontSize: "11px", letterSpacing: "0.1em" }}>TOP-RATED CLINIC IN MALTA</span>
                 </div>
               </Reveal>
             )}
@@ -238,7 +241,8 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                 <div className="grid gap-6 text-center" style={{ gridTemplateColumns: `repeat(${Math.min(t.info.length, 5)}, minmax(0,1fr))` }}>
                   {t.info.map((it) => (
                     <div key={it.metric}>
-                      <div className="font-display" style={{ fontSize: "11px", color: "var(--teal)", letterSpacing: "0.14em", marginBottom: "8px" }}>{it.metric}</div>
+                      {/* a11y: teal #96b2b2 = 2.26:1 on white .card fails 1.4.3; teal-text #406060 = 6.86:1 */}
+                      <div className="font-display" style={{ fontSize: "11px", color: "var(--teal-text)", letterSpacing: "0.14em", marginBottom: "8px" }}>{it.metric}</div>
                       <div style={{ fontSize: "14px", color: "var(--ink)" }}>{it.detail}</div>
                     </div>
                   ))}
@@ -418,7 +422,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                   <div className="flex items-center gap-3" style={{ marginBottom: "14px" }}>
                     <span style={{ width: "18px", height: "18px", borderRadius: "50%", background: "var(--teal)", boxShadow: "0 0 0 5px #dde8e8", flexShrink: 0 }} />
                     <span className="font-serif" style={{ fontSize: "15px", color: "var(--gold)", letterSpacing: "0.14em" }}>
-                      STEP <span style={{ fontSize: "clamp(22px,6vw,34px)", opacity: 0.5, lineHeight: 1 }}>{i + 1}</span>
+                      STEP <span style={{ fontSize: "clamp(24px,6vw,34px)", lineHeight: 1 }}>{i + 1}</span>
                     </span>
                   </div>
                   {/* photo card */}
@@ -449,7 +453,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                   {/* STEP + number */}
                   <div className="text-center">
                     <div className="font-serif" style={{ fontSize: "17px", color: "var(--gold)", letterSpacing: "0.14em" }}>STEP</div>
-                    <div className="font-serif" style={{ fontSize: "clamp(30px,4vw,46px)", color: "var(--gold)", opacity: 0.5, lineHeight: 1.1 }}>{i + 1}</div>
+                    <div className="font-serif" style={{ fontSize: "clamp(30px,4vw,46px)", color: "var(--gold)", lineHeight: 1.1 }}>{i + 1}</div>
                   </div>
                   {/* photo card */}
                   <div style={{ borderRadius: "20px 56px 20px 56px", background: "linear-gradient(180deg,#ffffff 0%, #e7eff0 100%)", padding: "10px", boxShadow: "0 16px 38px rgba(0,0,0,0.07)" }}>
@@ -616,7 +620,8 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
             <div className="mx-auto" style={{ maxWidth: "1120px", borderRadius: "36px", background: "linear-gradient(160deg,#eef4f5 0%, #ffffff 50%, #e6eef0 100%)", border: "1px solid var(--line)", padding: "clamp(32px,4vw,60px)" }}>
               {t.difference.kicker && (
                 <div className="text-center">
-                  <p className="font-display" style={{ fontSize: "11px", color: "var(--teal-deep)", letterSpacing: "0.18em", textTransform: "uppercase" }}>{t.difference.kicker}</p>
+                  {/* a11y: teal-deep #4f7373 = 4.43:1 on worst gradient stop #e6eef0 fails AA at 11px; teal-text #406060 = 5.83:1 */}
+                  <p className="font-display" style={{ fontSize: "11px", color: "var(--teal-text)", letterSpacing: "0.18em", textTransform: "uppercase" }}>{t.difference.kicker}</p>
                   <div className="mx-auto" style={{ width: "80px", height: "1px", background: "var(--teal)", margin: "10px auto 0" }} />
                 </div>
               )}
@@ -713,13 +718,15 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={tier.image} alt={tier.name} className="mx-auto" style={{ display: "block", width: "100%", maxWidth: "280px", borderRadius: "14px", boxShadow: "0 10px 26px rgba(0,0,0,0.12)" }} />
                   <h3 className="font-display" style={{ fontSize: "16px", color: "var(--gold)", letterSpacing: "0.12em", textTransform: "uppercase", marginTop: "22px" }}>{tier.name}</h3>
+                  {/* a11y: teal #96b2b2 stroke = 1.88:1 on the card's worst gradient stop #e3ecee fails 1.4.11; teal-deep #4f7373 = 4.34:1 clears the 3:1 graphical-object bar */}
                   <div className="flex items-center justify-center gap-2" style={{ marginTop: "14px" }}>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9" /><path d="M5 12.5l4.5 4.5L19 7" /></svg>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--teal-deep)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9" /><path d="M5 12.5l4.5 4.5L19 7" /></svg>
                     <span style={{ fontSize: "14px", color: "var(--label)" }}>{tier.sessions}</span>
                   </div>
                   <div className="flex items-center justify-center gap-2" style={{ marginTop: "12px" }}>
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--teal-deep)" strokeWidth="1.7"><circle cx="12" cy="12" r="9" /><path d="M15 9a3.5 3.5 0 0 0-3-1.6c-1.9 0-3 1.3-3 2.6s1.1 2.6 3 2.6 3 1.3 3 2.6-1.1 2.6-3 2.6A3.5 3.5 0 0 1 9 15M12 6v12" /></svg>
-                    <span className="font-display" style={{ fontSize: "18px", color: "var(--teal-deep)", letterSpacing: "0.06em" }}>{tier.price}</span>
+                    {/* a11y: teal-deep #4f7373 = 4.34:1 on worst gradient stop #e3ecee fails AA (18px non-bold is normal text, needs 4.5:1); teal-text #406060 = 5.72:1 */}
+                    <span className="font-display" style={{ fontSize: "18px", color: "var(--teal-text)", letterSpacing: "0.06em" }}>{tier.price}</span>
                   </div>
                   <div style={{ marginTop: "22px" }}>
                     <Link href="/consultation" className="btn btn-teal" style={{ fontSize: "12px" }}>book your session</Link>
@@ -757,7 +764,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
         <section style={{ padding: "70px 0 90px", backgroundColor: "var(--cream)" }}>
           <div className="container">
             {t.faqKicker && (
-              <p className="font-display text-center" style={{ fontSize: "12px", color: "var(--teal-deep)", letterSpacing: "0.16em", textTransform: "uppercase", marginBottom: "10px" }}>{t.faqKicker}</p>
+              <p className="font-display text-center" style={{ fontSize: "12px", color: "var(--teal-text)", letterSpacing: "0.16em", textTransform: "uppercase", marginBottom: "10px" }}>{t.faqKicker}</p>
             )}
             <h2 className="font-serif text-center" style={{ fontSize: "clamp(24px,3.4vw,38px)", color: "var(--gold)", letterSpacing: "0.04em", marginBottom: "44px" }}>{t.faqTitle ?? "Frequently Asked Questions"}</h2>
             <div className="mx-auto" style={{ maxWidth: "820px" }}>

@@ -175,7 +175,7 @@ export default function ProtocolPage({ d }: { d: ProtocolData }) {
                   <div>
                     <div className="flex items-center justify-between flex-wrap gap-2" style={{ marginBottom: "18px" }}>
                       <h3 className="font-serif" style={{ fontSize: "20px", color: AA_GOLD, letterSpacing: "0.06em", textTransform: "uppercase" }}>{d.modality.name}</h3>
-                      <span className="font-display" style={{ fontSize: "11px", color: "var(--white)", background: "var(--teal)", letterSpacing: "0.06em", padding: "6px 14px", borderRadius: "999px" }}>{d.modality.tag}</span>
+                      <span className="font-display" style={{ fontSize: "11px", color: "var(--white)", background: "var(--teal-deep)", letterSpacing: "0.06em", padding: "6px 14px", borderRadius: "999px" }}>{d.modality.tag}</span>
                     </div>
                     {d.modality.baImage && (
                       // eslint-disable-next-line @next/next/no-img-element

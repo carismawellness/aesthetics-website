@@ -237,7 +237,7 @@ export default function MembershipPage() {
               <span style={{ width: "7px", height: "7px", background: "#b8a89a", transform: "rotate(45deg)", flexShrink: 0 }} />
               <span style={{ flex: 1, height: "1px", background: "#b8a89a" }} />
             </span>
-            <p className="font-serif" style={{ fontSize: "clamp(18px,2.4vw,24px)", color: GOLD, letterSpacing: "0.22em", textTransform: "uppercase", whiteSpace: "nowrap", margin: 0 }}>welcome to</p>
+            <p className="font-serif" style={{ fontSize: "clamp(18px,2.4vw,24px)", color: "#544a3a", letterSpacing: "0.22em", textTransform: "uppercase", whiteSpace: "nowrap", margin: 0 }}>welcome to</p>
             <span className="flex items-center" style={{ flex: 1, maxWidth: "120px" }}>
               <span style={{ flex: 1, height: "1px", background: "#b8a89a" }} />
               <span style={{ width: "7px", height: "7px", background: "#b8a89a", transform: "rotate(45deg)", flexShrink: 0 }} />

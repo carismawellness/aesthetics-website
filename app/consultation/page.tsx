@@ -68,8 +68,8 @@ function ContactItem({
           width: "42px",
           height: "42px",
           borderRadius: "50%",
-          border: "1px solid var(--teal)",
-          color: "var(--teal)",
+          border: "1px solid var(--teal-text)",
+          color: "var(--teal-text)",
         }}
       >
         {icon}
@@ -118,7 +118,7 @@ export default function ConsultationPage() {
               className="font-display"
               style={{
                 fontSize: "11px",
-                color: "var(--teal-deep)",
+                color: "var(--teal-text)",
                 letterSpacing: "0.18em",
                 marginBottom: "18px",
               }}
@@ -141,7 +141,7 @@ export default function ConsultationPage() {
               style={{
                 width: "56px",
                 height: "2px",
-                background: "var(--teal)",
+                background: "var(--teal-text)",
                 margin: "24px auto",
               }}
             />
@@ -177,7 +177,7 @@ export default function ConsultationPage() {
               className="font-display text-center"
               style={{
                 fontSize: "11px",
-                color: "var(--teal)",
+                color: "var(--teal-text)",
                 letterSpacing: "0.18em",
                 marginBottom: "14px",
               }}
@@ -207,7 +207,7 @@ export default function ConsultationPage() {
                     style={{
                       fontSize: "11px",
                       letterSpacing: "0.22em",
-                      color: "var(--teal)",
+                      color: "var(--teal-text)",
                       display: "flex",
                       alignItems: "center",
                       gap: "10px",
@@ -221,7 +221,7 @@ export default function ConsultationPage() {
                         width: "36px",
                         height: "36px",
                         borderRadius: "50%",
-                        border: "1px solid var(--teal)",
+                        border: "1px solid var(--teal-text)",
                         fontSize: "11px",
                         letterSpacing: "0.08em",
                       }}
@@ -258,7 +258,7 @@ export default function ConsultationPage() {
               className="font-display text-center"
               style={{
                 fontSize: "11px",
-                color: "var(--teal-deep)",
+                color: "var(--teal-text)",
                 letterSpacing: "0.18em",
                 marginBottom: "12px",
               }}

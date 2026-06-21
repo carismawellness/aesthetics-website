@@ -46,7 +46,7 @@ export default function Redefined() {
             className="font-serif"
             style={{
               fontSize: "clamp(22px,3vw,30px)",
-              color: "#527979",
+              color: "#406060",
               letterSpacing: "0.06em",
               fontWeight: 400,
               lineHeight: 1.3,
@@ -56,14 +56,14 @@ export default function Redefined() {
             Your Skin — Redefined.
           </h2>
 
-          <p style={{ color: "var(--teal)", fontSize: "14px", lineHeight: 1.7, marginTop: "14px" }}>
+          <p style={{ color: "var(--teal-text)", fontSize: "14px", lineHeight: 1.7, marginTop: "14px" }}>
             See how advanced Pico Laser treatment helps fade unwanted tattoo ink with precision, care, and a personalised plan designed around your skin.
           </p>
 
           <ul className="space-y-5" style={{ marginTop: "26px", listStyle: "none" }}>
             {BULLETS.map((b) => (
               <li key={b.label} className="flex" style={{ gap: "10px" }}>
-                <span style={{ color: "var(--teal)", fontSize: "9px", lineHeight: 2, flexShrink: 0 }}>●</span>
+                <span aria-hidden style={{ color: "var(--teal-text)", fontSize: "9px", lineHeight: 2, flexShrink: 0 }}>●</span>
                 <span style={{ fontSize: "14px", lineHeight: 1.6, color: "var(--label)" }}>
                   <span style={{ color: "var(--gold)", fontWeight: 600 }}>{b.label}</span> — {b.desc}
                 </span>

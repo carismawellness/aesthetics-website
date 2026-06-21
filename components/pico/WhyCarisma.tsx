@@ -20,8 +20,10 @@ export default function WhyCarisma() {
         <p
           className="font-display text-center"
           style={{
+            // WCAG: eyebrow sits on the page gradient (worst stop #d6e1e1) at <24px
+            // normal text. --gold #706552 = 4.28:1 (fail) → darkened to #5d5443 = 5.58:1.
             fontSize: "clamp(20px,2.4vw,28px)",
-            color: "var(--gold)",
+            color: "#5d5443",
             letterSpacing: "0.06em",
             lineHeight: 1.5,
             fontWeight: 400,

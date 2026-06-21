@@ -7,10 +7,11 @@ import Link from "next/link";
 export const A = "/assets/treatments";
 
 // WCAG AA corrected tokens (resolve to the global corrected palette).
-// Previous #98afb2 (2.31:1) and #96b2b2 (2.26:1) failed AA; both replaced with
-// the corrected sage-teal --teal #527979 (4.81:1 as text / white-on-teal button).
-export const TEAL_HEAD = "#527979"; // --teal — all section headings & kickers (was #98afb2)
-export const SAGE = "#527979";      // --teal — all CTA buttons, white text 4.81:1 (was #96b2b2)
+// Previous #98afb2 (2.31:1), #96b2b2 (2.26:1) and #527979 (3.6:1 on the page
+// gradient #d6e1e1) failed AA as normal text. Headings/kickers now use
+// --teal-text #406060: 5.14:1 on the gradient worst-stop and 6.86:1 on white.
+export const TEAL_HEAD = "#406060"; // --teal-text — all section headings & kickers (AA on gradient + white)
+export const SAGE = "#527979";      // --teal — CTA buttons only (white text on teal-deep gradient)
 
 export function Kicker({ children }: { children: React.ReactNode }) {
   return <p className="font-display text-center" style={{ fontSize: "18px", color: TEAL_HEAD, letterSpacing: "0.02em" }}>{children}</p>;
@@ -36,7 +37,9 @@ export function Cta({ label }: { label: string }) {
 }
 
 export function Dot() {
-  return <span style={{ color: "var(--teal)", fontSize: "11px", lineHeight: 1.8, flexShrink: 0 }}>●</span>;
+  // WCAG: bullet glyph is a graphical object — use AA-corrected TEAL_HEAD #527979
+  // (4.81:1 on white) instead of decorative --teal #96b2b2 (2.26:1).
+  return <span aria-hidden style={{ color: TEAL_HEAD, fontSize: "11px", lineHeight: 1.8, flexShrink: 0 }}>●</span>;
 }
 
 export function GoogleRating() {
@@ -44,8 +47,8 @@ export function GoogleRating() {
     <div className="flex items-center gap-2" style={{ marginTop: "20px" }}>
       <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.27-4.74 3.27-8.1z" /><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.26 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84A11 11 0 0 0 12 23z" /><path fill="#FBBC05" d="M5.84 14.1a6.6 6.6 0 0 1 0-4.2V7.06H2.18a11 11 0 0 0 0 9.88l3.66-2.84z" /><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84C6.71 7.3 9.14 5.38 12 5.38z" /></svg>
       <span style={{ fontWeight: 600, fontSize: "13px", color: "var(--label)" }}>4.9</span>
-      <span className="flex" style={{ color: "var(--teal)" }}>{[0, 1, 2, 3, 4].map((i) => (<svg key={i} width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>))}</span>
-      <span className="font-display" style={{ fontSize: "11px", color: "var(--teal)", letterSpacing: "0.08em" }}>TOP-RATED CLINIC IN MALTA</span>
+      <span className="flex" aria-hidden style={{ color: TEAL_HEAD }}>{[0, 1, 2, 3, 4].map((i) => (<svg key={i} width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>))}</span>
+      <span className="font-display" style={{ fontSize: "11px", color: TEAL_HEAD, letterSpacing: "0.08em" }}>TOP-RATED CLINIC IN MALTA</span>
     </div>
   );
 }

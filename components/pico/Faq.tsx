@@ -122,8 +122,13 @@ export default function Faq() {
           background-color: rgba(99, 145, 171, 0.06);
         }
         .faq-row:focus-visible {
-          outline: none;
-          box-shadow: 0 0 0 3px rgba(12, 11, 11, 0.18);
+          /* WCAG 2.4.11/2.4.7: visible focus ring >= 3:1. The prior faint
+             rgba(12,11,11,0.18) composited to ~#d3d3d3 (1.5:1) and failed.
+             --teal-deep #4f7373 ring = 5.21:1 vs white. Keep a real outline as
+             a Windows High-Contrast / forced-colors fallback. */
+          outline: 2px solid transparent;
+          outline-offset: 2px;
+          box-shadow: 0 0 0 3px var(--teal-deep);
         }
         @media (max-width: 640px) {
           .faq-head { align-items: stretch; }

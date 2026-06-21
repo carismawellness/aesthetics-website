@@ -6,6 +6,7 @@ import { Pinyon_Script } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WidowGuard from "@/components/WidowGuard";
+import MediaLegibilityGuard from "@/components/MediaLegibilityGuard";
 import SmoothScroll from "@/components/motion/SmoothScroll";
 
 const pinyonScript = Pinyon_Script({
@@ -101,6 +102,8 @@ export default function RootLayout({
         <Footer />
         {/* Eliminates typographic widows (lone last word) site-wide. */}
         <WidowGuard />
+        {/* Guarantees text stays legible over any video/photo media. */}
+        <MediaLegibilityGuard />
 
         {/* GHL form embed */}
         <Script src="https://link.msgsndr.com/js/form_embed.js" strategy="lazyOnload" />

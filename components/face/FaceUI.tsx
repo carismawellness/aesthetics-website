@@ -58,8 +58,8 @@ export function TreatmentCard({ t, variant = "card" }: { t: { slug: string; name
         <h3 className="font-display" style={{ fontSize: "clamp(13px,1.2vw,15px)", fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--ink)", marginBottom: variant === "card" && t.tagline ? "8px" : "0" }}>{t.name}</h3>
         {variant === "card" && t.tagline && <p style={{ fontSize: "13px", color: "var(--muted)", lineHeight: 1.6, marginBottom: "14px" }}>{t.tagline}</p>}
         <div style={{ display: "flex", alignItems: "center", gap: "6px" }}>
-          <span className="font-display" style={{ fontSize: "10px", letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--teal)" }}>Explore</span>
-          <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="var(--teal)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+          <span className="font-display" style={{ fontSize: "10px", letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--teal-text)" }}>Explore</span>
+          <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="var(--teal-text)" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
         </div>
       </div>
     </Link>
@@ -130,7 +130,7 @@ export function AreaGrid({ areas }: { areas: Area[] }) {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style={{ gap: "24px", marginTop: "44px" }}>
         {areas.map((a, i) => (
           <Reveal key={a.label} delay={(i % 4) * 70} className="card" style={{ borderRadius: "var(--radius-card)", padding: "26px 22px" }}>
-            <span className="font-display" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: "40px", height: "40px", borderRadius: "50%", border: "1px solid var(--teal)", color: "var(--teal)", fontSize: "14px", marginBottom: "14px" }}>{String(i + 1).padStart(2, "0")}</span>
+            <span className="font-display" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: "40px", height: "40px", borderRadius: "50%", border: "1px solid var(--teal-text)", color: "var(--teal-text)", fontSize: "14px", marginBottom: "14px" }}>{String(i + 1).padStart(2, "0")}</span>
             <h3 className="font-display" style={{ fontSize: "clamp(14px,1.4vw,16px)", fontWeight: 600, letterSpacing: "0.10em", textTransform: "uppercase", color: "var(--ink)", marginBottom: "8px" }}>{a.label}</h3>
             <p style={{ fontSize: "13.5px", color: "var(--muted)", lineHeight: 1.6 }}>{a.blurb}</p>
           </Reveal>
@@ -145,12 +145,12 @@ export function SuitabilityCompare({ ideal, notIdeal }: { ideal: string[]; notId
     <Section>
       <SectionHeading eyebrow="Honest guidance" title="Is this right for you?" />
       <div className="grid grid-cols-1 md:grid-cols-2" style={{ gap: "24px", marginTop: "44px", maxWidth: "960px", marginInline: "auto" }}>
-        <div style={{ background: "var(--teal-100)", border: "1px solid var(--teal)", borderRadius: "var(--radius-card)", padding: "30px 28px" }}>
+        <div style={{ background: "var(--teal-100)", border: "1px solid var(--teal-text)", borderRadius: "var(--radius-card)", padding: "30px 28px" }}>
           <h3 className="font-display" style={{ fontSize: "14px", fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--ink)", marginBottom: "18px" }}>Suitable for you if</h3>
           <ul style={{ display: "grid", gap: "12px" }}>
             {ideal.map((s) => (
               <li key={s} className="flex items-start" style={{ gap: "12px" }}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: "2px" }}><path d="M5 12.5l4.5 4.5L19 7" /></svg>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--teal-text)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: "2px" }}><path d="M5 12.5l4.5 4.5L19 7" /></svg>
                 <span style={{ fontSize: "14px", color: "var(--ink-soft)", lineHeight: 1.55 }}>{s}</span>
               </li>
             ))}
@@ -180,7 +180,7 @@ export function ExperienceSteps({ steps }: { steps: Step[] }) {
       <div style={{ marginTop: "44px", maxWidth: "860px", marginInline: "auto", display: "grid", gap: "20px" }}>
         {steps.map((s) => (
           <Reveal key={s.n} className="flex items-start card" style={{ gap: "22px", borderRadius: "var(--radius-card)", padding: "24px 26px" }}>
-            <span className="font-display" style={{ flexShrink: 0, fontSize: "22px", fontWeight: 600, color: "var(--teal)", lineHeight: 1 }}>{String(s.n).padStart(2, "0")}</span>
+            <span className="font-display" style={{ flexShrink: 0, fontSize: "22px", fontWeight: 600, color: "var(--teal-text)", lineHeight: 1 }}>{String(s.n).padStart(2, "0")}</span>
             <div>
               <h3 className="font-display" style={{ fontSize: "clamp(15px,1.6vw,18px)", fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--ink)", marginBottom: "8px" }}>{s.label}</h3>
               <p style={{ fontSize: "14px", color: "var(--ink-soft)", lineHeight: 1.7 }}>{s.text}</p>
@@ -200,7 +200,7 @@ export function PrepAftercare({ prep }: { prep: { before: string; during: string
       <div className="grid grid-cols-1 md:grid-cols-3" style={{ gap: "24px", marginTop: "44px" }}>
         {cols.map(([label, text]) => (
           <div key={label} style={{ background: "var(--cream)", borderRadius: "var(--radius-card)", padding: "28px 24px" }}>
-            <h3 className="font-display" style={{ fontSize: "13px", fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--teal-deep)", marginBottom: "12px" }}>{label}</h3>
+            <h3 className="font-display" style={{ fontSize: "13px", fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--teal-text)", marginBottom: "12px" }}>{label}</h3>
             <p style={{ fontSize: "14px", color: "var(--ink-soft)", lineHeight: 1.7 }}>{text}</p>
           </div>
         ))}
@@ -221,7 +221,7 @@ export function TrustStrip({ logos, benefits }: { logos: string[]; benefits: str
       <ul className="grid grid-cols-1 sm:grid-cols-2" style={{ gap: "12px 32px", marginTop: "40px", maxWidth: "820px", marginInline: "auto" }}>
         {benefits.map((b) => (
           <li key={b} className="flex items-start" style={{ gap: "12px" }}>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: "3px" }}><path d="M5 12.5l4.5 4.5L19 7" /></svg>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--teal-text)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: "3px" }}><path d="M5 12.5l4.5 4.5L19 7" /></svg>
             <span style={{ fontSize: "14px", color: "var(--ink-soft)", lineHeight: 1.5 }}>{b}</span>
           </li>
         ))}

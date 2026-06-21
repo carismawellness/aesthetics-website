@@ -137,7 +137,7 @@ export default function Header() {
             {MENUS.map((m) => {
               if (!m.items) {
                 return (
-                  <Link key={m.label} href={m.href!} className="font-display link-underline" style={{ fontSize: "13px", letterSpacing: "0.12em", color: "#5e5446", cursor: "pointer" }}>
+                  <Link key={m.label} href={m.href!} className="font-display link-underline" style={{ fontSize: "13px", letterSpacing: "0.12em", color: "#423a30", cursor: "pointer" }}>
                     {m.label}
                   </Link>
                 );
@@ -145,7 +145,7 @@ export default function Header() {
               const { items, showViewAll } = curate(m);
               return (
                 <div key={m.label} className="relative group">
-                  <button className="font-display link-underline flex items-center gap-1" style={{ fontSize: "13px", letterSpacing: "0.12em", padding: "20px 0", color: "#5e5446", cursor: "pointer" }}>
+                  <button className="font-display link-underline flex items-center gap-1" style={{ fontSize: "13px", letterSpacing: "0.12em", padding: "20px 0", color: "#423a30", cursor: "pointer" }}>
                     {m.label}
                     <svg width="9" height="9" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.6"><path d="M2 4l4 4 4-4" /></svg>
                   </button>
@@ -168,9 +168,9 @@ export default function Header() {
                         key={it.href}
                         href={it.href}
                         className="block text-center font-display transition-colors"
-                        style={{ padding: "7px 24px", fontSize: "11px", color: "#5e5446", textTransform: "uppercase", letterSpacing: "0.08em", whiteSpace: "nowrap", cursor: "pointer" }}
+                        style={{ padding: "7px 24px", fontSize: "11px", color: "#423a30", textTransform: "uppercase", letterSpacing: "0.08em", whiteSpace: "nowrap", cursor: "pointer" }}
                         onMouseEnter={e => (e.currentTarget.style.color = "var(--gold)")}
-                        onMouseLeave={e => (e.currentTarget.style.color = "#5e5446")}
+                        onMouseLeave={e => (e.currentTarget.style.color = "#423a30")}
                       >
                         {it.label}
                       </Link>
@@ -293,7 +293,7 @@ export default function Header() {
                           href={it.href}
                           onClick={() => setOpen(false)}
                           className="block font-display link-underline"
-                          style={{ padding: "9px 12px", fontSize: "14px", color: "#5e5446", textTransform: "uppercase", letterSpacing: "0.06em", cursor: "pointer" }}
+                          style={{ padding: "9px 12px", fontSize: "14px", color: "#423a30", textTransform: "uppercase", letterSpacing: "0.06em", cursor: "pointer" }}
                         >
                           {it.label}
                         </Link>

@@ -76,7 +76,7 @@ export default function WhatToExpect() {
                     className="wte-tile"
                     style={{
                       background: "rgba(255,255,255,0.6)",
-                      borderLeft: "3px solid var(--teal)",
+                      borderLeft: "3px solid var(--teal-deep)",
                       borderRadius: "12px",
                       padding: "14px 16px",
                     }}

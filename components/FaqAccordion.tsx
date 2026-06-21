@@ -21,12 +21,12 @@ export default function FaqAccordion({ items, uppercase = true }: { items: Faq[]
               onMouseLeave={(e) => { e.currentTarget.style.opacity = "1"; }}
               aria-expanded={isOpen}
             >
-              <span className="font-display" style={{ fontSize: "16px", color: "#806a35", letterSpacing: "0.06em", lineHeight: 1.4, textTransform: uppercase ? undefined : "none" }}>
+              <span className="font-display" style={{ fontSize: "16px", color: "#776030", letterSpacing: "0.06em", lineHeight: 1.4, textTransform: uppercase ? undefined : "none" }}>
                 {it.q}
               </span>
               <span
                 aria-hidden
-                style={{ color: "#806a35", transition: "transform 0.3s", transform: isOpen ? "rotate(180deg)" : "none", flexShrink: 0 }}
+                style={{ color: "#776030", transition: "transform 0.3s", transform: isOpen ? "rotate(180deg)" : "none", flexShrink: 0 }}
               >
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M6 9l6 6 6-6" /></svg>
               </span>

@@ -179,7 +179,7 @@ function Hero() {
             </p>
             <h1
               className="font-serif"
-              style={{ fontSize: "clamp(24px,3vw,32px)", color: "var(--teal)", textTransform: "uppercase", letterSpacing: "0.05em", lineHeight: 1.2, marginBottom: "10px" }}
+              style={{ fontSize: "clamp(24px,3vw,32px)", color: "var(--teal-text)", textTransform: "uppercase", letterSpacing: "0.05em", lineHeight: 1.2, marginBottom: "10px" }}
             >
               doctor-led ozempic &amp; mounjaro in malta
             </h1>
@@ -365,7 +365,7 @@ function Results() {
   return (
     <section id="results" style={{ background: "var(--white)", padding: "72px 0" }}>
       <div className="container text-center">
-        <h2 className="font-serif" style={{ fontSize: "clamp(22px,3.2vw,30px)", color: "var(--teal)", letterSpacing: "0.08em", textTransform: "uppercase", lineHeight: 1.3 }}>
+        <h2 className="font-serif" style={{ fontSize: "clamp(22px,3.2vw,30px)", color: "var(--teal-text)", letterSpacing: "0.08em", textTransform: "uppercase", lineHeight: 1.3 }}>
           ozempic &amp; mounjaro results
         </h2>
         <div style={{ width: "150px", height: "1px", background: "var(--teal)", opacity: 0.4, margin: "16px auto 44px" }} />
@@ -406,7 +406,7 @@ function CarouselArrow({ dir, onClick }: { dir: "left" | "right"; onClick: () =>
         background: "var(--white)",
         border: "1px solid var(--line)",
         boxShadow: "0 6px 18px rgba(0,0,0,0.12)",
-        color: "var(--teal)",
+        color: "var(--teal-text)",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -626,7 +626,7 @@ function NumberedList({ items }: { items: string[] }) {
 
 function CheckMark({ kind }: { kind: "check" | "cross" }) {
   return kind === "check" ? (
-    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--teal-text)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
       <path d="M4 12.5l5 5L20 6" />
     </svg>
   ) : (
@@ -987,7 +987,7 @@ function ExpertCare() {
     <section id="expert-care" style={{ background: "var(--white)", padding: "64px 0 80px" }}>
       <div className="container">
         <Reveal>
-          <h2 className="font-serif" style={{ textAlign: "center", fontSize: "clamp(22px,3.2vw,30px)", color: "var(--teal)", letterSpacing: "0.12em", textTransform: "uppercase", lineHeight: 1.4, marginBottom: "48px" }}>
+          <h2 className="font-serif" style={{ textAlign: "center", fontSize: "clamp(22px,3.2vw,30px)", color: "var(--teal-text)", letterSpacing: "0.12em", textTransform: "uppercase", lineHeight: 1.4, marginBottom: "48px" }}>
             led by expertise.<br />driven by results.
           </h2>
         </Reveal>
@@ -1002,7 +1002,7 @@ function ExpertCare() {
             />
           </Reveal>
           <Reveal delay={100}>
-            <h3 className="font-display" style={{ fontSize: "18px", color: "var(--teal)", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: "16px" }}>Dr Zaid Teebi</h3>
+            <h3 className="font-display" style={{ fontSize: "18px", color: "var(--teal-text)", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: "16px" }}>Dr Zaid Teebi</h3>
             <P>
               Dr Zaid Teebi is a medical doctor at Carisma with over 30+ years of clinical experience and an
               evidence-based focus on GLP-1 prescribing and metabolic health. A graduate of Imperial College London, he
@@ -1045,7 +1045,7 @@ function Promise() {
           </div>
           <h2
             className="font-serif"
-            style={{ textAlign: "center", fontSize: "clamp(24px,3.8vw,36px)", color: "var(--teal)", textTransform: "uppercase", letterSpacing: "0.1em", lineHeight: 1.45, marginBottom: "48px" }}
+            style={{ textAlign: "center", fontSize: "clamp(24px,3.8vw,36px)", color: "var(--teal-text)", textTransform: "uppercase", letterSpacing: "0.1em", lineHeight: 1.45, marginBottom: "48px" }}
           >
             up to 1kg per week<br />measured. verified. comitted.
           </h2>
@@ -1064,7 +1064,7 @@ function Promise() {
               }}
             >
               <p className="font-serif" style={{ fontSize: "clamp(19px,2.4vw,26px)", letterSpacing: "0.03em", textTransform: "uppercase", lineHeight: 1.45 }}>
-                <span style={{ color: "var(--teal)", fontWeight: 700 }}>Only clinic in Malta</span>{" "}
+                <span style={{ color: "var(--teal-text)", fontWeight: 700 }}>Only clinic in Malta</span>{" "}
                 <span style={{ color: "var(--gold)" }}>to offer an extended care commitment on Ozempic &amp; Mounjaro programmes</span>
               </p>
             </div>
@@ -1362,7 +1362,7 @@ function Faqs() {
   return (
     <section id="faqs" style={{ background: "var(--white)", padding: "72px 0" }}>
       <div className="container">
-        <h2 className="font-serif" style={{ textAlign: "center", fontSize: "clamp(20px,2.6vw,25px)", color: "var(--teal)", textTransform: "lowercase", marginBottom: "36px" }}>
+        <h2 className="font-serif" style={{ textAlign: "center", fontSize: "clamp(20px,2.6vw,25px)", color: "var(--teal-text)", textTransform: "lowercase", marginBottom: "36px" }}>
           faqs about ozempic &amp; mounjaro
         </h2>
         <Reveal>
@@ -1468,15 +1468,15 @@ function ResearchCardView({ card, col }: { card: ResearchCard; col: "left" | "ri
           {card.title}
         </h3>
         <div className="flex justify-center" style={{ marginBottom: "20px" }}>
-          <span className="font-display" style={{ fontSize: "11px", letterSpacing: "0.1em", color: "var(--white)", background: "var(--teal)", padding: "7px 16px", borderRadius: "20px" }}>
+          <span className="font-display" style={{ fontSize: "11px", letterSpacing: "0.1em", color: "var(--white)", background: "var(--teal-deep)", padding: "7px 16px", borderRadius: "20px" }}>
             {card.pill}
           </span>
         </div>
-        <p className="font-display" style={{ fontSize: "12px", color: "var(--teal)", letterSpacing: "0.1em", marginBottom: "8px" }}>WHAT IT DOES</p>
+        <p className="font-display" style={{ fontSize: "12px", color: "var(--teal-text)", letterSpacing: "0.1em", marginBottom: "8px" }}>WHAT IT DOES</p>
         <p style={{ fontSize: "13.5px", color: "#655a50", lineHeight: 1.75, marginBottom: "18px" }}>{card.whatItDoes}</p>
 
         <div style={{ display: open ? "block" : "none" }}>
-          <p className="font-display" style={{ fontSize: "12px", color: "var(--teal)", letterSpacing: "0.1em", marginBottom: "10px" }}>KEY RESULTS</p>
+          <p className="font-display" style={{ fontSize: "12px", color: "var(--teal-text)", letterSpacing: "0.1em", marginBottom: "10px" }}>KEY RESULTS</p>
           <ul style={{ margin: 0 }}>
             {card.keyResults.map((r, i) => (
               <li key={i} style={{ fontSize: "13px", color: "#655a50", lineHeight: 1.7, marginBottom: "14px" }}>
@@ -1489,7 +1489,7 @@ function ResearchCardView({ card, col }: { card: ResearchCard; col: "left" | "ri
         <button
           type="button"
           onClick={() => setOpen((o) => !o)}
-          style={{ background: "transparent", border: "none", padding: 0, cursor: "pointer", color: "var(--teal)", fontSize: "13px", fontWeight: 600, marginTop: "6px" }}
+          style={{ background: "transparent", border: "none", padding: 0, cursor: "pointer", color: "var(--teal-text)", fontSize: "13px", fontWeight: 600, marginTop: "6px", textDecoration: "underline" }}
         >
           {open ? "Read less" : "Read more"}
         </button>

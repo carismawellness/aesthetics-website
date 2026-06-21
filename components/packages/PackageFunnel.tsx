@@ -59,7 +59,7 @@ function BookCta({ href, save, label }: { href: string; save: number | null; lab
         consultLabel="Book Free Consultation"
       />
       {save != null && (
-        <p className="font-display text-center" style={{ fontSize: "10px", letterSpacing: "0.1em", textTransform: "uppercase", marginTop: "10px", opacity: 0.7, color: "var(--label)" }}>
+        <p className="font-display text-center" style={{ fontSize: "10px", letterSpacing: "0.1em", textTransform: "uppercase", marginTop: "10px", color: "var(--label)" }}>
           Limited-Time Offer — Save €{save}
         </p>
       )}
@@ -133,7 +133,7 @@ function SerifHeading({ text, align = "center", size = "clamp(22px,3vw,32px)", s
 
 function StatIcon({ metric }: { metric: string }) {
   const m = metric.toLowerCase();
-  const common = { width: 18, height: 18, viewBox: "0 0 24 24", fill: "none", stroke: "var(--teal)", strokeWidth: 1.5 } as const;
+  const common = { width: 18, height: 18, viewBox: "0 0 24 24", fill: "none", stroke: "var(--teal-deep)", strokeWidth: 1.5 } as const;
   if (m.includes("procedure") || m.includes("time")) return (<svg {...common}><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg>);
   if (m.includes("downtime")) return (<svg {...common}><circle cx="12" cy="12" r="9" /><path d="M9 12h6M12 9v6" /></svg>);
   if (m.includes("last")) return (<svg {...common}><rect x="3" y="4" width="18" height="17" rx="2" /><path d="M16 2v4M8 2v4M3 10h18" /></svg>);
@@ -240,7 +240,7 @@ export default function PackageFunnel({ data }: { data: PackageData }) {
           <div style={{ borderRadius: "26px", background: "linear-gradient(160deg,#e8f0f0 0%, #f6fafa 45%, #eef4f4 100%)", border: "1px solid var(--line)", padding: "clamp(24px,3vw,40px)", boxShadow: "0 20px 60px rgba(0,0,0,0.05)" }}>
             <div className="grid gap-10 lg:grid-cols-2 items-center">
               <Reveal>
-                <h1 className="font-serif" style={{ fontSize: "clamp(26px,3vw,34px)", color: "var(--teal)", letterSpacing: "normal", textTransform: "uppercase", lineHeight: 1.2 }}>
+                <h1 className="font-serif" style={{ fontSize: "clamp(26px,3vw,34px)", color: "var(--teal-text)", letterSpacing: "normal", textTransform: "uppercase", lineHeight: 1.2 }}>
                   {h.title}
                 </h1>
                 {h.lead && <p style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.4, marginTop: "12px", fontWeight: 700, textAlign: "justify" }}>{h.lead}</p>}
@@ -378,13 +378,13 @@ export default function PackageFunnel({ data }: { data: PackageData }) {
           <div className="container">
             <div className="grid gap-12 md:grid-cols-2 mx-auto" style={{ maxWidth: "960px" }}>
               <Reveal>
-                <h3 className="font-display" style={{ fontSize: "13px", color: "var(--teal)", letterSpacing: "0.14em", marginBottom: "18px" }}>OUR COMMITMENT</h3>
+                <h3 className="font-display" style={{ fontSize: "13px", color: "var(--teal-text)", letterSpacing: "0.14em", marginBottom: "18px" }}>OUR COMMITMENT</h3>
                 <ul className="space-y-3">
                   {data.commitment.items.map((t) => (<li key={t} className="flex items-start gap-3"><span style={{ color: "var(--teal)", fontSize: "11px", lineHeight: 1.9 }}>●</span><span style={{ fontSize: "14.5px", color: "var(--label)", lineHeight: 1.6 }}>{t}</span></li>))}
                 </ul>
               </Reveal>
               <Reveal delay={120}>
-                <h3 className="font-display" style={{ fontSize: "13px", color: "var(--teal)", letterSpacing: "0.14em", marginBottom: "18px" }}>{data.commitment.whyTitle}</h3>
+                <h3 className="font-display" style={{ fontSize: "13px", color: "var(--teal-text)", letterSpacing: "0.14em", marginBottom: "18px" }}>{data.commitment.whyTitle}</h3>
                 <ul className="space-y-3">
                   {data.commitment.why.map((t) => (<li key={t} className="flex items-start gap-3"><span style={{ color: "var(--teal)", fontSize: "11px", lineHeight: 1.9 }}>●</span><span style={{ fontSize: "14.5px", color: "var(--label)", lineHeight: 1.6 }}>{t}</span></li>))}
                 </ul>
@@ -460,7 +460,7 @@ export default function PackageFunnel({ data }: { data: PackageData }) {
                 {data.redefined.tabs && (
                   <div className="flex" style={{ gap: "30px", borderBottom: "1px solid var(--line)" }}>
                     {data.redefined.tabs.map((label, i) => (
-                      <button key={label} onClick={() => setTab(i)} className="font-serif" style={{ fontSize: "clamp(18px,2.4vw,24px)", letterSpacing: "0.04em", color: tab === i ? "var(--ink)" : "var(--teal)", paddingBottom: "8px", borderBottom: tab === i ? "2px solid var(--ink)" : "2px solid transparent", background: "none", cursor: "pointer" }}>{label}</button>
+                      <button key={label} onClick={() => setTab(i)} aria-pressed={tab === i} className="font-serif" style={{ fontSize: "clamp(18px,2.4vw,24px)", letterSpacing: "0.04em", color: tab === i ? "var(--ink)" : "var(--teal-text)", fontWeight: tab === i ? 700 : 400, paddingBottom: "8px", borderBottom: tab === i ? "2px solid var(--ink)" : "2px solid transparent", background: "none", cursor: "pointer" }}>{label}</button>
                     ))}
                   </div>
                 )}
@@ -489,7 +489,7 @@ export default function PackageFunnel({ data }: { data: PackageData }) {
             <div className="grid gap-6 md:grid-cols-3" style={{ marginTop: "44px" }}>
               {data.expect.cols.map((col, i) => (
                 <Reveal key={col.label} delay={(i % 3) * 80}>
-                  <p className="font-display text-center" style={{ fontSize: "13px", color: "var(--teal)", letterSpacing: "0.14em", marginBottom: "16px" }}>{col.label}</p>
+                  <p className="font-display text-center" style={{ fontSize: "13px", color: "var(--teal-text)", letterSpacing: "0.14em", marginBottom: "16px" }}>{col.label}</p>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={col.img} alt={col.label} className="w-full" style={{ display: "block", borderRadius: "8px", aspectRatio: "278 / 221", objectFit: "cover", marginBottom: "16px" }} />
                   <div className="space-y-3">
@@ -576,7 +576,7 @@ export default function PackageFunnel({ data }: { data: PackageData }) {
       {/* ===== REAL PEOPLE, REAL REVIEWS (heading sits above the global Footer's DoctorsSection) ===== */}
       <section style={{ padding: "30px 0 0" }}>
         <div className="container text-center">
-          <h2 className="font-serif" style={{ fontSize: "clamp(20px,2.6vw,28px)", color: "var(--teal)", letterSpacing: "0.06em", display: "inline-block", borderBottom: "1px solid var(--teal-200)", paddingBottom: "14px" }}>REAL PEOPLE, REAL REVIEWS</h2>
+          <h2 className="font-serif" style={{ fontSize: "clamp(20px,2.6vw,28px)", color: "var(--teal-text)", letterSpacing: "0.06em", display: "inline-block", borderBottom: "1px solid var(--teal-200)", paddingBottom: "14px" }}>REAL PEOPLE, REAL REVIEWS</h2>
         </div>
       </section>
     </>
