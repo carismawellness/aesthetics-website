@@ -17,13 +17,15 @@ function CheckIcon({ ok }: { ok: boolean }) {
 }
 
 // small icon by metric keyword for the info card
-const INFO_COLOR = "#96b2b2";
+// AA-compliant: text uses taupe (#756758, 5.0:1 on card bg); icon strokes use teal-deep (#3f6363, 6.1:1) so graphical objects clear 3:1 (1.4.11).
+const INFO_COLOR = "#756758";
+const INFO_ICON = "#3f6363";
 
 function MetricIcon({ metric }: { metric: string }) {
   const m = metric.toLowerCase();
-  const common = { width: 28, height: 28, viewBox: "0 0 24 24", fill: "none", stroke: INFO_COLOR, strokeWidth: 1.4 } as const;
+  const common = { width: 28, height: 28, viewBox: "0 0 24 24", fill: "none", stroke: INFO_ICON, strokeWidth: 1.4 } as const;
   if (m.includes("time") || m.includes("duration")) return (<svg {...common}><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg>);
-  if (m.includes("downtime") || m.includes("recovery")) return (<svg {...common}><circle cx="12" cy="12" r="9" /><path d="M12 8v4" /><text x="8" y="15" fontSize="6" fill={INFO_COLOR} stroke="none">24</text></svg>);
+  if (m.includes("downtime") || m.includes("recovery")) return (<svg {...common}><circle cx="12" cy="12" r="9" /><path d="M12 8v4" /><text x="8" y="15" fontSize="6" fill={INFO_ICON} stroke="none">24</text></svg>);
   if (m.includes("last") || m.includes("results last")) return (<svg {...common}><rect x="3" y="4" width="18" height="17" rx="2" /><path d="M16 2v4M8 2v4M3 10h18" /></svg>);
   if (m.includes("visible")) return (<svg {...common}><circle cx="12" cy="16" r="5" /><path d="M12 3v5M8 5l2.5 2.5M16 5l-2.5 2.5" /></svg>);
   if (m.includes("anaesth") || m.includes("anesth")) return (<svg {...common}><path d="M6 18l3-8 3 4 2-3 4 7" /><circle cx="18" cy="6" r="2" /></svg>);
@@ -53,25 +55,39 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
   return (
     <>
       {/* Hero — 2-column (content left, media + info card right) matching live */}
-      <section style={t.hero.heroBgColor
-        ? { background: t.hero.heroBgColor, backgroundSize: "cover", backgroundPosition: "center", padding: "44px 0 64px", borderRadius: "26px", overflow: "hidden", margin: "0 16px" }
-        : { backgroundImage: "url('/assets/hero-bg.png')", backgroundSize: "cover", backgroundPosition: "bottom center", padding: "44px 0 64px", borderRadius: "26px", overflow: "hidden", margin: "0 16px" }}>
+      <section style={{
+          ...(t.hero.heroBgColor
+            ? { background: t.hero.heroBgColor, backgroundSize: "cover", backgroundPosition: "center" }
+            : { backgroundImage: "url('/assets/hero-bg.png')", backgroundSize: "cover", backgroundPosition: "bottom center" }),
+          borderRadius: "26px",
+          overflow: "hidden",
+          margin: "0 16px",
+          /* One-viewport above-the-fold: fill the screen, reserve the fixed nav,
+             centre the hero content. */
+          minHeight: "calc(100svh - 16px)",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          padding: "var(--nav-clear) 0 clamp(20px,3vh,40px)",
+        }}>
         <div className="container">
-          <p className="font-display text-center" style={{ fontSize: "11px", color: "var(--gold-deep)", letterSpacing: "0.16em", marginBottom: "26px" }}>
+          <p className="font-display text-center" style={{ fontSize: "11px", color: "var(--gold)", letterSpacing: "0.16em", marginBottom: "16px" }}>
             {ANNOUNCE}
           </p>
 
           <div style={t.hero.bgImage
-            ? { borderRadius: "26px", backgroundImage: `linear-gradient(rgba(255,255,255,0.62), rgba(255,255,255,0.72)), url('${t.hero.bgImage}')`, backgroundSize: "cover", backgroundPosition: "center", padding: "clamp(24px,3.5vw,48px)" }
+            // a11y: overlay raised to 0.92/0.94 so the worst-case rendered bg over a dark photo is >= #ebebeb,
+            // keeping all hero body text (gold 5.0:1, label 4.8:1, teal-deep 5.8:1) above AA 4.5:1 (WCAG 1.4.3).
+            ? { borderRadius: "26px", backgroundImage: `linear-gradient(rgba(255,255,255,0.92), rgba(255,255,255,0.94)), url('${t.hero.bgImage}')`, backgroundSize: "cover", backgroundPosition: "center", padding: "clamp(24px,3.5vw,48px)" }
             : { padding: "clamp(28px,3.6vw,52px)" }}>
           <div className={hasMedia ? "grid gap-8 lg:grid-cols-[1.15fr_0.85fr] items-start" : ""}>
             {/* Left: content */}
             <Reveal>
-              <h1 className="font-serif" style={{ fontSize: "clamp(28px,4.4vw,46px)", color: "var(--gold)", letterSpacing: "0.04em", textAlign: hasMedia ? "left" : "center" }}>
+              <h1 className="font-serif" style={{ fontSize: "clamp(24px,3.4vw,38px)", color: "var(--gold)", letterSpacing: "0.04em", textAlign: hasMedia ? "left" : "center" }}>
                 {t.hero.title}
               </h1>
               {t.hero.benefits && t.hero.benefits.length > 0 && (
-                <ul className="space-y-3" style={{ marginTop: "20px", maxWidth: hasMedia ? "100%" : "560px", marginInline: hasMedia ? undefined : "auto", textAlign: "left" }}>
+                <ul className="space-y-2" style={{ marginTop: "14px", maxWidth: hasMedia ? "100%" : "560px", marginInline: hasMedia ? undefined : "auto", textAlign: "left" }}>
                   {t.hero.benefits.map((b) => (
                     <li key={b} className="flex items-start gap-3">
                       <span className="shrink-0 inline-flex items-center justify-center" style={{ width: "22px", height: "22px", borderRadius: "50%", background: "#e3eded", color: "var(--teal)", marginTop: "1px" }}>
@@ -83,53 +99,52 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                 </ul>
               )}
               {t.hero.subtitle && (
-                <p style={{ fontSize: "15px", color: "var(--label)", textTransform: "uppercase", letterSpacing: "0.06em", marginTop: "22px", lineHeight: 1.5, textAlign: hasMedia ? "left" : "center", maxWidth: hasMedia ? undefined : "720px", marginInline: hasMedia ? undefined : "auto" }}>
+                <p style={{ fontSize: "14px", color: "var(--label)", textTransform: "uppercase", letterSpacing: "0.06em", marginTop: "12px", lineHeight: 1.45, textAlign: hasMedia ? "left" : "center", maxWidth: hasMedia ? undefined : "720px", marginInline: hasMedia ? undefined : "auto" }}>
                   {t.hero.subtitle}
                 </p>
               )}
               {t.hero.body && (
-                <p style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.8, marginTop: "18px", textAlign: hasMedia ? "justify" : "center", maxWidth: hasMedia ? undefined : "760px", marginInline: hasMedia ? undefined : "auto" }}>
+                <p style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.6, marginTop: "10px", textAlign: hasMedia ? "justify" : "center", maxWidth: hasMedia ? undefined : "760px", marginInline: hasMedia ? undefined : "auto" }}>
                   {t.hero.body}
                 </p>
               )}
               {t.hero.location && (
-                <p className="font-display" style={{ fontSize: "12px", color: "var(--teal)", letterSpacing: "0.14em", textTransform: "uppercase", marginTop: "14px", textAlign: hasMedia ? "left" : "center" }}>
+                <p className="font-display" style={{ fontSize: "12px", color: "var(--teal-deep)", letterSpacing: "0.14em", textTransform: "uppercase", marginTop: "14px", textAlign: hasMedia ? "left" : "center" }}>
+                  {/* a11y: teal (4.03:1 over worst-case hero bg) fails AA at 12px; teal-deep is 5.55:1 */}
                   {t.hero.location}
                 </p>
               )}
               {t.hero.prices && t.hero.prices.length > 0 && (
-                <ul style={{ marginTop: "26px", maxWidth: hasMedia ? "100%" : "560px", marginInline: hasMedia ? undefined : "auto" }}>
+                <ul style={{ marginTop: "14px", maxWidth: hasMedia ? "100%" : "560px", marginInline: hasMedia ? undefined : "auto" }}>
                   {t.hero.prices.map((p) => {
                     const m = p.price.match(/^(.*?)\s*(€\S+)\s*$/);
                     const prefix = m ? m[1] : p.price;
                     const amount = m ? m[2] : "";
                     return (
                       <li key={p.label} className="flex items-baseline gap-2" style={{ padding: "5px 0" }}>
-                        <span style={{ color: "var(--teal)", fontSize: "11px", lineHeight: 1.7 }}>●</span>
+                        <span style={{ color: "var(--teal-deep)", fontSize: "11px", lineHeight: 1.7 }}>●</span>
                         <span style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.5 }}>
                           {p.label} {prefix}{" "}
-                          {amount && <u style={{ color: "var(--teal)", textUnderlineOffset: "2px", fontWeight: 500 }}>{amount}</u>}
+                          {/* a11y: teal-deep (5.8:1 worst-case hero bg) + underline non-color cue so the price isn't distinguished by colour alone (1.4.1/1.4.3) */}
+                          {amount && <u style={{ color: "var(--teal-deep)", textUnderlineOffset: "2px", fontWeight: 600 }}>{amount}</u>}
                         </span>
                       </li>
                     );
                   })}
                 </ul>
               )}
-              <div style={{ marginTop: "30px", textAlign: hasMedia ? "left" : "center" }}>
-                <Link href="/consultation" className="btn btn-teal">{t.hero.cta ?? "BOOK YOUR CONSULTATION"}</Link>
+              <div style={{ marginTop: "18px", textAlign: hasMedia ? "left" : "center" }}>
+                <Link href={t.hero.heroForm ? "#book" : "/consultation"} className="btn btn-teal" style={{ borderRadius: "999px" }}>{t.hero.cta ?? "BOOK YOUR CONSULTATION"}</Link>
               </div>
               {t.hero.note && (
-                <p style={{ marginTop: "16px", fontSize: "12px", color: "var(--muted)", lineHeight: 1.6, textAlign: hasMedia ? "left" : "center", maxWidth: hasMedia ? undefined : "620px", marginInline: hasMedia ? undefined : "auto" }}>
+                <p style={{ marginTop: "16px", fontSize: "12px", color: "var(--ink-soft)", lineHeight: 1.6, textAlign: hasMedia ? "left" : "center", maxWidth: hasMedia ? undefined : "620px", marginInline: hasMedia ? undefined : "auto" }}>
+                  {/* a11y: muted (4.28:1 over worst-case hero bg) fails AA; ink-soft is 12:1 — fine note still reads as secondary via small size */}
                   {t.hero.note}
                 </p>
               )}
-              {t.hero.heroForm && (
-                <div style={{ marginTop: "22px" }}>
-                  <ConsultationForm instanceId="hero" stacked submitLabel="Submit" />
-                </div>
-              )}
               {t.pending && (
-                <p style={{ marginTop: "24px", fontSize: "12px", color: "var(--muted)", fontStyle: "italic", textAlign: hasMedia ? "left" : "center" }}>
+                <p style={{ marginTop: "24px", fontSize: "12px", color: "var(--ink-soft)", fontStyle: "italic", textAlign: hasMedia ? "left" : "center" }}>
+                  {/* a11y: muted fails AA over the worst-case hero overlay; ink-soft (12:1) is safe, italic preserves the de-emphasis */}
                   Detailed treatment information for this page is being finalised.
                 </p>
               )}
@@ -145,11 +160,11 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                     muted
                     loop
                     playsInline
-                    style={{ display: "block", width: "100%", maxWidth: "398px", height: "617px", objectFit: "cover", borderRadius: "20px", boxShadow: "0 20px 50px rgba(0,0,0,0.10)", margin: "0 auto" }}
+                    style={{ display: "block", width: "100%", maxWidth: "min(360px,100%)", height: "clamp(320px,46vh,480px)", objectFit: "cover", borderRadius: "20px", boxShadow: "0 20px 50px rgba(0,0,0,0.10)", margin: "0 auto" }}
                   />
                 ) : (
                   /* eslint-disable-next-line @next/next/no-img-element */
-                  <img src={t.hero.image} alt={t.hero.title} className="w-full" style={{ display: "block", borderRadius: "20px", boxShadow: "0 20px 50px rgba(0,0,0,0.10)", ...(t.hero.imageRatio ? { aspectRatio: t.hero.imageRatio, objectFit: "cover" } : {}) }} />
+                  <img src={t.hero.image} alt={t.hero.title} className="w-full" style={{ display: "block", maxWidth: "min(400px,100%)", maxHeight: "clamp(320px,48vh,500px)", margin: "0 auto", objectFit: "cover", borderRadius: "20px", boxShadow: "0 20px 50px rgba(0,0,0,0.10)", ...(t.hero.imageRatio ? { aspectRatio: t.hero.imageRatio } : {}) }} />
                 )}
                 {t.hero.productTabs && t.hero.productTabs.length > 0 && (
                   <div className="flex gap-3" style={{ marginTop: "14px" }}>
@@ -173,62 +188,66 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                     ))}
                   </div>
                 )}
-                {t.info && <div style={{ marginTop: "18px", maxWidth: "100%", position: "relative" }}><InfoCard info={t.info} /></div>}
-
-                {/* Trust block + scroll cue under the treatment info */}
-                <div style={{ marginTop: "26px" }}>
-                  {/* Google rating */}
-                  <div className="flex items-center flex-wrap gap-x-2 gap-y-1" style={{ fontSize: "13px", color: "var(--label)" }}>
-                    <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.27-4.74 3.27-8.1z" /><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.26 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84A11 11 0 0 0 12 23z" /><path fill="#FBBC05" d="M5.84 14.1a6.6 6.6 0 0 1 0-4.2V7.06H2.18a11 11 0 0 0 0 9.88l3.66-2.84z" /><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84C6.71 7.3 9.14 5.38 12 5.38z" /></svg>
-                    <span style={{ fontWeight: 600 }}>4.7</span>
-                    <span className="flex" style={{ color: "var(--teal)" }}>
-                      {[0, 1, 2, 3, 4].map((i) => (
-                        <svg key={i} width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>
-                      ))}
-                    </span>
-                    <span className="font-display" style={{ color: "var(--teal)", fontSize: "11px", letterSpacing: "0.1em" }}>TOP-RATED CLINIC IN MALTA</span>
-                  </div>
-
-                  {/* Check items */}
-                  <ul className="space-y-3" style={{ marginTop: "20px" }}>
-                    {["Malta's leading wellness chain", "30+ years of expertise", "Medically qualified"].map((label) => (
-                      <li key={label} className="flex items-center gap-3">
-                        <span className="shrink-0 inline-flex items-center justify-center" style={{ width: "26px", height: "26px", border: "1.5px solid var(--teal)", borderRadius: "5px", color: "var(--teal)" }}>
-                          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M5 12l5 5L20 6" /></svg>
-                        </span>
-                        <span className="font-display" style={{ fontSize: "12.5px", color: "var(--label)", letterSpacing: "0.06em", textTransform: "uppercase" }}>{label}</span>
-                      </li>
+                {/* Compact Google rating under the media (trust at a glance). */}
+                <div className="flex items-center flex-wrap gap-x-2 gap-y-1" style={{ marginTop: "14px", fontSize: "13px", color: "var(--label)" }}>
+                  <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.27-4.74 3.27-8.1z" /><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.26 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84A11 11 0 0 0 12 23z" /><path fill="#FBBC05" d="M5.84 14.1a6.6 6.6 0 0 1 0-4.2V7.06H2.18a11 11 0 0 0 0 9.88l3.66-2.84z" /><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84C6.71 7.3 9.14 5.38 12 5.38z" /></svg>
+                  <span style={{ fontWeight: 600 }}>4.7</span>
+                  <span className="flex" style={{ color: "var(--teal)" }}>
+                    {[0, 1, 2, 3, 4].map((i) => (
+                      <svg key={i} width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>
                     ))}
-                  </ul>
-
-                  {/* Scroll down cue */}
-                  <div className="text-center" style={{ marginTop: "30px" }}>
-                    <p className="font-display" style={{ fontSize: "14px", color: "var(--label)", letterSpacing: "0.12em", lineHeight: 1.5 }}>Scroll down to learn more</p>
-                    <div className="flex justify-center" style={{ width: "32px", height: "50px", border: "1.5px solid var(--teal)", borderRadius: "16px", margin: "16px auto 0", paddingTop: "9px" }}>
-                      <svg className="animate-bounce" width="12" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" strokeWidth="2"><path d="M12 4v12M6 12l6 6 6-6" /></svg>
-                    </div>
-                  </div>
+                  </span>
+                  <span className="font-display" style={{ color: "var(--teal-deep)", fontSize: "11px", letterSpacing: "0.1em" }}>TOP-RATED CLINIC IN MALTA</span>
                 </div>
               </Reveal>
             )}
           </div>
           </div>
-
-          {/* info bar fallback when no hero image */}
-          {!hasMedia && t.info && (
-            <div className="rounded-lg bg-white mx-auto" style={{ border: "1px solid var(--line)", padding: "22px 20px", marginTop: "32px", maxWidth: "900px", boxShadow: "0 14px 40px rgba(0,0,0,0.05)" }}>
-              <div className="grid gap-6 text-center" style={{ gridTemplateColumns: `repeat(${Math.min(t.info.length, 5)}, minmax(0,1fr))` }}>
-                {t.info.map((it) => (
-                  <div key={it.metric}>
-                    <div className="font-display" style={{ fontSize: "11px", color: "var(--teal)", letterSpacing: "0.14em", marginBottom: "8px" }}>{it.metric}</div>
-                    <div style={{ fontSize: "14px", color: "var(--ink)" }}>{it.detail}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
         </div>
       </section>
+
+      {/* Lead form — moved out of the hero (the embedded form is taller than a
+          single viewport) into its own section directly below, anchored from the
+          hero CTA (#book) so lead capture stays one click / one scroll away. */}
+      {t.hero.heroForm && (
+        <section id="book" style={{ padding: "clamp(36px,5vh,64px) 0", backgroundColor: "var(--beige)", scrollMarginTop: "var(--nav-clear)" }}>
+          <div className="container">
+            <h2 className="font-serif text-center" style={{ fontSize: "clamp(24px,3.4vw,38px)", color: "var(--gold)", letterSpacing: "0.04em", textTransform: "uppercase" }}>Book Your Consultation</h2>
+            <p className="text-center" style={{ fontSize: "14px", color: "var(--label)", marginTop: "10px", maxWidth: "560px", marginInline: "auto" }}>
+              Share a few details and our team will be in touch to arrange your complimentary consultation.
+            </p>
+            <div className="mx-auto" style={{ marginTop: "26px", maxWidth: "560px" }}>
+              <ConsultationForm instanceId="book" stacked submitLabel="Submit" />
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Treatment info — moved just below the hero so the above-the-fold
+          (content + media) fits one viewport, while the info card stays
+          immediately accessible on first scroll. */}
+      {t.info && (
+        <section style={{ padding: "clamp(28px,4vh,48px) 0" }}>
+          <div className="container">
+            {hasMedia ? (
+              <div className="mx-auto" style={{ maxWidth: "640px" }}>
+                <InfoCard info={t.info} />
+              </div>
+            ) : (
+              <div className="rounded-lg bg-white mx-auto" style={{ border: "1px solid var(--line)", padding: "22px 20px", maxWidth: "900px", boxShadow: "0 14px 40px rgba(0,0,0,0.05)" }}>
+                <div className="grid gap-6 text-center" style={{ gridTemplateColumns: `repeat(${Math.min(t.info.length, 5)}, minmax(0,1fr))` }}>
+                  {t.info.map((it) => (
+                    <div key={it.metric}>
+                      <div className="font-display" style={{ fontSize: "11px", color: "var(--teal)", letterSpacing: "0.14em", marginBottom: "8px" }}>{it.metric}</div>
+                      <div style={{ fontSize: "14px", color: "var(--ink)" }}>{it.detail}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </section>
+      )}
 
       {/* Education — "what is all the hype?" + technology diagram + suitability chart */}
       {t.education && (
@@ -248,7 +267,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={t.education.image} alt={t.education.imageCaption ?? "Laser technology diagram"} className="w-full" style={{ display: "block", borderRadius: "14px" }} />
                 {t.education.imageCaption && (
-                  <figcaption style={{ fontSize: "13px", color: "var(--muted)", lineHeight: 1.6, marginTop: "14px" }}>{t.education.imageCaption}</figcaption>
+                  <figcaption style={{ fontSize: "13px", color: "var(--label)", lineHeight: 1.6, marginTop: "14px" }}>{t.education.imageCaption}</figcaption>
                 )}
               </figure>
             )}
@@ -257,7 +276,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={t.education.chart} alt={t.education.chartCaption ?? "Skin tone and hair colour suitability chart"} className="w-full" style={{ display: "block", borderRadius: "14px" }} />
                 {t.education.chartCaption && (
-                  <figcaption style={{ fontSize: "13px", color: "var(--muted)", lineHeight: 1.6, marginTop: "14px" }}>{t.education.chartCaption}</figcaption>
+                  <figcaption style={{ fontSize: "13px", color: "var(--label)", lineHeight: 1.6, marginTop: "14px" }}>{t.education.chartCaption}</figcaption>
                 )}
               </figure>
             )}
@@ -318,14 +337,14 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
             {t.precision.areas && t.precision.areas.length > 0 && (
               <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4" style={{ marginTop: "44px" }}>
                 {t.precision.areas.map((a, i) => (
-                  <Reveal key={a.name} delay={(i % 4) * 70} className="text-center" style={{ background: "linear-gradient(150deg, #ffffff 0%, #eef4f5 55%, #dde8ea 100%)", padding: "32px 24px", borderRadius: "10px 40px 10px 40px", border: "1px solid var(--line)", boxShadow: "0 12px 30px rgba(0,0,0,0.05)" }}>
+                  <Reveal key={a.name} delay={(i % 4) * 70} className="text-center" style={{ background: "linear-gradient(150deg, #ffffff 0%, #eef4f5 55%, #e9f1f2 100%)", padding: "32px 24px", borderRadius: "10px 40px 10px 40px", border: "1px solid var(--line)", boxShadow: "0 12px 30px rgba(0,0,0,0.05)" }}>
                     {a.icon && (
                       <div className="flex justify-center" style={{ marginBottom: "16px" }}>
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img src={a.icon} alt={a.zone ?? a.name} style={{ height: "70px", width: "auto" }} />
                       </div>
                     )}
-                    {a.zone && <div className="font-display" style={{ fontSize: "11px", color: "#96b2b2", letterSpacing: "0.16em", marginBottom: "10px" }}>{a.zone}</div>}
+                    {a.zone && <div className="font-display" style={{ fontSize: "11px", color: "var(--teal-deep)", letterSpacing: "0.16em", marginBottom: "10px" }}>{a.zone}</div>}
                     <h3 className="font-display" style={{ fontSize: "15px", color: "var(--label)", letterSpacing: "0.05em", marginBottom: a.desc ? "12px" : "0" }}>{a.name}</h3>
                     {a.desc && <p style={{ fontSize: "13.5px", color: "var(--label)", lineHeight: 1.7 }}>{a.desc}</p>}
                   </Reveal>
@@ -333,14 +352,14 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
               </div>
             )}
             {t.precision.additional && (
-              <div className="mx-auto" style={{ marginTop: "44px", maxWidth: "760px", borderLeftWidth: "4px", borderLeftStyle: "solid", borderLeftColor: "#b0a68f", paddingLeft: "22px" }}>
+              <div className="mx-auto" style={{ marginTop: "44px", maxWidth: "760px", borderLeftWidth: "4px", borderLeftStyle: "solid", borderLeftColor: "var(--gold)", paddingLeft: "22px" }}>
                 <h3 className="font-display" style={{ fontSize: "13px", color: "var(--label)", letterSpacing: "0.14em", textTransform: "uppercase", marginBottom: "10px" }}>
                   {t.precision.additionalTitle ?? "Additional Treatment Areas"}
                 </h3>
                 {t.precision.additionalIntro && (
-                  <p style={{ fontSize: "15px", color: "#b0a68f", lineHeight: 1.7, marginBottom: "12px" }}>{t.precision.additionalIntro}</p>
+                  <p style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.7, marginBottom: "12px" }}>{t.precision.additionalIntro}</p>
                 )}
-                <p className="font-display" style={{ fontSize: "13px", color: "#b0a68f", letterSpacing: "0.06em", textTransform: "uppercase" }}>{t.precision.additional}</p>
+                <p className="font-display" style={{ fontSize: "13px", color: "var(--label)", letterSpacing: "0.06em", textTransform: "uppercase" }}>{t.precision.additional}</p>
               </div>
             )}
           </div>
@@ -420,7 +439,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
             {/* ── Desktop layout (>= 768 px): 3-column dashed timeline ── */}
             <div className="relative mx-auto hidden md:block" style={{ maxWidth: "760px" }}>
               {/* continuous dashed timeline */}
-              <span aria-hidden style={{ position: "absolute", left: "22px", top: "46px", bottom: "46px", borderLeft: "1px dashed #c2d3d3", zIndex: 0 }} />
+              <span aria-hidden style={{ position: "absolute", left: "22px", top: "46px", bottom: "46px", borderLeft: "1px dashed #7a9a9a", zIndex: 0 }} />
               {t.experience.steps.map((s, i) => (
                 <Reveal key={s.title || i} delay={i * 80} className="relative grid items-center" style={{ gridTemplateColumns: "44px 84px minmax(0, 440px)", columnGap: "22px", marginBottom: i === t.experience!.steps.length - 1 ? 0 : "40px" }}>
                   {/* timeline node */}
@@ -533,7 +552,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
             )}
             {t.trusted.asSeenOn && t.trusted.asSeenOn.length > 0 && (
               <div className="text-center" style={{ marginTop: "28px" }}>
-                <p className="font-display" style={{ fontSize: "11px", color: "var(--gold-deep)", letterSpacing: "0.18em", textTransform: "uppercase", marginBottom: "14px" }}>As seen on</p>
+                <p className="font-display" style={{ fontSize: "11px", color: "var(--gold)", letterSpacing: "0.18em", textTransform: "uppercase", marginBottom: "14px" }}>As seen on</p>
                 <div className="flex flex-wrap items-center justify-center" style={{ gap: "26px" }}>
                   {t.trusted.asSeenOn.map((logo) => (
                     // eslint-disable-next-line @next/next/no-img-element
@@ -597,11 +616,11 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
             <div className="mx-auto" style={{ maxWidth: "1120px", borderRadius: "36px", background: "linear-gradient(160deg,#eef4f5 0%, #ffffff 50%, #e6eef0 100%)", border: "1px solid var(--line)", padding: "clamp(32px,4vw,60px)" }}>
               {t.difference.kicker && (
                 <div className="text-center">
-                  <p className="font-display" style={{ fontSize: "11px", color: "var(--teal)", letterSpacing: "0.18em", textTransform: "uppercase" }}>{t.difference.kicker}</p>
+                  <p className="font-display" style={{ fontSize: "11px", color: "var(--teal-deep)", letterSpacing: "0.18em", textTransform: "uppercase" }}>{t.difference.kicker}</p>
                   <div className="mx-auto" style={{ width: "80px", height: "1px", background: "var(--teal)", margin: "10px auto 0" }} />
                 </div>
               )}
-              <h2 className="font-serif text-center" style={{ fontSize: "clamp(24px,3.4vw,38px)", color: "#8fa3a0", letterSpacing: "0.04em", marginTop: "20px" }}>{t.difference.title}</h2>
+              <h2 className="font-serif text-center" style={{ fontSize: "clamp(24px,3.4vw,38px)", color: "var(--gold)", letterSpacing: "0.04em", marginTop: "20px" }}>{t.difference.title}</h2>
 
               <div className="grid gap-12 lg:grid-cols-2 items-stretch" style={{ marginTop: "44px" }}>
                 {/* left: commitment + why */}
@@ -648,7 +667,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
         <section style={{ padding: "30px 0 84px" }}>
           <div className="container">
             <div className="mx-auto" style={{ maxWidth: "1400px" }}>
-              <div style={{ background: "linear-gradient(180deg,#c0d2d2 0%, #9fb9b9 100%)", borderRadius: "18px 56px 18px 18px", padding: "clamp(26px,3vw,40px) 32px", textAlign: "center", position: "relative", zIndex: 1, boxShadow: "0 14px 30px rgba(0,0,0,0.08)" }}>
+              <div style={{ background: "linear-gradient(180deg,#527979 0%, #456b6b 100%)", borderRadius: "18px 56px 18px 18px", padding: "clamp(26px,3vw,40px) 32px", textAlign: "center", position: "relative", zIndex: 1, boxShadow: "0 14px 30px rgba(0,0,0,0.08)" }}>
                 <h2 style={{ fontSize: "clamp(20px,3vw,33px)", color: "#fff", letterSpacing: "0.04em", textTransform: "uppercase", fontWeight: 400 }}>{t.bookingForm.title}</h2>
               </div>
               <div className="mx-auto" style={{ marginTop: "12px", position: "relative" }}>
@@ -669,9 +688,9 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
             )}
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3" style={{ marginTop: "44px" }}>
               {t.pricingGrid.items.map((it, i) => (
-                <Reveal key={it.name} delay={(i % 3) * 70} className="text-center" style={{ background: "linear-gradient(150deg, #ffffff 0%, #eef4f5 55%, #dde8ea 100%)", padding: "32px 26px", borderRadius: "10px 40px 10px 40px", border: "1px solid var(--line)", boxShadow: "0 12px 30px rgba(0,0,0,0.05)" }}>
-                  <h3 className="font-display" style={{ fontSize: "16px", color: "var(--gold-deep)", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "8px" }}>{it.name}</h3>
-                  <div className="font-display" style={{ fontSize: "13px", color: "var(--teal)", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: "16px" }}>{it.price}</div>
+                <Reveal key={it.name} delay={(i % 3) * 70} className="text-center" style={{ background: "linear-gradient(150deg, #ffffff 0%, #eef4f5 55%, #e9f1f2 100%)", padding: "32px 26px", borderRadius: "10px 40px 10px 40px", border: "1px solid var(--line)", boxShadow: "0 12px 30px rgba(0,0,0,0.05)" }}>
+                  <h3 className="font-display" style={{ fontSize: "16px", color: "var(--gold)", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "8px" }}>{it.name}</h3>
+                  <div className="font-display" style={{ fontSize: "13px", color: "var(--teal-deep)", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: "16px" }}>{it.price}</div>
                   <p style={{ fontSize: "13.5px", color: "var(--ink-soft)", lineHeight: 1.7 }}>{it.desc}</p>
                 </Reveal>
               ))}
@@ -693,14 +712,14 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                 <Reveal key={tier.name} delay={(i % 3) * 90} className="text-center" style={{ background: "linear-gradient(170deg,#ffffff 0%, #f1f6f7 60%, #e3ecee 100%)", border: "1px solid var(--line)", borderRadius: "20px 56px 20px 56px", boxShadow: "0 12px 30px rgba(0,0,0,0.05)", padding: "clamp(24px,3vw,32px)" }}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={tier.image} alt={tier.name} className="mx-auto" style={{ display: "block", width: "100%", maxWidth: "280px", borderRadius: "14px", boxShadow: "0 10px 26px rgba(0,0,0,0.12)" }} />
-                  <h3 className="font-display" style={{ fontSize: "16px", color: "var(--gold-deep)", letterSpacing: "0.12em", textTransform: "uppercase", marginTop: "22px" }}>{tier.name}</h3>
+                  <h3 className="font-display" style={{ fontSize: "16px", color: "var(--gold)", letterSpacing: "0.12em", textTransform: "uppercase", marginTop: "22px" }}>{tier.name}</h3>
                   <div className="flex items-center justify-center gap-2" style={{ marginTop: "14px" }}>
                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9" /><path d="M5 12.5l4.5 4.5L19 7" /></svg>
                     <span style={{ fontSize: "14px", color: "var(--label)" }}>{tier.sessions}</span>
                   </div>
                   <div className="flex items-center justify-center gap-2" style={{ marginTop: "12px" }}>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" strokeWidth="1.7"><circle cx="12" cy="12" r="9" /><path d="M15 9a3.5 3.5 0 0 0-3-1.6c-1.9 0-3 1.3-3 2.6s1.1 2.6 3 2.6 3 1.3 3 2.6-1.1 2.6-3 2.6A3.5 3.5 0 0 1 9 15M12 6v12" /></svg>
-                    <span className="font-display" style={{ fontSize: "18px", color: "var(--teal)", letterSpacing: "0.06em" }}>{tier.price}</span>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--teal-deep)" strokeWidth="1.7"><circle cx="12" cy="12" r="9" /><path d="M15 9a3.5 3.5 0 0 0-3-1.6c-1.9 0-3 1.3-3 2.6s1.1 2.6 3 2.6 3 1.3 3 2.6-1.1 2.6-3 2.6A3.5 3.5 0 0 1 9 15M12 6v12" /></svg>
+                    <span className="font-display" style={{ fontSize: "18px", color: "var(--teal-deep)", letterSpacing: "0.06em" }}>{tier.price}</span>
                   </div>
                   <div style={{ marginTop: "22px" }}>
                     <Link href="/consultation" className="btn btn-teal" style={{ fontSize: "12px" }}>book your session</Link>
@@ -725,7 +744,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                     <img src={it.image} alt={it.label} style={{ display: "block", width: "100%", aspectRatio: "3 / 2", objectFit: "cover" }} />
                   </div>
                   <h3 className="font-display" style={{ fontSize: "14px", color: "var(--label)", letterSpacing: "0.1em", textTransform: "uppercase", margin: "18px 4px 14px" }}>{it.label}</h3>
-                  <Link href={it.href} className="block text-center font-display" style={{ background: "linear-gradient(180deg,#a9c2c2 0%, #8fb0b0 100%)", color: "#fff", padding: "15px", fontSize: "13px", letterSpacing: "0.16em", textTransform: "uppercase", borderRadius: "8px" }}>Explore</Link>
+                  <Link href={it.href} className="block text-center font-display" style={{ background: "linear-gradient(180deg,#4a7070 0%, #3f6363 100%)", color: "#fff", padding: "15px", fontSize: "13px", letterSpacing: "0.16em", textTransform: "uppercase", borderRadius: "8px" }}>Explore</Link>
                 </Reveal>
               ))}
             </div>
@@ -738,15 +757,15 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
         <section style={{ padding: "70px 0 90px", backgroundColor: "var(--cream)" }}>
           <div className="container">
             {t.faqKicker && (
-              <p className="font-display text-center" style={{ fontSize: "12px", color: "var(--teal)", letterSpacing: "0.16em", textTransform: "uppercase", marginBottom: "10px" }}>{t.faqKicker}</p>
+              <p className="font-display text-center" style={{ fontSize: "12px", color: "var(--teal-deep)", letterSpacing: "0.16em", textTransform: "uppercase", marginBottom: "10px" }}>{t.faqKicker}</p>
             )}
             <h2 className="font-serif text-center" style={{ fontSize: "clamp(24px,3.4vw,38px)", color: "var(--gold)", letterSpacing: "0.04em", marginBottom: "44px" }}>{t.faqTitle ?? "Frequently Asked Questions"}</h2>
             <div className="mx-auto" style={{ maxWidth: "820px" }}>
               {t.faq.map((f) => (
                 <details key={f.q} style={{ background: "#fff", border: "1px solid var(--line)", borderRadius: "12px", marginBottom: "12px", padding: "0 22px" }}>
-                  <summary className="flex items-center justify-between gap-4" style={{ cursor: "pointer", padding: "18px 0", fontSize: "15px", fontWeight: 500, color: "var(--gold-deep)", letterSpacing: "0.01em" }}>
+                  <summary className="flex items-center justify-between gap-4" style={{ cursor: "pointer", padding: "18px 0", fontSize: "15px", fontWeight: 500, color: "var(--gold)", letterSpacing: "0.01em" }}>
                     <span>{f.q}</span>
-                    <span className="faq-plus shrink-0" style={{ color: "var(--teal)", fontSize: "22px", lineHeight: 1 }}>+</span>
+                    <span className="faq-plus shrink-0" style={{ color: "var(--teal-deep)", fontSize: "22px", lineHeight: 1 }}>+</span>
                   </summary>
                   <p style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.8, padding: "0 0 20px" }}>{f.a}</p>
                 </details>
