@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { A, Dot, GoogleRating } from "./_shared";
 
@@ -15,14 +16,13 @@ const TRUST = [
 ];
 
 // WCAG AA corrected: prior #98afb2 (2.31:1) and #96b2b2 (2.26:1) failed AA.
-const TEAL = "#527979";   // --teal heading text, 4.81:1 on light bg (was #98afb2)
+const TEAL = "#406060"; // --teal-text heading, 5.14:1 on white (was #98afb2)
 
 export default function Hero() {
   return (
     <section
-      style={{
-        padding: "40px 0",
-      }}
+      aria-labelledby="hero-heading"
+      style={{ padding: "40px 0" }}
     >
       <div className="container">
         {/* Blue-grey gradient panel (no green) */}
@@ -40,6 +40,7 @@ export default function Hero() {
             {/* LEFT: copy stack */}
             <div className="hero-copy">
               <h1
+                id="hero-heading"
                 className="font-serif"
                 style={{
                   fontSize: "clamp(20px, 2vw, 28px)",
@@ -51,7 +52,7 @@ export default function Hero() {
                   margin: 0,
                 }}
               >
-                pico laser tattoo removal
+                Pico Laser Tattoo Removal
               </h1>
 
               <p
@@ -82,7 +83,7 @@ export default function Hero() {
                 What&apos;s Included:
               </p>
 
-              <ul className="space-y-2">
+              <ul className="space-y-2" role="list">
                 {INCLUDED.map((item) => (
                   <li key={item} className="flex items-start gap-3">
                     <Dot />
@@ -125,50 +126,107 @@ export default function Hero() {
                 may not always be guaranteed. Please inquire for current options.
               </p>
 
-              {/* full-width muted sage CTA — shared .btn .btn-teal pill (glow + hover scale) */}
+              {/* Full-width teal CTA pill — min 48px tall for touch target */}
               <Link
                 href="/consultation"
                 className="btn btn-teal font-display"
                 style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  justifyContent: "center",
                   marginTop: "24px",
                   width: "100%",
                   maxWidth: "470px",
+                  minHeight: "48px",
                   color: "#fff",
                   fontSize: "14px",
                   letterSpacing: "0.12em",
                   textTransform: "uppercase",
-                  padding: "16px 24px",
+                  padding: "14px 24px",
                 }}
               >
-                Book Now &amp; Save 70% <span aria-hidden style={{ marginLeft: "8px" }}>›</span>
+                Book Now &amp; Save 70%{" "}
+                <span aria-hidden="true" style={{ marginLeft: "8px" }}>›</span>
               </Link>
 
               <GoogleRating />
             </div>
 
-            {/* RIGHT: image collage only (no form) — tiles carry sage backings + rose marks */}
-            <div className="hero-collage" style={{ position: "relative", aspectRatio: "1 / 1.08" }}>
+            {/* RIGHT: image collage only — tiles carry sage backings + rose marks */}
+            <div
+              className="hero-collage"
+              style={{ position: "relative", aspectRatio: "1 / 1.08" }}
+              aria-hidden="true"
+            >
               {/* arm being lasered — top-left */}
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={`${A}/pico-hero-collage-arm.png`}
-                alt="Pico laser tattoo removal in progress on an arm"
-                style={{ position: "absolute", top: 0, left: 0, width: "62%", borderRadius: "14px", filter: "drop-shadow(0 14px 30px rgba(0,0,0,0.14))" }}
-              />
+              <div
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  width: "62%",
+                  aspectRatio: "1 / 1.1",
+                }}
+              >
+                <Image
+                  src={`${A}/pico-hero-collage-arm.png`}
+                  alt="Pico laser tattoo removal in progress on an arm"
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 40vw, 25vw"
+                  style={{
+                    objectFit: "cover",
+                    borderRadius: "14px",
+                    filter: "drop-shadow(0 14px 30px rgba(0,0,0,0.14))",
+                  }}
+                />
+              </div>
               {/* neck tattoo portrait — right, taller, overlapping */}
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={`${A}/pico-hero-collage-tile1.png`}
-                alt="Geometric neck tattoo before removal"
-                style={{ position: "absolute", top: "20%", right: 0, width: "47%", borderRadius: "14px", filter: "drop-shadow(0 16px 34px rgba(0,0,0,0.16))" }}
-              />
+              <div
+                style={{
+                  position: "absolute",
+                  top: "20%",
+                  right: 0,
+                  width: "47%",
+                  aspectRatio: "1 / 1.4",
+                }}
+              >
+                <Image
+                  src={`${A}/pico-hero-collage-tile1.png`}
+                  alt="Geometric neck tattoo before removal"
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 30vw, 20vw"
+                  style={{
+                    objectFit: "cover",
+                    borderRadius: "14px",
+                    filter: "drop-shadow(0 16px 34px rgba(0,0,0,0.16))",
+                  }}
+                />
+              </div>
               {/* before / after composite — bottom-left */}
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={`${A}/pico-hero-collage-ba.png`}
-                alt="Tattoo fading before and after"
-                style={{ position: "absolute", bottom: 0, left: "2%", width: "45%", borderRadius: "14px", filter: "drop-shadow(0 14px 30px rgba(0,0,0,0.16))" }}
-              />
+              <div
+                style={{
+                  position: "absolute",
+                  bottom: 0,
+                  left: "2%",
+                  width: "45%",
+                  aspectRatio: "1 / 0.8",
+                }}
+              >
+                <Image
+                  src={`${A}/pico-hero-collage-ba.png`}
+                  alt="Tattoo fading before and after"
+                  fill
+                  priority
+                  sizes="(max-width: 1024px) 30vw, 18vw"
+                  style={{
+                    objectFit: "cover",
+                    borderRadius: "14px",
+                    filter: "drop-shadow(0 14px 30px rgba(0,0,0,0.16))",
+                  }}
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -177,15 +235,16 @@ export default function Hero() {
         <div
           className="flex flex-wrap items-center justify-center gap-x-12 gap-y-4"
           style={{ marginTop: "40px" }}
+          aria-label="Trust credentials"
         >
           {TRUST.map((label) => (
             <div key={label} className="flex items-center gap-2">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
+              <Image
                 src={`${A}/laser-ic-check.png`}
                 alt=""
-                aria-hidden
-                style={{ width: "22px", height: "22px" }}
+                aria-hidden="true"
+                width={22}
+                height={22}
               />
               <span
                 className="font-display"

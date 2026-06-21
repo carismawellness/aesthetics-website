@@ -1,33 +1,38 @@
+import Image from "next/image";
 import { WHY_POINTS } from "@/lib/site";
 import Reveal from "@/components/Reveal";
 
 export default function WhyUs() {
   return (
-    <section style={{ backgroundColor: "var(--beige)", padding: "126px 0" }}>
+    <section aria-labelledby="why-heading" style={{ backgroundColor: "var(--beige)", padding: "126px 0" }}>
       {/* Card hover: deepen shadow + darken border (decorative, non-text cues) */}
       <style>{`
         .why-card:hover {
           border-color: var(--gold-deep);
           box-shadow: 0 2px 6px rgba(12,11,11,0.08), 0 16px 40px rgba(12,11,11,0.12);
         }
+        @media (prefers-reduced-motion: no-preference) {
+          .why-card { transition: box-shadow 0.25s ease, border-color 0.25s ease; }
+        }
       `}</style>
       <div className="container">
         {/* Kicker — two lines, emphasis on "#1 Award Winning" and "30+ Years" */}
         <Reveal>
           <h2
+            id="why-heading"
             className="font-display text-center mx-auto"
             style={{ fontSize: "clamp(19px,2.6vw,30px)", letterSpacing: "0.08em", lineHeight: 1.55, maxWidth: "780px", marginBottom: "56px", color: "var(--gold)", fontWeight: 400 }}
           >
-            <span style={{ fontWeight: 700 }}>#1 award winning</span> chain in Malta with
+            <span style={{ fontWeight: 700 }}>#1 Award Winning</span> Chain in Malta with
             <br />
-            <span style={{ fontWeight: 700 }}>30+ years</span> in wellness
+            <span style={{ fontWeight: 700 }}>30+ Years</span> in Wellness
           </h2>
         </Reveal>
 
         {/* Card with offset double-frame + bottom notch + faint wave */}
         <Reveal delay={120} className="relative mx-auto" style={{ maxWidth: "640px" }}>
           {/* offset frame peeking bottom-right */}
-          <span aria-hidden style={{ position: "absolute", inset: 0, transform: "translate(16px, 16px)", border: "1px solid var(--gold)", borderRadius: "var(--radius-card)", zIndex: 0 }} />
+          <span aria-hidden="true" style={{ position: "absolute", inset: 0, transform: "translate(16px, 16px)", border: "1px solid var(--gold)", borderRadius: "var(--radius-card)", zIndex: 0 }} />
 
           <div
             className="why-card relative bg-white"
@@ -38,22 +43,30 @@ export default function WhyUs() {
               zIndex: 1,
               overflow: "hidden",
               boxShadow: "0 1px 2px rgba(12,11,11,0.04), 0 6px 18px rgba(12,11,11,0.06)",
-              transition: "box-shadow 0.25s ease, border-color 0.25s ease",
             }}
           >
-            {/* faint wave graphic at the bottom of the card */}
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/assets/wave-gold.png" alt="" aria-hidden style={{ position: "absolute", left: 0, bottom: "18px", width: "100%", height: "auto", opacity: 0.5, zIndex: 0, pointerEvents: "none" }} />
+            {/* faint wave graphic at the bottom of the card — decorative */}
+            <div aria-hidden="true" style={{ position: "absolute", left: 0, bottom: "18px", width: "100%", opacity: 0.5, zIndex: 0, pointerEvents: "none" }}>
+              <Image
+                src="/assets/wave-gold.png"
+                alt=""
+                role="presentation"
+                width={640}
+                height={60}
+                style={{ width: "100%", height: "auto" }}
+              />
+            </div>
 
             <div className="relative" style={{ zIndex: 1 }}>
+              {/* h3 is correct: this card heading is subordinate to the section h2 above */}
               <h3 className="font-display text-center" style={{ fontSize: "clamp(20px,3vw,30px)", color: "var(--gold)", letterSpacing: "0.1em", fontWeight: 400 }}>
-                why carisma aesthetics ?
+                Why Carisma Aesthetics?
               </h3>
-              <div className="mx-auto" style={{ width: "120px", height: "1px", background: "var(--gold)", margin: "18px auto 34px" }} />
+              <div aria-hidden="true" className="mx-auto" style={{ width: "120px", height: "1px", background: "var(--gold)", margin: "18px auto 34px" }} />
               <ul className="space-y-5">
                 {WHY_POINTS.map((p) => (
                   <li key={p} className="flex items-start gap-3">
-                    <span style={{ color: "var(--gold)", fontSize: "14px", lineHeight: 1.6 }}>●</span>
+                    <span aria-hidden="true" style={{ color: "var(--gold)", fontSize: "14px", lineHeight: 1.6 }}>●</span>
                     <span className="font-display" style={{ fontSize: "14px", fontWeight: 400, color: "var(--gold)", letterSpacing: "0.06em", lineHeight: 1.5 }}>{p}</span>
                   </li>
                 ))}
@@ -63,15 +76,11 @@ export default function WhyUs() {
 
           {/* downward triangle notch at bottom-center */}
           <span
-            aria-hidden
+            aria-hidden="true"
             style={{ position: "absolute", left: "50%", bottom: "-9px", transform: "translateX(-50%)", width: 0, height: 0, borderLeft: "9px solid transparent", borderRight: "9px solid transparent", borderTop: "9px solid var(--gold)", zIndex: 2 }}
           />
         </Reveal>
-
-        {/* Live site carries this near-invisible SEO paragraph (8px, beige-on-beige) below the card */}
-        <p style={{ marginTop: "120px", fontSize: "8px", color: "#f6efe3", lineHeight: 1.5 }}>
-          Relieve excessive sweating with Botox. Dermal fillers, chemical peels, and botulinum toxin type injections enhance appearance. Slight headaches post-treatment subside quickly. Botox targets nerve impulses for natural-looking results. Treat various areas for overall facial harmony. Trust a professional for the best results. Say goodbye to sweating and embrace a revitalized appearance with Botox.
-        </p>
+        {/* NOTE: Hidden SEO paragraph removed — it was 8px beige-on-beige text (WCAG fail + manipulative SEO). */}
       </div>
     </section>
   );

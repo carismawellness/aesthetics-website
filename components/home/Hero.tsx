@@ -1,5 +1,7 @@
 import Link from "next/link";
+import Image from "next/image";
 import HeroBackdrop from "@/components/motion/HeroBackdrop";
+import VideoPlayer from "@/components/VideoPlayer";
 
 /* Five small filled stars (decorative) in brand gold. */
 function Stars({ size = 12 }: { size?: number }) {
@@ -37,7 +39,11 @@ const CHECKS = [
 
 export default function Hero() {
   return (
-    <section className="hero-fit" style={{ background: "var(--white)", position: "relative", overflow: "hidden" }}>
+    <section
+      className="hero-fit"
+      aria-labelledby="hero-heading"
+      style={{ background: "var(--white)", position: "relative", overflow: "hidden" }}
+    >
       <HeroBackdrop />
       <div className="container w-full" style={{ position: "relative", zIndex: 1 }}>
         <div className="grid items-center gap-10 lg:grid-cols-[60fr_40fr]">
@@ -60,7 +66,7 @@ export default function Hero() {
             </div>
 
             {/* Headline — dialed back ~30% vs reference */}
-            <h1 style={{ margin: 0, lineHeight: 1.04 }}>
+            <h1 id="hero-heading" style={{ margin: 0, lineHeight: 1.04 }}>
               <span className="font-display block" style={{ fontSize: "clamp(34px,3.6vw,50px)", color: "var(--ink)", letterSpacing: "0.04em" }}>
                 Glow With
               </span>
@@ -88,13 +94,21 @@ export default function Hero() {
               ))}
             </ul>
 
-            {/* CTAs */}
+            {/* CTAs — min 44px height for WCAG touch target */}
             <div className="flex flex-wrap items-center" style={{ gap: "14px", marginTop: "26px" }}>
-              <Link href="/consultation" className="btn btn-teal" style={{ borderRadius: "999px", padding: "15px 30px" }}>
+              <Link
+                href="/consultation"
+                className="btn btn-teal inline-flex items-center justify-center min-h-[44px]"
+                style={{ borderRadius: "999px", padding: "15px 30px" }}
+              >
                 Book Free Consultation
                 <span aria-hidden style={{ marginLeft: "2px" }}>→</span>
               </Link>
-              <Link href="/face-treatments" className="btn btn-outline" style={{ borderRadius: "999px", padding: "15px 30px" }}>
+              <Link
+                href="/face-treatments"
+                className="btn btn-outline inline-flex items-center justify-center min-h-[44px]"
+                style={{ borderRadius: "999px", padding: "15px 30px" }}
+              >
                 View Treatments
               </Link>
             </div>
@@ -123,17 +137,7 @@ export default function Hero() {
                 boxShadow: "0 24px 60px rgba(28,30,30,0.16)",
               }}
             >
-              {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
-              <video
-                style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-                src="/assets/clinic-video.mp4"
-                poster="/assets/clinic-room.jpg"
-                autoPlay
-                muted
-                loop
-                playsInline
-                aria-label="Carisma Aesthetics clinic in Malta"
-              />
+              <VideoPlayer fill src="/assets/clinic-video.mp4" poster="/assets/clinic-room.jpg" label="Carisma Aesthetics clinic in Malta" />
             </div>
 
             {/* Floating card — years in wellness (top-right) */}
@@ -171,8 +175,13 @@ export default function Hero() {
                 maxWidth: "230px",
               }}
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/assets/logos/carisma-round.png" alt="" aria-hidden style={{ width: "36px", height: "36px", borderRadius: "50%", flexShrink: 0 }} />
+              <Image
+                src="/assets/logos/carisma-round.png"
+                alt="Carisma Aesthetics logo"
+                width={36}
+                height={36}
+                style={{ borderRadius: "50%", flexShrink: 0 }}
+              />
               <div>
                 <div className="font-display" style={{ fontSize: "12px", letterSpacing: "0.08em", color: "var(--ink)", fontWeight: 700 }}>#1 Voted Clinic</div>
                 <div style={{ fontSize: "11px", color: "var(--muted)" }}>Malta Healthcare Awards</div>

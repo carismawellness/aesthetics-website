@@ -18,12 +18,32 @@ export default function ConsultationForm({
 }) {
   const iframeId = `inline-${FORM_ID}-${instanceId}`;
   return (
-    <div style={{ width: "100%" }}>
+    /*
+     * Wrapping region gives screen-reader users a named landmark
+     * for the embedded booking form. The iframe itself cannot expose
+     * individual field labels (third-party GHL form), so we rely on
+     * the iframe's own `title` and the outer landmark.
+     */
+    <section
+      aria-label="Book a Free Consultation form"
+      style={{ width: "100%" }}
+    >
       <iframe
         src={FORM_SRC}
         id={iframeId}
         title="Book Your Free Consultation"
-        style={{ width: "100%", height: `${height}px`, border: "none", display: "block" }}
+        /* Announce the purpose to assistive technology */
+        aria-label="Book Your Free Consultation — powered by GHL"
+        style={{
+          width: "100%",
+          height: `${height}px`,
+          border: "none",
+          display: "block",
+          /* Prevent CLS: reserve the exact height so the page doesn't jump */
+          minHeight: `${height}px`,
+        }}
+        /* Lazy-load: iframe is below the fold on the modal/page */
+        loading="lazy"
         data-layout="{'id':'INLINE'}"
         data-trigger-type="alwaysShow"
         data-trigger-value=""
@@ -36,6 +56,6 @@ export default function ConsultationForm({
         data-layout-iframe-id={iframeId}
         data-form-id={FORM_ID}
       />
-    </div>
+    </section>
   );
 }

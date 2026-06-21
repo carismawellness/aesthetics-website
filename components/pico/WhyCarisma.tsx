@@ -5,18 +5,21 @@
 // (the PNG / checkmark.png are excluded UI sprites, no asset import needed).
 
 const BULLETS = [
-  "Team of highly trained and Medically qualified practitioners",
-  "Central and discrete location",
+  "Team of highly trained and medically qualified practitioners",
+  "Central and discreet location",
   "Flexible scheduling and booking",
   "Personalised treatment plans",
-  "Advanced treatments with cutting edge technology",
+  "Advanced treatments with cutting-edge technology",
 ];
 
 export default function WhyCarisma() {
   return (
-    <section style={{ padding: "50px 0 96px" }}>
+    <section
+      aria-labelledby="why-carisma-heading"
+      style={{ padding: "50px 0 96px" }}
+    >
       <div className="container">
-        {/* Eyebrow headline (live: rendered PNG, here: real styled text) */}
+        {/* Eyebrow headline */}
         <p
           className="font-display text-center"
           style={{
@@ -45,7 +48,7 @@ export default function WhyCarisma() {
         >
           {/* Offset back frame (down-and-right) */}
           <div
-            aria-hidden
+            aria-hidden="true"
             style={{
               position: "absolute",
               inset: 0,
@@ -61,13 +64,13 @@ export default function WhyCarisma() {
               zIndex: 1,
               background: "#fff",
               border: "1px solid var(--gold-deep)",
-              padding: "44px 56px 52px",
+              padding: "clamp(28px, 4vw, 44px) clamp(20px, 5vw, 56px) clamp(32px, 4vw, 52px)",
               overflow: "hidden",
             }}
           >
             {/* Decorative faint gold wave behind the lower list rows */}
             <svg
-              aria-hidden
+              aria-hidden="true"
               viewBox="0 0 640 140"
               preserveAspectRatio="none"
               style={{
@@ -98,21 +101,22 @@ export default function WhyCarisma() {
 
             <div style={{ position: "relative", zIndex: 1 }}>
               <h2
+                id="why-carisma-heading"
                 className="font-display text-center"
                 style={{
-                  fontSize: "clamp(20px,2.4vw,26px)",
+                  fontSize: "clamp(18px,2.4vw,26px)",
                   color: "var(--gold)",
                   letterSpacing: "0.1em",
                   fontWeight: 400,
                   textTransform: "uppercase",
                 }}
               >
-                why carisma aesthetics ?
+                Why Carisma Aesthetics?
               </h2>
 
               {/* Thin gold divider rule */}
               <div
-                aria-hidden
+                aria-hidden="true"
                 style={{
                   width: "120px",
                   height: "1px",
@@ -122,11 +126,14 @@ export default function WhyCarisma() {
               />
 
               {/* Bulleted list */}
-              <ul style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
+              <ul
+                style={{ display: "flex", flexDirection: "column", gap: "20px", padding: 0 }}
+                role="list"
+              >
                 {BULLETS.map((b) => (
                   <li key={b} className="flex items-start gap-3">
                     <span
-                      aria-hidden
+                      aria-hidden="true"
                       style={{
                         color: "var(--gold-deep)",
                         fontSize: "9px",
@@ -157,7 +164,7 @@ export default function WhyCarisma() {
 
           {/* Bottom-center downward gold caret anchored to the outer frame */}
           <div
-            aria-hidden
+            aria-hidden="true"
             style={{
               position: "absolute",
               left: "50%",

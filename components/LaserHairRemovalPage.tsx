@@ -1,4 +1,5 @@
 import Reveal from "@/components/Reveal";
+import VideoPlayer from "@/components/VideoPlayer";
 import CompositeSlideshow from "@/components/CompositeSlideshow";
 import FaqAccordion, { type Faq } from "@/components/FaqAccordion";
 import BookingButtons from "@/components/BookingButtons";
@@ -178,8 +179,7 @@ export default function LaserHairRemovalPage() {
             {/* RIGHT — framed video + image collage */}
             <Reveal delay={120}>
               <div className="relative mx-auto" style={{ maxWidth: "440px", maxHeight: "clamp(360px,56vh,520px)", overflow: "hidden", boxShadow: "0 20px 50px rgba(0,0,0,0.14)" }}>
-                {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
-                <video src={`${IMG}/laser-hero-video.mp4`} autoPlay muted loop playsInline style={{ display: "block", position: "absolute", top: "10%", left: "6%", width: "88%", height: "68%", objectFit: "cover", zIndex: 1 }} />
+                <VideoPlayer cover radius={0} src={`${IMG}/laser-hero-video.mp4`} label="Laser hair removal at Carisma Aesthetics" style={{ position: "absolute", top: "10%", left: "6%", width: "88%", height: "68%", zIndex: 1 }} />
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={`${IMG}/laser-hero-photo1.png`} alt="" aria-hidden style={{ display: "block", width: "100%", height: "auto", position: "relative", zIndex: 2, pointerEvents: "none" }} />
               </div>

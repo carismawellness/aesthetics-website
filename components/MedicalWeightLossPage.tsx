@@ -12,9 +12,10 @@
   before/after results carousel are interactive (hence "use client").
 */
 
-import { useRef, useState, type ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
+import VideoPlayer from "@/components/VideoPlayer";
 import FaqAccordion, { type Faq } from "@/components/FaqAccordion";
 import BookingButtons from "@/components/BookingButtons";
 
@@ -144,17 +145,6 @@ function Hero() {
     { lead: "Doctor monitored:", text: "Full eligibility assessment, body scan, blood work, safety screening, and regular reviews to manage side effects and adjust your dose." },
     { lead: "Part of a full plan:", text: "Your GLP-1 prescription is paired with nutrition, movement, accountability, and body contouring treatments — never used on its own." },
   ];
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [showPlay, setShowPlay] = useState(true);
-  const playWithSound = () => {
-    const v = videoRef.current;
-    if (!v) return;
-    v.muted = false;
-    v.volume = 1;
-    void v.play().catch(() => {});
-    setShowPlay(false);
-  };
-
   return (
     <section id="hero" style={{ minHeight: "100svh", display: "flex", flexDirection: "column", justifyContent: "center", padding: "var(--nav-clear) 0 clamp(20px,3vh,40px)", backgroundColor: "var(--cream)" }}>
       <div className="container">
@@ -242,31 +232,7 @@ function Hero() {
                 boxShadow: "0 20px 50px rgba(0,0,0,0.18)",
               }}
             >
-              <video
-                ref={videoRef}
-                src={`${A}/hero.mp4`}
-                poster={`${A}/hero-doctor.png`}
-                autoPlay
-                muted
-                loop
-                playsInline
-                style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-              />
-              {showPlay && (
-                <button
-                  type="button"
-                  onClick={playWithSound}
-                  aria-label="Play video with sound"
-                  className="absolute inset-0 flex items-center justify-center"
-                  style={{ background: "transparent", border: "none", cursor: "pointer" }}
-                >
-                  <span className="flex items-center justify-center" style={{ width: "66px", height: "66px", borderRadius: "50%", border: "2px solid rgba(255,255,255,0.9)", background: "rgba(0,0,0,0.18)" }}>
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff" aria-hidden style={{ marginLeft: "3px" }}>
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
-                  </span>
-                </button>
-              )}
+              <VideoPlayer fill src={`${A}/hero.mp4`} poster={`${A}/hero-doctor.png`} label="Doctor-led medical weight loss in Malta" />
             </div>
             <div className="flex items-center justify-center" style={{ gap: "14px", marginTop: "24px" }}>
               <Image src={`${A}/award-badge.png`} alt="Malta Healthcare, Wellness, Beauty & Best Spa Awards" width={114} height={72} style={{ height: "58px", width: "auto" }} />

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import BookingButtons from "@/components/BookingButtons";
 
@@ -6,7 +7,7 @@ const FRESHA_CONSULT =
 
 export default function BookConsultation() {
   return (
-    <section style={{ backgroundColor: "var(--white)", padding: "72px 0 100px" }}>
+    <section aria-labelledby="book-heading" style={{ backgroundColor: "var(--white)", padding: "72px 0 100px" }}>
       <div className="container">
         {/* Beige heading block (contained, not full-width) */}
         <Reveal className="mx-auto" style={{ maxWidth: "960px" }}>
@@ -18,22 +19,19 @@ export default function BookConsultation() {
               overflow: "hidden",
             }}
           >
-            {/* Wave graphic */}
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/assets/treatments/home-book-wave.png"
-              alt=""
-              aria-hidden
-              style={{
-                position: "absolute",
-                left: 0,
-                bottom: 0,
-                width: "100%",
-                height: "auto",
-                pointerEvents: "none",
-              }}
-            />
+            {/* Wave graphic — decorative, no alt needed */}
+            <div aria-hidden="true" style={{ position: "absolute", left: 0, bottom: 0, width: "100%", pointerEvents: "none" }}>
+              <Image
+                src="/assets/treatments/home-book-wave.png"
+                alt=""
+                role="presentation"
+                width={960}
+                height={120}
+                style={{ width: "100%", height: "auto" }}
+              />
+            </div>
             <h2
+              id="book-heading"
               className="relative font-display text-center"
               style={{
                 zIndex: 1,
@@ -45,7 +43,7 @@ export default function BookConsultation() {
                 lineHeight: 1.4,
               }}
             >
-              book your Consultation
+              Book Your Consultation
             </h2>
             <p
               className="relative font-display text-center"

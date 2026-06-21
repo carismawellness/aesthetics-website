@@ -1,6 +1,7 @@
 "use client";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
+import VideoPlayer from "@/components/VideoPlayer";
 import hairRegrowth from "@/lib/treatments/hair-regrowth";
 import { useState, useEffect } from "react";
 
@@ -621,20 +622,7 @@ export default function HairRegrowthPage() {
                   border: `1px solid rgba(201,169,106,0.3)`,
                 }}
               >
-                {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
-                <video
-                  src={`${A}/vid-hair-regrowth.mp4`}
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  style={{
-                    display: "block",
-                    width: "100%",
-                    aspectRatio: "9 / 16",
-                    objectFit: "cover",
-                  }}
-                />
+                <VideoPlayer className="w-full" ratio="9 / 16" radius={0} src={`${A}/vid-hair-regrowth.mp4`} label="Hair regrowth treatment at Carisma Aesthetics" />
               </div>
               <p
                 className="text-center"
@@ -1495,20 +1483,7 @@ export default function HairRegrowthPage() {
                     boxShadow: "0 4px 20px rgba(0,0,0,0.07)",
                   }}
                 >
-                  {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
-                  <video
-                    src={`${A}/vid-hair-regrowth-${n}.mp4`}
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    style={{
-                      display: "block",
-                      width: "100%",
-                      aspectRatio: "9 / 16",
-                      objectFit: "cover",
-                    }}
-                  />
+                  <VideoPlayer className="w-full" ratio="9 / 16" radius={0} src={`${A}/vid-hair-regrowth-${n}.mp4`} label={`Hair regrowth patient video ${n}`} />
                 </div>
               </Reveal>
             ))}

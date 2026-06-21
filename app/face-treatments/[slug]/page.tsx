@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
+import Link from "next/link";
 import { getFaceTreatment, faceTreatmentSlugs, type FaceTreatment } from "@/lib/face-treatments";
 import {
   FaceHero,
@@ -75,6 +76,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title,
     description,
+    // P1 SEO: canonical prevents indexing of duplicate/trailing-slash variants
+    alternates: {
+      canonical: `https://www.carismaaesthetics.com/face-treatments/${slug}`,
+    },
     openGraph: {
       title,
       description,
@@ -100,7 +105,39 @@ export default async function FaceTreatmentDetail({ params }: { params: Promise<
     .filter((x): x is FaceTreatment => Boolean(x));
 
   return (
-    <main>
+    <main id="main-content">
+      {/* P9: Breadcrumb navigation — improves wayfinding and adds BreadcrumbList structured data opportunity */}
+      <nav aria-label="Breadcrumb" style={{ background: "var(--cream)", borderBottom: "1px solid var(--line)" }}>
+        <div className="container" style={{ paddingTop: "12px", paddingBottom: "12px" }}>
+          <ol
+            className="flex flex-wrap items-center"
+            style={{ gap: "4px 8px", listStyle: "none", padding: 0, margin: 0, fontSize: "12px", color: "var(--muted)", letterSpacing: "0.06em" }}
+          >
+            <li>
+              <Link
+                href="/"
+                style={{ color: "var(--teal-text)", textDecoration: "none", minHeight: "44px", display: "inline-flex", alignItems: "center" }}
+              >
+                Home
+              </Link>
+            </li>
+            {/* P9: decorative separator is aria-hidden */}
+            <li aria-hidden="true" style={{ userSelect: "none" }}>›</li>
+            <li>
+              <Link
+                href="/face-treatments"
+                style={{ color: "var(--teal-text)", textDecoration: "none", minHeight: "44px", display: "inline-flex", alignItems: "center" }}
+              >
+                Face Treatments
+              </Link>
+            </li>
+            <li aria-hidden="true" style={{ userSelect: "none" }}>›</li>
+            {/* P9: aria-current="page" on the final breadcrumb item */}
+            <li aria-current="page" style={{ color: "var(--ink-soft)" }}>{t.name}</li>
+          </ol>
+        </div>
+      </nav>
+
       <FaceHero t={t} />
       <TreatmentInfoBar stats={t.infoStats} />
       {t.beforeAfter && t.beforeAfter.length > 0 && <BeforeAfter name={t.name} pairs={t.beforeAfter} />}

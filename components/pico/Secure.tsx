@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { A, Serif, Cta } from "./_shared";
 import Reveal from "@/components/Reveal";
 
@@ -10,13 +11,16 @@ const PARAGRAPHS = [
 
 export default function Secure() {
   return (
-    <section style={{ padding: "30px 0 60px" }}>
+    <section
+      aria-labelledby="secure-heading"
+      style={{ padding: "30px 0 60px" }}
+    >
       <div className="container">
         <div className="grid gap-12 lg:grid-cols-2 items-center">
           {/* LEFT: heading, copy, CTA */}
           <div>
-            <Serif style={{ textAlign: "left" }}>
-              SECURE YOUR PICO LASER TATTOO REMOVAL CONSULTATION TODAY
+            <Serif id="secure-heading" style={{ textAlign: "left" }}>
+              Secure Your Pico Laser Tattoo Removal Consultation Today
             </Serif>
             {PARAGRAPHS.map((p, i) => (
               <p
@@ -32,24 +36,33 @@ export default function Secure() {
               </p>
             ))}
             <div style={{ marginTop: "26px" }}>
-              <Cta label="book your tattoo removal now" />
+              <Cta label="Book Your Tattoo Removal Now" />
             </div>
           </div>
 
           {/* RIGHT: consultation photo */}
           <Reveal delay={120}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={`${A}/pico-secure-consultation.jpg`}
-              alt="Pico laser tattoo removal consultation"
-              className="w-full rounded-xl"
+            <div
               style={{
-                display: "block",
-                objectFit: "cover",
+                position: "relative",
+                width: "100%",
                 aspectRatio: "429 / 443",
-                boxShadow: "0 16px 40px rgba(0,0,0,0.12)",
+                borderRadius: "12px",
+                overflow: "hidden",
               }}
-            />
+            >
+              <Image
+                src={`${A}/pico-secure-consultation.jpg`}
+                alt="Specialist conducting a Pico laser tattoo removal consultation with a client"
+                fill
+                sizes="(max-width: 1024px) 100vw, 45vw"
+                style={{
+                  objectFit: "cover",
+                  borderRadius: "12px",
+                  boxShadow: "0 16px 40px rgba(0,0,0,0.12)",
+                }}
+              />
+            </div>
           </Reveal>
         </div>
       </div>

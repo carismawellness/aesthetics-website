@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { A, Cta, Dot } from "./_shared";
 
 const BECAUSE = [
@@ -10,26 +11,30 @@ const BECAUSE = [
 
 export default function Because() {
   return (
-    <section style={{ background: "#ffffff", padding: "60px 0" }}>
+    <section
+      aria-labelledby="because-heading"
+      style={{ background: "#ffffff", padding: "60px 0" }}
+    >
       <div className="mx-auto" style={{ maxWidth: "1040px", padding: "0 24px" }}>
         <h2
+          id="because-heading"
           className="font-serif text-center"
           style={{
             fontSize: "clamp(22px,3vw,30px)",
-            color: "#527979",
+            color: "#406060",
             letterSpacing: "0.06em",
             lineHeight: 1.3,
             fontWeight: 400,
             marginBottom: "40px",
           }}
         >
-          safe, confident tattoo removal starts here.
+          Safe, confident tattoo removal starts here.
         </h2>
 
         <div className="grid lg:grid-cols-2 items-center gap-12">
           {/* LEFT: bullet list + CTA */}
           <div>
-            <ul style={{ listStyle: "none", margin: 0, padding: 0 }}>
+            <ul style={{ listStyle: "none", margin: 0, padding: 0 }} role="list">
               {BECAUSE.map((item) => (
                 <li
                   key={item}
@@ -51,32 +56,56 @@ export default function Because() {
             </ul>
 
             <div style={{ marginTop: "24px" }}>
-              <Cta label="ClaimTatto Removal Over 50% Off" />
+              <Cta label="Claim Tattoo Removal — Over 50% Off" />
             </div>
 
-            {/* Star rating row */}
-            <div className="flex items-center" style={{ marginTop: "14px", gap: "6px" }}>
-              {[0,1,2,3,4].map((i) => (
-                <svg key={i} width="14" height="14" viewBox="0 0 24 24" fill="#9c8344" aria-hidden>
+            {/* Star rating row — accessible */}
+            <div
+              className="flex items-center"
+              style={{ marginTop: "14px", gap: "6px" }}
+              role="img"
+              aria-label="Rated 4.9 out of 5 stars from over 200 customer reviews"
+            >
+              {[0, 1, 2, 3, 4].map((i) => (
+                <svg
+                  key={i}
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="#9c8344"
+                  aria-hidden="true"
+                >
                   <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
                 </svg>
               ))}
-              <span style={{ fontSize: "12px", color: "var(--label)", marginLeft: "4px" }}>4.9/5 from over 200 customer reviews</span>
+              <span
+                style={{ fontSize: "12px", color: "var(--label)", marginLeft: "4px" }}
+                aria-hidden="true"
+              >
+                4.9/5 from over 200 customer reviews
+              </span>
             </div>
           </div>
 
           {/* RIGHT: square content photo */}
-          <div>
-            <img
+          <div
+            style={{
+              position: "relative",
+              width: "100%",
+              aspectRatio: "1 / 1",
+              borderRadius: "12px",
+              overflow: "hidden",
+            }}
+          >
+            <Image
               src={`${A}/pico-because-man-arm-tattoo.png`}
-              alt="Young man in a sleeveless tank top with a tattoo on his upper arm, considering tattoo removal"
+              alt="Person with a tattoo on their upper arm considering professional pico laser removal"
+              fill
+              sizes="(max-width: 1024px) 100vw, 45vw"
               style={{
-                width: "100%",
-                aspectRatio: "1 / 1",
                 objectFit: "cover",
                 borderRadius: "12px",
                 boxShadow: "0 16px 40px rgba(0,0,0,0.12)",
-                display: "block",
               }}
             />
           </div>

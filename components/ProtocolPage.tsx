@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
+import VideoPlayer from "@/components/VideoPlayer";
 import FaqAccordion from "@/components/FaqAccordion";
 import type { ProtocolData } from "@/lib/protocols";
 
@@ -76,8 +77,7 @@ export default function ProtocolPage({ d }: { d: ProtocolData }) {
 
             <Reveal delay={120}>
               <div className="overflow-hidden" style={{ borderRadius: "26px", boxShadow: "0 20px 50px rgba(0,0,0,0.14)" }}>
-                {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
-                <video src={`${d.hero.video}`} autoPlay muted loop playsInline className="w-full" style={{ display: "block", aspectRatio: "4 / 5", objectFit: "cover" }} />
+                <VideoPlayer className="w-full" ratio="4 / 5" radius={0} src={`${d.hero.video}`} label="Treatment video" />
               </div>
               <div className="flex items-center justify-center gap-3" style={{ marginTop: "18px" }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}

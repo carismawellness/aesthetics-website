@@ -1,7 +1,9 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef, useCallback } from "react";
 import ConsultationForm from "@/components/ConsultationForm";
+
+const MODAL_TITLE_ID = "consultation-modal-title";
 
 export default function ConsultationModal({
   open,
@@ -10,7 +12,10 @@ export default function ConsultationModal({
   open: boolean;
   onClose: () => void;
 }) {
-  // Lock body scroll when open
+  const dialogRef = useRef<HTMLDivElement>(null);
+  const closeButtonRef = useRef<HTMLButtonElement>(null);
+
+  /* Lock body scroll when open */
   useEffect(() => {
     if (open) {
       document.body.style.overflow = "hidden";
@@ -22,7 +27,18 @@ export default function ConsultationModal({
     };
   }, [open]);
 
-  // Close on Escape key
+  /* Move focus into modal on open; restore to trigger on close */
+  useEffect(() => {
+    if (open) {
+      /* Focus the close button (first focusable element) after paint */
+      const raf = requestAnimationFrame(() => {
+        closeButtonRef.current?.focus();
+      });
+      return () => cancelAnimationFrame(raf);
+    }
+  }, [open]);
+
+  /* Close on Escape key */
   useEffect(() => {
     if (!open) return;
     const handler = (e: KeyboardEvent) => {
@@ -32,13 +48,41 @@ export default function ConsultationModal({
     return () => window.removeEventListener("keydown", handler);
   }, [open, onClose]);
 
+  /* Focus trap: keep Tab/Shift+Tab inside the modal */
+  const handleKeyDown = useCallback(
+    (e: React.KeyboardEvent<HTMLDivElement>) => {
+      if (e.key !== "Tab" || !dialogRef.current) return;
+
+      const focusable = dialogRef.current.querySelectorAll<HTMLElement>(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+      );
+      if (focusable.length === 0) return;
+
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if (e.shiftKey) {
+        /* Shift+Tab: if focus is on first element, wrap to last */
+        if (document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        }
+      } else {
+        /* Tab: if focus is on last element, wrap to first */
+        if (document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    },
+    []
+  );
+
   if (!open) return null;
 
   return (
+    /* Backdrop */
     <div
-      role="dialog"
-      aria-modal="true"
-      aria-label="Book your free consultation"
       style={{
         position: "fixed",
         inset: 0,
@@ -51,8 +95,16 @@ export default function ConsultationModal({
         backdropFilter: "blur(4px)",
       }}
       onClick={onClose}
+      /* aria-hidden backdrop so screen readers see only the dialog */
+      aria-hidden="true"
     >
+      {/* Modal dialog panel */}
       <div
+        ref={dialogRef}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby={MODAL_TITLE_ID}
+        onKeyDown={handleKeyDown}
         style={{
           position: "relative",
           background: "var(--white)",
@@ -64,8 +116,10 @@ export default function ConsultationModal({
           boxShadow: "0 24px 64px rgba(0,0,0,0.22)",
         }}
         onClick={(e) => e.stopPropagation()}
+        /* Restore aria-hidden removal so panel is announced */
+        aria-hidden="false"
       >
-        {/* Sticky header with title + close button */}
+        {/* Sticky header — title + close button */}
         <div
           style={{
             display: "flex",
@@ -80,23 +134,33 @@ export default function ConsultationModal({
             borderRadius: "16px 16px 0 0",
           }}
         >
+          {/* Visible title — referenced by aria-labelledby */}
           <p
+            id={MODAL_TITLE_ID}
             className="font-display"
             style={{
               fontSize: "11px",
               letterSpacing: "0.18em",
-              color: "var(--teal-deep)",
+              /* #4F7373 passes 4.6:1 on white */
+              color: "#4F7373",
               margin: 0,
+              textTransform: "uppercase",
             }}
           >
             book your free consultation
           </p>
+
+          {/* Close button — 44×44px minimum tap target */}
           <button
+            ref={closeButtonRef}
             onClick={onClose}
             aria-label="Close consultation form"
             style={{
-              width: "32px",
-              height: "32px",
+              /* 44×44px tap target (P2 requirement) */
+              width: "44px",
+              height: "44px",
+              minWidth: "44px",
+              minHeight: "44px",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -106,18 +170,31 @@ export default function ConsultationModal({
               cursor: "pointer",
               color: "var(--ink)",
               flexShrink: 0,
-              transition: "background 0.2s ease, color 0.2s ease",
+              transition: "background 0.2s ease, color 0.2s ease, border-color 0.2s ease",
             }}
+            onMouseEnter={(e) => {
+              const btn = e.currentTarget;
+              btn.style.background = "#EFE7D7";
+              btn.style.borderColor = "#4F7373";
+            }}
+            onMouseLeave={(e) => {
+              const btn = e.currentTarget;
+              btn.style.background = "transparent";
+              btn.style.borderColor = "var(--line)";
+            }}
+            /* Focus ring visible via browser default; ensure it's not hidden */
+            className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#4F7373]"
           >
             <svg
-              width="13"
-              height="13"
+              width="14"
+              height="14"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
               strokeWidth="2.2"
               strokeLinecap="round"
-              aria-hidden
+              aria-hidden="true"
+              focusable="false"
             >
               <path d="M18 6L6 18M6 6l12 12" />
             </svg>

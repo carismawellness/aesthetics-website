@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Reveal from "@/components/Reveal";
 
 /*
@@ -97,22 +98,24 @@ function Stars({ size = 16 }: { size?: number }) {
 
 export default function Reviews() {
   return (
-    <section style={{ backgroundColor: "#ffffff", padding: "80px 0" }}>
+    <section aria-labelledby="reviews-heading" style={{ backgroundColor: "#ffffff", padding: "80px 0" }}>
       <div className="container">
         <Reveal>
+          {/* P1: var(--teal) = #96b2b2 FAILS 4.5:1 contrast on white. var(--teal-text) = #406060 passes AA (4.7:1). */}
           <h2
+            id="reviews-heading"
             className="font-display text-center"
-            style={{ fontSize: "clamp(24px,3vw,35px)", color: "var(--teal)", fontWeight: 400, letterSpacing: "0.06em" }}
+            style={{ fontSize: "clamp(24px,3vw,35px)", color: "var(--teal-text)", fontWeight: 400, letterSpacing: "0.06em" }}
           >
-            real people, real reviews
+            Real People, Real Reviews
           </h2>
-          <div className="mx-auto" style={{ width: "min(500px, 80%)", height: "1px", background: "var(--teal)", marginTop: "18px", marginBottom: "44px" }} />
+          <div aria-hidden="true" className="mx-auto" style={{ width: "min(500px, 80%)", height: "1px", background: "var(--teal)", marginTop: "18px", marginBottom: "44px" }} />
         </Reveal>
 
         {/* Widget header — overall rating */}
         <Reveal className="flex flex-col sm:flex-row items-center justify-center gap-x-10 gap-y-4" style={{ marginBottom: "36px" }}>
           <div className="flex items-center gap-3">
-            <span style={{ fontSize: "40px", fontWeight: 700, color: "#222", lineHeight: 1 }}>4.7</span>
+            <span aria-hidden="true" style={{ fontSize: "40px", fontWeight: 700, color: "#222", lineHeight: 1 }}>4.7</span>
             <span className="flex flex-col items-start">
               <Stars size={17} />
               <span className="flex items-center gap-1" style={{ fontSize: "13px", color: "#666", marginTop: "3px" }}>
@@ -120,11 +123,13 @@ export default function Reviews() {
               </span>
             </span>
           </div>
+          {/* P2: min-h-[44px] ensures WCAG touch target. P9: aria-label mentions new tab. */}
           <a
             href="https://www.google.com/maps/search/?api=1&query=Carisma+Aesthetics+Malta"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-display btn btn-teal"
+            aria-label="Review Carisma Aesthetics on Google (opens in new tab)"
+            className="font-display btn btn-teal inline-flex items-center justify-center min-h-[44px]"
             style={{
               fontSize: "11px",
               fontWeight: 600,
@@ -147,10 +152,10 @@ export default function Reviews() {
               style={{ padding: "22px" }}
             >
               <div className="flex items-center gap-3">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+                {/* P3: next/image replaces raw <img> */}
+                <Image
                   src={r.avatar}
-                  alt={r.name}
+                  alt={`${r.name} profile photo`}
                   width={40}
                   height={40}
                   style={{ width: "40px", height: "40px", borderRadius: "50%", objectFit: "cover", flexShrink: 0 }}
@@ -162,7 +167,8 @@ export default function Reviews() {
                 <GoogleG size={18} />
               </div>
               <div style={{ marginTop: "10px" }}>
-                <span className="inline-flex gap-0.5">
+                {/* aria-label provides accessible rating; individual stars are decorative */}
+                <span className="inline-flex gap-0.5" aria-label="5 out of 5 stars">
                   {[0, 1, 2, 3, 4].map((s) => (
                     <Star key={s} size={14} />
                   ))}
@@ -183,7 +189,7 @@ export default function Reviews() {
                 {r.text}
               </p>
               {r.readMore && (
-                <span style={{ marginTop: "6px", fontSize: "13px", color: "#707070" }}>Read more</span>
+                <span aria-hidden="true" style={{ marginTop: "6px", fontSize: "13px", color: "#707070" }}>Read more</span>
               )}
             </Reveal>
           ))}
