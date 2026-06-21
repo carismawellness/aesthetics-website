@@ -5,7 +5,7 @@ export default function BookConsultation() {
   return (
     // White section: a CONTAINED beige heading block, with the grey form
     // panel narrower + centered below, overlapping the beige's bottom edge.
-    <section style={{ backgroundColor: "var(--white)", padding: "48px 0 80px" }}>
+    <section style={{ backgroundColor: "var(--white)", padding: "72px 0 120px" }}>
       <div className="container">
         {/* Beige heading block (contained, not full-width) */}
         <Reveal className="mx-auto" style={{ maxWidth: "960px" }}>
@@ -14,7 +14,7 @@ export default function BookConsultation() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/assets/treatments/home-book-wave.png" alt="" aria-hidden style={{ position: "absolute", left: 0, bottom: 0, width: "100%", height: "auto", pointerEvents: "none" }} />
             <h2
-              className="relative font-display"
+              className="relative font-display text-center"
               style={{ zIndex: 1, fontSize: "clamp(28px,3.6vw,40px)", color: "var(--gold)", textTransform: "uppercase", fontWeight: 300, letterSpacing: "0.04em", lineHeight: 1.4 }}
             >
               book your<br />Consultation

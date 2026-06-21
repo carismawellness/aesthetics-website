@@ -38,7 +38,7 @@ export default function Hero() {
   return (
     <section className="hero-fit" style={{ background: "var(--white)" }}>
       <div className="container w-full">
-        <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+        <div className="grid items-center gap-10 lg:grid-cols-[60fr_40fr]">
           {/* ── Left: copy ── */}
           <div>
             {/* Badge pills */}

@@ -3,7 +3,7 @@ import Reveal from "@/components/Reveal";
 
 export default function WhyUs() {
   return (
-    <section style={{ backgroundColor: "var(--beige)", padding: "84px 0" }}>
+    <section style={{ backgroundColor: "var(--beige)", padding: "126px 0" }}>
       <div className="container">
         {/* Kicker — two lines, emphasis on "#1 Award Winning" and "30+ Years" */}
         <Reveal>

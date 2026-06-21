@@ -6,7 +6,7 @@ const BRACKET = "1px solid #e0dbd5";
 
 export default function ServicesMarquee() {
   return (
-    <section style={{ padding: "70px 0", backgroundColor: "var(--white)" }}>
+    <section style={{ padding: "105px 0", backgroundColor: "var(--white)" }}>
       <div className="container">
         <Reveal>
           <h2 className="font-display text-center" style={{ fontSize: "clamp(22px,3vw,35px)", color: "var(--gold)", fontWeight: 400, letterSpacing: "0.1em" }}>
@@ -29,7 +29,7 @@ export default function ServicesMarquee() {
                     style={{ width: "100%", display: "block", objectFit: "contain" }}
                     className="transition-transform duration-300 group-hover:scale-105"
                   />
-                  <p className="font-display absolute" style={{ bottom: "14%", left: "50%", transform: "translateX(-50%)", textAlign: "center", fontSize: "clamp(9px,0.8vw,11px)", color: "#9b8d83", letterSpacing: "0.12em", fontWeight: 400, textTransform: "uppercase", lineHeight: 1.3, whiteSpace: "nowrap" }}>
+                  <p className="font-display absolute" style={{ bottom: "14%", left: "50%", transform: "translateX(-50%)", textAlign: "center", fontSize: "clamp(9px,0.8vw,11px)", color: "var(--label)", letterSpacing: "0.12em", fontWeight: 400, textTransform: "uppercase", lineHeight: 1.3, whiteSpace: "nowrap" }}>
                     {s.label}
                   </p>
                 </div>
