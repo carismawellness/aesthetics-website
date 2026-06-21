@@ -555,26 +555,11 @@ body.dark-texture-page footer div[style*="background"] {
 }
 
 /* ============================================================
-   MOTION SYSTEM (GSAP / Lenis + one lazy WebGL hero)
+   MOTION SYSTEM — premium additive layers (Lenis + lazy WebGL hero + micro-interactions)
+   Scroll reveals use the existing lightweight components/Reveal (CSS/IO).
    See docs/design-system.md. Performance + CRO first:
    transform/opacity only, no CLS, reduced-motion fully respected.
    ============================================================ */
-
-/* Scroll reveal — pre-hidden ONLY when JS is active (html.js set before paint),
-   so no-JS users always see content and there is no flash. Animated by
-   components/motion/Reveal.tsx (opacity + translateY). */
-html.js [data-reveal],
-html.js [data-reveal-group] > * {
-  opacity: 0;
-  transform: translateY(var(--reveal-y, 24px));
-}
-@media (prefers-reduced-motion: reduce) {
-  html.js [data-reveal],
-  html.js [data-reveal-group] > * {
-    opacity: 1 !important;
-    transform: none !important;
-  }
-}
 
 /* Hero bokeh — always-painted CSS fallback (LCP-safe). WebGL layers on top via
    components/motion/HeroBackdrop.tsx when conditions allow. Brand hues only. */

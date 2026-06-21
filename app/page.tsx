@@ -2,7 +2,7 @@ import Hero from "@/components/home/Hero";
 import ServicesMarquee from "@/components/home/ServicesMarquee";
 import WhyUs from "@/components/home/WhyUs";
 import BookConsultation from "@/components/home/BookConsultation";
-import Reveal from "@/components/motion/Reveal";
+import Reveal from "@/components/Reveal";
 
 // Reviews, doctors, and the award blurb render in the global Footer
 // (live shows that stack at the end of every page, including home).

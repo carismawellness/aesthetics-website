@@ -61,9 +61,6 @@ export default function RootLayout({
   return (
     <html lang="en" className={`h-full antialiased ${pinyonScript.variable}`}>
       <head>
-        {/* Set `js` before paint so scroll-reveal pre-hiding only applies when JS is
-            on (no-JS users always see content; no reveal flash). */}
-        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
         {/* Preload critical self-hosted fonts */}
         <link rel="preload" as="font" href="/assets/fonts/novecento-wide-book.woff2" type="font/woff2" crossOrigin="" />
         <link rel="preload" as="font" href="/assets/fonts/trajan-pro.woff2" type="font/woff2" crossOrigin="" />

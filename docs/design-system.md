@@ -21,10 +21,10 @@ Motion bokeh + glows use **only** these hues (sage-teal, mist, beige).
 - **`SmoothScroll`** — Lenis provider mounted once in `app/layout.tsx` around
   `{children}`. Synced to GSAP ScrollTrigger via a single ticker. **Disabled under
   reduced-motion** (native scroll kept).
-- **`Reveal`** — scroll fade-rise. `<Reveal>…</Reveal>` for a block; `stagger` for
-  direct children (cards, lists). Props: `as`, `className`, `style`, `stagger`,
-  `delay`, `y`. Content is always in the DOM; pre-hidden only when `html.js` is set
-  (no flash, no CLS). **Never wrap the LCP hero headline** — keep above-the-fold instant.
+- **Scroll reveals** — use the existing lightweight **`components/Reveal`** (CSS +
+  IntersectionObserver, used ~23× site-wide). Props: `delay`, `className`, `style`.
+  Prefer this over GSAP for fade-rise — it's lighter and already standardised.
+  **Never wrap the LCP hero headline** — keep above-the-fold instant.
 - **`HeroBackdrop`** — always paints a CSS bokeh gradient (`.hero-bokeh-fallback`),
   then lazy-mounts `HeroScene` on top only when: desktop + fine pointer + reduced-motion
   off + hero in view + browser idle.
@@ -52,15 +52,13 @@ Motion bokeh + glows use **only** these hues (sage-teal, mist, beige).
 ## Usage examples
 
 ```tsx
-import Reveal from '@/components/motion/Reveal';
+import Reveal from '@/components/Reveal';            // existing CSS/IO reveal
 import HeroBackdrop from '@/components/motion/HeroBackdrop';
 import Magnetic from '@/components/motion/Magnetic';
 
-// Below-the-fold section
-<Reveal as="section" className="…">…</Reveal>
-
-// Staggered card grid
-<Reveal stagger className="grid …">{cards}</Reveal>
+// Below-the-fold section (stagger via incremental delay props)
+<Reveal>…</Reveal>
+<Reveal delay={120}>…</Reveal>
 
 // Hero (WebGL behind content)
 <section className="relative">
