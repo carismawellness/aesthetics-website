@@ -118,7 +118,7 @@ export default function ConsultationPage() {
               className="font-display"
               style={{
                 fontSize: "11px",
-                color: "var(--teal)",
+                color: "var(--teal-deep)",
                 letterSpacing: "0.18em",
                 marginBottom: "18px",
               }}
@@ -135,7 +135,7 @@ export default function ConsultationPage() {
                 lineHeight: 1.15,
               }}
             >
-              Book Your Free<br />Consultation
+              Book Your Free Consultation
             </h1>
             <div
               style={{
@@ -172,7 +172,7 @@ export default function ConsultationPage() {
                 className="font-display"
                 style={{
                   fontSize: "10px",
-                  color: "var(--muted)",
+                  color: "var(--label)",
                   letterSpacing: "0.12em",
                   marginTop: "12px",
                 }}
@@ -273,7 +273,7 @@ export default function ConsultationPage() {
               className="font-display text-center"
               style={{
                 fontSize: "11px",
-                color: "var(--teal)",
+                color: "var(--teal-deep)",
                 letterSpacing: "0.18em",
                 marginBottom: "12px",
               }}
@@ -319,7 +319,7 @@ export default function ConsultationPage() {
               className="font-display text-center"
               style={{
                 fontSize: "11px",
-                color: "var(--teal)",
+                color: "var(--teal-deep)",
                 letterSpacing: "0.18em",
                 marginBottom: "12px",
               }}

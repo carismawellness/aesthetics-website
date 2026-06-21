@@ -102,15 +102,10 @@ function RelatedCard({ post }: { post: BlogPost }) {
   return (
     <Link
       href={`/blog/${post.slug}`}
-      className="group block overflow-hidden"
+      className="group card review-card block overflow-hidden"
       style={{
-        background: "#fff",
-        borderRadius: "var(--radius)",
-        boxShadow: "0 2px 16px rgba(0,0,0,0.06)",
-        border: "1px solid var(--line)",
-        transition: "box-shadow 0.25s ease",
+        borderRadius: "var(--radius-card)",
       }}
-      onMouseEnter={undefined}
     >
       {/* Cover */}
       <div className="relative overflow-hidden" style={{ aspectRatio: "3/2" }}>
@@ -143,7 +138,7 @@ function RelatedCard({ post }: { post: BlogPost }) {
       <div style={{ padding: "18px 20px 22px" }}>
         <p
           className="font-serif mb-2 leading-snug"
-          style={{ fontSize: "14px", color: "#98afb2", letterSpacing: "0.02em" }}
+          style={{ fontSize: "14px", color: "var(--teal)", letterSpacing: "0.02em" }}
         >
           {post.title}
         </p>
@@ -270,7 +265,7 @@ export default function BlogTemplate({ post }: { post: BlogPost }) {
         <div
           style={{
             background: "#fff",
-            borderRadius: "var(--radius)",
+            borderRadius: "var(--radius-card)",
             padding: "clamp(28px, 5vw, 56px)",
             maxWidth: "800px",
             margin: "0 auto",
@@ -282,7 +277,7 @@ export default function BlogTemplate({ post }: { post: BlogPost }) {
             className="font-serif mb-10"
             style={{
               fontSize: "17px",
-              color: "#98afb2",
+              color: "var(--teal)",
               lineHeight: 1.8,
               borderLeft: "3px solid var(--teal)",
               paddingLeft: "20px",
@@ -316,15 +311,12 @@ export default function BlogTemplate({ post }: { post: BlogPost }) {
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="font-display"
+                    className="btn btn-outline font-display"
                     style={{
                       fontSize: "10px",
                       letterSpacing: "0.12em",
-                      color: "var(--teal)",
-                      border: "1px solid var(--teal-200)",
-                      padding: "6px 14px",
-                      borderRadius: "3px",
-                      transition: "background 0.2s",
+                      padding: "6px 16px",
+                      borderRadius: "var(--radius-pill)",
                     }}
                   >
                     {link.anchorText}
@@ -349,7 +341,7 @@ export default function BlogTemplate({ post }: { post: BlogPost }) {
               </p>
               <h2
                 className="font-serif"
-                style={{ fontSize: "clamp(20px, 3vw, 30px)", color: "#98afb2", letterSpacing: "0.04em" }}
+                style={{ fontSize: "clamp(20px, 3vw, 30px)", color: "var(--teal)", letterSpacing: "0.04em" }}
               >
                 You Might Also Like
               </h2>
@@ -382,7 +374,7 @@ export default function BlogTemplate({ post }: { post: BlogPost }) {
         <div className="container">
           <p
             className="font-display mb-3"
-            style={{ fontSize: "10px", color: "rgba(255,255,255,0.75)", letterSpacing: "0.22em" }}
+            style={{ fontSize: "10px", color: "#fff", letterSpacing: "0.22em" }}
           >
             Carisma Aesthetics — Malta
           </p>
@@ -399,7 +391,7 @@ export default function BlogTemplate({ post }: { post: BlogPost }) {
           </h2>
           <p
             style={{
-              color: "rgba(255,255,255,0.85)",
+              color: "#fff",
               fontSize: "15px",
               maxWidth: "520px",
               margin: "0 auto 32px",

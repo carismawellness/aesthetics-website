@@ -5,17 +5,27 @@ import type { ProtocolData } from "@/lib/protocols";
 
 const ASSET = "/assets/treatments";
 
-function Kicker({ children, color = "var(--gold-deep)" }: { children: React.ReactNode; color?: string }) {
+// WCAG 2.2 AA: brand colors darkened to pass >=4.5:1 normal-text contrast over the
+// light hero/marble image backgrounds (worst-case darkest regions #c2d3d3 / #d5d4e5)
+// and translucent white cards (flattened worst-case #eaeaf2). Hues kept in the
+// Carisma cool-taupe-gold + sage-teal family (darkened toward the same hue).
+const AA_GOLD = "#5f5128"; // was var(--gold-deep) #9c8344 (failed: 2.36-3.66:1)
+const AA_TEAL = "#3a5757"; // was var(--teal) #527979 (failed as text: 3.1-4.16:1)
+const AA_LABEL = "#5c5246"; // was var(--label) #756758 (failed: 3.53:1 on hero)
+const AA_MUTED = "#555555"; // was var(--muted) #717171 (failed: 3.15:1 on hero)
+
+function Kicker({ children, color = AA_GOLD }: { children: React.ReactNode; color?: string }) {
   return <p className="font-display text-center" style={{ fontSize: "18px", color, letterSpacing: "0.02em" }}>{children}</p>;
 }
 function Serif({ children, style }: { children: React.ReactNode; style?: React.CSSProperties }) {
-  return <h2 className="font-serif text-center" style={{ fontSize: "clamp(22px,3vw,30px)", color: "var(--gold-deep)", letterSpacing: "0.06em", fontWeight: 400, lineHeight: 1.3, ...style }}>{children}</h2>;
+  return <h2 className="font-serif text-center" style={{ fontSize: "clamp(22px,3vw,30px)", color: AA_GOLD, letterSpacing: "0.06em", fontWeight: 400, lineHeight: 1.3, ...style }}>{children}</h2>;
 }
 function Cta({ label }: { label: string }) {
   return <Link href="/consultation" className="btn btn-teal" style={{ fontSize: "13px", padding: "15px 36px", letterSpacing: "0.12em" }}>{label}</Link>;
 }
 function TealDot() {
-  return <span style={{ color: "var(--teal)", fontSize: "11px", lineHeight: 1.8, flexShrink: 0 }}>●</span>;
+  // Graphical list marker (1.4.11): AA_TEAL gives >=5:1 vs every page background.
+  return <span aria-hidden style={{ color: AA_TEAL, fontSize: "11px", lineHeight: 1.8, flexShrink: 0 }}>●</span>;
 }
 
 function PackageList({ items, totalValue, today }: { items: { label: string; price: string }[]; totalValue: string; today: string }) {
@@ -25,12 +35,12 @@ function PackageList({ items, totalValue, today }: { items: { label: string; pri
         {items.map((it) => (
           <li key={it.label} className="flex items-start gap-3">
             <TealDot />
-            <span style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.5 }}>{it.label} {it.price && <span style={{ color: "var(--teal)" }}>({it.price})</span>}</span>
+            <span style={{ fontSize: "14px", color: AA_LABEL, lineHeight: 1.5 }}>{it.label} {it.price && <span style={{ color: AA_TEAL }}>({it.price})</span>}</span>
           </li>
         ))}
       </ul>
-      <p className="font-display" style={{ fontSize: "16px", color: "var(--gold-deep)", letterSpacing: "0.04em", marginTop: "22px" }}>
-        {totalValue} <span style={{ color: "var(--teal)" }}>{today}</span>
+      <p className="font-display" style={{ fontSize: "16px", color: AA_GOLD, letterSpacing: "0.04em", marginTop: "22px" }}>
+        {totalValue} <span style={{ color: AA_TEAL }}>{today}</span>
       </p>
     </>
   );
@@ -44,22 +54,22 @@ export default function ProtocolPage({ d }: { d: ProtocolData }) {
         <div className="container">
           <div className="grid gap-12 lg:grid-cols-2 items-center">
             <Reveal>
-              <p className="font-display" style={{ fontSize: "12px", color: "var(--gold-deep)", letterSpacing: "0.12em" }}>{d.hero.kicker}</p>
-              <h1 className="font-serif" style={{ fontSize: "clamp(30px,4.4vw,46px)", color: "var(--gold-deep)", letterSpacing: "0.04em", marginTop: "10px", textTransform: "uppercase" }}>{d.hero.title}</h1>
-              <p className="font-display" style={{ fontSize: "15px", color: "var(--label)", letterSpacing: "0.04em", marginTop: "12px" }}>{d.hero.tagline}</p>
-              <p style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.7, marginTop: "16px" }}>{d.hero.intro}</p>
+              <p className="font-display" style={{ fontSize: "12px", color: AA_GOLD, letterSpacing: "0.12em" }}>{d.hero.kicker}</p>
+              <h1 className="font-serif" style={{ fontSize: "clamp(30px,4.4vw,46px)", color: AA_GOLD, letterSpacing: "0.04em", marginTop: "10px", textTransform: "uppercase" }}>{d.hero.title}</h1>
+              <p className="font-display" style={{ fontSize: "15px", color: AA_LABEL, letterSpacing: "0.04em", marginTop: "12px" }}>{d.hero.tagline}</p>
+              <p style={{ fontSize: "14px", color: AA_LABEL, lineHeight: 1.7, marginTop: "16px" }}>{d.hero.intro}</p>
               <PackageList items={d.hero.items} totalValue={d.hero.totalValue} today={d.hero.today} />
-              <p style={{ fontSize: "13px", color: "var(--muted)", marginTop: "6px" }}>{d.hero.individualNote}</p>
+              <p style={{ fontSize: "13px", color: AA_MUTED, marginTop: "6px" }}>{d.hero.individualNote}</p>
               <div style={{ marginTop: "24px" }}><Cta label={d.hero.cta} /></div>
               <div className="flex items-center gap-2" style={{ marginTop: "20px" }}>
                 <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.27-4.74 3.27-8.1z" /><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.26 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84A11 11 0 0 0 12 23z" /><path fill="#FBBC05" d="M5.84 14.1a6.6 6.6 0 0 1 0-4.2V7.06H2.18a11 11 0 0 0 0 9.88l3.66-2.84z" /><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84C6.71 7.3 9.14 5.38 12 5.38z" /></svg>
-                <span style={{ fontWeight: 600, fontSize: "13px", color: "var(--label)" }}>4.9</span>
-                <span className="flex" style={{ color: "var(--teal)" }}>{[0, 1, 2, 3, 4].map((i) => (<svg key={i} width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>))}</span>
-                <span className="font-display" style={{ fontSize: "11px", color: "var(--teal)", letterSpacing: "0.08em" }}>TOP-RATED CLINIC IN MALTA</span>
+                <span style={{ fontWeight: 600, fontSize: "13px", color: AA_LABEL }}>4.9</span>
+                <span className="flex" aria-label="Rated 5 out of 5 stars" role="img" style={{ color: AA_TEAL }}>{[0, 1, 2, 3, 4].map((i) => (<svg key={i} width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>))}</span>
+                <span className="font-display" style={{ fontSize: "11px", color: AA_TEAL, letterSpacing: "0.08em" }}>TOP-RATED CLINIC IN MALTA</span>
               </div>
               {d.hero.finePrint.length > 0 && (
                 <div style={{ marginTop: "20px" }}>
-                  {d.hero.finePrint.map((f, i) => (<p key={i} style={{ fontSize: "11px", color: "var(--muted)", lineHeight: 1.6 }}>{f}</p>))}
+                  {d.hero.finePrint.map((f, i) => (<p key={i} style={{ fontSize: "11px", color: AA_MUTED, lineHeight: 1.6 }}>{f}</p>))}
                 </div>
               )}
             </Reveal>
@@ -72,7 +82,7 @@ export default function ProtocolPage({ d }: { d: ProtocolData }) {
               <div className="flex items-center justify-center gap-3" style={{ marginTop: "18px" }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src="/assets/awards-badge.png" alt="#1 voted clinic in Malta" style={{ height: "44px", width: "auto" }} />
-                <span className="font-display" style={{ fontSize: "12px", color: "var(--gold-deep)", letterSpacing: "0.1em", lineHeight: 1.4 }}>#1 VOTED CLINIC<br />IN MALTA</span>
+                <span className="font-display" style={{ fontSize: "12px", color: AA_GOLD, letterSpacing: "0.1em", lineHeight: 1.4 }}>#1 VOTED CLINIC<br />IN MALTA</span>
               </div>
             </Reveal>
           </div>
@@ -85,18 +95,18 @@ export default function ProtocolPage({ d }: { d: ProtocolData }) {
         <section style={{ padding: "70px 0" }}>
           <div className="container">
             <Serif>{d.secret.heading}</Serif>
-            <p className="font-display text-center" style={{ fontSize: "13px", color: "var(--label)", letterSpacing: "0.06em", marginTop: "12px", textTransform: "uppercase" }}>{d.secret.sub}</p>
+            <p className="font-display text-center" style={{ fontSize: "13px", color: AA_LABEL, letterSpacing: "0.06em", marginTop: "12px", textTransform: "uppercase" }}>{d.secret.sub}</p>
             <div className="grid gap-12 lg:grid-cols-2 items-center" style={{ marginTop: "40px" }}>
               <Reveal>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={d.secret.image} alt={d.secret.heading} className="w-full rounded-xl" style={{ display: "block", objectFit: "cover", aspectRatio: "4 / 3", boxShadow: "0 16px 40px rgba(0,0,0,0.12)" }} />
               </Reveal>
               <div>
-                {d.secret.paragraphs[0] && <p style={{ fontSize: "14.5px", color: "var(--label)", lineHeight: 1.8 }}>{d.secret.paragraphs[0]}</p>}
+                {d.secret.paragraphs[0] && <p style={{ fontSize: "14.5px", color: AA_LABEL, lineHeight: 1.8 }}>{d.secret.paragraphs[0]}</p>}
                 <ul className="space-y-3" style={{ marginTop: "18px" }}>
-                  {d.secret.bullets.map((b) => (<li key={b} className="flex items-start gap-3"><TealDot /><span style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.6 }}>{b}</span></li>))}
+                  {d.secret.bullets.map((b) => (<li key={b} className="flex items-start gap-3"><TealDot /><span style={{ fontSize: "14px", color: AA_LABEL, lineHeight: 1.6 }}>{b}</span></li>))}
                 </ul>
-                {d.secret.paragraphs.slice(1).map((p, i) => (<p key={i} style={{ fontSize: "14.5px", color: "var(--label)", lineHeight: 1.8, marginTop: "16px" }}>{p}</p>))}
+                {d.secret.paragraphs.slice(1).map((p, i) => (<p key={i} style={{ fontSize: "14.5px", color: AA_LABEL, lineHeight: 1.8, marginTop: "16px" }}>{p}</p>))}
                 <div style={{ marginTop: "26px" }}><Cta label={d.secret.cta} /></div>
               </div>
             </div>
@@ -124,8 +134,8 @@ export default function ProtocolPage({ d }: { d: ProtocolData }) {
                       <img src={f.icon} alt={f.label} style={{ maxHeight: "52px", width: "auto" }} />
                     </div>
                   )}
-                  <h3 className="font-display" style={{ fontSize: "13px", color: "var(--gold-deep)", letterSpacing: "0.06em", marginBottom: "10px" }}>{f.label}</h3>
-                  <p style={{ fontSize: "13px", color: "var(--label)", lineHeight: 1.65 }}>{f.desc}</p>
+                  <h3 className="font-display" style={{ fontSize: "13px", color: AA_GOLD, letterSpacing: "0.06em", marginBottom: "10px" }}>{f.label}</h3>
+                  <p style={{ fontSize: "13px", color: AA_LABEL, lineHeight: 1.65 }}>{f.desc}</p>
                 </Reveal>
               ))}
             </div>
@@ -143,10 +153,10 @@ export default function ProtocolPage({ d }: { d: ProtocolData }) {
                 <img src={d.eligibility.image} alt={d.eligibility.heading} className="w-full rounded-xl" style={{ display: "block", objectFit: "cover", aspectRatio: "1 / 1", boxShadow: "0 16px 40px rgba(0,0,0,0.12)" }} />
               </Reveal>
               <div>
-                <p className="font-display" style={{ fontSize: "15px", color: "var(--gold-deep)", letterSpacing: "0.04em", marginBottom: "20px" }}>{d.eligibility.areasIntro}</p>
+                <p className="font-display" style={{ fontSize: "15px", color: AA_GOLD, letterSpacing: "0.04em", marginBottom: "20px" }}>{d.eligibility.areasIntro}</p>
                 <div className="grid gap-3 sm:grid-cols-2">
                   {d.eligibility.areas.map((a) => (
-                    <span key={a} className="font-display" style={{ fontSize: "12px", color: "var(--label)", letterSpacing: "0.04em", background: "rgba(255,255,255,0.6)", border: "1px solid var(--line)", borderRadius: "8px", padding: "13px 16px", textAlign: "center" }}>{a}</span>
+                    <span key={a} className="font-display" style={{ fontSize: "12px", color: AA_LABEL, letterSpacing: "0.04em", background: "rgba(255,255,255,0.6)", border: "1px solid var(--line)", borderRadius: "8px", padding: "13px 16px", textAlign: "center" }}>{a}</span>
                   ))}
                 </div>
               </div>
@@ -164,24 +174,24 @@ export default function ProtocolPage({ d }: { d: ProtocolData }) {
                 <div className="grid gap-10 lg:grid-cols-2 items-start">
                   <div>
                     <div className="flex items-center justify-between flex-wrap gap-2" style={{ marginBottom: "18px" }}>
-                      <h3 className="font-serif" style={{ fontSize: "20px", color: "var(--gold-deep)", letterSpacing: "0.06em", textTransform: "uppercase" }}>{d.modality.name}</h3>
+                      <h3 className="font-serif" style={{ fontSize: "20px", color: AA_GOLD, letterSpacing: "0.06em", textTransform: "uppercase" }}>{d.modality.name}</h3>
                       <span className="font-display" style={{ fontSize: "11px", color: "var(--white)", background: "var(--teal)", letterSpacing: "0.06em", padding: "6px 14px", borderRadius: "999px" }}>{d.modality.tag}</span>
                     </div>
                     {d.modality.baImage && (
                       // eslint-disable-next-line @next/next/no-img-element
                       <img src={d.modality.baImage} alt={d.modality.name} className="w-full rounded-lg" style={{ display: "block", marginBottom: "18px" }} />
                     )}
-                    <p style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.75 }}>{d.modality.intro}</p>
+                    <p style={{ fontSize: "14px", color: AA_LABEL, lineHeight: 1.75 }}>{d.modality.intro}</p>
                   </div>
                   <div>
                     <ul className="space-y-3">
-                      {d.modality.bullets.map((b) => (<li key={b} className="flex items-start gap-3"><TealDot /><span style={{ fontSize: "13.5px", color: "var(--label)", lineHeight: 1.65 }}>{b}</span></li>))}
+                      {d.modality.bullets.map((b) => (<li key={b} className="flex items-start gap-3"><TealDot /><span style={{ fontSize: "13.5px", color: AA_LABEL, lineHeight: 1.65 }}>{b}</span></li>))}
                     </ul>
                     {d.modality.sideImage && (
                       // eslint-disable-next-line @next/next/no-img-element
                       <img src={d.modality.sideImage} alt="" className="mx-auto" style={{ display: "block", width: "150px", marginTop: "24px" }} />
                     )}
-                    <p className="font-display text-center" style={{ fontSize: "12px", color: "var(--teal)", letterSpacing: "0.08em", marginTop: "16px" }}>{d.modality.tagSub}</p>
+                    <p className="font-display text-center" style={{ fontSize: "12px", color: AA_TEAL, letterSpacing: "0.08em", marginTop: "16px" }}>{d.modality.tagSub}</p>
                   </div>
                 </div>
               </Reveal>
@@ -194,9 +204,9 @@ export default function ProtocolPage({ d }: { d: ProtocolData }) {
           <div className="container text-center">
             <Kicker>{d.difference1.kicker}</Kicker>
             <Serif style={{ marginTop: "8px" }}>{d.difference1.heading}</Serif>
-            <p className="mx-auto" style={{ maxWidth: "820px", fontSize: "14.5px", color: "var(--label)", lineHeight: 1.8, marginTop: "20px" }}>{d.difference1.intro}</p>
+            <p className="mx-auto" style={{ maxWidth: "820px", fontSize: "14.5px", color: AA_LABEL, lineHeight: 1.8, marginTop: "20px" }}>{d.difference1.intro}</p>
             <ul className="mx-auto grid gap-3 sm:grid-cols-2 text-left" style={{ maxWidth: "880px", marginTop: "30px" }}>
-              {d.difference1.bullets.map((b) => (<li key={b} className="flex items-start gap-3"><TealDot /><span style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.6 }}>{b}</span></li>))}
+              {d.difference1.bullets.map((b) => (<li key={b} className="flex items-start gap-3"><TealDot /><span style={{ fontSize: "14px", color: AA_LABEL, lineHeight: 1.6 }}>{b}</span></li>))}
             </ul>
           </div>
         </section>
@@ -208,18 +218,18 @@ export default function ProtocolPage({ d }: { d: ProtocolData }) {
             <div className="grid gap-6 md:grid-cols-3" style={{ marginTop: "40px" }}>
               {d.starterPack.cols.map((c, i) => (
                 <Reveal key={c.title} delay={(i % 3) * 80} className="text-center" style={{ background: "rgba(255,255,255,0.55)", border: "1px solid var(--line)", borderRadius: "16px", padding: "28px 24px", boxShadow: "0 12px 30px rgba(0,0,0,0.05)" }}>
-                  <h3 className="font-display" style={{ fontSize: "13px", color: "var(--gold-deep)", letterSpacing: "0.06em", marginBottom: "12px" }}>{c.title}</h3>
-                  <p style={{ fontSize: "13.5px", color: "var(--label)", lineHeight: 1.7 }}>{c.desc}</p>
+                  <h3 className="font-display" style={{ fontSize: "13px", color: AA_GOLD, letterSpacing: "0.06em", marginBottom: "12px" }}>{c.title}</h3>
+                  <p style={{ fontSize: "13.5px", color: AA_LABEL, lineHeight: 1.7 }}>{c.desc}</p>
                 </Reveal>
               ))}
             </div>
             <div className="mx-auto text-center" style={{ maxWidth: "640px", marginTop: "40px", background: "rgba(255,255,255,0.6)", border: "1px solid var(--line)", borderRadius: "16px", padding: "clamp(26px,3vw,36px)" }}>
               <ul className="space-y-2.5 text-left mx-auto" style={{ maxWidth: "440px" }}>
-                {d.starterPack.items.map((it) => (<li key={it.label} className="flex items-start gap-3"><TealDot /><span style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.5 }}>{it.label} {it.price && <span style={{ color: "var(--teal)" }}>({it.price})</span>}</span></li>))}
+                {d.starterPack.items.map((it) => (<li key={it.label} className="flex items-start gap-3"><TealDot /><span style={{ fontSize: "14px", color: AA_LABEL, lineHeight: 1.5 }}>{it.label} {it.price && <span style={{ color: AA_TEAL }}>({it.price})</span>}</span></li>))}
               </ul>
-              <p className="font-display" style={{ fontSize: "16px", color: "var(--gold-deep)", letterSpacing: "0.04em", marginTop: "22px" }}>{d.starterPack.totalValue} <span style={{ color: "var(--teal)" }}>{d.starterPack.today}</span></p>
+              <p className="font-display" style={{ fontSize: "16px", color: AA_GOLD, letterSpacing: "0.04em", marginTop: "22px" }}>{d.starterPack.totalValue} <span style={{ color: AA_TEAL }}>{d.starterPack.today}</span></p>
               <div style={{ marginTop: "22px" }}><Cta label={d.starterPack.cta} /></div>
-              {d.starterPack.finePrint.map((f, i) => (<p key={i} style={{ fontSize: "11px", color: "var(--muted)", lineHeight: 1.6, marginTop: i ? "2px" : "16px" }}>{f}</p>))}
+              {d.starterPack.finePrint.map((f, i) => (<p key={i} style={{ fontSize: "11px", color: AA_MUTED, lineHeight: 1.6, marginTop: i ? "2px" : "16px" }}>{f}</p>))}
             </div>
           </div>
         </section>
@@ -234,13 +244,13 @@ export default function ProtocolPage({ d }: { d: ProtocolData }) {
               </div>
               <div className="grid gap-12 lg:grid-cols-2 items-stretch" style={{ marginTop: "40px" }}>
                 <div>
-                  <h3 className="font-display" style={{ fontSize: "13px", color: "var(--label)", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "16px" }}>{d.difference2.commitmentTitle}</h3>
+                  <h3 className="font-display" style={{ fontSize: "13px", color: AA_LABEL, letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "16px" }}>{d.difference2.commitmentTitle}</h3>
                   <ul className="space-y-3">
-                    {d.difference2.commitment.map((c) => (<li key={c} className="flex items-start gap-3"><TealDot /><span style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.6 }}>{c}</span></li>))}
+                    {d.difference2.commitment.map((c) => (<li key={c} className="flex items-start gap-3"><TealDot /><span style={{ fontSize: "14px", color: AA_LABEL, lineHeight: 1.6 }}>{c}</span></li>))}
                   </ul>
-                  <h3 className="font-display" style={{ fontSize: "13px", color: "var(--label)", letterSpacing: "0.1em", textTransform: "uppercase", margin: "30px 0 16px" }}>{d.difference2.whyTitle}</h3>
+                  <h3 className="font-display" style={{ fontSize: "13px", color: AA_LABEL, letterSpacing: "0.1em", textTransform: "uppercase", margin: "30px 0 16px" }}>{d.difference2.whyTitle}</h3>
                   <ul className="space-y-3">
-                    {d.difference2.why.map((c) => (<li key={c} className="flex items-start gap-3"><TealDot /><span style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.6 }}>{c}</span></li>))}
+                    {d.difference2.why.map((c) => (<li key={c} className="flex items-start gap-3"><TealDot /><span style={{ fontSize: "14px", color: AA_LABEL, lineHeight: 1.6 }}>{c}</span></li>))}
                   </ul>
                 </div>
                 <div style={{ borderRadius: "32px 12px 32px 12px", overflow: "hidden", boxShadow: "0 16px 38px rgba(0,0,0,0.10)", minHeight: "360px" }}>
@@ -250,8 +260,8 @@ export default function ProtocolPage({ d }: { d: ProtocolData }) {
               <div className="flex flex-col sm:flex-row items-center justify-between gap-6" style={{ marginTop: "40px" }}>
                 <Cta label={d.difference2.cta} />
                 <div className="flex items-center gap-3">
-                  <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden><path fill="none" stroke="var(--teal)" strokeWidth="1.4" d="M12 22s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z" /><text x="12" y="13.5" textAnchor="middle" fontSize="9" fill="var(--teal)" fontWeight="700">P</text></svg>
-                  <span className="font-display" style={{ fontSize: "12px", color: "var(--label)", letterSpacing: "0.08em", textTransform: "uppercase" }}>{d.difference2.parking}</span>
+                  <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden><path fill="none" stroke={AA_TEAL} strokeWidth="1.4" d="M12 22s7-6.5 7-12a7 7 0 1 0-14 0c0 5.5 7 12 7 12z" /><text x="12" y="13.5" textAnchor="middle" fontSize="9" fill={AA_TEAL} fontWeight="700">P</text></svg>
+                  <span className="font-display" style={{ fontSize: "12px", color: AA_LABEL, letterSpacing: "0.08em", textTransform: "uppercase" }}>{d.difference2.parking}</span>
                 </div>
               </div>
             </div>
@@ -261,7 +271,7 @@ export default function ProtocolPage({ d }: { d: ProtocolData }) {
         {/* FAQ */}
         <section style={{ padding: "60px 0" }}>
           <div className="container">
-            <h2 className="font-serif text-center" style={{ fontSize: "clamp(22px,3vw,30px)", color: "var(--gold-deep)", letterSpacing: "0.06em", fontWeight: 400, marginBottom: "40px" }}>Frequently asked questions</h2>
+            <h2 className="font-serif text-center" style={{ fontSize: "clamp(22px,3vw,30px)", color: AA_GOLD, letterSpacing: "0.06em", fontWeight: 400, marginBottom: "40px" }}>Frequently asked questions</h2>
             <FaqAccordion items={d.faq} />
           </div>
         </section>
@@ -279,14 +289,14 @@ export default function ProtocolPage({ d }: { d: ProtocolData }) {
                     <img src={c.image} alt={c.title} className="w-full" style={{ display: "block", aspectRatio: "2 / 1", objectFit: "cover" }} />
                   )}
                   <div style={{ padding: "24px" }}>
-                    <h3 className="font-display" style={{ fontSize: "13px", color: "var(--gold-deep)", letterSpacing: "0.04em", marginBottom: "14px", lineHeight: 1.4 }}>{c.title}</h3>
-                    <p className="font-display" style={{ fontSize: "10px", color: "var(--teal)", letterSpacing: "0.1em", marginBottom: "6px" }}>WHAT IT DOES</p>
-                    <p style={{ fontSize: "13px", color: "var(--label)", lineHeight: 1.65, marginBottom: "14px" }}>{c.whatItDoes}</p>
-                    <p className="font-display" style={{ fontSize: "10px", color: "var(--teal)", letterSpacing: "0.1em", marginBottom: "6px" }}>KEY RESULTS</p>
+                    <h3 className="font-display" style={{ fontSize: "13px", color: AA_GOLD, letterSpacing: "0.04em", marginBottom: "14px", lineHeight: 1.4 }}>{c.title}</h3>
+                    <p className="font-display" style={{ fontSize: "10px", color: AA_TEAL, letterSpacing: "0.1em", marginBottom: "6px" }}>WHAT IT DOES</p>
+                    <p style={{ fontSize: "13px", color: AA_LABEL, lineHeight: 1.65, marginBottom: "14px" }}>{c.whatItDoes}</p>
+                    <p className="font-display" style={{ fontSize: "10px", color: AA_TEAL, letterSpacing: "0.1em", marginBottom: "6px" }}>KEY RESULTS</p>
                     <ul className="space-y-2">
-                      {c.keyResults.map((k, j) => (<li key={j} className="flex items-start gap-2"><TealDot /><span style={{ fontSize: "12.5px", color: "var(--label)", lineHeight: 1.6 }}>{k}</span></li>))}
+                      {c.keyResults.map((k, j) => (<li key={j} className="flex items-start gap-2"><TealDot /><span style={{ fontSize: "12.5px", color: AA_LABEL, lineHeight: 1.6 }}>{k}</span></li>))}
                     </ul>
-                    <p className="font-display" style={{ fontSize: "11px", color: "var(--gold-deep)", letterSpacing: "0.06em", marginTop: "16px", textTransform: "uppercase" }}>{c.evidence}</p>
+                    <p className="font-display" style={{ fontSize: "11px", color: AA_GOLD, letterSpacing: "0.06em", marginTop: "16px", textTransform: "uppercase" }}>{c.evidence}</p>
                   </div>
                 </Reveal>
               ))}

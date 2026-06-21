@@ -48,7 +48,7 @@ function Search({ size = 18 }: { size?: number }) {
 const labelStyle: React.CSSProperties = {
   fontSize: "11px",
   letterSpacing: "0.1em",
-  color: "#9b8d83",
+  color: "var(--label)",
   textTransform: "uppercase",
 };
 const valueStyle: React.CSSProperties = {
@@ -119,18 +119,18 @@ export default function Footer() {
       <section style={{ backgroundColor: "var(--white)", padding: "0 0 48px" }}>
         <div className="container">
           <form className="mx-auto relative" style={{ maxWidth: "560px" }}>
-            <span style={{ position: "absolute", left: "18px", top: "50%", transform: "translateY(-50%)", color: "#9b8d83" }}>
+            <span style={{ position: "absolute", left: "18px", top: "50%", transform: "translateY(-50%)", color: "var(--muted)" }}>
               <Search />
             </span>
             <input
               type="search"
               aria-label="Search"
               placeholder="WHAT ARE YOU LOOKING FOR?"
-              className="font-display"
+              className="font-display placeholder:text-[var(--muted)]"
               style={{
                 width: "100%",
                 padding: "14px 18px 14px 46px",
-                border: "1px solid var(--line)",
+                border: "1px solid var(--muted)",
                 borderRadius: "999px",
                 fontSize: "12px",
                 letterSpacing: "0.1em",

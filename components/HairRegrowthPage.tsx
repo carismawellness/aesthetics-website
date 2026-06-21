@@ -1061,7 +1061,7 @@ export default function HairRegrowthPage() {
                   lineHeight: 1.3,
                 }}
               >
-                A 100% PERFORMANCE<br />GUARANTEE*
+                A 100% PERFORMANCE GUARANTEE*
               </p>
             </div>
 

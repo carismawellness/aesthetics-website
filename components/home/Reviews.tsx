@@ -102,11 +102,11 @@ export default function Reviews() {
         <Reveal>
           <h2
             className="font-display text-center"
-            style={{ fontSize: "clamp(24px,3vw,35px)", color: "#96b2b2", fontWeight: 400, letterSpacing: "0.06em" }}
+            style={{ fontSize: "clamp(24px,3vw,35px)", color: "var(--teal)", fontWeight: 400, letterSpacing: "0.06em" }}
           >
             real people, real reviews
           </h2>
-          <div className="mx-auto" style={{ width: "min(500px, 80%)", height: "1px", background: "#96b2b2", marginTop: "18px", marginBottom: "44px" }} />
+          <div className="mx-auto" style={{ width: "min(500px, 80%)", height: "1px", background: "var(--teal)", marginTop: "18px", marginBottom: "44px" }} />
         </Reveal>
 
         {/* Widget header — overall rating */}
@@ -124,17 +124,12 @@ export default function Reviews() {
             href="https://www.google.com/maps/search/?api=1&query=Carisma+Aesthetics+Malta"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-display"
+            className="font-display btn btn-teal"
             style={{
-              background: "#96b2b2",
-              color: "#fff",
               fontSize: "11px",
               fontWeight: 600,
               padding: "12px 22px",
-              borderRadius: "4px",
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "8px",
+              borderRadius: "999px",
               letterSpacing: "0.1em",
             }}
           >
@@ -148,8 +143,8 @@ export default function Reviews() {
             <Reveal
               key={r.name}
               delay={(i % 3) * 90}
-              className="bg-white rounded-lg flex flex-col"
-              style={{ padding: "22px", border: "1px solid var(--line)", boxShadow: "0 6px 18px rgba(0,0,0,0.05)" }}
+              className="card review-card flex flex-col"
+              style={{ padding: "22px" }}
             >
               <div className="flex items-center gap-3">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -162,7 +157,7 @@ export default function Reviews() {
                 />
                 <span className="flex-1 min-w-0">
                   <span className="block truncate" style={{ fontSize: "14px", color: "#222", fontWeight: 600 }}>{r.name}</span>
-                  <span className="block" style={{ fontSize: "12px", color: "#888" }}>{r.when}</span>
+                  <span className="block" style={{ fontSize: "12px", color: "#707070" }}>{r.when}</span>
                 </span>
                 <GoogleG size={18} />
               </div>
@@ -188,7 +183,7 @@ export default function Reviews() {
                 {r.text}
               </p>
               {r.readMore && (
-                <span style={{ marginTop: "6px", fontSize: "13px", color: "#888" }}>Read more</span>
+                <span style={{ marginTop: "6px", fontSize: "13px", color: "#707070" }}>Read more</span>
               )}
             </Reveal>
           ))}

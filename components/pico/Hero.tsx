@@ -14,9 +14,9 @@ const TRUST = [
   "MEDICALLY QUALIFIED",
 ];
 
-// live design tokens sampled from carismaaesthetics.com/pico-laser-tattoo-removal
-const TEAL = "#98afb2";   // muted grey-teal heading
-const BTN = "#96b2b2";    // muted sage-teal button fill
+// WCAG AA corrected: prior #98afb2 (2.31:1) and #96b2b2 (2.26:1) failed AA.
+const TEAL = "#527979";   // --teal heading text, 4.81:1 on light bg (was #98afb2)
+const BTN = "#527979";    // --teal button fill, white text 4.81:1 (was #96b2b2)
 
 export default function Hero() {
   return (
@@ -57,7 +57,7 @@ export default function Hero() {
 
               <p
                 style={{
-                  color: "var(--gold-deep)",
+                  color: "var(--gold)",
                   fontSize: "14px",
                   fontWeight: 600,
                   lineHeight: 1.7,
@@ -72,7 +72,7 @@ export default function Hero() {
               <p
                 className="font-display"
                 style={{
-                  color: "var(--gold-deep)",
+                  color: "var(--gold)",
                   fontSize: "14px",
                   fontWeight: 600,
                   letterSpacing: "0.02em",
@@ -89,7 +89,7 @@ export default function Hero() {
                     <Dot />
                     <span
                       style={{
-                        color: "var(--gold-deep)",
+                        color: "var(--gold)",
                         fontSize: "13.5px",
                         lineHeight: 1.55,
                       }}
@@ -103,7 +103,7 @@ export default function Hero() {
               <p
                 className="font-display"
                 style={{
-                  color: "var(--gold-deep)",
+                  color: "var(--gold)",
                   fontSize: "15px",
                   fontWeight: 600,
                   letterSpacing: "0.02em",
@@ -115,12 +115,11 @@ export default function Hero() {
 
               <p
                 style={{
-                  color: "var(--gold-deep)",
+                  color: "var(--gold)",
                   fontSize: "11px",
                   lineHeight: 1.6,
                   marginTop: "12px",
                   maxWidth: "440px",
-                  opacity: 0.75,
                 }}
               >
                 Due to high demand, packages are offered based on availability and

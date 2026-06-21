@@ -23,7 +23,7 @@ export default function Pricing() {
               key={p.size}
               delay={(i % 5) * 60}
               className="text-center relative"
-              style={{ width: "200px", background: "linear-gradient(160deg,#b6ac95 0%, #a89e86 100%)", borderRadius: "14px", padding: "44px 18px 26px", marginTop: "26px", boxShadow: "0 12px 30px rgba(0,0,0,0.10)" }}
+              style={{ width: "200px", background: "linear-gradient(160deg,#7d7358 0%, #6f6749 100%)", borderRadius: "14px", padding: "44px 18px 26px", marginTop: "26px", boxShadow: "0 12px 30px rgba(0,0,0,0.10)" }}
             >
               <span
                 className="inline-flex items-center justify-center"

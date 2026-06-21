@@ -48,7 +48,7 @@ export default function WhatToExpect() {
                 className="font-display text-center"
                 style={{
                   fontSize: "14px",
-                  color: "var(--gold-deep)",
+                  color: "var(--gold)",
                   letterSpacing: "0.12em",
                   textTransform: "uppercase",
                   marginBottom: "16px",

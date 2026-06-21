@@ -46,7 +46,7 @@ export default function Redefined() {
             className="font-serif"
             style={{
               fontSize: "clamp(22px,3vw,30px)",
-              color: "#98afb2",
+              color: "#527979",
               letterSpacing: "0.06em",
               fontWeight: 400,
               lineHeight: 1.3,
@@ -65,7 +65,7 @@ export default function Redefined() {
               <li key={b.label} className="flex" style={{ gap: "10px" }}>
                 <span style={{ color: "var(--teal)", fontSize: "9px", lineHeight: 2, flexShrink: 0 }}>●</span>
                 <span style={{ fontSize: "14px", lineHeight: 1.6, color: "var(--label)" }}>
-                  <span style={{ color: "var(--gold-deep)", fontWeight: 600 }}>{b.label}</span> — {b.desc}
+                  <span style={{ color: "var(--gold)", fontWeight: 600 }}>{b.label}</span> — {b.desc}
                 </span>
               </li>
             ))}

@@ -21,7 +21,7 @@ export default function WhyCarisma() {
           className="font-display text-center"
           style={{
             fontSize: "clamp(20px,2.4vw,28px)",
-            color: "var(--gold-deep)",
+            color: "var(--gold)",
             letterSpacing: "0.06em",
             lineHeight: 1.5,
             fontWeight: 400,
@@ -99,7 +99,7 @@ export default function WhyCarisma() {
                 className="font-display text-center"
                 style={{
                   fontSize: "clamp(20px,2.4vw,26px)",
-                  color: "var(--gold-deep)",
+                  color: "var(--gold)",
                   letterSpacing: "0.1em",
                   fontWeight: 400,
                   textTransform: "uppercase",
@@ -138,7 +138,7 @@ export default function WhyCarisma() {
                       className="font-display"
                       style={{
                         fontSize: "14px",
-                        color: "var(--gold-deep)",
+                        color: "var(--gold)",
                         letterSpacing: "0.06em",
                         fontWeight: 400,
                         textTransform: "uppercase",

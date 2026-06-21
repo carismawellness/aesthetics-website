@@ -34,13 +34,9 @@ function BlogCard({ post }: { post: BlogPost }) {
   return (
     <Link
       href={`/blog/${post.slug}`}
-      className="group block overflow-hidden"
+      className="group card review-card block overflow-hidden"
       style={{
-        background: "#fff",
-        borderRadius: "var(--radius)",
-        boxShadow: "0 2px 16px rgba(0,0,0,0.06)",
-        border: "1px solid var(--line)",
-        transition: "box-shadow 0.25s ease, transform 0.25s ease",
+        borderRadius: "var(--radius-card)",
       }}
     >
       {/* Cover image */}
@@ -88,7 +84,7 @@ function BlogCard({ post }: { post: BlogPost }) {
           className="font-serif mb-3 leading-snug"
           style={{
             fontSize: "clamp(14px, 1.5vw, 17px)",
-            color: "#98afb2",
+            color: "var(--teal-deep)",
             letterSpacing: "0.03em",
           }}
         >
@@ -154,7 +150,7 @@ export default function BlogIndexPage() {
             className="font-serif"
             style={{
               fontSize: "clamp(26px, 5vw, 48px)",
-              color: "#98afb2",
+              color: "var(--teal-deep)",
               letterSpacing: "0.06em",
               lineHeight: 1.2,
               marginBottom: "20px",
@@ -182,11 +178,11 @@ export default function BlogIndexPage() {
           <div className="text-center" style={{ padding: "80px 0", color: "var(--muted)" }}>
             <p
               className="font-serif mb-4"
-              style={{ fontSize: "22px", color: "#98afb2" }}
+              style={{ fontSize: "22px", color: "var(--teal-deep)" }}
             >
               Coming Soon
             </p>
-            <p style={{ fontSize: "15px", lineHeight: 1.7 }}>
+            <p style={{ fontSize: "15px", lineHeight: 1.7, color: "var(--ink-soft)" }}>
               We are currently crafting expert articles for you. Check back soon.
             </p>
             <div className="mt-8">
@@ -212,7 +208,7 @@ export default function BlogIndexPage() {
       {/* ── Bottom CTA ──────────────────────────────── */}
       <section
         style={{
-          background: "linear-gradient(135deg, var(--teal) 0%, #7a9e9e 100%)",
+          background: "linear-gradient(135deg, var(--teal) 0%, #466b6b 100%)",
           padding: "64px 20px",
           textAlign: "center",
         }}
@@ -230,7 +226,7 @@ export default function BlogIndexPage() {
           </h2>
           <p
             style={{
-              color: "rgba(255,255,255,0.85)",
+              color: "#ffffff",
               fontSize: "15px",
               maxWidth: "480px",
               margin: "0 auto 28px",

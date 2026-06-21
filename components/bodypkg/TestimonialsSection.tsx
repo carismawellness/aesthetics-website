@@ -4,7 +4,9 @@ import { useState } from 'react';
 import type { CSSProperties } from 'react';
 import { type Testimonial } from '@/lib/bodypkg/testimonials';
 
-const GREEN = '#6391AB';
+// WCAG 2.2 AA-corrected (darkened within brand hues) — see BodyPackagePage palette notes
+const GREEN = '#365568';      // carousel arrow controls — 3:1+ UI contrast on white
+const QUOTE_TEXT = '#5e5349'; // quote / name / "Read more" — 4.5:1+ on gradient cards
 const BODY = 'Roboto, sans-serif';
 
 function TestimonialCard({ t }: { t: Testimonial }) {
@@ -16,16 +18,16 @@ function TestimonialCard({ t }: { t: Testimonial }) {
       <div style={{ background: 'linear-gradient(178deg, #f0f5f5 42%, #bdd1d1 100%)', borderRadius: 16, padding: '15px', paddingTop: 70, marginTop: -91 }}>
         <p
           style={{
-            color: '#9B8C81', fontFamily: BODY, fontSize: 14, lineHeight: 1.5, margin: '0 0 5px',
+            color: QUOTE_TEXT, fontFamily: BODY, fontSize: 14, lineHeight: 1.5, margin: '0 0 5px',
             ...(expanded ? {} : { display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }),
           }}
         >
           {t.quote}
         </p>
-        <button type="button" onClick={() => setExpanded((v) => !v)} style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', fontSize: 14, textDecoration: 'underline', color: '#9B8C81', fontFamily: BODY }}>
+        <button type="button" onClick={() => setExpanded((v) => !v)} style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', fontSize: 14, textDecoration: 'underline', color: QUOTE_TEXT, fontFamily: BODY }}>
           {expanded ? 'Read less' : 'Read more'}
         </button>
-        <h3 style={{ fontSize: 16, fontWeight: 500, color: '#9B8C81', margin: '24px 0 5px', fontFamily: BODY }}>{t.name}</h3>
+        <h3 style={{ fontSize: 16, fontWeight: 500, color: QUOTE_TEXT, margin: '24px 0 5px', fontFamily: BODY }}>{t.name}</h3>
       </div>
     </div>
   );

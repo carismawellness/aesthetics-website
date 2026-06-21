@@ -16,7 +16,7 @@ export default function AwardSection() {
           />
           <div className="text-center sm:text-left" style={{ maxWidth: "380px" }}>
             <h2
-              style={{ fontFamily: "'Roboto Local', sans-serif", fontSize: "19px", fontWeight: 700, color: "#96b2b2", letterSpacing: "0.01em", lineHeight: 1.35, textTransform: "none" }}
+              style={{ fontFamily: "'Roboto Local', sans-serif", fontSize: "19px", fontWeight: 700, color: "var(--teal-deep)", letterSpacing: "0.01em", lineHeight: 1.35, textTransform: "none" }}
             >
               #1 Voted Med-Aesthetics Clinic in Malta
             </h2>

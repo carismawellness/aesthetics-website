@@ -25,7 +25,9 @@ const FAQS: QA[] = [
 ];
 
 function ShareIcons() {
-  const ic = { color: "var(--label)", opacity: 0.65 } as const;
+  // opacity removed: 0.65 dropped the social-share icons to 2.70:1 (UI graphic fail).
+  // Full --label #756758 = 5.47:1, passes 1.4.11 (>=3:1).
+  const ic = { color: "var(--label)" } as const;
   return (
     <div className="flex items-center" style={{ gap: "20px", padding: "4px 4px 6px" }}>
       <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" style={ic} aria-hidden><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.91h2.54V9.85c0-2.51 1.49-3.9 3.78-3.9 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.88h2.78l-.44 2.91h-2.34V22c4.78-.79 8.43-4.94 8.43-9.94z" /></svg>
@@ -49,11 +51,11 @@ export default function Faq() {
           >
             <h2
               className="font-serif"
-              style={{ fontSize: "clamp(22px,3vw,30px)", color: "#98afb2", letterSpacing: "0.06em", fontWeight: 400, textTransform: "uppercase", margin: 0, lineHeight: 1.3 }}
+              style={{ fontSize: "clamp(22px,3vw,30px)", color: "#527979", letterSpacing: "0.06em", fontWeight: 400, textTransform: "uppercase", margin: 0, lineHeight: 1.3 }}
             >
               Frequently asked questions
             </h2>
-            <div style={{ position: "relative", width: "280px", maxWidth: "100%", borderBottom: "1px solid var(--line)" }}>
+            <div style={{ position: "relative", width: "280px", maxWidth: "100%", borderBottom: "1px solid var(--muted)" }}>
               <input
                 type="text"
                 placeholder="Looking for something?"

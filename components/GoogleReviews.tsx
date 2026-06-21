@@ -57,9 +57,9 @@ function GoogleG({ size = 18 }: { size?: number }) {
 
 function Stars({ rating = 5, size = 14 }: { rating?: number; size?: number }) {
   return (
-    <span className="inline-flex" style={{ color: "#f5b50a" }} aria-label={`${rating} out of 5 stars`}>
+    <span className="inline-flex" style={{ color: "#b8860b" }} aria-label={`${rating} out of 5 stars`}>
       {[0, 1, 2, 3, 4].map((i) => (
-        <svg key={i} width={size} height={size} viewBox="0 0 24 24" fill={i < Math.round(rating) ? "currentColor" : "#e2e2e2"}>
+        <svg key={i} width={size} height={size} viewBox="0 0 24 24" fill={i < Math.round(rating) ? "currentColor" : "#8a8a8a"}>
           <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
         </svg>
       ))}
@@ -67,7 +67,7 @@ function Stars({ rating = 5, size = 14 }: { rating?: number; size?: number }) {
   );
 }
 
-const AVATAR_COLORS = ["#7c9eb2", "#b29a7c", "#8fb29a", "#b27c93", "#9a8fb2", "#b2a07c"];
+const AVATAR_COLORS = ["#4f6f82", "#6f5b4f", "#5b6f4f", "#6f4f5b", "#5b4f6f", "#4f6f6f"];
 
 export default async function GoogleReviews() {
   const live = await fetchGoogleReviews();

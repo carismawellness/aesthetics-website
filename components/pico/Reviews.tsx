@@ -91,7 +91,7 @@ export default function Reviews() {
               <span
                 style={{
                   fontSize: "13px",
-                  color: "#8a847b",
+                  color: "var(--label)",
                   marginTop: "10px",
                   textDecoration: "underline",
                   textUnderlineOffset: "2px",

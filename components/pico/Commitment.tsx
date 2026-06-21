@@ -27,20 +27,20 @@ export default function Commitment() {
         <Serif>35+ years helping malta feel confident.</Serif>
         <div className="grid gap-12 lg:grid-cols-2 mx-auto" style={{ maxWidth: "1000px", marginTop: "40px" }}>
           <div>
-            <h3 className="font-display" style={{ fontSize: "14px", color: "var(--gold-deep)", letterSpacing: "0.08em", marginBottom: "18px" }}>OUR COMMITMENT</h3>
+            <h3 className="font-display" style={{ fontSize: "14px", color: "var(--gold)", letterSpacing: "0.08em", marginBottom: "18px" }}>OUR COMMITMENT</h3>
             <ul className="space-y-4">
               {COMMITMENT.map(([t, d]) => (
                 <li key={t} className="flex items-start gap-3">
                   <Dot />
                   <span style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.6 }}>
-                    <b style={{ color: "var(--gold-deep)", fontWeight: 600 }}>{t}</b> — {d}
+                    <b style={{ color: "var(--gold)", fontWeight: 600 }}>{t}</b> — {d}
                   </span>
                 </li>
               ))}
             </ul>
           </div>
           <div>
-            <h3 className="font-display" style={{ fontSize: "14px", color: "var(--gold-deep)", letterSpacing: "0.08em", marginBottom: "18px" }}>WHY MALTA TRUSTS OUR PICO LASER TREATMENT</h3>
+            <h3 className="font-display" style={{ fontSize: "14px", color: "var(--gold)", letterSpacing: "0.08em", marginBottom: "18px" }}>WHY MALTA TRUSTS OUR PICO LASER TREATMENT</h3>
             <ul className="space-y-4">
               {WHY_TRUST.map((w) => (
                 <li key={w} className="flex items-start gap-3">

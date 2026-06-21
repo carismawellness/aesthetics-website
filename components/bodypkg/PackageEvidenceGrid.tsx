@@ -3,10 +3,11 @@
 import { useState } from 'react';
 import { type EvidenceCard } from '@/lib/bodypkg/types';
 
-const GREEN = '#6391AB';
-const TAUPE = '#9B8D83';
-const TAUPE_DK = '#6391AB';
-const TAUPE_LT = '#AFA39D';
+// WCAG 2.2 AA-corrected (darkened within brand hues) — see BodyPackagePage palette notes
+const GREEN = '#365568';
+const TAUPE = '#5e5349';
+const TAUPE_DK = '#365568';
+const TAUPE_LT = '#5e5349';
 const WIDE = 'Novecento Wide Book, Novecento Wide, sans-serif';
 const BODY = 'Roboto, sans-serif';
 const SERIF = 'Trajan Pro, "Trajan Pro Regular", Georgia, serif';

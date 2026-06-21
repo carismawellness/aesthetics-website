@@ -4,6 +4,13 @@ import Reveal from "@/components/Reveal";
 export default function WhyUs() {
   return (
     <section style={{ backgroundColor: "var(--beige)", padding: "126px 0" }}>
+      {/* Card hover: deepen shadow + darken border (decorative, non-text cues) */}
+      <style>{`
+        .why-card:hover {
+          border-color: var(--gold-deep);
+          box-shadow: 0 2px 6px rgba(12,11,11,0.08), 0 16px 40px rgba(12,11,11,0.12);
+        }
+      `}</style>
       <div className="container">
         {/* Kicker — two lines, emphasis on "#1 Award Winning" and "30+ Years" */}
         <Reveal>
@@ -20,9 +27,20 @@ export default function WhyUs() {
         {/* Card with offset double-frame + bottom notch + faint wave */}
         <Reveal delay={120} className="relative mx-auto" style={{ maxWidth: "640px" }}>
           {/* offset frame peeking bottom-right */}
-          <span aria-hidden style={{ position: "absolute", inset: 0, transform: "translate(16px, 16px)", border: "1px solid var(--gold)", zIndex: 0 }} />
+          <span aria-hidden style={{ position: "absolute", inset: 0, transform: "translate(16px, 16px)", border: "1px solid var(--gold)", borderRadius: "var(--radius-card)", zIndex: 0 }} />
 
-          <div className="relative bg-white" style={{ border: "1px solid var(--gold)", padding: "clamp(36px,5vw,56px)", zIndex: 1, overflow: "hidden" }}>
+          <div
+            className="why-card relative bg-white"
+            style={{
+              border: "1px solid var(--gold)",
+              borderRadius: "var(--radius-card)",
+              padding: "clamp(36px,5vw,56px)",
+              zIndex: 1,
+              overflow: "hidden",
+              boxShadow: "0 1px 2px rgba(12,11,11,0.04), 0 6px 18px rgba(12,11,11,0.06)",
+              transition: "box-shadow 0.25s ease, border-color 0.25s ease",
+            }}
+          >
             {/* faint wave graphic at the bottom of the card */}
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/assets/wave-gold.png" alt="" aria-hidden style={{ position: "absolute", left: 0, bottom: "18px", width: "100%", height: "auto", opacity: 0.5, zIndex: 0, pointerEvents: "none" }} />

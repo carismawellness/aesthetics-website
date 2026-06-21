@@ -14,11 +14,13 @@ import type { FaceTreatment, InfoStat, Area, Step, BeforeAfter, Faq } from "@/li
 const BOOK = "/consultation";
 
 // ---------- primitives ----------
-export function Eyebrow({ children, tone = "gold", center }: { children: React.ReactNode; tone?: "gold" | "label"; center?: boolean }) {
+export function Eyebrow({ children, tone = "gold", center }: { children: React.ReactNode; tone?: "gold" | "label" | "onDark"; center?: boolean }) {
+  // onDark: light cream tint for use over the dark hero overlay (AA-safe vs the worst-case flattened overlay bg).
+  const color = tone === "gold" ? "var(--gold)" : tone === "onDark" ? "var(--teal-100)" : "var(--label)";
   return (
     <p
       className="font-display"
-      style={{ fontSize: "clamp(11px,1.1vw,12px)", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color: tone === "gold" ? "var(--gold)" : "var(--label)", textAlign: center ? "center" : "left", marginBottom: "12px" }}
+      style={{ fontSize: "clamp(11px,1.1vw,12px)", fontWeight: 600, letterSpacing: "0.18em", textTransform: "uppercase", color, textAlign: center ? "center" : "left", marginBottom: "12px" }}
     >
       {children}
     </p>
@@ -38,7 +40,7 @@ export function SectionHeading({ eyebrow, title, center = true, light = false, m
 
 export function TealButton({ href, children, small = false }: { href: string; children: React.ReactNode; small?: boolean }) {
   return (
-    <Link href={href} className="btn btn-teal font-display" style={{ borderRadius: "8px", padding: small ? "9px 20px" : "14px 30px", fontSize: small ? "11px" : "12px", letterSpacing: "0.14em", display: "inline-block" }}>
+    <Link href={href} className="btn btn-teal font-display" style={{ borderRadius: "var(--radius-pill)", padding: small ? "9px 20px" : "14px 30px", fontSize: small ? "11px" : "12px", letterSpacing: "0.14em", display: "inline-block" }}>
       {children}
     </Link>
   );
@@ -47,7 +49,7 @@ export function TealButton({ href, children, small = false }: { href: string; ch
 // ---------- cards ----------
 export function TreatmentCard({ t, variant = "card" }: { t: { slug: string; name: string; tagline?: string; cardImage: string }; variant?: "card" | "explore" }) {
   return (
-    <Link href={`/face-treatments/${t.slug}`} className="group block" style={{ borderRadius: "8px", overflow: "hidden", background: "var(--white)", border: "1px solid var(--line)", boxShadow: "0 2px 12px rgba(12,11,11,0.05)" }}>
+    <Link href={`/face-treatments/${t.slug}`} className="group block card" style={{ borderRadius: "var(--radius-card)", overflow: "hidden" }}>
       <div style={{ position: "relative", width: "100%", aspectRatio: "3 / 4", overflow: "hidden" }}>
         <Image src={t.cardImage} alt={t.name} fill sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw" style={{ objectFit: "cover" }} className="transition-transform duration-500 group-hover:scale-[1.05]" />
         {/* Subtle gradient overlay at bottom for text legibility */}
@@ -70,12 +72,13 @@ export function FaceHero({ t }: { t: FaceTreatment }) {
   return (
     <section style={{ position: "relative", minHeight: "min(78vh, 680px)", display: "flex", alignItems: "flex-end", overflow: "hidden" }}>
       <Image src={t.heroImage} alt={t.name} fill priority sizes="100vw" style={{ objectFit: "cover" }} />
-      <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(12,11,11,0.15) 0%, rgba(12,11,11,0.55) 100%)" }} />
+      {/* Overlay strengthened to 0.62 at the text band so white/cream copy stays AA even over a bright underlying image (worst case ~#686868). */}
+      <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, rgba(12,11,11,0.25) 0%, rgba(12,11,11,0.62) 100%)" }} />
       <div className="container" style={{ position: "relative", paddingTop: "120px", paddingBottom: "56px" }}>
         <div style={{ maxWidth: "640px" }}>
-          <Eyebrow tone="label">{t.eyebrow}</Eyebrow>
+          <Eyebrow tone="onDark">{t.eyebrow}</Eyebrow>
           <h1 className="font-display" style={{ fontSize: "clamp(30px,4.2vw,44px)", fontWeight: 600, letterSpacing: "0.10em", textTransform: "uppercase", lineHeight: 1.2, color: "#fff" }}>{t.name}</h1>
-          <p style={{ fontSize: "clamp(14px,1vw,16px)", color: "rgba(255,255,255,0.9)", lineHeight: 1.7, margin: "18px 0 26px", maxWidth: "560px" }}>{t.heroSubhead}</p>
+          <p style={{ fontSize: "clamp(14px,1vw,16px)", color: "#ffffff", lineHeight: 1.7, margin: "18px 0 26px", maxWidth: "560px" }}>{t.heroSubhead}</p>
           <TealButton href={BOOK}>Free Consultation</TealButton>
         </div>
       </div>
@@ -109,9 +112,9 @@ export function BeforeAfter({ name, pairs }: { name: string; pairs: BeforeAfter[
         <div className="grid grid-cols-2" style={{ gap: "20px" }}>
           {([["Before", p.before], ["After", p.after]] as const).map(([label, src]) => (
             <div key={label}>
-              <div style={{ position: "relative", width: "100%", aspectRatio: "4 / 5", borderRadius: "10px", overflow: "hidden", border: "1px solid var(--line)" }}>
+              <div style={{ position: "relative", width: "100%", aspectRatio: "4 / 5", borderRadius: "var(--radius-card)", overflow: "hidden", border: "1px solid var(--line)" }}>
                 <Image src={src} alt={`${name} ${label}`} fill sizes="(max-width:640px) 50vw, 360px" style={{ objectFit: "cover" }} />
-                <span className="font-display" style={{ position: "absolute", top: "12px", left: "12px", background: "rgba(255,255,255,0.92)", color: "var(--ink)", fontSize: "10px", letterSpacing: "0.12em", textTransform: "uppercase", padding: "5px 10px", borderRadius: "4px" }}>{label}</span>
+                <span className="font-display" style={{ position: "absolute", top: "12px", left: "12px", background: "rgba(255,255,255,0.92)", color: "var(--ink)", fontSize: "10px", letterSpacing: "0.12em", textTransform: "uppercase", padding: "5px 10px", borderRadius: "var(--radius-pill)" }}>{label}</span>
               </div>
             </div>
           ))}
@@ -127,8 +130,8 @@ export function AreaGrid({ areas }: { areas: Area[] }) {
       <SectionHeading eyebrow="Where it helps" title="Precision areas of refinement" />
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style={{ gap: "24px", marginTop: "44px" }}>
         {areas.map((a, i) => (
-          <Reveal key={a.label} delay={(i % 4) * 70} style={{ background: "var(--white)", border: "1px solid var(--line)", borderRadius: "10px", padding: "26px 22px" }}>
-            <span className="font-display" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: "40px", height: "40px", borderRadius: "50%", border: "1px solid var(--teal-200)", color: "var(--teal)", fontSize: "14px", marginBottom: "14px" }}>{String(i + 1).padStart(2, "0")}</span>
+          <Reveal key={a.label} delay={(i % 4) * 70} className="card" style={{ borderRadius: "var(--radius-card)", padding: "26px 22px" }}>
+            <span className="font-display" style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: "40px", height: "40px", borderRadius: "50%", border: "1px solid var(--teal)", color: "var(--teal)", fontSize: "14px", marginBottom: "14px" }}>{String(i + 1).padStart(2, "0")}</span>
             <h3 className="font-display" style={{ fontSize: "clamp(14px,1.4vw,16px)", fontWeight: 600, letterSpacing: "0.10em", textTransform: "uppercase", color: "var(--ink)", marginBottom: "8px" }}>{a.label}</h3>
             <p style={{ fontSize: "13.5px", color: "var(--muted)", lineHeight: 1.6 }}>{a.blurb}</p>
           </Reveal>
@@ -143,7 +146,7 @@ export function SuitabilityCompare({ ideal, notIdeal }: { ideal: string[]; notId
     <Section>
       <SectionHeading eyebrow="Honest guidance" title="Is this right for you?" />
       <div className="grid grid-cols-1 md:grid-cols-2" style={{ gap: "24px", marginTop: "44px", maxWidth: "960px", marginInline: "auto" }}>
-        <div style={{ background: "var(--teal-100)", border: "1px solid var(--teal-200)", borderRadius: "10px", padding: "30px 28px" }}>
+        <div style={{ background: "var(--teal-100)", border: "1px solid var(--teal)", borderRadius: "var(--radius-card)", padding: "30px 28px" }}>
           <h3 className="font-display" style={{ fontSize: "14px", fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--ink)", marginBottom: "18px" }}>Suitable for you if</h3>
           <ul style={{ display: "grid", gap: "12px" }}>
             {ideal.map((s) => (
@@ -154,12 +157,13 @@ export function SuitabilityCompare({ ideal, notIdeal }: { ideal: string[]; notId
             ))}
           </ul>
         </div>
-        <div style={{ background: "var(--white)", border: "1px solid var(--line)", borderRadius: "10px", padding: "30px 28px" }}>
+        <div style={{ background: "var(--white)", border: "1px solid var(--line)", borderRadius: "var(--radius-card)", padding: "30px 28px" }}>
           <h3 className="font-display" style={{ fontSize: "14px", fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--label)", marginBottom: "18px" }}>May not be ideal if</h3>
           <ul style={{ display: "grid", gap: "12px" }}>
             {notIdeal.map((s) => (
               <li key={s} className="flex items-start" style={{ gap: "12px" }}>
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#b3a98f" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: "2px" }}><path d="M6 6l12 12M18 6L6 18" /></svg>
+                {/* X icon (vs. the ✓ icon above) is the non-color cue distinguishing "not ideal"; stroke darkened to var(--label) for 3:1 UI contrast. */}
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--label)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0, marginTop: "2px" }}><path d="M6 6l12 12M18 6L6 18" /></svg>
                 <span style={{ fontSize: "14px", color: "var(--muted)", lineHeight: 1.55 }}>{s}</span>
               </li>
             ))}
@@ -176,7 +180,7 @@ export function ExperienceSteps({ steps }: { steps: Step[] }) {
       <SectionHeading eyebrow="What to expect" title="Your treatment experience" />
       <div style={{ marginTop: "44px", maxWidth: "860px", marginInline: "auto", display: "grid", gap: "20px" }}>
         {steps.map((s) => (
-          <Reveal key={s.n} className="flex items-start" style={{ gap: "22px", background: "var(--white)", border: "1px solid var(--line)", borderRadius: "10px", padding: "24px 26px" }}>
+          <Reveal key={s.n} className="flex items-start card" style={{ gap: "22px", borderRadius: "var(--radius-card)", padding: "24px 26px" }}>
             <span className="font-display" style={{ flexShrink: 0, fontSize: "22px", fontWeight: 600, color: "var(--teal)", lineHeight: 1 }}>{String(s.n).padStart(2, "0")}</span>
             <div>
               <h3 className="font-display" style={{ fontSize: "clamp(15px,1.6vw,18px)", fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--ink)", marginBottom: "8px" }}>{s.label}</h3>
@@ -196,8 +200,8 @@ export function PrepAftercare({ prep }: { prep: { before: string; during: string
       <SectionHeading eyebrow="Preparation & aftercare" title="Looking after your result" />
       <div className="grid grid-cols-1 md:grid-cols-3" style={{ gap: "24px", marginTop: "44px" }}>
         {cols.map(([label, text]) => (
-          <div key={label} style={{ background: "var(--cream)", borderRadius: "10px", padding: "28px 24px" }}>
-            <h3 className="font-display" style={{ fontSize: "13px", fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--teal)", marginBottom: "12px" }}>{label}</h3>
+          <div key={label} style={{ background: "var(--cream)", borderRadius: "var(--radius-card)", padding: "28px 24px" }}>
+            <h3 className="font-display" style={{ fontSize: "13px", fontWeight: 600, letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--teal-deep)", marginBottom: "12px" }}>{label}</h3>
             <p style={{ fontSize: "14px", color: "var(--ink-soft)", lineHeight: 1.7 }}>{text}</p>
           </div>
         ))}

@@ -113,9 +113,9 @@ export default function GiftsPage() {
           <div className="grid items-center gap-10 lg:grid-cols-2" style={{ paddingTop: "70px" }}>
             {/* left: white card with copy */}
             <Reveal>
-              <div style={{ background: "#fff", padding: "44px 40px 48px", boxShadow: "0 18px 44px rgba(0,0,0,0.07)" }}>
+              <div style={{ background: "#fff", padding: "44px 40px 48px", boxShadow: "0 18px 44px rgba(0,0,0,0.07)", borderRadius: "var(--radius-card)" }}>
                 <h1 className="font-display" style={{ fontSize: "clamp(26px,3.6vw,40px)", color: GOLD, letterSpacing: "0.08em", fontWeight: 400, lineHeight: 1.3, textTransform: "uppercase" }}>
-                  give the gift of<br />aesthetics
+                  give the gift of aesthetics
                 </h1>
                 <div style={{ height: "1px", background: GOLD, opacity: 0.5, margin: "20px 0 22px" }} />
                 <p style={{ fontSize: "14.5px", color: "var(--label)", lineHeight: 1.8 }}>
@@ -134,7 +134,7 @@ export default function GiftsPage() {
             </Reveal>
             {/* right: framed gift-card image */}
             <Reveal delay={120}>
-              <div style={{ background: "#f6efe6", padding: "10px", boxShadow: "0 22px 50px rgba(0,0,0,0.12)" }}>
+              <div style={{ background: "#f6efe6", padding: "10px", boxShadow: "0 22px 50px rgba(0,0,0,0.12)", borderRadius: "var(--radius-card)" }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={HERO_IMG} alt="Carisma Aesthetics gift card" className="w-full" style={{ display: "block", aspectRatio: "513 / 451", objectFit: "cover" }} />
               </div>
@@ -155,8 +155,8 @@ export default function GiftsPage() {
                   href={`${PRODUCT}/${o.slug}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block overflow-hidden group"
-                  style={{ background: "#fff", boxShadow: "0 12px 30px rgba(0,0,0,0.07)" }}
+                  className="block overflow-hidden group card review-card"
+                  style={{ borderRadius: "var(--radius-card)" }}
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img

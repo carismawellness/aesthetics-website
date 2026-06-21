@@ -151,7 +151,7 @@ export default function TermsConditions() {
         ))}
 
         {/* Divider between terms and GDPR compliance block (matches live) */}
-        <hr style={{ border: 0, borderTop: "1px solid var(--line)", margin: "40px 0 44px" }} />
+        <hr style={{ border: 0, borderTop: "1px solid var(--muted)", margin: "40px 0 44px" }} />
 
         <p style={bodyStyle}>
           At Carisma Aesthetic clinic in Malta, we are committed to protecting the privacy and security of our patients&apos; personal data. We comply with the General Data Protection Regulation (GDPR) and any applicable data protection laws.

@@ -11,7 +11,7 @@ export default function DoYouHave() {
           <div>
             <p
               className="font-serif"
-              style={{ fontSize: "clamp(20px,2.6vw,26px)", color: "#98afb2", letterSpacing: "0.06em", textTransform: "uppercase", fontWeight: 400, lineHeight: 1.25 }}
+              style={{ fontSize: "clamp(20px,2.6vw,26px)", color: "#527979", letterSpacing: "0.06em", textTransform: "uppercase", fontWeight: 400, lineHeight: 1.25 }}
             >
               so your skin feels like yours again- confidently.
             </p>
@@ -19,7 +19,7 @@ export default function DoYouHave() {
               className="font-serif"
               style={{
                 fontSize: "18px",
-                color: "#98afb2",
+                color: "#527979",
                 letterSpacing: "0.02em",
                 fontWeight: 400,
                 lineHeight: 1.3,

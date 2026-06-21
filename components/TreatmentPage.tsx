@@ -169,7 +169,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                 {t.hero.productTabs && t.hero.productTabs.length > 0 && (
                   <div className="flex gap-3" style={{ marginTop: "14px" }}>
                     {t.hero.productTabs.map((tab) => (
-                      <span key={tab} className="font-display inline-flex items-center justify-center" style={{ flex: 1, textAlign: "center", padding: "11px 14px", border: "1px solid var(--teal)", borderRadius: "6px", fontSize: "12px", letterSpacing: "0.1em", color: "var(--ink)", background: "var(--teal-100)" }}>
+                      <span key={tab} className="font-display inline-flex items-center justify-center" style={{ flex: 1, textAlign: "center", padding: "11px 14px", border: "1px solid var(--teal)", borderRadius: "var(--radius-card)", fontSize: "12px", letterSpacing: "0.1em", color: "var(--ink)", background: "var(--teal-100)" }}>
                         {tab.startsWith("/") ? (
                           // eslint-disable-next-line @next/next/no-img-element
                           <img src={tab} alt="" style={{ height: "30px", width: "auto", maxWidth: "100%", objectFit: "contain" }} />
@@ -181,7 +181,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                   </div>
                 )}
                 {t.hero.brandLogos && t.hero.brandLogos.length > 0 && (
-                  <div className="flex items-center justify-center" style={{ marginTop: "14px", gap: "26px", background: "var(--white)", border: "1px solid var(--line)", borderRadius: "10px", padding: "14px 18px" }}>
+                  <div className="flex items-center justify-center" style={{ marginTop: "14px", gap: "26px", background: "var(--white)", border: "1px solid var(--line)", borderRadius: "var(--radius-card)", padding: "14px 18px" }}>
                     {t.hero.brandLogos.map((logo) => (
                       // eslint-disable-next-line @next/next/no-img-element
                       <img key={logo} src={logo} alt="" style={{ height: "28px", width: "auto", objectFit: "contain" }} />
@@ -234,7 +234,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                 <InfoCard info={t.info} />
               </div>
             ) : (
-              <div className="rounded-lg bg-white mx-auto" style={{ border: "1px solid var(--line)", padding: "22px 20px", maxWidth: "900px", boxShadow: "0 14px 40px rgba(0,0,0,0.05)" }}>
+              <div className="card mx-auto" style={{ padding: "22px 20px", maxWidth: "900px" }}>
                 <div className="grid gap-6 text-center" style={{ gridTemplateColumns: `repeat(${Math.min(t.info.length, 5)}, minmax(0,1fr))` }}>
                   {t.info.map((it) => (
                     <div key={it.metric}>
@@ -318,7 +318,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
               {t.beforeAfterTitle && <h2 className="font-display" style={{ fontSize: "clamp(20px,3vw,30px)", color: "var(--label)", marginBottom: "36px" }}>{t.beforeAfterTitle}</h2>}
               <div className="grid gap-4 sm:grid-cols-3">
                 {[1, 2, 3].map((n) => (
-                  <div key={n} className="rounded-lg flex items-center justify-center" style={{ aspectRatio: "4/3", backgroundColor: "var(--white)", border: "1px solid var(--line)", color: "var(--muted)", fontSize: "13px" }}>Before / After {n}</div>
+                  <div key={n} className="flex items-center justify-center" style={{ aspectRatio: "4/3", backgroundColor: "var(--white)", border: "1px solid var(--line)", borderRadius: "var(--radius-card)", color: "var(--muted)", fontSize: "13px" }}>Before / After {n}</div>
                 ))}
               </div>
             </div>
@@ -744,7 +744,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                     <img src={it.image} alt={it.label} style={{ display: "block", width: "100%", aspectRatio: "3 / 2", objectFit: "cover" }} />
                   </div>
                   <h3 className="font-display" style={{ fontSize: "14px", color: "var(--label)", letterSpacing: "0.1em", textTransform: "uppercase", margin: "18px 4px 14px" }}>{it.label}</h3>
-                  <Link href={it.href} className="block text-center font-display" style={{ background: "linear-gradient(180deg,#4a7070 0%, #3f6363 100%)", color: "#fff", padding: "15px", fontSize: "13px", letterSpacing: "0.16em", textTransform: "uppercase", borderRadius: "8px" }}>Explore</Link>
+                  <Link href={it.href} className="block text-center font-display cta-glow-teal" style={{ color: "#fff", padding: "15px", fontSize: "13px", letterSpacing: "0.16em", textTransform: "uppercase", borderRadius: "var(--radius-pill)" }}>Explore</Link>
                 </Reveal>
               ))}
             </div>
@@ -762,7 +762,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
             <h2 className="font-serif text-center" style={{ fontSize: "clamp(24px,3.4vw,38px)", color: "var(--gold)", letterSpacing: "0.04em", marginBottom: "44px" }}>{t.faqTitle ?? "Frequently Asked Questions"}</h2>
             <div className="mx-auto" style={{ maxWidth: "820px" }}>
               {t.faq.map((f) => (
-                <details key={f.q} style={{ background: "#fff", border: "1px solid var(--line)", borderRadius: "12px", marginBottom: "12px", padding: "0 22px" }}>
+                <details key={f.q} style={{ background: "#fff", border: "1px solid var(--line)", borderRadius: "var(--radius-card)", marginBottom: "12px", padding: "0 22px" }}>
                   <summary className="flex items-center justify-between gap-4" style={{ cursor: "pointer", padding: "18px 0", fontSize: "15px", fontWeight: 500, color: "var(--gold)", letterSpacing: "0.01em" }}>
                     <span>{f.q}</span>
                     <span className="faq-plus shrink-0" style={{ color: "var(--teal-deep)", fontSize: "22px", lineHeight: 1 }}>+</span>

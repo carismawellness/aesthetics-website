@@ -6,9 +6,11 @@ import Link from "next/link";
 
 export const A = "/assets/treatments";
 
-// Live design tokens sampled from carismaaesthetics.com/pico-laser-tattoo-removal
-export const TEAL_HEAD = "#98afb2"; // muted grey-teal — all section headings & kickers
-export const SAGE = "#96b2b2";      // muted sage — all CTA buttons
+// WCAG AA corrected tokens (resolve to the global corrected palette).
+// Previous #98afb2 (2.31:1) and #96b2b2 (2.26:1) failed AA; both replaced with
+// the corrected sage-teal --teal #527979 (4.81:1 as text / white-on-teal button).
+export const TEAL_HEAD = "#527979"; // --teal — all section headings & kickers (was #98afb2)
+export const SAGE = "#527979";      // --teal — all CTA buttons, white text 4.81:1 (was #96b2b2)
 
 export function Kicker({ children }: { children: React.ReactNode }) {
   return <p className="font-display text-center" style={{ fontSize: "18px", color: TEAL_HEAD, letterSpacing: "0.02em" }}>{children}</p>;

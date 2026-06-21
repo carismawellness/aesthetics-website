@@ -104,7 +104,10 @@
   --gold-deep-rgb: 156, 131, 68;   /* --gold-deep #9c8344 */
 
   --maxw: 1200px;
-  --radius: 8px;
+  --radius: 14px;            /* generic rounded surfaces (rounded design language) */
+  --radius-pill: 999px;      /* buttons are pills */
+  --radius-field: 12px;      /* inputs / selects / textareas */
+  --radius-card: 16px;       /* cards / panels / tiles */
   --nav-clear: 104px;        /* fixed glass nav + announce strip allowance — heroes reserve this */
 }
 
@@ -170,6 +173,18 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.2;
 }
 
+/* ── No hanging lines (widows/orphans) ──
+   Balance headings & display/serif titles so a wrap never drops a single lone
+   word onto its own line; `pretty` keeps body copy from orphaning a last word.
+   Harmless on single-line elements (buttons, labels, nav). */
+h1, h2, h3, h4, h5, h6,
+.font-display, .font-serif {
+  text-wrap: balance;
+}
+p, li, figcaption, blockquote {
+  text-wrap: pretty;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -183,6 +198,37 @@ main li a:not(.btn):not(.no-underline),
   text-decoration: underline;
   text-underline-offset: 2px;
   text-decoration-thickness: 1px;
+}
+
+/* ── .link-underline ──
+   Animated underline-reveal for text/ghost links anywhere (nav, in-content,
+   footer). The underline grows from left on hover/focus; cursor is a pointer.
+   Pair with brand text colour via inline style/class — the underline inherits
+   currentColor so it stays the same AA-safe colour as the link text. */
+.link-underline {
+  position: relative;
+  cursor: pointer;
+  text-decoration: none;
+  padding-bottom: 1px;
+}
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.25s ease;
+}
+.link-underline:hover::after,
+.link-underline:focus-visible::after {
+  transform: scaleX(1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .link-underline::after { transition: none; }
 }
 
 /* 2.4.7 / 2.4.11 Focus visible: never remove the indicator. Visible ring >=3:1. */
@@ -208,9 +254,18 @@ main li a:not(.btn):not(.no-underline),
   font-size: 12px;
   font-weight: 600;
   padding: 14px 30px;
-  border-radius: 4px;
+  border-radius: var(--radius-pill); /* every button is a pill */
   transition: all 0.25s ease;
   cursor: pointer;
+}
+/* Universal hover lift: every button scales up smoothly. Solid CTAs layer their
+   own glow + translateY on top (see .btn-teal/.btn-gold:hover below). */
+.btn:hover {
+  transform: scale(1.04);
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn,
+  .btn:hover { transform: none; }
 }
 /* ── Brand CTA effect: soft brand-colour gradient + blurred glow halo
    (adapted from the LaserAway treatment, in Carisma colours).
@@ -241,7 +296,7 @@ main li a:not(.btn):not(.no-underline),
   box-shadow:
     0 0 30px rgba(var(--gold-rgb), 0.58),
     0 12px 30px rgba(var(--gold-deep-rgb), 0.6);
-  transform: translateY(-1px);
+  transform: translateY(-1px) scale(1.04); /* keep lift + glow, add universal scale */
 }
 
 /* Teal CTA: all gradient stops dark enough that WHITE text passes >=4.5 across
@@ -263,16 +318,42 @@ main li a:not(.btn):not(.no-underline),
   box-shadow:
     0 0 30px rgba(var(--teal-rgb), 0.62),
     0 12px 30px rgba(var(--teal-rgb), 0.68);
-  transform: translateY(-1px);
+  transform: translateY(-1px) scale(1.04); /* keep lift + glow, add universal scale */
 }
+/* ── Text / outline / ghost buttons: INVERT on hover (fill ink, light text)
+   + reveal an underline. White-on-ink = 19.66:1 (AAA). The scale comes from
+   the universal .btn:hover rule. ── */
 .btn-outline {
   border: 1px solid var(--ink);
   color: var(--ink);
   background: transparent;
+  text-decoration: none;
+  text-underline-offset: 3px;
 }
-.btn-outline:hover {
+.btn-outline:hover,
+.btn-outline:focus-visible {
   background: var(--ink);
   color: var(--white);
+  border-color: var(--ink);
+  text-decoration: underline;
+}
+/* .btn-ghost / .btn-text — borderless text buttons that share the invert+underline
+   reveal language. Use for tertiary actions ("Learn more", "Skip"). */
+.btn-ghost,
+.btn-text {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid transparent;
+  text-decoration: none;
+  text-underline-offset: 3px;
+}
+.btn-ghost:hover,
+.btn-ghost:focus-visible,
+.btn-text:hover,
+.btn-text:focus-visible {
+  background: var(--ink);
+  color: var(--white);
+  text-decoration: underline;
 }
 
 .container {
@@ -313,7 +394,7 @@ main li a:not(.btn):not(.no-underline),
   width: 100%;
   padding: 13px 16px;
   border: 1px solid var(--field-border); /* UI component >=3:1 vs white (3.45:1) */
-  border-radius: 4px;
+  border-radius: var(--radius-field); /* 12px rounded inputs */
   font-size: 14px;
   background: var(--white);
   color: var(--ink-soft);
@@ -323,11 +404,53 @@ main li a:not(.btn):not(.no-underline),
   color: var(--placeholder); /* >=4.5:1 vs white (4.88:1) */
   opacity: 1; /* Firefox lowers placeholder opacity by default — keep full */
 }
+/* Focus: ink border (1px, 19.66:1 vs white) carries the contrast cue + a soft
+   4px halo for affordance. outline:none is replaced by the box-shadow ring, so
+   the indicator is never bare-removed (2.4.7 / 2.4.11). */
 .form-field:focus,
 .form-field:focus-visible {
-  outline: 2px solid var(--focus-ring); /* visible focus ring >=3:1 */
-  outline-offset: 1px;
-  border-color: var(--focus-ring);      /* focus border also >=3:1 */
+  outline: none;
+  border: 1px solid var(--ink);
+  box-shadow: 0 0 0 4px rgba(12, 11, 11, 0.12);
+}
+
+/* ── Cards / panels / tiles ──
+   16px radius, soft resting shadow + hairline border. On hover the shadow
+   deepens and the border darkens (decorative cues; not contrast-bearing). */
+.card {
+  border-radius: var(--radius-card);
+  background: var(--white);
+  border: 1px solid var(--line);
+  box-shadow: 0 1px 2px rgba(12, 11, 11, 0.04),
+              0 6px 18px rgba(12, 11, 11, 0.06);
+  transition: box-shadow 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+.card:hover {
+  border-color: var(--label); /* darker hairline on hover */
+  box-shadow: 0 2px 6px rgba(12, 11, 11, 0.08),
+              0 16px 40px rgba(12, 11, 11, 0.12);
+}
+
+/* ── Review / testimonial cards (marquee effect) ──
+   The premium raise + zoom on hover: lifts and gently scales with a deeper
+   shadow. Inherits .card resting styles when combined, or stands alone. */
+.review-card {
+  border-radius: var(--radius-card);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s ease;
+}
+.review-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 4px 10px rgba(12, 11, 11, 0.10),
+              0 24px 56px rgba(12, 11, 11, 0.16);
+  border-color: var(--label);
+}
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .card:hover,
+  .review-card,
+  .review-card:hover { transform: none; }
 }
 
 /* Marquee / announcement bar */

@@ -73,7 +73,7 @@ export default function BeforeAfterCarousel({ pairs, title }: { pairs: Pair[]; t
                     quality={80}
                   />
                 ) : (
-                  <div className="flex items-center justify-center text-center" style={{ aspectRatio: "4 / 5", background: "var(--cream)", color: "var(--muted)", fontSize: "12px", padding: "16px" }}>
+                  <div className="flex items-center justify-center text-center" style={{ aspectRatio: "4 / 5", background: "var(--cream)", color: "#5f5f5f", fontSize: "12px", padding: "16px" }}>
                     {`${ba.label ?? ""} ${lbl}`.trim()} photo — drop file in
                   </div>
                 )}
