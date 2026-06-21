@@ -105,6 +105,7 @@
 
   --maxw: 1200px;
   --radius: 8px;
+  --nav-clear: 104px;        /* fixed glass nav + announce strip allowance — heroes reserve this */
 }
 
 @theme inline {
@@ -278,6 +279,33 @@ main li a:not(.btn):not(.no-underline),
   max-width: var(--maxw);
   margin-inline: auto;
   padding-inline: 20px;
+}
+
+/* ── One-viewport above-the-fold ──
+   Every page hero uses .hero-fit so it fills (and fits within) the viewport at
+   the 1440x900 baseline (~780px usable). The fixed glass nav overlays the top,
+   so we reserve --nav-clear and vertically centre the content. svh keeps it
+   honest on mobile browser chrome. */
+.hero-fit {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  padding-top: var(--nav-clear);
+  padding-bottom: clamp(16px, 3vh, 40px);
+  box-sizing: border-box;
+}
+/* On short laptops, let the hero shrink to content rather than force-stretch. */
+@media (max-height: 760px) {
+  .hero-fit { min-height: auto; }
+}
+
+/* Gentle bob for floating social-proof cards (independent phases). */
+@keyframes floatA { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+@keyframes floatB { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
+.float-a { animation: floatA 5.5s ease-in-out infinite; }
+.float-b { animation: floatB 6.5s ease-in-out infinite 0.6s; }
+@media (prefers-reduced-motion: reduce) {
+  .float-a, .float-b { animation: none; }
 }
 
 /* Form fields */
