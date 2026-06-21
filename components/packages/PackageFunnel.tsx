@@ -243,58 +243,49 @@ export default function PackageFunnel({ data }: { data: PackageData }) {
   return (
     <>
       {/* ===== HERO ===== */}
-      <section style={{ background: "linear-gradient(180deg,#eef3f3 0%, #ffffff 100%)", padding: "34px 0 56px" }}>
+      <section style={{ background: "linear-gradient(180deg,#eef3f3 0%, #ffffff 100%)", minHeight: "100svh", display: "flex", flexDirection: "column", justifyContent: "center", padding: "var(--nav-clear) 0 clamp(20px,3vh,40px)" }}>
         <div className="container">
-          <div style={{ borderRadius: "26px", background: "linear-gradient(160deg,#e8f0f0 0%, #f6fafa 45%, #eef4f4 100%)", border: "1px solid var(--line)", padding: "clamp(26px,3.5vw,48px)", boxShadow: "0 20px 60px rgba(0,0,0,0.05)" }}>
+          <div style={{ borderRadius: "26px", background: "linear-gradient(160deg,#e8f0f0 0%, #f6fafa 45%, #eef4f4 100%)", border: "1px solid var(--line)", padding: "clamp(24px,3vw,40px)", boxShadow: "0 20px 60px rgba(0,0,0,0.05)" }}>
             <div className="grid gap-10 lg:grid-cols-2 items-center">
               <Reveal>
-                <h1 className="font-serif" style={{ fontSize: "clamp(28px,3.4vw,34px)", color: "var(--teal)", letterSpacing: "normal", textTransform: "uppercase", lineHeight: 1.4 }}>
+                <h1 className="font-serif" style={{ fontSize: "clamp(26px,3vw,34px)", color: "var(--teal)", letterSpacing: "normal", textTransform: "uppercase", lineHeight: 1.2 }}>
                   {h.title}
                 </h1>
-                {h.lead && <p style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.4, marginTop: "16px", fontWeight: 700, textAlign: "justify" }}>{h.lead}</p>}
-                <p style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.4, marginTop: h.lead ? "12px" : "18px", textAlign: "justify" }}>
+                {h.lead && <p style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.4, marginTop: "12px", fontWeight: 700, textAlign: "justify" }}>{h.lead}</p>}
+                <p style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.4, marginTop: h.lead ? "10px" : "12px", textAlign: "justify" }}>
                   {withBold(h.subtitle, h.subtitleBold)}
                 </p>
                 {h.bodyParas?.map((p, i) => (
-                  <p key={i} style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.4, marginTop: "12px", textAlign: "justify" }}>{p}</p>
+                  <p key={i} style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.4, marginTop: "10px", textAlign: "justify" }}>{p}</p>
                 ))}
 
-                <p style={{ fontSize: "14px", color: "var(--label)", fontWeight: 700, marginTop: "24px", marginBottom: "10px" }}>{h.includedTitle}</p>
+                <p style={{ fontSize: "14px", color: "var(--label)", fontWeight: 700, marginTop: "14px", marginBottom: "6px" }}>{h.includedTitle}</p>
                 <ul>
                   {h.included.map((it) => <Bullet key={it}>{it}</Bullet>)}
                 </ul>
-                <p style={{ fontSize: "14px", color: "var(--label)", fontWeight: 700, marginTop: "16px" }}>{h.total}</p>
-                {h.note && <p style={{ fontSize: "14px", color: "var(--label)", marginTop: "8px", fontWeight: 700 }}>{h.note}</p>}
+                <p style={{ fontSize: "14px", color: "var(--label)", fontWeight: 700, marginTop: "12px" }}>{h.total}</p>
+                {h.note && <p style={{ fontSize: "14px", color: "var(--label)", marginTop: "6px", fontWeight: 700 }}>{h.note}</p>}
                 {h.footnotes?.map((f) => (
-                  <p key={f} style={{ fontSize: "12px", color: "var(--label)", lineHeight: 1.5, marginTop: "6px" }}>{f}</p>
+                  <p key={f} style={{ fontSize: "12px", color: "var(--label)", lineHeight: 1.45, marginTop: "5px" }}>{f}</p>
                 ))}
-                {h.disclaimer && <p style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.4, marginTop: "16px" }}>{h.disclaimer}</p>}
+                {h.disclaimer && <p style={{ fontSize: "13px", color: "var(--label)", lineHeight: 1.4, marginTop: "12px" }}>{h.disclaimer}</p>}
 
-                <div style={{ marginTop: "26px" }}><CtaButton href={data.bookHref}>{h.cta}</CtaButton></div>
+                <div style={{ marginTop: "16px" }}><CtaButton href={data.bookHref}>{h.cta}</CtaButton></div>
 
-                <div className="flex items-center flex-wrap gap-x-2 gap-y-1" style={{ marginTop: "24px", fontSize: "13px", color: "var(--label)" }}>
+                <div className="flex items-center flex-wrap gap-x-2 gap-y-1" style={{ marginTop: "14px", fontSize: "13px", color: "var(--label)" }}>
                   <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.27-4.74 3.27-8.1z" /><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.26 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84A11 11 0 0 0 12 23z" /><path fill="#FBBC05" d="M5.84 14.1a6.6 6.6 0 0 1 0-4.2V7.06H2.18a11 11 0 0 0 0 9.88l3.66-2.84z" /><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84C6.71 7.3 9.14 5.38 12 5.38z" /></svg>
                   <span style={{ fontWeight: 600 }}>4.9</span>
-                  <span className="flex" style={{ color: "var(--teal)" }}>
+                  <span className="flex" style={{ color: "var(--teal-deep)" }} aria-hidden>
                     {[0, 1, 2, 3, 4].map((i) => (<svg key={i} width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>))}
                   </span>
-                  <span className="font-display" style={{ color: "var(--teal)", fontSize: "11px", letterSpacing: "0.1em" }}>TOP-RATED CLINIC IN MALTA</span>
+                  <span className="font-display" style={{ color: "var(--teal-deep)", fontSize: "11px", letterSpacing: "0.1em" }}>TOP-RATED CLINIC IN MALTA</span>
                 </div>
-
-                <ul className="flex flex-wrap gap-x-7 gap-y-3" style={{ marginTop: "20px" }}>
-                  {["Malta's leading wellness chain", "30+ years of expertise", "Medically qualified"].map((label) => (
-                    <li key={label} className="flex items-center gap-2">
-                      <span className="shrink-0 inline-flex items-center justify-center" style={{ width: "22px", height: "22px", border: "1.5px solid var(--teal)", borderRadius: "5px", color: "var(--teal)" }}>
-                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"><path d="M5 12l5 5L20 6" /></svg>
-                      </span>
-                      <span className="font-display" style={{ fontSize: "11px", color: "var(--label)", letterSpacing: "0.06em" }}>{label}</span>
-                    </li>
-                  ))}
-                </ul>
               </Reveal>
 
-              <Reveal delay={120}>
-                <HeroVideo poster={h.poster} src={h.video} ratio={h.posterRatio ?? "317 / 394"} />
+              <Reveal delay={120} className="mx-auto" style={{ width: "100%", maxWidth: "320px" }}>
+                <div style={{ maxHeight: "clamp(320px,48vh,470px)", overflow: "hidden", borderRadius: "18px" }}>
+                  <HeroVideo poster={h.poster} src={h.video} ratio={h.posterRatio ?? "317 / 394"} />
+                </div>
               </Reveal>
             </div>
           </div>
@@ -526,7 +517,13 @@ export default function PackageFunnel({ data }: { data: PackageData }) {
             <div className="flex flex-wrap items-center justify-between gap-4" style={{ marginBottom: "30px" }}>
               <h2 className="font-display" style={{ fontSize: "clamp(17px,2.2vw,22px)", color: "var(--gold)", letterSpacing: "0.12em" }}>FREQUENTLY ASKED QUESTIONS</h2>
               <div className="flex items-center gap-2" style={{ borderBottom: "1px solid var(--line)", paddingBottom: "6px", minWidth: "220px" }}>
-                <input placeholder="Looking for something?" style={{ flex: 1, border: "none", outline: "none", background: "transparent", fontSize: "14px", color: "var(--muted)" }} />
+                <input
+                  placeholder="Looking for something?"
+                  aria-label="Search frequently asked questions"
+                  onFocus={(e) => { e.currentTarget.style.outline = "2px solid var(--teal-deep)"; e.currentTarget.style.outlineOffset = "2px"; }}
+                  onBlur={(e) => { e.currentTarget.style.outline = "none"; }}
+                  style={{ flex: 1, border: "none", outline: "none", background: "transparent", fontSize: "14px", color: "var(--ink-soft)" }}
+                />
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" strokeWidth="1.6"><circle cx="11" cy="11" r="7" /><path d="M21 21l-4-4" /></svg>
               </div>
             </div>

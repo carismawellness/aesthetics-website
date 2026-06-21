@@ -6,10 +6,17 @@ import ConsultationForm from "@/components/ConsultationForm";
 
 const IMG = "/assets/treatments";
 
+/* Accessible deep-gold for NORMAL-size text (<24px, or <18.66px bold).
+   var(--gold-deep) #9c8344 only reaches 3.66:1 on white / 3.26:1 on cream — it
+   passes AA for large text but FAILS AA (4.5:1) for normal text. This darker
+   same-hue gold reaches 5.65:1 on white and 5.04:1 on cream (AA). Large
+   headings keep var(--gold-deep) to preserve visual hierarchy. */
+const GOLD_TXT = "#7a6526";
+
 /* ---------- shared atoms ---------- */
 function Kicker({ children }: { children: React.ReactNode }) {
   return (
-    <p className="font-display text-center" style={{ fontSize: "18px", color: "var(--gold-deep)", letterSpacing: "0.02em" }}>{children}</p>
+    <p className="font-display text-center" style={{ fontSize: "18px", color: GOLD_TXT, letterSpacing: "0.02em" }}>{children}</p>
   );
 }
 function SerifHeading({ children, style }: { children: React.ReactNode; style?: React.CSSProperties }) {
@@ -29,7 +36,7 @@ function Check({ size = 26 }: { size?: number }) {
 }
 function Cross({ size = 26 }: { size?: number }) {
   return (
-    <span className="shrink-0 inline-flex items-center justify-center" style={{ width: size, height: size, borderRadius: "50%", border: "1.5px solid #c9bfa6", color: "#b3a98f" }}>
+    <span role="img" aria-label="Not suitable" className="shrink-0 inline-flex items-center justify-center" style={{ width: size, height: size, borderRadius: "50%", border: "1.5px solid var(--label)", color: "var(--label)" }}>
       <svg width={size * 0.5} height={size * 0.5} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><path d="M6 6l12 12M18 6L6 18" /></svg>
     </span>
   );
@@ -37,8 +44,8 @@ function Cross({ size = 26 }: { size?: number }) {
 
 /* ---------- data ---------- */
 const BENEFITS: { text: React.ReactNode }[] = [
-  { text: <>Painless sessions with patented <b style={{ color: "var(--gold-deep)", fontWeight: 600 }}>ICE Plus™ Cooling</b></> },
-  { text: <>Permanently reduce <b style={{ color: "var(--gold-deep)", fontWeight: 600 }}>10-15%</b> of hair per treatment</> },
+  { text: <>Painless sessions with patented <b style={{ color: GOLD_TXT, fontWeight: 600 }}>ICE Plus™ Cooling</b></> },
+  { text: <>Permanently reduce <b style={{ color: GOLD_TXT, fontWeight: 600 }}>10-15%</b> of hair per treatment</> },
   { text: <>No more waxing, shaving, or ingrowns</> },
   { text: <>Safe for all skin types - even tanned</> },
 ];
@@ -104,10 +111,10 @@ const CELEBS = [
 ];
 
 const SUMMARY = [
-  { icon: "laser-sum1.png", text: <><b style={{ color: "var(--gold-deep)", fontWeight: 600 }}>the most advanced</b> laser hair removal technology in malta</> },
-  { icon: "laser-sum2.png", text: <><b style={{ color: "var(--gold-deep)", fontWeight: 600 }}>100% pain-free</b>, clinically proven & effective for all skin tones & hair types</> },
-  { icon: "laser-sum3.png", text: <><b style={{ color: "var(--gold-deep)", fontWeight: 600 }}>Faster</b>, more effective results—permanent hair reduction in fewer sessions</> },
-  { icon: "laser-sum4.png", text: <><b style={{ color: "var(--gold-deep)", fontWeight: 600 }}>No downtime</b>, no redness, no hassle—just smooth, touchable skin</> },
+  { icon: "laser-sum1.png", text: <><b style={{ color: GOLD_TXT, fontWeight: 600 }}>the most advanced</b> laser hair removal technology in malta</> },
+  { icon: "laser-sum2.png", text: <><b style={{ color: GOLD_TXT, fontWeight: 600 }}>100% pain-free</b>, clinically proven & effective for all skin tones & hair types</> },
+  { icon: "laser-sum3.png", text: <><b style={{ color: GOLD_TXT, fontWeight: 600 }}>Faster</b>, more effective results—permanent hair reduction in fewer sessions</> },
+  { icon: "laser-sum4.png", text: <><b style={{ color: GOLD_TXT, fontWeight: 600 }}>No downtime</b>, no redness, no hassle—just smooth, touchable skin</> },
 ];
 
 const FAQS: Faq[] = [
@@ -129,69 +136,60 @@ export default function LaserHairRemovalPage() {
   return (
     <div style={{ backgroundImage: `url('${IMG}/laser-marble-white.png')`, backgroundSize: "cover", backgroundAttachment: "fixed", backgroundPosition: "top center" }}>
       {/* ============ HERO ============ */}
-      <section style={{ backgroundImage: "url('/assets/hero-bg.png')", backgroundSize: "cover", backgroundPosition: "bottom center", padding: "44px 0 64px", borderRadius: "26px", overflow: "hidden", margin: "0 16px" }}>
+      <section style={{ backgroundImage: "url('/assets/hero-bg.png')", backgroundSize: "cover", backgroundPosition: "bottom center", minHeight: "100svh", display: "flex", flexDirection: "column", justifyContent: "center", padding: "var(--nav-clear) 0 clamp(20px,3vh,40px)", borderRadius: "26px", overflow: "hidden", margin: "0 16px" }}>
         <div className="container">
-          <div className="grid gap-12 lg:grid-cols-2 items-start">
+          <div className="grid gap-12 lg:grid-cols-2 items-center">
             {/* LEFT */}
             <Reveal>
-              <p className="font-display" style={{ fontSize: "12px", color: "var(--gold-deep)", letterSpacing: "0.12em" }}>World-renowned Alma Soprano for the first time in Malta</p>
-              <h1 className="font-serif" style={{ fontSize: "clamp(32px,4.6vw,50px)", color: "var(--gold-deep)", letterSpacing: "0.04em", marginTop: "10px", textTransform: "uppercase" }}>Laser Hair Removal</h1>
-              <p className="font-display" style={{ fontSize: "13px", lineHeight: 1.6, marginTop: "16px", color: "var(--label)", letterSpacing: "0.06em" }}>
-                Permanently Smooth, Hair-Free Skin with our Virtually <span style={{ color: "var(--gold-deep)" }}>Painfree SHR® guarantee</span>:
+              <p className="font-display" style={{ fontSize: "12px", color: GOLD_TXT, letterSpacing: "0.12em" }}>World-renowned Alma Soprano for the first time in Malta</p>
+              <h1 className="font-serif" style={{ fontSize: "clamp(28px,3.6vw,42px)", color: "var(--gold-deep)", letterSpacing: "0.04em", marginTop: "10px", textTransform: "uppercase" }}>Laser Hair Removal</h1>
+              <p className="font-display" style={{ fontSize: "13px", lineHeight: 1.5, marginTop: "12px", color: "var(--label)", letterSpacing: "0.06em" }}>
+                Permanently Smooth, Hair-Free Skin with our Virtually <span style={{ color: GOLD_TXT }}>Painfree SHR® guarantee</span>:
               </p>
-              <ul className="space-y-3" style={{ marginTop: "22px" }}>
+              <ul className="space-y-2" style={{ marginTop: "14px" }}>
                 {BENEFITS.map((b, i) => (
                   <li key={i} className="flex items-start gap-3">
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src={`${IMG}/laser-ic-check.png`} alt="" style={{ width: "20px", height: "20px", marginTop: "2px", flexShrink: 0 }} />
-                    <span style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.5 }}>{b.text}</span>
+                    <span style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.45 }}>{b.text}</span>
                   </li>
                 ))}
               </ul>
 
-              {/* GHL consultation form — embedded in the hero, under the heading & benefits */}
-              <div style={{ marginTop: "30px" }}>
-                <p className="font-display" style={{ fontSize: "16px", color: "var(--gold-deep)", letterSpacing: "0.08em", textTransform: "uppercase", textAlign: "center", marginBottom: "6px" }}>book your free consultation</p>
-                <ConsultationForm />
+              <div style={{ marginTop: "20px" }}>
+                <a href="#book" className="btn btn-gold" style={{ borderRadius: "999px" }}>book your free consultation</a>
+              </div>
+              <div className="flex items-center gap-2" style={{ marginTop: "14px" }}>
+                <span className="flex" style={{ color: "var(--gold-deep)" }}>
+                  {[0, 1, 2, 3, 4].map((i) => (
+                    <svg key={i} width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>
+                  ))}
+                </span>
+                <span className="font-display" style={{ fontSize: "12px", color: GOLD_TXT, letterSpacing: "0.08em" }}>3,000+ 5 star reviews</span>
               </div>
             </Reveal>
 
-            {/* RIGHT — framed video + image collage + captions */}
+            {/* RIGHT — framed video + image collage */}
             <Reveal delay={120}>
-              {/* Dark decorative frame wrapping the hero video */}
-              <div className="relative" style={{ boxShadow: "0 20px 50px rgba(0,0,0,0.14)" }}>
+              <div className="relative mx-auto" style={{ maxWidth: "440px", maxHeight: "clamp(360px,56vh,520px)", overflow: "hidden", boxShadow: "0 20px 50px rgba(0,0,0,0.14)" }}>
                 {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
                 <video src={`${IMG}/laser-hero-video.mp4`} autoPlay muted loop playsInline style={{ display: "block", position: "absolute", top: "10%", left: "6%", width: "88%", height: "68%", objectFit: "cover", zIndex: 1 }} />
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={`${IMG}/laser-hero-photo1.png`} alt="" aria-hidden style={{ display: "block", width: "100%", height: "auto", position: "relative", zIndex: 2, pointerEvents: "none" }} />
               </div>
-              <div className="grid grid-cols-2 gap-4" style={{ marginTop: "16px" }}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={`${IMG}/laser-hero.png`} alt="Alma Soprano Platinum laser hair removal machine" className="w-full rounded-xl" style={{ display: "block", objectFit: "cover", aspectRatio: "1 / 1", boxShadow: "0 14px 34px rgba(0,0,0,0.12)" }} />
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={`${IMG}/laser-hero-photo2.png`} alt="Laser hair removal results" className="w-full rounded-xl" style={{ display: "block", objectFit: "cover", aspectRatio: "1 / 1", boxShadow: "0 14px 34px rgba(0,0,0,0.12)" }} />
-              </div>
-              <p className="font-display text-center" style={{ fontSize: "12px", color: "var(--gold-deep)", letterSpacing: "0.1em", marginTop: "18px", lineHeight: 1.5 }}>Experience the triple wavelength laser hair removal difference</p>
-              <div className="text-center" style={{ marginTop: "20px" }}>
-                <p className="font-display" style={{ fontSize: "12px", color: "var(--gold-deep)", letterSpacing: "0.1em" }}>intercontinental hotel &nbsp;|&nbsp; st. julian's</p>
-                <p style={{ fontFamily: "var(--font-display)", fontSize: "11px", color: "var(--gold-deep)", lineHeight: 1.6, marginTop: "12px", maxWidth: "420px", marginInline: "auto" }}>Minors may undergo this procedure only with the presence of a parent or legal guardian during the session.</p>
-                <div className="flex items-center justify-center gap-2" style={{ marginTop: "16px" }}>
-                  <span className="flex" style={{ color: "var(--gold-deep)" }}>
-                    {[0, 1, 2, 3, 4].map((i) => (
-                      <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>
-                    ))}
-                  </span>
-                  <span className="font-display" style={{ fontSize: "12px", color: "var(--gold-deep)", letterSpacing: "0.08em" }}>3,000+ 5 star reviews</span>
-                </div>
-                {/* scroll down cue */}
-                <div className="flex flex-col items-center" style={{ marginTop: "28px" }}>
-                  <span className="font-display" style={{ fontSize: "11px", color: "var(--gold-deep)", letterSpacing: "0.14em" }}>scroll down</span>
-                  <span className="flex items-start justify-center" style={{ width: "26px", height: "42px", border: "1.5px solid var(--gold-deep)", borderRadius: "14px", marginTop: "10px", paddingTop: "7px" }}>
-                    <svg className="animate-bounce" width="11" height="13" viewBox="0 0 24 24" fill="none" stroke="var(--gold-deep)" strokeWidth="2"><path d="M12 4v12M6 12l6 6 6-6" /></svg>
-                  </span>
-                </div>
-              </div>
+              <p className="font-display text-center" style={{ fontSize: "12px", color: GOLD_TXT, letterSpacing: "0.1em", marginTop: "14px", lineHeight: 1.5 }}>Triple-wavelength laser &nbsp;|&nbsp; Intercontinental Hotel, St. Julian&rsquo;s</p>
             </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* Lead form — moved out of the hero (the embedded form is taller than a
+          single viewport) into its own section anchored from the hero CTA. */}
+      <section id="book" style={{ padding: "clamp(36px,5vh,64px) 0", backgroundColor: "rgba(255,255,255,0.7)", scrollMarginTop: "var(--nav-clear)" }}>
+        <div className="container">
+          <p className="font-display text-center" style={{ fontSize: "18px", color: GOLD_TXT, letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: "16px" }}>book your free consultation</p>
+          <div className="mx-auto" style={{ maxWidth: "560px" }}>
+            <ConsultationForm />
           </div>
         </div>
       </section>
@@ -204,7 +202,7 @@ export default function LaserHairRemovalPage() {
               <span key={t} className="flex items-center gap-2.5">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={`${IMG}/laser-ic-check.png`} alt="" style={{ width: "22px", height: "22px" }} />
-                <span className="font-display" style={{ fontSize: "12px", color: "var(--gold-deep)", letterSpacing: "0.1em" }}>{t}</span>
+                <span className="font-display" style={{ fontSize: "12px", color: GOLD_TXT, letterSpacing: "0.1em" }}>{t}</span>
               </span>
             ))}
           </div>
@@ -256,8 +254,8 @@ export default function LaserHairRemovalPage() {
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src={`${IMG}/${s.icon}`} alt={s.title} style={{ maxHeight: "80px", width: "auto" }} />
                   </div>
-                  <div className="font-serif" style={{ fontSize: "20px", color: "var(--gold-deep)", letterSpacing: "0.1em", margin: "14px 0 6px", textTransform: "uppercase" }}>step {s.n}</div>
-                  <h3 className="font-display" style={{ fontSize: "13px", color: "var(--gold-deep)", letterSpacing: "0.06em", marginBottom: "12px" }}>{s.title}</h3>
+                  <div className="font-serif" style={{ fontSize: "20px", color: GOLD_TXT, letterSpacing: "0.1em", margin: "14px 0 6px", textTransform: "uppercase" }}>step {s.n}</div>
+                  <h3 className="font-display" style={{ fontSize: "13px", color: GOLD_TXT, letterSpacing: "0.06em", marginBottom: "12px" }}>{s.title}</h3>
                   <p style={{ fontSize: "13.5px", color: "var(--label)", lineHeight: 1.7 }}>{s.desc}</p>
                 </Reveal>
               ))}
@@ -276,13 +274,13 @@ export default function LaserHairRemovalPage() {
                   <img src={`${IMG}/${p.icon}`} alt={p.name} style={{ width: "82px", height: "auto", flexShrink: 0 }} />
                   <div>
                     <div className="flex items-baseline gap-2 flex-wrap">
-                      <span className="font-serif" style={{ fontSize: "18px", color: "var(--gold-deep)", letterSpacing: "0.04em", textTransform: "uppercase" }}>{p.name}</span>
+                      <span className="font-serif" style={{ fontSize: "18px", color: GOLD_TXT, letterSpacing: "0.04em", textTransform: "uppercase" }}>{p.name}</span>
                       {(() => {
                         const m = p.price.match(/^(from|FROM)\s+(.*)$/);
                         const qual = m ? m[1] : "";
                         const amount = m ? m[2] : p.price;
                         return (
-                          <span className="font-display" style={{ color: "var(--gold-deep)", letterSpacing: "0.04em" }}>
+                          <span className="font-display" style={{ color: GOLD_TXT, letterSpacing: "0.04em" }}>
                             <span style={{ fontSize: "13px" }}>| {qual} </span>
                             <span style={{ fontSize: "18px" }}>{amount}</span>
                           </span>
@@ -312,7 +310,7 @@ export default function LaserHairRemovalPage() {
                 <Reveal key={t.name} delay={(i % 3) * 90} className="text-center" style={{ background: "rgba(255,255,255,0.65)", border: "1px solid var(--line)", borderRadius: "16px", padding: "26px 24px 30px", boxShadow: "0 12px 30px rgba(0,0,0,0.06)" }}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={`${IMG}/${t.image}`} alt={t.name} className="mx-auto" style={{ display: "block", width: "100%", maxWidth: "260px", borderRadius: "10px", boxShadow: "0 8px 22px rgba(0,0,0,0.12)" }} />
-                  <h3 className="font-serif" style={{ fontSize: "20px", color: "var(--gold-deep)", letterSpacing: "0.08em", textTransform: "uppercase", marginTop: "22px" }}>{t.name}</h3>
+                  <h3 className="font-serif" style={{ fontSize: "20px", color: GOLD_TXT, letterSpacing: "0.08em", textTransform: "uppercase", marginTop: "22px" }}>{t.name}</h3>
                   <div className="flex items-center justify-center gap-2" style={{ marginTop: "14px" }}>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src={`${IMG}/laser-ic-check.png`} alt="" style={{ width: "20px", height: "20px" }} />
@@ -321,7 +319,7 @@ export default function LaserHairRemovalPage() {
                   <div className="flex items-center justify-center gap-2" style={{ marginTop: "12px" }}>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src={`${IMG}/laser-ic-euro.png`} alt="" style={{ width: "20px", height: "20px" }} />
-                    <span className="font-serif" style={{ fontSize: "20px", color: "var(--gold-deep)" }}>{t.price}</span>
+                    <span className="font-serif" style={{ fontSize: "20px", color: GOLD_TXT }}>{t.price}</span>
                   </div>
                   {t.tags.length > 0 && (
                     <div className="flex flex-wrap justify-center gap-2" style={{ marginTop: "16px" }}>
@@ -334,10 +332,10 @@ export default function LaserHairRemovalPage() {
               ))}
             </div>
             <div className="mx-auto" style={{ maxWidth: "820px", marginTop: "48px", background: "rgba(255,255,255,0.65)", border: "1px solid var(--line)", borderRadius: "16px", padding: "clamp(26px,3vw,38px)" }}>
-              <p className="font-display text-center" style={{ fontSize: "14px", color: "var(--gold-deep)", letterSpacing: "0.04em", lineHeight: 1.7 }}>
+              <p className="font-display text-center" style={{ fontSize: "14px", color: GOLD_TXT, letterSpacing: "0.04em", lineHeight: 1.7 }}>
                 WE STAND BY OUR PROMISE: SEE VISIBLE RESULTS IN <span style={{ fontWeight: 700 }}>3 SESSIONS</span><br />OR YOUR <span style={{ fontWeight: 700 }}>NEXT ONE IS FREE.</span>
               </p>
-              <p className="font-display text-center" style={{ fontSize: "13px", color: "var(--label)", letterSpacing: "0.04em", lineHeight: 1.7, marginTop: "12px" }}>BOOK YOUR <span style={{ color: "var(--gold-deep)" }}>PRIVATE CONSULTATION</span> TODAY AND DISCOVER THE<br />EFFORTLESS ELEGANCE OF LASTING SMOOTH SKIN.</p>
+              <p className="font-display text-center" style={{ fontSize: "13px", color: "var(--label)", letterSpacing: "0.04em", lineHeight: 1.7, marginTop: "12px" }}>BOOK YOUR <span style={{ color: GOLD_TXT }}>PRIVATE CONSULTATION</span> TODAY AND DISCOVER THE<br />EFFORTLESS ELEGANCE OF LASTING SMOOTH SKIN.</p>
               <div style={{ marginTop: "24px" }}>
                 <Link href="/consultation" className="btn btn-gold" style={{ display: "block", width: "100%", fontSize: "13px", padding: "16px 34px", letterSpacing: "0.14em", borderRadius: "999px" }}>book your session</Link>
               </div>
@@ -361,7 +359,7 @@ export default function LaserHairRemovalPage() {
             </div>
             <div className="grid gap-12 md:grid-cols-2 mx-auto" style={{ maxWidth: "1000px", marginTop: "48px" }}>
               <div>
-                <h3 className="font-serif" style={{ fontSize: "18px", color: "var(--gold-deep)", letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: "22px" }}>suitable for:</h3>
+                <h3 className="font-serif" style={{ fontSize: "18px", color: GOLD_TXT, letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: "22px" }}>suitable for:</h3>
                 <ul className="space-y-4">
                   {SUITABLE.map((s) => (
                     <li key={s} className="flex items-start gap-3"><Check size={24} /><span style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.55 }}>{s}</span></li>
@@ -369,7 +367,7 @@ export default function LaserHairRemovalPage() {
                 </ul>
               </div>
               <div>
-                <h3 className="font-serif" style={{ fontSize: "18px", color: "var(--gold-deep)", letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: "22px" }}>not suitable for:</h3>
+                <h3 className="font-serif" style={{ fontSize: "18px", color: GOLD_TXT, letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: "22px" }}>not suitable for:</h3>
                 <ul className="space-y-4">
                   {NOT_SUITABLE.map((s) => (
                     <li key={s} className="flex items-start gap-3"><Cross size={24} /><span style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.55 }}>{s}</span></li>
@@ -406,7 +404,7 @@ export default function LaserHairRemovalPage() {
                     <li key={w} className="flex items-start gap-3">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img src={`${IMG}/laser-ic-check.png`} alt="" style={{ width: "20px", height: "20px", marginTop: "2px", flexShrink: 0 }} />
-                      <span className="font-display" style={{ fontSize: "14px", color: "var(--gold-deep)", letterSpacing: "0.02em", lineHeight: 1.5 }}>{w}</span>
+                      <span className="font-display" style={{ fontSize: "14px", color: GOLD_TXT, letterSpacing: "0.02em", lineHeight: 1.5 }}>{w}</span>
                     </li>
                   ))}
                 </ul>
@@ -416,7 +414,7 @@ export default function LaserHairRemovalPage() {
                 <img src={`${IMG}/laser-hero-photo2.png`} alt="Laser hair removal at Carisma Aesthetics Malta" className="w-full rounded-xl" style={{ display: "block", objectFit: "cover", aspectRatio: "4 / 3", boxShadow: "0 16px 40px rgba(0,0,0,0.12)" }} />
               </Reveal>
             </div>
-            <p className="font-display text-center" style={{ fontSize: "18px", color: "var(--gold-deep)", letterSpacing: "0.02em", marginTop: "40px" }}>slots reserved on first come first serve basis</p>
+            <p className="font-display text-center" style={{ fontSize: "18px", color: GOLD_TXT, letterSpacing: "0.02em", marginTop: "40px" }}>slots reserved on first come first serve basis</p>
           </div>
         </section>
 
@@ -424,7 +422,7 @@ export default function LaserHairRemovalPage() {
         <section style={{ padding: "30px 0 70px" }}>
           <div className="container text-center">
             <SerifHeading style={{ letterSpacing: "0.1em" }}>begin your path to pain-free,<br />long-lasting hair removal</SerifHeading>
-            <p className="font-display" style={{ fontSize: "14px", color: "var(--gold-deep)", letterSpacing: "0.02em", marginTop: "20px", lineHeight: 1.7 }}>
+            <p className="font-display" style={{ fontSize: "14px", color: GOLD_TXT, letterSpacing: "0.02em", marginTop: "20px", lineHeight: 1.7 }}>
               Be Part of Malta's <span style={{ fontWeight: 700 }}>Smoothest Success Stories</span><br />Discover Why Clients Across the Globe Choose <span style={{ fontWeight: 700 }}>Alma Soprano</span>
             </p>
             <div style={{ marginTop: "26px" }}><BookButton /></div>
@@ -437,23 +435,23 @@ export default function LaserHairRemovalPage() {
             <Kicker>OUR TECHNOLOGY</Kicker>
             <SerifHeading style={{ marginTop: "10px" }}>ALMA SOPRANO</SerifHeading>
             <p className="mx-auto" style={{ maxWidth: "900px", fontSize: "15px", color: "var(--label)", lineHeight: 1.85, marginTop: "22px" }}>
-              Not all laser hair removal is created equal. Carisma has Malta's first and only internationally acclaimed <span style={{ color: "var(--gold-deep)", fontWeight: 600 }}>Alma Soprano</span> laser regarded as the <span style={{ color: "var(--gold-deep)", fontWeight: 600 }}>gold standard in laser hair removal technology today</span>—best for comfort, clinical reliability, and seamless triple-wavelength delivery.
+              Not all laser hair removal is created equal. Carisma has Malta's first and only internationally acclaimed <span style={{ color: GOLD_TXT, fontWeight: 600 }}>Alma Soprano</span> laser regarded as the <span style={{ color: GOLD_TXT, fontWeight: 600 }}>gold standard in laser hair removal technology today</span>—best for comfort, clinical reliability, and seamless triple-wavelength delivery.
             </p>
 
             {/* effective */}
             <h3 className="font-serif" style={{ fontSize: "25px", color: "var(--gold-deep)", letterSpacing: "0.1em", textTransform: "uppercase", marginTop: "48px" }}>effective</h3>
             <p className="mx-auto" style={{ maxWidth: "860px", fontSize: "15px", color: "var(--label)", lineHeight: 1.85, marginTop: "16px" }}>
-              Tired of laser treatments that take forever to see results? Our <span style={{ color: "var(--gold-deep)", fontWeight: 600 }}>triple-wavelength laser</span> simultaneously targets hair at multiple depths, delivering superior results in fewer sessions—no matter your skin tone or hair type.
+              Tired of laser treatments that take forever to see results? Our <span style={{ color: GOLD_TXT, fontWeight: 600 }}>triple-wavelength laser</span> simultaneously targets hair at multiple depths, delivering superior results in fewer sessions—no matter your skin tone or hair type.
             </p>
 
             {/* wavelengths */}
             <div className="grid gap-6 md:grid-cols-3 items-start mx-auto" style={{ maxWidth: "980px", marginTop: "40px" }}>
               {WAVELENGTHS.map((w, i) => (
                 <div key={w.nm} className="relative text-center">
-                  <p className="font-display" style={{ fontSize: "13px", color: "var(--gold-deep)", letterSpacing: "0.06em" }}>-wavelength-</p>
+                  <p className="font-display" style={{ fontSize: "13px", color: GOLD_TXT, letterSpacing: "0.06em" }}>-wavelength-</p>
                   <div className="font-serif" style={{ fontSize: "clamp(30px,3.6vw,40px)", color: "var(--gold-deep)", letterSpacing: "0.02em", lineHeight: 1.1 }}>{w.nm}</div>
-                  <p className="font-display" style={{ fontSize: "13px", color: "var(--gold-deep)", letterSpacing: "0.04em", marginTop: "6px" }}>{w.lead}</p>
-                  <div className="font-serif" style={{ fontSize: "18px", color: "var(--gold-deep)", letterSpacing: "0.06em", marginTop: "8px" }}>{w.name}</div>
+                  <p className="font-display" style={{ fontSize: "13px", color: GOLD_TXT, letterSpacing: "0.04em", marginTop: "6px" }}>{w.lead}</p>
+                  <div className="font-serif" style={{ fontSize: "18px", color: GOLD_TXT, letterSpacing: "0.06em", marginTop: "8px" }}>{w.name}</div>
                   <p style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.6, marginTop: "10px" }}>{w.desc}</p>
                   {i < WAVELENGTHS.length - 1 && (
                     <span aria-hidden className="hidden md:block font-serif" style={{ position: "absolute", right: "-18px", top: "26px", fontSize: "28px", color: "var(--gold-deep)" }}>+</span>
@@ -466,9 +464,9 @@ export default function LaserHairRemovalPage() {
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={`${IMG}/laser-comparison.png`} alt="Candela vs Alma Soprano vs Diode laser comparison" className="mx-auto" style={{ display: "block", width: "100%", maxWidth: "940px", marginTop: "44px" }} />
             <div className="grid gap-6 md:grid-cols-3 mx-auto" style={{ maxWidth: "940px", marginTop: "20px" }}>
-              <p style={{ fontSize: "13.5px", color: "var(--label)", lineHeight: 1.6 }}><span style={{ color: "var(--gold-deep)", fontWeight: 600 }}>Candela</span> hair removal lasers utilise only the <span style={{ color: "var(--gold-deep)", fontWeight: 600 }}>Alex and ND:Yag</span> wavelengths</p>
-              <p style={{ fontSize: "13.5px", color: "var(--label)", lineHeight: 1.6 }}>With its exclusive <span style={{ color: "var(--gold-deep)", fontWeight: 600 }}>3D technology</span>, <span style={{ color: "var(--gold-deep)", fontWeight: 600 }}>Soprano</span> unites all <span style={{ color: "var(--gold-deep)", fontWeight: 600 }}>three most efficient</span> wavelengths in one device</p>
-              <p style={{ fontSize: "13.5px", color: "var(--label)", lineHeight: 1.6 }}>Traditional <span style={{ color: "var(--gold-deep)", fontWeight: 600 }}>Diode</span> lasers have a tendancy to <span style={{ color: "var(--gold-deep)", fontWeight: 600 }}>miss finer or darker hairs</span></p>
+              <p style={{ fontSize: "13.5px", color: "var(--label)", lineHeight: 1.6 }}><span style={{ color: GOLD_TXT, fontWeight: 600 }}>Candela</span> hair removal lasers utilise only the <span style={{ color: GOLD_TXT, fontWeight: 600 }}>Alex and ND:Yag</span> wavelengths</p>
+              <p style={{ fontSize: "13.5px", color: "var(--label)", lineHeight: 1.6 }}>With its exclusive <span style={{ color: GOLD_TXT, fontWeight: 600 }}>3D technology</span>, <span style={{ color: GOLD_TXT, fontWeight: 600 }}>Soprano</span> unites all <span style={{ color: GOLD_TXT, fontWeight: 600 }}>three most efficient</span> wavelengths in one device</p>
+              <p style={{ fontSize: "13.5px", color: "var(--label)", lineHeight: 1.6 }}>Traditional <span style={{ color: GOLD_TXT, fontWeight: 600 }}>Diode</span> lasers have a tendancy to <span style={{ color: GOLD_TXT, fontWeight: 600 }}>miss finer or darker hairs</span></p>
             </div>
 
             {/* painfree */}
@@ -476,8 +474,8 @@ export default function LaserHairRemovalPage() {
             <div className="grid gap-10 lg:grid-cols-2 items-center mx-auto" style={{ maxWidth: "1000px", marginTop: "24px", textAlign: "left" }}>
               <div>
                 <p style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.85 }}>Our lasers' SHR technology is the only clinically proven laser hair removal method that is virtually painless.</p>
-                <p style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.85, marginTop: "14px" }}>Traditional lasers shock the skin with painful pulses—our <span style={{ color: "var(--gold-deep)", fontWeight: 600 }}>Super Hair Removal (SHR) technology</span> gradually heats the hair follicles for a virtually painless experience. This prevents regrowth and avoids injury to the surrounding tissue often seen with single pulse lasers.</p>
-                <p style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.85, marginTop: "14px" }}><span style={{ color: "var(--gold-deep)", fontWeight: 600 }}>The patented ICE Plus™ cooling system</span> keeps skin comfortable throughout treatment. This cooling technology can bring the contact temparature as low as -4°C making this is the most comfortable laser available in the market.</p>
+                <p style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.85, marginTop: "14px" }}>Traditional lasers shock the skin with painful pulses—our <span style={{ color: GOLD_TXT, fontWeight: 600 }}>Super Hair Removal (SHR) technology</span> gradually heats the hair follicles for a virtually painless experience. This prevents regrowth and avoids injury to the surrounding tissue often seen with single pulse lasers.</p>
+                <p style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.85, marginTop: "14px" }}><span style={{ color: GOLD_TXT, fontWeight: 600 }}>The patented ICE Plus™ cooling system</span> keeps skin comfortable throughout treatment. This cooling technology can bring the contact temparature as low as -4°C making this is the most comfortable laser available in the market.</p>
               </div>
               <div className="mx-auto" style={{ width: "100%", maxWidth: "460px" }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -488,7 +486,7 @@ export default function LaserHairRemovalPage() {
             {/* safe */}
             <h3 className="font-serif" style={{ fontSize: "25px", color: "var(--gold-deep)", letterSpacing: "0.1em", textTransform: "uppercase", marginTop: "56px" }}>safe</h3>
             <div className="mx-auto" style={{ maxWidth: "900px", marginTop: "20px" }}>
-              <p style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.85 }}>Alma Soprano is the go-to laser for top-tier dermatologists and luxury aesthetic clinics, trusted in over 80 countries and chosen by celebrities like <span style={{ color: "var(--gold-deep)", fontWeight: 600 }}>Kim Kardashian</span>, <span style={{ color: "var(--gold-deep)", fontWeight: 600 }}>Victoria Beckham</span>, and <span style={{ color: "var(--gold-deep)", fontWeight: 600 }}>Coleen Rooney</span>.</p>
+              <p style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.85 }}>Alma Soprano is the go-to laser for top-tier dermatologists and luxury aesthetic clinics, trusted in over 80 countries and chosen by celebrities like <span style={{ color: GOLD_TXT, fontWeight: 600 }}>Kim Kardashian</span>, <span style={{ color: GOLD_TXT, fontWeight: 600 }}>Victoria Beckham</span>, and <span style={{ color: GOLD_TXT, fontWeight: 600 }}>Coleen Rooney</span>.</p>
               <p style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.85, marginTop: "14px" }}>This safety profile is backed by FDA and CE approvals, our laser is a medical-grade device offering unmatched safety especially important in warmer climates like Malta, where skin is more prone to sensitivity and post-treatment irritation.</p>
             </div>
 
@@ -498,7 +496,7 @@ export default function LaserHairRemovalPage() {
                 <Reveal key={c.name} delay={(i % 3) * 90} className="text-center">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={`${IMG}/${c.image}`} alt={c.name} className="w-full" style={{ display: "block", borderRadius: "6px", boxShadow: "0 12px 30px rgba(0,0,0,0.12)" }} />
-                  <p className="font-display" style={{ fontSize: "13px", color: "var(--gold-deep)", letterSpacing: "0.08em", marginTop: "14px" }}>{c.name}</p>
+                  <p className="font-display" style={{ fontSize: "13px", color: GOLD_TXT, letterSpacing: "0.08em", marginTop: "14px" }}>{c.name}</p>
                 </Reveal>
               ))}
             </div>
@@ -511,7 +509,7 @@ export default function LaserHairRemovalPage() {
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mx-auto" style={{ maxWidth: "1080px", marginBottom: "36px" }}>
               <h2 className="font-serif" style={{ fontSize: "clamp(24px,3.2vw,32px)", color: "var(--gold-deep)", letterSpacing: "0.06em", fontWeight: 400 }}>Frequently asked questions</h2>
               <span className="relative" style={{ width: "260px", maxWidth: "100%" }}>
-                <input type="search" aria-label="Search FAQs" placeholder="Looking for something?" style={{ width: "100%", padding: "10px 38px 10px 16px", border: "none", borderBottom: "1px solid var(--line)", background: "transparent", fontSize: "13px", color: "var(--label)" }} />
+                <input type="search" aria-label="Search FAQs" placeholder="Looking for something?" style={{ width: "100%", padding: "10px 38px 10px 16px", border: "none", borderBottom: "1px solid var(--muted)", background: "transparent", fontSize: "13px", color: "var(--label)" }} />
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gold-deep)" strokeWidth="1.6" style={{ position: "absolute", right: "10px", top: "50%", transform: "translateY(-50%)" }}><circle cx="11" cy="11" r="7" /><path d="m21 21-4.3-4.3" /></svg>
               </span>
             </div>
@@ -522,7 +520,7 @@ export default function LaserHairRemovalPage() {
         {/* ---- IN SUMMARY ---- */}
         <section style={{ padding: "70px 0 90px" }}>
           <div className="container text-center">
-            <p className="font-display text-center" style={{ fontSize: "18px", color: "var(--gold-deep)", letterSpacing: "0.02em" }}>in summary</p>
+            <p className="font-display text-center" style={{ fontSize: "18px", color: GOLD_TXT, letterSpacing: "0.02em" }}>in summary</p>
             <div className="mx-auto" style={{ width: "min(500px, 80%)", height: "1px", background: "var(--gold-deep)", marginTop: "14px", marginBottom: "14px", opacity: 0.5 }} />
             <SerifHeading style={{ marginTop: "6px" }}>your journey to smooth, redefined by carisma</SerifHeading>
             <p className="mx-auto" style={{ maxWidth: "900px", fontSize: "15px", color: "var(--label)", lineHeight: 1.85, marginTop: "22px" }}>Imagine the results you'd get if you removed hair every day for years—our team has performed thousands of treatments using the world's most advanced technology, refining every detail to deliver a laser hair removal experience that's truly unmatched.</p>
@@ -534,8 +532,8 @@ export default function LaserHairRemovalPage() {
                   <img src={`${IMG}/${s.icon}`} alt="" style={{ height: "90px", width: "auto", flexShrink: 0, marginBottom: "18px" }} />
                   {/* number + text row below */}
                   <div className="flex items-start gap-4" style={{ textAlign: "left" }}>
-                    <span className="font-serif shrink-0" style={{ fontSize: "60px", color: "var(--gold-deep)", opacity: 0.6, lineHeight: 1 }}>{i + 1}</span>
-                    <span className="font-display" style={{ fontSize: "14px", color: "var(--gold-deep)", letterSpacing: "0.04em", lineHeight: 1.5, paddingTop: "8px" }}>{s.text}</span>
+                    <span className="font-serif shrink-0" style={{ fontSize: "60px", color: GOLD_TXT, opacity: 0.85, lineHeight: 1 }}>{i + 1}</span>
+                    <span className="font-display" style={{ fontSize: "14px", color: GOLD_TXT, letterSpacing: "0.04em", lineHeight: 1.5, paddingTop: "8px" }}>{s.text}</span>
                   </div>
                 </Reveal>
               ))}

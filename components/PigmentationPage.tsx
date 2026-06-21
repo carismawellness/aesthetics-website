@@ -5,12 +5,19 @@ import Link from "next/link";
 import Reveal from "@/components/Reveal";
 
 const A = "/assets/treatments";
-const TEAL = "#98afb2";
-const SAGE = "#96b2b2";
+// WCAG AA: prior #98afb2 (2.31:1 on white) / #96b2b2 (white text 2.26:1) failed.
+// Darkened toward the same teal hue → teal-deep, brand-consistent.
+const TEAL = "#3f6363"; // headings: 6.61:1 on white, 4.14:1 on page bg
+const SAGE = "#3f6363"; // CTA fill: white text 6.61:1
+// Deep taupe-gold for body copy that sits over the light page background image
+// (gold-deep #9c8344 only reached 2.36–3.66:1). 5.0–8.0:1 across all backgrounds.
+const GOLD_TEXT = "#5c4f32";
 
+// clamp min 22px non-bold = "normal" text; used on both white and the light page bg,
+// so use the deeper teal #345252 (5.31:1 on page bg) so it clears 4.5:1 at the smallest size everywhere
 function Serif({ children, style }: { children: React.ReactNode; style?: React.CSSProperties }) {
   return (
-    <h2 className="font-serif text-center" style={{ fontSize: "clamp(22px,3vw,30px)", color: TEAL, letterSpacing: "0.06em", fontWeight: 400, lineHeight: 1.3, ...style }}>
+    <h2 className="font-serif text-center" style={{ fontSize: "clamp(22px,3vw,30px)", color: "#345252", letterSpacing: "0.06em", fontWeight: 400, lineHeight: 1.3, ...style }}>
       {children}
     </h2>
   );
@@ -26,7 +33,7 @@ function Cta({ label }: { label: string }) {
 }
 
 function Dot() {
-  return <span style={{ color: "var(--teal)", fontSize: "11px", lineHeight: 1.8, flexShrink: 0 }}>●</span>;
+  return <span style={{ color: TEAL, fontSize: "11px", lineHeight: 1.8, flexShrink: 0 }}>●</span>;
 }
 
 function Stars() {
@@ -37,7 +44,7 @@ function Stars() {
           <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
         </svg>
       ))}
-      <span style={{ fontSize: "12px", color: "var(--label)", marginLeft: "4px" }}>4,9/5 from over 200 customer reviews</span>
+      <span style={{ fontSize: "12px", color: GOLD_TEXT, marginLeft: "4px" }}>4,9/5 from over 200 customer reviews</span>
     </div>
   );
 }
@@ -55,32 +62,34 @@ const TRUST_BAR = ["MALTA'S LEADING WELLNESS CHAIN", "30+ YEARS OF EXPERTISE", "
 
 function Hero() {
   return (
-    <section style={{ padding: "40px 0" }}>
+    <section style={{ padding: "24px 0" }}>
       <div className="container">
-        <div className="hero-panel" style={{ backgroundImage: "url(/assets/bg-gradient.png)", backgroundSize: "cover", backgroundPosition: "center", borderRadius: "26px", padding: "clamp(28px,3.6vw,56px)" }}>
+        <div className="hero-panel" style={{ backgroundImage: "url(/assets/bg-gradient.png)", backgroundSize: "cover", backgroundPosition: "center", borderRadius: "26px", padding: "clamp(22px,3vw,40px)" }}>
           <div className="pig-hero-grid grid gap-10 items-start">
             <div className="hero-copy">
-              <h1 className="font-serif" style={{ fontSize: "clamp(20px,2vw,28px)", color: TEAL, letterSpacing: "0.04em", textTransform: "uppercase", fontWeight: 400, lineHeight: 1.12, margin: 0 }}>
+              {/* clamp min 20px non-bold = normal text on the hero gradient → #345252 = 5.x:1 clears 4.5:1 */}
+              <h1 className="font-serif" style={{ fontSize: "clamp(20px,2vw,28px)", color: "#345252", letterSpacing: "0.04em", textTransform: "uppercase", fontWeight: 400, lineHeight: 1.12, margin: 0 }}>
                 pico laser pigmentation treatment
               </h1>
-              <p style={{ color: "var(--gold-deep)", fontSize: "14px", fontWeight: 600, lineHeight: 1.7, marginTop: "16px", maxWidth: "440px" }}>
+              <p style={{ color: GOLD_TEXT, fontSize: "14px", fontWeight: 600, lineHeight: 1.7, marginTop: "16px", maxWidth: "440px" }}>
                 Advanced Pico laser technology to visibly reduce unwanted pigmentation and restore a clearer, brighter, more even-looking complexion.
               </p>
-              <p className="font-display" style={{ color: "var(--gold-deep)", fontSize: "14px", fontWeight: 600, letterSpacing: "0.02em", marginTop: "22px", marginBottom: "10px" }}>
+              <p className="font-display" style={{ color: GOLD_TEXT, fontSize: "14px", fontWeight: 600, letterSpacing: "0.02em", marginTop: "22px", marginBottom: "10px" }}>
                 What&apos;s Included:
               </p>
               <ul className="space-y-2">
                 {INCLUDED.map((item) => (
                   <li key={item} className="flex items-start gap-3">
                     <Dot />
-                    <span style={{ color: "var(--gold-deep)", fontSize: "13.5px", lineHeight: 1.55 }}>{item}</span>
+                    <span style={{ color: GOLD_TEXT, fontSize: "13.5px", lineHeight: 1.55 }}>{item}</span>
                   </li>
                 ))}
               </ul>
-              <p className="font-display" style={{ color: "var(--gold-deep)", fontSize: "15px", fontWeight: 600, letterSpacing: "0.02em", marginTop: "22px" }}>
+              <p className="font-display" style={{ color: GOLD_TEXT, fontSize: "15px", fontWeight: 600, letterSpacing: "0.02em", marginTop: "22px" }}>
                 Treatments From €79 Per Session
               </p>
-              <p style={{ color: "var(--gold-deep)", fontSize: "11px", lineHeight: 1.6, marginTop: "12px", maxWidth: "440px", opacity: 0.75 }}>
+              {/* opacity removed: at 0.75 the 11px disclaimer flattened to ~3.1:1; full-opacity GOLD_TEXT = 5.18:1 */}
+              <p style={{ color: GOLD_TEXT, fontSize: "11px", lineHeight: 1.6, marginTop: "12px", maxWidth: "440px" }}>
                 Due to high demand, appointments are offered subject to availability. Results and the number of sessions required may vary depending on your skin type and pigmentation concern.
               </p>
               <Link href="/consultation" className="font-display flex items-center justify-center"
@@ -89,9 +98,9 @@ function Hero() {
               </Link>
               <div className="flex items-center gap-2" style={{ marginTop: "20px" }}>
                 <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.27-4.74 3.27-8.1z" /><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.26 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84A11 11 0 0 0 12 23z" /><path fill="#FBBC05" d="M5.84 14.1a6.6 6.6 0 0 1 0-4.2V7.06H2.18a11 11 0 0 0 0 9.88l3.66-2.84z" /><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84C6.71 7.3 9.14 5.38 12 5.38z" /></svg>
-                <span style={{ fontWeight: 600, fontSize: "13px", color: "var(--label)" }}>4.9</span>
-                <span className="flex" style={{ color: "var(--teal)" }}>{[0,1,2,3,4].map((i) => (<svg key={i} width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>))}</span>
-                <span className="font-display" style={{ fontSize: "11px", color: "var(--teal)", letterSpacing: "0.08em" }}>TOP-RATED CLINIC IN MALTA</span>
+                <span style={{ fontWeight: 600, fontSize: "13px", color: GOLD_TEXT }}>4.9</span>
+                <span className="flex" style={{ color: "#d4a017" }}>{[0,1,2,3,4].map((i) => (<svg key={i} width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>))}</span>
+                <span className="font-display" style={{ fontSize: "11px", color: GOLD_TEXT, letterSpacing: "0.08em" }}>TOP-RATED CLINIC IN MALTA</span>
               </div>
             </div>
 
@@ -111,7 +120,7 @@ function Hero() {
             <div key={label} className="flex items-center gap-2">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={`${A}/laser-ic-check.png`} alt="" aria-hidden style={{ width: "22px", height: "22px" }} />
-              <span className="font-display" style={{ fontSize: "12px", color: "var(--label)", letterSpacing: "0.1em", textTransform: "uppercase" }}>{label}</span>
+              <span className="font-display" style={{ fontSize: "12px", color: GOLD_TEXT, letterSpacing: "0.1em", textTransform: "uppercase" }}>{label}</span>
             </div>
           ))}
         </div>
@@ -168,7 +177,7 @@ function Reviews() {
               <p style={{ fontSize: "13px", color: "var(--label)", lineHeight: 1.7, fontStyle: "italic", margin: 0, display: "-webkit-box", WebkitLineClamp: 3, WebkitBoxOrient: "vertical", overflow: "hidden", textOverflow: "ellipsis" }}>
                 {r.body}
               </p>
-              <span style={{ fontSize: "13px", color: "#8a847b", marginTop: "10px", textDecoration: "underline", textUnderlineOffset: "2px" }}>Read more</span>
+              <span style={{ fontSize: "13px", color: GOLD_TEXT, marginTop: "10px", textDecoration: "underline", textUnderlineOffset: "2px" }}>Read more</span>
               <span style={{ fontSize: "13px", fontWeight: 600, color: "#4a4a4a", marginTop: "14px" }}>- {r.name}</span>
             </div>
           </div>
@@ -185,22 +194,24 @@ function DoYouHave() {
       <div className="container">
         <div className="grid gap-12 lg:grid-cols-2 items-center">
           <div>
-            <p className="font-serif" style={{ fontSize: "clamp(20px,2.6vw,26px)", color: TEAL, letterSpacing: "0.06em", textTransform: "uppercase", fontWeight: 400, lineHeight: 1.25 }}>
+            {/* clamp min 20px non-bold = normal text; deepen to #345252 (5.31:1 on page bg) to clear 4.5:1 even at the smallest size */}
+            <p className="font-serif" style={{ fontSize: "clamp(20px,2.6vw,26px)", color: "#345252", letterSpacing: "0.06em", textTransform: "uppercase", fontWeight: 400, lineHeight: 1.25 }}>
               so your skin looks like yours again -confidently.
             </p>
-            <h2 className="font-serif" style={{ fontSize: "18px", color: TEAL, letterSpacing: "0.02em", fontWeight: 400, lineHeight: 1.3, marginTop: "12px" }}>
+            {/* 18px non-bold = "normal" text per WCAG, needs 4.5:1; #3f6363 only hit 4.14 on the page bg, so use a deeper teal here (5.31:1) */}
+            <h2 className="font-serif" style={{ fontSize: "18px", color: "#345252", letterSpacing: "0.02em", fontWeight: 400, lineHeight: 1.3, marginTop: "12px" }}>
               Do you have pigmentation you no longer want to carry?
             </h2>
-            <p style={{ fontSize: "14.5px", color: "var(--label)", lineHeight: 1.8, marginTop: "20px" }}>
+            <p style={{ fontSize: "14.5px", color: "var(--ink-soft)", lineHeight: 1.8, marginTop: "20px" }}>
               Whether it comes from sun exposure, post-acne marks, melasma, or uneven skin tone, unwanted pigmentation can feel frustrating. You&rsquo;re not alone &mdash; and safe, gradual improvement is possible with the right technology and care.
             </p>
-            <p style={{ fontSize: "14.5px", color: "var(--label)", lineHeight: 1.8, marginTop: "14px" }}>
+            <p style={{ fontSize: "14.5px", color: "var(--ink-soft)", lineHeight: 1.8, marginTop: "14px" }}>
               With our advanced Pico Laser Pigmentation treatment, ultra-short laser pulses target excess pigment beneath the skin, helping break it into tiny particles so your body can naturally clear it over time.
             </p>
-            <p style={{ fontSize: "14.5px", color: "var(--label)", lineHeight: 1.8, marginTop: "14px" }}>
+            <p style={{ fontSize: "14.5px", color: "var(--ink-soft)", lineHeight: 1.8, marginTop: "14px" }}>
               Every skin concern is different. Your treatment plan is personalised based on your pigmentation type, depth, skin tone, and skin goals to support safer treatment and more even-looking results.
             </p>
-            <p style={{ fontSize: "14.5px", color: "var(--label)", lineHeight: 1.8, marginTop: "14px" }}>
+            <p style={{ fontSize: "14.5px", color: "var(--ink-soft)", lineHeight: 1.8, marginTop: "14px" }}>
               Your skin can feel clearer, brighter, and more balanced again. Let&rsquo;s help you begin with confidence.
             </p>
             <div style={{ marginTop: "28px" }}><Cta label="Reserve Your Clearer-Skin Session" /></div>
@@ -284,7 +295,7 @@ function Because() {
           <div>
             <ul style={{ listStyle: "disc", margin: 0, paddingLeft: "22px" }}>
               {BECAUSE.map((item) => (
-                <li key={item} style={{ color: "var(--gold-deep)", fontSize: "15px", lineHeight: 1.6, marginBottom: "12px" }}>{item}</li>
+                <li key={item} style={{ color: GOLD_TEXT, fontSize: "15px", lineHeight: 1.6, marginBottom: "12px" }}>{item}</li>
               ))}
             </ul>
             <div style={{ marginTop: "24px" }}><Cta label="Claim Pigmentation Care" /></div>
@@ -375,7 +386,7 @@ function Secure() {
           <div>
             <Serif style={{ textAlign: "left" }}>SECURE YOUR PICO LASER PIGMENTATION CONSULTATION TODAY</Serif>
             {SECURE_PARAS.map((p, i) => (
-              <p key={i} style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.8, marginTop: i ? "12px" : "18px" }}>{p}</p>
+              <p key={i} style={{ fontSize: "14px", color: "var(--ink-soft)", lineHeight: 1.8, marginTop: i ? "12px" : "18px" }}>{p}</p>
             ))}
             <div style={{ marginTop: "26px" }}><Cta label="Book Pigmentation Treatment Now" /></div>
           </div>
@@ -409,14 +420,15 @@ function FadeUnwanted() {
             <h2 className="font-serif" style={{ fontSize: "clamp(26px,3.5vw,38px)", color: TEAL, letterSpacing: "0.06em", fontWeight: 400, lineHeight: 1.2, textTransform: "uppercase" }}>
               Fade Unwanted Pigment. Feel More Like You.
             </h2>
-            <p style={{ color: TEAL, fontSize: "14px", lineHeight: 1.7, marginTop: "18px" }}>
+            {/* body copy is 14px normal text over the light page bg → needs 4.5:1; deeper teal #345252 = 5.31:1 */}
+            <p style={{ color: "#345252", fontSize: "14px", lineHeight: 1.7, marginTop: "18px" }}>
               Advanced Pico Laser pigmentation care designed for clearer, brighter-looking skin and personalised results.
             </p>
             <ul className="space-y-3" style={{ marginTop: "22px", listStyle: "none", padding: 0 }}>
               {FADE.map((item) => (
                 <li key={item} className="flex items-start gap-3">
                   <Dot />
-                  <span style={{ color: TEAL, fontSize: "14px", lineHeight: 1.6 }}>{item}</span>
+                  <span style={{ color: "#345252", fontSize: "14px", lineHeight: 1.6 }}>{item}</span>
                 </li>
               ))}
             </ul>
@@ -495,15 +507,15 @@ function Pricing() {
     <section style={{ padding: "60px 0" }}>
       <div className="container text-center">
         <Serif>pico laser pigmentation pricing</Serif>
-        <p className="mx-auto" style={{ maxWidth: "760px", fontSize: "14px", color: "var(--label)", lineHeight: 1.7, marginTop: "16px" }}>
+        <p className="mx-auto" style={{ maxWidth: "760px", fontSize: "14px", color: "var(--ink-soft)", lineHeight: 1.7, marginTop: "16px" }}>
           Choose the treatment option that best suits your skin concern and goals. Every plan is designed to deliver targeted care and a premium experience.
         </p>
         <div className="flex flex-wrap justify-center mx-auto" style={{ gap: "22px", marginTop: "40px", maxWidth: "800px" }}>
           {PRICES.map((p, i) => (
             <div key={p.size} className="text-center relative"
-              style={{ width: "200px", background: "linear-gradient(160deg,#b6ac95 0%, #a89e86 100%)", borderRadius: "14px", padding: "44px 18px 26px", marginTop: "26px", boxShadow: "0 12px 30px rgba(0,0,0,0.10)", opacity: i < 4 ? 1 : 0.95 }}>
+              style={{ width: "200px", background: "linear-gradient(160deg,#7d7053 0%, #6e6243 100%)", borderRadius: "14px", padding: "44px 18px 26px", marginTop: "26px", boxShadow: "0 12px 30px rgba(0,0,0,0.10)", opacity: i < 4 ? 1 : 0.95 }}>
               <span className="inline-flex items-center justify-center"
-                style={{ position: "absolute", top: "-26px", left: "50%", transform: "translateX(-50%)", width: "56px", height: "56px", borderRadius: "12px", backgroundColor: "#8e836b" }}>
+                style={{ position: "absolute", top: "-26px", left: "50%", transform: "translateX(-50%)", width: "56px", height: "56px", borderRadius: "12px", backgroundColor: "#5c5236" }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={`${A}/${p.icon}`} alt="" style={{ width: "30px", height: "30px" }} />
               </span>
@@ -513,7 +525,7 @@ function Pricing() {
                 <span aria-hidden style={{ width: "4px", height: "4px", background: "rgba(255,255,255,0.85)", transform: "rotate(45deg)", flexShrink: 0 }} />
                 <span style={{ flex: 1, height: "1px", background: "rgba(255,255,255,0.6)" }} />
               </div>
-              <p style={{ fontSize: "11px", color: "rgba(255,255,255,0.75)", lineHeight: 1.4, marginBottom: "8px" }}>{p.sub}</p>
+              <p style={{ fontSize: "11px", color: "#ffffff", lineHeight: 1.4, marginBottom: "8px" }}>{p.sub}</p>
               <div className="font-serif" style={{ fontSize: "24px", color: "#fff", letterSpacing: "0.02em", lineHeight: 1.1 }}>
                 {p.from && <span style={{ fontSize: "11px", letterSpacing: "0.12em", textTransform: "uppercase", marginRight: "6px", verticalAlign: "middle" }}>from</span>}
                 {p.price}
@@ -568,7 +580,7 @@ function WhatToExpect() {
         <div className="pig-wte-grid grid gap-8" style={{ marginTop: "36px" }}>
           {WTE_COLUMNS.map((col) => (
             <div key={col.label}>
-              <p className="font-display text-center" style={{ fontSize: "14px", color: "var(--gold-deep)", letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: "16px" }}>{col.label}</p>
+              <p className="font-display text-center" style={{ fontSize: "14px", color: GOLD_TEXT, letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: "16px" }}>{col.label}</p>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src={`${A}/${col.image}`} alt={col.alt} className="rounded-xl"
                 style={{ width: "100%", aspectRatio: "5 / 4", objectFit: "cover", boxShadow: "0 12px 30px rgba(0,0,0,0.08)" }} />
@@ -628,9 +640,11 @@ function Faq() {
             <h2 className="font-serif" style={{ fontSize: "clamp(22px,3vw,30px)", color: TEAL, letterSpacing: "0.06em", fontWeight: 400, textTransform: "uppercase", margin: 0, lineHeight: 1.3 }}>
               Frequently asked questions
             </h2>
-            <div style={{ position: "relative", width: "280px", maxWidth: "100%", borderBottom: "1px solid var(--line)" }}>
+            {/* search field: the bottom border is the only affordance of the input, so it must meet 1.4.11 (>=3:1). --line #e2e2e2 was 1.3:1; #527979 = 4.81:1. focus-visible ring added via scoped CSS below (never outline:none). */}
+            <div style={{ position: "relative", width: "280px", maxWidth: "100%", borderBottom: "1px solid #527979" }}>
               <input type="text" placeholder="Looking for something?" aria-label="Looking for something?"
-                style={{ width: "100%", border: "none", background: "transparent", outline: "none", fontSize: "13px", color: "var(--label)", padding: "8px 26px 8px 2px" }} />
+                className="pig-faq-search"
+                style={{ width: "100%", border: "none", background: "transparent", fontSize: "13px", color: "var(--ink-soft)", padding: "8px 26px 8px 2px" }} />
               <span aria-hidden style={{ position: "absolute", right: "2px", top: "50%", transform: "translateY(-50%)", color: "var(--gold-deep)", pointerEvents: "none" }}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="7" /><path d="M21 21l-4.3-4.3" /></svg>
               </span>
@@ -672,6 +686,11 @@ function Faq() {
           .pig-faq-head { align-items: stretch; }
           .pig-faq-head > div { width: 100%; }
         }
+        /* placeholder default browser shade can drop below 4.5:1; pin to a tone that
+           flattens to >=4.5:1 on white (#5d5d5d = 5.92:1). */
+        .pig-faq-search::placeholder { color: #5d5d5d; opacity: 1; }
+        /* visible focus indicator (>=3:1 teal-deep ring); replaces removed outline:none */
+        .pig-faq-search:focus-visible { outline: 2px solid #3f6363; outline-offset: 2px; border-radius: 2px; }
       `}</style>
     </section>
   );
@@ -691,7 +710,7 @@ function WhyCarisma() {
     <section style={{ padding: "50px 0 96px" }}>
       <div className="container">
         <p className="font-display text-center"
-          style={{ fontSize: "clamp(20px,2.4vw,28px)", color: "var(--gold-deep)", letterSpacing: "0.06em", lineHeight: 1.5, fontWeight: 400, textTransform: "uppercase" }}>
+          style={{ fontSize: "clamp(20px,2.4vw,28px)", color: GOLD_TEXT, letterSpacing: "0.06em", lineHeight: 1.5, fontWeight: 400, textTransform: "uppercase" }}>
           <span style={{ fontWeight: 700 }}>#1 award winning</span> chain in Malta with<br />
           <span style={{ fontWeight: 700 }}>30+ years</span> in wellness
         </p>
@@ -705,16 +724,16 @@ function WhyCarisma() {
             </svg>
             <div style={{ position: "relative", zIndex: 1 }}>
               <h2 className="font-display text-center"
-                style={{ fontSize: "clamp(20px,2.4vw,26px)", color: "var(--gold-deep)", letterSpacing: "0.1em", fontWeight: 400, textTransform: "uppercase" }}>
+                style={{ fontSize: "clamp(20px,2.4vw,26px)", color: GOLD_TEXT, letterSpacing: "0.1em", fontWeight: 400, textTransform: "uppercase" }}>
                 why carisma aesthetics ?
               </h2>
               <div aria-hidden style={{ width: "120px", height: "1px", background: "var(--gold-deep)", margin: "16px auto 32px" }} />
               <ul style={{ display: "flex", flexDirection: "column", gap: "20px" }}>
                 {WHY_BULLETS.map((b) => (
                   <li key={b} className="flex items-start gap-3">
-                    <span aria-hidden style={{ color: "var(--gold-deep)", fontSize: "9px", lineHeight: 1.9, flexShrink: 0 }}>●</span>
+                    <span aria-hidden style={{ color: GOLD_TEXT, fontSize: "9px", lineHeight: 1.9, flexShrink: 0 }}>●</span>
                     <span className="font-display"
-                      style={{ fontSize: "14px", color: "var(--gold-deep)", letterSpacing: "0.06em", fontWeight: 400, textTransform: "uppercase", lineHeight: 1.4 }}>
+                      style={{ fontSize: "14px", color: GOLD_TEXT, letterSpacing: "0.06em", fontWeight: 400, textTransform: "uppercase", lineHeight: 1.4 }}>
                       {b}
                     </span>
                   </li>

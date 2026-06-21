@@ -296,7 +296,7 @@ function ReviewCard({ image, name, text }: (typeof TESTIMONIALS)[0]) {
         </p>
         <div className="flex justify-center gap-1" style={{ marginBottom: "12px" }}>
           {[0,1,2,3,4].map((i) => (
-            <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill="#f5a623" aria-hidden>
+            <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill="#b8690a" aria-hidden>
               <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
             </svg>
           ))}
@@ -309,7 +309,7 @@ function ReviewCard({ image, name, text }: (typeof TESTIMONIALS)[0]) {
             type="button"
             onClick={() => setExpanded(!expanded)}
             className="text-center"
-            style={{ marginTop: "10px", background: "none", border: "none", cursor: "pointer", fontSize: "13px", color: GOLD, textDecoration: "underline", textUnderlineOffset: "2px" }}
+            style={{ marginTop: "10px", background: "none", border: "none", cursor: "pointer", fontSize: "13px", color: "#6b5526", textDecoration: "underline", textUnderlineOffset: "2px" }}
           >
             {expanded ? "Show less" : "Read more"}
           </button>
@@ -457,11 +457,15 @@ export default function HairRegrowthPage() {
       <section
         style={{
           background: "transparent",
-          padding: "clamp(60px,7vw,110px) 0 clamp(50px,6vw,90px)",
+          minHeight: "100svh",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          padding: "var(--nav-clear) 0 clamp(20px,3vh,40px)",
         }}
       >
         <div className="container">
-          <div className="grid items-center gap-10 lg:grid-cols-[1fr_380px]">
+          <div className="grid items-center gap-10 lg:grid-cols-[1fr_360px]">
             <Reveal>
               {/* Kicker */}
               <p
@@ -480,10 +484,10 @@ export default function HairRegrowthPage() {
               <h1
                 className="font-serif"
                 style={{
-                  fontSize: "clamp(28px,4.2vw,56px)",
+                  fontSize: "clamp(26px,3.4vw,42px)",
                   color: "#ffffff",
                   letterSpacing: "0.02em",
-                  lineHeight: 1.12,
+                  lineHeight: 1.1,
                   textTransform: "uppercase",
                   fontWeight: 400,
                 }}
@@ -495,15 +499,15 @@ export default function HairRegrowthPage() {
                 style={{
                   fontSize: "14px",
                   color: "#d4cfc6",
-                  lineHeight: 1.85,
-                  marginTop: "22px",
+                  lineHeight: 1.6,
+                  marginTop: "14px",
                   maxWidth: "560px",
                 }}
               >
                 {t.hero.body}
               </p>
               {/* Benefit list */}
-              <ul className="space-y-3" style={{ marginTop: "26px" }}>
+              <ul className="space-y-2" style={{ marginTop: "16px" }}>
                 {(t.hero.benefits ?? []).map((b) => (
                   <li key={b} className="flex items-start gap-3">
                     <GoldCheck />
@@ -520,11 +524,11 @@ export default function HairRegrowthPage() {
                 ))}
               </ul>
               {/* CTA */}
-              <div style={{ marginTop: "32px" }}>
+              <div style={{ marginTop: "18px" }}>
                 <GoldBtn>{t.hero.cta}</GoldBtn>
               </div>
               {/* Stars + note */}
-              <div className="flex items-center gap-3" style={{ marginTop: "18px" }}>
+              <div className="flex items-center gap-3" style={{ marginTop: "12px" }}>
                 <span className="flex" style={{ color: GOLD }}>
                   {[0, 1, 2, 3, 4].map((i) => (
                     <svg
@@ -565,11 +569,12 @@ export default function HairRegrowthPage() {
             </Reveal>
 
             {/* Portrait video reel */}
-            <Reveal delay={120} className="mx-auto" style={{ width: "100%", maxWidth: "360px" }}>
+            <Reveal delay={120} className="mx-auto" style={{ width: "100%", maxWidth: "320px" }}>
               <div
                 style={{
                   borderRadius: "16px",
                   overflow: "hidden",
+                  maxHeight: "clamp(320px,48vh,470px)",
                   boxShadow: "0 20px 50px rgba(0,0,0,0.55)",
                   border: `1px solid rgba(201,169,106,0.3)`,
                 }}
@@ -1037,7 +1042,7 @@ export default function HairRegrowthPage() {
                 className="font-display"
                 style={{
                   fontSize: "12px",
-                  color: "rgba(26,20,10,0.7)",
+                  color: INK,
                   letterSpacing: "0.15em",
                   textTransform: "uppercase",
                   marginBottom: "10px",
@@ -1213,7 +1218,7 @@ export default function HairRegrowthPage() {
                       className="font-display"
                       style={{
                         fontSize: "13px",
-                        color: INK,
+                        color: GOLD,
                         letterSpacing: "0.06em",
                         marginTop: "12px",
                       }}
@@ -1484,7 +1489,7 @@ export default function HairRegrowthPage() {
               style={{
                 display: "flex",
                 alignItems: "center",
-                border: `1px solid rgba(201,169,106,0.3)`,
+                border: `1px solid rgba(201,169,106,0.7)`,
                 borderRadius: "4px",
                 padding: "10px 16px",
               }}
@@ -1493,10 +1498,10 @@ export default function HairRegrowthPage() {
                 type="text"
                 placeholder="Looking for something?"
                 readOnly
+                aria-label="Search FAQs"
                 style={{
                   flex: 1,
                   border: "none",
-                  outline: "none",
                   fontSize: "13px",
                   color: TAUPE,
                   background: "transparent",

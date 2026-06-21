@@ -3,9 +3,14 @@ import Reveal from "@/components/Reveal";
 import FaqAccordion, { type Faq } from "@/components/FaqAccordion";
 
 const A = "/assets/treatments";
-const BLUE = "#6391ab";
-const GOLD = "var(--gold-deep)";
+// WCAG AA: darkened from #6391ab (3.4:1) to teal-deep #3f6363 (6.61:1 on white) for text + UI strokes
+const BLUE = "#3f6363";
+// WCAG AA: text gold darkened from --gold-deep #9c8344 (3.66:1) to --gold #706552 (5.72:1 on white)
+const GOLD = "var(--gold)";
+// SAGE retained for decorative gem SVG fills only; text-on-SAGE surfaces use SAGE_SOLID below
 const SAGE = "#96b2b2";
+// WCAG AA: solid teal for surfaces carrying white text (white on #527979 = 4.81:1)
+const SAGE_SOLID = "#527979";
 
 /* ─── helpers ─────────────────────────────────────────────────── */
 
@@ -42,10 +47,12 @@ function Cta({ label, href = "/sign-up" }: { label: string; href?: string }) {
 }
 
 function Stars() {
+  // WCAG 1.4.11 + 1.4.1: star fill darkened from #F4C542 (1.63:1) to gold-deep #9c8344 (3.66:1 on white)
+  // role="img" + aria-label gives a non-color/non-graphic-only cue for the rating value
   return (
-    <div className="flex" style={{ gap: "3px", justifyContent: "center", margin: "12px 0" }}>
+    <div className="flex" role="img" aria-label="Rated 5 out of 5 stars" style={{ gap: "3px", justifyContent: "center", margin: "12px 0" }}>
       {Array.from({ length: 5 }).map((_, i) => (
-        <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill="#F4C542" aria-hidden>
+        <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill="#9c8344" aria-hidden>
           <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z" />
         </svg>
       ))}
@@ -197,14 +204,14 @@ export default function MembershipPage() {
   return (
     <>
       {/* ════ HERO ════ */}
-      <section style={{ background: "url('/assets/hero-bg.png') center / cover no-repeat", padding: "56px 0 64px" }}>
+      <section style={{ background: "url('/assets/hero-bg.png') center / cover no-repeat", minHeight: "100svh", display: "flex", flexDirection: "column", justifyContent: "center", padding: "var(--nav-clear) 0 clamp(20px,3vh,40px)" }}>
         <div className="container text-center" style={{ maxWidth: "640px" }}>
-          <div className="mx-auto" style={{ maxWidth: "600px" }}>
+          <div className="mx-auto" style={{ maxWidth: "460px" }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={`${A}/mem-hero.jpg`} alt="The Glow Club membership" className="w-full" style={{ display: "block", aspectRatio: "3 / 2", objectFit: "cover" }} />
+            <img src={`${A}/mem-hero.jpg`} alt="The Glow Club membership" className="w-full" style={{ display: "block", maxHeight: "clamp(240px,38vh,340px)", aspectRatio: "3 / 2", objectFit: "cover", borderRadius: "10px" }} />
           </div>
 
-          <div className="flex items-center justify-center" style={{ gap: "14px", marginTop: "32px" }}>
+          <div className="flex items-center justify-center" style={{ gap: "14px", marginTop: "22px" }}>
             <span className="flex items-center" style={{ flex: 1, maxWidth: "120px" }}>
               <span style={{ width: "7px", height: "7px", background: "#b8a89a", transform: "rotate(45deg)", flexShrink: 0 }} />
               <span style={{ flex: 1, height: "1px", background: "#b8a89a" }} />
@@ -220,15 +227,8 @@ export default function MembershipPage() {
             <p className="font-display" style={{ fontSize: "clamp(16px,2.4vw,22px)", color: BLUE, letterSpacing: "0.38em", textTransform: "uppercase", margin: 0 }}>the glow club</p>
           </div>
 
-          <div style={{ marginTop: "30px" }}>
+          <div style={{ marginTop: "22px" }}>
             <Cta label="begin your journey now" />
-          </div>
-
-          <div className="flex flex-col items-center" style={{ marginTop: "34px" }}>
-            <span className="font-display" style={{ fontSize: "11px", color: BLUE, letterSpacing: "0.16em" }}>scroll down<br />to learn more</span>
-            <svg className="animate-bounce" width="14" height="16" viewBox="0 0 24 24" fill="none" stroke={BLUE} strokeWidth="2" style={{ marginTop: "10px" }}>
-              <path d="M12 4v12M6 12l6 6 6-6" />
-            </svg>
           </div>
         </div>
       </section>
@@ -256,11 +256,11 @@ export default function MembershipPage() {
                 <div className="flex items-center" style={{ position: "relative", background: "#e3ecec", height: "62px" }}>
                   <span
                     className="font-serif flex items-center justify-center"
-                    style={{ width: "70px", height: "88px", marginTop: "-13px", flexShrink: 0, background: SAGE, color: "#fff", fontSize: "44px", lineHeight: 1 }}
+                    style={{ width: "70px", height: "88px", marginTop: "-13px", flexShrink: 0, background: SAGE_SOLID, color: "#fff", fontSize: "44px", lineHeight: 1 }}
                   >
                     {s.n}
                   </span>
-                  <span className="font-serif" style={{ fontSize: "28px", color: "#a7b6b6", letterSpacing: "0.1em", textTransform: "uppercase", marginLeft: "18px" }}>{s.word}</span>
+                  <span className="font-serif" style={{ fontSize: "28px", color: "#3f6363", letterSpacing: "0.1em", textTransform: "uppercase", marginLeft: "18px" }}>{s.word}</span>
                 </div>
                 {/* subheading + divider + body + example */}
                 <h3 className="font-display" style={{ fontSize: "15px", color: GOLD, letterSpacing: "0.08em", textTransform: "uppercase", lineHeight: 1.5, margin: "26px 0 0" }}>{s.sub}</h3>
@@ -311,7 +311,7 @@ export default function MembershipPage() {
                 style={{ background: "#fff", border: "1px solid #e4eded", borderRadius: "8px", padding: "40px 24px 32px", boxShadow: "0 4px 20px rgba(0,0,0,0.06)" }}
               >
                 <div style={{ height: "60px", display: "flex", alignItems: "center", justifyContent: "center" }}>{s.gem}</div>
-                <h3 className="font-display" style={{ fontSize: "13px", color: "#7a9898", letterSpacing: "0.18em", textTransform: "uppercase", marginTop: "22px" }}>{s.name}</h3>
+                <h3 className="font-display" style={{ fontSize: "13px", color: "#527979", letterSpacing: "0.18em", textTransform: "uppercase", marginTop: "22px" }}>{s.name}</h3>
                 <div style={{ width: "180px", maxWidth: "80%", height: "1px", background: "var(--line)", margin: "16px 0 20px" }} />
                 <p style={{ fontSize: "13px", color: "var(--muted)", lineHeight: 1.6, fontStyle: "italic" }}>Complimentary</p>
                 <p style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.7, marginTop: "4px", fontWeight: 500 }}>{s.reward}</p>
@@ -335,15 +335,15 @@ export default function MembershipPage() {
           <div className="grid gap-7 md:grid-cols-3 mx-auto" style={{ maxWidth: "960px" }}>
             {SAVINGS.map((s, i) => (
               <Reveal key={s.spend} delay={i * 70} className="text-center" style={{ background: "#ffffff", borderRadius: "8px", padding: "36px 24px", boxShadow: "0 4px 20px rgba(0,0,0,0.07)", border: "1px solid #ece9e4" }}>
-                <p className="font-display" style={{ fontSize: "13px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#b0aba2" }}>spend</p>
+                <p className="font-display" style={{ fontSize: "13px", letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--muted)" }}>spend</p>
                 <p className="font-serif" style={{ fontSize: "clamp(26px,3vw,34px)", color: "var(--label)", letterSpacing: "0.04em", margin: "6px 0 4px" }}>{s.spend}</p>
-                <p className="font-display" style={{ fontSize: "11px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#b0aba2" }}>on services</p>
+                <p className="font-display" style={{ fontSize: "11px", letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--muted)" }}>on services</p>
                 <svg className="mx-auto" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke={GOLD} strokeWidth="1.4" style={{ margin: "18px auto" }}>
                   <path d="M6 9l6 6 6-6" />
                 </svg>
-                <p className="font-display" style={{ fontSize: "13px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#b0aba2" }}>save</p>
+                <p className="font-display" style={{ fontSize: "13px", letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--muted)" }}>save</p>
                 <p className="font-serif" style={{ fontSize: "clamp(26px,3vw,34px)", color: GOLD, letterSpacing: "0.04em", margin: "6px 0 4px" }}>{s.save}</p>
-                <p className="font-display" style={{ fontSize: "11px", letterSpacing: "0.14em", textTransform: "uppercase", color: "#b0aba2" }}>annually</p>
+                <p className="font-display" style={{ fontSize: "11px", letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--muted)" }}>annually</p>
               </Reveal>
             ))}
           </div>
@@ -427,7 +427,7 @@ export default function MembershipPage() {
               <Reveal key={t.name} delay={i * 80}>
                 <div style={{ background: "#fff", borderRadius: "12px", padding: "32px 28px", boxShadow: "0 4px 20px rgba(0,0,0,0.07)", border: "1px solid #ece9e4", display: "flex", flexDirection: "column", gap: "0" }}>
                   {/* avatar */}
-                  <div style={{ width: "56px", height: "56px", borderRadius: "8px", background: SAGE, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "4px" }}>
+                  <div style={{ width: "56px", height: "56px", borderRadius: "8px", background: SAGE_SOLID, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "4px" }}>
                     <span className="font-display" style={{ fontSize: "16px", color: "#fff", letterSpacing: "0.08em", fontWeight: 700 }}>{t.initials}</span>
                   </div>
                   {/* stars */}
@@ -455,7 +455,7 @@ export default function MembershipPage() {
               <span style={{ width: "7px", height: "7px", background: "#9fb5b5", transform: "rotate(45deg)", flexShrink: 0 }} />
               <span style={{ flex: 1, height: "1px", background: "#9fb5b5" }} />
             </span>
-            <h2 className="font-serif" style={{ fontSize: "clamp(24px,4vw,38px)", color: "#9fb5b5", letterSpacing: "0.3em", fontWeight: 400, whiteSpace: "nowrap" }}>JOIN THE CLUB</h2>
+            <h2 className="font-serif" style={{ fontSize: "clamp(24px,4vw,38px)", color: "#527979", letterSpacing: "0.3em", fontWeight: 400, whiteSpace: "nowrap" }}>JOIN THE CLUB</h2>
             <span className="flex items-center" style={{ flex: 1, maxWidth: "150px" }}>
               <span style={{ flex: 1, height: "1px", background: "#9fb5b5" }} />
               <span style={{ width: "7px", height: "7px", background: "#9fb5b5", transform: "rotate(45deg)", flexShrink: 0 }} />
@@ -466,7 +466,7 @@ export default function MembershipPage() {
           {/* sign up link */}
           <Link href="/sign-up" className="flex items-center" style={{ marginTop: "44px", gap: "22px" }}>
             <span style={{ flex: 1, height: "1px", background: "#cfcabf" }} />
-            <span className="font-display" style={{ fontSize: "14px", color: "#9fb5b5", letterSpacing: "0.22em", textTransform: "uppercase", whiteSpace: "nowrap" }}>sign up now</span>
+            <span className="font-display" style={{ fontSize: "14px", color: "#527979", letterSpacing: "0.22em", textTransform: "uppercase", whiteSpace: "nowrap" }}>sign up now</span>
             <span style={{ flex: 1, height: "1px", background: "#cfcabf" }} />
           </Link>
         </div>
