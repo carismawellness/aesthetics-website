@@ -16,6 +16,7 @@ import { useRef, useState, type ReactNode } from "react";
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import FaqAccordion, { type Faq } from "@/components/FaqAccordion";
+import BookingButtons from "@/components/BookingButtons";
 
 const BOOK_HREF =
   "http://fresha.com/a/carisma-slimming-floriana-great-siege-road-wxxyuj9p/booking?menu=true&share=true&offerItems=sv%3A26105577&pId=2708191&dppub=true&employeeId=5084222";
@@ -26,15 +27,11 @@ const A = "/assets/mwl";
 
 function Cta({ children = "book your medical consultation" }: { children?: ReactNode }) {
   return (
-    <a
-      href={BOOK_HREF}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="btn btn-teal"
-      style={{ borderRadius: "2px" }}
-    >
-      {children}
-    </a>
+    <BookingButtons
+      freshaHref={BOOK_HREF}
+      primaryLabel={typeof children === "string" ? children : "book your medical consultation"}
+      consultLabel="Book Free Consultation"
+    />
   );
 }
 
@@ -103,6 +100,24 @@ function H2({
 export default function MedicalWeightLossPage() {
   return (
     <main style={{ overflowX: "hidden" }}>
+      {/* rounded interaction system — cards lift + deepen shadow on hover,
+          carousel arrows scale (preserving their vertical centering) */}
+      <style>{`
+        .mwl-card:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 24px 50px rgba(120,140,140,0.22);
+        }
+        .mwl-arrow:hover,
+        .mwl-arrow:focus-visible {
+          transform: translateY(-50%) scale(1.1);
+          box-shadow: 0 10px 26px rgba(0,0,0,0.2);
+          border-color: var(--teal);
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .mwl-card:hover { transform: none; }
+          .mwl-arrow:hover, .mwl-arrow:focus-visible { transform: translateY(-50%); }
+        }
+      `}</style>
       <Hero />
       <Results />
       <Clarity />
@@ -200,7 +215,7 @@ function Hero() {
               target="_blank"
               rel="noopener noreferrer"
               className="font-display cta-glow-teal"
-              style={{ display: "block", textAlign: "center", color: "#fff", padding: "16px", borderRadius: "8px", letterSpacing: "0.12em", textTransform: "uppercase", fontSize: "13px" }}
+              style={{ display: "block", textAlign: "center", color: "#fff", padding: "16px", borderRadius: "999px", letterSpacing: "0.12em", textTransform: "uppercase", fontSize: "13px", cursor: "pointer" }}
             >
               book your medical consultation
             </a>
@@ -303,7 +318,7 @@ const RESULTS = [
 function ResultCard({ image, name, quote }: { image: string; name: string; quote: string }) {
   const [open, setOpen] = useState(false);
   return (
-    <div style={{ background: "#fff", borderRadius: "16px", padding: "16px 12px", boxShadow: "0 10px 28px rgba(120,140,140,0.12)" }}>
+    <div className="review-card" style={{ background: "#fff", borderRadius: "16px", padding: "16px 12px", boxShadow: "0 10px 28px rgba(120,140,140,0.12)" }}>
       <Image
         src={image}
         alt={`Before and after Ozempic / Mounjaro weight-loss result — ${name}, Carisma Aesthetics Malta`}
@@ -383,6 +398,7 @@ function CarouselArrow({ dir, onClick }: { dir: "left" | "right"; onClick: () =>
       type="button"
       aria-label={dir === "left" ? "Previous results" : "Next results"}
       onClick={onClick}
+      className="mwl-arrow"
       style={{
         position: "absolute",
         top: "40%",
@@ -400,6 +416,7 @@ function CarouselArrow({ dir, onClick }: { dir: "left" | "right"; onClick: () =>
         justifyContent: "center",
         cursor: "pointer",
         zIndex: 2,
+        transition: "transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease",
       }}
     >
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -526,12 +543,14 @@ function Trusted() {
           {DIFFERENTIATORS.map((d, i) => (
             <Reveal key={d.label} delay={i * 80}>
               <div
+                className="mwl-card"
                 style={{
                   height: "100%",
                   background: "linear-gradient(150deg, #ffffff 0%, #f1f5f5 100%)",
                   borderRadius: "26px 26px 92px 26px",
                   boxShadow: "0 18px 40px rgba(120,140,140,0.12)",
                   padding: "30px 28px 38px",
+                  transition: "transform 0.25s ease, box-shadow 0.25s ease",
                 }}
               >
                 <Image src={d.icon} alt="" width={74} height={74} style={{ height: "58px", width: "auto", marginBottom: "22px" }} />
@@ -642,7 +661,7 @@ function SuitColumn({ kind, title, items, style }: { kind: "check" | "cross"; ti
 
 function Suitability({ suitable, notSuitable }: { suitable: string[]; notSuitable: string[] }) {
   return (
-    <div style={{ background: "var(--white)", borderRadius: "14px", boxShadow: "0 14px 34px rgba(120,140,140,0.10)", padding: "clamp(24px,3vw,36px)", height: "100%" }}>
+    <div className="mwl-card" style={{ background: "var(--white)", borderRadius: "16px", boxShadow: "0 14px 34px rgba(120,140,140,0.10)", padding: "clamp(24px,3vw,36px)", height: "100%", transition: "transform 0.25s ease, box-shadow 0.25s ease" }}>
       <div className="grid" style={{ gridTemplateColumns: "minmax(0,1fr) minmax(0,1fr)", gap: "0" }}>
         <SuitColumn kind="check" title="Suitable for" items={suitable} style={{ paddingRight: "26px" }} />
         <SuitColumn kind="cross" title="Not suitable for" items={notSuitable} style={{ paddingLeft: "26px", borderLeft: "1px solid var(--line)" }} />
@@ -947,7 +966,7 @@ function HowItWorks() {
                       : { gridTemplateColumns: "minmax(0,1fr)" }
                   }
                 >
-                  <div style={{ background: "var(--white)", borderRadius: "14px", boxShadow: "0 14px 34px rgba(120,140,140,0.10)", padding: "clamp(24px,3vw,38px)" }}>
+                  <div style={{ background: "var(--white)", borderRadius: "16px", boxShadow: "0 14px 34px rgba(120,140,140,0.10)", padding: "clamp(24px,3vw,38px)" }}>
                     <div className="flex items-center" style={{ gap: "16px", marginBottom: "20px" }}>
                       <Image src={s.icon} alt="" width={56} height={56} style={{ width: "46px", height: "46px", objectFit: "contain", flexShrink: 0 }} />
                       <h3 className="font-serif" style={{ fontSize: "clamp(16px,2vw,19px)", color: "var(--gold)", letterSpacing: "0.04em", textTransform: "uppercase", lineHeight: 1.3 }}>{s.title}</h3>
@@ -1004,7 +1023,7 @@ function ExpertCare() {
               medication stops, that&rsquo;s the real work.&rdquo;
               <span style={{ display: "block", fontStyle: "normal", fontSize: "15px", marginTop: "10px" }}>&mdash; Dr. Teebi</span>
             </blockquote>
-            <a href={BOOK_HREF} target="_blank" rel="noopener noreferrer" className="font-display cta-glow-teal" style={{ display: "block", textAlign: "center", color: "#fff", padding: "16px", borderRadius: "8px", letterSpacing: "0.12em", textTransform: "uppercase", fontSize: "13px" }}>
+            <a href={BOOK_HREF} target="_blank" rel="noopener noreferrer" className="font-display cta-glow-teal" style={{ display: "block", textAlign: "center", color: "#fff", padding: "16px", borderRadius: "999px", letterSpacing: "0.12em", textTransform: "uppercase", fontSize: "13px", cursor: "pointer" }}>
               book your medical consultation
             </a>
           </Reveal>
@@ -1227,7 +1246,7 @@ function Difference() {
             </ul>
           </Reveal>
           <Reveal delay={100}>
-            <div style={{ position: "relative", borderRadius: "10px", overflow: "hidden", boxShadow: "0 16px 38px rgba(0,0,0,0.10)", minHeight: "420px" }}>
+            <div style={{ position: "relative", borderRadius: "16px", overflow: "hidden", boxShadow: "0 16px 38px rgba(0,0,0,0.10)", minHeight: "420px" }}>
               <iframe
                 title="Carisma Aesthetics location"
                 src="https://maps.google.com/maps?q=Carisma%20Aesthetics%20Malta&z=14&output=embed"
@@ -1442,7 +1461,7 @@ function ResearchCardView({ card, col }: { card: ResearchCard; col: "left" | "ri
   const [open, setOpen] = useState(false);
   const h = card.imgHeight ?? 160;
   return (
-    <div style={{ background: "var(--white)", border: "1px solid var(--line)", borderRadius: "12px", boxShadow: "0 8px 24px rgba(0,0,0,0.05)" }}>
+    <div className="mwl-card" style={{ background: "var(--white)", border: "1px solid var(--line)", borderRadius: "16px", boxShadow: "0 8px 24px rgba(0,0,0,0.05)", transition: "transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease" }}>
       <div style={{ padding: "12px 12px 0" }}>
         <Image src={card.img} alt="" width={381} height={h} style={{ width: "100%", height: `${h}px`, objectFit: "cover", objectPosition: "center", display: "block", borderRadius: "0 28px 0 28px" }} />
       </div>

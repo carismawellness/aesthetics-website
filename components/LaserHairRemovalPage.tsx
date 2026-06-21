@@ -1,8 +1,7 @@
-import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import CompositeSlideshow from "@/components/CompositeSlideshow";
 import FaqAccordion, { type Faq } from "@/components/FaqAccordion";
-import ConsultationForm from "@/components/ConsultationForm";
+import BookingButtons from "@/components/BookingButtons";
 
 const IMG = "/assets/treatments";
 
@@ -25,7 +24,7 @@ function SerifHeading({ children, style }: { children: React.ReactNode; style?: 
   );
 }
 function BookButton({ label = "book your session" }: { label?: string }) {
-  return <Link href="/consultation" className="btn btn-gold" style={{ fontSize: "13px", padding: "15px 34px", letterSpacing: "0.12em", borderRadius: "999px" }}>{label}</Link>;
+  return <BookingButtons consultLabel={label} theme="gold" />;
 }
 function Check({ size = 26 }: { size?: number }) {
   return (
@@ -157,7 +156,7 @@ export default function LaserHairRemovalPage() {
               </ul>
 
               <div style={{ marginTop: "20px" }}>
-                <a href="#book" className="btn btn-gold" style={{ borderRadius: "999px" }}>book your free consultation</a>
+                <BookingButtons consultLabel="book your free consultation" theme="gold" align="left" />
               </div>
               <div className="flex items-center gap-2" style={{ marginTop: "14px" }}>
                 <span className="flex" style={{ color: "var(--gold-deep)" }}>
@@ -179,17 +178,6 @@ export default function LaserHairRemovalPage() {
               </div>
               <p className="font-display text-center" style={{ fontSize: "12px", color: GOLD_TXT, letterSpacing: "0.1em", marginTop: "14px", lineHeight: 1.5 }}>Triple-wavelength laser &nbsp;|&nbsp; Intercontinental Hotel, St. Julian&rsquo;s</p>
             </Reveal>
-          </div>
-        </div>
-      </section>
-
-      {/* Lead form — moved out of the hero (the embedded form is taller than a
-          single viewport) into its own section anchored from the hero CTA. */}
-      <section id="book" style={{ padding: "clamp(36px,5vh,64px) 0", backgroundColor: "rgba(255,255,255,0.7)", scrollMarginTop: "var(--nav-clear)" }}>
-        <div className="container">
-          <p className="font-display text-center" style={{ fontSize: "18px", color: GOLD_TXT, letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: "16px" }}>book your free consultation</p>
-          <div className="mx-auto" style={{ maxWidth: "560px" }}>
-            <ConsultationForm />
           </div>
         </div>
       </section>
@@ -307,7 +295,7 @@ export default function LaserHairRemovalPage() {
             <p className="mx-auto" style={{ maxWidth: "900px", fontSize: "14px", color: "var(--label)", lineHeight: 1.8, marginTop: "20px" }}>Choose from three tailored membership tiers — Bronze, Silver, or Gold — based on your treatment duration and coverage needs. Each option offers six sessions at exclusive pricing, making it easier than ever to commit to smooth, hair-free skin on your terms.</p>
             <div className="grid gap-8 md:grid-cols-3 mx-auto" style={{ maxWidth: "1000px", marginTop: "44px" }}>
               {TIERS.map((t, i) => (
-                <Reveal key={t.name} delay={(i % 3) * 90} className="text-center" style={{ background: "rgba(255,255,255,0.65)", border: "1px solid var(--line)", borderRadius: "16px", padding: "26px 24px 30px", boxShadow: "0 12px 30px rgba(0,0,0,0.06)" }}>
+                <Reveal key={t.name} delay={(i % 3) * 90} className="text-center card" style={{ background: "rgba(255,255,255,0.65)", border: "1px solid var(--line)", borderRadius: "16px", padding: "26px 24px 30px" }}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={`${IMG}/${t.image}`} alt={t.name} className="mx-auto" style={{ display: "block", width: "100%", maxWidth: "260px", borderRadius: "10px", boxShadow: "0 8px 22px rgba(0,0,0,0.12)" }} />
                   <h3 className="font-serif" style={{ fontSize: "20px", color: GOLD_TXT, letterSpacing: "0.08em", textTransform: "uppercase", marginTop: "22px" }}>{t.name}</h3>
@@ -337,7 +325,7 @@ export default function LaserHairRemovalPage() {
               </p>
               <p className="font-display text-center" style={{ fontSize: "13px", color: "var(--label)", letterSpacing: "0.04em", lineHeight: 1.7, marginTop: "12px" }}>BOOK YOUR <span style={{ color: GOLD_TXT }}>PRIVATE CONSULTATION</span> TODAY AND DISCOVER THE<br />EFFORTLESS ELEGANCE OF LASTING SMOOTH SKIN.</p>
               <div style={{ marginTop: "24px" }}>
-                <Link href="/consultation" className="btn btn-gold" style={{ display: "block", width: "100%", fontSize: "13px", padding: "16px 34px", letterSpacing: "0.14em", borderRadius: "999px" }}>book your session</Link>
+                <BookingButtons consultLabel="book your session" theme="gold" />
               </div>
             </div>
           </div>
@@ -397,7 +385,7 @@ export default function LaserHairRemovalPage() {
           <div className="container">
             <SerifHeading>#1 award winning chain in malta</SerifHeading>
             <div className="grid gap-12 lg:grid-cols-2 items-center mx-auto" style={{ maxWidth: "1040px", marginTop: "40px" }}>
-              <Reveal style={{ background: "rgba(255,255,255,0.65)", border: "1px solid var(--line)", borderRadius: "16px", padding: "clamp(28px,3.5vw,42px)", boxShadow: "0 12px 30px rgba(0,0,0,0.06)" }}>
+              <Reveal className="card" style={{ background: "rgba(255,255,255,0.65)", border: "1px solid var(--line)", borderRadius: "16px", padding: "clamp(28px,3.5vw,42px)" }}>
                 <h3 className="font-display" style={{ fontSize: "20px", color: "var(--label)", letterSpacing: "0.04em", marginBottom: "22px" }}>why choose carisma?</h3>
                 <ul className="space-y-4">
                   {WHY.map((w) => (
@@ -509,9 +497,18 @@ export default function LaserHairRemovalPage() {
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mx-auto" style={{ maxWidth: "1080px", marginBottom: "36px" }}>
               <h2 className="font-serif" style={{ fontSize: "clamp(24px,3.2vw,32px)", color: "var(--gold-deep)", letterSpacing: "0.06em", fontWeight: 400 }}>Frequently asked questions</h2>
               <span className="relative" style={{ width: "260px", maxWidth: "100%" }}>
-                <input type="search" aria-label="Search FAQs" placeholder="Looking for something?" style={{ width: "100%", padding: "10px 38px 10px 16px", border: "none", borderBottom: "1px solid var(--muted)", background: "transparent", fontSize: "13px", color: "var(--label)" }} />
+                <input type="search" aria-label="Search FAQs" placeholder="Looking for something?" className="lhr-faq-search" style={{ width: "100%", padding: "10px 38px 10px 16px", border: "none", borderBottom: "1px solid var(--muted)", borderRadius: "12px 12px 0 0", background: "transparent", fontSize: "13px", color: "var(--label)" }} />
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gold-deep)" strokeWidth="1.6" style={{ position: "absolute", right: "10px", top: "50%", transform: "translateY(-50%)" }}><circle cx="11" cy="11" r="7" /><path d="m21 21-4.3-4.3" /></svg>
               </span>
+              {/* focus ring: ink bottom border + soft 4px halo (never bare outline:none) */}
+              <style>{`
+                .lhr-faq-search:focus,
+                .lhr-faq-search:focus-visible {
+                  outline: none;
+                  border-bottom: 1px solid var(--ink);
+                  box-shadow: 0 0 0 4px rgba(12,11,11,0.12);
+                }
+              `}</style>
             </div>
             <FaqAccordion items={FAQS} />
           </div>
@@ -541,7 +538,7 @@ export default function LaserHairRemovalPage() {
             <div style={{ marginTop: "60px" }}>
               <SerifHeading style={{ marginBottom: "30px" }}>start your smooth skin journey today</SerifHeading>
               {/* Full-width book button matching live — pill style */}
-              <Link href="/consultation" className="btn btn-gold" style={{ display: "block", width: "100%", maxWidth: "660px", margin: "0 auto", fontSize: "13px", padding: "18px 34px", letterSpacing: "0.14em", borderRadius: "999px" }}>book your session</Link>
+              <BookingButtons consultLabel="book your session" theme="gold" />
             </div>
           </div>
         </section>

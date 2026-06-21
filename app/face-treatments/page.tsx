@@ -4,6 +4,7 @@ import Link from "next/link";
 import { faceTreatments, FACE_LISTING } from "@/lib/face-treatments";
 import { TreatmentCard, CtaBanner, Eyebrow, SectionHeading } from "@/components/face/FaceUI";
 import Reveal from "@/components/Reveal";
+import BookingButtons from "@/components/BookingButtons";
 
 export const metadata: Metadata = {
   title: "Face Treatments | Carisma Aesthetics Malta",
@@ -27,9 +28,7 @@ export default function FaceTreatmentsPage() {
               <div style={{ width: "200px", height: "1.5px", background: "var(--teal)", margin: "18px 0" }} />
               <p style={{ fontSize: "clamp(14px,1vw,15px)", color: "var(--ink-soft)", lineHeight: 1.85, maxWidth: "520px" }}>{FACE_LISTING.subhead}</p>
               <div style={{ marginTop: "28px" }}>
-                <Link href="/consultation" className="btn btn-teal" style={{ fontSize: "11px", letterSpacing: "0.14em", padding: "12px 26px" }}>
-                  Free Consultation
-                </Link>
+                <BookingButtons consultLabel="Free Consultation" align="left" />
               </div>
             </div>
             {/* Right: hero image mosaic */}

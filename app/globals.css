@@ -356,6 +356,30 @@ main li a:not(.btn):not(.no-underline),
   text-decoration: underline;
 }
 
+/* Secondary CTA outline buttons — teal and gold variants */
+.btn-outline-teal {
+  border: 1.5px solid var(--teal-deep);
+  color: var(--teal-deep);
+  background: transparent;
+}
+.btn-outline-teal:hover,
+.btn-outline-teal:focus-visible {
+  background: var(--teal-deep);
+  color: var(--white);
+  border-color: var(--teal-deep);
+}
+.btn-outline-gold {
+  border: 1.5px solid var(--gold);
+  color: var(--gold);
+  background: transparent;
+}
+.btn-outline-gold:hover,
+.btn-outline-gold:focus-visible {
+  background: var(--gold);
+  color: var(--white);
+  border-color: var(--gold);
+}
+
 .container {
   max-width: var(--maxw);
   margin-inline: auto;

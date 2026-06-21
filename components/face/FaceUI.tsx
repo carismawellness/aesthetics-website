@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import FaqAccordion from "@/components/FaqAccordion";
+import BookingButtons from "@/components/BookingButtons";
 import type { FaceTreatment, InfoStat, Area, Step, BeforeAfter, Faq } from "@/lib/face-treatments";
 
 /*
@@ -79,7 +80,7 @@ export function FaceHero({ t }: { t: FaceTreatment }) {
           <Eyebrow tone="onDark">{t.eyebrow}</Eyebrow>
           <h1 className="font-display" style={{ fontSize: "clamp(30px,4.2vw,44px)", fontWeight: 600, letterSpacing: "0.10em", textTransform: "uppercase", lineHeight: 1.2, color: "#fff" }}>{t.name}</h1>
           <p style={{ fontSize: "clamp(14px,1vw,16px)", color: "#ffffff", lineHeight: 1.7, margin: "18px 0 26px", maxWidth: "560px" }}>{t.heroSubhead}</p>
-          <TealButton href={BOOK}>Free Consultation</TealButton>
+          <BookingButtons consultLabel="Free Consultation" align="left" />
         </div>
       </div>
     </section>
@@ -249,13 +250,13 @@ export function CarismaDifference({ commitments }: { commitments: string[] }) {
   );
 }
 
-export function CtaBanner({ heading, sub, buttonLabel = "Book a Consultation", href = BOOK }: { heading: string; sub?: string; buttonLabel?: string; href?: string }) {
+export function CtaBanner({ heading, sub, buttonLabel = "Book a Consultation" }: { heading: string; sub?: string; buttonLabel?: string }) {
   return (
     <section style={{ background: "var(--beige)" }}>
       <div className="container" style={{ paddingTop: "80px", paddingBottom: "80px", textAlign: "center" }}>
         <h2 className="font-display" style={{ fontSize: "clamp(24px,3vw,34px)", fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase", color: "var(--ink)", lineHeight: 1.25, maxWidth: "760px", marginInline: "auto" }}>{heading}</h2>
         {sub && <p style={{ fontSize: "15px", color: "var(--ink-soft)", lineHeight: 1.7, maxWidth: "620px", margin: "16px auto 0" }}>{sub}</p>}
-        <div style={{ marginTop: "28px" }}><TealButton href={href}>{buttonLabel}</TealButton></div>
+        <div style={{ marginTop: "28px" }}><BookingButtons consultLabel={buttonLabel} /></div>
       </div>
     </section>
   );

@@ -1,6 +1,6 @@
 import { CONTACT } from "@/lib/site";
-import ConsultationForm from "@/components/ConsultationForm";
 import Reveal from "@/components/Reveal";
+import BookingButtons from "@/components/BookingButtons";
 
 export const metadata = {
   title: "Book Your Free Consultation | Carisma Aesthetics Malta",
@@ -159,26 +159,11 @@ export default function ConsultationPage() {
               shaping a conservative, personalised plan with one of our doctors.
             </p>
             <div style={{ marginTop: "32px" }}>
-              <a
-                href={FRESHA_CONSULT}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn btn-teal"
-                style={{ fontSize: "12px", letterSpacing: "0.14em" }}
-              >
-                Book Instantly on Fresha
-              </a>
-              <p
-                className="font-display"
-                style={{
-                  fontSize: "10px",
-                  color: "var(--label)",
-                  letterSpacing: "0.12em",
-                  marginTop: "12px",
-                }}
-              >
-                or complete the form below and we will be in touch
-              </p>
+              <BookingButtons
+                freshaHref={FRESHA_CONSULT}
+                primaryLabel="Book Instantly on Fresha"
+                consultLabel="Book Free Consultation"
+              />
             </div>
           </Reveal>
         </div>
@@ -262,52 +247,6 @@ export default function ConsultationPage() {
               </Reveal>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* ===== FORM ===== */}
-      <section style={{ backgroundColor: "var(--beige)", padding: "64px 0 80px" }}>
-        <div className="container">
-          <Reveal>
-            <p
-              className="font-display text-center"
-              style={{
-                fontSize: "11px",
-                color: "var(--teal-deep)",
-                letterSpacing: "0.18em",
-                marginBottom: "12px",
-              }}
-            >
-              request a consultation
-            </p>
-            <h2
-              className="font-display text-center"
-              style={{
-                fontSize: "clamp(20px,2.6vw,30px)",
-                color: "var(--ink)",
-                letterSpacing: "0.08em",
-                fontWeight: 600,
-                marginBottom: "8px",
-              }}
-            >
-              Fill in Your Details
-            </h2>
-            <p
-              className="text-center mx-auto"
-              style={{
-                fontSize: "14px",
-                color: "var(--label)",
-                lineHeight: 1.7,
-                maxWidth: "560px",
-                marginBottom: "40px",
-              }}
-            >
-              One of our team will reach out within 24 hours to confirm your appointment.
-            </p>
-          </Reveal>
-          <Reveal delay={80} className="mx-auto" style={{ maxWidth: "960px" }}>
-            <ConsultationForm />
-          </Reveal>
         </div>
       </section>
 

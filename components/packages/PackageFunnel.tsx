@@ -3,6 +3,7 @@
 import { useRef, useState } from "react";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
+import BookingButtons from "@/components/BookingButtons";
 import type { PackageData } from "@/lib/packages";
 
 /*
@@ -38,21 +39,12 @@ function Chevron() {
 }
 
 function CtaButton({ children, href }: { children: string; href: string }) {
-  const external = /^https?:\/\//.test(href);
-  const style = { padding: "12px 34px", borderRadius: "0px" } as const;
-  if (external) {
-    return (
-      <a href={href} target="_blank" rel="noopener noreferrer" className="btn btn-teal" style={style}>
-        {children}
-        <Chevron />
-      </a>
-    );
-  }
   return (
-    <Link href={href} className="btn btn-teal" style={style}>
-      {children}
-      <Chevron />
-    </Link>
+    <BookingButtons
+      freshaHref={href}
+      primaryLabel={children}
+      consultLabel="Book Free Consultation"
+    />
   );
 }
 
@@ -61,21 +53,17 @@ function CtaButton({ children, href }: { children: string; href: string }) {
 function BookCta({ href, save, label }: { href: string; save: number | null; label?: string }) {
   return (
     <div style={{ marginTop: "34px" }}>
-      <a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="block text-center cta-glow-teal"
-        style={{ color: "#fff", padding: "16px 24px", borderRadius: "0px" }}
-      >
-        <span className="font-display" style={{ display: "block", fontSize: "15px", letterSpacing: "0.08em", textTransform: "uppercase" }}>{label ?? "Book Your Consultation Now"}</span>
-        {save != null && (
-          <span className="font-display" style={{ display: "block", fontSize: "10px", letterSpacing: "0.1em", textTransform: "uppercase", marginTop: "5px", opacity: 0.92 }}>
-            Limited-Time Offer — Save €{save}
-          </span>
-        )}
-      </a>
-      <div className="flex items-center gap-2" style={{ marginTop: "13px" }}>
+      <BookingButtons
+        freshaHref={href}
+        primaryLabel={label ?? "Book Your Consultation Now"}
+        consultLabel="Book Free Consultation"
+      />
+      {save != null && (
+        <p className="font-display text-center" style={{ fontSize: "10px", letterSpacing: "0.1em", textTransform: "uppercase", marginTop: "10px", opacity: 0.7, color: "var(--label)" }}>
+          Limited-Time Offer — Save €{save}
+        </p>
+      )}
+      <div className="flex items-center justify-center gap-2" style={{ marginTop: "13px" }}>
         <span style={{ color: "#f5b50a", fontSize: "15px", letterSpacing: "1px" }} aria-hidden>★★★★★</span>
         <span style={{ fontSize: "13px", color: "var(--label)" }}>4,9/5 from over 200 customer reviews</span>
       </div>
@@ -183,6 +171,10 @@ function HeroVideo({ poster, src, ratio }: { poster: string; src?: string; ratio
         aria-label={muted ? "Unmute video" : "Mute video"}
         aria-pressed={!muted}
         className="absolute inline-flex items-center justify-center"
+        onMouseEnter={(e) => { e.currentTarget.style.transform = "scale(1.04)"; }}
+        onMouseLeave={(e) => { e.currentTarget.style.transform = "scale(1)"; }}
+        onFocus={(e) => { e.currentTarget.style.transform = "scale(1.04)"; }}
+        onBlur={(e) => { e.currentTarget.style.transform = "scale(1)"; }}
         style={{
           right: "14px",
           bottom: "14px",
@@ -194,7 +186,7 @@ function HeroVideo({ poster, src, ratio }: { poster: string; src?: string; ratio
           color: "#fff",
           border: "1px solid rgba(255,255,255,0.55)",
           cursor: "pointer",
-          transition: "background 0.2s ease",
+          transition: "background 0.2s ease, transform 250ms ease",
         }}
       >
         {muted ? (
@@ -216,12 +208,12 @@ function HeroVideo({ poster, src, ratio }: { poster: string; src?: string; ratio
 function TestimonialCard({ t }: { t: { img: string; quote: string; name: string } }) {
   const [open, setOpen] = useState(false);
   return (
-    <div style={{ background: "var(--white)", border: "1px solid var(--line)", borderRadius: "8px", overflow: "hidden", boxShadow: "0 10px 26px rgba(0,0,0,0.05)" }}>
+    <div className="card review-card" style={{ overflow: "hidden" }}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src={t.img} alt="" style={{ display: "block", width: "100%", aspectRatio: "4 / 3", objectFit: "cover" }} />
       <div style={{ padding: "18px 18px 20px" }}>
         <p style={{ fontSize: "12.5px", color: "var(--label)", lineHeight: 1.6, ...(open ? {} : { display: "-webkit-box", WebkitLineClamp: 4, WebkitBoxOrient: "vertical", overflow: "hidden" }) }}>{t.quote}</p>
-        <button onClick={() => setOpen((v) => !v)} style={{ fontSize: "12px", color: "var(--teal)", marginTop: "10px", background: "none", cursor: "pointer", padding: 0 }}>
+        <button onClick={() => setOpen((v) => !v)} className="link-underline" style={{ fontSize: "12px", color: "var(--teal-text)", marginTop: "10px", background: "none", cursor: "pointer", padding: 0, border: "none" }}>
           {open ? "Read less" : "Read more"}
         </button>
         <p style={{ fontSize: "13px", color: "var(--ink-soft)", marginTop: "12px", fontWeight: 600 }}>- {t.name}</p>
@@ -340,7 +332,7 @@ export default function PackageFunnel({ data }: { data: PackageData }) {
             </div>
             <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4" style={{ marginTop: "48px" }}>
               {data.trusted.benefits.map((b, i) => (
-                <Reveal key={b.title} delay={(i % 4) * 70} className="text-center" style={{ background: "var(--white)", border: "1px solid var(--line)", borderRadius: "8px", padding: "28px 22px" }}>
+                <Reveal key={b.title} delay={(i % 4) * 70} className="card text-center" style={{ padding: "28px 22px" }}>
                   <div className="flex justify-center" style={{ marginBottom: "14px" }}>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src={b.icon} alt="" style={{ height: "48px", width: "auto" }} />
@@ -516,13 +508,12 @@ export default function PackageFunnel({ data }: { data: PackageData }) {
           <div className="mx-auto" style={{ maxWidth: "820px" }}>
             <div className="flex flex-wrap items-center justify-between gap-4" style={{ marginBottom: "30px" }}>
               <h2 className="font-display" style={{ fontSize: "clamp(17px,2.2vw,22px)", color: "var(--gold)", letterSpacing: "0.12em" }}>FREQUENTLY ASKED QUESTIONS</h2>
-              <div className="flex items-center gap-2" style={{ borderBottom: "1px solid var(--line)", paddingBottom: "6px", minWidth: "220px" }}>
+              <div className="flex items-center gap-2" style={{ minWidth: "220px" }}>
                 <input
+                  className="form-field"
                   placeholder="Looking for something?"
                   aria-label="Search frequently asked questions"
-                  onFocus={(e) => { e.currentTarget.style.outline = "2px solid var(--teal-deep)"; e.currentTarget.style.outlineOffset = "2px"; }}
-                  onBlur={(e) => { e.currentTarget.style.outline = "none"; }}
-                  style={{ flex: 1, border: "none", outline: "none", background: "transparent", fontSize: "14px", color: "var(--ink-soft)" }}
+                  style={{ flex: 1 }}
                 />
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" strokeWidth="1.6"><circle cx="11" cy="11" r="7" /><path d="M21 21l-4-4" /></svg>
               </div>
@@ -552,7 +543,7 @@ export default function PackageFunnel({ data }: { data: PackageData }) {
           <h2 className="font-display text-center" style={{ fontSize: "clamp(20px,2.8vw,30px)", color: "var(--label)", letterSpacing: "0.04em", lineHeight: 1.3 }}>
             <strong style={{ color: "var(--ink-soft)" }}>#1 AWARD WINNING</strong> CHAIN IN MALTA WITH<br /><strong style={{ color: "var(--ink-soft)" }}>30+ YEARS</strong> IN WELLNESS
           </h2>
-          <Reveal className="mx-auto" style={{ marginTop: "44px", maxWidth: "640px", background: "var(--white)", border: "1px solid var(--gold)", outline: "1px solid var(--gold)", outlineOffset: "8px", borderRadius: "4px", padding: "clamp(30px,4vw,48px)" }}>
+          <Reveal className="mx-auto" style={{ marginTop: "44px", maxWidth: "640px", background: "var(--white)", border: "1px solid var(--gold)", outline: "1px solid var(--gold)", outlineOffset: "8px", borderRadius: "var(--radius-card)", padding: "clamp(30px,4vw,48px)" }}>
             <h3 className="font-display text-center" style={{ fontSize: "clamp(17px,2.2vw,22px)", color: "var(--gold)", letterSpacing: "0.08em" }}>WHY CARISMA AESTHETICS ?</h3>
             <div className="mx-auto" style={{ width: "120px", height: "1px", background: "var(--gold)", margin: "14px auto 26px" }} />
             <ul className="space-y-5">
@@ -569,7 +560,7 @@ export default function PackageFunnel({ data }: { data: PackageData }) {
           <div className={`grid gap-6 ${data.recommended.cards.length === 2 ? "sm:grid-cols-2" : "sm:grid-cols-3"} mx-auto`} style={{ marginTop: "40px", maxWidth: data.recommended.cards.length === 2 ? "620px" : "920px" }}>
             {data.recommended.cards.map((r, i) => (
               <Reveal key={r.label} delay={(i % 3) * 80}>
-                <Link href={r.href} className="block" style={{ borderRadius: "8px", overflow: "hidden", border: "1px solid var(--line)", background: "var(--white)" }}>
+                <Link href={r.href} className="card review-card block" style={{ overflow: "hidden", cursor: "pointer" }}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={r.img} alt={r.label} style={{ display: "block", width: "100%", aspectRatio: "286 / 335", objectFit: "cover" }} />
                   <div style={{ background: "var(--beige)", padding: "14px 16px" }}>
