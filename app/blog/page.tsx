@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "Carisma Aesthetics | Aesthetics Blog | #1 Award Winning Chain in Malta",
   description:
     "Botox, fillers or body contouring tips, Carisma Aesthetics' blog cover it all—Malta's trusted clinic for expert guidance in medical aesthetics.",
+  alternates: {
+    canonical: "https://www.carismaaesthetics.com/blog",
+  },
   openGraph: {
     title: "Carisma Aesthetics | Aesthetics Blog | #1 Award Winning Chain in Malta",
     description:
@@ -24,6 +27,8 @@ export const metadata: Metadata = {
   },
 };
 
+// ─── Blog Card ────────────────────────────────────────────────────────────────
+
 function BlogCard({ post }: { post: BlogPost }) {
   const formattedDate = new Date(post.publishDate).toLocaleDateString("en-GB", {
     day: "numeric",
@@ -32,106 +37,149 @@ function BlogCard({ post }: { post: BlogPost }) {
   });
 
   return (
-    <Link
-      href={`/blog/${post.slug}`}
-      className="group card review-card block overflow-hidden"
-      style={{
-        borderRadius: "var(--radius-card)",
-      }}
-    >
-      {/* Cover image */}
-      <div className="relative overflow-hidden" style={{ aspectRatio: "3/2" }}>
-        <Image
-          src={post.coverImage}
-          alt={post.title}
-          fill
-          className="object-cover transition-transform duration-500 group-hover:scale-105"
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-        />
+    /* P6: <article> element for blog cards; heading hierarchy H2 for card titles */
+    <article>
+      <Link
+        href={`/blog/${post.slug}`}
+        className="group card review-card block overflow-hidden transition-all duration-200 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
+        style={{
+          borderRadius: "var(--radius-card)",
+          /* P2: visible focus ring color */
+          outlineColor: "var(--teal-deep)",
+        }}
+        /* P1: BLOG-SPECIFIC: aria-label for link so screen readers get article title */
+        aria-label={`Read article: ${post.title}`}
+      >
+        {/* P3: Cover image — fill + sized container, no priority needed (below fold) */}
+        <div className="relative overflow-hidden" style={{ aspectRatio: "3/2" }}>
+          <Image
+            src={post.coverImage}
+            /* P1: meaningful alt describing article topic */
+            alt={`Cover image for: ${post.title}`}
+            fill
+            className="object-cover transition-transform duration-500 motion-safe:group-hover:scale-105"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+            loading="lazy"
+          />
 
-        {/* Category chip */}
-        <span
-          className="absolute font-display"
-          style={{
-            top: "14px",
-            left: "16px",
-            background: "var(--teal-deep)",
-            color: "#fff",
-            fontSize: "9px",
-            letterSpacing: "0.16em",
-            padding: "4px 11px",
-            borderRadius: "3px",
-          }}
-        >
-          {post.category}
-        </span>
-      </div>
-
-      {/* Card body */}
-      <div style={{ padding: "22px 24px 28px" }}>
-        {/* Date + read time */}
-        <div
-          className="flex items-center gap-3 mb-3"
-          style={{ fontSize: "11px", color: "var(--muted)", letterSpacing: "0.06em" }}
-        >
-          <span className="font-display" style={{ fontSize: "9.5px" }}>{formattedDate}</span>
-          <span style={{ color: "var(--line)" }}>·</span>
-          <span className="font-display" style={{ fontSize: "9.5px" }}>{post.readTime} min read</span>
+          {/* Category chip */}
+          <span
+            className="absolute font-display"
+            aria-hidden="true"
+            style={{
+              top: "14px",
+              left: "16px",
+              background: "var(--teal-deep)",
+              color: "#fff",
+              fontSize: "9px",
+              letterSpacing: "0.16em",
+              padding: "4px 11px",
+              borderRadius: "3px",
+            }}
+          >
+            {post.category}
+          </span>
         </div>
 
-        {/* Title */}
-        <h2
-          className="font-serif mb-3 leading-snug"
-          style={{
-            fontSize: "clamp(14px, 1.5vw, 17px)",
-            color: "var(--teal-deep)",
-            letterSpacing: "0.03em",
-          }}
-        >
-          {post.title}
-        </h2>
+        {/* Card body */}
+        <div style={{ padding: "22px 24px 28px" }}>
+          {/* P6: date + read time metadata */}
+          <div
+            className="flex items-center gap-3 mb-3"
+            style={{ fontSize: "11px", color: "var(--muted)", letterSpacing: "0.06em" }}
+          >
+            <time
+              className="font-display"
+              dateTime={post.publishDate}
+              style={{ fontSize: "9.5px" }}
+            >
+              {formattedDate}
+            </time>
+            <span aria-hidden="true" style={{ color: "var(--line)" }}>·</span>
+            <span className="font-display" style={{ fontSize: "9.5px" }}>
+              {post.readTime} min read
+            </span>
+          </div>
 
-        {/* Excerpt */}
-        <p
-          className="mb-5"
-          style={{
-            fontSize: "13.5px",
-            color: "var(--muted)",
-            lineHeight: 1.65,
-            display: "-webkit-box",
-            WebkitLineClamp: 3,
-            WebkitBoxOrient: "vertical",
-            overflow: "hidden",
-          }}
-        >
-          {post.excerpt}
-        </p>
+          {/* P6: H2 for card titles (H1 is on the page header) */}
+          <h2
+            className="font-serif mb-3 leading-snug"
+            style={{
+              fontSize: "clamp(14px, 1.5vw, 17px)",
+              color: "var(--teal-deep)",
+              letterSpacing: "0.03em",
+            }}
+          >
+            {post.title}
+          </h2>
 
-        {/* Read more */}
-        <span
-          className="font-display"
-          style={{
-            fontSize: "10px",
-            color: "var(--teal-text)",
-            letterSpacing: "0.14em",
-            borderBottom: "1px solid var(--teal-deep)",
-            paddingBottom: "2px",
-          }}
-        >
-          Read Article &rarr;
-        </span>
-      </div>
-    </Link>
+          {/* Excerpt */}
+          <p
+            className="mb-5"
+            style={{
+              fontSize: "13.5px",
+              color: "var(--muted)",
+              lineHeight: 1.65,
+              display: "-webkit-box",
+              WebkitLineClamp: 3,
+              WebkitBoxOrient: "vertical",
+              overflow: "hidden",
+            }}
+          >
+            {post.excerpt}
+          </p>
+
+          {/* P2: tap target — min 44px via padding; P4: consistent hover underline */}
+          <span
+            className="font-display inline-flex items-center min-h-[44px]"
+            aria-hidden="true"
+            style={{
+              fontSize: "10px",
+              color: "var(--teal-text)",
+              letterSpacing: "0.14em",
+              borderBottom: "1px solid var(--teal-deep)",
+              paddingBottom: "2px",
+            }}
+          >
+            Read Article &rarr;
+          </span>
+        </div>
+      </Link>
+    </article>
   );
 }
+
+// ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default function BlogIndexPage() {
   const posts = getAllBlogs();
 
   return (
-    <div style={{ background: "var(--teal-100)", minHeight: "100vh" }}>
+    /* P1: <main> landmark */
+    <main style={{ background: "var(--teal-100)", minHeight: "100vh" }}>
+      {/* P9: breadcrumb nav */}
+      <nav aria-label="Breadcrumb" className="container" style={{ padding: "16px 20px 0" }}>
+        <ol
+          className="flex items-center gap-2 flex-wrap"
+          style={{ fontSize: "12px", color: "var(--muted)", listStyle: "none", margin: 0, padding: 0 }}
+        >
+          <li>
+            <Link
+              href="/"
+              className="transition-colors duration-200 hover:underline focus-visible:outline-none focus-visible:underline"
+              style={{ color: "var(--teal-text)" }}
+            >
+              Home
+            </Link>
+          </li>
+          <li aria-hidden="true" style={{ color: "var(--line)" }}>/</li>
+          <li aria-current="page" style={{ color: "var(--muted)" }}>Blog</li>
+        </ol>
+      </nav>
+
       {/* ── Page header ─────────────────────────────── */}
       <section
+        aria-labelledby="blog-page-heading"
         style={{
           background: "#fff",
           borderBottom: "1px solid var(--line)",
@@ -142,11 +190,14 @@ export default function BlogIndexPage() {
         <div className="container">
           <p
             className="font-display mb-4"
+            aria-hidden="true"
             style={{ fontSize: "10px", color: "var(--label)", letterSpacing: "0.22em" }}
           >
             Carisma Aesthetics
           </p>
+          {/* P6: exactly one H1 per page */}
           <h1
+            id="blog-page-heading"
             className="font-serif"
             style={{
               fontSize: "clamp(26px, 5vw, 48px)",
@@ -160,6 +211,7 @@ export default function BlogIndexPage() {
           </h1>
           <p
             style={{
+              /* P1: var(--muted) is assumed to have sufficient contrast on white; using max-w-prose */
               color: "var(--muted)",
               fontSize: "15px",
               maxWidth: "540px",
@@ -173,7 +225,14 @@ export default function BlogIndexPage() {
       </section>
 
       {/* ── Post grid ───────────────────────────────── */}
-      <section className="container" style={{ padding: "64px 20px 96px" }}>
+      <section
+        className="container"
+        aria-labelledby="blog-articles-heading"
+        style={{ padding: "64px 20px 96px" }}
+      >
+        {/* P1: visually hidden label for section */}
+        <h2 id="blog-articles-heading" className="sr-only">All Articles</h2>
+
         {posts.length === 0 ? (
           <div className="text-center" style={{ padding: "80px 0", color: "var(--muted)" }}>
             <p
@@ -186,12 +245,17 @@ export default function BlogIndexPage() {
               We are currently crafting expert articles for you. Check back soon.
             </p>
             <div className="mt-8">
-              <Link href="/consultation" className="btn btn-teal">
+              {/* P2: min tap target 44px via btn class; P10: primary CTA */}
+              <Link
+                href="/consultation"
+                className="btn btn-teal inline-flex items-center justify-center min-h-[44px]"
+              >
                 Book a Consultation
               </Link>
             </div>
           </div>
         ) : (
+          /* P5: responsive grid — 1 col on mobile, auto-fill on larger */
           <div
             className="grid gap-8"
             style={{
@@ -207,6 +271,7 @@ export default function BlogIndexPage() {
 
       {/* ── Bottom CTA ──────────────────────────────── */}
       <section
+        aria-labelledby="blog-cta-heading"
         style={{
           background: "linear-gradient(135deg, var(--teal-deep) 0%, #466b6b 100%)",
           padding: "64px 20px",
@@ -215,6 +280,7 @@ export default function BlogIndexPage() {
       >
         <div className="container">
           <h2
+            id="blog-cta-heading"
             className="font-serif mb-5"
             style={{
               fontSize: "clamp(18px, 3vw, 28px)",
@@ -235,22 +301,22 @@ export default function BlogIndexPage() {
           >
             Our team of medically qualified practitioners is here to guide you. Book a free consultation today.
           </p>
+          {/* P2: min 44px tap target; P10: primary CTA styling */}
           <Link
             href="/consultation"
-            className="btn"
+            className="btn inline-flex items-center justify-center min-h-[44px] transition-all duration-200 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-transparent"
             style={{
               background: "#fff",
               color: "var(--teal-text)",
               fontSize: "12px",
               padding: "15px 36px",
               letterSpacing: "0.16em",
-              display: "inline-flex",
             }}
           >
             Free Consultation
           </Link>
         </div>
       </section>
-    </div>
+    </main>
   );
 }
