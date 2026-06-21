@@ -451,8 +451,12 @@ main li a:not(.btn):not(.no-underline),
 }
 .card:hover {
   border-color: var(--label); /* darker hairline on hover */
+  transform: translateY(-4px); /* subtle luxury lift (transition already set above) */
   box-shadow: 0 2px 6px rgba(12, 11, 11, 0.08),
               0 16px 40px rgba(12, 11, 11, 0.12);
+}
+@media (prefers-reduced-motion: reduce) {
+  .card:hover { transform: none; }
 }
 
 /* ── Review / testimonial cards (marquee effect) ──
