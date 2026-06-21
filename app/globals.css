@@ -42,33 +42,66 @@
   font-style: normal;
   font-display: swap;
 }
+/* Helvetica — clean neutral UI / alternate body face */
+@font-face {
+  font-family: "Helvetica Brand";
+  src: url("/assets/fonts/helvetica.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+/* Ani Lazy Day — decorative script for elegant accents (use sparingly, large only) */
+@font-face {
+  font-family: "Carisma Script";
+  src: url("/assets/fonts/ani-lazy-day.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 
 :root {
-  /* Brand palette — sampled from the live site via pixel QC.
-     The live brand is COOL: muted teal accents + cool taupe + light teal
-     backgrounds (not warm cream). */
-  --gold: #a99e8d;          /* primary taupe-gold (headings, nav, prices) — sampled from live */
-  --gold-deep: #b79e61;     /* richer gold for star accents */
-  --label: #9b8d83;         /* muted label / bio taupe */
-  --teal: #96b2b2;          /* PRIMARY accent — Carisma Aesthetics sage-teal (buttons, highlights) */
-  --teal-deep: #7a9e9e;     /* sage teal hover */
-  --teal-200: #c5d6d6;      /* light sage teal */
-  --teal-100: #eef3f3;      /* lightest teal tint */
+  /* ============================================================
+     Carisma Aesthetics — BRAND PALETTE (2026 refresh)
+     Identity hues come straight from the brand palette board:
+       sage-teal #96B2B2 · light teal #DEEBEB · warm beige #EFE7D7
+       taupe #9B8D83 · neutral grey #ECEAE7 · white #FFFFFF
+     Bright identity hues are decorative (backgrounds / large graphics).
+     Each functional TEXT/FILL token keeps an AA-darkened variant so the
+     live site stays WCAG AA — never use a bright hue as small text on white.
+     ============================================================ */
+
+  /* — Identity (decorative: backgrounds, large graphics, fills) — */
+  --brand-teal:  #96b2b2;   /* signature sage-teal */
+  --brand-taupe: #9b8d83;   /* warm taupe accent */
+  --teal:        #96b2b2;   /* brand sage-teal (decorative / large fills) */
+  --teal-200:    #c5d6d6;   /* mid sage tint */
+  --teal-100:    #deebeb;   /* lightest teal tint — section background */
+  --beige:       #efe7d7;   /* warm beige band — "why" + "book consultation" */
+  --beige-2:     #e7dbc7;
+  --gray-100:    #eceae7;   /* neutral light grey surface */
+  --cream:       #deebeb;   /* cool "mist" section background (hero, etc.) */
+  --cream-2:     #eef3f3;
+  --white:       #ffffff;
+
+  /* — Accessible TEXT / FILL variants (small text / icons / buttons) — */
+  --teal-deep: #4f7373;     /* accessible teal — button fill & icons carry WHITE text (>=4.5) */
+  --teal-text: #4f7373;     /* teal as small text/link on white */
+  --gold: #706552;          /* heading / nav / price TEXT — AA on white/cream/beige (>=4.5) */
+  --gold-deep: #9c8344;     /* gold graphic / star accent — >=3:1 vs white */
+  --label: #756758;         /* muted label / bio taupe TEXT — AA on white (>=4.5) */
   --ink: #0c0b0b;           /* near-black (footer / award) */
   --ink-soft: #2b2b2b;
-  --muted: #8f8f8f;         /* secondary text */
-  --line: #e2e2e2;          /* hairline borders */
-  --cream: #eef3f3;         /* cool "mist" section background (hero, etc.) */
-  --cream-2: #e7eeee;
-  --beige: #f6efe3;         /* warm beige band — "why" + "book consultation" */
-  --beige-2: #efe6d6;
-  --white: #ffffff;
+  --muted: #717171;         /* secondary TEXT — AA on white (>=4.5) */
+  --line: #e2e2e2;          /* decorative hairline borders (form fields use --field-border) */
+  --field-border: #8a8a8a;  /* form-field border — UI component >=3:1 vs white */
+  --placeholder: #717171;   /* placeholder text — >=4.5:1 vs white */
+  --focus-ring: #4f7373;    /* visible focus indicator — >=3:1 vs white & light tints */
 
   /* RGB channels for translucent brand glows (CTA halo effect) */
   --teal-rgb: 150, 178, 178;       /* --teal  #96b2b2 */
-  --teal-deep-rgb: 122, 158, 158;  /* --teal-deep #7a9e9e */
-  --gold-rgb: 169, 158, 141;       /* --gold  #a99e8d */
-  --gold-deep-rgb: 183, 158, 97;   /* --gold-deep #b79e61 */
+  --teal-deep-rgb: 79, 115, 115;   /* --teal-deep #4f7373 */
+  --gold-rgb: 155, 141, 131;       /* --brand-taupe #9b8d83 */
+  --gold-deep-rgb: 156, 131, 68;   /* --gold-deep #9c8344 */
 
   --maxw: 1200px;
   --radius: 8px;
@@ -85,6 +118,22 @@
   --font-display: "Novecento Wide";
   --font-serif: "Trajan Pro";
   --font-body: "Roboto Local";
+  --font-helvetica: "Helvetica Brand";
+  --font-script: "Carisma Script";
+  --color-brand-teal: var(--brand-teal);
+  --color-brand-taupe: var(--brand-taupe);
+}
+
+/* Decorative script accent — large display use only (hero flourishes, quotes) */
+.font-script {
+  font-family: "Carisma Script", "Trajan Pro", cursive;
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+/* Clean neutral UI / alternate body face */
+.font-helvetica {
+  font-family: "Helvetica Brand", -apple-system, "Segoe UI", sans-serif;
 }
 
 html {
@@ -125,6 +174,27 @@ a {
   text-decoration: none;
 }
 
+/* 1.4.1 Use of Color: in-content (prose) links must carry a non-color cue.
+   Structural/nav/button links opt out via .no-underline or by being a .btn. */
+main p a:not(.btn):not(.no-underline),
+main li a:not(.btn):not(.no-underline),
+.prose a:not(.btn):not(.no-underline) {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+}
+
+/* 2.4.7 / 2.4.11 Focus visible: never remove the indicator. Visible ring >=3:1. */
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+/* Mouse users (no keyboard) keep a clean look but focus is never fully removed. */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
 /* Buttons */
 .btn {
   display: inline-flex;
@@ -154,32 +224,41 @@ a {
   transition: all 0.25s ease;
 }
 
+/* Gold CTA: all gradient stops darkened so WHITE text passes >=4.5 across the
+   ENTIRE gradient (worst/lightest stop #80704c = 4.84:1). Glow halo uses the
+   brand-gold rgb channels so the gold identity is preserved. */
 .btn-gold,
 .cta-glow-gold {
-  background: linear-gradient(135deg, #c9bfae 0%, var(--gold) 52%, var(--gold-deep) 100%);
+  background: linear-gradient(135deg, #80704c 0%, #75663f 52%, #635430 100%);
   box-shadow:
     0 0 22px rgba(var(--gold-rgb), 0.42),
     0 8px 24px rgba(var(--gold-deep-rgb), 0.45);
 }
 .btn-gold:hover,
 .cta-glow-gold:hover {
-  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-deep) 70%, var(--gold-deep) 100%);
+  background: linear-gradient(135deg, #75663f 0%, #635430 70%, #564829 100%);
   box-shadow:
     0 0 30px rgba(var(--gold-rgb), 0.58),
     0 12px 30px rgba(var(--gold-deep-rgb), 0.6);
   transform: translateY(-1px);
 }
 
+/* Teal CTA: all gradient stops dark enough that WHITE text passes >=4.5 across
+   the ENTIRE gradient (worst/lightest stop --teal #527979 = 4.81:1). The old
+   light --teal-200 lead stop (1.5:1) is removed. */
 .btn-teal,
 .cta-glow-teal {
-  background: linear-gradient(135deg, var(--teal-200) 0%, var(--teal) 55%, var(--teal-deep) 100%);
+  /* Fill uses the AA-darkened teal across the whole gradient (lightest stop
+     --teal-deep #4f7373 = 4.7:1) so WHITE text passes — the bright brand
+     --teal #96b2b2 is decorative only and not used as a button fill. */
+  background: linear-gradient(135deg, var(--teal-deep) 0%, #466b6b 55%, #3f6363 100%);
   box-shadow:
     0 0 22px rgba(var(--teal-rgb), 0.45),
     0 8px 24px rgba(var(--teal-rgb), 0.5);
 }
 .btn-teal:hover,
 .cta-glow-teal:hover {
-  background: linear-gradient(135deg, var(--teal) 0%, var(--teal-deep) 65%, var(--teal-deep) 100%);
+  background: linear-gradient(135deg, #466b6b 0%, var(--teal-deep) 65%, #355555 100%);
   box-shadow:
     0 0 30px rgba(var(--teal-rgb), 0.62),
     0 12px 30px rgba(var(--teal-rgb), 0.68);
@@ -205,16 +284,22 @@ a {
 .form-field {
   width: 100%;
   padding: 13px 16px;
-  border: 1px solid var(--line);
+  border: 1px solid var(--field-border); /* UI component >=3:1 vs white (3.45:1) */
   border-radius: 4px;
   font-size: 14px;
   background: var(--white);
   color: var(--ink-soft);
-  transition: border-color 0.2s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
-.form-field:focus {
-  outline: none;
-  border-color: var(--gold);
+.form-field::placeholder {
+  color: var(--placeholder); /* >=4.5:1 vs white (4.88:1) */
+  opacity: 1; /* Firefox lowers placeholder opacity by default — keep full */
+}
+.form-field:focus,
+.form-field:focus-visible {
+  outline: 2px solid var(--focus-ring); /* visible focus ring >=3:1 */
+  outline-offset: 1px;
+  border-color: var(--focus-ring);      /* focus border also >=3:1 */
 }
 
 /* Marquee / announcement bar */
@@ -275,11 +360,16 @@ body.dark-texture-page footer {
   --cream-2:  transparent;
   --beige:    transparent;
   --beige-2:  transparent;
+  /* All verified on the brightest texture patch (#303030) as worst case:
+     ink 10.33, ink-soft 8.04, muted 6.16, label 5.89 — all >=4.5. */
   --ink:      #e8e3da;
   --ink-soft: #d0c9bf;
   --muted:    #b8b0a6;
   --label:    #c9a96a;
-  --line:     rgba(255, 255, 255, 0.12);
+  --line:     rgba(255, 255, 255, 0.40); /* form/UI border >=3:1 on worst patch (3.48:1) */
+  --field-border: rgba(255, 255, 255, 0.40);
+  --placeholder:  #c4bdb2;               /* >=4.5:1 on worst patch */
+  --focus-ring:   #e8e3da;               /* light ring stands out on dark stone */
 }
 /* Footer sections transparent so the texture shows through */
 body.dark-texture-page footer section,
