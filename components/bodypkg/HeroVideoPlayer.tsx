@@ -46,7 +46,11 @@ export default function HeroVideoPlayer({
         onClick={toggle}
         aria-label={muted ? 'Unmute video' : 'Mute video'}
         title={muted ? 'Tap to hear the doctor' : 'Mute'}
-        style={{ position: 'absolute', bottom: 12, right: 12, width: 42, height: 42, borderRadius: '50%', border: 'none', cursor: 'pointer', backgroundColor: 'rgba(20,22,20,0.72)', backdropFilter: 'blur(2px)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', padding: 0 }}
+        onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.04)'; }}
+        onMouseLeave={(e) => { e.currentTarget.style.transform = 'scale(1)'; }}
+        onFocus={(e) => { e.currentTarget.style.transform = 'scale(1.04)'; }}
+        onBlur={(e) => { e.currentTarget.style.transform = 'scale(1)'; }}
+        style={{ position: 'absolute', bottom: 12, right: 12, width: 42, height: 42, borderRadius: '50%', border: 'none', cursor: 'pointer', backgroundColor: 'rgba(20,22,20,0.72)', backdropFilter: 'blur(2px)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', padding: 0, transition: 'transform 250ms ease' }}
       >
         {muted ? (
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>

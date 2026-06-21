@@ -25,8 +25,8 @@ function Serif({ children, style }: { children: React.ReactNode; style?: React.C
 
 function Cta({ label }: { label: string }) {
   return (
-    <Link href="/consultation" className="font-display flex items-center justify-center"
-      style={{ width: "100%", maxWidth: "470px", background: SAGE, color: "#fff", fontSize: "13px", letterSpacing: "0.12em", textTransform: "uppercase", padding: "15px 24px", borderRadius: "4px" }}>
+    <Link href="/consultation" className="font-display flex items-center justify-center pig-cta"
+      style={{ width: "100%", maxWidth: "470px", background: SAGE, color: "#fff", fontSize: "13px", letterSpacing: "0.12em", textTransform: "uppercase", padding: "15px 24px", borderRadius: "999px", cursor: "pointer", transition: "transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease" }}>
       {label} <span aria-hidden style={{ marginLeft: "8px" }}>›</span>
     </Link>
   );
@@ -92,8 +92,8 @@ function Hero() {
               <p style={{ color: GOLD_TEXT, fontSize: "11px", lineHeight: 1.6, marginTop: "12px", maxWidth: "440px" }}>
                 Due to high demand, appointments are offered subject to availability. Results and the number of sessions required may vary depending on your skin type and pigmentation concern.
               </p>
-              <Link href="/consultation" className="font-display flex items-center justify-center"
-                style={{ marginTop: "24px", width: "100%", maxWidth: "470px", background: SAGE, color: "#fff", fontSize: "14px", letterSpacing: "0.12em", textTransform: "uppercase", padding: "16px 24px", borderRadius: "4px" }}>
+              <Link href="/consultation" className="font-display flex items-center justify-center pig-cta"
+                style={{ marginTop: "24px", width: "100%", maxWidth: "470px", background: SAGE, color: "#fff", fontSize: "14px", letterSpacing: "0.12em", textTransform: "uppercase", padding: "16px 24px", borderRadius: "999px", cursor: "pointer", transition: "transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease" }}>
                 Reserve Your Pico Laser Session <span aria-hidden style={{ marginLeft: "8px" }}>›</span>
               </Link>
               <div className="flex items-center gap-2" style={{ marginTop: "20px" }}>
@@ -169,8 +169,8 @@ function Reviews() {
       <Serif>precision pigmentation care in malta</Serif>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style={{ maxWidth: "1160px", margin: "40px auto 0", gap: "24px" }}>
         {REVIEWS.map((r) => (
-          <div key={r.name} className="flex flex-col"
-            style={{ borderRadius: "14px", background: "rgba(255,255,255,0.6)", border: "1px solid rgba(120,160,165,0.5)", boxShadow: "0 12px 30px rgba(0,0,0,0.05)", overflow: "hidden" }}>
+          <div key={r.name} className="flex flex-col review-card"
+            style={{ borderRadius: "16px", background: "rgba(255,255,255,0.6)", border: "1px solid rgba(120,160,165,0.5)", boxShadow: "0 12px 30px rgba(0,0,0,0.05)", overflow: "hidden" }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={r.img} alt={r.alt} style={{ display: "block", width: "100%", aspectRatio: "2 / 1", objectFit: "cover" }} />
             <div className="flex flex-col" style={{ padding: "20px" }}>
@@ -259,8 +259,8 @@ function TrustedFeatures() {
         </div>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4" style={{ marginTop: "44px" }}>
           {FEATURES.map((f) => (
-            <div key={f.label} className="text-center"
-              style={{ background: "#ffffff", border: `1px solid ${TEAL}`, borderRadius: "12px", padding: "28px 22px", boxShadow: "0 4px 16px rgba(0,0,0,0.06)" }}>
+            <div key={f.label} className="text-center card"
+              style={{ background: "#ffffff", border: `1px solid ${TEAL}`, borderRadius: "16px", padding: "28px 22px" }}>
               <div className="flex justify-center" style={{ marginBottom: "16px", height: "68px", alignItems: "center" }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={`${A}/${f.icon}`} alt={f.label} style={{ width: "68px", height: "68px", objectFit: "contain" }} />
@@ -512,8 +512,8 @@ function Pricing() {
         </p>
         <div className="flex flex-wrap justify-center mx-auto" style={{ gap: "22px", marginTop: "40px", maxWidth: "800px" }}>
           {PRICES.map((p, i) => (
-            <div key={p.size} className="text-center relative"
-              style={{ width: "200px", background: "linear-gradient(160deg,#7d7053 0%, #6e6243 100%)", borderRadius: "14px", padding: "44px 18px 26px", marginTop: "26px", boxShadow: "0 12px 30px rgba(0,0,0,0.10)", opacity: i < 4 ? 1 : 0.95 }}>
+            <div key={p.size} className="text-center relative pig-price-tile"
+              style={{ width: "200px", background: "linear-gradient(160deg,#7d7053 0%, #6e6243 100%)", borderRadius: "16px", padding: "44px 18px 26px", marginTop: "26px", boxShadow: "0 12px 30px rgba(0,0,0,0.10)", opacity: i < 4 ? 1 : 0.95, transition: "transform 0.25s ease, box-shadow 0.25s ease" }}>
               <span className="inline-flex items-center justify-center"
                 style={{ position: "absolute", top: "-26px", left: "50%", transform: "translateX(-50%)", width: "56px", height: "56px", borderRadius: "12px", backgroundColor: "#5c5236" }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -752,6 +752,23 @@ function WhyCarisma() {
 export default function PigmentationPage() {
   return (
     <div style={{ backgroundImage: "url('/assets/hero-bg.png')", backgroundSize: "cover", backgroundAttachment: "fixed", backgroundPosition: "top center" }}>
+      {/* solid CTA pills: scale + deepen shadow on hover; price tiles raise on hover */}
+      <style>{`
+        .pig-cta:hover,
+        .pig-cta:focus-visible {
+          transform: scale(1.04);
+          background: #355555;
+          box-shadow: 0 10px 26px rgba(63,99,99,0.35);
+        }
+        .pig-price-tile:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 20px 44px rgba(0,0,0,0.18);
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .pig-cta:hover, .pig-cta:focus-visible,
+          .pig-price-tile:hover { transform: none; }
+        }
+      `}</style>
       <Hero />
       <Reviews />
       <DoYouHave />

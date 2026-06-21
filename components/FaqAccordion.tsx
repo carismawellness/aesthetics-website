@@ -16,7 +16,9 @@ export default function FaqAccordion({ items, uppercase = true }: { items: Faq[]
               type="button"
               onClick={() => setOpen(isOpen ? null : i)}
               className="flex items-center justify-between w-full text-left"
-              style={{ padding: "22px 4px", background: "transparent", border: "none", cursor: "pointer", gap: "20px" }}
+              style={{ padding: "22px 4px", background: "transparent", border: "none", cursor: "pointer", gap: "20px", transition: "opacity 0.25s ease" }}
+              onMouseEnter={(e) => { e.currentTarget.style.opacity = "0.72"; }}
+              onMouseLeave={(e) => { e.currentTarget.style.opacity = "1"; }}
               aria-expanded={isOpen}
             >
               <span className="font-display" style={{ fontSize: "16px", color: "#806a35", letterSpacing: "0.06em", lineHeight: 1.4, textTransform: uppercase ? undefined : "none" }}>

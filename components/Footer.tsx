@@ -98,17 +98,17 @@ export default function Footer() {
       {/* Discover banners */}
       <section className="container" style={{ padding: "60px 20px" }}>
         <Reveal className="grid gap-6 grid-cols-1 mx-auto" style={{ maxWidth: "920px", minWidth: 0 }}>
-          <a href="https://www.carismaspa.com" target="_blank" rel="noopener noreferrer" className="relative block overflow-hidden rounded-lg group" style={{ minWidth: 0 }}>
+          <a href="https://www.carismaspa.com" target="_blank" rel="noopener noreferrer" className="relative block overflow-hidden group" style={{ minWidth: 0, borderRadius: "var(--radius-card)" }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/assets/banner-spa.png" alt="Discover our spas" className="w-full h-auto transition-transform duration-500 group-hover:scale-105" />
-            <span className="font-display" style={{ position: "absolute", right: "22px", bottom: "20px", background: "rgba(255,255,255,0.92)", color: "var(--ink)", fontSize: "11px", letterSpacing: "0.12em", padding: "10px 18px", borderRadius: "4px", display: "inline-flex", alignItems: "center", gap: "8px" }}>
+            <span className="font-display" style={{ position: "absolute", right: "22px", bottom: "20px", background: "rgba(255,255,255,0.92)", color: "var(--ink)", fontSize: "11px", letterSpacing: "0.12em", padding: "10px 18px", borderRadius: "var(--radius-pill)", display: "inline-flex", alignItems: "center", gap: "8px" }}>
               DISCOVER OUR SPA <span aria-hidden>›</span>
             </span>
           </a>
-          <a href="https://www.carismaslimming.com" target="_blank" rel="noopener noreferrer" className="relative block overflow-hidden rounded-lg group" style={{ minWidth: 0 }}>
+          <a href="https://www.carismaslimming.com" target="_blank" rel="noopener noreferrer" className="relative block overflow-hidden group" style={{ minWidth: 0, borderRadius: "var(--radius-card)" }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src="/assets/banner-slimming.png" alt="Discover Body Slimming" className="w-full h-auto transition-transform duration-500 group-hover:scale-105" />
-            <span className="font-display" style={{ position: "absolute", right: "22px", bottom: "20px", background: "rgba(255,255,255,0.92)", color: "var(--ink)", fontSize: "11px", letterSpacing: "0.12em", padding: "10px 18px", borderRadius: "4px", display: "inline-flex", alignItems: "center", gap: "8px" }}>
+            <span className="font-display" style={{ position: "absolute", right: "22px", bottom: "20px", background: "rgba(255,255,255,0.92)", color: "var(--ink)", fontSize: "11px", letterSpacing: "0.12em", padding: "10px 18px", borderRadius: "var(--radius-pill)", display: "inline-flex", alignItems: "center", gap: "8px" }}>
               DISCOVER BODY SLIMMING <span aria-hidden>›</span>
             </span>
           </a>
@@ -126,12 +126,11 @@ export default function Footer() {
               type="search"
               aria-label="Search"
               placeholder="WHAT ARE YOU LOOKING FOR?"
-              className="font-display placeholder:text-[var(--muted)]"
+              className="form-field font-display placeholder:text-[var(--muted)]"
               style={{
                 width: "100%",
                 padding: "14px 18px 14px 46px",
-                border: "1px solid var(--muted)",
-                borderRadius: "999px",
+                borderRadius: "var(--radius-pill)",
                 fontSize: "12px",
                 letterSpacing: "0.1em",
                 color: "#5b5249",
@@ -161,12 +160,12 @@ export default function Footer() {
       {/* Light rounded bottom bar — copyright + legal links */}
       <section style={{ backgroundColor: "var(--white)", padding: "0 0 40px" }}>
         <div className="container">
-          <div style={{ background: "linear-gradient(180deg,#eef3f3,#e6eded)", borderRadius: "12px", padding: "18px 28px" }}>
+          <div style={{ background: "linear-gradient(180deg,#eef3f3,#e6eded)", borderRadius: "var(--radius-card)", padding: "18px 28px" }}>
             <div className="flex flex-col sm:flex-row items-center justify-between gap-3" style={{ fontSize: "12px", letterSpacing: "0.06em", color: "var(--label)" }}>
               <span>© 2026 – CARISMA AESTHETICS ALL RIGHTS RESERVED.</span>
               <div className="flex items-center gap-8">
-                <Link href="/privacy-policy" className="hover:text-ink transition-colors" style={{ textDecoration: "underline" }}>PRIVACY POLICY</Link>
-                <Link href="/terms-conditions" className="hover:text-ink transition-colors" style={{ textDecoration: "underline" }}>TERMS &amp; CONDITION</Link>
+                <Link href="/privacy-policy" className="link-underline">PRIVACY POLICY</Link>
+                <Link href="/terms-conditions" className="link-underline">TERMS &amp; CONDITION</Link>
               </div>
             </div>
           </div>

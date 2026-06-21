@@ -48,7 +48,7 @@ export default function PackageEvidenceGrid({ evidence }: { evidence: EvidenceCa
                   {e.foot && <p style={{ color: TAUPE_LT, fontFamily: BODY, fontSize: 12.5, lineHeight: 1.6, margin: 0 }}>{e.foot}</p>}
                 </>
               )}
-              <button onClick={() => setOpenEv(open ? null : i)} style={{ marginTop: open ? 14 : 8, background: 'none', border: 'none', cursor: 'pointer', color: TAUPE, fontFamily: BODY, fontSize: 15, fontStyle: 'italic', textDecoration: 'underline', padding: 0, display: 'block' }}>{open ? 'Read less' : 'Read more'}</button>
+              <button onClick={() => setOpenEv(open ? null : i)} className="link-underline" style={{ marginTop: open ? 14 : 8, background: 'none', border: 'none', cursor: 'pointer', color: TAUPE, fontFamily: BODY, fontSize: 15, fontStyle: 'italic', padding: 0, display: 'inline-block' }}>{open ? 'Read less' : 'Read more'}</button>
             </div>
           </div>
         );

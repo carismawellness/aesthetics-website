@@ -73,10 +73,11 @@ export default function WhatToExpect() {
                 {col.points.map((point) => (
                   <div
                     key={point}
+                    className="wte-tile"
                     style={{
                       background: "rgba(255,255,255,0.6)",
                       borderLeft: "3px solid var(--teal)",
-                      borderRadius: "6px",
+                      borderRadius: "12px",
                       padding: "14px 16px",
                     }}
                   >
@@ -91,6 +92,16 @@ export default function WhatToExpect() {
 
       {/* eslint-disable-next-line */}
       <style>{`
+        /* Content callout tiles: soft resting shadow that deepens on hover with a
+           gently darkening left accent. Decorative, non-text cues only. */
+        .wte-tile {
+          box-shadow: 0 1px 2px rgba(12,11,11,0.04), 0 6px 18px rgba(12,11,11,0.05);
+          transition: box-shadow 0.25s ease, border-color 0.25s ease;
+        }
+        .wte-tile:hover {
+          box-shadow: 0 2px 6px rgba(12,11,11,0.08), 0 14px 34px rgba(12,11,11,0.10);
+          border-left-color: var(--teal-deep);
+        }
         @media (min-width: 768px) {
           .wte-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
         }

@@ -85,13 +85,13 @@
 
   /* — Accessible TEXT / FILL variants (small text / icons / buttons) — */
   --teal-deep: #4f7373;     /* accessible teal — button fill & icons carry WHITE text (>=4.5) */
-  --teal-text: #4f7373;     /* teal as small text/link on white */
+  --teal-text: #406060;     /* teal as small text/link — AA on white + teal-100/cream/beige tints (>=4.5) */
   --gold: #706552;          /* heading / nav / price TEXT — AA on white/cream/beige (>=4.5) */
   --gold-deep: #9c8344;     /* gold graphic / star accent — >=3:1 vs white */
-  --label: #756758;         /* muted label / bio taupe TEXT — AA on white (>=4.5) */
+  --label: #695c4e;         /* muted label / bio taupe TEXT — AA on white + cream/beige tints (>=4.5) */
   --ink: #0c0b0b;           /* near-black (footer / award) */
   --ink-soft: #2b2b2b;
-  --muted: #717171;         /* secondary TEXT — AA on white (>=4.5) */
+  --muted: #636363;         /* secondary TEXT — AA on white + teal-100/cream/beige tints (>=4.5) */
   --line: #e2e2e2;          /* decorative hairline borders (form fields use --field-border) */
   --field-border: #8a8a8a;  /* form-field border — UI component >=3:1 vs white */
   --placeholder: #717171;   /* placeholder text — >=4.5:1 vs white */

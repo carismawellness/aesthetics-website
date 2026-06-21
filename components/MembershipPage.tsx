@@ -28,20 +28,41 @@ function Rule() {
 
 function Cta({ label, href = "/sign-up" }: { label: string; href?: string }) {
   return (
-    <div className="flex items-center justify-center">
+    <div className="flex items-center justify-center mem-cta">
       <Link
         href={href}
-        style={{ display: "inline-flex", alignItems: "center", border: `1.5px solid ${BLUE}`, color: BLUE, fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "11px", letterSpacing: "0.22em", textTransform: "uppercase", padding: "16px 36px", borderRadius: "4px 0 0 4px", borderRight: "none", background: "transparent", whiteSpace: "nowrap" }}
+        className="mem-cta-label"
+        style={{ display: "inline-flex", alignItems: "center", border: `1.5px solid ${BLUE}`, color: BLUE, fontFamily: "var(--font-display)", fontWeight: 700, fontSize: "11px", letterSpacing: "0.22em", textTransform: "uppercase", padding: "16px 36px", borderRadius: "999px 0 0 999px", borderRight: "none", background: "transparent", whiteSpace: "nowrap", cursor: "pointer", transition: "background 0.25s ease, color 0.25s ease, transform 0.25s ease, text-decoration 0.25s ease" }}
       >
         {label}
       </Link>
       <Link
         href={href}
         aria-label="Begin your journey"
-        style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: "50px", height: "50px", background: BLUE, borderRadius: "50%", flexShrink: 0, marginLeft: "12px" }}
+        className="mem-cta-arrow"
+        style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: "50px", height: "50px", background: BLUE, borderRadius: "50%", flexShrink: 0, marginLeft: "12px", cursor: "pointer", transition: "transform 0.25s ease, box-shadow 0.25s ease" }}
       >
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2.2"><path d="M5 12h13M13 6l6 6-6 6" /></svg>
       </Link>
+      {/* pill CTA: label inverts (ink fill, light text) + underline on hover; both parts scale 1.04 */}
+      <style>{`
+        .mem-cta-label:hover,
+        .mem-cta-label:focus-visible {
+          background: var(--ink);
+          color: var(--white);
+          text-decoration: underline;
+          transform: scale(1.04);
+        }
+        .mem-cta-arrow:hover,
+        .mem-cta-arrow:focus-visible {
+          transform: scale(1.04);
+          box-shadow: 0 6px 18px rgba(12,11,11,0.22);
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .mem-cta-label:hover, .mem-cta-label:focus-visible,
+          .mem-cta-arrow:hover, .mem-cta-arrow:focus-visible { transform: none; }
+        }
+      `}</style>
     </div>
   );
 }
@@ -223,7 +244,7 @@ export default function MembershipPage() {
             </span>
           </div>
 
-          <div style={{ background: "rgba(150,178,178,0.13)", padding: "10px 20px", margin: "8px auto 0", maxWidth: "440px", borderRadius: "2px" }}>
+          <div style={{ background: "rgba(150,178,178,0.13)", padding: "10px 20px", margin: "8px auto 0", maxWidth: "440px", borderRadius: "12px" }}>
             <p className="font-display" style={{ fontSize: "clamp(16px,2.4vw,22px)", color: BLUE, letterSpacing: "0.38em", textTransform: "uppercase", margin: 0 }}>the glow club</p>
           </div>
 
@@ -307,8 +328,8 @@ export default function MembershipPage() {
             {STATUS.map((s) => (
               <div
                 key={s.name}
-                className="text-center flex flex-col items-center"
-                style={{ background: "#fff", border: "1px solid #e4eded", borderRadius: "8px", padding: "40px 24px 32px", boxShadow: "0 4px 20px rgba(0,0,0,0.06)" }}
+                className="text-center flex flex-col items-center card"
+                style={{ background: "#fff", border: "1px solid #e4eded", borderRadius: "16px", padding: "40px 24px 32px" }}
               >
                 <div style={{ height: "60px", display: "flex", alignItems: "center", justifyContent: "center" }}>{s.gem}</div>
                 <h3 className="font-display" style={{ fontSize: "13px", color: "#527979", letterSpacing: "0.18em", textTransform: "uppercase", marginTop: "22px" }}>{s.name}</h3>
@@ -334,7 +355,7 @@ export default function MembershipPage() {
         <div className="container">
           <div className="grid gap-7 md:grid-cols-3 mx-auto" style={{ maxWidth: "960px" }}>
             {SAVINGS.map((s, i) => (
-              <Reveal key={s.spend} delay={i * 70} className="text-center" style={{ background: "#ffffff", borderRadius: "8px", padding: "36px 24px", boxShadow: "0 4px 20px rgba(0,0,0,0.07)", border: "1px solid #ece9e4" }}>
+              <Reveal key={s.spend} delay={i * 70} className="text-center card" style={{ background: "#ffffff", borderRadius: "16px", padding: "36px 24px", border: "1px solid #ece9e4" }}>
                 <p className="font-display" style={{ fontSize: "13px", letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--muted)" }}>spend</p>
                 <p className="font-serif" style={{ fontSize: "clamp(26px,3vw,34px)", color: "var(--label)", letterSpacing: "0.04em", margin: "6px 0 4px" }}>{s.spend}</p>
                 <p className="font-display" style={{ fontSize: "11px", letterSpacing: "0.14em", textTransform: "uppercase", color: "var(--muted)" }}>on services</p>
@@ -390,13 +411,22 @@ export default function MembershipPage() {
         <div className="container text-center">
           <Serif>best selling treatments</Serif>
           <Rule />
+          {/* clickable tiles lift + zoom on hover */}
+          <style>{`
+            .mem-treatment-tile { transition: box-shadow 0.25s ease, border-color 0.25s ease, transform 0.25s ease; }
+            .mem-treatment-tile:hover,
+            .mem-treatment-tile:focus-visible { transform: translateY(-4px) scale(1.02); }
+            @media (prefers-reduced-motion: reduce) {
+              .mem-treatment-tile:hover, .mem-treatment-tile:focus-visible { transform: none; }
+            }
+          `}</style>
           <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-4 mx-auto" style={{ maxWidth: "1040px", marginTop: "44px" }}>
             {TREATMENTS.map((t, i) => (
               <Reveal key={t.label} delay={i * 70}>
                 <Link
                   href={t.href}
-                  className="block overflow-hidden"
-                  style={{ borderRadius: "10px", boxShadow: "0 4px 20px rgba(0,0,0,0.10)", border: "1px solid #e0e0e0", background: "#fff", transition: "transform 0.25s, box-shadow 0.25s", display: "block" }}
+                  className="block overflow-hidden card mem-treatment-tile"
+                  style={{ borderRadius: "16px", border: "1px solid #e0e0e0", background: "#fff", display: "block", cursor: "pointer" }}
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={`${A}/${t.img}`} alt={t.label} className="w-full" style={{ display: "block", aspectRatio: "5 / 6", objectFit: "cover" }} />
@@ -425,7 +455,7 @@ export default function MembershipPage() {
           <div className="grid gap-8 md:grid-cols-3 mx-auto" style={{ maxWidth: "1040px", marginTop: "48px" }}>
             {TESTIMONIALS.map((t, i) => (
               <Reveal key={t.name} delay={i * 80}>
-                <div style={{ background: "#fff", borderRadius: "12px", padding: "32px 28px", boxShadow: "0 4px 20px rgba(0,0,0,0.07)", border: "1px solid #ece9e4", display: "flex", flexDirection: "column", gap: "0" }}>
+                <div className="card review-card" style={{ background: "#fff", borderRadius: "16px", padding: "32px 28px", border: "1px solid #ece9e4", display: "flex", flexDirection: "column", gap: "0" }}>
                   {/* avatar */}
                   <div style={{ width: "56px", height: "56px", borderRadius: "8px", background: SAGE_SOLID, display: "flex", alignItems: "center", justifyContent: "center", marginBottom: "4px" }}>
                     <span className="font-display" style={{ fontSize: "16px", color: "#fff", letterSpacing: "0.08em", fontWeight: 700 }}>{t.initials}</span>
@@ -464,9 +494,9 @@ export default function MembershipPage() {
           {/* script tagline */}
           <p style={{ fontFamily: "var(--font-pinyon), cursive", fontSize: "clamp(34px,5vw,46px)", color: "var(--gold)", marginTop: "14px", lineHeight: 1.1 }}>Glow with Confidence</p>
           {/* sign up link */}
-          <Link href="/sign-up" className="flex items-center" style={{ marginTop: "44px", gap: "22px" }}>
+          <Link href="/sign-up" className="flex items-center" style={{ marginTop: "44px", gap: "22px", cursor: "pointer" }}>
             <span style={{ flex: 1, height: "1px", background: "#cfcabf" }} />
-            <span className="font-display" style={{ fontSize: "14px", color: "#527979", letterSpacing: "0.22em", textTransform: "uppercase", whiteSpace: "nowrap" }}>sign up now</span>
+            <span className="link-underline font-display" style={{ fontSize: "14px", color: "#527979", letterSpacing: "0.22em", textTransform: "uppercase", whiteSpace: "nowrap" }}>sign up now</span>
             <span style={{ flex: 1, height: "1px", background: "#cfcabf" }} />
           </Link>
         </div>

@@ -55,14 +55,15 @@ export default function Faq() {
             >
               Frequently asked questions
             </h2>
-            <div style={{ position: "relative", width: "280px", maxWidth: "100%", borderBottom: "1px solid var(--muted)" }}>
+            <div style={{ position: "relative", width: "280px", maxWidth: "100%" }}>
               <input
                 type="text"
+                className="form-field"
                 placeholder="Looking for something?"
                 aria-label="Looking for something?"
-                style={{ width: "100%", border: "none", background: "transparent", outline: "none", fontSize: "13px", color: "var(--label)", padding: "8px 26px 8px 2px" }}
+                style={{ fontSize: "13px", padding: "10px 34px 10px 14px" }}
               />
-              <span aria-hidden style={{ position: "absolute", right: "2px", top: "50%", transform: "translateY(-50%)", color: "var(--gold-deep)", pointerEvents: "none" }}>
+              <span aria-hidden style={{ position: "absolute", right: "12px", top: "50%", transform: "translateY(-50%)", color: "var(--gold-deep)", pointerEvents: "none" }}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="7" /><path d="M21 21l-4.3-4.3" /></svg>
               </span>
             </div>
@@ -78,8 +79,8 @@ export default function Faq() {
                     type="button"
                     onClick={() => setOpen(isOpen ? null : i)}
                     aria-expanded={isOpen}
-                    className="flex items-center justify-between w-full text-left"
-                    style={{ padding: "26px 4px", background: "transparent", border: "none", cursor: "pointer", gap: "20px" }}
+                    className="faq-row flex items-center justify-between w-full text-left"
+                    style={{ padding: "26px 12px", background: "transparent", border: "none", cursor: "pointer", gap: "20px", borderRadius: "12px" }}
                   >
                     <span style={{ fontSize: "16px", color: "var(--label)", lineHeight: 1.4, letterSpacing: "0.01em" }}>{it.q}</span>
                     <span
@@ -111,6 +112,19 @@ export default function Faq() {
       </div>
 
       <style>{`
+        /* Accordion disclosure rows: rounded interactive rows (not pills, to keep
+           the full-width list layout) with a soft hover tint + focus ring. Text
+           stays --label on a near-white tint, so AA contrast is preserved. */
+        .faq-row {
+          transition: background-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        .faq-row:hover {
+          background-color: rgba(99, 145, 171, 0.06);
+        }
+        .faq-row:focus-visible {
+          outline: none;
+          box-shadow: 0 0 0 3px rgba(12, 11, 11, 0.18);
+        }
         @media (max-width: 640px) {
           .faq-head { align-items: stretch; }
           .faq-head > div { width: 100%; }

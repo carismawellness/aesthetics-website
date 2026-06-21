@@ -41,8 +41,8 @@ export default function TrustedFeatures() {
           {FEATURES.map((f) => (
             <div
               key={f.label}
-              className="text-center"
-              style={{ background: "rgba(255,255,255,0.5)", border: "1px solid var(--line)", borderRadius: "16px 40px 16px 40px", padding: "28px 22px", boxShadow: "0 12px 30px rgba(0,0,0,0.05)" }}
+              className="card text-center"
+              style={{ background: "rgba(255,255,255,0.5)", borderRadius: "16px 40px 16px 40px", padding: "28px 22px" }}
             >
               <div className="flex justify-center" style={{ marginBottom: "14px", height: "52px", alignItems: "center" }}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}

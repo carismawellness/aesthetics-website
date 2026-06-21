@@ -16,7 +16,6 @@ const TRUST = [
 
 // WCAG AA corrected: prior #98afb2 (2.31:1) and #96b2b2 (2.26:1) failed AA.
 const TEAL = "#527979";   // --teal heading text, 4.81:1 on light bg (was #98afb2)
-const BTN = "#527979";    // --teal button fill, white text 4.81:1 (was #96b2b2)
 
 export default function Hero() {
   return (
@@ -126,21 +125,19 @@ export default function Hero() {
                 may not always be guaranteed. Please inquire for current options.
               </p>
 
-              {/* full-width muted sage button (matches live) */}
+              {/* full-width muted sage CTA — shared .btn .btn-teal pill (glow + hover scale) */}
               <Link
                 href="/consultation"
-                className="font-display flex items-center justify-center"
+                className="btn btn-teal font-display"
                 style={{
                   marginTop: "24px",
                   width: "100%",
                   maxWidth: "470px",
-                  background: BTN,
                   color: "#fff",
                   fontSize: "14px",
                   letterSpacing: "0.12em",
                   textTransform: "uppercase",
                   padding: "16px 24px",
-                  borderRadius: "4px",
                 }}
               >
                 Book Now &amp; Save 70% <span aria-hidden style={{ marginLeft: "8px" }}>›</span>
@@ -156,21 +153,21 @@ export default function Hero() {
               <img
                 src={`${A}/pico-hero-collage-arm.png`}
                 alt="Pico laser tattoo removal in progress on an arm"
-                style={{ position: "absolute", top: 0, left: 0, width: "62%", borderRadius: "4px", filter: "drop-shadow(0 14px 30px rgba(0,0,0,0.14))" }}
+                style={{ position: "absolute", top: 0, left: 0, width: "62%", borderRadius: "14px", filter: "drop-shadow(0 14px 30px rgba(0,0,0,0.14))" }}
               />
               {/* neck tattoo portrait — right, taller, overlapping */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={`${A}/pico-hero-collage-tile1.png`}
                 alt="Geometric neck tattoo before removal"
-                style={{ position: "absolute", top: "20%", right: 0, width: "47%", borderRadius: "4px", filter: "drop-shadow(0 16px 34px rgba(0,0,0,0.16))" }}
+                style={{ position: "absolute", top: "20%", right: 0, width: "47%", borderRadius: "14px", filter: "drop-shadow(0 16px 34px rgba(0,0,0,0.16))" }}
               />
               {/* before / after composite — bottom-left */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src={`${A}/pico-hero-collage-ba.png`}
                 alt="Tattoo fading before and after"
-                style={{ position: "absolute", bottom: 0, left: "2%", width: "45%", borderRadius: "4px", filter: "drop-shadow(0 14px 30px rgba(0,0,0,0.16))" }}
+                style={{ position: "absolute", bottom: 0, left: "2%", width: "45%", borderRadius: "14px", filter: "drop-shadow(0 14px 30px rgba(0,0,0,0.16))" }}
               />
             </div>
           </div>

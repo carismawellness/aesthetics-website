@@ -100,7 +100,7 @@ export default async function GoogleReviews() {
         {/* review cards */}
         <div className="grid gap-6 md:grid-cols-3 mx-auto" style={{ maxWidth: "1080px" }}>
           {reviews.map((r, i) => (
-            <div key={r.name + i} className="bg-white rounded-lg" style={{ padding: "24px", border: "1px solid var(--line)", boxShadow: "0 10px 26px rgba(0,0,0,0.04)" }}>
+            <div key={r.name + i} className="review-card bg-white" style={{ padding: "24px", borderRadius: "var(--radius-card)", border: "1px solid var(--line)", boxShadow: "0 10px 26px rgba(0,0,0,0.04)" }}>
               <div className="flex items-center gap-3">
                 <span className="shrink-0 inline-flex items-center justify-center font-display" style={{ width: "40px", height: "40px", borderRadius: "50%", background: AVATAR_COLORS[i % AVATAR_COLORS.length], color: "#fff", fontSize: "16px" }}>
                   {r.initial}
@@ -119,7 +119,7 @@ export default async function GoogleReviews() {
 
         {/* CTA to full Google profile */}
         <div className="text-center" style={{ marginTop: "36px" }}>
-          <a href={url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2" style={{ border: "1px solid var(--line)", borderRadius: "999px", padding: "11px 24px", fontSize: "13px", color: "var(--label)" }}>
+          <a href={url} target="_blank" rel="noopener noreferrer" className="btn btn-outline inline-flex items-center gap-2" style={{ padding: "11px 24px", fontSize: "13px" }}>
             <GoogleG size={16} />
             Review us on Google
           </a>

@@ -21,12 +21,14 @@ export function Serif({ children, style }: { children: React.ReactNode; style?: 
 }
 
 // Full-width muted sage button matching the live page CTAs.
+// Uses the shared .btn .btn-teal system: pill shape (--radius-pill), brand-teal
+// gradient + glow, and the universal hover scale(1.04)+lift. White text stays AA.
 export function Cta({ label }: { label: string }) {
   return (
     <Link
       href="/consultation"
-      className="font-display flex items-center justify-center"
-      style={{ width: "100%", maxWidth: "470px", background: SAGE, color: "#fff", fontSize: "13px", letterSpacing: "0.12em", textTransform: "uppercase", padding: "15px 24px", borderRadius: "4px" }}
+      className="btn btn-teal font-display"
+      style={{ width: "100%", maxWidth: "470px", color: "#fff", fontSize: "13px", letterSpacing: "0.12em", textTransform: "uppercase", padding: "15px 24px" }}
     >
       {label} <span aria-hidden style={{ marginLeft: "8px" }}>›</span>
     </Link>

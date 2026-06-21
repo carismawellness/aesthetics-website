@@ -39,7 +39,7 @@ function GoldBtn({
   return (
     <Link
       href={href}
-      className="font-display inline-flex items-center justify-center"
+      className="font-display inline-flex items-center justify-center hrg-btn"
       style={{
         background: `linear-gradient(180deg, #e2c97a 0%, ${GOLD} 50%, ${GOLD_MID} 100%)`,
         color: INK,
@@ -48,9 +48,11 @@ function GoldBtn({
         textTransform: "uppercase",
         fontWeight: 600,
         padding: "14px 36px",
-        borderRadius: "2px",
+        borderRadius: "999px",
         width: fullWidth ? "100%" : undefined,
         textAlign: "center",
+        cursor: "pointer",
+        transition: "transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease",
         ...style,
       }}
     >
@@ -275,9 +277,10 @@ function ReviewCard({ image, name, text }: (typeof TESTIMONIALS)[0]) {
   const truncated = text.length > PREVIEW_LEN && !expanded;
   return (
     <div
+      className="review-card"
       style={{
         background: "#ffffff",
-        borderRadius: "14px",
+        borderRadius: "16px",
         overflow: "hidden",
         display: "flex",
         flexDirection: "column",
@@ -356,6 +359,7 @@ function TestimonialsCarousel() {
               type="button"
               aria-label="Previous"
               onClick={() => go(-1)}
+              className="hrg-arrow"
               style={{
                 position: "absolute",
                 top: "50%",
@@ -372,6 +376,7 @@ function TestimonialsCarousel() {
                 justifyContent: "center",
                 cursor: "pointer",
                 zIndex: 2,
+                transition: "transform 0.25s ease, background 0.25s ease",
               }}
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M15 6l-6 6 6 6" /></svg>
@@ -384,6 +389,7 @@ function TestimonialsCarousel() {
               type="button"
               aria-label="Next"
               onClick={() => go(1)}
+              className="hrg-arrow"
               style={{
                 position: "absolute",
                 top: "50%",
@@ -400,6 +406,7 @@ function TestimonialsCarousel() {
                 justifyContent: "center",
                 cursor: "pointer",
                 zIndex: 2,
+                transition: "transform 0.25s ease, background 0.25s ease",
               }}
             >
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M9 6l6 6-6 6" /></svg>
@@ -451,6 +458,37 @@ export default function HairRegrowthPage() {
 
   return (
     <div style={{ background: "transparent", color: TAUPE }}>
+      {/* rounded interaction system — pill buttons scale on hover, dark-theme cards
+          lift + brighten border, focus rings use a visible gold halo on dark bg */}
+      <style>{`
+        .hrg-btn:hover,
+        .hrg-btn:focus-visible {
+          transform: scale(1.04);
+          box-shadow: 0 0 26px rgba(201,169,106,0.5), 0 10px 26px rgba(0,0,0,0.45);
+          filter: brightness(1.04);
+        }
+        .hrg-arrow:hover,
+        .hrg-arrow:focus-visible {
+          transform: translateY(-50%) scale(1.1);
+          background: rgba(255,255,255,0.22);
+        }
+        .hrg-card:hover {
+          transform: translateY(-4px);
+          border-color: rgba(201,169,106,0.85);
+          box-shadow: 0 18px 40px rgba(0,0,0,0.4);
+        }
+        .hrg-faq-search-wrap:focus-within {
+          border-color: ${GOLD};
+          box-shadow: 0 0 0 4px rgba(201,169,106,0.3);
+        }
+        .hrg-faq-search:focus,
+        .hrg-faq-search:focus-visible { outline: none; }
+        @media (prefers-reduced-motion: reduce) {
+          .hrg-btn:hover, .hrg-btn:focus-visible,
+          .hrg-card:hover { transform: none; }
+          .hrg-arrow:hover, .hrg-arrow:focus-visible { transform: translateY(-50%); }
+        }
+      `}</style>
       {/* ───────────────────────────────────────────────────────
           HERO — dark charcoal with background image + portrait video
       ─────────────────────────────────────────────────────── */}
@@ -722,10 +760,12 @@ export default function HairRegrowthPage() {
           >
             {/* Suitable for */}
             <div
+              className="hrg-card"
               style={{
                 border: `1.5px solid rgba(201,169,106,0.4)`,
-                borderRadius: "8px",
+                borderRadius: "16px",
                 padding: "clamp(24px,3vw,36px)",
+                transition: "transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease",
               }}
             >
               <h3
@@ -762,10 +802,12 @@ export default function HairRegrowthPage() {
 
             {/* Not suitable for */}
             <div
+              className="hrg-card"
               style={{
                 border: `1.5px solid rgba(201,169,106,0.25)`,
-                borderRadius: "8px",
+                borderRadius: "16px",
                 padding: "clamp(24px,3vw,36px)",
+                transition: "transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease",
               }}
             >
               <h3
@@ -856,12 +898,14 @@ export default function HairRegrowthPage() {
               {t.precision!.areas.map((area) => (
                 <div
                   key={area.name}
+                  className="hrg-card"
                   style={{
                     border: `1px solid rgba(201,169,106,0.28)`,
-                    borderRadius: "8px",
+                    borderRadius: "16px",
                     overflow: "hidden",
                     display: "flex",
                     flexDirection: "column",
+                    transition: "transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease",
                   }}
                 >
                   <div style={{ width: "100%", aspectRatio: "4/3", overflow: "hidden" }}>
@@ -1128,7 +1172,7 @@ export default function HairRegrowthPage() {
               maxWidth: "820px",
               marginTop: "44px",
               border: `1px solid rgba(201,169,106,0.45)`,
-              borderRadius: "4px",
+              borderRadius: "16px",
               padding: "clamp(20px,3vw,30px)",
               textAlign: "center",
             }}
@@ -1182,13 +1226,15 @@ export default function HairRegrowthPage() {
                   style={{ display: "flex", flexDirection: "column" }}
                 >
                   <div
+                    className="hrg-card"
                     style={{
                       border: `1px solid rgba(201,169,106,0.35)`,
-                      borderRadius: "4px",
+                      borderRadius: "16px",
                       padding: "clamp(24px,2.5vw,32px)",
                       display: "flex",
                       flexDirection: "column",
                       flex: 1,
+                      transition: "transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease",
                     }}
                   >
                     <h3
@@ -1486,12 +1532,14 @@ export default function HairRegrowthPage() {
             style={{ maxWidth: "760px", marginTop: "32px", marginBottom: "8px" }}
           >
             <div
+              className="hrg-faq-search-wrap"
               style={{
                 display: "flex",
                 alignItems: "center",
                 border: `1px solid rgba(201,169,106,0.7)`,
-                borderRadius: "4px",
+                borderRadius: "12px",
                 padding: "10px 16px",
+                transition: "border-color 0.25s ease, box-shadow 0.25s ease",
               }}
             >
               <input
@@ -1499,6 +1547,7 @@ export default function HairRegrowthPage() {
                 placeholder="Looking for something?"
                 readOnly
                 aria-label="Search FAQs"
+                className="hrg-faq-search"
                 style={{
                   flex: 1,
                   border: "none",

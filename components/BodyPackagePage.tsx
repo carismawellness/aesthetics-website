@@ -92,7 +92,8 @@ function CTA({ variant = 'blue', children = 'Claim your spot now', full = false 
       href={BOOKING_URL}
       target="_blank"
       rel="noopener noreferrer"
-      style={{ display: full ? 'block' : 'inline-block', backgroundColor: isGreen ? GREEN : BLUE, color: '#fff', fontFamily: WIDE, fontWeight: 700, fontSize: 14, letterSpacing: '1.4px', textTransform: 'uppercase', textAlign: 'center', textDecoration: 'none', padding: '15px 38px', borderRadius: isGreen ? 5 : 10 }}
+      className="btn"
+      style={{ display: full ? 'block' : 'inline-block', backgroundColor: isGreen ? GREEN : BLUE, color: '#fff', fontFamily: WIDE, fontWeight: 700, fontSize: 14, letterSpacing: '1.4px', textTransform: 'uppercase', textAlign: 'center', textDecoration: 'none', padding: '15px 38px', borderRadius: 'var(--radius-pill)', cursor: 'pointer' }}
     >
       {children}
     </a>
@@ -411,7 +412,7 @@ export default function PackagePage({ content: c }: { content: PackageContent })
           <SectionHeading>{c.dualHeading.map((l, i) => (<span key={i}>{l}{i < c.dualHeading.length - 1 && <br />}</span>))}</SectionHeading>
 
           <div style={{ marginTop: 36, background: 'linear-gradient(150deg, #f0f5f5 0%, #bdd1d1 100%)', borderRadius: 22, padding: 22, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 22 }} className="fr-2col">
-            <div style={{ backgroundColor: '#fff', borderRadius: 16, padding: '34px 30px', display: 'flex', flexDirection: 'column', gap: 26, justifyContent: 'center' }}>
+            <div className="card" style={{ padding: '34px 30px', display: 'flex', flexDirection: 'column', gap: 26, justifyContent: 'center' }}>
               {c.dualMini.map((m) => (
                 <div key={m.title} style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>
                   <span style={{ flexShrink: 0, width: 54, height: 54, border: '1px solid #cdd9e6', borderRadius: 12, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -426,7 +427,7 @@ export default function PackagePage({ content: c }: { content: PackageContent })
               ))}
             </div>
 
-            <div style={{ backgroundColor: '#fff', borderRadius: 16, padding: '30px 30px' }}>
+            <div className="card" style={{ padding: '30px 30px' }}>
               <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 22px', display: 'flex', flexDirection: 'column', gap: 12 }}>
                 {c.dualIncludes.map((it) => (
                   <li key={it} style={{ display: 'flex', gap: 10, alignItems: 'flex-start', color: TAUPE, fontFamily: BODY, fontSize: 14.5 }}>
@@ -466,7 +467,7 @@ export default function PackagePage({ content: c }: { content: PackageContent })
 
           {/* pricing card */}
           <div style={{ marginTop: 40, background: 'linear-gradient(150deg, #f0f5f5 0%, #bdd1d1 100%)', borderRadius: 22, padding: 22, display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: 22, alignItems: 'stretch' }} className="fr-2col">
-            <div style={{ backgroundColor: '#fff', borderRadius: 16, padding: '32px 30px' }}>
+            <div className="card" style={{ padding: '32px 30px' }}>
               <p style={{ color: TAUPE_DK, fontFamily: WIDE, fontWeight: 700, fontSize: 15, letterSpacing: '0.5px', textTransform: 'uppercase', margin: '0 0 8px' }}>{c.offer.tagline}</p>
               <p style={{ ...body, fontSize: 13.5, marginBottom: 18 }}>{c.offer.subline}</p>
               <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 20px', display: 'flex', flexDirection: 'column', gap: 12 }}>

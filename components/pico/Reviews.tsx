@@ -50,12 +50,9 @@ export default function Reviews() {
         {REVIEWS.map((r) => (
           <div
             key={r.name}
-            className="flex flex-col"
+            className="card review-card flex flex-col"
             style={{
-              borderRadius: "14px",
               background: "rgba(255,255,255,0.6)",
-              border: "1px solid rgba(120,160,165,0.5)",
-              boxShadow: "0 12px 30px rgba(0,0,0,0.05)",
               overflow: "hidden",
             }}
           >

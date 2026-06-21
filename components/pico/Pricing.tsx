@@ -22,8 +22,8 @@ export default function Pricing() {
             <Reveal
               key={p.size}
               delay={(i % 5) * 60}
-              className="text-center relative"
-              style={{ width: "200px", background: "linear-gradient(160deg,#7d7358 0%, #6f6749 100%)", borderRadius: "14px", padding: "44px 18px 26px", marginTop: "26px", boxShadow: "0 12px 30px rgba(0,0,0,0.10)" }}
+              className="pico-price-card text-center relative"
+              style={{ width: "200px", background: "linear-gradient(160deg,#7d7358 0%, #6f6749 100%)", borderRadius: "16px", padding: "44px 18px 26px", marginTop: "26px" }}
             >
               <span
                 className="inline-flex items-center justify-center"
@@ -49,6 +49,20 @@ export default function Pricing() {
           ))}
         </div>
       </div>
+
+      {/* Pricing tiles: card hover (deeper shadow + darker edge). No transform —
+          the Reveal wrapper owns the float-in transform, so we avoid conflict. */}
+      <style>{`
+        .pico-price-card {
+          border: 1px solid transparent;
+          box-shadow: 0 12px 30px rgba(0,0,0,0.10);
+          transition: box-shadow 0.25s ease, border-color 0.25s ease;
+        }
+        .pico-price-card:hover {
+          box-shadow: 0 18px 46px rgba(0,0,0,0.20);
+          border-color: rgba(0,0,0,0.28);
+        }
+      `}</style>
     </section>
   );
 }

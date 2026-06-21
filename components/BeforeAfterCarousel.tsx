@@ -50,6 +50,17 @@ export default function BeforeAfterCarousel({ pairs, title }: { pairs: Pair[]; t
     justifyContent: "center",
     zIndex: 2,
     cursor: "pointer",
+    transition: "transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease",
+  };
+  const onArrowEnter = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.currentTarget.style.transform = "translateY(-50%) scale(1.04)";
+    e.currentTarget.style.boxShadow = "0 10px 26px rgba(0,0,0,0.18)";
+    e.currentTarget.style.borderColor = "var(--label)";
+  };
+  const onArrowLeave = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.currentTarget.style.transform = "translateY(-50%)";
+    e.currentTarget.style.boxShadow = "0 6px 18px rgba(0,0,0,0.12)";
+    e.currentTarget.style.borderColor = "var(--line)";
   };
 
   return (
@@ -60,7 +71,7 @@ export default function BeforeAfterCarousel({ pairs, title }: { pairs: Pair[]; t
         <Reveal>
           <div className="grid grid-cols-2 gap-4">
             {([["BEFORE", ba.before], ["AFTER", ba.after]] as const).map(([lbl, src]) => (
-              <div key={lbl} className="relative overflow-hidden rounded-xl" style={{ border: "none", background: "transparent" }}>
+              <div key={lbl} className="relative overflow-hidden" style={{ borderRadius: "var(--radius-card)", border: "none", background: "transparent" }}>
                 {src ? (
                   <Image
                     src={src}
@@ -77,7 +88,7 @@ export default function BeforeAfterCarousel({ pairs, title }: { pairs: Pair[]; t
                     {`${ba.label ?? ""} ${lbl}`.trim()} photo — drop file in
                   </div>
                 )}
-                <span className="font-display" style={{ position: "absolute", top: "12px", left: "12px", background: "rgba(255,255,255,0.9)", color: "var(--ink)", fontSize: "10px", letterSpacing: "0.12em", padding: "5px 10px", borderRadius: "3px" }}>{lbl}</span>
+                <span className="font-display" style={{ position: "absolute", top: "12px", left: "12px", background: "rgba(255,255,255,0.9)", color: "var(--ink)", fontSize: "10px", letterSpacing: "0.12em", padding: "5px 10px", borderRadius: "var(--radius-pill)" }}>{lbl}</span>
               </div>
             ))}
           </div>
@@ -85,8 +96,8 @@ export default function BeforeAfterCarousel({ pairs, title }: { pairs: Pair[]; t
 
         {n > 1 && (
           <>
-            <button type="button" aria-label="Previous" onClick={() => go(-1)} className="md:-left-[21px]" style={{ ...arrowBase, left: "6px" }}><Chevron dir="left" /></button>
-            <button type="button" aria-label="Next" onClick={() => go(1)} className="md:-right-[21px]" style={{ ...arrowBase, right: "6px" }}><Chevron dir="right" /></button>
+            <button type="button" aria-label="Previous" onClick={() => go(-1)} onMouseEnter={onArrowEnter} onMouseLeave={onArrowLeave} className="md:-left-[21px]" style={{ ...arrowBase, left: "6px" }}><Chevron dir="left" /></button>
+            <button type="button" aria-label="Next" onClick={() => go(1)} onMouseEnter={onArrowEnter} onMouseLeave={onArrowLeave} className="md:-right-[21px]" style={{ ...arrowBase, right: "6px" }}><Chevron dir="right" /></button>
           </>
         )}
       </div>
