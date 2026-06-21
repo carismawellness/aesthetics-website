@@ -12,8 +12,6 @@ import type { FaceTreatment, InfoStat, Area, Step, BeforeAfter, Faq } from "@/li
   their data is present, so each treatment record stays independently editable.
 */
 
-const BOOK = "/consultation";
-
 // ---------- primitives ----------
 export function Eyebrow({ children, tone = "gold", center }: { children: React.ReactNode; tone?: "gold" | "label" | "onDark"; center?: boolean }) {
   // onDark: light cream tint for use over the dark hero overlay (AA-safe vs the worst-case flattened overlay bg).

@@ -210,15 +210,11 @@ function Hero() {
               <Image src={`${A}/mounjaro-wordmark.png`} alt="Mounjaro tirzepatide" width={152} height={51} style={{ height: "32px", width: "auto" }} />
             </div>
 
-            <a
-              href={BOOK_HREF}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-display cta-glow-teal"
-              style={{ display: "block", textAlign: "center", color: "#fff", padding: "16px", borderRadius: "999px", letterSpacing: "0.12em", textTransform: "uppercase", fontSize: "13px", cursor: "pointer" }}
-            >
-              book your medical consultation
-            </a>
+            <BookingButtons
+              freshaHref={BOOK_HREF}
+              primaryLabel="book your medical consultation"
+              consultLabel="Book Free Consultation"
+            />
 
             <div className="flex items-center" style={{ marginTop: "14px" }}>
               <Image src={`${A}/google-reviews-bar.png`} alt="G 4.9 — TOP-RATED CLINIC IN MALTA" width={313} height={20} style={{ height: "20px", width: "auto" }} />
@@ -1023,9 +1019,11 @@ function ExpertCare() {
               medication stops, that&rsquo;s the real work.&rdquo;
               <span style={{ display: "block", fontStyle: "normal", fontSize: "15px", marginTop: "10px" }}>&mdash; Dr. Teebi</span>
             </blockquote>
-            <a href={BOOK_HREF} target="_blank" rel="noopener noreferrer" className="font-display cta-glow-teal" style={{ display: "block", textAlign: "center", color: "#fff", padding: "16px", borderRadius: "999px", letterSpacing: "0.12em", textTransform: "uppercase", fontSize: "13px", cursor: "pointer" }}>
-              book your medical consultation
-            </a>
+            <BookingButtons
+              freshaHref={BOOK_HREF}
+              primaryLabel="book your medical consultation"
+              consultLabel="Book Free Consultation"
+            />
           </Reveal>
         </div>
       </div>
