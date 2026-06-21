@@ -622,7 +622,7 @@ export default function HairRegrowthPage() {
                   border: `1px solid rgba(201,169,106,0.3)`,
                 }}
               >
-                <VideoPlayer className="w-full" ratio="9 / 16" radius={0} src={`${A}/vid-hair-regrowth.mp4`} label="Hair regrowth treatment at Carisma Aesthetics" />
+                <VideoPlayer className="w-full" ratio="9 / 16" radius={16} src={`${A}/vid-hair-regrowth.mp4`} label="Hair regrowth treatment at Carisma Aesthetics" />
               </div>
               <p
                 className="text-center"
@@ -1483,7 +1483,7 @@ export default function HairRegrowthPage() {
                     boxShadow: "0 4px 20px rgba(0,0,0,0.07)",
                   }}
                 >
-                  <VideoPlayer className="w-full" ratio="9 / 16" radius={0} src={`${A}/vid-hair-regrowth-${n}.mp4`} label={`Hair regrowth patient video ${n}`} />
+                  <VideoPlayer className="w-full" ratio="9 / 16" radius={12} src={`${A}/vid-hair-regrowth-${n}.mp4`} label={`Hair regrowth patient video ${n}`} />
                 </div>
               </Reveal>
             ))}

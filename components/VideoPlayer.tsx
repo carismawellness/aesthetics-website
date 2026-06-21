@@ -104,18 +104,23 @@ export default function VideoPlayer({
   };
 
   const wrapperStyle: React.CSSProperties = fill
-    ? { position: "absolute", inset: 0, overflow: "hidden", ...style }
+    ? { position: "absolute", inset: 0, overflow: "hidden", borderRadius: radius, isolation: "isolate", ...style }
     : {
         position: "relative",
         overflow: "hidden",
         borderRadius: radius,
+        isolation: "isolate",
         ...(ratio ? { aspectRatio: ratio } : {}),
         ...style,
       };
 
+  // The shape's radius is applied to the <video> ITSELF — a playing (GPU-
+  // composited) video ignores an ancestor's overflow/border-radius clip and
+  // would otherwise snap to a rectangle on play. Rounding the element keeps the
+  // container shape intact while object-fit:cover fills it fully.
   const vStyle: React.CSSProperties = coverFill
-    ? { position: "absolute", inset: 0, width: "100%", height: "100%", objectFit, display: "block", cursor: "pointer", ...videoStyle }
-    : { width: "100%", height: "auto", objectFit, display: "block", cursor: "pointer", ...videoStyle };
+    ? { position: "absolute", inset: 0, width: "100%", height: "100%", objectFit, display: "block", cursor: "pointer", borderRadius: radius, ...videoStyle }
+    : { width: "100%", height: "auto", objectFit, display: "block", cursor: "pointer", borderRadius: radius, ...videoStyle };
 
   return (
     <div className={className} style={wrapperStyle}>

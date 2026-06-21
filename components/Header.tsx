@@ -73,13 +73,21 @@ export default function Header() {
     if (!open) return;
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
-    const onKey = (e: KeyboardEvent) => e.key === "Escape" && setOpen(false);
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") { setOpen(false); setExpanded(null); } };
     window.addEventListener("keydown", onKey);
     return () => {
       document.body.style.overflow = prev;
       window.removeEventListener("keydown", onKey);
     };
   }, [open]);
+
+  // Close desktop dropdown on Escape when mobile menu is closed.
+  useEffect(() => {
+    if (!expanded) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setExpanded(null); };
+    document.addEventListener("keydown", onKey);
+    return () => document.removeEventListener("keydown", onKey);
+  }, [expanded]);
 
   // Liquid-glass surface for the floating pill. More translucent over the hero,
   // firmer once scrolled for legibility over light content.
@@ -122,6 +130,7 @@ export default function Header() {
       {/* Floating glass pill */}
       <div style={{ padding: "12px clamp(12px,3vw,28px) 0" }}>
         <nav
+          aria-label="Main navigation"
           className="container flex items-center justify-between"
           style={{ ...pillStyle, minHeight: "62px", padding: "8px 12px 8px 22px" }}
         >
@@ -145,12 +154,18 @@ export default function Header() {
               const { items, showViewAll } = curate(m);
               return (
                 <div key={m.label} className="relative group">
-                  <button className="font-display link-underline flex items-center gap-1" style={{ fontSize: "13px", letterSpacing: "0.12em", padding: "20px 0", color: "#423a30", cursor: "pointer" }}>
+                  <button
+                    className="font-display link-underline flex items-center gap-1"
+                    style={{ fontSize: "13px", letterSpacing: "0.12em", padding: "20px 0", color: "#423a30", cursor: "pointer" }}
+                    aria-haspopup="true"
+                    aria-expanded={expanded === m.label}
+                    onClick={() => setExpanded(expanded === m.label ? null : m.label)}
+                  >
                     {m.label}
-                    <svg width="9" height="9" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.6"><path d="M2 4l4 4 4-4" /></svg>
+                    <svg width="9" height="9" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true"><path d="M2 4l4 4 4-4" /></svg>
                   </button>
                   <div
-                    className="absolute left-1/2 -translate-x-1/2 top-full hidden group-hover:block z-50"
+                    className={`absolute left-1/2 -translate-x-1/2 top-full z-50 ${expanded === m.label ? 'block' : 'hidden group-hover:block'}`}
                     style={{
                       background: "rgba(255,255,255,0.78)",
                       backdropFilter: "blur(22px) saturate(180%)",

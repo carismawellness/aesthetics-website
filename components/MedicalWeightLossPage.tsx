@@ -232,7 +232,7 @@ function Hero() {
                 boxShadow: "0 20px 50px rgba(0,0,0,0.18)",
               }}
             >
-              <VideoPlayer fill src={`${A}/hero.mp4`} poster={`${A}/hero-doctor.png`} label="Doctor-led medical weight loss in Malta" />
+              <VideoPlayer fill radius="80px 24px 80px 24px" src={`${A}/hero.mp4`} poster={`${A}/hero-doctor.png`} label="Doctor-led medical weight loss in Malta" />
             </div>
             <div className="flex items-center justify-center" style={{ gap: "14px", marginTop: "24px" }}>
               <Image src={`${A}/award-badge.png`} alt="Malta Healthcare, Wellness, Beauty & Best Spa Awards" width={114} height={72} style={{ height: "58px", width: "auto" }} />

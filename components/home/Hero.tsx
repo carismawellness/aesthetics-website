@@ -137,7 +137,7 @@ export default function Hero() {
                 boxShadow: "0 24px 60px rgba(28,30,30,0.16)",
               }}
             >
-              <VideoPlayer fill src="/assets/clinic-video.mp4" poster="/assets/clinic-room.jpg" label="Carisma Aesthetics clinic in Malta" />
+              <VideoPlayer fill radius="220px 220px 18px 18px" src="/assets/clinic-video.mp4" poster="/assets/clinic-room.jpg" label="Carisma Aesthetics clinic in Malta" />
             </div>
 
             {/* Floating card — years in wellness (top-right) */}

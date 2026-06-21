@@ -4,8 +4,14 @@ import { useState } from "react";
 
 export type Faq = { q: string; a: string };
 
+// Inline styles always win over CSS @media rules, so we gate transitions in JS.
+function prefersReducedMotion() {
+  return typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+}
+
 export default function FaqAccordion({ items, uppercase = true }: { items: Faq[]; uppercase?: boolean }) {
   const [open, setOpen] = useState<number | null>(null);
+  const reduced = prefersReducedMotion();
 
   return (
     // P6 — explicit landmark not needed here since TreatmentPage wraps in <section>;
@@ -64,8 +70,8 @@ export default function FaqAccordion({ items, uppercase = true }: { items: Faq[]
                 aria-hidden="true"
                 style={{
                   color: "#776030",
-                  // P7 — animation respects prefers-reduced-motion via CSS (globals handles @media)
-                  transition: "transform 0.3s ease",
+                  // P7 — gate transition in JS; inline styles override @media CSS rules
+                  transition: reduced ? "none" : "transform 0.3s ease",
                   transform: isOpen ? "rotate(180deg)" : "none",
                   flexShrink: 0,
                   // P2 — ensure icon area meets minimum touch target
@@ -100,7 +106,7 @@ export default function FaqAccordion({ items, uppercase = true }: { items: Faq[]
                 // P7 — CSS grid row animation: smooth open/close
                 display: "grid",
                 gridTemplateRows: isOpen ? "1fr" : "0fr",
-                transition: "grid-template-rows 0.3s ease",
+                transition: reduced ? "none" : "grid-template-rows 0.3s ease",
               }}
             >
               <div style={{ overflow: "hidden" }}>

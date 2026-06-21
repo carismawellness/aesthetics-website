@@ -1332,7 +1332,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
             {t.patientVideos.videos.length === 1 ? (
               <div style={{ marginTop: "44px", maxWidth: "340px", marginInline: "auto" }}>
                 <div style={{ borderRadius: "28px 64px 28px 64px", overflow: "hidden", boxShadow: "0 16px 38px rgba(0,0,0,0.10)" }}>
-                  <VideoPlayer className="w-full" ratio="4 / 5" radius={0} src={t.patientVideos.videos[0]} label="Patient treatment video" />
+                  <VideoPlayer className="w-full" ratio="4 / 5" radius="28px 64px 28px 64px" src={t.patientVideos.videos[0]} label="Patient treatment video" />
                 </div>
               </div>
             ) : (
@@ -1351,7 +1351,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                     delay={(i % 3) * 90}
                     style={{ borderRadius: "28px 64px 28px 64px", overflow: "hidden", boxShadow: "0 16px 38px rgba(0,0,0,0.10)" }}
                   >
-                    <VideoPlayer className="w-full" ratio="4 / 5" radius={0} src={src} label={`Patient treatment video ${i + 1}`} />
+                    <VideoPlayer className="w-full" ratio="4 / 5" radius="28px 64px 28px 64px" src={src} label={`Patient treatment video ${i + 1}`} />
                   </Reveal>
                 ))}
               </div>

@@ -16,12 +16,12 @@ export default function HomePage() {
       >
         Skip to main content
       </a>
-      <Hero />
-      <div id="main-content" tabIndex={-1}>
+      <main id="main-content" tabIndex={-1}>
+        <Hero />
         <Reveal><ServicesMarquee /></Reveal>
         <Reveal><WhyUs /></Reveal>
         <Reveal><BookConsultation /></Reveal>
-      </div>
+      </main>
     </>
   );
 }

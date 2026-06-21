@@ -491,6 +491,9 @@ main li a:not(.btn):not(.no-underline),
   white-space: nowrap;
   animation: marquee 30s linear infinite;
 }
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+}
 
 /* subtle fade-up used on scroll sections */
 @keyframes fadeUp {
@@ -521,6 +524,9 @@ summary { list-style: none; }
 summary::-webkit-details-marker { display: none; }
 .faq-plus { transition: transform 0.2s ease; }
 details[open] .faq-plus { transform: rotate(45deg); }
+@media (prefers-reduced-motion: reduce) {
+  .faq-plus { transition: none; }
+}
 
 /* ── Dark stone texture pages (hair-regrowth, pico-laser, medical-weight-loss, packages) ── */
 body.dark-texture-page {

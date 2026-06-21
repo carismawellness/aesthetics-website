@@ -3,6 +3,11 @@
 import { useState, useId } from "react";
 import Link from "next/link";
 
+// Detect prefers-reduced-motion (SSR-safe: returns false on server).
+function prefersReducedMotion() {
+  return typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+}
+
 // FAQ section for the Pico laser tattoo removal page.
 // Self-contained: borderless search input + 10-row accordion (first row open by
 // default with a share-icon row), faint-teal hairline dividers, and a centered
@@ -132,6 +137,8 @@ export default function Faq() {
   const [open, setOpen] = useState<number | null>(0);
   const [query, setQuery] = useState("");
   const baseId = useId();
+  // Inline styles win over CSS @media rules so gate transition in JS.
+  const reduced = prefersReducedMotion();
 
   const filtered = query.trim()
     ? FAQS.filter(
@@ -281,7 +288,7 @@ export default function Faq() {
                       aria-hidden="true"
                       style={{
                         color: "var(--gold-deep)",
-                        transition: "transform 0.3s",
+                        transition: reduced ? "none" : "transform 0.3s",
                         transform: isOpen ? "rotate(180deg)" : "none",
                         flexShrink: 0,
                       }}
@@ -307,7 +314,7 @@ export default function Faq() {
                     style={{
                       display: "grid",
                       gridTemplateRows: isOpen ? "1fr" : "0fr",
-                      transition: "grid-template-rows 0.3s ease",
+                      transition: reduced ? "none" : "grid-template-rows 0.3s ease",
                     }}
                   >
                     <div style={{ overflow: "hidden" }}>
