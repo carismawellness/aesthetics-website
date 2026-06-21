@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
+import Magnetic from "@/components/motion/Magnetic";
 import {
   CONTACT,
   FACE_LINKS,
@@ -52,6 +54,10 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const [expanded, setExpanded] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  // Portal target (document.body) is only available after mount.
+  useEffect(() => setMounted(true), []);
 
   // Scroll-aware: collapse the announcement strip and firm up the glass once
   // the user scrolls past the hero edge.
@@ -192,9 +198,11 @@ export default function Header() {
               <PhoneIcon />
               <span style={{ color: "var(--ink-soft)", letterSpacing: "1px", fontSize: "13px" }}>{CONTACT.phoneDigits}</span>
             </a>
-            <Link href="/consultation" className="btn btn-teal" style={{ borderRadius: "999px", cursor: "pointer" }}>
-              free consultation
-            </Link>
+            <Magnetic strength={0.25}>
+              <Link href="/consultation" className="btn btn-teal" style={{ borderRadius: "999px", cursor: "pointer" }}>
+                free consultation
+              </Link>
+            </Magnetic>
           </div>
 
           {/* Mobile hamburger */}
@@ -324,38 +332,42 @@ export default function Header() {
       )}
 
       {/* Mobile-only sticky bottom CTA — present on every page, hidden while the
-          full-page menu is open (menu is z-60, this sits below at z-40). */}
-      {!open && (
-        <>
-          {/* Spacer reserves layout room so the fixed bar never permanently
-              covers page content (incl. footer) on mobile. */}
-          <div
-            aria-hidden
-            className="lg:hidden"
-            style={{ height: "calc(64px + env(safe-area-inset-bottom, 0px))" }}
-          />
-          <div
-            className="lg:hidden fixed inset-x-0 bottom-0"
-            style={{
-              zIndex: 40,
-              padding: "10px clamp(12px,4vw,20px) calc(10px + env(safe-area-inset-bottom, 0px))",
-              background: "rgba(255,255,255,0.82)",
-              backdropFilter: "blur(18px) saturate(180%)",
-              WebkitBackdropFilter: "blur(18px) saturate(180%)",
-              borderTop: "1px solid rgba(255,255,255,0.7)",
-              boxShadow: "0 -8px 28px rgba(28,30,30,0.12)",
-            }}
-          >
-            <Link
-              href="/consultation"
-              className="btn btn-teal w-full"
-              style={{ borderRadius: "999px", justifyContent: "center", cursor: "pointer" }}
+          full-page menu is open (menu is z-60, this bar sits below at z-40).
+          Portaled to <body> so the in-flow spacer can reserve room AFTER the
+          footer, ensuring the fixed bar never permanently covers content. */}
+      {mounted && !open &&
+        createPortal(
+          <>
+            {/* In-flow spacer (appended at end of <body>) reserves height equal
+                to the bar so page/footer content is never permanently covered. */}
+            <div
+              aria-hidden
+              className="lg:hidden"
+              style={{ height: "calc(64px + env(safe-area-inset-bottom, 0px))" }}
+            />
+            <div
+              className="lg:hidden fixed inset-x-0 bottom-0"
+              style={{
+                zIndex: 40,
+                padding: "10px clamp(12px,4vw,20px) calc(10px + env(safe-area-inset-bottom, 0px))",
+                background: "rgba(255,255,255,0.82)",
+                backdropFilter: "blur(18px) saturate(180%)",
+                WebkitBackdropFilter: "blur(18px) saturate(180%)",
+                borderTop: "1px solid rgba(255,255,255,0.7)",
+                boxShadow: "0 -8px 28px rgba(28,30,30,0.12)",
+              }}
             >
-              Book Your Free Consultation
-            </Link>
-          </div>
-        </>
-      )}
+              <Link
+                href="/consultation"
+                className="btn btn-teal w-full"
+                style={{ borderRadius: "999px", justifyContent: "center", cursor: "pointer" }}
+              >
+                Book Your Free Consultation
+              </Link>
+            </div>
+          </>,
+          document.body
+        )}
     </header>
   );
 }
