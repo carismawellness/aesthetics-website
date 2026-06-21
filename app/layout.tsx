@@ -4,6 +4,8 @@ import Script from "next/script";
 import { Pinyon_Script } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import WidowGuard from "@/components/WidowGuard";
+import SmoothScroll from "@/components/motion/SmoothScroll";
 
 const pinyonScript = Pinyon_Script({
   weight: "400",
@@ -59,6 +61,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`h-full antialiased ${pinyonScript.variable}`}>
       <head>
+        {/* Set `js` before paint so scroll-reveal pre-hiding only applies when JS is
+            on (no-JS users always see content; no reveal flash). */}
+        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
         {/* Preload critical self-hosted fonts */}
         <link rel="preload" as="font" href="/assets/fonts/novecento-wide-book.woff2" type="font/woff2" crossOrigin="" />
         <link rel="preload" as="font" href="/assets/fonts/trajan-pro.woff2" type="font/woff2" crossOrigin="" />
@@ -92,8 +97,12 @@ export default function RootLayout({
         </noscript>
 
         <Header />
-        <main className="flex-grow">{children}</main>
+        <main className="flex-grow">
+          <SmoothScroll>{children}</SmoothScroll>
+        </main>
         <Footer />
+        {/* Eliminates typographic widows (lone last word) site-wide. */}
+        <WidowGuard />
 
         {/* GHL form embed */}
         <Script src="https://link.msgsndr.com/js/form_embed.js" strategy="lazyOnload" />
