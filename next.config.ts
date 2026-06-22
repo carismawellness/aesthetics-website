@@ -95,6 +95,14 @@ const legacyRedirects: { source: string; destination: string }[] = [
 ];
 
 const nextConfig: NextConfig = {
+  images: {
+    // Allow next/image to optimize the legacy Wix CDN assets still referenced on
+    // a few pages (e.g. the gift-card occasion mockups). Without this the image
+    // optimizer returns 400 Bad Request for the remote host.
+    remotePatterns: [
+      { protocol: "https", hostname: "static.wixstatic.com" },
+    ],
+  },
   async redirects() {
     return [
       // Legacy Wix blog: ~404 /post/* URLs (new slugs differ entirely) → blog index.
