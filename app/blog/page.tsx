@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
+import PageHero from "@/components/PageHero";
 import { getAllBlogs } from "@/lib/blogs";
 import type { BlogPost } from "@/lib/blog-types";
 
@@ -153,6 +154,7 @@ function BlogCard({ post }: { post: BlogPost }) {
 
 export default function BlogIndexPage() {
   const posts = getAllBlogs();
+  const heroImage = posts[0]?.coverImage || "/assets/clinic-room.jpg";
 
   return (
     /* P1: <main> landmark */
@@ -177,52 +179,25 @@ export default function BlogIndexPage() {
         </ol>
       </nav>
 
-      {/* ── Page header ─────────────────────────────── */}
-      <section
-        aria-labelledby="blog-page-heading"
-        style={{
-          background: "#fff",
-          borderBottom: "1px solid var(--line)",
-          padding: "72px 20px 64px",
-          textAlign: "center",
+      {/* ── Hero (shared PageHero) ──────────────────── */}
+      <PageHero
+        eyebrow="The Journal"
+        headline={[
+          { text: "Aesthetics Journal" },
+          { text: "Tips & Insights for Malta", em: true },
+        ]}
+        sub="Expert guides on aesthetic treatments, skin and confidence — from Malta's #1 voted med-aesthetics clinic."
+        primaryCta={{ text: "Book Free Consultation", href: "/consultation" }}
+        secondaryCta={{ text: "View Treatments", href: "/face-treatments" }}
+        media={{ type: "image", src: heroImage, alt: "Carisma Aesthetics journal" }}
+        proof={{
+          rating: "4.9",
+          reviews: "200+",
+          statValue: "30+",
+          statLabel: "years in wellness",
+          awardText: "#1 Voted Clinic\nMalta Healthcare Awards",
         }}
-      >
-        <div className="container">
-          <p
-            className="font-display mb-4"
-            aria-hidden="true"
-            style={{ fontSize: "10px", color: "var(--label)", letterSpacing: "0.22em" }}
-          >
-            Carisma Aesthetics
-          </p>
-          {/* P6: exactly one H1 per page */}
-          <h1
-            id="blog-page-heading"
-            className="font-serif"
-            style={{
-              fontSize: "clamp(26px, 5vw, 48px)",
-              color: "var(--teal-deep)",
-              letterSpacing: "0.06em",
-              lineHeight: 1.2,
-              marginBottom: "20px",
-            }}
-          >
-            Our Blog
-          </h1>
-          <p
-            style={{
-              /* P1: var(--muted) is assumed to have sufficient contrast on white; using max-w-prose */
-              color: "var(--muted)",
-              fontSize: "15px",
-              maxWidth: "540px",
-              margin: "0 auto",
-              lineHeight: 1.75,
-            }}
-          >
-            Expert insights on medical aesthetics, skincare, and beauty — written by our medically qualified team in Malta.
-          </p>
-        </div>
-      </section>
+      />
 
       {/* ── Post grid ───────────────────────────────── */}
       <section

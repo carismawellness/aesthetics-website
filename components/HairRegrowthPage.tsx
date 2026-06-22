@@ -2,6 +2,7 @@
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import VideoPlayer from "@/components/VideoPlayer";
+import PageHero from "@/components/PageHero";
 import hairRegrowth from "@/lib/treatments/hair-regrowth";
 import { useState, useEffect } from "react";
 
@@ -495,152 +496,31 @@ export default function HairRegrowthPage() {
         }
       `}</style>
       {/* ───────────────────────────────────────────────────────
-          HERO — dark charcoal with background image + portrait video
+          HERO — shared <PageHero theme="dark"> (gold-on-charcoal)
       ─────────────────────────────────────────────────────── */}
-      <section
-        style={{
-          background: "transparent",
-          minHeight: "100svh",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          padding: "var(--nav-clear) 0 clamp(20px,3vh,40px)",
+      <PageHero
+        theme="dark"
+        eyebrow={t.hero.subtitle}
+        headline={[
+          { text: "Non-Surgical Hair Loss Clinic" },
+          { text: "Guaranteed Results in 90 Days", em: true },
+        ]}
+        sub={t.hero.body}
+        bullets={(t.hero.benefits ?? []).map((b) => ({ text: b }))}
+        primaryCta={{ text: t.hero.cta ?? "Book Your Consultation", href: "/consultation" }}
+        media={{
+          type: "video",
+          src: `${A}/vid-hair-regrowth.mp4`,
+          alt: "Hair regrowth treatment at Carisma Aesthetics",
         }}
-      >
-        <div className="container">
-          <div className="grid items-center gap-10 lg:grid-cols-[1fr_360px]">
-            <Reveal>
-              {/* Kicker */}
-              <p
-                className="font-display"
-                style={{
-                  fontSize: "11px",
-                  color: GOLD,
-                  letterSpacing: "0.22em",
-                  textTransform: "uppercase",
-                  marginBottom: "18px",
-                }}
-              >
-                {t.hero.subtitle}
-              </p>
-              {/* H1 */}
-              <h1
-                className="font-serif"
-                style={{
-                  fontSize: "clamp(26px,3.4vw,42px)",
-                  color: "#ffffff",
-                  letterSpacing: "0.02em",
-                  lineHeight: 1.1,
-                  textTransform: "uppercase",
-                  fontWeight: 400,
-                }}
-              >
-                {t.hero.title}
-              </h1>
-              {/* Body */}
-              <p
-                style={{
-                  fontSize: "14px",
-                  color: "#d4cfc6",
-                  lineHeight: 1.6,
-                  marginTop: "14px",
-                  maxWidth: "560px",
-                }}
-              >
-                {t.hero.body}
-              </p>
-              {/* Benefit list */}
-              <ul className="space-y-2" style={{ marginTop: "16px" }}>
-                {(t.hero.benefits ?? []).map((b) => (
-                  <li key={b} className="flex items-start gap-3">
-                    <GoldCheck />
-                    <span
-                      style={{
-                        fontSize: "13.5px",
-                        color: "#e0dbd2",
-                        lineHeight: 1.6,
-                      }}
-                    >
-                      {b}
-                    </span>
-                  </li>
-                ))}
-              </ul>
-              {/* CTA */}
-              <div style={{ marginTop: "18px" }}>
-                <GoldBtn>{t.hero.cta}</GoldBtn>
-              </div>
-              {/* Stars + note */}
-              <div className="flex items-center gap-3" style={{ marginTop: "12px" }}>
-                <span className="flex" style={{ color: GOLD }}>
-                  {[0, 1, 2, 3, 4].map((i) => (
-                    <svg
-                      key={i}
-                      width="14"
-                      height="14"
-                      viewBox="0 0 24 24"
-                      fill="currentColor"
-                      aria-hidden
-                    >
-                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                    </svg>
-                  ))}
-                </span>
-                <span
-                  style={{
-                    fontSize: "11px",
-                    color: "#c2bbb0",
-                    letterSpacing: "0.06em",
-                  }}
-                >
-                  {t.hero.note}
-                </span>
-              </div>
-              {/* Location */}
-              {t.hero.location && (
-                <p
-                  style={{
-                    fontSize: "11px",
-                    color: "#bdb4a6",
-                    letterSpacing: "0.08em",
-                    marginTop: "8px",
-                  }}
-                >
-                  📍 {t.hero.location}
-                </p>
-              )}
-            </Reveal>
-
-            {/* Portrait video reel */}
-            <Reveal delay={120} className="mx-auto" style={{ width: "100%", maxWidth: "320px" }}>
-              <div
-                style={{
-                  borderRadius: "16px",
-                  overflow: "hidden",
-                  maxHeight: "clamp(320px,48vh,470px)",
-                  boxShadow: "0 20px 50px rgba(0,0,0,0.55)",
-                  border: `1px solid rgba(201,169,106,0.3)`,
-                }}
-              >
-                <VideoPlayer className="w-full" ratio="9 / 16" radius={16} src={`${A}/vid-hair-regrowth.mp4`} label="Hair regrowth treatment at Carisma Aesthetics" />
-              </div>
-              <p
-                className="text-center"
-                style={{
-                  fontSize: "11px",
-                  color: "#b2aba1",
-                  lineHeight: 1.6,
-                  marginTop: "14px",
-                  letterSpacing: "0.04em",
-                }}
-              >
-                Developed by Malta&rsquo;s leading hair-loss clinic with 20+
-                years experience
-              </p>
-            </Reveal>
-          </div>
-        </div>
-      </section>
+        proof={{
+          rating: "4.9",
+          reviews: "200+",
+          statValue: "20+",
+          statLabel: "years of expertise",
+          awardText: "#1 Voted Clinic\nMalta Healthcare Awards",
+        }}
+      />
 
 
       {/* ───────────────────────────────────────────────────────

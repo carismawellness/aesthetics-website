@@ -439,6 +439,30 @@ main li a:not(.btn):not(.no-underline),
 }
 .hero-outline:hover { background: var(--teal-text); color: #fff; }
 
+/* Dark colourway (used by PageHero theme="dark" on the dark-stone pages). */
+.hero-pill-dark {
+  display: inline-flex; align-items: center; gap: 7px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(201, 169, 106, 0.30);
+  border-radius: 999px; padding: 7px 14px;
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+}
+.hero-glass-dark {
+  background: rgba(28, 26, 23, 0.66);
+  border: 1px solid rgba(201, 169, 106, 0.28);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px) saturate(140%); -webkit-backdrop-filter: blur(10px) saturate(140%);
+}
+.hero-outline-dark {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 14px 28px; border-radius: 999px;
+  border: 1.5px solid rgba(201, 169, 106, 0.7); color: #c9a96a;
+  font-family: "Novecento Wide", sans-serif; font-size: 12px; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.hero-outline-dark:hover { background: #c9a96a; color: #14120e; }
+
 /* Form fields */
 .form-field {
   width: 100%;
