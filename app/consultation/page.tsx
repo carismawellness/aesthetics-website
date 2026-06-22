@@ -1,6 +1,6 @@
 import { CONTACT } from "@/lib/site";
 import Reveal from "@/components/Reveal";
-import BookingButtons from "@/components/BookingButtons";
+import PageHero from "@/components/PageHero";
 
 export const metadata = {
   title: "Book Your Free Consultation | Carisma Aesthetics Malta",
@@ -162,7 +162,6 @@ const STEPS = [
   },
 ];
 
-const HERO_ID = "consultation-hero-heading";
 const STEPS_ID = "consultation-steps-heading";
 const CONTACT_ID = "consultation-contact-heading";
 
@@ -180,70 +179,32 @@ export default function ConsultationPage() {
 
       <main id="consultation-main">
         {/* ===== HERO ===== */}
-        <section
-          aria-labelledby={HERO_ID}
-          style={{ backgroundColor: "var(--cream)", padding: "80px 0 72px" }}
-        >
-          <div className="container text-center">
-            <Reveal>
-              <p
-                className="font-display"
-                style={{
-                  fontSize: "11px",
-                  /* #4F7373 on cream (#EFE7D7) ≈ 4.5:1 — passes AA */
-                  color: "#4F7373",
-                  letterSpacing: "0.18em",
-                  marginBottom: "18px",
-                  textTransform: "uppercase",
-                }}
-              >
-                free consultation
-              </p>
-              <h1
-                id={HERO_ID}
-                className="font-display"
-                style={{
-                  fontSize: "clamp(28px,4.2vw,46px)",
-                  color: "var(--ink)",
-                  letterSpacing: "0.08em",
-                  fontWeight: 600,
-                  lineHeight: 1.15,
-                }}
-              >
-                Book Your Free Consultation
-              </h1>
-              <div
-                aria-hidden="true"
-                style={{
-                  width: "56px",
-                  height: "2px",
-                  background: "#4F7373",
-                  margin: "24px auto",
-                }}
-              />
-              <p
-                className="font-serif mx-auto"
-                style={{
-                  fontSize: "18px",
-                  color: "var(--label)",
-                  fontWeight: 400,
-                  lineHeight: 1.75,
-                  maxWidth: "620px",
-                }}
-              >
-                Every consultation begins with listening to your story — then
-                shaping a conservative, personalised plan with one of our doctors.
-              </p>
-              <div style={{ marginTop: "32px" }}>
-                <BookingButtons
-                  freshaHref={FRESHA_CONSULT}
-                  primaryLabel="Book Instantly on Fresha"
-                  consultLabel="Book Free Consultation"
-                />
-              </div>
-            </Reveal>
-          </div>
-        </section>
+        <PageHero
+          eyebrow="Free Consultation"
+          headline={[
+            { text: "Book Your Free" },
+            { text: "Consultation in Malta", em: true },
+          ]}
+          sub="Every consultation begins with listening to your story — then shaping a conservative, personalised plan with one of our doctors."
+          primaryCta={{
+            text: "Book Instantly on Fresha",
+            href: FRESHA_CONSULT,
+            external: true,
+          }}
+          secondaryCta={{ text: "View Treatments", href: "/face-treatments" }}
+          media={{
+            type: "image",
+            src: "/assets/clinic-room.jpg",
+            alt: "Carisma Aesthetics clinic in Malta",
+          }}
+          proof={{
+            rating: "4.9",
+            reviews: "200+",
+            statValue: "30+",
+            statLabel: "years in wellness",
+            awardText: "#1 Voted Clinic\nMalta Healthcare Awards",
+          }}
+        />
 
         {/* ===== WHAT TO EXPECT ===== */}
         <section

@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import FaqAccordion, { type Faq } from "@/components/FaqAccordion";
+import PageHero from "@/components/PageHero";
 
 const A = "/assets/treatments";
 // WCAG AA: darkened from #6391ab (3.4:1) to teal-deep #3f6363 (6.61:1 on white) for text + UI strokes
@@ -55,106 +56,6 @@ function Rule() {
         margin: "14px auto 0",
       }}
     />
-  );
-}
-
-function Cta({ label, href = "/sign-up" }: { label: string; href?: string }) {
-  return (
-    <div className="flex items-center justify-center mem-cta">
-      {/* Single accessible link wrapping both pill + arrow */}
-      <Link
-        href={href}
-        aria-label={label}
-        className="mem-cta-link flex items-center"
-        style={{
-          display: "inline-flex",
-          alignItems: "center",
-          textDecoration: "none",
-          cursor: "pointer",
-        }}
-      >
-        <span
-          className="mem-cta-label"
-          style={{
-            display: "inline-flex",
-            alignItems: "center",
-            border: `1.5px solid ${BLUE}`,
-            color: BLUE,
-            fontFamily: "var(--font-display)",
-            fontWeight: 700,
-            fontSize: "11px",
-            letterSpacing: "0.22em",
-            textTransform: "uppercase",
-            padding: "16px 36px",
-            borderRadius: "999px 0 0 999px",
-            borderRight: "none",
-            background: "transparent",
-            whiteSpace: "nowrap",
-            minHeight: "50px",
-            transition:
-              "background 0.25s ease, color 0.25s ease, transform 0.25s ease",
-          }}
-        >
-          {label}
-        </span>
-        <span
-          aria-hidden="true"
-          className="mem-cta-arrow"
-          style={{
-            display: "inline-flex",
-            alignItems: "center",
-            justifyContent: "center",
-            width: "50px",
-            height: "50px",
-            background: BLUE,
-            borderRadius: "50%",
-            flexShrink: 0,
-            marginLeft: "12px",
-            transition: "transform 0.25s ease, box-shadow 0.25s ease",
-          }}
-        >
-          <svg
-            width="18"
-            height="18"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="#fff"
-            strokeWidth="2.2"
-            aria-hidden="true"
-          >
-            <path d="M5 12h13M13 6l6 6-6 6" />
-          </svg>
-        </span>
-      </Link>
-      {/* pill CTA: label inverts (ink fill, light text) on hover; whole link scales 1.04 */}
-      <style>{`
-        .mem-cta-link:hover .mem-cta-label,
-        .mem-cta-link:focus-visible .mem-cta-label {
-          background: var(--ink);
-          color: var(--white);
-          text-decoration: underline;
-        }
-        .mem-cta-link:hover .mem-cta-arrow,
-        .mem-cta-link:focus-visible .mem-cta-arrow {
-          box-shadow: 0 6px 18px rgba(12,11,11,0.22);
-        }
-        @media (prefers-reduced-motion: no-preference) {
-          .mem-cta-link:hover .mem-cta-label,
-          .mem-cta-link:focus-visible .mem-cta-label {
-            transform: scale(1.04);
-          }
-          .mem-cta-link:hover .mem-cta-arrow,
-          .mem-cta-link:focus-visible .mem-cta-arrow {
-            transform: scale(1.04);
-          }
-        }
-        .mem-cta-link:focus-visible {
-          outline: 2px solid ${BLUE};
-          outline-offset: 4px;
-          border-radius: 999px;
-        }
-      `}</style>
-    </div>
   );
 }
 
@@ -430,123 +331,33 @@ export default function MembershipPage() {
   return (
     <main id="main-content">
       {/* ════ HERO ════ */}
-      <section
-        aria-labelledby="hero-heading"
-        style={{
-          background:
-            "url('/assets/hero-bg.png') center / cover no-repeat",
-          minHeight: "100svh",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          padding: "var(--nav-clear) 0 clamp(20px,3vh,40px)",
+      <PageHero
+        badge="#1 Voted Med-Aesthetics Clinic"
+        headline={[
+          { text: "Glow Club Membership" },
+          { text: "in Malta", em: true },
+        ]}
+        sub="Save towards your favourite Carisma Aesthetics treatments month by month, then spend your Glow balance with exclusive member discounts."
+        bullets={[
+          { text: "10% off all aesthetics & spa services" },
+          { text: "15% off skin care products" },
+          { text: "Priority booking & a yearly complimentary consultation" },
+        ]}
+        primaryCta={{ text: "Begin Your Journey", href: "/sign-up" }}
+        secondaryCta={{ text: "How It Works", href: "#how-it-works-heading" }}
+        media={{
+          type: "image",
+          src: `${A}/mem-hero.jpg`,
+          alt: "Glow Club membership at Carisma Aesthetics Malta — exclusive aesthetics savings programme",
         }}
-      >
-        <div
-          className="container text-center"
-          style={{ maxWidth: "640px" }}
-        >
-          <div className="mx-auto" style={{ maxWidth: "460px" }}>
-            <Image
-              src={`${A}/mem-hero.jpg`}
-              alt="Glow Club membership at Carisma Aesthetics Malta — exclusive aesthetics savings programme"
-              width={460}
-              height={307}
-              priority
-              className="w-full"
-              style={{
-                display: "block",
-                maxHeight: "clamp(240px,38vh,340px)",
-                aspectRatio: "3 / 2",
-                objectFit: "cover",
-                borderRadius: "10px",
-              }}
-            />
-          </div>
-
-          <div
-            className="flex items-center justify-center"
-            style={{ gap: "14px", marginTop: "22px" }}
-          >
-            <span
-              className="flex items-center"
-              style={{ flex: 1, maxWidth: "120px" }}
-              aria-hidden="true"
-            >
-              <span
-                style={{
-                  width: "7px",
-                  height: "7px",
-                  background: "#b8a89a",
-                  transform: "rotate(45deg)",
-                  flexShrink: 0,
-                }}
-              />
-              <span
-                style={{ flex: 1, height: "1px", background: "#b8a89a" }}
-              />
-            </span>
-            <p
-              className="font-serif"
-              style={{
-                fontSize: "clamp(18px,2.4vw,24px)",
-                color: "#544a3a",
-                letterSpacing: "0.22em",
-                textTransform: "uppercase",
-                whiteSpace: "nowrap",
-                margin: 0,
-              }}
-              aria-hidden="true"
-            >
-              welcome to
-            </p>
-            <span
-              className="flex items-center"
-              style={{ flex: 1, maxWidth: "120px" }}
-              aria-hidden="true"
-            >
-              <span
-                style={{ flex: 1, height: "1px", background: "#b8a89a" }}
-              />
-              <span
-                style={{
-                  width: "7px",
-                  height: "7px",
-                  background: "#b8a89a",
-                  transform: "rotate(45deg)",
-                  flexShrink: 0,
-                }}
-              />
-            </span>
-          </div>
-
-          {/* ── H1: single page heading, contains brand + programme name ── */}
-          <h1
-            id="hero-heading"
-            style={{
-              background: "rgba(150,178,178,0.13)",
-              padding: "10px 20px",
-              margin: "8px auto 0",
-              maxWidth: "440px",
-              borderRadius: "12px",
-              /* typography */
-              fontFamily: "var(--font-display)",
-              fontSize: "clamp(16px,2.4vw,22px)",
-              color: BLUE,
-              letterSpacing: "0.38em",
-              textTransform: "uppercase",
-              fontWeight: 700,
-              lineHeight: 1.4,
-            }}
-          >
-            the glow club
-          </h1>
-
-          <div style={{ marginTop: "22px" }}>
-            <Cta label="begin your journey now" />
-          </div>
-        </div>
-      </section>
+        proof={{
+          rating: "4.9",
+          reviews: "200+",
+          statValue: "30+",
+          statLabel: "years in wellness",
+          awardText: "#1 Voted Clinic\nMalta Healthcare Awards",
+        }}
+      />
 
       {/* ════ HOW IT WORKS ════ */}
       <section aria-labelledby="how-it-works-heading" style={{ padding: "70px 0" }}>

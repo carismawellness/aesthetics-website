@@ -2,13 +2,32 @@ import Link from "next/link";
 import Image from "next/image";
 import type { Treatment } from "@/lib/treatments";
 import Reveal from "@/components/Reveal";
+import PageHero from "@/components/PageHero";
 import ConsultationForm from "@/components/ConsultationForm";
 import BeforeAfterCarousel from "@/components/BeforeAfterCarousel";
 import CompositeSlideshow from "@/components/CompositeSlideshow";
 import VideoPlayer from "@/components/VideoPlayer";
 
-const ANNOUNCE =
-  "⭐ Highest rated clinic in Malta ⭐ · Medically qualified doctors · #1 voted med-aesthetics clinic in malta";
+// Fallback hero image when a treatment defines neither image nor video.
+const HERO_FALLBACK_IMAGE = "/assets/hero-bg.png";
+
+// Split the treatment title into at most two headline lines for PageHero, with
+// the last line rendered teal (em). Keeps the primary keyword + "Malta" intact.
+function splitHeadline(title: string): { text: string; em?: boolean }[] {
+  const words = title.trim().split(/\s+/);
+  if (words.length <= 1) return [{ text: title, em: true }];
+  // Break near the middle so neither line is a lone word where avoidable.
+  const breakAt = Math.ceil(words.length / 2);
+  const first = words.slice(0, breakAt).join(" ");
+  const second = words.slice(breakAt).join(" ");
+  return [{ text: first }, { text: second, em: true }];
+}
+
+// First sentence of a paragraph (used as the hero sub when there's no subtitle).
+function firstSentence(text: string): string {
+  const m = text.match(/^(.*?[.!?])(\s|$)/);
+  return (m ? m[1] : text).trim();
+}
 
 // P1 — teal-deep #4f7373 = 4.26:1 clears the 3:1 graphical-object bar (WCAG 1.4.11).
 // The ✓/✗ glyph itself is the non-colour cue for suitable vs not-ideal.
@@ -142,297 +161,166 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
   return (
     // P1 — <main> landmark wrapping all page content
     <main>
-      {/* ── Hero — 2-column (content left, media + info card right) ── */}
-      {/* P1 — section with aria-labelledby linking to h1 */}
-      <section
-        aria-labelledby="treatment-title"
-        style={{
-          ...(t.hero.heroBgColor
-            ? { background: t.hero.heroBgColor, backgroundSize: "cover", backgroundPosition: "center" }
-            : {
-                backgroundImage: "url('/assets/hero-bg.png')",
-                backgroundSize: "cover",
-                backgroundPosition: "bottom center",
-              }),
-          borderRadius: "26px",
-          overflow: "hidden",
-          margin: "0 16px",
-          minHeight: "calc(100svh - 16px)",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          padding: "var(--nav-clear) 0 clamp(20px,3vh,40px)",
+      {/* ── Hero — shared <PageHero> (one <h1>, primary keyword + Malta) ── */}
+      <PageHero
+        badge="#1 Voted Med-Aesthetics Clinic"
+        headline={splitHeadline(t.hero.title)}
+        compactHeadline={t.hero.title.length > 22}
+        sub={t.hero.subtitle ?? (t.hero.body ? firstSentence(t.hero.body) : undefined)}
+        bullets={
+          t.hero.benefits && t.hero.benefits.length > 0
+            ? t.hero.benefits.map((b) => ({ text: b }))
+            : undefined
+        }
+        primaryCta={{ text: t.hero.cta ?? "Book Your Consultation", href: "/consultation" }}
+        secondaryCta={{ text: "View Treatments", href: "/face-treatments" }}
+        media={
+          t.hero.heroVideo
+            ? {
+                type: "video",
+                src: t.hero.heroVideo,
+                poster: t.hero.image,
+                alt: `${t.hero.title} treatment video`,
+              }
+            : t.hero.image
+              ? {
+                  type: "image",
+                  src: t.hero.image,
+                  alt: `${t.hero.title} — Carisma Aesthetics Malta`,
+                  aspect: t.hero.imageRatio,
+                }
+              : {
+                  type: "image",
+                  src: HERO_FALLBACK_IMAGE,
+                  alt: `${t.hero.title} — Carisma Aesthetics Malta`,
+                }
+        }
+        proof={{
+          rating: "4.9",
+          reviews: "200+",
+          statValue: "30+",
+          statLabel: "years in wellness",
+          awardText: "#1 Voted Clinic\nMalta Healthcare Awards",
         }}
-      >
-        <div className="container">
-          {/* P1 — aria-hidden on decorative announcement text */}
-          <p
-            className="font-display text-center"
-            aria-hidden="true"
-            style={{ fontSize: "11px", color: "var(--gold)", letterSpacing: "0.16em", marginBottom: "16px" }}
-          >
-            {ANNOUNCE}
-          </p>
+      />
 
-          <div
-            style={
-              t.hero.bgImage
-                ? {
-                    borderRadius: "26px",
-                    backgroundImage: `linear-gradient(rgba(255,255,255,0.92), rgba(255,255,255,0.94)), url('${t.hero.bgImage}')`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    padding: "clamp(24px,3.5vw,48px)",
-                  }
-                : { padding: "clamp(28px,3.6vw,52px)" }
-            }
-          >
-            <div className={hasMedia ? "grid gap-8 lg:grid-cols-[1.15fr_0.85fr] items-start" : ""}>
-              {/* Left: content */}
-              <Reveal>
-                {/* P6 — ONE <h1> per page, id linked from aria-labelledby above */}
-                <h1
-                  id="treatment-title"
-                  className="font-serif"
-                  style={{
-                    fontSize: "clamp(24px,3.4vw,38px)",
-                    color: "var(--gold)",
-                    letterSpacing: "0.04em",
-                    textAlign: hasMedia ? "left" : "center",
-                    // P6 — tight line height for headings
-                    lineHeight: 1.25,
-                  }}
-                >
-                  {t.hero.title}
-                </h1>
-
-                {t.hero.benefits && t.hero.benefits.length > 0 && (
-                  <ul
-                    className="space-y-2"
-                    style={{
-                      marginTop: "14px",
-                      maxWidth: hasMedia ? "100%" : "560px",
-                      marginInline: hasMedia ? undefined : "auto",
-                      textAlign: "left",
-                    }}
-                  >
-                    {t.hero.benefits.map((b) => (
-                      <li key={b} className="flex items-start gap-3">
-                        <span
-                          className="shrink-0 inline-flex items-center justify-center"
-                          style={{
-                            // P2 — minimum 22px decorative icon, not interactive — OK
-                            width: "22px",
-                            height: "22px",
-                            borderRadius: "50%",
-                            background: "#e3eded",
-                            color: "var(--teal)",
-                            marginTop: "1px",
-                          }}
-                          aria-hidden="true"
-                        >
-                          <svg
-                            width="13"
-                            height="13"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2.4"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          >
-                            <path d="M5 12.5l4.5 4.5L19 7" />
-                          </svg>
-                        </span>
-                        {/* P6 — body text line height */}
-                        <span style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.625 }}>{b}</span>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-
-                {t.hero.subtitle && (
-                  <p
-                    style={{
-                      fontSize: "14px",
-                      color: "var(--label)",
-                      textTransform: "uppercase",
-                      letterSpacing: "0.06em",
-                      marginTop: "12px",
-                      lineHeight: 1.45,
-                      textAlign: hasMedia ? "left" : "center",
-                      maxWidth: hasMedia ? undefined : "720px",
-                      marginInline: hasMedia ? undefined : "auto",
-                    }}
-                  >
-                    {t.hero.subtitle}
-                  </p>
-                )}
-
-                {t.hero.body && (
-                  // P6 — max-width prose for comfortable line length
-                  <p
-                    style={{
-                      fontSize: "14px",
-                      color: "var(--label)",
-                      lineHeight: 1.625,
-                      marginTop: "10px",
-                      textAlign: hasMedia ? "justify" : "center",
-                      maxWidth: hasMedia ? "72ch" : "760px",
-                      marginInline: hasMedia ? undefined : "auto",
-                    }}
-                  >
-                    {t.hero.body}
-                  </p>
-                )}
-
-                {t.hero.location && (
-                  <p
-                    className="font-display"
-                    style={{
-                      fontSize: "12px",
-                      // P1 — teal-text #406060 = 5.76:1 on worst hero overlay — passes AA
-                      color: "var(--teal-text)",
-                      letterSpacing: "0.14em",
-                      textTransform: "uppercase",
-                      marginTop: "14px",
-                      textAlign: hasMedia ? "left" : "center",
-                    }}
-                  >
-                    {t.hero.location}
-                  </p>
-                )}
-
-                {t.hero.prices && t.hero.prices.length > 0 && (
-                  // P10 — pricing section landmark
-                  <ul
-                    aria-label="Treatment pricing"
-                    style={{
-                      marginTop: "14px",
-                      maxWidth: hasMedia ? "100%" : "560px",
-                      marginInline: hasMedia ? undefined : "auto",
-                    }}
-                  >
-                    {t.hero.prices.map((p) => {
-                      const m = p.price.match(/^(.*?)\s*(€\S+)\s*$/);
-                      const prefix = m ? m[1] : p.price;
-                      const amount = m ? m[2] : "";
-                      return (
-                        <li key={p.label} className="flex items-baseline gap-2" style={{ padding: "5px 0" }}>
-                          <span
-                            style={{ color: "var(--teal-deep)", fontSize: "11px", lineHeight: 1.7 }}
-                            aria-hidden="true"
-                          >
-                            ●
-                          </span>
-                          <span style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.5 }}>
-                            {p.label} {prefix}{" "}
-                            {/* P1 — underline is non-colour cue so price isn't distinguished by colour alone (WCAG 1.4.1) */}
-                            {amount && (
-                              <u
-                                style={{
-                                  color: "var(--teal-text)",
-                                  textUnderlineOffset: "2px",
-                                  fontWeight: 600,
-                                }}
-                              >
-                                {amount}
-                              </u>
-                            )}
-                          </span>
-                        </li>
-                      );
-                    })}
-                  </ul>
-                )}
-
-                <div style={{ marginTop: "18px", textAlign: hasMedia ? "left" : "center" }}>
-                  {/* P2 — min-h-[44px] for CTA tap target */}
-                  <Link
-                    href={t.hero.heroForm ? "#book" : "/consultation"}
-                    className="btn btn-teal"
-                    style={{ borderRadius: "999px", display: "inline-flex", alignItems: "center", minHeight: "44px" }}
-                  >
-                    {t.hero.cta ?? "BOOK YOUR CONSULTATION"}
-                  </Link>
-                </div>
-
-                {t.hero.note && (
-                  <p
-                    style={{
-                      marginTop: "16px",
-                      fontSize: "12px",
-                      // P1 — ink-soft is 12:1 — passes AA
-                      color: "var(--ink-soft)",
-                      lineHeight: 1.6,
-                      textAlign: hasMedia ? "left" : "center",
-                      maxWidth: hasMedia ? undefined : "620px",
-                      marginInline: hasMedia ? undefined : "auto",
-                    }}
-                  >
-                    {t.hero.note}
-                  </p>
-                )}
-
-                {t.pending && (
-                  <p
-                    style={{
-                      marginTop: "24px",
-                      fontSize: "12px",
-                      color: "var(--ink-soft)",
-                      fontStyle: "italic",
-                      textAlign: hasMedia ? "left" : "center",
-                    }}
-                  >
-                    Detailed treatment information for this page is being finalised.
-                  </p>
-                )}
-              </Reveal>
-
-              {/* Right: media + info card */}
-              {hasMedia && (
-                <Reveal delay={120}>
-                  {t.hero.heroVideo ? (
-                    <VideoPlayer
-                      cover
-                      src={t.hero.heroVideo}
-                      label={`${t.hero.title} treatment video`}
-                      radius={20}
+      {/* ── Hero detail strip — prices + treatment info, product tabs, brand logos,
+             and the Google-rating trust block that used to live inside the hero ── */}
+      {(t.hero.location ||
+        t.hero.body ||
+        t.hero.note ||
+        (t.hero.prices && t.hero.prices.length > 0) ||
+        t.info ||
+        (t.hero.productTabs && t.hero.productTabs.length > 0) ||
+        (t.hero.brandLogos && t.hero.brandLogos.length > 0) ||
+        t.pending) && (
+        <section
+          aria-label="Treatment overview"
+          style={{ padding: "clamp(56px,7vh,88px) 0" }}
+        >
+          <div className="container">
+            <div className="mx-auto" style={{ maxWidth: "1100px" }}>
+              <div className="grid gap-8 md:grid-cols-2 items-start">
+                {/* Left: prices + supporting copy */}
+                <Reveal>
+                  {t.hero.location && (
+                    <p
+                      className="font-display"
                       style={{
-                        width: "100%",
-                        maxWidth: "min(360px,100%)",
-                        height: "clamp(320px,46vh,480px)",
-                        margin: "0 auto",
-                        boxShadow: "0 20px 50px rgba(0,0,0,0.10)",
-                      }}
-                    />
-                  ) : (
-                    // P3 — next/image replaces <img> for hero image
-                    <div
-                      className="relative overflow-hidden"
-                      style={{
-                        display: "block",
-                        maxWidth: "min(400px,100%)",
-                        margin: "0 auto",
-                        borderRadius: "20px",
-                        boxShadow: "0 20px 50px rgba(0,0,0,0.10)",
-                        ...(t.hero.imageRatio
-                          ? { aspectRatio: t.hero.imageRatio }
-                          : { aspectRatio: "4 / 5" }),
+                        fontSize: "12px",
+                        // P1 — teal-text #406060 = 5.76:1 — passes AA
+                        color: "var(--teal-text)",
+                        letterSpacing: "0.14em",
+                        textTransform: "uppercase",
+                        marginBottom: "12px",
                       }}
                     >
-                      <Image
-                        src={t.hero.image!}
-                        // P1 — meaningful alt text for hero image
-                        alt={`${t.hero.title} — Carisma Aesthetics Malta`}
-                        fill
-                        style={{ objectFit: "cover" }}
-                        // P3 — priority on above-fold hero image
-                        priority
-                        sizes="(max-width: 1024px) 100vw, 400px"
-                      />
-                    </div>
+                      {t.hero.location}
+                    </p>
                   )}
+
+                  {t.hero.body && (
+                    // P6 — max-width prose for comfortable line length
+                    <p
+                      style={{
+                        fontSize: "14px",
+                        color: "var(--label)",
+                        lineHeight: 1.625,
+                        marginBottom: "16px",
+                        maxWidth: "72ch",
+                      }}
+                    >
+                      {t.hero.body}
+                    </p>
+                  )}
+
+                  {t.hero.prices && t.hero.prices.length > 0 && (
+                    // P10 — pricing section landmark
+                    <ul aria-label="Treatment pricing">
+                      {t.hero.prices.map((p) => {
+                        const m = p.price.match(/^(.*?)\s*(€\S+)\s*$/);
+                        const prefix = m ? m[1] : p.price;
+                        const amount = m ? m[2] : "";
+                        return (
+                          <li key={p.label} className="flex items-baseline gap-2" style={{ padding: "5px 0" }}>
+                            <span
+                              style={{ color: "var(--teal-deep)", fontSize: "11px", lineHeight: 1.7 }}
+                              aria-hidden="true"
+                            >
+                              ●
+                            </span>
+                            <span style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.5 }}>
+                              {p.label} {prefix}{" "}
+                              {/* P1 — underline is non-colour cue so price isn't distinguished by colour alone (WCAG 1.4.1) */}
+                              {amount && (
+                                <u
+                                  style={{
+                                    color: "var(--teal-text)",
+                                    textUnderlineOffset: "2px",
+                                    fontWeight: 600,
+                                  }}
+                                >
+                                  {amount}
+                                </u>
+                              )}
+                            </span>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  )}
+
+                  {t.hero.note && (
+                    <p
+                      style={{
+                        marginTop: "16px",
+                        fontSize: "12px",
+                        // P1 — ink-soft is 12:1 — passes AA
+                        color: "var(--ink-soft)",
+                        lineHeight: 1.6,
+                      }}
+                    >
+                      {t.hero.note}
+                    </p>
+                  )}
+
+                  {t.pending && (
+                    <p
+                      style={{
+                        marginTop: "24px",
+                        fontSize: "12px",
+                        color: "var(--ink-soft)",
+                        fontStyle: "italic",
+                      }}
+                    >
+                      Detailed treatment information for this page is being finalised.
+                    </p>
+                  )}
+                </Reveal>
+
+                {/* Right: treatment-info card + product tabs + brand logos + trust block */}
+                <Reveal delay={120}>
+                  {t.info && hasMedia && <InfoCard info={t.info} />}
 
                   {t.hero.productTabs && t.hero.productTabs.length > 0 && (
                     <div className="flex gap-3" style={{ marginTop: "14px" }}>
@@ -496,7 +384,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                     </div>
                   )}
 
-                  {/* Compact Google rating under the media */}
+                  {/* Compact Google rating trust block */}
                   <div
                     className="flex items-center flex-wrap gap-x-2 gap-y-1"
                     style={{ marginTop: "14px", fontSize: "13px", color: "var(--label)" }}
@@ -542,11 +430,11 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                     </span>
                   </div>
                 </Reveal>
-              )}
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* ── Lead form — below hero, anchored via #book ── */}
       {t.hero.heroForm && (
@@ -593,35 +481,30 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
         </section>
       )}
 
-      {/* ── Treatment info ── */}
-      {t.info && (
+      {/* ── Treatment info — horizontal info-bar fallback when there is no media
+             (the card form now lives in the hero overview strip above) ── */}
+      {t.info && !hasMedia && (
         <section aria-label="Treatment information" style={{ padding: "clamp(28px,4vh,48px) 0" }}>
           <div className="container">
-            {hasMedia ? (
-              <div className="mx-auto" style={{ maxWidth: "640px" }}>
-                <InfoCard info={t.info} />
-              </div>
-            ) : (
-              <div className="card mx-auto" style={{ padding: "22px 20px", maxWidth: "900px" }}>
-                <div
-                  className="grid gap-6 text-center"
-                  style={{ gridTemplateColumns: `repeat(${Math.min(t.info.length, 5)}, minmax(0,1fr))` }}
-                >
-                  {t.info.map((it) => (
-                    <div key={it.metric}>
-                      <div
-                        className="font-display"
-                        // P1 — teal-text #406060 = 6.86:1 on white .card — passes AA
-                        style={{ fontSize: "11px", color: "var(--teal-text)", letterSpacing: "0.14em", marginBottom: "8px" }}
-                      >
-                        {it.metric}
-                      </div>
-                      <div style={{ fontSize: "14px", color: "var(--ink)" }}>{it.detail}</div>
+            <div className="card mx-auto" style={{ padding: "22px 20px", maxWidth: "900px" }}>
+              <div
+                className="grid gap-6 text-center"
+                style={{ gridTemplateColumns: `repeat(${Math.min(t.info.length, 5)}, minmax(0,1fr))` }}
+              >
+                {t.info.map((it) => (
+                  <div key={it.metric}>
+                    <div
+                      className="font-display"
+                      // P1 — teal-text #406060 = 6.86:1 on white .card — passes AA
+                      style={{ fontSize: "11px", color: "var(--teal-text)", letterSpacing: "0.14em", marginBottom: "8px" }}
+                    >
+                      {it.metric}
                     </div>
-                  ))}
-                </div>
+                    <div style={{ fontSize: "14px", color: "var(--ink)" }}>{it.detail}</div>
+                  </div>
+                ))}
               </div>
-            )}
+            </div>
           </div>
         </section>
       )}

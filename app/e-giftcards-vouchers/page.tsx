@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import Reveal from "@/components/Reveal";
+import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
   title: "E-Gift Vouchers | Carisma Aesthetics - #1 Award Winning Chain in Malta",
@@ -108,12 +108,6 @@ const OCCASIONS = [
 
 const PRODUCT = "https://www.carismaaesthetics.com/product-page";
 
-const STEPS = [
-  { number: "01", label: "Pick the Occasion" },
-  { number: "02", label: "Select Your Gift" },
-  { number: "03", label: "Customise Your Message" },
-];
-
 export default function GiftsPage() {
   return (
     <>
@@ -127,191 +121,35 @@ export default function GiftsPage() {
 
       <main id="main-content">
         {/* ===== HERO ===== */}
-        <section
-          aria-labelledby="hero-heading"
-          style={{ position: "relative", padding: "0 0 70px" }}
-        >
-          {/* cream band behind the top of the hero */}
-          <div
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              right: 0,
-              height: "62%",
-              background: "var(--cream)",
-            }}
-            aria-hidden="true"
-          />
-
-          <div className="container" style={{ position: "relative" }}>
-            <div
-              className="grid items-center gap-10 lg:grid-cols-2"
-              style={{ paddingTop: "70px" }}
-            >
-              {/* left: white card with copy */}
-              <Reveal>
-                <div
-                  style={{
-                    background: "#fff",
-                    padding: "44px 40px 48px",
-                    boxShadow: "0 18px 44px rgba(0,0,0,0.07)",
-                    borderRadius: "var(--radius-card)",
-                  }}
-                >
-                  <h1
-                    id="hero-heading"
-                    className="font-display"
-                    style={{
-                      fontSize: "clamp(26px,3.6vw,40px)",
-                      color: GOLD,
-                      letterSpacing: "0.08em",
-                      fontWeight: 400,
-                      lineHeight: 1.3,
-                      textTransform: "uppercase",
-                    }}
-                  >
-                    Give the Gift of Aesthetics
-                  </h1>
-
-                  {/* Decorative divider */}
-                  <div
-                    style={{
-                      height: "1px",
-                      background: GOLD,
-                      opacity: 0.5,
-                      margin: "20px 0 22px",
-                    }}
-                    aria-hidden="true"
-                  />
-
-                  <p
-                    style={{
-                      fontSize: "15px",
-                      color: "var(--label)",
-                      lineHeight: 1.8,
-                      marginBottom: "20px",
-                    }}
-                  >
-                    In 3 easy steps, you can invite your loved ones on a journey
-                    of relaxation and wellness that they will never forget.
-                  </p>
-
-                  {/* Steps list — structured for screen readers */}
-                  <ol
-                    aria-label="How to purchase a gift voucher"
-                    style={{
-                      display: "flex",
-                      flexDirection: "column",
-                      gap: "10px",
-                      listStyle: "none",
-                      margin: 0,
-                      padding: 0,
-                    }}
-                  >
-                    {STEPS.map((step) => (
-                      <li
-                        key={step.number}
-                        style={{
-                          display: "flex",
-                          alignItems: "center",
-                          gap: "12px",
-                        }}
-                      >
-                        <span
-                          aria-hidden="true"
-                          style={{
-                            flexShrink: 0,
-                            width: "28px",
-                            height: "28px",
-                            borderRadius: "50%",
-                            background: "var(--teal)",
-                            color: "#fff",
-                            display: "flex",
-                            alignItems: "center",
-                            justifyContent: "center",
-                            fontSize: "11px",
-                            fontWeight: 600,
-                            letterSpacing: "0.04em",
-                          }}
-                        >
-                          {step.number}
-                        </span>
-                        <span
-                          style={{
-                            fontSize: "14px",
-                            color: "var(--label)",
-                            lineHeight: 1.6,
-                          }}
-                        >
-                          {step.label}
-                        </span>
-                      </li>
-                    ))}
-                  </ol>
-
-                  {/* Primary CTA (P10 — prominent, 48px+ height) */}
-                  <a
-                    href="#pick-occasion"
-                    className="inline-flex items-center justify-center transition-all duration-200 ease-in-out hover:opacity-90 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
-                    style={{
-                      marginTop: "28px",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      minHeight: "48px",
-                      padding: "0 28px",
-                      background: GOLD,
-                      color: "#fff",
-                      borderRadius: "var(--radius-card)",
-                      fontSize: "13px",
-                      fontWeight: 600,
-                      letterSpacing: "0.1em",
-                      textTransform: "uppercase",
-                      textDecoration: "none",
-                      cursor: "pointer",
-                    }}
-                    aria-label="Browse gift card occasions"
-                  >
-                    Browse Gift Cards
-                  </a>
-                </div>
-              </Reveal>
-
-              {/* right: framed gift-card image */}
-              <Reveal delay={120}>
-                <div
-                  style={{
-                    background: "#f6efe6",
-                    padding: "10px",
-                    boxShadow: "0 22px 50px rgba(0,0,0,0.12)",
-                    borderRadius: "var(--radius-card)",
-                  }}
-                >
-                  {/* P3: next/image with explicit dimensions + priority for hero */}
-                  <div
-                    style={{
-                      position: "relative",
-                      width: "100%",
-                      aspectRatio: "513 / 451",
-                      borderRadius: "calc(var(--radius-card) - 4px)",
-                      overflow: "hidden",
-                    }}
-                  >
-                    <Image
-                      src={HERO_IMG}
-                      alt="Carisma Aesthetics e-gift voucher — the perfect present for any occasion"
-                      fill
-                      priority
-                      sizes="(max-width: 1024px) 100vw, 50vw"
-                      style={{ objectFit: "cover" }}
-                    />
-                  </div>
-                </div>
-              </Reveal>
-            </div>
-          </div>
-        </section>
+        <PageHero
+          badge="#1 Voted Med-Aesthetics Clinic in Malta"
+          headline={[
+            { text: "Give the Gift" },
+            { text: "of Aesthetics", em: true },
+          ]}
+          sub="In 3 easy steps, you can invite your loved ones on a journey of relaxation and wellness in Malta that they will never forget."
+          bullets={[
+            { label: "01", text: "Pick the Occasion" },
+            { label: "02", text: "Select Your Gift" },
+            { label: "03", text: "Customise Your Message" },
+          ]}
+          primaryCta={{ text: "Shop Gift Cards", href: "#pick-occasion" }}
+          secondaryCta={{ text: "How It Works", href: "#how-it-works-heading" }}
+          media={{
+            type: "image",
+            src: HERO_IMG,
+            fit: "contain",
+            bg: "#f6efe6",
+            alt: "Carisma Aesthetics gift voucher",
+          }}
+          proof={{
+            rating: "4.9",
+            reviews: "200+",
+            statValue: "30+",
+            statLabel: "years in wellness",
+            awardText: "#1 Voted Clinic\nMalta Healthcare Awards",
+          }}
+        />
 
         {/* ===== HOW IT WORKS — delivery info (P gift cards specific) ===== */}
         <section
