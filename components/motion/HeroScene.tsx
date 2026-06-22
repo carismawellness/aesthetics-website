@@ -46,8 +46,8 @@ export default function HeroScene() {
     c2d.fillRect(0, 0, 128, 128);
     const texture = new THREE.CanvasTexture(canvas);
 
-    // Brand palette: sage-teal, mist, beige, mid-sage tint.
-    const palette = [0x96b2b2, 0xdeebeb, 0xefe7d7, 0xc5d6d6];
+    // Brand palette: sage-teal, mist, light-teal, mid-sage tint (no warm beige).
+    const palette = [0x96b2b2, 0xdeebeb, 0xc5d6d6, 0xb7cccc];
     const COUNT = 14;
     const sprites: { sp: THREE.Sprite; speed: number; phase: number }[] = [];
     for (let i = 0; i < COUNT; i++) {
