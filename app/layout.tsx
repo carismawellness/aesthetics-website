@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import WidowGuard from "@/components/WidowGuard";
 import MediaLegibilityGuard from "@/components/MediaLegibilityGuard";
 import PageLoader from "@/components/PageLoader";
+import ConsultationModal from "@/components/ConsultationModal";
 
 const pinyonScript = Pinyon_Script({
   weight: "400",
@@ -167,6 +168,9 @@ export default function RootLayout({
         <WidowGuard />
         {/* Guarantees text stays legible over any video/photo media. */}
         <MediaLegibilityGuard />
+        {/* Site-wide consultation popup. Mounted once; intercepts every
+            "/consultation" + fresha book-now CTA and opens the GHL form modal. */}
+        <ConsultationModal />
 
         {/* GHL form embed */}
         <Script src="https://link.msgsndr.com/js/form_embed.js" strategy="lazyOnload" />

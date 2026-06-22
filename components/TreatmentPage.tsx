@@ -3,7 +3,6 @@ import Image from "next/image";
 import type { Treatment } from "@/lib/treatments";
 import Reveal from "@/components/Reveal";
 import PageHero from "@/components/PageHero";
-import ConsultationForm from "@/components/ConsultationForm";
 import BeforeAfterCarousel from "@/components/BeforeAfterCarousel";
 import CompositeSlideshow from "@/components/CompositeSlideshow";
 import VideoPlayer from "@/components/VideoPlayer";
@@ -474,8 +473,19 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
             >
               Share a few details and our team will be in touch to arrange your complimentary consultation.
             </p>
-            <div className="mx-auto" style={{ marginTop: "26px", maxWidth: "560px" }}>
-              <ConsultationForm instanceId="book" stacked submitLabel="Submit" />
+            <div
+              className="flex justify-center"
+              style={{ marginTop: "26px" }}
+            >
+              {/* Opens the site-wide consultation popup (global interceptor on
+                  href="/consultation"). */}
+              <Link
+                href="/consultation"
+                className="btn btn-teal"
+                style={{ fontSize: "13px", padding: "15px 44px", letterSpacing: "0.12em" }}
+              >
+                Book Free Consultation
+              </Link>
             </div>
           </div>
         </section>
@@ -1585,8 +1595,19 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                   {t.bookingForm.title}
                 </h2>
               </div>
-              <div className="mx-auto" style={{ marginTop: "12px", position: "relative" }}>
-                <ConsultationForm instanceId="booking" stacked submitLabel="Submit" />
+              <div
+                className="mx-auto flex justify-center"
+                style={{ marginTop: "20px", position: "relative" }}
+              >
+                {/* Opens the site-wide consultation popup (global interceptor on
+                    href="/consultation"). */}
+                <Link
+                  href="/consultation"
+                  className="btn btn-teal"
+                  style={{ fontSize: "13px", padding: "15px 44px", letterSpacing: "0.12em" }}
+                >
+                  Book Free Consultation
+                </Link>
               </div>
             </div>
           </div>
