@@ -413,6 +413,32 @@ main li a:not(.btn):not(.no-underline),
   .float-a, .float-b { animation: none; }
 }
 
+/* ── Shared PageHero primitives (adapted from the slimming design language) ──
+   Used by components/PageHero.tsx for a consistent above-the-fold across every
+   aesthetics page: glass badge pill, frosted floating proof cards, ghost CTA. */
+.hero-pill {
+  display: inline-flex; align-items: center; gap: 7px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(79, 115, 115, 0.18);
+  border-radius: 999px; padding: 7px 14px;
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+}
+.hero-glass {
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 16px 40px rgba(28, 30, 30, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px) saturate(160%); -webkit-backdrop-filter: blur(10px) saturate(160%);
+}
+.hero-outline {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 14px 28px; border-radius: 999px;
+  border: 1.5px solid var(--teal-text); color: var(--teal-text);
+  font-family: "Novecento Wide", sans-serif; font-size: 12px; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.hero-outline:hover { background: var(--teal-text); color: #fff; }
+
 /* Form fields */
 .form-field {
   width: 100%;
