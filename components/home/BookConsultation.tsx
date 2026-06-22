@@ -9,12 +9,15 @@ export default function BookConsultation() {
   return (
     <section aria-labelledby="book-heading" style={{ backgroundColor: "var(--white)", padding: "72px 0 100px" }}>
       <div className="container">
-        {/* Beige heading block (contained, not full-width) */}
+        {/* Heading block (contained, not full-width) — Slimming-style cool teal
+            gradient ground (white → light teal), NO warm beige. */}
         <Reveal className="mx-auto" style={{ maxWidth: "960px" }}>
           <div
             className="relative"
             style={{
-              backgroundColor: "var(--beige)",
+              background: "linear-gradient(135deg, var(--white) 0%, var(--teal-100) 60%, var(--cream-2) 100%)",
+              borderRadius: "var(--radius-card)",
+              border: "1px solid rgba(79,115,115,0.14)",
               padding: "48px clamp(28px,5vw,56px) 56px",
               overflow: "hidden",
             }}

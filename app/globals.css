@@ -63,8 +63,9 @@
   /* ============================================================
      Carisma Aesthetics — BRAND PALETTE (2026 refresh)
      Identity hues come straight from the brand palette board:
-       sage-teal #96B2B2 · light teal #DEEBEB · warm beige #EFE7D7
+       sage-teal #96B2B2 · light teal #DEEBEB · teal-mist #EEF3F3
        taupe #9B8D83 · neutral grey #ECEAE7 · white #FFFFFF
+     (Warm beige #EFE7D7 has been ERADICATED — grounds are white + teal only.)
      Bright identity hues are decorative (backgrounds / large graphics).
      Each functional TEXT/FILL token keeps an AA-darkened variant so the
      live site stays WCAG AA — never use a bright hue as small text on white.
@@ -76,8 +77,15 @@
   --teal:        #96b2b2;   /* brand sage-teal (decorative / large fills) */
   --teal-200:    #c5d6d6;   /* mid sage tint */
   --teal-100:    #deebeb;   /* lightest teal tint — section background */
-  --beige:       #efe7d7;   /* warm beige band — "why" + "book consultation" */
-  --beige-2:     #e7dbc7;
+  /* ── Warm beige ERADICATED (Jun 2026) ──────────────────────────────────
+     The old warm cream/beige wallpaper (#efe7d7) is gone site-wide. These
+     tokens now resolve to COOL teal-mist grounds so every legacy
+     `var(--beige)` reference (TreatmentPage, PackageFunnel, FaceUI, PageHero)
+     renders as a subtle blue-teal tint matching the Slimming design language.
+     Prefer white + gradient rhythm for large blocks; these flat tints are
+     gentle accents only. NO warm cream/beige/tan/sand anywhere. */
+  --beige:       #eef3f3;   /* (was #efe7d7) cool teal-mist accent ground */
+  --beige-2:     #deebeb;   /* (was #e7dbc7) light teal accent */
   --gray-100:    #eceae7;   /* neutral light grey surface */
   --cream:       #deebeb;   /* cool "mist" section background (hero, etc.) */
   --cream-2:     #eef3f3;
@@ -244,6 +252,7 @@ main li a:not(.btn):not(.no-underline),
 
 /* Buttons */
 .btn {
+  position: relative; /* anchors the .btn::after line/shine reveal */
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -258,6 +267,36 @@ main li a:not(.btn):not(.no-underline),
   transition: all 0.25s ease;
   cursor: pointer;
 }
+/* ── Slimming-style "line reveal" shine (recoloured teal) ──
+   Replicated from slimming globals.css `.btn::after` / `.cta-glow::after`: an
+   animated underline grows 0 → 60% from centre on hover, layered on top of the
+   teal glow + scale. Uses currentColor (white on teal CTAs, ink on outline
+   buttons) so it always matches the label. Applied to EVERY CTA via .btn +
+   the standalone .cta-glow-* utilities. */
+.btn::after,
+.cta-glow-teal::after,
+.cta-glow-gold::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0.55em;
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+  pointer-events: none;
+}
+.btn:hover::after,
+.cta-glow-teal:hover::after,
+.cta-glow-gold:hover::after {
+  width: 60%;
+}
+/* Standalone inline-styled CTAs (.cta-glow-* without .btn) still need the anchor. */
+.cta-glow-teal,
+.cta-glow-gold {
+  position: relative;
+}
 /* Universal hover lift: every button scales up smoothly. Solid CTAs layer their
    own glow + translateY on top (see .btn-teal/.btn-gold:hover below). */
 .btn:hover {
@@ -266,6 +305,12 @@ main li a:not(.btn):not(.no-underline),
 @media (prefers-reduced-motion: reduce) {
   .btn,
   .btn:hover { transform: none; }
+  .btn::after,
+  .btn:hover::after,
+  .cta-glow-teal::after,
+  .cta-glow-teal:hover::after,
+  .cta-glow-gold::after,
+  .cta-glow-gold:hover::after { transition: none; }
 }
 /* ── Brand CTA effect: soft brand-colour gradient + blurred glow halo
    (adapted from the LaserAway treatment, in Carisma colours).
@@ -493,14 +538,36 @@ main li a:not(.btn):not(.no-underline),
               0 6px 18px rgba(12, 11, 11, 0.06);
   transition: box-shadow 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
 }
+/* Slimming "Meet Your Doctor" lift: rise + slight scale + softer/larger shadow,
+   darker teal hairline. Broad coverage — every .card across the site inherits it. */
 .card:hover {
-  border-color: var(--label); /* darker hairline on hover */
-  transform: translateY(-4px); /* subtle luxury lift (transition already set above) */
-  box-shadow: 0 2px 6px rgba(12, 11, 11, 0.08),
-              0 16px 40px rgba(12, 11, 11, 0.12);
+  border-color: var(--teal-deep); /* darker teal hairline on hover */
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 4px 10px rgba(12, 11, 11, 0.10),
+              0 24px 56px -10px rgba(28, 30, 30, 0.20);
+}
+/* ── .card-lift — shared Slimming-style hover utility ──
+   Apply to any card/tile/panel (service cards, why-us cards, brand cards,
+   package cards, etc.) to get the doctors-card lift without per-component CSS.
+   Mirrors slimming's `.card-lift`, recoloured to the teal palette. */
+.card-lift {
+  border-radius: var(--radius-card);
+  background: var(--white);
+  border: 1px solid var(--line);
+  box-shadow: 0 1px 2px rgba(12, 11, 11, 0.04),
+              0 6px 18px rgba(12, 11, 11, 0.06);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+.card-lift:hover {
+  border-color: var(--teal-deep);
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 4px 10px rgba(12, 11, 11, 0.10),
+              0 24px 56px -10px rgba(28, 30, 30, 0.22);
 }
 @media (prefers-reduced-motion: reduce) {
-  .card:hover { transform: none; }
+  .card:hover,
+  .card-lift,
+  .card-lift:hover { transform: none; }
 }
 
 /* ── Review / testimonial cards (marquee effect) ──
@@ -656,8 +723,8 @@ body.dark-texture-page footer div[style*="background"] {
   will-change: transform;
 }
 .lift:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 18px 40px -22px rgba(28, 30, 30, 0.35);
+  transform: translateY(-6px) scale(1.02); /* match Slimming doctors-card lift */
+  box-shadow: 0 18px 40px -18px rgba(28, 30, 30, 0.38);
 }
 @media (prefers-reduced-motion: reduce) {
   .lift,

@@ -231,7 +231,7 @@ export default function DoctorsSection() {
         @media (hover: hover) {
           /* Hover lift only applies once the card has finished revealing. */
           .doctor-card[data-revealed='true']:hover {
-            transform: translateY(-6px);
+            transform: translateY(-6px) scale(1.02);
             box-shadow: 0 28px 60px rgba(26,26,26,0.14);
             transition: transform .4s cubic-bezier(.2,.7,.2,1), box-shadow .4s cubic-bezier(.2,.7,.2,1);
           }

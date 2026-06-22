@@ -4,15 +4,24 @@ import Reveal from "@/components/Reveal";
 
 export default function WhyUs() {
   return (
-    <section aria-labelledby="why-heading" style={{ backgroundColor: "var(--beige)", padding: "126px 0" }}>
-      {/* Card hover: deepen shadow + darken border (decorative, non-text cues) */}
+    <section
+      aria-labelledby="why-heading"
+      style={{
+        /* Slimming-style ground: white → very light teal → soft mist (no warm beige) */
+        background: "linear-gradient(180deg, var(--white) 0%, var(--teal-100) 55%, var(--cream-2) 100%)",
+        padding: "126px 0",
+      }}
+    >
+      {/* Card hover: Slimming "Meet Your Doctor" lift — translateY up + scale +
+          softer/larger shadow + darkened teal border. Reduced-motion guarded. */}
       <style>{`
+        .why-card { transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s ease; }
         .why-card:hover {
-          border-color: var(--gold-deep);
-          box-shadow: 0 2px 6px rgba(12,11,11,0.08), 0 16px 40px rgba(12,11,11,0.12);
+          border-color: var(--teal-deep);
+          box-shadow: 0 4px 10px rgba(12,11,11,0.10), 0 22px 48px -12px rgba(28,30,30,0.22);
         }
         @media (prefers-reduced-motion: no-preference) {
-          .why-card { transition: box-shadow 0.25s ease, border-color 0.25s ease; }
+          .why-card:hover { transform: translateY(-6px) scale(1.02); }
         }
       `}</style>
       <div className="container">
