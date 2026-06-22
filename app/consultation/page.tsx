@@ -175,17 +175,7 @@ const CONTACT_ID = "consultation-contact-heading";
 
 export default function ConsultationPage() {
   return (
-    <>
-      {/* Skip-to-main link — first focusable element, hidden until focused */}
-      <a
-        href="#consultation-main"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:rounded-lg focus:font-medium focus:text-white focus:no-underline"
-        style={{ background: "#4F7373" }}
-      >
-        Skip to main content
-      </a>
-
-      <main id="consultation-main">
+    <main>
         {/* ===== HERO ===== */}
         <PageHero
           eyebrow="Free Consultation"
@@ -385,7 +375,6 @@ export default function ConsultationPage() {
             </Reveal>
           </div>
         </section>
-      </main>
-    </>
+    </main>
   );
 }

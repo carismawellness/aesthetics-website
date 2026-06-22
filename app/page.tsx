@@ -30,20 +30,11 @@ export const metadata: Metadata = {
 // (live shows that stack at the end of every page, including home).
 export default function HomePage() {
   return (
-    <>
-      {/* P1 — Skip-to-main-content link: first focusable element in body, visually hidden until focused */}
-      <a
-        href="#main-content"
-        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[9999] focus:px-4 focus:py-2 focus:rounded-lg focus:bg-[#4F7373] focus:text-white focus:font-medium focus:shadow-lg"
-      >
-        Skip to main content
-      </a>
-      <main id="main-content" tabIndex={-1}>
-        <Hero />
-        <Reveal><ServicesMarquee /></Reveal>
-        <Reveal><WhyUs /></Reveal>
-        <Reveal><BookConsultation /></Reveal>
-      </main>
-    </>
+    <main>
+      <Hero />
+      <Reveal><ServicesMarquee /></Reveal>
+      <Reveal><WhyUs /></Reveal>
+      <Reveal><BookConsultation /></Reveal>
+    </main>
   );
 }

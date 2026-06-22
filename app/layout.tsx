@@ -7,7 +7,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WidowGuard from "@/components/WidowGuard";
 import MediaLegibilityGuard from "@/components/MediaLegibilityGuard";
-import SmoothScroll from "@/components/motion/SmoothScroll";
+import PageLoader from "@/components/PageLoader";
 
 const pinyonScript = Pinyon_Script({
   weight: "400",
@@ -150,10 +150,18 @@ export default function RootLayout({
           />
         </noscript>
 
+        {/* First-load loader (native scroll — no scroll-jacking) */}
+        <PageLoader />
+
+        {/* Single site-wide skip link — visually hidden until keyboard-focused,
+            jumps to the page's <main>. Inline styles guarantee the off-screen
+            hidden state regardless of utility-class availability. */}
+        <a href="#main" className="skip-link">Skip to main content</a>
+
         <Header />
-        <main className="flex-grow">
-          <SmoothScroll>{children}</SmoothScroll>
-        </main>
+        {/* Skip-link target + flex wrapper. A plain div (not <main>) so pages
+            that render their own <main> landmark don't produce a nested one. */}
+        <div id="main" tabIndex={-1} className="flex-grow" style={{ outline: "none" }}>{children}</div>
         <Footer />
         {/* Eliminates typographic widows (lone last word) site-wide. */}
         <WidowGuard />
