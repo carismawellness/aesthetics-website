@@ -120,8 +120,10 @@ export default function PageHero({
 
   return (
     <section className="hero-fit" style={{ position: "relative", overflow: "hidden", paddingInline: "clamp(16px,4vw,40px)", background: sectionBg }}>
-      {/* Animated constellation motif — drifting linked dots (every page). */}
-      <HeroMotif color={dark ? "201, 169, 106" : "150, 178, 178"} />
+      {/* Animated constellation motif — drifting linked dots (every page).
+         Light pages use a deeper teal so the lattice reads clearly over the
+         pale teal-mist bed; the dark page uses gold. */}
+      <HeroMotif color={dark ? "201, 169, 106" : "116, 156, 156"} />
       <span aria-hidden style={{ position: "absolute", top: "-12%", right: "-8%", width: 460, height: 460, borderRadius: "50%", background: dark ? "rgba(201,169,106,0.16)" : "rgba(150,178,178,0.28)", filter: "blur(90px)", zIndex: 0 }} />
 
       <div className="page-hero-grid" style={{ position: "relative", zIndex: 1, width: "100%", maxWidth: 1180, margin: "0 auto", display: "grid", gap: "clamp(10px,1.6vw,24px)", alignItems: "center" }}>
