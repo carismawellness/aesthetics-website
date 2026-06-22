@@ -23,7 +23,7 @@ const legacyRedirects: { source: string; destination: string }[] = [
   { source: "/fat-reduction", destination: "/fat-freezing" },
   { source: "/wrinkle-relaxer", destination: "/wrinkle-relaxing-malta" },
   { source: "/wrinkles-and-fine-lines", destination: "/wrinkle-relaxing-malta" },
-  { source: "/wrinkles-fine-lines-packages", destination: "/wrinkle-relaxing-malta" },
+  // /wrinkles-fine-lines-packages is a live page — NOT redirected (has own SLUG_SEO entry + sitemap entry)
   { source: "/laser-hair-removal-booking", destination: "/laser-hair-removal-malta" },
   { source: "/laser-hair-removal-package", destination: "/laser-hair-removal-malta" },
   { source: "/50-off-laser-hair-removal", destination: "/laser-hair-removal-malta" },

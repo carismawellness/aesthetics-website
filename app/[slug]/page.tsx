@@ -21,6 +21,7 @@ export function generateStaticParams() {
 export const dynamicParams = false;
 
 const SLUG_SEO: Record<string, { title: string; description: string }> = {
+  // ─── Core treatments ───────────────────────────────────────────────────────
   "wrinkle-relaxing-malta": {
     title: "Botox Malta | #1 Award Winning Clinic | Carisma Aesthetics",
     description:
@@ -37,20 +38,101 @@ const SLUG_SEO: Record<string, { title: string; description: string }> = {
       "Doctor-led Ozempic and Mounjaro programme in Malta. Full medical assessment, GLP-1 support, side effect management, and body contouring. Book today.",
   },
   "pico-laser-tattoo-removal": {
-    title: "Pico Laser Tattoo Removal Treatment | #1 Award Winning Clinic",
+    title: "Pico Laser Tattoo Removal Malta | #1 Award Winning Clinic | Carisma Aesthetics",
     description:
-      "Experience safe and effective Pico laser tattoo removal in Malta. Our advanced treatment helps fade unwanted tattoos with minimal discomfort and is suitable for all skin types and tones.",
+      "Safe and effective Pico laser tattoo removal in Malta. Advanced picosecond technology fades tattoos of all colours with minimal discomfort. All skin types. Free consultation.",
   },
   "pico-laser-pigmentation-treatment": {
-    title: "Pico Laser Pigmentation Treatment | #1 Award Winning Clinic",
+    title: "Pico Laser Pigmentation Treatment Malta | #1 Award Winning Clinic | Carisma Aesthetics",
     description:
-      "Experience safe and effective Pico laser pigmentation treatment in Malta. Our advanced treatment helps fade unwanted tattoos with minimal discomfort and is suitable for all skin types and tones.",
+      "Pico laser pigmentation treatment in Malta. Targets sun spots, melasma, age spots and uneven skin tone with precision. Minimal downtime. Free consultation.",
   },
   "hair-regrowth": {
-    title: "Hair Loss Treatment Malta | Malta's #1 Award-Winning Clinic",
+    title: "Hair Loss Treatment Malta | Malta's #1 Award-Winning Clinic | Carisma Aesthetics",
     description:
       "Doctor-led hair loss treatment in Malta from €399. PRP, exosomes & prescription therapy in one guaranteed program. 21-28% density increase in 90 days. Free consultation, book today.",
   },
+  "hydrafacial": {
+    title: "HydraFacial Malta | #1 Award Winning Clinic | Carisma Aesthetics",
+    description:
+      "HydraFacial in Malta from €99. Deep cleanse, exfoliation, extraction and hydration in one treatment. Medically supervised — visible results after one session. Book today.",
+  },
+  "dermal-fillers-malta": {
+    title: "Dermal Fillers Malta | Lips, Cheeks, Jawline | Carisma Aesthetics",
+    description:
+      "Dermal filler treatments in Malta from €269. Lips, cheeks, jawline, nose, tear trough. Natural results by medically qualified doctors. Free consultation.",
+  },
+  "lip-fillers-malta": {
+    title: "Lip Fillers Malta | Natural Results | Carisma Aesthetics",
+    description:
+      "Lip filler treatments in Malta from €219. Juvederm, Croma, and Teoxane by medically qualified doctors. Subtle, natural enhancement. Book your free consultation.",
+  },
+  "microneedling-malta": {
+    title: "Microneedling Malta | #1 Award Winning Clinic | Carisma Aesthetics",
+    description:
+      "Microneedling with mesotherapy in Malta from €149/session. Doctor-led collagen induction therapy with personalised cocktails. Smooth acne scars, fine lines. Free consultation.",
+  },
+  "prp-malta": {
+    title: "PRP Treatment Malta | #1 Award Winning Clinic | Carisma Aesthetics",
+    description:
+      "Doctor-led PRP treatment in Malta. PRP facial, vampire facial, and PRP hair treatment for natural rejuvenation. Plasma-rich platelet therapy at Malta's award-winning clinic. Book today.",
+  },
+  "fat-dissolving-malta": {
+    title: "Fat Dissolving Malta | #1 Award Winning Clinic | Carisma Aesthetics",
+    description:
+      "Fat dissolving injections in Malta from €149. Doctor-led Aqualyx treatment targeting chin, arms, stomach and thighs. Natural-looking results. Free consultation available.",
+  },
+  "chemical-peels-malta": {
+    title: "Chemical Peels Malta | Brighter, Smoother Skin | Carisma Aesthetics",
+    description:
+      "Chemical peel treatments in Malta for brighter, smoother, and more youthful skin. Doctor-led peels tailored to your skin type. Free consultation available.",
+  },
+  "profhilo": {
+    title: "Profhilo Malta | Skin Booster Treatment | Carisma Aesthetics",
+    description:
+      "Profhilo bio-remodelling treatment in Malta — the gold standard for skin hydration and laxity. Doctor-led injectable from €299. Natural, long-lasting results. Free consultation.",
+  },
+  "fat-freezing": {
+    title: "CoolSculpting Malta | Fat Freezing Treatment | Carisma Aesthetics",
+    description:
+      "CoolSculpting fat freezing in Malta. Non-surgical, FDA-cleared body contouring to permanently eliminate stubborn fat. Natural-looking results. Book your free consultation.",
+  },
+  "muscle-stimulation-1": {
+    title: "EMSculpt NEO Malta | Body Sculpting | Carisma Aesthetics",
+    description:
+      "EMSculpt NEO in Malta — burn fat and build muscle simultaneously with Malta's only dual-technology body sculpting treatment. Visible results in 4 sessions. Book today.",
+  },
+  "skin-tightening-1": {
+    title: "VelaShape III Malta | Skin Tightening & Cellulite | Carisma Aesthetics",
+    description:
+      "VelaShape III skin tightening in Malta. Non-invasive radiofrequency and infrared treatment for tighter skin and cellulite reduction. Doctor-supervised. Free consultation.",
+  },
+  "anti-cellulite": {
+    title: "Cellulite Treatment Malta | Advanced Smoothing | Carisma Aesthetics",
+    description:
+      "Advanced cellulite smoothing treatment in Malta. Multi-technology approach targeting stubborn cellulite to improve skin texture and smoothness. Free consultation.",
+  },
+  "mesotherapy-malta": {
+    title: "Mesotherapy Malta | Skin Booster Injections | Carisma Aesthetics",
+    description:
+      "Mesotherapy skin booster treatments in Malta from €149. Hyaluronic acid cocktails for deep hydration, radiance and anti-ageing. Doctor-led. Free consultation.",
+  },
+  "collagen-stimulator-malta": {
+    title: "Collagen Stimulator Malta | Sculptra & Radiesse | Carisma Aesthetics",
+    description:
+      "Collagen stimulator treatments in Malta including Sculptra and Radiesse. Restore facial volume, improve skin texture and stimulate long-lasting natural collagen. Free consultation.",
+  },
+  "polynucleotides-salmon-dna": {
+    title: "Polynucleotides Malta | PDRN Skin Treatment | Carisma Aesthetics",
+    description:
+      "Polynucleotides (PDRN) treatment in Malta — regenerative salmon DNA injections to repair and renew skin. Reduces pigmentation, wrinkles and improves elasticity. Free consultation.",
+  },
+  "lympathic-drainage": {
+    title: "Lymphatic Drainage Therapy Malta | Carisma Aesthetics",
+    description:
+      "Lymphatic drainage therapy in Malta. Professional treatment to reduce fluid retention, puffiness and support overall wellbeing. Available at Carisma Aesthetics. Book today.",
+  },
+  // ─── Packages ──────────────────────────────────────────────────────────────
   "snatch-your-jawline": {
     title: "Snatch Your Jawline Package | Carisma Aesthetics Malta",
     description:
@@ -72,9 +154,9 @@ const SLUG_SEO: Record<string, { title: string; description: string }> = {
       "The Ultimate Facelift Package in Malta combines non-surgical lifting treatments for full facial rejuvenation. Doctor-led, personalised approach. Free consultation.",
   },
   "wrinkles-fine-lines-packages": {
-    title: "Wrinkles & Fine Lines | Packages | Carisma Aesthetics",
+    title: "Wrinkles & Fine Lines Packages Malta | Carisma Aesthetics",
     description:
-      "Try our Malta summer recovery packages and rejuvenate your skin this summer. Call us on +356 27802062 to book a free consultation with Carisma Aesthetics!",
+      "Anti-wrinkle treatment packages in Malta combining Botox, fillers and skin-boosting therapies. Doctor-led, tailored combinations. Free consultation available.",
   },
 };
 
