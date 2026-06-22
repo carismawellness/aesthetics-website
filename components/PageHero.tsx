@@ -1,6 +1,6 @@
 import Link from "next/link";
 import VideoPlayer from "@/components/VideoPlayer";
-import HeroBackdrop from "@/components/motion/HeroBackdrop";
+import HeroMotif from "@/components/motion/HeroMotif";
 
 /* ──────────────────────────────────────────────────────────────────────────
    PageHero — the shared above-the-fold hero for EVERY Carisma Aesthetics page.
@@ -87,12 +87,12 @@ export default function PageHero({
   proof,
   background,
   compactHeadline,
-  motif,
   theme = "light",
 }: PageHeroProps) {
   const dark = theme === "dark";
-  const headlineSize = compactHeadline ? "clamp(26px,3vw,40px)" : "clamp(30px,3.6vw,50px)";
-  const aspect = media.aspect ?? "4 / 5";
+  // Match slimming's restrained hero proportions exactly.
+  const headlineSize = compactHeadline ? "clamp(23px,2.7vw,31px)" : "clamp(26px,3vw,35px)";
+  const aspect = media.aspect ?? (media.type === "video" ? "406 / 720" : "4 / 5");
 
   // Colourway
   const c = {
@@ -111,7 +111,7 @@ export default function PageHero({
   };
   const sectionBg = background || (dark
     ? "radial-gradient(120% 90% at 85% 10%, #1c1a17 0%, #14120e 55%, #0e0c09 100%)"
-    : "radial-gradient(120% 90% at 85% 10%, var(--teal-100) 0%, #f6f4ef 45%, #ffffff 100%)");
+    : "radial-gradient(120% 90% at 85% 10%, #eef3f3 0%, #f6f4ef 45%, #ffffff 100%)");
   const archBg = media.bg || (dark ? "#0c0c0c" : "linear-gradient(160deg, var(--teal-100) 0%, var(--gray-100) 55%, var(--beige) 100%)");
   const glassClass = dark ? "hero-glass-dark" : "hero-glass";
   const pillClass = dark ? "hero-pill-dark" : "hero-pill";
@@ -120,10 +120,11 @@ export default function PageHero({
 
   return (
     <section className="hero-fit" style={{ position: "relative", overflow: "hidden", paddingInline: "clamp(16px,4vw,40px)", background: sectionBg }}>
-      {motif && !dark && <HeroBackdrop />}
+      {/* Animated constellation motif — drifting linked dots (every page). */}
+      <HeroMotif color={dark ? "201, 169, 106" : "150, 178, 178"} />
       <span aria-hidden style={{ position: "absolute", top: "-12%", right: "-8%", width: 460, height: 460, borderRadius: "50%", background: dark ? "rgba(201,169,106,0.16)" : "rgba(150,178,178,0.28)", filter: "blur(90px)", zIndex: 0 }} />
 
-      <div className="page-hero-grid" style={{ position: "relative", zIndex: 1, width: "100%", maxWidth: 1180, margin: "0 auto", display: "grid", gap: "clamp(24px,3vw,48px)", alignItems: "center" }}>
+      <div className="page-hero-grid" style={{ position: "relative", zIndex: 1, width: "100%", maxWidth: 1180, margin: "0 auto", display: "grid", gap: "clamp(10px,1.6vw,24px)", alignItems: "center" }}>
         {/* LEFT — message */}
         <div>
           {badge && (
@@ -188,6 +189,14 @@ export default function PageHero({
               // eslint-disable-next-line @next/next/no-img-element
               <img src={media.src} alt={media.alt || "Carisma Aesthetics Malta"} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: media.fit || "cover", display: "block" }} />
             )}
+          </div>
+
+          {/* doctor-led pill — top-left */}
+          <div className={`${glassClass} float-b`} style={{ position: "absolute", left: "clamp(-10px,-1vw,-2px)", top: "15%", borderRadius: 999, padding: "8px 14px", display: "flex", alignItems: "center", gap: 7, zIndex: 3, animationDelay: "-2.8s" }}>
+            <span aria-hidden style={{ width: 16, height: 16, borderRadius: "50%", background: c.checkBg, display: "grid", placeItems: "center" }}>
+              <svg width="9" height="9" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke={c.check} strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" /></svg>
+            </span>
+            <span style={{ fontFamily: WIDE, fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: c.proofStrong }}>Doctor-led</span>
           </div>
 
           {/* stat card — bottom-left */}
