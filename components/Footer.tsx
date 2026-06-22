@@ -4,7 +4,7 @@ import Image from "next/image";
 import { CONTACT } from "@/lib/site";
 import DoctorsSection from "@/components/home/DoctorsSection";
 import Reviews from "@/components/home/Reviews";
-import AwardSection from "@/components/home/AwardSection";
+import FooterRose from "@/components/FooterRose";
 
 // ─── Shared design tokens (cross-file consistent) ────────────────────────────
 const GRADIENT = 'radial-gradient(120% 90% at 85% 10%, #eaf1f1 0%, #f6f4ef 45%, #ffffff 100%)';
@@ -216,10 +216,12 @@ function FooterBase() {
 export default function Footer() {
   return (
     <footer style={{ background: GRADIENT, position: 'relative', overflow: 'hidden', isolation: 'isolate' }}>
+      {/* decorative rose hidden on mobile (it overlapped the copyright) */}
+      <div className="hidden md:block"><FooterRose /></div>
       <div style={{ position: 'relative', zIndex: 1 }}>
-        <DoctorsSection />
         <Reviews />
-        <AwardSection />
+        {/* heavy/decorative rows hidden on mobile to keep the footer lean */}
+        <div className="hidden md:block"><DoctorsSection /></div>
         <BrandsSection />
         <FooterBase />
       </div>

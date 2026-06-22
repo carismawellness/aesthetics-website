@@ -67,13 +67,15 @@ function Stars({ rating = 5, size = 14 }: { rating?: number; size?: number }) {
   );
 }
 
-const AVATAR_COLORS = ["#4f6f82", "#6f5b4f", "#5b6f4f", "#6f4f5b", "#5b4f6f", "#4f6f6f"];
+// Aesthetics teal-palette avatar fills (white text clears AA on each).
+const AVATAR_COLORS = ["#4f7373", "#406060", "#5a6f6f", "#3a4a4a", "#6b7e7e", "#48646e"];
 
 export default async function GoogleReviews() {
   const live = await fetchGoogleReviews();
   const rating = live?.rating ?? REVIEW_SUMMARY.rating;
-  const total = live?.total ?? REVIEW_SUMMARY.total;
-  const showPlus = !live && REVIEW_SUMMARY.plus;
+  // Curated fallback count is shown as "500+"; a live API result overrides with the real Google total.
+  const total = live?.total ?? 500;
+  const showPlus = !live;
   const url = live?.url ?? GOOGLE_PROFILE_URL;
   const reviews = (live?.reviews?.length ? live.reviews : CURATED_REVIEWS).slice(0, 6);
 
@@ -87,7 +89,7 @@ export default async function GoogleReviews() {
             <span className="font-display" style={{ fontSize: "13px", letterSpacing: "0.14em", color: "var(--label)" }}>GOOGLE REVIEWS</span>
           </div>
           <div className="flex items-center gap-3" style={{ marginTop: "14px" }}>
-            <span className="font-serif" style={{ fontSize: "34px", color: "var(--gold)", lineHeight: 1 }}>{rating.toFixed(1)}</span>
+            <span className="font-serif" style={{ fontSize: "34px", color: "var(--teal-text)", lineHeight: 1 }}>{rating.toFixed(1)}</span>
             <span className="flex flex-col items-start">
               <Stars rating={rating} size={17} />
               <span style={{ fontSize: "12.5px", color: "var(--muted)", marginTop: "3px" }}>

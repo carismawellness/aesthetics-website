@@ -98,7 +98,8 @@ export default function PageHero({
   const c = {
     headline: dark ? "#c9a96a" : "var(--gold)",
     em: dark ? "#e2c97a" : "var(--teal-text)",
-    body: dark ? "rgb(176,166,143)" : "var(--ink-soft)",
+    // Body copy mirrors slimming's taupe (#6f6456) — aesthetics' brown --gold (#706552). AA on white.
+    body: dark ? "rgb(176,166,143)" : "var(--gold)",
     eyebrow: dark ? "#c9a96a" : "var(--gold)",
     bulletLabel: dark ? "#e2c97a" : "var(--gold)",
     pillText: dark ? "#c9a96a" : "var(--gold)",
@@ -168,7 +169,7 @@ export default function PageHero({
           )}
 
           <div style={{ display: "flex", flexWrap: "wrap", gap: 12, alignItems: "center", marginBottom: 18 }}>
-            <CtaLink cta={primaryCta} className={primaryClass} style={{ borderRadius: 999, padding: "15px 30px" }}>{primaryCta.text}</CtaLink>
+            <CtaLink cta={primaryCta} className={primaryClass} style={{ borderRadius: 999, padding: "14px 28px" }}>{primaryCta.text}</CtaLink>
             {secondaryCta && (
               <CtaLink cta={secondaryCta} className={outlineClass}>{secondaryCta.text}</CtaLink>
             )}

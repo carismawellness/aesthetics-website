@@ -19,6 +19,7 @@ export default function Hero() {
       secondaryCta={{ text: "View Treatments", href: "/face-treatments" }}
       media={{ type: "video", src: "/assets/clinic-video.mp4", poster: "/assets/clinic-room.jpg", alt: "Carisma Aesthetics clinic in Malta" }}
       proof={{ rating: "4.9", reviews: "200+", statValue: "30+", statLabel: "years in wellness", awardText: "#1 Voted Clinic\nMalta Healthcare Awards" }}
+      compactHeadline
     />
   );
 }

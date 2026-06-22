@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
-import Magnetic from "@/components/motion/Magnetic";
+import SiteSearch from "@/components/SiteSearch";
 import {
   CONTACT,
   FACE_LINKS,
@@ -12,28 +12,29 @@ import {
   type NavLink,
 } from "@/lib/site";
 
-const ANNOUNCE =
-  "#1 voted med-aesthetics clinic in malta          ⭐ Highest rated clinic in Malta ⭐          Medically qualified doctors";
+// ── Aesthetics palette (slimming green → aesthetics teal) ──────────────────
+// CTA fill / active ink:  --teal-deep #4f7373 (white text passes AA)
+// Teal text / link / icon: --teal-text #406060 (AA on white)
+// Nav-link ink keeps the existing aesthetics token #423a30.
+const TEAL_FILL = "#4f7373";   // CTA fill (slimming GREEN_FILL → teal-deep)
+const TEAL = "#406060";        // small teal text / phone / icons (slimming GREEN → teal-text)
+const NAV_INK = "#423a30";     // nav-link ink (aesthetics existing token)
+const DROPDOWN_INK = "#423a30"; // dropdown/sub-item link ink (aesthetics existing token)
 
 type Dropdown = { label: string; href?: string; items?: NavLink[]; viewAllHref?: string };
 
-// Curate overloaded dropdowns: show the most popular ~6-7 treatments, then a
-// "View all →" link to the section index. Lists at/under the cap render in full
-// (no View-all). Curation is done here (slice) rather than by deleting site data.
+// Curate overloaded dropdowns: show the most popular ~7 treatments, then a
+// "View all →" link to the section index. Lists at/under the cap render in full.
 const MAX_DROPDOWN_ITEMS = 7;
 
 const MENUS: Dropdown[] = [
-  // Face has a dedicated index page (/face-treatments) → trim + "View all".
   { label: "Face", items: FACE_LINKS, viewAllHref: "/face-treatments" },
-  // Body & Packages have no index route, so they render in full (no View-all to
-  // avoid a 404). Body (9) is mildly over the cap but every item is a live page.
   { label: "Body", items: BODY_LINKS },
   { label: "Packages", items: PACKAGE_LINKS },
   { label: "Membership", href: "/membership" },
   { label: "Gifts", href: "/e-giftcards-vouchers" },
 ];
 
-// Returns the rendered slice + whether a "View all" link should be appended.
 function curate(m: Dropdown): { items: NavLink[]; showViewAll: boolean } {
   const all = m.items ?? [];
   if (all.length > MAX_DROPDOWN_ITEMS && m.viewAllHref) {
@@ -42,10 +43,22 @@ function curate(m: Dropdown): { items: NavLink[]; showViewAll: boolean } {
   return { items: all, showViewAll: false };
 }
 
+// Slimming nav-link spec, exact px (green → aesthetics nav ink).
+const navLink: React.CSSProperties = {
+  color: NAV_INK,
+  fontFamily: '"Novecento Wide", sans-serif',
+  fontSize: "12px",
+  fontWeight: 400,
+  letterSpacing: "0.5px",
+  textDecoration: "none",
+  textTransform: "uppercase",
+  whiteSpace: "nowrap",
+};
+
 function PhoneIcon() {
   return (
-    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke={TEAL} strokeWidth="2">
+      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.21 12.8a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.11 2h3a2 2 0 0 1 2 1.72c.128.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.572 2.81.7A2 2 0 0 1 22 16.92z" />
     </svg>
   );
 }
@@ -53,14 +66,14 @@ function PhoneIcon() {
 export default function Header() {
   const [open, setOpen] = useState(false);
   const [expanded, setExpanded] = useState<string | null>(null);
+  const [hover, setHover] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
   const [mounted, setMounted] = useState(false);
 
   // Portal target (document.body) is only available after mount.
   useEffect(() => setMounted(true), []);
 
-  // Scroll-aware: collapse the announcement strip and firm up the glass once
-  // the user scrolls past the hero edge.
+  // Scroll-aware: firm up the glass once past the hero edge (slimming behaviour).
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
     onScroll();
@@ -73,7 +86,7 @@ export default function Header() {
     if (!open) return;
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
-    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") { setOpen(false); setExpanded(null); } };
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") { setOpen(false); setExpanded(null); setHover(null); } };
     window.addEventListener("keydown", onKey);
     return () => {
       document.body.style.overflow = prev;
@@ -83,18 +96,15 @@ export default function Header() {
 
   // Close desktop dropdown on Escape when mobile menu is closed.
   useEffect(() => {
-    if (!expanded) return;
-    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setExpanded(null); };
+    if (!hover && !expanded) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") { setHover(null); setExpanded(null); } };
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
-  }, [expanded]);
+  }, [hover, expanded]);
 
-  // Liquid-glass surface for the floating pill. More translucent over the hero,
-  // firmer once scrolled for legibility over light content.
+  // Liquid-glass surface for the floating pill (slimming spec, exact values).
   const pillStyle: React.CSSProperties = {
-    // 0.66 min opacity bounds the worst-case contrast of dark pill text over the
-    // translucent glass so nav labels stay AA even over a saturated hero patch.
-    background: scrolled ? "rgba(255,255,255,0.78)" : "rgba(255,255,255,0.66)",
+    background: scrolled ? "rgba(255,255,255,0.74)" : "rgba(255,255,255,0.56)",
     backdropFilter: "blur(20px) saturate(180%)",
     WebkitBackdropFilter: "blur(20px) saturate(180%)",
     border: "1px solid rgba(255,255,255,0.65)",
@@ -105,125 +115,127 @@ export default function Header() {
     transition: "background 0.35s ease, box-shadow 0.35s ease",
   };
 
+  // CTA pill (slimming ctaStyle spec, exact px; green fill → teal-deep).
+  const ctaStyle: React.CSSProperties = {
+    backgroundColor: TEAL_FILL,
+    color: "#ffffff",
+    fontFamily: '"Novecento Wide", sans-serif',
+    fontSize: "12px",
+    fontWeight: 700,
+    letterSpacing: "0.5px",
+    textTransform: "uppercase",
+    padding: "9px 20px",
+    borderRadius: "999px",
+    textDecoration: "none",
+    whiteSpace: "nowrap",
+  };
+
   return (
     <header className="fixed top-0 inset-x-0 z-50">
-      {/* Announcement strip — slides away on scroll */}
-      <div
-        className="w-full overflow-hidden"
-        style={{
-          backgroundColor: "var(--teal-100)",
-          color: "var(--gold)",
-          height: scrolled ? 0 : 28,
-          opacity: scrolled ? 0 : 1,
-          transition: "height 0.35s ease, opacity 0.25s ease",
-        }}
-      >
-        <div
-          className="marquee-track font-display"
-          style={{ letterSpacing: "0.18em", fontWeight: 500, fontSize: "11px", padding: "7px 0" }}
-        >
-          <span style={{ paddingRight: "60px" }}>{ANNOUNCE}</span>
-          <span style={{ paddingRight: "60px" }}>{ANNOUNCE}</span>
-        </div>
-      </div>
+      {/* Logo sizing rules (slimming): mobile ~20px, mobile-menu ~22px. */}
+      <style>{`@media (max-width:1023px){.header-logo{height:20px !important}}
+.header-logo--mobile{height:22px !important}`}</style>
 
       {/* Floating glass pill */}
-      <div style={{ padding: "12px clamp(12px,3vw,28px) 0" }}>
+      <div style={{ padding: "12px clamp(12px,3vw,28px) 0", maxWidth: "1280px", margin: "0 auto" }}>
         <nav
           aria-label="Main navigation"
-          className="container flex items-center justify-between"
-          style={{ ...pillStyle, minHeight: "62px", padding: "8px 12px 8px 22px" }}
+          className="flex items-center justify-between"
+          style={{ ...pillStyle, minHeight: "52px", padding: "6px 10px 6px 20px" }}
         >
           {/* Logo */}
           <Link href="/" className="flex items-center shrink-0" onClick={() => setOpen(false)}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            {/* Mobile logo ~28px, desktop ~40px */}
-            <img src="/assets/logo.png" alt="Carisma Aesthetics" className="h-7 lg:h-10" style={{ width: "auto" }} />
+            <img src="/assets/logo.png" alt="Carisma Aesthetics" className="header-logo" style={{ height: "26px", width: "auto", display: "block" }} />
           </Link>
 
           {/* Desktop menu */}
-          <div className="hidden lg:flex items-center" style={{ gap: "30px" }}>
+          <div className="hidden lg:flex items-center" style={{ gap: "26px" }}>
             {MENUS.map((m) => {
               if (!m.items) {
                 return (
-                  <Link key={m.label} href={m.href!} className="font-display link-underline" style={{ fontSize: "13px", letterSpacing: "0.12em", color: "#423a30", cursor: "pointer" }}>
-                    {m.label}
-                  </Link>
+                  <Link key={m.label} href={m.href!} style={navLink} className="hover:underline transition">{m.label}</Link>
                 );
               }
               const { items, showViewAll } = curate(m);
               return (
-                <div key={m.label} className="relative group">
+                <div
+                  key={m.label}
+                  className="relative"
+                  style={{ display: "flex", alignItems: "center" }}
+                  onMouseEnter={() => setHover(m.label)}
+                  onMouseLeave={() => setHover(null)}
+                >
                   <button
-                    className="font-display link-underline flex items-center gap-1"
-                    style={{ fontSize: "13px", letterSpacing: "0.12em", padding: "20px 0", color: "#423a30", cursor: "pointer" }}
+                    style={{ ...navLink, background: "none", border: "none", cursor: "pointer", padding: "20px 0", display: "flex", alignItems: "center", gap: "4px" }}
+                    className="hover:underline transition"
                     aria-haspopup="true"
-                    aria-expanded={expanded === m.label}
-                    onClick={() => setExpanded(expanded === m.label ? null : m.label)}
+                    aria-expanded={hover === m.label}
+                    onClick={() => setHover((p) => (p === m.label ? null : m.label))}
                   >
                     {m.label}
-                    <svg width="9" height="9" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true"><path d="M2 4l4 4 4-4" /></svg>
+                    <svg
+                      width="10" height="10" viewBox="0 0 24 24" fill="none"
+                      stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
+                      style={{ transition: "transform 0.2s ease", transform: hover === m.label ? "rotate(180deg)" : "rotate(0deg)", opacity: 0.7 }}
+                    >
+                      <polyline points="6 9 12 15 18 9" />
+                    </svg>
                   </button>
-                  <div
-                    className={`absolute left-1/2 -translate-x-1/2 top-full z-50 ${expanded === m.label ? 'block' : 'hidden group-hover:block'}`}
-                    style={{
-                      background: "rgba(255,255,255,0.78)",
+                  {hover === m.label && (
+                    <div style={{
+                      position: "absolute",
+                      top: "calc(100% - 4px)",
+                      left: "50%",
+                      transform: "translateX(-50%)",
+                      background: "rgba(255,255,255,0.82)",
                       backdropFilter: "blur(22px) saturate(180%)",
                       WebkitBackdropFilter: "blur(22px) saturate(180%)",
                       border: "1px solid rgba(255,255,255,0.7)",
-                      borderRadius: "20px",
+                      borderRadius: "16px",
                       boxShadow: "0 16px 40px rgba(28,30,30,0.16), inset 0 1px 0 rgba(255,255,255,0.85)",
-                      minWidth: "260px",
-                      padding: "10px 0 12px",
-                      marginTop: "6px",
-                    }}
-                  >
-                    {items.map((it) => (
-                      <Link
-                        key={it.href}
-                        href={it.href}
-                        className="block text-center font-display transition-colors"
-                        style={{ padding: "7px 24px", fontSize: "11px", color: "#423a30", textTransform: "uppercase", letterSpacing: "0.08em", whiteSpace: "nowrap", cursor: "pointer" }}
-                        onMouseEnter={e => (e.currentTarget.style.color = "var(--gold)")}
-                        onMouseLeave={e => (e.currentTarget.style.color = "#423a30")}
-                      >
-                        {it.label}
-                      </Link>
-                    ))}
-                    {showViewAll && (
-                      <Link
-                        href={m.viewAllHref!}
-                        className="block text-center font-display transition-colors"
-                        style={{ padding: "9px 24px 4px", fontSize: "11px", color: "var(--gold)", textTransform: "uppercase", letterSpacing: "0.1em", whiteSpace: "nowrap", fontWeight: 600, cursor: "pointer", marginTop: "4px", borderTop: "1px solid rgba(155,141,131,0.22)" }}
-                        onMouseEnter={e => (e.currentTarget.style.color = "var(--ink-soft)")}
-                        onMouseLeave={e => (e.currentTarget.style.color = "var(--gold)")}
-                      >
-                        View all →
-                      </Link>
-                    )}
-                  </div>
+                      width: "360px",
+                      padding: "10px",
+                      display: "grid",
+                      gridTemplateColumns: "1fr 1fr",
+                      columnGap: "6px",
+                      zIndex: 100,
+                    }}>
+                      {items.map((it) => (
+                        <Link key={it.href} href={it.href} className="block hover:bg-black/5 hover:underline"
+                          style={{ padding: "9px 14px", borderRadius: "10px", color: DROPDOWN_INK, fontFamily: '"Roboto Local", sans-serif', fontSize: "13px", textDecoration: "none", transition: "background 0.3s ease" }}>
+                          {it.label}
+                        </Link>
+                      ))}
+                      {showViewAll && (
+                        <Link href={m.viewAllHref!} className="block hover:bg-black/5 hover:underline"
+                          style={{ gridColumn: "1 / -1", marginTop: "4px", borderTop: "1px solid rgba(64,96,96,0.16)", paddingTop: "10px", padding: "10px 14px 4px", color: TEAL, fontFamily: '"Roboto Local", sans-serif', fontSize: "13px", fontWeight: 600, textDecoration: "none", transition: "background 0.3s ease" }}>
+                          View all →
+                        </Link>
+                      )}
+                    </div>
+                  )}
                 </div>
               );
             })}
           </div>
 
-          {/* Right side */}
+          {/* Right — search + phone + CTA */}
           <div className="hidden lg:flex items-center" style={{ gap: "18px" }}>
-            <a href={`tel:${CONTACT.tel}`} className="flex items-center gap-1.5 link-underline" style={{ color: "var(--gold)", cursor: "pointer" }}>
+            <div style={{ width: "210px" }}>
+              <SiteSearch />
+            </div>
+            <a href={`tel:${CONTACT.tel}`} className="flex items-center hover:underline transition" style={{ gap: "6px", textDecoration: "none" }}>
               <PhoneIcon />
-              <span style={{ color: "var(--ink-soft)", letterSpacing: "1px", fontSize: "13px" }}>{CONTACT.phoneDigits}</span>
+              <span style={{ color: TEAL, fontFamily: '"Novecento Wide", sans-serif', fontSize: "13px", fontWeight: 600, letterSpacing: "0.5px" }}>{CONTACT.phoneDigits}</span>
             </a>
-            <Magnetic strength={0.25}>
-              <Link href="/consultation" className="btn btn-teal" style={{ borderRadius: "999px", cursor: "pointer" }}>
-                free consultation
-              </Link>
-            </Magnetic>
+            <Link href="/consultation" style={{ ...ctaStyle }}>free consultation</Link>
           </div>
 
           {/* Mobile hamburger */}
-          <button className="lg:hidden flex items-center justify-center" style={{ width: 44, height: 44, cursor: "pointer" }} onClick={() => setOpen(true)} aria-label="Open menu">
-            <svg className="w-6 h-6" fill="none" stroke="var(--ink-soft)" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M4 7h16M4 12h16M4 17h16" />
+          <button className="lg:hidden flex items-center justify-center" style={{ width: 44, height: 44 }} onClick={() => setOpen(true)} aria-label="Open menu">
+            <svg width="22" height="22" fill="none" stroke={TEAL} viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </button>
         </nav>
@@ -235,8 +247,7 @@ export default function Header() {
           className="lg:hidden fixed inset-0"
           style={{
             zIndex: 60,
-            background:
-              "linear-gradient(160deg, rgba(238,243,243,0.88) 0%, rgba(255,255,255,0.82) 55%, rgba(245,241,236,0.86) 100%)",
+            background: "linear-gradient(160deg, rgba(238,243,243,0.9) 0%, rgba(255,255,255,0.82) 55%, rgba(245,241,236,0.88) 100%)",
             backdropFilter: "blur(30px) saturate(180%)",
             WebkitBackdropFilter: "blur(30px) saturate(180%)",
             animation: "glassIn 0.32s cubic-bezier(0.22,1,0.36,1)",
@@ -250,8 +261,7 @@ export default function Header() {
           <div className="flex items-center justify-between shrink-0" style={{ padding: "16px clamp(16px,5vw,28px)" }}>
             <Link href="/" onClick={() => setOpen(false)} className="flex items-center">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              {/* Mobile menu logo ~28px */}
-              <img src="/assets/logo.png" alt="Carisma Aesthetics" className="h-7" style={{ width: "auto" }} />
+              <img src="/assets/logo.png" alt="Carisma Aesthetics" className="header-logo--mobile" style={{ height: "22px", width: "auto", display: "block" }} />
             </Link>
             <button
               onClick={() => setOpen(false)}
@@ -264,17 +274,21 @@ export default function Header() {
                 background: "rgba(255,255,255,0.6)",
                 border: "1px solid rgba(255,255,255,0.7)",
                 boxShadow: "inset 0 1px 0 rgba(255,255,255,0.8)",
-                cursor: "pointer",
               }}
             >
-              <svg className="w-6 h-6" fill="none" stroke="var(--ink-soft)" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M6 18L18 6M6 6l12 12" />
+              <svg width="22" height="22" fill="none" stroke={TEAL} viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>
           </div>
 
           {/* Scrollable link area */}
           <div style={{ flex: 1, overflowY: "auto", padding: "8px clamp(16px,5vw,28px) 28px" }}>
+            {/* Search at the top of the mobile menu */}
+            <div style={{ marginBottom: "8px" }}>
+              <SiteSearch />
+            </div>
+
             {MENUS.map((m) => {
               if (!m.items) {
                 return (
@@ -282,8 +296,8 @@ export default function Header() {
                     key={m.label}
                     href={m.href!}
                     onClick={() => setOpen(false)}
-                    className="block font-display link-underline"
-                    style={{ padding: "18px 4px", fontSize: "19px", letterSpacing: "0.08em", color: "var(--ink-soft)", borderBottom: "1px solid rgba(155,141,131,0.18)", cursor: "pointer" }}
+                    className="block"
+                    style={{ padding: "18px 4px", fontFamily: '"Novecento Wide", sans-serif', fontSize: "17px", letterSpacing: "0.06em", textTransform: "uppercase", color: NAV_INK, borderBottom: "1px solid rgba(64,96,96,0.18)", textDecoration: "none" }}
                   >
                     {m.label}
                   </Link>
@@ -291,14 +305,14 @@ export default function Header() {
               }
               const { items, showViewAll } = curate(m);
               return (
-                <div key={m.label} style={{ borderBottom: "1px solid rgba(155,141,131,0.18)" }}>
+                <div key={m.label} style={{ borderBottom: "1px solid rgba(64,96,96,0.18)" }}>
                   <button
-                    className="w-full flex items-center justify-between font-display"
-                    style={{ padding: "18px 4px", fontSize: "19px", letterSpacing: "0.08em", color: "var(--ink-soft)", cursor: "pointer" }}
+                    className="w-full flex items-center justify-between"
+                    style={{ padding: "18px 4px", fontFamily: '"Novecento Wide", sans-serif', fontSize: "17px", letterSpacing: "0.06em", textTransform: "uppercase", color: NAV_INK }}
                     onClick={() => setExpanded(expanded === m.label ? null : m.label)}
                   >
                     {m.label}
-                    <span style={{ fontSize: "22px", color: "var(--gold)", lineHeight: 1 }}>{expanded === m.label ? "−" : "+"}</span>
+                    <span style={{ fontSize: "22px", color: TEAL, lineHeight: 1 }}>{expanded === m.label ? "−" : "+"}</span>
                   </button>
                   {expanded === m.label && (
                     <div style={{ paddingBottom: "10px" }}>
@@ -307,8 +321,8 @@ export default function Header() {
                           key={it.href}
                           href={it.href}
                           onClick={() => setOpen(false)}
-                          className="block font-display link-underline"
-                          style={{ padding: "9px 12px", fontSize: "14px", color: "#423a30", textTransform: "uppercase", letterSpacing: "0.06em", cursor: "pointer" }}
+                          className="block"
+                          style={{ padding: "9px 12px", fontFamily: '"Roboto Local", sans-serif', fontSize: "14px", color: DROPDOWN_INK, textDecoration: "none" }}
                         >
                           {it.label}
                         </Link>
@@ -317,8 +331,8 @@ export default function Header() {
                         <Link
                           href={m.viewAllHref!}
                           onClick={() => setOpen(false)}
-                          className="block font-display link-underline"
-                          style={{ padding: "11px 12px 5px", fontSize: "14px", color: "var(--gold)", textTransform: "uppercase", letterSpacing: "0.08em", fontWeight: 600, cursor: "pointer" }}
+                          className="block"
+                          style={{ padding: "11px 12px 5px", fontFamily: '"Roboto Local", sans-serif', fontSize: "14px", color: TEAL, fontWeight: 600, textDecoration: "none" }}
                         >
                           View all →
                         </Link>
@@ -330,15 +344,15 @@ export default function Header() {
             })}
 
             {/* Phone + CTA */}
-            <a href={`tel:${CONTACT.tel}`} className="flex items-center gap-2 link-underline" style={{ padding: "22px 4px 8px", color: "var(--gold)", cursor: "pointer", width: "fit-content" }}>
+            <a href={`tel:${CONTACT.tel}`} className="flex items-center" style={{ gap: "8px", padding: "22px 4px 8px", textDecoration: "none" }}>
               <PhoneIcon />
-              <span style={{ color: "var(--ink-soft)", letterSpacing: "1px", fontSize: "16px" }}>{CONTACT.phoneDigits}</span>
+              <span style={{ color: TEAL, fontFamily: '"Novecento Wide", sans-serif', fontSize: "16px", fontWeight: 600, letterSpacing: "0.5px" }}>{CONTACT.phoneDigits}</span>
             </a>
             <Link
               href="/consultation"
               onClick={() => setOpen(false)}
-              className="btn btn-teal w-full"
-              style={{ borderRadius: "999px", marginTop: "10px", justifyContent: "center", cursor: "pointer" }}
+              className="block text-center w-full"
+              style={{ ...ctaStyle, marginTop: "10px", padding: "14px", fontSize: "13px" }}
             >
               free consultation
             </Link>
@@ -347,14 +361,11 @@ export default function Header() {
       )}
 
       {/* Mobile-only sticky bottom CTA — present on every page, hidden while the
-          full-page menu is open (menu is z-60, this bar sits below at z-40).
-          Portaled to <body> so the in-flow spacer can reserve room AFTER the
-          footer, ensuring the fixed bar never permanently covers content. */}
+          full-page menu is open. Portaled to <body> so the in-flow spacer can
+          reserve room after the footer (existing aesthetics mobile behaviour). */}
       {mounted && !open &&
         createPortal(
           <>
-            {/* In-flow spacer (appended at end of <body>) reserves height equal
-                to the bar so page/footer content is never permanently covered. */}
             <div
               aria-hidden
               className="lg:hidden"
@@ -374,8 +385,8 @@ export default function Header() {
             >
               <Link
                 href="/consultation"
-                className="btn btn-teal w-full"
-                style={{ borderRadius: "999px", justifyContent: "center", cursor: "pointer" }}
+                className="block text-center w-full"
+                style={{ ...ctaStyle, padding: "14px", fontSize: "13px" }}
               >
                 Book Your Free Consultation
               </Link>
