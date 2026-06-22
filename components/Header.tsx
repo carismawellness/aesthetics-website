@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import SiteSearch from "@/components/SiteSearch";
 import {
@@ -69,6 +69,28 @@ export default function Header() {
   const [hover, setHover] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
   const [mounted, setMounted] = useState(false);
+
+  // Hover-intent: open immediately, close on a short delay so the cursor can
+  // travel from the trigger into the (wide, centered) panel without the
+  // wrapper's onMouseLeave race-closing the menu. The timeout also means the
+  // menu never closes on incidental events like scroll while hovered.
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const cancelClose = () => {
+    if (closeTimer.current) {
+      clearTimeout(closeTimer.current);
+      closeTimer.current = null;
+    }
+  };
+  const openMenu = (label: string) => {
+    cancelClose();
+    setHover(label);
+  };
+  const scheduleClose = () => {
+    cancelClose();
+    closeTimer.current = setTimeout(() => setHover(null), 140);
+  };
+  // Clear any pending timer on unmount.
+  useEffect(() => cancelClose, []);
 
   // Portal target (document.body) is only available after mount.
   useEffect(() => setMounted(true), []);
@@ -163,8 +185,8 @@ export default function Header() {
                   key={m.label}
                   className="relative"
                   style={{ display: "flex", alignItems: "center" }}
-                  onMouseEnter={() => setHover(m.label)}
-                  onMouseLeave={() => setHover(null)}
+                  onMouseEnter={() => openMenu(m.label)}
+                  onMouseLeave={scheduleClose}
                 >
                   <button
                     style={{ ...navLink, background: "none", border: "none", cursor: "pointer", padding: "20px 0", display: "flex", alignItems: "center", gap: "4px" }}
@@ -183,7 +205,10 @@ export default function Header() {
                     </svg>
                   </button>
                   {hover === m.label && (
-                    <div style={{
+                    <div
+                      onMouseEnter={cancelClose}
+                      onMouseLeave={scheduleClose}
+                      style={{
                       position: "absolute",
                       top: "calc(100% - 4px)",
                       left: "50%",
@@ -201,6 +226,21 @@ export default function Header() {
                       columnGap: "6px",
                       zIndex: 100,
                     }}>
+                      {/* Invisible hover bridge: spans the full panel width and
+                          covers the gap up to the trigger, so moving the cursor
+                          from the (narrow) button down into the (wide, centered)
+                          panel never crosses dead space and closes the menu. */}
+                      <span
+                        aria-hidden
+                        style={{
+                          position: "absolute",
+                          bottom: "100%",
+                          left: 0,
+                          right: 0,
+                          height: "18px",
+                          background: "transparent",
+                        }}
+                      />
                       {items.map((it) => (
                         <Link key={it.href} href={it.href} className="block hover:bg-black/5 hover:underline"
                           style={{ padding: "9px 14px", borderRadius: "10px", color: DROPDOWN_INK, fontFamily: '"Roboto Local", sans-serif', fontSize: "13px", textDecoration: "none", transition: "background 0.3s ease" }}>

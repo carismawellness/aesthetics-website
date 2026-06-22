@@ -307,7 +307,9 @@ export function RecommendedGrid({ items }: { items: { slug: string; name: string
 
 export function FaqSection({ faqs }: { faqs: Faq[] }) {
   return (
-    <Section tone="cream" aria-labelledby="faq-heading">
+    // tone="white" (not "cream"/#deebeb) so the accordion rows blend into the
+    // page instead of sitting on an opaque turquoise/teal block.
+    <Section tone="white" aria-labelledby="faq-heading">
       <div className="mx-auto" style={{ maxWidth: "820px" }}>
         <SectionHeading eyebrow="Good to know" title="Frequently asked questions" id="faq-heading" />
         <div style={{ marginTop: "40px" }}>

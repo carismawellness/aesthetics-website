@@ -10,24 +10,30 @@ import { useState, useEffect } from "react";
   Dedicated landing page for /hair-regrowth.
   Live page: https://www.carismaaesthetics.com/hair-regrowth
 
-  Design: Dark charcoal throughout — entire page uses DARK bg.
-  Gold headings (#c9a96a), warm taupe body text (rgb(176,166,143)).
-  Buttons: gold gradient.
-  FAQ: accordion (client component).
+  Design: LIGHT theme — matches the rest of the Carisma Aesthetics site.
+  Page sits on the shared light teal-blue gradient ground (hero-bg.png); sections
+  alternate white / lightest-teal (#deebeb) tints.
+  Teal headings (#3f6363 / #345252), warm brown body copy (#706552), teal accents
+  (#4f7373 / #406060), teal CTA gradient + glow. Trajan/Novecento/Roboto.
+  FAQ: accordion (client component). All text verified AA on the new light grounds.
 */
 
 const A = "/assets/treatments";
 const t = hairRegrowth;
 
-// Gold shades
-const GOLD = "#c9a96a";
-const GOLD_MID = "#b89a52";
-const DARK = "#14120e"; // page background — matches live dark charcoal
-const TAUPE = "rgb(176,166,143)"; // live body text color
-const INK = "#1a1712"; // dark text for buttons / hero
-const CHARCOAL = "#1c1a17"; // hero bg fallback
+// ── Light-theme palette (all AA-verified on white + #deebeb teal tint) ──
+const TEAL = "#3f6363";        // headings / accents — 6.61:1 on white, AA on teal-100
+const TEAL_DEEP = "#4f7373";   // CTA fill / icons (white text 4.7:1), focus ring
+const TEAL_TEXT = "#406060";   // teal as small text — AA on white + teal tint
+const HEADING = "#345252";     // deeper teal for large serif headings
+const BODY = "#706552";        // brand brown body copy — 5.6:1 on white (AA)
+const BODY_SOFT = "#5c4f32";   // deeper taupe-brown for copy over light tints
+const GOLD_STAR = "#9c8344";   // gold star/graphic accent (decorative)
+const INK = "#0c0b0b";         // near-black (rare, badge/award text)
+const TINT = "#deebeb";        // lightest teal tint — alternating section ground
+const TINT_SOFT = "#eef3f3";   // cooler near-white teal tint
 
-function GoldBtn({
+function TealBtn({
   children,
   href = "/consultation",
   style,
@@ -43,8 +49,8 @@ function GoldBtn({
       href={href}
       className="font-display inline-flex items-center justify-center hrg-btn"
       style={{
-        background: `linear-gradient(180deg, #e2c97a 0%, ${GOLD} 50%, ${GOLD_MID} 100%)`,
-        color: INK,
+        background: `linear-gradient(135deg, ${TEAL_DEEP} 0%, #466b6b 55%, ${TEAL} 100%)`,
+        color: "#ffffff",
         fontSize: "11px",
         letterSpacing: "0.18em",
         textTransform: "uppercase",
@@ -54,6 +60,8 @@ function GoldBtn({
         width: fullWidth ? "100%" : undefined,
         textAlign: "center",
         cursor: "pointer",
+        boxShadow:
+          "0 0 22px rgba(150,178,178,0.45), 0 8px 24px rgba(79,115,115,0.28)",
         transition: "transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease",
         ...style,
       }}
@@ -63,13 +71,13 @@ function GoldBtn({
   );
 }
 
-function GoldLine() {
+function TealLine() {
   return (
     <div
       style={{
         width: "60px",
         height: "1px",
-        background: GOLD,
+        background: TEAL,
         margin: "0 auto 14px",
       }}
     />
@@ -82,7 +90,7 @@ function SectionKicker({ children }: { children: React.ReactNode }) {
       className="font-display text-center"
       style={{
         fontSize: "12px",
-        color: GOLD,
+        color: TEAL_TEXT,
         letterSpacing: "0.22em",
         textTransform: "uppercase",
         marginBottom: "10px",
@@ -105,7 +113,7 @@ function SectionHeading({
       className="font-serif text-center"
       style={{
         fontSize: "clamp(20px,2.8vw,34px)",
-        color: GOLD,
+        color: HEADING,
         letterSpacing: "0.08em",
         fontWeight: 400,
         lineHeight: 1.3,
@@ -118,14 +126,14 @@ function SectionHeading({
   );
 }
 
-function GoldCheck() {
+function TealCheck() {
   return (
     <svg
       width="18"
       height="18"
       viewBox="0 0 24 24"
       fill="none"
-      stroke={GOLD}
+      stroke={TEAL_DEEP}
       strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -145,7 +153,7 @@ function XIcon() {
       height="18"
       viewBox="0 0 24 24"
       fill="none"
-      stroke={GOLD}
+      stroke={TEAL_DEEP}
       strokeWidth="1.5"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -163,7 +171,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
   return (
     <div
       style={{
-        borderBottom: "1px solid rgba(201,169,106,0.25)",
+        borderBottom: "1px solid rgba(79,115,115,0.22)",
       }}
     >
       <button
@@ -180,7 +188,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
           className="font-display"
           style={{
             fontSize: "11px",
-            color: GOLD,
+            color: TEAL_TEXT,
             letterSpacing: "0.14em",
             textTransform: "uppercase",
             lineHeight: 1.5,
@@ -193,7 +201,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
           height="18"
           viewBox="0 0 24 24"
           fill="none"
-          stroke={GOLD}
+          stroke={TEAL_DEEP}
           strokeWidth="1.5"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -207,7 +215,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
         <p
           style={{
             fontSize: "13px",
-            color: TAUPE,
+            color: BODY,
             lineHeight: 1.8,
             padding: "0 0 20px",
           }}
@@ -287,10 +295,10 @@ function ReviewCard({ image, name, text }: (typeof TESTIMONIALS)[0]) {
         display: "flex",
         flexDirection: "column",
         minWidth: 0,
+        border: "1px solid rgba(79,115,115,0.15)",
+        boxShadow: "0 10px 30px rgba(79,115,115,0.08)",
       }}
     >
-      {/* Dark-teal focus ring: the page-level light ring (#e8e3da) is invisible
-          on this white review card; override to #4f7373 (5.21:1 vs white). */}
       <style>{`.hairreg-readmore-btn:focus-visible{outline:2px solid #4f7373!important;outline-offset:2px;border-radius:2px;}`}</style>
       {/* Combined before/after image */}
       <div style={{ height: "160px", overflow: "hidden" }}>
@@ -304,7 +312,7 @@ function ReviewCard({ image, name, text }: (typeof TESTIMONIALS)[0]) {
         </p>
         <div className="flex justify-center gap-1" style={{ marginBottom: "12px" }}>
           {[0,1,2,3,4].map((i) => (
-            <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill="#b8690a" aria-hidden>
+            <svg key={i} width="16" height="16" viewBox="0 0 24 24" fill="#d4a017" aria-hidden>
               <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
             </svg>
           ))}
@@ -317,7 +325,7 @@ function ReviewCard({ image, name, text }: (typeof TESTIMONIALS)[0]) {
             type="button"
             onClick={() => setExpanded(!expanded)}
             className="text-center hairreg-readmore-btn"
-            style={{ marginTop: "10px", background: "none", border: "none", cursor: "pointer", fontSize: "13px", color: "#6b5526", textDecoration: "underline", textUnderlineOffset: "2px" }}
+            style={{ marginTop: "10px", background: "none", border: "none", cursor: "pointer", fontSize: "13px", color: TEAL_TEXT, textDecoration: "underline", textUnderlineOffset: "2px" }}
           >
             {expanded ? "Show less" : "Read more"}
           </button>
@@ -342,7 +350,7 @@ function TestimonialsCarousel() {
   const go = (d: number) => setIdx((i) => Math.max(0, Math.min(i + d, max)));
 
   return (
-    <section style={{ background: "transparent", padding: "clamp(60px,7vw,100px) 0" }}>
+    <section style={{ background: TINT, padding: "clamp(60px,7vw,100px) 0" }}>
       <div className="container">
         <div className="relative" style={{ maxWidth: "1100px", margin: "0 auto" }}>
           {/* Cards */}
@@ -373,14 +381,15 @@ function TestimonialsCarousel() {
                 width: "42px",
                 height: "42px",
                 borderRadius: "50%",
-                background: "rgba(255,255,255,0.12)",
-                border: "1px solid rgba(255,255,255,0.2)",
-                color: "#fff",
+                background: "#ffffff",
+                border: "1px solid rgba(79,115,115,0.35)",
+                color: TEAL_DEEP,
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
                 cursor: "pointer",
                 zIndex: 2,
+                boxShadow: "0 6px 18px rgba(79,115,115,0.18)",
                 transition: "transform 0.25s ease, background 0.25s ease",
               }}
             >
@@ -403,14 +412,15 @@ function TestimonialsCarousel() {
                 width: "42px",
                 height: "42px",
                 borderRadius: "50%",
-                background: "rgba(255,255,255,0.12)",
-                border: "1px solid rgba(255,255,255,0.2)",
-                color: "#fff",
+                background: "#ffffff",
+                border: "1px solid rgba(79,115,115,0.35)",
+                color: TEAL_DEEP,
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
                 cursor: "pointer",
                 zIndex: 2,
+                boxShadow: "0 6px 18px rgba(79,115,115,0.18)",
                 transition: "transform 0.25s ease, background 0.25s ease",
               }}
             >
@@ -424,12 +434,6 @@ function TestimonialsCarousel() {
 }
 
 export default function HairRegrowthPage() {
-  // Apply texture background to entire page including header/footer
-  useEffect(() => {
-    document.body.classList.add("dark-texture-page");
-    return () => { document.body.classList.remove("dark-texture-page"); };
-  }, []);
-
   const pkg = t.pricingGrid!;
   const collage = t.trusted!;
   const dr = t.experience!.steps[0];
@@ -462,29 +466,38 @@ export default function HairRegrowthPage() {
   const eligClosing = mostIdx > -1 ? afterQ.slice(mostIdx).trim() : "";
 
   return (
-    <div style={{ background: "transparent", color: TAUPE }}>
-      {/* rounded interaction system — pill buttons scale on hover, dark-theme cards
-          lift + brighten border, focus rings use a visible gold halo on dark bg */}
+    <div
+      style={{
+        backgroundImage: "url('/assets/hero-bg.png')",
+        backgroundSize: "cover",
+        backgroundAttachment: "fixed",
+        backgroundPosition: "top center",
+        color: BODY,
+      }}
+    >
+      {/* rounded interaction system — pill buttons scale on hover with a teal glow,
+          light-theme cards lift + brighten their teal border, focus rings use the
+          shared teal focus indicator. */}
       <style>{`
         .hrg-btn:hover,
         .hrg-btn:focus-visible {
           transform: scale(1.04);
-          box-shadow: 0 0 26px rgba(201,169,106,0.5), 0 10px 26px rgba(0,0,0,0.45);
-          filter: brightness(1.04);
+          box-shadow: 0 0 26px rgba(150,178,178,0.6), 0 10px 26px rgba(79,115,115,0.32);
+          filter: brightness(1.03);
         }
         .hrg-arrow:hover,
         .hrg-arrow:focus-visible {
           transform: translateY(-50%) scale(1.1);
-          background: rgba(255,255,255,0.22);
+          background: ${TINT};
         }
         .hrg-card:hover {
           transform: translateY(-4px);
-          border-color: rgba(201,169,106,0.85);
-          box-shadow: 0 18px 40px rgba(0,0,0,0.4);
+          border-color: rgba(79,115,115,0.7);
+          box-shadow: 0 18px 40px rgba(79,115,115,0.16);
         }
         .hrg-faq-search-wrap:focus-within {
-          border-color: ${GOLD};
-          box-shadow: 0 0 0 4px rgba(201,169,106,0.3);
+          border-color: ${TEAL_DEEP};
+          box-shadow: 0 0 0 4px rgba(79,115,115,0.18);
         }
         .hrg-faq-search:focus,
         .hrg-faq-search:focus-visible { outline: none; }
@@ -496,10 +509,10 @@ export default function HairRegrowthPage() {
         }
       `}</style>
       {/* ───────────────────────────────────────────────────────
-          HERO — shared <PageHero theme="dark"> (gold-on-charcoal)
+          HERO — shared <PageHero theme="light"> (light teal-blue ground)
       ─────────────────────────────────────────────────────── */}
       <PageHero
-        theme="dark"
+        theme="light"
         eyebrow={t.hero.subtitle}
         headline={[
           { text: "Non-Surgical Hair Loss Clinic" },
@@ -533,7 +546,7 @@ export default function HairRegrowthPage() {
         }}
       >
         <div className="container" style={{ maxWidth: "860px" }}>
-          <GoldLine />
+          <TealLine />
           <SectionKicker>{t.education!.subtitle}</SectionKicker>
           <SectionHeading>{t.education!.title}</SectionHeading>
           {t.education!.paragraphs.map((p) => (
@@ -542,7 +555,7 @@ export default function HairRegrowthPage() {
               className="text-center mx-auto"
               style={{
                 fontSize: "14px",
-                color: TAUPE,
+                color: BODY,
                 lineHeight: 1.9,
                 marginTop: "28px",
                 maxWidth: "740px",
@@ -587,7 +600,7 @@ export default function HairRegrowthPage() {
           </div>
 
           <div className="text-center" style={{ marginTop: "36px" }}>
-            <GoldBtn>CHECK IF YOU QUALIFY</GoldBtn>
+            <TealBtn>CHECK IF YOU QUALIFY</TealBtn>
           </div>
         </div>
       </section>
@@ -598,7 +611,7 @@ export default function HairRegrowthPage() {
       <TestimonialsCarousel />
 
       {/* ───────────────────────────────────────────────────────
-          ELIGIBILITY — 2-column cards on white
+          ELIGIBILITY — 2-column cards
       ─────────────────────────────────────────────────────── */}
       <section
         style={{
@@ -607,21 +620,21 @@ export default function HairRegrowthPage() {
         }}
       >
         <div className="container">
-          <GoldLine />
+          <TealLine />
           <SectionKicker>eligibility criteria</SectionKicker>
           <SectionHeading>{t.suitability!.title}</SectionHeading>
           {/* Bullet questions */}
           <ul className="mx-auto" style={{ maxWidth: "820px", marginTop: "28px", listStyle: "none", padding: 0 }}>
             {eligBullets.map(q => (
               <li key={q} className="flex items-start gap-3" style={{ marginBottom: "14px" }}>
-                <span style={{ color: GOLD, flexShrink: 0, marginTop: "3px" }}>›</span>
-                <span style={{ fontSize: "14px", color: TAUPE, lineHeight: 1.8 }}>{q}</span>
+                <span style={{ color: TEAL_DEEP, flexShrink: 0, marginTop: "3px" }}>›</span>
+                <span style={{ fontSize: "14px", color: BODY, lineHeight: 1.8 }}>{q}</span>
               </li>
             ))}
           </ul>
           {/* Intro paragraphs */}
           {eligParas && (
-            <p className="mx-auto" style={{ fontSize: "14px", color: TAUPE, lineHeight: 1.9, maxWidth: "820px", marginTop: "20px" }}>
+            <p className="mx-auto" style={{ fontSize: "14px", color: BODY, lineHeight: 1.9, maxWidth: "820px", marginTop: "20px" }}>
               {eligParas}
             </p>
           )}
@@ -634,9 +647,11 @@ export default function HairRegrowthPage() {
             <div
               className="hrg-card"
               style={{
-                border: `1.5px solid rgba(201,169,106,0.4)`,
+                background: "#ffffff",
+                border: `1.5px solid rgba(79,115,115,0.35)`,
                 borderRadius: "16px",
                 padding: "clamp(24px,3vw,36px)",
+                boxShadow: "0 10px 30px rgba(79,115,115,0.08)",
                 transition: "transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease",
               }}
             >
@@ -644,7 +659,7 @@ export default function HairRegrowthPage() {
                 className="font-display"
                 style={{
                   fontSize: "10px",
-                  color: GOLD,
+                  color: TEAL_TEXT,
                   letterSpacing: "0.2em",
                   textTransform: "uppercase",
                   marginBottom: "22px",
@@ -655,11 +670,11 @@ export default function HairRegrowthPage() {
               <ul className="space-y-5">
                 {t.suitability!.suitableFor!.map((s) => (
                   <li key={s} className="flex items-start gap-3">
-                    <GoldCheck />
+                    <TealCheck />
                     <span
                       style={{
                         fontSize: "12px",
-                        color: TAUPE,
+                        color: BODY,
                         lineHeight: 1.6,
                         textTransform: "uppercase",
                         letterSpacing: "0.06em",
@@ -676,9 +691,11 @@ export default function HairRegrowthPage() {
             <div
               className="hrg-card"
               style={{
-                border: `1.5px solid rgba(201,169,106,0.25)`,
+                background: "#ffffff",
+                border: `1.5px solid rgba(79,115,115,0.2)`,
                 borderRadius: "16px",
                 padding: "clamp(24px,3vw,36px)",
+                boxShadow: "0 10px 30px rgba(79,115,115,0.06)",
                 transition: "transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease",
               }}
             >
@@ -686,7 +703,7 @@ export default function HairRegrowthPage() {
                 className="font-display"
                 style={{
                   fontSize: "10px",
-                  color: GOLD,
+                  color: TEAL_TEXT,
                   letterSpacing: "0.2em",
                   textTransform: "uppercase",
                   marginBottom: "22px",
@@ -701,7 +718,7 @@ export default function HairRegrowthPage() {
                     <span
                       style={{
                         fontSize: "12px",
-                        color: TAUPE,
+                        color: BODY,
                         lineHeight: 1.6,
                         textTransform: "uppercase",
                         letterSpacing: "0.06em",
@@ -720,7 +737,7 @@ export default function HairRegrowthPage() {
               className="text-center mx-auto"
               style={{
                 fontSize: "13.5px",
-                color: TAUPE,
+                color: BODY,
                 lineHeight: 1.9,
                 maxWidth: "820px",
                 marginTop: "32px",
@@ -731,7 +748,7 @@ export default function HairRegrowthPage() {
             </p>
           )}
           <div className="text-center" style={{ marginTop: "40px" }}>
-            <GoldBtn>CHECK YOUR ELIGIBILITY</GoldBtn>
+            <TealBtn>CHECK YOUR ELIGIBILITY</TealBtn>
           </div>
         </div>
       </section>
@@ -741,19 +758,19 @@ export default function HairRegrowthPage() {
       ─────────────────────────────────────────────────────── */}
       <section
         style={{
-          background: "transparent",
+          background: TINT,
           padding: "clamp(60px,7vw,100px) 0",
         }}
       >
         <div className="container" style={{ maxWidth: "960px" }}>
-          <GoldLine />
+          <TealLine />
           <SectionKicker>The Science Behind the Results</SectionKicker>
           <SectionHeading>{t.precision!.title}</SectionHeading>
           <p
             className="text-center mx-auto"
             style={{
               fontSize: "14px",
-              color: TAUPE,
+              color: BODY_SOFT,
               lineHeight: 1.9,
               marginTop: "28px",
               maxWidth: "820px",
@@ -772,11 +789,13 @@ export default function HairRegrowthPage() {
                   key={area.name}
                   className="hrg-card"
                   style={{
-                    border: `1px solid rgba(201,169,106,0.28)`,
+                    background: "#ffffff",
+                    border: `1px solid rgba(79,115,115,0.22)`,
                     borderRadius: "16px",
                     overflow: "hidden",
                     display: "flex",
                     flexDirection: "column",
+                    boxShadow: "0 10px 28px rgba(79,115,115,0.08)",
                     transition: "transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease",
                   }}
                 >
@@ -793,7 +812,7 @@ export default function HairRegrowthPage() {
                       className="font-display"
                       style={{
                         fontSize: "10px",
-                        color: GOLD,
+                        color: TEAL_TEXT,
                         letterSpacing: "0.2em",
                         textTransform: "uppercase",
                         marginBottom: "7px",
@@ -805,7 +824,7 @@ export default function HairRegrowthPage() {
                       className="font-serif"
                       style={{
                         fontSize: "14px",
-                        color: GOLD,
+                        color: HEADING,
                         letterSpacing: "0.04em",
                         lineHeight: 1.35,
                         marginBottom: "10px",
@@ -817,7 +836,7 @@ export default function HairRegrowthPage() {
                     <p
                       style={{
                         fontSize: "12px",
-                        color: TAUPE,
+                        color: BODY,
                         lineHeight: 1.75,
                       }}
                     >
@@ -841,7 +860,7 @@ export default function HairRegrowthPage() {
         }}
       >
         <div className="container">
-          <GoldLine />
+          <TealLine />
           <SectionKicker>expert care</SectionKicker>
           <SectionHeading>{t.experience!.title}</SectionHeading>
 
@@ -866,7 +885,7 @@ export default function HairRegrowthPage() {
                 className="font-display"
                 style={{
                   fontSize: "12px",
-                  color: GOLD,
+                  color: TEAL_TEXT,
                   letterSpacing: "0.18em",
                   textTransform: "uppercase",
                   marginBottom: "18px",
@@ -877,7 +896,7 @@ export default function HairRegrowthPage() {
               <p
                 style={{
                   fontSize: "13.5px",
-                  color: TAUPE,
+                  color: BODY,
                   lineHeight: 1.9,
                 }}
               >
@@ -886,7 +905,7 @@ export default function HairRegrowthPage() {
               {drQuote && (
                 <blockquote
                   style={{
-                    borderLeft: `2px solid ${GOLD}`,
+                    borderLeft: `2px solid ${TEAL_DEEP}`,
                     paddingLeft: "18px",
                     marginTop: "24px",
                   }}
@@ -895,7 +914,7 @@ export default function HairRegrowthPage() {
                     className="font-serif"
                     style={{
                       fontSize: "16px",
-                      color: "#b8af9c",
+                      color: HEADING,
                       fontStyle: "italic",
                       lineHeight: 1.65,
                     }}
@@ -907,7 +926,7 @@ export default function HairRegrowthPage() {
                       style={{
                         display: "block",
                         fontSize: "11px",
-                        color: GOLD,
+                        color: TEAL_TEXT,
                         marginTop: "10px",
                         fontStyle: "normal",
                         letterSpacing: "0.1em",
@@ -919,7 +938,7 @@ export default function HairRegrowthPage() {
                 </blockquote>
               )}
               <div style={{ marginTop: "28px" }}>
-                <GoldBtn>MEET DR GIOVANNI</GoldBtn>
+                <TealBtn>MEET DR GIOVANNI</TealBtn>
               </div>
             </Reveal>
           </div>
@@ -931,37 +950,39 @@ export default function HairRegrowthPage() {
       ─────────────────────────────────────────────────────── */}
       <section
         style={{
-          background: "transparent",
+          background: TINT,
           padding: "clamp(60px,7vw,100px) 0",
         }}
       >
         <div className="container">
-          <GoldLine />
+          <TealLine />
           <SectionKicker>Our guarantee</SectionKicker>
           <SectionHeading>{t.guarantee!.title}</SectionHeading>
 
-          {/* 2-column: gold badge LEFT, guarantee text RIGHT */}
+          {/* 2-column: teal badge LEFT, guarantee text RIGHT */}
           <div
             className="grid items-start gap-12 lg:grid-cols-[300px_1fr] mx-auto"
             style={{ maxWidth: "960px", marginTop: "48px" }}
           >
-            {/* Gold badge card */}
+            {/* Teal badge card */}
             <div
               className="text-center"
               style={{
-                background: `linear-gradient(145deg, #e2c97a 0%, ${GOLD} 50%, ${GOLD_MID} 100%)`,
+                background: `linear-gradient(145deg, ${TEAL_DEEP} 0%, #466b6b 55%, ${TEAL} 100%)`,
                 borderRadius: "16px",
                 padding: "clamp(24px,3vw,36px) clamp(20px,3vw,32px)",
+                boxShadow: "0 14px 34px rgba(79,115,115,0.22)",
               }}
             >
               <p
                 className="font-display"
                 style={{
                   fontSize: "12px",
-                  color: INK,
+                  color: "#ffffff",
                   letterSpacing: "0.15em",
                   textTransform: "uppercase",
                   marginBottom: "10px",
+                  opacity: 0.92,
                 }}
               >
                 THE ONLY HAIR LOSS<br />TREATMENT CLINIC IN<br />MALTA TO OFFER
@@ -970,7 +991,7 @@ export default function HairRegrowthPage() {
                 className="font-display"
                 style={{
                   fontSize: "17px",
-                  color: INK,
+                  color: "#ffffff",
                   letterSpacing: "0.08em",
                   textTransform: "uppercase",
                   fontWeight: 700,
@@ -988,7 +1009,7 @@ export default function HairRegrowthPage() {
                   key={p}
                   style={{
                     fontSize: i === 0 ? "15px" : "13.5px",
-                    color: i === 0 ? GOLD : TAUPE,
+                    color: i === 0 ? HEADING : BODY_SOFT,
                     lineHeight: 1.9,
                     marginTop: i === 0 ? 0 : "20px",
                     fontFamily: i === 0 ? "var(--font-serif, serif)" : undefined,
@@ -1001,7 +1022,7 @@ export default function HairRegrowthPage() {
               <p
                 style={{
                   fontSize: "12px",
-                  color: GOLD,
+                  color: TEAL_TEXT,
                   letterSpacing: "0.12em",
                   textTransform: "uppercase",
                   fontFamily: "var(--font-display)",
@@ -1014,8 +1035,8 @@ export default function HairRegrowthPage() {
               <ul className="space-y-3">
                 {gParas.slice(4, 8).map((p) => (
                   <li key={p} className="flex items-start gap-3">
-                    <GoldCheck />
-                    <span style={{ fontSize: "13px", color: TAUPE, lineHeight: 1.7 }}>
+                    <TealCheck />
+                    <span style={{ fontSize: "13px", color: BODY_SOFT, lineHeight: 1.7 }}>
                       {p}
                     </span>
                   </li>
@@ -1025,7 +1046,7 @@ export default function HairRegrowthPage() {
                 <p
                   style={{
                     fontSize: "13px",
-                    color: TAUPE,
+                    color: BODY_SOFT,
                     lineHeight: 1.8,
                     marginTop: "20px",
                     fontStyle: "italic",
@@ -1043,17 +1064,19 @@ export default function HairRegrowthPage() {
             style={{
               maxWidth: "820px",
               marginTop: "44px",
-              border: `1px solid rgba(201,169,106,0.45)`,
+              background: "#ffffff",
+              border: `1px solid rgba(79,115,115,0.4)`,
               borderRadius: "16px",
               padding: "clamp(20px,3vw,30px)",
               textAlign: "center",
+              boxShadow: "0 10px 30px rgba(79,115,115,0.08)",
             }}
           >
             <p
               className="font-display mx-auto"
               style={{
                 fontSize: "11px",
-                color: GOLD,
+                color: TEAL_TEXT,
                 letterSpacing: "0.14em",
                 textTransform: "uppercase",
                 maxWidth: "640px",
@@ -1063,7 +1086,7 @@ export default function HairRegrowthPage() {
             >
               Our guaranteed hair loss treatment programs are limited to 12 patients per month at our Malta clinic to ensure individual follow-up and measurable outcomes. Please inquire for the next available start date.
             </p>
-            <GoldBtn>{t.guarantee!.cta}</GoldBtn>
+            <TealBtn>{t.guarantee!.cta}</TealBtn>
           </div>
         </div>
       </section>
@@ -1078,7 +1101,7 @@ export default function HairRegrowthPage() {
         }}
       >
         <div className="container">
-          <GoldLine />
+          <TealLine />
           <SectionKicker>{pkg.intro}</SectionKicker>
           <SectionHeading>{pkg.title}</SectionHeading>
 
@@ -1100,12 +1123,14 @@ export default function HairRegrowthPage() {
                   <div
                     className="hrg-card"
                     style={{
-                      border: `1px solid rgba(201,169,106,0.35)`,
+                      background: "#ffffff",
+                      border: `1px solid rgba(79,115,115,0.3)`,
                       borderRadius: "16px",
                       padding: "clamp(24px,2.5vw,32px)",
                       display: "flex",
                       flexDirection: "column",
                       flex: 1,
+                      boxShadow: "0 10px 30px rgba(79,115,115,0.08)",
                       transition: "transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease",
                     }}
                   >
@@ -1113,7 +1138,7 @@ export default function HairRegrowthPage() {
                       className="font-display"
                       style={{
                         fontSize: "13px",
-                        color: GOLD,
+                        color: TEAL_TEXT,
                         letterSpacing: "0.14em",
                         textTransform: "uppercase",
                       }}
@@ -1124,7 +1149,7 @@ export default function HairRegrowthPage() {
                       <p
                         style={{
                           fontSize: "12px",
-                          color: TAUPE,
+                          color: BODY,
                           lineHeight: 1.7,
                           marginTop: "10px",
                         }}
@@ -1136,7 +1161,7 @@ export default function HairRegrowthPage() {
                       className="font-display"
                       style={{
                         fontSize: "13px",
-                        color: GOLD,
+                        color: HEADING,
                         letterSpacing: "0.06em",
                         marginTop: "12px",
                       }}
@@ -1147,7 +1172,7 @@ export default function HairRegrowthPage() {
                       <p
                         style={{
                           fontSize: "12px",
-                          color: "#66bd78",
+                          color: TEAL_TEXT,
                           lineHeight: 1.5,
                           marginTop: "10px",
                         }}
@@ -1159,11 +1184,11 @@ export default function HairRegrowthPage() {
                       <ul className="space-y-2" style={{ marginTop: "18px" }}>
                         {bullets.map((b) => (
                           <li key={b} className="flex items-start gap-2">
-                            <GoldCheck />
+                            <TealCheck />
                             <span
                               style={{
                                 fontSize: "11.5px",
-                                color: TAUPE,
+                                color: BODY,
                                 lineHeight: 1.6,
                               }}
                             >
@@ -1175,7 +1200,7 @@ export default function HairRegrowthPage() {
                     )}
                     <div style={{ flex: 1 }} />
                     <div style={{ marginTop: "24px" }}>
-                      <GoldBtn fullWidth>GET STARTED</GoldBtn>
+                      <TealBtn fullWidth>GET STARTED</TealBtn>
                     </div>
                   </div>
                 </Reveal>
@@ -1190,14 +1215,14 @@ export default function HairRegrowthPage() {
       ─────────────────────────────────────────────────────── */}
       <section
         style={{
-          background: "transparent",
+          background: TINT,
           padding: "clamp(60px,7vw,100px) 0",
         }}
       >
         <div className="container">
           {/* Title block */}
           <div className="mx-auto" style={{ maxWidth: "820px" }}>
-            <GoldLine />
+            <TealLine />
             <SectionKicker>we don&rsquo;t just treat hair loss</SectionKicker>
             <SectionHeading>{collage.title}</SectionHeading>
             {collage.subtitle && (
@@ -1205,7 +1230,7 @@ export default function HairRegrowthPage() {
                 className="font-serif text-center"
                 style={{
                   fontSize: "15px",
-                  color: GOLD,
+                  color: TEAL_TEXT,
                   letterSpacing: "0.04em",
                   marginTop: "12px",
                   fontStyle: "italic",
@@ -1274,23 +1299,24 @@ export default function HairRegrowthPage() {
             </div>
           </div>
 
-          {/* Why Patients Choose card (taupe/grey rounded box) */}
+          {/* Why Patients Choose card (white rounded box on the teal tint band) */}
           <div
             className="mx-auto"
             style={{
               marginTop: "52px",
               maxWidth: "820px",
-              background: "rgba(176,166,143,0.12)",
-              border: `1px solid rgba(201,169,106,0.2)`,
+              background: "#ffffff",
+              border: `1px solid rgba(79,115,115,0.2)`,
               borderRadius: "16px",
               padding: "clamp(28px,4vw,48px)",
+              boxShadow: "0 12px 34px rgba(79,115,115,0.1)",
             }}
           >
             <h3
               className="font-serif"
               style={{
                 fontSize: "clamp(16px,2vw,22px)",
-                color: GOLD,
+                color: HEADING,
                 letterSpacing: "0.06em",
                 textTransform: "uppercase",
                 lineHeight: 1.35,
@@ -1302,11 +1328,11 @@ export default function HairRegrowthPage() {
             <ul className="space-y-4">
               {whyBullets.map((p) => (
                 <li key={p.title} className="flex items-start gap-3">
-                  <GoldCheck />
+                  <TealCheck />
                   <span
                     style={{
                       fontSize: "13px",
-                      color: "#c5beb3",
+                      color: BODY,
                       lineHeight: 1.65,
                     }}
                   >
@@ -1319,7 +1345,7 @@ export default function HairRegrowthPage() {
               <p
                 style={{
                   fontSize: "12px",
-                  color: "#c5beb3",
+                  color: BODY,
                   lineHeight: 1.8,
                   marginTop: "24px",
                   fontStyle: "italic",
@@ -1329,7 +1355,7 @@ export default function HairRegrowthPage() {
               </p>
             )}
             <div style={{ marginTop: "28px" }}>
-              <GoldBtn>BOOK YOUR CONSULTATION</GoldBtn>
+              <TealBtn>BOOK YOUR CONSULTATION</TealBtn>
             </div>
           </div>
         </div>
@@ -1345,7 +1371,7 @@ export default function HairRegrowthPage() {
         }}
       >
         <div className="container">
-          <GoldLine />
+          <TealLine />
           <SectionKicker>real patients. real results.</SectionKicker>
           <SectionHeading>hear from our patients</SectionHeading>
 
@@ -1359,8 +1385,8 @@ export default function HairRegrowthPage() {
                   style={{
                     borderRadius: "12px",
                     overflow: "hidden",
-                    border: `1px solid rgba(201,169,106,0.2)`,
-                    boxShadow: "0 4px 20px rgba(0,0,0,0.07)",
+                    border: `1px solid rgba(79,115,115,0.18)`,
+                    boxShadow: "0 4px 20px rgba(79,115,115,0.1)",
                   }}
                 >
                   <VideoPlayer className="w-full" ratio="9 / 16" radius={12} src={`${A}/vid-hair-regrowth-${n}.mp4`} label={`Hair regrowth patient video ${n}`} />
@@ -1376,12 +1402,12 @@ export default function HairRegrowthPage() {
       ─────────────────────────────────────────────────────── */}
       <section
         style={{
-          background: "transparent",
+          background: TINT_SOFT,
           padding: "clamp(60px,7vw,100px) 0",
         }}
       >
         <div className="container">
-          <GoldLine />
+          <TealLine />
           <SectionKicker>{t.faqKicker}</SectionKicker>
           <SectionHeading>{t.faqTitle}</SectionHeading>
 
@@ -1395,7 +1421,8 @@ export default function HairRegrowthPage() {
               style={{
                 display: "flex",
                 alignItems: "center",
-                border: `1px solid rgba(201,169,106,0.7)`,
+                background: "#ffffff",
+                border: `1px solid rgba(79,115,115,0.4)`,
                 borderRadius: "12px",
                 padding: "10px 16px",
                 transition: "border-color 0.25s ease, box-shadow 0.25s ease",
@@ -1411,12 +1438,12 @@ export default function HairRegrowthPage() {
                   flex: 1,
                   border: "none",
                   fontSize: "13px",
-                  color: TAUPE,
+                  color: BODY,
                   background: "transparent",
                   cursor: "default",
                 }}
               />
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={GOLD} strokeWidth="1.5" aria-hidden>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={TEAL_DEEP} strokeWidth="1.5" aria-hidden>
                 <circle cx="11" cy="11" r="8" />
                 <path d="M21 21l-4.35-4.35" />
               </svg>
@@ -1442,14 +1469,14 @@ export default function HairRegrowthPage() {
         }}
       >
         <div className="container" style={{ maxWidth: "860px" }}>
-          <GoldLine />
+          <TealLine />
           <SectionKicker>CLINICAL RESEARCH</SectionKicker>
           <SectionHeading>evidence based approach</SectionHeading>
           <p
             className="text-center mx-auto"
             style={{
               fontSize: "14px",
-              color: TAUPE,
+              color: BODY,
               lineHeight: 1.9,
               marginTop: "28px",
               maxWidth: "680px",
