@@ -18,9 +18,12 @@ const pinyonScript = Pinyon_Script({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.carismaaesthetics.com"),
-  title: "Carisma Aesthetics | Medical Aesthetic Clinic Malta",
+  title: {
+    template: "%s | Carisma Aesthetics",
+    default: "Carisma Aesthetics | Medical Aesthetic Clinic Malta",
+  },
   description:
-    "Medical aesthetics in Malta led by medically qualified practitioners. Botox from €59, lip fillers from €219. Natural results, consultation-first approach. Book today.",
+    "Medical aesthetics in Malta led by medically qualified practitioners. Botox from €59, lip fillers from €219. Natural results, consultation-first.",
   keywords:
     "aesthetics Malta, botox Malta, dermal fillers Malta, lip fillers Malta, hydrafacial Malta, laser hair removal Malta, med-aesthetics clinic Malta",
   icons: {
@@ -34,15 +37,16 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Carisma Aesthetics | Medical Aesthetic Clinic Malta",
     description:
-      "Medical aesthetics in Malta led by medically qualified practitioners. Botox from €59, lip fillers from €219. Natural results, consultation-first approach. Book today.",
+      "Medical aesthetics in Malta led by medically qualified practitioners. Botox from €59, lip fillers from €219. Natural results, consultation-first.",
     url: "https://www.carismaaesthetics.com",
     siteName: "Carisma Aesthetics",
     type: "website",
+    locale: "en_MT",
     images: [
       {
-        url: "https://static.wixstatic.com/media/87fc13_9b11f1377c0d475ba944da47df67fb9d%7Emv2.png/v1/fit/w_2500,h_1330,al_c/87fc13_9b11f1377c0d475ba944da47df67fb9d%7Emv2.png",
-        width: 2500,
-        height: 1330,
+        url: "/assets/og-main.jpg",
+        width: 1200,
+        height: 630,
       },
     ],
   },
@@ -50,11 +54,57 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Carisma Aesthetics | Medical Aesthetic Clinic Malta",
     description:
-      "Medical aesthetics in Malta led by medically qualified practitioners. Botox from €59, lip fillers from €219. Natural results, consultation-first approach. Book today.",
-    images: [
-      "https://static.wixstatic.com/media/87fc13_9b11f1377c0d475ba944da47df67fb9d%7Emv2.png/v1/fit/w_2500,h_1330,al_c/87fc13_9b11f1377c0d475ba944da47df67fb9d%7Emv2.png",
-    ],
+      "Medical aesthetics in Malta led by medically qualified practitioners. Botox from €59, lip fillers from €219. Natural results, consultation-first.",
+    images: ["/assets/og-main.jpg"],
   },
+};
+
+const siteSchema = {
+  "@context": "https://schema.org",
+  "@type": ["MedicalBusiness", "HealthAndBeautyBusiness"],
+  "name": "Carisma Aesthetics",
+  "alternateName": "#1 Award Winning Medical Aesthetic Clinic Malta",
+  "description": "Medical aesthetics in Malta led by medically qualified practitioners. Botox, dermal fillers, laser hair removal, and more.",
+  "url": "https://www.carismaaesthetics.com",
+  "telephone": "+35627802062",
+  "email": "info@carismaaesthetics.com",
+  "priceRange": "€€€",
+  "currenciesAccepted": "EUR",
+  "paymentAccepted": "Cash, Credit Card",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Triq il-Kbira",
+    "addressLocality": "Birkirkara",
+    "addressRegion": "MT",
+    "postalCode": "BKR 1104",
+    "addressCountry": "MT",
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 35.8942,
+    "longitude": 14.4636,
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+    "opens": "09:00",
+    "closes": "19:00",
+  },
+  "sameAs": [
+    "https://www.instagram.com/carisma.aesthetics",
+    "https://www.facebook.com/CarismaAesthetics",
+  ],
+  "medicalSpecialty": "Medical Aesthetics",
+  "availableService": [
+    {"@type": "MedicalTherapy", "name": "Botox Anti-Wrinkle Injections"},
+    {"@type": "MedicalTherapy", "name": "Dermal Fillers"},
+    {"@type": "MedicalTherapy", "name": "Lip Fillers"},
+    {"@type": "MedicalTherapy", "name": "Laser Hair Removal"},
+    {"@type": "MedicalTherapy", "name": "HydraFacial"},
+    {"@type": "MedicalTherapy", "name": "Microneedling"},
+    {"@type": "MedicalTherapy", "name": "Chemical Peels"},
+    {"@type": "MedicalTherapy", "name": "GLP-1 Medical Weight Loss"},
+  ],
 };
 
 export default function RootLayout({
@@ -63,6 +113,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={`h-full antialiased ${pinyonScript.variable}`}>
       <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(siteSchema).replace(/</g, '\\u003c') }}
+        />
+
         {/* Preload critical self-hosted fonts */}
         <link rel="preload" as="font" href="/assets/fonts/novecento-wide-book.woff2" type="font/woff2" crossOrigin="" />
         <link rel="preload" as="font" href="/assets/fonts/trajan-pro.woff2" type="font/woff2" crossOrigin="" />

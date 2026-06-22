@@ -28,6 +28,9 @@ export async function generateMetadata({
   return {
     title: blog.metaTitle,
     description: blog.metaDescription,
+    alternates: {
+      canonical: `https://www.carismaaesthetics.com/blog/${blog.slug}`,
+    },
     openGraph: {
       title: blog.metaTitle,
       description: blog.metaDescription,
@@ -66,5 +69,40 @@ export default async function BlogPostPage({
     notFound();
   }
 
-  return <BlogTemplate post={blog} />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            headline: blog.metaTitle ?? blog.title,
+            description: blog.metaDescription ?? blog.excerpt ?? "",
+            url: `https://www.carismaaesthetics.com/blog/${blog.slug}`,
+            datePublished: blog.publishDate ?? "",
+            dateModified: blog.publishDate ?? "",
+            image: blog.coverImage
+              ? [{ "@type": "ImageObject", url: blog.coverImage }]
+              : [{ "@type": "ImageObject", url: "https://www.carismaaesthetics.com/og-aesthetics.jpg", width: 1200, height: 630 }],
+            author: {
+              "@type": "Organization",
+              name: "Carisma Aesthetics",
+              url: "https://www.carismaaesthetics.com",
+            },
+            publisher: {
+              "@type": "Organization",
+              name: "Carisma Aesthetics",
+              url: "https://www.carismaaesthetics.com",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://www.carismaaesthetics.com/assets/logos/carisma-wordmark.svg",
+              },
+            },
+          }).replace(/</g, "\\u003c"),
+        }}
+      />
+      <BlogTemplate post={blog} />
+    </>
+  );
 }

@@ -4,6 +4,8 @@ export const metadata: Metadata = {
   title: "Privacy Policy | Carisma Aesthetics",
   description:
     "Check Privacy Policy of Carisma Aesthetics that outlines how we collect, use, and protect personal data that patients provide us in relation to med-aesthetic services.",
+  alternates: { canonical: "https://www.carismaaesthetics.com/privacy-policy" },
+  robots: { index: false, follow: true },
   openGraph: {
     title: "Privacy Policy | Carisma Aesthetics",
     description:

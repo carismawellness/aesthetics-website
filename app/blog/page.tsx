@@ -6,25 +6,26 @@ import { getAllBlogs } from "@/lib/blogs";
 import type { BlogPost } from "@/lib/blog-types";
 
 export const metadata: Metadata = {
-  title: "Carisma Aesthetics | Aesthetics Blog | #1 Award Winning Chain in Malta",
+  title: "Medical Aesthetics Blog Malta | Carisma Aesthetics",
   description:
-    "Botox, fillers or body contouring tips, Carisma Aesthetics' blog cover it all—Malta's trusted clinic for expert guidance in medical aesthetics.",
+    "Expert tips on Botox, dermal fillers, laser hair removal and skincare from Malta's leading medical aesthetic clinic. Read our latest articles.",
   alternates: {
     canonical: "https://www.carismaaesthetics.com/blog",
   },
   openGraph: {
-    title: "Carisma Aesthetics | Aesthetics Blog | #1 Award Winning Chain in Malta",
+    title: "Medical Aesthetics Blog Malta | Carisma Aesthetics",
     description:
-      "Botox, fillers or body contouring tips, Carisma Aesthetics' blog cover it all—Malta's trusted clinic for expert guidance in medical aesthetics.",
+      "Expert tips on Botox, dermal fillers, laser hair removal and skincare from Malta's leading medical aesthetic clinic.",
     url: "https://www.carismaaesthetics.com/blog",
     siteName: "Carisma Aesthetics",
     type: "website",
+    images: [{ url: "/og-aesthetics.jpg" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Carisma Aesthetics | Aesthetics Blog | #1 Award Winning Chain in Malta",
+    title: "Medical Aesthetics Blog Malta | Carisma Aesthetics",
     description:
-      "Botox, fillers or body contouring tips, Carisma Aesthetics' blog cover it all—Malta's trusted clinic for expert guidance in medical aesthetics.",
+      "Expert tips on Botox, dermal fillers, laser hair removal and skincare from Malta's leading medical aesthetic clinic. Read our latest articles.",
   },
 };
 
@@ -183,8 +184,8 @@ export default function BlogIndexPage() {
       <PageHero
         eyebrow="The Journal"
         headline={[
-          { text: "Aesthetics Journal" },
-          { text: "Tips & Insights for Malta", em: true },
+          { text: "Medical Aesthetics" },
+          { text: "Blog Malta", em: true },
         ]}
         sub="Expert guides on aesthetic treatments, skin and confidence — from Malta's #1 voted med-aesthetics clinic."
         primaryCta={{ text: "Book Free Consultation", href: "/consultation" }}

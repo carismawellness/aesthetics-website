@@ -6,10 +6,16 @@ import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
   title: "Face Treatments | Carisma Aesthetics Malta",
-  description: FACE_LISTING.subhead,
+  description: "Expert face treatments in Malta — fillers, Botox, microneedling & more. Free consultation with medically qualified practitioners.",
   // P1 SEO: canonical prevents duplicate-content issues
   alternates: {
     canonical: "https://www.carismaaesthetics.com/face-treatments",
+  },
+  openGraph: {
+    title: "Face Treatments Malta | Carisma Aesthetics",
+    description: "Expert face treatments in Malta — fillers, Botox, microneedling & more. Free consultation with medically qualified practitioners.",
+    url: "https://www.carismaaesthetics.com/face-treatments",
+    type: "website",
   },
 };
 

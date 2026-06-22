@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getFaceTreatment, faceTreatmentSlugs, type FaceTreatment } from "@/lib/face-treatments";
+import JsonLd from "@/lib/seo/JsonLd";
 import {
   FaceHero,
   TreatmentInfoBar,
@@ -27,42 +28,42 @@ const FACE_SEO: Record<string, { title: string; description: string }> = {
   "dermal-fillers": {
     title: "Dermal Fillers Malta | Lips, Cheeks, Jawline | Carisma Aesthetics",
     description:
-      "Dermal filler treatments in Malta from €269. Lips, cheeks, jawline, nose, tear trough. Natural results by medically qualified doctor & practitioner. Free consultation.",
-  },
-  "microneedling": {
-    title: "Microneedling Malta | #1 Award Winning Clinic",
-    description:
-      "Microneedling with mesotherapy in Malta from €149/session. Doctor-led collagen induction therapy with personalised cocktails: smooth acne scars, fine lines & more. Free consultation, book today.",
-  },
-  "chemical-peels": {
-    title: "Chemical Peels Malta | #1 Award Winning Clinic",
-    description:
-      "Carisma's Malta chemical peels can help you achieve a brighter, smoother, and youthful complexion. Call us on +356 27802062 to book a free consultation!",
+      "Dermal filler treatments in Malta from €269. Lips, cheeks, jawline, nose, tear trough. Natural results by medically qualified doctors. Free consultation.",
   },
   "lip-fillers": {
     title: "Lip Fillers Malta | Natural Results | Carisma Aesthetics",
     description:
-      "Lip filler treatments in Malta from €219. Juvederm, Croma, and Teoxane by medically qualified doctors & practitioners. Subtle, natural enhancement. Book your free consultation.",
+      "Lip filler treatments in Malta from €219. Juvederm, Croma, and Teoxane by medically qualified doctors. Subtle, natural enhancement. Book your free consultation.",
   },
-  "collagen-stimulator": {
-    title: "Collagen Stimulator | #1 Award Winning Clinic",
+  "microneedling": {
+    title: "Microneedling Malta | Collagen Induction Therapy | Carisma Aesthetics",
     description:
-      "Carisma's collagen stimulators in Malta revitalise your skin and boost collagen production. Call us on +356 27802062 to book a free consultation!",
+      "Microneedling with mesotherapy in Malta from €149/session. Doctor-led collagen induction therapy with personalised cocktails. Smooth acne scars, fine lines. Free consultation.",
   },
-  "wrinkle-relaxing": {
-    title: "Botox Malta | #1 Award Winning Clinic",
+  "chemical-peels": {
+    title: "Chemical Peels Malta | Brighter, Smoother Skin | Carisma Aesthetics",
     description:
-      "Botox in Malta from €59. Doctor-led anti-wrinkle injections by Dr. Giovanni Scornavacca. Natural results, no frozen look. Free consultation | Book Today.",
-  },
-  "mesotherapy": {
-    title: "Mesotherapy in Malta | #1 Award Winning Clinic",
-    description:
-      "Experience Carisma's Malta Mesotherapy and rejuvenate your skin with skin boosters. Contact us on +356 27802062 to book a free consultation!",
+      "Chemical peel treatments in Malta for brighter, smoother, and more youthful skin. Doctor-led peels tailored to your skin type. Free consultation available.",
   },
   "thread-lift": {
-    title: "Thread Lift | #1 Award Winning Clinic",
+    title: "Thread Lift Malta | Non-Surgical Face Lift | Carisma Aesthetics",
     description:
-      "We provide skincare in Malta tailored to your skin. To contact Carisma Aesthetics, fill out our form or call us on +356 27802062 to book a free consultation.",
+      "Thread lift in Malta — non-surgical face lifting using PDO threads. Lift sagging skin around jawline, cheeks and neck. Doctor-led, natural results. Free consultation.",
+  },
+  "wrinkle-relaxing": {
+    title: "Anti-Wrinkle Injections Malta | Botox | Carisma Aesthetics",
+    description:
+      "Anti-wrinkle injections in Malta from €59. Doctor-led Botox treatments with natural results. No frozen look. Free consultation with our medical team.",
+  },
+  "collagen-stimulator": {
+    title: "Collagen Stimulator Malta | Sculptra & Radiesse | Carisma Aesthetics",
+    description:
+      "Collagen stimulator treatments in Malta including Sculptra and Radiesse. Restore facial volume, improve skin texture and stimulate long-lasting natural collagen. Free consultation.",
+  },
+  "mesotherapy": {
+    title: "Mesotherapy Malta | Skin Booster Injections | Carisma Aesthetics",
+    description:
+      "Mesotherapy skin booster treatments in Malta from €149. Hyaluronic acid cocktails for deep hydration, radiance and anti-ageing. Doctor-led. Free consultation.",
   },
 };
 
@@ -71,21 +72,21 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const t = getFaceTreatment(slug);
   if (!t) return {};
   const seo = FACE_SEO[slug];
+  const BASE = "https://www.carismaaesthetics.com";
+  const canonical = `${BASE}/face-treatments/${slug}`;
   const title = seo?.title ?? `${t.name} in Malta | Carisma Aesthetics`;
   const description = seo?.description ?? t.tagline;
   return {
     title,
     description,
-    // P1 SEO: canonical prevents indexing of duplicate/trailing-slash variants
-    alternates: {
-      canonical: `https://www.carismaaesthetics.com/face-treatments/${slug}`,
-    },
+    alternates: { canonical },
     openGraph: {
       title,
       description,
-      url: `https://www.carismaaesthetics.com/face-treatments/${slug}`,
+      url: canonical,
       siteName: "Carisma Aesthetics",
       type: "website",
+      images: t.heroImage ? [{ url: t.heroImage, width: 1200, height: 630, alt: t.name }] : [],
     },
     twitter: {
       card: "summary_large_image",
@@ -106,6 +107,32 @@ export default async function FaceTreatmentDetail({ params }: { params: Promise<
 
   return (
     <main id="main-content">
+      {/* BreadcrumbList JSON-LD */}
+      <JsonLd
+        schema={{
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Home", item: "https://www.carismaaesthetics.com" },
+            { "@type": "ListItem", position: 2, name: "Face Treatments", item: "https://www.carismaaesthetics.com/face-treatments" },
+            { "@type": "ListItem", position: 3, name: t.name, item: `https://www.carismaaesthetics.com/face-treatments/${slug}` },
+          ],
+        }}
+      />
+      {/* FAQPage JSON-LD — rendered only when the treatment has FAQs */}
+      {t.faqs && t.faqs.length > 0 && (
+        <JsonLd
+          schema={{
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: t.faqs.map((f) => ({
+              "@type": "Question",
+              name: f.q,
+              acceptedAnswer: { "@type": "Answer", text: f.a },
+            })),
+          }}
+        />
+      )}
       {/* P9: Breadcrumb navigation — improves wayfinding and adds BreadcrumbList structured data opportunity */}
       <nav aria-label="Breadcrumb" style={{ background: "var(--cream)", borderBottom: "1px solid var(--line)" }}>
         <div className="container" style={{ paddingTop: "12px", paddingBottom: "12px" }}>

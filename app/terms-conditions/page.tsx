@@ -4,6 +4,8 @@ export const metadata: Metadata = {
   title: "Terms & Conditions | Carisma Aesthetics",
   description:
     "At our med-aesthetic clinic, we are committed to protecting the privacy & security of our patients' personal data. We comply with the General Data Protection Regulation (GDPR) & any applicable data protection laws.",
+  alternates: { canonical: "https://www.carismaaesthetics.com/terms-conditions" },
+  robots: { index: false, follow: true },
   openGraph: {
     title: "Terms & Conditions | Carisma Aesthetics",
     description:
@@ -138,7 +140,7 @@ export default function TermsConditions() {
               borderBottom: "1px solid var(--gold)",
             }}
           >
-            terms &amp; condition
+            Terms &amp; Conditions
           </h1>
         </div>
 

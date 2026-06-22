@@ -20,15 +20,20 @@ export function generateStaticParams() {
 export const dynamicParams = false;
 
 const SLUG_SEO: Record<string, { title: string; description: string }> = {
+  "wrinkle-relaxing-malta": {
+    title: "Botox Malta | #1 Award Winning Clinic | Carisma Aesthetics",
+    description:
+      "Botox in Malta from €59. Doctor-led anti-wrinkle injections. Natural results, no frozen look. Free consultation available. Book today.",
+  },
   "laser-hair-removal-malta": {
-    title: "Laser Hair Removal Malta | Soprano Ice Platinum",
+    title: "Laser Hair Removal Malta | Soprano Ice Platinum | Carisma Aesthetics",
     description:
       "Laser hair removal in Malta using Alma Soprano Ice Platinum. Virtually painless, all skin types. 6-session packages from €139. Book your free consultation.",
   },
   "medical-weight-loss": {
     title: "Ozempic & Mounjaro Malta | Doctor-Led GLP-1 Programme | Carisma Aesthetics",
     description:
-      "Doctor-led Ozempic and Mounjaro programme in Malta. Full medical assessment, structured GLP-1 support, side effect management, and body contouring. Book your eligibility consultation today or call us on +356 27802062.",
+      "Doctor-led Ozempic and Mounjaro programme in Malta. Full medical assessment, GLP-1 support, side effect management, and body contouring. Book today.",
   },
   "pico-laser-tattoo-removal": {
     title: "Pico Laser Tattoo Removal Treatment | #1 Award Winning Clinic",
@@ -46,24 +51,24 @@ const SLUG_SEO: Record<string, { title: string; description: string }> = {
       "Doctor-led hair loss treatment in Malta from €399. PRP, exosomes & prescription therapy in one guaranteed program. 21-28% density increase in 90 days. Free consultation, book today.",
   },
   "snatch-your-jawline": {
-    title: "Fat Dissolving in Malta |  | #1 Award Winning Clinic",
+    title: "Snatch Your Jawline Package | Carisma Aesthetics Malta",
     description:
-      "Our fat-dissolving treatments in Malta will help you discover a new you. To book a free consultation with Carisma Aesthetics, call us on +356 27802062.",
+      "Sculpt and define your jawline in Malta with our combined fat-dissolving and contouring package. Natural, doctor-led results. Free consultation available.",
   },
   "4-in-1-hydrafacial-glow": {
-    title: "Hydrafacial Glow in Malta |  | #1 Award Winning Clinic",
+    title: "4-in-1 HydraFacial Glow Package | Carisma Aesthetics Malta",
     description:
-      "Our fat-dissolving treatments in Malta will help you discover a new you. To book a free consultation with Carisma Aesthetics, call us on +356 27802062.",
+      "Our 4-in-1 HydraFacial Glow package in Malta combines deep cleansing, exfoliation, extraction and hydration for radiant, glowing skin. Book your consultation today.",
   },
   "exosome-glowlift": {
-    title: "Microneedling in Malta |  | #1 Award Winning Clinic",
+    title: "Exosome Glow Lift Package | Carisma Aesthetics Malta",
     description:
-      "Experience smoother, firmer, glowing skin with the Exosome Glow Lift Package in Malta. Microneedling with exosomes, LED therapy, and expert care for real, visible results. To book a free consultation with Carisma Aesthetics, call us on +356 27802062.",
+      "Experience smoother, firmer, glowing skin with the Exosome Glow Lift Package in Malta. Microneedling with exosomes, LED therapy and expert care for visible results.",
   },
   "ultimate-facelift": {
-    title: "Thread Lift in Malta |  | #1 Award Winning Clinic",
+    title: "Ultimate Facelift Package | Carisma Aesthetics Malta",
     description:
-      "We provide skincare in Malta tailored to your skin. To contact Carisma Aesthetics, fill out our form or call us on +356 27802062 to book a free consultation.",
+      "The Ultimate Facelift Package in Malta combines non-surgical lifting treatments for full facial rejuvenation. Doctor-led, personalised approach. Free consultation.",
   },
   "wrinkles-fine-lines-packages": {
     title: "Wrinkles & Fine Lines | Packages | Carisma Aesthetics",
@@ -79,12 +84,16 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     return {
       title: seo.title,
       description: seo.description,
+      alternates: {
+        canonical: `https://www.carismaaesthetics.com/${slug}`,
+      },
       openGraph: {
         title: seo.title,
         description: seo.description,
         url: `https://www.carismaaesthetics.com/${slug}`,
         siteName: "Carisma Aesthetics",
         type: "website" as const,
+        images: [{ url: "/og-aesthetics.jpg", width: 1200, height: 630 }],
       },
       twitter: {
         card: "summary_large_image" as const,

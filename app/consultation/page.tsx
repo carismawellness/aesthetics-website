@@ -1,11 +1,19 @@
+import type { Metadata } from "next";
 import { CONTACT } from "@/lib/site";
 import Reveal from "@/components/Reveal";
 import PageHero from "@/components/PageHero";
 
-export const metadata = {
-  title: "Book Your Free Consultation | Carisma Aesthetics Malta",
-  description:
-    "Book a free, no-pressure consultation with one of our medically qualified doctors at Carisma Aesthetics, Malta. Every plan begins with listening to your story.",
+export const metadata: Metadata = {
+  title: 'Book Your Free Consultation | Carisma Aesthetics Malta',
+  description: 'Book a free, no-pressure consultation with our medically qualified doctors at Carisma Aesthetics Malta. Every treatment plan begins with listening to your goals.',
+  alternates: { canonical: 'https://www.carismaaesthetics.com/consultation' },
+  openGraph: {
+    title: 'Book Your Free Consultation | Carisma Aesthetics Malta',
+    description: 'Free consultation with qualified doctors. No pressure, no obligation — just clarity.',
+    url: 'https://www.carismaaesthetics.com/consultation',
+    images: [{ url: '/og-aesthetics.jpg', width: 1200, height: 630, alt: 'Free Aesthetics Consultation Malta' }],
+  },
+  twitter: { card: 'summary_large_image', images: ['/og-aesthetics.jpg'] },
 };
 
 const FRESHA_CONSULT =

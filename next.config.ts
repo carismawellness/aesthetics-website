@@ -47,6 +47,25 @@ const legacyRedirects: { source: string; destination: string }[] = [
   { source: "/glow-multiplier", destination: "/" },
   { source: "/advertorial", destination: "/" },
 
+  // --- Additional booking / utility URL variants ---
+  { source: "/book-consultation", destination: "/consultation" },
+  { source: "/book", destination: "/consultation" },
+  { source: "/treatments", destination: "/face-treatments" },
+
+  // --- Legacy brand-keyword slugs → canonical treatment slugs ---
+  { source: "/botox-malta", destination: "/wrinkle-relaxing-malta" },
+  { source: "/anti-wrinkle-injections-malta", destination: "/wrinkle-relaxing-malta" },
+  { source: "/laser-hair-removal", destination: "/laser-hair-removal-malta" },
+  { source: "/ozempic-malta", destination: "/medical-weight-loss" },
+  { source: "/mounjaro-malta", destination: "/medical-weight-loss" },
+  { source: "/glp1-malta", destination: "/medical-weight-loss" },
+
+  // --- Face-treatment hierarchy variants ---
+  { source: "/thread-lift-malta", destination: "/face-treatments/thread-lift" },
+
+  // --- Blog slug migration (Wix blog sub-paths → new blog) ---
+  { source: "/aesthetics-blog/:slug*", destination: "/blog/:slug*" },
+
   // --- Utility / info pages → nearest new equivalent ---
   { source: "/contact", destination: "/consultation" },
   { source: "/quiz", destination: "/consultation" },
