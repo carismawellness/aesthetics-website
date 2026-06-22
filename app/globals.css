@@ -90,7 +90,9 @@
   --gold-deep: #9c8344;     /* gold graphic / star accent — >=3:1 vs white */
   --label: #695c4e;         /* muted label / bio taupe TEXT — AA on white + cream/beige tints (>=4.5) */
   --ink: #0c0b0b;           /* near-black (footer / award) */
-  --ink-soft: #2b2b2b;
+  /* Body copy = brand brown taupe (#706552 = 5.6:1 on white, AA) — matches the
+     slimming site's taupe body voice. NEVER near-black/green for paragraph copy. */
+  --ink-soft: #706552;
   --muted: #636363;         /* secondary TEXT — AA on white + teal-100/cream/beige tints (>=4.5) */
   --line: #e2e2e2;          /* decorative hairline borders (form fields use --field-border) */
   --field-border: #8a8a8a;  /* form-field border — UI component >=3:1 vs white */
@@ -280,38 +282,28 @@ main li a:not(.btn):not(.no-underline),
   transition: all 0.25s ease;
 }
 
-/* Gold CTA: all gradient stops darkened so WHITE text passes >=4.5 across the
-   ENTIRE gradient (worst/lightest stop #80704c = 4.84:1). Glow halo uses the
-   brand-gold rgb channels so the gold identity is preserved. */
+/* ── ONE shared brand CTA: teal (the "blue"), mirroring slimming's .cta-glow ──
+   Every primary CTA across the site resolves to this single teal treatment:
+   a very subtle low-contrast teal gradient fill (--teal-deep #4f7373 → a
+   slightly deeper teal), white uppercase Novecento label, a soft backdrop
+   box-shadow glow halo, pill radius. NO green, NO brown/gold button fills.
+   The legacy gold classes (.btn-gold / .cta-glow-gold) are intentionally
+   aliased onto the teal fill so every call site (dark heroes, theme="gold")
+   renders teal without touching markup. */
 .btn-gold,
-.cta-glow-gold {
-  background: linear-gradient(135deg, #80704c 0%, #75663f 52%, #635430 100%);
-  box-shadow:
-    0 0 22px rgba(var(--gold-rgb), 0.42),
-    0 8px 24px rgba(var(--gold-deep-rgb), 0.45);
-}
-.btn-gold:hover,
-.cta-glow-gold:hover {
-  background: linear-gradient(135deg, #75663f 0%, #635430 70%, #564829 100%);
-  box-shadow:
-    0 0 30px rgba(var(--gold-rgb), 0.58),
-    0 12px 30px rgba(var(--gold-deep-rgb), 0.6);
-  transform: translateY(-1px) scale(1.04); /* keep lift + glow, add universal scale */
-}
-
-/* Teal CTA: all gradient stops dark enough that WHITE text passes >=4.5 across
-   the ENTIRE gradient (worst/lightest stop --teal #527979 = 4.81:1). The old
-   light --teal-200 lead stop (1.5:1) is removed. */
+.cta-glow-gold,
 .btn-teal,
 .cta-glow-teal {
-  /* Fill uses the AA-darkened teal across the whole gradient (lightest stop
-     --teal-deep #4f7373 = 4.7:1) so WHITE text passes — the bright brand
-     --teal #96b2b2 is decorative only and not used as a button fill. */
+  /* Very subtle teal gradient — lightest stop --teal-deep #4f7373 = 4.7:1, so
+     WHITE text passes AA across the ENTIRE fill. Low-contrast on purpose. */
   background: linear-gradient(135deg, var(--teal-deep) 0%, #466b6b 55%, #3f6363 100%);
+  color: var(--white);
   box-shadow:
     0 0 22px rgba(var(--teal-rgb), 0.45),
     0 8px 24px rgba(var(--teal-rgb), 0.5);
 }
+.btn-gold:hover,
+.cta-glow-gold:hover,
 .btn-teal:hover,
 .cta-glow-teal:hover {
   background: linear-gradient(135deg, #466b6b 0%, var(--teal-deep) 65%, #355555 100%);
@@ -368,16 +360,18 @@ main li a:not(.btn):not(.no-underline),
   color: var(--white);
   border-color: var(--teal-deep);
 }
+/* Secondary CTA outline: gold variant is aliased to TEAL so the paired
+   secondary button matches the unified teal CTA system (no brown fills). */
 .btn-outline-gold {
-  border: 1.5px solid var(--gold);
-  color: var(--gold);
+  border: 1.5px solid var(--teal-deep);
+  color: var(--teal-deep);
   background: transparent;
 }
 .btn-outline-gold:hover,
 .btn-outline-gold:focus-visible {
-  background: var(--gold);
+  background: var(--teal-deep);
   color: var(--white);
-  border-color: var(--gold);
+  border-color: var(--teal-deep);
 }
 
 .container {
@@ -453,15 +447,17 @@ main li a:not(.btn):not(.no-underline),
   box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.06);
   backdrop-filter: blur(10px) saturate(140%); -webkit-backdrop-filter: blur(10px) saturate(140%);
 }
+/* Dark-hero secondary ghost CTA — teal colorway (light teal reads on dark
+   stone; fills teal on hover) so no brown/gold button fill remains. */
 .hero-outline-dark {
   display: inline-flex; align-items: center; justify-content: center;
   padding: 14px 28px; border-radius: 999px;
-  border: 1.5px solid rgba(201, 169, 106, 0.7); color: #c9a96a;
+  border: 1.5px solid rgba(150, 178, 178, 0.7); color: #c5d6d6;
   font-family: "Novecento Wide", sans-serif; font-size: 12px; font-weight: 600;
   letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none;
   transition: background 0.2s ease, color 0.2s ease;
 }
-.hero-outline-dark:hover { background: #c9a96a; color: #14120e; }
+.hero-outline-dark:hover { background: #c5d6d6; color: #14120e; }
 
 /* Form fields */
 .form-field {

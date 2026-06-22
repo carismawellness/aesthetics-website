@@ -84,14 +84,17 @@ function SectionHeading({ children, align = 'center', size = 28 }: { children: R
 }
 
 function CTA({ variant = 'blue', children = 'Claim your spot now', full = false }: { variant?: 'green' | 'blue'; children?: React.ReactNode; full?: boolean }) {
-  const isGreen = variant === 'green';
+  // Unified brand CTA: shared teal .cta-glow-teal treatment (subtle teal
+  // gradient fill + white Novecento label + glow halo + pill). The legacy
+  // `variant` prop is retained for API compat but no longer colours the fill.
+  void variant;
   return (
     <a
       href={BOOKING_URL}
       target="_blank"
       rel="noopener noreferrer"
-      className="btn"
-      style={{ display: full ? 'block' : 'inline-block', backgroundColor: isGreen ? GREEN : BLUE, color: '#fff', fontFamily: WIDE, fontWeight: 700, fontSize: 14, letterSpacing: '1.4px', textTransform: 'uppercase', textAlign: 'center', textDecoration: 'none', padding: '15px 38px', borderRadius: 'var(--radius-pill)', cursor: 'pointer' }}
+      className="btn cta-glow-teal"
+      style={{ display: full ? 'block' : 'inline-block', color: '#fff', fontFamily: WIDE, fontWeight: 700, fontSize: 14, letterSpacing: '1.4px', textTransform: 'uppercase', textAlign: 'center', textDecoration: 'none', padding: '15px 38px', borderRadius: 'var(--radius-pill)', cursor: 'pointer' }}
     >
       {children}
     </a>
