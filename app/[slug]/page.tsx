@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import JsonLd from "@/lib/seo/JsonLd";
 import TreatmentPage from "@/components/TreatmentPage";
 import LaserHairRemovalPage from "@/components/LaserHairRemovalPage";
 import ProtocolPage from "@/components/ProtocolPage";
@@ -82,7 +83,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const seo = SLUG_SEO[slug];
   if (seo) {
     return {
-      title: seo.title,
+      title: { absolute: seo.title },
       description: seo.description,
       alternates: {
         canonical: `https://www.carismaaesthetics.com/${slug}`,
@@ -119,16 +120,40 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
+
+  const seoEntry = SLUG_SEO[slug];
+  const schemas = seoEntry ? (
+    <>
+      <JsonLd schema={{
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "Home", item: "https://www.carismaaesthetics.com" },
+          { "@type": "ListItem", position: 2, name: seoEntry.title.split(" | ")[0], item: `https://www.carismaaesthetics.com/${slug}` },
+        ],
+      }} />
+      <JsonLd schema={{
+        "@context": "https://schema.org",
+        "@type": "Service",
+        serviceType: "Medical Aesthetics",
+        provider: { "@type": "MedicalOrganization", name: "Carisma Aesthetics", url: "https://www.carismaaesthetics.com" },
+        name: seoEntry.title.split(" | ")[0],
+        description: seoEntry.description,
+        url: `https://www.carismaaesthetics.com/${slug}`,
+      }} />
+    </>
+  ) : null;
+
   const pkg = PACKAGES[slug];
-  if (pkg) return <PackageFunnel data={pkg} />;
-  if (slug === "laser-hair-removal-malta") return <LaserHairRemovalPage />;
-  if (bodyPackages[slug]) return <BodyPackagePage content={bodyPackages[slug]} />;
-  if (PROTOCOLS[slug]) return <ProtocolPage d={PROTOCOLS[slug]} />;
-  if (slug === "medical-weight-loss") return <MedicalWeightLossPage />;
-  if (slug === "pico-laser-tattoo-removal") return <PicoLaserPage />;
-  if (slug === "pico-laser-pigmentation-treatment") return <PigmentationPage />;
-  if (slug === "hair-regrowth") return <HairRegrowthPage />;
+  if (pkg) return <>{schemas}<PackageFunnel data={pkg} /></>;
+  if (slug === "laser-hair-removal-malta") return <>{schemas}<LaserHairRemovalPage /></>;
+  if (bodyPackages[slug]) return <>{schemas}<BodyPackagePage content={bodyPackages[slug]} /></>;
+  if (PROTOCOLS[slug]) return <>{schemas}<ProtocolPage d={PROTOCOLS[slug]} /></>;
+  if (slug === "medical-weight-loss") return <>{schemas}<MedicalWeightLossPage /></>;
+  if (slug === "pico-laser-tattoo-removal") return <>{schemas}<PicoLaserPage /></>;
+  if (slug === "pico-laser-pigmentation-treatment") return <>{schemas}<PigmentationPage /></>;
+  if (slug === "hair-regrowth") return <>{schemas}<HairRegrowthPage /></>;
   const t = getTreatment(slug);
   if (!t) notFound();
-  return <TreatmentPage t={t} />;
+  return <>{schemas}<TreatmentPage t={t} /></>;
 }

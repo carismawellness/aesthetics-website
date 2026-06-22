@@ -77,7 +77,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const title = seo?.title ?? `${t.name} in Malta | Carisma Aesthetics`;
   const description = seo?.description ?? t.tagline;
   return {
-    title,
+    title: { absolute: title },
     description,
     alternates: { canonical },
     openGraph: {

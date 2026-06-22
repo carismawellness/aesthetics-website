@@ -6,7 +6,7 @@ import { getAllBlogs } from "@/lib/blogs";
 import type { BlogPost } from "@/lib/blog-types";
 
 export const metadata: Metadata = {
-  title: "Medical Aesthetics Blog Malta | Carisma Aesthetics",
+  title: { absolute: "Medical Aesthetics Blog Malta | Carisma Aesthetics" },
   description:
     "Expert tips on Botox, dermal fillers, laser hair removal and skincare from Malta's leading medical aesthetic clinic. Read our latest articles.",
   alternates: {
