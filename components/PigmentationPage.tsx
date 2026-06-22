@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
+import PageHero from "@/components/PageHero";
 
 const A = "/assets/treatments";
 // WCAG AA: prior #98afb2 (2.31:1 on white) / #96b2b2 (white text 2.26:1) failed.
@@ -62,30 +63,34 @@ const TRUST_BAR = ["MALTA'S LEADING WELLNESS CHAIN", "30+ YEARS OF EXPERTISE", "
 
 function Hero() {
   return (
-    <section style={{ padding: "24px 0" }}>
+    <PageHero
+      badge="#1 Voted Med-Aesthetics Clinic"
+      headline={[{ text: "Pico Laser Pigmentation" }, { text: "Treatment in Malta", em: true }]}
+      sub="Advanced Pico laser technology to visibly reduce unwanted pigmentation and restore a clearer, brighter, more even-looking complexion."
+      bullets={INCLUDED.map((text) => ({ text }))}
+      primaryCta={{ text: "Reserve Your Pico Laser Session", href: "/consultation" }}
+      secondaryCta={{ text: "View Pricing", href: "#pico-pigmentation-pricing" }}
+      media={{ type: "image", src: `${A}/pig-hero-main.png`, alt: "Pigmentation treatment in Malta", aspect: "4 / 5" }}
+      proof={{
+        rating: "4.9",
+        reviews: "200+",
+        statValue: "30+",
+        statLabel: "years in wellness",
+        awardText: "#1 Voted Clinic\nMalta Healthcare Awards",
+      }}
+    />
+  );
+}
+
+// ─── OFFER / TRUST (moved out of the old hero) ────────────────────────────────
+function HeroOffer() {
+  return (
+    <section style={{ padding: "10px 0 30px" }}>
       <div className="container">
         <div className="hero-panel" style={{ backgroundImage: "url(/assets/bg-gradient.png)", backgroundSize: "cover", backgroundPosition: "center", borderRadius: "26px", padding: "clamp(22px,3vw,40px)" }}>
-          <div className="pig-hero-grid grid gap-10 items-start">
-            <div className="hero-copy">
-              {/* clamp min 20px non-bold = normal text on the hero gradient → #345252 = 5.x:1 clears 4.5:1 */}
-              <h1 className="font-serif" style={{ fontSize: "clamp(20px,2vw,28px)", color: "#345252", letterSpacing: "0.04em", textTransform: "uppercase", fontWeight: 400, lineHeight: 1.12, margin: 0 }}>
-                pico laser pigmentation treatment
-              </h1>
-              <p style={{ color: GOLD_TEXT, fontSize: "14px", fontWeight: 600, lineHeight: 1.7, marginTop: "16px", maxWidth: "440px" }}>
-                Advanced Pico laser technology to visibly reduce unwanted pigmentation and restore a clearer, brighter, more even-looking complexion.
-              </p>
-              <p className="font-display" style={{ color: GOLD_TEXT, fontSize: "14px", fontWeight: 600, letterSpacing: "0.02em", marginTop: "22px", marginBottom: "10px" }}>
-                What&apos;s Included:
-              </p>
-              <ul className="space-y-2">
-                {INCLUDED.map((item) => (
-                  <li key={item} className="flex items-start gap-3">
-                    <Dot />
-                    <span style={{ color: GOLD_TEXT, fontSize: "13.5px", lineHeight: 1.55 }}>{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <p className="font-display" style={{ color: GOLD_TEXT, fontSize: "15px", fontWeight: 600, letterSpacing: "0.02em", marginTop: "22px" }}>
+          <div className="grid gap-8 lg:grid-cols-2 items-center">
+            <div>
+              <p className="font-display" style={{ color: GOLD_TEXT, fontSize: "15px", fontWeight: 600, letterSpacing: "0.02em" }}>
                 Treatments From €79 Per Session
               </p>
               {/* opacity removed: at 0.75 the 11px disclaimer flattened to ~3.1:1; full-opacity GOLD_TEXT = 5.18:1 */}
@@ -125,12 +130,6 @@ function Hero() {
           ))}
         </div>
       </div>
-
-      <style>{`
-        @media (min-width: 1024px) {
-          .pig-hero-grid { grid-template-columns: 1.12fr 0.88fr; }
-        }
-      `}</style>
     </section>
   );
 }
@@ -504,7 +503,7 @@ const PRICES = [
 
 function Pricing() {
   return (
-    <section style={{ padding: "60px 0" }}>
+    <section id="pico-pigmentation-pricing" style={{ padding: "60px 0", scrollMarginTop: "90px" }}>
       <div className="container text-center">
         <Serif>pico laser pigmentation pricing</Serif>
         <p className="mx-auto" style={{ maxWidth: "760px", fontSize: "14px", color: "var(--ink-soft)", lineHeight: 1.7, marginTop: "16px" }}>
@@ -770,6 +769,7 @@ export default function PigmentationPage() {
         }
       `}</style>
       <Hero />
+      <HeroOffer />
       <Reviews />
       <DoYouHave />
       <TrustedFeatures />

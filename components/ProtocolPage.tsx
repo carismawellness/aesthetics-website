@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
-import VideoPlayer from "@/components/VideoPlayer";
+import PageHero from "@/components/PageHero";
 import FaqAccordion from "@/components/FaqAccordion";
 import type { ProtocolData } from "@/lib/protocols";
 
@@ -51,39 +51,37 @@ export default function ProtocolPage({ d }: { d: ProtocolData }) {
   return (
     <>
       {/* ===== HERO ===== */}
-      <section style={{ background: "url('/assets/hero-bg.png') center / cover no-repeat", padding: "40px 0 56px" }}>
+      <PageHero
+        badge={d.hero.kicker}
+        headline={[{ text: d.hero.title }, { text: "in Malta", em: true }]}
+        sub={d.hero.intro}
+        primaryCta={{ text: d.hero.cta, href: "/consultation" }}
+        media={{ type: "video", src: d.hero.video, alt: `${d.hero.title} in Malta` }}
+        proof={{
+          rating: "4.9",
+          reviews: "200+",
+          statValue: "30+",
+          statLabel: "years in wellness",
+          awardText: "#1 Voted Clinic\nMalta Healthcare Awards",
+        }}
+      />
+
+      {/* ===== OFFER / PACKAGE (was in hero) ===== */}
+      <section style={{ background: "url('/assets/hero-bg.png') center / cover no-repeat", padding: "48px 0 56px" }}>
         <div className="container">
-          <div className="grid gap-12 lg:grid-cols-2 items-center">
+          <div className="mx-auto text-center" style={{ maxWidth: "680px", background: "rgba(255,255,255,0.6)", border: "1px solid var(--line)", borderRadius: "16px", padding: "clamp(28px,3vw,40px)" }}>
             <Reveal>
-              <p className="font-display" style={{ fontSize: "12px", color: AA_GOLD, letterSpacing: "0.12em" }}>{d.hero.kicker}</p>
-              <h1 className="font-serif" style={{ fontSize: "clamp(30px,4.4vw,46px)", color: AA_GOLD, letterSpacing: "0.04em", marginTop: "10px", textTransform: "uppercase" }}>{d.hero.title}</h1>
-              <p className="font-display" style={{ fontSize: "15px", color: AA_LABEL, letterSpacing: "0.04em", marginTop: "12px" }}>{d.hero.tagline}</p>
-              <p style={{ fontSize: "14px", color: AA_LABEL, lineHeight: 1.7, marginTop: "16px" }}>{d.hero.intro}</p>
-              <PackageList items={d.hero.items} totalValue={d.hero.totalValue} today={d.hero.today} />
-              <p style={{ fontSize: "13px", color: AA_MUTED, marginTop: "6px" }}>{d.hero.individualNote}</p>
-              <div style={{ marginTop: "24px" }}><Cta label={d.hero.cta} /></div>
-              <div className="flex items-center gap-2" style={{ marginTop: "20px" }}>
-                <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.27-4.74 3.27-8.1z" /><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.26 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84A11 11 0 0 0 12 23z" /><path fill="#FBBC05" d="M5.84 14.1a6.6 6.6 0 0 1 0-4.2V7.06H2.18a11 11 0 0 0 0 9.88l3.66-2.84z" /><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84C6.71 7.3 9.14 5.38 12 5.38z" /></svg>
-                <span style={{ fontWeight: 600, fontSize: "13px", color: AA_LABEL }}>4.9</span>
-                <span className="flex" aria-label="Rated 5 out of 5 stars" role="img" style={{ color: AA_TEAL }}>{[0, 1, 2, 3, 4].map((i) => (<svg key={i} width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>))}</span>
-                <span className="font-display" style={{ fontSize: "11px", color: AA_TEAL, letterSpacing: "0.08em" }}>TOP-RATED CLINIC IN MALTA</span>
+              <p className="font-display" style={{ fontSize: "15px", color: AA_GOLD, letterSpacing: "0.04em" }}>{d.hero.tagline}</p>
+              <div className="mx-auto text-left" style={{ maxWidth: "460px" }}>
+                <PackageList items={d.hero.items} totalValue={d.hero.totalValue} today={d.hero.today} />
+                <p style={{ fontSize: "13px", color: AA_MUTED, marginTop: "6px" }}>{d.hero.individualNote}</p>
               </div>
+              <div style={{ marginTop: "24px" }}><Cta label={d.hero.cta} /></div>
               {d.hero.finePrint.length > 0 && (
                 <div style={{ marginTop: "20px" }}>
                   {d.hero.finePrint.map((f, i) => (<p key={i} style={{ fontSize: "11px", color: AA_MUTED, lineHeight: 1.6 }}>{f}</p>))}
                 </div>
               )}
-            </Reveal>
-
-            <Reveal delay={120}>
-              <div className="overflow-hidden" style={{ borderRadius: "26px", boxShadow: "0 20px 50px rgba(0,0,0,0.14)" }}>
-                <VideoPlayer className="w-full" ratio="4 / 5" radius={26} src={`${d.hero.video}`} label="Treatment video" />
-              </div>
-              <div className="flex items-center justify-center gap-3" style={{ marginTop: "18px" }}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="/assets/awards-badge.png" alt="#1 voted clinic in Malta" style={{ height: "44px", width: "auto" }} />
-                <span className="font-display" style={{ fontSize: "12px", color: AA_GOLD, letterSpacing: "0.1em", lineHeight: 1.4 }}>#1 VOTED CLINIC<br />IN MALTA</span>
-              </div>
             </Reveal>
           </div>
         </div>

@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import BookingButtons from "@/components/BookingButtons";
-import VideoPlayer from "@/components/VideoPlayer";
+import PageHero from "@/components/PageHero";
 import type { PackageData } from "@/lib/packages";
 
 /*
@@ -192,26 +192,6 @@ function StatIcon({ metric }: { metric: string }) {
   return (<svg {...common}><path d="M18 2l4 4-9 9-4 1 1-4z" /><path d="M14 6l4 4" /></svg>);
 }
 
-/* Hero video with a customer-facing mute / unmute toggle.
-   Autoplay requires the video to start muted; the button lets the visitor turn sound on.
-   Respects prefers-reduced-motion (P7). */
-function HeroVideo({ poster, src, ratio, title }: { poster: string; src?: string; ratio: string; title?: string }) {
-  if (!src) {
-    // eslint-disable-next-line @next/next/no-img-element
-    return <img src={poster} alt={title ?? "Treatment"} className="w-full" style={{ display: "block", aspectRatio: ratio, objectFit: "cover", borderRadius: "18px", boxShadow: "0 24px 60px rgba(0,0,0,0.14)" }} />;
-  }
-  return (
-    <VideoPlayer
-      ratio={ratio}
-      radius={18}
-      src={src}
-      poster={poster}
-      label={title ?? "Treatment video"}
-      style={{ boxShadow: "0 24px 60px rgba(0,0,0,0.14)" }}
-    />
-  );
-}
-
 function TestimonialCard({ t, index }: { t: { img: string; quote: string; name: string }; index: number }) {
   const [open, setOpen] = useState(false);
   const quoteId = `funnel-quote-${index}`;
@@ -271,57 +251,64 @@ export default function PackageFunnel({ data }: { data: PackageData }) {
 
   return (
     <>
-      {/* ===== HERO ===== */}
-      <section
-        aria-label="Package overview"
-        style={{ background: "linear-gradient(180deg,#eef3f3 0%, #ffffff 100%)", minHeight: "100svh", display: "flex", flexDirection: "column", justifyContent: "center", padding: "var(--nav-clear) 0 clamp(20px,3vh,40px)" }}
-      >
+      {/* ===== HERO (shared PageHero) ===== */}
+      <PageHero
+        badge="#1 Voted Med-Aesthetics Clinic"
+        headline={[{ text: h.title }, { text: "in Malta", em: true }]}
+        compactHeadline
+        sub={h.lead ?? h.subtitle}
+        bullets={h.included.map((it) => ({ text: it }))}
+        primaryCta={{ text: h.cta, href: data.bookHref, external: data.bookHref.startsWith("http") }}
+        media={
+          h.video
+            ? { type: "video", src: h.video, poster: h.poster, alt: h.title, aspect: h.posterRatio?.replace("/", " / ") }
+            : { type: "image", src: h.poster, alt: h.title, aspect: h.posterRatio?.replace("/", " / ") }
+        }
+        proof={{
+          rating: "4.9",
+          reviews: "200+",
+          statValue: "30+",
+          statLabel: "years in wellness",
+          awardText: "#1 Voted Clinic\nMalta Healthcare Awards",
+        }}
+      />
+
+      {/* ===== OFFER / WHAT'S INCLUDED (price + package detail moved from the hero) ===== */}
+      <section aria-label="Package offer" style={{ background: "linear-gradient(180deg,#eef3f3 0%, #ffffff 100%)", padding: "clamp(40px,6vh,72px) 0" }}>
         <div className="container">
-          <div style={{ borderRadius: "26px", background: "linear-gradient(160deg,#e8f0f0 0%, #f6fafa 45%, #eef4f4 100%)", border: "1px solid var(--line)", padding: "clamp(24px,3vw,40px)", boxShadow: "0 20px 60px rgba(0,0,0,0.05)" }}>
-            <div className="grid gap-10 lg:grid-cols-2 items-center">
-              <Reveal>
-                <h1 className="font-serif" style={{ fontSize: "clamp(26px,3vw,34px)", color: "var(--teal-text)", letterSpacing: "normal", textTransform: "uppercase", lineHeight: 1.2 }}>
-                  {h.title}
-                </h1>
-                {h.lead && <p style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.6, marginTop: "12px", fontWeight: 700, textAlign: "justify" }}>{h.lead}</p>}
-                <p style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.6, marginTop: h.lead ? "10px" : "12px", textAlign: "justify" }}>
-                  {withBold(h.subtitle, h.subtitleBold)}
-                </p>
-                {h.bodyParas?.map((p, i) => (
-                  <p key={i} style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.6, marginTop: "10px", textAlign: "justify" }}>{p}</p>
-                ))}
+          <div className="mx-auto" style={{ maxWidth: "760px", borderRadius: "26px", background: "linear-gradient(160deg,#e8f0f0 0%, #f6fafa 45%, #eef4f4 100%)", border: "1px solid var(--line)", padding: "clamp(24px,3vw,40px)", boxShadow: "0 20px 60px rgba(0,0,0,0.05)" }}>
+            <Reveal>
+              <p style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.6, textAlign: "justify" }}>
+                {withBold(h.subtitle, h.subtitleBold)}
+              </p>
+              {h.bodyParas?.map((p, i) => (
+                <p key={i} style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.6, marginTop: "10px", textAlign: "justify" }}>{p}</p>
+              ))}
 
-                <p style={{ fontSize: "14px", color: "var(--label)", fontWeight: 700, marginTop: "14px", marginBottom: "6px" }}>{h.includedTitle}</p>
-                <ul aria-label="Package includes">
-                  {h.included.map((it) => <Bullet key={it}>{it}</Bullet>)}
-                </ul>
-                <p style={{ fontSize: "14px", color: "var(--label)", fontWeight: 700, marginTop: "12px" }}>{h.total}</p>
-                {h.note && <p style={{ fontSize: "14px", color: "var(--label)", marginTop: "6px", fontWeight: 700 }}>{h.note}</p>}
-                {h.footnotes?.map((f) => (
-                  <p key={f} style={{ fontSize: "12px", color: "var(--label)", lineHeight: 1.45, marginTop: "5px" }}>{f}</p>
-                ))}
-                {h.disclaimer && <p style={{ fontSize: "13px", color: "var(--label)", lineHeight: 1.6, marginTop: "12px" }}>{h.disclaimer}</p>}
+              <p style={{ fontSize: "14px", color: "var(--label)", fontWeight: 700, marginTop: "18px", marginBottom: "6px" }}>{h.includedTitle}</p>
+              <ul aria-label="Package includes">
+                {h.included.map((it) => <Bullet key={it}>{it}</Bullet>)}
+              </ul>
+              <p style={{ fontSize: "14px", color: "var(--label)", fontWeight: 700, marginTop: "12px" }}>{h.total}</p>
+              {h.note && <p style={{ fontSize: "14px", color: "var(--label)", marginTop: "6px", fontWeight: 700 }}>{h.note}</p>}
+              {h.footnotes?.map((f) => (
+                <p key={f} style={{ fontSize: "12px", color: "var(--label)", lineHeight: 1.45, marginTop: "5px" }}>{f}</p>
+              ))}
+              {h.disclaimer && <p style={{ fontSize: "13px", color: "var(--label)", lineHeight: 1.6, marginTop: "12px" }}>{h.disclaimer}</p>}
 
-                <div style={{ marginTop: "16px" }}><CtaButton href={data.bookHref}>{h.cta}</CtaButton></div>
+              <div style={{ marginTop: "20px" }}><CtaButton href={data.bookHref}>{h.cta}</CtaButton></div>
 
-                <div className="flex items-center flex-wrap gap-x-2 gap-y-1" style={{ marginTop: "14px", fontSize: "13px", color: "var(--label)" }}>
-                  {/* Google logo is decorative here; rating text is the content */}
-                  <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.27-4.74 3.27-8.1z" /><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.26 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84A11 11 0 0 0 12 23z" /><path fill="#FBBC05" d="M5.84 14.1a6.6 6.6 0 0 1 0-4.2V7.06H2.18a11 11 0 0 0 0 9.88l3.66-2.84z" /><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84C6.71 7.3 9.14 5.38 12 5.38z" /></svg>
-                  <span style={{ fontWeight: 600 }}>4.9</span>
-                  {/* Stars decorative — the text "4.9/5 ... TOP-RATED" is the accessible label */}
-                  <span className="flex" style={{ color: "var(--teal-deep)" }} aria-hidden="true">
-                    {[0, 1, 2, 3, 4].map((i) => (<svg key={i} width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>))}
-                  </span>
-                  <span className="font-display" style={{ color: "var(--teal-deep)", fontSize: "11px", letterSpacing: "0.1em" }}>TOP-RATED CLINIC IN MALTA</span>
-                </div>
-              </Reveal>
-
-              <Reveal delay={120} className="mx-auto" style={{ width: "100%", maxWidth: "320px" }}>
-                <div style={{ maxHeight: "clamp(320px,48vh,470px)", overflow: "hidden", borderRadius: "18px" }}>
-                  <HeroVideo poster={h.poster} src={h.video} ratio={h.posterRatio ?? "317 / 394"} title={h.title} />
-                </div>
-              </Reveal>
-            </div>
+              <div className="flex items-center flex-wrap gap-x-2 gap-y-1" style={{ marginTop: "14px", fontSize: "13px", color: "var(--label)" }}>
+                {/* Google logo is decorative here; rating text is the content */}
+                <svg width="17" height="17" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.27-4.74 3.27-8.1z" /><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.26 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84A11 11 0 0 0 12 23z" /><path fill="#FBBC05" d="M5.84 14.1a6.6 6.6 0 0 1 0-4.2V7.06H2.18a11 11 0 0 0 0 9.88l3.66-2.84z" /><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84C6.71 7.3 9.14 5.38 12 5.38z" /></svg>
+                <span style={{ fontWeight: 600 }}>4.9</span>
+                {/* Stars decorative — the text "4.9/5 ... TOP-RATED" is the accessible label */}
+                <span className="flex" style={{ color: "var(--teal-deep)" }} aria-hidden="true">
+                  {[0, 1, 2, 3, 4].map((i) => (<svg key={i} width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>))}
+                </span>
+                <span className="font-display" style={{ color: "var(--teal-deep)", fontSize: "11px", letterSpacing: "0.1em" }}>TOP-RATED CLINIC IN MALTA</span>
+              </div>
+            </Reveal>
           </div>
         </div>
       </section>

@@ -29,7 +29,7 @@ import {
   SHARED_WHY_MALTA,
 } from '@/lib/bodypkg/types';
 import { testimonials as TESTIMONIALS } from '@/lib/bodypkg/testimonials';
-import HeroVideoPlayer from '@/components/bodypkg/HeroVideoPlayer';
+import PageHero from '@/components/PageHero';
 import TestimonialsSection from '@/components/bodypkg/TestimonialsSection';
 import PackageFaqAccordion from '@/components/bodypkg/PackageFaqAccordion';
 import PackageEvidenceGrid from '@/components/bodypkg/PackageEvidenceGrid';
@@ -51,8 +51,6 @@ const BODY = 'Roboto, sans-serif';
 
 /* ---------- shared assets ---------- */
 const W = '/wix/';
-const HERO_BG = '/assets/hero-bg.png'; // Carisma Aesthetics brand background (cool blue + wave lines)
-const BADGE = W + 'f940f0_c4008d16bc3245f7bc8663f5b60d7a82~mv2.png';
 const GOOGLE = W + '87fc13_c507b5f7e86f4eed970b757bc84a8ec4~mv2.png';
 const CHECK = W + '87fc13_59346c1121b34e759ebf20eba3054c8c~mv2.png';
 const DIFF_BG = W + '87fc13_eed9276b67e74ae99994e6bab4bcd409~mv2.png';
@@ -130,63 +128,44 @@ export default function PackagePage({ content: c }: { content: PackageContent })
   return (
     <div style={{ backgroundColor: '#ffffff', fontFamily: BODY }}>
       {/* ===================== 1. HERO ===================== */}
-      <section style={{ ...CONTAINER, maxWidth: 1180, minHeight: '100svh', display: 'flex', flexDirection: 'column', justifyContent: 'center', paddingTop: 'var(--nav-clear)', paddingBottom: 'clamp(16px,3vh,32px)' }}>
-        <div style={{ backgroundImage: `url(${HERO_BG})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundColor: '#eef1f7', borderRadius: 28, padding: 'clamp(24px,3vw,40px) clamp(24px,3.5vw,52px)' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '1.05fr 0.95fr', gap: 40, alignItems: 'center' }} className="fr-hero-grid">
-            <div>
-              <Eyebrow align="left">{c.heroEyebrow}</Eyebrow>
-              <h1 style={{ color: GOLD, fontFamily: SERIF, fontWeight: 400, fontSize: 'clamp(22px,2.6vw,28px)', lineHeight: 1.25, letterSpacing: 'normal', textTransform: 'uppercase', margin: '10px 0 0' }}>
-                {c.heroTitle}
-              </h1>
-              <div style={{ width: 300, maxWidth: '70%', height: 1, backgroundColor: '#d9d2ca', margin: '10px 0 12px' }} />
-              <p style={{ color: BLUE, fontFamily: WIDE, fontWeight: 400, fontSize: 15, letterSpacing: 'normal', margin: '0 0 10px' }}>{c.heroSubheading}</p>
-              <p style={{ color: TAUPE, fontFamily: BODY, fontWeight: 400, fontSize: 14, lineHeight: 1.45, margin: '0 0 10px' }}>{c.heroDescription}</p>
+      <PageHero
+        badge={c.heroEyebrow}
+        eyebrow={c.heroSubheading}
+        headline={[{ text: c.heroTitle }, { text: 'in Malta', em: true }]}
+        compactHeadline
+        sub={c.heroDescription}
+        bullets={c.heroIncludes.map((it) => ({ text: it }))}
+        primaryCta={{ text: 'Claim your spot now', href: BOOKING_URL, external: true }}
+        media={
+          c.heroVideo
+            ? { type: 'video', src: c.heroVideo, poster: c.heroImage, alt: c.heroSubheading }
+            : { type: 'image', src: c.heroImage, alt: c.heroSubheading }
+        }
+        proof={{
+          rating: '4.9',
+          reviews: '200+',
+          statValue: '30+',
+          statLabel: 'years in wellness',
+          awardText: '#1 Voted Clinic\nMalta Healthcare Awards',
+        }}
+      />
 
-              <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 10px', display: 'flex', flexDirection: 'column', gap: 6 }}>
-                {c.heroIncludes.map((it) => (
-                  <li key={it} style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
-                    <span style={{ color: TAUPE_LT, fontSize: 18, lineHeight: 1.1, flexShrink: 0 }}>&bull;</span>
-                    <span style={{ color: TAUPE, fontFamily: BODY, fontWeight: 400, fontSize: 14 }}>{it}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <p style={{ color: TAUPE, fontFamily: WIDE, fontSize: 15, letterSpacing: 'normal', margin: '0 0 2px' }}>
-                <span style={{ fontWeight: 700 }}>TOTAL VALUE:</span> {c.heroTotalValue} <span style={{ fontWeight: 700 }}>TODAY:</span> {c.heroTodayPrice}
-              </p>
-              {c.heroPriceNote && <p style={{ color: TAUPE, fontFamily: WIDE, fontSize: 12, letterSpacing: 'normal', textTransform: 'uppercase', margin: '0 0 12px' }}>{c.heroPriceNote}</p>}
-
-              <div style={{ marginBottom: 10, marginTop: c.heroPriceNote ? 0 : 12 }}>
-                <CTA variant="green">Claim your spot now</CTA>
-              </div>
-              <div style={{ marginBottom: 10 }}><Stars /></div>
-
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
-                {c.heroFineprint.slice(0, 2).map((f) => (
-                  <p key={f} style={{ color: TAUPE_LT, fontFamily: BODY, fontSize: 11, lineHeight: 1.45, margin: 0, maxWidth: 460 }}>{f}</p>
-                ))}
-              </div>
+      {/* ===== 1b. OFFER DETAIL (moved out of the old hero) ===== */}
+      <section style={{ paddingTop: 40, paddingBottom: 8 }}>
+        <div style={{ ...CONTAINER, maxWidth: 1180 }}>
+          <div style={{ maxWidth: 560, marginLeft: 'auto', marginRight: 'auto', background: 'linear-gradient(150deg, #f0f5f5 0%, #bdd1d1 100%)', borderRadius: 18, padding: '28px 32px', textAlign: 'center' }}>
+            <p style={{ color: TAUPE, fontFamily: WIDE, fontSize: 16, letterSpacing: 'normal', margin: '0 0 4px' }}>
+              <span style={{ fontWeight: 700 }}>TOTAL VALUE:</span> {c.heroTotalValue} <span style={{ fontWeight: 700 }}>TODAY:</span> <span style={{ color: GREEN, fontWeight: 700 }}>{c.heroTodayPrice}</span>
+            </p>
+            {c.heroPriceNote && <p style={{ color: TAUPE, fontFamily: WIDE, fontSize: 12, letterSpacing: 'normal', textTransform: 'uppercase', margin: '0 0 16px' }}>{c.heroPriceNote}</p>}
+            <div style={{ marginTop: c.heroPriceNote ? 0 : 16, marginBottom: 14 }}>
+              <CTA variant="green">Claim your spot now</CTA>
             </div>
-
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 12 }}>
-              <div style={{ width: '100%', maxWidth: 320, maxHeight: 'clamp(320px,46vh,470px)', overflow: 'hidden', borderRadius: 18 }}>
-              {c.heroVideo ? (
-                <HeroVideoPlayer
-                  src={c.heroVideo}
-                  poster={c.heroImage}
-                  ratio={c.heroImageRatio ?? '398 / 682'}
-                  alt={c.heroSubheading}
-                />
-              ) : (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img src={c.heroImage} alt={c.heroSubheading} style={{ width: '100%', maxWidth: 320, maxHeight: 'clamp(320px,46vh,470px)', aspectRatio: c.heroImageRatio ?? '398 / 560', objectFit: 'cover', borderRadius: 18, display: 'block' }} />
-              )}
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={BADGE} alt="#1 Voted Clinic in Malta" style={{ width: 64, height: 'auto' }} />
-                <span style={{ color: TAUPE, fontFamily: WIDE, fontSize: 12, letterSpacing: '1px', lineHeight: 1.3, textTransform: 'uppercase' }}>#1 Voted Clinic<br />in Malta</span>
-              </div>
+            <div style={{ display: 'flex', justifyContent: 'center', marginBottom: 16 }}><Stars /></div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
+              {c.heroFineprint.slice(0, 2).map((f) => (
+                <p key={f} style={{ color: TAUPE_LT, fontFamily: BODY, fontSize: 11, lineHeight: 1.45, margin: 0 }}>{f}</p>
+              ))}
             </div>
           </div>
         </div>

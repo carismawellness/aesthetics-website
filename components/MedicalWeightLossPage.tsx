@@ -15,7 +15,7 @@
 import { useState, type ReactNode } from "react";
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
-import VideoPlayer from "@/components/VideoPlayer";
+import PageHero from "@/components/PageHero";
 import FaqAccordion, { type Faq } from "@/components/FaqAccordion";
 import BookingButtons from "@/components/BookingButtons";
 
@@ -120,6 +120,7 @@ export default function MedicalWeightLossPage() {
         }
       `}</style>
       <Hero />
+      <HeroExtras />
       <Results />
       <Clarity />
       <Trusted />
@@ -140,109 +141,54 @@ export default function MedicalWeightLossPage() {
 /* ---------- S1 HERO ---------- */
 
 function Hero() {
-  const bullets = [
-    { lead: "Calmer appetite:", text: "Ozempic and Mounjaro mimic natural fullness signals so you feel satisfied with smaller portions and less food noise." },
-    { lead: "Doctor monitored:", text: "Full eligibility assessment, body scan, blood work, safety screening, and regular reviews to manage side effects and adjust your dose." },
-    { lead: "Part of a full plan:", text: "Your GLP-1 prescription is paired with nutrition, movement, accountability, and body contouring treatments — never used on its own." },
-  ];
   return (
-    <section id="hero" style={{ minHeight: "100svh", display: "flex", flexDirection: "column", justifyContent: "center", padding: "var(--nav-clear) 0 clamp(20px,3vh,40px)", backgroundColor: "var(--cream)" }}>
+    <PageHero
+      badge="Doctor-led GLP-1 weight loss"
+      headline={[
+        { text: "Doctor-led Ozempic & Mounjaro" },
+        { text: "weight loss in Malta", em: true },
+      ]}
+      sub="At Carisma Aesthetics, GLP-1 medications are never prescribed in isolation. Our doctor-led programme combines a full medical assessment, structured prescription support, nutrition guidance, and weekly monitoring to help you lose weight safely and sustain your results."
+      bullets={[
+        { label: "Calmer appetite:", text: "Ozempic and Mounjaro mimic natural fullness signals so you feel satisfied with smaller portions and less food noise." },
+        { label: "Doctor monitored:", text: "Full eligibility assessment, body scan, blood work, safety screening, and regular reviews to manage side effects and adjust your dose." },
+        { label: "Part of a full plan:", text: "Your GLP-1 prescription is paired with nutrition, movement, accountability, and body contouring treatments — never used on its own." },
+      ]}
+      primaryCta={{ text: "Book your medical consultation", href: BOOK_HREF, external: true }}
+      media={{
+        type: "video",
+        src: `${A}/hero.mp4`,
+        poster: `${A}/hero-doctor.png`,
+        alt: "Doctor-led medical weight loss in Malta",
+      }}
+      proof={{
+        rating: "4.9",
+        reviews: "200+",
+        statValue: "30+",
+        statLabel: "years in wellness",
+        awardText: "#1 Voted Clinic\nMalta Healthcare Awards",
+      }}
+    />
+  );
+}
+
+/* ---------- S1b HERO EXTRAS — GLP-1 wordmarks + prescribing disclaimer ---------- */
+
+function HeroExtras() {
+  return (
+    <section id="hero-extras" style={{ background: "var(--cream)", padding: "clamp(28px,4vh,48px) 0" }}>
       <div className="container">
-      <div
-        style={{
-          backgroundImage: `url(${A}/hero-frame.png)`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          borderRadius: "26px",
-          padding: "clamp(20px,2.4vw,30px) clamp(24px, 4vw, 56px)",
-          overflow: "hidden",
-        }}
-      >
-        <div
-          className="grid items-center"
-          style={{ gridTemplateColumns: "minmax(0,1fr) minmax(0,460px)", gap: "48px" }}
-        >
-          {/* LEFT — copy */}
-          <Reveal>
-            <p className="font-display" style={{ fontSize: "12px", color: "var(--gold)", letterSpacing: "0.14em", textTransform: "uppercase", marginBottom: "8px" }}>
-              Ozempic &amp; Mounjaro in Malta
-            </p>
-            <h1
-              className="font-serif"
-              style={{ fontSize: "clamp(24px,3vw,32px)", color: "var(--teal-text)", textTransform: "uppercase", letterSpacing: "0.05em", lineHeight: 1.2, marginBottom: "10px" }}
-            >
-              doctor-led ozempic &amp; mounjaro in malta
-            </h1>
-            <div style={{ width: "150px", height: "1px", background: "var(--gold)", opacity: 0.55, marginBottom: "12px" }} />
-            <p className="font-display" style={{ fontSize: "13.5px", color: "var(--gold)", fontWeight: 600, letterSpacing: "0.04em", textTransform: "uppercase", marginBottom: "10px" }}>
-              Considering <strong style={{ color: "#655a50", fontWeight: 700 }}>Ozempic</strong> or{" "}
-              <strong style={{ color: "#655a50", fontWeight: 700 }}>Mounjaro</strong> for{" "}
-              <strong style={{ color: "#655a50", fontWeight: 700 }}>weight loss</strong>?
-            </p>
-            <p style={{ fontSize: "14px", color: "#655a50", lineHeight: 1.55, marginBottom: "14px" }}>
-              At Carisma Aesthetics, GLP-1 medications are never prescribed in isolation. Our doctor-led programme
-              combines a full medical assessment, structured prescription support, nutrition guidance, and weekly
-              monitoring to help you lose weight safely and sustain your results.
-            </p>
-            <ul style={{ marginBottom: "14px" }}>
-              {bullets.map((b) => (
-                <li key={b.lead} className="flex items-start" style={{ gap: "10px", marginBottom: "7px" }}>
-                  <span style={{ flexShrink: 0, color: "var(--gold)", fontSize: "13px", lineHeight: 1.6 }}>&bull;</span>
-                  <span style={{ fontSize: "14px", color: "#655a50", lineHeight: 1.65 }}>
-                    <strong style={{ color: "#655a50", fontWeight: 700 }}>{b.lead}</strong> {b.text}
-                  </span>
-                </li>
-              ))}
-            </ul>
-
-            <div className="flex items-center" style={{ gap: "22px", marginBottom: "14px" }}>
-              <Image src={`${A}/ozempic-wordmark.png`} alt="Ozempic Semaglutide" width={176} height={51} style={{ height: "32px", width: "auto" }} />
-              <Image src={`${A}/mounjaro-wordmark.png`} alt="Mounjaro tirzepatide" width={152} height={51} style={{ height: "32px", width: "auto" }} />
-            </div>
-
-            <BookingButtons
-              freshaHref={BOOK_HREF}
-              primaryLabel="book your medical consultation"
-              consultLabel="Book Free Consultation"
-            />
-
-            <div className="flex items-center" style={{ marginTop: "14px" }}>
-              <Image src={`${A}/google-reviews-bar.png`} alt="G 4.9 — TOP-RATED CLINIC IN MALTA" width={313} height={20} style={{ height: "20px", width: "auto" }} />
-            </div>
-
-            <p style={{ fontSize: "11px", color: "#655a50", lineHeight: 1.5, marginTop: "12px" }}>
-              Eligibility and exact costs depend on your health, lab results, and the dose you need. You will always
-              receive a clear plan and pricing in your consultation before starting. Important: Ozempic and Mounjaro are
-              prescription-only and not suitable for everyone.
-            </p>
-          </Reveal>
-
-          {/* RIGHT — portrait video (leaf frame) + award */}
-          <Reveal delay={120}>
-            <div
-              className="relative"
-              style={{
-                width: "100%",
-                maxWidth: "360px",
-                aspectRatio: "405 / 540",
-                maxHeight: "clamp(320px,48vh,470px)",
-                marginInline: "auto",
-                borderRadius: "80px 24px 80px 24px",
-                overflow: "hidden",
-                boxShadow: "0 20px 50px rgba(0,0,0,0.18)",
-              }}
-            >
-              <VideoPlayer fill radius="80px 24px 80px 24px" src={`${A}/hero.mp4`} poster={`${A}/hero-doctor.png`} label="Doctor-led medical weight loss in Malta" />
-            </div>
-            <div className="flex items-center justify-center" style={{ gap: "14px", marginTop: "24px" }}>
-              <Image src={`${A}/award-badge.png`} alt="Malta Healthcare, Wellness, Beauty & Best Spa Awards" width={114} height={72} style={{ height: "58px", width: "auto" }} />
-              <span className="font-serif" style={{ fontSize: "15px", color: "#655a50", letterSpacing: "0.08em", textTransform: "uppercase", lineHeight: 1.35, maxWidth: "150px" }}>
-                #1 Voted Clinic in Malta
-              </span>
-            </div>
-          </Reveal>
-        </div>
-      </div>
+        <Reveal>
+          <div className="flex items-center justify-center" style={{ gap: "32px", flexWrap: "wrap", marginBottom: "18px" }}>
+            <Image src={`${A}/ozempic-wordmark.png`} alt="Ozempic Semaglutide" width={176} height={51} style={{ height: "34px", width: "auto" }} />
+            <Image src={`${A}/mounjaro-wordmark.png`} alt="Mounjaro tirzepatide" width={152} height={51} style={{ height: "34px", width: "auto" }} />
+          </div>
+          <p style={{ maxWidth: "760px", margin: "0 auto", textAlign: "center", fontSize: "12px", color: "#655a50", lineHeight: 1.6 }}>
+            Eligibility and exact costs depend on your health, lab results, and the dose you need. You will always
+            receive a clear plan and pricing in your consultation before starting. Important: Ozempic and Mounjaro are
+            prescription-only and not suitable for everyone.
+          </p>
+        </Reveal>
       </div>
     </section>
   );

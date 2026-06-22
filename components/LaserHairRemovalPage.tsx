@@ -1,5 +1,5 @@
 import Reveal from "@/components/Reveal";
-import VideoPlayer from "@/components/VideoPlayer";
+import PageHero from "@/components/PageHero";
 import CompositeSlideshow from "@/components/CompositeSlideshow";
 import FaqAccordion, { type Faq } from "@/components/FaqAccordion";
 import BookingButtons from "@/components/BookingButtons";
@@ -12,13 +12,6 @@ const IMG = "/assets/treatments";
    same-hue gold reaches 5.65:1 on white and 5.04:1 on cream (AA). Large
    headings keep var(--gold-deep) to preserve visual hierarchy. */
 const GOLD_TXT = "#7a6526";
-
-/* Hero-specific deep-gold. The hero sits on the sage-teal hero-bg.png, whose
-   darkest pixels reach #c0d1d1. var(--gold-deep) #9c8344 only hits 2.31:1 and
-   GOLD_TXT #7a6526 only 3.57:1 there. This darker same-hue gold reaches 5.24:1
-   on the worst-case hero pixel (#c0d1d1) — AA for normal text, AAA for large
-   text, and >=3:1 for graphical objects (the rating stars). */
-const GOLD_HERO = "#5c4d1d";
 
 /* ---------- shared atoms ---------- */
 function Kicker({ children }: { children: React.ReactNode }) {
@@ -50,13 +43,6 @@ function Cross({ size = 26 }: { size?: number }) {
 }
 
 /* ---------- data ---------- */
-const BENEFITS: { text: React.ReactNode }[] = [
-  { text: <>Painless sessions with patented <b style={{ color: GOLD_HERO, fontWeight: 600 }}>ICE Plus™ Cooling</b></> },
-  { text: <>Permanently reduce <b style={{ color: GOLD_HERO, fontWeight: 600 }}>10-15%</b> of hair per treatment</> },
-  { text: <>No more waxing, shaving, or ingrowns</> },
-  { text: <>Safe for all skin types - even tanned</> },
-];
-
 const STEPS = [
   { n: 1, icon: "laser-step1.png", title: "Free Consultation", desc: "We begin with a one-on-one consultation to understand your skin type, hair type, and goals. You'll receive a free patch test to experience the Alma Soprano Platinum system firsthand and confirm your skin's compatibility. Takes 15–20 minutes. No obligation to continue." },
   { n: 2, icon: "laser-step2.png", title: "Custom Treatment Plan", desc: "Based on your hair growth patterns and skin tone, we create a tailored plan designed to maximize results in the fewest sessions possible. We'll walk you through the timeline, pre- and post-care, and answer any questions. Most plans span 6–8 sessions spaced a few weeks apart." },
@@ -143,51 +129,19 @@ export default function LaserHairRemovalPage() {
   return (
     <div style={{ backgroundImage: `url('${IMG}/laser-marble-white.png')`, backgroundSize: "cover", backgroundAttachment: "fixed", backgroundPosition: "top center" }}>
       {/* ============ HERO ============ */}
-      <section style={{ backgroundImage: "url('/assets/hero-bg.png')", backgroundSize: "cover", backgroundPosition: "bottom center", minHeight: "100svh", display: "flex", flexDirection: "column", justifyContent: "center", padding: "var(--nav-clear) 0 clamp(20px,3vh,40px)", borderRadius: "26px", overflow: "hidden", margin: "0 16px" }}>
-        <div className="container">
-          <div className="grid gap-12 lg:grid-cols-2 items-center">
-            {/* LEFT */}
-            <Reveal>
-              <p className="font-display" style={{ fontSize: "12px", color: GOLD_HERO, letterSpacing: "0.12em" }}>World-renowned Alma Soprano for the first time in Malta</p>
-              <h1 className="font-serif" style={{ fontSize: "clamp(28px,3.6vw,42px)", color: GOLD_HERO, letterSpacing: "0.04em", marginTop: "10px", textTransform: "uppercase" }}>Laser Hair Removal</h1>
-              <p className="font-display" style={{ fontSize: "13px", lineHeight: 1.5, marginTop: "12px", color: "var(--label)", letterSpacing: "0.06em" }}>
-                Permanently Smooth, Hair-Free Skin with our Virtually <span style={{ color: GOLD_HERO }}>Painfree SHR® guarantee</span>:
-              </p>
-              <ul className="space-y-2" style={{ marginTop: "14px" }}>
-                {BENEFITS.map((b, i) => (
-                  <li key={i} className="flex items-start gap-3">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={`${IMG}/laser-ic-check.png`} alt="" style={{ width: "20px", height: "20px", marginTop: "2px", flexShrink: 0 }} />
-                    <span style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.45 }}>{b.text}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <div style={{ marginTop: "20px" }}>
-                <BookingButtons consultLabel="book your free consultation" theme="gold" align="left" />
-              </div>
-              <div className="flex items-center gap-2" style={{ marginTop: "14px" }}>
-                <span className="flex" style={{ color: GOLD_HERO }}>
-                  {[0, 1, 2, 3, 4].map((i) => (
-                    <svg key={i} width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" /></svg>
-                  ))}
-                </span>
-                <span className="font-display" style={{ fontSize: "12px", color: GOLD_HERO, letterSpacing: "0.08em" }}>3,000+ 5 star reviews</span>
-              </div>
-            </Reveal>
-
-            {/* RIGHT — framed video + image collage */}
-            <Reveal delay={120}>
-              <div className="relative mx-auto" style={{ maxWidth: "440px", maxHeight: "clamp(360px,56vh,520px)", overflow: "hidden", boxShadow: "0 20px 50px rgba(0,0,0,0.14)" }}>
-                <VideoPlayer cover radius={0} src={`${IMG}/laser-hero-video.mp4`} label="Laser hair removal at Carisma Aesthetics" style={{ position: "absolute", top: "10%", left: "6%", width: "88%", height: "68%", zIndex: 1 }} />
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={`${IMG}/laser-hero-photo1.png`} alt="" aria-hidden style={{ display: "block", width: "100%", height: "auto", position: "relative", zIndex: 2, pointerEvents: "none" }} />
-              </div>
-              <p className="font-display text-center" style={{ fontSize: "12px", color: GOLD_HERO, letterSpacing: "0.1em", marginTop: "14px", lineHeight: 1.5 }}>Triple-wavelength laser &nbsp;|&nbsp; Intercontinental Hotel, St. Julian&rsquo;s</p>
-            </Reveal>
-          </div>
-        </div>
-      </section>
+      <PageHero
+        badge="World-renowned Alma Soprano — first in Malta"
+        headline={[{ text: "Laser Hair Removal" }, { text: "in Malta", em: true }]}
+        sub="Permanently smooth, hair-free skin with our virtually painfree SHR® guarantee."
+        bullets={[
+          { text: "Triple-wavelength Alma Soprano — effective on every skin tone & hair type" },
+          { text: "Virtually painless, with patented ICE Plus™ cooling" },
+          { text: "Medically supervised by qualified practitioners" },
+        ]}
+        primaryCta={{ text: "Book Your Free Consultation", href: "/consultation" }}
+        media={{ type: "video", src: `${IMG}/laser-hero-video.mp4`, poster: `${IMG}/laser-hero-photo1.png`, alt: "Laser hair removal in Malta" }}
+        proof={{ rating: "4.9", reviews: "200+", statValue: "30+", statLabel: "years in wellness", awardText: "#1 Voted Clinic\nMalta Healthcare Awards" }}
+      />
 
       {/* ============ TRUST BAR ============ */}
       <section style={{ backgroundColor: "rgba(255,255,255,0.6)", padding: "26px 0", borderTop: "1px solid var(--line)", borderBottom: "1px solid var(--line)" }}>
