@@ -160,26 +160,6 @@ export default function BlogIndexPage() {
   return (
     /* P1: <main> landmark */
     <main style={{ background: "var(--teal-100)", minHeight: "100vh" }}>
-      {/* P9: breadcrumb nav */}
-      <nav aria-label="Breadcrumb" className="container" style={{ padding: "16px 20px 0" }}>
-        <ol
-          className="flex items-center gap-2 flex-wrap"
-          style={{ fontSize: "12px", color: "var(--muted)", listStyle: "none", margin: 0, padding: 0 }}
-        >
-          <li>
-            <Link
-              href="/"
-              className="transition-colors duration-200 hover:underline focus-visible:outline-none focus-visible:underline"
-              style={{ color: "var(--teal-text)" }}
-            >
-              Home
-            </Link>
-          </li>
-          <li aria-hidden="true" style={{ color: "var(--line)" }}>/</li>
-          <li aria-current="page" style={{ color: "var(--muted)" }}>Blog</li>
-        </ol>
-      </nav>
-
       {/* ── Hero (shared PageHero) ──────────────────── */}
       <PageHero
         eyebrow="The Journal"
@@ -199,6 +179,26 @@ export default function BlogIndexPage() {
           awardText: "#1 Voted Clinic\nMalta Healthcare Awards",
         }}
       />
+
+      {/* P9: breadcrumb nav (below the hero so the above-the-fold fits one viewport) */}
+      <nav aria-label="Breadcrumb" className="container" style={{ padding: "20px 20px 0" }}>
+        <ol
+          className="flex items-center gap-2 flex-wrap"
+          style={{ fontSize: "12px", color: "var(--muted)", listStyle: "none", margin: 0, padding: 0 }}
+        >
+          <li>
+            <Link
+              href="/"
+              className="transition-colors duration-200 hover:underline focus-visible:outline-none focus-visible:underline"
+              style={{ color: "var(--teal-text)" }}
+            >
+              Home
+            </Link>
+          </li>
+          <li aria-hidden="true" style={{ color: "var(--line)" }}>/</li>
+          <li aria-current="page" style={{ color: "var(--muted)" }}>Blog</li>
+        </ol>
+      </nav>
 
       {/* ── Post grid ───────────────────────────────── */}
       <section

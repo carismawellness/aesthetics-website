@@ -139,7 +139,7 @@ export default function LaserHairRemovalPage() {
           { text: "Medically supervised by qualified practitioners" },
         ]}
         primaryCta={{ text: "Book Your Free Consultation", href: "/consultation" }}
-        media={{ type: "video", src: `${IMG}/laser-hero-video.mp4`, poster: `${IMG}/laser-hero-photo1.png`, alt: "Laser hair removal in Malta" }}
+        media={{ type: "video", src: `${IMG}/laser-hero-video.mp4`, poster: `${IMG}/laser-hero-photo2.png`, alt: "Laser hair removal in Malta" }}
         proof={{ rating: "4.9", reviews: "200+", statValue: "30+", statLabel: "years in wellness", awardText: "#1 Voted Clinic\nMalta Healthcare Awards" }}
       />
 
