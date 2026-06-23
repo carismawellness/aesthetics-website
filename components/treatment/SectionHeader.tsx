@@ -33,7 +33,7 @@ export default function SectionHeader({
         <h2
           id={id}
           className="font-serif"
-          style={{ fontSize: "clamp(24px,3.4vw,38px)", color: "var(--gold)", letterSpacing: "0.04em", textTransform: "uppercase", fontWeight: 400, lineHeight: 1.2, margin: 0, textWrap: "balance" }}
+          style={{ fontSize: "clamp(24px,3.4vw,38px)", color: "var(--gold)", letterSpacing: "0.04em", fontWeight: 400, lineHeight: 1.2, margin: 0, textWrap: "balance" }}
         >
           {title}
         </h2>

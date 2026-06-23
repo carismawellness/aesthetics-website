@@ -71,10 +71,9 @@ export default function Redefined() {
               letterSpacing: "0.06em",
               fontWeight: 400,
               lineHeight: 1.3,
-              textTransform: "uppercase",
             }}
           >
-            Your Skin — Redefined.
+            Your skin — redefined.
           </h2>
 
           <p

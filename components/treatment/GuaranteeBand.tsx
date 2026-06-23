@@ -116,7 +116,6 @@ export default function GuaranteeBand({
                   fontSize: "clamp(30px, 5.4vw, 56px)",
                   color: "var(--gold)",
                   letterSpacing: "0.03em",
-                  textTransform: "uppercase",
                   fontWeight: 400,
                   lineHeight: 1.12,
                   margin: 0,

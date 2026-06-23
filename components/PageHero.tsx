@@ -42,6 +42,14 @@ export type HeroMedia = {
    *  playsInline) instead of the default poster + click-to-play. Used only by
    *  the home hero. Respects prefers-reduced-motion (keeps the static poster). */
   autoPlay?: boolean;
+  /** Opt-in: let the arch media fill its column edge-to-edge (no surrounding
+   *  white space). The arch grows to the full media-column width and its height
+   *  follows from the column width within a tasteful cap, instead of the default
+   *  height-driven box whose width is constrained by `aspect`. The elegant arch
+   *  radius is preserved and the image still uses object-fit: cover (no
+   *  distortion). Used by the membership hero. Backward-compatible: omit and the
+   *  hero is unchanged. */
+  fill?: boolean;
 };
 export type HeroProof = {
   rating?: string;
@@ -70,10 +78,11 @@ export type PageHeroProps = {
    *  below the hero copy on mobile. Backward-compatible: omit to leave the hero
    *  right column as media-only. */
   belowMedia?: React.ReactNode;
-  /** Optional content rendered at the BOTTOM of the LEFT column, beneath the
-   *  rating/footnote (e.g. a compact treatment-info strip). This keeps the right
-   *  column media-only. Backward-compatible: omit and nothing renders. */
-  belowContent?: React.ReactNode;
+  /** Optional bespoke media that REPLACES the arch image/video. Rendered inside the
+   *  same sized wrapper (transparent — no arch box) so the floating proof cards still
+   *  anchor correctly and the custom visual can float/overflow freely (e.g. the gifts
+   *  fanned-cards). Backward-compatible: omit to keep the standard arch media. */
+  mediaSlot?: React.ReactNode;
   /** Optional small print under the hero CTAs/rating (e.g. a pricing disclaimer).
    *  Backward-compatible: omit and nothing renders. */
   footnote?: string;
@@ -115,7 +124,7 @@ export default function PageHero({
   media,
   proof,
   belowMedia,
-  belowContent,
+  mediaSlot,
   footnote,
   background,
   compactHeadline,
@@ -125,6 +134,9 @@ export default function PageHero({
   // Match slimming's restrained hero proportions exactly.
   const headlineSize = compactHeadline ? "clamp(23px,2.7vw,31px)" : "clamp(26px,3vw,35px)";
   const aspect = media.aspect ?? (media.type === "video" ? "406 / 720" : "4 / 5");
+  // Fill mode: the arch grows to its column width edge-to-edge (no white space),
+  // its height follows from the width via `aspect`, capped so it never towers.
+  const fill = media.fill === true;
 
   // Colourway
   const c = {
@@ -222,18 +234,25 @@ export default function PageHero({
           {footnote && (
             <p style={{ fontFamily: BODY, fontSize: 11.5, fontWeight: 400, lineHeight: 1.5, color: c.statLabel, maxWidth: 540, margin: "14px 0 0" }}>{footnote}</p>
           )}
-
-          {/* optional compact strip beneath the rating (e.g. treatment-info) */}
-          {belowContent && (
-            <div style={{ marginTop: footnote ? 16 : 22 }}>{belowContent}</div>
-          )}
         </div>
 
         {/* RIGHT — arch media + floating proof (+ optional belowMedia card) */}
         <div className="page-hero-media" style={{ position: "relative", justifySelf: "center", width: "100%", display: "flex", flexDirection: "column", alignItems: "center", gap: belowMedia ? "clamp(16px,2.4vh,28px)" : 0 }}>
-          {/* arch wrapper — floating proof cards position against THIS, not the column */}
-          <div style={{ position: "relative", display: "flex", justifyContent: "center" }}>
-            <div style={{ position: "relative", height: belowMedia ? "min(46vh, 440px)" : "min(60vh, 540px)", aspectRatio: aspect, maxWidth: "100%", borderRadius: ARCH_RADIUS, overflow: "hidden", background: archBg, boxShadow: dark ? "0 24px 60px rgba(0,0,0,0.5)" : "0 24px 60px rgba(28,30,30,0.16)" }}>
+          {/* arch wrapper — floating proof cards position against THIS, not the column.
+             In fill mode the wrapper spans the full column so the arch (width:100%)
+             sits flush to its edges and the cards anchor to the arch's true edges. */}
+          <div style={{ position: "relative", display: "flex", justifyContent: "center", width: fill ? "100%" : undefined }}>
+            {mediaSlot ? (
+              /* Bespoke media (e.g. gifts fanned-cards): transparent sized wrapper,
+                 NO arch box/overflow — lets the custom visual float & overflow freely.
+                 Same dimensions as the arch so the floating proof cards still anchor. */
+              <div style={{ position: "relative", width: fill ? "100%" : undefined, height: belowMedia ? "min(46vh, 440px)" : "min(60vh, 540px)", aspectRatio: aspect, maxWidth: "100%" }}>
+                {mediaSlot}
+              </div>
+            ) : (
+            <div style={fill
+              ? { position: "relative", width: "100%", aspectRatio: aspect, maxHeight: belowMedia ? "min(46vh, 440px)" : "min(60vh, 540px)", borderRadius: ARCH_RADIUS, overflow: "hidden", background: archBg, boxShadow: dark ? "0 24px 60px rgba(0,0,0,0.5)" : "0 24px 60px rgba(28,30,30,0.16)" }
+              : { position: "relative", height: belowMedia ? "min(46vh, 440px)" : "min(60vh, 540px)", aspectRatio: aspect, maxWidth: "100%", borderRadius: ARCH_RADIUS, overflow: "hidden", background: archBg, boxShadow: dark ? "0 24px 60px rgba(0,0,0,0.5)" : "0 24px 60px rgba(28,30,30,0.16)" }}>
               {media.type === "video" ? (
                 media.autoPlay ? (
                   <HeroAutoplayVideo radius={ARCH_RADIUS} src={media.src} poster={media.poster} alt={media.alt} objectFit={media.fit || "cover"} />
@@ -245,9 +264,10 @@ export default function PageHero({
                 <img src={media.src} alt={media.alt || "Carisma Aesthetics Malta"} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: media.fit || "cover", display: "block" }} />
               )}
             </div>
+            )}
 
             {/* doctor-led pill — top-left */}
-            <div className={`${glassClass} float-b`} style={{ position: "absolute", left: "clamp(-18px,-1.8vw,-4px)", top: "9%", borderRadius: 999, padding: "8px 14px", display: "flex", alignItems: "center", gap: 7, zIndex: 3, animationDelay: "-2.8s" }}>
+            <div className={`${glassClass} float-b`} style={{ position: "absolute", left: "clamp(-10px,-1vw,-2px)", top: "15%", borderRadius: 999, padding: "8px 14px", display: "flex", alignItems: "center", gap: 7, zIndex: 3, animationDelay: "-2.8s" }}>
               <span aria-hidden style={{ width: 16, height: 16, borderRadius: "50%", background: c.checkBg, display: "grid", placeItems: "center" }}>
                 <svg width="9" height="9" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke={c.check} strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" /></svg>
               </span>
@@ -255,13 +275,13 @@ export default function PageHero({
             </div>
 
             {/* stat card — bottom-left */}
-            <div className={`${glassClass} float-a`} style={{ position: "absolute", left: "clamp(-20px,-1.8vw,-2px)", bottom: "9%", borderRadius: 16, padding: "11px 16px", display: "flex", alignItems: "center", gap: 10, zIndex: 3 }}>
+            <div className={`${glassClass} float-a`} style={{ position: "absolute", left: "clamp(-14px,-1vw,0px)", bottom: "12%", borderRadius: 16, padding: "11px 16px", display: "flex", alignItems: "center", gap: 10, zIndex: 3 }}>
               <span style={{ fontFamily: SERIF, fontSize: 28, color: c.stat, lineHeight: 1 }}>{proof?.statValue || "30+"}</span>
               <span style={{ fontFamily: WIDE, fontSize: 9.5, letterSpacing: "0.08em", textTransform: "uppercase", color: c.statLabel, lineHeight: 1.3, maxWidth: 86 }}>{proof?.statLabel || "years in wellness"}</span>
             </div>
 
             {/* award / #1 voted — top-right */}
-            <div className={`${glassClass} float-b`} style={{ position: "absolute", right: "clamp(-18px,-1.2vw,-2px)", top: "5%", borderRadius: 16, padding: "10px 14px", display: "flex", alignItems: "center", gap: 10, maxWidth: 210, zIndex: 3 }}>
+            <div className={`${glassClass} float-b`} style={{ position: "absolute", right: "clamp(-12px,-0.5vw,4px)", top: "8%", borderRadius: 16, padding: "10px 14px", display: "flex", alignItems: "center", gap: 10, maxWidth: 210, zIndex: 3 }}>
               {proof?.awardSrc ? (
                 // eslint-disable-next-line @next/next/no-img-element
                 <img src={proof.awardSrc} alt="" aria-hidden style={{ width: 36, height: 36, borderRadius: "50%", flexShrink: 0 }} />

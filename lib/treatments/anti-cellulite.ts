@@ -4,7 +4,7 @@ const t: Treatment = {
   slug: "anti-cellulite",
   category: "Body",
   hero: {
-    title: "ADVANCED CELLULITE SMOOTHING",
+    title: "Advanced cellulite smoothing",
     subtitle: "cellulift & contour protocol",
     body: "Our cellulite protocol combines three VelaShape vacuum roller sessions with one lymphatic drainage massage to elminate cellulite, uneven texture, and boost circulation:",
     image: "/assets/treatments/ac-secret.png",
@@ -20,7 +20,7 @@ const t: Treatment = {
   },
 
   education: {
-    title: "smooth stubborn cellulite and uneven texture with precision",
+    title: "Smooth stubborn cellulite and uneven texture with precision",
     subtitle: "the secret to a more defined, confident look",
     paragraphs: [
       "You eat well, stay active, and take care of yourself — yet cellulite on your thighs, bum or hips still shows through. No matter how fit you feel, the uneven, dimpled texture can make certain outfits uncomfortable and affect your confidence. The scale may move, but the look of your skin doesn't.",
@@ -30,7 +30,7 @@ const t: Treatment = {
   },
 
   guarantee: {
-    title: "malta's trusted clinic for non surgical fat reduction",
+    title: "Malta's trusted clinic for non surgical fat reduction",
     paragraphs: [
       "CelluLift uses VelaShape III vacuum roller technology to target the structural causes of visible cellulite. Each session combines radiofrequency, infrared heat, vacuum suction and mechanical rollers to soften fibrous tissue, boost circulation and support lymphatic flow. This multi-action approach helps smooth uneven texture and improve the overall look and feel of the skin. Over the weeks following treatment, skin can appear more even, firmer and refined — particularly in areas prone to cellulite such as the thighs, hips and bum.",
     ],
@@ -50,7 +50,7 @@ const t: Treatment = {
   },
 
   experience: {
-    title: "VELASHAPE III (CELLULIFT PROTOCOL)",
+    title: "VelaShape III (CelluLift protocol)",
     steps: [
       {
         title: "TARGETED CELLULITE CONTOURING",
@@ -76,7 +76,7 @@ const t: Treatment = {
   },
 
   trusted: {
-    title: "malta's most advanced cellulite smoothing & contouring protocol",
+    title: "Malta's most advanced cellulite smoothing & contouring protocol",
     subtitle: "internationally renowned, fda-approved modalities",
     images: [
       "/assets/treatments/ac-research1.png",
@@ -102,7 +102,7 @@ const t: Treatment = {
 
   difference: {
     kicker: "the carisma difference",
-    title: "malta's #1 leading wellness chain",
+    title: "Malta's #1 leading wellness chain",
     commitmentTitle: "Our Commitment",
     commitment: [
       "Visible inch loss and shape change, not vague promises",
@@ -125,13 +125,13 @@ const t: Treatment = {
   },
 
   patientVideos: {
-    title: "Real Patients. Real Results.",
+    title: "Real patients. Real results.",
     intro: "Watch real patient videos from our anti-cellulite CelluLift treatments at Carisma Aesthetics Malta.",
     videos: ["/assets/treatments/vid-anti-cellulite.mp4"],
   },
 
   faqKicker: "anti-cellulite treatment FAQs",
-  faqTitle: "Frequently Asked Questions",
+  faqTitle: "Frequently asked questions",
   faq: [
     {
       q: "What is included in the CelluLift protocol?",

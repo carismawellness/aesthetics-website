@@ -136,9 +136,10 @@ export default function Header() {
     transition: "background 0.35s ease, box-shadow 0.35s ease",
   };
 
-  // CTA pill (slimming ctaStyle spec, exact px; green fill → teal-deep).
+  // CTA pill (slimming ctaStyle spec, exact px; green fill → teal-deep gradient).
   const ctaStyle: React.CSSProperties = {
-    backgroundColor: TEAL_FILL,
+    background: "linear-gradient(155deg, #639090 0%, #4f7373 45%, #365858 100%)",
+    boxShadow: "0 0 22px rgba(79,115,115,0.45), 0 8px 24px rgba(79,115,115,0.5)",
     color: "#ffffff",
     fontFamily: '"Novecento Wide", sans-serif',
     fontSize: "12px",
@@ -265,7 +266,7 @@ export default function Header() {
               <PhoneIcon />
               <span style={{ color: TEAL, fontFamily: '"Novecento Wide", sans-serif', fontSize: "13px", fontWeight: 600, letterSpacing: "0.5px" }}>{CONTACT.phoneDigits}</span>
             </a>
-            <Link href="/consultation" style={{ ...ctaStyle }}>free consultation</Link>
+            <Link href="/consultation" className="cta-glow-teal" style={{ ...ctaStyle }}>free consultation</Link>
           </div>
 
           {/* Mobile hamburger */}
@@ -382,7 +383,7 @@ export default function Header() {
             <Link
               href="/consultation"
               onClick={() => setOpen(false)}
-              className="block text-center w-full"
+              className="cta-glow-teal block text-center w-full"
               style={{ ...ctaStyle, marginTop: "10px", padding: "14px", fontSize: "13px" }}
             >
               free consultation
@@ -416,7 +417,7 @@ export default function Header() {
             >
               <Link
                 href="/consultation"
-                className="block text-center w-full"
+                className="cta-glow-teal block text-center w-full"
                 style={{ ...ctaStyle, padding: "14px", fontSize: "13px" }}
               >
                 Book Your Free Consultation

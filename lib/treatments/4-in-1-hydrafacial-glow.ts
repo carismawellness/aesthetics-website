@@ -31,7 +31,7 @@ const t: Treatment = {
     intro: "Do you ever look in the mirror and wonder where your glow went? Your skin feels dull, your pores seem clogged, and every product you try promises more than it delivers. You're not alone — healthy, radiant skin shouldn't feel out of reach. With our 4-in-1 Hydrafacial Glow treatment, your skin gets exactly what it needs: deep cleansing, gentle resurfacing, and lasting hydration — all designed for Maltese skin and real-world results. After just one session, you'll see (and feel) the difference: smoother texture, balanced tone, and that luminous glow you thought you'd lost. No filters, no downtime — just confidence that shines through.",
   },
   suitability: {
-    title: "CREATED FOR WOMEN WHO WANT THEIR SKIN TO GLOW — NATURALLY AND CONFIDENTLY.",
+    title: "Created for women who want their skin to glow — naturally and confidently.",
     suitableFor: [
       "Because you want skin that looks luminous, smooth, and deeply refreshed — even without makeup.",
       "Because you deserve a medical-grade facial that delivers visible results, not just promises.",
@@ -41,7 +41,7 @@ const t: Treatment = {
     ],
   },
   experience: {
-    title: "what to expect during your hydrafacial treatment?",
+    title: "What to expect during your Hydrafacial treatment?",
     steps: [
       {
         title: "BEFORE",
@@ -61,7 +61,7 @@ const t: Treatment = {
     ],
   },
   trusted: {
-    title: "MALTA'S TRUSTED CLINIC FOR RADIANT, HEALTHY SKIN",
+    title: "Malta's trusted clinic for radiant, healthy skin",
     asSeenOn: [
       "/assets/press/lovin-malta.jpeg",
       "/assets/press/malta-daily.png",
@@ -84,7 +84,7 @@ const t: Treatment = {
   },
   difference: {
     kicker: "the carisma difference",
-    title: "35+ YEARS HELPING MALTA GLOW WITH CONFIDENCE",
+    title: "35+ years helping Malta glow with confidence",
     commitmentTitle: "OUR COMMITMENT",
     commitment: [
       "Instant Radiance – Brighter, smoother skin after your first Hydrafacial session.",
@@ -101,7 +101,7 @@ const t: Treatment = {
     ],
     mapQuery: "Carisma Aesthetics, Malta",
   },
-  faqTitle: "faqs about hydrafacial in malta",
+  faqTitle: "FAQs about Hydrafacial in Malta",
   faq: [
     { q: "Who can benefit from Hydrafacial?", a: "Anyone looking to combat dryness, dullness, or dehydration in their skin can benefit from Hydrafacial. The treatments are suitable for various skin types and concerns." },
     { q: "How does Hydrafacial work?", a: "Hydrafacial work by delivering potent hydration deep into the skin using specialized techniques like dermal infusion, hyaluronic acid infusion, and custom serums. These treatments help improve skin texture, elasticity, and overall radiance." },

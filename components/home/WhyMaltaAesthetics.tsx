@@ -168,13 +168,12 @@ export default function WhyMaltaAesthetics() {
                 fontWeight: 400,
                 fontSize: "clamp(24px, 3.4vw, 38px)",
                 lineHeight: 1.2,
-                textTransform: "uppercase",
                 letterSpacing: "1px",
                 margin: "0 auto",
                 maxWidth: 760,
               }}
             >
-              Malta&rsquo;s #1 Voted Medical Aesthetics Clinic
+              Malta&rsquo;s #1 voted medical aesthetics clinic
             </h2>
 
             <div

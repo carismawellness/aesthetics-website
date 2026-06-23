@@ -4,7 +4,7 @@ const t: Treatment = {
   slug: "prp-malta",
   category: "Face",
   hero: {
-    title: "prp malta platelet rich plasma",
+    title: "PRP Malta platelet rich plasma",
     subtitle: "Looking for a natural way to rejuvenate your skin and promote healing?",
     body: "Is dull skin, thinning hair, or visible scarring holding you back? Rediscover radiant, youthful skin and thicker, healthier hair with our expert PRP treatment in Malta. Every session is performed by qualified doctors who harness the regenerative power of your own plasma rich platelets to stimulate collagen, accelerate healing, and deliver natural, lasting results from within.",
     prices: [
@@ -43,7 +43,7 @@ const t: Treatment = {
     additional: "Neck, decolletage, hands, acne scars, stretch marks, surgical scars",
   },
   suitability: {
-    title: "is this suitable for you?",
+    title: "Is this suitable for you?",
     intro: "This treatment uses your own blood to stimulate natural rejuvenation and collagen renewal. Because it works with your biology, there is no risk of allergic reaction. Results are gradual and best achieved through a course of three sessions.",
     suitableFor: [
       "You prefer a natural approach using your body's own growth factors",
@@ -61,7 +61,7 @@ const t: Treatment = {
     ],
   },
   experience: {
-    title: "your treatment experience",
+    title: "Your treatment experience",
     steps: [
       { title: "personalised consultation", desc: "We assess your skin or scalp condition, medical history, and PRP treatment goals with one of our doctors.", image: "/assets/treatments/prp-malta-step1.png" },
       { title: "Structured Plan", desc: "Your doctor designs a personalised treatment protocol tailored to your specific concerns whether facial rejuvenation, hair restoration, or a vampire facial.", image: "/assets/treatments/prp-malta-step2.png" },
@@ -72,7 +72,7 @@ const t: Treatment = {
   },
   prepAftercare: {
     kicker: "Preparation & Aftercare",
-    title: "your session, step by step",
+    title: "Your session, step by step",
     intro: "Your own blood provides the growth factors for natural regeneration. Here is how to support the process",
     cards: [
       {
@@ -111,12 +111,12 @@ const t: Treatment = {
     ],
   },
   patientVideos: {
-    title: "real patients, real confidence",
+    title: "Real patients, real confidence",
     intro: "Every journey is unique. Every story is personal. Discover how our patients describe their experience of natural skin rejuvenation and hair restoration at Carisma Aesthetics in Malta.",
     videos: ["/assets/treatments/vid-prp-malta.mp4"],
   },
   trusted: {
-    title: "malta's trusted clinic for prp treatment",
+    title: "Malta's trusted clinic for PRP treatment",
     subtitle: "Doctor-Led PRP Treatment in Malta",
     asSeenOn: ["/assets/press/lovin-malta.jpeg", "/assets/press/malta-daily.png", "/assets/press/bay.jpeg", "/assets/press/times-of-malta.png", "/assets/press/malta-today.jpg"],
     images: ["/assets/treatments/trusted-clinic-collage.png"],
@@ -130,7 +130,7 @@ const t: Treatment = {
   },
   difference: {
     kicker: "The Carisma Difference",
-    title: "malta’s #1 leading wellness chain",
+    title: "Malta’s #1 leading wellness chain",
     commitmentTitle: "our commitment",
     commitment: [
       "Natural, gradual results — restoration, not transformation",
@@ -149,13 +149,13 @@ const t: Treatment = {
   },
   bookingForm: { title: "BOOK YOUR PRP APPOINTMENT TODAY" },
   recommended: {
-    title: "recommended with prp treatment",
+    title: "Recommended with PRP treatment",
     items: [
       { label: "Microneedling", href: "/microneedling-malta", image: "/assets/treatments/rec-microneedling.jpg" },
-      { label: "mesotherapy", href: "/mesotherapy-malta", image: "/assets/treatments/rec-mesotherapy.jpg" },
+      { label: "Mesotherapy", href: "/mesotherapy-malta", image: "/assets/treatments/rec-mesotherapy.jpg" },
     ],
   },
-  faqTitle: "faqs about prp treatment in malta",
+  faqTitle: "FAQs about PRP treatment in Malta",
   faq: [
     {
       q: "What is PRP, and how does it work?",

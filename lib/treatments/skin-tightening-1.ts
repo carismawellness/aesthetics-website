@@ -4,7 +4,7 @@ const t: Treatment = {
   slug: "skin-tightening-1",
   category: "Body",
   hero: {
-    title: "VELASHAPE III IN MALTA",
+    title: "VelaShape III in Malta",
     subtitle: "4 in 1 skin tightening protocol",
     body: "Smoother, firmer, and tighter skin in 4 focused sessions. Our 4 in 1 course with the VelaShape III uses radiofrequency, infrared heat, vacuum and mechanical massage together to stimulate collagen to tighten and smoothen your skin.",
     image: "/assets/treatments/st-feat1.png",
@@ -29,7 +29,7 @@ const t: Treatment = {
     ],
   },
   trusted: {
-    title: "malta's trusted clinic for non surgical fat reduction",
+    title: "Malta's trusted clinic for non surgical fat reduction",
     images: [
       "/assets/treatments/st-feat1.png",
       "/assets/treatments/st-feat2.png",
@@ -56,7 +56,7 @@ const t: Treatment = {
     ],
   },
   experience: {
-    title: "malta's most effective 4-in-1 skin tightening starter protocol",
+    title: "Malta's most effective 4-in-1 skin tightening starter protocol",
     steps: [
       {
         title: "Targeted SKIN TIGHTENING",
@@ -78,7 +78,7 @@ const t: Treatment = {
   },
   difference: {
     kicker: "the carisma difference",
-    title: "malta's #1 leading wellness chain",
+    title: "Malta's #1 leading wellness chain",
     commitmentTitle: "our commitment",
     commitment: [
       "Visible inch loss and shape change, not vague promises",

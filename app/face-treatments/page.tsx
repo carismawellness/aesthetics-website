@@ -28,7 +28,7 @@ export default function FaceTreatmentsPage() {
         badge="#1 Voted Med-Aesthetics Clinic"
         eyebrow={FACE_LISTING.eyebrow}
         headline={[
-          { text: "Considered Facial Aesthetics" },
+          { text: "Considered facial aesthetics" },
           { text: "in Malta", em: true },
         ]}
         sub={FACE_LISTING.subhead}

@@ -147,7 +147,7 @@ export default function StickyCta({ freshaHref, priceLabel, ctaLabel, secondaryH
           href={freshaHref}
           {...(/^https?:\/\//.test(freshaHref) ? { target: "_blank", rel: "noopener noreferrer" } : {})}
           aria-label={ctaLabel}
-          className="font-display"
+          className="font-display cta-glow-teal"
           style={{
             flex: "0 0 auto",
             display: "inline-flex",
@@ -156,14 +156,14 @@ export default function StickyCta({ freshaHref, priceLabel, ctaLabel, secondaryH
             minHeight: 44,
             padding: "12px 20px",
             borderRadius: "999px",
-            background: "var(--teal-deep)",
-            color: "var(--white)",
+            background: "linear-gradient(155deg, #639090 0%, #4f7373 45%, #365858 100%)",
+            color: "#fff",
             fontSize: "12px",
             letterSpacing: "0.12em",
             textTransform: "uppercase",
             textDecoration: "none",
             whiteSpace: "nowrap",
-            boxShadow: "0 6px 18px rgba(var(--teal-rgb), 0.45)",
+            boxShadow: "0 0 22px rgba(79,115,115,0.45), 0 8px 24px rgba(79,115,115,0.5)",
           }}
         >
           {ctaLabel}

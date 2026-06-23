@@ -63,42 +63,42 @@ export type Service = {
 
 export const HOME_SERVICES: Service[] = [
   {
-    label: "botox",
+    label: "Botox",
     href: "/wrinkle-relaxing-malta",
     image: "/assets/service-botox.png",
     photo: "/assets/treatments/botox-hero.jpg",
     blurb: "Smooth expression lines and soften wrinkles with precise, natural-looking anti-wrinkle injections.",
   },
   {
-    label: "lip fillers",
+    label: "Lip fillers",
     href: "/lip-fillers-malta",
     image: "/assets/service-lip-fillers.png",
     photo: "/assets/treatments/lip-fillers-malta-hero.png",
     blurb: "Define, hydrate and subtly enhance your lips for a balanced, beautifully proportioned pout.",
   },
   {
-    label: "dermal fillers",
+    label: "Dermal fillers",
     href: "/dermal-fillers-malta",
     image: "/assets/service-dermal-fillers.png",
     photo: "/assets/treatments/dermal-fillers-malta-hero.png",
     blurb: "Restore lost volume and refine facial contours for a refreshed, harmonious profile.",
   },
   {
-    label: "collagen boost",
+    label: "Collagen boost",
     href: "/collagen-stimulator-malta",
     image: "/assets/service-collagen.png",
     photo: "/assets/treatments/collagen-stimulator-malta-hero.png",
     blurb: "Stimulate your skin's own collagen for firmer, more youthful texture over time.",
   },
   {
-    label: "microneedling",
+    label: "Microneedling",
     href: "/microneedling-malta",
     image: "/assets/service-microneedling.png",
     photo: "/assets/treatments/microneedling-malta-hero.png",
     blurb: "Refine pores, scars and tone with controlled micro-channels that renew your skin.",
   },
   {
-    label: "mesotherapy",
+    label: "Mesotherapy",
     href: "/mesotherapy-malta",
     image: "/assets/service-mesotherapy.png",
     photo: "/assets/treatments/mesotherapy-malta-hero.png",
@@ -112,35 +112,35 @@ export const HOME_SERVICES: Service[] = [
     blurb: "Harness your body's own platelets to regenerate skin and revive natural radiance.",
   },
   {
-    label: "thread lift",
+    label: "Thread lift",
     href: "/thread-lift-malta",
     image: "/assets/service-thread-lift.png",
     photo: "/assets/treatments/thread-lift-malta-hero.avif",
     blurb: "Gently lift and reposition sagging skin with dissolvable threads — no surgery required.",
   },
   {
-    label: "chemical peel",
+    label: "Chemical peel",
     href: "/chemical-peels-malta",
     image: "/assets/service-chemical-peel.png",
     photo: "/assets/treatments/chemical-peels-malta-hero.png",
     blurb: "Resurface dull, uneven skin to reveal a brighter, smoother and more even complexion.",
   },
   {
-    label: "fat dissolving",
+    label: "Fat dissolving",
     href: "/fat-dissolving-malta",
     image: "/assets/service-fat-dissolving.png",
     photo: "/assets/treatments/fat-dissolving-hero.jpg",
     blurb: "Target stubborn pockets of fat under the chin and body for a sculpted, defined contour.",
   },
   {
-    label: "hydrafacial",
+    label: "Hydrafacial",
     href: "/hydrafacial",
     image: "/assets/service-hydrafacial.png",
     photo: "/assets/treatments/hydrafacial-hero.jpg",
     blurb: "Cleanse, exfoliate and deeply hydrate in one luxurious treatment for instant glow.",
   },
   {
-    label: "laser hair removal",
+    label: "Laser hair removal",
     href: "/laser-hair-removal-malta",
     image: "/assets/service-laser.png",
     photo: "/assets/treatments/laser-hero.png",
@@ -165,7 +165,7 @@ export type Doctor = {
 
 export const DOCTORS: Doctor[] = [
   {
-    name: "dr. giovanni scornavacca",
+    name: "Dr. Giovanni Scornavacca",
     title: "Italian aesthetic doctor at Carisma Aesthetics",
     bio: [
       "Dr. Giovanni is an Italian aesthetic doctor at Carisma Aesthetics, trained and practiced for years in Italy with continued advanced education across leading universities in Rome, Bologna and other centres. He specialises in aesthetic medicine with a particular interest in regenerative approaches such as PRP, stem cells, pairing medical rigour with a calm, human manner.",
@@ -175,7 +175,7 @@ export const DOCTORS: Doctor[] = [
     image: "/assets/doctor-giovanni.png",
   },
   {
-    name: "dr. francesca CHIRCOP",
+    name: "Dr. Francesca Chircop",
     title: "London-trained aesthetic doctor",
     bio: [
       "Dr. Francesca is a London-trained aesthetic doctor with eight years in medical aesthetics and a foundation in orthopaedic surgery, bringing precise anatomical insight to subtle, balanced results. Her philosophy is restoration, not change: every consultation begins with listening to your story and how you want to feel in your skin before shaping a conservative, personalised plan that prioritises safety, clarity, and natural harmony.",
@@ -184,7 +184,7 @@ export const DOCTORS: Doctor[] = [
     image: "/assets/doctor-francesca.png",
   },
   {
-    name: "dr. zaid teebi",
+    name: "Dr. Zaid Teebi",
     title: "Medical consultant",
     bio: [
       "Dr Zaid Teebi, a medical consultant with over 30 years experience in medical practice. He holds credentials in general medicine, geriatrics, and has specialised allergy training, allowing him to combine broad clinical insight with focused allergy care. In addition, he obtained a certificate in Sports Medicine from the American College of Sports Medicine. He followed a course in Allergy and allergy therapy at the Imperial College London (UK).",

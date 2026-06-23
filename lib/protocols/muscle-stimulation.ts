@@ -30,7 +30,7 @@ export const muscleStimulation: ProtocolData = {
     video: `${A}/vid-muscle-stimulation-1.mp4`,
   },
   secret: {
-    heading: "THE SECRET TO A MORE DEFINED, CONFIDENT LOOK",
+    heading: "The secret to a more defined, confident look",
     sub: "SCULPT, TIGHTEN AND DEFINE STUBBORN AREAS WITH PRECISION",
     image: `${A}/ms-secret.png`,
     paragraphs: [
@@ -46,8 +46,8 @@ export const muscleStimulation: ProtocolData = {
     cta: "Claim your spot now",
   },
   trusted: {
-    heading: "MALTA’S TRUSTED CLINIC FOR",
-    headingSub: "NON SURGICAL FAT REDUCTION",
+    heading: "Malta’s trusted clinic for",
+    headingSub: "Non surgical fat reduction",
     pressLogos: PRESS,
     features: [
       { icon: `${A}/ms-feat1.png`, label: "TARGETED BODY SCULPTING", desc: "Focus on the areas that matter most tummy, hips, bum or thighs using targeted EMSculpt Neo technology to improve muscle definition and firmness where exercise often falls short." },
@@ -58,15 +58,15 @@ export const muscleStimulation: ProtocolData = {
   },
   eligibility: {
     kicker: "eligibility criteria",
-    heading: "selective by intention successful by design",
+    heading: "Selective by intention successful by design",
     image: `${A}/ms-eligibility.png`,
     areasIntro: "Treat visible fat bulges in 7 areas of the body",
     areas: ["ABDOMEN / CORE", "GLUTES / BUTTOCKS", "THIGHS (FRONT AND BACK)", "CALVES", "UPPER ARMS (BICEPS AND TRICEPS)"],
   },
   modality: {
     kicker: "our technology",
-    heading: "internationally renowned, fda-approved modalities",
-    name: "emsculpt neo",
+    heading: "Internationally renowned, FDA-approved modalities",
+    name: "EMSculpt Neo",
     tag: "Muscle strengthening, tone & metabolic support",
     tagSub: "Proven efficacy",
     baImage: `${A}/ms-ba.png`,
@@ -81,7 +81,7 @@ export const muscleStimulation: ProtocolData = {
   },
   difference1: {
     kicker: "the carisma difference",
-    heading: "we are not another diet clinic.",
+    heading: "We are not another diet clinic.",
     intro: "We’re a doctor led transformation program that blends medical insight, sustainable nutrition, and modern body tech into one high touch system, so you don’t just lose weight, you step into your strongest form.",
     bullets: [
       "Doctor led: full medical check and body scan",
@@ -93,7 +93,7 @@ export const muscleStimulation: ProtocolData = {
     ],
   },
   starterPack: {
-    heading: "malta’s only dual technology starter pack for stubborn fat",
+    heading: "Malta’s only dual technology starter pack for stubborn fat",
     cols: [
       { title: "Targeted BODY SCULPTING", desc: "EMSculpt Neo sessions are focused on your main problem areas — such as the tummy, hips, bum or thighs — delivering powerful muscle contractions to areas that are hard to tone naturally." },
       { title: "Visible, TRACKABLE DEFINITION", desc: "Muscle engagement you can feel and results you can see. Improved firmness and definition show in clothes and posture, not just on the scale." },
@@ -111,7 +111,7 @@ export const muscleStimulation: ProtocolData = {
   },
   difference2: {
     kicker: "the carisma difference",
-    heading: "malta’s #1 leading wellness chain",
+    heading: "Malta’s #1 leading wellness chain",
     commitmentTitle: "our commitment",
     commitment: [
       "Visible inch loss and shape change, not vague promises",
@@ -143,7 +143,7 @@ export const muscleStimulation: ProtocolData = {
   ],
   research: {
     heading: "CLINICAL RESEARCH: BASIS OF OUR METhODOLOGY",
-    sub: "EVIDENCE BASED APPROACH",
+    sub: "Evidence based approach",
     cards: [
       {
         image: `${A}/ms-research1.png`,

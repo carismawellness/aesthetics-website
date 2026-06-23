@@ -113,7 +113,6 @@ function DoctorCard({ doctor, index }: { doctor: Doctor; index: number }) {
             fontWeight: 400,
             fontSize: 'clamp(19px,2vw,23px)',
             lineHeight: 1.2,
-            textTransform: 'uppercase',
             letterSpacing: 0.3,
             margin: 0,
           }}
@@ -272,12 +271,11 @@ export default function DoctorsSection() {
               fontWeight: 400,
               fontSize: 'clamp(28px,4.4vw,44px)',
               lineHeight: 1.12,
-              textTransform: 'uppercase',
               letterSpacing: 0.5,
               margin: '10px 0 0',
             }}
           >
-            Meet Your Doctors
+            Meet your doctors
           </h2>
           <p
             style={{

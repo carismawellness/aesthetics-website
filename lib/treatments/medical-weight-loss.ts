@@ -4,7 +4,7 @@ const t: Treatment = {
   slug: "medical-weight-loss",
   category: "Body",
   hero: {
-    title: "doctor-led ozempic & mounjaro in malta",
+    title: "Doctor-led Ozempic & Mounjaro in Malta",
     subtitle: "Considering Ozempic or Mounjaro for weight loss?",
     body: "At Carisma Aesthetics, GLP-1 medications are never prescribed in isolation. Our doctor-led programme combines a full medical assessment, structured prescription support, nutrition guidance, and weekly monitoring to help you lose weight safely and sustain your results.",
     cta: "book your medical consultation",
@@ -17,7 +17,7 @@ const t: Treatment = {
     notIdeal: ["Eating disorders", "Very lean patients", "Those unwilling to attend check-ins", "Currently pregnant or trying to conceive"],
   },
   experience: {
-    title: "how it works",
+    title: "How it works",
     steps: [
       { title: "Your Ozempic & Mounjaro consultation", desc: "Every programme starts with a full in-clinic consultation. This is where we determine if Ozempic or Mounjaro is clinically appropriate for you. Because we stand behind your results, we are selective about who we prescribe to." },
     ],

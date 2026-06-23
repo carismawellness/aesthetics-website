@@ -26,10 +26,9 @@ export default function FadeInk() {
                 letterSpacing: "0.06em",
                 fontWeight: 400,
                 lineHeight: 1.3,
-                textTransform: "uppercase",
               }}
             >
-              Fade Unwanted Ink. Feel More Like You.
+              Fade unwanted ink. Feel more like you.
             </h2>
 
             <p

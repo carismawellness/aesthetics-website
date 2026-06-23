@@ -31,7 +31,7 @@ export const fatFreezing: ProtocolData = {
     video: `${A}/vid-fat-freezing.mp4`,
   },
   secret: {
-    heading: "the secret to a more defined, confident look",
+    heading: "The secret to a more defined, confident look",
     sub: "shrink love handles & target stubborn fat pockets with precision",
     image: `${A}/ff-secret.png`,
     paragraphs: [
@@ -47,8 +47,8 @@ export const fatFreezing: ProtocolData = {
     cta: "Claim your spot now",
   },
   trusted: {
-    heading: "malta’s trusted clinic for",
-    headingSub: "non surgical fat reduction",
+    heading: "Malta’s trusted clinic for",
+    headingSub: "Non surgical fat reduction",
     pressLogos: PRESS,
     features: [
       { icon: `${A}/ff-feat1.png`, label: "TARGETED CONTOURING", desc: "Focus on your biggest trouble spot first so love handles, lower belly or double chin start to look smoother in clothes and photos." },
@@ -59,15 +59,15 @@ export const fatFreezing: ProtocolData = {
   },
   eligibility: {
     kicker: "eligibility criteria",
-    heading: "selective by intention successful by design",
+    heading: "Selective by intention successful by design",
     image: `${A}/ff-eligibility.png`,
     areasIntro: "Treat visible fat bulges in 7 areas of the body",
     areas: ["STOMACH - BELLY FAT", "Love handles", "upper arms", "thighs", "banana roll", "back fat, bra fat", "DOUBLE CHIN / THE JAWLINE"],
   },
   modality: {
     kicker: "package treatments",
-    heading: "malta’s only multidisciplinary approach to weightloss",
-    name: "coolsculpting",
+    heading: "Malta’s only multidisciplinary approach to weightloss",
+    name: "CoolSculpting",
     tag: "targeted-fat reduction",
     tagSub: "Proven efficacy",
     baImage: `${A}/ff-ba.png`,
@@ -82,7 +82,7 @@ export const fatFreezing: ProtocolData = {
   },
   difference1: {
     kicker: "the carisma difference",
-    heading: "we are not another diet clinic.",
+    heading: "We are not another diet clinic.",
     intro: "We’re a doctor led transformation program that blends medical insight, sustainable nutrition, and modern body tech into one high touch system, so you don’t just lose weight, you step into your strongest form.",
     bullets: [
       "Doctor led: full medical check and body scan",
@@ -94,7 +94,7 @@ export const fatFreezing: ProtocolData = {
     ],
   },
   starterPack: {
-    heading: "malta’s only dual technology starter pack for stubborn fat",
+    heading: "Malta’s only dual technology starter pack for stubborn fat",
     cols: [
       { title: "Targeted contouring", desc: "CoolSculpting plus Lemon Bottle injections in one visit for your number one trouble spot." },
       { title: "Visible, trackable change", desc: "Local fat reduction where you actually see it in clothes and photos, not just on the scale." },
@@ -112,7 +112,7 @@ export const fatFreezing: ProtocolData = {
   },
   difference2: {
     kicker: "the carisma difference",
-    heading: "malta’s #1 leading wellness chain",
+    heading: "Malta’s #1 leading wellness chain",
     commitmentTitle: "our commitment",
     commitment: [
       "Visible inch loss and shape change, not vague promises",
@@ -144,7 +144,7 @@ export const fatFreezing: ProtocolData = {
   ],
   research: {
     heading: "CLINICAL RESEARCH: BASIS OF OUR METHODOLOGY",
-    sub: "evidence based approach",
+    sub: "Evidence based approach",
     cards: [
       {
         image: `${A}/ff-research1.png`,

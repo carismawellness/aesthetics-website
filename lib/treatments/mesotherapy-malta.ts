@@ -4,7 +4,7 @@ const t: Treatment = {
   slug: "mesotherapy-malta",
   category: "Face",
   hero: {
-    title: "mesotherapy & skin boosters",
+    title: "Mesotherapy & skin boosters",
     subtitle: "Are you seeking a brighter, smoother, and more youthful complexion?",
     body: "Looking for a non-invasive way to rejuvenate your skin? Our Mesotherapy treatments in Malta can help! Our team uses a personalized blend of skin boosters (hyaluronic acid), vitamins, minerals, and amino acids to restore your skin's natural radiance and vitality.",
     prices: [
@@ -46,7 +46,7 @@ const t: Treatment = {
     additional: "Scalp, hands, inner arms, acne-prone zones, dull skin patches, lip area",
   },
   suitability: {
-    title: "is this suitable for you?",
+    title: "Is this suitable for you?",
     intro: "Mesotherapy delivers vitamins, minerals, and hyaluronic acid directly into the skin for targeted nourishment. Results are cumulative, meaning each session builds on the last. A course-based approach delivers the most visible improvement.",
     suitableFor: [
       "Your skin looks dull, tired, or dehydrated and you want a visible boost",
@@ -64,7 +64,7 @@ const t: Treatment = {
     ],
   },
   experience: {
-    title: "your treatment experience", cta: "BOOK YOUR FREE CONSULTATION",
+    title: "Your treatment experience", cta: "BOOK YOUR FREE CONSULTATION",
     steps: [
       { title: "personalised consultation", desc: "We assess your facial anatomy, skin condition, medical history, and mesotherapy goals with one of our doctors.", image: "/assets/treatments/botox-step1.png" },
       { title: "Structured Plan", desc: "Your doctor designs a medically guided mesotherapy plan tailored to your facial structure and desired outcome.", image: "/assets/treatments/botox-step2.png" },
@@ -113,7 +113,7 @@ const t: Treatment = {
     ],
   },
   patientVideos: {
-    title: "real patients, real confidence",
+    title: "Real patients, real confidence",
     intro: "Every face is unique. Every story is personal. Discover how our mesotherapy patients describe their journey to refined, natural results at Carisma Aesthetics in Malta.",
     videos: [
       "/assets/treatments/vid-mesotherapy-malta-1.mp4",
@@ -122,7 +122,7 @@ const t: Treatment = {
     ],
   },
   trusted: {
-    title: "malta's trusted clinic for mesotherapy",
+    title: "Malta's trusted clinic for mesotherapy",
     subtitle: "DOCTOR-LED mesotherapy IN MALTA",
     asSeenOn: ["/assets/press/lovin-malta.jpeg", "/assets/press/malta-daily.png", "/assets/press/bay.jpeg", "/assets/press/times-of-malta.png", "/assets/press/malta-today.jpg"],
     images: ["/assets/treatments/trusted-clinic-collage.png"],
@@ -136,7 +136,7 @@ const t: Treatment = {
   },
   difference: {
     kicker: "the carisma difference",
-    title: "malta’s #1 leading wellness chain",
+    title: "Malta’s #1 leading wellness chain",
     commitmentTitle: "our commitment",
     commitment: [
       "Natural, refined mesotherapy results, never overdone",
@@ -155,12 +155,12 @@ const t: Treatment = {
   },
   bookingForm: { title: "BOOK YOUR mesotherapy APPOINTMENT TODAY" },
   recommended: {
-    title: "recommended with mesotherapy",
+    title: "Recommended with mesotherapy",
     items: [
-      { label: "COLLAGEN STIMULATOR", href: "/collagen-stimulator-malta", image: "/assets/treatments/mesotherapy-malta-rec-collagen.avif" },
-      { label: "prp", href: "/prp-malta", image: "/assets/treatments/mesotherapy-malta-rec-prp.avif" },
-      { label: "microneedling", href: "/microneedling-malta", image: "/assets/treatments/mesotherapy-malta-rec-microneedling.avif" },
-      { label: "chemical peels", href: "/chemical-peels-malta", image: "/assets/treatments/mesotherapy-malta-rec-chemical-peels.avif" },
+      { label: "Collagen stimulator", href: "/collagen-stimulator-malta", image: "/assets/treatments/mesotherapy-malta-rec-collagen.avif" },
+      { label: "PRP", href: "/prp-malta", image: "/assets/treatments/mesotherapy-malta-rec-prp.avif" },
+      { label: "Microneedling", href: "/microneedling-malta", image: "/assets/treatments/mesotherapy-malta-rec-microneedling.avif" },
+      { label: "Chemical peels", href: "/chemical-peels-malta", image: "/assets/treatments/mesotherapy-malta-rec-chemical-peels.avif" },
     ],
   },
   faqTitle: "Frequently asked questions",

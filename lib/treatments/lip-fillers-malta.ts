@@ -9,7 +9,7 @@ const t: Treatment = {
   slug: "lip-fillers-malta",
   category: "Face",
   hero: {
-    title: "lip fillers malta",
+    title: "Lip fillers Malta",
     subtitle: "Are you looking to achieve fuller, more luscious lips?",
     body: "Get plump and luscious lips with our expert lip fillers in Malta. Say goodbye to thin lips and hello to the perfect pout.",
     prices: [{ label: "1ml", price: "from €219/ml" }],
@@ -47,7 +47,7 @@ const t: Treatment = {
     additional: "Philtrum columns, oral commissures, perioral lines, lip flip, smoker's lines, marionette area",
   },
   suitability: {
-    title: "is this suitable for you?",
+    title: "Is this suitable for you?",
     intro: "Lip enhancement is not one-size-fits-all. The right approach depends on your natural lip shape, facial proportions, and the result you are hoping for. We always start conservatively and build from there.",
     suitableFor: [
       "You want subtle enhancement that complements your natural features",
@@ -65,7 +65,7 @@ const t: Treatment = {
     ],
   },
   experience: {
-    title: "your treatment experience", cta: "BOOK YOUR FREE CONSULTATION",
+    title: "Your treatment experience", cta: "BOOK YOUR FREE CONSULTATION",
     steps: [
       { title: "personalised consultation", desc: "We assess your facial anatomy, skin condition, medical history, and lip filler goals with one of our doctors.", image: "/assets/treatments/botox-step1.png" },
       { title: "Structured Plan", desc: "Your doctor designs a medically guided lip filler plan tailored to your facial structure and desired outcome.", image: "/assets/treatments/botox-step2.png" },
@@ -114,12 +114,12 @@ const t: Treatment = {
     ],
   },
   patientVideos: {
-    title: "real patients, real confidence",
+    title: "Real patients, real confidence",
     intro: "Every face is unique. Every story is personal. Discover how our lip fillers patients describe their journey to refined, natural results at Carisma Aesthetics in Malta.",
     videos: ["/assets/treatments/lip-fillers-malta-video1.mp4", "/assets/treatments/lip-fillers-malta-video2.mp4", "/assets/treatments/lip-fillers-malta-video3.mp4"],
   },
   trusted: {
-    title: "malta's trusted clinic for lip fillers",
+    title: "Malta's trusted clinic for lip fillers",
     subtitle: "DOCTOR-LED lip fillers IN MALTA",
     asSeenOn: ["/assets/press/lovin-malta.jpeg", "/assets/press/malta-daily.png", "/assets/press/bay.jpeg", "/assets/press/times-of-malta.png", "/assets/press/malta-today.jpg"],
     images: ["/assets/treatments/trusted-clinic-collage.png"],
@@ -133,7 +133,7 @@ const t: Treatment = {
   },
   difference: {
     kicker: "the carisma difference",
-    title: "malta's #1 leading wellness chain",
+    title: "Malta's #1 leading wellness chain",
     commitmentTitle: "our commitment",
     commitment: [
       "Natural, refined lip fillers results, never overdone, never frozen",
@@ -152,15 +152,15 @@ const t: Treatment = {
   },
   bookingForm: { title: "BOOK YOUR lip fillers APPOINTMENT TODAY" },
   recommended: {
-    title: "recommended with lip fillers",
+    title: "Recommended with lip fillers",
     items: [
       { label: "Dermal fillers", href: "/dermal-fillers-malta", image: "/assets/treatments/lip-fillers-malta-rec-dermal-fillers.png" },
       { label: "Microneedling", href: "/microneedling-malta", image: "/assets/treatments/lip-fillers-malta-rec-microneedling.png" },
-      { label: "botox", href: "/wrinkle-relaxing-malta", image: "/assets/treatments/lip-fillers-malta-rec-botox.png" },
-      { label: "collagen stimulator", href: "/collagen-stimulator-malta", image: "/assets/treatments/lip-fillers-malta-rec-collagen.png" },
+      { label: "Botox", href: "/wrinkle-relaxing-malta", image: "/assets/treatments/lip-fillers-malta-rec-botox.png" },
+      { label: "Collagen stimulator", href: "/collagen-stimulator-malta", image: "/assets/treatments/lip-fillers-malta-rec-collagen.png" },
     ],
   },
-  faqTitle: "faqs about lip-fillers in malta",
+  faqTitle: "FAQs about lip-fillers in Malta",
   faq: [
     { q: "What are lip fillers, and how do they work?", a: "Lip fillers are a cosmetic treatment that involves injecting a dermal filler, typically made of hyaluronic acid, into the lips to add volume and enhance their shape. Hyaluronic acid is a naturally occurring substance in the body that helps to hydrate and plump the skin, and it can be used to add volume to the lips, smooth fine lines and wrinkles around the mouth, and improve lip symmetry." },
     { q: "What are the benefits of lip fillers?", a: "Lip fillers can improve the appearance of the lips in many ways, including adding volume, enhancing their shape, smoothing fine lines and wrinkles around the mouth, and improving lip symmetry." },

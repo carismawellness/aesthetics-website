@@ -117,7 +117,7 @@ function ClarityCard({
 
 export default function ClarityGrid({
   kicker = "Honest expectations",
-  title = "What It Does — and What It Won't",
+  title = "What it does — and what it won't",
   sub,
   does,
   doesnt,

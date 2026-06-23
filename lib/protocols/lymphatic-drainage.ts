@@ -29,7 +29,7 @@ export const lymphaticDrainage: ProtocolData = {
     video: `${A}/vid-lympathic-drainage.mp4`,
   },
   secret: {
-    heading: "the secret to a more defined, confident look",
+    heading: "The secret to a more defined, confident look",
     sub: "when hunger, not willpower, is holding you back",
     image: `${A}/lympathic-drainage-secret.png`,
     paragraphs: [
@@ -46,8 +46,8 @@ export const lymphaticDrainage: ProtocolData = {
     cta: "Claim Your Spot Now",
   },
   trusted: {
-    heading: "malta’s trusted clinic for",
-    headingSub: "medical lymphatic drainage therapy",
+    heading: "Malta’s trusted clinic for",
+    headingSub: "Medical lymphatic drainage therapy",
     pressLogos: PRESS,
     features: [
       { icon: `${A}/lympathic-drainage-feat1.png`, label: "MEDICALLY GUIDED APPROACH", desc: "Your lymphatic drainage treatment is overseen by medical professionals, with careful assessment of your health history to ensure the therapy is safe, appropriate, and effective for your body." },
@@ -58,7 +58,7 @@ export const lymphaticDrainage: ProtocolData = {
   },
   eligibility: {
     kicker: "Benefits of lymphatic drainage",
-    heading: "what is all the hype with debloating",
+    heading: "What is all the hype with debloating",
     image: `${A}/lympathic-drainage-benefits.png`,
     areasIntro: "SUPPORTS DETOXIFICATION, CIRCULATION & FLUID BALANCE",
     areas: [
@@ -71,7 +71,7 @@ export const lymphaticDrainage: ProtocolData = {
   modality: {
     kicker: "",
     heading: "",
-    name: "lymphatic drainage therapy",
+    name: "Lymphatic drainage therapy",
     tag: "",
     tagSub: "",
     baImage: `${A}/lympathic-drainage-consultation.jpg`,
@@ -86,7 +86,7 @@ export const lymphaticDrainage: ProtocolData = {
   },
   difference1: {
     kicker: "the carisma difference",
-    heading: "we are not another diet clinic.",
+    heading: "We are not another diet clinic.",
     intro: "We’re a doctor led transformation program that blends medical insight, sustainable nutrition, and modern body tech into one high touch system, so you don’t just lose weight, you step into your strongest form.",
     bullets: [
       "Doctor led: full medical check and body scan",
@@ -114,7 +114,7 @@ export const lymphaticDrainage: ProtocolData = {
   },
   difference2: {
     kicker: "the carisma difference",
-    heading: "malta’s #1 leading wellness chain",
+    heading: "Malta’s #1 leading wellness chain",
     commitmentTitle: "our commitment",
     commitment: [
       "Visible inch loss and shape change, not vague promises",
@@ -144,7 +144,7 @@ export const lymphaticDrainage: ProtocolData = {
   ],
   research: {
     heading: "CLINICAL RESEARCH: BASIS OF OUR METODOLOGY",
-    sub: "evidence based approach",
+    sub: "Evidence based approach",
     cards: [
       {
         image: `${A}/lympathic-drainage-research1.png`,

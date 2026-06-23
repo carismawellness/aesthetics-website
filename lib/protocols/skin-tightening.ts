@@ -31,7 +31,7 @@ export const skinTightening: ProtocolData = {
     video: `${A}/vid-skin-tightening-1.mp4`,
   },
   secret: {
-    heading: "the secret to a more defined, confident look",
+    heading: "The secret to a more defined, confident look",
     sub: "tighten loose skin and smooth stubborn areas without surgery",
     image: `${A}/st-secret.png`,
     paragraphs: [
@@ -47,8 +47,8 @@ export const skinTightening: ProtocolData = {
     cta: "claim your spot now",
   },
   trusted: {
-    heading: "malta’s trusted clinic for",
-    headingSub: "non surgical fat reduction",
+    heading: "Malta’s trusted clinic for",
+    headingSub: "Non surgical fat reduction",
     pressLogos: PRESS,
     features: [
       { icon: `${A}/st-feat1.png`, label: "TARGETED SKIN TIGHTENING", desc: "Focus on your biggest trouble spot first so love handles, lower belly or double chin start to look smoother in clothes and photos." },
@@ -59,15 +59,15 @@ export const skinTightening: ProtocolData = {
   },
   eligibility: {
     kicker: "eligibility criteria",
-    heading: "selective by intention successful by design",
+    heading: "Selective by intention successful by design",
     image: `${A}/st-eligibility.png`,
     areasIntro: "Treat visible fat bulges in 7 areas of the body",
     areas: ["TUMMY / ABDOMEN", "NECK", "ARMS", "BUTTOCKS AND UNDER-BUTT CREASE", "THIGHS (FRONT, BACK, INNER AND OUTER)"],
   },
   modality: {
     kicker: "our technology",
-    heading: "internationally renowned, fda-approved modalities",
-    name: "VELASHAPE III",
+    heading: "Internationally renowned, FDA-approved modalities",
+    name: "VelaShape III",
     tag: "Smooths cellulite, tightens skin and improves contour in one comfortable treatment.",
     tagSub: "Muscle strengthening, tone & metabolic support",
     baImage: `${A}/st-ba.png`,
@@ -82,7 +82,7 @@ export const skinTightening: ProtocolData = {
   },
   difference1: {
     kicker: "the carisma difference",
-    heading: "we are not another diet clinic.",
+    heading: "We are not another diet clinic.",
     intro: "We’re a doctor led transformation program that blends medical insight, sustainable nutrition, and modern body tech into one high touch system, so you don’t just lose weight, you step into your strongest form.",
     bullets: [
       "Doctor led: full medical check and body scan",
@@ -94,7 +94,7 @@ export const skinTightening: ProtocolData = {
     ],
   },
   starterPack: {
-    heading: "malta’s most effective 4-in-1 skin tightening starter protocol",
+    heading: "Malta’s most effective 4-in-1 skin tightening starter protocol",
     cols: [
       { title: "Targeted SKIN TIGHTENING", desc: "Four focused VelaShape III sessions designed to treat one or more priority areas such as the tummy, hips, thighs or bum, depending on your goals." },
       { title: "Visible, NOTICEABLE IMPROVEMENT", desc: "Skin feels firmer and smoother over the course of treatments, with improvements you can see in clothes and feel to the touch — not just on a machine." },
@@ -112,7 +112,7 @@ export const skinTightening: ProtocolData = {
   },
   difference2: {
     kicker: "the carisma difference",
-    heading: "malta’s #1 leading wellness chain",
+    heading: "Malta’s #1 leading wellness chain",
     commitmentTitle: "our commitment",
     commitment: [
       "Visible inch loss and shape change, not vague promises",
@@ -144,7 +144,7 @@ export const skinTightening: ProtocolData = {
   ],
   research: {
     heading: "CLINICAL RESEARCH: BASIS OF OUR METhODOLOGY",
-    sub: "evidence based approach",
+    sub: "Evidence based approach",
     cards: [
       {
         image: `${A}/st-research1.png`,

@@ -4,7 +4,7 @@ const t: Treatment = {
   slug: "thread-lift-malta",
   category: "Face",
   hero: {
-    title: "THREAD LIFT",
+    title: "Thread lift",
     subtitle: "Ready to defy gravity and achieve a more youthful, lifted appearance without surgery?",
     body: "Looking for a non-surgical facelift option in Malta? Our Thread Lift treatments can help lift and tighten your skin, giving you a more youthful and refreshed appearance. Our experienced team uses the latest techniques and top-quality threads to ensure natural-looking, long-lasting results.",
     prices: [
@@ -43,7 +43,7 @@ const t: Treatment = {
     additional: "Brow lift, nasolabial area, marionette zone, chin projection, temple region",
   },
   suitability: {
-    title: "IS THIS SUITABLE FOR YOU?",
+    title: "Is this suitable for you?",
     intro: "A thread lift provides non-surgical lifting for the face and neck, offering both an immediate visible result and long-term collagen stimulation. It is a medical procedure that requires a doctor's assessment to determine if it is the right approach for you.",
     suitableFor: [
       "You have mild to moderate sagging and want a non-surgical lifting option",
@@ -61,7 +61,7 @@ const t: Treatment = {
     ],
   },
   experience: {
-    title: "YOUR TREATMENT EXPERIENCE",
+    title: "Your treatment experience",
     steps: [
       { title: "Personalised Consultation", desc: "We assess your facial anatomy, skin condition, medical history, and thread lift goals with one of our doctors.", image: "/assets/treatments/thread-lift-step1.png" },
       { title: "Structured Plan", desc: "Your doctor designs a medically guided thread lift plan tailored to your facial structure and desired outcome.", image: "/assets/treatments/thread-lift-step2.png" },
@@ -71,7 +71,7 @@ const t: Treatment = {
   },
   prepAftercare: {
     kicker: "Preparation & Aftercare",
-    title: "Your Session, Step by Step",
+    title: "Your session, step by step",
     intro: "This is an advanced, minimally invasive procedure. Thorough preparation and careful aftercare are essential.",
     cards: [
       {
@@ -110,7 +110,7 @@ const t: Treatment = {
     ],
   },
   trusted: {
-    title: "Malta's Trusted Clinic for Thread Lift",
+    title: "Malta's trusted clinic for thread lift",
     subtitle: "Doctor-Led Thread Lift in Malta",
     asSeenOn: ["/assets/press/lovin-malta.jpeg", "/assets/press/malta-daily.png", "/assets/press/bay.jpeg", "/assets/press/times-of-malta.png", "/assets/press/malta-today.jpg"],
     images: ["/assets/treatments/trusted-clinic-collage.png"],
@@ -124,7 +124,7 @@ const t: Treatment = {
   },
   difference: {
     kicker: "The Carisma Difference",
-    title: "Malta's #1 Leading Wellness Chain",
+    title: "Malta's #1 leading wellness chain",
     commitmentTitle: "Our Commitment",
     commitment: [
       "Natural, refined thread lift results, never overdone, never frozen",
@@ -143,11 +143,11 @@ const t: Treatment = {
   },
   bookingForm: { title: "Book Your Thread Lift Appointment Today" },
   recommended: {
-    title: "Recommended with Thread Lift",
+    title: "Recommended with thread lift",
     items: [
       { label: "Botox", href: "/wrinkle-relaxing-malta", image: "/assets/treatments/thread-lift-malta-rec-botox.avif" },
-      { label: "Collagen Stimulator", href: "/collagen-stimulator-malta", image: "/assets/treatments/thread-lift-malta-rec-collagen-stimulator.avif" },
-      { label: "Dermal Fillers", href: "/dermal-fillers-malta", image: "/assets/treatments/thread-lift-malta-rec-dermal-fillers.avif" },
+      { label: "Collagen stimulator", href: "/collagen-stimulator-malta", image: "/assets/treatments/thread-lift-malta-rec-collagen-stimulator.avif" },
+      { label: "Dermal fillers", href: "/dermal-fillers-malta", image: "/assets/treatments/thread-lift-malta-rec-dermal-fillers.avif" },
       { label: "Platelet-rich plasma", href: "/prp-malta", image: "/assets/treatments/thread-lift-malta-rec-prp.avif" },
     ],
   },

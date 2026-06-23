@@ -3,18 +3,18 @@ import { A, Serif } from "./_shared";
 import Image from "next/image";
 
 const PRICES = [
-  { size: "xs", label: "Extra Small", price: "€ 79", icon: "pico-pricing-icon-xs-leaf.png" },
-  { size: "small", label: "Small", price: "€ 99", icon: "pico-pricing-icon-small-lotus.png" },
-  { size: "medium", label: "Medium", price: "€ 149", icon: "pico-pricing-icon-medium-waterdrop.png" },
-  { size: "large", label: "Large", price: "€ 199", icon: "pico-pricing-icon-large-sparkle.png" },
-  { size: "xl", label: "Extra Large", price: "€ 249", from: true, icon: "pico-pricing-icon-xl-crown.png" },
+  { size: "XS", label: "Extra Small", price: "€ 79", icon: "pico-pricing-icon-xs-leaf.png" },
+  { size: "Small", label: "Small", price: "€ 99", icon: "pico-pricing-icon-small-lotus.png" },
+  { size: "Medium", label: "Medium", price: "€ 149", icon: "pico-pricing-icon-medium-waterdrop.png" },
+  { size: "Large", label: "Large", price: "€ 199", icon: "pico-pricing-icon-large-sparkle.png" },
+  { size: "XL", label: "Extra Large", price: "€ 249", from: true, icon: "pico-pricing-icon-xl-crown.png" },
 ];
 
 export default function Pricing() {
   return (
     <section aria-labelledby="pricing-heading" style={{ padding: "60px 0" }}>
       <div className="container text-center">
-        <Serif>pico laser tattoo removal pricing</Serif>
+        <Serif>Pico laser tattoo removal pricing</Serif>
         <p
           id="pricing-heading"
           className="sr-only"
@@ -81,7 +81,6 @@ export default function Pricing() {
                   fontSize: "20px",
                   color: "#fff",
                   letterSpacing: "0.08em",
-                  textTransform: "uppercase",
                 }}
               >
                 <span className="sr-only">{p.label} tattoo — </span>
@@ -114,7 +113,6 @@ export default function Pricing() {
                     style={{
                       fontSize: "11px",
                       letterSpacing: "0.12em",
-                      textTransform: "uppercase",
                       marginRight: "6px",
                       verticalAlign: "middle",
                     }}

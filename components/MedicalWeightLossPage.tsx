@@ -85,7 +85,6 @@ function H2({
         textAlign: "center",
         fontSize: serif ? "clamp(24px,3.4vw,30px)" : "clamp(22px,3vw,28px)",
         color: "#655a50",
-        textTransform: serif ? "lowercase" : undefined,
         lineHeight: 1.25,
         margin: "0 auto 26px",
         ...style,
@@ -277,8 +276,8 @@ function Results() {
   return (
     <section id="results" style={{ background: "var(--white)", padding: "72px 0" }}>
       <div className="container text-center">
-        <h2 className="font-serif" style={{ fontSize: "clamp(22px,3.2vw,30px)", color: "var(--teal-text)", letterSpacing: "0.08em", textTransform: "uppercase", lineHeight: 1.3 }}>
-          ozempic &amp; mounjaro results
+        <h2 className="font-serif" style={{ fontSize: "clamp(22px,3.2vw,30px)", color: "var(--teal-text)", letterSpacing: "0.08em", lineHeight: 1.3 }}>
+          Ozempic &amp; Mounjaro results
         </h2>
         <div style={{ width: "150px", height: "1px", background: "var(--teal)", opacity: 0.4, margin: "16px auto 44px" }} />
         <Reveal>
@@ -416,7 +415,7 @@ const DIFFERENTIATORS = [
   },
   {
     icon: `${A}/icon-appetite.png`,
-    label: "APPETITE & METABOLIC SUPPORT",
+    label: "Appetite & metabolic support",
     body:
       "Ozempic and Mounjaro quiet hunger and reduce food noise, making consistency easier. If you qualify, we titrate carefully, monitor side effects, and pair your prescription with a repeatable eating structure — never medication in isolation.",
   },
@@ -462,7 +461,7 @@ function Trusted() {
                 }}
               >
                 <Image src={d.icon} alt="" width={74} height={74} style={{ height: "58px", width: "auto", marginBottom: "22px" }} />
-                <p className="font-serif" style={{ color: "var(--gold)", fontSize: "13px", fontWeight: 700, letterSpacing: "0.06em", marginBottom: "12px", textTransform: "uppercase" }}>
+                <p className="font-serif" style={{ color: "var(--gold)", fontSize: "13px", fontWeight: 700, letterSpacing: "0.06em", marginBottom: "12px" }}>
                   {d.label}
                 </p>
                 <p style={{ fontSize: "13.5px", color: "#655a50", lineHeight: 1.7 }}>{d.body}</p>
@@ -730,7 +729,7 @@ const STEPS: StepPanel[] = [
   },
   {
     num: 4,
-    title: "Movement That Fits Your Life",
+    title: "Movement that fits your life",
     icon: `${A}/step-movement.png`,
     body: (
       <>
@@ -763,7 +762,7 @@ const STEPS: StepPanel[] = [
   },
   {
     num: 5,
-    title: "treatments",
+    title: "Treatments",
     icon: `${A}/step-treatments.png`,
     body: (
       <>
@@ -840,14 +839,13 @@ function HowItWorks() {
                   cursor: "pointer",
                   fontSize: "clamp(13px,1.6vw,16px)",
                   letterSpacing: "0.18em",
-                  textTransform: "uppercase",
                   color: "#655a50",
                   paddingBottom: "8px",
                   borderBottom: on ? "2px solid var(--gold)" : "2px solid transparent",
                   transition: "all 0.2s ease",
                 }}
               >
-                STEP {s.num}
+                Step {s.num}
               </button>
             );
           })}
@@ -877,7 +875,7 @@ function HowItWorks() {
                   <div style={{ background: "var(--white)", borderRadius: "16px", boxShadow: "0 14px 34px rgba(120,140,140,0.10)", padding: "clamp(24px,3vw,38px)" }}>
                     <div className="flex items-center" style={{ gap: "16px", marginBottom: "20px" }}>
                       <Image src={s.icon} alt="" width={56} height={56} style={{ width: "46px", height: "46px", objectFit: "contain", flexShrink: 0 }} />
-                      <h3 className="font-serif" style={{ fontSize: "clamp(16px,2vw,19px)", color: "var(--gold)", letterSpacing: "0.04em", textTransform: "uppercase", lineHeight: 1.3 }}>{s.title}</h3>
+                      <h3 className="font-serif" style={{ fontSize: "clamp(16px,2vw,19px)", color: "var(--gold)", letterSpacing: "0.04em", lineHeight: 1.3 }}>{s.title}</h3>
                     </div>
                     {s.body}
                   </div>
@@ -899,8 +897,8 @@ function ExpertCare() {
     <section id="expert-care" style={{ background: "var(--white)", padding: "64px 0 80px" }}>
       <div className="container">
         <Reveal>
-          <h2 className="font-serif" style={{ textAlign: "center", fontSize: "clamp(22px,3.2vw,30px)", color: "var(--teal-text)", letterSpacing: "0.12em", textTransform: "uppercase", lineHeight: 1.4, marginBottom: "48px" }}>
-            led by expertise.<br />driven by results.
+          <h2 className="font-serif" style={{ textAlign: "center", fontSize: "clamp(22px,3.2vw,30px)", color: "var(--teal-text)", letterSpacing: "0.12em", lineHeight: 1.4, marginBottom: "48px" }}>
+            Led by expertise.<br />Driven by results.
           </h2>
         </Reveal>
         <div className="grid" style={{ gridTemplateColumns: "minmax(0,440px) minmax(0,1fr)", gap: "56px", alignItems: "center", maxWidth: "1080px", margin: "0 auto" }}>
@@ -951,15 +949,15 @@ function Promise() {
       <div className="container">
         <Reveal>
           <div className="text-center" style={{ marginBottom: "12px" }}>
-            <span className="font-serif" style={{ display: "inline-block", fontSize: "13px", letterSpacing: "0.2em", textTransform: "uppercase", color: "var(--gold)", paddingBottom: "10px", borderBottom: "1px solid var(--line)" }}>
-              our promise
+            <span className="font-serif" style={{ display: "inline-block", fontSize: "13px", letterSpacing: "0.2em", color: "var(--gold)", paddingBottom: "10px", borderBottom: "1px solid var(--line)" }}>
+              Our promise
             </span>
           </div>
           <h2
             className="font-serif"
-            style={{ textAlign: "center", fontSize: "clamp(24px,3.8vw,36px)", color: "var(--teal-text)", textTransform: "uppercase", letterSpacing: "0.1em", lineHeight: 1.45, marginBottom: "48px" }}
+            style={{ textAlign: "center", fontSize: "clamp(24px,3.8vw,36px)", color: "var(--teal-text)", letterSpacing: "0.1em", lineHeight: 1.45, marginBottom: "48px" }}
           >
-            up to 1kg per week<br />measured. verified. comitted.
+            Up to 1kg per week<br />Measured. Verified. Comitted.
           </h2>
         </Reveal>
         <div className="grid" style={{ gridTemplateColumns: "minmax(0,1fr) minmax(0,1.25fr)", gap: "48px", alignItems: "start" }}>
@@ -975,7 +973,7 @@ function Promise() {
                 alignItems: "center",
               }}
             >
-              <p className="font-serif" style={{ fontSize: "clamp(19px,2.4vw,26px)", letterSpacing: "0.03em", textTransform: "uppercase", lineHeight: 1.45 }}>
+              <p className="font-serif" style={{ fontSize: "clamp(19px,2.4vw,26px)", letterSpacing: "0.03em", lineHeight: 1.45 }}>
                 <span style={{ color: "var(--teal-text)", fontWeight: 700 }}>Only clinic in Malta</span>{" "}
                 <span style={{ color: "var(--gold)" }}>to offer an extended care commitment on Ozempic &amp; Mounjaro programmes</span>
               </p>
@@ -1092,7 +1090,7 @@ function Methodology() {
       <div className="container">
         <Reveal>
           <Eyebrow center>4 core pillars of our Ozempic &amp; Mounjaro methodology</Eyebrow>
-          <H2 serif>a doctor-led glp-1 programme built to last</H2>
+          <H2 serif>A doctor-led GLP-1 programme built to last</H2>
         </Reveal>
         <div className="grid" style={{ gridTemplateColumns: "minmax(0,1fr) minmax(0,1fr)", gap: "48px", alignItems: "start", marginTop: "20px" }}>
           <Reveal>
@@ -1133,8 +1131,8 @@ function Difference() {
     <section id="difference" style={{ background: "var(--cream)", padding: "72px 0" }}>
       <div className="container">
         <Reveal>
-          <Eyebrow center>the carisma difference</Eyebrow>
-          <H2 serif>malta&rsquo;s #1 leading wellness chain</H2>
+          <Eyebrow center>The Carisma difference</Eyebrow>
+          <H2 serif>Malta&rsquo;s #1 leading wellness chain</H2>
         </Reveal>
         <div className="grid" style={{ gridTemplateColumns: "minmax(0,1fr) minmax(0,1fr)", gap: "48px", alignItems: "center", marginTop: "20px" }}>
           <Reveal>
@@ -1274,8 +1272,8 @@ function Faqs() {
   return (
     <section id="faqs" style={{ background: "var(--white)", padding: "72px 0" }}>
       <div className="container">
-        <h2 className="font-serif" style={{ textAlign: "center", fontSize: "clamp(20px,2.6vw,25px)", color: "var(--teal-text)", textTransform: "lowercase", marginBottom: "36px" }}>
-          faqs about ozempic &amp; mounjaro
+        <h2 className="font-serif" style={{ textAlign: "center", fontSize: "clamp(20px,2.6vw,25px)", color: "var(--teal-text)", marginBottom: "36px" }}>
+          FAQs about Ozempic &amp; Mounjaro
         </h2>
         <Reveal>
           <FaqAccordion items={FAQS} uppercase={false} />
@@ -1415,8 +1413,8 @@ function Research() {
     <section id="research" style={{ background: "var(--cream)", padding: "72px 0" }}>
       <div className="container">
         <Reveal>
-          <Eyebrow center>CLINICAL RESEARCH: basis of our Ozempic &amp; Mounjaro methodology</Eyebrow>
-          <H2 serif style={{ fontSize: "clamp(24px,3.6vw,30px)" }}>evidence based approach</H2>
+          <Eyebrow center>Clinical research: basis of our Ozempic &amp; Mounjaro methodology</Eyebrow>
+          <H2 serif style={{ fontSize: "clamp(24px,3.6vw,30px)" }}>Evidence based approach</H2>
         </Reveal>
         <div className="grid" style={{ gridTemplateColumns: "repeat(2, minmax(0,1fr))", gap: "28px", maxWidth: "960px", margin: "0 auto" }}>
           {RESEARCH.map((c, i) => (
@@ -1439,8 +1437,8 @@ function EndBoundary() {
   return (
     <section style={{ background: "var(--white)", padding: "56px 0 16px" }}>
       <div className="container">
-        <h2 className="font-serif" style={{ textAlign: "center", fontSize: "clamp(26px,4vw,35px)", color: "#655a50", textTransform: "lowercase" }}>
-          real people, real reviews
+        <h2 className="font-serif" style={{ textAlign: "center", fontSize: "clamp(26px,4vw,35px)", color: "#655a50" }}>
+          Real people, real reviews
         </h2>
       </div>
     </section>

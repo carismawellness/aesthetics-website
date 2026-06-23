@@ -4,7 +4,7 @@ const t: Treatment = {
   slug: "chemical-peels-malta",
   category: "Face",
   hero: {
-    title: "chemical peels",
+    title: "Chemical peels",
     subtitle: "Are you seeking a brighter, smoother, and more youthful complexion?",
     body: "Get a safe and effective Chemical Peel treatment in Malta! Our experienced team uses medical-grade solutions. Inflammatory (TCA and Retinoic) peels deeply and takes 1-10 days to heal, typically done in cold season. Non-inflammatory (Mandelic and Salicylic acid) is gentler and can be done in any season. Book now for even, radiant skin!",
     prices: [
@@ -46,7 +46,7 @@ const t: Treatment = {
     additional: "Rosacea management, dullness, congested pores, melasma, neck, decolletage",
   },
   suitability: {
-    title: "IS THIS SUITABLE FOR YOU?",
+    title: "Is this suitable for you?",
     intro:
       "Chemical peels use medical-grade solutions to reveal smoother, more even-toned skin beneath the surface. The type and depth of peel is tailored to your skin. Commitment to sun protection during recovery is essential for safe, effective results.",
     suitableFor: [
@@ -65,7 +65,7 @@ const t: Treatment = {
     ],
   },
   experience: {
-    title: "YOUR TREATMENT EXPERIENCE", cta: "BOOK YOUR FREE CONSULTATION",
+    title: "Your treatment experience", cta: "BOOK YOUR FREE CONSULTATION",
     steps: [
       { title: "Personalised Consultation", desc: "We assess your facial anatomy, skin condition, medical history, and chemical peel goals with one of our doctors.", image: "/assets/treatments/chemical-peels-malta-step1.png" },
       { title: "Structured Plan", desc: "Your doctor designs a medically guided chemical peel plan tailored to your facial structure and desired outcome.", image: "/assets/treatments/chemical-peels-malta-step2.png" },
@@ -75,7 +75,7 @@ const t: Treatment = {
   },
   prepAftercare: {
     kicker: "Preparation & Aftercare",
-    title: "Your Session, Step by Step",
+    title: "Your session, step by step",
     intro: "A medical-grade peel renews your skin from within. Preparation and aftercare are essential for safe, effective results.",
     cards: [
       {
@@ -114,7 +114,7 @@ const t: Treatment = {
     ],
   },
   patientVideos: {
-    title: "Real Patients, Real Confidence",
+    title: "Real patients, real confidence",
     intro: "Every face is unique. Every story is personal. Discover how our chemical peel patients describe their journey to refined, natural results at Carisma Aesthetics in Malta.",
     videos: [
       "/assets/treatments/chemical-peels-malta-video1.mp4",
@@ -123,7 +123,7 @@ const t: Treatment = {
     ],
   },
   trusted: {
-    title: "Malta's Trusted Clinic for Chemical Peels",
+    title: "Malta's trusted clinic for chemical peels",
     subtitle: "Doctor-Led Chemical Peel in Malta",
     asSeenOn: ["/assets/press/lovin-malta.jpeg", "/assets/press/malta-daily.png", "/assets/press/bay.jpeg", "/assets/press/times-of-malta.png", "/assets/press/malta-today.jpg"],
     images: ["/assets/treatments/trusted-clinic-collage.png"],
@@ -137,7 +137,7 @@ const t: Treatment = {
   },
   difference: {
     kicker: "The Carisma Difference",
-    title: "Malta's #1 Leading Wellness Chain",
+    title: "Malta's #1 leading wellness chain",
     commitmentTitle: "Our Commitment",
     commitment: [
       "Natural, refined chemical peel results, never overdone, never frozen",
@@ -156,15 +156,15 @@ const t: Treatment = {
   },
   bookingForm: { title: "Book Your Chemical Peel Appointment Today" },
   recommended: {
-    title: "Recommended with Chemical Peel",
+    title: "Recommended with chemical peel",
     items: [
       { label: "Mesotherapy", href: "/mesotherapy-malta", image: "/assets/treatments/rec-mesotherapy.jpg" },
       { label: "Microneedling", href: "/microneedling-skin-revival", image: "/assets/treatments/rec-microneedling.jpg" },
-      { label: "Collagen Stimulator", href: "/collagen-stimulator-malta", image: "/assets/treatments/chemical-peels-malta-rec-collagen-stimulator.png" },
+      { label: "Collagen stimulator", href: "/collagen-stimulator-malta", image: "/assets/treatments/chemical-peels-malta-rec-collagen-stimulator.png" },
       { label: "HydraFacial", href: "/hydrafacial", image: "/assets/treatments/chemical-peels-malta-rec-hydrafacial.png" },
     ],
   },
-  faqTitle: "faqs about chemical peels in malta",
+  faqTitle: "FAQs about chemical peels in Malta",
   faq: [
     { q: "What is a chemical peel, and how does it work?", a: "A chemical peel is a cosmetic procedure that involves applying a solution to the skin to exfoliate the outermost layer, promoting cell turnover and revealing smoother, more radiant skin. The solution contains various types and strengths of acids, such as alpha-hydroxy acid (AHA), beta-hydroxy acid (BHA), or trichloroacetic acid (TCA), which penetrate the skin at different levels depending on the strength and type of peel used." },
     { q: "What are the benefits of a chemical peel?", a: "A chemical peel can improve the appearance of the skin in many ways, including reducing the appearance of fine lines and wrinkles, improving skin texture and tone, reducing hyperpigmentation and dark spots, and minimizing the appearance of acne scars." },

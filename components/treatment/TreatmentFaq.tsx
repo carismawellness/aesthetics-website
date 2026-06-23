@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 /**
  * TreatmentFaq — searchable FAQ accordion ported 1:1 from the Carisma Slimming
- * design language (components/FAQAccordion.tsx): centered Trajan-uppercase H2 with
+ * design language (components/FAQAccordion.tsx): centered Trajan sentence-case H2 with
  * an inline search field, hairline-ruled accordion rows, numbered question labels,
  * and a chevron indicator that rotates 180° on expand. Recolored to Aesthetics
  * tokens (green → teal): headings carry --gold, accents/icons/rules --teal-deep /
@@ -15,13 +15,13 @@ import { useState } from 'react';
  */
 
 // Fonts mirror the Slimming component's roles:
-// headingFont = Trajan (titling caps, always uppercase) · bodyFont = Roboto.
+// headingFont = Trajan (sentence case) · bodyFont = Roboto.
 const headingFont = 'Trajan Pro, Georgia, serif';
 const bodyFont = 'Roboto Local, Roboto, sans-serif';
 
 export default function TreatmentFaq({
   kicker,
-  title = 'Frequently Asked Questions',
+  title = 'Frequently asked questions',
   items,
 }: {
   kicker?: string;
@@ -60,7 +60,6 @@ export default function TreatmentFaq({
               fontFamily: headingFont,
               fontWeight: 400,
               fontSize: '22px',
-              textTransform: 'uppercase',
               letterSpacing: '1px',
             }}
           >

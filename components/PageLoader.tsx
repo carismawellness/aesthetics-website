@@ -162,13 +162,12 @@ export default function PageLoader() {
         <div style={{
           fontFamily: 'Trajan Pro, "Trajan Pro Regular", Georgia, serif',
           fontSize: 'clamp(16px, 2.8vw, 22px)',
-          letterSpacing: '11px',
+          letterSpacing: '4px',
           color: '#4f7373',
-          textTransform: 'uppercase',
           opacity: 0,
           animation: 'lxUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 480ms both',
         }}>
-          CARISMA
+          Carisma
         </div>
 
         {/* ── Hairline divider ─────────────────────────────────────────── */}

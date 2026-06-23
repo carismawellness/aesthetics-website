@@ -462,11 +462,10 @@ export default function TreatmentTemplate({ t }: { t: Treatment }) {
                 fontSize: "clamp(24px,3.4vw,38px)",
                 color: "var(--gold)",
                 letterSpacing: "0.04em",
-                textTransform: "uppercase",
                 lineHeight: 1.25,
               }}
             >
-              Book Your Consultation
+              Book your consultation
             </h2>
             <p
               className="text-center"
@@ -542,7 +541,6 @@ export default function TreatmentTemplate({ t }: { t: Treatment }) {
                 fontSize: "clamp(24px,3.4vw,38px)",
                 color: "var(--gold)",
                 letterSpacing: "0.04em",
-                textTransform: "uppercase",
                 lineHeight: 1.25,
               }}
             >
@@ -908,7 +906,7 @@ export default function TreatmentTemplate({ t }: { t: Treatment }) {
                       className="font-serif"
                       style={{ fontSize: "15px", color: "var(--gold)", letterSpacing: "0.14em" }}
                     >
-                      STEP <span style={{ fontSize: "clamp(24px,6vw,34px)", lineHeight: 1 }}>{i + 1}</span>
+                      Step <span style={{ fontSize: "clamp(24px,6vw,34px)", lineHeight: 1 }}>{i + 1}</span>
                     </span>
                   </div>
                   <div
@@ -999,7 +997,7 @@ export default function TreatmentTemplate({ t }: { t: Treatment }) {
                   {/* STEP + number */}
                   <div className="text-center">
                     <div className="font-serif" style={{ fontSize: "17px", color: "var(--gold)", letterSpacing: "0.14em" }}>
-                      STEP
+                      Step
                     </div>
                     <div
                       className="font-serif"
@@ -1594,7 +1592,6 @@ export default function TreatmentTemplate({ t }: { t: Treatment }) {
                 fontSize: "clamp(24px,3.4vw,38px)",
                 color: "var(--gold)",
                 letterSpacing: "0.04em",
-                textTransform: "uppercase",
                 lineHeight: 1.25,
               }}
             >
@@ -1816,7 +1813,7 @@ export default function TreatmentTemplate({ t }: { t: Treatment }) {
                 lineHeight: 1.25,
               }}
             >
-              {t.faqTitle ?? "Frequently Asked Questions"}
+              {t.faqTitle ?? "Frequently asked questions"}
             </h2>
             <div className="mx-auto" style={{ maxWidth: "820px" }}>
               {t.faq.map((f, i) => {

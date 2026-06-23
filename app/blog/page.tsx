@@ -164,8 +164,8 @@ export default function BlogIndexPage() {
       <PageHero
         eyebrow="The Journal"
         headline={[
-          { text: "Medical Aesthetics" },
-          { text: "Blog Malta", em: true },
+          { text: "Medical aesthetics" },
+          { text: "blog Malta", em: true },
         ]}
         sub="Expert guides on aesthetic treatments, skin and confidence — from Malta's #1 voted med-aesthetics clinic."
         primaryCta={{ text: "Book Free Consultation", href: "/consultation" }}

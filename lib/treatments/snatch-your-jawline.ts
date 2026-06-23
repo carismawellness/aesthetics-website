@@ -4,7 +4,7 @@ const t: Treatment = {
   slug: "snatch-your-jawline",
   category: "Package",
   hero: {
-    title: "snatch your jawline",
+    title: "Snatch your jawline",
     subtitle: "For those in Malta ready to snatch their jawline — this non-surgical, low-downtime treatment melts chin fat, reverses sagging, and restores lasting definition at every age.",
     body: "Do you ever catch your reflection and wish your jawline looked sharper again? You look in the mirror and notice a softer chin line, a little sagging, or stubborn fat that wasn't there before. With our Snatch Your Jawline treatment, you can bring back that definition and confidence — no surgery, no downtime. After just one session, you'll see the difference… and even better, you'll feel it. Because a sculpted, defined jawline doesn't just change your profile — it changes how you carry yourself every day. Your face is your first impression. Let's make it unforgettable.",
     prices: [
@@ -40,7 +40,7 @@ const t: Treatment = {
     ],
   },
   suitability: {
-    title: "Who is a suitable candidate for Fat Dissolving treatment?",
+    title: "Who is a suitable candidate for fat dissolving treatment?",
     intro: "Fat dissolving is ideal for individuals with minimal to moderate localises fat who want to improve the appearance without surgery. It is not suitable for those with severe localized fat or individuals with loose, sagging skin in the treatment area. A thorough consultation with a qualified practitioner is necessary to determine if it's the right treatment for you.",
     suitableFor: [
       "Fat dissolving is ideal for individuals with minimal to moderate localises fat who want to improve the appearance without surgery.",
@@ -50,7 +50,7 @@ const t: Treatment = {
     ],
   },
   experience: {
-    title: "what to expect during your Fat dissolving treatment?",
+    title: "What to expect during your fat dissolving treatment?",
     steps: [
       {
         title: "before",
@@ -70,7 +70,7 @@ const t: Treatment = {
     ],
   },
   trusted: {
-    title: "MALTA's TOP CLINIC FOR NON-SURGICAL JAWLINE CONTOURING",
+    title: "Malta's top clinic for non-surgical jawline contouring",
     images: [
       "/assets/treatments/fat-dissolving-malta-trusted1.png",
       "/assets/treatments/fat-dissolving-malta-trusted2.png",
@@ -96,7 +96,7 @@ const t: Treatment = {
     title: "SECURE YOUR EXCLUSIVE JAWLINE SCULPTING OFFER NOW",
   },
   faqKicker: "fat dissolving treatment FAQs",
-  faqTitle: "Frequently Asked Questions",
+  faqTitle: "Frequently asked questions",
   faq: [
     {
       q: "What can I expect during a Fat Dissolving treatment?",

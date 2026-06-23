@@ -89,8 +89,8 @@ function Timeline() {
               />
             </div>
             <div className="text-center">
-              <div style={{ fontFamily: SERIF, fontSize: 15, color: TEAL_TEXT, letterSpacing: '0.14em', textTransform: 'uppercase' }}>
-                STEP
+              <div style={{ fontFamily: SERIF, fontSize: 15, color: TEAL_TEXT, letterSpacing: '0.14em' }}>
+                Step
               </div>
               <div style={{ fontFamily: SERIF, fontSize: 'clamp(30px, 4vw, 44px)', color: TEAL_DEEP, lineHeight: 1.1 }}>
                 {i + 1}
@@ -110,8 +110,8 @@ function Timeline() {
                 aria-hidden
                 style={{ width: 16, height: 16, borderRadius: '50%', background: '#96b2b2', boxShadow: '0 0 0 4px #deebeb', flexShrink: 0 }}
               />
-              <span style={{ fontFamily: SERIF, color: TEAL_TEXT, letterSpacing: '0.14em', fontSize: 14, textTransform: 'uppercase' }}>
-                STEP <span style={{ fontSize: 24, color: TEAL_DEEP }}>{i + 1}</span>
+              <span style={{ fontFamily: SERIF, color: TEAL_TEXT, letterSpacing: '0.14em', fontSize: 14 }}>
+                Step <span style={{ fontSize: 24, color: TEAL_DEEP }}>{i + 1}</span>
               </span>
             </div>
             <Card s={s} />
@@ -156,12 +156,11 @@ export default function ConsultationProcess() {
               fontSize: '38px',
               lineHeight: '1.25',
               letterSpacing: '2px',
-              textTransform: 'uppercase',
             }}
           >
-            How a Free Consultation
+            How a free consultation
             <br />
-            Works at Our Clinic
+            works at our clinic
           </h2>
         </div>
 

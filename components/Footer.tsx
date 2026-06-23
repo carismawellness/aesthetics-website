@@ -91,8 +91,8 @@ function BrandsSection() {
         <div style={{ textAlign: 'center', marginBottom: 'clamp(24px, 5vw, 40px)' }}>
           <Eyebrow>The Carisma Wellness Group</Eyebrow>
           <Rule center />
-          <h2 id="footer-brands-h" style={{ fontFamily: SERIF, fontSize: 'clamp(20px,3vw,28px)', fontWeight: 400, color: INK, letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '0' }}>
-            Malta&rsquo;s Leading Wellness Group
+          <h2 id="footer-brands-h" style={{ fontFamily: SERIF, fontSize: 'clamp(20px,3vw,28px)', fontWeight: 400, color: INK, letterSpacing: '1px', marginBottom: '0' }}>
+            Malta&rsquo;s leading wellness group
           </h2>
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px,1fr))', gap: '20px' }}>
@@ -101,7 +101,7 @@ function BrandsSection() {
               <Image src={brand.img} alt={brand.title} fill style={{ objectFit: 'cover' }} sizes="(max-width:768px) 100vw, 50vw" loading="lazy" />
               <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(100deg,rgba(0,30,40,0.72) 0%,rgba(0,30,40,0.22) 60%,transparent 100%)' }} />
               <div style={{ position: 'absolute', inset: 0, padding: '28px 28px 28px 32px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end' }}>
-                <p style={{ fontFamily: SERIF, fontSize: '17px', fontWeight: 400, color: '#fff', letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '14px', lineHeight: 1.3 }}>
+                <p style={{ fontFamily: SERIF, fontSize: '17px', fontWeight: 400, color: '#fff', letterSpacing: '1.5px', marginBottom: '14px', lineHeight: 1.3 }}>
                   {brand.title}
                 </p>
                 <a href={brand.href} target="_blank" rel="noopener noreferrer" aria-label={`${brand.cta} — opens in new tab`}
@@ -131,7 +131,7 @@ function FooterBase() {
 
             {/* Brand + socials + IG preview */}
             <div>
-              <p style={{ fontFamily: SERIF, fontSize: '18px', fontWeight: 400, color: INK, letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '12px' }}>Carisma Aesthetics</p>
+              <p style={{ fontFamily: SERIF, fontSize: '18px', fontWeight: 400, color: INK, letterSpacing: '1px', marginBottom: '12px' }}>Carisma Aesthetics</p>
               <p style={{ fontFamily: BODY, fontSize: '13px', lineHeight: 1.75, color: TEXT, maxWidth: '210px', marginBottom: '20px' }}>
                 Glow with confidence — doctor-led medical aesthetics in Malta. Natural results, delivered with care.
               </p>

@@ -36,7 +36,7 @@ export default function GiftFaq() {
               fontWeight: 400,
             }}
           >
-            Gifting Questions, Answered
+            Gifting questions, answered
           </h2>
 
           <p

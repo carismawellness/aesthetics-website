@@ -64,7 +64,7 @@ function NotIdealMark() {
 
 export default function SuitabilityCards({
   kicker,
-  title = "Is This Right For You?",
+  title = "Is this right for you?",
   sub,
   suitableFor,
   notIdeal,

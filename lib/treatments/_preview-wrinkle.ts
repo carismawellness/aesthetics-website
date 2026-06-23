@@ -19,7 +19,7 @@ const preview: Treatment = {
 
   clarity: {
     kicker: "Honest expectations",
-    title: "What Botox Does — and What It Won't",
+    title: "What Botox does — and what it won't",
     sub: "Wrinkle-relaxing is precise, not dramatic. Here's the honest picture before you book.",
     does: [
       "Softens dynamic lines from movement — forehead, frown lines (the 11s), crow's feet",
@@ -39,7 +39,7 @@ const preview: Treatment = {
 
   reviews: {
     kicker: "Real patients, real results",
-    title: "What Our Patients Say",
+    title: "What our patients say",
     sub: "A few of the women who trust Carisma with their face.",
     items: [
       { name: "Maria C.", location: "Sliema", rating: 5, quote: "I was terrified of looking frozen — instead I just look like a less tired version of me. The doctor took time to explain everything and the result is so natural my friends just think I'm finally sleeping well." },
@@ -52,7 +52,7 @@ const preview: Treatment = {
 
   doctor: {
     kicker: "Doctor-led, never a salon",
-    heading: "Meet Your Doctor",
+    heading: "Meet your doctor",
     name: "Dr. Giovanni Scornavacca",
     title: "Aesthetic Doctor · Carisma Aesthetics",
     credentials: [
@@ -70,7 +70,7 @@ const preview: Treatment = {
 
   guarantee: {
     kicker: "Our promise",
-    title: "Natural Results, Reviewed & Refined",
+    title: "Natural results, reviewed & refined",
     paragraphs: [
       "We'd rather under-treat and refine than overdo it. Every wrinkle-relaxing treatment includes a complimentary review at two weeks — if a touch-up is needed to perfect your result, it's on us.",
       "Doctor-led, medically qualified, CE-marked toxins only. No pressure and no upselling — just an honest plan and a result you'll genuinely love.",
@@ -84,24 +84,24 @@ const preview: Treatment = {
   },
 
   pricingGrid: {
-    title: "Botox Pricing in Malta",
+    title: "Botox pricing in Malta",
     intro: "Transparent, per-area pricing. Your exact plan is confirmed at your free consultation.",
     items: [
-      { name: "Lip Flip / Gummy Smile / Chin", price: "from €59", desc: "Targeted single-point softening." },
-      { name: "One Area", price: "from €139", desc: "Forehead, frown lines (11s) or crow's feet." },
-      { name: "Full Upper Face / Nefertiti Neck Lift", price: "from €249", desc: "Comprehensive upper-face or neck & jaw lift." },
-      { name: "Underarm Sweating (Hyperhidrosis)", price: "from €399", desc: "Lasts up to 6 months — goodbye sweat patches." },
+      { name: "Lip flip / gummy smile / chin", price: "from €59", desc: "Targeted single-point softening." },
+      { name: "One area", price: "from €139", desc: "Forehead, frown lines (11s) or crow's feet." },
+      { name: "Full upper face / Nefertiti neck lift", price: "from €249", desc: "Comprehensive upper-face or neck & jaw lift." },
+      { name: "Underarm sweating (hyperhidrosis)", price: "from €399", desc: "Lasts up to 6 months — goodbye sweat patches." },
     ],
   },
 
   evidence: {
     kicker: "Backed by science",
-    title: "The Evidence Behind Botox",
+    title: "The evidence behind Botox",
     sub: "Botulinum toxin type A is among the most studied aesthetic treatments in the world.",
     items: [
-      { tag: "Efficacy", title: "Proven for Frown Lines", whatItDoes: "Relaxes the muscles that create the frown lines between the brows.", keyResults: "In randomised controlled trials, the majority of patients showed a significant improvement in moderate-to-severe glabellar lines at day 30, with effects commonly lasting up to ~4 months.", source: "Peer-reviewed RCTs (glabellar lines)" },
-      { tag: "Safety", title: "A Well-Characterised Safety Profile", whatItDoes: "Decades of clinical use across millions of treatments worldwide.", keyResults: "When administered by a qualified medical professional at appropriate doses, botulinum toxin type A has a well-established safety record; side effects are typically mild and temporary (e.g. minor bruising at the injection site).", source: "Long-term post-marketing surveillance" },
-      { tag: "Hyperhidrosis", title: "Effective for Excessive Sweating", whatItDoes: "Blocks the nerve signals that activate the sweat glands.", keyResults: "Studies report marked reductions in underarm sweating, with results commonly lasting 4–6 months per treatment.", source: "Peer-reviewed hyperhidrosis trials" },
+      { tag: "Efficacy", title: "Proven for frown lines", whatItDoes: "Relaxes the muscles that create the frown lines between the brows.", keyResults: "In randomised controlled trials, the majority of patients showed a significant improvement in moderate-to-severe glabellar lines at day 30, with effects commonly lasting up to ~4 months.", source: "Peer-reviewed RCTs (glabellar lines)" },
+      { tag: "Safety", title: "A well-characterised safety profile", whatItDoes: "Decades of clinical use across millions of treatments worldwide.", keyResults: "When administered by a qualified medical professional at appropriate doses, botulinum toxin type A has a well-established safety record; side effects are typically mild and temporary (e.g. minor bruising at the injection site).", source: "Long-term post-marketing surveillance" },
+      { tag: "Hyperhidrosis", title: "Effective for excessive sweating", whatItDoes: "Blocks the nerve signals that activate the sweat glands.", keyResults: "Studies report marked reductions in underarm sweating, with results commonly lasting 4–6 months per treatment.", source: "Peer-reviewed hyperhidrosis trials" },
     ],
   },
 };

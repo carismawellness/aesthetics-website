@@ -786,7 +786,7 @@ export default function PackageFunnel({ data }: { data: PackageData }) {
       {/* ===== REAL PEOPLE, REAL REVIEWS (heading sits above the global Footer's DoctorsSection) ===== */}
       <section aria-label="Real customer reviews" style={{ padding: "30px 0 0" }}>
         <div className="container text-center">
-          <h2 className="font-serif" style={{ fontSize: "clamp(20px,2.6vw,28px)", color: "var(--teal-text)", letterSpacing: "0.06em", display: "inline-block", borderBottom: "1px solid var(--teal-200)", paddingBottom: "14px" }}>REAL PEOPLE, REAL REVIEWS</h2>
+          <h2 className="font-serif" style={{ fontSize: "clamp(20px,2.6vw,28px)", color: "var(--teal-text)", letterSpacing: "0.06em", display: "inline-block", borderBottom: "1px solid var(--teal-200)", paddingBottom: "14px" }}>Real people, real reviews</h2>
         </div>
       </section>
     </>

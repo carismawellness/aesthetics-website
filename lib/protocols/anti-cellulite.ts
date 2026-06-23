@@ -31,7 +31,7 @@ export const antiCellulite: ProtocolData = {
     video: `${A}/vid-anti-cellulite.mp4`,
   },
   secret: {
-    heading: "the secret to a more defined, confident look",
+    heading: "The secret to a more defined, confident look",
     sub: "smooth stubborn cellulite and uneven texture with precision",
     image: `${A}/ac-secret.png`,
     paragraphs: [
@@ -47,8 +47,8 @@ export const antiCellulite: ProtocolData = {
     cta: "Claim My Spot Now",
   },
   trusted: {
-    heading: "malta’s trusted clinic for",
-    headingSub: "non surgical fat reduction",
+    heading: "Malta’s trusted clinic for",
+    headingSub: "Non surgical fat reduction",
     pressLogos: PRESS,
     features: [
       { icon: `${A}/ac-feat1.png`, label: "TARGETED CELLULITE CONTOURING", desc: "Focus on areas most affected by cellulite — thighs, bum and hips — using targeted VelaShape vacuum roller treatments to improve texture and contour." },
@@ -59,15 +59,15 @@ export const antiCellulite: ProtocolData = {
   },
   eligibility: {
     kicker: "eligibility criteria",
-    heading: "selective by intention successful by design",
+    heading: "Selective by intention successful by design",
     image: `${A}/ac-eligibility.png`,
     areasIntro: "Treat visible fat bulges in 3 areas of the body",
     areas: ["arms", "BUTTOCKS AND UNDER-BUTT CREASE", "THIGHS (FRONT, BACK, INNER AND OUTER)"],
   },
   modality: {
     kicker: "our technology",
-    heading: "internationally renowned, fda-approved modalities",
-    name: "VELASHAPE III (CELLULIFT PROTOCOL)",
+    heading: "Internationally renowned, FDA-approved modalities",
+    name: "VelaShape III (CelluLift protocol)",
     tag: "Cellulite smoothing  & skin tightening",
     tagSub: "Smooths the appearance of cellulite, improves skin texture and refines contour in one comfortable treatment.",
     baImage: `${A}/ac-ba.png`,
@@ -83,7 +83,7 @@ export const antiCellulite: ProtocolData = {
   },
   difference1: {
     kicker: "the carisma difference",
-    heading: "we are not another diet clinic.",
+    heading: "We are not another diet clinic.",
     intro: "We’re a doctor led transformation program that blends medical insight, sustainable nutrition, and modern body tech into one high touch system, so you don’t just lose weight, you step into your strongest form.",
     bullets: [
       "Doctor led: full medical check and body scan",
@@ -95,7 +95,7 @@ export const antiCellulite: ProtocolData = {
     ],
   },
   starterPack: {
-    heading: "malta’s most advanced cellulite smoothing & contouring protocol",
+    heading: "Malta’s most advanced cellulite smoothing & contouring protocol",
     cols: [
       { title: "Targeted CELLULITE CONTOURING", desc: "Adjustable Intensity for Comfort & Results" },
       { title: "VISIBLE, NOTICEABLE SMOOTHING", desc: "Improvements you can see and feel. Skin appears smoother, more even, and more refined in clothes and movement — not just immediately after treatment, but progressively over sessions." },
@@ -113,7 +113,7 @@ export const antiCellulite: ProtocolData = {
   },
   difference2: {
     kicker: "the carisma difference",
-    heading: "malta’s #1 leading wellness chain",
+    heading: "Malta’s #1 leading wellness chain",
     commitmentTitle: "our commitment",
     commitment: [
       "Visible inch loss and shape change, not vague promises",
@@ -145,7 +145,7 @@ export const antiCellulite: ProtocolData = {
   ],
   research: {
     heading: "CLINICAL RESEARCH: BASIS OF OUR METODOLOGY",
-    sub: "evidence based approach",
+    sub: "Evidence based approach",
     cards: [
       {
         image: `${A}/ac-research1.png`,

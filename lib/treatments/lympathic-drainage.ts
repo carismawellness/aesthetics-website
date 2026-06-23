@@ -4,7 +4,7 @@ const t: Treatment = {
   slug: "lympathic-drainage",
   category: "Body",
   hero: {
-    title: "lymphatic drainage therapy",
+    title: "Lymphatic drainage therapy",
     subtitle: "Expert LED BODY DETOX & CIRCULATION SUPPORT",
     body: "Our Lymphatic Drainage Therapy is a gentle, expert-guided treatment designed to stimulate your lymphatic system, helping your body eliminate toxins, reduce fluid retention, and restore natural balance.",
     image: "/assets/treatments/lympathic-drainage-secret.png",
@@ -21,7 +21,7 @@ const t: Treatment = {
   },
 
   education: {
-    title: "what is all the hype with debloating",
+    title: "What is all the hype with debloating",
     subtitle: "SUPPORTS DETOXIFICATION, CIRCULATION & FLUID BALANCE",
     paragraphs: [
       "You eat well, try to stay active, and take care of yourself — yet your body still feels bloated, tight, or sluggish. Swelling comes and goes, your skin feels puffy, and recovery feels slower than it should. You know something feels \"off,\" but it's hard to explain — and harder to fix on your own.",
@@ -32,7 +32,7 @@ const t: Treatment = {
   },
 
   guarantee: {
-    title: "malta's trusted clinic for\nmedical lymphatic drainage therapy",
+    title: "Malta's trusted clinic for\nmedical lymphatic drainage therapy",
     paragraphs: [
       "The lymphatic system plays a vital role in fluid balance, detoxification, and immune support. When lymph flow becomes sluggish, fluid and waste can accumulate in the body — leading to bloating, swelling, heaviness, and slow recovery.",
       "Lymphatic Drainage Therapy uses gentle, targeted techniques to stimulate lymph flow, helping the body naturally eliminate excess fluids and toxins while supporting circulation and overall wellbeing.",
@@ -43,7 +43,7 @@ const t: Treatment = {
   },
 
   experience: {
-    title: "lymphatic drainage therapy",
+    title: "Lymphatic drainage therapy",
     steps: [
       {
         title: "MEDICALLY GUIDED APPROACH",
@@ -69,7 +69,7 @@ const t: Treatment = {
   },
 
   trusted: {
-    title: "malta's #1 leading wellness chain",
+    title: "Malta's #1 leading wellness chain",
     subtitle: "evidence based approach",
     images: [
       "/assets/treatments/lympathic-drainage-research1.png",
@@ -95,7 +95,7 @@ const t: Treatment = {
 
   difference: {
     kicker: "the carisma difference",
-    title: "malta's #1 leading wellness chain",
+    title: "Malta's #1 leading wellness chain",
     commitmentTitle: "our commitment",
     commitment: [
       "Visible inch loss and shape change, not vague promises",

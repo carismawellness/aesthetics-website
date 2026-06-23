@@ -4,7 +4,7 @@ const t: Treatment = {
   slug: "muscle-stimulation-1",
   category: "Body",
   hero: {
-    title: "EMSculpt NEO MALTA",
+    title: "EMSculpt NEO Malta",
     subtitle: "3-in-1 body sculpt protocol",
     body: "Stronger, tighter, more defined in 4 focused sessions.\n\nOur 3-1 course with EMSculpt NEO with HIFEM + RF gives you the effect of 20,000 sit ups per session, burns local fat and tightens the skin resulting in 30% Fat reduction, 25% Muscle growth & 29% Muscle strength",
     prices: [
@@ -22,7 +22,7 @@ const t: Treatment = {
 
   // "The secret to a more defined, confident look" section
   education: {
-    title: "THE SECRET TO A MORE DEFINED, CONFIDENT LOOK",
+    title: "The secret to a more defined, confident look",
     subtitle: "SCULPT, TIGHTEN AND DEFINE STUBBORN AREAS WITH PRECISION",
     paragraphs: [
       "You're eating well, staying active, and making an effort — yet certain areas still feel soft or undefined. Your tummy doesn't feel as firm as it should, your hips or bum lack shape, and your clothes don't reflect the work you're putting in. The scale may move slightly, but your body definition doesn't.",
@@ -32,7 +32,7 @@ const t: Treatment = {
   },
 
   trusted: {
-    title: "MALTA'S TRUSTED CLINIC FOR NON SURGICAL FAT REDUCTION",
+    title: "Malta's trusted clinic for non surgical fat reduction",
     images: [
       "/assets/treatments/ms-feat1.png",
       "/assets/treatments/ms-feat2.png",
@@ -72,7 +72,7 @@ const t: Treatment = {
   },
 
   experience: {
-    title: "the carisma difference",
+    title: "The carisma difference",
     steps: [
       { title: "Doctor led", desc: "full medical check and body scan" },
       { title: "One integrated program", desc: "medical, diet, movement and treatments together" },
@@ -85,7 +85,7 @@ const t: Treatment = {
 
   difference: {
     kicker: "the carisma difference",
-    title: "we are not another diet clinic.",
+    title: "We are not another diet clinic.",
     commitmentTitle: "our commitment",
     commitment: [
       "Visible inch loss and shape change, not vague promises",
@@ -104,7 +104,7 @@ const t: Treatment = {
   },
 
   patientVideos: {
-    title: "real people, real reviews",
+    title: "Real people, real reviews",
     videos: ["/assets/treatments/vid-muscle-stimulation-1.mp4"],
   },
 

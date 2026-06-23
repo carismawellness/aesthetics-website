@@ -180,8 +180,8 @@ export default function ConsultationPage() {
         <PageHero
           eyebrow="Free Consultation"
           headline={[
-            { text: "Book Your Free" },
-            { text: "Consultation in Malta", em: true },
+            { text: "Book your free" },
+            { text: "consultation in Malta", em: true },
           ]}
           sub="Every consultation begins with listening to your story — then shaping a conservative, personalised plan with one of our doctors."
           primaryCta={{

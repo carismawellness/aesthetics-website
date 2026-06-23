@@ -92,54 +92,49 @@ function MetricIcon({ metric }: { metric: string }) {
   );
 }
 
-// Compact horizontal treatment-info strip — the same metric language as the old
-// vertical card, but a single tidy row (icon → metric → detail) shown at the
-// bottom of the hero's LEFT column (under the reviews) so the RIGHT column stays
-// a clean, full-height hero photo.
-function InfoStrip({ info }: { info: NonNullable<Treatment["info"]> }) {
+function InfoCard({ info }: { info: NonNullable<Treatment["info"]> }) {
   return (
+    // P10 — pricing/info section aria-label for screen readers
     <div
       aria-label="Treatment info"
+      className="rounded-2xl"
       style={{
-        width: "100%",
-        maxWidth: 620,
-        padding: "15px clamp(14px,1.8vw,22px)",
-        borderRadius: "var(--radius-card)",
-        background: "rgba(150,178,178,0.10)",
-        border: "1px solid rgba(150,178,178,0.30)",
+        background: "rgba(150,178,178,0.12)",
+        border: "1px solid rgba(150,178,178,0.35)",
+        padding: "22px 26px",
       }}
     >
-      <div className="treatment-info-strip">
-        {info.map((it) => (
-          <div key={it.metric} style={{ display: "flex", alignItems: "center", gap: 9, minWidth: 0 }}>
-            <MetricIcon metric={it.metric} />
-            <span style={{ display: "flex", flexDirection: "column", minWidth: 0 }}>
-              <span
-                className="font-display"
-                style={{ fontSize: 9.5, color: INFO_COLOR, letterSpacing: "0.08em", lineHeight: 1.25, textTransform: "uppercase" }}
-              >
-                {it.metric}
-              </span>
-              <span style={{ fontSize: 13, color: "#27484a", lineHeight: 1.3, fontWeight: 500 }}>{it.detail}</span>
-            </span>
-          </div>
-        ))}
+      <div
+        className="font-display"
+        style={{ fontSize: "12px", color: INFO_COLOR, letterSpacing: "0.14em", marginBottom: "18px" }}
+      >
+        TREATMENT INFO
       </div>
-      <style>{`
-        .treatment-info-strip {
-          display: grid;
-          grid-template-columns: repeat(5, minmax(0, 1fr));
-          gap: clamp(8px, 1vw, 16px);
-          align-items: center;
-        }
-        @media (max-width: 980px) { .treatment-info-strip { grid-template-columns: repeat(3, minmax(0,1fr)); row-gap: 14px; } }
-        @media (max-width: 520px) { .treatment-info-strip { grid-template-columns: repeat(2, minmax(0,1fr)); row-gap: 14px; } }
-      `}</style>
+      {info.map((it, i) => (
+        <div
+          key={it.metric}
+          className="flex items-center justify-between gap-4"
+          style={{ padding: "11px 0", borderTop: i === 0 ? "none" : `1px solid rgba(150,178,178,0.25)` }}
+        >
+          <span className="flex items-center gap-3">
+            <MetricIcon metric={it.metric} />
+            <span
+              className="font-display"
+              style={{ fontSize: "11px", color: INFO_COLOR, letterSpacing: "0.1em" }}
+            >
+              {it.metric}
+            </span>
+          </span>
+          <span style={{ fontSize: "13px", color: INFO_COLOR, textAlign: "right" }}>{it.detail}</span>
+        </div>
+      ))}
     </div>
   );
 }
 
 export default function TreatmentPage({ t }: { t: Treatment }) {
+  const hasImage = Boolean(t.hero.image);
+  const hasMedia = hasImage || Boolean(t.hero.heroVideo);
   // Primary booking CTA → direct Fresha (new tab); secondary → consultation popup.
   const bookHref = t.hero.bookHref ?? AESTHETICS_FRESHA_BOOK;
 
@@ -179,7 +174,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
           t.hero.note ??
           (t.pending ? "Detailed treatment information for this page is being finalised." : undefined)
         }
-        belowContent={t.info && t.info.length > 0 ? <InfoStrip info={t.info} /> : undefined}
+        belowMedia={t.info && hasMedia ? <InfoCard info={t.info} /> : undefined}
         media={
           t.hero.heroVideo
             ? {
@@ -255,6 +250,34 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
         </section>
       )}
 
+      {/* ── Treatment info — horizontal info-bar fallback when there is no media
+             (the card form now lives in the hero overview strip above) ── */}
+      {t.info && !hasMedia && (
+        <section aria-label="Treatment information" style={{ padding: "clamp(28px,4vh,48px) 0" }}>
+          <div className="container">
+            <div className="card mx-auto" style={{ padding: "22px 20px", maxWidth: "900px" }}>
+              <div
+                className="grid gap-6 text-center"
+                style={{ gridTemplateColumns: `repeat(${Math.min(t.info.length, 5)}, minmax(0,1fr))` }}
+              >
+                {t.info.map((it) => (
+                  <div key={it.metric}>
+                    <div
+                      className="font-display"
+                      // P1 — teal-text #406060 = 6.86:1 on white .card — passes AA
+                      style={{ fontSize: "11px", color: "var(--teal-text)", letterSpacing: "0.14em", marginBottom: "8px" }}
+                    >
+                      {it.metric}
+                    </div>
+                    <div style={{ fontSize: "14px", color: "var(--ink)" }}>{it.detail}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* ── Education ── */}
       {t.education && (
         <section
@@ -269,7 +292,6 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                 fontSize: "clamp(24px,3.4vw,38px)",
                 color: "var(--gold)",
                 letterSpacing: "0.04em",
-                textTransform: "uppercase",
                 lineHeight: 1.25,
               }}
             >
@@ -360,7 +382,6 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                 fontSize: "clamp(24px,3.4vw,38px)",
                 color: "var(--gold)",
                 letterSpacing: "0.04em",
-                textTransform: "uppercase",
                 lineHeight: 1.25,
               }}
             >
@@ -568,7 +589,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                       className="font-serif"
                       style={{ fontSize: "15px", color: "var(--gold)", letterSpacing: "0.14em" }}
                     >
-                      STEP <span style={{ fontSize: "clamp(24px,6vw,34px)", lineHeight: 1 }}>{i + 1}</span>
+                      Step <span style={{ fontSize: "clamp(24px,6vw,34px)", lineHeight: 1 }}>{i + 1}</span>
                     </span>
                   </div>
                   <div
@@ -659,7 +680,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                   {/* STEP + number */}
                   <div className="text-center">
                     <div className="font-serif" style={{ fontSize: "17px", color: "var(--gold)", letterSpacing: "0.14em" }}>
-                      STEP
+                      Step
                     </div>
                     <div
                       className="font-serif"
@@ -1208,7 +1229,6 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                 fontSize: "clamp(24px,3.4vw,38px)",
                 color: "var(--gold)",
                 letterSpacing: "0.04em",
-                textTransform: "uppercase",
                 lineHeight: 1.25,
               }}
             >
@@ -1281,7 +1301,6 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                 fontSize: "clamp(24px,3.4vw,38px)",
                 color: "var(--gold)",
                 letterSpacing: "0.04em",
-                textTransform: "uppercase",
                 lineHeight: 1.25,
               }}
             >

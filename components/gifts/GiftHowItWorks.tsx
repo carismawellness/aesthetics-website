@@ -58,7 +58,7 @@ export default function GiftHowItWorks() {
                 lineHeight: 1.2,
               }}
             >
-              How It Works
+              How it works
             </h2>
             <p
               style={{

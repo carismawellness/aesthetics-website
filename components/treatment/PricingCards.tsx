@@ -72,7 +72,6 @@ function PriceTile({ item }: { item: PriceItem }) {
           fontSize: 17,
           color: "var(--gold)",
           letterSpacing: "0.06em",
-          textTransform: "uppercase",
           fontWeight: 400,
           lineHeight: 1.3,
           textWrap: "balance",

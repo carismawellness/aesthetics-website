@@ -281,7 +281,6 @@ export default function Reviews() {
             fontSize: 13,
             letterSpacing: 4,
             color: TEAL_TEXT,
-            textTransform: 'uppercase',
             marginBottom: 16,
           }}
         >

@@ -65,7 +65,7 @@ function Hero() {
   return (
     <PageHero
       badge="#1 Voted Med-Aesthetics Clinic"
-      headline={[{ text: "Pico Laser Pigmentation" }, { text: "Treatment in Malta", em: true }]}
+      headline={[{ text: "Pico laser pigmentation" }, { text: "treatment in Malta", em: true }]}
       sub="Advanced Pico laser technology to visibly reduce unwanted pigmentation and restore a clearer, brighter, more even-looking complexion."
       bullets={INCLUDED.map((text) => ({ text }))}
       primaryCta={{ text: "Reserve Your Pico Laser Session", href: "/consultation" }}
@@ -165,7 +165,7 @@ const REVIEWS = [
 function Reviews() {
   return (
     <section style={{ padding: "70px 24px" }}>
-      <Serif>precision pigmentation care in malta</Serif>
+      <Serif>Precision pigmentation care in Malta</Serif>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4" style={{ maxWidth: "1160px", margin: "40px auto 0", gap: "24px" }}>
         {REVIEWS.map((r) => (
           <div key={r.name} className="flex flex-col review-card"
@@ -194,8 +194,8 @@ function DoYouHave() {
         <div className="grid gap-12 lg:grid-cols-2 items-center">
           <div>
             {/* clamp min 20px non-bold = normal text; deepen to #345252 (5.31:1 on page bg) to clear 4.5:1 even at the smallest size */}
-            <p className="font-serif" style={{ fontSize: "clamp(20px,2.6vw,26px)", color: "#345252", letterSpacing: "0.06em", textTransform: "uppercase", fontWeight: 400, lineHeight: 1.25 }}>
-              so your skin looks like yours again -confidently.
+            <p className="font-serif" style={{ fontSize: "clamp(20px,2.6vw,26px)", color: "#345252", letterSpacing: "0.06em", fontWeight: 400, lineHeight: 1.25 }}>
+              So your skin looks like yours again -confidently.
             </p>
             {/* 18px non-bold = "normal" text per WCAG, needs 4.5:1; #3f6363 only hit 4.14 on the page bg, so use a deeper teal here (5.31:1) */}
             <h2 className="font-serif" style={{ fontSize: "18px", color: "#345252", letterSpacing: "0.02em", fontWeight: 400, lineHeight: 1.3, marginTop: "12px" }}>
@@ -246,7 +246,7 @@ function TrustedFeatures() {
   return (
     <section style={{ padding: "50px 0", background: "#ffffff" }}>
       <div className="container text-center">
-        <Serif>malta&apos;s trusted pigmentation clinic</Serif>
+        <Serif>Malta&apos;s trusted pigmentation clinic</Serif>
         <p className="mx-auto" style={{ maxWidth: "740px", fontSize: "14px", color: "var(--label)", lineHeight: 1.7, marginTop: "16px" }}>
           Advanced Pico laser technology, personalised skin plans, and medically guided care for unwanted pigmentation.
         </p>
@@ -287,8 +287,8 @@ function Because() {
   return (
     <section style={{ background: "#ffffff", padding: "60px 0" }}>
       <div className="mx-auto" style={{ maxWidth: "1040px", padding: "0 24px" }}>
-        <h2 className="font-serif text-center" style={{ fontSize: "clamp(22px,3vw,30px)", color: TEAL, letterSpacing: "0.06em", lineHeight: 1.3, fontWeight: 400, marginBottom: "40px", textTransform: "uppercase" }}>
-          Safe, Confident Pigmentation Care Starts Here.
+        <h2 className="font-serif text-center" style={{ fontSize: "clamp(22px,3vw,30px)", color: TEAL, letterSpacing: "0.06em", lineHeight: 1.3, fontWeight: 400, marginBottom: "40px" }}>
+          Safe, confident pigmentation care starts here.
         </h2>
         <div className="grid lg:grid-cols-2 items-center gap-12">
           <div>
@@ -331,7 +331,7 @@ function Commitment() {
   return (
     <section style={{ padding: "40px 0 60px", background: "#ffffff" }}>
       <div className="container">
-        <Serif style={{ textTransform: "uppercase" }}>35+ years helping malta feel confident.</Serif>
+        <Serif>35+ years helping Malta feel confident.</Serif>
         <div className="grid gap-12 lg:grid-cols-2" style={{ marginTop: "40px", alignItems: "start" }}>
           {/* LEFT: text content */}
           <div>
@@ -383,7 +383,7 @@ function Secure() {
       <div className="container">
         <div className="grid gap-12 lg:grid-cols-2 items-center">
           <div>
-            <Serif style={{ textAlign: "left" }}>SECURE YOUR PICO LASER PIGMENTATION CONSULTATION TODAY</Serif>
+            <Serif style={{ textAlign: "left" }}>Secure your Pico laser pigmentation consultation today</Serif>
             {SECURE_PARAS.map((p, i) => (
               <p key={i} style={{ fontSize: "14px", color: "var(--ink-soft)", lineHeight: 1.8, marginTop: i ? "12px" : "18px" }}>{p}</p>
             ))}
@@ -416,8 +416,8 @@ function FadeUnwanted() {
       <div className="container">
         <div className="pig-fade-grid grid items-center gap-10">
           <div>
-            <h2 className="font-serif" style={{ fontSize: "clamp(26px,3.5vw,38px)", color: TEAL, letterSpacing: "0.06em", fontWeight: 400, lineHeight: 1.2, textTransform: "uppercase" }}>
-              Fade Unwanted Pigment. Feel More Like You.
+            <h2 className="font-serif" style={{ fontSize: "clamp(26px,3.5vw,38px)", color: TEAL, letterSpacing: "0.06em", fontWeight: 400, lineHeight: 1.2 }}>
+              Fade unwanted pigment. Feel more like you.
             </h2>
             {/* body copy is 14px normal text over the light page bg → needs 4.5:1; deeper teal #345252 = 5.31:1 */}
             <p style={{ color: "#345252", fontSize: "14px", lineHeight: 1.7, marginTop: "18px" }}>
@@ -468,8 +468,8 @@ function Brighter() {
         <img src={`${A}/pig-brighter.png`} alt="Woman with facial pigmentation — Pico laser before and after result"
           style={{ width: "100%", aspectRatio: "9 / 10", objectFit: "cover", borderRadius: "14px", boxShadow: "0 16px 40px rgba(0,0,0,0.12)", display: "block" }} />
         <div>
-          <h2 className="font-serif" style={{ fontSize: "clamp(22px,3vw,30px)", color: TEAL, letterSpacing: "0.06em", fontWeight: 400, lineHeight: 1.3, textTransform: "uppercase" }}>
-            Your Skin — Brighter, Clearer.
+          <h2 className="font-serif" style={{ fontSize: "clamp(22px,3vw,30px)", color: TEAL, letterSpacing: "0.06em", fontWeight: 400, lineHeight: 1.3 }}>
+            Your skin — brighter, clearer.
           </h2>
           <p style={{ color: TEAL, fontSize: "14px", lineHeight: 1.7, marginTop: "14px" }}>
             See how advanced Pico Laser treatment helps reduce visible pigmentation with precision, care, and a personalised plan designed around your skin.
@@ -505,7 +505,7 @@ function Pricing() {
   return (
     <section id="pico-pigmentation-pricing" style={{ padding: "60px 0", scrollMarginTop: "90px" }}>
       <div className="container text-center">
-        <Serif>pico laser pigmentation pricing</Serif>
+        <Serif>Pico laser pigmentation pricing</Serif>
         <p className="mx-auto" style={{ maxWidth: "760px", fontSize: "14px", color: "var(--ink-soft)", lineHeight: 1.7, marginTop: "16px" }}>
           Choose the treatment option that best suits your skin concern and goals. Every plan is designed to deliver targeted care and a premium experience.
         </p>
@@ -518,7 +518,7 @@ function Pricing() {
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={`${A}/${p.icon}`} alt="" style={{ width: "30px", height: "30px" }} />
               </span>
-              <div className="font-serif" style={{ fontSize: "20px", color: "#fff", letterSpacing: "0.08em", textTransform: "uppercase" }}>{p.size}</div>
+              <div className="font-serif" style={{ fontSize: "20px", color: "#fff", letterSpacing: "0.08em" }}>{p.size}</div>
               <div className="flex items-center justify-center" style={{ width: "60px", margin: "8px auto", gap: "5px" }}>
                 <span style={{ flex: 1, height: "1px", background: "rgba(255,255,255,0.6)" }} />
                 <span aria-hidden style={{ width: "4px", height: "4px", background: "rgba(255,255,255,0.85)", transform: "rotate(45deg)", flexShrink: 0 }} />
@@ -526,7 +526,7 @@ function Pricing() {
               </div>
               <p style={{ fontSize: "11px", color: "#ffffff", lineHeight: 1.4, marginBottom: "8px" }}>{p.sub}</p>
               <div className="font-serif" style={{ fontSize: "24px", color: "#fff", letterSpacing: "0.02em", lineHeight: 1.1 }}>
-                {p.from && <span style={{ fontSize: "11px", letterSpacing: "0.12em", textTransform: "uppercase", marginRight: "6px", verticalAlign: "middle" }}>from</span>}
+                {p.from && <span style={{ fontSize: "11px", letterSpacing: "0.12em", marginRight: "6px", verticalAlign: "middle" }}>from</span>}
                 {p.price}
               </div>
             </div>
@@ -575,7 +575,7 @@ function WhatToExpect() {
   return (
     <section style={{ padding: "50px 0" }}>
       <div className="container">
-        <Serif style={{ textTransform: "uppercase" }}>what to expect during your pico laser pigmentation treatment?</Serif>
+        <Serif>What to expect during your Pico laser pigmentation treatment?</Serif>
         <div className="pig-wte-grid grid gap-8" style={{ marginTop: "36px" }}>
           {WTE_COLUMNS.map((col) => (
             <div key={col.label}>
@@ -636,7 +636,7 @@ function Faq() {
       <div className="container">
         <div className="mx-auto" style={{ maxWidth: "1080px" }}>
           <div className="pig-faq-head" style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", flexWrap: "wrap", gap: "20px", marginBottom: "18px" }}>
-            <h2 className="font-serif" style={{ fontSize: "clamp(22px,3vw,30px)", color: TEAL, letterSpacing: "0.06em", fontWeight: 400, textTransform: "uppercase", margin: 0, lineHeight: 1.3 }}>
+            <h2 className="font-serif" style={{ fontSize: "clamp(22px,3vw,30px)", color: TEAL, letterSpacing: "0.06em", fontWeight: 400, margin: 0, lineHeight: 1.3 }}>
               Frequently asked questions
             </h2>
             {/* search field: the bottom border is the only affordance of the input, so it must meet 1.4.11 (>=3:1). --line #e2e2e2 was 1.3:1; #527979 = 4.81:1. focus-visible ring added via scoped CSS below (never outline:none). */}
