@@ -36,14 +36,25 @@
   font-display: swap;
 }
 @font-face {
+  /* Registered as "Roboto" (NOT "Roboto Local") with the 300–500 range — BYTE-
+     IDENTICAL to the Slimming site's /fonts/roboto.woff2 (verified same md5) and
+     declared exactly as Slimming does. Every BODY const across the site is
+     `font-family: 'Roboto, sans-serif'`; previously this face was named "Roboto
+     Local", so those consts missed and fell back to a heavy system sans-serif —
+     that was the real "bold everywhere" bug. Matching Slimming's registration
+     makes hero / reviews / footer / doctor copy render in the real light Roboto. */
+  font-family: "Roboto";
+  src: url("/assets/fonts/roboto.woff2") format("woff2");
+  font-weight: 300 500;
+  font-style: normal;
+  font-display: swap;
+}
+/* Alias: any lingering `"Roboto Local"` reference resolves to the SAME light
+   master + range, so no call site falls back to a heavy system font. */
+@font-face {
   font-family: "Roboto Local";
   src: url("/assets/fonts/roboto.woff2") format("woff2");
-  /* roboto.woff2 is a STATIC Regular master (usWeightClass 400, not a variable
-     font). Declaring a 300–700 range over a single 400 outline let the UA
-     faux-embolden base copy, so body text rendered bold everywhere. Pin the
-     face to its real weight (400) so paragraph copy reads at normal weight,
-     matching the Slimming site's body voice. */
-  font-weight: 400;
+  font-weight: 300 500;
   font-style: normal;
   font-display: swap;
 }

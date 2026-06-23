@@ -30,11 +30,7 @@ const STEPS: TimelineStep[] = [
   },
   {
     title: 'Your Personalised Treatment Plan',
-    desc: 'Together you map a clear plan: the right treatments, realistic results and transparent pricing — only what genuinely suits your skin, your timeline and your budget.',
-  },
-  {
-    title: 'Begin Treatment With Ongoing Support',
-    desc: 'When you are ready, we begin your journey with expert, gentle care — and stay alongside you with reviews and aftercare so your confidence keeps growing.',
+    desc: 'Together you map a clear plan: the right treatments, realistic results and transparent pricing — then begin when you are ready, with expert care and ongoing reviews so your confidence keeps growing.',
   },
 ];
 
