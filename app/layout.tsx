@@ -9,6 +9,7 @@ import WidowGuard from "@/components/WidowGuard";
 import MediaLegibilityGuard from "@/components/MediaLegibilityGuard";
 import PageLoader from "@/components/PageLoader";
 import ConsultationModal from "@/components/ConsultationModal";
+import StickyBookingBar from "@/components/StickyBookingBar";
 
 const pinyonScript = Pinyon_Script({
   weight: "400",
@@ -172,6 +173,8 @@ export default function RootLayout({
         {/* Site-wide consultation popup. Mounted once; intercepts every
             "/consultation" + fresha book-now CTA and opens the GHL form modal. */}
         <ConsultationModal />
+        {/* Site-wide sticky Liquid Gloss booking bar — shows on every Face/Body/Packages dropdown page. */}
+        <StickyBookingBar />
 
         {/* GHL form embed */}
         <Script src="https://link.msgsndr.com/js/form_embed.js" strategy="lazyOnload" />

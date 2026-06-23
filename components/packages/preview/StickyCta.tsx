@@ -106,11 +106,13 @@ export default function StickyCta({ freshaHref, priceLabel, ctaLabel }: StickyCt
         >
           {priceLabel}
         </span>
-        {/* Primary claim CTA: white-on-teal-deep (>=4.5:1 AA), 44px+ target. */}
+        {/* Primary claim CTA: white-on-teal-deep (>=4.5:1 AA), 44px+ target.
+            External (Fresha) links open in a new tab; internal links (e.g.
+            /consultation) stay in-tab so the site-wide consultation modal can
+            intercept them. */}
         <a
           href={freshaHref}
-          target="_blank"
-          rel="noopener noreferrer"
+          {...(/^https?:\/\//.test(freshaHref) ? { target: "_blank", rel: "noopener noreferrer" } : {})}
           aria-label={ctaLabel}
           className="font-display"
           style={{
