@@ -109,8 +109,8 @@ export default function WhyGiftStrip() {
           style={{ maxWidth: "1120px", padding: 0, margin: 0 }}
         >
           {PILLARS.map((p, i) => (
-            <li key={p.label}>
-              <Reveal delay={(i % 4) * 70}>
+            <li key={p.label} className="h-full">
+              <Reveal delay={(i % 4) * 70} className="h-full">
                 <div
                   className="card"
                   style={{
