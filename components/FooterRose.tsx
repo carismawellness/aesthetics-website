@@ -48,7 +48,7 @@ export default function FooterRose() {
         zIndex: 0,
         pointerEvents: 'none',
         background: '#96B2B2', // teal (decorative) — replaces slimming sage #AECBB4
-        opacity: 0.9,
+        opacity: 0.3,
         WebkitMaskImage: 'url(/rose-motif.svg)',
         maskImage: 'url(/rose-motif.svg)',
         WebkitMaskRepeat: 'no-repeat',

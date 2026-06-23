@@ -50,22 +50,102 @@ export const PACKAGE_LINKS: NavLink[] = [
 ];
 
 // Homepage "medical aesthetics procedures" grid.
-// image = local asset under /assets. Mapping verified visually during QA.
-export type Service = { label: string; href: string; image: string };
+// `image` = the line-art icon (kept for legacy/fallback use). `photo` = the real
+// treatment hero photograph used by the premium card grid; `blurb` is a short
+// one-line descriptor. Mapping verified against the live treatment pages.
+export type Service = {
+  label: string;
+  href: string;
+  image: string;
+  photo: string;
+  blurb: string;
+};
 
 export const HOME_SERVICES: Service[] = [
-  { label: "botox", href: "/wrinkle-relaxing-malta", image: "/assets/service-botox.png" },
-  { label: "lip fillers", href: "/lip-fillers-malta", image: "/assets/service-lip-fillers.png" },
-  { label: "dermal fillers", href: "/dermal-fillers-malta", image: "/assets/service-dermal-fillers.png" },
-  { label: "collagen boost", href: "/collagen-stimulator-malta", image: "/assets/service-collagen.png" },
-  { label: "microneedling", href: "/microneedling-malta", image: "/assets/service-microneedling.png" },
-  { label: "mesotherapy", href: "/mesotherapy-malta", image: "/assets/service-mesotherapy.png" },
-  { label: "PRP", href: "/prp-malta", image: "/assets/service-prp.png" },
-  { label: "thread lift", href: "/thread-lift-malta", image: "/assets/service-thread-lift.png" },
-  { label: "chemical peel", href: "/chemical-peels-malta", image: "/assets/service-chemical-peel.png" },
-  { label: "fat Dissolving", href: "/fat-dissolving-malta", image: "/assets/service-fat-dissolving.png" },
-  { label: "hydrafacial", href: "/hydrafacial", image: "/assets/service-hydrafacial.png" },
-  { label: "laser hair removal", href: "/laser-hair-removal-malta", image: "/assets/service-laser.png" },
+  {
+    label: "botox",
+    href: "/wrinkle-relaxing-malta",
+    image: "/assets/service-botox.png",
+    photo: "/assets/treatments/botox-hero.jpg",
+    blurb: "Smooth expression lines and soften wrinkles with precise, natural-looking anti-wrinkle injections.",
+  },
+  {
+    label: "lip fillers",
+    href: "/lip-fillers-malta",
+    image: "/assets/service-lip-fillers.png",
+    photo: "/assets/treatments/lip-fillers-malta-hero.png",
+    blurb: "Define, hydrate and subtly enhance your lips for a balanced, beautifully proportioned pout.",
+  },
+  {
+    label: "dermal fillers",
+    href: "/dermal-fillers-malta",
+    image: "/assets/service-dermal-fillers.png",
+    photo: "/assets/treatments/dermal-fillers-malta-hero.png",
+    blurb: "Restore lost volume and refine facial contours for a refreshed, harmonious profile.",
+  },
+  {
+    label: "collagen boost",
+    href: "/collagen-stimulator-malta",
+    image: "/assets/service-collagen.png",
+    photo: "/assets/treatments/collagen-stimulator-malta-hero.png",
+    blurb: "Stimulate your skin's own collagen for firmer, more youthful texture over time.",
+  },
+  {
+    label: "microneedling",
+    href: "/microneedling-malta",
+    image: "/assets/service-microneedling.png",
+    photo: "/assets/treatments/microneedling-malta-hero.png",
+    blurb: "Refine pores, scars and tone with controlled micro-channels that renew your skin.",
+  },
+  {
+    label: "mesotherapy",
+    href: "/mesotherapy-malta",
+    image: "/assets/service-mesotherapy.png",
+    photo: "/assets/treatments/mesotherapy-malta-hero.png",
+    blurb: "Deliver vitamins, antioxidants and hydration directly into the skin for a luminous glow.",
+  },
+  {
+    label: "PRP",
+    href: "/prp-malta",
+    image: "/assets/service-prp.png",
+    photo: "/assets/treatments/prp-malta-hero.png",
+    blurb: "Harness your body's own platelets to regenerate skin and revive natural radiance.",
+  },
+  {
+    label: "thread lift",
+    href: "/thread-lift-malta",
+    image: "/assets/service-thread-lift.png",
+    photo: "/assets/treatments/thread-lift-malta-hero.avif",
+    blurb: "Gently lift and reposition sagging skin with dissolvable threads — no surgery required.",
+  },
+  {
+    label: "chemical peel",
+    href: "/chemical-peels-malta",
+    image: "/assets/service-chemical-peel.png",
+    photo: "/assets/treatments/chemical-peels-malta-hero.png",
+    blurb: "Resurface dull, uneven skin to reveal a brighter, smoother and more even complexion.",
+  },
+  {
+    label: "fat dissolving",
+    href: "/fat-dissolving-malta",
+    image: "/assets/service-fat-dissolving.png",
+    photo: "/assets/treatments/fat-dissolving-hero.jpg",
+    blurb: "Target stubborn pockets of fat under the chin and body for a sculpted, defined contour.",
+  },
+  {
+    label: "hydrafacial",
+    href: "/hydrafacial",
+    image: "/assets/service-hydrafacial.png",
+    photo: "/assets/treatments/hydrafacial-hero.jpg",
+    blurb: "Cleanse, exfoliate and deeply hydrate in one luxurious treatment for instant glow.",
+  },
+  {
+    label: "laser hair removal",
+    href: "/laser-hair-removal-malta",
+    image: "/assets/service-laser.png",
+    photo: "/assets/treatments/laser-hero.png",
+    blurb: "Achieve lasting smoothness with medical-grade laser technology, safe for every area.",
+  },
 ];
 
 export const WHY_POINTS = [

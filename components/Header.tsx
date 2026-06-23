@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import SiteSearch from "@/components/SiteSearch";
 import {
   CONTACT,
   FACE_LINKS,
@@ -260,11 +259,8 @@ export default function Header() {
             })}
           </div>
 
-          {/* Right — search + phone + CTA */}
+          {/* Right — phone + CTA (search lives in the footer) */}
           <div className="hidden lg:flex items-center" style={{ gap: "18px" }}>
-            <div style={{ width: "210px" }}>
-              <SiteSearch />
-            </div>
             <a href={`tel:${CONTACT.tel}`} className="flex items-center hover:underline transition" style={{ gap: "6px", textDecoration: "none" }}>
               <PhoneIcon />
               <span style={{ color: TEAL, fontFamily: '"Novecento Wide", sans-serif', fontSize: "13px", fontWeight: 600, letterSpacing: "0.5px" }}>{CONTACT.phoneDigits}</span>
@@ -324,11 +320,6 @@ export default function Header() {
 
           {/* Scrollable link area */}
           <div style={{ flex: 1, overflowY: "auto", padding: "8px clamp(16px,5vw,28px) 28px" }}>
-            {/* Search at the top of the mobile menu */}
-            <div style={{ marginBottom: "8px" }}>
-              <SiteSearch />
-            </div>
-
             {MENUS.map((m) => {
               if (!m.items) {
                 return (

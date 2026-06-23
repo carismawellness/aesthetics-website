@@ -1,5 +1,6 @@
 import Link from "next/link";
 import VideoPlayer from "@/components/VideoPlayer";
+import HeroAutoplayVideo from "@/components/HeroAutoplayVideo";
 import HeroMotif from "@/components/motion/HeroMotif";
 
 /* ──────────────────────────────────────────────────────────────────────────
@@ -30,6 +31,10 @@ export type HeroMedia = {
   fit?: "cover" | "contain";
   aspect?: string;
   bg?: string;
+  /** Opt-in: auto-load + autoplay the video immediately (muted, looped,
+   *  playsInline) instead of the default poster + click-to-play. Used only by
+   *  the home hero. Respects prefers-reduced-motion (keeps the static poster). */
+  autoPlay?: boolean;
 };
 export type HeroProof = {
   rating?: string;
@@ -187,7 +192,11 @@ export default function PageHero({
         <div className="page-hero-media" style={{ position: "relative", justifySelf: "center", width: "100%", display: "flex", justifyContent: "center" }}>
           <div style={{ position: "relative", height: "min(60vh, 540px)", aspectRatio: aspect, maxWidth: "100%", borderRadius: ARCH_RADIUS, overflow: "hidden", background: archBg, boxShadow: dark ? "0 24px 60px rgba(0,0,0,0.5)" : "0 24px 60px rgba(28,30,30,0.16)" }}>
             {media.type === "video" ? (
-              <VideoPlayer fill radius={ARCH_RADIUS} src={media.src} poster={media.poster} label={media.alt} objectFit={media.fit || "cover"} />
+              media.autoPlay ? (
+                <HeroAutoplayVideo radius={ARCH_RADIUS} src={media.src} poster={media.poster} alt={media.alt} objectFit={media.fit || "cover"} />
+              ) : (
+                <VideoPlayer fill radius={ARCH_RADIUS} src={media.src} poster={media.poster} label={media.alt} objectFit={media.fit || "cover"} />
+              )
             ) : (
               // eslint-disable-next-line @next/next/no-img-element
               <img src={media.src} alt={media.alt || "Carisma Aesthetics Malta"} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: media.fit || "cover", display: "block" }} />
