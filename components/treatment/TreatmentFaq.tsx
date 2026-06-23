@@ -148,6 +148,7 @@ export default function TreatmentFaq({
             Search frequently asked questions
           </label>
           <span
+            className="fr-faqsearch-wrap"
             style={{
               position: 'relative',
               display: 'inline-flex',
@@ -284,6 +285,10 @@ export default function TreatmentFaq({
       <style>{`
         .fr-faqsearch::placeholder { color: var(--teal-text); opacity: 1; }
         .fr-faqsearch:focus-visible { outline: 3px solid var(--teal-deep); outline-offset: 2px; }
+        @media (max-width: 639px) {
+          .fr-faqrow { flex-direction: column; align-items: stretch; }
+          .fr-faqsearch-wrap { width: 100% !important; }
+        }
       `}</style>
     </section>
   );

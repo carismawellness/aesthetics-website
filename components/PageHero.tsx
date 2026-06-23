@@ -259,13 +259,23 @@ export default function PageHero({
               /* Bespoke media (e.g. gifts fanned-cards): transparent sized wrapper,
                  NO arch box/overflow — lets the custom visual float & overflow freely.
                  Same dimensions as the arch so the floating proof cards still anchor. */
-              <div style={{ position: "relative", width: fill ? "100%" : undefined, height: belowMedia ? "min(46vh, 440px)" : "min(60vh, 540px)", aspectRatio: aspect, maxWidth: "100%" }}>
+              <div
+                className={fill ? undefined : (belowMedia ? "arch-box arch-box--below" : "arch-box")}
+                style={{
+                  position: "relative",
+                  width: fill ? "100%" : undefined,
+                  maxHeight: fill ? (belowMedia ? "min(46vh, 440px)" : "min(60vh, 540px)") : undefined,
+                  aspectRatio: aspect,
+                }}
+              >
                 {mediaSlot}
               </div>
             ) : (
-            <div style={fill
-              ? { position: "relative", width: "100%", aspectRatio: aspect, maxHeight: belowMedia ? "min(46vh, 440px)" : "min(60vh, 540px)", borderRadius: ARCH_RADIUS, overflow: "hidden", background: archBg, boxShadow: dark ? "0 24px 60px rgba(0,0,0,0.5)" : "0 24px 60px rgba(28,30,30,0.16)" }
-              : { position: "relative", height: belowMedia ? "min(46vh, 440px)" : "min(60vh, 540px)", aspectRatio: aspect, maxWidth: "100%", borderRadius: ARCH_RADIUS, overflow: "hidden", background: archBg, boxShadow: dark ? "0 24px 60px rgba(0,0,0,0.5)" : "0 24px 60px rgba(28,30,30,0.16)" }}>
+            <div
+              className={fill ? undefined : (belowMedia ? "arch-box arch-box--below" : "arch-box")}
+              style={fill
+                ? { position: "relative", width: "100%", aspectRatio: aspect, maxHeight: belowMedia ? "min(46vh, 440px)" : "min(60vh, 540px)", borderRadius: ARCH_RADIUS, overflow: "hidden", background: archBg, boxShadow: dark ? "0 24px 60px rgba(0,0,0,0.5)" : "0 24px 60px rgba(28,30,30,0.16)" }
+                : { position: "relative", aspectRatio: aspect, borderRadius: ARCH_RADIUS, overflow: "hidden", background: archBg, boxShadow: dark ? "0 24px 60px rgba(0,0,0,0.5)" : "0 24px 60px rgba(28,30,30,0.16)" }}>
               {media.type === "video" ? (
                 media.autoPlay ? (
                   <HeroAutoplayVideo radius={ARCH_RADIUS} src={media.src} poster={media.poster} alt={media.alt} objectFit={media.fit || "cover"} />
@@ -280,7 +290,7 @@ export default function PageHero({
             )}
 
             {/* doctor-led pill — mid-left (dropped below the top-right award card so they never overlap) */}
-            <div className={`${glassClass} float-b`} style={{ position: "absolute", left: "clamp(-18px,-1.8vw,-4px)", top: "38%", borderRadius: 999, padding: "8px 14px", display: "flex", alignItems: "center", gap: 7, zIndex: 3, animationDelay: "-2.8s" }}>
+            <div className={`${glassClass} float-b proof-left`} style={{ position: "absolute", left: "clamp(-18px,-1.8vw,-4px)", top: "38%", borderRadius: 999, padding: "8px 14px", display: "flex", alignItems: "center", gap: 7, zIndex: 3, animationDelay: "-2.8s" }}>
               <span aria-hidden style={{ width: 16, height: 16, borderRadius: "50%", background: c.checkBg, display: "grid", placeItems: "center" }}>
                 <svg width="9" height="9" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke={c.check} strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" /></svg>
               </span>
@@ -288,13 +298,13 @@ export default function PageHero({
             </div>
 
             {/* stat card — bottom-left */}
-            <div className={`${glassClass} float-a`} style={{ position: "absolute", left: "clamp(-20px,-1.8vw,-2px)", bottom: "9%", borderRadius: 16, padding: "11px 16px", display: "flex", alignItems: "center", gap: 10, zIndex: 3 }}>
+            <div className={`${glassClass} float-a proof-left`} style={{ position: "absolute", left: "clamp(-20px,-1.8vw,-2px)", bottom: "9%", borderRadius: 16, padding: "11px 16px", display: "flex", alignItems: "center", gap: 10, zIndex: 3 }}>
               <span style={{ fontFamily: SERIF, fontSize: 28, color: c.stat, lineHeight: 1 }}>{proof?.statValue || "30+"}</span>
               <span style={{ fontFamily: WIDE, fontSize: 9.5, letterSpacing: "0.08em", textTransform: "uppercase", color: c.statLabel, lineHeight: 1.3, maxWidth: 86 }}>{proof?.statLabel || "years in wellness"}</span>
             </div>
 
             {/* award / #1 voted — top-right */}
-            <div className={`${glassClass} float-b`} style={{ position: "absolute", right: "clamp(-18px,-1.2vw,-2px)", top: "5%", borderRadius: 16, padding: "10px 14px", display: "flex", alignItems: "center", gap: 10, maxWidth: 210, zIndex: 3 }}>
+            <div className={`${glassClass} float-b proof-right`} style={{ position: "absolute", right: "clamp(-18px,-1.2vw,-2px)", top: "5%", borderRadius: 16, padding: "10px 14px", display: "flex", alignItems: "center", gap: 10, maxWidth: 210, zIndex: 3 }}>
               {proof?.awardSrc ? (
                 // eslint-disable-next-line @next/next/no-img-element
                 <img src={proof.awardSrc} alt="" aria-hidden style={{ width: 36, height: 36, borderRadius: "50%", flexShrink: 0 }} />
@@ -317,6 +327,16 @@ export default function PageHero({
         @media (min-width: 900px) {
           .page-hero-grid { grid-template-columns: 60fr 40fr; }
           .page-hero-media { justify-self: end; }
+        }
+        .page-hero-grid > * { min-width: 0; }
+        .arch-box { width: 100%; }
+        @media (min-width: 900px) {
+          .arch-box { width: auto; max-width: 100%; height: min(60vh, 540px); }
+          .arch-box--below { height: min(46vh, 440px); }
+        }
+        @media (max-width: 899px) {
+          .proof-left { left: 8px !important; }
+          .proof-right { right: 8px !important; }
         }
       `}</style>
     </section>
