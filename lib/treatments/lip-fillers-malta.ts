@@ -28,12 +28,32 @@ const t: Treatment = {
   ],
   beforeAfterTitle: "lip fillers results",
   beforeAfter: [
-    { before: "/assets/treatments/lip-fillers-malta-ba1-before.png", after: "/assets/treatments/lip-fillers-malta-ba1-after.png", label: "Natural Enhancement" },
-    { before: "/assets/treatments/lip-fillers-malta-ba2-before.png", after: "/assets/treatments/lip-fillers-malta-ba2-after.png", label: "Volume & Definition" },
-    { before: "/assets/treatments/lip-fillers-malta-ba3-before.png", after: "/assets/treatments/lip-fillers-malta-ba3-after.png", label: "Fuller Lips" },
-    { before: "/assets/treatments/lip-fillers-malta-ba4-before.png", after: "/assets/treatments/lip-fillers-malta-ba4-after.png", label: "Lip Augmentation" },
-    { before: "/assets/treatments/lip-fillers-malta-ba5-before.png", after: "/assets/treatments/lip-fillers-malta-ba5-after.png", label: "Male Treatment" },
+    { before: "/assets/treatments/lip-fillers-malta-ba1-before.png", after: "/assets/treatments/lip-fillers-malta-ba1-after.png", label: "Natural Enhancement", name: "Maria C.", review: "My lips always felt a bit flat — now they look fuller and balanced, but still completely like me." },
+    { before: "/assets/treatments/lip-fillers-malta-ba2-before.png", after: "/assets/treatments/lip-fillers-malta-ba2-after.png", label: "Hydration & Definition", name: "Doreen V.", review: "The fine lines around my mouth softened and my lips finally have a defined border again." },
+    { before: "/assets/treatments/lip-fillers-malta-ba3-before.png", after: "/assets/treatments/lip-fillers-malta-ba3-after.png", label: "Shape & Symmetry", name: "Chloe B.", review: "I just wanted a little more shape and symmetry — the result is subtle and exactly what I hoped for." },
+    { before: "/assets/treatments/lip-fillers-malta-ba4-before.png", after: "/assets/treatments/lip-fillers-malta-ba4-after.png", label: "Contour & Cupid's Bow", name: "Antoinette S.", review: "My cupid's bow looks defined and elegant now, not overdone — friends just say I look refreshed." },
+    { before: "/assets/treatments/lip-fillers-malta-ba5-before.png", after: "/assets/treatments/lip-fillers-malta-ba5-after.png", label: "Subtle Enhancement", name: "Luke A.", review: "I wanted a natural bit of volume without it being obvious — the balance is spot on for me." },
   ],
+  problem: {
+    kicker: "The real reason people book",
+    title: "You catch yourself hiding your smile in photos",
+    body: [
+      "Doctor-led lip enhancement adds gentle, balanced volume that suits your face — so your smile feels like yours again, just more confident.",
+    ],
+  },
+  guarantee: {
+    kicker: "The Natural Confidence Guarantee",
+    title: "Natural Confidence Guarantee",
+    paragraphs: [
+      "Every lip treatment starts with a doctor-led facial assessment and a natural-first approach that is never overfilled, backed by a free follow-up adjustment until you are 100% satisfied with a result that still looks like you.",
+    ],
+    cta: "Book Your Free Consultation",
+    points: [
+      { value: "Doctor-led", label: "Assessment first", sub: "Never a salesperson" },
+      { value: "Natural-first", label: "Never overfilled", sub: "We refine, never overdo" },
+      { value: "100%", label: "Satisfaction", sub: "Free follow-up until you are happy" },
+    ],
+  },
   precision: {
     title: "precision areas of refinement",
     intro: "Enhancement is guided by your unique lip anatomy and desired outcome. Below are the four key dimensions we refine.",
@@ -57,20 +77,24 @@ const t: Treatment = {
       "You are looking for a treatment that can be adjusted or reversed if needed",
     ],
     notIdeal: [
-      "You are looking for a dramatically different lip shape",
-      "You expect permanent results from a single session",
-      "You are pregnant, breastfeeding, or have active cold sores in the lip area",
-      "You have a low tolerance for temporary swelling or tenderness",
-      "You would prefer a non-injectable alternative such as a lip flip",
+      "You want a dramatically different lip shape — we enhance your natural anatomy rather than reinvent it",
+      "You need the final result the same day — gentle swelling settles over 2 weeks, and it is worth the wait",
+      "You are pregnant or breastfeeding — we will happily welcome you back afterwards",
+      "You have an active cold sore right now — we will simply rebook you once it has fully healed",
+      "You would rather avoid injectables — a lip flip with Botox may suit you better, and we are glad to discuss it",
+    ],
+    personas: [
+      { title: "The natural enhancer", desc: "Your lips feel a little thin or flat, and you want subtle, balanced volume that still looks completely like you." },
+      { title: "The symmetry seeker", desc: "One side sits differently from the other, or your border has softened, and you want a defined, harmonious shape." },
+      { title: "The first-timer", desc: "You are curious but cautious — you want a conservative, doctor-led result you can build on, never an obvious one." },
     ],
   },
   experience: {
     title: "Your treatment experience", cta: "BOOK YOUR FREE CONSULTATION",
     steps: [
-      { title: "personalised consultation", desc: "We assess your facial anatomy, skin condition, medical history, and lip filler goals with one of our doctors.", image: "/assets/treatments/botox-step1.png" },
-      { title: "Structured Plan", desc: "Your doctor designs a medically guided lip filler plan tailored to your facial structure and desired outcome.", image: "/assets/treatments/botox-step2.png" },
-      { title: "Targeted Treatments", desc: "Your doctor administers lip filler with fine, precise injections, quick, comfortable, and no downtime.", image: "/assets/treatments/botox-step3.png" },
-      { title: "Ongoing Review & Adjustment", desc: "Your doctor monitors your response and refines the plan to ensure natural lip filler results over time.", image: "/assets/treatments/botox-step4.png" },
+      { title: "Consultation & Plan", desc: "We assess your lip shape, facial proportions, and goals with one of our doctors, then design a medically guided plan tailored to you.", image: "/assets/treatments/botox-step1.png" },
+      { title: "Gentle Treatment", desc: "Your doctor applies a topical numbing cream, then places filler with fine, precise injections — comfortable, measured, and with no downtime.", image: "/assets/treatments/botox-step3.png" },
+      { title: "Ongoing Review & Adjustment", desc: "Your doctor reviews how your lips settle and refines the result if needed, ensuring natural, balanced lip filler results over time.", image: "/assets/treatments/botox-step4.png" },
     ],
   },
   prepAftercare: {
@@ -151,6 +175,27 @@ const t: Treatment = {
     mapQuery: "Carisma Aesthetics, Malta",
   },
   bookingForm: { title: "BOOK YOUR lip fillers APPOINTMENT TODAY" },
+  planSummary: {
+    kicker: "Your lip filler plan",
+    title: "Malta's Doctor-Led Lip Filler Plan",
+    benefits: [
+      { icon: "shield", title: "Doctor-Led Precision", desc: "Every lip treatment is performed by a medically qualified doctor — never a salon, never a quick top-up." },
+      { icon: "sparkle", title: "Natural, Balanced Results", desc: "We add subtle volume and definition that suit your face — fuller and refined, never overfilled or obvious." },
+      { icon: "clock", title: "Complimentary 2-Week Review", desc: "We review how your lips settle at two weeks and refine the result if needed — included free." },
+    ],
+    included: [
+      { label: "Free doctor-led consultation & lip assessment" },
+      { label: "Personalised, medically guided treatment plan" },
+      { label: "Topical numbing for a comfortable session" },
+      { label: "Expert CE-marked hyaluronic acid filler", value: "from €219/ml" },
+      { label: "Complimentary 2-week review & refinement" },
+      { label: "Aftercare guidance & ongoing support" },
+    ],
+    price: "From €219",
+    priceLabel: "per ml",
+    cta: { text: "Book Your Lip Filler Appointment", href: "/consultation" },
+    reviews: "200+ verified reviews",
+  },
   recommended: {
     title: "Recommended with lip fillers",
     items: [
