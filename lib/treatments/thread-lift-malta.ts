@@ -25,10 +25,10 @@ const t: Treatment = {
   ],
   beforeAfterTitle: "THREAD LIFT RESULTS",
   beforeAfter: [
-    { before: "/assets/treatments/thread-lift-malta-ba1-before.png", after: "/assets/treatments/thread-lift-malta-ba1-after.png" },
-    { before: "/assets/treatments/thread-lift-malta-ba2-before.png", after: "/assets/treatments/thread-lift-malta-ba2-after.png" },
-    { before: "/assets/treatments/thread-lift-malta-ba3-before.png", after: "/assets/treatments/thread-lift-malta-ba3-after.png" },
-    { before: "/assets/treatments/thread-lift-malta-ba4-before.png", after: "/assets/treatments/thread-lift-malta-ba4-after.png" },
+    { before: "/assets/treatments/thread-lift-malta-ba1-before.png", after: "/assets/treatments/thread-lift-malta-ba1-after.png", name: "Daniela R.", review: "My cheeks had started to droop and pull my whole face down — now my midface sits higher and I just look fresher." },
+    { before: "/assets/treatments/thread-lift-malta-ba2-before.png", after: "/assets/treatments/thread-lift-malta-ba2-after.png", name: "Carmen V.", review: "The sagging under my jaw and neck was what aged me most — the lift is subtle but my jawline finally looks defined again." },
+    { before: "/assets/treatments/thread-lift-malta-ba3-before.png", after: "/assets/treatments/thread-lift-malta-ba3-after.png", name: "Isabel M.", review: "My whole face looks lifted and more contoured, yet it still moves and smiles exactly like me." },
+    { before: "/assets/treatments/thread-lift-malta-ba4-before.png", after: "/assets/treatments/thread-lift-malta-ba4-after.png", name: "Nicole F.", review: "A gentle lift through my brow opened up my eyes — I look rested rather than heavy and tired." },
   ],
   precision: {
     title: "PRECISION AREAS OF REFINEMENT",
@@ -53,20 +53,44 @@ const t: Treatment = {
       "You can follow aftercare guidance, including avoiding strenuous activity during healing",
     ],
     notIdeal: [
-      "You have very advanced sagging that may require a surgical approach",
-      "You are not prepared for 1 to 2 weeks of recovery with some swelling",
-      "You are pregnant, breastfeeding, or managing autoimmune conditions",
-      "You expect the same degree of lift as a surgical facelift",
-      "You have very thin skin, which may need a different treatment pathway",
+      "You have very advanced sagging — a surgical facelift may suit you better, and we will tell you honestly",
+      "You need zero downtime this week — there is mild swelling for 1 to 2 weeks as it settles",
+      "You are pregnant or breastfeeding — we will happily welcome you back afterwards",
+      "You are expecting a full surgical-facelift result — threads lift and refresh, they do not replace surgery",
+      "You have very thin or delicate skin — a skin booster or collagen-led plan may be the gentler path for you",
+    ],
+    personas: [
+      { title: "The early-sagging face", desc: "Your cheeks and jowls have begun to soften and drift downward, and creams just are not holding the line anymore." },
+      { title: "The not-ready-for-surgery patient", desc: "You want a real, visible lift but a surgical facelift feels like too much — you want a step in between." },
+      { title: "The natural-result seeker", desc: "You want to look lifted and rested, not pulled or operated on — a subtle change that still looks like you." },
+    ],
+  },
+  problem: {
+    kicker: "The real reason people book",
+    title: "Your face has started to slide, and you are not ready for surgery",
+    body: [
+      "Doctor-led thread lifting gently lifts and repositions the tissue that has softened with time — so your face looks firmer and rested, without the cut, the cost, or the downtime of a facelift.",
+    ],
+  },
+  guarantee: {
+    kicker: "The Natural Confidence Guarantee",
+    title: "Natural Confidence Guarantee",
+    paragraphs: [
+      "Every thread lift starts with a doctor-led facial assessment and a natural-first approach that lifts without overcorrecting, backed by a free follow-up review to fine-tune your result until you are 100% satisfied with a face that still looks like you.",
+    ],
+    cta: "Book Your Free Consultation",
+    points: [
+      { value: "Doctor-led", label: "Assessment first", sub: "Never a salesperson" },
+      { value: "Natural-first", label: "Lifted, never pulled", sub: "We refine, never overcorrect" },
+      { value: "100%", label: "Satisfaction", sub: "Free follow-up until you are happy" },
     ],
   },
   experience: {
     title: "Your treatment experience",
     steps: [
-      { title: "Personalised Consultation", desc: "We assess your facial anatomy, skin condition, medical history, and thread lift goals with one of our doctors.", image: "/assets/treatments/thread-lift-step1.png" },
-      { title: "Structured Plan", desc: "Your doctor designs a medically guided thread lift plan tailored to your facial structure and desired outcome.", image: "/assets/treatments/thread-lift-step2.png" },
-      { title: "Targeted Treatments", desc: "Your doctor administers the thread lift using a fine cannula, quick, comfortable, and no downtime.", image: "/assets/treatments/thread-lift-step3.png" },
-      { title: "Ongoing Review & Adjustment", desc: "Your doctor monitors your response and refines the plan to ensure natural thread lift results over time.", image: "/assets/treatments/thread-lift-step4.png" },
+      { title: "Consultation & Plan", desc: "One of our doctors assesses your facial anatomy, skin laxity, and goals, then designs a medically guided thread lift plan tailored to your structure.", image: "/assets/treatments/thread-lift-step1.png" },
+      { title: "The Thread Lift", desc: "Your doctor places medical-grade threads beneath the skin through a fine cannula under local anaesthetic, lifting and repositioning the tissue.", image: "/assets/treatments/thread-lift-step3.png" },
+      { title: "Ongoing Review & Adjustment", desc: "Your doctor monitors your response and refines the plan, so your lift keeps improving as collagen builds over the following months.", image: "/assets/treatments/thread-lift-step4.png" },
     ],
   },
   prepAftercare: {
@@ -142,6 +166,26 @@ const t: Treatment = {
     mapQuery: "Carisma Aesthetics, Malta",
   },
   bookingForm: { title: "Book Your Thread Lift Appointment Today" },
+  planSummary: {
+    kicker: "Your thread lift plan",
+    title: "Malta's Doctor-Led Thread Lift Plan",
+    benefits: [
+      { icon: "shield", title: "Doctor-Led Precision", desc: "Every thread lift is performed by a medically qualified doctor with advanced facial-anatomy expertise — never a salon, never nurse-only." },
+      { icon: "sparkle", title: "Natural, Lifted Results", desc: "We lift and reposition the areas that have softened while keeping your expression — refreshed and firmer, never pulled." },
+      { icon: "clock", title: "Collagen That Keeps Building", desc: "Your lift improves over the following months as the threads stimulate your own collagen — with a follow-up review included." },
+    ],
+    included: [
+      { label: "Free doctor-led consultation & suitability assessment" },
+      { label: "Personalised, medically guided thread lift plan" },
+      { label: "Expert CE-marked thread lift treatment", value: "from €239" },
+      { label: "Complimentary follow-up review" },
+      { label: "Aftercare guidance & ongoing support" },
+    ],
+    price: "From €239",
+    priceLabel: "per treatment",
+    cta: { text: "Book Your Thread Lift Appointment", href: "/consultation" },
+    reviews: "200+ verified reviews",
+  },
   recommended: {
     title: "Recommended with thread lift",
     items: [
