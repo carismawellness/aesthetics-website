@@ -22,7 +22,8 @@ import type { StickyCtaProps } from "@/lib/packages/preview-types";
     `pointer-events:none` while hidden so it never blocks taps and causes no
     layout shift (it's removed from flow), and nothing overflows horizontally.
 */
-export default function StickyCta({ freshaHref, priceLabel, ctaLabel }: StickyCtaProps) {
+export default function StickyCta({ freshaHref, priceLabel, ctaLabel, secondaryHref, secondaryLabel }: StickyCtaProps) {
+  const hasSecondary = Boolean(secondaryHref && secondaryLabel);
   const [shown, setShown] = useState(false);
   // Respect reduced-motion for the enter animation only (visibility still works).
   const [animate, setAnimate] = useState(true);
@@ -77,20 +78,25 @@ export default function StickyCta({ freshaHref, priceLabel, ctaLabel }: StickyCt
         transition: animate ? "opacity 280ms ease, transform 320ms cubic-bezier(0.22,1,0.36,1)" : "none",
       }}
     >
+      <style>{`
+        @media (max-width: 600px) {
+          .sticky-cta-has-2 .sticky-cta-label { display: none; }
+        }
+      `}</style>
       <div
-        className="lg lg--pill lg--strong"
+        className={`lg lg--pill lg--strong${hasSecondary ? " sticky-cta-has-2" : ""}`}
         style={{
           display: "flex",
           alignItems: "center",
-          gap: "12px",
+          gap: "10px",
           width: "100%",
-          maxWidth: "560px", // narrows + centres on desktop so it doesn't span full width
+          maxWidth: hasSecondary ? "620px" : "560px", // a touch wider to fit two CTAs
           padding: "8px 8px 8px 18px",
           minHeight: 60,
         }}
       >
         <span
-          className="font-display"
+          className="font-display sticky-cta-label"
           style={{
             flex: "1 1 auto",
             minWidth: 0, // allow text to shrink/ellipsis instead of forcing overflow
@@ -106,10 +112,37 @@ export default function StickyCta({ freshaHref, priceLabel, ctaLabel }: StickyCt
         >
           {priceLabel}
         </span>
+        {/* Secondary CTA — outline pill. Internal "/consultation" stays in-tab so
+            the site-wide consultation popup intercepts it. */}
+        {hasSecondary && (
+          <a
+            href={secondaryHref}
+            aria-label={secondaryLabel}
+            className="font-display"
+            style={{
+              flex: "0 0 auto",
+              display: "inline-flex",
+              alignItems: "center",
+              justifyContent: "center",
+              minHeight: 44,
+              padding: "12px 16px",
+              borderRadius: "999px",
+              background: "transparent",
+              color: "var(--teal-deep)",
+              border: "1px solid rgba(var(--teal-deep-rgb), 0.5)",
+              fontSize: "11px",
+              letterSpacing: "0.1em",
+              textTransform: "uppercase",
+              textDecoration: "none",
+              whiteSpace: "nowrap",
+            }}
+          >
+            {secondaryLabel}
+          </a>
+        )}
         {/* Primary claim CTA: white-on-teal-deep (>=4.5:1 AA), 44px+ target.
-            External (Fresha) links open in a new tab; internal links (e.g.
-            /consultation) stay in-tab so the site-wide consultation modal can
-            intercept them. */}
+            External (Fresha) links open in a new tab and bypass the popup;
+            internal links stay in-tab for the consultation modal. */}
         <a
           href={freshaHref}
           {...(/^https?:\/\//.test(freshaHref) ? { target: "_blank", rel: "noopener noreferrer" } : {})}
@@ -121,7 +154,7 @@ export default function StickyCta({ freshaHref, priceLabel, ctaLabel }: StickyCt
             alignItems: "center",
             justifyContent: "center",
             minHeight: 44,
-            padding: "12px 22px",
+            padding: "12px 20px",
             borderRadius: "999px",
             background: "var(--teal-deep)",
             color: "var(--white)",

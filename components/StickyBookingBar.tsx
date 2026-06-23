@@ -18,7 +18,18 @@ import { PACKAGES } from "@/lib/packages";
   render nothing.
 */
 
-type BarConfig = { href: string; priceLabel: string; ctaLabel: string };
+type BarConfig = {
+  href: string;
+  priceLabel: string;
+  ctaLabel: string;
+  secondaryHref?: string;
+  secondaryLabel?: string;
+};
+
+// Carisma Aesthetics Fresha booking page (all services) — primary booking CTA
+// for Face/Body treatments. Opens in a new tab and bypasses the popup.
+const AESTHETICS_FRESHA_BOOK =
+  "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2800348&share=true&pId=2708191";
 
 // Extract the "Today: €N" price from a package's hero.total, if present.
 function priceFromTotal(total?: string): string | null {
@@ -41,14 +52,17 @@ for (const link of PACKAGE_LINKS) {
   };
 }
 
-// Face + Body treatments — consultation-first (modal-intercepted), name as label.
+// Face + Body treatments — two CTAs: primary "Book Appointment" → Fresha (new
+// tab, bypasses popup); secondary "Free Consultation" → /consultation popup.
 for (const link of [...FACE_LINKS, ...BODY_LINKS]) {
   // Don't overwrite a package entry that might share a slug.
   if (CONFIG[link.href]) continue;
   CONFIG[link.href] = {
-    href: "/consultation",
+    href: AESTHETICS_FRESHA_BOOK,
     priceLabel: link.label,
-    ctaLabel: "Book consultation",
+    ctaLabel: "Book Appointment",
+    secondaryHref: "/consultation",
+    secondaryLabel: "Free Consultation",
   };
 }
 
@@ -56,5 +70,13 @@ export default function StickyBookingBar() {
   const pathname = usePathname();
   const cfg = pathname ? CONFIG[pathname] : undefined;
   if (!cfg) return null;
-  return <StickyCta freshaHref={cfg.href} priceLabel={cfg.priceLabel} ctaLabel={cfg.ctaLabel} />;
+  return (
+    <StickyCta
+      freshaHref={cfg.href}
+      priceLabel={cfg.priceLabel}
+      ctaLabel={cfg.ctaLabel}
+      secondaryHref={cfg.secondaryHref}
+      secondaryLabel={cfg.secondaryLabel}
+    />
+  );
 }

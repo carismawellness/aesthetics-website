@@ -13,6 +13,12 @@ import TreatmentFaq from "@/components/treatment/TreatmentFaq";
 // Fallback hero image when a treatment defines neither image nor video.
 const HERO_FALLBACK_IMAGE = "/assets/hero-bg.png";
 
+// Default Carisma Aesthetics Fresha booking page (all services). The primary
+// booking CTA opens this in a new tab and bypasses the consultation popup; a
+// treatment can override it with hero.bookHref to deep-link its own service.
+const AESTHETICS_FRESHA_BOOK =
+  "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2800348&share=true&pId=2708191";
+
 // Split the treatment title into at most two headline lines for PageHero, with
 // the last line rendered teal (em). Keeps the primary keyword + "Malta" intact.
 function splitHeadline(title: string): { text: string; em?: boolean }[] {
@@ -135,6 +141,8 @@ function InfoCard({ info }: { info: NonNullable<Treatment["info"]> }) {
 export default function TreatmentPage({ t }: { t: Treatment }) {
   const hasImage = Boolean(t.hero.image);
   const hasMedia = hasImage || Boolean(t.hero.heroVideo);
+  // Primary booking CTA → direct Fresha (new tab); secondary → consultation popup.
+  const bookHref = t.hero.bookHref ?? AESTHETICS_FRESHA_BOOK;
 
   // Lift the price list into the hero's left column so it reads above the fold
   // (PageHero already renders `bullets`). Benefit bullets first, then one bullet
@@ -159,8 +167,8 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
         compactHeadline={t.hero.title.length > 22}
         sub={t.hero.subtitle ?? (t.hero.body ? firstSentence(t.hero.body) : undefined)}
         bullets={heroBullets.length > 0 ? heroBullets : undefined}
-        primaryCta={{ text: t.hero.cta ?? "Book Your Consultation", href: "/consultation" }}
-        secondaryCta={{ text: "View Treatments", href: "/face-treatments" }}
+        primaryCta={{ text: t.hero.cta ?? "Book Your Appointment", href: bookHref, external: true }}
+        secondaryCta={{ text: "Free Consultation", href: "/consultation" }}
         media={
           t.hero.heroVideo
             ? {

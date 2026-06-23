@@ -61,6 +61,15 @@ export default function ConsultationModal() {
          intercept booking links regardless so the popup is the single path. */
       const anchor = (e.target as Element | null)?.closest?.("a");
       if (!anchor) return;
+      /* Explicit opt-out: links that open externally (target="_blank", e.g. a
+         direct Fresha booking CTA) or carry data-direct-booking navigate normally
+         and are never swallowed by the popup. The popup stays the path only for
+         in-tab "/consultation" intents. */
+      if (
+        (anchor as HTMLAnchorElement).target === "_blank" ||
+        anchor.hasAttribute("data-direct-booking")
+      )
+        return;
       const href = anchor.getAttribute("href") || "";
       const isBookingLink =
         href.includes("fresha.com/book-now") ||

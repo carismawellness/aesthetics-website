@@ -22,6 +22,10 @@ export type Treatment = {
     location?: string;
     prices?: PriceItem[];
     cta?: string;
+    /** direct Fresha booking URL for the primary hero/sticky CTA (opens in a new
+     *  tab, bypassing the consultation popup). Falls back to the Aesthetics
+     *  all-services Fresha page when unset. */
+    bookHref?: string;
     image?: string;
     imageRatio?: string;
     bgImage?: string;

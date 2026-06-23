@@ -42,6 +42,10 @@ export type StickyCtaProps = {
   freshaHref: string;
   priceLabel: string; // e.g. "Glow Package · €99"
   ctaLabel: string; // e.g. "Claim my spot"
+  /** optional secondary CTA (e.g. "Free Consultation" → /consultation popup),
+   *  rendered as an outline pill alongside the primary booking button. */
+  secondaryHref?: string;
+  secondaryLabel?: string;
 };
 
 export type HowItWorksProps = { heading: string; steps: PreviewStep[] };
