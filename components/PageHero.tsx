@@ -56,11 +56,23 @@ export type PageHeroProps = {
   eyebrow?: string;
   headline: { text: string; em?: boolean }[];
   sub?: string;
+  /** Optional second body paragraph rendered directly under `sub` (e.g. the full
+   *  treatment intro, with `sub` acting as a short one-line lead-in above it).
+   *  Backward-compatible: omit it and the hero is unchanged. */
+  subSecondary?: string;
   bullets?: HeroBullet[];
   primaryCta: { text: string; href: string; external?: boolean };
   secondaryCta?: { text: string; href: string; external?: boolean };
   media: HeroMedia;
   proof?: HeroProof;
+  /** Optional content rendered inside the right column, directly beneath the arch
+   *  media (e.g. a treatment-info card) so it reads as part of the hero. Stacks
+   *  below the hero copy on mobile. Backward-compatible: omit to leave the hero
+   *  right column as media-only. */
+  belowMedia?: React.ReactNode;
+  /** Optional small print under the hero CTAs/rating (e.g. a pricing disclaimer).
+   *  Backward-compatible: omit and nothing renders. */
+  footnote?: string;
   background?: string;
   compactHeadline?: boolean;
   motif?: boolean;
@@ -92,11 +104,14 @@ export default function PageHero({
   eyebrow,
   headline,
   sub,
+  subSecondary,
   bullets,
   primaryCta,
   secondaryCta,
   media,
   proof,
+  belowMedia,
+  footnote,
   background,
   compactHeadline,
   theme = "light",
@@ -155,14 +170,18 @@ export default function PageHero({
             <p style={{ fontFamily: WIDE, fontSize: 12, letterSpacing: "0.22em", textTransform: "uppercase", color: c.eyebrow, margin: "0 0 14px" }}>{eyebrow}</p>
           )}
 
-          <h1 style={{ fontFamily: SERIF, fontWeight: 400, fontSize: headlineSize, lineHeight: 1.1, textTransform: "uppercase", color: c.headline, margin: "0 0 18px", maxWidth: 640, textWrap: "balance" }}>
+          <h1 style={{ fontFamily: SERIF, fontWeight: 400, fontSize: headlineSize, lineHeight: 1.1, color: c.headline, margin: "0 0 18px", maxWidth: 640, textWrap: "balance" }}>
             {headline.map((l, i) => (
               <span key={i} style={{ display: "block", color: l.em ? c.em : undefined }}>{l.text}</span>
             ))}
           </h1>
 
           {sub && (
-            <p style={{ fontFamily: BODY, fontSize: "clamp(14px,1.1vw,15.5px)", fontWeight: 400, lineHeight: 1.6, color: c.body, maxWidth: 520, margin: "0 0 20px", textWrap: "pretty" }}>{sub}</p>
+            <p style={{ fontFamily: BODY, fontSize: "clamp(14px,1.1vw,15.5px)", fontWeight: 400, lineHeight: 1.6, color: c.body, maxWidth: 520, margin: subSecondary ? "0 0 10px" : "0 0 20px", textWrap: "pretty" }}>{sub}</p>
+          )}
+
+          {subSecondary && (
+            <p style={{ fontFamily: BODY, fontSize: "clamp(13.5px,1.05vw,15px)", fontWeight: 400, lineHeight: 1.6, color: c.body, maxWidth: 540, margin: "0 0 20px", textWrap: "pretty" }}>{subSecondary}</p>
           )}
 
           {bullets && bullets.length > 0 && (
@@ -194,47 +213,59 @@ export default function PageHero({
               <strong style={{ color: c.proofStrong }}>{proof?.rating || "4.9"}</strong> · {proof?.reviews || "200+"} verified client reviews
             </span>
           </div>
+
+          {footnote && (
+            <p style={{ fontFamily: BODY, fontSize: 11.5, fontWeight: 400, lineHeight: 1.5, color: c.statLabel, maxWidth: 540, margin: "14px 0 0" }}>{footnote}</p>
+          )}
         </div>
 
-        {/* RIGHT — arch media + floating proof */}
-        <div className="page-hero-media" style={{ position: "relative", justifySelf: "center", width: "100%", display: "flex", justifyContent: "center" }}>
-          <div style={{ position: "relative", height: "min(60vh, 540px)", aspectRatio: aspect, maxWidth: "100%", borderRadius: ARCH_RADIUS, overflow: "hidden", background: archBg, boxShadow: dark ? "0 24px 60px rgba(0,0,0,0.5)" : "0 24px 60px rgba(28,30,30,0.16)" }}>
-            {media.type === "video" ? (
-              media.autoPlay ? (
-                <HeroAutoplayVideo radius={ARCH_RADIUS} src={media.src} poster={media.poster} alt={media.alt} objectFit={media.fit || "cover"} />
+        {/* RIGHT — arch media + floating proof (+ optional belowMedia card) */}
+        <div className="page-hero-media" style={{ position: "relative", justifySelf: "center", width: "100%", display: "flex", flexDirection: "column", alignItems: "center", gap: belowMedia ? "clamp(16px,2.4vh,28px)" : 0 }}>
+          {/* arch wrapper — floating proof cards position against THIS, not the column */}
+          <div style={{ position: "relative", display: "flex", justifyContent: "center" }}>
+            <div style={{ position: "relative", height: belowMedia ? "min(46vh, 440px)" : "min(60vh, 540px)", aspectRatio: aspect, maxWidth: "100%", borderRadius: ARCH_RADIUS, overflow: "hidden", background: archBg, boxShadow: dark ? "0 24px 60px rgba(0,0,0,0.5)" : "0 24px 60px rgba(28,30,30,0.16)" }}>
+              {media.type === "video" ? (
+                media.autoPlay ? (
+                  <HeroAutoplayVideo radius={ARCH_RADIUS} src={media.src} poster={media.poster} alt={media.alt} objectFit={media.fit || "cover"} />
+                ) : (
+                  <VideoPlayer fill radius={ARCH_RADIUS} src={media.src} poster={media.poster} label={media.alt} objectFit={media.fit || "cover"} />
+                )
               ) : (
-                <VideoPlayer fill radius={ARCH_RADIUS} src={media.src} poster={media.poster} label={media.alt} objectFit={media.fit || "cover"} />
-              )
-            ) : (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img src={media.src} alt={media.alt || "Carisma Aesthetics Malta"} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: media.fit || "cover", display: "block" }} />
-            )}
+                // eslint-disable-next-line @next/next/no-img-element
+                <img src={media.src} alt={media.alt || "Carisma Aesthetics Malta"} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: media.fit || "cover", display: "block" }} />
+              )}
+            </div>
+
+            {/* doctor-led pill — top-left */}
+            <div className={`${glassClass} float-b`} style={{ position: "absolute", left: "clamp(-10px,-1vw,-2px)", top: "15%", borderRadius: 999, padding: "8px 14px", display: "flex", alignItems: "center", gap: 7, zIndex: 3, animationDelay: "-2.8s" }}>
+              <span aria-hidden style={{ width: 16, height: 16, borderRadius: "50%", background: c.checkBg, display: "grid", placeItems: "center" }}>
+                <svg width="9" height="9" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke={c.check} strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" /></svg>
+              </span>
+              <span style={{ fontFamily: WIDE, fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: c.proofStrong }}>Doctor-led</span>
+            </div>
+
+            {/* stat card — bottom-left */}
+            <div className={`${glassClass} float-a`} style={{ position: "absolute", left: "clamp(-14px,-1vw,0px)", bottom: "12%", borderRadius: 16, padding: "11px 16px", display: "flex", alignItems: "center", gap: 10, zIndex: 3 }}>
+              <span style={{ fontFamily: SERIF, fontSize: 28, color: c.stat, lineHeight: 1 }}>{proof?.statValue || "30+"}</span>
+              <span style={{ fontFamily: WIDE, fontSize: 9.5, letterSpacing: "0.08em", textTransform: "uppercase", color: c.statLabel, lineHeight: 1.3, maxWidth: 86 }}>{proof?.statLabel || "years in wellness"}</span>
+            </div>
+
+            {/* award / #1 voted — top-right */}
+            <div className={`${glassClass} float-b`} style={{ position: "absolute", right: "clamp(-12px,-0.5vw,4px)", top: "8%", borderRadius: 16, padding: "10px 14px", display: "flex", alignItems: "center", gap: 10, maxWidth: 210, zIndex: 3 }}>
+              {proof?.awardSrc ? (
+                // eslint-disable-next-line @next/next/no-img-element
+                <img src={proof.awardSrc} alt="" aria-hidden style={{ width: 36, height: 36, borderRadius: "50%", flexShrink: 0 }} />
+              ) : (
+                <Stars size={11} />
+              )}
+              <span style={{ fontFamily: WIDE, fontSize: 9.5, letterSpacing: "0.07em", textTransform: "uppercase", color: c.awardText, lineHeight: 1.35, whiteSpace: "pre-line", fontWeight: 600 }}>{proof?.awardText || "#1 Voted Clinic\nMalta Healthcare Awards"}</span>
+            </div>
           </div>
 
-          {/* doctor-led pill — top-left */}
-          <div className={`${glassClass} float-b`} style={{ position: "absolute", left: "clamp(-10px,-1vw,-2px)", top: "15%", borderRadius: 999, padding: "8px 14px", display: "flex", alignItems: "center", gap: 7, zIndex: 3, animationDelay: "-2.8s" }}>
-            <span aria-hidden style={{ width: 16, height: 16, borderRadius: "50%", background: c.checkBg, display: "grid", placeItems: "center" }}>
-              <svg width="9" height="9" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke={c.check} strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" /></svg>
-            </span>
-            <span style={{ fontFamily: WIDE, fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: c.proofStrong }}>Doctor-led</span>
-          </div>
-
-          {/* stat card — bottom-left */}
-          <div className={`${glassClass} float-a`} style={{ position: "absolute", left: "clamp(-14px,-1vw,0px)", bottom: "12%", borderRadius: 16, padding: "11px 16px", display: "flex", alignItems: "center", gap: 10, zIndex: 3 }}>
-            <span style={{ fontFamily: SERIF, fontSize: 28, color: c.stat, lineHeight: 1 }}>{proof?.statValue || "30+"}</span>
-            <span style={{ fontFamily: WIDE, fontSize: 9.5, letterSpacing: "0.08em", textTransform: "uppercase", color: c.statLabel, lineHeight: 1.3, maxWidth: 86 }}>{proof?.statLabel || "years in wellness"}</span>
-          </div>
-
-          {/* award / #1 voted — top-right */}
-          <div className={`${glassClass} float-b`} style={{ position: "absolute", right: "clamp(-12px,-0.5vw,4px)", top: "8%", borderRadius: 16, padding: "10px 14px", display: "flex", alignItems: "center", gap: 10, maxWidth: 210, zIndex: 3 }}>
-            {proof?.awardSrc ? (
-              // eslint-disable-next-line @next/next/no-img-element
-              <img src={proof.awardSrc} alt="" aria-hidden style={{ width: 36, height: 36, borderRadius: "50%", flexShrink: 0 }} />
-            ) : (
-              <Stars size={11} />
-            )}
-            <span style={{ fontFamily: WIDE, fontSize: 9.5, letterSpacing: "0.07em", textTransform: "uppercase", color: c.awardText, lineHeight: 1.35, whiteSpace: "pre-line", fontWeight: 600 }}>{proof?.awardText || "#1 Voted Clinic\nMalta Healthcare Awards"}</span>
-          </div>
+          {/* optional card beneath the arch (e.g. treatment-info) — part of the hero */}
+          {belowMedia && (
+            <div style={{ width: "100%", maxWidth: 420, zIndex: 2 }}>{belowMedia}</div>
+          )}
         </div>
       </div>
 

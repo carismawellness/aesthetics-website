@@ -31,12 +31,6 @@ function splitHeadline(title: string): { text: string; em?: boolean }[] {
   return [{ text: first }, { text: second, em: true }];
 }
 
-// First sentence of a paragraph (used as the hero sub when there's no subtitle).
-function firstSentence(text: string): string {
-  const m = text.match(/^(.*?[.!?])(\s|$)/);
-  return (m ? m[1] : text).trim();
-}
-
 // P1 — accessible colors: text uses taupe (#756758, 5.0:1 on card bg);
 // icon strokes use teal-deep (#3f6363, 6.1:1) so graphical objects clear 3:1 (WCAG 1.4.11).
 const INFO_COLOR = "#756758";
@@ -160,15 +154,27 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
   return (
     // P1 — <main> landmark wrapping all page content
     <main>
-      {/* ── Hero — shared <PageHero> (one <h1>, primary keyword + Malta) ── */}
+      {/* ── Hero — shared <PageHero> (one <h1>, primary keyword + Malta) ──
+             The full intro paragraph (t.hero.body) reads directly under the
+             headline as the hero's body, with the short subtitle as an optional
+             one-line lead-in above it. The TREATMENT INFO card is folded into the
+             hero's right column (belowMedia), beneath the arch photo, so the
+             above-the-fold reads as one cohesive unit. ── */}
       <PageHero
         badge="#1 Voted Med-Aesthetics Clinic"
+        eyebrow={t.hero.location}
         headline={splitHeadline(t.hero.title)}
         compactHeadline={t.hero.title.length > 22}
-        sub={t.hero.subtitle ?? (t.hero.body ? firstSentence(t.hero.body) : undefined)}
+        sub={t.hero.subtitle}
+        subSecondary={t.hero.body}
         bullets={heroBullets.length > 0 ? heroBullets : undefined}
         primaryCta={{ text: t.hero.cta ?? "Book Your Appointment", href: bookHref, external: true }}
         secondaryCta={{ text: "Free Consultation", href: "/consultation" }}
+        footnote={
+          t.hero.note ??
+          (t.pending ? "Detailed treatment information for this page is being finalised." : undefined)
+        }
+        belowMedia={t.info && hasMedia ? <InfoCard info={t.info} /> : undefined}
         media={
           t.hero.heroVideo
             ? {
@@ -199,99 +205,9 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
         }}
       />
 
-      {/* ── Hero detail strip — sits tight under the hero (minimal top padding so
-             it reads above the fold): supporting copy on the left, the TREATMENT
-             INFO card on the right. Prices now live in the hero bullets; the
-             product tabs, brand logos, and duplicate Google-rating block have
-             been removed. ── */}
-      {(t.hero.location ||
-        t.hero.body ||
-        t.hero.note ||
-        (t.info && hasMedia) ||
-        t.pending) && (
-        <section
-          aria-label="Treatment overview"
-          style={{ padding: "clamp(20px,3vh,36px) 0 clamp(40px,5vh,64px)" }}
-        >
-          <div className="container">
-            <div className="mx-auto" style={{ maxWidth: "1100px" }}>
-              <div className="grid gap-8 md:grid-cols-2 items-start">
-                {/* Left: supporting copy */}
-                <Reveal>
-                  {t.hero.location && (
-                    <p
-                      className="font-display"
-                      style={{
-                        fontSize: "12px",
-                        // P1 — teal-text #406060 = 5.76:1 — passes AA
-                        color: "var(--teal-text)",
-                        letterSpacing: "0.14em",
-                        textTransform: "uppercase",
-                        marginBottom: "12px",
-                      }}
-                    >
-                      {t.hero.location}
-                    </p>
-                  )}
-
-                  {t.hero.body && (
-                    // P6 — max-width prose for comfortable line length
-                    <p
-                      style={{
-                        fontSize: "14px",
-                        color: "var(--label)",
-                        lineHeight: 1.625,
-                        marginBottom: "16px",
-                        maxWidth: "72ch",
-                      }}
-                    >
-                      {t.hero.body}
-                    </p>
-                  )}
-
-                  {t.hero.note && (
-                    <p
-                      style={{
-                        marginTop: "16px",
-                        fontSize: "12px",
-                        // P1 — ink-soft is 12:1 — passes AA
-                        color: "var(--ink-soft)",
-                        lineHeight: 1.6,
-                      }}
-                    >
-                      {t.hero.note}
-                    </p>
-                  )}
-
-                  {t.pending && (
-                    <p
-                      style={{
-                        marginTop: "24px",
-                        fontSize: "12px",
-                        color: "var(--ink-soft)",
-                        fontStyle: "italic",
-                      }}
-                    >
-                      Detailed treatment information for this page is being finalised.
-                    </p>
-                  )}
-                </Reveal>
-
-                {/* Right: treatment-info card */}
-                {t.info && hasMedia && (
-                  <Reveal delay={120}>
-                    <InfoCard info={t.info} />
-                  </Reveal>
-                )}
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* ── Before / After carousel — moved up to sit immediately under the
-             above-the-fold (hero + info strip), before everything else. Shows
-             all before/after pairs. ── */}
+      {/* ── Before / After carousel — sits immediately under the above-the-fold
+             hero (which now carries the body copy + TREATMENT INFO card),
+             before everything else. Shows all before/after pairs. ── */}
       {(t.beforeAfter || t.beforeAfterTitle) && (
         <section aria-label="Before and after results" style={{ padding: "70px 0" }}>
           {t.beforeAfter && t.beforeAfter.length > 0 ? (
