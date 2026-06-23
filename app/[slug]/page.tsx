@@ -176,7 +176,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         url: `https://www.carismaaesthetics.com/${slug}`,
         siteName: "Carisma Aesthetics",
         type: "website" as const,
-        images: [{ url: "/og-aesthetics.jpg", width: 1200, height: 630 }],
+        images: [{ url: "/og-aesthetics.png", width: 1277, height: 1330 }],
       },
       twitter: {
         card: "summary_large_image" as const,
