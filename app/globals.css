@@ -209,6 +209,19 @@ body {
   font-family: "Trajan Pro", Georgia, serif;
 }
 
+/* ── BRAND RULE: Trajan Pro is a titling-capitals face ──
+   Title/mixed case renders with a tall first letter + small-caps rest (the ugly
+   two-height look) — strictly against brand. Force uniform UPPERCASE on EVERY
+   element that uses Trajan, however it's applied: the .font-serif class OR an
+   inline font-family / SERIF constant (every such string contains "Trajan").
+   The attribute selector catches inline usages that escape the class/heading
+   rules. `.font-script` (Carisma Script) is class-based with no inline "Trajan",
+   so it stays exempt. */
+[style*="Trajan"],
+.font-serif {
+  text-transform: uppercase !important;
+}
+
 h1, h2, h3, h4, h5, h6 {
   color: var(--ink);
   font-family: "Novecento Wide", sans-serif;
