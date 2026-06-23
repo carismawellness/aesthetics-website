@@ -102,20 +102,20 @@
      consumed as backgrounds across the site (TreatmentPage, PackageFunnel,
      FaceUI, PageHero, MembershipPage, etc.), so remapping them here flips the
      whole site from teal wallpaper to a clean warm ivory/champagne neutral in
-     one place. Palette: white #ffffff · ivory #faf6ef · light-ivory #fdfaf4 ·
-     champagne #f3ece0 · light-champagne #f7f0e4. NO teal/turquoise grounds. */
-  --teal-100:    #faf6ef;   /* (was #deebeb teal) → warm ivory section background */
-  --beige:       #f3ece0;   /* (was #eef3f3 teal) → champagne accent ground */
-  --beige-2:     #f7f0e4;   /* (was #deebeb teal) → light champagne accent */
+     one place. Palette: white #ffffff · ivory #deebeb · light-ivory #eef3f3 ·
+     champagne #eef3f3 · light-champagne #deebeb. NO teal/turquoise grounds. */
+  --teal-100:    #deebeb;   /* (was #deebeb teal) → warm ivory section background */
+  --beige:       #eef3f3;   /* (was #eef3f3 teal) → champagne accent ground */
+  --beige-2:     #deebeb;   /* (was #deebeb teal) → light champagne accent */
   --gray-100:    #eceae7;   /* neutral light grey surface */
-  --cream:       #faf6ef;   /* (was #deebeb teal) → warm ivory section background */
-  --cream-2:     #fdfaf4;   /* (was #eef3f3 teal) → light ivory */
+  --cream:       #deebeb;   /* (was #deebeb teal) → warm ivory section background */
+  --cream-2:     #eef3f3;   /* (was #eef3f3 teal) → light ivory */
   --white:       #ffffff;
   /* Warm ivory / champagne background palette (explicit handles) */
-  --ivory:           #faf6ef;
-  --ivory-light:     #fdfaf4;
-  --champagne:       #f3ece0;
-  --champagne-light: #f7f0e4;
+  --ivory:           #deebeb;
+  --ivory-light:     #eef3f3;
+  --champagne:       #eef3f3;
+  --champagne-light: #deebeb;
 
   /* — Accessible TEXT / FILL variants (small text / icons / buttons) — */
   --teal-deep: #4f7373;     /* accessible teal — button fill & icons carry WHITE text (>=4.5). ACCENT only — not a section background */
@@ -773,7 +773,7 @@ body.dark-texture-page footer div[style*="background"] {
    One clean, continuous warm ivory→champagne field that VERY slowly drifts so
    the whole MembershipPage reads as a single evolving background instead of a
    patchwork of section fills. NO teal/turquoise — warm neutrals only:
-     white #ffffff → ivory #faf6ef → champagne #f3ece0.
+     white #ffffff → ivory #deebeb → champagne #eef3f3.
    How it works: an oversized linear base gradient pans across a 400% canvas
    (~34s) while two soft radial "blooms" (warm ivory / light champagne) breathe
    on long, offset loops (~28s / ~40s). Movement is tiny and the colours sit
@@ -783,17 +783,17 @@ body.dark-texture-page footer div[style*="background"] {
    (the <main>/section that currently stacks several teal/section fills), then
    make the inner sections transparent (background: transparent / remove their
    fills) so this one field shows through end-to-end. Dark text tokens stay AA
-   on every stop (#ffffff / #faf6ef / #f3ece0 — gold #706552 = 4.87:1 worst).
+   on every stop (#ffffff / #deebeb / #eef3f3 — gold #706552 = 4.87:1 worst).
    ============================================================ */
 .glow-field {
   position: relative;
-  background-color: #faf6ef; /* solid fallback before paint */
+  background-color: #deebeb; /* solid fallback before paint */
   /* Layer 1: warm-ivory bloom (top-left) · Layer 2: light-champagne bloom
      (bottom-right) · Layer 3: the base ivory→champagne linear field. */
   background-image:
     radial-gradient(60% 55% at 18% 22%, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0) 60%),
-    radial-gradient(58% 60% at 84% 78%, rgba(247, 240, 228, 0.85) 0%, rgba(247, 240, 228, 0) 62%),
-    linear-gradient(125deg, #ffffff 0%, #faf6ef 42%, #f3ece0 100%);
+    radial-gradient(58% 60% at 84% 78%, rgba(222, 235, 235, 0.85) 0%, rgba(222, 235, 235, 0) 62%),
+    linear-gradient(125deg, #ffffff 0%, #deebeb 42%, #eef3f3 100%);
   background-size: 160% 160%, 170% 170%, 400% 400%;
   background-position: 18% 22%, 84% 78%, 0% 50%;
   background-repeat: no-repeat;
