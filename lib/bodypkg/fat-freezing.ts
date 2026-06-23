@@ -7,7 +7,7 @@ export const fatFreezing: PackageContent = {
   liveUrl: 'https://www.carismaslimming.com/fat-reduction',
 
   heroEyebrow: 'COOLSCULPTING IN MALTA',
-  heroTitle: 'fat eraser protocol',
+  heroTitle: 'Fat Freezing — Clinically Proven Body Contouring',
   heroSubheading: 'BURN STUBBORN FAT, NO SURGERY.',
   heroDescription:
     'For those who have tried dieting, eating healthier and moving more, but the love handles, stubborn belly fat and double chin still will not budge.',
@@ -30,7 +30,7 @@ export const fatFreezing: PackageContent = {
   heroVideo: 'https://video.wixstatic.com/video/87fc13_d455089124694edb96940d4cd650622a/720p/mp4/file.mp4',
   heroImageRatio: '398 / 682',
 
-  secretHeading: ['the secret to a more defined,', 'confident look'],
+  secretHeading: ['What Is Fat Freezing and', 'How Does Cryolipolysis Work?'],
   secretSubheading: 'shrink love handles & target stubborn fat pockets with precision',
   secretImage: W + '87fc13_af546d93467e47d790f061caff13348a~mv2.png',
   secretIntro:
@@ -52,13 +52,13 @@ export const fatFreezing: PackageContent = {
   ],
 
   eligEyebrow: 'eligibility criteria',
-  eligHeading: 'selective by intention successful by design',
+  eligHeading: 'Who Is a Good Candidate for Fat Freezing in Malta?',
   eligImage: W + '87fc13_bda5e64e4bcb4471b28a919528af71bc~mv2.png',
   eligIntro: 'Treat visible fat bulges in 7 areas of the body',
   areas: ['STOMACH – BELLY FAT', 'LOVE HANDLES', 'UPPER ARMS', 'THIGHS', 'BANANA ROLL', 'BACK FAT, BRA FAT', 'DOUBLE CHIN / THE JAWLINE'],
 
   ptEyebrow: 'package treatments',
-  ptHeading: 'malta’s only multidisciplinary approach to weightloss',
+  ptHeading: 'Medically Supervised Cryolipolysis at Carisma Aesthetics',
   ptCardEyebrow: 'coolsculpting',
   ptCardTag: 'targeted-fat reduction',
   ptParas: [
@@ -75,7 +75,7 @@ export const fatFreezing: PackageContent = {
   ptImage: W + '87fc13_e873e3bf68584964b06a9f7bd9e5d335~mv2.png',
   ptImage2: W + '87fc13_1105e5fcee694da4a6ed1edeb9fd2bd7~mv2.png',
 
-  dualHeading: ['malta’s only dual technology', 'starter pack for stubborn fat'],
+  dualHeading: ['Fat Freezing Results in Malta', '— What to Expect'],
   dualMini: [
     { icon: W + '87fc13_387683ad0f4c499c8cab338b5f800aa0~mv2.png', title: 'TARGETED CONTOURING', body: 'CoolSculpting plus Lemon Bottle injections in one visit for your number one trouble spot.' },
     { icon: W + '87fc13_9011dffd287245ed9d60f5663e21edba~mv2.png', title: 'VISIBLE, TRACKABLE CHANGE', body: 'Local fat reduction where you actually see it in clothes and photos, not just on the scale.' },
@@ -99,16 +99,16 @@ export const fatFreezing: PackageContent = {
   mapQuery: 'Carisma Slimming, Malta',
 
   faqs: [
-    { q: '1. What is included in the Stubborn Fat Eraser Starter Pack?', a: 'One in person consultation with our doctor, one CoolSculpting fat freezing session, access to spa & fitness facilities, Tanita Body Composition Analysis, €25 Carisma Aesthetics credit for future treatments.' },
-    { q: '2. Am I a good candidate for this package?', a: 'It is ideal if you are close to your goal weight but have localised fat on areas like the lower belly, love handles or double chin. Suitability is always confirmed in your medical consultation.' },
-    { q: '3. How does CoolSculpting fat freezing actually work?', a: 'CoolSculpting uses controlled cooling to target and kill fat cells under the skin. Over the following weeks your body naturally clears these cells, which can reduce the thickness of the fat layer in the treated area.' },
-    { q: '4. What is the difference between fat freezing and fat dissolving injections?', a: 'Fat freezing uses cold to destroy fat cells from outside the body, while fat dissolving injections use a solution that breaks down fat cells from within a small, targeted pocket. In this pack you get both, planned together for one key area.' },
-    { q: '5. How many areas can I treat with this starter pack?', a: 'This offer is built to focus on one main problem area so you can see a clear change. During the consultation the doctor will advise how best to use the CoolSculpting and injections for that area.' },
-    { q: '6. Does the treatment hurt and is there downtime?', a: 'CoolSculpting usually feels very cold and tight at first, then the area goes numb. Most people go back to normal activities the same day.' },
-    { q: '7. When will I see results?', a: 'As the body removes treated fat cells. Your clinic will schedule follow up photos so you can compare.' },
-    { q: '8. Are the results permanent?', a: 'The fat cells that are destroyed and removed do not come back. However remaining fat cells can still grow if you gain weight, so a healthy lifestyle will help you maintain your results.' },
-    { q: '9. Are there any risks or side effects?', a: 'As with all medical procedures there are possible risks, such as temporary swelling, bruising, numbness, tenderness or small lumps in the treated area. Your doctor will discuss all potential side effects and safety information before you decide.' },
-    { q: '10. How does the €25 Carisma Aesthetics credit work?', a: 'Your €25 credit is applied to a future treatment at Carisma Aesthetics, such as body contouring or injectables, within a set time frame that will be clearly written on your booking and confirmation.' },
+    { q: 'What is included in the Fat Eraser Starter Pack?', a: 'One in person consultation with our doctor, one CoolSculpting fat freezing session, access to spa & fitness facilities, Tanita Body Composition Analysis, €25 Carisma Aesthetics credit for future treatments.' },
+    { q: 'Am I a good candidate for this package?', a: 'It is ideal if you are close to your goal weight but have localised fat on areas like the lower belly, love handles or double chin. Suitability is always confirmed in your medical consultation.' },
+    { q: 'How does CoolSculpting fat freezing actually work?', a: 'CoolSculpting uses controlled cooling to target and kill fat cells under the skin. Over the following weeks your body naturally clears these cells, which can reduce the thickness of the fat layer in the treated area.' },
+    { q: 'What Is the Difference Between Fat Freezing and Fat Dissolving?', a: 'Fat freezing uses cold to destroy fat cells from outside the body, while fat dissolving injections use a solution that breaks down fat cells from within a small, targeted pocket. In this pack you get both, planned together for one key area.' },
+    { q: 'How many areas can I treat with this starter pack?', a: 'This offer is built to focus on one main problem area so you can see a clear change. During the consultation the doctor will advise how best to use the CoolSculpting and injections for that area.' },
+    { q: 'Does the treatment hurt and is there downtime?', a: 'CoolSculpting usually feels very cold and tight at first, then the area goes numb. Most people go back to normal activities the same day.' },
+    { q: 'When will I see fat freezing results?', a: 'As the body removes treated fat cells. Your clinic will schedule follow up photos so you can compare.' },
+    { q: 'Are the results long-lasting?', a: 'The fat cells that are destroyed and removed do not come back. However remaining fat cells can still grow if you gain weight, so a healthy lifestyle will help you maintain your results.' },
+    { q: 'Are there any risks or side effects?', a: 'As with all medical procedures there are possible risks, such as temporary swelling, bruising, numbness, tenderness or small lumps in the treated area. Your doctor will discuss all potential side effects and safety information before you decide.' },
+    { q: 'How does the €25 Carisma Aesthetics credit work?', a: 'Your €25 credit is applied to a future treatment at Carisma Aesthetics, such as body contouring or injectables, within a set time frame that will be clearly written on your booking and confirmation.' },
   ],
 
   evidenceEyebrow: 'clinical research: basis of our methodology',

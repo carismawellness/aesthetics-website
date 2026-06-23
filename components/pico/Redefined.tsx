@@ -73,7 +73,7 @@ export default function Redefined() {
               lineHeight: 1.3,
             }}
           >
-            Your skin — redefined.
+            Before and After Pico Laser — Carisma Aesthetics, Birkirkara
           </h2>
 
           <p

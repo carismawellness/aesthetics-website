@@ -110,7 +110,7 @@ export default function MemberReviews() {
                 margin: 0,
               }}
             >
-              Real people, real glow
+              Real Reviews from Glow Club Members Across Malta
             </h2>
             <p
               style={{

@@ -10,7 +10,7 @@ const t: Treatment = {
   slug: "hydrafacial",
   category: "Face",
   hero: {
-    title: "Hydrafacial in Malta",
+    title: "HydraFacial in Malta — Cleanse, Extract and Hydrate",
     subtitle: "The Deep-Cleansing Facial That Hydrates, Brightens and Restores Your Skin",
     body: "Dull skin, clogged pores, or a complexion that has lost its glow? Our HydraFacial in Malta cleanses, extracts, and hydrates in a single session, personalised to your skin type and concerns. Walk out with visibly clearer, more radiant skin from your very first visit, plumper, more radiant skin from your very first session.",
     prices: [
@@ -30,7 +30,7 @@ const t: Treatment = {
     { before: "/assets/treatments/hydrafacial-ba5-before.png", after: "/assets/treatments/hydrafacial-ba5-after.png", label: "Pigmentation", name: "Mei L.", review: "The dark patches and uneven tone have faded and my skin looks brighter and more even." },
   ],
   precision: {
-    title: "precision areas of refinement",
+    title: "What Does HydraFacial Treat? Precision Skin Concerns",
     intro:
       "Each HydraFacial targets your skin's specific concerns using personalised serums and advanced vortex technology. Below are the primary concerns we treat.",
     areas: [
@@ -64,7 +64,7 @@ const t: Treatment = {
     ],
   },
   suitability: {
-    title: "Is hydrafacial suitable for you?",
+    title: "Who Is a Good Candidate for HydraFacial in Malta?",
     intro:
       "HydraFacial is one of the most versatile facial treatments available, suitable for virtually all skin types, tones, and ages. Whether you are preparing for a special event, maintaining healthy skin, or targeting a specific concern, a personalised HydraFacial at our Malta clinic can help. A consultation with our team ensures we select the right protocol for you.",
     personas: [
@@ -88,7 +88,7 @@ const t: Treatment = {
     ],
   },
   experience: {
-    title: "Your treatment experience",
+    title: "How Does a HydraFacial Treatment Work? Step by Step",
     steps: [
       { title: "Consultation & Plan", desc: "We assess your skin type, concerns, and goals, then select the ideal HydraFacial protocol, serum cocktail, and targeted boosters for your session.", image: "/assets/treatments/hydrafacial-step1.png" },
       { title: "Your HydraFacial", desc: "Your aesthetician performs your personalised HydraFacial — cleansing, extracting, and infusing nourishing serums in a single comfortable session.", image: "/assets/treatments/hydrafacial-step3.jpg" },
@@ -98,7 +98,7 @@ const t: Treatment = {
   },
   prepAftercare: {
     kicker: "PREPARATION & AFTERCARE",
-    title: "your session, step by step",
+    title: "Aftercare and Recovery After Your HydraFacial Session",
     intro: "A smooth HydraFacial experience begins with a few simple steps. Here is what to know before, during, and after your session at our Malta clinic.",
     cards: [
       {
@@ -141,7 +141,7 @@ const t: Treatment = {
   // Book now). The shared pricingGrid renders name/price/desc only — content is
   // condensed into desc; richer cards + reorder reported to the orchestrator.
   pricingGrid: {
-    title: "Hydrafacial packages Malta",
+    title: "HydraFacial Packages in Malta — Prices From €99",
     intro:
       "Three HydraFacial experiences designed for every skin goal and schedule. Every package includes personalised serum selection, complimentary spa access, and free parking at our InterContinental Hotel clinic in St. Julian's. From a 30-minute express deep cleanse to our full 80-minute signature facial. Choose the HydraFacial that fits your skin and your day.",
     items: [
@@ -184,7 +184,7 @@ const t: Treatment = {
     reviews: "200+ verified reviews",
   },
   patientVideos: {
-    title: "Real patients, real confidence",
+    title: "Real HydraFacial Results from Our Malta Patients",
     intro: "Watch our clients' Hydrafacial journeys and see the stunning results that have boosted their confidence.",
     videos: [
       "/assets/treatments/hydrafacial-video1.mp4",
@@ -193,7 +193,7 @@ const t: Treatment = {
     ],
   },
   trusted: {
-    title: "Malta's trusted clinic for hydrafacial",
+    title: "Medically Qualified Practitioners — Safe HydraFacial in Malta",
     subtitle: "DOCTOR-LED hydrafacial IN MALTA",
     asSeenOn: ["/assets/press/lovin-malta.jpeg", "/assets/press/malta-daily.png", "/assets/press/bay.jpeg", "/assets/press/times-of-malta.png", "/assets/press/malta-today.jpg"],
     images: ["/assets/treatments/trusted-clinic-collage.png"],
@@ -207,7 +207,7 @@ const t: Treatment = {
   },
   difference: {
     kicker: "the carisma difference",
-    title: "Malta’s #1 leading wellness chain",
+    title: "Your HydraFacial Results — What to Expect After Treatment",
     commitmentTitle: "our commitment",
     commitment: [
       "Natural, radiant results — your skin at its healthiest, not an artificial finish",
@@ -225,7 +225,7 @@ const t: Treatment = {
     mapQuery: "Carisma Aesthetics, Malta",
   },
   recommended: {
-    title: "Recommended with hydrafacial",
+    title: "Treatments to Combine with HydraFacial",
     items: [
       { label: "Microneedling", href: "/microneedling-malta", image: "/assets/treatments/hydrafacial-rec-microneedling.jpg" },
       { label: "Dermafillers", href: "/dermal-fillers-malta", image: "/assets/treatments/hydrafacial-rec-dermafillers.avif" },
@@ -234,7 +234,7 @@ const t: Treatment = {
       { label: "MFU Ultight", href: "/skin-tightening-1", image: "/assets/treatments/hydrafacial-rec-mfu.png" },
     ],
   },
-  faqTitle: "FAQs about hydrafacial in Malta",
+  faqTitle: "Frequently Asked Questions About HydraFacial in Malta",
   faq: [
     { q: "Who can benefit from Hydrafacial?", a: "Anyone looking to combat dryness, dullness, or dehydration in their skin can benefit from Hydrafacial. The treatments are suitable for various skin types and concerns." },
     { q: "How does Hydrafacial work?", a: "Hydrafacial work by delivering potent hydration deep into the skin using specialized techniques like dermal infusion, hyaluronic acid infusion, and custom serums. These treatments help improve skin texture, elasticity, and overall radiance." },

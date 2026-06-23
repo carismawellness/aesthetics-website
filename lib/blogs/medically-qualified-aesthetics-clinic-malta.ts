@@ -2,7 +2,7 @@ import type { BlogPost } from '../blog-types';
 
 export const post: BlogPost = {
   slug: 'medically-qualified-aesthetics-clinic-malta',
-  title: 'Why Choose a Medically Qualified Aesthetics Clinic in Malta',
+  title: 'Medically Qualified Aesthetics Clinic Malta — Why It Matters',
   metaTitle: 'Medically Qualified Aesthetics Clinic Malta | Carisma',
   metaDescription:
     'Medically qualified aesthetics clinic Malta — safer results, expert doctors. Carisma is Malta\'s #1 med-aesthetics clinic. Book your free consultation now.',
@@ -52,7 +52,7 @@ export const post: BlogPost = {
     {
       type: 'heading',
       level: 2,
-      text: 'Meet the Doctors at Carisma Aesthetics',
+      text: 'Medically Qualified Practitioners — The Carisma Doctors',
     },
     {
       type: 'paragraph',
@@ -65,7 +65,7 @@ export const post: BlogPost = {
     {
       type: 'heading',
       level: 2,
-      text: 'Why Medical Oversight Changes the Quality of Your Results',
+      text: 'How Doctor-Led Treatment Delivers Superior Aesthetic Results',
     },
     {
       type: 'paragraph',
@@ -100,7 +100,7 @@ export const post: BlogPost = {
     {
       type: 'heading',
       level: 2,
-      text: '7 Questions to Ask Any Aesthetics Clinic in Malta Before You Book',
+      text: '7 Questions to Ask Any Aesthetics Clinic Before You Book',
     },
     {
       type: 'list',

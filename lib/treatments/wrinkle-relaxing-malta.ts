@@ -5,7 +5,7 @@ const t: Treatment = {
   slug: "wrinkle-relaxing-malta",
   category: "Face",
   hero: {
-    title: "Botox Malta",
+    title: "Botox Malta — Natural Results by Medically Qualified Doctors",
     subtitle: "Are wrinkles and fine lines getting in your way?",
     body: "Say goodbye to forehead lines, frown lines, and crow's feet with expert Botox treatments in Malta. Every session is performed by qualified doctors who specialise in facial anatomy, delivering natural, refined results that restore your confidence without changing who you are.",
     prices: [
@@ -25,15 +25,15 @@ const t: Treatment = {
     { metric: "Results Visible In", detail: "4-5 Days" },
     { metric: "Anaesthetic", detail: "None" },
   ],
-  beforeAfterTitle: "BOTOX RESULTS",
+  beforeAfterTitle: "Real Botox Results — Before and After at Carisma Malta",
   beforeAfter: [
-    { before: "/assets/treatments/botox-r4-before.png", after: "/assets/treatments/botox-r4-after.png", name: "Mark C.", review: "My frown lines made me look permanently angry — now I just look rested, not done." },
-    { before: "/assets/treatments/botox-r1-before.png", after: "/assets/treatments/botox-r1-after.png", name: "Elena P.", review: "The crow's feet around my eyes are gone, but I can still smile completely." },
-    { before: "/assets/treatments/botox-r2-before.png", after: "/assets/treatments/botox-r2-after.png", name: "Sophie B.", review: "My forehead lines smoothed out without that frozen look I was so worried about." },
-    { before: "/assets/treatments/botox-r3-before.png", after: "/assets/treatments/botox-r3-after.png", name: "Rebecca M.", review: "A natural softening across my forehead and frown lines — my friends just say I look refreshed." },
+    { before: "/assets/treatments/botox-r4-before.png", after: "/assets/treatments/botox-r4-after.png" },
+    { before: "/assets/treatments/botox-r1-before.png", after: "/assets/treatments/botox-r1-after.png" },
+    { before: "/assets/treatments/botox-r2-before.png", after: "/assets/treatments/botox-r2-after.png" },
+    { before: "/assets/treatments/botox-r3-before.png", after: "/assets/treatments/botox-r3-after.png" },
   ],
   precision: {
-    title: "PRECISION AREAS OF REFINEMENT",
+    title: "Botox Treatment Areas — What Can Be Treated?",
     intro:
       "Each botox treatment is carefully applied to specific anatomical areas by our doctors. Below are the most commonly treated zones at our Malta clinic.",
     areas: [
@@ -47,7 +47,7 @@ const t: Treatment = {
     additional: "Lip flip, gummy smile, chin dimpling, bunny lines, brow lift, jaw slimming, hyperhidrosis",
   },
   suitability: {
-    title: "Is this suitable for you?",
+    title: "Who Is a Good Candidate for Botox in Malta?",
     intro:
       "Every face moves differently. Botox is most effective when tailored to your unique facial anatomy, targeting the lines that bother you while preserving your natural expressions. A free consultation with one of our doctors helps us understand what will work for you.",
     suitableFor: [
@@ -74,34 +74,41 @@ const t: Treatment = {
     kicker: "The real reason people book",
     title: "You look more tired, tense, or stressed than you feel",
     body: [
-      "Doctor-led wrinkle relaxing gently softens those expression lines while keeping your natural movement — so you still look like you, just more rested.",
+      "It's rarely about chasing perfection or erasing every line. It's that your forehead, frown, or eyes can make you look exhausted, tense, or older than you actually feel — even on the days you're calm and well-rested.",
+      "Doctor-led wrinkle relaxing gently softens those expression lines while keeping your natural movement. You still look like you — just more rested, calmer, and refreshed.",
+    ],
+    points: [
+      { title: "Softer, not frozen", desc: "We relax the lines that age you while keeping every natural expression." },
+      { title: "Rested, not 'done'", desc: "People notice you look refreshed — not that you've had something done." },
+      { title: "Still you", desc: "A subtle softening that looks like you on your most well-rested day." },
     ],
   },
   guarantee: {
     kicker: "The Natural Confidence Guarantee",
-    title: "Natural Confidence Guarantee",
+    title: "Natural Botox Results — or Your Follow-Up Is Free",
     paragraphs: [
-      "Every plan starts with a doctor-led facial assessment and a natural-first approach that is never overdone, backed by a free follow-up adjustment until you are 100% satisfied with a result that still looks like you.",
+      "The fears we hear most are the ones we're built around: I don't want to look overdone. I don't want to be pressured. What if I'm not happy? What if I don't even need it? What if they overdo it?",
+      "So we do the opposite. Every treatment starts with a doctor-led facial assessment — never a sales pitch — and a natural-first plan that treats only what you need. If you're ever not completely happy with how your result settles, your follow-up adjustment session is on us, until you're 100% satisfied with a result that still looks like you.",
     ],
     cta: "Book Your Free Consultation",
     points: [
-      { value: "Doctor-led", label: "Assessment first", sub: "Never a salesperson" },
-      { value: "Natural-first", label: "Never overdone", sub: "We refine, never overfill" },
-      { value: "100%", label: "Satisfaction", sub: "Free follow-up until you are happy" },
+      { value: "Doctor-led", label: "Assessment first", sub: "Every plan starts with a doctor, never a salesperson" },
+      { value: "Natural-first", label: "Never overdone", sub: "We'd rather under-treat and refine than overdo it" },
+      { value: "Free", label: "Follow-up session", sub: "Included until you're 100% satisfied" },
     ],
   },
   experience: {
-    title: "Your treatment experience",
+    title: "How Does Botox Work? Your Step-by-Step Journey",
     steps: [
-      { title: "Personalised Consultation", desc: "We assess your facial anatomy, skin condition, medical history, and botox goals with one of our doctors.", image: "/assets/treatments/wrinkle-relaxing-malta-step1.png" },
-      { title: "Structured Plan", desc: "Your doctor designs a medically guided botox plan tailored to your facial structure and desired outcome.", image: "/assets/treatments/wrinkle-relaxing-malta-step2.png" },
-      { title: "Targeted Treatments", desc: "Your doctor administers botox using fine, precise injections, quick, comfortable, and no downtime.", image: "/assets/treatments/wrinkle-relaxing-malta-step3.png" },
-      { title: "Ongoing Review & Adjustment", desc: "Your doctor monitors your response and refines the plan to ensure natural botox results over time.", image: "/assets/treatments/wrinkle-relaxing-malta-step4.png" },
+      { title: "Step 1 — Your Consultation", desc: "We assess your facial anatomy, skin condition, medical history, and botox goals with one of our doctors.", image: "/assets/treatments/wrinkle-relaxing-malta-step1.png" },
+      { title: "Step 2 — Your Personalised Plan", desc: "Your doctor designs a medically guided botox plan tailored to your facial structure and desired outcome.", image: "/assets/treatments/wrinkle-relaxing-malta-step2.png" },
+      { title: "Step 3 — Targeted Injections", desc: "Your doctor administers botox using fine, precise injections, quick, comfortable, and no downtime.", image: "/assets/treatments/wrinkle-relaxing-malta-step3.png" },
+      { title: "Step 4 — Review and Adjustment", desc: "Your doctor monitors your response and refines the plan to ensure natural botox results over time.", image: "/assets/treatments/wrinkle-relaxing-malta-step4.png" },
     ],
   },
   prepAftercare: {
     kicker: "Preparation & Aftercare",
-    title: "Your session, step by step",
+    title: "Botox Aftercare — What to Do Before and After",
     intro: "A smooth botox experience begins with a few simple steps. Here is what to know before, during, and after your session at our Malta clinic.",
     cards: [
       { icon: "/assets/treatments/wrinkle-relaxing-malta-icon-prep-before.png", label: "Before", lead: "Arrive informed and ready for a comfortable session.", points: ["Share your concerns and medical history", "Disclose all medications and supplements", "Avoid alcohol and blood thinners for 24 hours", "Pause strenuous exercise the day before"] },
@@ -110,12 +117,12 @@ const t: Treatment = {
     ],
   },
   patientVideos: {
-    title: "Real patients, real confidence",
+    title: "Real Botox Patients — Stories from Our Malta Clinic",
     intro: "Every face is unique. Every story is personal. Discover how our botox patients describe their journey to refined, natural results at Carisma Aesthetics in Malta.",
     videos: ["/assets/treatments/botox-video1.mp4", "/assets/treatments/botox-video2.mp4", "/assets/treatments/botox-video3.mp4"],
   },
   trusted: {
-    title: "Malta's trusted clinic for Botox",
+    title: "Medically Qualified Practitioners — Safe Botox in Malta",
     subtitle: "Doctor-Led Botox in Malta",
     asSeenOn: ["/assets/press/lovin-malta.jpeg", "/assets/press/malta-daily.png", "/assets/press/bay.jpeg", "/assets/press/times-of-malta.png", "/assets/press/malta-today.jpg"],
     images: ["/assets/treatments/trusted-clinic-collage.png"],
@@ -129,7 +136,7 @@ const t: Treatment = {
   },
   difference: {
     kicker: "The Carisma Difference",
-    title: "Malta's #1 leading wellness chain",
+    title: "Why Malta Patients Choose Carisma for Botox",
     commitmentTitle: "Our Commitment",
     commitment: [
       "Natural, refined botox results, never overdone, never frozen",
@@ -168,7 +175,7 @@ const t: Treatment = {
     reviews: "200+ verified reviews",
   },
   recommended: {
-    title: "Recommended with Botox",
+    title: "Recommended Treatments to Combine with Botox",
     items: [
       { label: "Dermal fillers", href: "/dermal-fillers-malta", image: "/assets/treatments/wrinkle-relaxing-malta-rec-dermal-fillers.jpg" },
       { label: "Microneedling", href: "/microneedling-malta", image: "/assets/treatments/wrinkle-relaxing-malta-rec-microneedling.png" },
@@ -176,7 +183,7 @@ const t: Treatment = {
       { label: "Mesotherapy", href: "/mesotherapy-malta", image: "/assets/treatments/wrinkle-relaxing-malta-rec-mesotherapy.png" },
     ],
   },
-  faqTitle: "FAQs about Botox in Malta",
+  faqTitle: "How Long Does Botox Last in Malta?",
   faq: [
     { q: "What is botox and how does it work?", a: "Botox is a purified protein that temporarily relaxes specific facial muscles. By blocking the nerve signals that cause muscle contraction, it smooths dynamic wrinkles, such as forehead lines, frown lines, and crow's feet. The result is smoother skin and a naturally refreshed appearance, without altering your unique expressions. Botox has been used safely for over 30 years and is one of the most popular cosmetic treatments in Malta." },
     { q: "What are the common cosmetic uses of botox?", a: "Botox treatments are designed to relax specific facial muscles, reducing the appearance of dynamic wrinkles and expression lines. Common treatment areas include forehead lines, frown lines between the eyebrows, and crow's feet around the eyes. Botox can also be used for a lip flip, gummy smile correction, chin dimpling, bunny lines, brow lift, jawline slimming, and the nefertiti neck lift, resulting in a smoother, more refreshed look." },

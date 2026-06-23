@@ -46,7 +46,7 @@ export default function GiftFinalCta() {
                 margin: 0,
               }}
             >
-              Give a gift she&rsquo;ll never forget
+              Gift a Carisma Aesthetics Treatment in Malta Today
             </h2>
 
             {/* Supporting line */}

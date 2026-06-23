@@ -132,7 +132,7 @@ export default function Pillars() {
             maxWidth: "640px",
           }}
         >
-          Four ways the Glow Club rewards you
+          Glow Club Membership Benefits — Exclusive Discounts in Malta
         </h2>
         <p
           className="text-center"

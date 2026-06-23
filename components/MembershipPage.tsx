@@ -24,8 +24,8 @@ export default function MembershipPage() {
       <PageHero
         badge="#1 Voted Med-Aesthetics Clinic"
         headline={[
-          { text: "Glow Club membership" },
-          { text: "in Malta", em: true },
+          { text: "Glow Club Membership Malta —" },
+          { text: "Save on Every Treatment", em: true },
         ]}
         sub="Save towards your favourite Carisma Aesthetics treatments month by month, then spend your Glow balance with exclusive member discounts."
         bullets={[
@@ -98,7 +98,7 @@ export default function MembershipPage() {
               lineHeight: 1.25,
             }}
           >
-            Ready to start saving towards your glow?
+            Start Your Glow Club Membership in Malta Today
           </h2>
           <p
             style={{

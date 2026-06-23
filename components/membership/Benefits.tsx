@@ -518,7 +518,7 @@ export default function Benefits() {
               margin: "16px auto 0",
             }}
           >
-            Your Glow Club benefits
+            Member Perks and Savings — What Your Glow Club Includes
           </h2>
           <div
             aria-hidden="true"

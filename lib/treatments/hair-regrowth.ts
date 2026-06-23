@@ -1,245 +1,181 @@
 import type { Treatment } from "../treatment-types";
 
-// Hair Regrowth / PRP + exosome hair-loss treatment (Malta).
-// Migrated from the bespoke components/HairRegrowthPage.tsx (dark theme) to the
-// shared, light-theme data-driven TreatmentPage. Content harvested from the live
-// page (https://www.carismaaesthetics.com/hair-regrowth) and adapted to the
-// template's section schema: hero · before/after · problem reframe · guarantee ·
-// precision (the science) · suitability (3 personas + humanized notIdeal) ·
-// experience (exactly 3 steps) · trusted (Top-Clinic band) · plan summary ·
-// recommended · FAQ.
-//
-// Before/after note: the live page ships *combined* before|after PNGs
-// (hair-regrowth-ba1..5.png), which cannot render in the shared BeforeAfterCarousel
-// (it frames `before` and `after` as two separate side-by-side images). We instead
-// use the repo's genuine *split* hair-loss before/after assets (prp-malta-ba4/ba5,
-// mesotherapy-malta-ba-hair), with patient names + reviews matched to each photo's
-// gender and thinning area, preserving 3 of the harvested testimonials.
+// Live page: https://www.carismaaesthetics.com/hair-regrowth
+// Dark, custom Wix landing page. All copy below is verbatim from the live dump.
+// Live section order: hero (video right) → before-and-afters → eligibility criteria →
+// the science behind the results → expert care (Dr Giovanni) → our guarantee →
+// our packages (3 protocol cards with videos) → "we don't just treat hair loss" collage +
+// why-patients-choose card → FAQs → clinical research → real people, real reviews.
 const t: Treatment = {
   slug: "hair-regrowth",
   category: "Face",
   hero: {
-    title: "Hair Loss Treatment Malta",
-    subtitle: "Doctor-led, guaranteed regrowth in 90 days — no surgery, no guesswork.",
-    body: "Malta's only doctor-led, exosome-powered hair loss clinic that reverses thinning hair without surgery. We combine PRP and exosome therapy, delivered in-clinic by our medical team, with a doctor-issued prescription for minoxidil, finasteride, and ketoconazole — dispensed by our licensed pharmacy partner, Melita Health & Beauty. One clinically measured, fully managed, results-guaranteed program with baseline and follow-up density scans, so you see your progress in numbers, not just in the mirror.",
+    // Live renders a small kicker "Hair Loss Treatment in Malta" above this heading.
+    title: "Hair Regrowth Treatment in Malta — PRP & Laser Therapy",
+    subtitle: "Hair Loss Treatment in Malta",
+    body: "Malta's only doctor-led, exosome-powered hair loss treatment clinic that reverses thinning hair without surgery. The program combines PRP and exosome therapy delivered in-clinic by our medical team with a doctor-issued prescription for minoxidil, finasteride, and ketoconazole — dispensed by our licensed pharmacy partner, Melita Health & Beauty. One clinically measured, fully managed, guaranteed program.",
     benefits: [
-      "AI-powered scalp imaging & density mapping at Day 0 and Day 90",
-      "Exosome hair therapy via 36-pin HydroPen delivery",
-      "PRP follicle reactivation therapy from your own blood",
-      "ScalpRx prescription protocol — minoxidil, finasteride & ketoconazole (dispensed by Melita Health & Beauty)",
+      "AI-Powered Scalp Imaging & Density Mapping",
+      "Exosome Hair Treatment via HydroPen Delivery",
+      "PRP Hair Treatment (Follicle Reactivation Therapy)",
+      "ScalpRx Prescription Protocol — doctor-issued prescription for Minoxidil, Finasteride & Ketoconazole (dispensed by Melita Health & Beauty pharmacy)",
     ],
-    prices: [
-      { label: "Single session (Hair Regrowth 30)", price: "from €399" },
-      { label: "90-day guaranteed program", price: "from €897" },
-      { label: "180-day program", price: "from €1,494" },
-    ],
-    location: "St Julian's, Malta",
-    cta: "Book Your Hair Regrowth Consultation",
-    note: "Over 1,000 patients treated · Guaranteed programs limited to 12 patients per month",
-    heroVideo: "/assets/treatments/vid-hair-regrowth.mp4",
-    image: "/assets/treatments/hair-regrowth-hero-bg.jpg",
+    location: "St Julian’s, Malta",
+    cta: "Book Your Free Consultation",
+    note: "Over 1,000 patients treated",
+    bgImage: "/assets/treatments/hair-regrowth-hero-bg.jpg",
+    // Live hero right column is a portrait video reel — /assets/treatments/vid-hair-regrowth.mp4
+    // (no hero.video field in the schema yet; see componentChangesNeeded).
   },
-  info: [
-    { metric: "Procedure Time", detail: "45-60 Minutes" },
-    { metric: "Downtime", detail: "Minimal" },
-    { metric: "Results Visible In", detail: "8-12 Weeks" },
-    { metric: "Program Length", detail: "90-180 Days" },
-    { metric: "Anaesthetic", detail: "Topical Numbing" },
-  ],
-  beforeAfterTitle: "HAIR REGROWTH RESULTS",
-  beforeAfter: [
-    {
-      before: "/assets/treatments/prp-malta-ba5-before.png",
-      after: "/assets/treatments/prp-malta-ba5-after.png",
-      label: "Receding Hairline (Male)",
-      name: "Thomas B.",
-      review: "I'd been losing hair for years and tried everything. After 90 days on the full protocol I genuinely couldn't believe the difference at my hairline.",
-    },
-    {
-      before: "/assets/treatments/prp-malta-ba4-before.png",
-      after: "/assets/treatments/prp-malta-ba4-after.png",
-      label: "Thinning Crown & Part (Female)",
-      name: "Nadine A.",
-      review: "I used to check my pillow every morning, terrified of how much I'd shed overnight. Three months in, the shedding has almost stopped and my part looks fuller.",
-    },
-    {
-      before: "/assets/treatments/mesotherapy-malta-ba-hair-before.png",
-      after: "/assets/treatments/mesotherapy-malta-ba-hair-after.png",
-      label: "Diffuse Thinning (Female)",
-      name: "Sara C.",
-      review: "After the second month I noticed tiny new hairs along my part — that moment made me emotional. My density scan confirmed a 24% improvement.",
-    },
-  ],
-  problem: {
-    kicker: "The real reason people book",
-    title: "Every morning you notice a little more scalp than hair",
-    body: [
-      "Thinning hair quietly chips away at how confident you feel — doctor-led regenerative treatment reactivates your own follicles so you can stop counting strands and feel like yourself again.",
-    ],
-  },
-  guarantee: {
-    kicker: "The Natural Confidence Guarantee",
-    title: "Natural Confidence Guarantee",
+
+  // Live section 2: "Before and afters / hair loss treatment results guaranteed."
+  education: {
+    title: "Hair Regrowth Before and After — Real Patient Results in Malta",
+    subtitle: "Before and afters",
     paragraphs: [
-      "Every program starts with a doctor-led scalp assessment and AI density scan — never a sales pitch — and follows a clinically measured, natural-first plan. If you qualify, complete your 90-day protocol exactly as prescribed, and your follow-up density scan shows no visible improvement, we extend your treatment at no cost. We are the only hair loss clinic in Malta to offer this.",
+      "Average density increase of 21-28% after 90 days of treatment, as measured by AI-powered scalp density and follicle tracking at our Malta hair loss clinic. Each treatment program includes baseline and follow-up scans so you can see your own progress in numbers, not just in the mirror.",
     ],
-    cta: "Book Your Hair Regrowth Consultation",
-    points: [
-      { value: "Doctor-led", label: "Assessment & scan first", sub: "Never a salesperson" },
-      { value: "Measured", label: "21-28% average density gain", sub: "Confirmed by Day-0 and Day-90 scans" },
-      { value: "100%", label: "Performance guarantee", sub: "No visible result, treatment extended free" },
-    ],
+    // Live shows a before/after slideshow here plus a gold "CHECK IF YOU QUALIFY" CTA;
+    // the slideshow images were lazy-loaded and not present in the DOM extract.
   },
+
+  // Live section 6: "Our guarantee / measured. verified. guaranteed." (renders earlier
+  // than live order because of the shared template's fixed slot order).
+  guarantee: {
+    title: "Your Measurable Hair Regrowth Guarantee — Verified in 90 Days",
+    paragraphs: [
+      "The only hair loss treatment clinic in Malta to offer a 100% performance guarantee*",
+      "We're selective about who qualifies for our hair loss treatment. We only accept patients we genuinely believe we can help. For those who qualify for treatment at our Malta clinic, we're confident in the results our protocol can deliver — we have seen it work, again and again.",
+      "If you qualify and complete your 90-day hair loss treatment — including all prescribed in-clinic sessions, your full prescribed minoxidil and finasteride regimen (issued by Dr. Giovanni and dispensed by our licensed pharmacy partner, Melita Health & Beauty), and the home-care steps in your plan — and your follow-up density scan shows no visible improvement, we will extend your treatment at no cost.",
+      "*To ensure results remain measurable and medically valid, patients must:",
+      "Complete all prescribed in-clinic sessions on schedule.",
+      "Use the recommended oral and topical treatments consistently.",
+      "Avoid unapproved scalp products, supplements, or external treatments.",
+      "Maintain stable health, with no major hormonal, nutritional, or medical changes (e.g., thyroid imbalance, iron deficiency, pregnancy).",
+      "Our guaranteed hair loss treatment programs are limited to 12 patients per month at our Malta clinic to ensure individual follow-up and measurable outcomes. Please inquire for the next available start date.",
+    ],
+    cta: "CHECK IF YOU QUALIFY",
+  },
+
+  // Live section 4: "The Science Behind the Results / no fads. only what works."
   precision: {
-    title: "No fads. Only what works.",
+    title: "How PRP and Exosome Hair Regrowth Treatment Works",
     intro:
-      "For years, advanced hair loss treatments like exosome therapy and medically supervised minoxidil and finasteride protocols were limited to elite clinics abroad. For the first time in Malta, Carisma's doctor-led clinic offers the same standard of care — PRP and exosome therapy performed in-clinic by our medical team, paired with a doctor-issued prescription dispensed by our licensed pharmacy partner, Melita Health & Beauty. Each part of the program plays a distinct role in bringing your follicles back to life.",
+      "For years, advanced hair loss treatments like exosome therapy and medically supervised minoxidil and finasteride protocols were limited to elite clinics abroad. For the first time in Malta, Carisma's doctor-led hair loss clinic offers the same standard of care: PRP and exosome therapy performed in-clinic by our medical team, paired with a doctor-issued prescription for minoxidil, finasteride, and ketoconazole — dispensed by our licensed pharmacy partner, Melita Health & Beauty. One complete, results-guaranteed treatment system. Each component of the Hair Regrowth treatment plays a unique role in restoring your follicles to life.",
     areas: [
       {
         zone: "01",
         icon: "/assets/treatments/hair-regrowth-density-scan.png",
-        name: "AI Scalp Imaging & Density Mapping",
-        desc: "Establishes your clinical baseline — follicle density, thinning zones, and growth potential. Repeated at Day 0 and Day 90 to measure real results in numbers.",
+        name: "AI-Powered Scalp Imaging & Density Mapping",
+        desc: "Establishes your clinical baseline: follicle density, thinning zones, and growth-potential mapping. Used at Day 0 and Day 90 to measure your real results in numbers — not just in the mirror.",
       },
       {
         zone: "02",
         icon: "/assets/treatments/hair-regrowth-scalp-imaging.png",
-        name: "Exosome Therapy via HydroPen",
-        desc: "Lab-purified exosomes delivered deep into the scalp via the 36-pin HydroPen. Clinical studies show 25% greater results than PRP alone.",
+        name: "Exosome Hair Treatment via HydroPen Delivery",
+        desc: "Lab-purified exosomes delivered deep into the scalp via the 36-pin HydroPen system. Amplifies follicle repair and accelerates hair regrowth at a cellular level — clinical studies show 25% greater results compared to PRP alone.",
       },
       {
         zone: "03",
         icon: "/assets/treatments/hair-regrowth-prp-centrifuge.png",
-        name: "PRP Follicle Reactivation",
-        desc: "Growth factors concentrated from your own blood, injected precisely into the scalp to reactivate dormant follicles and stimulate new growth.",
+        name: "PRP Hair Treatment (Follicle Reactivation Therapy)",
+        desc: "Growth factors concentrated from your own blood, injected precisely into the scalp to reactivate dormant follicles and stimulate new hair growth from within.",
       },
       {
         zone: "04",
         icon: "/assets/treatments/hair-regrowth-consult-tablet.png",
         name: "ScalpRx Prescription Protocol",
-        desc: "A personalised prescription for minoxidil, finasteride, and ketoconazole — written by Dr. Giovanni and dispensed by Melita Health & Beauty pharmacy.",
+        desc: "A personalised prescription for minoxidil, finasteride, and ketoconazole — written by Dr. Giovanni, tailored to your hair loss pattern, and dispensed by our licensed pharmacy partner, Melita Health & Beauty.",
       },
     ],
   },
+
+  // Live section 3: "eligibility criteria / selective by intention. successful by design."
   suitability: {
-    title: "Selective by intention. Successful by design.",
+    title: "Who Is a Good Candidate for PRP Hair Treatment in Malta?",
     intro:
-      "Noticing your hair thinning, shedding, or receding more each year? Tried minoxidil, supplements, and every at-home fix only to end up where you started? You're not alone — hair loss affects over 50% of men and 40% of women at some point. We're selective about who we accept and only take on patients we genuinely believe we can help, because early-stage thinning responds strongly to regenerative treatment when addressed in time. If follicles are beyond recovery, we tell you honestly and may point you to trusted hair transplant partners instead.",
-    personas: [
-      {
-        title: "The early-stage thinner",
-        desc: "You've spotted a widening part, a receding hairline, or more scalp at the crown — and you want to act before it progresses.",
-      },
-      {
-        title: "The tried-everything sceptic",
-        desc: "You've cycled through shampoos, serums, and supplements with nothing to show for it, and you want a plan that's actually measured.",
-      },
-      {
-        title: "The no-surgery seeker",
-        desc: "You don't want a transplant's cost, scarring, or downtime — you want natural regrowth from your own follicles, guided by a doctor.",
-      },
+      "Noticing your hair thinning, shedding, or receding more each year? Experienced hair loss after a stressful episode, pregnancy, hormonal changes, or illness? Tried minoxidil, supplements, serums, and every at-home treatment only to end up right where you started? You're not alone. Hair loss affects over 50% of men and 40% of women at some point in their lives. The Hair Reset Protocol at our Malta clinic is for those ready to move beyond fads, a doctor-led, science-based hair loss treatment built for real, measurable regrowth, not quick fixes. Most early-stage hair loss patterns respond strongly to regenerative treatment when addressed early. If follicles are beyond recovery, we advise honestly and may recommend trusted hair transplant partners instead.",
+    suitableFor: [
+      "Noticing thinning or a receding hairline and want to stop hair loss early",
+      "Tried minoxidil, finasteride, supplements, or at-home treatments that failed to work",
+      "Don't want a hair transplant because of cost, scarring, or downtime",
+      "Tired of \"miracle\" fixes and unproven hair loss products",
+      "Want guaranteed, measurable hair regrowth results without surgery",
+      "Ready for a doctor-led treatment at a specialist hair loss clinic in Malta",
     ],
     notIdeal: [
-      "Your follicles are no longer biologically active — advanced baldness needs a different route, and we'll point you to trusted transplant partners",
-      "A scalp condition or active inflammation needs settling first — we'll treat that before regeneration can work",
-      "An underlying issue (thyroid, iron, hormones) should be stabilised first — we'll guide you, then welcome you back",
-      "You're hoping for instant, one-session results — real regrowth is measured over 90 days, not days",
-      "You'd rather not commit to a consistent medical plan — the guarantee depends on following it through",
+      "Advanced baldness where follicles are no longer biologically active",
+      "Severe scalp conditions or inflammation that prevent regeneration",
+      "Hormonal or medical issues (thyroid, anemia, medications) that must be stabilised first",
+      "Expecting instant or one-session results",
+      "Unwilling to follow a consistent 90-day medical plan",
+      "Focused solely on price instead of clinical outcomes",
+      "Seeking cosmetic cover-ups rather than true regeneration",
     ],
   },
+
+  // Live section 5: "expert care / led by expertise. driven by results." (Dr Giovanni).
   experience: {
-    title: "Your treatment experience",
+    title: "Doctor-Led Hair Regrowth by Medically Qualified Practitioners",
     steps: [
       {
-        title: "Consultation & Density Scan",
-        desc: "Dr. Giovanni assesses your hair loss pattern and medical history, and an AI scalp scan maps your follicle density to establish your Day-0 baseline.",
-        image: "/assets/treatments/hair-regrowth-consult-tablet.png",
-      },
-      {
-        title: "Regenerative Treatment",
-        desc: "In-clinic PRP and exosome sessions reactivate dormant follicles, paired with your personalised ScalpRx prescription for minoxidil, finasteride, and ketoconazole.",
-        image: "/assets/treatments/hair-regrowth-scalp-injection.png",
-      },
-      {
-        title: "Day-90 Review & Maintenance",
-        desc: "A follow-up density scan compares your results against baseline in measurable numbers, and we set a maintenance plan to protect and build on your regrowth.",
-        image: "/assets/treatments/hair-regrowth-density-scan.png",
+        title: "Dr. Giovanni Scornavacca",
+        image: "/assets/treatments/hair-regrowth-dr-giovanni.png",
+        desc: "The Hair Reset hair loss treatment is led by Dr. Giovanni Scornavacca, Malta's leading specialist in regenerative hair medicine. With over 20 years of clinical experience treating hair loss, he has helped thousands of patients at our Malta clinic restore their hair and confidence using evidence-based, minimally invasive treatments including PRP, exosome therapy, minoxidil, and finasteride. To ensure world-class expertise, Dr. Giovanni is flown from Italy to Malta each week to oversee all advanced regenerative procedures and treatment protocols personally. “Hair restoration should never be guesswork. Every follicle tells a story — our job is to help it start growing again..” — Dr. Giovanni, Hair Loss Treatment Specialist.",
       },
     ],
   },
-  trusted: {
-    title: "Malta's Top Clinic for Hair Loss Treatment",
-    subtitle: "Doctor-Led Regenerative Hair Treatment in Malta",
-    asSeenOn: [
-      "/assets/press/lovin-malta.jpeg",
-      "/assets/press/malta-daily.png",
-      "/assets/press/bay.jpeg",
-      "/assets/press/times-of-malta.png",
-      "/assets/press/malta-today.jpg",
-    ],
-    images: ["/assets/treatments/hair-regrowth-scalp-marking.png"],
-    points: [
-      {
-        title: "Doctor-Led, Not Salon-Led",
-        desc: "Every program is overseen by Dr. Giovanni Scornavacca, a specialist in regenerative hair medicine flown in from Italy each week.",
-      },
-      {
-        title: "Measured, Not Guessed",
-        desc: "AI scalp imaging at Day 0 and Day 90 proves your results in numbers — the foundation of our performance guarantee.",
-      },
-      {
-        title: "Non-Surgical, No Downtime",
-        desc: "PRP, exosomes, and prescription therapy reactivate real hair growth with only mild redness that fades within a day.",
-      },
-      {
-        title: "Everything Managed for You",
-        desc: "Consultation, in-clinic treatment, and prescriptions handled at one Malta clinic — backed by a measurable results guarantee.",
-      },
-    ],
-  },
-  planSummary: {
-    kicker: "Your hair regrowth plan",
-    title: "Malta's Doctor-Led Hair Regrowth Program",
-    benefits: [
-      {
-        icon: "shield",
-        title: "Doctor-Led & Guaranteed",
-        desc: "Overseen by a regenerative hair specialist and backed by a 100% performance guarantee — the only one of its kind in Malta.",
-      },
-      {
-        icon: "chart",
-        title: "Measured in Numbers",
-        desc: "AI density scans at Day 0 and Day 90 prove your regrowth — patients average a 21-28% increase in density.",
-      },
-      {
-        icon: "sparkle",
-        title: "Natural, Gradual Regrowth",
-        desc: "Your own follicles reactivated with PRP, exosomes, and prescription therapy — results that look and feel authentically yours.",
-      },
-    ],
-    included: [
-      { label: "Doctor-led consultation with Dr. Giovanni" },
-      { label: "AI scalp imaging & density mapping (Day 0 + Day 90)" },
-      { label: "In-clinic PRP & exosome therapy sessions" },
-      { label: "ScalpRx prescription (dispensed by Melita Health & Beauty)" },
-      { label: "Final density scan & post-care maintenance plan" },
-    ],
-    price: "From €399",
-    priceLabel: "single session · 90-day program from €897",
-    cta: { text: "Book Your Hair Regrowth Consultation", href: "/consultation" },
-    reviews: "500+ verified reviews",
-  },
-  recommended: {
-    title: "Recommended with Hair Regrowth",
+
+  // Live section 7: "Our packages / choose your protocol".
+  pricingGrid: {
+    title: "Hair Regrowth Treatment Pricing in Malta — From €399",
+    intro: "Our packages",
     items: [
-      { label: "PRP treatment", href: "/prp-malta", image: "/assets/treatments/hair-regrowth-prp-centrifuge.png" },
-      { label: "Mesotherapy", href: "/mesotherapy-malta", image: "/assets/treatments/hair-regrowth-scalp-injection.png" },
-      { label: "Exosome glow lift", href: "/exosome-glowlift", image: "/assets/treatments/hair-regrowth-scalp-imaging.png" },
-      { label: "Microneedling", href: "/microneedling-malta", image: "/assets/treatments/hair-regrowth-density-mapping.png" },
+      {
+        name: "Hair regrowth 30",
+        price: "One treatment time: €399",
+        desc: "Your first step toward treating hair loss at Malta's leading hair clinic. One time plan Includes: Hair loss treatment consultation with Dr. Giovanni. AI-Powered Scalp Imaging & Density Mapping. PRP Hair Treatment (Follicle Reactivation Therapy). ScalpRx Prescription Protocol — Finasteride (Oral Therapy) – blocks DHT, the hormone responsible for follicle miniaturization. Minoxidil (Topical Therapy) – boosts blood flow and oxygen delivery to stimulate new growth. Ketoconazole Shampoo – maintains scalp balance, reduces inflammation, and supports follicle health.",
+      },
+      {
+        name: "Hair regrowth 90",
+        price: "Monthly: €897",
+        desc: "Our most popular hair loss treatment - Measurable regrowth guaranteed in 90 days. ✅ Backed by the Carisma Measurable Results Guarantee. 3-month plan Includes: Hair regrowth consultation with Dr. Giovanni. Scalp Imaging & Density Mapping – identifies growth-potential zones for targeted treatment. 3-Month Regenerative Program: Day 1: Hair Scalp Complex: Exosomes delivered with the HydroPen (36-pin deep-delivery system). Day 20: PRP Follicle Reactivation Therapy. Day 40: Hair Scalp Complex. Day 60: PRP Follicle Reactivation Therapy. Day 80: Hair Scalp Complex. Day 90: Final Density Scan – progress comparison against your baseline imaging. Each session is performed by the Dr. ScalpRx Protocol a personalised minoxidil and finasteride prescription, issued by Dr. Giovanni and tailored to your hair loss pattern. Dispensed by our licensed pharmacy partner, Melita Health & Beauty — not by the clinic. Finasteride (Oral Therapy) – blocks DHT, the hormone responsible for follicle miniaturization. Minoxidil (Topical Therapy) – boosts blood flow and oxygen delivery to stimulate new growth. Ketoconazole Shampoo – maintains scalp balance, reduces inflammation, and supports follicle health. Post-Care Plan – guidance to maintain and strengthen results.",
+      },
+      {
+        name: "Hair regrowth 180",
+        price: "Monthly: €1494",
+        desc: "Full 6-month hair loss treatment protocol for long-term regrowth and stability. ✅ Backed by the Carisma Measurable Results Guarantee. 6 month plan Includes: Hair regrowth consultation with Dr. Giovanni. Scalp Imaging & Density Mapping – identifies growth-potential zones for targeted treatment. 6-Month Regenerative Program: Day 1: Hair Scalp Complex: Exosomes delivered with the HydroPen (36-pin deep-delivery system). Day 20: PRP Follicle Reactivation Therapy. Day 40: Hair Scalp Complex. Day 60: PRP Follicle Reactivation Therapy. Day 80: Hair Scalp Complex. Day 100: PRP Follicle Reactivation Therapy. Day 120: Hair Scalp Complex. Day 140: PRP Follicle Reactivation Therapy. Day 160: Hair Scalp Complex. Day 180: Final Density Scan – progress comparison against your baseline imaging. Each session is performed by the Dr. ScalpRx Protocol a personalised minoxidil and finasteride prescription, issued by Dr. Giovanni and tailored to your hair loss pattern. Dispensed by our licensed pharmacy partner, Melita Health & Beauty — not by the clinic. Finasteride (Oral Therapy) – blocks DHT, the hormone responsible for follicle miniaturization. Minoxidil (Topical Therapy) – boosts blood flow and oxygen delivery to stimulate new growth. Ketoconazole Shampoo – maintains scalp balance, reduces inflammation, and supports follicle health. Post-Care Plan – guidance to maintain and strengthen results.",
+      },
     ],
   },
+
+  // Live sections 8+9: "we don't just treat hair loss" photo collage + grey
+  // "Why Patients Choose Our Hair Loss Treatment Clinic in Malta" card.
+  trusted: {
+    title: "Restore Your Confidence with Doctor-Led Hair Regrowth in Malta",
+    subtitle: "to make visible results the new standard in Malta",
+    images: [
+      "/assets/treatments/hair-regrowth-scalp-marking.png",
+      "/assets/treatments/hair-regrowth-density-mapping.png",
+      "/assets/treatments/hair-regrowth-prp-centrifuge.png",
+      "/assets/treatments/hair-regrowth-scalp-injection.png",
+    ],
+    points: [
+      { title: "Why Patients Choose Our Hair Loss Treatment Clinic in Malta", desc: "" },
+      { title: "No surgery or scars — non-surgical hair loss treatment that reactivates real hair growth", desc: "" },
+      { title: "No downtime — minimal redness that fades within a day", desc: "" },
+      { title: "Doctor-led treatment plan using clinically proven PRP, exosome therapy, minoxidil, and finasteride", desc: "" },
+      { title: "Everything managed for you: consultation, treatment, and prescriptions all at one Malta clinic", desc: "" },
+      { title: "Natural, gradual results that look and feel authentic — guaranteed", desc: "" },
+      { title: "Discreet, central hair clinic in St Julian's, Malta with a proven track record", desc: "" },
+      { title: "Finally, a hair loss treatment that actually works: backed by a measurable results guarantee", desc: "" },
+      { title: "", desc: "Due to limited availability, our guaranteed hair loss treatment programs are restricted to 12 patients per month at our Malta clinic. Please inquire about the next available openings." },
+    ],
+  },
+
+  // Live section 10: "hair loss treatment FAQs / you asked we answered".
   faqKicker: "hair loss treatment FAQs",
-  faqTitle: "You asked, we answered",
+  faqTitle: "Frequently Asked Questions About Hair Regrowth in Malta",
   faq: [
     {
       q: "What exactly is the Hair Reset Program?",
@@ -247,23 +183,23 @@ const t: Treatment = {
     },
     {
       q: "Who is the program best suited for?",
-      a: "Our hair loss treatment is best suited for people with mild to moderate hair loss, thinning at the crown, a receding hairline, or general reduction in density. The treatment is suitable for both men and women at our Malta clinic, including female pattern hair thinning and postpartum hair loss. If follicles are still active, results are highly achievable.",
+      a: "Our hair loss treatment is best suited for people with mild to moderate hair loss, thinning at the crown, receding hairline, or general reduction in density. The treatment is suitable for both men and women at our Malta clinic, including female pattern hair thinning and postpartum hair loss. If follicles are still active, results are highly achievable.",
     },
     {
       q: "How soon will I start seeing results?",
-      a: "Most patients at our Malta hair loss clinic notice visible improvement between 8 and 12 weeks of treatment, with measurable density increases confirmed through scalp imaging. Patients on the full protocol — PRP, exosomes, minoxidil, and finasteride — typically see the strongest results.",
+      a: "Most patients at our Malta hair loss clinic notice visible improvement between 8–12 weeks of treatment, with measurable density increases confirmed through scalp imaging. Patients on the full treatment protocol: PRP, exosomes, minoxidil, and finasteride, typically see the strongest results.",
     },
     {
       q: "How is this different from PRP alone?",
-      a: "Traditional PRP hair treatment only stimulates growth factors from your blood. Our Hair Reset Protocol enriches PRP with lab-purified exosomes, which amplify follicle repair and accelerate hair regrowth at a cellular level — clinical studies show 25% greater results with exosome treatment compared to PRP alone. Combined with prescription minoxidil and finasteride, this is Malta's most comprehensive non-surgical hair loss treatment.",
+      a: "Traditional PRP hair treatment only stimulates growth factors from your blood. Our Hair Reset Protocol enriches PRP with lab-purified exosomes, which amplify follicle repair and accelerate hair regrowth at a cellular level, clinical studies show 25% greater results with exosome treatment compared to PRP alone. Combined with prescription minoxidil and finasteride, this is Malta's most comprehensive non-surgical hair loss treatment.",
     },
     {
       q: "Is it painful?",
-      a: "Not at all. Hair loss treatments at our clinic are performed with topical numbing and gentle HydroPen microneedling, designed for scalp comfort. Mild redness may appear but fades within 24 hours. The minoxidil and finasteride components are simply taken at home.",
+      a: "Not at all. Hair loss treatments at our clinic are performed with topical numbing and gentle HydroPen microneedling, designed for scalp comfort. Mild redness may appear but fades within 24 hours. The minoxidil and finasteride components of the treatment are simply taken at home.",
     },
     {
       q: "Will I need to take time off work?",
-      a: "No. The procedure is non-surgical with zero downtime — you can resume normal activity immediately.",
+      a: "No. The procedure is non-surgical with zero downtime, you can resume normal activity immediately.",
     },
     {
       q: "Is it safe?",
@@ -271,7 +207,7 @@ const t: Treatment = {
     },
     {
       q: "How does the guarantee work?",
-      a: "If you qualify for our hair loss treatment and complete your 90-day protocol — including all prescribed in-clinic sessions, minoxidil and finasteride use, and home-care steps — and your follow-up density scan shows no visible improvement, we will extend your treatment at no cost. Carisma Aesthetics is the only hair loss treatment clinic in Malta to offer this guarantee. To keep results measurable and medically valid, patients must complete all sessions on schedule, use the recommended oral and topical treatments consistently, avoid unapproved scalp products, and maintain stable health with no major hormonal, nutritional, or medical changes.",
+      a: "If you qualify for our hair loss treatment and complete your 90-day protocol, including all prescribed in-clinic sessions, minoxidil and finasteride use, and home treatments, and your follow-up density scan shows no visible improvement, we will extend your treatment at no cost. Carisma Aesthetics is the only hair loss treatment clinic in Malta to offer this guarantee.",
     },
     {
       q: "How long do the results last?",
@@ -283,11 +219,7 @@ const t: Treatment = {
     },
     {
       q: "Can women do this treatment too?",
-      a: "Absolutely. Our hair loss treatment is effective for female pattern thinning, postpartum shedding, and hormonal hair loss, with minoxidil dosages and protocols tailored specifically for women at our Malta clinic.",
-    },
-    {
-      q: "How much does hair loss treatment cost in Malta?",
-      a: "A single session (Hair Regrowth 30) starts from €399 and includes your consultation with Dr. Giovanni, AI scalp imaging, PRP therapy, and the ScalpRx prescription protocol. Our most popular 90-day guaranteed program starts from €897, and the full 180-day program from €1,494. Book a free consultation at our St Julian's clinic for a personalised plan and quote.",
+      a: "Absolutely. Our hair loss treatment is effective for female pattern thinning, postpartum shedding, and hormonal hair loss, with minoxidil dosages and treatment protocols tailored specifically for women at our Malta clinic.",
     },
   ],
 };

@@ -44,7 +44,7 @@ export default function TrustedFeatures() {
     >
       <div className="container text-center">
         <Serif id="trusted-heading">
-          malta&apos;s trusted clinic for safe, precise tattoo removal
+          Medically Qualified Practitioners — Safe Tattoo Removal in Malta
         </Serif>
         <p
           className="mx-auto"

@@ -20,7 +20,7 @@ const STEPS = [
   },
   {
     n: "03",
-    title: "Delivered Instantly",
+    title: "Sent to Their Inbox",
     body: "Your e-voucher arrives by email within moments, beautifully presented and ready to gift — no shipping, no waiting.",
   },
 ];
@@ -62,7 +62,7 @@ export default function GiftHowItWorks() {
                 lineHeight: 1.2,
               }}
             >
-              How it works
+              How to Purchase and Redeem Your Gift Card
             </h2>
             <p
               style={{

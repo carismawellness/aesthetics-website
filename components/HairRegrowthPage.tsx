@@ -520,8 +520,8 @@ export default function HairRegrowthPage() {
         theme="light"
         eyebrow={t.hero.subtitle}
         headline={[
-          { text: "Non-surgical hair loss clinic" },
-          { text: "guaranteed results in 90 days", em: true },
+          { text: "PRP Hair Regrowth Treatment in Malta" },
+          { text: "Doctor-Led Results in 90 Days", em: true },
         ]}
         sub={t.hero.body}
         bullets={(t.hero.benefits ?? []).map((b) => ({ text: b }))}

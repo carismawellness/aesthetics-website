@@ -98,7 +98,7 @@ export function FaceHero({ t }: { t: FaceTreatment }) {
         <div style={{ maxWidth: "640px" }}>
           <Eyebrow tone="onDark">{t.eyebrow}</Eyebrow>
           {/* P6: id matches aria-labelledby on section */}
-          <h1 id="hero-treatment-title" className="font-display" style={{ fontSize: "clamp(30px,4.2vw,44px)", fontWeight: 600, letterSpacing: "0.10em", textTransform: "uppercase", lineHeight: 1.2, color: "#fff" }}>{t.name}</h1>
+          <h1 id="hero-treatment-title" className="font-display" style={{ fontSize: "clamp(30px,4.2vw,44px)", fontWeight: 600, letterSpacing: "0.10em", textTransform: "uppercase", lineHeight: 1.2, color: "#fff" }}>{t.h1 ?? `${t.name} in Malta`}</h1>
           <p style={{ fontSize: "clamp(14px,1vw,16px)", color: "#ffffff", lineHeight: 1.7, margin: "18px 0 26px", maxWidth: "560px" }}>{t.heroSubhead}</p>
           <BookingButtons consultLabel="Free Consultation" align="left" />
         </div>

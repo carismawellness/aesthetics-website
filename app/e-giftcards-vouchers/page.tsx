@@ -130,8 +130,8 @@ export default function GiftsPage() {
         <PageHero
           badge="#1 Voted Med-Aesthetics Clinic in Malta"
           headline={[
-            { text: "Give the gift" },
-            { text: "of Aesthetics", em: true },
+            { text: "Aesthetic Gift Vouchers Malta" },
+            { text: "The Perfect Treat for Any Occasion", em: true },
           ]}
           sub="In 3 easy steps, you can invite your loved ones on a journey of relaxation and wellness in Malta that they will never forget."
           bullets={[
@@ -178,8 +178,7 @@ export default function GiftsPage() {
                 fontWeight: 400,
               }}
             >
-              {/* P6 Typo fix: "occassion" → "occasion" */}
-              Pick Your Occasion
+              Choose Your Occasion — Birthdays, Weddings and More
             </h2>
 
             {/* Decorative underline */}

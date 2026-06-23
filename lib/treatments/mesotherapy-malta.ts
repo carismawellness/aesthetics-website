@@ -4,7 +4,7 @@ const t: Treatment = {
   slug: "mesotherapy-malta",
   category: "Face",
   hero: {
-    title: "Mesotherapy & skin boosters",
+    title: "Mesotherapy in Malta — Deeply Hydrated, Radiant Skin",
     subtitle: "Are you seeking a brighter, smoother, and more youthful complexion?",
     body: "Looking for a non-invasive way to rejuvenate your skin? Our Mesotherapy treatments in Malta can help! Our team uses a personalized blend of skin boosters (hyaluronic acid), vitamins, minerals, and amino acids to restore your skin's natural radiance and vitality.",
     prices: [
@@ -25,16 +25,23 @@ const t: Treatment = {
     { metric: "Results Visible In", detail: "Dependent of concern" },
     { metric: "Anaesthetic", detail: "Anesthetic cream" },
   ],
-  beforeAfterTitle: "mesotherapy results",
+  beforeAfterTitle: "Real Mesotherapy Results from Our Malta Patients",
   beforeAfter: [
-    { before: "/assets/treatments/mesotherapy-malta-ba1-before.jpg", after: "/assets/treatments/mesotherapy-malta-ba1-after.jpg", label: "Scalp & Hair", name: "Marisa F.", review: "My part was getting so thin and wide — after a course my scalp looks fuller and far less visible." },
-    { before: "/assets/treatments/mesotherapy-malta-ba2-before.jpg", after: "/assets/treatments/mesotherapy-malta-ba2-after.jpg", label: "Scalp & Hair", name: "Daniel R.", review: "The thinning at my crown was my biggest worry — the regrowth across the top genuinely surprised me." },
-    { before: "/assets/treatments/mesotherapy-malta-ba3-before.jpg", after: "/assets/treatments/mesotherapy-malta-ba3-after.jpg", label: "Skin Rejuvenation", name: "Carmen V.", review: "The crepey lines around my cheek and mouth softened and my skin finally looks hydrated again." },
-    { before: "/assets/treatments/mesotherapy-malta-ba4-before.jpg", after: "/assets/treatments/mesotherapy-malta-ba4-after.jpg", label: "Radiance & Tone", name: "Elise B.", review: "The redness and dullness across my cheeks evened out — I have a natural glow without makeup now." },
-    { before: "/assets/treatments/mesotherapy-malta-ba5-before.jpg", after: "/assets/treatments/mesotherapy-malta-ba5-after.jpg", label: "Texture & Scarring", name: "Luke A.", review: "The old acne scarring on my cheek looks smoother and my skin texture is so much more even." },
+    { before: "/assets/treatments/mesotherapy-malta-ba1-before.jpg", after: "/assets/treatments/mesotherapy-malta-ba1-after.jpg", label: "Hair Regrowth" },
+    { before: "/assets/treatments/mesotherapy-malta-ba2-before.jpg", after: "/assets/treatments/mesotherapy-malta-ba2-after.jpg", label: "Hair Regrowth" },
+    { before: "/assets/treatments/mesotherapy-malta-ba3-before.jpg", after: "/assets/treatments/mesotherapy-malta-ba3-after.jpg", label: "Skin Rejuvenation" },
+    { before: "/assets/treatments/mesotherapy-malta-ba4-before.jpg", after: "/assets/treatments/mesotherapy-malta-ba4-after.jpg", label: "Skin Rejuvenation" },
+    { before: "/assets/treatments/mesotherapy-malta-ba5-before.jpg", after: "/assets/treatments/mesotherapy-malta-ba5-after.jpg", label: "Skin Rejuvenation" },
   ],
+  education: {
+    title: "What Is Mesotherapy? Vitamins, HA and Active Ingredients",
+    paragraphs: [
+      "Mesotherapy is a clinically established injectable treatment that delivers a bespoke blend of hyaluronic acid, vitamins, minerals, and amino acids directly into the mesoderm — the middle layer of the skin. By targeting the tissue where nutrients are most needed, mesotherapy bypasses the skin barrier and achieves results that topical products cannot replicate.",
+      "At Carisma Aesthetics in Malta, every mesotherapy cocktail is formulated by a medically qualified doctor and tailored to your specific skin assessment. Whether your goal is deep hydration, improved radiance, pigmentation correction, or anti-ageing repair, the active ingredients are selected and dosed to match your individual skin profile.",
+    ],
+  },
   precision: {
-    title: "precision areas of refinement",
+    title: "Where Can Mesotherapy Be Applied?",
     intro: "Active ingredients are delivered directly into the skin where they are needed most. Below are the primary treatment zones.",
     areas: [
       { zone: "Face", icon: "/assets/treatments/mesotherapy-malta-icon-face.png", name: "Full Face Glow", desc: "Nourishes the skin with vitamins and hyaluronic acid for visible hydration and luminosity" },
@@ -42,37 +49,12 @@ const t: Treatment = {
       { zone: "Eyes", icon: "/assets/treatments/mesotherapy-malta-icon-eyes.png", name: "Under-Eye Area", desc: "Addresses dark circles and fine crepiness with targeted microinjections of revitalising nutrients" },
       { zone: "Neck", icon: "/assets/treatments/mesotherapy-malta-icon-neck.png", name: "Neck and Chest", desc: "Revitalises the neck and decolletage where sun damage and dehydration are most pronounced." },
     ],
-    additionalTitle: "Your cocktail of active ingredients is customised based on your skin assessment.",
+    additionalTitle: "Your Active Ingredient Cocktail Is Fully Personalised",
     additional: "Scalp, hands, inner arms, acne-prone zones, dull skin patches, lip area",
   },
-  problem: {
-    kicker: "The real reason people book",
-    title: "Your skin looks tired and dull, even when you feel fine",
-    body: [
-      "Doctor-led mesotherapy feeds your skin hyaluronic acid, vitamins, and nutrients exactly where it has lost them — so you look hydrated, rested, and naturally radiant again.",
-    ],
-  },
-  guarantee: {
-    kicker: "The Natural Confidence Guarantee",
-    title: "Natural Confidence Guarantee",
-    paragraphs: [
-      "Every plan starts with a doctor-led skin assessment and a natural-first approach that is never overdone, backed by a free follow-up review to keep your course on track until you are 100% satisfied with a result that still looks like you.",
-    ],
-    cta: "Book Your Free Consultation",
-    points: [
-      { value: "Doctor-led", label: "Assessment first", sub: "Never a salesperson" },
-      { value: "Natural-first", label: "Custom cocktail", sub: "Tailored to your skin" },
-      { value: "100%", label: "Satisfaction", sub: "Free follow-up review" },
-    ],
-  },
   suitability: {
-    title: "Is this suitable for you?",
+    title: "Who Is a Good Candidate for Mesotherapy?",
     intro: "Mesotherapy delivers vitamins, minerals, and hyaluronic acid directly into the skin for targeted nourishment. Results are cumulative, meaning each session builds on the last. A course-based approach delivers the most visible improvement.",
-    personas: [
-      { title: "The dull, dehydrated complexion", desc: "Your skin looks tired, flat, and thirsty — you want that lit-from-within glow back without changing your features." },
-      { title: "The early-ageing skin", desc: "Fine lines, crepiness, and a loss of bounce are creeping in, and you want to feed and firm the skin before it progresses." },
-      { title: "The targeted-concern patient", desc: "Uneven tone, dark under-eyes, or thinning scalp bother you, and you want a cocktail built around that exact concern." },
-    ],
     suitableFor: [
       "Your skin looks dull, tired, or dehydrated and you want a visible boost",
       "You want a customised cocktail tailored to your specific skin concerns",
@@ -81,24 +63,26 @@ const t: Treatment = {
       "You want a treatment that can be combined with other skin therapies",
     ],
     notIdeal: [
-      "You are hoping to restore lost volume or lift — that is what dermal fillers and collagen stimulators are for",
-      "You need to see the full result after one session — mesotherapy builds gently over a course",
-      "You are pregnant or breastfeeding — we will happily welcome you back afterwards",
-      "You are on blood-thinning medication — we will simply ask for medical clearance first",
-      "You have a known allergy to common mesotherapy ingredients — your consultation rules this out safely",
+      "You are looking for structural changes like lifting or volume",
+      "You expect a single session to deliver your final result",
+      "You are pregnant, breastfeeding, or have active skin infection in the area",
+      "You are on blood-thinning medication without medical clearance",
+      "You have a known allergy to any common mesotherapy ingredients",
     ],
   },
   experience: {
-    title: "Your treatment experience", cta: "BOOK YOUR FREE CONSULTATION",
+    title: "How Does Mesotherapy Work? Your Step-by-Step Journey",
+    cta: "BOOK YOUR FREE CONSULTATION",
     steps: [
-      { title: "Consultation & Plan", desc: "One of our doctors assesses your skin condition, concerns, and medical history, then designs a personalised cocktail and session course built around your goals.", image: "/assets/treatments/botox-step1.png" },
-      { title: "Targeted Treatment", desc: "Your doctor delivers the active ingredients into the mesoderm with fine, precise microinjections — quick, comfortable, and with minimal downtime.", image: "/assets/treatments/botox-step3.png" },
-      { title: "Ongoing Review", desc: "Your doctor monitors how your skin responds across the course and refines the cocktail to keep your results natural and progressive.", image: "/assets/treatments/botox-step4.png" },
+      { title: "Step 1 — Your Consultation", desc: "We assess your facial anatomy, skin condition, medical history, and mesotherapy goals with one of our doctors.", image: "/assets/treatments/botox-step1.png" },
+      { title: "Step 2 — Your Personalised Plan", desc: "Your doctor designs a medically guided mesotherapy plan tailored to your facial structure and desired outcome.", image: "/assets/treatments/botox-step2.png" },
+      { title: "Step 3 — Targeted Treatment", desc: "Your doctor administers mesotherapy with fine, precise injections, quick, comfortable, and no downtime.", image: "/assets/treatments/botox-step3.png" },
+      { title: "Step 4 — Review and Refinement", desc: "Your doctor monitors your response and refines the plan to ensure natural mesotherapy results over time.", image: "/assets/treatments/botox-step4.png" },
     ],
   },
   prepAftercare: {
     kicker: "PREPARATION & AFTERCARE",
-    title: "your session, step by step",
+    title: "Aftercare Advice After Your Mesotherapy Treatment",
     intro: "Microinjections deliver active nutrients directly where your skin needs them most.",
     cards: [
       {
@@ -137,7 +121,7 @@ const t: Treatment = {
     ],
   },
   patientVideos: {
-    title: "Real patients, real confidence",
+    title: "Your Mesotherapy Results — What to Expect",
     intro: "Every face is unique. Every story is personal. Discover how our mesotherapy patients describe their journey to refined, natural results at Carisma Aesthetics in Malta.",
     videos: [
       "/assets/treatments/vid-mesotherapy-malta-1.mp4",
@@ -146,21 +130,21 @@ const t: Treatment = {
     ],
   },
   trusted: {
-    title: "Malta's trusted clinic for mesotherapy",
+    title: "Medically Qualified Practitioners — Safe Mesotherapy in Malta",
     subtitle: "DOCTOR-LED mesotherapy IN MALTA",
     asSeenOn: ["/assets/press/lovin-malta.jpeg", "/assets/press/malta-daily.png", "/assets/press/bay.jpeg", "/assets/press/times-of-malta.png", "/assets/press/malta-today.jpg"],
     images: ["/assets/treatments/trusted-clinic-collage.png"],
     points: [
       { title: "Medically Qualified Practitioners", desc: "Every mesotherapy treatment is performed by a qualified doctor." },
-      { title: "Advanced Skin & Anatomy Expertise", desc: "Precise injection depth and technique tailored to your unique skin and concern." },
-      { title: "Personalised Cocktails", desc: "Your blend of hyaluronic acid, vitamins, and actives is designed around your skin assessment." },
-      { title: "Clinically Approved Products", desc: "CE-marked, clinically approved mesotherapy solutions and evidence-based protocols." },
+      { title: "Advanced Facial Anatomy Expertise", desc: "Precision mesotherapy techniques tailored to your unique facial anatomy." },
+      { title: "Personalised Treatment Plans", desc: "Your cocktail of active ingredients is designed around your skin assessment." },
+      { title: "Clinically Approved Products", desc: "CE-marked, clinically approved mesotherapy products and evidence-based protocols." },
       { title: "Thousands of Treatments Performed", desc: "Experience and results you can trust, right here in Malta." },
     ],
   },
   difference: {
     kicker: "the carisma difference",
-    title: "Malta’s #1 leading wellness chain",
+    title: "Doctor-Led Mesotherapy at Carisma Aesthetics, Birkirkara",
     commitmentTitle: "our commitment",
     commitment: [
       "Natural, refined mesotherapy results, never overdone",
@@ -170,36 +154,25 @@ const t: Treatment = {
     ],
     whyTitle: "Why Malta Chooses Carisma for Mesotherapy",
     why: [
-      "Created by the team behind Malta’s leading spa and medical aesthetics centres",
+      "Created by the team behind Malta's leading spa and medical aesthetics centres",
       "Doctor-led mesotherapy treatments with a focus on safety and long-term results",
       "A personalised journey from consultation to aftercare",
       "Seamless experience with ongoing support and guidance",
     ],
     mapQuery: "Carisma Aesthetics, Malta",
   },
-  bookingForm: { title: "BOOK YOUR mesotherapy APPOINTMENT TODAY" },
-  planSummary: {
-    kicker: "Your mesotherapy plan",
-    title: "Malta's Doctor-Led Mesotherapy Plan",
-    benefits: [
-      { icon: "shield", title: "Doctor-Led Precision", desc: "Every treatment is performed by a medically qualified doctor — never a salon, never a beautician-only service." },
-      { icon: "sparkle", title: "Custom Skin Cocktail", desc: "Your blend of hyaluronic acid, vitamins, and actives is built around your skin assessment — for real hydration and glow." },
-      { icon: "clock", title: "Course-Based Results", desc: "We plan a progressive course so each session builds on the last, with ongoing review to keep results natural." },
+  pricingGrid: {
+    title: "Mesotherapy Pricing in Malta — Sessions From €199",
+    intro: "Mesotherapy is a course-based treatment. Each session builds on the last for cumulative, visible improvement. Packages offer the best value.",
+    items: [
+      { name: "Single Session", price: "From €199", desc: "Ideal for a first consultation and introductory treatment, personalised to your skin concerns." },
+      { name: "Course of 2 Sessions", price: "From €349", desc: "Two targeted sessions spaced 4 weeks apart for progressive hydration and radiance." },
+      { name: "Course of 3 Sessions", price: "From €499", desc: "Our recommended starter course for visible, lasting results in skin quality and tone." },
     ],
-    included: [
-      { label: "Free doctor-led skin consultation" },
-      { label: "Personalised, medically guided cocktail & course plan" },
-      { label: "Expert CE-marked mesotherapy session", value: "from €199" },
-      { label: "Better per-session value across a course", value: "from €167/session" },
-      { label: "Aftercare guidance & ongoing review" },
-    ],
-    price: "From €199",
-    priceLabel: "per session",
-    cta: { text: "Book Your Mesotherapy Appointment", href: "/consultation" },
-    reviews: "200+ verified reviews",
   },
+  bookingForm: { title: "BOOK YOUR mesotherapy APPOINTMENT TODAY" },
   recommended: {
-    title: "Recommended with mesotherapy",
+    title: "Treatments to Combine with Mesotherapy",
     items: [
       { label: "Collagen stimulator", href: "/collagen-stimulator-malta", image: "/assets/treatments/mesotherapy-malta-rec-collagen.avif" },
       { label: "PRP", href: "/prp-malta", image: "/assets/treatments/mesotherapy-malta-rec-prp.avif" },
@@ -207,7 +180,7 @@ const t: Treatment = {
       { label: "Chemical peels", href: "/chemical-peels-malta", image: "/assets/treatments/mesotherapy-malta-rec-chemical-peels.avif" },
     ],
   },
-  faqTitle: "Frequently asked questions",
+  faqTitle: "Frequently Asked Questions About Mesotherapy in Malta",
   faq: [
     {
       q: "What is mesotherapy, and how does it work?",
@@ -230,7 +203,7 @@ const t: Treatment = {
       a: "Results from mesotherapy can vary depending on the individual and the treatment area. Some people may see noticeable improvements after just one session, while others may require multiple treatments to achieve their desired results. Generally, the full effects of mesotherapy become apparent within a few weeks to a few months after the treatment.",
     },
     {
-      q: "Are there any side effects or risks associated with mesotherapy?",
+      q: "Are there side effects or risks with mesotherapy?",
       a: "As with any cosmetic procedure, there can be side effects and risks associated with mesotherapy. Common side effects include temporary redness, swelling, and bruising at the injection sites. In rare cases, more serious complications such as infection, allergic reactions, or uneven results may occur. It's essential to consult with a qualified practitioner to minimize risks and ensure proper treatment.",
     },
     {

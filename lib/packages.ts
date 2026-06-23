@@ -75,7 +75,7 @@ export const PACKAGES: Record<string, PackageData> = {
     bookHref: FRESHA("25781412"),
     faqHref: PRODUCT("snatch-your-jawline"),
     hero: {
-      title: "snatch your jawline",
+      title: "Jawline Contouring & Sculpting Package",
       subtitle:
         "For those in Malta ready to snatch their jawline — this non-surgical, low-downtime treatment melts chin fat, reverses sagging, and restores lasting definition at every age.",
       subtitleBold: ["snatch their jawline", "melts chin fat, reverses sagging, and restores lasting definition"],
@@ -240,7 +240,7 @@ export const PACKAGES: Record<string, PackageData> = {
     faqHref: PRODUCT("4-in-1-hydrafacial-glow"),
     ctaBanner: "Claim Your Glow for €99 Now",
     hero: {
-      title: "4-in-1 hydrafacial glow",
+      title: "4-in-1 HydraFacial Glow Package",
       subtitle: "Clogged pores, dull skin, and products that just don't work? If your glow's gone quiet, you're not alone. This is for Maltese skin that's ready for real results.",
       includedTitle: "What's Included in the 4-in-1 Hydrafacial Glow Package:",
       included: [
@@ -398,7 +398,7 @@ export const PACKAGES: Record<string, PackageData> = {
     bookHref: FRESHA("25781430"),
     faqHref: FRESHA("25781430"),
     hero: {
-      title: "EXOSOME GLOW LIFT",
+      title: "Exosome GlowLift Facial Package",
       subtitle: "When facials stop working and your glow fades, Exosomes offer the next step — real regeneration for smoother, firmer, brighter skin.",
       includedTitle: "What's Included in the Exosome Glow Lift Package:",
       included: [
@@ -469,7 +469,7 @@ export const PACKAGES: Record<string, PackageData> = {
     bookHref: FRESHA("25781408"),
     faqHref: FRESHA("25781408"),
     hero: {
-      title: "ultimate facelift",
+      title: "Non-Surgical Ultimate Facelift Package",
       lead: "Reverse visible aging — no knife, no downtime.",
       subtitle: "If your skin's lost its lift, your cheeks feel flatter than before, or your jawline's lost its shape, this is your sign to rewind time — naturally.",
       bodyParas: ["Our Ultimate Facelift Package is designed to lift, tighten, and sculpt — without surgery, fillers, or long recovery days."],

@@ -2,7 +2,7 @@ import { BlogPost } from '../blog-types';
 
 export const post: BlogPost = {
   slug: 'hydrafacial-vs-traditional-facials',
-  title: 'HydraFacial vs Traditional Facials: Which Is Right for You?',
+  title: 'HydraFacial Malta vs Traditional Facials — Which Gets Better Results?',
   metaTitle: 'HydraFacial vs Traditional Facials | Carisma Aesthetics',
   metaDescription:
     'HydraFacial or a classic facial? Compare results, downtime, and skin benefits at Carisma Aesthetics Malta — find out which suits your skin best.',
@@ -20,7 +20,7 @@ export const post: BlogPost = {
     {
       type: 'heading',
       level: 2,
-      text: 'What Is a Traditional Facial?',
+      text: 'What Is a Traditional Facial and How Does It Work?',
     },
     {
       type: 'paragraph',
@@ -33,7 +33,7 @@ export const post: BlogPost = {
     {
       type: 'heading',
       level: 2,
-      text: 'What Is a HydraFacial?',
+      text: 'What Makes HydraFacial a Medical-Grade Skin Treatment?',
     },
     {
       type: 'paragraph',
@@ -46,7 +46,7 @@ export const post: BlogPost = {
     {
       type: 'heading',
       level: 2,
-      text: 'HydraFacial vs Traditional Facial: A Side-by-Side Comparison',
+      text: 'HydraFacial vs Classic Facial — Side-by-Side Skin Comparison',
     },
     {
       type: 'list',
@@ -64,12 +64,12 @@ export const post: BlogPost = {
     {
       type: 'heading',
       level: 2,
-      text: 'Which Concerns Does Each Treatment Address Best?',
+      text: 'Choosing the Right Facial for Your Specific Skin Concerns',
     },
     {
       type: 'heading',
       level: 3,
-      text: 'Traditional Facials Are Ideal For:',
+      text: 'When a Traditional Facial Is the Right Choice',
     },
     {
       type: 'list',
@@ -84,7 +84,7 @@ export const post: BlogPost = {
     {
       type: 'heading',
       level: 3,
-      text: 'HydraFacial Is the Better Choice For:',
+      text: 'When HydraFacial Delivers Superior Results',
     },
     {
       type: 'list',
@@ -100,8 +100,8 @@ export const post: BlogPost = {
     },
     {
       type: 'heading',
-      level: 2,
-      text: 'The Role of Add-On Treatments',
+      level: 3,
+      text: 'Combining Facials with Other Aesthetic Treatments',
     },
     {
       type: 'paragraph',
@@ -115,11 +115,6 @@ export const post: BlogPost = {
     {
       type: 'paragraph',
       html: 'Skin cell turnover occurs roughly every 28 days, which is why monthly treatments are generally recommended for both traditional and HydraFacials. However, the frequency depends on your specific skin concerns and goals. Clients targeting acne or hyperpigmentation may benefit from more frequent HydraFacial sessions initially, while those in a maintenance phase may only need a treatment every six to eight weeks. If you\'re unsure, our team at Carisma Aesthetics offers a thorough skin assessment at every <a href="/consultation" style="color:var(--teal);text-decoration:underline;">Free Consultation</a> — so you never leave guessing.',
-    },
-    {
-      type: 'heading',
-      level: 2,
-      text: 'Can You Combine Facials with Other Aesthetic Treatments?',
     },
     {
       type: 'paragraph',
@@ -137,7 +132,7 @@ export const post: BlogPost = {
     {
       type: 'heading',
       level: 2,
-      text: 'What to Expect at Carisma Aesthetics',
+      text: 'Your HydraFacial Experience at Carisma Aesthetics Malta',
     },
     {
       type: 'paragraph',

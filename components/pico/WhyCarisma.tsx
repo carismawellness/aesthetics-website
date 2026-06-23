@@ -111,7 +111,7 @@ export default function WhyCarisma() {
                   textTransform: "uppercase",
                 }}
               >
-                Why Carisma Aesthetics?
+                Why Malta Patients Choose Carisma for Pico Laser Removal
               </h2>
 
               {/* Thin gold divider rule */}

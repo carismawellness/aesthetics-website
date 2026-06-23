@@ -93,7 +93,7 @@ export default function MembershipFaq() {
               margin: "22px 0 0",
             }}
           >
-            Frequently asked questions
+            Have Questions About the Glow Club Membership in Malta?
           </h2>
 
           <div

@@ -155,17 +155,17 @@ function ContactItem({
 const STEPS = [
   {
     num: "01",
-    title: "We Listen",
+    title: "We Listen to Your Goals",
     body: "Your doctor takes time to understand your goals, concerns, and medical history — with no pressure and no rush.",
   },
   {
     num: "02",
-    title: "We Plan",
+    title: "We Build Your Personalised Plan",
     body: "A personalised treatment plan is shaped around your anatomy and what you want to feel, never what you think you should want.",
   },
   {
     num: "03",
-    title: "You Decide",
+    title: "You Decide — No Obligation",
     body: "You leave with a clear, honest proposal. There is no obligation — only clarity. When you are ready, we are here.",
   },
 ];
@@ -180,8 +180,8 @@ export default function ConsultationPage() {
         <PageHero
           eyebrow="Free Consultation"
           headline={[
-            { text: "Book your free" },
-            { text: "consultation in Malta", em: true },
+            { text: "Book Your Free Aesthetic Consultation" },
+            { text: "in Malta — Doctor-Led Care", em: true },
           ]}
           sub="Every consultation begins with listening to your story — then shaping a conservative, personalised plan with one of our doctors."
           primaryCta={{
@@ -235,7 +235,7 @@ export default function ConsultationPage() {
                   lineHeight: 1.25,
                 }}
               >
-                What Happens at Your Consultation
+                What Happens at Your Carisma Aesthetics Consultation?
               </h2>
             </Reveal>
 
@@ -337,7 +337,7 @@ export default function ConsultationPage() {
                   lineHeight: 1.25,
                 }}
               >
-                Other Ways to Reach Us
+                How to Book — Clinic Hours and Location in Birkirkara
               </h2>
             </Reveal>
 

@@ -459,7 +459,7 @@ export default function Tiers() {
               letterSpacing: "0.04em",
             }}
           >
-            Save as you go, glow as you grow
+            Membership Tiers — Earn Status as Your Glow Balance Grows
           </h2>
           <div
             aria-hidden="true"

@@ -164,7 +164,7 @@ export default function BlogIndexPage() {
       <PageHero
         eyebrow="The Journal"
         headline={[
-          { text: "Aesthetics & Beauty Blog Malta" },
+          { text: "Medical Aesthetics Blog Malta —" },
           { text: "Expert Guides from Our Clinic", em: true },
         ]}
         sub="Expert guides on aesthetic treatments, skin and confidence — from Malta's #1 voted med-aesthetics clinic."

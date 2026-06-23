@@ -28,7 +28,7 @@ export default function FadeInk() {
                 lineHeight: 1.3,
               }}
             >
-              Fade unwanted ink. Feel more like you.
+              Your Pico Laser Results — Gradual Fading, Lasting Confidence
             </h2>
 
             <p

@@ -28,7 +28,7 @@ export default function Because() {
             marginBottom: "40px",
           }}
         >
-          Safe, confident tattoo removal starts here.
+          Who Is a Good Candidate for Pico Laser Treatment?
         </h2>
 
         <div className="grid lg:grid-cols-2 items-center gap-12">

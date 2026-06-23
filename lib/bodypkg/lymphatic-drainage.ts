@@ -7,7 +7,7 @@ export const lymphaticDrainage: PackageContent = {
   liveUrl: 'https://www.carismaslimming.com/lymphatic-drainage',
 
   heroEyebrow: 'Expert LED BODY DETOX & CIRCULATION SUPPORT',
-  heroTitle: 'lymphatic drainage therapy',
+  heroTitle: 'Lymphatic Drainage Massage Therapy',
   heroSubheading: '',
   heroDescription:
     'Our Lymphatic Drainage Therapy is a gentle, expert-guided treatment designed to stimulate your lymphatic system, helping your body eliminate toxins, reduce fluid retention, and restore natural balance.',
