@@ -167,19 +167,8 @@ export default function WhyGiftStrip() {
             </li>
           ))}
         </ul>
-
-        {/* Gentle nudge toward the occasion grid (primary on-page action) */}
-        <Reveal delay={140}>
-          <div className="text-center" style={{ marginTop: "36px" }}>
-            <a
-              href="#pick-occasion"
-              className="btn-teal font-display"
-              style={{ letterSpacing: "0.1em" }}
-            >
-              Pick an Occasion
-            </a>
-          </div>
-        </Reveal>
+        {/* (Removed the redundant mid-section "Pick an Occasion" CTA box — the
+            occasion grid with its own "Pick Your Occasion" heading is directly below.) */}
       </div>
     </section>
   );
