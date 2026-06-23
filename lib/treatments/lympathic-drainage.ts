@@ -20,6 +20,14 @@ const t: Treatment = {
     note: "* Eligibility and treatment recommendations depend on your health history and individual needs. A clear plan will always be discussed during your consultation before starting. Lymphatic drainage is a supportive wellness therapy and may not be suitable for certain medical conditions. Treatment is provided following professional assessment by our medical team.",
   },
 
+  info: [
+    { metric: "Procedure Time", detail: "45-60 Minutes" },
+    { metric: "Downtime", detail: "None" },
+    { metric: "Sensation", detail: "Gentle & Relaxing" },
+    { metric: "Results Felt In", detail: "Same Day" },
+    { metric: "Anaesthetic", detail: "None" },
+  ],
+
   education: {
     title: "What is all the hype with debloating",
     subtitle: "SUPPORTS DETOXIFICATION, CIRCULATION & FLUID BALANCE",
@@ -31,39 +39,62 @@ const t: Treatment = {
     image: "/assets/treatments/lympathic-drainage-benefits.png",
   },
 
+  problem: {
+    kicker: "The real reason people book",
+    title: "Your body feels heavy and puffy, no matter how well you live",
+    body: [
+      "Gentle, expert-guided lymphatic drainage helps your body release the fluid it's holding onto — so you feel lighter, less bloated, and more like yourself again.",
+    ],
+  },
+
   guarantee: {
-    title: "Malta's trusted clinic for\nmedical lymphatic drainage therapy",
+    kicker: "The Natural Confidence Guarantee",
+    title: "Natural Confidence Guarantee",
     paragraphs: [
-      "The lymphatic system plays a vital role in fluid balance, detoxification, and immune support. When lymph flow becomes sluggish, fluid and waste can accumulate in the body — leading to bloating, swelling, heaviness, and slow recovery.",
-      "Lymphatic Drainage Therapy uses gentle, targeted techniques to stimulate lymph flow, helping the body naturally eliminate excess fluids and toxins while supporting circulation and overall wellbeing.",
-      "At our clinic, lymphatic drainage is used as a therapeutic support, not a cosmetic shortcut:",
-      "If lymphatic drainage is not appropriate for you, we are clear and transparent — and guide you toward alternative therapies that better support your health and goals.",
+      "Every plan starts with a doctor-led wellness assessment and a gentle, natural-first approach that is never an aggressive shortcut, backed by free follow-up guidance until you are 100% satisfied that your body feels lighter and more balanced.",
     ],
     cta: "Claim Your Spot Now",
+    points: [
+      { value: "Doctor-led", label: "Assessment first", sub: "Never a salesperson" },
+      { value: "Gentle-first", label: "Therapeutic, never harsh", sub: "We support, never strain" },
+      { value: "100%", label: "Satisfaction", sub: "Free follow-up until you feel the difference" },
+    ],
+  },
+
+  suitability: {
+    title: "Is this suitable for you?",
+    intro:
+      "Every body holds fluid differently. Lymphatic drainage is most effective when tailored to your health history and how your system actually drains. A consultation with our medical team helps us confirm it's right for you before we begin.",
+    personas: [
+      { title: "The bloated & puffy", desc: "You feel swollen and heavy by the evening, and your rings, ankles, or waistband tell the story even when your routine hasn't changed." },
+      { title: "The post-procedure recoverer", desc: "You've had surgery or a body treatment and want to ease swelling, support healing, and feel comfortable in your body sooner." },
+      { title: "The sluggish-circulation type", desc: "You sit or travel a lot, your legs feel tired and congested, and you want a gentle reset that helps everything move again." },
+    ],
+    notIdeal: [
+      "You're expecting permanent fat loss — lymphatic drainage relieves fluid and bloating, it isn't a weight-loss treatment",
+      "You have an active infection or untreated medical condition — we'll ask you to clear it first, then welcome you back",
+      "You're pregnant — we'll happily see you afterwards once it's safe to begin",
+      "You'd rather skip the consultation — it's how we keep the therapy safe and tailored to you",
+    ],
   },
 
   experience: {
-    title: "Lymphatic drainage therapy",
+    title: "Your treatment experience",
     steps: [
       {
-        title: "MEDICALLY GUIDED APPROACH",
-        desc: "Your lymphatic drainage treatment is overseen by medical professionals, with careful assessment of your health history to ensure the therapy is safe, appropriate, and effective for your body.",
+        title: "Medically guided consultation",
+        desc: "Your lymphatic drainage journey begins with a professional assessment of your health history and concerns, so we can confirm suitability and design a plan that's safe and right for your body.",
         image: "/assets/treatments/lympathic-drainage-feat1.png",
       },
       {
-        title: "LYMPHATIC FLOW & DETOX SUPPORT",
-        desc: "Gentle, targeted techniques are used to stimulate lymph flow, helping reduce fluid retention, support natural detoxification, and relieve feelings of heaviness and congestion.",
+        title: "Lymphatic flow & detox support",
+        desc: "Gentle, targeted techniques stimulate lymph flow to reduce fluid retention, support natural detoxification, and relieve that feeling of heaviness and congestion.",
         image: "/assets/treatments/lympathic-drainage-feat2.png",
       },
       {
-        title: "Expert-DESIGNED TREATMENT PLAN",
-        desc: "Your in-person consultation helps determine suitability, treatment frequency, and realistic outcomes — ensuring lymphatic drainage is delivered as part of a structured, personalised wellness plan.",
+        title: "Ongoing review & guidance",
+        desc: "We review how your body responds, recommend the right treatment frequency, and share simple aftercare so your lighter, more balanced feeling lasts.",
         image: "/assets/treatments/lympathic-drainage-feat3.png",
-      },
-      {
-        title: "SAFE AND CLINICALLY CERTIFIED",
-        desc: "All treatments are performed under clinical standards, using medically approved techniques, with professional supervision to prioritise comfort, safety, and results at every stage.",
-        image: "/assets/treatments/lympathic-drainage-feat4.png",
       },
     ],
   },
@@ -117,10 +148,41 @@ const t: Treatment = {
     title: "malta's only dual technology starter pack for stubborn fat",
   },
 
+  planSummary: {
+    kicker: "Your lymphatic drainage plan",
+    title: "Malta's Doctor-Led Lymphatic Drainage Plan",
+    benefits: [
+      { icon: "shield", title: "Medically Guided Care", desc: "Every session is overseen by our medical team — suitability is assessed first, never sold." },
+      { icon: "sparkle", title: "Gentle, Natural Relief", desc: "Light, targeted techniques reduce fluid and bloating so your body feels lighter — never harsh or aggressive." },
+      { icon: "value", title: "Complete Starter Bundle", desc: "Four sessions plus spa & fitness access, a Tanita body analysis, and clinic credit in one plan." },
+    ],
+    included: [
+      { label: "4x Lymphatic drainage therapy sessions" },
+      { label: "4x access to spa & fitness facilities", value: "€140" },
+      { label: "Tanita Body Composition Analysis", value: "€60" },
+      { label: "€25 Carisma Aesthetics credit" },
+      { label: "Complimentary parking validation" },
+    ],
+    price: "From €299",
+    priceLabel: "complete 4-session bundle",
+    cta: { text: "Claim Your Spot Now", href: "/consultation" },
+    reviews: "200+ verified reviews",
+  },
+
   patientVideos: {
     title: "Real Patients. Real Results.",
     intro: "Watch real patient videos from our lymphatic drainage therapy treatments at Carisma Aesthetics Malta.",
     videos: ["/assets/treatments/vid-lympathic-drainage.mp4"],
+  },
+
+  recommended: {
+    title: "Recommended with lymphatic drainage",
+    items: [
+      { label: "Cellulite treatment", href: "/anti-cellulite", image: "/assets/treatments/ac-secret.png" },
+      { label: "Skin tightening", href: "/skin-tightening-1", image: "/assets/treatments/st-secret.png" },
+      { label: "Fat freezing", href: "/fat-freezing", image: "/assets/treatments/ff-secret.png" },
+      { label: "Muscle stimulation", href: "/muscle-stimulation-1", image: "/assets/treatments/ms-secret.png" },
+    ],
   },
 
   faqKicker: "lymphatic drainage therapy FAQs",
