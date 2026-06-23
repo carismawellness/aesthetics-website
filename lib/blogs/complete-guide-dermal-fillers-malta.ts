@@ -2,7 +2,7 @@ import { BlogPost } from '../blog-types';
 
 export const post: BlogPost = {
   slug: 'complete-guide-dermal-fillers-malta',
-  title: 'The Complete Guide to Dermal Fillers in Malta',
+  title: 'Dermal Fillers Malta — What You Need to Know Before You Book',
   metaTitle: 'Dermal Fillers Malta | Complete Guide – Carisma Aesthetics',
   metaDescription: 'Everything you need to know about dermal fillers in Malta: how they work, areas treated, costs, and what to expect. Book a free consultation today.',
   category: 'Dermal Fillers',
@@ -15,7 +15,7 @@ export const post: BlogPost = {
     {
       type: 'heading',
       level: 2,
-      text: 'What Are Dermal Fillers?',
+      text: 'What Are Dermal Fillers and How Do They Work?',
     },
     {
       type: 'paragraph',
@@ -27,8 +27,8 @@ export const post: BlogPost = {
     },
     {
       type: 'heading',
-      level: 2,
-      text: 'How Do Hyaluronic Acid Fillers Work?',
+      level: 3,
+      text: 'How Hyaluronic Acid Fillers Work in the Skin',
     },
     {
       type: 'paragraph',
@@ -37,7 +37,7 @@ export const post: BlogPost = {
     {
       type: 'heading',
       level: 2,
-      text: 'Areas Commonly Treated with Dermal Fillers',
+      text: 'Facial Areas Commonly Enhanced with Filler Injections',
     },
     {
       type: 'paragraph',
@@ -63,7 +63,7 @@ export const post: BlogPost = {
     {
       type: 'heading',
       level: 2,
-      text: 'What Results Can You Realistically Expect?',
+      text: 'What Results Can You Realistically Expect from Fillers?',
     },
     {
       type: 'paragraph',
@@ -76,7 +76,7 @@ export const post: BlogPost = {
     {
       type: 'heading',
       level: 2,
-      text: 'Dermal Fillers vs. Anti-Wrinkle Injections: Understanding the Difference',
+      text: 'Fillers vs. Anti-Wrinkle Injections — Key Differences Explained',
     },
     {
       type: 'paragraph',
@@ -85,7 +85,7 @@ export const post: BlogPost = {
     {
       type: 'heading',
       level: 2,
-      text: 'What to Expect: Preparation and Aftercare',
+      text: 'Filler Aftercare and Safety — What to Do Before and After',
     },
     {
       type: 'heading',
@@ -120,7 +120,7 @@ export const post: BlogPost = {
     },
     {
       type: 'heading',
-      level: 2,
+      level: 3,
       text: 'Are Dermal Fillers Safe? Understanding the Risks',
     },
     {
@@ -134,7 +134,7 @@ export const post: BlogPost = {
     {
       type: 'heading',
       level: 2,
-      text: 'How Much Do Dermal Fillers Cost in Malta?',
+      text: 'Dermal Filler Pricing in Malta — From €269 per ml',
     },
     {
       type: 'paragraph',
@@ -142,7 +142,7 @@ export const post: BlogPost = {
     },
     {
       type: 'heading',
-      level: 2,
+      level: 3,
       text: 'Who Is a Good Candidate for Dermal Fillers?',
     },
     {
@@ -151,8 +151,8 @@ export const post: BlogPost = {
     },
     {
       type: 'heading',
-      level: 2,
-      text: 'Combining Dermal Fillers with Other Treatments',
+      level: 3,
+      text: 'Combining Fillers with Complementary Treatments',
     },
     {
       type: 'paragraph',
@@ -161,7 +161,7 @@ export const post: BlogPost = {
     {
       type: 'heading',
       level: 2,
-      text: 'Why Choose Carisma Aesthetics for Dermal Fillers in Malta?',
+      text: 'Medically Qualified Practitioners — Safe Dermal Fillers in Malta',
     },
     {
       type: 'paragraph',
