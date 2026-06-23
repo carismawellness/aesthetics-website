@@ -28,11 +28,11 @@ const t: Treatment = {
   ],
   beforeAfterTitle: "profhilo results",
   beforeAfter: [
-    { before: "/assets/treatments/profhilo-ba1-before.png", after: "/assets/treatments/profhilo-ba1-after.png", label: "Face Rejuvenation" },
-    { before: "/assets/treatments/profhilo-ba2-before.png", after: "/assets/treatments/profhilo-ba2-after.png", label: "Skin Quality" },
-    { before: "/assets/treatments/profhilo-ba3-before.png", after: "/assets/treatments/profhilo-ba3-after.png", label: "Skin Texture" },
-    { before: "/assets/treatments/profhilo-ba4-before.png", after: "/assets/treatments/profhilo-ba4-after.png", label: "Neck Treatment" },
-    { before: "/assets/treatments/profhilo-ba5-before.png", after: "/assets/treatments/profhilo-ba5-after.png", label: "Jawline & Neck" },
+    { before: "/assets/treatments/profhilo-ba1-before.png", after: "/assets/treatments/profhilo-ba1-after.png", label: "Face Rejuvenation", name: "Maria C.", review: "My skin looked dull and crepey on my cheeks — now it feels firmer and has that fresh, healthy glow back." },
+    { before: "/assets/treatments/profhilo-ba2-before.png", after: "/assets/treatments/profhilo-ba2-after.png", label: "Skin Quality", name: "Antonella V.", review: "The skin across my cheeks looks smoother and more hydrated, without changing my face at all." },
+    { before: "/assets/treatments/profhilo-ba3-before.png", after: "/assets/treatments/profhilo-ba3-after.png", label: "Skin Texture", name: "Theresa B.", review: "The fine lines on my cheeks softened and my skin finally feels plump and bouncy again." },
+    { before: "/assets/treatments/profhilo-ba4-before.png", after: "/assets/treatments/profhilo-ba4-after.png", label: "Neck Treatment", name: "Sandra M.", review: "The crepey lines on my neck have smoothed out — it was the first place that gave my age away." },
+    { before: "/assets/treatments/profhilo-ba5-before.png", after: "/assets/treatments/profhilo-ba5-after.png", label: "Jawline & Neck", name: "Roberta F.", review: "My jawline and neck look tighter and more refreshed, and it still looks completely natural." },
   ],
   precision: {
     title: "precision areas of refinement",
@@ -46,6 +46,26 @@ const t: Treatment = {
     additionalTitle: "Your treatment plan is personalised based on skin quality assessment across multiple zones.",
     additional: "Inner arms, above the knee, under-eye area, jawline laxity, forehead skin quality",
   },
+  problem: {
+    kicker: "The real reason people book",
+    title: "Your skin looks tired and flat, even when you feel good",
+    body: [
+      "Doctor-led Profhilo deeply rehydrates and gently firms your skin from within — so it looks fresher, plumper, and more radiant, while still looking completely like you.",
+    ],
+  },
+  guarantee: {
+    kicker: "The Natural Confidence Guarantee",
+    title: "Natural Confidence Guarantee",
+    paragraphs: [
+      "Every plan starts with a doctor-led skin assessment and a natural-first approach that is never overdone, backed by a free follow-up review to make sure you are 100% satisfied with skin that still looks like you.",
+    ],
+    cta: "Book Your Free Consultation",
+    points: [
+      { value: "Doctor-led", label: "Assessment first", sub: "Never a salesperson" },
+      { value: "Natural-first", label: "Hydrate, never overfill", sub: "We refresh skin, never change your face" },
+      { value: "100%", label: "Satisfaction", sub: "Free follow-up review until you are happy" },
+    ],
+  },
   suitability: {
     title: "Is this suitable for you?",
     intro: "Profhilo is a skin quality treatment, not a filler. It hydrates and firms from within without adding volume or changing your facial structure. If your skin feels tired or has lost its bounce, this may be what it needs.",
@@ -57,20 +77,24 @@ const t: Treatment = {
       "You are looking for a subtle, gradual improvement that builds over time",
     ],
     notIdeal: [
-      "You are looking for volume, contouring, or structural changes to your face",
-      "You expect dramatic results from a single session",
-      "You are pregnant, breastfeeding, or have active infection in the treatment area",
-      "You want immediate, visible lifting or tightening",
-      "You are not yet ready for an in-person consultation to assess suitability",
+      "You are looking for volume or contouring — that is what dermal fillers are for, and we are happy to guide you there",
+      "You want to see the full result the same day — Profhilo works gradually as your skin rebuilds over a few weeks",
+      "You are pregnant or breastfeeding — we will warmly welcome you back afterwards",
+      "You want immediate lifting or tightening — Profhilo refreshes skin quality rather than lifting structure",
+      "You would rather skip the quick doctor consultation — it is how we keep your results safe and natural",
+    ],
+    personas: [
+      { title: "The dull, tired complexion", desc: "You feel well, but your skin looks flat, dehydrated, and has lost the healthy glow it used to have." },
+      { title: "The early-laxity face", desc: "Your skin is starting to feel less firm and a little crepey, especially across the cheeks, neck, or jawline." },
+      { title: "The natural-refinement patient", desc: "You do not want filler or a changed face — you want your own skin to simply look fresher, plumper, and more rested." },
     ],
   },
   experience: {
     title: "Your treatment experience", cta: "BOOK YOUR FREE CONSULTATION",
     steps: [
-      { title: "personalised consultation", desc: "We assess your facial anatomy, skin condition, medical history, and Profhilo treatment goals with one of our doctors.", image: "/assets/treatments/profhilo-step1.png" },
-      { title: "Structured Plan", desc: "Your doctor designs a medically guided Profhilo plan tailored to your facial structure and desired outcome.", image: "/assets/treatments/profhilo-step2.png" },
-      { title: "Targeted Treatments", desc: "Your doctor administers Profhilo with fine, precise injections, quick, comfortable, and no downtime.", image: "/assets/treatments/profhilo-step3.png" },
-      { title: "Ongoing Review & Adjustment", desc: "Your doctor monitors your response and refines the plan to ensure natural Profhilo results over time.", image: "/assets/treatments/profhilo-step4.png" },
+      { title: "personalised consultation", desc: "We assess your skin quality, facial anatomy, medical history, and Profhilo goals with one of our doctors, then design a medically guided plan tailored to you.", image: "/assets/treatments/profhilo-step1.png" },
+      { title: "Targeted Treatment", desc: "Your doctor administers Profhilo with fine, precise injections at standardised bio-aesthetic points, quick, comfortable, and with no downtime.", image: "/assets/treatments/profhilo-step3.png" },
+      { title: "Ongoing Review & Adjustment", desc: "Your doctor monitors your response and refines the plan to ensure natural, hydrated Profhilo results that build over time.", image: "/assets/treatments/profhilo-step4.png" },
     ],
   },
   prepAftercare: {
@@ -146,8 +170,28 @@ const t: Treatment = {
     mapQuery: "Carisma Aesthetics, Malta",
   },
   bookingForm: { title: "BOOK YOUR profhilo APPOINTMENT TODAY" },
+  planSummary: {
+    kicker: "Your Profhilo plan",
+    title: "Malta's Doctor-Led Profhilo Plan",
+    benefits: [
+      { icon: "shield", title: "Doctor-Led Precision", desc: "Every treatment is performed by a medically qualified doctor — never a salon, never nurse-only." },
+      { icon: "sparkle", title: "Natural, Hydrated Results", desc: "We deeply rehydrate and firm your skin while keeping your face exactly as it is — fresher, never changed." },
+      { icon: "clock", title: "Personalised Protocol", desc: "A two-session course four weeks apart, planned around your skin quality for a gradual, lasting glow." },
+    ],
+    included: [
+      { label: "Free doctor-led consultation & skin assessment" },
+      { label: "Personalised, medically guided treatment plan" },
+      { label: "Expert CE-marked Profhilo treatment", value: "from €279" },
+      { label: "Standardised bio-aesthetic point technique" },
+      { label: "Aftercare guidance & ongoing support" },
+    ],
+    price: "From €279",
+    priceLabel: "per session",
+    cta: { text: "Book Your Profhilo Appointment", href: "/consultation" },
+    reviews: "200+ verified reviews",
+  },
   recommended: {
-    title: "Recommended with mesotherapy",
+    title: "Recommended with Profhilo",
     items: [
       { label: "Collagen stimulator", href: "/collagen-stimulator-malta", image: "/assets/treatments/profhilo-rec-collagen-stimulator.png" },
       { label: "Microneedling", href: "/microneedling-malta", image: "/assets/treatments/profhilo-rec-microneedling.png" },
