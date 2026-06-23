@@ -2,6 +2,12 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import PageHero from "@/components/PageHero";
+import WhyGiftStrip from "@/components/gifts/WhyGiftStrip";
+import GiftSocialProof from "@/components/gifts/GiftSocialProof";
+import GiftHowItWorks from "@/components/gifts/GiftHowItWorks";
+import GiftFaq from "@/components/gifts/GiftFaq";
+import GiftFinalCta from "@/components/gifts/GiftFinalCta";
+import { giftFaqs } from "@/components/gifts/giftFaqData";
 
 export const metadata: Metadata = {
   title: "E-Gift Vouchers | Carisma Aesthetics - #1 Award Winning Chain in Malta",
@@ -103,9 +109,23 @@ const OCCASIONS = [
 
 const PRODUCT = "https://www.carismaaesthetics.com/product-page";
 
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: giftFaqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+
 export default function GiftsPage() {
   return (
     <main>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd).replace(/</g, "\\u003c") }}
+        />
         {/* ===== HERO ===== */}
         <PageHero
           badge="#1 Voted Med-Aesthetics Clinic in Malta"
@@ -120,7 +140,7 @@ export default function GiftsPage() {
             { label: "03", text: "Customise Your Message" },
           ]}
           primaryCta={{ text: "Shop Gift Cards", href: "#pick-occasion" }}
-          secondaryCta={{ text: "How It Works", href: "#how-it-works-heading" }}
+          secondaryCta={{ text: "How It Works", href: "#how-it-works" }}
           media={{
             type: "image",
             src: HERO_IMG,
@@ -137,58 +157,14 @@ export default function GiftsPage() {
           }}
         />
 
-        {/* ===== HOW IT WORKS — delivery info (P gift cards specific) ===== */}
-        <section
-          aria-labelledby="how-it-works-heading"
-          style={{ padding: "0 0 60px" }}
-        >
-          <div className="container">
-            <div
-              style={{
-                background: "var(--cream)",
-                borderRadius: "var(--radius-card)",
-                padding: "32px 24px",
-                maxWidth: "760px",
-                margin: "0 auto",
-                textAlign: "center",
-              }}
-            >
-              <h2
-                id="how-it-works-heading"
-                className="font-display"
-                style={{
-                  fontSize: "clamp(14px,2vw,17px)",
-                  color: "#4F7373",
-                  letterSpacing: "0.12em",
-                  fontWeight: 600,
-                  textTransform: "uppercase",
-                  marginBottom: "12px",
-                }}
-              >
-                Delivered by Email · Valid for 12 Months
-              </h2>
-              <p
-                style={{
-                  fontSize: "14px",
-                  color: "var(--label)",
-                  lineHeight: 1.8,
-                  maxWidth: "560px",
-                  margin: "0 auto",
-                }}
-              >
-                Your e-gift voucher is delivered instantly by email to the
-                recipient. It can be redeemed at any Carisma Aesthetics clinic
-                in Malta and is valid for 12 months from the date of purchase.
-              </p>
-            </div>
-          </div>
-        </section>
+        {/* ===== WHY A CARISMA GIFT — value pillars (replaces the old one-line note) ===== */}
+        <WhyGiftStrip />
 
         {/* ===== PICK YOUR OCCASION ===== */}
         <section
           id="pick-occasion"
           aria-labelledby="occasions-heading"
-          style={{ padding: "30px 0 90px" }}
+          style={{ padding: "30px 0 90px", scrollMarginTop: "var(--nav-clear)" }}
         >
           <div className="container">
             <h2
@@ -301,7 +277,7 @@ export default function GiftsPage() {
                 marginTop: "40px",
                 textAlign: "center",
                 fontSize: "12px",
-                color: "#9B8D83",
+                color: "var(--label)",
                 lineHeight: 1.7,
               }}
             >
@@ -310,6 +286,20 @@ export default function GiftsPage() {
             </p>
           </div>
         </section>
+
+        {/* ===== SOCIAL PROOF — real 4.9★ / 200+ reviews ===== */}
+        <GiftSocialProof />
+
+        {/* ===== HOW IT WORKS — 3 steps + redemption (hero secondary CTA anchor) ===== */}
+        <div id="how-it-works" style={{ scrollMarginTop: "var(--nav-clear)" }}>
+          <GiftHowItWorks />
+        </div>
+
+        {/* ===== FAQ — gift-card objections (FAQPage JSON-LD emitted above) ===== */}
+        <GiftFaq />
+
+        {/* ===== FINAL CTA — re-offer → #pick-occasion ===== */}
+        <GiftFinalCta />
     </main>
   );
 }
