@@ -75,8 +75,7 @@ export default function ServicesMarquee() {
       aria-labelledby="services-heading"
       style={{
         padding: "clamp(72px,9vw,112px) 0",
-        background:
-          "linear-gradient(180deg, var(--white) 0%, #f4f8f8 38%, var(--white) 100%)",
+        background: "transparent",
       }}
     >
       {/* Scoped interaction styles — hover lift + image zoom + CTA fill/shine.

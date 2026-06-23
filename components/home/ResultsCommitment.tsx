@@ -110,7 +110,7 @@ export default function ResultsCommitment() {
       className={`rc${revealed ? ' rc--in' : ''}`}
       style={{
         padding: 'clamp(46px,10vw,128px) 0',
-        background: `linear-gradient(180deg,#ffffff 0%,${TEAL_100} 100%)`,
+        background: "transparent",
       }}
     >
       <style>{`

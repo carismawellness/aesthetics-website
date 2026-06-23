@@ -127,7 +127,7 @@ export default function ConsultationProcess() {
     <section
       className="py-32"
       aria-labelledby="consultation-process-heading"
-      style={{ background: 'linear-gradient(180deg, #ffffff 0%, #deebeb 48%, #ffffff 100%)' }}
+      style={{ background: 'transparent' }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Eyebrow + heading */}

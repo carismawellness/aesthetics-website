@@ -27,9 +27,7 @@ export default function GiftCardsSummary() {
     <section
       aria-labelledby="gift-summary-heading"
       style={{
-        /* Cool teal ground to echo the Slimming/Membership rhythm — white → light teal → mist */
-        background:
-          "linear-gradient(180deg, var(--white) 0%, var(--teal-100) 58%, var(--cream-2) 100%)",
+        background: "transparent",
         padding: "clamp(72px, 9vw, 120px) 0",
         scrollMarginTop: "var(--nav-clear)",
         overflow: "hidden",

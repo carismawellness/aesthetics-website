@@ -101,9 +101,7 @@ export default function MembershipSummary() {
     <section
       aria-labelledby="membership-summary-heading"
       style={{
-        /* Slimming-style cool ground: white → light teal → soft mist */
-        background:
-          "linear-gradient(180deg, #ffffff 0%, var(--teal-100) 58%, var(--cream-2) 100%)",
+        background: "transparent",
         padding: "92px 0",
       }}
     >

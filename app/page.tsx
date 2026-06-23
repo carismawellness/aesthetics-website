@@ -35,12 +35,24 @@ export default function HomePage() {
   return (
     <main>
       <Hero />
-      <Reveal><ServicesMarquee /></Reveal>
-      <Reveal><WhyMaltaAesthetics /></Reveal>
-      <Reveal><ResultsCommitment /></Reveal>
-      <Reveal><ConsultationProcess /></Reveal>
-      <Reveal><MembershipSummary /></Reveal>
-      <Reveal><GiftCardsSummary /></Reveal>
+      {/* One continuous, intentional canvas for the whole mid-page scroll — a single
+          smooth white→soft-teal→white wash so sections flow into each other with NO
+          hard seams. Each section below is transparent and sits on this one ground;
+          deliberate panels (the Difference card, membership cards, gift scene) are the
+          only intentional accents on top. */}
+      <div
+        style={{
+          background:
+            "linear-gradient(180deg, #ffffff 0%, #f3f8f8 10%, #e9f2f2 34%, #eef5f5 60%, #f5fafa 84%, #ffffff 100%)",
+        }}
+      >
+        <Reveal><ServicesMarquee /></Reveal>
+        <Reveal><WhyMaltaAesthetics /></Reveal>
+        <Reveal><ResultsCommitment /></Reveal>
+        <Reveal><ConsultationProcess /></Reveal>
+        <Reveal><MembershipSummary /></Reveal>
+        <Reveal><GiftCardsSummary /></Reveal>
+      </div>
     </main>
   );
 }
