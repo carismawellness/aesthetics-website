@@ -162,7 +162,7 @@ export default function PageHero({
   };
   const sectionBg = background || (dark
     ? "radial-gradient(120% 90% at 85% 10%, #1c1a17 0%, #14120e 55%, #0e0c09 100%)"
-    : "radial-gradient(120% 90% at 85% 10%, #faf6ef 0%, #f6f4ef 45%, #ffffff 100%)");
+    : "radial-gradient(120% 90% at 85% 10%, #ffffff 0%, #faf6ef 60%, #faf6ef 100%)");
   const archBg = media.bg || (dark ? "#0c0c0c" : "linear-gradient(160deg, var(--teal-100) 0%, var(--gray-100) 55%, var(--beige) 100%)");
   const glassClass = dark ? "hero-glass-dark" : "hero-glass";
   const pillClass = dark ? "hero-pill-dark" : "hero-pill";
@@ -175,7 +175,7 @@ export default function PageHero({
          Light pages use a deeper teal so the lattice reads clearly over the
          pale teal-mist bed; the dark page uses gold. */}
       <HeroMotif color={dark ? "201, 169, 106" : "116, 156, 156"} />
-      <span aria-hidden style={{ position: "absolute", top: "-12%", right: "-8%", width: 460, height: 460, borderRadius: "50%", background: dark ? "rgba(201,169,106,0.16)" : "rgba(150,178,178,0.28)", filter: "blur(90px)", zIndex: 0 }} />
+      <span aria-hidden style={{ position: "absolute", top: "-12%", right: "-8%", width: 460, height: 460, borderRadius: "50%", background: dark ? "rgba(201,169,106,0.16)" : "rgba(243,236,224,0.5)", filter: "blur(90px)", zIndex: 0 }} />
 
       <div className="page-hero-grid" style={{ position: "relative", zIndex: 1, width: "100%", maxWidth: 1180, margin: "0 auto", display: "grid", gap: "clamp(10px,1.6vw,24px)", alignItems: "center" }}>
         {/* LEFT — message */}
@@ -276,8 +276,8 @@ export default function PageHero({
             </div>
             )}
 
-            {/* doctor-led pill — top-left */}
-            <div className={`${glassClass} float-b`} style={{ position: "absolute", left: "clamp(-18px,-1.8vw,-4px)", top: "9%", borderRadius: 999, padding: "8px 14px", display: "flex", alignItems: "center", gap: 7, zIndex: 3, animationDelay: "-2.8s" }}>
+            {/* doctor-led pill — mid-left (dropped below the top-right award card so they never overlap) */}
+            <div className={`${glassClass} float-b`} style={{ position: "absolute", left: "clamp(-18px,-1.8vw,-4px)", top: "38%", borderRadius: 999, padding: "8px 14px", display: "flex", alignItems: "center", gap: 7, zIndex: 3, animationDelay: "-2.8s" }}>
               <span aria-hidden style={{ width: 16, height: 16, borderRadius: "50%", background: c.checkBg, display: "grid", placeItems: "center" }}>
                 <svg width="9" height="9" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke={c.check} strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" /></svg>
               </span>
