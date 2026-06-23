@@ -27,10 +27,10 @@ const t: Treatment = {
   ],
   beforeAfterTitle: "BOTOX RESULTS",
   beforeAfter: [
-    { before: "/assets/treatments/botox-r4-before.png", after: "/assets/treatments/botox-r4-after.png" },
-    { before: "/assets/treatments/botox-r1-before.png", after: "/assets/treatments/botox-r1-after.png" },
-    { before: "/assets/treatments/botox-r2-before.png", after: "/assets/treatments/botox-r2-after.png" },
-    { before: "/assets/treatments/botox-r3-before.png", after: "/assets/treatments/botox-r3-after.png" },
+    { before: "/assets/treatments/botox-r4-before.png", after: "/assets/treatments/botox-r4-after.png", name: "Maria C.", review: "My frown lines softened so naturally — I just look rested, not done." },
+    { before: "/assets/treatments/botox-r1-before.png", after: "/assets/treatments/botox-r1-after.png", name: "Elena P.", review: "The crow's feet around my eyes are gone, but I can still smile completely." },
+    { before: "/assets/treatments/botox-r2-before.png", after: "/assets/treatments/botox-r2-after.png", name: "Sophie B.", review: "My forehead lines smoothed out without that frozen look I was so worried about." },
+    { before: "/assets/treatments/botox-r3-before.png", after: "/assets/treatments/botox-r3-after.png", name: "Rebecca M.", review: "The underarm treatment changed my life — no more sweat patches, total confidence." },
   ],
   precision: {
     title: "PRECISION AREAS OF REFINEMENT",
@@ -74,13 +74,7 @@ const t: Treatment = {
     kicker: "The real reason people book",
     title: "You look more tired, tense, or stressed than you feel",
     body: [
-      "It's rarely about chasing perfection or erasing every line. It's that your forehead, frown, or eyes can make you look exhausted, tense, or older than you actually feel — even on the days you're calm and well-rested.",
-      "Doctor-led wrinkle relaxing gently softens those expression lines while keeping your natural movement. You still look like you — just more rested, calmer, and refreshed.",
-    ],
-    points: [
-      { title: "Softer, not frozen", desc: "We relax the lines that age you while keeping every natural expression." },
-      { title: "Rested, not 'done'", desc: "People notice you look refreshed — not that you've had something done." },
-      { title: "Still you", desc: "A subtle softening that looks like you on your most well-rested day." },
+      "Doctor-led wrinkle relaxing gently softens those expression lines while keeping your natural movement — so you still look like you, just more rested.",
     ],
   },
   guarantee: {

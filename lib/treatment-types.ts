@@ -5,7 +5,7 @@ export type PriceItem = { label: string; price: string };
 export type InfoItem = { metric: string; detail: string };
 export type AreaItem = { name: string; desc: string; zone?: string; icon?: string };
 export type Step = { title: string; desc: string; image?: string };
-export type BeforeAfter = { before: string; after: string; label?: string };
+export type BeforeAfter = { before: string; after: string; label?: string; name?: string; review?: string };
 
 export type Treatment = {
   slug: string;

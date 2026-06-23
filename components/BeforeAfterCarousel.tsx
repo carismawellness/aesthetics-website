@@ -4,7 +4,7 @@ import { useState, useEffect, useMemo, useCallback } from "react";
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
 
-type Pair = { before: string; after: string; label?: string };
+type Pair = { before: string; after: string; label?: string; name?: string; review?: string };
 
 // Responsive cards-per-view — mirrors the slimming ResultsCarousel peek logic
 // (mobile 1 · tablet 2 · desktop 3), but as a windowed *page* count rather than
@@ -125,17 +125,54 @@ function PairCard({
           );
         })}
       </div>
-      {pair.label && (
-        <figcaption
-          style={{
-            marginTop: "14px",
-            fontSize: "12.5px",
-            color: "var(--label)",
-            letterSpacing: "0.04em",
-            textAlign: "center",
-          }}
-        >
-          {pair.label}
+      {/* Patient name + short review beneath the before|after pair. The name is
+          uppercase Novecento (font-display) in teal text; the review is a soft
+          italic quote in --ink-soft. The optional treatment `label` stays as a
+          small muted caption above them. */}
+      {(pair.name || pair.review || pair.label) && (
+        <figcaption style={{ marginTop: "14px", textAlign: "center" }}>
+          {pair.label && (
+            <span
+              style={{
+                display: "block",
+                fontSize: "12.5px",
+                color: "var(--label)",
+                letterSpacing: "0.04em",
+              }}
+            >
+              {pair.label}
+            </span>
+          )}
+          {pair.name && (
+            <span
+              className="font-display"
+              style={{
+                display: "block",
+                marginTop: pair.label ? "8px" : 0,
+                fontSize: "12px",
+                color: "var(--teal-text)",
+                letterSpacing: "0.16em",
+                lineHeight: 1.4,
+              }}
+            >
+              {pair.name}
+            </span>
+          )}
+          {pair.review && (
+            <span
+              style={{
+                display: "block",
+                marginTop: pair.name ? "6px" : pair.label ? "8px" : 0,
+                fontSize: "13.5px",
+                lineHeight: 1.6,
+                color: "var(--ink-soft)",
+                fontStyle: "italic",
+                textWrap: "pretty",
+              }}
+            >
+              {`“${pair.review}”`}
+            </span>
+          )}
         </figcaption>
       )}
     </figure>

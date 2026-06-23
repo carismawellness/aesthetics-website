@@ -55,7 +55,9 @@ export default function ProblemReframe({
     <section
       aria-labelledby={headingId}
       style={{
-        padding: "clamp(72px,9vh,112px) 0",
+        // Compact emotional beat — tightened from clamp(72px,9vh,112px) so this
+        // reads as a single elegant line, not a towering full-height section.
+        padding: "clamp(40px,5vh,64px) 0",
         // Faint warm-ivory ground (token remapped to #deebeb in the 2026 palette)
         // so the section reads as a soft, set-apart emotional beat — not teal
         // wallpaper. A whisper-soft top sheen adds depth without alarm.
@@ -64,6 +66,9 @@ export default function ProblemReframe({
       }}
     >
       <div className="container">
+        {/* Shrink the SectionHeader's H2 a notch for this compact beat (the shared
+            SectionHeader has a fixed size; scope the override to this heading). */}
+        <style>{`#${headingId} { font-size: clamp(21px,2.7vw,30px) !important; }`}</style>
         <SectionHeader id={headingId} kicker={kicker} title={title} />
 
         {/* ── Calm supporting paragraphs ───────────────────────────────────
@@ -74,9 +79,9 @@ export default function ProblemReframe({
           <Reveal>
             <div
               style={{
-                maxWidth: 640,
+                maxWidth: 580,
                 marginInline: "auto",
-                marginTop: "clamp(32px,4.4vw,48px)",
+                marginTop: "clamp(20px,2.6vw,30px)",
                 textAlign: "center",
               }}
             >
@@ -87,8 +92,8 @@ export default function ProblemReframe({
                     border: "1px solid var(--line)",
                     borderRadius: "var(--radius-card)",
                     background: "rgba(255,255,255,0.66)",
-                    padding: "clamp(24px,3.4vw,36px)",
-                    boxShadow: "0 14px 34px rgba(var(--teal-deep-rgb), 0.06)",
+                    padding: "clamp(18px,2.4vw,26px)",
+                    boxShadow: "0 10px 26px rgba(var(--teal-deep-rgb), 0.06)",
                   }}
                 >
                   {/* Decorative opening quote mark — soft teal, purely emotional
@@ -98,12 +103,12 @@ export default function ProblemReframe({
                     className="font-serif"
                     style={{
                       position: "absolute",
-                      top: -14,
+                      top: -11,
                       left: "50%",
                       transform: "translateX(-50%)",
                       background: "var(--teal-100)",
-                      padding: "0 14px",
-                      fontSize: 34,
+                      padding: "0 12px",
+                      fontSize: 26,
                       lineHeight: 1,
                       color: "var(--teal-200)",
                       userSelect: "none",
@@ -113,8 +118,8 @@ export default function ProblemReframe({
                   </span>
                   <p
                     style={{
-                      fontSize: "clamp(16px,1.5vw,18px)",
-                      lineHeight: 1.75,
+                      fontSize: "clamp(15px,1.4vw,16.5px)",
+                      lineHeight: 1.65,
                       color: "var(--ink-soft)",
                       margin: 0,
                       textWrap: "pretty",
