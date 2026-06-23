@@ -37,7 +37,7 @@ export default function DoYouHave() {
                 marginTop: "12px",
               }}
             >
-              What Is Pico Laser Tattoo Removal?
+              Do you have a tattoo you no longer want to carry?
             </h2>
 
             <p

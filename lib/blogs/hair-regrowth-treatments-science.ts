@@ -2,7 +2,7 @@ import { BlogPost } from '../blog-types';
 
 export const post: BlogPost = {
   slug: 'hair-regrowth-treatments-science',
-  title: 'Hair Regrowth Treatments Malta — How PRP and Laser Really Work',
+  title: 'Hair Regrowth Treatments: The Science Behind PRP and Laser',
   metaTitle: 'PRP & Laser Hair Regrowth: The Science | Carisma Malta',
   metaDescription:
     'Explore the science behind PRP and laser hair regrowth treatments in Malta. See how Carisma Aesthetics combines both for guaranteed, measurable results.',
@@ -24,7 +24,7 @@ export const post: BlogPost = {
     },
     {
       type: 'heading',
-      level: 3,
+      level: 2,
       text: 'The Biology of Hair Loss',
     },
     {
@@ -47,7 +47,7 @@ export const post: BlogPost = {
     {
       type: 'heading',
       level: 2,
-      text: 'Low-Level Laser Therapy: Photobiomodulation for Hair Follicles',
+      text: 'Low-Level Laser Therapy (LLLT): Photobiomodulation for Follicle Health',
     },
     {
       type: 'paragraph',
@@ -56,7 +56,7 @@ export const post: BlogPost = {
     {
       type: 'heading',
       level: 2,
-      text: 'PRP and Laser for Hair Regrowth — Better Together',
+      text: 'PRP vs Laser: Complementary, Not Competing',
     },
     {
       type: 'paragraph',
@@ -65,7 +65,7 @@ export const post: BlogPost = {
     {
       type: 'heading',
       level: 2,
-      text: 'Your Hair Regrowth Journey at Carisma Aesthetics Malta',
+      text: 'What to Expect: A Typical Treatment Journey',
     },
     {
       type: 'paragraph',
@@ -88,7 +88,7 @@ export const post: BlogPost = {
     },
     {
       type: 'heading',
-      level: 3,
+      level: 2,
       text: 'Who Is an Ideal Candidate?',
     },
     {
@@ -98,7 +98,7 @@ export const post: BlogPost = {
     {
       type: 'heading',
       level: 2,
-      text: 'Medically Supervised Hair Regrowth at Carisma Aesthetics',
+      text: 'Beyond Hair: The Carisma Approach to Whole-Person Aesthetics',
     },
     {
       type: 'paragraph',
@@ -106,8 +106,8 @@ export const post: BlogPost = {
     },
     {
       type: 'heading',
-      level: 3,
-      text: 'The Clinical Evidence for PRP and Laser',
+      level: 2,
+      text: 'The Evidence Base: What Clinical Research Shows',
     },
     {
       type: 'paragraph',

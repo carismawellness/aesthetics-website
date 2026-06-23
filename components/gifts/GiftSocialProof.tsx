@@ -63,7 +63,7 @@ export default function GiftSocialProof() {
                 margin: "14px 0 0",
               }}
             >
-              Loved by Clients Across Malta — 4.9 Stars
+              A gift they'll thank you for
             </h2>
 
             {/* Headline aggregate score */}

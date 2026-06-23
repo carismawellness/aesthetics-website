@@ -4,7 +4,7 @@ const t: Treatment = {
   slug: "microneedling-malta",
   category: "Face",
   hero: {
-    title: "Microneedling in Malta — Doctor-Led Collagen Renewal",
+    title: "Microneedling + mesotherapy Malta",
     subtitle: "Doctor-Led Microneedling with Mesotherapy — Restore Your Skin from Within",
     body: "Is uneven skin texture, scarring, or dull skin holding you back? Rediscover smoother, brighter, more confident skin with our expert microneedling and mesotherapy treatments in Malta. Every treatment is performed by qualified doctors who combine collagen induction therapy with personalised mesotherapy cocktails, delivering natural, lasting results that restore your skin from within.",
     prices: [
@@ -27,14 +27,14 @@ const t: Treatment = {
   ],
   beforeAfterTitle: "microneedling results",
   beforeAfter: [
-    { before: "/assets/treatments/microneedling-malta-ba1-before.png", after: "/assets/treatments/microneedling-malta-ba1-after.png" },
-    { before: "/assets/treatments/microneedling-malta-ba2-before.png", after: "/assets/treatments/microneedling-malta-ba2-after.png" },
-    { before: "/assets/treatments/microneedling-malta-ba3-before.png", after: "/assets/treatments/microneedling-malta-ba3-after.png" },
-    { before: "/assets/treatments/microneedling-malta-ba4-before.png", after: "/assets/treatments/microneedling-malta-ba4-after.png" },
-    { before: "/assets/treatments/microneedling-malta-ba5-before.png", after: "/assets/treatments/microneedling-malta-ba5-after.png" },
+    { before: "/assets/treatments/microneedling-malta-ba1-before.png", after: "/assets/treatments/microneedling-malta-ba1-after.png", name: "Daniel V.", review: "Years of pitted acne scars on my cheeks finally look smoother — my skin feels like mine again." },
+    { before: "/assets/treatments/microneedling-malta-ba2-before.png", after: "/assets/treatments/microneedling-malta-ba2-after.png", name: "Mariella S.", review: "The acne marks on my cheeks faded and my skin looks so much more even — I barely wear foundation now." },
+    { before: "/assets/treatments/microneedling-malta-ba3-before.png", after: "/assets/treatments/microneedling-malta-ba3-after.png", name: "Chloe A.", review: "My texture and little blemishes evened out and my whole face just glows now." },
+    { before: "/assets/treatments/microneedling-malta-ba4-before.png", after: "/assets/treatments/microneedling-malta-ba4-after.png", name: "Carmen B.", review: "The fine lines around my eyes softened beautifully — I look rested without looking done." },
+    { before: "/assets/treatments/microneedling-malta-ba5-before.png", after: "/assets/treatments/microneedling-malta-ba5-after.png", name: "Josephine R.", review: "My pores and sun spots are so much less noticeable — my skin looks years fresher." },
   ],
   precision: {
-    title: "Skin Concerns Microneedling Targets — Precision Areas",
+    title: "precision areas of refinement",
     intro: "Controlled micro-injuries trigger your skin's natural renewal response. Below are the primary concerns and zones we target.",
     areas: [
       { zone: "Texture", icon: "/assets/treatments/microneedling-malta-icon-texture.png", name: "Skin Texture", desc: "Refines overall skin texture by stimulating collagen production across the full treatment zone." },
@@ -42,11 +42,11 @@ const t: Treatment = {
       { zone: "Pores", icon: "/assets/treatments/microneedling-malta-icon-pores.png", name: "Enlarged Pores", desc: "Tightens the pore structure through repeated collagen stimulation for a visibly refined surface." },
       { zone: "Lines", icon: "/assets/treatments/microneedling-malta-icon-lines.png", name: "Fine Lines", desc: "Softens early fine lines by encouraging the skin to rebuild its collagen matrix from within." },
     ],
-    additionalTitle: "Additional Areas Treated at Your Assessment",
+    additionalTitle: "Your practitioner selects needle depth and mesotherapy infusion based on your individual skin assessment.",
     additional: "Pigmentation, stretch marks, neck, decolletage, hands, surgical scars",
   },
   suitability: {
-    title: "Who Is a Good Candidate for Microneedling?",
+    title: "Is this suitable for you?",
     intro: "Every skin tells a different story. Microneedling with mesotherapy is most effective when tailored to your specific skin concerns, whether that is scarring, texture, fine lines, or overall radiance. A free consultation with one of our doctors helps us assess your skin and design a treatment plan that works for you.",
     suitableFor: [
       "You want to improve acne scarring, enlarged pores, fine lines, or uneven texture",
@@ -56,25 +56,49 @@ const t: Treatment = {
       "You want a treatment that improves skin quality without injectables",
     ],
     notIdeal: [
-      "You currently have an active acne breakout or skin infection",
-      "You have used isotretinoin (Accutane) within the last six months",
-      "You are pregnant, breastfeeding, or have active cold sores in the area",
-      "You have a history of keloid scarring that has not been assessed",
-      "You cannot commit to sun protection during the recovery period",
+      "You have an active breakout or skin infection right now — we will happily treat you once your skin has calmed",
+      "You have used isotretinoin (Accutane) in the last six months — a short wait keeps your skin safe, and we will be here",
+      "You are pregnant or breastfeeding — we will welcome you back warmly afterwards",
+      "You have a history of keloid scarring we have not assessed yet — let us take a careful look together first",
+      "You would rather not follow simple daily SPF during recovery — sun protection is what protects your results",
+    ],
+    personas: [
+      { title: "The acne-scar healer", desc: "Old breakouts left pitted scars or marks, and you want smoother, more even skin without surgery or heavy resurfacing." },
+      { title: "The dull, tired complexion", desc: "Your skin looks flat and lacklustre, and you want that fresh, lit-from-within glow back." },
+      { title: "The early-ageing preventer", desc: "Fine lines, larger pores, or uneven texture are creeping in, and you want to rebuild collagen before they deepen." },
+    ],
+  },
+  problem: {
+    kicker: "The real reason people book",
+    title: "Your skin feels older and more tired than you are",
+    body: [
+      "Doctor-led microneedling with mesotherapy gently rebuilds collagen from within — softening scars, refining texture, and bringing back the natural, healthy glow that still looks like you.",
+    ],
+  },
+  guarantee: {
+    kicker: "The Natural Confidence Guarantee",
+    title: "Natural Confidence Guarantee",
+    paragraphs: [
+      "Every plan starts with a doctor-led skin assessment and a natural-first approach focused on gradual, healthy renewal — backed by a free follow-up review until you are 100% satisfied with skin that still looks like you.",
+    ],
+    cta: "Book Your Free Consultation",
+    points: [
+      { value: "Doctor-led", label: "Assessment first", sub: "Never a salesperson" },
+      { value: "Natural-first", label: "Gradual renewal", sub: "We restore, never overtreat" },
+      { value: "100%", label: "Satisfaction", sub: "Free follow-up until you are happy" },
     ],
   },
   experience: {
-    title: "How Microneedling Works — Your Step-by-Step Journey",
+    title: "Your treatment experience",
     steps: [
-      { title: "Step 1 — Your Consultation", desc: "We assess your skin condition, concerns, and medical history with one of our doctors to design your personalised microneedling plan.", image: "/assets/treatments/microneedling-malta-step1.png" },
-      { title: "Step 2 — Your Treatment Plan", desc: "Your doctor selects the mesotherapy cocktail and treatment protocol tailored to your skin type, concerns, and goals.", image: "/assets/treatments/microneedling-malta-step2.png" },
-      { title: "Step 3 — Targeted Treatment", desc: "Your doctor performs microneedling with your personalised mesotherapy cocktail: precise, comfortable, and no downtime.", image: "/assets/treatments/microneedling-malta-step3.png" },
-      { title: "Step 4 — Review and Refinement", desc: "Your doctor reviews your skin's response and refines the plan to ensure optimal microneedling results over time.", image: "/assets/treatments/microneedling-malta-step4.png" },
+      { title: "Consultation & Plan", desc: "One of our doctors assesses your skin condition, concerns, and medical history, then selects the mesotherapy cocktail and protocol tailored to your skin.", image: "/assets/treatments/microneedling-malta-step1.png" },
+      { title: "Targeted Treatment", desc: "Your doctor performs microneedling with your personalised mesotherapy cocktail — precise, comfortable, and with minimal downtime.", image: "/assets/treatments/microneedling-malta-step3.png" },
+      { title: "Ongoing Review & Adjustment", desc: "Your doctor reviews your skin's response and refines the plan across your course to ensure optimal, lasting results over time.", image: "/assets/treatments/microneedling-malta-step4.png" },
     ],
   },
   prepAftercare: {
     kicker: "Preparation & Aftercare",
-    title: "Aftercare and Recovery After Microneedling",
+    title: "your session, step by step",
     intro: "A smooth microneedling experience begins with a few simple steps. Here is what to know before, during, and after your session at our Malta clinic.",
     cards: [
       {
@@ -113,7 +137,7 @@ const t: Treatment = {
     ],
   },
   patientVideos: {
-    title: "Real Microneedling Results from Our Malta Patients",
+    title: "Real patients, real confidence",
     intro: "Every skin is unique. Every story is personal. Discover how our microneedling patients describe their journey to smoother, healthier skin at Carisma Aesthetics in Malta.",
     videos: [
       "/assets/treatments/microneedling-malta-video1.mp4",
@@ -122,7 +146,7 @@ const t: Treatment = {
     ],
   },
   trusted: {
-    title: "Medically Qualified Practitioners — Safe Microneedling in Malta",
+    title: "Malta's trusted clinic for microneedling",
     subtitle: "DOCTOR-LED microneedling IN MALTA",
     asSeenOn: ["/assets/press/lovin-malta.jpeg", "/assets/press/malta-daily.png", "/assets/press/bay.jpeg", "/assets/press/times-of-malta.png", "/assets/press/malta-today.jpg"],
     images: ["/assets/treatments/microneedling-malta-trusted.png"],
@@ -136,7 +160,7 @@ const t: Treatment = {
   },
   difference: {
     kicker: "the carisma difference",
-    title: "Why Choose Carisma for Collagen Induction Therapy in Malta",
+    title: "Malta’s #1 leading wellness chain",
     commitmentTitle: "our commitment",
     commitment: [
       "Natural, refined microneedling results — gradual improvement that respects your skin",
@@ -144,7 +168,7 @@ const t: Treatment = {
       "Safe, ethical care using clinically approved devices and products",
       "A personalised journey from consultation to aftercare",
     ],
-    whyTitle: "Why Malta Chooses Carisma for Microneedling",
+    whyTitle: "WHY MALTA CHOOSES CARISMA FOR MICRONEEDLING",
     why: [
       "Created by the team behind Malta’s leading spa and medical aesthetics centres",
       "Doctor-led microneedling with mesotherapy, focused on safety and long-term skin renewal",
@@ -154,14 +178,34 @@ const t: Treatment = {
     mapQuery: "Carisma Aesthetics, Malta",
   },
   bookingForm: { title: "BOOK YOUR microneedling APPOINTMENT TODAY" },
+  planSummary: {
+    kicker: "Your microneedling plan",
+    title: "Malta's Doctor-Led Microneedling Plan",
+    benefits: [
+      { icon: "shield", title: "Doctor-Led Precision", desc: "Every session is performed by a medically qualified doctor — never a salon, with needle depth tailored to your skin." },
+      { icon: "sparkle", title: "Mesotherapy Included", desc: "A personalised vitamin and growth-factor cocktail is infused into the micro-channels for deeper nourishment and glow." },
+      { icon: "chart", title: "Cumulative, Lasting Results", desc: "A structured course rebuilds collagen over time, softening scars and refining texture for results that keep improving." },
+    ],
+    included: [
+      { label: "Free doctor-led skin consultation" },
+      { label: "Personalised mesotherapy cocktail selection" },
+      { label: "Medical-grade microneedling session", value: "from €149" },
+      { label: "Optional exosome boost", value: "+€50" },
+      { label: "Aftercare guidance & ongoing review" },
+    ],
+    price: "From €119",
+    priceLabel: "per session in a course of 5",
+    cta: { text: "Book Your Microneedling Appointment", href: "/consultation" },
+    reviews: "200+ verified reviews",
+  },
   recommended: {
-    title: "Treatments That Combine Well with Microneedling",
+    title: "Recommended with microneedling",
     items: [
       { label: "Chemical peels", href: "/chemical-peels-malta", image: "/assets/treatments/microneedling-malta-rec-chemical-peels.png" },
       { label: "PRP", href: "/prp-malta", image: "/assets/treatments/microneedling-malta-rec-prp.png" },
     ],
   },
-  faqTitle: "Frequently Asked Questions About Microneedling in Malta",
+  faqTitle: "FAQs about microneedling in Malta",
   faq: [
     {
       q: "What is microneedling, and how does it work?",

@@ -152,7 +152,7 @@ export default function HowItWorks() {
               margin: 0,
             }}
           >
-            How the Glow Club Membership Works in Malta
+            Three simple steps to glow for less
           </h2>
           <p
             style={{

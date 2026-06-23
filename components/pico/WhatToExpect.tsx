@@ -42,7 +42,7 @@ export default function WhatToExpect() {
     >
       <div className="container">
         <Serif id="wte-heading" style={{ textTransform: "uppercase" }}>
-          Pico Laser Aftercare — How to Protect Your Skin After Treatment
+          What to expect during your Pico laser tattoo removal treatment
         </Serif>
 
         <div className="wte-grid grid gap-8" style={{ marginTop: "36px" }}>

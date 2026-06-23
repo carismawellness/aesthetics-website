@@ -46,3 +46,4 @@ consultation-submissions.jsonl
 # dev server logs
 dev.log
 dev.*.log
+.claude/worktrees/

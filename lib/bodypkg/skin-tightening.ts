@@ -7,7 +7,7 @@ export const skinTightening: PackageContent = {
   liveUrl: 'https://www.carismaslimming.com/skin-tightening',
 
   heroEyebrow: 'VELASHAPE III IN MALTA',
-  heroTitle: 'RF Skin Tightening with VelaShape III',
+  heroTitle: '4-in-1 skin tightening protocol',
   heroSubheading: 'Smoother, firmer, and tighter skin in 4 focused sessions.',
   heroDescription:
     'Our 4 in 1 course with the VelaShape III uses radiofrequency, infrared heat, vacuum and mechanical massage together to stimulate collagen to tighten and smoothen your skin.',

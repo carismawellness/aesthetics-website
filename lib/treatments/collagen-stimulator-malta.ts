@@ -4,7 +4,7 @@ const t: Treatment = {
   slug: "collagen-stimulator-malta",
   category: "Face",
   hero: {
-    title: "Collagen Stimulator Malta — Rebuild Your Skin's Own Collagen",
+    title: "Collagen stimulator (bio-revitalization)",
     subtitle: "Is your skin lacking collagen?",
     body: "Discover the power of Collagen Stimulator (Sculptra & Radiesse) treatment in Malta for natural skin rejuvenation. Boost collagen production, reduce wrinkles, and achieve youthful, radiant skin. Non-surgical facelift alternative",
     prices: [{ label: "", price: "From €399/vial" }],
@@ -20,16 +20,16 @@ const t: Treatment = {
     { metric: "RESULTS VISIBLE IN", detail: "1-3 months" },
     { metric: "ANAESTHETIC", detail: "Local anesthetic" },
   ],
-  beforeAfterTitle: "Real Collagen Stimulator Results — Before & After",
+  beforeAfterTitle: "COLLAGEN STIMULATOR RESULTS",
   beforeAfter: [
-    { before: "/assets/treatments/collagen-stimulator-malta-ba1-before.png", after: "/assets/treatments/collagen-stimulator-malta-ba1-after.png" },
-    { before: "/assets/treatments/collagen-stimulator-malta-ba2-before.png", after: "/assets/treatments/collagen-stimulator-malta-ba2-after.png" },
-    { before: "/assets/treatments/collagen-stimulator-malta-ba3-before.png", after: "/assets/treatments/collagen-stimulator-malta-ba3-after.png" },
-    { before: "/assets/treatments/collagen-stimulator-malta-ba4-before.png", after: "/assets/treatments/collagen-stimulator-malta-ba4-after.png" },
-    { before: "/assets/treatments/collagen-stimulator-malta-ba5-before.png", after: "/assets/treatments/collagen-stimulator-malta-ba5-after.png" },
+    { before: "/assets/treatments/collagen-stimulator-malta-ba1-before.png", after: "/assets/treatments/collagen-stimulator-malta-ba1-after.png", name: "Marisa P.", review: "The folds around my mouth softened over a few months — it looks like my own skin, just years younger." },
+    { before: "/assets/treatments/collagen-stimulator-malta-ba2-before.png", after: "/assets/treatments/collagen-stimulator-malta-ba2-after.png", name: "Claudine V.", review: "My cheeks slowly filled back out and my whole mid-face looks lifted — no one can tell I had anything done." },
+    { before: "/assets/treatments/collagen-stimulator-malta-ba3-before.png", after: "/assets/treatments/collagen-stimulator-malta-ba3-after.png", name: "Antonella R.", review: "The skin on my cheeks feels firmer and the tired hollows under my eyes are so much smoother now." },
+    { before: "/assets/treatments/collagen-stimulator-malta-ba4-before.png", after: "/assets/treatments/collagen-stimulator-malta-ba4-after.png", name: "Doris S.", review: "The deep creases by my eyes and cheeks gradually relaxed — at my age I never thought my skin could look this rested." },
+    { before: "/assets/treatments/collagen-stimulator-malta-ba5-before.png", after: "/assets/treatments/collagen-stimulator-malta-ba5-after.png", name: "Bridget M.", review: "The skin on my thighs and buttocks is noticeably firmer and the dimpling has smoothed out beautifully." },
   ],
   precision: {
-    title: "What Is Collagen Stimulator Treatment?",
+    title: "PRECISION AREAS OF REFINEMENT",
     intro: "Collagen stimulators rebuild your skin's structural foundation gradually. Below are the zones where this approach is most effective.",
     areas: [
       { zone: "Tone", icon: "/assets/treatments/collagen-stimulator-malta-icon-tone.png", name: "Cheek Volume", desc: "Stimulates your own collagen production for natural volume restoration and skin firming." },
@@ -37,11 +37,11 @@ const t: Treatment = {
       { zone: "Jawline", icon: "/assets/treatments/collagen-stimulator-malta-icon-jawline.png", name: "Jawline Scaffold", desc: "Strengthens the lower face contour through progressive collagen deposition along the jaw." },
       { zone: "Skin", icon: "/assets/treatments/collagen-stimulator-malta-icon-skin.png", name: "Skin Firmness", desc: "Improves overall skin density and firmness for a more lifted, toned facial canvas" },
     ],
-    additionalTitle: "Additional Treatment Areas",
+    additionalTitle: "Your treatment plan is designed around your unique facial structure and desired pace of improvement.",
     additional: "Pre-jowl area, nasolabial folds, marionette region, chin, midface lateral, brow area",
   },
   suitability: {
-    title: "Who Is a Good Candidate for Collagen Stimulation?",
+    title: "Is this suitable for you?",
     intro: "Collagen stimulators encourage your body to rebuild its own collagen over time. This is not an instant-result treatment. It is designed for those who prefer a gradual, natural-looking restoration that unfolds over weeks and months.",
     suitableFor: [
       "You want long-lasting rejuvenation that develops naturally over 1 to 3 months",
@@ -51,25 +51,49 @@ const t: Treatment = {
       "You appreciate a treatment that continues improving long after your appointment",
     ],
     notIdeal: [
-      "You need visible results for an upcoming event in the next few weeks",
-      "You prefer a treatment that delivers immediate, same-day results",
-      "You are pregnant, breastfeeding, or managing certain autoimmune conditions",
-      "You are looking for quick contouring rather than progressive restoration",
-      "You have very thin skin that may need an alternative approach",
+      "You have an event in the next few weeks — collagen builds gradually, so we'd plan an earlier start or suggest a faster option",
+      "You'd love same-day results — this one rewards patience, and we'll happily talk you through quicker alternatives",
+      "You're pregnant or breastfeeding — we'll warmly welcome you back once the time is right",
+      "You want instant contouring — fillers may suit that goal better, and we're glad to guide you there",
+      "You're managing certain autoimmune conditions — a quick doctor consultation helps us find the safest path for you",
+    ],
+    personas: [
+      { title: "The early signs of ageing", desc: "You've noticed your cheeks looking flatter and your face a little less full — and you want to rebuild it naturally, not fill it." },
+      { title: "The natural-first patient", desc: "You'd rather stimulate your own collagen than rely on synthetic filler, and you're happy to let results unfold over months." },
+      { title: "The long-term planner", desc: "You want rejuvenation that keeps improving and lasts — a foundation, not a quick fix you have to top up constantly." },
+    ],
+  },
+  problem: {
+    kicker: "The real reason people book",
+    title: "Your face looks flatter and more tired than it used to",
+    body: [
+      "Doctor-led collagen stimulators gently rebuild the volume and firmness you've lost — using your own collagen, so you look refreshed and natural, never filled or done.",
+    ],
+  },
+  guarantee: {
+    kicker: "The Natural Confidence Guarantee",
+    title: "Natural Confidence Guarantee",
+    paragraphs: [
+      "Every plan starts with a doctor-led facial assessment and a natural-first approach that rebuilds gradually and is never overdone, backed by a free follow-up review to keep your collagen stimulator results looking like a more rested version of you.",
+    ],
+    cta: "Book Your Free Consultation",
+    points: [
+      { value: "Doctor-led", label: "Assessment first", sub: "Never a salesperson" },
+      { value: "Natural-first", label: "Builds gradually", sub: "Your own collagen, never overfilled" },
+      { value: "100%", label: "Satisfaction", sub: "Free follow-up review until you are happy" },
     ],
   },
   experience: {
-    title: "How Do Sculptra and Radiesse Work in Malta?", cta: "BOOK YOUR FREE CONSULTATION",
+    title: "Your treatment experience", cta: "BOOK YOUR FREE CONSULTATION",
     steps: [
-      { title: "Step 1 — Your Consultation", desc: "We assess your facial anatomy, skin condition, medical history, and collagen stimulator goals with one of our doctors.", image: "/assets/treatments/botox-step1.png" },
-      { title: "Step 2 — Your Personalised Plan", desc: "Your doctor designs a medically guided collagen stimulator plan tailored to your facial structure and desired outcome.", image: "/assets/treatments/botox-step2.png" },
-      { title: "Step 3 — Your Treatment", desc: "Your doctor administers the collagen stimulator with fine, precise injections, quick, comfortable, and no downtime.", image: "/assets/treatments/botox-step3.png" },
-      { title: "Step 4 — Review and Refinement", desc: "Your doctor monitors your response and refines the plan to ensure natural collagen stimulator results over time.", image: "/assets/treatments/botox-step4.png" },
+      { title: "Consultation & Plan", desc: "One of our doctors assesses your facial anatomy, skin condition, and medical history, then designs a medically guided collagen stimulator plan around your structure and the pace you want.", image: "/assets/treatments/botox-step1.png" },
+      { title: "Targeted Treatment", desc: "Your doctor administers the collagen stimulator with fine, precise injections into the right facial planes — quick, comfortable, and with minimal downtime.", image: "/assets/treatments/botox-step3.png" },
+      { title: "Ongoing Review & Adjustment", desc: "Your doctor monitors how your collagen rebuilds over the months and refines the plan to ensure natural, long-lasting results.", image: "/assets/treatments/botox-step4.png" },
     ],
   },
   prepAftercare: {
     kicker: "Preparation & Aftercare",
-    title: "Aftercare and Recovery After Collagen Stimulator",
+    title: "Your session, step by step",
     intro: "Your body does the work over the months ahead. Here is how to support the process from day one.",
     cards: [
       {
@@ -108,12 +132,12 @@ const t: Treatment = {
     ],
   },
   patientVideos: {
-    title: "Sculptra & Radiesse Results — Our Malta Patients' Stories",
+    title: "Real patients, real confidence",
     intro: "Every face is unique. Every story is personal. Discover how our collagen stimulator patients describe their journey to refined, natural results at Carisma Aesthetics in Malta.",
     videos: ["/assets/treatments/vid-collagen-stimulator-malta-1.mp4", "/assets/treatments/vid-collagen-stimulator-malta-2.mp4"],
   },
   trusted: {
-    title: "Medically Qualified Practitioners — Safe Collagen Stimulator in Malta",
+    title: "Malta's trusted clinic for collagen stimulator",
     subtitle: "Doctor-Led Collagen Stimulator in Malta",
     asSeenOn: ["/assets/press/lovin-malta.jpeg", "/assets/press/malta-daily.png", "/assets/press/bay.jpeg", "/assets/press/times-of-malta.png", "/assets/press/malta-today.jpg"],
     images: ["/assets/treatments/trusted-clinic-collage.png"],
@@ -127,7 +151,7 @@ const t: Treatment = {
   },
   difference: {
     kicker: "The Carisma Difference",
-    title: "Why Malta Chooses Carisma for Collagen Stimulator",
+    title: "Malta's #1 leading wellness chain",
     commitmentTitle: "Our Commitment",
     commitment: [
       "Natural, refined collagen stimulator results,  never overdone, never frozen",
@@ -135,7 +159,7 @@ const t: Treatment = {
       "Safe, ethical care using clinically approved products",
       "A personalised journey from consultation to aftercare",
     ],
-    whyTitle: "Why Patients Choose Carisma Aesthetics",
+    whyTitle: "Why Malta Chooses Carisma for Collagen Stimulator",
     why: [
       "Created by the team behind Malta's leading spa and medical aesthetics centres",
       "Doctor-led collagen stimulator treatments with a focus on safety and long-term results",
@@ -145,8 +169,28 @@ const t: Treatment = {
     mapQuery: "Carisma Aesthetics, Malta",
   },
   bookingForm: { title: "Book Your Collagen Stimulator Appointment Today" },
+  planSummary: {
+    kicker: "Your collagen stimulator plan",
+    title: "Malta's Doctor-Led Collagen Stimulator Plan",
+    benefits: [
+      { icon: "shield", title: "Doctor-Led Precision", desc: "Every vial is placed by a medically qualified doctor with advanced facial-anatomy expertise — never a salon, never nurse-only." },
+      { icon: "sparkle", title: "Natural, Self-Built Volume", desc: "We stimulate your own collagen to rebuild firmness and volume gradually — refreshed and lifted, never filled or frozen." },
+      { icon: "clock", title: "Long-Lasting, Progressive Results", desc: "Your result keeps improving over 3 to 6 months and can last well beyond a year, with a follow-up review included." },
+    ],
+    included: [
+      { label: "Free doctor-led facial assessment" },
+      { label: "Personalised, medically guided treatment plan" },
+      { label: "Expert collagen stimulator (Sculptra or Radiesse)", value: "from €399/vial" },
+      { label: "Complimentary follow-up review" },
+      { label: "Aftercare guidance & ongoing support" },
+    ],
+    price: "From €399",
+    priceLabel: "per vial",
+    cta: { text: "Book Your Collagen Stimulator Appointment", href: "/consultation" },
+    reviews: "200+ verified reviews",
+  },
   recommended: {
-    title: "Treatments That Complement Collagen Stimulator",
+    title: "Recommended with collagen stimulator",
     items: [
       { label: "Botox", href: "/wrinkle-relaxing-malta", image: "/assets/treatments/collagen-stimulator-malta-rec-botox.png" },
       { label: "Mesotherapy", href: "/mesotherapy-malta", image: "/assets/treatments/collagen-stimulator-malta-rec-mesotherapy.png" },
@@ -154,15 +198,15 @@ const t: Treatment = {
       { label: "PRP", href: "/prp-malta", image: "/assets/treatments/collagen-stimulator-malta-rec-prp.png" },
     ],
   },
-  faqTitle: "Frequently Asked Questions About Collagen Stimulator in Malta",
+  faqTitle: "Frequently asked questions",
   faq: [
-    { q: "How does a collagen stimulator differ from filler?", a: "Collagen stimulator treatment is a non-surgical procedure that stimulates the body's natural collagen production. It involves the use of specialized techniques or products to enhance skin elasticity, reduce wrinkles, and promote a more youthful appearance." },
-    { q: "How many sessions of Sculptra or Radiesse will I need?", a: "Collagen stimulator treatments work by introducing substances, such as injectable fillers or laser treatments, that stimulate the production of collagen in the deeper layers of the skin. This increased collagen production helps to improve skin texture, firmness, and reduce the signs of aging." },
-    { q: "Is collagen stimulator treatment safe in Malta?", a: "Yes, collagen stimulator treatments are generally safe when performed by qualified professionals. However, it's important to consult with a skilled practitioner who will assess your specific needs and ensure that the treatment is suitable for you. They will also discuss potential risks and side effects, although these are usually minimal." },
-    { q: "How long do collagen stimulator results last?", a: "Results from collagen stimulator treatments such as Sculptra and Radiesse typically develop gradually over 1 to 3 months as your body produces new collagen. Results can last up to 12 to 24 months depending on the product used, the area treated, and your individual skin response." },
+    { q: "What is a collagen stimulator treatment?", a: "Collagen stimulator treatment is a non-surgical procedure that stimulates the body's natural collagen production. It involves the use of specialized techniques or products to enhance skin elasticity, reduce wrinkles, and promote a more youthful appearance." },
+    { q: "How does collagen stimulator treatment work?", a: "Collagen stimulator treatments work by introducing substances, such as injectable fillers or laser treatments, that stimulate the production of collagen in the deeper layers of the skin. This increased collagen production helps to improve skin texture, firmness, and reduce the signs of aging." },
+    { q: "Is collagen stimulator treatment safe?", a: "Yes, collagen stimulator treatments are generally safe when performed by qualified professionals. However, it's important to consult with a skilled practitioner who will assess your specific needs and ensure that the treatment is suitable for you. They will also discuss potential risks and side effects, although these are usually minimal." },
+    { q: "How long do the results of collagen stimulator treatment last?", a: "Collagen stimulator results develop gradually as your body produces new collagen, with the full effect becoming apparent over the first two to three months. Because the improvement comes from your own collagen, results are long-lasting — typically 12 months or more, and often longer with a recommended course. A follow-up review with your doctor helps plan any maintenance to keep your results looking natural over time." },
     { q: "Is collagen stimulator treatment painful?", a: "Collagen stimulator treatments are typically well-tolerated, and discomfort is usually minimal. Depending on the specific procedure, a topical numbing cream or local anesthesia may be used to ensure your comfort during the treatment." },
-    { q: "What are the side effects of collagen stimulator?", a: "Mild side effects such as temporary redness, swelling, or bruising may occur after the treatment, but these usually subside within a few days. Serious complications are rare, especially when the treatment is performed by a qualified professional." },
-    { q: "Am I a good candidate for collagen stimulator?", a: "Collagen stimulator treatments are suitable for individuals who want to improve their skin's firmness, reduce wrinkles, and enhance overall skin texture. It's important to have a consultation with a qualified professional who can assess your skin condition, medical history, and discuss the expected outcomes of the treatment." },
+    { q: "Are there any side effects of collagen stimulator treatment?", a: "Mild side effects such as temporary redness, swelling, or bruising may occur after the treatment, but these usually subside within a few days. Serious complications are rare, especially when the treatment is performed by a qualified professional." },
+    { q: "Who is a suitable candidate for collagen stimulator treatment?", a: " Collagen stimulator treatments are suitable for individuals who want to improve their skin's firmness, reduce wrinkles, and enhance overall skin texture. It's important to have a consultation with a qualified professional who can assess your skin condition, medical history, and discuss the expected outcomes of the treatment." },
   ],
 };
 

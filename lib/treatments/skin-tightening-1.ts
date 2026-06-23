@@ -4,7 +4,7 @@ const t: Treatment = {
   slug: "skin-tightening-1",
   category: "Body",
   hero: {
-    title: "RF Skin Tightening in Malta — Firmer Skin in 4 Sessions",
+    title: "VelaShape III in Malta",
     subtitle: "4 in 1 skin tightening protocol",
     body: "Smoother, firmer, and tighter skin in 4 focused sessions. Our 4 in 1 course with the VelaShape III uses radiofrequency, infrared heat, vacuum and mechanical massage together to stimulate collagen to tighten and smoothen your skin.",
     image: "/assets/treatments/st-feat1.png",
@@ -19,7 +19,7 @@ const t: Treatment = {
     cta: "claim your spot now",
   },
   precision: {
-    title: "Body Areas We Can Target With VelaShape III",
+    title: "Treat visible fat bulges in 7 areas of the body",
     areas: [
       { name: "TUMMY / ABDOMEN", desc: "" },
       { name: "NECK", desc: "" },
@@ -29,7 +29,7 @@ const t: Treatment = {
     ],
   },
   trusted: {
-    title: "Medically Qualified Practitioners — Safe Skin Tightening in Malta",
+    title: "Malta's trusted clinic for non surgical fat reduction",
     images: [
       "/assets/treatments/st-feat1.png",
       "/assets/treatments/st-feat2.png",
@@ -56,7 +56,7 @@ const t: Treatment = {
     ],
   },
   experience: {
-    title: "Your VelaShape III Skin Tightening Results — What to Expect",
+    title: "Malta's most effective 4-in-1 skin tightening starter protocol",
     steps: [
       {
         title: "Targeted SKIN TIGHTENING",
@@ -78,7 +78,7 @@ const t: Treatment = {
   },
   difference: {
     kicker: "the carisma difference",
-    title: "VelaShape III Skin Tightening in Malta — From €100 Per Session",
+    title: "Malta's #1 leading wellness chain",
     commitmentTitle: "our commitment",
     commitment: [
       "Visible inch loss and shape change, not vague promises",
@@ -95,7 +95,7 @@ const t: Treatment = {
     ],
     mapQuery: "Carisma Aesthetics Malta",
   },
-  faqTitle: "Frequently Asked Questions About VelaShape III in Malta",
+  faqTitle: "Frequently asked questions",
   faq: [
     {
       q: "What is included in the 4-in-1 Skin Tightening Protocol?",

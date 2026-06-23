@@ -102,7 +102,7 @@ export default function MemberTreatments() {
               margin: "12px 0 0",
             }}
           >
-            Aesthetic Treatments Covered by Your Glow Club Membership
+            Your favourite treatments, at member prices
           </h2>
         </Reveal>
 

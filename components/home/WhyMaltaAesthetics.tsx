@@ -173,7 +173,7 @@ export default function WhyMaltaAesthetics() {
                 maxWidth: 760,
               }}
             >
-              Medically Qualified Practitioners — The Carisma Difference
+              Why Choose Carisma Aesthetics — Medically Qualified Team
             </h2>
 
             <div

@@ -65,7 +65,7 @@ function Hero() {
   return (
     <PageHero
       badge="#1 Voted Med-Aesthetics Clinic"
-      headline={[{ text: "Pico Laser Pigmentation Removal" }, { text: "in Malta — Clearer, Even Skin", em: true }]}
+      headline={[{ text: "Pico laser pigmentation" }, { text: "treatment in Malta", em: true }]}
       sub="Advanced Pico laser technology to visibly reduce unwanted pigmentation and restore a clearer, brighter, more even-looking complexion."
       bullets={INCLUDED.map((text) => ({ text }))}
       primaryCta={{ text: "Reserve Your Pico Laser Session", href: "/consultation" }}
@@ -199,7 +199,7 @@ function DoYouHave() {
             </p>
             {/* 18px non-bold = "normal" text per WCAG, needs 4.5:1; #3f6363 only hit 4.14 on the page bg, so use a deeper teal here (5.31:1) */}
             <h2 className="font-serif" style={{ fontSize: "18px", color: "#345252", letterSpacing: "0.02em", fontWeight: 400, lineHeight: 1.3, marginTop: "12px" }}>
-              What Causes Pigmentation — and Can Pico Laser Remove It?
+              Do you have pigmentation you no longer want to carry?
             </h2>
             <p style={{ fontSize: "14.5px", color: "var(--ink-soft)", lineHeight: 1.8, marginTop: "20px" }}>
               Whether it comes from sun exposure, post-acne marks, melasma, or uneven skin tone, unwanted pigmentation can feel frustrating. You&rsquo;re not alone &mdash; and safe, gradual improvement is possible with the right technology and care.
@@ -288,7 +288,7 @@ function Because() {
     <section style={{ background: "#ffffff", padding: "60px 0" }}>
       <div className="mx-auto" style={{ maxWidth: "1040px", padding: "0 24px" }}>
         <h2 className="font-serif text-center" style={{ fontSize: "clamp(22px,3vw,30px)", color: TEAL, letterSpacing: "0.06em", lineHeight: 1.3, fontWeight: 400, marginBottom: "40px" }}>
-          Medically Qualified Pigmentation Treatment in Malta
+          Safe, confident pigmentation care starts here.
         </h2>
         <div className="grid lg:grid-cols-2 items-center gap-12">
           <div>
@@ -417,7 +417,7 @@ function FadeUnwanted() {
         <div className="pig-fade-grid grid items-center gap-10">
           <div>
             <h2 className="font-serif" style={{ fontSize: "clamp(26px,3.5vw,38px)", color: TEAL, letterSpacing: "0.06em", fontWeight: 400, lineHeight: 1.2 }}>
-              How Pico Laser Fades Pigmentation, Sun Spots & Melasma
+              Fade unwanted pigment. Feel more like you.
             </h2>
             {/* body copy is 14px normal text over the light page bg → needs 4.5:1; deeper teal #345252 = 5.31:1 */}
             <p style={{ color: "#345252", fontSize: "14px", lineHeight: 1.7, marginTop: "18px" }}>
@@ -469,7 +469,7 @@ function Brighter() {
           style={{ width: "100%", aspectRatio: "9 / 10", objectFit: "cover", borderRadius: "14px", boxShadow: "0 16px 40px rgba(0,0,0,0.12)", display: "block" }} />
         <div>
           <h2 className="font-serif" style={{ fontSize: "clamp(22px,3vw,30px)", color: TEAL, letterSpacing: "0.06em", fontWeight: 400, lineHeight: 1.3 }}>
-            Real Pigmentation Removal Results from Our Malta Clinic
+            Your skin — brighter, clearer.
           </h2>
           <p style={{ color: TEAL, fontSize: "14px", lineHeight: 1.7, marginTop: "14px" }}>
             See how advanced Pico Laser treatment helps reduce visible pigmentation with precision, care, and a personalised plan designed around your skin.
@@ -637,7 +637,7 @@ function Faq() {
         <div className="mx-auto" style={{ maxWidth: "1080px" }}>
           <div className="pig-faq-head" style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", flexWrap: "wrap", gap: "20px", marginBottom: "18px" }}>
             <h2 className="font-serif" style={{ fontSize: "clamp(22px,3vw,30px)", color: TEAL, letterSpacing: "0.06em", fontWeight: 400, margin: 0, lineHeight: 1.3 }}>
-              How Many Pico Laser Sessions for Pigmentation?
+              Frequently asked questions
             </h2>
             {/* search field: the bottom border is the only affordance of the input, so it must meet 1.4.11 (>=3:1). --line #e2e2e2 was 1.3:1; #527979 = 4.81:1. focus-visible ring added via scoped CSS below (never outline:none). */}
             <div style={{ position: "relative", width: "280px", maxWidth: "100%", borderBottom: "1px solid #527979" }}>

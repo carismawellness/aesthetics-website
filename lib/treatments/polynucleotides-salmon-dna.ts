@@ -7,7 +7,7 @@ const t: Treatment = {
   slug: "polynucleotides-salmon-dna",
   category: "Face",
   hero: {
-    title: "Polynucleotides in Malta — Regenerate Your Skin with Salmon DNA",
+    title: "Polynucleotides (salmon DNA)",
     subtitle: "ARE YOU LOOKING TO RESTORE FIRMER, SMOOTHER, MORE RADIANT SKIN?",
     body: "Polynucleotides (Salmon DNA) boost hydration, repair damaged skin, and stimulate collagen — giving you smoother texture, improved elasticity, and a naturally refreshed glow.",
     prices: [{ label: "1ml", price: "from €249/ml" }],
@@ -24,16 +24,16 @@ const t: Treatment = {
     { metric: "Results Visible In", detail: "immediate" },
     { metric: "Anaesthetic", detail: "Local anesthetic" },
   ],
-  beforeAfterTitle: "",
+  beforeAfterTitle: "Polynucleotides results",
   beforeAfter: [
-    { before: "/assets/treatments/polynucleotides-salmon-dna-ba1-before.png", after: "/assets/treatments/polynucleotides-salmon-dna-ba1-after.png" },
-    { before: "/assets/treatments/polynucleotides-salmon-dna-ba2-before.png", after: "/assets/treatments/polynucleotides-salmon-dna-ba2-after.png" },
-    { before: "/assets/treatments/polynucleotides-salmon-dna-ba3-before.png", after: "/assets/treatments/polynucleotides-salmon-dna-ba3-after.png" },
-    { before: "/assets/treatments/polynucleotides-salmon-dna-ba4-before.png", after: "/assets/treatments/polynucleotides-salmon-dna-ba4-after.png" },
-    { before: "/assets/treatments/polynucleotides-salmon-dna-ba5-before.png", after: "/assets/treatments/polynucleotides-salmon-dna-ba5-after.png" },
+    { before: "/assets/treatments/polynucleotides-salmon-dna-ba1-before.png", after: "/assets/treatments/polynucleotides-salmon-dna-ba1-after.png", name: "Maria F.", review: "The crepey, tired skin under my eyes looks hydrated and smoother — I no longer reach for concealer every morning." },
+    { before: "/assets/treatments/polynucleotides-salmon-dna-ba2-before.png", after: "/assets/treatments/polynucleotides-salmon-dna-ba2-after.png", name: "Daniel S.", review: "The shadows and hollows under my eyes have visibly lifted — I look rested instead of run-down." },
+    { before: "/assets/treatments/polynucleotides-salmon-dna-ba3-before.png", after: "/assets/treatments/polynucleotides-salmon-dna-ba3-after.png", name: "Priya N.", review: "My dark circles and under-eye pigmentation are noticeably brighter and more even after my course." },
+    { before: "/assets/treatments/polynucleotides-salmon-dna-ba4-before.png", after: "/assets/treatments/polynucleotides-salmon-dna-ba4-after.png", name: "Rebecca M.", review: "My overall skin tone is brighter and the pigmentation across my cheeks has softened beautifully — it just looks healthier." },
+    { before: "/assets/treatments/polynucleotides-salmon-dna-ba5-before.png", after: "/assets/treatments/polynucleotides-salmon-dna-ba5-after.png", name: "Sophie B.", review: "The fine lines at the corner of my eyes are softer and my skin feels plumper — natural, never overdone." },
   ],
   precision: {
-    title: "What Are Polynucleotides and How Does Salmon DNA Work?",
+    title: "precision areas of refinement",
     intro: "This regenerative treatment stimulates cellular renewal at the deepest level. Below are the primary zones of application.",
     areas: [
       { zone: "Face", icon: "/assets/treatments/polynucleotides-salmon-dna-icon-face.png", name: "Full Face", desc: "Activates fibroblast renewal across the face for improved texture, tone, and radiance over time." },
@@ -45,7 +45,7 @@ const t: Treatment = {
     additional: "Decolletage, forehead, inner arms, lip area, acne scarring zones, scalp",
   },
   suitability: {
-    title: "Who Is a Good Candidate for Polynucleotide Treatment?",
+    title: "Is this suitable for you?",
     intro: "Polynucleotides work at a cellular level to regenerate and rejuvenate skin from within. This is a treatment for those who value long-term skin health over instant visual change. Results build gradually with each session.",
     suitableFor: [
       "You are interested in advanced skin rejuvenation at a cellular level",
@@ -55,27 +55,51 @@ const t: Treatment = {
       "You are looking for progressive improvement that lasts",
     ],
     notIdeal: [
-      "You want immediate, visible results from your first session",
-      "You are looking for volume or structural enhancement",
-      "You are pregnant, breastfeeding, or have active infection in the area",
-      "You prefer treatments with no follow-up sessions required",
-      "You are on blood-thinning medication without prior medical discussion",
+      "You want to see the full result from a single session — skin renewal builds gradually over your course",
+      "You are looking to restore volume or reshape features — that is what dermal fillers are for, and we are happy to guide you",
+      "You are pregnant or breastfeeding — we will warmly welcome you back afterwards",
+      "You have an active skin infection in the area — we will treat once your skin has settled",
+      "You take blood-thinning medication — let us know first so we can plan your treatment safely",
+    ],
+    personas: [
+      { title: "The tired, depleted complexion", desc: "Your skin looks dull, dehydrated, and lacklustre — it has lost the bounce and glow it once had." },
+      { title: "The delicate under-eye", desc: "Crepey, thin, shadowed skin around your eyes makes you look more tired than you feel." },
+      { title: "The long-term skin investor", desc: "You care about real skin health over a quick fix, and want a science-led result that builds and lasts." },
+    ],
+  },
+  problem: {
+    kicker: "The real reason people book",
+    title: "Your skin looks tired and depleted, even when you feel well",
+    body: [
+      "Polynucleotides work deep in the skin to rebuild hydration and collagen from within — so your complexion looks healthier, brighter, and refreshed, in a way that is unmistakably you.",
+    ],
+  },
+  guarantee: {
+    kicker: "The Natural Confidence Guarantee",
+    title: "Natural Confidence Guarantee",
+    paragraphs: [
+      "Every plan starts with a doctor-led skin assessment and a natural-first approach that supports your skin's own repair — never overdone, backed by a complimentary review until you are 100% satisfied with a result that still looks like you.",
+    ],
+    cta: "Book Your Free Consultation",
+    points: [
+      { value: "Doctor-led", label: "Assessment first", sub: "Never a salesperson" },
+      { value: "Natural-first", label: "Skin from within", sub: "We regenerate, never overfill" },
+      { value: "100%", label: "Satisfaction", sub: "Free follow-up until you are happy" },
     ],
   },
   experience: {
-    title: "How Your Polynucleotide Session Works — Step by Step",
+    title: "Your treatment experience",
     steps: [
-      { title: "personalised consultation", desc: "We assess your facial anatomy, skin condition, medical history, and botox goals with one of our doctors.", image: "/assets/treatments/botox-step1.png" },
-      { title: "Structured Plan", desc: "Your doctor designs a medically guided botox plan tailored to your facial structure and desired outcome.", image: "/assets/treatments/botox-step2.png" },
-      { title: "Targeted Treatments", desc: "Your doctor administers botox using fine, precise injections, quick, comfortable, and no downtime.", image: "/assets/treatments/botox-step3.png" },
-      { title: "Ongoing Review & Adjustment", desc: "Your doctor monitors your response and refines the plan to ensure natural botox results over time.", image: "/assets/treatments/botox-step4.png" },
+      { title: "Consultation & Skin Assessment", desc: "We assess your skin condition, concerns, and medical history with one of our doctors, then design a regenerative plan tailored to you.", image: "/assets/treatments/botox-step1.png" },
+      { title: "Targeted Treatment", desc: "Your doctor delivers the polynucleotide solution through fine, precise injections — comfortable, controlled, and with minimal downtime.", image: "/assets/treatments/botox-step2.png" },
+      { title: "Ongoing Review & Renewal", desc: "Your doctor monitors how your skin responds across your course and refines the plan to support natural, lasting renewal.", image: "/assets/treatments/botox-step4.png" },
     ],
     cta: "BOOK YOUR FREE CONSULTATION",
   },
   prepAftercare: {
     kicker: "Preparation & Aftercare",
-    title: "Aftercare After Your Polynucleotide Session in Malta",
-    intro: "A smooth botox experience begins with a few simple steps. Here is what to know before, during, and after your session at our Malta clinic.",
+    title: "Your session, step by step",
+    intro: "A smooth polynucleotides experience begins with a few simple steps. Here is what to know before, during, and after your session at our Malta clinic.",
     cards: [
       {
         icon: "/assets/treatments/polynucleotides-salmon-dna-icon-prep-before.png",
@@ -113,7 +137,7 @@ const t: Treatment = {
     ],
   },
   trusted: {
-    title: "Medically Qualified Practitioners — Safe Salmon DNA Treatment in Malta",
+    title: "Malta's trusted clinic for salmon DNA",
     subtitle: "DOCTOR-LED salmon dna IN MALTA",
     asSeenOn: ["/assets/press/lovin-malta.jpeg", "/assets/press/malta-daily.png", "/assets/press/bay.jpeg", "/assets/press/times-of-malta.png", "/assets/press/malta-today.jpg"],
     images: ["/assets/treatments/trusted-clinic-collage.png"],
@@ -127,7 +151,7 @@ const t: Treatment = {
   },
   difference: {
     kicker: "the carisma difference",
-    title: "Salmon DNA Treatment Results — What to Expect in Malta",
+    title: "Malta’s #1 leading wellness chain",
     commitmentTitle: "our commitment",
     commitment: [
       "Natural, refined salmon dna results, never overdone, never frozen",
@@ -135,7 +159,7 @@ const t: Treatment = {
       "Safe, ethical care using clinically approved products",
       "A personalised journey from consultation to aftercare",
     ],
-    whyTitle: "Why Malta Chooses Carisma for Polynucleotides",
+    whyTitle: "WHY MALTA CHOOSES Carisma for salmon dna",
     why: [
       "Created by the team behind Malta’s leading spa and medical aesthetics centres",
       "Doctor-led salmon dna treatments with a focus on safety and long-term results",
@@ -145,8 +169,28 @@ const t: Treatment = {
     mapQuery: "Carisma Aesthetics, Malta",
   },
   bookingForm: { title: "BOOK YOUR salmon dna APPOINTMENT TODAY" },
+  planSummary: {
+    kicker: "Your polynucleotides plan",
+    title: "Malta's Doctor-Led Polynucleotides Plan",
+    benefits: [
+      { icon: "shield", title: "Doctor-Led Precision", desc: "Every treatment is performed by a medically qualified doctor — never a salon, never nurse-only." },
+      { icon: "sparkle", title: "Natural Skin Renewal", desc: "Polynucleotides rebuild hydration and collagen from within — your skin looks healthier and refreshed, never altered." },
+      { icon: "chart", title: "Progressive, Lasting Results", desc: "Results build across your course and can last 6 to 12 months, supported by a personalised maintenance plan." },
+    ],
+    included: [
+      { label: "Free doctor-led skin consultation" },
+      { label: "Personalised, medically guided treatment plan" },
+      { label: "Expert polynucleotide (Salmon DNA) treatment", value: "from €249/ml" },
+      { label: "Progress review across your course" },
+      { label: "Aftercare guidance & ongoing support" },
+    ],
+    price: "From €249",
+    priceLabel: "per ml",
+    cta: { text: "Book Your Polynucleotides Appointment", href: "/consultation" },
+    reviews: "200+ verified reviews",
+  },
   recommended: {
-    title: "Treatments That Complement Your Polynucleotide Course",
+    title: "Recommended with salmon DNA",
     items: [
       { label: "Hydrafacial", href: "/hydrafacial", image: "/assets/treatments/polynucleotides-salmon-dna-rec-hydrafacial.avif" },
       { label: "Microneedling", href: "/microneedling-malta", image: "/assets/treatments/polynucleotides-salmon-dna-rec-microneedling.png" },
@@ -154,7 +198,7 @@ const t: Treatment = {
       { label: "PRP", href: "/prp-malta", image: "/assets/treatments/polynucleotides-salmon-dna-rec-prp.avif" },
     ],
   },
-  faqTitle: "Got Questions About Salmon DNA Treatment in Malta?",
+  faqTitle: "Frequently asked questions",
   faq: [
     { q: "What exactly are polynucleotides (Salmon DNA)?", a: "Polynucleotides are purified DNA molecules that stimulate skin repair, hydration, and collagen production. They work by helping your skin regenerate naturally — without altering your facial features." },
     { q: "Is the treatment safe?", a: "Yes. Polynucleotides are clinically proven, biocompatible, and widely used in regenerative aesthetics. They are injected in small amounts and are suitable even for delicate areas such as the under-eyes." },

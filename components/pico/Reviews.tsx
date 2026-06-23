@@ -153,7 +153,7 @@ export default function Reviews() {
       <Serif
         style={{ fontSize: "clamp(22px,3vw,30px)", letterSpacing: "0.1em" }}
       >
-        Real Tattoo Removal Results from Our Malta Patients
+        precision tattoo removal in malta
       </Serif>
       <p id="reviews-heading" className="sr-only">
         Customer reviews for Pico laser tattoo removal

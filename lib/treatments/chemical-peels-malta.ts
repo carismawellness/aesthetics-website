@@ -24,7 +24,7 @@ const t: Treatment = {
     { metric: "Results Visible In", detail: "1-2 weeks" },
     { metric: "Anaesthetic", detail: "None" },
   ],
-  beforeAfterTitle: "Chemical Peel Before & After — Real Malta Results",
+  beforeAfterTitle: "CHEMICAL PEEL RESULTS",
   beforeAfter: [
     { before: "/assets/treatments/chemical-peels-malta-ba1-before.png", after: "/assets/treatments/chemical-peels-malta-ba1-after.png", label: "Under-Eye Pigmentation", name: "Marian C.", review: "The dark patches under my eyes and across my cheeks faded so much — my skin finally looks even and bright again." },
     { before: "/assets/treatments/chemical-peels-malta-ba2-before.png", after: "/assets/treatments/chemical-peels-malta-ba2-after.png", label: "Acne & Redness", name: "Chloe B.", review: "My breakouts and redness calmed right down — for the first time in years I feel comfortable without makeup." },
@@ -90,7 +90,7 @@ const t: Treatment = {
     ],
   },
   experience: {
-    title: "How Does a Chemical Peel Work? — Step by Step", cta: "BOOK YOUR FREE CONSULTATION",
+    title: "How Does a Chemical Peel Work? — Your Treatment Steps", cta: "BOOK YOUR FREE CONSULTATION",
     steps: [
       { title: "Consultation & Skin Assessment", desc: "One of our doctors reviews your skin condition, concerns, and medical history, then designs a peel plan at the right strength and depth for your skin type.", image: "/assets/treatments/chemical-peels-malta-step1.png" },
       { title: "Your Peel Treatment", desc: "Your doctor applies the medical-grade peel solution in precisely controlled layers, quick, comfortable, and tailored to your skin.", image: "/assets/treatments/chemical-peels-malta-step3.png" },
@@ -138,7 +138,7 @@ const t: Treatment = {
     ],
   },
   patientVideos: {
-    title: "What Our Malta Patients Say About Chemical Peels",
+    title: "Real Chemical Peel Results from Our Malta Patients",
     intro: "Every face is unique. Every story is personal. Discover how our chemical peel patients describe their journey to refined, natural results at Carisma Aesthetics in Malta.",
     videos: [
       "/assets/treatments/chemical-peels-malta-video1.mp4",
@@ -161,7 +161,7 @@ const t: Treatment = {
   },
   difference: {
     kicker: "The Carisma Difference",
-    title: "Doctor-Led Chemical Peels — The Carisma Approach",
+    title: "Your Chemical Peel Results — What to Expect",
     commitmentTitle: "Our Commitment",
     commitment: [
       "Natural, refined chemical peel results, never overdone, never frozen",
@@ -208,7 +208,7 @@ const t: Treatment = {
       { label: "HydraFacial", href: "/hydrafacial", image: "/assets/treatments/chemical-peels-malta-rec-hydrafacial.png" },
     ],
   },
-  faqTitle: "Have Questions About Chemical Peels in Malta?",
+  faqTitle: "Frequently Asked Questions About Chemical Peels in Malta",
   faq: [
     { q: "What is a chemical peel, and how does it work?", a: "A chemical peel is a cosmetic procedure that involves applying a solution to the skin to exfoliate the outermost layer, promoting cell turnover and revealing smoother, more radiant skin. The solution contains various types and strengths of acids, such as alpha-hydroxy acid (AHA), beta-hydroxy acid (BHA), or trichloroacetic acid (TCA), which penetrate the skin at different levels depending on the strength and type of peel used." },
     { q: "What are the benefits of a chemical peel?", a: "A chemical peel can improve the appearance of the skin in many ways, including reducing the appearance of fine lines and wrinkles, improving skin texture and tone, reducing hyperpigmentation and dark spots, and minimizing the appearance of acne scars." },

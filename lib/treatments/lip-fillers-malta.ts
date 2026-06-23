@@ -9,7 +9,7 @@ const t: Treatment = {
   slug: "lip-fillers-malta",
   category: "Face",
   hero: {
-    title: "Lip Fillers in Malta — Natural Results by Qualified Doctors",
+    title: "Lip fillers Malta",
     subtitle: "Are you looking to achieve fuller, more luscious lips?",
     body: "Get plump and luscious lips with our expert lip fillers in Malta. Say goodbye to thin lips and hello to the perfect pout.",
     prices: [{ label: "1ml", price: "from €219/ml" }],
@@ -26,16 +26,36 @@ const t: Treatment = {
     { metric: "Results Visible In", detail: "Immediate" },
     { metric: "Anaesthetic", detail: "Local anesthetic" },
   ],
-  beforeAfterTitle: "Real Lip Filler Results from Our Malta Patients",
+  beforeAfterTitle: "lip fillers results",
   beforeAfter: [
-    { before: "/assets/treatments/lip-fillers-malta-ba1-before.png", after: "/assets/treatments/lip-fillers-malta-ba1-after.png", label: "Natural Enhancement" },
-    { before: "/assets/treatments/lip-fillers-malta-ba2-before.png", after: "/assets/treatments/lip-fillers-malta-ba2-after.png", label: "Volume & Definition" },
-    { before: "/assets/treatments/lip-fillers-malta-ba3-before.png", after: "/assets/treatments/lip-fillers-malta-ba3-after.png", label: "Fuller Lips" },
-    { before: "/assets/treatments/lip-fillers-malta-ba4-before.png", after: "/assets/treatments/lip-fillers-malta-ba4-after.png", label: "Lip Augmentation" },
-    { before: "/assets/treatments/lip-fillers-malta-ba5-before.png", after: "/assets/treatments/lip-fillers-malta-ba5-after.png", label: "Male Treatment" },
+    { before: "/assets/treatments/lip-fillers-malta-ba1-before.png", after: "/assets/treatments/lip-fillers-malta-ba1-after.png", label: "Natural Enhancement", name: "Maria C.", review: "My lips always felt a bit flat — now they look fuller and balanced, but still completely like me." },
+    { before: "/assets/treatments/lip-fillers-malta-ba2-before.png", after: "/assets/treatments/lip-fillers-malta-ba2-after.png", label: "Hydration & Definition", name: "Doreen V.", review: "The fine lines around my mouth softened and my lips finally have a defined border again." },
+    { before: "/assets/treatments/lip-fillers-malta-ba3-before.png", after: "/assets/treatments/lip-fillers-malta-ba3-after.png", label: "Shape & Symmetry", name: "Chloe B.", review: "I just wanted a little more shape and symmetry — the result is subtle and exactly what I hoped for." },
+    { before: "/assets/treatments/lip-fillers-malta-ba4-before.png", after: "/assets/treatments/lip-fillers-malta-ba4-after.png", label: "Contour & Cupid's Bow", name: "Antoinette S.", review: "My cupid's bow looks defined and elegant now, not overdone — friends just say I look refreshed." },
+    { before: "/assets/treatments/lip-fillers-malta-ba5-before.png", after: "/assets/treatments/lip-fillers-malta-ba5-after.png", label: "Subtle Enhancement", name: "Luke A.", review: "I wanted a natural bit of volume without it being obvious — the balance is spot on for me." },
   ],
+  problem: {
+    kicker: "The real reason people book",
+    title: "You catch yourself hiding your smile in photos",
+    body: [
+      "Doctor-led lip enhancement adds gentle, balanced volume that suits your face — so your smile feels like yours again, just more confident.",
+    ],
+  },
+  guarantee: {
+    kicker: "The Natural Confidence Guarantee",
+    title: "Natural Confidence Guarantee",
+    paragraphs: [
+      "Every lip treatment starts with a doctor-led facial assessment and a natural-first approach that is never overfilled, backed by a free follow-up adjustment until you are 100% satisfied with a result that still looks like you.",
+    ],
+    cta: "Book Your Free Consultation",
+    points: [
+      { value: "Doctor-led", label: "Assessment first", sub: "Never a salesperson" },
+      { value: "Natural-first", label: "Never overfilled", sub: "We refine, never overdo" },
+      { value: "100%", label: "Satisfaction", sub: "Free follow-up until you are happy" },
+    ],
+  },
   precision: {
-    title: "Lip Enhancement Areas We Refine and Define",
+    title: "precision areas of refinement",
     intro: "Enhancement is guided by your unique lip anatomy and desired outcome. Below are the four key dimensions we refine.",
     areas: [
       { zone: "Volume", icon: "/assets/treatments/lip-fillers-malta-icon-volume.png", name: "Lip Body", desc: "Adds subtle or fuller volume to the upper and lower lips, tailored to your natural proportions." },
@@ -43,11 +63,11 @@ const t: Treatment = {
       { zone: "Shape", icon: "/assets/treatments/lip-fillers-malta-icon-shape.png", name: "Cupid's Bow", desc: "Refines the cupid's bow for a more defined, balanced shape that complements your features." },
       { zone: "Balance", icon: "/assets/treatments/lip-fillers-malta-icon-balance.png", name: "Symmetry", desc: "Addresses natural asymmetry between upper and lower lips for a harmonious, proportionate result." },
     ],
-    additionalTitle: "Additional Refinements Based on Your Assessment",
+    additionalTitle: "Your practitioner may recommend additional refinements based on your facial balance assessment",
     additional: "Philtrum columns, oral commissures, perioral lines, lip flip, smoker's lines, marionette area",
   },
   suitability: {
-    title: "Who Is a Good Candidate for Lip Fillers?",
+    title: "Is this suitable for you?",
     intro: "Lip enhancement is not one-size-fits-all. The right approach depends on your natural lip shape, facial proportions, and the result you are hoping for. We always start conservatively and build from there.",
     suitableFor: [
       "You want subtle enhancement that complements your natural features",
@@ -57,25 +77,29 @@ const t: Treatment = {
       "You are looking for a treatment that can be adjusted or reversed if needed",
     ],
     notIdeal: [
-      "You are looking for a dramatically different lip shape",
-      "You expect permanent results from a single session",
-      "You are pregnant, breastfeeding, or have active cold sores in the lip area",
-      "You have a low tolerance for temporary swelling or tenderness",
-      "You would prefer a non-injectable alternative such as a lip flip",
+      "You want a dramatically different lip shape — we enhance your natural anatomy rather than reinvent it",
+      "You need the final result the same day — gentle swelling settles over 2 weeks, and it is worth the wait",
+      "You are pregnant or breastfeeding — we will happily welcome you back afterwards",
+      "You have an active cold sore right now — we will simply rebook you once it has fully healed",
+      "You would rather avoid injectables — a lip flip with Botox may suit you better, and we are glad to discuss it",
+    ],
+    personas: [
+      { title: "The natural enhancer", desc: "Your lips feel a little thin or flat, and you want subtle, balanced volume that still looks completely like you." },
+      { title: "The symmetry seeker", desc: "One side sits differently from the other, or your border has softened, and you want a defined, harmonious shape." },
+      { title: "The first-timer", desc: "You are curious but cautious — you want a conservative, doctor-led result you can build on, never an obvious one." },
     ],
   },
   experience: {
-    title: "How Your Lip Filler Treatment Works — Step by Step", cta: "BOOK YOUR FREE CONSULTATION",
+    title: "Your treatment experience", cta: "BOOK YOUR FREE CONSULTATION",
     steps: [
-      { title: "Step 1 — Your Consultation", desc: "We assess your facial anatomy, skin condition, medical history, and lip filler goals with one of our doctors.", image: "/assets/treatments/botox-step1.png" },
-      { title: "Step 2 — Your Treatment Plan", desc: "Your doctor designs a medically guided lip filler plan tailored to your facial structure and desired outcome.", image: "/assets/treatments/botox-step2.png" },
-      { title: "Step 3 — Lip Filler Application", desc: "Your doctor administers lip filler with fine, precise injections, quick, comfortable, and no downtime.", image: "/assets/treatments/botox-step3.png" },
-      { title: "Step 4 — Review and Follow-Up", desc: "Your doctor monitors your response and refines the plan to ensure natural lip filler results over time.", image: "/assets/treatments/botox-step4.png" },
+      { title: "Consultation & Plan", desc: "We assess your lip shape, facial proportions, and goals with one of our doctors, then design a medically guided plan tailored to you.", image: "/assets/treatments/botox-step1.png" },
+      { title: "Gentle Treatment", desc: "Your doctor applies a topical numbing cream, then places filler with fine, precise injections — comfortable, measured, and with no downtime.", image: "/assets/treatments/botox-step3.png" },
+      { title: "Ongoing Review & Adjustment", desc: "Your doctor reviews how your lips settle and refines the result if needed, ensuring natural, balanced lip filler results over time.", image: "/assets/treatments/botox-step4.png" },
     ],
   },
   prepAftercare: {
     kicker: "Preparation & Aftercare",
-    title: "Preparing for Your Lip Filler Session in Malta",
+    title: "your session, step by step",
     intro: "Beautiful lip results begin with thoughtful preparation. Here is how to get the most from your session.",
     cards: [
       {
@@ -114,12 +138,12 @@ const t: Treatment = {
     ],
   },
   patientVideos: {
-    title: "Hear from Our Lip Filler Patients in Malta",
+    title: "Real patients, real confidence",
     intro: "Every face is unique. Every story is personal. Discover how our lip fillers patients describe their journey to refined, natural results at Carisma Aesthetics in Malta.",
     videos: ["/assets/treatments/lip-fillers-malta-video1.mp4", "/assets/treatments/lip-fillers-malta-video2.mp4", "/assets/treatments/lip-fillers-malta-video3.mp4"],
   },
   trusted: {
-    title: "Medically Qualified Practitioners — Safe Lip Fillers in Malta",
+    title: "Malta's trusted clinic for lip fillers",
     subtitle: "DOCTOR-LED lip fillers IN MALTA",
     asSeenOn: ["/assets/press/lovin-malta.jpeg", "/assets/press/malta-daily.png", "/assets/press/bay.jpeg", "/assets/press/times-of-malta.png", "/assets/press/malta-today.jpg"],
     images: ["/assets/treatments/trusted-clinic-collage.png"],
@@ -133,15 +157,15 @@ const t: Treatment = {
   },
   difference: {
     kicker: "the carisma difference",
-    title: "Why Patients in Malta Choose Carisma for Lip Fillers",
-    commitmentTitle: "Our Commitment to Natural Results",
+    title: "Malta's #1 leading wellness chain",
+    commitmentTitle: "our commitment",
     commitment: [
       "Natural, refined lip fillers results, never overdone, never frozen",
       "Doctor-led treatments with advanced facial anatomy expertise",
       "Safe, ethical care using clinically approved products",
       "A personalised journey from consultation to aftercare",
     ],
-    whyTitle: "Our Doctor-Led Difference",
+    whyTitle: "WHY MALTA CHOOSES Carisma for lip fillers",
     why: [
       "Created by the team behind Malta's leading spa and medical aesthetics centres",
       "Doctor-led lip fillers treatments with a focus on safety and long-term results",
@@ -151,8 +175,29 @@ const t: Treatment = {
     mapQuery: "Carisma Aesthetics, Malta",
   },
   bookingForm: { title: "BOOK YOUR lip fillers APPOINTMENT TODAY" },
+  planSummary: {
+    kicker: "Your lip filler plan",
+    title: "Malta's Doctor-Led Lip Filler Plan",
+    benefits: [
+      { icon: "shield", title: "Doctor-Led Precision", desc: "Every lip treatment is performed by a medically qualified doctor — never a salon, never a quick top-up." },
+      { icon: "sparkle", title: "Natural, Balanced Results", desc: "We add subtle volume and definition that suit your face — fuller and refined, never overfilled or obvious." },
+      { icon: "clock", title: "Complimentary 2-Week Review", desc: "We review how your lips settle at two weeks and refine the result if needed — included free." },
+    ],
+    included: [
+      { label: "Free doctor-led consultation & lip assessment" },
+      { label: "Personalised, medically guided treatment plan" },
+      { label: "Topical numbing for a comfortable session" },
+      { label: "Expert CE-marked hyaluronic acid filler", value: "from €219/ml" },
+      { label: "Complimentary 2-week review & refinement" },
+      { label: "Aftercare guidance & ongoing support" },
+    ],
+    price: "From €219",
+    priceLabel: "per ml",
+    cta: { text: "Book Your Lip Filler Appointment", href: "/consultation" },
+    reviews: "200+ verified reviews",
+  },
   recommended: {
-    title: "Treatments That Complement Your Lip Fillers",
+    title: "Recommended with lip fillers",
     items: [
       { label: "Dermal fillers", href: "/dermal-fillers-malta", image: "/assets/treatments/lip-fillers-malta-rec-dermal-fillers.png" },
       { label: "Microneedling", href: "/microneedling-malta", image: "/assets/treatments/lip-fillers-malta-rec-microneedling.png" },
@@ -160,7 +205,7 @@ const t: Treatment = {
       { label: "Collagen stimulator", href: "/collagen-stimulator-malta", image: "/assets/treatments/lip-fillers-malta-rec-collagen.png" },
     ],
   },
-  faqTitle: "How Long Do Lip Fillers Last in Malta?",
+  faqTitle: "FAQs about lip-fillers in Malta",
   faq: [
     { q: "What are lip fillers, and how do they work?", a: "Lip fillers are a cosmetic treatment that involves injecting a dermal filler, typically made of hyaluronic acid, into the lips to add volume and enhance their shape. Hyaluronic acid is a naturally occurring substance in the body that helps to hydrate and plump the skin, and it can be used to add volume to the lips, smooth fine lines and wrinkles around the mouth, and improve lip symmetry." },
     { q: "What are the benefits of lip fillers?", a: "Lip fillers can improve the appearance of the lips in many ways, including adding volume, enhancing their shape, smoothing fine lines and wrinkles around the mouth, and improving lip symmetry." },
@@ -168,7 +213,7 @@ const t: Treatment = {
     { q: "Is a lip filler treatment painful?", a: "While some discomfort or pain may be experienced during a lip filler treatment, most patients find the procedure tolerable. A local anesthetic may be applied to the lips to numb the area and minimize any pain or discomfort." },
     { q: "What is the recovery time for a lip filler treatment?", a: "Recovery time after a lip filler treatment is generally minimal. You may experience some mild swelling, bruising, or tenderness at the injection sites, but these side effects usually subside within a few hours." },
     { q: "How long do the results of a lip filler treatment last?", a: "The longevity of lip filler results can vary depending on the individual and the type of filler used. Generally, the results can last from 6-12 months, as the filler gradually breaks down and is absorbed by the body. To maintain the results, additional treatments may be recommended." },
-    { q: "What Are the Side Effects of Lip Fillers?", a: "As with any cosmetic procedure, there can be side effects and risks associated with a lip filler treatment. Common side effects include temporary redness, swelling, or bruising at the injection sites. In rare cases, more serious complications such as infection, allergic reaction, or tissue damage may occur. It's essential to consult with a qualified practitioner to minimize risks and ensure proper treatment." },
+    { q: "Are there any side effects or risks associated with a lip filler treatment?", a: "As with any cosmetic procedure, there can be side effects and risks associated with a lip filler treatment. Common side effects include temporary redness, swelling, or bruising at the injection sites. In rare cases, more serious complications such as infection, allergic reaction, or tissue damage may occur. It's essential to consult with a qualified practitioner to minimize risks and ensure proper treatment." },
     { q: "Who is a suitable candidate for a lip filler treatment?", a: "Lip fillers are suitable for most individuals who want to enhance the appearance of their lips. It's not recommended for those with certain medical conditions or allergies. A thorough consultation with a qualified practitioner is necessary to determine if lip fillers are the right treatment for you. It's also important to have realistic expectations and to understand that the results of the treatment may vary depending on the individual's anatomy and the type of filler used." },
   ],
 };

@@ -4,7 +4,7 @@ const t: Treatment = {
   slug: "dermal-fillers-malta",
   category: "Face",
   hero: {
-    title: "Dermal Fillers in Malta — Results by Medically Qualified Doctors",
+    title: "Dermal fillers Malta",
     subtitle: "Enhancing Facial Features with Hyaluronic Acid",
     body: "Looking to reduce facial lines and restore a more youthful appearance? Consider the benefits of injectable dermal fillers in Malta. These cosmetic procedures utilize hyaluronic acid, a gel-like substance found naturally in the body, to treat facial wrinkles, smile lines, and facial creases.",
     prices: [
@@ -24,31 +24,59 @@ const t: Treatment = {
     { metric: "Results visible in", detail: "Immediate" },
     { metric: "Anaesthetic", detail: "Local anesthetic" },
   ],
-  beforeAfterTitle: "Real Dermal Filler Results from Our Malta Patients",
+  beforeAfterTitle: "dermal fillers results",
   beforeAfter: [
     {
       before: "/assets/treatments/dermal-fillers-malta-ba1-before.jpg",
       after: "/assets/treatments/dermal-fillers-malta-ba1-after.jpg",
       label: "Jaw & Cheek Contouring",
+      name: "Marisa A.",
+      review: "My cheeks had lost their fullness and my jawline looked soft — now my whole side profile is defined and lifted.",
     },
     {
       before: "/assets/treatments/dermal-fillers-malta-ba2-before.jpg",
       after: "/assets/treatments/dermal-fillers-malta-ba2-after.jpg",
       label: "Cheek Volume Restoration",
+      name: "Daniela R.",
+      review: "The hollows under my eyes always made me look tired — restoring my cheeks lifted everything and I look so much fresher.",
     },
     {
       before: "/assets/treatments/dermal-fillers-malta-ba3-before.jpg",
       after: "/assets/treatments/dermal-fillers-malta-ba3-after.jpg",
       label: "Mid-Face Rejuvenation",
+      name: "Claire B.",
+      review: "A little volume back in my mid-face and cheeks took years off — it still looks completely like me, just rested.",
     },
     {
       before: "/assets/treatments/dermal-fillers-malta-ba4-before.jpg",
       after: "/assets/treatments/dermal-fillers-malta-ba4-after.jpg",
       label: "Profile Enhancement",
+      name: "Nicole F.",
+      review: "Balancing my nose, lips, and chin gave me the side profile I never thought I could have without surgery.",
     },
   ],
+  problem: {
+    kicker: "The real reason people book",
+    title: "Your face looks flatter or more tired than you feel inside",
+    body: [
+      "Doctor-led dermal fillers gently restore the volume that time has taken — lifting and refining your contours so you look rested and like yourself, never overfilled.",
+    ],
+  },
+  guarantee: {
+    kicker: "The Natural Confidence Guarantee",
+    title: "Natural Confidence Guarantee",
+    paragraphs: [
+      "Every plan starts with a doctor-led facial assessment and a natural-first approach that is never overfilled, backed by a free follow-up review until you are 100% satisfied with a result that still looks like you.",
+    ],
+    cta: "Book Your Free Consultation",
+    points: [
+      { value: "Doctor-led", label: "Assessment first", sub: "Never a salesperson" },
+      { value: "Natural-first", label: "Never overfilled", sub: "We refine, never overdo it" },
+      { value: "100%", label: "Satisfaction", sub: "Free follow-up until you are happy" },
+    ],
+  },
   precision: {
-    title: "Dermal Filler Treatment Areas in Malta — Precision Facial Zones",
+    title: "precision areas of refinement",
     intro: "Filler placement is guided by your facial anatomy and individual goals. Below are the four most commonly enhanced zones.",
     areas: [
       { zone: "Cheeks", icon: "/assets/treatments/dermal-fillers-malta-icon-cheeks.png", name: "Cheek Contour", desc: "Restores volume and defines the midface for a naturally lifted, sculpted appearance." },
@@ -56,11 +84,11 @@ const t: Treatment = {
       { zone: "Folds", icon: "/assets/treatments/dermal-fillers-malta-icon-folds.png", name: "Nasolabial Folds", desc: "Softens the lines from nose to mouth that deepen with age, restoring a smoother transition." },
       { zone: "Chin", icon: "/assets/treatments/dermal-fillers-malta-icon-chin.png", name: "Chin Projection", desc: "Improves chin shape and projection to bring balance and proportion to the facial profile." },
     ],
-    additionalTitle: "Additional Zones — Assessed at Consultation",
+    additionalTitle: "Additional zones are assessed during your consultation to ensure a cohesive, balanced result.",
     additional: "Tear troughs, temples, marionette lines, pre-jowl sulcus, nose profile, lip border",
   },
   suitability: {
-    title: "Who Is a Good Candidate for Dermal Fillers?",
+    title: "Is this suitable for you?",
     intro: "Dermal fillers restore volume and refine contours, but they work best when guided by a clear understanding of your facial structure. Your consultation ensures the treatment plan is designed around your anatomy, not a trend.",
     suitableFor: [
       "You have noticed volume loss in areas like cheeks, jawline, or temples",
@@ -70,25 +98,29 @@ const t: Treatment = {
       "You appreciate that results are adjustable and reversible",
     ],
     notIdeal: [
-      "You are seeking an overall skin quality improvement without adding volume",
-      "You expect filler to address deep skin texture concerns or pigmentation",
-      "You are pregnant, breastfeeding, or have active infection near the treatment area",
-      "You are looking for permanent structural changes",
-      "You are on blood-thinning medication without medical clearance",
+      "You want to soften expression lines, not add volume — that is what wrinkle relaxing is for, and we will happily guide you there",
+      "You are hoping to improve skin texture or pigmentation alone — a skin booster or peel may suit you better, and we will advise",
+      "You are pregnant or breastfeeding — we will warmly welcome you back when the time is right",
+      "You are looking for a permanent surgical change — fillers are temporary and gently adjustable by design",
+      "You take blood-thinning medication — we simply ask for medical clearance first to keep you safe",
+    ],
+    personas: [
+      { title: "The face that has lost volume", desc: "Your cheeks, temples, or jawline have softened over time, and you want that natural fullness restored without looking overdone." },
+      { title: "The balance-and-definition patient", desc: "You love your features but want subtle harmony — a defined jaw, lifted cheeks, or a smoother profile that simply fits your face." },
+      { title: "The natural-refinement patient", desc: "You do not want a dramatic change — you want refined, believable contouring that still looks completely like you." },
     ],
   },
   experience: {
-    title: "How Dermal Fillers Work — Your Step-by-Step Journey", cta: "BOOK YOUR FREE CONSULTATION",
+    title: "Your treatment experience", cta: "BOOK YOUR FREE CONSULTATION",
     steps: [
-      { title: "Step 1 — Personalised Consultation", desc: "We assess your facial anatomy, skin condition, medical history, and dermal filler goals with one of our doctors.", image: "/assets/treatments/dermal-fillers-malta-step1.png" },
-      { title: "Step 2 — Structured Treatment Plan", desc: "Your doctor designs a medically guided dermal filler plan tailored to your facial structure and desired outcome.", image: "/assets/treatments/dermal-fillers-malta-step2.png" },
-      { title: "Step 3 — Targeted Filler Placement", desc: "Your doctor administers dermal fillers with fine, precise injections, quick, comfortable, and no downtime.", image: "/assets/treatments/dermal-fillers-malta-step3.png" },
-      { title: "Step 4 — Review and Refinement", desc: "Your doctor monitors your response and refines the plan to ensure natural dermal filler results over time.", image: "/assets/treatments/dermal-fillers-malta-step4.png" },
+      { title: "Consultation & Personalised Plan", desc: "One of our doctors assesses your facial anatomy, skin, and goals, then designs a medically guided filler plan tailored to your structure and desired outcome.", image: "/assets/treatments/dermal-fillers-malta-step1.png" },
+      { title: "Targeted Treatment", desc: "Your doctor administers dermal fillers with fine, precise injections — quick, comfortable, and with little to no downtime.", image: "/assets/treatments/dermal-fillers-malta-step3.png" },
+      { title: "Ongoing Review & Adjustment", desc: "Your doctor monitors how you settle and refines the plan to ensure natural, balanced dermal filler results over time.", image: "/assets/treatments/dermal-fillers-malta-step4.png" },
     ],
   },
   prepAftercare: {
     kicker: "Preparation & Aftercare",
-    title: "Aftercare and Recovery After Dermal Fillers",
+    title: "Your session, step by step",
     intro: "Thoughtful preparation and aftercare help your results look and feel their best.",
     cards: [
       {
@@ -127,7 +159,7 @@ const t: Treatment = {
     ],
   },
   patientVideos: {
-    title: "Real Dermal Filler Results — Before and After at Carisma",
+    title: "Real patients, real confidence",
     intro: "Every face is unique. Every story is personal. Discover how our Dermal fillers patients describe their journey to refined, natural results at Carisma Aesthetics in Malta.",
     videos: [
       "/assets/treatments/dermal-fillers-malta-video1.mp4",
@@ -136,7 +168,7 @@ const t: Treatment = {
     ],
   },
   trusted: {
-    title: "Medically Qualified Practitioners — Safe Dermal Fillers in Malta",
+    title: "Malta's trusted clinic for dermal fillers",
     subtitle: "DOCTOR-LED dermal fillers IN MALTA",
     asSeenOn: ["/assets/press/lovin-malta.jpeg", "/assets/press/malta-daily.png", "/assets/press/bay.jpeg", "/assets/press/times-of-malta.png", "/assets/press/malta-today.jpg"],
     images: ["/assets/treatments/trusted-clinic-collage.png"],
@@ -150,7 +182,7 @@ const t: Treatment = {
   },
   difference: {
     kicker: "the carisma difference",
-    title: "The Carisma Difference — Doctor-Led Dermal Fillers in Malta",
+    title: "Malta's #1 leading wellness chain",
     commitmentTitle: "our commitment",
     commitment: [
       "Natural, refined dermal fillers results, never overdone, never frozen",
@@ -168,8 +200,28 @@ const t: Treatment = {
     mapQuery: "Carisma Aesthetics, Malta",
   },
   bookingForm: { title: "BOOK YOUR dermal fillers APPOINTMENT TODAY" },
+  planSummary: {
+    kicker: "Your dermal filler plan",
+    title: "Malta's Doctor-Led Dermal Filler Plan",
+    benefits: [
+      { icon: "shield", title: "Doctor-Led Precision", desc: "Every treatment is performed by a medically qualified doctor with advanced facial-anatomy expertise — never a salon, never nurse-only." },
+      { icon: "sparkle", title: "Natural, Refined Results", desc: "We restore volume and define contours while keeping you looking like you — balanced and refreshed, never overfilled." },
+      { icon: "clock", title: "Complimentary 2-Week Review", desc: "We review how your filler has settled at two weeks and perfect it if needed — included free." },
+    ],
+    included: [
+      { label: "Free doctor-led consultation & facial assessment" },
+      { label: "Personalised, medically guided treatment plan" },
+      { label: "Premium CE-marked hyaluronic acid filler", value: "from €269/ml" },
+      { label: "Complimentary 2-week review & adjustment" },
+      { label: "Aftercare guidance & ongoing support" },
+    ],
+    price: "From €269",
+    priceLabel: "per ml",
+    cta: { text: "Book Your Dermal Filler Appointment", href: "/consultation" },
+    reviews: "200+ verified reviews",
+  },
   recommended: {
-    title: "Treatments Recommended Alongside Dermal Fillers",
+    title: "Recommended with dermal fillers",
     items: [
       { label: "Lip fillers", href: "/lip-fillers-malta", image: "/assets/treatments/lip-fillers-malta-hero.png" },
       { label: "Microneedling", href: "/microneedling-malta", image: "/assets/treatments/rec-microneedling.jpg" },
@@ -177,7 +229,7 @@ const t: Treatment = {
       { label: "Mesotherapy", href: "/mesotherapy-malta", image: "/assets/treatments/rec-mesotherapy.jpg" },
     ],
   },
-  faqTitle: "Frequently Asked Questions About Dermal Fillers in Malta",
+  faqTitle: "Frequently asked questions",
   faq: [
     {
       q: "What are dermal fillers, and how do they work?",
@@ -192,7 +244,7 @@ const t: Treatment = {
       a: "The longevity of dermal and lip fillers can vary depending on the type of filler used and the individual's metabolism. Generally, the results of hyaluronic acid-based fillers can last anywhere from six months to one years. Over time, the body naturally breaks down and absorbs the filler, so follow-up treatments may be needed to maintain the desired results.",
     },
     {
-      q: "What are the side effects of dermal fillers?",
+      q: "Are there any side effects or risks associated with dermal fillers?",
       a: "As with any cosmetic procedure, there can be some side effects and risks associated with dermal and lip fillers. Common side effects include temporary redness, swelling, or bruising at the injection site. More serious but rare complications include infection, allergic reactions, or uneven results. To minimize risks, it's important to consult with a qualified practitioner who will ensure the procedure is performed safely and effectively.",
     },
     {

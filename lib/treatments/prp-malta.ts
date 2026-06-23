@@ -4,7 +4,7 @@ const t: Treatment = {
   slug: "prp-malta",
   category: "Face",
   hero: {
-    title: "PRP Treatment in Malta — Natural Rejuvenation by Qualified Doctors",
+    title: "PRP Malta platelet rich plasma",
     subtitle: "Looking for a natural way to rejuvenate your skin and promote healing?",
     body: "Is dull skin, thinning hair, or visible scarring holding you back? Rediscover radiant, youthful skin and thicker, healthier hair with our expert PRP treatment in Malta. Every session is performed by qualified doctors who harness the regenerative power of your own plasma rich platelets to stimulate collagen, accelerate healing, and deliver natural, lasting results from within.",
     prices: [
@@ -31,7 +31,7 @@ const t: Treatment = {
     { before: "/assets/treatments/prp-malta-ba5-before.png", after: "/assets/treatments/prp-malta-ba5-after.png", label: "Hair Loss (Male)", name: "James P.", review: "My hairline was receding at the temples — the regrowth has been gradual but real, and completely natural." },
   ],
   precision: {
-    title: "What Is PRP Treatment and How Does It Work?",
+    title: "precision areas of refinement",
     intro: "Your body's own growth factors are concentrated and applied where renewal is needed most. Below are the primary treatment zones.",
     areas: [
       { zone: "Face", icon: "/assets/treatments/prp-malta-icon-face.png", name: "Facial Rejuvenation", desc: "Stimulates collagen and tissue repair across the face for a naturally refreshed, radiant complexion." },
@@ -39,11 +39,11 @@ const t: Treatment = {
       { zone: "Scalp", icon: "/assets/treatments/prp-malta-icon-scalp.png", name: "Hair Restoration", desc: "Delivers growth factors directly to thinning areas of the scalp to reactivate dormant follicles." },
       { zone: "Skin", icon: "/assets/treatments/prp-malta-icon-skin.png", name: "Vampire Facial", desc: "Combines PRP with microneedling for enhanced penetration and accelerated skin renewal." },
     ],
-    additionalTitle: "Your Doctor Will Advise the Best Method for Your Goals",
+    additionalTitle: "Your practitioner will recommend the most effective application method based on your goals.",
     additional: "Neck, decolletage, hands, acne scars, stretch marks, surgical scars",
   },
   suitability: {
-    title: "Who Is a Good Candidate for PRP Therapy?",
+    title: "Is this suitable for you?",
     intro: "This treatment uses your own blood to stimulate natural rejuvenation and collagen renewal. Because it works with your biology, there is no risk of allergic reaction. Results are gradual and best achieved through a course of three sessions.",
     suitableFor: [
       "You prefer a natural approach using your body's own growth factors",
@@ -86,7 +86,7 @@ const t: Treatment = {
     ],
   },
   experience: {
-    title: "How Your PRP Session Works — From Blood Draw to Results",
+    title: "Your treatment experience",
     steps: [
       { title: "Personalised Consultation & Plan", desc: "We assess your skin or scalp, medical history, and PRP goals with one of our doctors, then design a protocol tailored to your concern — facial rejuvenation, hair restoration, or a vampire facial.", image: "/assets/treatments/prp-malta-step1.png" },
       { title: "Targeted Treatment", desc: "Your doctor draws a small blood sample, concentrates your plasma rich platelets in a centrifuge, and delivers the PRP via precise injection — comfortable and around 35-45 minutes.", image: "/assets/treatments/prp-malta-step3.jpg" },
@@ -96,7 +96,7 @@ const t: Treatment = {
   },
   prepAftercare: {
     kicker: "Preparation & Aftercare",
-    title: "PRP Aftercare and Recovery — What to Expect",
+    title: "Your session, step by step",
     intro: "Your own blood provides the growth factors for natural regeneration. Here is how to support the process",
     cards: [
       {
@@ -135,12 +135,12 @@ const t: Treatment = {
     ],
   },
   patientVideos: {
-    title: "Real PRP Results from Our Malta Patients",
+    title: "Real patients, real confidence",
     intro: "Every journey is unique. Every story is personal. Discover how our patients describe their experience of natural skin rejuvenation and hair restoration at Carisma Aesthetics in Malta.",
     videos: ["/assets/treatments/vid-prp-malta.mp4"],
   },
   trusted: {
-    title: "PRP Treatment by Medically Qualified Practitioners",
+    title: "Malta's trusted clinic for PRP treatment",
     subtitle: "Doctor-Led PRP Treatment in Malta",
     asSeenOn: ["/assets/press/lovin-malta.jpeg", "/assets/press/malta-daily.png", "/assets/press/bay.jpeg", "/assets/press/times-of-malta.png", "/assets/press/malta-today.jpg"],
     images: ["/assets/treatments/trusted-clinic-collage.png"],
@@ -154,7 +154,7 @@ const t: Treatment = {
   },
   difference: {
     kicker: "The Carisma Difference",
-    title: "The Carisma Difference — Doctor-Led PRP Care in Malta",
+    title: "Malta’s #1 leading wellness chain",
     commitmentTitle: "our commitment",
     commitment: [
       "Natural, gradual results — restoration, not transformation",
@@ -193,13 +193,13 @@ const t: Treatment = {
     reviews: "200+ verified reviews",
   },
   recommended: {
-    title: "Treatments That Pair Well with Platelet Rich Plasma",
+    title: "Recommended with PRP treatment",
     items: [
       { label: "Microneedling", href: "/microneedling-malta", image: "/assets/treatments/rec-microneedling.jpg" },
       { label: "Mesotherapy", href: "/mesotherapy-malta", image: "/assets/treatments/rec-mesotherapy.jpg" },
     ],
   },
-  faqTitle: "Frequently Asked Questions About PRP Treatment in Malta",
+  faqTitle: "FAQs about PRP treatment in Malta",
   faq: [
     {
       q: "What is PRP, and how does it work?",

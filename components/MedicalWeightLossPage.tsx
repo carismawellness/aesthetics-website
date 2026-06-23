@@ -144,8 +144,8 @@ function Hero() {
     <PageHero
       badge="Doctor-led GLP-1 weight loss"
       headline={[
-        { text: "Medical Weight Loss Malta" },
-        { text: "Doctor-Led GLP-1 Programme", em: true },
+        { text: "Doctor-led Ozempic & Mounjaro" },
+        { text: "weight loss in Malta", em: true },
       ]}
       sub="At Carisma Aesthetics, GLP-1 medications are never prescribed in isolation. Our doctor-led programme combines a full medical assessment, structured prescription support, nutrition guidance, and weekly monitoring to help you lose weight safely and sustain your results."
       bullets={[
@@ -276,9 +276,9 @@ function Results() {
   return (
     <section id="results" style={{ background: "var(--white)", padding: "72px 0" }}>
       <div className="container text-center">
-        <h3 className="font-serif" style={{ fontSize: "clamp(22px,3.2vw,30px)", color: "var(--teal-text)", letterSpacing: "0.08em", lineHeight: 1.3 }}>
-          Real GLP-1 Results from Our Malta Patients
-        </h3>
+        <h2 className="font-serif" style={{ fontSize: "clamp(22px,3.2vw,30px)", color: "var(--teal-text)", letterSpacing: "0.08em", lineHeight: 1.3 }}>
+          Ozempic &amp; Mounjaro results
+        </h2>
         <div style={{ width: "150px", height: "1px", background: "var(--teal)", opacity: 0.4, margin: "16px auto 44px" }} />
         <Reveal>
           <div className="relative" style={{ maxWidth: "1080px", margin: "0 auto" }}>
@@ -341,7 +341,7 @@ function Clarity() {
       <div className="container">
         <Reveal>
           <Eyebrow center>What are Ozempic &amp; Mounjaro?</Eyebrow>
-          <H2>What Is Medical Weight Loss with Ozempic &amp; Mounjaro?</H2>
+          <H2>clarity before you start</H2>
           <p
             style={{
               maxWidth: "880px",
@@ -438,7 +438,7 @@ function Trusted() {
     <section id="trusted" style={{ background: "var(--white)", padding: "72px 0" }}>
       <div className="container">
         <Reveal>
-          <H2>Who Is a Good Candidate for GLP-1 Weight Loss?</H2>
+          <H2>malta&rsquo;s trusted clinic for ozempic &amp; mounjaro</H2>
           <div className="flex items-center justify-center" style={{ gap: "40px", flexWrap: "wrap", margin: "0 auto 56px", maxWidth: "900px" }}>
             {PRESS.map((p, i) => (
               <Image key={i} src={p.src} alt={p.alt} width={120} height={40} style={{ height: "34px", width: "auto", objectFit: "contain", opacity: 0.85 }} />
@@ -481,7 +481,7 @@ function Eligibility() {
     <div id="eligibility" style={{ marginTop: "72px", paddingTop: "56px", borderTop: "1px solid var(--line)" }}>
       <Reveal>
         <Eyebrow center>Ozempic &amp; Mounjaro eligibility criteria</Eyebrow>
-        <h3 className="font-display" style={{ textAlign: "center", fontSize: "clamp(20px,2.6vw,24px)", color: "#655a50", lineHeight: 1.25, margin: "0 auto 26px" }}>Ozempic &amp; Mounjaro Eligibility — Selective by Design</h3>
+        <H2>selective by intention successful by design</H2>
         <p style={{ maxWidth: "900px", margin: "0 auto 44px", textAlign: "center", fontSize: "15px", color: "#655a50", lineHeight: 1.8 }}>
           Ozempic and Mounjaro can be powerful, but only when prescribed as part of a structured, doctor-supervised
           programme. Eligibility is determined through a proper medical assessment, including blood tests, food
@@ -898,7 +898,7 @@ function ExpertCare() {
       <div className="container">
         <Reveal>
           <h2 className="font-serif" style={{ textAlign: "center", fontSize: "clamp(22px,3.2vw,30px)", color: "var(--teal-text)", letterSpacing: "0.12em", lineHeight: 1.4, marginBottom: "48px" }}>
-            Medically Qualified Practitioners — Safe GLP-1 Prescribing in Malta
+            Led by expertise.<br />Driven by results.
           </h2>
         </Reveal>
         <div className="grid" style={{ gridTemplateColumns: "minmax(0,440px) minmax(0,1fr)", gap: "56px", alignItems: "center", maxWidth: "1080px", margin: "0 auto" }}>
@@ -957,7 +957,7 @@ function Promise() {
             className="font-serif"
             style={{ textAlign: "center", fontSize: "clamp(24px,3.8vw,36px)", color: "var(--teal-text)", letterSpacing: "0.1em", lineHeight: 1.45, marginBottom: "48px" }}
           >
-            Your Medical Weight Loss Results — What to Expect
+            Up to 1kg per week<br />Measured. Verified. Comitted.
           </h2>
         </Reveal>
         <div className="grid" style={{ gridTemplateColumns: "minmax(0,1fr) minmax(0,1.25fr)", gap: "48px", alignItems: "start" }}>
@@ -1020,7 +1020,7 @@ function Safety() {
     <section id="safety" style={{ background: "linear-gradient(180deg, #ffffff 0%, var(--cream) 50%, #ffffff 100%)", padding: "72px 0" }}>
       <div className="container">
         <Reveal>
-          <h3 className="font-display" style={{ textAlign: "center", fontSize: "clamp(20px,2.6vw,24px)", color: "#655a50", lineHeight: 1.25, margin: "0 auto 26px" }}>Ozempic &amp; Mounjaro: Side Effects &amp; How We Manage Them</h3>
+          <H2>ozempic &amp; mounjaro: safety, side effects, &amp; our system</H2>
         </Reveal>
         <div className="grid" style={{ gridTemplateColumns: "minmax(0,1fr) minmax(0,1.1fr)", gap: "44px", alignItems: "start", marginTop: "12px" }}>
           <Reveal>
@@ -1090,7 +1090,7 @@ function Methodology() {
       <div className="container">
         <Reveal>
           <Eyebrow center>4 core pillars of our Ozempic &amp; Mounjaro methodology</Eyebrow>
-          <H2 serif>How Does the GLP-1 Medical Weight Loss Programme Work?</H2>
+          <H2 serif>A doctor-led GLP-1 programme built to last</H2>
         </Reveal>
         <div className="grid" style={{ gridTemplateColumns: "minmax(0,1fr) minmax(0,1fr)", gap: "48px", alignItems: "start", marginTop: "20px" }}>
           <Reveal>
@@ -1132,20 +1132,20 @@ function Difference() {
       <div className="container">
         <Reveal>
           <Eyebrow center>The Carisma difference</Eyebrow>
-          <h3 className="font-serif" style={{ textAlign: "center", fontSize: "clamp(20px,2.6vw,24px)", color: "#655a50", lineHeight: 1.25, margin: "0 auto 26px" }}>Why Choose a Medical-Grade Clinic for GLP-1 Weight Loss in Malta</h3>
+          <H2 serif>Malta&rsquo;s #1 leading wellness chain</H2>
         </Reveal>
         <div className="grid" style={{ gridTemplateColumns: "minmax(0,1fr) minmax(0,1fr)", gap: "48px", alignItems: "center", marginTop: "20px" }}>
           <Reveal>
-            <p className="font-display" style={{ fontSize: "15px", color: "#655a50", marginBottom: "16px" }}>our commitment</p>
+            <h3 className="font-display" style={{ fontSize: "15px", color: "#655a50", marginBottom: "16px" }}>our commitment</h3>
             <ul style={{ marginBottom: "30px" }}>
               <Bullet kind="check">Visible inch loss and shape change, not vague promises</Bullet>
               <Bullet kind="check">Plans that work with your age, hormones and metabolism</Bullet>
               <Bullet kind="check">No crash diets, no banned foods, no endless hours of cardio</Bullet>
               <Bullet kind="check">Medical grade technology and treatments delivered by trained professionals</Bullet>
             </ul>
-            <p className="font-display" style={{ fontSize: "15px", color: "#655a50", marginBottom: "16px" }}>
+            <h3 className="font-display" style={{ fontSize: "15px", color: "#655a50", marginBottom: "16px" }}>
               Why Malta chooses Carisma for Ozempic &amp; Mounjaro
-            </p>
+            </h3>
             <ul>
               <Bullet kind="check">Created by the team behind Malta&rsquo;s leading spa and medical aesthetics centres</Bullet>
               <Bullet kind="check">Doctor led medical slimming, not a beauty salon &ldquo;diet program&rdquo;</Bullet>
@@ -1186,7 +1186,7 @@ function NotAnotherClinic() {
         <div className="grid" style={{ gridTemplateColumns: "minmax(0,1fr) minmax(0,1fr)", gap: "48px", alignItems: "center" }}>
           <Reveal>
             <h2 className="font-display" style={{ fontSize: "clamp(22px,3vw,28px)", color: "#655a50", lineHeight: 1.25, marginBottom: "20px" }}>
-              Medical Weight Loss Pricing in Malta — Transparent From Day One
+              we are not another diet clinic.
             </h2>
             <p style={{ fontSize: "15px", color: "#655a50", lineHeight: 1.85 }}>
               We&rsquo;re a doctor-led Ozempic and Mounjaro programme that blends medical insight, sustainable nutrition,
@@ -1273,7 +1273,7 @@ function Faqs() {
     <section id="faqs" style={{ background: "var(--white)", padding: "72px 0" }}>
       <div className="container">
         <h2 className="font-serif" style={{ textAlign: "center", fontSize: "clamp(20px,2.6vw,25px)", color: "var(--teal-text)", marginBottom: "36px" }}>
-          What Should I Know Before Starting Medical Weight Loss in Malta?
+          FAQs about Ozempic &amp; Mounjaro
         </h2>
         <Reveal>
           <FaqAccordion items={FAQS} uppercase={false} />
@@ -1414,7 +1414,7 @@ function Research() {
       <div className="container">
         <Reveal>
           <Eyebrow center>Clinical research: basis of our Ozempic &amp; Mounjaro methodology</Eyebrow>
-          <H2 serif style={{ fontSize: "clamp(24px,3.6vw,30px)" }}>Evidence-Based Approach to GLP-1 Prescribing</H2>
+          <H2 serif style={{ fontSize: "clamp(24px,3.6vw,30px)" }}>Evidence based approach</H2>
         </Reveal>
         <div className="grid" style={{ gridTemplateColumns: "repeat(2, minmax(0,1fr))", gap: "28px", maxWidth: "960px", margin: "0 auto" }}>
           {RESEARCH.map((c, i) => (
@@ -1438,7 +1438,7 @@ function EndBoundary() {
     <section style={{ background: "var(--white)", padding: "56px 0 16px" }}>
       <div className="container">
         <h2 className="font-serif" style={{ textAlign: "center", fontSize: "clamp(26px,4vw,35px)", color: "#655a50" }}>
-          Book Your Medical Weight Loss Consultation in Malta Today
+          Real people, real reviews
         </h2>
       </div>
     </section>

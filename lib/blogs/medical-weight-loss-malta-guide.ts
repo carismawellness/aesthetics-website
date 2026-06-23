@@ -2,7 +2,7 @@ import { BlogPost } from '../blog-types';
 
 export const post: BlogPost = {
   slug: 'medical-weight-loss-malta-guide',
-  title: 'Medical Weight Loss in Malta — Your Doctor-Led GLP-1 Guide',
+  title: 'Medical Weight Loss in Malta: A Clinically Guided Approach',
   metaTitle: 'Medical Weight Loss Malta | Carisma Aesthetics',
   metaDescription:
     'Clinically guided medical weight loss in Malta at Carisma Aesthetics. GLP-1 medications, body treatments & more — book your free consultation today.',
@@ -16,7 +16,7 @@ export const post: BlogPost = {
     {
       type: 'heading',
       level: 2,
-      text: 'Why Medical Weight Loss Outperforms Dieting Alone',
+      text: 'Why Medical Weight Loss Is Different',
     },
     {
       type: 'paragraph',

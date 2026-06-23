@@ -4,7 +4,7 @@ const t: Treatment = {
   slug: "muscle-stimulation-1",
   category: "Body",
   hero: {
-    title: "Muscle Stimulation Malta — Build Muscle and Burn Fat",
+    title: "EMSculpt NEO Malta",
     subtitle: "3-in-1 body sculpt protocol",
     body: "Stronger, tighter, more defined in 4 focused sessions.\n\nOur 3-1 course with EMSculpt NEO with HIFEM + RF gives you the effect of 20,000 sit ups per session, burns local fat and tightens the skin resulting in 30% Fat reduction, 25% Muscle growth & 29% Muscle strength",
     prices: [
@@ -22,7 +22,7 @@ const t: Treatment = {
 
   // "The secret to a more defined, confident look" section
   education: {
-    title: "What Is EMSculpt NEO Muscle Stimulation?",
+    title: "The secret to a more defined, confident look",
     subtitle: "SCULPT, TIGHTEN AND DEFINE STUBBORN AREAS WITH PRECISION",
     paragraphs: [
       "You're eating well, staying active, and making an effort — yet certain areas still feel soft or undefined. Your tummy doesn't feel as firm as it should, your hips or bum lack shape, and your clothes don't reflect the work you're putting in. The scale may move slightly, but your body definition doesn't.",
@@ -31,26 +31,8 @@ const t: Treatment = {
     image: "/assets/treatments/ms-secret.png",
   },
 
-  suitability: {
-    title: "Who Is a Good Candidate for Body Sculpting in Malta?",
-    intro: "EMSculpt NEO works best for people who are close to their goal weight but want improved muscle definition, firmness, and targeted contouring.",
-    suitableFor: [
-      "Close to goal weight but lacking muscle definition",
-      "Wanting to tone the abdomen, glutes, thighs, or arms",
-      "Seeking non-surgical body contouring with no downtime",
-      "Combining treatments with an active lifestyle",
-      "Looking for clinically proven fat reduction and muscle growth",
-    ],
-    notIdeal: [
-      "Pregnant or breastfeeding",
-      "Metal implants or a pacemaker in or near the treatment area",
-      "Seeking significant weight loss (not a weight-loss treatment)",
-      "Certain medical conditions — full screening completed at consultation",
-    ],
-  },
-
   trusted: {
-    title: "Medically Qualified Practitioners — Safe Body Sculpting in Malta",
+    title: "Malta's trusted clinic for non surgical fat reduction",
     images: [
       "/assets/treatments/ms-feat1.png",
       "/assets/treatments/ms-feat2.png",
@@ -78,7 +60,7 @@ const t: Treatment = {
   },
 
   precision: {
-    title: "Body Sculpting Treatment Areas — Target Where It Matters Most",
+    title: "TARGETED BODY SCULPTING",
     intro: "Focus on the areas that matter most tummy, hips, bum or thighs using targeted EMSculpt Neo technology to improve muscle definition and firmness where exercise often falls short.",
     areas: [
       { name: "ABDOMEN / CORE", desc: "" },
@@ -90,57 +72,20 @@ const t: Treatment = {
   },
 
   experience: {
-    title: "How Does EMSculpt NEO Work? Your Session Explained",
+    title: "The carisma difference",
     steps: [
-      { title: "Step 1 — Your Consultation", desc: "Full medical check and body composition scan to map your treatment plan." },
-      { title: "Step 2 — Applicator Placement", desc: "The EMSculpt NEO applicator is positioned on the target area — tummy, glutes, thighs, or arms." },
-      { title: "Step 3 — HIFEM + RF Delivery", desc: "High-intensity electromagnetic energy triggers powerful muscle contractions while radiofrequency warms and reduces fat." },
-      { title: "Step 4 — Session Complete", desc: "Each session lasts around 30 minutes with no downtime — return to normal activities immediately." },
-      { title: "Step 5 — Progress Review", desc: "Weekly check-ins track your muscle definition and contour changes across the full protocol." },
-      { title: "Step 6 — Your Final Results", desc: "Visible improvements develop over 4 sessions and continue for several weeks after your last treatment." },
-    ],
-  },
-
-  prepAftercare: {
-    title: "Aftercare Advice After Muscle Stimulation Treatment",
-    intro: "EMSculpt NEO requires no downtime, but following these simple guidelines will help you get the most from your results.",
-    cards: [
-      {
-        label: "After Your Session",
-        lead: "No special recovery needed",
-        points: [
-          "Resume normal activities immediately",
-          "Stay well hydrated throughout the day",
-          "Light muscle soreness is normal — similar to post-workout fatigue",
-          "Avoid strenuous exercise on the treated area for 24 hours",
-        ],
-      },
-      {
-        label: "Between Sessions",
-        lead: "Support your results",
-        points: [
-          "Maintain a balanced diet to support fat reduction",
-          "Stay active — EMSculpt NEO enhances, not replaces, exercise",
-          "Attend all 4 sessions within the recommended 2–4 week window",
-          "Report any unusual discomfort to your practitioner",
-        ],
-      },
-      {
-        label: "Long-Term Maintenance",
-        lead: "Sustain your definition",
-        points: [
-          "Results continue to develop for several weeks after your last session",
-          "Regular activity and a healthy lifestyle preserve muscle improvements",
-          "Maintenance sessions may be recommended every 3–6 months",
-          "Follow-up body scans track your progress over time",
-        ],
-      },
+      { title: "Doctor led", desc: "full medical check and body scan" },
+      { title: "One integrated program", desc: "medical, diet, movement and treatments together" },
+      { title: "Real gym included", desc: "Technogym facility, semi-private classes and PT" },
+      { title: "High touch support", desc: "weekly check ins, progress reports and WhatsApp follow up" },
+      { title: "Evidence based devices", desc: "Emsculpt NEO, coolsculpting and RF skin tightening" },
+      { title: "Selective entry", desc: "measurable weight loss results guaranteed" },
     ],
   },
 
   difference: {
     kicker: "the carisma difference",
-    title: "Your EMSculpt NEO Results — What to Expect in Malta",
+    title: "We are not another diet clinic.",
     commitmentTitle: "our commitment",
     commitment: [
       "Visible inch loss and shape change, not vague promises",
@@ -158,24 +103,12 @@ const t: Treatment = {
     mapQuery: "Carisma Aesthetics Malta",
   },
 
-  pricingGrid: {
-    title: "Muscle Stimulation Pricing in Malta — From €199",
-    intro: "Our 3-in-1 Body Sculpt Protocol bundles everything you need for visible results into one transparent package price.",
-    items: [
-      {
-        name: "3-in-1 Body Sculpt Protocol",
-        price: "€199",
-        desc: "4x EMSculpt NEO sessions, 4x spa & fitness access, Tanita body scan, €25 clinic credit, complimentary parking.",
-      },
-      {
-        name: "Individual EMSculpt NEO Session",
-        price: "From €99",
-        desc: "Single session targeting one area — abdomen, glutes, thighs, or arms. Book a consultation to confirm suitability.",
-      },
-    ],
+  patientVideos: {
+    title: "Real people, real reviews",
+    videos: ["/assets/treatments/vid-muscle-stimulation-1.mp4"],
   },
 
-  faqTitle: "Frequently Asked Questions About Muscle Stimulation in Malta",
+  faqTitle: "Frequently asked questions",
   faq: [
     {
       q: "1. What is included in the EMS Neo Ultimate 3-in-1 Body Sculpt Protocol?",

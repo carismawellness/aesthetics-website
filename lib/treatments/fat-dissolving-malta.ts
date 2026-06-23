@@ -4,7 +4,7 @@ const t: Treatment = {
   slug: "fat-dissolving-malta",
   category: "Face",
   hero: {
-    title: "Fat Dissolving Injections Malta — Clinically Proven Results",
+    title: "Fat dissolving",
     subtitle: "Are you tired of dealing with stubborn localised fat?",
     body: "Embrace a new you with our reliable and impactful localized fat reduction solutions in Malta! Our knowledgeable team is focused on helping you realise a more contoured and youthful version of yourself, without the drawbacks of surgical alternatives.",
     prices: [
@@ -24,7 +24,7 @@ const t: Treatment = {
     { metric: "Results Visible In", detail: "2 weeks or more" },
     { metric: "Anaesthetic", detail: "None" },
   ],
-  beforeAfterTitle: "Real Fat Dissolving Results — Before and After in Malta",
+  beforeAfterTitle: "fat dissolving results",
   beforeAfter: [
     {
       before: "/assets/treatments/fat-dissolving-malta-ba1-before.jpg",
@@ -53,7 +53,7 @@ const t: Treatment = {
     },
   ],
   precision: {
-    title: "Treatment Areas — Where Fat Dissolving Works Best",
+    title: "precision areas of refinement",
     intro: "This treatment targets localised fat deposits that resist diet and exercise. Below are the areas most commonly treated.",
     areas: [
       {
@@ -86,7 +86,7 @@ const t: Treatment = {
     additional: "Upper arms, inner thighs, flanks, bra fat, knee area, abdomen",
   },
   suitability: {
-    title: "Who Is a Good Candidate for Fat Dissolving?",
+    title: "Is this suitable for you?",
     intro: "Fat dissolving targets small, stubborn pockets of fat that resist diet and exercise. It is a contouring treatment, not a weight loss solution. Realistic expectations and a consultation ensure this is the right fit for your goals.",
     suitableFor: [
       "You have a localised area of stubborn fat, such as under the chin or jawline",
@@ -104,25 +104,25 @@ const t: Treatment = {
     ],
   },
   experience: {
-    title: "How Do Fat Dissolving Injections Work?",
+    title: "Your treatment experience",
     steps: [
       {
-        title: "Step 1 — Your Consultation",
+        title: "personalised consultation",
         desc: "We assess your facial anatomy, skin condition, medical history, and botox goals with one of our doctors.",
         image: "/assets/treatments/fat-dissolving-malta-step1.png",
       },
       {
-        title: "Step 2 — Your Treatment Plan",
+        title: "Structured Plan",
         desc: "Your doctor designs a medically guided botox plan tailored to your facial structure and desired outcome.",
         image: "/assets/treatments/fat-dissolving-malta-step2.png",
       },
       {
-        title: "Step 3 — Targeted Injections",
+        title: "Targeted Treatments",
         desc: "Your doctor administers botox using fine, precise injections, quick, comfortable, and no downtime.",
         image: "/assets/treatments/fat-dissolving-malta-step3.png",
       },
       {
-        title: "Step 4 — Review and Adjustment",
+        title: "Ongoing Review & Adjustment",
         desc: "Your doctor monitors your response and refines the plan to ensure natural botox results over time.",
         image: "/assets/treatments/fat-dissolving-malta-step4.png",
       },
@@ -131,7 +131,7 @@ const t: Treatment = {
   },
   prepAftercare: {
     kicker: "PREPARATION & AFTERCARE",
-    title: "Aftercare and Recovery After Fat Dissolving",
+    title: "Your session, step by step",
     intro: "Targeted contouring works best with the right preparation. Here is how to support your treatment journey.",
     cards: [
       {
@@ -170,7 +170,7 @@ const t: Treatment = {
     ],
   },
   trusted: {
-    title: "Medically Qualified Practitioners — Safe Fat Dissolving in Malta",
+    title: "Malta's trusted clinic for fat dissolving",
     subtitle: "DOCTOR-LED fat dissolving IN MALTA",
     asSeenOn: [
       "/assets/press/lovin-malta.jpeg",
@@ -207,7 +207,7 @@ const t: Treatment = {
   },
   difference: {
     kicker: "the carisma difference",
-    title: "Why Malta Chooses Carisma Aesthetics for Fat Dissolving",
+    title: "Malta's #1 leading wellness chain",
     commitmentTitle: "our commitment",
     commitment: [
       "Natural, refined fat dissolving results,  never overdone, never frozen",
@@ -215,7 +215,7 @@ const t: Treatment = {
       "Safe, ethical care using clinically approved products",
       "A personalised journey from consultation to aftercare",
     ],
-    whyTitle: "Our Doctor-Led Approach",
+    whyTitle: "WHY MALTA CHOOSES Carisma for fat dissolving",
     why: [
       "Created by the team behind Malta's leading spa and medical aesthetics centres",
       "Doctor-led fat dissolving treatments with a focus on safety and long-term results",
@@ -226,7 +226,7 @@ const t: Treatment = {
   },
   bookingForm: { title: "BOOK YOUR fat dissolving APPOINTMENT TODAY" },
   recommended: {
-    title: "Treatments That Complement Fat Dissolving Injections",
+    title: "Recommended with fat dissolving",
     items: [
       {
         label: "Dermal fillers",
@@ -245,7 +245,7 @@ const t: Treatment = {
       },
     ],
   },
-  faqTitle: "Have Questions About Fat Dissolving Injections in Malta?",
+  faqTitle: "Frequently asked questions",
   faq: [
     {
       q: "What can I expect during a Fat Dissolving treatment?",
@@ -264,11 +264,11 @@ const t: Treatment = {
       a: "Results from Fat Dissolving treatments typically become noticeable within two to four weeks after your initial treatment session. It's important to remember that multiple sessions may be needed to achieve your desired results, and the number of sessions will depend on the amount of fat being treated and your individual response to the treatment.",
     },
     {
-      q: "How Long Do Fat Dissolving Results Last?",
+      q: "How long do the results of Fat Dissolving?",
       a: "The great thing about our Fat Dissolving is that the results are long-lasting. Once the fat cells under the treated areas are destroyed, they cannot store or accumulate fat again. As long as you maintain a stable weight, your treatments results should be permanent.",
     },
     {
-      q: "What Are the Side Effects of Fat Dissolving?",
+      q: "Are there any side effects or risks associated with Fat Dissolving?",
       a: "As with any cosmetic treatment, there can be side effects and risks associated with Fat Dissolving. Common side effects include swelling, bruising, redness, and discomfort at the injection site. In rare cases, more serious complications may occur, such as nerve injury that can cause an uneven smile or facial muscle weakness (when applied on under chin fat). It's essential to consult with a qualified practitioner to minimise risks and ensure proper treatment.",
     },
     {

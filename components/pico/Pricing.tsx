@@ -14,7 +14,7 @@ export default function Pricing() {
   return (
     <section aria-labelledby="pricing-heading" style={{ padding: "60px 0" }}>
       <div className="container text-center">
-        <Serif>Pico Laser Tattoo Removal Pricing in Malta — From €79</Serif>
+        <Serif>Pico laser tattoo removal pricing</Serif>
         <p
           id="pricing-heading"
           className="sr-only"

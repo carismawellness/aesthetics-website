@@ -11,8 +11,7 @@ export type Faq = { q: string; a: string };
 
 export type FaceTreatment = {
   slug: string;
-  name: string;           // short label — reused in breadcrumbs, alt text, CTAs, schema
-  h1?: string;            // SEO-optimised hero <h1> (keyword + Malta); falls back to `${name} in Malta`
+  name: string;
   category: "Face";
   tagline: string;        // 1-line listing-card descriptor
   eyebrow: string;        // hero trust line
@@ -73,7 +72,6 @@ export const faceTreatments: FaceTreatment[] = [
   {
     slug: "dermal-fillers",
     name: "Dermal Fillers",
-    h1: "Dermal Fillers for Facial Volume & Contour in Malta",
     category: "Face",
     tagline: "Restore lost volume and redefine contour with soft, natural results.",
     eyebrow: "Premium injectable artistry",
@@ -109,7 +107,6 @@ export const faceTreatments: FaceTreatment[] = [
   {
     slug: "microneedling",
     name: "Microneedling",
-    h1: "Microneedling Facials in Malta — Smoother, Refined Skin",
     category: "Face",
     tagline: "Stimulate your own collagen to refine texture, pores and scarring.",
     eyebrow: "Collagen induction therapy",
@@ -145,7 +142,6 @@ export const faceTreatments: FaceTreatment[] = [
   {
     slug: "chemical-peels",
     name: "Chemical Peels",
-    h1: "Chemical Peel Facials in Malta — Resurface & Renew Skin",
     category: "Face",
     tagline: "Resurface the skin to even tone, brighten and refine.",
     eyebrow: "Medical-grade resurfacing",
@@ -181,7 +177,6 @@ export const faceTreatments: FaceTreatment[] = [
   {
     slug: "lip-fillers",
     name: "Lip Fillers",
-    h1: "Lip Enhancement in Malta — Subtle, Natural Lip Fillers",
     category: "Face",
     tagline: "Define, hydrate and balance with a result that looks like you.",
     eyebrow: "Subtle lip enhancement",
@@ -217,7 +212,6 @@ export const faceTreatments: FaceTreatment[] = [
   {
     slug: "collagen-stimulator",
     name: "Collagen Stimulator",
-    h1: "Collagen Stimulators in Malta — Sculptra Bio-Remodelling",
     category: "Face",
     tagline: "A gradual, structural lift that rebuilds firmness from within.",
     eyebrow: "Bio-stimulating regeneration",
@@ -253,7 +247,6 @@ export const faceTreatments: FaceTreatment[] = [
   {
     slug: "wrinkle-relaxing",
     name: "Wrinkle Relaxing",
-    h1: "Anti-Wrinkle Injections in Malta — Soften Lines Naturally",
     category: "Face",
     tagline: "Soften dynamic lines while keeping natural expression.",
     eyebrow: "Anti-wrinkle injectables",
@@ -289,7 +282,6 @@ export const faceTreatments: FaceTreatment[] = [
   {
     slug: "mesotherapy",
     name: "Mesotherapy",
-    h1: "Facial Mesotherapy in Malta — Nourish & Brighten Skin",
     category: "Face",
     tagline: "Micro-infusions of vitamins and hydration for visible glow.",
     eyebrow: "Skin nutrition & glow",
@@ -324,7 +316,6 @@ export const faceTreatments: FaceTreatment[] = [
   {
     slug: "thread-lift",
     name: "Thread Lift",
-    h1: "PDO Thread Lift in Malta — Lift & Tighten Without Surgery",
     category: "Face",
     tagline: "A non-surgical lift that redefines contour and firmness.",
     eyebrow: "Non-surgical lifting",
@@ -372,5 +363,5 @@ export const FACE_LISTING = {
   title: "Considered facial aesthetics, led by medical expertise",
   subhead:
     "A curated range of advanced face treatments — from injectable artistry to skin regeneration — each delivered with a careful, doctor-led approach and a single goal: results that look refined, balanced and unmistakably you.",
-  gridHeading: "Our Face Treatments in Malta",
+  gridHeading: "Explore our face treatments",
 };

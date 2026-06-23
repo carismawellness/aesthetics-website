@@ -85,7 +85,7 @@ export default function WhyGiftStrip() {
               marginBottom: "8px",
             }}
           >
-            What Is Included in a Carisma Gift Card?
+            Why a Carisma Gift
           </h2>
         </Reveal>
         <Reveal delay={70}>

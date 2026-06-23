@@ -2,7 +2,7 @@ import { BlogPost } from '../blog-types';
 
 const post: BlogPost = {
   slug: 'anti-wrinkle-injections-guide',
-  title: 'Anti-Wrinkle Injections Malta — Results, Safety and What to Expect',
+  title: 'Anti-Wrinkle Injections: Everything You Need to Know',
   metaTitle: 'Anti-Wrinkle Injections Malta | Carisma Aesthetics',
   metaDescription:
     'Discover how anti-wrinkle injections work, what areas can be treated, how long results last, and what to expect at Carisma Aesthetics Malta.',
@@ -16,11 +16,16 @@ const post: BlogPost = {
     {
       type: 'heading',
       level: 2,
-      text: 'What Are Anti-Wrinkle Injections and How Do They Work?',
+      text: 'What Are Anti-Wrinkle Injections?',
     },
     {
       type: 'paragraph',
       html: 'Anti-wrinkle injections — commonly known as Botox — use a purified protein called botulinum toxin to temporarily relax specific facial muscles. When those muscles contract repeatedly over years of smiling, frowning, and squinting, they create dynamic wrinkles: the lines you see when your face is moving. By gently interrupting the nerve signals that tell those muscles to contract, anti-wrinkle injections smooth existing lines and prevent new ones from forming. The treatment has been used safely in clinical settings for more than 30 years and remains one of the most evidence-backed procedures in aesthetic medicine. At <a href="/wrinkle-relaxing-malta" style="color:var(--teal);text-decoration:underline;">Anti-Wrinkle Treatments</a> at Carisma Aesthetics, every session is performed by a qualified doctor who specialises in facial anatomy — so your results are precise, natural, and never overdone.',
+    },
+    {
+      type: 'heading',
+      level: 2,
+      text: 'How Do Anti-Wrinkle Injections Work?',
     },
     {
       type: 'paragraph',
@@ -29,7 +34,7 @@ const post: BlogPost = {
     {
       type: 'heading',
       level: 2,
-      text: 'Which Areas Does Botox Treat? — Face, Neck and Body',
+      text: 'Which Areas Can Be Treated?',
     },
     {
       type: 'paragraph',
@@ -58,11 +63,16 @@ const post: BlogPost = {
     {
       type: 'heading',
       level: 2,
-      text: 'Your Results — What to Expect and How Long They Last',
+      text: 'What Results Can You Expect?',
     },
     {
       type: 'paragraph',
       html: 'Most patients notice a visible softening of lines within three to five days, with full results settling in at around two weeks. The treated areas look smoother and more relaxed, while your natural expressions remain intact. The goal at Carisma is never to "freeze" your face — it is to create a refreshed, rested version of you that still moves naturally. Results typically last three to four months, after which a maintenance appointment keeps the look consistent. Over the long term, many regular patients require slightly less product per session as the muscles adapt.',
+    },
+    {
+      type: 'heading',
+      level: 2,
+      text: 'Is the Treatment Painful?',
     },
     {
       type: 'paragraph',
@@ -71,11 +81,16 @@ const post: BlogPost = {
     {
       type: 'heading',
       level: 2,
-      text: 'Safety, Side Effects and Who Is a Good Candidate',
+      text: 'Are There Any Side Effects?',
     },
     {
       type: 'paragraph',
       html: 'When performed by a qualified practitioner, anti-wrinkle injections are very safe. The most common side effects are temporary and mild: slight redness, minor swelling, or tenderness at the injection site, all of which typically resolve within 24 to 48 hours. Bruising is possible but uncommon, and can be minimised by avoiding blood-thinning medications and alcohol for 24 hours before treatment. Rare side effects such as temporary eyelid heaviness are almost always the result of incorrect placement — which is why choosing a medically qualified, experienced injector matters enormously. At Carisma, every treatment is doctor-led and conducted within a clinical environment, giving you maximum confidence in both safety and outcome.',
+    },
+    {
+      type: 'heading',
+      level: 2,
+      text: 'Who Is a Good Candidate?',
     },
     {
       type: 'paragraph',
@@ -84,11 +99,16 @@ const post: BlogPost = {
     {
       type: 'heading',
       level: 2,
-      text: 'Preparation, Aftercare and Combining Botox Treatments',
+      text: 'How to Prepare and What to Do Afterwards',
     },
     {
       type: 'paragraph',
       html: 'Preparation is simple. In the 24 hours before your session, avoid alcohol and blood-thinning supplements such as fish oil, vitamin E, and aspirin (unless medically prescribed). Pause strenuous exercise the day before. Arrive with a clean face and be ready to share your full medical history with your doctor. After treatment, avoid touching or massaging the injected areas for 24 hours, stay upright for the first four hours, and skip heavy exercise, alcohol, and saunas for 24 to 48 hours. These small precautions help the product settle where it was placed and ensure optimal results.',
+    },
+    {
+      type: 'heading',
+      level: 2,
+      text: 'Combining Anti-Wrinkle Injections with Other Treatments',
     },
     {
       type: 'paragraph',
@@ -97,11 +117,16 @@ const post: BlogPost = {
     {
       type: 'heading',
       level: 2,
-      text: 'Medically Qualified Practitioners — Botox Pricing in Malta',
+      text: 'How Much Do Anti-Wrinkle Injections Cost in Malta?',
     },
     {
       type: 'paragraph',
       html: 'At Carisma Aesthetics, pricing is transparent and straightforward. Targeted single treatments such as a lip flip, gummy smile correction, or chin start from €59. Single-area treatments — forehead, frown lines, or crow\'s feet — start from €139. Full upper face or a Nefertiti neck lift starts from €249, and hyperhidrosis treatment starts from €399. If you attend treatments regularly, the <a href="/membership" style="color:var(--teal);text-decoration:underline;">Carisma Membership</a> programme offers exclusive savings and priority booking across all our aesthetic services. Exact pricing is confirmed at your consultation based on the number of units required for your unique anatomy.',
+    },
+    {
+      type: 'heading',
+      level: 2,
+      text: 'Why Choose Carisma Aesthetics for Anti-Wrinkle Injections in Malta?',
     },
     {
       type: 'paragraph',

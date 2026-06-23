@@ -28,8 +28,8 @@ export default function FaceTreatmentsPage() {
         badge="#1 Voted Med-Aesthetics Clinic"
         eyebrow={FACE_LISTING.eyebrow}
         headline={[
-          { text: "Face Treatments in Malta" },
-          { text: "— Medically Led Aesthetic Care", em: true },
+          { text: "Considered facial aesthetics" },
+          { text: "in Malta", em: true },
         ]}
         sub={FACE_LISTING.subhead}
         primaryCta={{ text: "Book Free Consultation", href: "/consultation" }}
@@ -71,7 +71,7 @@ export default function FaceTreatmentsPage() {
       </section>
 
       <CtaBanner
-        heading="Book Your Face Treatment Consultation in Malta Today"
+        heading="Not sure where to begin?"
         sub="Every plan starts with an honest, no-pressure consultation. We will assess your skin and goals and recommend only what will genuinely help."
         buttonLabel="Book a Consultation"
       />

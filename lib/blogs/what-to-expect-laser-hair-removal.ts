@@ -2,7 +2,7 @@ import { BlogPost } from '../blog-types';
 
 export const post: BlogPost = {
   slug: 'what-to-expect-laser-hair-removal',
-  title: 'Laser Hair Removal Malta — What to Expect at Your First Session',
+  title: 'What to Expect From Your First Laser Hair Removal Session',
   metaTitle: 'First Laser Hair Removal Session | Carisma Aesthetics Malta',
   metaDescription:
     'Nervous about your first laser hair removal session in Malta? Learn what to expect before, during and after — SHR® technology makes it virtually painless.',
@@ -20,7 +20,7 @@ export const post: BlogPost = {
     {
       type: 'heading',
       level: 2,
-      text: 'Why Laser Hair Removal Beats Waxing and Shaving Long-Term',
+      text: 'Why Laser Hair Removal Is Worth It',
     },
     {
       type: 'paragraph',
@@ -33,7 +33,7 @@ export const post: BlogPost = {
     {
       type: 'heading',
       level: 2,
-      text: 'How to Prepare for Your Laser Hair Removal Appointment',
+      text: 'Before Your Session: How to Prepare',
     },
     {
       type: 'paragraph',
@@ -57,7 +57,7 @@ export const post: BlogPost = {
     {
       type: 'heading',
       level: 2,
-      text: 'What Happens During Your Laser Hair Removal Session',
+      text: 'What Happens During the Session',
     },
     {
       type: 'paragraph',
@@ -88,7 +88,7 @@ export const post: BlogPost = {
     {
       type: 'heading',
       level: 2,
-      text: 'Aftercare at Carisma Aesthetics Malta — What Comes Next',
+      text: 'After Your Session: What to Expect',
     },
     {
       type: 'paragraph',
@@ -137,7 +137,7 @@ export const post: BlogPost = {
     {
       type: 'heading',
       level: 2,
-      text: 'Our Laser Hair Removal Guarantee — Visible Results or It Is Free',
+      text: 'Our Guarantee',
     },
     {
       type: 'paragraph',
@@ -150,7 +150,7 @@ export const post: BlogPost = {
     {
       type: 'heading',
       level: 2,
-      text: 'Book Your Laser Hair Removal Consultation in Malta Today',
+      text: 'Ready to Book?',
     },
     {
       type: 'paragraph',

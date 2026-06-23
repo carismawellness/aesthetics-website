@@ -2,7 +2,7 @@ import { BlogPost } from '../blog-types';
 
 export const post: BlogPost = {
   slug: 'how-does-pico-laser-tattoo-removal-work',
-  title: 'Pico Laser Tattoo Removal Malta — How It Works and What to Expect',
+  title: 'How Does Pico Laser Tattoo Removal Work?',
   metaTitle: 'Pico Laser Tattoo Removal Malta | Carisma Aesthetics',
   metaDescription:
     'Discover how Pico Laser shatters tattoo ink in picoseconds — faster and safer than older lasers. Expert tattoo removal at Carisma Aesthetics Malta.',
@@ -16,7 +16,7 @@ export const post: BlogPost = {
     {
       type: 'heading',
       level: 2,
-      text: 'What Is Pico Laser Tattoo Removal Technology?',
+      text: 'What Is Pico Laser Technology?',
     },
     {
       type: 'paragraph',
@@ -25,7 +25,7 @@ export const post: BlogPost = {
     {
       type: 'heading',
       level: 2,
-      text: 'How Pico Laser Shatters Tattoo Ink — The Photomechanical Effect',
+      text: 'The Science Behind Ink Shattering',
     },
     {
       type: 'paragraph',
@@ -47,7 +47,7 @@ export const post: BlogPost = {
     {
       type: 'heading',
       level: 2,
-      text: 'Which Ink Colours Can Pico Laser Remove?',
+      text: 'Which Ink Colours Can Pico Laser Treat?',
     },
     {
       type: 'paragraph',
@@ -71,7 +71,7 @@ export const post: BlogPost = {
     {
       type: 'heading',
       level: 2,
-      text: 'How Many Sessions Does Pico Laser Removal Take?',
+      text: 'How Many Sessions Will I Need?',
     },
     {
       type: 'paragraph',
@@ -96,7 +96,7 @@ export const post: BlogPost = {
     {
       type: 'heading',
       level: 2,
-      text: 'What to Expect at Carisma Aesthetics Malta — Your Treatment Journey',
+      text: 'What Does a Pico Laser Session Feel Like?',
     },
     {
       type: 'paragraph',
@@ -108,8 +108,8 @@ export const post: BlogPost = {
     },
     {
       type: 'heading',
-      level: 3,
-      text: 'Aftercare: Between Your Pico Laser Sessions',
+      level: 2,
+      text: 'Aftercare: What You Must Do Between Sessions',
     },
     {
       type: 'paragraph',
@@ -129,7 +129,7 @@ export const post: BlogPost = {
     },
     {
       type: 'heading',
-      level: 3,
+      level: 2,
       text: 'Is Pico Laser Safe for All Skin Tones?',
     },
     {
@@ -138,8 +138,8 @@ export const post: BlogPost = {
     },
     {
       type: 'heading',
-      level: 3,
-      text: 'Pico Laser vs. Traditional Nanosecond Lasers',
+      level: 2,
+      text: 'Pico Laser vs. Traditional Laser Removal',
     },
     {
       type: 'paragraph',
@@ -163,8 +163,8 @@ export const post: BlogPost = {
     },
     {
       type: 'heading',
-      level: 3,
-      text: 'Complementary Treatments After Removal',
+      level: 2,
+      text: 'Combining Tattoo Removal with Other Skin Treatments',
     },
     {
       type: 'paragraph',
@@ -172,8 +172,8 @@ export const post: BlogPost = {
     },
     {
       type: 'heading',
-      level: 3,
-      text: 'Who Is a Good Candidate for Pico Laser?',
+      level: 2,
+      text: 'Who Is a Good Candidate for Pico Laser Tattoo Removal?',
     },
     {
       type: 'paragraph',

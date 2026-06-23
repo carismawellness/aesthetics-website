@@ -20,7 +20,7 @@ export default function Secure() {
           {/* LEFT: heading, copy, CTA */}
           <div>
             <Serif id="secure-heading" style={{ textAlign: "left" }}>
-              Book Your Pico Laser Tattoo Removal Consultation in Malta Today
+              Secure Your Pico Laser Tattoo Removal Consultation Today
             </Serif>
             {PARAGRAPHS.map((p, i) => (
               <p

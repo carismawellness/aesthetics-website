@@ -7,7 +7,7 @@ export const antiCellulite: PackageContent = {
   liveUrl: 'https://www.carismaslimming.com/anti-cellulite',
 
   heroEyebrow: 'ADVANCED CELLULITE SMOOTHING',
-  heroTitle: 'Anti-Cellulite Treatment with VelaShape',
+  heroTitle: 'cellulift & contour protocol',
   heroSubheading: 'smooth stubborn cellulite and uneven texture with precision',
   heroDescription:
     'Our cellulite protocol combines three VelaShape vacuum roller sessions with one lymphatic drainage massage to elminate cellulite, uneven texture, and boost circulation:',

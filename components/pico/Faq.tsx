@@ -179,7 +179,7 @@ export default function Faq() {
                 lineHeight: 1.3,
               }}
             >
-              What Should You Know Before Pico Laser Tattoo Removal?
+              Frequently asked questions
             </h2>
             <div style={{ position: "relative", width: "280px", maxWidth: "100%" }}>
               <label htmlFor="faq-search" className="sr-only">

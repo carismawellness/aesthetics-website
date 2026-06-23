@@ -36,7 +36,7 @@ export default function GiftFaq() {
               fontWeight: 400,
             }}
           >
-            Frequently Asked Questions About Our Gift Cards
+            Gifting questions, answered
           </h2>
 
           <p

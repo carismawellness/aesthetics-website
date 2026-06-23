@@ -7,7 +7,7 @@ export const muscleStimulation: PackageContent = {
   liveUrl: 'https://www.carismaslimming.com/muscle-stimulation',
 
   heroEyebrow: 'EMSculpt NEO MALTA',
-  heroTitle: 'EMSculpt NEO Muscle Stimulation',
+  heroTitle: '3 in 1 body sculpt protocol',
   heroSubheading: 'Stronger, tighter, more defined in 4 focused sessions.',
   heroDescription:
     'Our 3-1 course with EMSculpt NEO with HIFEM + RF gives you the effect of 20,000 sit ups per session, burns local fat and tightens the skin resulting in 30% Fat reduction, 25% Muscle growth & 29% Muscle strength',

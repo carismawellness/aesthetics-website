@@ -25,7 +25,7 @@ export default function Commitment() {
       style={{ padding: "40px 0 60px", background: "#ffffff" }}
     >
       <div className="container">
-        <Serif>How Pico Laser Technology Breaks Down Tattoo Ink</Serif>
+        <Serif>35+ years helping Malta feel confident.</Serif>
         <p id="commitment-heading" className="sr-only">
           Our commitment to safe, expert pico laser tattoo removal
         </p>

@@ -132,7 +132,7 @@ export default function GlowGuarantee() {
               margin: "22px 0 0",
             }}
           >
-            Your Glow Club Guarantee — Join with Confidence in Malta
+            The Glow Guarantee
           </h2>
 
           <div
