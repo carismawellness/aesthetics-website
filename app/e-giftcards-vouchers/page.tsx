@@ -3,7 +3,6 @@ import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import PageHero from "@/components/PageHero";
 import WhyGiftStrip from "@/components/gifts/WhyGiftStrip";
-import GiftSocialProof from "@/components/gifts/GiftSocialProof";
 import GiftHowItWorks from "@/components/gifts/GiftHowItWorks";
 import GiftFaq from "@/components/gifts/GiftFaq";
 import GiftFinalCta from "@/components/gifts/GiftFinalCta";
@@ -288,9 +287,6 @@ export default function GiftsPage() {
             </p>
           </div>
         </section>
-
-        {/* ===== SOCIAL PROOF — real 4.9★ / 200+ reviews ===== */}
-        <GiftSocialProof />
 
         {/* ===== HOW IT WORKS — 3 steps + redemption (hero secondary CTA anchor) ===== */}
         <div id="how-it-works" style={{ scrollMarginTop: "var(--nav-clear)" }}>
