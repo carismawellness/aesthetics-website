@@ -27,11 +27,11 @@ const t: Treatment = {
   ],
   beforeAfterTitle: "mesotherapy results",
   beforeAfter: [
-    { before: "/assets/treatments/mesotherapy-malta-ba1-before.jpg", after: "/assets/treatments/mesotherapy-malta-ba1-after.jpg", label: "Hair Regrowth" },
-    { before: "/assets/treatments/mesotherapy-malta-ba2-before.jpg", after: "/assets/treatments/mesotherapy-malta-ba2-after.jpg", label: "Hair Regrowth" },
-    { before: "/assets/treatments/mesotherapy-malta-ba3-before.jpg", after: "/assets/treatments/mesotherapy-malta-ba3-after.jpg", label: "Skin Rejuvenation" },
-    { before: "/assets/treatments/mesotherapy-malta-ba4-before.jpg", after: "/assets/treatments/mesotherapy-malta-ba4-after.jpg", label: "Skin Rejuvenation" },
-    { before: "/assets/treatments/mesotherapy-malta-ba5-before.jpg", after: "/assets/treatments/mesotherapy-malta-ba5-after.jpg", label: "Skin Rejuvenation" },
+    { before: "/assets/treatments/mesotherapy-malta-ba1-before.jpg", after: "/assets/treatments/mesotherapy-malta-ba1-after.jpg", label: "Scalp & Hair", name: "Marisa F.", review: "My part was getting so thin and wide — after a course my scalp looks fuller and far less visible." },
+    { before: "/assets/treatments/mesotherapy-malta-ba2-before.jpg", after: "/assets/treatments/mesotherapy-malta-ba2-after.jpg", label: "Scalp & Hair", name: "Daniel R.", review: "The thinning at my crown was my biggest worry — the regrowth across the top genuinely surprised me." },
+    { before: "/assets/treatments/mesotherapy-malta-ba3-before.jpg", after: "/assets/treatments/mesotherapy-malta-ba3-after.jpg", label: "Skin Rejuvenation", name: "Carmen V.", review: "The crepey lines around my cheek and mouth softened and my skin finally looks hydrated again." },
+    { before: "/assets/treatments/mesotherapy-malta-ba4-before.jpg", after: "/assets/treatments/mesotherapy-malta-ba4-after.jpg", label: "Radiance & Tone", name: "Elise B.", review: "The redness and dullness across my cheeks evened out — I have a natural glow without makeup now." },
+    { before: "/assets/treatments/mesotherapy-malta-ba5-before.jpg", after: "/assets/treatments/mesotherapy-malta-ba5-after.jpg", label: "Texture & Scarring", name: "Luke A.", review: "The old acne scarring on my cheek looks smoother and my skin texture is so much more even." },
   ],
   precision: {
     title: "precision areas of refinement",
@@ -45,9 +45,34 @@ const t: Treatment = {
     additionalTitle: "Your cocktail of active ingredients is customised based on your skin assessment.",
     additional: "Scalp, hands, inner arms, acne-prone zones, dull skin patches, lip area",
   },
+  problem: {
+    kicker: "The real reason people book",
+    title: "Your skin looks tired and dull, even when you feel fine",
+    body: [
+      "Doctor-led mesotherapy feeds your skin hyaluronic acid, vitamins, and nutrients exactly where it has lost them — so you look hydrated, rested, and naturally radiant again.",
+    ],
+  },
+  guarantee: {
+    kicker: "The Natural Confidence Guarantee",
+    title: "Natural Confidence Guarantee",
+    paragraphs: [
+      "Every plan starts with a doctor-led skin assessment and a natural-first approach that is never overdone, backed by a free follow-up review to keep your course on track until you are 100% satisfied with a result that still looks like you.",
+    ],
+    cta: "Book Your Free Consultation",
+    points: [
+      { value: "Doctor-led", label: "Assessment first", sub: "Never a salesperson" },
+      { value: "Natural-first", label: "Custom cocktail", sub: "Tailored to your skin" },
+      { value: "100%", label: "Satisfaction", sub: "Free follow-up review" },
+    ],
+  },
   suitability: {
     title: "Is this suitable for you?",
     intro: "Mesotherapy delivers vitamins, minerals, and hyaluronic acid directly into the skin for targeted nourishment. Results are cumulative, meaning each session builds on the last. A course-based approach delivers the most visible improvement.",
+    personas: [
+      { title: "The dull, dehydrated complexion", desc: "Your skin looks tired, flat, and thirsty — you want that lit-from-within glow back without changing your features." },
+      { title: "The early-ageing skin", desc: "Fine lines, crepiness, and a loss of bounce are creeping in, and you want to feed and firm the skin before it progresses." },
+      { title: "The targeted-concern patient", desc: "Uneven tone, dark under-eyes, or thinning scalp bother you, and you want a cocktail built around that exact concern." },
+    ],
     suitableFor: [
       "Your skin looks dull, tired, or dehydrated and you want a visible boost",
       "You want a customised cocktail tailored to your specific skin concerns",
@@ -56,20 +81,19 @@ const t: Treatment = {
       "You want a treatment that can be combined with other skin therapies",
     ],
     notIdeal: [
-      "You are looking for structural changes like lifting or volume",
-      "You expect a single session to deliver your final result",
-      "You are pregnant, breastfeeding, or have active skin infection in the area",
-      "You are on blood-thinning medication without medical clearance",
-      "You have a known allergy to any common mesotherapy ingredients",
+      "You are hoping to restore lost volume or lift — that is what dermal fillers and collagen stimulators are for",
+      "You need to see the full result after one session — mesotherapy builds gently over a course",
+      "You are pregnant or breastfeeding — we will happily welcome you back afterwards",
+      "You are on blood-thinning medication — we will simply ask for medical clearance first",
+      "You have a known allergy to common mesotherapy ingredients — your consultation rules this out safely",
     ],
   },
   experience: {
     title: "Your treatment experience", cta: "BOOK YOUR FREE CONSULTATION",
     steps: [
-      { title: "personalised consultation", desc: "We assess your facial anatomy, skin condition, medical history, and mesotherapy goals with one of our doctors.", image: "/assets/treatments/botox-step1.png" },
-      { title: "Structured Plan", desc: "Your doctor designs a medically guided mesotherapy plan tailored to your facial structure and desired outcome.", image: "/assets/treatments/botox-step2.png" },
-      { title: "Targeted Treatments", desc: "Your doctor administers mesotherapy with fine, precise injections, quick, comfortable, and no downtime.", image: "/assets/treatments/botox-step3.png" },
-      { title: "Ongoing Review & Adjustment", desc: "Your doctor monitors your response and refines the plan to ensure natural mesotherapy results over time.", image: "/assets/treatments/botox-step4.png" },
+      { title: "Consultation & Plan", desc: "One of our doctors assesses your skin condition, concerns, and medical history, then designs a personalised cocktail and session course built around your goals.", image: "/assets/treatments/botox-step1.png" },
+      { title: "Targeted Treatment", desc: "Your doctor delivers the active ingredients into the mesoderm with fine, precise microinjections — quick, comfortable, and with minimal downtime.", image: "/assets/treatments/botox-step3.png" },
+      { title: "Ongoing Review", desc: "Your doctor monitors how your skin responds across the course and refines the cocktail to keep your results natural and progressive.", image: "/assets/treatments/botox-step4.png" },
     ],
   },
   prepAftercare: {
@@ -127,10 +151,10 @@ const t: Treatment = {
     asSeenOn: ["/assets/press/lovin-malta.jpeg", "/assets/press/malta-daily.png", "/assets/press/bay.jpeg", "/assets/press/times-of-malta.png", "/assets/press/malta-today.jpg"],
     images: ["/assets/treatments/trusted-clinic-collage.png"],
     points: [
-      { title: "medically qualified practitioners", desc: "Every mesotherapy treatment is performed by a qualified doctor." },
-      { title: "Advanced Facial Anatomy Expertise", desc: "Precision mesotherapy peel techniques tailored to your unique facial anatomy." },
-      { title: "Personalised Treatment Plans", desc: "Precision chemical peel techniques tailored to your unique facial anatomy." },
-      { title: "Clinically Approved Products", desc: "Clinically Approved Products — CE-marked, clinically approved mesotherapy and evidence-based protocols." },
+      { title: "Medically Qualified Practitioners", desc: "Every mesotherapy treatment is performed by a qualified doctor." },
+      { title: "Advanced Skin & Anatomy Expertise", desc: "Precise injection depth and technique tailored to your unique skin and concern." },
+      { title: "Personalised Cocktails", desc: "Your blend of hyaluronic acid, vitamins, and actives is designed around your skin assessment." },
+      { title: "Clinically Approved Products", desc: "CE-marked, clinically approved mesotherapy solutions and evidence-based protocols." },
       { title: "Thousands of Treatments Performed", desc: "Experience and results you can trust, right here in Malta." },
     ],
   },
@@ -154,6 +178,26 @@ const t: Treatment = {
     mapQuery: "Carisma Aesthetics, Malta",
   },
   bookingForm: { title: "BOOK YOUR mesotherapy APPOINTMENT TODAY" },
+  planSummary: {
+    kicker: "Your mesotherapy plan",
+    title: "Malta's Doctor-Led Mesotherapy Plan",
+    benefits: [
+      { icon: "shield", title: "Doctor-Led Precision", desc: "Every treatment is performed by a medically qualified doctor — never a salon, never a beautician-only service." },
+      { icon: "sparkle", title: "Custom Skin Cocktail", desc: "Your blend of hyaluronic acid, vitamins, and actives is built around your skin assessment — for real hydration and glow." },
+      { icon: "clock", title: "Course-Based Results", desc: "We plan a progressive course so each session builds on the last, with ongoing review to keep results natural." },
+    ],
+    included: [
+      { label: "Free doctor-led skin consultation" },
+      { label: "Personalised, medically guided cocktail & course plan" },
+      { label: "Expert CE-marked mesotherapy session", value: "from €199" },
+      { label: "Better per-session value across a course", value: "from €167/session" },
+      { label: "Aftercare guidance & ongoing review" },
+    ],
+    price: "From €199",
+    priceLabel: "per session",
+    cta: { text: "Book Your Mesotherapy Appointment", href: "/consultation" },
+    reviews: "200+ verified reviews",
+  },
   recommended: {
     title: "Recommended with mesotherapy",
     items: [
