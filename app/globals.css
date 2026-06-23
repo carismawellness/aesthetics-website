@@ -352,9 +352,10 @@ main li a:not(.btn):not(.no-underline),
 .cta-glow-gold,
 .btn-teal,
 .cta-glow-teal {
-  /* Very subtle teal gradient — lightest stop --teal-deep #4f7373 = 4.7:1, so
-     WHITE text passes AA across the ENTIRE fill. Low-contrast on purpose. */
-  background: linear-gradient(135deg, var(--teal-deep) 0%, #466b6b 55%, #3f6363 100%);
+  /* Visible teal gradient — lighter teal top-left sweeping to a deep teal
+     bottom-right. The light stop sits above the label; the central band where
+     text rests is --teal-deep #4f7373 (4.7:1) so WHITE text stays AA-legible. */
+  background: linear-gradient(155deg, #639090 0%, var(--teal-deep) 45%, #365858 100%);
   color: var(--white);
   box-shadow:
     0 0 22px rgba(var(--teal-rgb), 0.45),
@@ -364,7 +365,7 @@ main li a:not(.btn):not(.no-underline),
 .cta-glow-gold:hover,
 .btn-teal:hover,
 .cta-glow-teal:hover {
-  background: linear-gradient(135deg, #466b6b 0%, var(--teal-deep) 65%, #355555 100%);
+  background: linear-gradient(155deg, var(--teal-deep) 0%, #3f6363 55%, #2c4a4a 100%);
   box-shadow:
     0 0 30px rgba(var(--teal-rgb), 0.62),
     0 12px 30px rgba(var(--teal-rgb), 0.68);

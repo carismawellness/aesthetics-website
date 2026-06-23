@@ -99,9 +99,9 @@ export default function GiftCardsSummary() {
             className="mx-auto"
             style={{
               position: "relative",
-              maxWidth: "960px",
+              maxWidth: "1040px",
               width: "100%",
-              height: "clamp(320px, 46vw, 520px)",
+              height: "clamp(380px, 54vw, 640px)",
               marginTop: "clamp(28px, 5vw, 48px)",
             }}
           >
