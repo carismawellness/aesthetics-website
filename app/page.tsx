@@ -35,23 +35,36 @@ export default function HomePage() {
   return (
     <main>
       <Hero />
-      {/* One continuous, intentional canvas for the whole mid-page scroll — a single
-          smooth white→soft-teal→white wash so sections flow into each other with NO
-          hard seams. Each section below is transparent and sits on this one ground;
-          deliberate panels (the Difference card, membership cards, gift scene) are the
-          only intentional accents on top. */}
+      {/* One continuous, intentional canvas for the whole mid-page scroll. The ground
+          is predominantly WHITE (only the faintest teal hint), and the "blue" reads as
+          a few soft teal accent glows sprinkled tastefully down the page — never a
+          heavy wash. Sections below are transparent and sit on this one ground (no hard
+          seams); deliberate panels are the only intentional accents on top. */}
       <div
         style={{
+          position: "relative",
           background:
-            "linear-gradient(180deg, #ffffff 0%, #f3f8f8 10%, #e9f2f2 34%, #eef5f5 60%, #f5fafa 84%, #ffffff 100%)",
+            "linear-gradient(180deg, #ffffff 0%, #fbfdfd 50%, #ffffff 100%)",
         }}
       >
-        <Reveal><ServicesMarquee /></Reveal>
-        <Reveal><WhyMaltaAesthetics /></Reveal>
-        <Reveal><ResultsCommitment /></Reveal>
-        <Reveal><ConsultationProcess /></Reveal>
-        <Reveal><MembershipSummary /></Reveal>
-        <Reveal><GiftCardsSummary /></Reveal>
+        {/* Sprinkled soft-teal accent glows — decorative, behind the content */}
+        <div
+          aria-hidden="true"
+          style={{ position: "absolute", inset: 0, zIndex: 0, pointerEvents: "none", overflow: "hidden" }}
+        >
+          <div style={{ position: "absolute", top: "4%", left: "-8%", width: 460, height: 460, borderRadius: "50%", background: "radial-gradient(circle, rgba(150,178,178,0.16) 0%, rgba(150,178,178,0) 70%)", filter: "blur(40px)" }} />
+          <div style={{ position: "absolute", top: "34%", right: "-10%", width: 520, height: 520, borderRadius: "50%", background: "radial-gradient(circle, rgba(79,115,115,0.10) 0%, rgba(79,115,115,0) 70%)", filter: "blur(50px)" }} />
+          <div style={{ position: "absolute", top: "66%", left: "-6%", width: 420, height: 420, borderRadius: "50%", background: "radial-gradient(circle, rgba(150,178,178,0.13) 0%, rgba(150,178,178,0) 70%)", filter: "blur(44px)" }} />
+          <div style={{ position: "absolute", top: "88%", right: "-4%", width: 380, height: 380, borderRadius: "50%", background: "radial-gradient(circle, rgba(150,178,178,0.10) 0%, rgba(150,178,178,0) 70%)", filter: "blur(40px)" }} />
+        </div>
+        <div style={{ position: "relative", zIndex: 1 }}>
+          <Reveal><ServicesMarquee /></Reveal>
+          <Reveal><WhyMaltaAesthetics /></Reveal>
+          <Reveal><ResultsCommitment /></Reveal>
+          <Reveal><ConsultationProcess /></Reveal>
+          <Reveal><MembershipSummary /></Reveal>
+          <Reveal><GiftCardsSummary /></Reveal>
+        </div>
       </div>
     </main>
   );

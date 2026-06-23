@@ -1,5 +1,5 @@
 import Reveal from "@/components/Reveal";
-import GiftCardSceneMount from "@/components/home/GiftCardSceneMount";
+import GiftHeroCards from "@/components/gifts/GiftHeroCards";
 
 /**
  * GiftCardsSummary — home-page e-gift-voucher section for Carisma Aesthetics.
@@ -91,19 +91,22 @@ export default function GiftCardsSummary() {
           </div>
         </Reveal>
 
-        {/* ── 3D fanned gift cards — the centrepiece ── */}
+        {/* ── Fanned occasion gift cards — the same visual used in the gift-cards
+              page hero (components/gifts/GiftHeroCards). Server-rendered, fits the
+              section, branding fully visible. Square relative stage so the fan
+              never overflows. ── */}
         <Reveal delay={80}>
           <div
             className="mx-auto"
             style={{
               position: "relative",
-              maxWidth: "1040px",
+              maxWidth: "600px",
               width: "100%",
-              height: "clamp(380px, 54vw, 640px)",
-              marginTop: "clamp(28px, 5vw, 48px)",
+              aspectRatio: "1 / 1",
+              marginTop: "clamp(20px, 4vw, 40px)",
             }}
           >
-            <GiftCardSceneMount />
+            <GiftHeroCards />
           </div>
         </Reveal>
 
@@ -115,10 +118,10 @@ export default function GiftCardsSummary() {
           >
             <a
               href={GIFTS_HREF}
-              className="btn-teal font-display"
+              className="btn btn-teal font-display"
               style={{ letterSpacing: "0.1em" }}
             >
-              Shop Gift Vouchers
+              Shop Gift Cards
             </a>
             <p
               style={{
