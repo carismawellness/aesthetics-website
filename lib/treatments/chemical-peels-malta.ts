@@ -26,11 +26,11 @@ const t: Treatment = {
   ],
   beforeAfterTitle: "CHEMICAL PEEL RESULTS",
   beforeAfter: [
-    { before: "/assets/treatments/chemical-peels-malta-ba1-before.png", after: "/assets/treatments/chemical-peels-malta-ba1-after.png", label: "Under-Eye Pigmentation" },
-    { before: "/assets/treatments/chemical-peels-malta-ba2-before.png", after: "/assets/treatments/chemical-peels-malta-ba2-after.png", label: "Acne & Redness" },
-    { before: "/assets/treatments/chemical-peels-malta-ba3-before.png", after: "/assets/treatments/chemical-peels-malta-ba3-after.png", label: "Hyperpigmentation" },
-    { before: "/assets/treatments/chemical-peels-malta-ba4-before.png", after: "/assets/treatments/chemical-peels-malta-ba4-after.png", label: "Pigmentation Spots" },
-    { before: "/assets/treatments/chemical-peels-malta-ba5-before.png", after: "/assets/treatments/chemical-peels-malta-ba5-after.png", label: "Acne Scarring" },
+    { before: "/assets/treatments/chemical-peels-malta-ba1-before.png", after: "/assets/treatments/chemical-peels-malta-ba1-after.png", label: "Under-Eye Pigmentation", name: "Marian C.", review: "The dark patches under my eyes and across my cheeks faded so much — my skin finally looks even and bright again." },
+    { before: "/assets/treatments/chemical-peels-malta-ba2-before.png", after: "/assets/treatments/chemical-peels-malta-ba2-after.png", label: "Acne & Redness", name: "Chloe B.", review: "My breakouts and redness calmed right down — for the first time in years I feel comfortable without makeup." },
+    { before: "/assets/treatments/chemical-peels-malta-ba3-before.png", after: "/assets/treatments/chemical-peels-malta-ba3-after.png", label: "Hyperpigmentation", name: "Daniela R.", review: "The dark spots on my cheek have lifted beautifully — my complexion looks clearer and more even than it has in years." },
+    { before: "/assets/treatments/chemical-peels-malta-ba4-before.png", after: "/assets/treatments/chemical-peels-malta-ba4-after.png", label: "Age Spots on Hands", name: "Patricia M.", review: "The sun spots on the back of my hands have faded dramatically — they finally look as young as I feel." },
+    { before: "/assets/treatments/chemical-peels-malta-ba5-before.png", after: "/assets/treatments/chemical-peels-malta-ba5-after.png", label: "Uneven Tone & Texture", name: "Sophia L.", review: "My skin tone is so much more even and my skin actually glows now — it looks fresh, smooth, and healthy." },
   ],
   precision: {
     title: "What Does a Chemical Peel Treat?",
@@ -57,20 +57,44 @@ const t: Treatment = {
       "You are willing to follow a structured pre- and post-care routine",
     ],
     notIdeal: [
-      "You cannot commit to strict sun protection during the recovery period",
-      "You have used isotretinoin within the last 6 to 12 months",
-      "You are pregnant, breastfeeding, or have an active skin infection",
-      "You have an active cold sore or herpes simplex in the treatment area",
-      "You have a very compromised skin barrier that needs to heal first",
+      "You cannot avoid the sun right now — strict SPF during recovery is non-negotiable for a safe result",
+      "You have used isotretinoin (Roaccutane) in the last 6 to 12 months — we will gladly welcome you back once your skin is ready",
+      "You are pregnant or breastfeeding — we will happily plan your peel for afterwards",
+      "You have an active cold sore or breakout in the area — let it settle first and we will pick the perfect window",
+      "Your skin barrier feels raw or compromised right now — we would rather repair it first, then peel",
+    ],
+    personas: [
+      { title: "The dull, tired complexion", desc: "Your skin looks flat, grey, or lacklustre — you want that fresh, lit-from-within glow back." },
+      { title: "The pigmentation concern", desc: "Sun spots, melasma, or post-acne marks are bothering you, and you want a clearer, more even tone." },
+      { title: "The breakout-prone skin", desc: "You still get congestion, blemishes, or post-acne texture and want skin that feels smooth and calm." },
+    ],
+  },
+  problem: {
+    kicker: "The real reason people book",
+    title: "Your skin looks tired and dull — older than you actually feel",
+    body: [
+      "A doctor-led medical-grade peel gently lifts away that dull, uneven surface to reveal the brighter, smoother, more radiant skin underneath — so your complexion finally matches how you feel.",
+    ],
+  },
+  guarantee: {
+    kicker: "The Natural Confidence Guarantee",
+    title: "Natural Confidence Guarantee",
+    paragraphs: [
+      "Every peel starts with a doctor-led skin assessment and a natural-first approach — the right peel, at the right strength, for your skin type — backed by a free follow-up review until you are 100% happy with a result that simply looks like healthier you.",
+    ],
+    cta: "Book Your Free Consultation",
+    points: [
+      { value: "Doctor-led", label: "Assessment first", sub: "Never a salesperson" },
+      { value: "Natural-first", label: "Tailored to your skin", sub: "Right peel, right strength" },
+      { value: "100%", label: "Satisfaction", sub: "Free follow-up until you are happy" },
     ],
   },
   experience: {
     title: "How Does a Chemical Peel Work? — Your Treatment Steps", cta: "BOOK YOUR FREE CONSULTATION",
     steps: [
-      { title: "Personalised Consultation", desc: "We assess your facial anatomy, skin condition, medical history, and chemical peel goals with one of our doctors.", image: "/assets/treatments/chemical-peels-malta-step1.png" },
-      { title: "Structured Plan", desc: "Your doctor designs a medically guided chemical peel plan tailored to your facial structure and desired outcome.", image: "/assets/treatments/chemical-peels-malta-step2.png" },
-      { title: "Targeted Treatments", desc: "Your doctor applies the chemical peel solution with precision and care, quick, comfortable, and no downtime.", image: "/assets/treatments/chemical-peels-malta-step3.png" },
-      { title: "Ongoing Review & Adjustment", desc: "Your doctor monitors your response and refines the plan to ensure natural chemical peel results over time.", image: "/assets/treatments/chemical-peels-malta-step4.png" },
+      { title: "Consultation & Skin Assessment", desc: "One of our doctors reviews your skin condition, concerns, and medical history, then designs a peel plan at the right strength and depth for your skin type.", image: "/assets/treatments/chemical-peels-malta-step1.png" },
+      { title: "Your Peel Treatment", desc: "Your doctor applies the medical-grade peel solution in precisely controlled layers, quick, comfortable, and tailored to your skin.", image: "/assets/treatments/chemical-peels-malta-step3.png" },
+      { title: "Ongoing Review & Adjustment", desc: "Your doctor monitors how your skin responds and refines your course to ensure even, radiant results over time.", image: "/assets/treatments/chemical-peels-malta-step4.png" },
     ],
   },
   prepAftercare: {
@@ -155,6 +179,26 @@ const t: Treatment = {
     mapQuery: "Carisma Aesthetics, Malta",
   },
   bookingForm: { title: "Book Your Chemical Peel Appointment Today" },
+  planSummary: {
+    kicker: "Your chemical peel plan",
+    title: "Malta's Doctor-Led Chemical Peel Plan",
+    benefits: [
+      { icon: "shield", title: "Doctor-Led & Medical-Grade", desc: "Every peel is performed by a medically qualified doctor using clinically approved solutions — never a salon, never guesswork." },
+      { icon: "sparkle", title: "Brighter, Even, Renewed Skin", desc: "We lift away dull, uneven surface skin to reveal a smoother, clearer, more radiant complexion that still looks like you." },
+      { icon: "chart", title: "Tailored to Your Skin Type", desc: "The peel type, strength, and depth are chosen for your skin and concern — for safe, progressive, lasting results." },
+    ],
+    included: [
+      { label: "Free doctor-led skin consultation" },
+      { label: "Personalised, medically guided peel plan" },
+      { label: "Medical-grade chemical peel treatment", value: "from €135" },
+      { label: "Course pricing available", value: "3 for €399, 5 for €649" },
+      { label: "Aftercare guidance & ongoing support" },
+    ],
+    price: "From €135",
+    priceLabel: "per session",
+    cta: { text: "Book Your Chemical Peel Appointment", href: "/consultation" },
+    reviews: "200+ verified reviews",
+  },
   recommended: {
     title: "Treatments That Complement Your Chemical Peel",
     items: [
