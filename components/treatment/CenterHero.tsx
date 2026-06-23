@@ -6,21 +6,22 @@ import HeroMotif from "@/components/motion/HeroMotif";
    right-photo <PageHero>. Everything sits on a single vertical axis:
 
      small badge / eyebrow
-       → Trajan uppercase H1  (the page's single <h1>)
+       → Trajan sentence-case H1  (the page's single <h1>)
          → optional one-line subtitle
            → body paragraph (constrained measure, centred)
-             → two CTAs side-by-side (primary teal-glow + secondary outline)
-               → centred hero photo in the brand arch, constellation behind it
-                 → TREATMENT INFO as a centred horizontal metric strip (5 icons)
-                   → optional prices as a centred chip row
+             → prices as a centred chip row (sits on top of the CTAs)
+               → two CTAs side-by-side (primary teal-glow + secondary outline)
+                 → rating proof line (star reviews)
+                   → TREATMENT INFO metric strip (directly under the reviews)
+                     → centred hero photo in the brand arch, constellation behind
 
    Tokens & conventions match PageHero exactly: two-tone teal-blue headline,
    Novecento eyebrows, Roboto body, the arch radius + floating proof language,
    `.hero-fit` nav clearance, `.btn .btn-teal` primary CTA, `.hero-outline`
    secondary CTA. Reduced-motion safe (HeroMotif paints one static frame),
    44px tap targets, stays a server component (HeroMotif is the only client
-   child). Fits ~100svh at 1440×900 but is allowed to grow / scroll on shorter
-   viewports so the whole composition stays visible.
+   child). Allowed to grow / scroll on shorter viewports so the whole
+   composition stays visible.
    ────────────────────────────────────────────────────────────────────────── */
 
 const ARCH_RADIUS = "220px 220px 18px 18px";
@@ -201,8 +202,7 @@ export default function CenterHero({
           </span>
         )}
 
-        {/* H1 — the page's single <h1>, Trajan uppercase, two-tone is not used
-            here (single title string) so the whole headline carries the deep
+        {/* H1 — the page's single <h1>, Trajan sentence case carrying the deep
             teal; balanced so it never orphans a lone word. */}
         <h1
           style={{
@@ -210,7 +210,6 @@ export default function CenterHero({
             fontWeight: 400,
             fontSize: "clamp(30px,4.6vw,52px)",
             lineHeight: 1.08,
-            textTransform: "uppercase",
             color: TEAL_DEEP,
             margin: 0,
             maxWidth: 820,
@@ -256,6 +255,48 @@ export default function CenterHero({
           </p>
         )}
 
+        {/* prices — centred chip row, brought up to sit on top of the CTAs */}
+        {prices && prices.length > 0 && (
+          <div
+            aria-label="Treatment pricing"
+            style={{
+              marginTop: "clamp(16px,2.2vh,24px)",
+              display: "flex",
+              flexWrap: "wrap",
+              gap: 10,
+              justifyContent: "center",
+              maxWidth: 820,
+            }}
+          >
+            {prices.map((p) => (
+              <span
+                key={p.label}
+                style={{
+                  display: "inline-flex",
+                  alignItems: "baseline",
+                  gap: 8,
+                  padding: "9px 16px",
+                  borderRadius: 999,
+                  background: "rgba(255,255,255,0.72)",
+                  border: "1px solid rgba(79,115,115,0.22)",
+                  backdropFilter: "blur(6px)",
+                  WebkitBackdropFilter: "blur(6px)",
+                }}
+              >
+                <span style={{ fontFamily: BODY, fontSize: 12.5, color: "var(--muted)", lineHeight: 1.2 }}>
+                  {p.label}
+                </span>
+                <span
+                  className="font-display"
+                  style={{ fontSize: 12, color: TEAL_DEEP, letterSpacing: "0.04em", lineHeight: 1.2 }}
+                >
+                  {p.price}
+                </span>
+              </span>
+            ))}
+          </div>
+        )}
+
         {/* two CTAs side-by-side — primary teal-glow + secondary outline.
             Primary → Fresha (new tab); secondary → /consultation (internal,
             opens the site-wide ConsultationModal). 44px tap targets. */}
@@ -266,7 +307,7 @@ export default function CenterHero({
             gap: 14,
             justifyContent: "center",
             alignItems: "center",
-            margin: "clamp(20px,3vh,30px) 0 0",
+            margin: "clamp(16px,2.4vh,24px) 0 0",
           }}
         >
           <a
@@ -304,125 +345,14 @@ export default function CenterHero({
           </span>
         </div>
 
-        {/* centred hero photo in the brand arch — constellation drifts behind it.
-            Floating proof pills hug the arch (top-left doctor-led, top-right
-            #1 voted) exactly as PageHero, recoloured to teal. */}
-        {image && (
-          <div
-            style={{
-              position: "relative",
-              display: "flex",
-              justifyContent: "center",
-              marginTop: "clamp(24px,3.4vh,40px)",
-            }}
-          >
-            <div
-              style={{
-                position: "relative",
-                height: "min(38vh, 360px)",
-                aspectRatio: "4 / 5",
-                maxWidth: "100%",
-                borderRadius: ARCH_RADIUS,
-                overflow: "hidden",
-                background: archBg,
-                boxShadow: "0 24px 60px rgba(28,30,30,0.16)",
-              }}
-            >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={image}
-                alt={`${title} — Carisma Aesthetics Malta`}
-                style={{
-                  position: "absolute",
-                  inset: 0,
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "cover",
-                  display: "block",
-                }}
-              />
-            </div>
-
-            {/* doctor-led pill — top-left of the arch */}
-            <div
-              className="hero-glass float-b"
-              style={{
-                position: "absolute",
-                left: "clamp(-10px,-1vw,-2px)",
-                top: "14%",
-                borderRadius: 999,
-                padding: "8px 14px",
-                display: "flex",
-                alignItems: "center",
-                gap: 7,
-                zIndex: 3,
-                animationDelay: "-2.8s",
-              }}
-            >
-              <span
-                aria-hidden
-                style={{
-                  width: 16,
-                  height: 16,
-                  borderRadius: "50%",
-                  background: "rgba(150,178,178,0.22)",
-                  display: "grid",
-                  placeItems: "center",
-                }}
-              >
-                <svg width="9" height="9" viewBox="0 0 24 24" fill="none">
-                  <path d="M5 13l4 4L19 7" stroke={TEAL_LIGHT} strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </span>
-              <span style={{ fontFamily: WIDE, fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: TEAL_DEEP }}>
-                Doctor-led
-              </span>
-            </div>
-
-            {/* award / #1 voted — top-right of the arch */}
-            <div
-              className="hero-glass float-b"
-              style={{
-                position: "absolute",
-                right: "clamp(-12px,-0.5vw,4px)",
-                top: "8%",
-                borderRadius: 16,
-                padding: "10px 14px",
-                display: "flex",
-                alignItems: "center",
-                gap: 10,
-                maxWidth: 200,
-                zIndex: 3,
-              }}
-            >
-              <Stars size={11} />
-              <span
-                style={{
-                  fontFamily: WIDE,
-                  fontSize: 9.5,
-                  letterSpacing: "0.07em",
-                  textTransform: "uppercase",
-                  color: "var(--ink)",
-                  lineHeight: 1.35,
-                  whiteSpace: "pre-line",
-                  fontWeight: 600,
-                }}
-              >
-                {"#1 Voted Clinic\nMalta Healthcare Awards"}
-              </span>
-            </div>
-          </div>
-        )}
-
-        {/* TREATMENT INFO — centred horizontal metric strip. The 5 metrics sit
-            in one row (each icon → metric → detail), wrapping gracefully on
-            mobile. A faint teal wash + hairline frames it as the treatment-info
-            language from the live page, now laid out horizontally and centred. */}
+        {/* TREATMENT INFO — centred metric strip, sits directly under the star
+            reviews and before the photo. The 5 metrics in one row (icon →
+            metric → detail), wrapping gracefully on mobile. */}
         {info && info.length > 0 && (
           <div
             aria-label="Treatment info"
             style={{
-              marginTop: "clamp(24px,3.4vh,40px)",
+              marginTop: "clamp(20px,2.8vh,30px)",
               width: "100%",
               maxWidth: 860,
               marginInline: "auto",
@@ -467,45 +397,113 @@ export default function CenterHero({
           </div>
         )}
 
-        {/* prices — centred chip row, the last band of the hero */}
-        {prices && prices.length > 0 && (
+        {/* centred hero photo in the brand arch — constellation drifts behind it.
+            Floating proof pills are spread on a diagonal (award upper-right,
+            doctor-led mid-left) so they never stack on top of each other. */}
+        {image && (
           <div
-            aria-label="Treatment pricing"
             style={{
-              marginTop: "clamp(18px,2.6vh,28px)",
+              position: "relative",
               display: "flex",
-              flexWrap: "wrap",
-              gap: 10,
               justifyContent: "center",
-              maxWidth: 820,
+              marginTop: "clamp(24px,3.4vh,40px)",
             }}
           >
-            {prices.map((p) => (
-              <span
-                key={p.label}
+            <div
+              style={{
+                position: "relative",
+                height: "min(38vh, 360px)",
+                aspectRatio: "4 / 5",
+                maxWidth: "100%",
+                borderRadius: ARCH_RADIUS,
+                overflow: "hidden",
+                background: archBg,
+                boxShadow: "0 24px 60px rgba(28,30,30,0.16)",
+              }}
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={image}
+                alt={`${title} — Carisma Aesthetics Malta`}
                 style={{
-                  display: "inline-flex",
-                  alignItems: "baseline",
-                  gap: 8,
-                  padding: "9px 16px",
-                  borderRadius: 999,
-                  background: "rgba(255,255,255,0.72)",
-                  border: "1px solid rgba(79,115,115,0.22)",
-                  backdropFilter: "blur(6px)",
-                  WebkitBackdropFilter: "blur(6px)",
+                  position: "absolute",
+                  inset: 0,
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  display: "block",
+                }}
+              />
+            </div>
+
+            {/* doctor-led pill — mid-left of the arch, pushed out & down */}
+            <div
+              className="hero-glass float-b"
+              style={{
+                position: "absolute",
+                left: "clamp(-24px,-3vw,-8px)",
+                top: "44%",
+                borderRadius: 999,
+                padding: "8px 14px",
+                display: "flex",
+                alignItems: "center",
+                gap: 7,
+                zIndex: 3,
+                animationDelay: "-2.8s",
+              }}
+            >
+              <span
+                aria-hidden
+                style={{
+                  width: 16,
+                  height: 16,
+                  borderRadius: "50%",
+                  background: "rgba(150,178,178,0.22)",
+                  display: "grid",
+                  placeItems: "center",
                 }}
               >
-                <span style={{ fontFamily: BODY, fontSize: 12.5, color: "var(--muted)", lineHeight: 1.2 }}>
-                  {p.label}
-                </span>
-                <span
-                  className="font-display"
-                  style={{ fontSize: 12, color: TEAL_DEEP, letterSpacing: "0.04em", lineHeight: 1.2 }}
-                >
-                  {p.price}
-                </span>
+                <svg width="9" height="9" viewBox="0 0 24 24" fill="none">
+                  <path d="M5 13l4 4L19 7" stroke={TEAL_LIGHT} strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
               </span>
-            ))}
+              <span style={{ fontFamily: WIDE, fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: TEAL_DEEP }}>
+                Doctor-led
+              </span>
+            </div>
+
+            {/* award / #1 voted — upper-right of the arch, pushed out & up */}
+            <div
+              className="hero-glass float-b"
+              style={{
+                position: "absolute",
+                right: "clamp(-24px,-3vw,-8px)",
+                top: "-4%",
+                borderRadius: 16,
+                padding: "10px 14px",
+                display: "flex",
+                alignItems: "center",
+                gap: 10,
+                maxWidth: 200,
+                zIndex: 3,
+              }}
+            >
+              <Stars size={11} />
+              <span
+                style={{
+                  fontFamily: WIDE,
+                  fontSize: 9.5,
+                  letterSpacing: "0.07em",
+                  textTransform: "uppercase",
+                  color: "var(--ink)",
+                  lineHeight: 1.35,
+                  whiteSpace: "pre-line",
+                  fontWeight: 600,
+                }}
+              >
+                {"#1 Voted Clinic\nMalta Healthcare Awards"}
+              </span>
+            </div>
           </div>
         )}
       </div>
