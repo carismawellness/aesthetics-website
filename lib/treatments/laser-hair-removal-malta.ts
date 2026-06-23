@@ -9,7 +9,7 @@ const t: Treatment = {
   slug: "laser-hair-removal-malta",
   category: "Body",
   hero: {
-    title: "Laser Hair Removal Malta",
+    title: "Laser Hair Removal in Malta — Virtually Painless Results",
     subtitle: "Tired of shaving, waxing, and the endless regrowth?",
     body: "Permanently smooth, hair-free skin with the world-renowned Alma Soprano — the first triple-wavelength laser in Malta. Virtually painless thanks to patented ICE Plus™ cooling, medically supervised by qualified practitioners, and effective on every skin tone and hair type. No more razor burn, stubble, or ingrowns — just touchable, lasting smoothness.",
     benefits: [
