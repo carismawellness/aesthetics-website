@@ -46,10 +46,10 @@ import { gsap } from "gsap";
        + opacity, so there is no layout shift / CLS.
 
    WCAG 2.2 AA verified with scripts/contrast.mjs on every text/UI pair:
-     gold      #706552 on #ffffff → 5.72 · on #f3f8f8 → 5.34 · on #deebeb → 4.68
-     teal-txt  #406060 on #ffffff → 6.86 · on #f3f8f8 → 6.40 · on #deebeb → 5.62
+     gold      #706552 on #ffffff → 5.72 · on #f3f8f8 → 5.34 · on #f7fafa → 4.68
+     teal-txt  #406060 on #ffffff → 6.86 · on #f3f8f8 → 6.40 · on #f7fafa → 5.62
      label     #695c4e on #ffffff → 6.48 · on #f3f8f8 → 6.04
-     teal-deep #3f6363 (icon/UI) on #f3f8f8 → 6.17 · on #deebeb → 5.41 (≥3 UI)
+     teal-deep #3f6363 (icon/UI) on #f3f8f8 → 6.17 · on #f7fafa → 5.41 (≥3 UI)
      gold-deep #9c8344 (foil hairline/graphic, UI/large only) on #fff → 3.66,
                on #f3f8f8 → 3.41 (both ≥3 UI; used only for decorative
                hairlines/badge graphics + ≥24px large foil ribbon text)
@@ -358,7 +358,7 @@ export default function Benefits() {
           position: relative;
           border-radius: 20px;
           background:
-            linear-gradient(180deg, rgba(255,255,255,0.85) 0%, rgba(222, 235, 235,0.85) 100%);
+            linear-gradient(180deg, rgba(255,255,255,0.85) 0%, rgba(247, 250, 250,0.85) 100%);
           backdrop-filter: blur(2px);
           border: 1px solid rgba(79, 115, 115, 0.14);
           box-shadow:
@@ -662,7 +662,7 @@ export default function Benefits() {
             overflow: "hidden",
             marginTop: "clamp(56px,8vw,88px)",
             background:
-              "linear-gradient(165deg, rgba(255,255,255,0.86) 0%, rgba(222, 235, 235,0.86) 52%, rgba(238, 243, 243,0.86) 100%)",
+              "linear-gradient(165deg, rgba(255,255,255,0.86) 0%, rgba(247, 250, 250,0.86) 52%, rgba(238, 243, 243,0.86) 100%)",
             backdropFilter: "blur(2px)",
             border: "1px solid rgba(112,101,82,0.16)",
             borderRadius: "28px",

@@ -159,7 +159,7 @@ export default function BlogIndexPage() {
 
   return (
     /* P1: <main> landmark */
-    <main style={{ background: "var(--teal-100)", minHeight: "100vh" }}>
+    <main style={{ background: "linear-gradient(180deg, #ffffff 0%, var(--teal-100) 50%, #ffffff 100%)", minHeight: "100vh" }}>
       {/* ── Hero (shared PageHero) ──────────────────── */}
       <PageHero
         eyebrow="The Journal"
@@ -249,7 +249,7 @@ export default function BlogIndexPage() {
       <section
         aria-labelledby="blog-cta-heading"
         style={{
-          background: "linear-gradient(135deg, var(--teal-deep) 0%, #466b6b 100%)",
+          background: "linear-gradient(180deg, #ffffff 0%, var(--teal-deep) 50%, #ffffff 100%)",
           padding: "64px 20px",
           textAlign: "center",
         }}

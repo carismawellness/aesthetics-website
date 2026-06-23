@@ -272,7 +272,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
       {t.education && (
         <section
           aria-labelledby="education-heading"
-          style={{ padding: "80px 0", backgroundColor: "var(--cream)" }}
+          style={{ padding: "80px 0", background: "linear-gradient(180deg, #ffffff 0%, var(--cream) 50%, #ffffff 100%)" }}
         >
           <div className="container">
             <h2
@@ -536,7 +536,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                         height: "18px",
                         borderRadius: "50%",
                         background: "var(--teal)",
-                        boxShadow: "0 0 0 5px #eef3f3",
+                        boxShadow: "0 0 0 5px #fbfdfd",
                         flexShrink: 0,
                       }}
                       aria-hidden="true"
@@ -551,7 +551,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                   <div
                     style={{
                       borderRadius: "20px 56px 20px 56px",
-                      background: "linear-gradient(180deg,#ffffff 0%, #eef3f3 100%)",
+                      background: "linear-gradient(180deg,#ffffff 0%, #fbfdfd 100%)",
                       padding: "10px",
                       boxShadow: "0 16px 38px rgba(0,0,0,0.07)",
                     }}
@@ -628,7 +628,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                         height: "18px",
                         borderRadius: "50%",
                         background: "var(--teal)",
-                        boxShadow: "0 0 0 5px #eef3f3",
+                        boxShadow: "0 0 0 5px #fbfdfd",
                       }}
                       aria-hidden="true"
                     />
@@ -649,7 +649,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                   <div
                     style={{
                       borderRadius: "20px 56px 20px 56px",
-                      background: "linear-gradient(180deg,#ffffff 0%, #eef3f3 100%)",
+                      background: "linear-gradient(180deg,#ffffff 0%, #fbfdfd 100%)",
                       padding: "10px",
                       boxShadow: "0 16px 38px rgba(0,0,0,0.07)",
                     }}
@@ -1030,7 +1030,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
         <section
           aria-labelledby="pricing-heading"
           aria-label="Treatment pricing"
-          style={{ padding: "80px 0", backgroundColor: "var(--cream)" }}
+          style={{ padding: "80px 0", background: "linear-gradient(180deg, #ffffff 0%, var(--cream) 50%, #ffffff 100%)" }}
         >
           <div className="container">
             <h2

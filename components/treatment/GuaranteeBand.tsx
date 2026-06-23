@@ -33,7 +33,7 @@ export default function GuaranteeBand({
   const summary = paragraphs[0];
 
   return (
-    <section style={{ padding: "clamp(48px,6vh,72px) 0", background: "linear-gradient(180deg, #ffffff 0%, #f4f8f8 100%)" }}>
+    <section style={{ padding: "clamp(48px,6vh,72px) 0", background: "linear-gradient(180deg, #ffffff 0%, var(--teal-100) 50%, #ffffff 100%)" }}>
       <div className="container">
         <Reveal>
           <div style={{ maxWidth: 920, marginInline: "auto", textAlign: "center" }}>

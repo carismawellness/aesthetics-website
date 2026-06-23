@@ -83,7 +83,7 @@ function DiffCheck() {
       xmlns="http://www.w3.org/2000/svg"
       style={{ flexShrink: 0, marginTop: 2 }}
     >
-      <circle cx="9" cy="9" r="9" fill="#deebeb" />
+      <circle cx="9" cy="9" r="9" fill="#f7fafa" />
       <path
         d="M5 9.5L7.5 12L13 6.5"
         stroke="#4f7373"
@@ -273,7 +273,7 @@ export default function WhyMaltaAesthetics() {
                     display: "inline-flex",
                     alignItems: "center",
                     gap: 8,
-                    background: "#eef3f3",
+                    background: "#fbfdfd",
                     borderRadius: 999,
                     padding: "8px 16px",
                     marginTop: 16,

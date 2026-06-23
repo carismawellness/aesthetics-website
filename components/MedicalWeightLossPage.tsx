@@ -175,7 +175,7 @@ function Hero() {
 
 function HeroExtras() {
   return (
-    <section id="hero-extras" style={{ background: "var(--cream)", padding: "clamp(28px,4vh,48px) 0" }}>
+    <section id="hero-extras" style={{ background: "linear-gradient(180deg, #ffffff 0%, var(--cream) 50%, #ffffff 100%)", padding: "clamp(28px,4vh,48px) 0" }}>
       <div className="container">
         <Reveal>
           <div className="flex items-center justify-center" style={{ gap: "32px", flexWrap: "wrap", marginBottom: "18px" }}>
@@ -337,7 +337,7 @@ function CarouselArrow({ dir, onClick }: { dir: "left" | "right"; onClick: () =>
 
 function Clarity() {
   return (
-    <section id="clarity" style={{ background: "var(--cream)", padding: "72px 0" }}>
+    <section id="clarity" style={{ background: "linear-gradient(180deg, #ffffff 0%, var(--cream) 50%, #ffffff 100%)", padding: "72px 0" }}>
       <div className="container">
         <Reveal>
           <Eyebrow center>What are Ozempic &amp; Mounjaro?</Eyebrow>
@@ -1017,7 +1017,7 @@ function Promise() {
 
 function Safety() {
   return (
-    <section id="safety" style={{ background: "var(--cream)", padding: "72px 0" }}>
+    <section id="safety" style={{ background: "linear-gradient(180deg, #ffffff 0%, var(--cream) 50%, #ffffff 100%)", padding: "72px 0" }}>
       <div className="container">
         <Reveal>
           <H2>ozempic &amp; mounjaro: safety, side effects, &amp; our system</H2>
@@ -1128,7 +1128,7 @@ function Methodology() {
 
 function Difference() {
   return (
-    <section id="difference" style={{ background: "var(--cream)", padding: "72px 0" }}>
+    <section id="difference" style={{ background: "linear-gradient(180deg, #ffffff 0%, var(--cream) 50%, #ffffff 100%)", padding: "72px 0" }}>
       <div className="container">
         <Reveal>
           <Eyebrow center>The Carisma difference</Eyebrow>
@@ -1410,7 +1410,7 @@ function ResearchCardView({ card, col }: { card: ResearchCard; col: "left" | "ri
 
 function Research() {
   return (
-    <section id="research" style={{ background: "var(--cream)", padding: "72px 0" }}>
+    <section id="research" style={{ background: "linear-gradient(180deg, #ffffff 0%, var(--cream) 50%, #ffffff 100%)", padding: "72px 0" }}>
       <div className="container">
         <Reveal>
           <Eyebrow center>Clinical research: basis of our Ozempic &amp; Mounjaro methodology</Eyebrow>

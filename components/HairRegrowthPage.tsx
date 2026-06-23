@@ -12,7 +12,7 @@ import { useState, useEffect } from "react";
 
   Design: LIGHT theme — matches the rest of the Carisma Aesthetics site.
   Page sits on the shared light teal-blue gradient ground (hero-bg.png); sections
-  alternate white / lightest-teal (#deebeb) tints.
+  alternate white / lightest-teal (#f7fafa) tints.
   Teal headings (#3f6363 / #345252), warm brown body copy (#706552), teal accents
   (#4f7373 / #406060), teal CTA gradient + glow. Trajan/Novecento/Roboto.
   FAQ: accordion (client component). All text verified AA on the new light grounds.
@@ -21,7 +21,7 @@ import { useState, useEffect } from "react";
 const A = "/assets/treatments";
 const t = hairRegrowth;
 
-// ── Light-theme palette (all AA-verified on white + #deebeb teal tint) ──
+// ── Light-theme palette (all AA-verified on white + #f7fafa teal tint) ──
 const TEAL = "#3f6363";        // headings / accents — 6.61:1 on white, AA on teal-100
 const TEAL_DEEP = "#4f7373";   // CTA fill / icons (white text 4.7:1), focus ring
 const TEAL_TEXT = "#406060";   // teal as small text — AA on white + teal tint
@@ -30,8 +30,8 @@ const BODY = "#706552";        // brand brown body copy — 5.6:1 on white (AA)
 const BODY_SOFT = "#5c4f32";   // deeper taupe-brown for copy over light tints
 const GOLD_STAR = "#9c8344";   // gold star/graphic accent (decorative)
 const INK = "#0c0b0b";         // near-black (rare, badge/award text)
-const TINT = "#deebeb";        // warm ivory — alternating section ground (was teal #deebeb)
-const TINT_SOFT = "#deebeb";   // light champagne section tint (was teal #eef3f3)
+const TINT = "#f7fafa";        // warm ivory — alternating section ground (was teal #f7fafa)
+const TINT_SOFT = "#f7fafa";   // light champagne section tint (was teal #fbfdfd)
 
 function TealBtn({
   children,
@@ -352,7 +352,7 @@ function TestimonialsCarousel() {
   const go = (d: number) => setIdx((i) => ((i + d) % count + count) % count);
 
   return (
-    <section style={{ background: TINT, padding: "clamp(60px,7vw,100px) 0" }}>
+    <section style={{ background: `linear-gradient(180deg, #ffffff 0%, ${TINT} 50%, #ffffff 100%)`, padding: "clamp(60px,7vw,100px) 0" }}>
       <div className="container">
         <div className="relative" style={{ maxWidth: "1100px", margin: "0 auto" }}>
           {/* Cards */}
@@ -763,7 +763,7 @@ export default function HairRegrowthPage() {
       ─────────────────────────────────────────────────────── */}
       <section
         style={{
-          background: TINT,
+          background: `linear-gradient(180deg, #ffffff 0%, ${TINT} 50%, #ffffff 100%)`,
           padding: "clamp(60px,7vw,100px) 0",
         }}
       >
@@ -955,7 +955,7 @@ export default function HairRegrowthPage() {
       ─────────────────────────────────────────────────────── */}
       <section
         style={{
-          background: TINT,
+          background: `linear-gradient(180deg, #ffffff 0%, ${TINT} 50%, #ffffff 100%)`,
           padding: "clamp(60px,7vw,100px) 0",
         }}
       >
@@ -1406,7 +1406,7 @@ export default function HairRegrowthPage() {
       ─────────────────────────────────────────────────────── */}
       <section
         style={{
-          background: TINT_SOFT,
+          background: `linear-gradient(180deg, #ffffff 0%, ${TINT_SOFT} 50%, #ffffff 100%)`,
           padding: "clamp(60px,7vw,100px) 0",
         }}
       >

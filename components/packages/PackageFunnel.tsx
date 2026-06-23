@@ -274,9 +274,9 @@ export default function PackageFunnel({ data }: { data: PackageData }) {
       />
 
       {/* ===== OFFER / WHAT'S INCLUDED (price + package detail moved from the hero) ===== */}
-      <section aria-label="Package offer" style={{ background: "linear-gradient(180deg,#deebeb 0%, #ffffff 100%)", padding: "clamp(40px,6vh,72px) 0" }}>
+      <section aria-label="Package offer" style={{ background: "linear-gradient(180deg, #ffffff 0%, #f7fafa 50%, #ffffff 100%)", padding: "clamp(40px,6vh,72px) 0" }}>
         <div className="container">
-          <div className="mx-auto" style={{ maxWidth: "760px", borderRadius: "26px", background: "linear-gradient(160deg,#deebeb 0%, #eef3f3 45%, #deebeb 100%)", border: "1px solid var(--line)", padding: "clamp(24px,3vw,40px)", boxShadow: "0 20px 60px rgba(0,0,0,0.05)" }}>
+          <div className="mx-auto" style={{ maxWidth: "760px", borderRadius: "26px", background: "linear-gradient(160deg,#f7fafa 0%, #fbfdfd 45%, #f7fafa 100%)", border: "1px solid var(--line)", padding: "clamp(24px,3vw,40px)", boxShadow: "0 20px 60px rgba(0,0,0,0.05)" }}>
             <Reveal>
               <p style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.6, textAlign: "justify" }}>
                 {withBold(h.subtitle, h.subtitleBold)}

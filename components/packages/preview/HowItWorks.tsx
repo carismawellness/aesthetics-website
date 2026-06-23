@@ -20,7 +20,7 @@ export default function HowItWorks({ heading, steps }: HowItWorksProps) {
       aria-label={heading}
       className="ambient-host"
       style={{
-        background: "linear-gradient(180deg, var(--white) 0%, var(--cream) 100%)",
+        background: "linear-gradient(180deg, #ffffff 0%, var(--cream) 50%, #ffffff 100%)",
         padding: "clamp(48px,7vh,84px) 0",
       }}
     >

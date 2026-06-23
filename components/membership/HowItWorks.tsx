@@ -19,7 +19,7 @@ const TEAL_DEEP = "#4f7373"; // step number circle (accent) — WHITE on it = 5.
 const TEAL_TEXT = "#406060"; // "STEP" label + accents — accent text
 const GOLD = "#706552"; // card subheading taupe-gold on white = 5.72:1
 const LABEL = "#695c4e"; // body taupe on white = 6.48:1
-const RING = "#deebeb"; // warm ivory ring behind the step badge (was teal mist)
+const RING = "#f7fafa"; // warm ivory ring behind the step badge (was teal mist)
 const DASH = "#bcae9a"; // decorative spine, warm taupe (UI graphic, non-text)
 
 type Step = {
@@ -189,8 +189,8 @@ export default function HowItWorks() {
               key={s.word}
               className="relative grid items-center"
               style={{
-                gridTemplateColumns: "64px 132px minmax(0, 1fr)",
-                columnGap: 28,
+                gridTemplateColumns: "64px 210px minmax(0, 1fr)",
+                columnGap: 48,
                 marginBottom: i === STEPS.length - 1 ? 0 : 32,
               }}
             >

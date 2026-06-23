@@ -299,7 +299,7 @@ export default function BlogTemplate({ post }: { post: BlogPost }) {
 
   return (
     /* P1: <main> landmark for content */
-    <main style={{ background: "var(--teal-100)", minHeight: "100vh" }}>
+    <main style={{ background: "linear-gradient(180deg, #ffffff 0%, var(--teal-100) 50%, #ffffff 100%)", minHeight: "100vh" }}>
       {/* ── Breadcrumb nav ────────────────────────────────────── */}
       {/* P9: Breadcrumb with aria-label="Breadcrumb" and aria-current on last item */}
       <nav
@@ -612,7 +612,7 @@ export default function BlogTemplate({ post }: { post: BlogPost }) {
       <section
         aria-labelledby="blog-post-cta-heading"
         style={{
-          background: "linear-gradient(135deg, var(--teal-deep) 0%, #466b6b 100%)",
+          background: "linear-gradient(180deg, #ffffff 0%, var(--teal-deep) 50%, #ffffff 100%)",
           padding: "72px 20px",
           textAlign: "center",
         }}

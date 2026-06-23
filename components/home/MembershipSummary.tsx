@@ -22,7 +22,7 @@ import Link from "next/link";
    Every €/% figure below is verbatim from those files. No PLACEHOLDERs.
 
    Accessibility (palette tokens already AA-verified in the source sections):
-     --gold      #706552 on white / #deebeb tints ... ≥4.68:1 (AA, headings)
+     --gold      #706552 on white / #f7fafa tints ... ≥4.68:1 (AA, headings)
      --teal-text #406060 on white / tints ........... ≥5.62:1 (AA, eyebrows)
      --label     #695c4e on white / tints ........... ≥5.30:1 (AA, body)
      --muted     #636363 on white ................... 6.01:1  (AA, footnote)
@@ -195,7 +195,7 @@ export default function MembershipSummary() {
                 display: "flex",
                 flexDirection: "column",
                 padding: "28px 24px",
-                background: "linear-gradient(180deg, #ffffff 0%, #deebeb 100%)",
+                background: "linear-gradient(180deg, #ffffff 0%, #f7fafa 100%)",
                 border: "1px solid rgba(79,115,115,0.12)",
                 borderTopLeftRadius: "16px",
                 borderTopRightRadius: "44px",

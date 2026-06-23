@@ -21,7 +21,7 @@ import Reveal from "@/components/Reveal";
    WCAG 2.2 AA — every text/UI pair verified with scripts/contrast.mjs:
    • #706552 (gold) on #fff ........... 5.72:1  ✓
    • #406060 (teal-text) on #fff ...... 6.86:1  ✓
-   • #406060 on #deebeb (cream) ....... 5.62:1  ✓
+   • #406060 on #f7fafa (cream) ....... 5.62:1  ✓
    • #695c4e (label) on #fff .......... 6.48:1  ✓
    • #fff on #4f7373 (teal-deep) ...... 5.21:1  ✓
    • #3f6363 (focus/border UI) on #fff  6.61:1  ✓
@@ -31,7 +31,7 @@ const A = "/assets/treatments";
 const GOLD = "var(--gold)"; // #706552
 const TEAL_TEXT = "var(--teal-text)"; // #406060
 const TEAL_DEEP = "var(--teal-deep)"; // #4f7373
-const CREAM = "var(--cream)"; // warm ivory #deebeb (neutral token, remapped off teal)
+const CREAM = "var(--cream)"; // warm ivory #f7fafa (neutral token, remapped off teal)
 const FOCUS = "#3f6363"; // teal-deep variant for UI strokes/focus
 const JOIN_HREF = "/membership/join";
 

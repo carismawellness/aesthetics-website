@@ -28,7 +28,7 @@ import Link from 'next/link';
 const INK = '#0c0b0b'; // near-black heading (--ink)
 const TEAL_DEEP = '#4f7373'; // accessible teal — big numbers / CTA fill (AA, white text passes)
 const TEAL_TEXT = '#406060'; // teal as small text / divider / eyebrow (AA on white + light tints)
-const TEAL_100 = '#deebeb'; // lightest teal tint — section background gradient stop
+const TEAL_100 = '#f7fafa'; // lightest teal tint — section background gradient stop
 const BODY = '#706552'; // brand taupe-brown body (--ink-soft, AA on near-white)
 const SERIF = '"Trajan Pro", Georgia, serif'; // headings + big numbers (uppercase only)
 const WIDE = '"Novecento Wide", sans-serif'; // eyebrow / stat titles / CTA label

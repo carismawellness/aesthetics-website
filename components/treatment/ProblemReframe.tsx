@@ -55,14 +55,11 @@ export default function ProblemReframe({
     <section
       aria-labelledby={headingId}
       style={{
-        // Compact emotional beat — tightened from clamp(72px,9vh,112px) so this
-        // reads as a single elegant line, not a towering full-height section.
+        // Compact emotional beat. Soft teal ground that fades to white at BOTH
+        // edges so it never creates a hard seam against neighbouring sections.
         padding: "clamp(40px,5vh,64px) 0",
-        // Faint warm-ivory ground (token remapped to #deebeb in the 2026 palette)
-        // so the section reads as a soft, set-apart emotional beat — not teal
-        // wallpaper. A whisper-soft top sheen adds depth without alarm.
         background:
-          "linear-gradient(180deg, #ffffff 0%, #f4f8f8 100%)",
+          "linear-gradient(180deg, #ffffff 0%, var(--teal-100) 50%, #ffffff 100%)",
       }}
     >
       <div className="container">

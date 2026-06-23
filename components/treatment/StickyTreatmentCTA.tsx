@@ -77,7 +77,7 @@ export default function StickyTreatmentCTA({
         bottom: 0,
         zIndex: 40,
         // Frosted ivory strip.
-        background: 'rgba(222, 235, 235, 0.86)', // ivory @ ~86%
+        background: 'rgba(247, 250, 250, 0.86)', // ivory @ ~86%
         backdropFilter: 'saturate(140%) blur(12px)',
         WebkitBackdropFilter: 'saturate(140%) blur(12px)',
         borderTop: '1px solid var(--line)',

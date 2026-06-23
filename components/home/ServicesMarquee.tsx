@@ -23,7 +23,7 @@ import { HOME_SERVICES } from "@/lib/site";
   teal with the button-shine line on hover, plus name + blurb. All 12 procedures
   and their treatment-page links come straight from HOME_SERVICES.
 
-  Palette is brand teal only (#4f7373 / #406060 / #96b2b2 / #deebeb), brown copy
+  Palette is brand teal only (#4f7373 / #406060 / #96b2b2 / #f7fafa), brown copy
   (#706552 / #695c4e), fonts Trajan (name) + Roboto (blurb) + Novecento (CTA).
 */
 

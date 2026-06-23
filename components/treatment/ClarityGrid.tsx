@@ -123,7 +123,7 @@ export default function ClarityGrid({
   doesnt,
 }: Props) {
   return (
-    <section style={{ padding: "clamp(72px,9vh,112px) 0", background: "var(--teal-100)" }}>
+    <section style={{ padding: "clamp(72px,9vh,112px) 0", background: "linear-gradient(180deg, #ffffff 0%, var(--teal-100) 50%, #ffffff 100%)" }}>
       <div className="container">
         <SectionHeader kicker={kicker} title={title} sub={sub} />
 

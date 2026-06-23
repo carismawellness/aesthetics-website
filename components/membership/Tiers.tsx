@@ -35,8 +35,8 @@ import { useEffect, useRef, useState } from "react";
  *
  * Brand: Carisma Aesthetics — "Glow with Confidence". Cool sage-teal + taupe-gold.
  * Accessibility: every text/UI pair verified AA with scripts/contrast.mjs. Worst
- * case is the warm champagne #eef3f3 the translucent cards sit over:
- *   - gold #706552 on champagne #eef3f3 .. 4.87  (AA)
+ * case is the warm champagne #fbfdfd the translucent cards sit over:
+ *   - gold #706552 on champagne #fbfdfd .. 4.87  (AA)
  *   - teal-text #406060 on champagne ..... 5.84  (AA)
  *   - label #695c4e on champagne ......... 5.52  (AA)
  *   - gold #706552 on white .............. 5.72  (AA)
@@ -408,7 +408,7 @@ function GemSlot({ tint, dark }: { tint: GemTint; dark: boolean }) {
         borderRadius: "50%",
         background: dark
           ? "radial-gradient(circle at 50% 38%, rgba(255,255,255,0.20), rgba(255,255,255,0.04) 70%)"
-          : "radial-gradient(circle at 50% 38%, #eef3f3, #eef3f3 72%)",
+          : "radial-gradient(circle at 50% 38%, #fbfdfd, #fbfdfd 72%)",
         border: dark
           ? "1px solid rgba(255,255,255,0.30)"
           : "1px solid rgba(112,101,82,0.28)", // soft gold hairline
@@ -512,8 +512,8 @@ export default function Tiers() {
             // Featured card gets a subtly warmer champagne-tinted translucent
             // surface so it still stands apart from the plainer ivory tiers.
             const surface = featured
-              ? "linear-gradient(170deg, rgba(255,255,255,0.92) 0%, rgba(222, 235, 235,0.92) 100%)"
-              : "linear-gradient(170deg, rgba(255,255,255,0.82) 0%, rgba(222, 235, 235,0.82) 100%)";
+              ? "linear-gradient(170deg, rgba(255,255,255,0.92) 0%, rgba(247, 250, 250,0.92) 100%)"
+              : "linear-gradient(170deg, rgba(255,255,255,0.82) 0%, rgba(247, 250, 250,0.82) 100%)";
             const nameColor = TEAL_TEXT;
             const rewardColor = GOLD;
             const subColor = LABEL;

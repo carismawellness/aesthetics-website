@@ -27,7 +27,7 @@ export default function ResultsGuarantee({
       aria-label={heading}
       className="ambient-host"
       style={{
-        background: "linear-gradient(180deg, var(--cream) 0%, var(--white) 100%)",
+        background: "linear-gradient(180deg, #ffffff 0%, var(--cream) 50%, #ffffff 100%)",
         padding: "clamp(52px,8vh,96px) 0",
       }}
     >

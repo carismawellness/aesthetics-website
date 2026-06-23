@@ -14,11 +14,11 @@ import Reveal from "@/components/Reveal";
    white. The sage avatar chip stays as a small accent (allowed). No teal fill.
 
    WCAG 2.2 AA — every text/UI pair verified with scripts/contrast.mjs. Header/
-   intro now sit on the page field; worst case is champagne #eef3f3:
-     • #695c4e (label)        on #ffffff = 6.48:1 ✓   on #eef3f3 = 5.52:1 ✓
-     • #406060 (teal-text)    on #ffffff = 6.86:1 ✓   on #eef3f3 = 5.84:1 ✓
-     • #706552 (gold)         on #ffffff = 5.72:1 ✓   on #eef3f3 = 4.87:1 ✓
-     • #0c0b0b (ink)          on #ffffff = 19.66 ✓     on #eef3f3 = 17+  ✓
+   intro now sit on the page field; worst case is champagne #fbfdfd:
+     • #695c4e (label)        on #ffffff = 6.48:1 ✓   on #fbfdfd = 5.52:1 ✓
+     • #406060 (teal-text)    on #ffffff = 6.86:1 ✓   on #fbfdfd = 5.84:1 ✓
+     • #706552 (gold)         on #ffffff = 5.72:1 ✓   on #fbfdfd = 4.87:1 ✓
+     • #0c0b0b (ink)          on #ffffff = 19.66 ✓     on #fbfdfd = 17+  ✓
      • #ffffff (white)        on #527979 (avatar) = 4.81:1 ✓   on teal CTA = 5.21:1 ✓
      • #9c8344 (gold-deep star, graphic/UI) on #ffffff = 3.66:1 ✓ (>3 UI)
    ───────────────────────────────────────────────────────────────────────── */

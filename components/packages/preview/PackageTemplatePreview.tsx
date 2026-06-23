@@ -68,7 +68,7 @@ export default function PackageTemplatePreview({ data, content }: { data: Packag
       />
 
       {/* ===== OFFER / WHAT'S INCLUDED (price anchor on a Liquid Gloss card) ===== */}
-      <section aria-label="Package offer" className="ambient-host" style={{ background: "linear-gradient(180deg, var(--cream) 0%, #ffffff 100%)", padding: "clamp(44px,6vh,76px) 0" }}>
+      <section aria-label="Package offer" className="ambient-host" style={{ background: "linear-gradient(180deg, #ffffff 0%, var(--cream) 50%, #ffffff 100%)", padding: "clamp(44px,6vh,76px) 0" }}>
         <AmbientField blob="top-right" tone="teal" soft dots />
         <div className="container">
           <Reveal className="lg lg--panel mx-auto" style={{ position: "relative", overflow: "hidden", maxWidth: "760px", padding: "clamp(26px,3.4vw,44px)" }}>
@@ -159,7 +159,7 @@ export default function PackageTemplatePreview({ data, content }: { data: Packag
       </section>
 
       {/* ===== CLOSING CTA BAND (Liquid Gloss) ===== */}
-      <section aria-label="Book your package" className="ambient-host" style={{ background: "linear-gradient(180deg, #ffffff 0%, var(--teal-100) 100%)", padding: "clamp(56px,8vh,96px) 0" }}>
+      <section aria-label="Book your package" className="ambient-host" style={{ background: "linear-gradient(180deg, #ffffff 0%, var(--teal-100) 50%, #ffffff 100%)", padding: "clamp(56px,8vh,96px) 0" }}>
         <AmbientField blob="center" tone="teal" soft dots={false} />
         <div className="container text-center">
           <Reveal className="lg lg--panel mx-auto" style={{ position: "relative", overflow: "hidden", maxWidth: "680px", padding: "clamp(30px,4vw,52px)" }}>

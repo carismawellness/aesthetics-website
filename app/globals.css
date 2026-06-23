@@ -101,21 +101,21 @@
      Turquoise/teal was eradicated from every NEUTRAL ground. These tokens are
      consumed as backgrounds across the site (TreatmentPage, PackageFunnel,
      FaceUI, PageHero, MembershipPage, etc.), so remapping them here flips the
-     whole site from teal wallpaper to a clean warm ivory/champagne neutral in
-     one place. Palette: white #ffffff · ivory #deebeb · light-ivory #eef3f3 ·
-     champagne #eef3f3 · light-champagne #deebeb. NO teal/turquoise grounds. */
-  --teal-100:    #deebeb;   /* (was #deebeb teal) → warm ivory section background */
-  --beige:       #eef3f3;   /* (was #eef3f3 teal) → champagne accent ground */
-  --beige-2:     #deebeb;   /* (was #deebeb teal) → light champagne accent */
+     whole site to a WHITE-dominant ground: section backgrounds are white / near-
+     white, with only the faintest cool whisper as a subtle touch of depth — never
+     a teal/turquoise wash. Blue/teal stays for accents (buttons, icons), not grounds. */
+  --teal-100:    #f7fafa;   /* near-white, faintest cool — section background */
+  --beige:       #f4f8f8;   /* faint cool accent ground (a subtle touch of depth) */
+  --beige-2:     #fbfdfd;   /* near-white */
   --gray-100:    #eceae7;   /* neutral light grey surface */
-  --cream:       #deebeb;   /* (was #deebeb teal) → warm ivory section background */
-  --cream-2:     #eef3f3;   /* (was #eef3f3 teal) → light ivory */
+  --cream:       #ffffff;   /* white section background */
+  --cream-2:     #fafcfc;   /* near-white */
   --white:       #ffffff;
-  /* Warm ivory / champagne background palette (explicit handles) */
-  --ivory:           #deebeb;
-  --ivory-light:     #eef3f3;
-  --champagne:       #eef3f3;
-  --champagne-light: #deebeb;
+  /* White-dominant background palette (explicit handles) */
+  --ivory:           #ffffff;
+  --ivory-light:     #fafcfc;
+  --champagne:       #f4f8f8;
+  --champagne-light: #fbfdfd;
 
   /* — Accessible TEXT / FILL variants (small text / icons / buttons) — */
   --teal-deep: #4f7373;     /* accessible teal — button fill & icons carry WHITE text (>=4.5). ACCENT only — not a section background */
@@ -773,7 +773,7 @@ body.dark-texture-page footer div[style*="background"] {
    One clean, continuous warm ivory→champagne field that VERY slowly drifts so
    the whole MembershipPage reads as a single evolving background instead of a
    patchwork of section fills. NO teal/turquoise — warm neutrals only:
-     white #ffffff → ivory #deebeb → champagne #eef3f3.
+     white #ffffff → ivory #f7fafa → champagne #fbfdfd.
    How it works: an oversized linear base gradient pans across a 400% canvas
    (~34s) while two soft radial "blooms" (warm ivory / light champagne) breathe
    on long, offset loops (~28s / ~40s). Movement is tiny and the colours sit
@@ -783,17 +783,18 @@ body.dark-texture-page footer div[style*="background"] {
    (the <main>/section that currently stacks several teal/section fills), then
    make the inner sections transparent (background: transparent / remove their
    fills) so this one field shows through end-to-end. Dark text tokens stay AA
-   on every stop (#ffffff / #deebeb / #eef3f3 — gold #706552 = 4.87:1 worst).
+   on every stop (#ffffff / #f7fafa / #fbfdfd — gold #706552 = 4.87:1 worst).
    ============================================================ */
 .glow-field {
   position: relative;
-  background-color: #deebeb; /* solid fallback before paint */
-  /* Layer 1: warm-ivory bloom (top-left) · Layer 2: light-champagne bloom
-     (bottom-right) · Layer 3: the base ivory→champagne linear field. */
+  background-color: #ffffff; /* white ground */
+  /* WHITE-dominant field: mostly white, with ONE very faint cool bloom as a
+     subtle touch of depth (not a wash). Layer 1: soft white lift (top-left) ·
+     Layer 2: faint cool whisper (bottom-right) · Layer 3: near-white base. */
   background-image:
-    radial-gradient(60% 55% at 18% 22%, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0) 60%),
-    radial-gradient(58% 60% at 84% 78%, rgba(222, 235, 235, 0.85) 0%, rgba(222, 235, 235, 0) 62%),
-    linear-gradient(125deg, #ffffff 0%, #deebeb 42%, #eef3f3 100%);
+    radial-gradient(60% 55% at 18% 22%, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0) 60%),
+    radial-gradient(58% 60% at 84% 78%, rgba(150, 178, 178, 0.07) 0%, rgba(150, 178, 178, 0) 62%),
+    linear-gradient(125deg, #ffffff 0%, #fbfdfd 55%, #f4f8f8 100%);
   background-size: 160% 160%, 170% 170%, 400% 400%;
   background-position: 18% 22%, 84% 78%, 0% 50%;
   background-repeat: no-repeat;

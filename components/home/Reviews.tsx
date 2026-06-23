@@ -27,7 +27,7 @@ const META = '#595959';     // muted / meta
 const TEAL = '#4f7373';     // links / icons / accent fill (white text = AA)
 const TEAL_TEXT = '#406060';// teal as small text / eyebrow (AA on white)
 const GOLD = '#8c6d18';     // star fills (brand star colour, kept)
-const HAIRLINE = '#deebeb'; // light-teal hairlines
+const HAIRLINE = '#f7fafa'; // light-teal hairlines
 const SERIF = 'Trajan Pro, "Trajan Pro Regular", Georgia, serif';
 const WIDE = '"Novecento Wide Book", "Novecento Wide", sans-serif';
 const BODY = 'Roboto, sans-serif';

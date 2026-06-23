@@ -182,7 +182,7 @@ export default function PlanSummary({
           <style>{`
             .plan-summary-grid {
               margin-top: 40px;
-              background: linear-gradient(150deg, var(--teal-100) 0%, #eef3f3 100%);
+              background: linear-gradient(150deg, var(--teal-100) 0%, #fbfdfd 100%);
               border-radius: var(--radius-card);
               padding: 22px;
               display: grid;
@@ -278,7 +278,7 @@ export default function PlanSummary({
               <div
                 style={{
                   marginTop: "auto",
-                  background: "linear-gradient(150deg, var(--teal-100) 0%, #eef3f3 100%)",
+                  background: "linear-gradient(150deg, var(--teal-100) 0%, #fbfdfd 100%)",
                   borderRadius: "var(--radius-card)",
                   padding: "18px 20px",
                 }}

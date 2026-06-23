@@ -12,7 +12,7 @@ export const lp = {
   teal: "#4f7373", // accessible deep teal — headings / accents
   tealText: "#406060", // teal as small text / links (AA on white)
   tealHair: "#DEEBEB", // light teal hairlines
-  tealTint: "#deebeb", // warm ivory section background (was teal #eef3f3)
+  tealTint: "#f7fafa", // warm ivory section background (was teal #fbfdfd)
   beigeBg: "#faf7f2", // warm card background
   gold: "#706552", // heading / nav text token
   taupe: "#695c4e", // muted label / body-strong
@@ -122,7 +122,7 @@ export function SectionBlock({
   children: React.ReactNode;
 }) {
   return (
-    <section id={id} style={{ backgroundColor: alt ? lp.tealTint : "#ffffff", scrollMarginTop: "120px" }}>
+    <section id={id} style={{ background: alt ? `linear-gradient(180deg, #ffffff 0%, ${lp.tealTint} 50%, #ffffff 100%)` : "#ffffff", scrollMarginTop: "120px" }}>
       <div
         className="mx-auto px-6 lg:px-0"
         style={{ maxWidth: "860px", paddingTop: "52px", paddingBottom: "52px" }}
@@ -175,7 +175,7 @@ export function LegalHero({
   lastUpdated: string;
 }) {
   return (
-    <section style={{ background: "linear-gradient(180deg, #deebeb 0%, #eef3f3 100%)", paddingTop: "104px", paddingBottom: "72px" }}>
+    <section style={{ background: "linear-gradient(180deg, #ffffff 0%, #f7fafa 50%, #ffffff 100%)", paddingTop: "104px", paddingBottom: "72px" }}>
       <div className="mx-auto px-6 lg:px-0 text-center" style={{ maxWidth: "860px" }}>
         <p style={{ ...labelStyle, color: lp.tealText, marginBottom: "20px" }}>{eyebrow}</p>
         <h1
@@ -221,7 +221,7 @@ export function LegalHero({
           style={{
             width: "48px",
             height: "1px",
-            backgroundColor: "rgba(222,235,235,0.35)",
+            backgroundColor: "rgba(247, 250, 250,0.35)",
             margin: "40px auto 0",
           }}
         />
@@ -276,7 +276,7 @@ export function LegalContactCard({
   children: React.ReactNode;
 }) {
   return (
-    <section style={{ backgroundColor: lp.tealTint }}>
+    <section style={{ background: `linear-gradient(180deg, #ffffff 0%, ${lp.tealTint} 50%, #ffffff 100%)` }}>
       <div className="mx-auto px-6 lg:px-0" style={{ maxWidth: "860px", paddingTop: "52px", paddingBottom: "72px" }}>
         <div
           style={{

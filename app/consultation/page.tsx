@@ -115,7 +115,7 @@ function ContactItem({
     >
       {/* Icon circle — minimum 44×44px tap target */}
       <span
-        className="shrink-0 inline-flex items-center justify-center transition-colors duration-200 ease-in-out group-hover:bg-[#eef3f3]"
+        className="shrink-0 inline-flex items-center justify-center transition-colors duration-200 ease-in-out group-hover:bg-[#fbfdfd]"
         style={{
           width: "44px",
           height: "44px",
@@ -309,7 +309,7 @@ export default function ConsultationPage() {
         {/* ===== CONTACT STRIP ===== */}
         <section
           aria-labelledby={CONTACT_ID}
-          style={{ backgroundColor: "var(--cream)", padding: "64px 0 72px" }}
+          style={{ background: "linear-gradient(180deg, #ffffff 0%, var(--cream) 50%, #ffffff 100%)", padding: "64px 0 72px" }}
         >
           <div className="container">
             <Reveal>

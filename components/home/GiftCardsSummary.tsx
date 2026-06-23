@@ -16,7 +16,7 @@ import GiftHeroCards from "@/components/gifts/GiftHeroCards";
  * server component — a WebGL canvas must never be server-rendered.
  *
  * Palette: Aesthetics teal only (--teal-deep #4f7373, --teal-text #406060,
- * --teal #96b2b2, --teal-100 #deebeb). Body copy is neutral grey, normal
+ * --teal #96b2b2, --teal-100 #f7fafa). Body copy is neutral grey, normal
  * weight. No green, no cream/beige fills, no brown button fills.
  */
 

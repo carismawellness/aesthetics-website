@@ -7,7 +7,7 @@
 
    Palette (AA): --teal-deep #4f7373 (step number, dots, CTA), --teal-text
    #406060 (STEP label, card heading), --teal #96b2b2 (decorative line/halo),
-   --teal-100 #deebeb (card gradient tint). NO green/cream/brown, NO bold body.
+   --teal-100 #f7fafa (card gradient tint). NO green/cream/brown, NO bold body.
    Headings: Trajan Pro / Novecento Wide. Body: system font, normal weight.
    ────────────────────────────────────────────────────────────────────────── */
 
@@ -36,7 +36,7 @@ const STEPS: TimelineStep[] = [
 
 const cardStyle: React.CSSProperties = {
   borderRadius: '18px 44px 18px 44px',
-  background: 'linear-gradient(180deg, #ffffff 0%, #deebeb 100%)',
+  background: 'linear-gradient(180deg, #ffffff 0%, #f7fafa 100%)',
   boxShadow: '0 16px 38px rgba(60,50,40,0.08)',
 };
 
@@ -85,7 +85,7 @@ function Timeline() {
             <div className="flex justify-center" style={{ position: 'relative', zIndex: 1 }}>
               <span
                 aria-hidden
-                style={{ width: 18, height: 18, borderRadius: '50%', background: '#96b2b2', boxShadow: '0 0 0 5px #eef3f3' }}
+                style={{ width: 18, height: 18, borderRadius: '50%', background: '#96b2b2', boxShadow: '0 0 0 5px #fbfdfd' }}
               />
             </div>
             <div className="text-center">
@@ -108,7 +108,7 @@ function Timeline() {
             <div className="flex items-center gap-3" style={{ marginBottom: 12 }}>
               <span
                 aria-hidden
-                style={{ width: 16, height: 16, borderRadius: '50%', background: '#96b2b2', boxShadow: '0 0 0 4px #eef3f3', flexShrink: 0 }}
+                style={{ width: 16, height: 16, borderRadius: '50%', background: '#96b2b2', boxShadow: '0 0 0 4px #fbfdfd', flexShrink: 0 }}
               />
               <span style={{ fontFamily: SERIF, color: TEAL_TEXT, letterSpacing: '0.14em', fontSize: 14 }}>
                 Step <span style={{ fontSize: 24, color: TEAL_DEEP }}>{i + 1}</span>

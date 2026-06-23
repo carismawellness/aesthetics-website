@@ -124,7 +124,7 @@ export default function CenterHero({
   ctaPrimary,
   ctaSecondary,
 }: CenterHeroProps) {
-  const sectionBg = "radial-gradient(120% 90% at 50% 8%, #deebeb 0%, #f4f9f9 45%, #ffffff 100%)";
+  const sectionBg = "radial-gradient(120% 90% at 50% 8%, #f7fafa 0%, #f4f9f9 45%, #ffffff 100%)";
 
   return (
     <section

@@ -165,7 +165,7 @@ export default function PageHero({
   };
   const sectionBg = background || (dark
     ? "radial-gradient(120% 90% at 85% 10%, #1c1a17 0%, #14120e 55%, #0e0c09 100%)"
-    : "radial-gradient(120% 90% at 85% 10%, #ffffff 0%, #deebeb 60%, #deebeb 100%)");
+    : "radial-gradient(120% 90% at 85% 10%, #ffffff 0%, #f7fafa 60%, #f7fafa 100%)");
   const archBg = media.bg || (dark ? "#0c0c0c" : "linear-gradient(160deg, var(--teal-100) 0%, var(--gray-100) 55%, var(--beige) 100%)");
   const glassClass = dark ? "hero-glass-dark" : "hero-glass";
   const pillClass = dark ? "hero-pill-dark" : "hero-pill";
