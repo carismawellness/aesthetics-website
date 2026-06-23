@@ -89,6 +89,18 @@ export type Treatment = {
   trusted?: { title: string; subtitle?: string; asSeenOn?: string[]; images: string[]; points: { title: string; desc: string }[] };
   difference?: { kicker?: string; title: string; commitmentTitle: string; commitment: string[]; whyTitle: string; why: string[]; mapQuery: string };
   bookingForm?: { title: string };
+  /** offer-stack / plan-summary section (rendered by treatment/PlanSummary) */
+  planSummary?: {
+    kicker?: string;
+    title: string;
+    benefits: { icon?: "target" | "chart" | "value" | "shield" | "clock" | "sparkle"; title: string; desc: string }[];
+    included: { label: string; value?: string }[];
+    totalValue?: string;
+    price?: string;
+    priceLabel?: string;
+    cta: { text: string; href: string; external?: boolean };
+    reviews?: string;
+  };
   recommended?: { title: string; items: { label: string; href: string; image: string }[] };
   /** small kicker above the FAQ heading (e.g. "hair loss treatment FAQs") */
   faqKicker?: string;

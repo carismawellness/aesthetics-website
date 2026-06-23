@@ -122,6 +122,26 @@ const t: Treatment = {
     mapQuery: "Carisma Aesthetics, Malta",
   },
   bookingForm: { title: "Book Your Botox Appointment Today" },
+  planSummary: {
+    kicker: "Your botox plan",
+    title: "Malta's Doctor-Led Botox Plan",
+    benefits: [
+      { icon: "shield", title: "Doctor-Led Precision", desc: "Every treatment is performed by a medically qualified doctor — never a salon, never nurse-only." },
+      { icon: "sparkle", title: "Natural, Refined Results", desc: "We soften the lines that bother you while keeping your full expression — refreshed, never frozen." },
+      { icon: "clock", title: "Complimentary 2-Week Review", desc: "We review your result at two weeks and perfect it with a touch-up if needed — included free." },
+    ],
+    included: [
+      { label: "Free doctor-led consultation" },
+      { label: "Personalised, medically guided treatment plan" },
+      { label: "Expert CE-marked Botox treatment", value: "from €59" },
+      { label: "Complimentary 2-week review & touch-up" },
+      { label: "Aftercare guidance & ongoing support" },
+    ],
+    price: "From €59",
+    priceLabel: "per area",
+    cta: { text: "Book Your Botox Appointment", href: "/consultation" },
+    reviews: "200+ verified reviews",
+  },
   recommended: {
     title: "Recommended with Botox",
     items: [

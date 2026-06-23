@@ -9,6 +9,8 @@ import VideoPlayer from "@/components/VideoPlayer";
 import SuitabilityCards from "@/components/treatment/SuitabilityCards";
 import RecommendedCards from "@/components/treatment/RecommendedCards";
 import TreatmentFaq from "@/components/treatment/TreatmentFaq";
+import PlanSummary from "@/components/treatment/PlanSummary";
+import TopClinic from "@/components/treatment/TopClinic";
 
 // Fallback hero image when a treatment defines neither image nor video.
 const HERO_FALLBACK_IMAGE = "/assets/hero-bg.png";
@@ -721,165 +723,12 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
              section, ahead of the CTA band, patient videos, and Carisma
              Difference (per the new section order). ── */}
       {t.trusted && (
-        <section aria-labelledby="trusted-heading" style={{ padding: "70px 0 84px" }}>
-          <div className="container">
-            <h2
-              id="trusted-heading"
-              className="font-serif text-center"
-              style={{
-                fontSize: "clamp(24px,3.4vw,38px)",
-                color: "var(--gold)",
-                letterSpacing: "0.04em",
-                lineHeight: 1.25,
-              }}
-            >
-              {t.trusted.title}
-            </h2>
-            {t.trusted.subtitle && (
-              <p
-                className="font-display text-center"
-                style={{
-                  fontSize: "14px",
-                  color: "var(--label)",
-                  letterSpacing: "0.14em",
-                  textTransform: "uppercase",
-                  marginTop: "12px",
-                }}
-              >
-                {t.trusted.subtitle}
-              </p>
-            )}
-            {t.trusted.asSeenOn && t.trusted.asSeenOn.length > 0 && (
-              <div className="text-center" style={{ marginTop: "28px" }}>
-                <p
-                  className="font-display"
-                  style={{
-                    fontSize: "11px",
-                    color: "var(--gold)",
-                    letterSpacing: "0.18em",
-                    textTransform: "uppercase",
-                    marginBottom: "14px",
-                  }}
-                >
-                  As seen on
-                </p>
-                <div className="flex flex-wrap items-center justify-center" style={{ gap: "26px" }}>
-                  {t.trusted.asSeenOn.map((logo) => (
-                    // P3 — next/image for media logos; purely decorative so alt=""
-                    <Image
-                      key={logo}
-                      src={logo}
-                      alt=""
-                      width={80}
-                      height={26}
-                      style={{ height: "26px", width: "auto", objectFit: "contain" }}
-                    />
-                  ))}
-                </div>
-              </div>
-            )}
-
-            <Reveal
-              className="mx-auto"
-              style={{
-                marginTop: "40px",
-                maxWidth: "1100px",
-                borderRadius: "32px",
-                background: "linear-gradient(135deg,#eef4f5 0%, #ffffff 45%, #e6eef0 100%)",
-                border: "1px solid var(--line)",
-                padding: "clamp(28px,4vw,52px)",
-              }}
-            >
-              <div className="grid gap-10 lg:grid-cols-2 items-center">
-                {/* image cluster */}
-                {t.trusted.images.length === 1 ? (
-                  <div className="relative overflow-hidden" style={{ borderRadius: "32px", maxWidth: "470px" }}>
-                    <Image
-                      src={t.trusted.images[0]}
-                      // P1 — descriptive alt for clinic image
-                      alt="Carisma Aesthetics clinic"
-                      width={470}
-                      height={360}
-                      style={{ display: "block", width: "100%", height: "auto" }}
-                      sizes="(max-width: 1024px) 100vw, 470px"
-                    />
-                  </div>
-                ) : (
-                  <div
-                    className="mx-auto"
-                    style={{ maxWidth: "460px", width: "100%", padding: "14px", background: "var(--champagne)", borderRadius: "40px" }}
-                  >
-                    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 0 }}>
-                      {t.trusted.images.slice(0, 4).map((src, i) => {
-                        const R = "46%";
-                        const radii = [`${R} 0 0 0`, `0 ${R} 0 0`, `0 0 0 ${R}`, `0 0 ${R} 0`];
-                        return (
-                          <div key={src} style={{ overflow: "hidden", borderRadius: radii[i], position: "relative", aspectRatio: "1 / 1" }}>
-                            {/* P3 — next/image for clover cluster; decorative collage */}
-                            <Image
-                              src={src}
-                              alt={i === 0 ? "Carisma Aesthetics clinic photo collage" : ""}
-                              fill
-                              style={{ objectFit: "cover" }}
-                              sizes="(max-width: 640px) 50vw, 230px"
-                            />
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
-                )}
-                {/* trust points */}
-                <ul className="space-y-6">
-                  {t.trusted.points.map((p) => (
-                    <li key={p.title} className="flex items-start gap-4">
-                      <span
-                        className="shrink-0 inline-flex items-center justify-center"
-                        style={{
-                          width: "34px",
-                          height: "34px",
-                          borderRadius: "50%",
-                          background: "#e3eded",
-                          color: "var(--teal)",
-                          marginTop: "2px",
-                        }}
-                        aria-hidden="true"
-                      >
-                        <svg
-                          width="16"
-                          height="16"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
-                          <path d="M5 12.5l4.5 4.5L19 7" />
-                        </svg>
-                      </span>
-                      <div>
-                        <h3
-                          className="font-display"
-                          style={{
-                            fontSize: "15px",
-                            color: "var(--gold)",
-                            letterSpacing: "0.04em",
-                            textTransform: "uppercase",
-                            marginBottom: "4px",
-                          }}
-                        >
-                          {p.title}
-                        </h3>
-                        <p style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.625 }}>{p.desc}</p>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </Reveal>
-          </div>
-        </section>
+        <TopClinic
+          title={t.trusted.title}
+          pressText="As featured in Times of Malta · Lovin Malta · Bay · Malta Daily · Malta Today"
+          logos={t.trusted.asSeenOn}
+          cards={t.trusted.points.slice(0, 4).map((p) => ({ title: p.title, desc: p.desc }))}
+        />
       )}
 
       {/* ── Real patients — autoplay video reels ── */}
@@ -1189,6 +1038,14 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
             )}
           </div>
         </section>
+      )}
+
+      {/* ── Plan summary / offer stack (after "Your session, step by step") ── */}
+      {t.planSummary && (
+        <PlanSummary
+          {...t.planSummary}
+          cta={{ ...t.planSummary.cta, href: bookHref, external: true }}
+        />
       )}
 
       {/* ── Pricing grid ── */}
