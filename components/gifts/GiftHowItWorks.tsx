@@ -1,4 +1,5 @@
 import Reveal from "@/components/Reveal";
+import HeroBackdrop from "@/components/motion/HeroBackdrop";
 
 /**
  * GiftHowItWorks — a clean 3-step explainer for the Gifts page that also
@@ -28,9 +29,12 @@ export default function GiftHowItWorks() {
   return (
     <section
       aria-labelledby="gift-how-heading"
-      style={{ padding: "clamp(56px, 8vw, 96px) 0" }}
+      style={{ position: "relative", overflow: "hidden", padding: "clamp(56px, 8vw, 96px) 0" }}
     >
-      <div className="container">
+      {/* Lazy WebGL bokeh ambient for depth behind the steps. Desktop + in-view +
+          idle only; reduced-motion / mobile get the static CSS gradient fallback. */}
+      <HeroBackdrop />
+      <div className="container" style={{ position: "relative", zIndex: 1 }}>
         {/* ── Heading ── */}
         <Reveal>
           <div className="text-center" style={{ maxWidth: "640px", margin: "0 auto" }}>
@@ -58,7 +62,7 @@ export default function GiftHowItWorks() {
                 lineHeight: 1.2,
               }}
             >
-              How It Works
+              How it works
             </h2>
             <p
               style={{

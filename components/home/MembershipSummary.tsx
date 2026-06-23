@@ -101,9 +101,7 @@ export default function MembershipSummary() {
     <section
       aria-labelledby="membership-summary-heading"
       style={{
-        /* Slimming-style cool ground: white → light teal → soft mist */
-        background:
-          "linear-gradient(180deg, #ffffff 0%, var(--teal-100) 58%, var(--cream-2) 100%)",
+        background: "transparent",
         padding: "92px 0",
       }}
     >
@@ -197,7 +195,7 @@ export default function MembershipSummary() {
                 display: "flex",
                 flexDirection: "column",
                 padding: "28px 24px",
-                background: "linear-gradient(180deg, #ffffff 0%, #eef3f3 100%)",
+                background: "linear-gradient(180deg, #ffffff 0%, #faf6ef 100%)",
                 border: "1px solid rgba(79,115,115,0.12)",
                 borderTopLeftRadius: "16px",
                 borderTopRightRadius: "44px",

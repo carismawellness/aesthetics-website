@@ -30,8 +30,8 @@ const BODY = "#706552";        // brand brown body copy — 5.6:1 on white (AA)
 const BODY_SOFT = "#5c4f32";   // deeper taupe-brown for copy over light tints
 const GOLD_STAR = "#9c8344";   // gold star/graphic accent (decorative)
 const INK = "#0c0b0b";         // near-black (rare, badge/award text)
-const TINT = "#deebeb";        // lightest teal tint — alternating section ground
-const TINT_SOFT = "#eef3f3";   // cooler near-white teal tint
+const TINT = "#faf6ef";        // warm ivory — alternating section ground (was teal #deebeb)
+const TINT_SOFT = "#f7f0e4";   // light champagne section tint (was teal #eef3f3)
 
 function TealBtn({
   children,
@@ -117,7 +117,6 @@ function SectionHeading({
         letterSpacing: "0.08em",
         fontWeight: 400,
         lineHeight: 1.3,
-        textTransform: "uppercase",
         ...style,
       }}
     >
@@ -346,8 +345,11 @@ function TestimonialsCarousel() {
     return () => window.removeEventListener("resize", update);
   }, []);
 
-  const max = TESTIMONIALS.length - visible;
-  const go = (d: number) => setIdx((i) => Math.max(0, Math.min(i + d, max)));
+  const count = TESTIMONIALS.length;
+  const hasOverflow = count > visible;
+  // Infinite loop: wrap the index modulo the item count so paging past the end
+  // resumes with the first testimonials (never dead-ends / hides an arrow).
+  const go = (d: number) => setIdx((i) => ((i + d) % count + count) % count);
 
   return (
     <section style={{ background: TINT, padding: "clamp(60px,7vw,100px) 0" }}>
@@ -361,13 +363,16 @@ function TestimonialsCarousel() {
               gap: "20px",
             }}
           >
-            {TESTIMONIALS.slice(idx, idx + visible).map((r) => (
-              <ReviewCard key={r.name} {...r} />
+            {(hasOverflow
+              ? Array.from({ length: visible }, (_, i) => TESTIMONIALS[(idx + i) % count])
+              : TESTIMONIALS
+            ).map((r, i) => (
+              <ReviewCard key={`${r.name}-${i}`} {...r} />
             ))}
           </div>
 
-          {/* Prev arrow */}
-          {idx > 0 && (
+          {/* Prev arrow — always shown when looping (no dead-end) */}
+          {hasOverflow && (
             <button
               type="button"
               aria-label="Previous"
@@ -397,8 +402,8 @@ function TestimonialsCarousel() {
             </button>
           )}
 
-          {/* Next arrow */}
-          {idx < max && (
+          {/* Next arrow — always shown when looping (no dead-end) */}
+          {hasOverflow && (
             <button
               type="button"
               aria-label="Next"
@@ -515,8 +520,8 @@ export default function HairRegrowthPage() {
         theme="light"
         eyebrow={t.hero.subtitle}
         headline={[
-          { text: "Non-Surgical Hair Loss Clinic" },
-          { text: "Guaranteed Results in 90 Days", em: true },
+          { text: "Non-surgical hair loss clinic" },
+          { text: "guaranteed results in 90 days", em: true },
         ]}
         sub={t.hero.body}
         bullets={(t.hero.benefits ?? []).map((b) => ({ text: b }))}
@@ -528,7 +533,7 @@ export default function HairRegrowthPage() {
         }}
         proof={{
           rating: "4.9",
-          reviews: "200+",
+          reviews: "500+",
           statValue: "20+",
           statLabel: "years of expertise",
           awardText: "#1 Voted Clinic\nMalta Healthcare Awards",
@@ -1318,7 +1323,6 @@ export default function HairRegrowthPage() {
                 fontSize: "clamp(16px,2vw,22px)",
                 color: HEADING,
                 letterSpacing: "0.06em",
-                textTransform: "uppercase",
                 lineHeight: 1.35,
                 marginBottom: "26px",
               }}
@@ -1373,7 +1377,7 @@ export default function HairRegrowthPage() {
         <div className="container">
           <TealLine />
           <SectionKicker>real patients. real results.</SectionKicker>
-          <SectionHeading>hear from our patients</SectionHeading>
+          <SectionHeading>Hear from our patients</SectionHeading>
 
           <div
             className="grid grid-cols-2 md:grid-cols-4 gap-4"
@@ -1471,7 +1475,7 @@ export default function HairRegrowthPage() {
         <div className="container" style={{ maxWidth: "860px" }}>
           <TealLine />
           <SectionKicker>CLINICAL RESEARCH</SectionKicker>
-          <SectionHeading>evidence based approach</SectionHeading>
+          <SectionHeading>Evidence-based approach</SectionHeading>
           <p
             className="text-center mx-auto"
             style={{

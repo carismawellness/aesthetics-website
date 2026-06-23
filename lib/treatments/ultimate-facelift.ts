@@ -4,7 +4,7 @@ const t: Treatment = {
   slug: "ultimate-facelift",
   category: "Package",
   hero: {
-    title: "ultimate facelift",
+    title: "Ultimate facelift",
     subtitle: "Reverse visible aging — no knife, no downtime.",
     body: "If your skin's lost its lift, your cheeks feel flatter than before, or your jawline's lost its shape, this is your sign to rewind time — naturally. Our Ultimate Facelift Package is designed to lift, tighten, and sculpt — without surgery, fillers, or long recovery days.",
     prices: [
@@ -48,7 +48,7 @@ const t: Treatment = {
     intro: "Thread lifting is generally suitable for individuals with mild to moderate skin sagging who want a more lifted and youthful appearance without undergoing surgery. It's important to have realistic expectations and be in generally good health. A consultation with a medical practitioner can determine if you're a suitable candidate based on your skin condition and desired outcomes.",
   },
   experience: {
-    title: "what to expect during your thread lift treatment?",
+    title: "What to expect during your thread lift treatment?",
     steps: [
       {
         title: "BEFORE",
@@ -68,7 +68,7 @@ const t: Treatment = {
     ],
   },
   trusted: {
-    title: "MALTA'S TRUSTED CLINIC FOR NON-SURGICAL FACELIFT TREATMENTS",
+    title: "Malta's trusted clinic for non-surgical facelift treatments",
     subtitle: "As featured in Times of Malta, Lovin Malta, Elle, and Cosmopolitan",
     asSeenOn: [
       "/assets/press/lovin-malta.jpeg",
@@ -92,7 +92,7 @@ const t: Treatment = {
   },
   difference: {
     kicker: "The Carisma Difference",
-    title: "35+ YEARS OF EXPERTISE. PROVEN, TIMELESS RESULTS.",
+    title: "35+ years of expertise. Proven, timeless results.",
     commitmentTitle: "OUR COMMITMENT",
     commitment: [
       "Visible Lift & Contour — A naturally lifted, youthful appearance from your very first session.",
@@ -111,11 +111,11 @@ const t: Treatment = {
   },
   bookingForm: { title: "SECURE YOUR EXCLUSIVE FACELIFT REJUVENATION OFFER NOW" },
   recommended: {
-    title: "Recommended with Ultimate Facelift",
+    title: "Recommended with ultimate facelift",
     items: [
       { label: "Botox", href: "/wrinkle-relaxing-malta", image: "/assets/treatments/thread-lift-malta-rec-botox.avif" },
-      { label: "Collagen Stimulator", href: "/collagen-stimulator-malta", image: "/assets/treatments/thread-lift-malta-rec-collagen-stimulator.avif" },
-      { label: "Dermal Fillers", href: "/dermal-fillers-malta", image: "/assets/treatments/thread-lift-malta-rec-dermal-fillers.avif" },
+      { label: "Collagen stimulator", href: "/collagen-stimulator-malta", image: "/assets/treatments/thread-lift-malta-rec-collagen-stimulator.avif" },
+      { label: "Dermal fillers", href: "/dermal-fillers-malta", image: "/assets/treatments/thread-lift-malta-rec-dermal-fillers.avif" },
       { label: "Platelet-rich plasma", href: "/prp-malta", image: "/assets/treatments/thread-lift-malta-rec-prp.avif" },
     ],
   },

@@ -20,7 +20,7 @@ export default function Hero() {
     <>
       <PageHero
         headline={[
-          { text: "Pico Laser Tattoo Removal" },
+          { text: "Pico laser tattoo removal" },
           { text: "in Malta", em: true },
         ]}
         sub="Advanced laser technology to safely fade unwanted tattoos with precision, comfort, and clinically guided care."
@@ -33,7 +33,7 @@ export default function Hero() {
         }}
         proof={{
           rating: "4.9",
-          reviews: "200+",
+          reviews: "500+",
           statValue: "30+",
           statLabel: "years in wellness",
           awardText: "#1 Voted Clinic\nMalta Healthcare Awards",

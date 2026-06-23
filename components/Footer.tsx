@@ -23,18 +23,23 @@ const IG_URL = CONTACT.instagram;
 const FB_URL = CONTACT.facebook;
 
 // ─── Static data ─────────────────────────────────────────────────────────────
+// Designed brand panels (logo + Google-reviews strip already baked into each
+// image, exactly like Slimming's BrandBlock). Per-brand CTA colour mirrors
+// Slimming: gold for Spa, deep sage for Slimming. Aspect ratio 1128/328.
 const BRANDS = [
   {
     title: 'Carisma Spa & Wellness',
     img: '/assets/banner-spa.png',
     cta: 'Discover Our Spas',
     href: 'https://www.carismaspa.com',
+    btnColor: '#8c6d18', // deep gold — white text AA
   },
   {
     title: 'Carisma Slimming',
     img: '/assets/banner-slimming.png',
     cta: 'Discover Slimming',
     href: 'https://www.carismaslimming.com',
+    btnColor: '#4f7256', // Slimming deep sage — white text AA
   },
 ];
 
@@ -91,26 +96,62 @@ function BrandsSection() {
         <div style={{ textAlign: 'center', marginBottom: 'clamp(24px, 5vw, 40px)' }}>
           <Eyebrow>The Carisma Wellness Group</Eyebrow>
           <Rule center />
-          <h2 id="footer-brands-h" style={{ fontFamily: SERIF, fontSize: 'clamp(20px,3vw,28px)', fontWeight: 400, color: INK, letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '0' }}>
-            Malta&rsquo;s Leading Wellness Group
+          <h2 id="footer-brands-h" style={{ fontFamily: SERIF, fontSize: 'clamp(20px,3vw,28px)', fontWeight: 400, color: INK, letterSpacing: '1px', marginBottom: '0' }}>
+            Malta&rsquo;s leading wellness group
           </h2>
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px,1fr))', gap: '20px' }}>
+        <style>{`
+          [data-brand-cta] { transition: transform 200ms ease; }
+          [data-brand-cta]:hover { transform: scale(1.04); }
+          [data-brand-cta]:active { transform: scale(0.97); }
+          @media (prefers-reduced-motion: reduce) {
+            [data-brand-cta]:hover, [data-brand-cta]:active { transform: none; }
+          }
+        `}</style>
+        {/* Full-width designed panels (logo + reviews baked in) with the CTA pill
+            hanging off the bottom-right edge — a faithful match to Slimming's BrandBlock.
+            No dark overlay, no text title, no crop (card aspect = banner aspect). */}
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '52px' }}>
           {BRANDS.map((brand) => (
-            <div key={brand.title} style={{ position: 'relative', height: 'clamp(210px, 54vw, 272px)', borderRadius: '20px', overflow: 'hidden', boxShadow: '0 10px 40px rgba(0,0,0,0.1)' }}>
-              <Image src={brand.img} alt={brand.title} fill style={{ objectFit: 'cover' }} sizes="(max-width:768px) 100vw, 50vw" loading="lazy" />
-              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(100deg,rgba(0,30,40,0.72) 0%,rgba(0,30,40,0.22) 60%,transparent 100%)' }} />
-              <div style={{ position: 'absolute', inset: 0, padding: '28px 28px 28px 32px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end' }}>
-                <p style={{ fontFamily: SERIF, fontSize: '17px', fontWeight: 400, color: '#fff', letterSpacing: '1.5px', textTransform: 'uppercase', marginBottom: '14px', lineHeight: 1.3 }}>
-                  {brand.title}
-                </p>
-                <a href={brand.href} target="_blank" rel="noopener noreferrer" aria-label={`${brand.cta} — opens in new tab`}
-                  style={{ display: 'inline-flex', alignItems: 'center', fontFamily: WIDE, fontSize: '11px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', textDecoration: 'none', color: '#fff', background: 'rgba(255,255,255,0.15)', border: '1px solid rgba(255,255,255,0.4)', backdropFilter: 'blur(8px)', WebkitBackdropFilter: 'blur(8px)', padding: '11px 20px', borderRadius: '999px', minHeight: '42px', width: 'fit-content', transition: 'background .2s' }}
-                  onMouseEnter={e => ((e.currentTarget as HTMLAnchorElement).style.background = 'rgba(255,255,255,0.28)')}
-                  onMouseLeave={e => ((e.currentTarget as HTMLAnchorElement).style.background = 'rgba(255,255,255,0.15)')}>
-                  {brand.cta} →
-                </a>
-              </div>
+            <div key={brand.title} style={{ position: 'relative', width: '100%', aspectRatio: '1128 / 328' }}>
+              <Image
+                src={brand.img}
+                alt={brand.title}
+                fill
+                sizes="(max-width: 1024px) 100vw, 1100px"
+                style={{ objectFit: 'cover', borderRadius: '16px', boxShadow: '0 10px 40px rgba(0,0,0,0.10)' }}
+                loading="lazy"
+              />
+              <a
+                href={brand.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${brand.cta} — opens in new tab`}
+                data-brand-cta
+                className="btn"
+                style={{
+                  position: 'absolute',
+                  right: 0,
+                  bottom: '-20px',
+                  width: '278px',
+                  maxWidth: '78%',
+                  minHeight: '48px',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  backgroundColor: brand.btnColor,
+                  color: '#fff',
+                  fontFamily: WIDE,
+                  fontSize: '12px',
+                  fontWeight: 700,
+                  letterSpacing: '0.5px',
+                  textTransform: 'uppercase',
+                  textDecoration: 'none',
+                  borderRadius: '999px',
+                }}
+              >
+                {brand.cta}
+              </a>
             </div>
           ))}
         </div>
@@ -131,7 +172,7 @@ function FooterBase() {
 
             {/* Brand + socials + IG preview */}
             <div>
-              <p style={{ fontFamily: SERIF, fontSize: '18px', fontWeight: 400, color: INK, letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '12px' }}>Carisma Aesthetics</p>
+              <p style={{ fontFamily: SERIF, fontSize: '18px', fontWeight: 400, color: INK, letterSpacing: '1px', marginBottom: '12px' }}>Carisma Aesthetics</p>
               <p style={{ fontFamily: BODY, fontSize: '13px', lineHeight: 1.75, color: TEXT, maxWidth: '210px', marginBottom: '20px' }}>
                 Glow with confidence — doctor-led medical aesthetics in Malta. Natural results, delivered with care.
               </p>

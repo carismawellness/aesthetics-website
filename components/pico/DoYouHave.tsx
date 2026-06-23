@@ -19,12 +19,11 @@ export default function DoYouHave() {
                 fontSize: "clamp(20px,2.6vw,26px)",
                 color: "#406060",
                 letterSpacing: "0.06em",
-                textTransform: "uppercase",
                 fontWeight: 400,
                 lineHeight: 1.25,
               }}
             >
-              so your skin feels like yours again — confidently.
+              So your skin feels like yours again — confidently.
             </p>
             <h2
               id="do-you-have-heading"

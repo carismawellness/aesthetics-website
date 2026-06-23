@@ -3,10 +3,10 @@ import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import PageHero from "@/components/PageHero";
 import WhyGiftStrip from "@/components/gifts/WhyGiftStrip";
-import GiftSocialProof from "@/components/gifts/GiftSocialProof";
 import GiftHowItWorks from "@/components/gifts/GiftHowItWorks";
 import GiftFaq from "@/components/gifts/GiftFaq";
 import GiftFinalCta from "@/components/gifts/GiftFinalCta";
+import GiftHeroCards from "@/components/gifts/GiftHeroCards";
 import { giftFaqs } from "@/components/gifts/giftFaqData";
 
 export const metadata: Metadata = {
@@ -130,7 +130,7 @@ export default function GiftsPage() {
         <PageHero
           badge="#1 Voted Med-Aesthetics Clinic in Malta"
           headline={[
-            { text: "Give the Gift" },
+            { text: "Give the gift" },
             { text: "of Aesthetics", em: true },
           ]}
           sub="In 3 easy steps, you can invite your loved ones on a journey of relaxation and wellness in Malta that they will never forget."
@@ -148,9 +148,10 @@ export default function GiftsPage() {
             bg: "#f6efe6",
             alt: "Carisma Aesthetics gift voucher",
           }}
+          mediaSlot={<GiftHeroCards />}
           proof={{
             rating: "4.9",
-            reviews: "200+",
+            reviews: "500+",
             statValue: "30+",
             statLabel: "years in wellness",
             awardText: "#1 Voted Clinic\nMalta Healthcare Awards",
@@ -286,9 +287,6 @@ export default function GiftsPage() {
             </p>
           </div>
         </section>
-
-        {/* ===== SOCIAL PROOF — real 4.9★ / 200+ reviews ===== */}
-        <GiftSocialProof />
 
         {/* ===== HOW IT WORKS — 3 steps + redemption (hero secondary CTA anchor) ===== */}
         <div id="how-it-works" style={{ scrollMarginTop: "var(--nav-clear)" }}>

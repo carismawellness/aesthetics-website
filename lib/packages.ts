@@ -95,7 +95,7 @@ export const PACKAGES: Record<string, PackageData> = {
       video: `${J}/hero-video.mp4`,
       posterRatio: "317 / 394",
     },
-    testimonialsHeading: "THE SECRET TO VISIBLY MORE BEAUTIFUL SKIN –|OUR CUSTOMERS SHOW YOU HOW.",
+    testimonialsHeading: "The secret to visibly more beautiful skin –|our customers show you how.",
     testimonialsHeadingTwoLine: true,
     testimonials: [
       { img: `${J}/testi-1.png`, quote: "Finally found my jawline again! I've always had a rounder face, no matter how much I worked out. This treatment honestly changed that. I feel more confident in photos, and the best part is it still looks super natural.", name: "Rachelle A." },
@@ -104,7 +104,7 @@ export const PACKAGES: Record<string, PackageData> = {
       { img: `${J}/testi-4.png`, quote: "I was always self-conscious about my double chin, especially in photos. Decided to try the fat dissolving treatment and honestly — I wish I did it sooner. The whole process was smooth, barely any downtime, and after a few weeks, I noticed a clear difference. Jawline looks more defined and the area under my chin is much tighter. Highly recommend it to any guy thinking about it.", name: "Daniel A." },
     ],
     emotional: {
-      heading: "SO YOUR JAWLINE TURNS HEADS —",
+      heading: "So your jawline turns heads —",
       paras: [
         "Do you ever catch your reflection and wish your jawline looked sharper again?",
         "You look in the mirror and notice a softer chin line, a little sagging, or stubborn fat that wasn't there before.",
@@ -115,7 +115,7 @@ export const PACKAGES: Record<string, PackageData> = {
       image: `${J}/so-jawline.png`,
     },
     trusted: {
-      heading: "MALTA'S TOP CLINIC FOR NON-SURGICAL|JAWLINE CONTOURING",
+      heading: "Malta's top clinic for non-surgical|jawline contouring",
       headingTwoLine: true,
       subtitle: "Times of Malta, Lovin Malta, Elle, Cosmopolitan",
       benefits: [
@@ -126,7 +126,7 @@ export const PACKAGES: Record<string, PackageData> = {
       ],
     },
     createdFor: {
-      heading: "CREATED FOR WOMEN WHO REFUSE TO COMPROMISE|ON THEIR CONFIDENCE.",
+      heading: "Created for women who refuse to compromise|on their confidence.",
       reasons: [
         "Because you want a visibly sculpted, defined jawline that enhances your natural beauty.",
         "Because you deserve the refined look that only a premium, non-surgical treatment can deliver.",
@@ -135,7 +135,7 @@ export const PACKAGES: Record<string, PackageData> = {
       ],
       image: `${J}/created-women.jpg`,
     },
-    yearsDivider: "35+ YEARS DELIVERING RESULTS",
+    yearsDivider: "35+ years delivering results",
     commitment: {
       items: [
         "Visible Contour Boost – Sculpted, youthful jawline after the first session",
@@ -154,7 +154,7 @@ export const PACKAGES: Record<string, PackageData> = {
       ctaHref: PRODUCT("snatch-your-jawline"),
     },
     offer: {
-      heading: "SECURE YOUR EXCLUSIVE|JAWLINE SCULPTING OFFER NOW",
+      heading: "Secure your exclusive|jawline sculpting offer now",
       paras: [
         "Our special launch offer is available only for a limited time — after that, the regular price applies.",
         "Experience the transformative power of our Snatch Your Jawline treatment now just €149 (regularly €400).",
@@ -164,7 +164,7 @@ export const PACKAGES: Record<string, PackageData> = {
       imageRatio: "489 / 549",
     },
     getBack: {
-      heading: "GET YOUR JAWLINE BACK. SHARPER. DEFINED. YOU.",
+      heading: "Get your jawline back. Sharper. Defined. You.",
       subtitle: "A fast, gentle treatment that melts chin fat and tightens skin — no surgery, no downtime.",
       bullets: [
         "Only €149 instead of €400 — exclusive limited-time offer",
@@ -175,7 +175,7 @@ export const PACKAGES: Record<string, PackageData> = {
       image: `${J}/get-jawline.jpg`,
     },
     redefined: {
-      heading: "YOUR JAWLINE — REDEFINED.",
+      heading: "Your jawline — redefined.",
       subtitle: "See how our Snatch Your Jawline treatment lifts, tightens, and sculpts for lasting definition.",
       bullets: [
         "Visible Contour Boost – Sculpted, youthful jawline after the first session",
@@ -184,7 +184,7 @@ export const PACKAGES: Record<string, PackageData> = {
         "Luxury Meets Science – Advanced technology performed by certified professionals",
       ],
       image: `${J}/redefined.png`,
-      tabs: ["AQUALYX", "LEMON BOTTLE"],
+      tabs: ["Aqualyx", "Lemon Bottle"],
       stats: [
         { metric: "Procedure time", value: "20-30 minutes" },
         { metric: "Downtime", value: "7-14 days of swelling" },
@@ -194,7 +194,7 @@ export const PACKAGES: Record<string, PackageData> = {
       ],
     },
     expect: {
-      heading: "what to expect during your Fat dissolving treatment?",
+      heading: "What to expect during your fat dissolving treatment?",
       cols: [
         { label: "before", img: `${J}/wte-before.png`, points: [
           "Share your concerns and objectives with our expert practitioners and answer any questions.",
@@ -258,7 +258,7 @@ export const PACKAGES: Record<string, PackageData> = {
       video: `${H}/hero-video.mp4`,
       posterRatio: "317 / 394",
     },
-    testimonialsHeading: "THE SECRET TO VISIBLY MORE BEAUTIFUL SKIN –|OUR CUSTOMERS SHOW YOU HOW.",
+    testimonialsHeading: "The secret to visibly more beautiful skin –|our customers show you how.",
     testimonialsHeadingTwoLine: true,
     testimonials: [
       { img: `${H}/testi-1.png`, quote: "I also had a HydraFacial with Natasha, and I honestly enjoyed every moment. Natasha created such a relaxing environment and made the experience even more enjoyable with her friendly and professional approach. My skin felt amazing afterwards!", name: "Morina G." },
@@ -267,7 +267,7 @@ export const PACKAGES: Record<string, PackageData> = {
       { img: `${H}/testi-4.png`, quote: "I've spent way too much money on good products, but my skin wasn't absorbing anything. Turns out — I needed to clear the surface first. The HydraFacial and dermaplaning combo made a huge difference. Now everything I apply actually sinks in and feels effective. So glad I found this place in St Julian's — already telling all my friends.", name: "Rachel B." },
     ],
     emotional: {
-      heading: "SO YOUR SKIN GLOWS AGAIN — EFFORTLESSLY.",
+      heading: "So your skin glows again — effortlessly.",
       paras: [
         "Do you ever look in the mirror and wonder where your glow went?",
         "Your skin feels dull, your pores seem clogged, and every product you try promises more than it delivers. You're not alone — healthy, radiant skin shouldn't feel out of reach.",
@@ -278,7 +278,7 @@ export const PACKAGES: Record<string, PackageData> = {
       image: `${H}/glow.png`,
     },
     trusted: {
-      heading: "MALTA'S TRUSTED CLINIC FOR RADIANT, HEALTHY SKIN",
+      heading: "Malta's trusted clinic for radiant, healthy skin",
       subtitle: "As seen in Times of Malta, Lovin Malta, Elle, Cosmopolitan",
       benefits: [
         { icon: `${H}/icon-1.png`, title: "Instant Glow", desc: "Experience a visibly brighter, smoother complexion right after your first session — no downtime required." },
@@ -288,7 +288,7 @@ export const PACKAGES: Record<string, PackageData> = {
       ],
     },
     createdFor: {
-      heading: "CREATED FOR WOMEN WHO WANT THEIR SKIN TO GLOW|— NATURALLY AND CONFIDENTLY.",
+      heading: "Created for women who want their skin to glow|— naturally and confidently.",
       reasons: [
         "Because you want skin that looks luminous, smooth, and deeply refreshed — even without makeup.",
         "Because you deserve a medical-grade facial that delivers visible results, not just promises.",
@@ -298,7 +298,7 @@ export const PACKAGES: Record<string, PackageData> = {
       ],
       image: `${H}/created.jpg`,
     },
-    yearsDivider: "35+ YEARS HELPING MALTA GLOW WITH CONFIDENCE",
+    yearsDivider: "35+ years helping Malta glow with confidence",
     commitment: {
       items: [
         "Instant Radiance – Brighter, smoother skin after your first Hydrafacial session.",
@@ -317,7 +317,7 @@ export const PACKAGES: Record<string, PackageData> = {
       ctaHref: FRESHA("25781423"),
     },
     offer: {
-      heading: "SECURE YOUR EXCLUSIVE HYDRAFACIAL GLOW OFFER TODAY",
+      heading: "Secure your exclusive Hydrafacial Glow offer today",
       paras: [
         "Our special launch offer is available for a limited time only — once slots are filled, the regular price applies.",
         "Experience the ultimate 4-step facial that cleanses, exfoliates, and rejuvenates your skin from within.",
@@ -328,7 +328,7 @@ export const PACKAGES: Record<string, PackageData> = {
       imageRatio: "489 / 552",
     },
     getBack: {
-      heading: "GET YOUR GLOW BACK. BRIGHTER. FRESHER. YOU.",
+      heading: "Get your glow back. Brighter. Fresher. You.",
       subtitle: "A fast, gentle treatment that deeply cleanses, hydrates, and renews tired skin — no needles, no downtime.",
       bullets: [
         "Only €99 instead of €335 — exclusive limited-time offer",
@@ -339,7 +339,7 @@ export const PACKAGES: Record<string, PackageData> = {
       image: `${H}/getback.jpg`,
     },
     redefined: {
-      heading: "YOUR GLOW — REDEFINED.",
+      heading: "Your glow — redefined.",
       subtitle: "See how our 4-in-1 Hydrafacial Glow treatment cleanses, hydrates, and brightens for skin that looks smoother, fresher, and truly radiant.",
       bullets: [
         "Visible Radiance Boost – Enjoy smoother, brighter skin right after your first session.",
@@ -350,7 +350,7 @@ export const PACKAGES: Record<string, PackageData> = {
       image: `${H}/redefined.png`,
     },
     expect: {
-      heading: "what to expect during your hydrafacial treatment?",
+      heading: "What to expect during your Hydrafacial treatment?",
       cols: [
         { label: "before", img: `${H}/wte-before.png`, points: [
           "Before your treatment, prepare your skin by avoiding any harsh exfoliants or treatments for a few days.",
@@ -415,7 +415,7 @@ export const PACKAGES: Record<string, PackageData> = {
       video: `${E}/hero-video.mp4`,
       posterRatio: "317 / 394",
     },
-    testimonialsHeading: "what our clients have to say about their results",
+    testimonialsHeading: "What our clients have to say about their results",
     testimonials: [
       { img: `${E}/testi-1.png`, quote: "My skin looked tired and textured for months. Leticia explained everything so calmly and made the whole treatment feel easy. After the Exosome Glow Lift, my skin finally feels smooth again and my glow is back.", name: "Nicole C." },
       { img: `${E}/testi-2.png`, quote: "I started noticing my skin wasn't as firm or bright, especially around the cheeks. Dr. Fran was amazing, she really listened and customised the treatment for me. One session and I already look tighter and fresher.", name: "Claire M." },
@@ -423,7 +423,7 @@ export const PACKAGES: Record<string, PackageData> = {
       { img: `${E}/testi-4.png`, quote: "Didn't expect much honestly, but Dr. Gio made the whole process feel very professional and comfortable. My skin looks healthier and smoother even colleagues noticed.", name: "Daniel B." },
     ],
     expect: {
-      heading: "what to expect during your MICRONEEDLING treatment?",
+      heading: "What to expect during your microneedling treatment?",
       cols: [
         { label: "before", img: `${E}/wte-before.png`, points: [
           "Avoid using any topical skin products containing retinol, aha or any other acid at least 24 hours prior to the procedure.",
@@ -492,7 +492,7 @@ export const PACKAGES: Record<string, PackageData> = {
       video: `${F}/hero-video.mp4`,
       posterRatio: "317 / 476",
     },
-    testimonialsHeading: "THE SECRET TO VISIBLY MORE BEAUTIFUL SKIN –|OUR CUSTOMERS SHOW YOU HOW.",
+    testimonialsHeading: "The secret to visibly more beautiful skin –|our customers show you how.",
     testimonialsHeadingTwoLine: true,
     testimonials: [
       { img: `${F}/testi-1.png`, quote: "I always worried a brow lift would give me that “surprised” look. But Dr. Giovanni explained everything and reassured me it would be tailored to my face. The result? A soft lift, nothing exaggerated. I still look like me, just more fresh and awake. Love it.", name: "Marika c." },
@@ -501,7 +501,7 @@ export const PACKAGES: Record<string, PackageData> = {
       { img: `${F}/testi-4.jpg`, quote: "After 40, I felt like everything started to drop cheeks, jawline, everything. I didn't want filler or anything dramatic, just something to bring my face up again. Dr. Giovanni recommended the thread lift and I'm so glad I trusted him. It's subtle, but the lift is real. I feel like myself again.", name: "Antonia v." },
     ],
     emotional: {
-      heading: "SO YOUR REFLECTION GLOWS BACK — JUST LIKE YOU.",
+      heading: "So your reflection glows back — just like you.",
       paras: [
         "Do you ever look in the mirror and wish your face looked as lifted and fresh as it used to?",
         "Over time, our skin naturally loses its firmness — cheeks soften, contours fade, and lines begin to tell stories we're not ready to share.",
@@ -512,7 +512,7 @@ export const PACKAGES: Record<string, PackageData> = {
       image: `${F}/reflection.png`,
     },
     trusted: {
-      heading: "MALTA'S TRUSTED CLINIC FOR NON-SURGICAL|FACELIFT TREATMENTS",
+      heading: "Malta's trusted clinic for non-surgical|facelift treatments",
       headingTwoLine: true,
       subtitle: "As featured in Times of Malta, Lovin Malta, Elle, and Cosmopolitan",
       benefits: [
@@ -522,7 +522,7 @@ export const PACKAGES: Record<string, PackageData> = {
         { icon: `${F}/icon-4.png`, title: "Safe & Clinically Certified", desc: "Performed by certified medical professionals using EU-approved, clinically proven products." },
       ],
     },
-    yearsDivider: "35+ YEARS OF EXPERTISE. PROVEN, TIMELESS RESULTS.",
+    yearsDivider: "35+ years of expertise. Proven, timeless results.",
     commitment: {
       items: [
         "Visible Lift & Contour — A naturally lifted, youthful appearance from your very first session.",
@@ -539,7 +539,7 @@ export const PACKAGES: Record<string, PackageData> = {
       ],
     },
     offer: {
-      heading: "SECURE YOUR EXCLUSIVE FACELIFT REJUVENATION OFFER NOW",
+      heading: "Secure your exclusive facelift rejuvenation offer now",
       paras: [
         "Our special launch offer is available for a short time only — once spots are filled, regular pricing applies.",
         "Rediscover your confidence with our Ultimate Facelift Package, a non-surgical treatment designed to lift, tighten, and smooth — giving your skin that refreshed, youthful glow.",
@@ -550,7 +550,7 @@ export const PACKAGES: Record<string, PackageData> = {
       imageRatio: "489 / 548",
     },
     getBack: {
-      heading: "GET YOUR LIFT BACK. FIRMER. SMOOTHER. YOU.",
+      heading: "Get your lift back. Firmer. Smoother. You.",
       subtitle: "A gentle, medical-grade treatment designed to lift, tighten, and sculpt — restoring youthful definition without surgery or downtime.",
       bullets: [
         "Only €239 instead of €430 — limited-time offer",
@@ -561,7 +561,7 @@ export const PACKAGES: Record<string, PackageData> = {
       image: `${F}/getback.jpg`,
     },
     redefined: {
-      heading: "YOUR FACELIFT — REDEFINED.",
+      heading: "Your facelift — redefined.",
       subtitle: "See how our Ultimate Facelift Package gently lifts, tightens, and sculpts for visibly younger, naturally radiant skin.",
       bullets: [
         "Visible Lift & Contour – Enjoy a firmer, more lifted appearance after your first session.",
@@ -572,7 +572,7 @@ export const PACKAGES: Record<string, PackageData> = {
       image: `${F}/redefined.png`,
     },
     expect: {
-      heading: "what to expect during your thread lift treatment?",
+      heading: "What to expect during your thread lift treatment?",
       cols: [
         { label: "before", img: `${F}/wte-before.png`, points: [
           "Share your concerns and objectives with our expert practitioners and answer any questions.",

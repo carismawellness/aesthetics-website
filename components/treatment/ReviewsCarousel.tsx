@@ -210,7 +210,7 @@ function Arrow({
 
 export default function ReviewsCarousel({
   kicker,
-  title = "Real Reviews",
+  title = "Real reviews",
   sub,
   items,
 }: {
@@ -231,15 +231,18 @@ export default function ReviewsCarousel({
   }, []);
 
   const count = items?.length ?? 0;
-  const max = Math.max(0, count - visible);
-  // keep the window in range when the viewport (visible) changes
+  // keep the index normalized in range when the item count changes
   useEffect(() => {
-    setIdx((i) => Math.min(i, max));
-  }, [max]);
+    setIdx((i) => (count ? ((i % count) + count) % count : 0));
+  }, [count]);
 
-  const go = (d: number) => setIdx((i) => Math.max(0, Math.min(i + d, max)));
-  const window_ = items?.slice(idx, idx + visible) ?? [];
   const hasOverflow = count > visible;
+  // Infinite loop: wrap the index modulo the item count so paging past the end
+  // continues with the first reviews again (never dead-ends / disables an arrow).
+  const go = (d: number) => setIdx((i) => ((i + d) % count + count) % count);
+  const window_ = hasOverflow
+    ? Array.from({ length: visible }, (_, i) => items[(idx + i) % count])
+    : items ?? [];
 
   if (!count) return null;
 
@@ -285,8 +288,8 @@ export default function ReviewsCarousel({
             ))}
           </div>
 
-          {/* Right-edge fade — only meaningful when more cards exist to the right */}
-          {hasOverflow && idx < max && (
+          {/* Right-edge fade — there's always more to the right when looping */}
+          {hasOverflow && (
             <div
               aria-hidden
               style={{
@@ -308,8 +311,8 @@ export default function ReviewsCarousel({
               className="flex items-center justify-center gap-4"
               style={{ marginTop: 32 }}
             >
-              <Arrow dir="prev" onClick={() => go(-1)} disabled={idx <= 0} />
-              <Arrow dir="next" onClick={() => go(1)} disabled={idx >= max} />
+              <Arrow dir="prev" onClick={() => go(-1)} disabled={false} />
+              <Arrow dir="next" onClick={() => go(1)} disabled={false} />
             </div>
           )}
         </div>

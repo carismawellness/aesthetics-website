@@ -4,14 +4,23 @@ import type { Treatment } from "@/lib/treatments";
 import Reveal from "@/components/Reveal";
 import PageHero from "@/components/PageHero";
 import BeforeAfterCarousel from "@/components/BeforeAfterCarousel";
-import CompositeSlideshow from "@/components/CompositeSlideshow";
 import VideoPlayer from "@/components/VideoPlayer";
 import SuitabilityCards from "@/components/treatment/SuitabilityCards";
 import RecommendedCards from "@/components/treatment/RecommendedCards";
 import TreatmentFaq from "@/components/treatment/TreatmentFaq";
+import PlanSummary from "@/components/treatment/PlanSummary";
+import TopClinic from "@/components/treatment/TopClinic";
+import ProblemReframe from "@/components/treatment/ProblemReframe";
+import GuaranteeBand from "@/components/treatment/GuaranteeBand";
 
 // Fallback hero image when a treatment defines neither image nor video.
 const HERO_FALLBACK_IMAGE = "/assets/hero-bg.png";
+
+// Default Carisma Aesthetics Fresha booking page (all services). The primary
+// booking CTA opens this in a new tab and bypasses the consultation popup; a
+// treatment can override it with hero.bookHref to deep-link its own service.
+const AESTHETICS_FRESHA_BOOK =
+  "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2800348&share=true&pId=2708191";
 
 // Split the treatment title into at most two headline lines for PageHero, with
 // the last line rendered teal (em). Keeps the primary keyword + "Malta" intact.
@@ -23,12 +32,6 @@ function splitHeadline(title: string): { text: string; em?: boolean }[] {
   const first = words.slice(0, breakAt).join(" ");
   const second = words.slice(breakAt).join(" ");
   return [{ text: first }, { text: second, em: true }];
-}
-
-// First sentence of a paragraph (used as the hero sub when there's no subtitle).
-function firstSentence(text: string): string {
-  const m = text.match(/^(.*?[.!?])(\s|$)/);
-  return (m ? m[1] : text).trim();
 }
 
 // P1 — accessible colors: text uses taupe (#756758, 5.0:1 on card bg);
@@ -92,49 +95,56 @@ function MetricIcon({ metric }: { metric: string }) {
   );
 }
 
-function InfoCard({ info }: { info: NonNullable<Treatment["info"]> }) {
+// Compact horizontal treatment-info strip — the same metric language as the old
+// vertical card, but a single tidy row (icon → metric → detail) shown at the
+// bottom of the hero's LEFT column (under the reviews) so the RIGHT column stays
+// a clean, full-height hero photo.
+function InfoStrip({ info }: { info: NonNullable<Treatment["info"]> }) {
   return (
-    // P10 — pricing/info section aria-label for screen readers
     <div
       aria-label="Treatment info"
-      className="rounded-2xl"
       style={{
-        background: "rgba(150,178,178,0.12)",
-        border: "1px solid rgba(150,178,178,0.35)",
-        padding: "22px 26px",
+        width: "100%",
+        maxWidth: 620,
+        padding: "15px clamp(14px,1.8vw,22px)",
+        borderRadius: "var(--radius-card)",
+        background: "rgba(243,236,224,0.55)",
+        border: "1px solid rgba(150,178,178,0.30)",
       }}
     >
-      <div
-        className="font-display"
-        style={{ fontSize: "12px", color: INFO_COLOR, letterSpacing: "0.14em", marginBottom: "18px" }}
-      >
-        TREATMENT INFO
-      </div>
-      {info.map((it, i) => (
-        <div
-          key={it.metric}
-          className="flex items-center justify-between gap-4"
-          style={{ padding: "11px 0", borderTop: i === 0 ? "none" : `1px solid rgba(150,178,178,0.25)` }}
-        >
-          <span className="flex items-center gap-3">
+      <div className="treatment-info-strip">
+        {info.map((it) => (
+          <div key={it.metric} style={{ display: "flex", alignItems: "center", gap: 9, minWidth: 0 }}>
             <MetricIcon metric={it.metric} />
-            <span
-              className="font-display"
-              style={{ fontSize: "11px", color: INFO_COLOR, letterSpacing: "0.1em" }}
-            >
-              {it.metric}
+            <span style={{ display: "flex", flexDirection: "column", minWidth: 0 }}>
+              <span
+                className="font-display"
+                style={{ fontSize: 9.5, color: INFO_COLOR, letterSpacing: "0.08em", lineHeight: 1.25, textTransform: "uppercase" }}
+              >
+                {it.metric}
+              </span>
+              <span style={{ fontSize: 13, color: "#27484a", lineHeight: 1.3, fontWeight: 500 }}>{it.detail}</span>
             </span>
-          </span>
-          <span style={{ fontSize: "13px", color: INFO_COLOR, textAlign: "right" }}>{it.detail}</span>
-        </div>
-      ))}
+          </div>
+        ))}
+      </div>
+      <style>{`
+        .treatment-info-strip {
+          display: grid;
+          grid-template-columns: repeat(5, minmax(0, 1fr));
+          gap: clamp(8px, 1vw, 16px);
+          align-items: center;
+        }
+        @media (max-width: 980px) { .treatment-info-strip { grid-template-columns: repeat(3, minmax(0,1fr)); row-gap: 14px; } }
+        @media (max-width: 520px) { .treatment-info-strip { grid-template-columns: repeat(2, minmax(0,1fr)); row-gap: 14px; } }
+      `}</style>
     </div>
   );
 }
 
 export default function TreatmentPage({ t }: { t: Treatment }) {
-  const hasImage = Boolean(t.hero.image);
-  const hasMedia = hasImage || Boolean(t.hero.heroVideo);
+  // Primary booking CTA → direct Fresha (new tab); secondary → consultation popup.
+  const bookHref = t.hero.bookHref ?? AESTHETICS_FRESHA_BOOK;
 
   // Lift the price list into the hero's left column so it reads above the fold
   // (PageHero already renders `bullets`). Benefit bullets first, then one bullet
@@ -152,15 +162,27 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
   return (
     // P1 — <main> landmark wrapping all page content
     <main>
-      {/* ── Hero — shared <PageHero> (one <h1>, primary keyword + Malta) ── */}
+      {/* ── Hero — shared <PageHero> (one <h1>, primary keyword + Malta) ──
+             The full intro paragraph (t.hero.body) reads directly under the
+             headline as the hero's body, with the short subtitle as an optional
+             one-line lead-in above it. The TREATMENT INFO card is folded into the
+             hero's right column (belowMedia), beneath the arch photo, so the
+             above-the-fold reads as one cohesive unit. ── */}
       <PageHero
         badge="#1 Voted Med-Aesthetics Clinic"
+        eyebrow={t.hero.location}
         headline={splitHeadline(t.hero.title)}
         compactHeadline={t.hero.title.length > 22}
-        sub={t.hero.subtitle ?? (t.hero.body ? firstSentence(t.hero.body) : undefined)}
+        sub={t.hero.subtitle}
+        subSecondary={t.hero.body}
         bullets={heroBullets.length > 0 ? heroBullets : undefined}
-        primaryCta={{ text: t.hero.cta ?? "Book Your Consultation", href: "/consultation" }}
-        secondaryCta={{ text: "View Treatments", href: "/face-treatments" }}
+        primaryCta={{ text: t.hero.cta ?? "Book Your Appointment", href: bookHref, external: true }}
+        secondaryCta={{ text: "Free Consultation", href: "/consultation" }}
+        footnote={
+          t.hero.note ??
+          (t.pending ? "Detailed treatment information for this page is being finalised." : undefined)
+        }
+        belowContent={t.info && t.info.length > 0 ? <InfoStrip info={t.info} /> : undefined}
         media={
           t.hero.heroVideo
             ? {
@@ -184,106 +206,16 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
         }
         proof={{
           rating: "4.9",
-          reviews: "200+",
+          reviews: "500+",
           statValue: "30+",
           statLabel: "years in wellness",
           awardText: "#1 Voted Clinic\nMalta Healthcare Awards",
         }}
       />
 
-      {/* ── Hero detail strip — sits tight under the hero (minimal top padding so
-             it reads above the fold): supporting copy on the left, the TREATMENT
-             INFO card on the right. Prices now live in the hero bullets; the
-             product tabs, brand logos, and duplicate Google-rating block have
-             been removed. ── */}
-      {(t.hero.location ||
-        t.hero.body ||
-        t.hero.note ||
-        (t.info && hasMedia) ||
-        t.pending) && (
-        <section
-          aria-label="Treatment overview"
-          style={{ padding: "clamp(20px,3vh,36px) 0 clamp(40px,5vh,64px)" }}
-        >
-          <div className="container">
-            <div className="mx-auto" style={{ maxWidth: "1100px" }}>
-              <div className="grid gap-8 md:grid-cols-2 items-start">
-                {/* Left: supporting copy */}
-                <Reveal>
-                  {t.hero.location && (
-                    <p
-                      className="font-display"
-                      style={{
-                        fontSize: "12px",
-                        // P1 — teal-text #406060 = 5.76:1 — passes AA
-                        color: "var(--teal-text)",
-                        letterSpacing: "0.14em",
-                        textTransform: "uppercase",
-                        marginBottom: "12px",
-                      }}
-                    >
-                      {t.hero.location}
-                    </p>
-                  )}
-
-                  {t.hero.body && (
-                    // P6 — max-width prose for comfortable line length
-                    <p
-                      style={{
-                        fontSize: "14px",
-                        color: "var(--label)",
-                        lineHeight: 1.625,
-                        marginBottom: "16px",
-                        maxWidth: "72ch",
-                      }}
-                    >
-                      {t.hero.body}
-                    </p>
-                  )}
-
-                  {t.hero.note && (
-                    <p
-                      style={{
-                        marginTop: "16px",
-                        fontSize: "12px",
-                        // P1 — ink-soft is 12:1 — passes AA
-                        color: "var(--ink-soft)",
-                        lineHeight: 1.6,
-                      }}
-                    >
-                      {t.hero.note}
-                    </p>
-                  )}
-
-                  {t.pending && (
-                    <p
-                      style={{
-                        marginTop: "24px",
-                        fontSize: "12px",
-                        color: "var(--ink-soft)",
-                        fontStyle: "italic",
-                      }}
-                    >
-                      Detailed treatment information for this page is being finalised.
-                    </p>
-                  )}
-                </Reveal>
-
-                {/* Right: treatment-info card */}
-                {t.info && hasMedia && (
-                  <Reveal delay={120}>
-                    <InfoCard info={t.info} />
-                  </Reveal>
-                )}
-              </div>
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* ── Before / After carousel — moved up to sit immediately under the
-             above-the-fold (hero + info strip), before everything else. Shows
-             all before/after pairs. ── */}
+      {/* ── Before / After carousel — sits immediately under the above-the-fold
+             hero (which now carries the body copy + TREATMENT INFO card),
+             before everything else. Shows all before/after pairs. ── */}
       {(t.beforeAfter || t.beforeAfterTitle) && (
         <section aria-label="Before and after results" style={{ padding: "70px 0" }}>
           {t.beforeAfter && t.beforeAfter.length > 0 ? (
@@ -326,88 +258,14 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
         </section>
       )}
 
-      {/* ── Lead form — below hero, anchored via #book ── */}
-      {t.hero.heroForm && (
-        <section
-          id="book"
-          aria-labelledby="book-heading"
-          style={{
-            padding: "clamp(36px,5vh,64px) 0",
-            backgroundColor: "var(--beige)",
-            scrollMarginTop: "var(--nav-clear)",
-          }}
-        >
-          <div className="container">
-            <h2
-              id="book-heading"
-              className="font-serif text-center"
-              style={{
-                fontSize: "clamp(24px,3.4vw,38px)",
-                color: "var(--gold)",
-                letterSpacing: "0.04em",
-                textTransform: "uppercase",
-                lineHeight: 1.25,
-              }}
-            >
-              Book Your Consultation
-            </h2>
-            <p
-              className="text-center"
-              style={{
-                fontSize: "14px",
-                color: "var(--label)",
-                marginTop: "10px",
-                maxWidth: "560px",
-                marginInline: "auto",
-                lineHeight: 1.625,
-              }}
-            >
-              Share a few details and our team will be in touch to arrange your complimentary consultation.
-            </p>
-            <div
-              className="flex justify-center"
-              style={{ marginTop: "26px" }}
-            >
-              {/* Opens the site-wide consultation popup (global interceptor on
-                  href="/consultation"). */}
-              <Link
-                href="/consultation"
-                className="btn btn-teal"
-                style={{ fontSize: "13px", padding: "15px 44px", letterSpacing: "0.12em" }}
-              >
-                Book Free Consultation
-              </Link>
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* ── Treatment info — horizontal info-bar fallback when there is no media
-             (the card form now lives in the hero overview strip above) ── */}
-      {t.info && !hasMedia && (
-        <section aria-label="Treatment information" style={{ padding: "clamp(28px,4vh,48px) 0" }}>
-          <div className="container">
-            <div className="card mx-auto" style={{ padding: "22px 20px", maxWidth: "900px" }}>
-              <div
-                className="grid gap-6 text-center"
-                style={{ gridTemplateColumns: `repeat(${Math.min(t.info.length, 5)}, minmax(0,1fr))` }}
-              >
-                {t.info.map((it) => (
-                  <div key={it.metric}>
-                    <div
-                      className="font-display"
-                      // P1 — teal-text #406060 = 6.86:1 on white .card — passes AA
-                      style={{ fontSize: "11px", color: "var(--teal-text)", letterSpacing: "0.14em", marginBottom: "8px" }}
-                    >
-                      {it.metric}
-                    </div>
-                    <div style={{ fontSize: "14px", color: "var(--ink)" }}>{it.detail}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
+      {/* ── Emotional problem reframe — right after the before/afters ── */}
+      {t.problem && (
+        <ProblemReframe
+          kicker={t.problem.kicker}
+          title={t.problem.title}
+          body={t.problem.body}
+          points={t.problem.points}
+        />
       )}
 
       {/* ── Education ── */}
@@ -424,7 +282,6 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                 fontSize: "clamp(24px,3.4vw,38px)",
                 color: "var(--gold)",
                 letterSpacing: "0.04em",
-                textTransform: "uppercase",
                 lineHeight: 1.25,
               }}
             >
@@ -505,51 +362,15 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
       )}
 
       {/* ── Guarantee ── */}
+      {/* ── Guarantee — the Natural Confidence Guarantee (GuaranteeBand) ── */}
       {t.guarantee && (
-        <section aria-labelledby="guarantee-heading" style={{ padding: "80px 0" }}>
-          <div className="container">
-            <h2
-              id="guarantee-heading"
-              className="font-serif text-center"
-              style={{
-                fontSize: "clamp(24px,3.4vw,38px)",
-                color: "var(--gold)",
-                letterSpacing: "0.04em",
-                textTransform: "uppercase",
-                lineHeight: 1.25,
-              }}
-            >
-              {t.guarantee.title}
-            </h2>
-            <div className="mx-auto" style={{ marginTop: "24px", maxWidth: "780px" }}>
-              {t.guarantee.paragraphs.map((p, i) => (
-                <p
-                  key={i}
-                  style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.625, marginTop: i === 0 ? 0 : "16px", textAlign: "center" }}
-                >
-                  {p}
-                </p>
-              ))}
-            </div>
-            {t.guarantee.cta && (
-              <div className="text-center" style={{ marginTop: "30px" }}>
-                {/* P2 — min-h-[44px] for CTA tap target */}
-                <Link
-                  href="/consultation"
-                  className="btn btn-teal"
-                  style={{ display: "inline-flex", alignItems: "center", minHeight: "44px" }}
-                >
-                  {t.guarantee.cta}
-                </Link>
-              </div>
-            )}
-            {t.guarantee.beforeAfter && t.guarantee.beforeAfter.length > 0 && (
-              <div style={{ marginTop: "52px" }}>
-                <CompositeSlideshow images={t.guarantee.beforeAfter} title={t.guarantee.beforeAfterTitle} />
-              </div>
-            )}
-          </div>
-        </section>
+        <GuaranteeBand
+          kicker={t.guarantee.kicker}
+          title={t.guarantee.title}
+          paragraphs={t.guarantee.paragraphs}
+          cta={t.guarantee.cta}
+          points={t.guarantee.points}
+        />
       )}
 
       {/* ── Precision areas ── */}
@@ -678,6 +499,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
           sub={t.suitability.intro}
           suitableFor={t.suitability.suitableFor ?? []}
           notIdeal={t.suitability.notIdeal ?? []}
+          personas={t.suitability.personas}
         />
       )}
 
@@ -714,7 +536,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                         height: "18px",
                         borderRadius: "50%",
                         background: "var(--teal)",
-                        boxShadow: "0 0 0 5px #dde8e8",
+                        boxShadow: "0 0 0 5px #f3ece0",
                         flexShrink: 0,
                       }}
                       aria-hidden="true"
@@ -723,13 +545,13 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                       className="font-serif"
                       style={{ fontSize: "15px", color: "var(--gold)", letterSpacing: "0.14em" }}
                     >
-                      STEP <span style={{ fontSize: "clamp(24px,6vw,34px)", lineHeight: 1 }}>{i + 1}</span>
+                      Step <span style={{ fontSize: "clamp(24px,6vw,34px)", lineHeight: 1 }}>{i + 1}</span>
                     </span>
                   </div>
                   <div
                     style={{
                       borderRadius: "20px 56px 20px 56px",
-                      background: "linear-gradient(180deg,#ffffff 0%, #e7eff0 100%)",
+                      background: "linear-gradient(180deg,#ffffff 0%, #f3ece0 100%)",
                       padding: "10px",
                       boxShadow: "0 16px 38px rgba(0,0,0,0.07)",
                     }}
@@ -806,7 +628,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                         height: "18px",
                         borderRadius: "50%",
                         background: "var(--teal)",
-                        boxShadow: "0 0 0 5px #dde8e8",
+                        boxShadow: "0 0 0 5px #f3ece0",
                       }}
                       aria-hidden="true"
                     />
@@ -814,7 +636,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                   {/* STEP + number */}
                   <div className="text-center">
                     <div className="font-serif" style={{ fontSize: "17px", color: "var(--gold)", letterSpacing: "0.14em" }}>
-                      STEP
+                      Step
                     </div>
                     <div
                       className="font-serif"
@@ -827,7 +649,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                   <div
                     style={{
                       borderRadius: "20px 56px 20px 56px",
-                      background: "linear-gradient(180deg,#ffffff 0%, #e7eff0 100%)",
+                      background: "linear-gradient(180deg,#ffffff 0%, #f3ece0 100%)",
                       padding: "10px",
                       boxShadow: "0 16px 38px rgba(0,0,0,0.07)",
                     }}
@@ -878,185 +700,13 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
              section, ahead of the CTA band, patient videos, and Carisma
              Difference (per the new section order). ── */}
       {t.trusted && (
-        <section aria-labelledby="trusted-heading" style={{ padding: "70px 0 84px" }}>
-          <div className="container">
-            <h2
-              id="trusted-heading"
-              className="font-serif text-center"
-              style={{
-                fontSize: "clamp(24px,3.4vw,38px)",
-                color: "var(--gold)",
-                letterSpacing: "0.04em",
-                lineHeight: 1.25,
-              }}
-            >
-              {t.trusted.title}
-            </h2>
-            {t.trusted.subtitle && (
-              <p
-                className="font-display text-center"
-                style={{
-                  fontSize: "14px",
-                  color: "var(--label)",
-                  letterSpacing: "0.14em",
-                  textTransform: "uppercase",
-                  marginTop: "12px",
-                }}
-              >
-                {t.trusted.subtitle}
-              </p>
-            )}
-            {t.trusted.asSeenOn && t.trusted.asSeenOn.length > 0 && (
-              <div className="text-center" style={{ marginTop: "28px" }}>
-                <p
-                  className="font-display"
-                  style={{
-                    fontSize: "11px",
-                    color: "var(--gold)",
-                    letterSpacing: "0.18em",
-                    textTransform: "uppercase",
-                    marginBottom: "14px",
-                  }}
-                >
-                  As seen on
-                </p>
-                <div className="flex flex-wrap items-center justify-center" style={{ gap: "26px" }}>
-                  {t.trusted.asSeenOn.map((logo) => (
-                    // P3 — next/image for media logos; purely decorative so alt=""
-                    <Image
-                      key={logo}
-                      src={logo}
-                      alt=""
-                      width={80}
-                      height={26}
-                      style={{ height: "26px", width: "auto", objectFit: "contain" }}
-                    />
-                  ))}
-                </div>
-              </div>
-            )}
-
-            <Reveal
-              className="mx-auto"
-              style={{
-                marginTop: "40px",
-                maxWidth: "1100px",
-                borderRadius: "32px",
-                background: "linear-gradient(135deg,#eef4f5 0%, #ffffff 45%, #e6eef0 100%)",
-                border: "1px solid var(--line)",
-                padding: "clamp(28px,4vw,52px)",
-              }}
-            >
-              <div className="grid gap-10 lg:grid-cols-2 items-center">
-                {/* image cluster */}
-                {t.trusted.images.length === 1 ? (
-                  <div className="relative overflow-hidden" style={{ borderRadius: "32px", maxWidth: "470px" }}>
-                    <Image
-                      src={t.trusted.images[0]}
-                      // P1 — descriptive alt for clinic image
-                      alt="Carisma Aesthetics clinic"
-                      width={470}
-                      height={360}
-                      style={{ display: "block", width: "100%", height: "auto" }}
-                      sizes="(max-width: 1024px) 100vw, 470px"
-                    />
-                  </div>
-                ) : (
-                  <div
-                    className="mx-auto"
-                    style={{ maxWidth: "460px", width: "100%", padding: "14px", background: "var(--teal-200)", borderRadius: "40px" }}
-                  >
-                    <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 0 }}>
-                      {t.trusted.images.slice(0, 4).map((src, i) => {
-                        const R = "46%";
-                        const radii = [`${R} 0 0 0`, `0 ${R} 0 0`, `0 0 0 ${R}`, `0 0 ${R} 0`];
-                        return (
-                          <div key={src} style={{ overflow: "hidden", borderRadius: radii[i], position: "relative", aspectRatio: "1 / 1" }}>
-                            {/* P3 — next/image for clover cluster; decorative collage */}
-                            <Image
-                              src={src}
-                              alt={i === 0 ? "Carisma Aesthetics clinic photo collage" : ""}
-                              fill
-                              style={{ objectFit: "cover" }}
-                              sizes="(max-width: 640px) 50vw, 230px"
-                            />
-                          </div>
-                        );
-                      })}
-                    </div>
-                  </div>
-                )}
-                {/* trust points */}
-                <ul className="space-y-6">
-                  {t.trusted.points.map((p) => (
-                    <li key={p.title} className="flex items-start gap-4">
-                      <span
-                        className="shrink-0 inline-flex items-center justify-center"
-                        style={{
-                          width: "34px",
-                          height: "34px",
-                          borderRadius: "50%",
-                          background: "#e3eded",
-                          color: "var(--teal)",
-                          marginTop: "2px",
-                        }}
-                        aria-hidden="true"
-                      >
-                        <svg
-                          width="16"
-                          height="16"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
-                          <path d="M5 12.5l4.5 4.5L19 7" />
-                        </svg>
-                      </span>
-                      <div>
-                        <h3
-                          className="font-display"
-                          style={{
-                            fontSize: "15px",
-                            color: "var(--gold)",
-                            letterSpacing: "0.04em",
-                            textTransform: "uppercase",
-                            marginBottom: "4px",
-                          }}
-                        >
-                          {p.title}
-                        </h3>
-                        <p style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.625 }}>{p.desc}</p>
-                      </div>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </Reveal>
-          </div>
-        </section>
+        <TopClinic
+          title={t.trusted.title}
+          pressText="As featured in Times of Malta · Lovin Malta · Bay · Malta Daily · Malta Today"
+          logos={t.trusted.asSeenOn}
+          cards={t.trusted.points.slice(0, 4).map((p) => ({ title: p.title, desc: p.desc }))}
+        />
       )}
-
-      {/* ── Call-to-action band — simple centred "Book Your Free Consultation"
-             on a light section (not a solid blue box). Sits under Trusted,
-             ahead of the patient videos. ── */}
-      <section aria-label="Book a consultation" style={{ padding: "16px 0 56px" }}>
-        <div className="container">
-          <div className="text-center">
-            {/* Opens the site-wide consultation popup (global interceptor on
-                href="/consultation"). */}
-            <Link
-              href="/consultation"
-              className="btn btn-teal"
-              style={{ borderRadius: 999, padding: "15px 32px" }}
-            >
-              Book Your Free Consultation
-            </Link>
-          </div>
-        </div>
-      </section>
 
       {/* ── Real patients — autoplay video reels ── */}
       {t.patientVideos && (
@@ -1367,6 +1017,14 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
         </section>
       )}
 
+      {/* ── Plan summary / offer stack (after "Your session, step by step") ── */}
+      {t.planSummary && (
+        <PlanSummary
+          {...t.planSummary}
+          cta={{ ...t.planSummary.cta, href: bookHref, external: true }}
+        />
+      )}
+
       {/* ── Pricing grid ── */}
       {t.pricingGrid && (
         <section
@@ -1382,7 +1040,6 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                 fontSize: "clamp(24px,3.4vw,38px)",
                 color: "var(--gold)",
                 letterSpacing: "0.04em",
-                textTransform: "uppercase",
                 lineHeight: 1.25,
               }}
             >
@@ -1455,7 +1112,6 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                 fontSize: "clamp(24px,3.4vw,38px)",
                 color: "var(--gold)",
                 letterSpacing: "0.04em",
-                textTransform: "uppercase",
                 lineHeight: 1.25,
               }}
             >

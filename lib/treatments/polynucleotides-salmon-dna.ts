@@ -7,7 +7,7 @@ const t: Treatment = {
   slug: "polynucleotides-salmon-dna",
   category: "Face",
   hero: {
-    title: "polynucleotides (salmon dna)",
+    title: "Polynucleotides (salmon DNA)",
     subtitle: "ARE YOU LOOKING TO RESTORE FIRMER, SMOOTHER, MORE RADIANT SKIN?",
     body: "Polynucleotides (Salmon DNA) boost hydration, repair damaged skin, and stimulate collagen — giving you smoother texture, improved elasticity, and a naturally refreshed glow.",
     prices: [{ label: "1ml", price: "from €249/ml" }],
@@ -45,7 +45,7 @@ const t: Treatment = {
     additional: "Decolletage, forehead, inner arms, lip area, acne scarring zones, scalp",
   },
   suitability: {
-    title: "is this suitable for you?",
+    title: "Is this suitable for you?",
     intro: "Polynucleotides work at a cellular level to regenerate and rejuvenate skin from within. This is a treatment for those who value long-term skin health over instant visual change. Results build gradually with each session.",
     suitableFor: [
       "You are interested in advanced skin rejuvenation at a cellular level",
@@ -63,7 +63,7 @@ const t: Treatment = {
     ],
   },
   experience: {
-    title: "your treatment experience",
+    title: "Your treatment experience",
     steps: [
       { title: "personalised consultation", desc: "We assess your facial anatomy, skin condition, medical history, and botox goals with one of our doctors.", image: "/assets/treatments/botox-step1.png" },
       { title: "Structured Plan", desc: "Your doctor designs a medically guided botox plan tailored to your facial structure and desired outcome.", image: "/assets/treatments/botox-step2.png" },
@@ -74,7 +74,7 @@ const t: Treatment = {
   },
   prepAftercare: {
     kicker: "Preparation & Aftercare",
-    title: "your session, step by step",
+    title: "Your session, step by step",
     intro: "A smooth botox experience begins with a few simple steps. Here is what to know before, during, and after your session at our Malta clinic.",
     cards: [
       {
@@ -113,7 +113,7 @@ const t: Treatment = {
     ],
   },
   trusted: {
-    title: "malta's trusted clinic for salmon dna",
+    title: "Malta's trusted clinic for salmon DNA",
     subtitle: "DOCTOR-LED salmon dna IN MALTA",
     asSeenOn: ["/assets/press/lovin-malta.jpeg", "/assets/press/malta-daily.png", "/assets/press/bay.jpeg", "/assets/press/times-of-malta.png", "/assets/press/malta-today.jpg"],
     images: ["/assets/treatments/trusted-clinic-collage.png"],
@@ -127,7 +127,7 @@ const t: Treatment = {
   },
   difference: {
     kicker: "the carisma difference",
-    title: "malta’s #1 leading wellness chain",
+    title: "Malta’s #1 leading wellness chain",
     commitmentTitle: "our commitment",
     commitment: [
       "Natural, refined salmon dna results, never overdone, never frozen",
@@ -146,12 +146,12 @@ const t: Treatment = {
   },
   bookingForm: { title: "BOOK YOUR salmon dna APPOINTMENT TODAY" },
   recommended: {
-    title: "recommended with salmon dna",
+    title: "Recommended with salmon DNA",
     items: [
-      { label: "hydrafacial", href: "/hydrafacial", image: "/assets/treatments/polynucleotides-salmon-dna-rec-hydrafacial.avif" },
+      { label: "Hydrafacial", href: "/hydrafacial", image: "/assets/treatments/polynucleotides-salmon-dna-rec-hydrafacial.avif" },
       { label: "Microneedling", href: "/microneedling-malta", image: "/assets/treatments/polynucleotides-salmon-dna-rec-microneedling.png" },
-      { label: "botox", href: "/wrinkle-relaxing-malta", image: "/assets/treatments/polynucleotides-salmon-dna-rec-botox.avif" },
-      { label: "PRp", href: "/prp-malta", image: "/assets/treatments/polynucleotides-salmon-dna-rec-prp.avif" },
+      { label: "Botox", href: "/wrinkle-relaxing-malta", image: "/assets/treatments/polynucleotides-salmon-dna-rec-botox.avif" },
+      { label: "PRP", href: "/prp-malta", image: "/assets/treatments/polynucleotides-salmon-dna-rec-prp.avif" },
     ],
   },
   faqTitle: "Frequently asked questions",

@@ -4,7 +4,7 @@ const t: Treatment = {
   slug: "exosome-glowlift",
   category: "Package",
   hero: {
-    title: "EXOSOME GLOW LIFT",
+    title: "Exosome glow lift",
     body: "When facials stop working and your glow fades, Exosomes offer the next step — real regeneration for smoother, firmer, brighter skin.",
     benefits: [
       "Microneedling with Exosomes (€200)",
@@ -23,7 +23,7 @@ const t: Treatment = {
     { before: "/assets/treatments/microneedling-malta-ba2-before.jpg", after: "/assets/treatments/microneedling-malta-ba2-after.jpg" },
   ],
   experience: {
-    title: "what to expect during your MICRONEEDLING treatment?",
+    title: "What to expect during your microneedling treatment?",
     steps: [
       {
         title: "BEFORE",

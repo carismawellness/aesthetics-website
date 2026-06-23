@@ -1,10 +1,24 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useMemo, useCallback } from "react";
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
 
 type Pair = { before: string; after: string; label?: string };
+
+// Responsive cards-per-view — mirrors the slimming ResultsCarousel peek logic
+// (mobile 1 · tablet 2 · desktop 3), but as a windowed *page* count rather than
+// a free-scroll peek, so arrows page through fixed groups and disable at the ends.
+const BREAKPOINTS = [
+  { min: 1024, perView: 3 }, // desktop: 3 pairs
+  { min: 640, perView: 2 }, //  tablet: 2 pairs
+  { min: 0, perView: 1 }, //   mobile: 1 pair
+] as const;
+
+function perViewForWidth(w: number): number {
+  for (const b of BREAKPOINTS) if (w >= b.min) return b.perView;
+  return 1;
+}
 
 function Chevron({ dir }: { dir: "left" | "right" }) {
   return (
@@ -24,19 +38,146 @@ function Chevron({ dir }: { dir: "left" | "right" }) {
   );
 }
 
+// One card = a single before|after pair shown side-by-side, with corner labels
+// and an optional caption beneath. Several of these sit in a row at once.
+function PairCard({
+  pair,
+  title,
+  index,
+  total,
+  priority,
+}: {
+  pair: Pair;
+  title?: string;
+  index: number;
+  total: number;
+  priority: boolean;
+}) {
+  const treatmentLabel = pair.label ?? title ?? "treatment";
+  const getAlt = (lbl: "BEFORE" | "AFTER") =>
+    `${treatmentLabel} — ${lbl.charAt(0) + lbl.slice(1).toLowerCase()} photo (result ${index + 1} of ${total})`;
+
+  return (
+    <figure
+      style={{ margin: 0 }}
+      // Group the before+after as one labelled item for assistive tech.
+      role="group"
+      aria-label={`${treatmentLabel} — before and after (result ${index + 1} of ${total})`}
+    >
+      <div className="grid grid-cols-2 gap-3">
+        {(["BEFORE", "AFTER"] as const).map((lbl) => {
+          const src = lbl === "BEFORE" ? pair.before : pair.after;
+          return (
+            <div
+              key={lbl}
+              className="relative overflow-hidden"
+              style={{
+                borderRadius: "var(--radius-card)",
+                // Fixed aspect ratio prevents CLS as pages change.
+                aspectRatio: "4 / 5",
+                background: "var(--cream)",
+                boxShadow: "0 10px 28px rgba(28,30,30,0.12)",
+              }}
+            >
+              {src ? (
+                <Image
+                  src={src}
+                  alt={getAlt(lbl)}
+                  fill
+                  style={{ objectFit: "cover" }}
+                  sizes="(max-width: 640px) 45vw, (max-width: 1024px) 23vw, 190px"
+                  priority={priority && lbl === "BEFORE"}
+                  quality={80}
+                />
+              ) : (
+                <div
+                  className="flex items-center justify-center text-center"
+                  style={{
+                    position: "absolute",
+                    inset: 0,
+                    background: "var(--cream)",
+                    color: "var(--muted)",
+                    fontSize: "12px",
+                    padding: "16px",
+                  }}
+                >
+                  {`${pair.label ?? ""} ${lbl}`.trim()} photo — drop file in
+                </div>
+              )}
+              <span
+                className="font-display"
+                style={{
+                  position: "absolute",
+                  top: "10px",
+                  left: "10px",
+                  background: "rgba(255,255,255,0.9)",
+                  color: "var(--ink)",
+                  fontSize: "9px",
+                  letterSpacing: "0.12em",
+                  padding: "4px 9px",
+                  borderRadius: "var(--radius-pill)",
+                }}
+                aria-hidden="true"
+              >
+                {lbl}
+              </span>
+            </div>
+          );
+        })}
+      </div>
+      {pair.label && (
+        <figcaption
+          style={{
+            marginTop: "14px",
+            fontSize: "12.5px",
+            color: "var(--label)",
+            letterSpacing: "0.04em",
+            textAlign: "center",
+          }}
+        >
+          {pair.label}
+        </figcaption>
+      )}
+    </figure>
+  );
+}
+
 export default function BeforeAfterCarousel({ pairs, title }: { pairs: Pair[]; title?: string }) {
-  const [idx, setIdx] = useState(0);
   const n = pairs.length;
-  const ba = pairs[idx];
 
-  // P2 — keyboard navigation for carousel
-  const go = useCallback((d: number) => setIdx((i) => (i + d + n) % n), [n]);
-
-  // Prefetch adjacent slides into the browser cache before the user clicks
+  // Responsive cards-per-view, recomputed on resize (SSR-safe default = 3).
+  const [perView, setPerView] = useState(3);
   useEffect(() => {
-    if (n < 2) return;
-    const adjacent = [pairs[(idx + 1) % n], pairs[(idx - 1 + n) % n]];
-    adjacent.forEach((p) => {
+    const update = () => setPerView(perViewForWidth(window.innerWidth));
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+
+  const effPerView = Math.min(perView, Math.max(n, 1));
+  const pageCount = Math.max(1, Math.ceil(n / effPerView));
+
+  // page = which window of cards is visible. Clamped at RENDER (not via a
+  // setState-in-effect, which React/eslint flag as cascading renders): if a
+  // resize grows perView and shrinks pageCount, the visible page stays bounded.
+  const [rawPage, setPage] = useState(0);
+  const page = Math.min(rawPage, Math.max(0, pageCount - 1));
+
+  const hasArrows = pageCount > 1;
+  const atStart = page === 0;
+  const atEnd = page >= pageCount - 1;
+
+  // Windowed (non-circular): prev/next disable at the ends.
+  const go = useCallback(
+    (d: number) => setPage(Math.min(Math.max(page + d, 0), pageCount - 1)),
+    [page, pageCount],
+  );
+
+  // Prefetch the next page's images so paging feels instant.
+  useEffect(() => {
+    if (!hasArrows) return;
+    const start = (page + 1) * effPerView;
+    pairs.slice(start, start + effPerView).forEach((p) => {
       [p?.before, p?.after].forEach((src) => {
         if (src) {
           const img = new window.Image();
@@ -44,68 +185,84 @@ export default function BeforeAfterCarousel({ pairs, title }: { pairs: Pair[]; t
         }
       });
     });
-  }, [idx, pairs, n]);
+  }, [page, effPerView, pairs, hasArrows]);
 
-  // P9 — keyboard left/right arrow navigation
+  // Keyboard left/right arrow navigation (only when there's more than one page).
   useEffect(() => {
-    if (n < 2) return;
+    if (!hasArrows) return;
     const handler = (e: KeyboardEvent) => {
       if (e.key === "ArrowLeft") go(-1);
       if (e.key === "ArrowRight") go(1);
     };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
-  }, [go, n]);
+  }, [go, hasArrows]);
 
-  const arrowBase: React.CSSProperties = {
-    position: "absolute",
-    top: "50%",
-    transform: "translateY(-50%)",
-    // P2 — minimum 44×44px tap target
-    width: "44px",
-    height: "44px",
-    borderRadius: "50%",
-    background: "var(--white)",
-    border: "1px solid var(--line)",
-    boxShadow: "0 6px 18px rgba(0,0,0,0.12)",
-    color: "var(--teal)",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    zIndex: 2,
-    cursor: "pointer",
-    // P2 — consistent transition on all hover states
-    transition: "transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease",
-  };
+  // Track transform: each page is one full track-width to the left.
+  const trackStyle: React.CSSProperties = useMemo(
+    () => ({
+      display: "flex",
+      transform: `translateX(-${page * 100}%)`,
+      transition: "transform 0.5s cubic-bezier(0.16, 1, 0.3, 1)",
+      willChange: "transform",
+    }),
+    [page],
+  );
 
-  const onArrowEnter = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.currentTarget.style.transform = "translateY(-50%) scale(1.04)";
-    e.currentTarget.style.boxShadow = "0 10px 26px rgba(0,0,0,0.18)";
-    e.currentTarget.style.borderColor = "var(--label)";
-  };
-  const onArrowLeave = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.currentTarget.style.transform = "translateY(-50%)";
-    e.currentTarget.style.boxShadow = "0 6px 18px rgba(0,0,0,0.12)";
-    e.currentTarget.style.borderColor = "var(--line)";
-  };
-
-  // P1 (treatment-page-specific) — meaningful alt for medical/aesthetics before/after images
-  const getAlt = (lbl: "BEFORE" | "AFTER") => {
-    const treatmentLabel = ba.label ?? title ?? "treatment";
-    return `${treatmentLabel} — ${lbl.charAt(0) + lbl.slice(1).toLowerCase()} photo${idx > 0 ? ` (result ${idx + 1} of ${n})` : ""}`;
+  const arrowBtn = (dir: "left" | "right", disabled: boolean) => {
+    const onClick = () => go(dir === "left" ? -1 : 1);
+    const labelPos = dir === "left" ? Math.max(page, 1) : Math.min(page + 2, pageCount);
+    return (
+      <button
+        type="button"
+        onClick={onClick}
+        disabled={disabled}
+        aria-label={`${dir === "left" ? "Previous" : "Next"} before and after photos (page ${labelPos} of ${pageCount})`}
+        className="ba-arrow"
+        style={{
+          width: "44px", // 44x44 minimum tap target
+          height: "44px",
+          borderRadius: "50%",
+          background: "var(--white)",
+          border: "1px solid var(--line)",
+          boxShadow: "0 6px 18px rgba(0,0,0,0.12)",
+          color: "var(--teal-deep)",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          cursor: disabled ? "default" : "pointer",
+          opacity: disabled ? 0.4 : 1,
+          transition: "transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease, opacity 0.2s ease",
+        }}
+      >
+        <Chevron dir={dir} />
+      </button>
+    );
   };
 
   return (
-    // P1 (treatment-page-specific) — carousel landmark with role and label
     <div
       className="container text-center"
       role="region"
-      aria-label="Before and after photos"
       aria-roledescription="carousel"
+      aria-label="Before and after photos"
     >
+      {/* Hover lift on arrows; never disables the indicator; reduced-motion safe. */}
+      <style>{`
+        .ba-arrow:not(:disabled):hover {
+          transform: scale(1.06);
+          box-shadow: 0 10px 26px rgba(0,0,0,0.18);
+          border-color: var(--label);
+        }
+        .ba-arrow:not(:disabled):active { transform: scale(0.98); }
+        @media (prefers-reduced-motion: reduce) {
+          .ba-track { transition: none !important; }
+          .ba-arrow, .ba-arrow:hover, .ba-arrow:active { transition: none; transform: none; }
+        }
+      `}</style>
+
       {title && (
         <h2
-          id="carousel-heading"
           className="font-display"
           style={{ fontSize: "clamp(20px,3vw,30px)", color: "var(--label)", marginBottom: "36px" }}
         >
@@ -113,154 +270,102 @@ export default function BeforeAfterCarousel({ pairs, title }: { pairs: Pair[]; t
         </h2>
       )}
 
-      {/* P5 — prevent horizontal overflow at narrow widths */}
-      <div className="relative mx-auto overflow-hidden md:overflow-visible" style={{ maxWidth: "760px" }}>
-        <Reveal>
-          {/* P3 — image containers have fixed aspect-ratio to prevent CLS */}
-          <div className="grid grid-cols-2 gap-4" aria-live="polite" role="status" aria-atomic="true">
-            {(["BEFORE", "AFTER"] as const).map((lbl) => {
-              const src = lbl === "BEFORE" ? ba.before : ba.after;
-              return (
-                <div
-                  key={lbl}
-                  className="relative overflow-hidden"
-                  style={{
-                    borderRadius: "var(--radius-card)",
-                    border: "none",
-                    background: "transparent",
-                    // P3 — fixed aspect ratio to prevent CLS
-                    aspectRatio: "4 / 5",
-                  }}
-                >
-                  {src ? (
-                    <Image
-                      src={src}
-                      // P1 (treatment-page-specific) — descriptive alt text for medical aesthetics content
-                      alt={getAlt(lbl)}
-                      fill
-                      style={{ objectFit: "cover" }}
-                      sizes="(max-width: 640px) 45vw, 370px"
-                      // P3 — priority on first slide, lazy for rest
-                      priority={idx === 0 && lbl === "BEFORE"}
-                      quality={80}
-                    />
-                  ) : (
-                    <div
-                      className="flex items-center justify-center text-center"
-                      style={{
-                        position: "absolute",
-                        inset: 0,
-                        background: "var(--cream)",
-                        color: "#5f5f5f",
-                        fontSize: "12px",
-                        padding: "16px",
-                      }}
-                    >
-                      {`${ba.label ?? ""} ${lbl}`.trim()} photo — drop file in
-                    </div>
-                  )}
-                  <span
-                    className="font-display"
-                    style={{
-                      position: "absolute",
-                      top: "12px",
-                      left: "12px",
-                      background: "rgba(255,255,255,0.9)",
-                      color: "var(--ink)",
-                      fontSize: "10px",
-                      letterSpacing: "0.12em",
-                      padding: "5px 10px",
-                      borderRadius: "var(--radius-pill)",
-                    }}
-                    aria-hidden="true"
-                  >
-                    {lbl}
-                  </span>
-                </div>
-              );
-            })}
-          </div>
-        </Reveal>
+      <div className="mx-auto" style={{ maxWidth: "1100px" }}>
+        <div
+          className="flex items-center"
+          style={{ gap: "16px" }}
+        >
+          {/* Left arrow beside the row (hidden entirely when only one page). */}
+          {hasArrows && <div style={{ flex: "0 0 auto" }}>{arrowBtn("left", atStart)}</div>}
 
-        {/* P1 (treatment-page-specific) — descriptive aria-labels on nav buttons */}
-        {n > 1 && (
-          <>
-            <button
-              type="button"
-              aria-label={`Previous before and after photo (${idx === 0 ? n : idx} of ${n})`}
-              onClick={() => go(-1)}
-              onMouseEnter={onArrowEnter}
-              onMouseLeave={onArrowLeave}
-              className="md:-left-[22px]"
-              style={{ ...arrowBase, left: "6px" }}
-            >
-              <Chevron dir="left" />
-            </button>
-            <button
-              type="button"
-              aria-label={`Next before and after photo (${(idx + 2 > n ? 1 : idx + 2)} of ${n})`}
-              onClick={() => go(1)}
-              onMouseEnter={onArrowEnter}
-              onMouseLeave={onArrowLeave}
-              className="md:-right-[22px]"
-              style={{ ...arrowBase, right: "6px" }}
-            >
-              <Chevron dir="right" />
-            </button>
-          </>
+          {/* The window: only `effPerView` cards are visible; the rest are clipped. */}
+          <div className="relative overflow-hidden" style={{ flex: "1 1 auto" }}>
+            <Reveal>
+              <div
+                className="ba-track"
+                style={trackStyle}
+                aria-live="polite"
+                role="status"
+                aria-atomic="true"
+              >
+                {Array.from({ length: pageCount }).map((_, pg) => (
+                  // Each "page" is one full-width slide holding up to effPerView cards.
+                  <div
+                    key={pg}
+                    style={{
+                      flex: "0 0 100%",
+                      display: "grid",
+                      gridTemplateColumns: `repeat(${effPerView}, minmax(0, 1fr))`,
+                      gap: "20px",
+                      paddingInline: "2px",
+                    }}
+                  >
+                    {pairs.slice(pg * effPerView, pg * effPerView + effPerView).map((p, i) => {
+                      const absoluteIndex = pg * effPerView + i;
+                      return (
+                        <PairCard
+                          key={absoluteIndex}
+                          pair={p}
+                          title={title}
+                          index={absoluteIndex}
+                          total={n}
+                          priority={pg === 0}
+                        />
+                      );
+                    })}
+                  </div>
+                ))}
+              </div>
+            </Reveal>
+          </div>
+
+          {/* Right arrow beside the row. */}
+          {hasArrows && <div style={{ flex: "0 0 auto" }}>{arrowBtn("right", atEnd)}</div>}
+        </div>
+
+        {/* Page indicators (one dot per window), centered below. */}
+        {hasArrows && (
+          <div
+            className="flex justify-center gap-2"
+            style={{ marginTop: "24px" }}
+            role="tablist"
+            aria-label="Before and after photo navigation"
+          >
+            {Array.from({ length: pageCount }).map((_, pg) => (
+              <button
+                key={pg}
+                type="button"
+                role="tab"
+                aria-label={`Page ${pg + 1} of ${pageCount}`}
+                aria-selected={pg === page}
+                onClick={() => setPage(pg)}
+                style={{
+                  // Padding reaches a 44px clickable area around the 9px dot.
+                  padding: "18px 6px",
+                  margin: "-18px 0",
+                  background: "transparent",
+                  border: "none",
+                  cursor: "pointer",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <span
+                  style={{
+                    display: "block",
+                    width: "9px",
+                    height: "9px",
+                    borderRadius: "50%",
+                    background: pg === page ? "var(--teal-deep)" : "var(--line)",
+                    transition: "background 0.2s ease",
+                  }}
+                />
+              </button>
+            ))}
+          </div>
         )}
       </div>
-
-      {ba.label && (
-        <p style={{ marginTop: "16px", fontSize: "13px", color: "var(--label)", letterSpacing: "0.04em" }}>
-          {ba.label}
-        </p>
-      )}
-
-      {/* P1 (treatment-page-specific) — slide indicators with aria-label="Photo n of total" */}
-      {n > 1 && (
-        <div
-          className="flex justify-center gap-2"
-          style={{ marginTop: "20px" }}
-          role="tablist"
-          aria-label="Before and after photo navigation"
-        >
-          {pairs.map((_, d) => (
-            <button
-              key={d}
-              type="button"
-              role="tab"
-              // P1 (treatment-page-specific) — descriptive slide indicator labels
-              aria-label={`Photo ${d + 1} of ${n}`}
-              aria-selected={d === idx}
-              onClick={() => setIdx(d)}
-              style={{
-                // P2 — minimum tap target: use padding to reach 44px clickable area
-                padding: "18px 6px",
-                margin: "-18px 0",
-                background: "transparent",
-                border: "none",
-                cursor: "pointer",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              <span
-                style={{
-                  display: "block",
-                  width: "9px",
-                  height: "9px",
-                  borderRadius: "50%",
-                  background: d === idx ? "var(--teal)" : "var(--line)",
-                  // P2 — transition on interactive element
-                  transition: "background 0.2s ease",
-                }}
-              />
-            </button>
-          ))}
-        </div>
-      )}
     </div>
   );
 }

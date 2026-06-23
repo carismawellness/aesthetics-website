@@ -128,7 +128,7 @@ function InfoCard({ info }: { info: NonNullable<Treatment["info"]> }) {
       aria-label="Treatment info"
       className="rounded-2xl"
       style={{
-        background: "rgba(150,178,178,0.12)",
+        background: "rgba(243,236,224,0.6)",
         border: "1px solid rgba(150,178,178,0.35)",
         padding: "22px 26px",
       }}
@@ -204,7 +204,7 @@ export default function TreatmentTemplate({ t }: { t: Treatment }) {
         }
         proof={{
           rating: "4.9",
-          reviews: "200+",
+          reviews: "500+",
           statValue: "30+",
           statLabel: "years in wellness",
           awardText: "#1 Voted Clinic\nMalta Healthcare Awards",
@@ -462,11 +462,10 @@ export default function TreatmentTemplate({ t }: { t: Treatment }) {
                 fontSize: "clamp(24px,3.4vw,38px)",
                 color: "var(--gold)",
                 letterSpacing: "0.04em",
-                textTransform: "uppercase",
                 lineHeight: 1.25,
               }}
             >
-              Book Your Consultation
+              Book your consultation
             </h2>
             <p
               className="text-center"
@@ -542,7 +541,6 @@ export default function TreatmentTemplate({ t }: { t: Treatment }) {
                 fontSize: "clamp(24px,3.4vw,38px)",
                 color: "var(--gold)",
                 letterSpacing: "0.04em",
-                textTransform: "uppercase",
                 lineHeight: 1.25,
               }}
             >
@@ -899,7 +897,7 @@ export default function TreatmentTemplate({ t }: { t: Treatment }) {
                         height: "18px",
                         borderRadius: "50%",
                         background: "var(--teal)",
-                        boxShadow: "0 0 0 5px #dde8e8",
+                        boxShadow: "0 0 0 5px #f3ece0",
                         flexShrink: 0,
                       }}
                       aria-hidden="true"
@@ -908,13 +906,13 @@ export default function TreatmentTemplate({ t }: { t: Treatment }) {
                       className="font-serif"
                       style={{ fontSize: "15px", color: "var(--gold)", letterSpacing: "0.14em" }}
                     >
-                      STEP <span style={{ fontSize: "clamp(24px,6vw,34px)", lineHeight: 1 }}>{i + 1}</span>
+                      Step <span style={{ fontSize: "clamp(24px,6vw,34px)", lineHeight: 1 }}>{i + 1}</span>
                     </span>
                   </div>
                   <div
                     style={{
                       borderRadius: "20px 56px 20px 56px",
-                      background: "linear-gradient(180deg,#ffffff 0%, #e7eff0 100%)",
+                      background: "linear-gradient(180deg,#ffffff 0%, #f3ece0 100%)",
                       padding: "10px",
                       boxShadow: "0 16px 38px rgba(0,0,0,0.07)",
                     }}
@@ -991,7 +989,7 @@ export default function TreatmentTemplate({ t }: { t: Treatment }) {
                         height: "18px",
                         borderRadius: "50%",
                         background: "var(--teal)",
-                        boxShadow: "0 0 0 5px #dde8e8",
+                        boxShadow: "0 0 0 5px #f3ece0",
                       }}
                       aria-hidden="true"
                     />
@@ -999,7 +997,7 @@ export default function TreatmentTemplate({ t }: { t: Treatment }) {
                   {/* STEP + number */}
                   <div className="text-center">
                     <div className="font-serif" style={{ fontSize: "17px", color: "var(--gold)", letterSpacing: "0.14em" }}>
-                      STEP
+                      Step
                     </div>
                     <div
                       className="font-serif"
@@ -1012,7 +1010,7 @@ export default function TreatmentTemplate({ t }: { t: Treatment }) {
                   <div
                     style={{
                       borderRadius: "20px 56px 20px 56px",
-                      background: "linear-gradient(180deg,#ffffff 0%, #e7eff0 100%)",
+                      background: "linear-gradient(180deg,#ffffff 0%, #f3ece0 100%)",
                       padding: "10px",
                       boxShadow: "0 16px 38px rgba(0,0,0,0.07)",
                     }}
@@ -1308,7 +1306,7 @@ export default function TreatmentTemplate({ t }: { t: Treatment }) {
                 ) : (
                   <div
                     className="mx-auto"
-                    style={{ maxWidth: "460px", width: "100%", padding: "14px", background: "var(--teal-200)", borderRadius: "40px" }}
+                    style={{ maxWidth: "460px", width: "100%", padding: "14px", background: "var(--champagne)", borderRadius: "40px" }}
                   >
                     <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 0 }}>
                       {t.trusted.images.slice(0, 4).map((src, i) => {
@@ -1594,7 +1592,6 @@ export default function TreatmentTemplate({ t }: { t: Treatment }) {
                 fontSize: "clamp(24px,3.4vw,38px)",
                 color: "var(--gold)",
                 letterSpacing: "0.04em",
-                textTransform: "uppercase",
                 lineHeight: 1.25,
               }}
             >
@@ -1816,7 +1813,7 @@ export default function TreatmentTemplate({ t }: { t: Treatment }) {
                 lineHeight: 1.25,
               }}
             >
-              {t.faqTitle ?? "Frequently Asked Questions"}
+              {t.faqTitle ?? "Frequently asked questions"}
             </h2>
             <div className="mx-auto" style={{ maxWidth: "820px" }}>
               {t.faq.map((f, i) => {

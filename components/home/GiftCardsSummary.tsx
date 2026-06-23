@@ -1,5 +1,5 @@
 import Reveal from "@/components/Reveal";
-import GiftCardSceneMount from "@/components/home/GiftCardSceneMount";
+import GiftHeroCards from "@/components/gifts/GiftHeroCards";
 
 /**
  * GiftCardsSummary — home-page e-gift-voucher section for Carisma Aesthetics.
@@ -27,9 +27,7 @@ export default function GiftCardsSummary() {
     <section
       aria-labelledby="gift-summary-heading"
       style={{
-        /* Cool teal ground to echo the Slimming/Membership rhythm — white → light teal → mist */
-        background:
-          "linear-gradient(180deg, var(--white) 0%, var(--teal-100) 58%, var(--cream-2) 100%)",
+        background: "transparent",
         padding: "clamp(72px, 9vw, 120px) 0",
         scrollMarginTop: "var(--nav-clear)",
         overflow: "hidden",
@@ -93,19 +91,22 @@ export default function GiftCardsSummary() {
           </div>
         </Reveal>
 
-        {/* ── 3D fanned gift cards — the centrepiece ── */}
+        {/* ── Fanned occasion gift cards — the same visual used in the gift-cards
+              page hero (components/gifts/GiftHeroCards). Server-rendered, fits the
+              section, branding fully visible. Square relative stage so the fan
+              never overflows. ── */}
         <Reveal delay={80}>
           <div
             className="mx-auto"
             style={{
               position: "relative",
-              maxWidth: "960px",
+              maxWidth: "600px",
               width: "100%",
-              height: "clamp(320px, 46vw, 520px)",
-              marginTop: "clamp(28px, 5vw, 48px)",
+              aspectRatio: "1 / 1",
+              marginTop: "clamp(20px, 4vw, 40px)",
             }}
           >
-            <GiftCardSceneMount />
+            <GiftHeroCards />
           </div>
         </Reveal>
 
@@ -117,10 +118,10 @@ export default function GiftCardsSummary() {
           >
             <a
               href={GIFTS_HREF}
-              className="btn-teal font-display"
+              className="btn btn-teal font-display"
               style={{ letterSpacing: "0.1em" }}
             >
-              Shop Gift Vouchers
+              Shop Gift Cards
             </a>
             <p
               style={{

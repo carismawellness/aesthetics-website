@@ -95,7 +95,6 @@ function EvidenceCard({ item }: { item: EvidenceItem }) {
             fontSize: "clamp(17px, 1.9vw, 20px)",
             color: "var(--gold)",
             letterSpacing: "0.03em",
-            textTransform: "uppercase",
             fontWeight: 400,
             lineHeight: 1.3,
             margin: "0 0 16px",
@@ -180,7 +179,7 @@ function EvidenceCard({ item }: { item: EvidenceItem }) {
 
 export default function EvidenceCards({
   kicker = "Backed by science",
-  title = "The Evidence",
+  title = "The evidence",
   sub,
   items,
 }: Props) {

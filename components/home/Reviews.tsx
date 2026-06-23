@@ -281,7 +281,6 @@ export default function Reviews() {
             fontSize: 13,
             letterSpacing: 4,
             color: TEAL_TEXT,
-            textTransform: 'uppercase',
             marginBottom: 16,
           }}
         >
@@ -322,8 +321,10 @@ export default function Reviews() {
         </div>
       </div>
 
-      {/* TOP row — GOOGLE reviews, latest first, scrolls left */}
-      <MarqueeRow direction="left" duration={44}>
+      {/* TOP row — GOOGLE reviews, latest first, scrolls left.
+          duration scaled to match Slimming's px/s: Slimming shows 5 google cards
+          at 44s (~34px/s); we show 10, so 44×(10/5)=88s keeps the same glide. */}
+      <MarqueeRow direction="left" duration={88}>
         {googleReviews.map((r) => (
           <GoogleReviewCard key={r.id} r={r} />
         ))}
@@ -331,7 +332,8 @@ export default function Reviews() {
 
       {/* BOTTOM row — FRESHA reviews, scrolls right */}
       <div style={{ marginTop: 16 }}>
-        <MarqueeRow direction="right" duration={48}>
+        {/* 10 fresha cards vs Slimming's 6 at 48s → 48×(10/6)=80s for matching px/s */}
+        <MarqueeRow direction="right" duration={80}>
           {freshaReviews.map((r, i) => (
             <FreshaReviewCard key={r.id} r={r} idx={i} />
           ))}

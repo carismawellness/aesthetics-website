@@ -173,7 +173,7 @@ export default function BlogIndexPage() {
         media={{ type: "image", src: heroImage, alt: "Carisma Aesthetics journal" }}
         proof={{
           rating: "4.9",
-          reviews: "200+",
+          reviews: "500+",
           statValue: "30+",
           statLabel: "years in wellness",
           awardText: "#1 Voted Clinic\nMalta Healthcare Awards",

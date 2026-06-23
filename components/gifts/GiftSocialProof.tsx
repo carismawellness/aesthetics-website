@@ -63,7 +63,7 @@ export default function GiftSocialProof() {
                 margin: "14px 0 0",
               }}
             >
-              A Gift They'll Thank You For
+              A gift they'll thank you for
             </h2>
 
             {/* Headline aggregate score */}

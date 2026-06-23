@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
@@ -12,9 +12,11 @@ import { HOME_SERVICES } from "@/lib/site";
   Reworked (Jun 2026) from a multi-row grid (stacked down the page) into a single
   horizontal carousel that mirrors the Slimming home "treatments" carousel
   (components/ModalitiesCarousel): a scroll-snap flex track that browses the cards
-  side by side, white circular ‹/› arrow buttons, hidden scrollbar, and
-  atStart/atEnd state so arrows hide/disable at the ends. Desktop shows ~3-4 cards
-  + a peek; mobile shows ~1.2 cards and swipes.
+  side by side, white circular ‹/› arrow buttons, and a hidden scrollbar. The
+  track loops INFINITELY: the cards are rendered twice and the scroll position
+  is silently wrapped at each set boundary, so the arrows never disable and the
+  scroll never dead-ends. Desktop shows ~3-4 cards + a peek; mobile shows ~1.2
+  cards and swipes.
 
   The PREMIUM CARD DESIGN is preserved exactly: real treatment photo, the shared
   hover lift + image zoom (.svc-card / .svc-img), the "Explore" pill that fills
@@ -33,20 +35,31 @@ const PAD = 24; // left/right breathing room inside the track
 
 export default function ServicesMarquee() {
   const ref = useRef<HTMLDivElement>(null);
-  const [atStart, setAtStart] = useState(true);
-  const [atEnd, setAtEnd] = useState(false);
 
+  // Infinite loop: the cards are rendered TWICE back-to-back. We keep the active
+  // scroll position inside the SECOND set so there's always a full set of cards
+  // on both sides. When the user crosses a set boundary we silently shift by one
+  // set (no smooth) so the track never reaches a hard start/end — arrows stay
+  // always enabled.
   const sync = () => {
     const el = ref.current;
     if (!el) return;
-    setAtStart(el.scrollLeft <= 4);
-    setAtEnd(el.scrollLeft + el.clientWidth >= el.scrollWidth - 4);
+    const half = el.scrollWidth / 2;
+    if (half <= 0) return;
+    if (el.scrollLeft >= half * 1.5) {
+      el.scrollLeft -= half;
+    } else if (el.scrollLeft < half * 0.5) {
+      el.scrollLeft += half;
+    }
   };
 
   useEffect(() => {
-    sync();
     const el = ref.current;
-    if (el) el.addEventListener("scroll", sync, { passive: true });
+    if (el) {
+      // Start centred in the second set so the user can scroll both directions.
+      el.scrollLeft = el.scrollWidth / 2;
+      el.addEventListener("scroll", sync, { passive: true });
+    }
     window.addEventListener("resize", sync);
     return () => {
       if (el) el.removeEventListener("scroll", sync);
@@ -62,8 +75,7 @@ export default function ServicesMarquee() {
       aria-labelledby="services-heading"
       style={{
         padding: "clamp(72px,9vw,112px) 0",
-        background:
-          "linear-gradient(180deg, var(--white) 0%, #f4f8f8 38%, var(--white) 100%)",
+        background: "transparent",
       }}
     >
       {/* Scoped interaction styles — hover lift + image zoom + CTA fill/shine.
@@ -127,11 +139,10 @@ export default function ServicesMarquee() {
               color: "var(--gold)",
               fontWeight: 400,
               letterSpacing: "0.04em",
-              textTransform: "uppercase",
               lineHeight: 1.15,
             }}
           >
-            Medical Aesthetics Procedures
+            Medical aesthetics procedures
           </h2>
           <p
             className="text-center mx-auto"
@@ -163,8 +174,8 @@ export default function ServicesMarquee() {
 
       {/* Carousel — full-bleed so cards can peek off the container edges. */}
       <div className="relative">
-        {/* Left arrow — hidden at the start of the track. */}
-        {!atStart && (
+        {/* Left arrow — always available (the track loops infinitely). */}
+        {
           <button
             onClick={() => scroll(-1)}
             aria-label="Previous treatments"
@@ -186,7 +197,7 @@ export default function ServicesMarquee() {
           >
             ‹
           </button>
-        )}
+        }
 
         {/* Scroll-snap track */}
         <div
@@ -202,11 +213,14 @@ export default function ServicesMarquee() {
             paddingRight: `${PAD}px`,
           }}
         >
-          {HOME_SERVICES.map((s, i) => (
+          {/* Cards rendered TWICE so the loop is seamless in both directions. */}
+          {[...HOME_SERVICES, ...HOME_SERVICES].map((s, i) => (
             <Link
-              key={s.href}
+              key={`${s.href}-${i}`}
               href={s.href}
               className="svc-card group flex-shrink-0"
+              aria-hidden={i >= HOME_SERVICES.length ? true : undefined}
+              tabIndex={i >= HOME_SERVICES.length ? -1 : undefined}
               aria-label={`Learn more about ${s.label}`}
               style={{
                 width: `${CARD_W}px`,
@@ -269,7 +283,6 @@ export default function ServicesMarquee() {
                     fontSize: "17px",
                     fontWeight: 400,
                     letterSpacing: "0.05em",
-                    textTransform: "uppercase",
                     lineHeight: 1.25,
                     margin: "0 0 10px",
                   }}
@@ -315,8 +328,8 @@ export default function ServicesMarquee() {
           ))}
         </div>
 
-        {/* Right arrow — hidden at the end of the track. */}
-        {!atEnd && (
+        {/* Right arrow — always available (the track loops infinitely). */}
+        {
           <button
             onClick={() => scroll(1)}
             aria-label="Next treatments"
@@ -338,7 +351,7 @@ export default function ServicesMarquee() {
           >
             ›
           </button>
-        )}
+        }
       </div>
 
       <div className="container">

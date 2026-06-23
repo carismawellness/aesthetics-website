@@ -2,7 +2,7 @@ import type { PreviewContent } from "@/lib/packages/preview-types";
 
 // CRO content for the V2 preview of the 4-in-1 HydraFacial Glow package.
 // Grounded in the real package (PACKAGES["4-in-1-hydrafacial-glow"]): €335 value,
-// €99 today; medical-grade, doctor-led, St Julian's; 4.9★ / 200+ reviews.
+// €99 today; medical-grade, doctor-led, St Julian's; 4.9★ / 500+ reviews.
 export const hydrafacialPreview: PreviewContent = {
   hero: {
     eyebrow: "The 4-in-1 Glow Package",
@@ -42,7 +42,7 @@ export const hydrafacialPreview: PreviewContent = {
     points: [
       "Doctor-led clinic, medically qualified practitioners",
       "Medical-grade equipment and clinically proven protocols",
-      "4.9★ from 200+ verified reviews",
+      "4.9★ from 500+ verified reviews",
       "Gentle, non-invasive and no downtime",
     ],
     medicalLine: "A medically qualified team — #1 voted med-aesthetics clinic in Malta.",

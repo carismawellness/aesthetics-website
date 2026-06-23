@@ -2,22 +2,23 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 
 /**
- * "Why Malta Chooses Carisma Aesthetics" — home-page section.
+ * "The Carisma Difference / Malta's #1 Voted Medical Aesthetics Clinic" —
+ * a faithful recreation of Carisma Slimming's package-page DifferencePanel
+ * (components/PackagePage.tsx): eyebrow → 110px rule → BIG Trajan headline,
+ * then a two-column items-stretch layout on the warm→teal gradient card with a
+ * centred motif watermark. LEFT = two circle-tick checklists + a single CTA
+ * pinned to the bottom; RIGHT = the Grand Hotel Excelsior Google map + the
+ * complimentary on-site parking pill.
  *
- * Mirrors Carisma Slimming's "Why Malta Chooses Carisma Slimming" home section
- * (eyebrow → divider → heading → two checklist columns + Google map panel +
- * CTA + complimentary parking pill) with the same proportions, re-skinned to
- * the Aesthetics teal/blue palette and populated with doctor-led medical
- * aesthetics commitments.
- *
- * Palette (all WCAG AA on their grounds):
- *   - #4f7373 (teal-deep)  — checklist fills, CTA fill (carries white text), parking text
- *   - #406060 (teal-text)  — body / list text, heading
- *   - #96b2b2 (teal)       — decorative gradient / divider
- *   - #deebeb (teal-100)   — soft section accents / parking pill ground
- * Headings: Trajan Pro (heading) + Novecento Wide (eyebrow / labels / CTA).
- * Body: system font stack, normal weight (no bold body).
+ * Re-skinned to the Aesthetics teal palette (no green, no cream, no brown
+ * button fills). The CTA uses the shared `.btn .btn-teal` gradient so it reads
+ * identically to every other primary CTA on the site.
  */
+
+const BODY =
+  '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
+const WIDE = '"Novecento Wide", sans-serif';
+const SERIF = '"Trajan Pro", Georgia, serif';
 
 const commitmentItems: ReactNode[] = [
   "Natural-looking results that enhance your features — never overdone, never frozen",
@@ -50,62 +51,98 @@ const differenceItems: ReactNode[] = [
   "Personal, unhurried consultations with a clear plan and transparent pricing before anything begins",
 ];
 
+const checklistItem: React.CSSProperties = {
+  display: "flex",
+  gap: 12,
+  alignItems: "flex-start",
+  color: "#706552",
+  fontFamily: BODY,
+  fontSize: 14,
+  fontWeight: 400,
+  lineHeight: 1.6,
+};
+
+const colHeading: React.CSSProperties = {
+  color: "#000000",
+  fontFamily: WIDE,
+  fontSize: 15,
+  fontWeight: 400,
+  letterSpacing: "1px",
+  textTransform: "uppercase",
+  margin: "0 0 18px",
+};
+
+function DiffCheck() {
+  return (
+    <svg
+      aria-hidden="true"
+      width="18"
+      height="18"
+      viewBox="0 0 18 18"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      style={{ flexShrink: 0, marginTop: 2 }}
+    >
+      <circle cx="9" cy="9" r="9" fill="#deebeb" />
+      <path
+        d="M5 9.5L7.5 12L13 6.5"
+        stroke="#4f7373"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
 export default function WhyMaltaAesthetics() {
   return (
     <section
-      className="py-14"
       aria-labelledby="why-malta-aesthetics-heading"
-      style={{ backgroundColor: "#ffffff" }}
+      style={{ paddingTop: 60, paddingBottom: 84, backgroundColor: "transparent" }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div
+        className="mx-auto px-4 sm:px-6 lg:px-8"
+        style={{ maxWidth: 1120 }}
+      >
         <div
-          className="relative"
           style={{
-            background:
-              "linear-gradient(160deg, #f4f8f8 0%, #edf4f4 55%, #e6f0f0 100%)",
-            borderRadius: "16px",
-            padding: "clamp(26px, 3vw, 38px)",
+            position: "relative",
             overflow: "hidden",
+            background:
+              "linear-gradient(192deg, #F6F9F9 44.74%, rgba(150, 178, 178, 0.4) 100%)",
+            borderRadius: 16,
+            padding: "clamp(28px, 4vw, 40px) clamp(22px, 4vw, 40px) clamp(34px, 4vw, 48px)",
           }}
         >
-          {/* Faint rose-motif glow — decorative, mirrors Slimming's glow-orb technique */}
-          <div
-            aria-hidden
+          {/* decorative motif watermark, centred top — mirrors Slimming's WELL_BG */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/assets/motif.svg"
+            alt=""
+            aria-hidden="true"
             style={{
               position: "absolute",
-              top: -100,
-              right: -80,
-              width: 320,
-              height: 320,
-              borderRadius: "50%",
-              background: "rgba(192, 140, 140, 0.13)",
-              filter: "blur(60px)",
+              left: "50%",
+              top: 12,
+              transform: "translateX(-50%)",
+              width: 560,
+              maxWidth: "90%",
+              opacity: 0.22,
               pointerEvents: "none",
+              zIndex: 0,
             }}
           />
-          <div
-            aria-hidden
-            style={{
-              position: "absolute",
-              bottom: -80,
-              left: -60,
-              width: 240,
-              height: 240,
-              borderRadius: "50%",
-              background: "rgba(150, 178, 178, 0.18)",
-              filter: "blur(50px)",
-              pointerEvents: "none",
-            }}
-          />
-          <div className="relative" style={{ zIndex: 1 }}>
+
+          <div style={{ position: "relative", zIndex: 1 }}>
             {/* Eyebrow */}
             <p
-              className="text-center mb-2"
+              className="text-center"
               aria-hidden="true"
               style={{
                 color: "#406060",
-                fontFamily: '"Novecento Wide", sans-serif',
-                fontSize: "14px",
+                fontFamily: WIDE,
+                fontSize: 14,
                 fontWeight: 600,
                 letterSpacing: "3px",
                 textTransform: "uppercase",
@@ -114,147 +151,95 @@ export default function WhyMaltaAesthetics() {
               the carisma difference
             </p>
             <div
-              className="mx-auto mb-4"
               aria-hidden="true"
-              style={{ width: "110px", height: "1px", backgroundColor: "#96b2b2" }}
+              style={{
+                width: 110,
+                height: 1,
+                backgroundColor: "#96b2b2",
+                margin: "10px auto 16px",
+              }}
             />
             <h2
               id="why-malta-aesthetics-heading"
-              className="text-center mb-8"
+              className="text-center"
               style={{
-                color: "#406060",
-                fontFamily: '"Trajan Pro", Georgia, serif',
+                color: "#27484a",
+                fontFamily: SERIF,
                 fontWeight: 400,
-                fontSize: "clamp(17px, 2vw, 22px)",
-                lineHeight: "1.45",
-                textTransform: "uppercase",
+                fontSize: "clamp(24px, 3.4vw, 38px)",
+                lineHeight: 1.2,
                 letterSpacing: "1px",
+                margin: "0 auto",
+                maxWidth: 760,
               }}
             >
-              why malta chooses carisma aesthetics
+              Malta&rsquo;s #1 voted medical aesthetics clinic
             </h2>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
-              {/* Left — commitment checklists + CTA */}
-              <div className="space-y-8">
+            <div
+              className="grid grid-cols-1 lg:grid-cols-2"
+              style={{ gap: 48, marginTop: 40, alignItems: "stretch" }}
+            >
+              {/* LEFT — commitment + difference checklists + single CTA */}
+              <div style={{ display: "flex", flexDirection: "column", gap: 36 }}>
                 <div>
-                  <h3
-                    className="mb-6"
+                  <h3 style={colHeading}>Our Doctor-Led Aesthetics Commitment</h3>
+                  <ul
                     style={{
-                      color: "#000000",
-                      fontFamily: '"Novecento Wide", sans-serif',
-                      fontSize: "15px",
-                      fontWeight: 400,
-                      letterSpacing: "1px",
-                      textTransform: "uppercase",
+                      listStyle: "none",
+                      padding: 0,
+                      margin: 0,
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: 16,
                     }}
                   >
-                    Our Doctor-Led Aesthetics Commitment
-                  </h3>
-                  <ul className="space-y-4">
                     {commitmentItems.map((item, idx) => (
-                      <li
-                        key={idx}
-                        className="flex items-start gap-3"
-                        style={{
-                          color: "#406060",
-                          fontFamily:
-                            '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-                          fontSize: "14px",
-                          fontWeight: 400,
-                          lineHeight: 1.6,
-                        }}
-                      >
-                        <svg
-                          aria-hidden="true"
-                          width="18"
-                          height="18"
-                          viewBox="0 0 18 18"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                          style={{ flexShrink: 0, marginTop: "2px" }}
-                        >
-                          <circle cx="9" cy="9" r="9" fill="#deebeb" />
-                          <path
-                            d="M5 9.5L7.5 12L13 6.5"
-                            stroke="#4f7373"
-                            strokeWidth="1.8"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                        </svg>
+                      <li key={idx} style={checklistItem}>
+                        <DiffCheck />
                         <span>{item}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
                 <div>
-                  <h3
-                    className="mb-6"
+                  <h3 style={colHeading}>What Makes Our Aesthetics Clinic Different</h3>
+                  <ul
                     style={{
-                      color: "#000000",
-                      fontFamily: '"Novecento Wide", sans-serif',
-                      fontSize: "15px",
-                      fontWeight: 400,
-                      letterSpacing: "1px",
-                      textTransform: "uppercase",
+                      listStyle: "none",
+                      padding: 0,
+                      margin: 0,
+                      display: "flex",
+                      flexDirection: "column",
+                      gap: 16,
                     }}
                   >
-                    What Makes Our Aesthetics Clinic Different
-                  </h3>
-                  <ul className="space-y-4">
                     {differenceItems.map((item, idx) => (
-                      <li
-                        key={idx}
-                        className="flex items-start gap-3"
-                        style={{
-                          color: "#406060",
-                          fontFamily:
-                            '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
-                          fontSize: "14px",
-                          fontWeight: 400,
-                          lineHeight: 1.6,
-                        }}
-                      >
-                        <svg
-                          aria-hidden="true"
-                          width="18"
-                          height="18"
-                          viewBox="0 0 18 18"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                          style={{ flexShrink: 0, marginTop: "2px" }}
-                        >
-                          <circle cx="9" cy="9" r="9" fill="#deebeb" />
-                          <path
-                            d="M5 9.5L7.5 12L13 6.5"
-                            stroke="#4f7373"
-                            strokeWidth="1.8"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                        </svg>
+                      <li key={idx} style={checklistItem}>
+                        <DiffCheck />
                         <span>{item}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
-                {/* CTA → consultation popup */}
-                <div>
+                {/* CTA → consultation popup — shared teal gradient pill */}
+                <div style={{ marginTop: "auto" }}>
                   <Link
                     href="/consultation"
-                    className="inline-flex items-center justify-center text-white transition-all duration-200 ease-in-out hover:brightness-110 active:scale-95"
+                    className="btn btn-teal"
                     style={{
-                      backgroundColor: "#4f7373",
-                      borderRadius: "999px",
-                      fontFamily: '"Novecento Wide", sans-serif',
-                      fontSize: "12px",
+                      display: "inline-flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      borderRadius: 999,
+                      fontFamily: WIDE,
+                      fontSize: 12,
                       fontWeight: 700,
                       letterSpacing: "1.5px",
                       textTransform: "uppercase",
-                      minHeight: "46px",
-                      padding: "0 30px",
-                      boxShadow: "0 6px 18px -4px rgba(79,115,115,0.55), 0 2px 6px -2px rgba(79,115,115,0.30)",
+                      minHeight: 48,
+                      padding: "0 32px",
+                      textDecoration: "none",
                     }}
                     aria-label="Book your free consultation"
                   >
@@ -263,36 +248,35 @@ export default function WhyMaltaAesthetics() {
                 </div>
               </div>
 
-              {/* Right — Google map panel + parking pill */}
-              <div className="flex flex-col">
+              {/* RIGHT — Google map panel + parking pill */}
+              <div style={{ display: "flex", flexDirection: "column" }}>
                 <iframe
                   title="Carisma Aesthetics clinic location — Grand Hotel Excelsior, Floriana, Malta"
                   aria-label="Google Maps showing Carisma Aesthetics at Grand Hotel Excelsior, Floriana, Malta"
                   src="https://maps.google.com/maps?q=Grand%20Hotel%20Excelsior%2C%20Great%20Siege%20Road%2C%20Floriana%20FRN%201810%2C%20Malta&z=15&output=embed"
                   width="100%"
                   height="100%"
-                  style={{
-                    border: 0,
-                    borderRadius: "20px",
-                    display: "block",
-                    flex: 1,
-                    minHeight: "320px",
-                    filter: "saturate(0.85) contrast(1.02)",
-                    boxShadow: "0 2px 16px -4px rgba(64,96,96,0.18)",
-                  }}
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                ></iframe>
+                  style={{
+                    border: 0,
+                    borderRadius: 20,
+                    display: "block",
+                    flex: 1,
+                    minHeight: 480,
+                    filter: "saturate(0.9) contrast(1.02)",
+                  }}
+                />
                 {/* Parking pill */}
                 <div
                   style={{
                     display: "inline-flex",
                     alignItems: "center",
-                    gap: "8px",
-                    background: "#deebeb",
-                    borderRadius: "999px",
+                    gap: 8,
+                    background: "#f3ece0",
+                    borderRadius: 999,
                     padding: "8px 16px",
-                    marginTop: "16px",
+                    marginTop: 16,
                     alignSelf: "flex-start",
                   }}
                 >
@@ -320,8 +304,8 @@ export default function WhyMaltaAesthetics() {
                   <span
                     style={{
                       color: "#406060",
-                      fontFamily: '"Novecento Wide", sans-serif',
-                      fontSize: "12px",
+                      fontFamily: WIDE,
+                      fontSize: 12,
                       letterSpacing: "1px",
                       textTransform: "uppercase",
                       fontWeight: 600,

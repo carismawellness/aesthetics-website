@@ -10,7 +10,7 @@ const t: Treatment = {
   slug: "hydrafacial",
   category: "Face",
   hero: {
-    title: "hydrafacial in malta",
+    title: "Hydrafacial in Malta",
     subtitle: "The Deep-Cleansing Facial That Hydrates, Brightens and Restores Your Skin",
     body: "Dull skin, clogged pores, or a complexion that has lost its glow? Our HydraFacial in Malta cleanses, extracts, and hydrates in a single session, personalised to your skin type and concerns. Walk out with visibly clearer, more radiant skin from your very first visit, plumper, more radiant skin from your very first session.",
     prices: [
@@ -44,7 +44,7 @@ const t: Treatment = {
     additional: "Pigmentation, sun damage, dullness, acne scarring, uneven skin tone,",
   },
   suitability: {
-    title: "is hydrafacial suitable for you?",
+    title: "Is hydrafacial suitable for you?",
     intro:
       "HydraFacial is one of the most versatile facial treatments available, suitable for virtually all skin types, tones, and ages. Whether you are preparing for a special event, maintaining healthy skin, or targeting a specific concern, a personalised HydraFacial at our Malta clinic can help. A consultation with our team ensures we select the right protocol for you.",
     suitableFor: [
@@ -63,7 +63,7 @@ const t: Treatment = {
     ],
   },
   experience: {
-    title: "your treatment experience",
+    title: "Your treatment experience",
     steps: [
       { title: "personalised consultation", desc: "We assess your skin type, concerns, and goals to select the ideal HydraFacial protocol and booster serums for your session.", image: "/assets/treatments/hydrafacial-step1.png" },
       { title: "Structured Plan", desc: "Your aesthetician selects the treatment package, serum cocktail, and targeted boosters tailored to your skin type and concerns.", image: "/assets/treatments/hydrafacial-step2.png" },
@@ -117,22 +117,22 @@ const t: Treatment = {
   // Book now). The shared pricingGrid renders name/price/desc only — content is
   // condensed into desc; richer cards + reorder reported to the orchestrator.
   pricingGrid: {
-    title: "hydrafacial packages malta",
+    title: "Hydrafacial packages Malta",
     intro:
       "Three HydraFacial experiences designed for every skin goal and schedule. Every package includes personalised serum selection, complimentary spa access, and free parking at our InterContinental Hotel clinic in St. Julian's. From a 30-minute express deep cleanse to our full 80-minute signature facial. Choose the HydraFacial that fits your skin and your day.",
     items: [
       {
-        name: "fresh package",
+        name: "Fresh package",
         price: "30 min · from €99",
         desc: "Treatment includes: Idropeeling, Bubble Pen, Scrubber. Complimentary: 3h Spa Day Use, 3h Free Parking at InterContinental. Best for: A quick deep cleansing facial to refresh and hydrate. Ideal when you are short on time.",
       },
       {
-        name: "glow package",
+        name: "Glow package",
         price: "50 min · from €139",
         desc: "Treatment includes: Idropeeling, Scrubber, Bubble Pen, Oxygen Spray Gun, High Frequency. Complimentary: Unlimited Spa Day Use, 3h Free Parking at InterContinental. Best for: Our most popular HydraFacial. Combines deep pore cleansing with brightening and anti-ageing for a complete skin overhaul.",
       },
       {
-        name: "signature package",
+        name: "Signature package",
         price: "80 min · from €199",
         desc: "Treatment includes: Idropeeling, Scrubber, Bubble Pen, Oxygen Spray Gun, Micro Currents, Nano Needling, Crio Handle, High Frequency. Complimentary: Unlimited Spa Day Use, 3h Free Parking at InterContinental. Best for: The ultimate facial treatment in Malta. All 8 technologies for deep cleansing, contouring, anti-ageing, and total skin rejuvenation.",
       },
@@ -140,7 +140,7 @@ const t: Treatment = {
   },
   bookingForm: { title: "BOOK YOUR hydrafacial APPOINTMENT TODAY" },
   patientVideos: {
-    title: "real patients, real confidence",
+    title: "Real patients, real confidence",
     intro: "Watch our clients' Hydrafacial journeys and see the stunning results that have boosted their confidence.",
     videos: [
       "/assets/treatments/hydrafacial-video1.mp4",
@@ -149,7 +149,7 @@ const t: Treatment = {
     ],
   },
   trusted: {
-    title: "malta's trusted clinic for hydrafacial",
+    title: "Malta's trusted clinic for hydrafacial",
     subtitle: "DOCTOR-LED hydrafacial IN MALTA",
     asSeenOn: ["/assets/press/lovin-malta.jpeg", "/assets/press/malta-daily.png", "/assets/press/bay.jpeg", "/assets/press/times-of-malta.png", "/assets/press/malta-today.jpg"],
     images: ["/assets/treatments/trusted-clinic-collage.png"],
@@ -163,7 +163,7 @@ const t: Treatment = {
   },
   difference: {
     kicker: "the carisma difference",
-    title: "malta’s #1 leading wellness chain",
+    title: "Malta’s #1 leading wellness chain",
     commitmentTitle: "our commitment",
     commitment: [
       "Natural, radiant results — your skin at its healthiest, not an artificial finish",
@@ -181,16 +181,16 @@ const t: Treatment = {
     mapQuery: "Carisma Aesthetics, Malta",
   },
   recommended: {
-    title: "recommended with hydrafacial",
+    title: "Recommended with hydrafacial",
     items: [
-      { label: "microneedling", href: "/microneedling-malta", image: "/assets/treatments/hydrafacial-rec-microneedling.jpg" },
-      { label: "dermafillers", href: "/dermal-fillers-malta", image: "/assets/treatments/hydrafacial-rec-dermafillers.avif" },
-      { label: "botox", href: "/wrinkle-relaxing-malta", image: "/assets/treatments/hydrafacial-rec-botox.jpg" },
-      { label: "chemical peels", href: "/chemical-peels-malta", image: "/assets/treatments/hydrafacial-rec-chemical-peels.png" },
+      { label: "Microneedling", href: "/microneedling-malta", image: "/assets/treatments/hydrafacial-rec-microneedling.jpg" },
+      { label: "Dermafillers", href: "/dermal-fillers-malta", image: "/assets/treatments/hydrafacial-rec-dermafillers.avif" },
+      { label: "Botox", href: "/wrinkle-relaxing-malta", image: "/assets/treatments/hydrafacial-rec-botox.jpg" },
+      { label: "Chemical peels", href: "/chemical-peels-malta", image: "/assets/treatments/hydrafacial-rec-chemical-peels.png" },
       { label: "MFU Ultight", href: "/skin-tightening-1", image: "/assets/treatments/hydrafacial-rec-mfu.png" },
     ],
   },
-  faqTitle: "faqs about hydrafacial in malta",
+  faqTitle: "FAQs about hydrafacial in Malta",
   faq: [
     { q: "Who can benefit from Hydrafacial?", a: "Anyone looking to combat dryness, dullness, or dehydration in their skin can benefit from Hydrafacial. The treatments are suitable for various skin types and concerns." },
     { q: "How does Hydrafacial work?", a: "Hydrafacial work by delivering potent hydration deep into the skin using specialized techniques like dermal infusion, hyaluronic acid infusion, and custom serums. These treatments help improve skin texture, elasticity, and overall radiance." },

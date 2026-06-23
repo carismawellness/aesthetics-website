@@ -30,18 +30,14 @@ const STEPS: TimelineStep[] = [
   },
   {
     title: 'Your Personalised Treatment Plan',
-    desc: 'Together you map a clear plan: the right treatments, realistic results and transparent pricing — only what genuinely suits your skin, your timeline and your budget.',
-  },
-  {
-    title: 'Begin Treatment With Ongoing Support',
-    desc: 'When you are ready, we begin your journey with expert, gentle care — and stay alongside you with reviews and aftercare so your confidence keeps growing.',
+    desc: 'Together you map a clear plan: the right treatments, realistic results and transparent pricing — then begin when you are ready, with expert care and ongoing reviews so your confidence keeps growing.',
   },
 ];
 
 const cardStyle: React.CSSProperties = {
   borderRadius: '18px 44px 18px 44px',
-  background: 'linear-gradient(180deg, #ffffff 0%, #deebeb 100%)',
-  boxShadow: '0 16px 38px rgba(79,115,115,0.10)',
+  background: 'linear-gradient(180deg, #ffffff 0%, #faf6ef 100%)',
+  boxShadow: '0 16px 38px rgba(60,50,40,0.08)',
 };
 
 function Card({ s }: { s: TimelineStep }) {
@@ -89,12 +85,12 @@ function Timeline() {
             <div className="flex justify-center" style={{ position: 'relative', zIndex: 1 }}>
               <span
                 aria-hidden
-                style={{ width: 18, height: 18, borderRadius: '50%', background: '#96b2b2', boxShadow: '0 0 0 5px #deebeb' }}
+                style={{ width: 18, height: 18, borderRadius: '50%', background: '#96b2b2', boxShadow: '0 0 0 5px #f3ece0' }}
               />
             </div>
             <div className="text-center">
-              <div style={{ fontFamily: SERIF, fontSize: 15, color: TEAL_TEXT, letterSpacing: '0.14em', textTransform: 'uppercase' }}>
-                STEP
+              <div style={{ fontFamily: SERIF, fontSize: 15, color: TEAL_TEXT, letterSpacing: '0.14em' }}>
+                Step
               </div>
               <div style={{ fontFamily: SERIF, fontSize: 'clamp(30px, 4vw, 44px)', color: TEAL_DEEP, lineHeight: 1.1 }}>
                 {i + 1}
@@ -112,10 +108,10 @@ function Timeline() {
             <div className="flex items-center gap-3" style={{ marginBottom: 12 }}>
               <span
                 aria-hidden
-                style={{ width: 16, height: 16, borderRadius: '50%', background: '#96b2b2', boxShadow: '0 0 0 4px #deebeb', flexShrink: 0 }}
+                style={{ width: 16, height: 16, borderRadius: '50%', background: '#96b2b2', boxShadow: '0 0 0 4px #f3ece0', flexShrink: 0 }}
               />
-              <span style={{ fontFamily: SERIF, color: TEAL_TEXT, letterSpacing: '0.14em', fontSize: 14, textTransform: 'uppercase' }}>
-                STEP <span style={{ fontSize: 24, color: TEAL_DEEP }}>{i + 1}</span>
+              <span style={{ fontFamily: SERIF, color: TEAL_TEXT, letterSpacing: '0.14em', fontSize: 14 }}>
+                Step <span style={{ fontSize: 24, color: TEAL_DEEP }}>{i + 1}</span>
               </span>
             </div>
             <Card s={s} />
@@ -131,7 +127,7 @@ export default function ConsultationProcess() {
     <section
       className="py-32"
       aria-labelledby="consultation-process-heading"
-      style={{ background: 'linear-gradient(180deg, #ffffff 0%, #deebeb 48%, #ffffff 100%)' }}
+      style={{ background: 'transparent' }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Eyebrow + heading */}
@@ -160,12 +156,11 @@ export default function ConsultationProcess() {
               fontSize: '38px',
               lineHeight: '1.25',
               letterSpacing: '2px',
-              textTransform: 'uppercase',
             }}
           >
-            How a Free Consultation
+            How a free consultation
             <br />
-            Works at Our Clinic
+            works at our clinic
           </h2>
         </div>
 

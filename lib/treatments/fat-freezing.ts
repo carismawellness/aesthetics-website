@@ -4,7 +4,7 @@ const t: Treatment = {
   slug: "fat-freezing",
   category: "Body",
   hero: {
-    title: "COOLSCULPTING IN MALTA",
+    title: "CoolSculpting in Malta",
     subtitle: "fat eraser protocol",
     body: "BURN STUBBORN FAT, NO SURGERY. For those who have tried dieting, eating healthier and moving more, but the love handles, stubborn belly fat and double chin still will not budge.",
     prices: [
@@ -20,7 +20,7 @@ const t: Treatment = {
   },
 
   education: {
-    title: "the secret to a more defined, confident look",
+    title: "The secret to a more defined, confident look",
     subtitle: "shrink love handles & target stubborn fat pockets with precision",
     paragraphs: [
       "You are eating better and moving more, yet the same bulge shows up in every outfit. Your jeans still cut into your hips, your bra digs into your back, or every selfie seems to highlight your double chin. The scale might move a little, but your shape does not.",
@@ -34,7 +34,7 @@ const t: Treatment = {
   },
 
   trusted: {
-    title: "malta’s trusted clinic for non surgical fat reduction",
+    title: "Malta’s trusted clinic for non surgical fat reduction",
     images: [
       "/assets/treatments/ff-feat1.png",
       "/assets/treatments/ff-feat2.png",
@@ -76,7 +76,7 @@ const t: Treatment = {
   },
 
   experience: {
-    title: "package treatments",
+    title: "Package treatments",
     steps: [
       {
         title: "CoolSculpting",
@@ -103,7 +103,7 @@ const t: Treatment = {
   },
 
   guarantee: {
-    title: "malta’s only dual technology starter pack for stubborn fat",
+    title: "Malta’s only dual technology starter pack for stubborn fat",
     paragraphs: [
       "CoolSculpting plus Lemon Bottle injections in one visit for your number one trouble spot.",
       "Local fat reduction where you actually see it in clothes and photos, not just on the scale.",
@@ -116,7 +116,7 @@ const t: Treatment = {
 
   difference: {
     kicker: "the carisma difference",
-    title: "malta’s #1 leading wellness chain",
+    title: "Malta’s #1 leading wellness chain",
     commitmentTitle: "Our Commitment",
     commitment: [
       "Visible inch loss and shape change, not vague promises",

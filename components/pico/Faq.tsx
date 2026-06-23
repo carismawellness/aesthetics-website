@@ -175,12 +175,11 @@ export default function Faq() {
                 color: "#406060",
                 letterSpacing: "0.06em",
                 fontWeight: 400,
-                textTransform: "uppercase",
                 margin: 0,
                 lineHeight: 1.3,
               }}
             >
-              Frequently Asked Questions
+              Frequently asked questions
             </h2>
             <div style={{ position: "relative", width: "280px", maxWidth: "100%" }}>
               <label htmlFor="faq-search" className="sr-only">

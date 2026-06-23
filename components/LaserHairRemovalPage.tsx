@@ -53,18 +53,18 @@ const STEPS = [
 ];
 
 const PRICES = [
-  { icon: "laser-ic-arms.png", name: "arms", price: "from 35 EUR", desc: "Say goodbye to daily shaving and irritation. Our laser hair removal solutions ensure smooth skin from shoulder to fingertip, helping you maintain a well-groomed appearance with minimal effort.", tags: ["underarms", "Arms & hands"] },
-  { icon: "laser-ic-bikini.png", name: "bikini", price: "from 39 EUR", desc: "Prepare for beach season all year round with our expert bikini laser treatments. We offer a variety of options, from a standard bikini line to a full Brazilian, ensuring optimal comfort and confidence.", tags: ["bikini line", "BRAZILIAN"] },
-  { icon: "laser-ic-legs.png", name: "legs", price: "from 109 EUR", desc: "Enjoy effortlessly smooth legs with our professional laser hair removal services. Whether you prefer full or half-leg treatments, we provide long-lasting results, eliminating the need for frequent shaving.", tags: ["legs"] },
-  { icon: "laser-ic-face.png", name: "face", price: "from 25 EUR", desc: "Achieve a flawless, hair-free complexion with our professional laser hair removal services. We target unwanted facial hair, from eyebrows to the chin, ensuring smooth and long-lasting results.", tags: ["Full Face", "chin"] },
-  { icon: "laser-ic-body.png", name: "body", price: "FROM 49 EUR", desc: "Experience the confidence of a smooth, hair-free torso. Our advanced laser treatments effectively remove unwanted hair from various areas of the body, providing a sleek and polished look.", tags: ["shoulders", "back", "chest"] },
-  { icon: "laser-ic-men.png", name: "men's", price: "from 25 EUR", desc: "Enhance your grooming routine with our customized laser hair removal solutions for men. We target common areas such as the back, shoulders, chest, and abs, ensuring a refined and polished appearance.", tags: ["multiple areas"] },
+  { icon: "laser-ic-arms.png", name: "Arms", price: "from 35 EUR", desc: "Say goodbye to daily shaving and irritation. Our laser hair removal solutions ensure smooth skin from shoulder to fingertip, helping you maintain a well-groomed appearance with minimal effort.", tags: ["underarms", "Arms & hands"] },
+  { icon: "laser-ic-bikini.png", name: "Bikini", price: "from 39 EUR", desc: "Prepare for beach season all year round with our expert bikini laser treatments. We offer a variety of options, from a standard bikini line to a full Brazilian, ensuring optimal comfort and confidence.", tags: ["bikini line", "BRAZILIAN"] },
+  { icon: "laser-ic-legs.png", name: "Legs", price: "from 109 EUR", desc: "Enjoy effortlessly smooth legs with our professional laser hair removal services. Whether you prefer full or half-leg treatments, we provide long-lasting results, eliminating the need for frequent shaving.", tags: ["legs"] },
+  { icon: "laser-ic-face.png", name: "Face", price: "from 25 EUR", desc: "Achieve a flawless, hair-free complexion with our professional laser hair removal services. We target unwanted facial hair, from eyebrows to the chin, ensuring smooth and long-lasting results.", tags: ["Full Face", "chin"] },
+  { icon: "laser-ic-body.png", name: "Body", price: "FROM 49 EUR", desc: "Experience the confidence of a smooth, hair-free torso. Our advanced laser treatments effectively remove unwanted hair from various areas of the body, providing a sleek and polished look.", tags: ["shoulders", "back", "chest"] },
+  { icon: "laser-ic-men.png", name: "Men's", price: "from 25 EUR", desc: "Enhance your grooming routine with our customized laser hair removal solutions for men. We target common areas such as the back, shoulders, chest, and abs, ensuring a refined and polished appearance.", tags: ["multiple areas"] },
 ];
 
 const TIERS = [
-  { image: "laser-member-bronze.png", name: "bronze membership", sessions: "6 Sessions | 15 min each", price: "139 EUR", tags: ["upper lip", "nose"] },
-  { image: "laser-member-silver.png", name: "silver membership", sessions: "6 Sessions | 30 min each", price: "245 EUR", tags: [] as string[] },
-  { image: "laser-member-gold.png", name: "gold membership", sessions: "6 Sessions | 60 min each", price: "399 EUR", tags: [] as string[] },
+  { image: "laser-member-bronze.png", name: "Bronze membership", sessions: "6 Sessions | 15 min each", price: "139 EUR", tags: ["upper lip", "nose"] },
+  { image: "laser-member-silver.png", name: "Silver membership", sessions: "6 Sessions | 30 min each", price: "245 EUR", tags: [] as string[] },
+  { image: "laser-member-gold.png", name: "Gold membership", sessions: "6 Sessions | 60 min each", price: "399 EUR", tags: [] as string[] },
 ];
 
 const SUITABLE = [
@@ -133,7 +133,7 @@ export default function LaserHairRemovalPage() {
       {/* ============ HERO ============ */}
       <PageHero
         badge="World-renowned Alma Soprano — first in Malta"
-        headline={[{ text: "Laser Hair Removal" }, { text: "in Malta", em: true }]}
+        headline={[{ text: "Laser hair removal" }, { text: "in Malta", em: true }]}
         sub="Permanently smooth, hair-free skin with our virtually painfree SHR® guarantee."
         bullets={[
           { text: "Triple-wavelength Alma Soprano — effective on every skin tone & hair type" },
@@ -142,7 +142,7 @@ export default function LaserHairRemovalPage() {
         ]}
         primaryCta={{ text: "Book Your Free Consultation", href: "/consultation" }}
         media={{ type: "video", src: `${IMG}/laser-hero-video.mp4`, poster: `${IMG}/laser-hero-photo2.png`, alt: "Laser hair removal in Malta" }}
-        proof={{ rating: "4.9", reviews: "200+", statValue: "30+", statLabel: "years in wellness", awardText: "#1 Voted Clinic\nMalta Healthcare Awards" }}
+        proof={{ rating: "4.9", reviews: "500+", statValue: "30+", statLabel: "years in wellness", awardText: "#1 Voted Clinic\nMalta Healthcare Awards" }}
       />
 
       {/* ============ TRUST BAR ============ */}
@@ -166,7 +166,7 @@ export default function LaserHairRemovalPage() {
         <section style={SECTION}>
           <div className="container text-center">
             <Kicker>laser hair removal In Malta</Kicker>
-            <SerifHeading style={{ marginTop: "10px" }}>what is all the hype?</SerifHeading>
+            <SerifHeading style={{ marginTop: "10px" }}>What is all the hype?</SerifHeading>
             <div className="mx-auto" style={{ maxWidth: "880px", marginTop: "24px" }}>
               {["Laser hair removal is a popular alternative to waxing and shaving. This is largely due to the fact that laser hair removal provides permanent results and is less expensive than maintaining a waxing and shaving routine for a lifetime.",
                 "Additionally, there's no recovery time needed after a treatment—so no more doing the waxing-waddle or battling razor burn.",
@@ -180,7 +180,7 @@ export default function LaserHairRemovalPage() {
         {/* ---- GUARANTEE ---- */}
         <section style={SECTION}>
           <div className="container">
-            <SerifHeading>never shave again. guaranteed.</SerifHeading>
+            <SerifHeading>Never shave again. Guaranteed.</SerifHeading>
             <div className="grid gap-12 lg:grid-cols-2 items-center" style={{ marginTop: "44px" }}>
               <CompositeSlideshow images={[`${IMG}/laser-ba1.png`, `${IMG}/laser-ba2.png`, `${IMG}/laser-ba3.png`, `${IMG}/laser-ba4.png`]} />
               <div>
@@ -197,7 +197,7 @@ export default function LaserHairRemovalPage() {
         <section style={SECTION}>
           <div className="container text-center">
             <Kicker>our process</Kicker>
-            <SerifHeading style={{ marginTop: "10px" }}>a seamless journey to silky, hair free skin</SerifHeading>
+            <SerifHeading style={{ marginTop: "10px" }}>A seamless journey to silky, hair free skin</SerifHeading>
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4" style={{ marginTop: "50px" }}>
               {STEPS.map((s, i) => (
                 <Reveal key={s.n} delay={(i % 4) * 80} className="text-center flex flex-col items-center">
@@ -205,7 +205,7 @@ export default function LaserHairRemovalPage() {
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src={`${IMG}/${s.icon}`} alt={s.title} style={{ maxHeight: "80px", width: "auto" }} />
                   </div>
-                  <div className="font-serif" style={{ fontSize: "20px", color: TEAL, letterSpacing: "0.1em", margin: "14px 0 6px", textTransform: "uppercase" }}>step {s.n}</div>
+                  <div className="font-serif" style={{ fontSize: "20px", color: TEAL, letterSpacing: "0.1em", margin: "14px 0 6px" }}>Step {s.n}</div>
                   <h3 className="font-display" style={{ fontSize: "13px", color: TEAL, letterSpacing: "0.06em", marginBottom: "12px" }}>{s.title}</h3>
                   <p style={{ fontSize: "13.5px", color: "var(--label)", lineHeight: 1.7 }}>{s.desc}</p>
                 </Reveal>
@@ -225,7 +225,7 @@ export default function LaserHairRemovalPage() {
                   <img src={`${IMG}/${p.icon}`} alt={p.name} style={{ width: "82px", height: "auto", flexShrink: 0 }} />
                   <div>
                     <div className="flex items-baseline gap-2 flex-wrap">
-                      <span className="font-serif" style={{ fontSize: "18px", color: TEAL, letterSpacing: "0.04em", textTransform: "uppercase" }}>{p.name}</span>
+                      <span className="font-serif" style={{ fontSize: "18px", color: TEAL, letterSpacing: "0.04em" }}>{p.name}</span>
                       {(() => {
                         const m = p.price.match(/^(from|FROM)\s+(.*)$/);
                         const qual = m ? m[1] : "";
@@ -261,7 +261,7 @@ export default function LaserHairRemovalPage() {
                 <Reveal key={t.name} delay={(i % 3) * 90} className="text-center card" style={{ background: "rgba(255,255,255,0.65)", border: "1px solid var(--line)", borderRadius: "16px", padding: "26px 24px 30px" }}>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={`${IMG}/${t.image}`} alt={t.name} className="mx-auto" style={{ display: "block", width: "100%", maxWidth: "260px", borderRadius: "10px", boxShadow: "0 8px 22px rgba(0,0,0,0.12)" }} />
-                  <h3 className="font-serif" style={{ fontSize: "20px", color: TEAL, letterSpacing: "0.08em", textTransform: "uppercase", marginTop: "22px" }}>{t.name}</h3>
+                  <h3 className="font-serif" style={{ fontSize: "20px", color: TEAL, letterSpacing: "0.08em", marginTop: "22px" }}>{t.name}</h3>
                   <div className="flex items-center justify-center gap-2" style={{ marginTop: "14px" }}>
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img src={`${IMG}/laser-ic-check.png`} alt="" style={{ width: "20px", height: "20px" }} />
@@ -299,7 +299,7 @@ export default function LaserHairRemovalPage() {
           <div className="container">
             <div className="text-center">
               <Kicker>Laser hair removal selection criteria</Kicker>
-              <SerifHeading style={{ marginTop: "10px" }}>selective by intention. successful by design.</SerifHeading>
+              <SerifHeading style={{ marginTop: "10px" }}>Selective by intention. Successful by design.</SerifHeading>
               <div className="mx-auto" style={{ maxWidth: "880px", marginTop: "22px" }}>
                 {["We only take on clients where we know we can deliver exceptional, lasting results.",
                   "After a thorough consultation and patch test, if we don't believe our treatment fits your skin, hair type, or expectations, we'll be honest—and part ways without wasting your time or money.",
@@ -310,7 +310,7 @@ export default function LaserHairRemovalPage() {
             </div>
             <div className="grid gap-12 md:grid-cols-2 mx-auto" style={{ maxWidth: "1000px", marginTop: "48px" }}>
               <div>
-                <h3 className="font-serif" style={{ fontSize: "18px", color: TEAL, letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: "22px" }}>suitable for:</h3>
+                <h3 className="font-serif" style={{ fontSize: "18px", color: TEAL, letterSpacing: "0.06em", marginBottom: "22px" }}>Suitable for:</h3>
                 <ul className="space-y-4">
                   {SUITABLE.map((s) => (
                     <li key={s} className="flex items-start gap-3"><Check size={24} /><span style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.55 }}>{s}</span></li>
@@ -318,7 +318,7 @@ export default function LaserHairRemovalPage() {
                 </ul>
               </div>
               <div>
-                <h3 className="font-serif" style={{ fontSize: "18px", color: TEAL, letterSpacing: "0.06em", textTransform: "uppercase", marginBottom: "22px" }}>not suitable for:</h3>
+                <h3 className="font-serif" style={{ fontSize: "18px", color: TEAL, letterSpacing: "0.06em", marginBottom: "22px" }}>Not suitable for:</h3>
                 <ul className="space-y-4">
                   {NOT_SUITABLE.map((s) => (
                     <li key={s} className="flex items-start gap-3"><Cross size={24} /><span style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.55 }}>{s}</span></li>
@@ -332,7 +332,7 @@ export default function LaserHairRemovalPage() {
         {/* ---- TECH CHART ---- */}
         <section style={SECTION}>
           <div className="container text-center">
-            <SerifHeading>super hair removal technology</SerifHeading>
+            <SerifHeading>Super hair removal technology</SerifHeading>
             <div className="mx-auto" style={{ maxWidth: "860px", marginTop: "22px" }}>
               <p style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.8 }}>Our advanced laser technology utilizes <b style={{ fontWeight: 600 }}>Super Hair Removal (SHR) technology</b>, making it <b style={{ fontWeight: 600 }}>suitable for all skin tones</b> and capable of effectively treating <b style={{ fontWeight: 600 }}>most hair types</b>.</p>
               <p style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.8, marginTop: "16px" }}>Designed to provide safe, efficient, and comfortable hair removal, our system ensures optimal results for a diverse range of patients, regardless of their skin type or hair texture.</p>
@@ -346,7 +346,7 @@ export default function LaserHairRemovalPage() {
         {/* ---- WHY CHOOSE ---- */}
         <section style={SECTION}>
           <div className="container">
-            <SerifHeading>#1 award winning chain in malta</SerifHeading>
+            <SerifHeading>#1 award winning chain in Malta</SerifHeading>
             <div className="grid gap-12 lg:grid-cols-2 items-center mx-auto" style={{ maxWidth: "1040px", marginTop: "40px" }}>
               <Reveal className="card" style={{ background: "rgba(255,255,255,0.65)", border: "1px solid var(--line)", borderRadius: "16px", padding: "clamp(28px,3.5vw,42px)" }}>
                 <h3 className="font-display" style={{ fontSize: "20px", color: "var(--label)", letterSpacing: "0.04em", marginBottom: "22px" }}>why choose carisma?</h3>
@@ -372,7 +372,7 @@ export default function LaserHairRemovalPage() {
         {/* ---- CTA BAND ---- */}
         <section style={{ padding: "30px 0 70px" }}>
           <div className="container text-center">
-            <SerifHeading style={{ letterSpacing: "0.1em" }}>begin your path to pain-free,<br />long-lasting hair removal</SerifHeading>
+            <SerifHeading style={{ letterSpacing: "0.1em" }}>Begin your path to pain-free,<br />long-lasting hair removal</SerifHeading>
             <p className="font-display" style={{ fontSize: "14px", color: TEAL, letterSpacing: "0.02em", marginTop: "20px", lineHeight: 1.7 }}>
               Be Part of Malta's <span style={{ fontWeight: 700 }}>Smoothest Success Stories</span><br />Discover Why Clients Across the Globe Choose <span style={{ fontWeight: 700 }}>Alma Soprano</span>
             </p>
@@ -384,13 +384,13 @@ export default function LaserHairRemovalPage() {
         <section style={SECTION}>
           <div className="container text-center">
             <Kicker>OUR TECHNOLOGY</Kicker>
-            <SerifHeading style={{ marginTop: "10px" }}>ALMA SOPRANO</SerifHeading>
+            <SerifHeading style={{ marginTop: "10px" }}>Alma Soprano</SerifHeading>
             <p className="mx-auto" style={{ maxWidth: "900px", fontSize: "15px", color: "var(--label)", lineHeight: 1.85, marginTop: "22px" }}>
               Not all laser hair removal is created equal. Carisma has Malta's first and only internationally acclaimed <span style={{ color: TEAL, fontWeight: 600 }}>Alma Soprano</span> laser regarded as the <span style={{ color: TEAL, fontWeight: 600 }}>gold standard in laser hair removal technology today</span>—best for comfort, clinical reliability, and seamless triple-wavelength delivery.
             </p>
 
             {/* effective */}
-            <h3 className="font-serif" style={{ fontSize: "25px", color: TEAL, letterSpacing: "0.1em", textTransform: "uppercase", marginTop: "48px" }}>effective</h3>
+            <h3 className="font-serif" style={{ fontSize: "25px", color: TEAL, letterSpacing: "0.1em", marginTop: "48px" }}>Effective</h3>
             <p className="mx-auto" style={{ maxWidth: "860px", fontSize: "15px", color: "var(--label)", lineHeight: 1.85, marginTop: "16px" }}>
               Tired of laser treatments that take forever to see results? Our <span style={{ color: TEAL, fontWeight: 600 }}>triple-wavelength laser</span> simultaneously targets hair at multiple depths, delivering superior results in fewer sessions—no matter your skin tone or hair type.
             </p>
@@ -421,7 +421,7 @@ export default function LaserHairRemovalPage() {
             </div>
 
             {/* painfree */}
-            <h3 className="font-serif" style={{ fontSize: "25px", color: TEAL, letterSpacing: "0.1em", textTransform: "uppercase", marginTop: "56px" }}>painfree</h3>
+            <h3 className="font-serif" style={{ fontSize: "25px", color: TEAL, letterSpacing: "0.1em", marginTop: "56px" }}>Painfree</h3>
             <div className="grid gap-10 lg:grid-cols-2 items-center mx-auto" style={{ maxWidth: "1000px", marginTop: "24px", textAlign: "left" }}>
               <div>
                 <p style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.85 }}>Our lasers' SHR technology is the only clinically proven laser hair removal method that is virtually painless.</p>
@@ -435,7 +435,7 @@ export default function LaserHairRemovalPage() {
             </div>
 
             {/* safe */}
-            <h3 className="font-serif" style={{ fontSize: "25px", color: TEAL, letterSpacing: "0.1em", textTransform: "uppercase", marginTop: "56px" }}>safe</h3>
+            <h3 className="font-serif" style={{ fontSize: "25px", color: TEAL, letterSpacing: "0.1em", marginTop: "56px" }}>Safe</h3>
             <div className="mx-auto" style={{ maxWidth: "900px", marginTop: "20px" }}>
               <p style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.85 }}>Alma Soprano is the go-to laser for top-tier dermatologists and luxury aesthetic clinics, trusted in over 80 countries and chosen by celebrities like <span style={{ color: TEAL, fontWeight: 600 }}>Kim Kardashian</span>, <span style={{ color: TEAL, fontWeight: 600 }}>Victoria Beckham</span>, and <span style={{ color: TEAL, fontWeight: 600 }}>Coleen Rooney</span>.</p>
               <p style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.85, marginTop: "14px" }}>This safety profile is backed by FDA and CE approvals, our laser is a medical-grade device offering unmatched safety especially important in warmer climates like Malta, where skin is more prone to sensitivity and post-treatment irritation.</p>
@@ -482,7 +482,7 @@ export default function LaserHairRemovalPage() {
           <div className="container text-center">
             <p className="font-display text-center" style={{ fontSize: "18px", color: TEAL, letterSpacing: "0.02em" }}>in summary</p>
             <div className="mx-auto" style={{ width: "min(500px, 80%)", height: "1px", background: "var(--teal-deep)", marginTop: "14px", marginBottom: "14px", opacity: 0.5 }} />
-            <SerifHeading style={{ marginTop: "6px" }}>your journey to smooth, redefined by carisma</SerifHeading>
+            <SerifHeading style={{ marginTop: "6px" }}>Your journey to smooth, redefined by Carisma</SerifHeading>
             <p className="mx-auto" style={{ maxWidth: "900px", fontSize: "15px", color: "var(--label)", lineHeight: 1.85, marginTop: "22px" }}>Imagine the results you'd get if you removed hair every day for years—our team has performed thousands of treatments using the world's most advanced technology, refining every detail to deliver a laser hair removal experience that's truly unmatched.</p>
             <div className="grid gap-x-16 gap-y-12 sm:grid-cols-2 mx-auto" style={{ maxWidth: "880px", marginTop: "48px", textAlign: "left" }}>
               {SUMMARY.map((s, i) => (
@@ -499,7 +499,7 @@ export default function LaserHairRemovalPage() {
               ))}
             </div>
             <div style={{ marginTop: "60px" }}>
-              <SerifHeading style={{ marginBottom: "30px" }}>start your smooth skin journey today</SerifHeading>
+              <SerifHeading style={{ marginBottom: "30px" }}>Start your smooth skin journey today</SerifHeading>
               {/* Full-width book button matching live — pill style */}
               <BookingButtons consultLabel="book your session" theme="teal" />
             </div>

@@ -110,7 +110,7 @@ export default function ResultsCommitment() {
       className={`rc${revealed ? ' rc--in' : ''}`}
       style={{
         padding: 'clamp(46px,10vw,128px) 0',
-        background: `linear-gradient(180deg,#ffffff 0%,${TEAL_100} 100%)`,
+        background: "transparent",
       }}
     >
       <style>{`
@@ -234,11 +234,10 @@ export default function ResultsCommitment() {
               fontWeight: 400,
               fontSize: 'clamp(27px,3.8vw,42px)',
               lineHeight: 1.16,
-              textTransform: 'uppercase',
               margin: '22px 0 0',
             }}
           >
-            The Carisma Results Commitment
+            The Carisma results commitment
           </h2>
           <p style={{ color: BODY, fontFamily: SYS, fontSize: 'clamp(16px,1.7vw,19px)', lineHeight: 1.6, margin: '14px auto 0', maxWidth: 540 }}>
             Doctor-led. Natural-looking. Built around you — so you glow with confidence, never overdone.
@@ -272,7 +271,6 @@ export default function ResultsCommitment() {
                   fontWeight: 400,
                   fontSize: 'clamp(40px,5.5vw,60px)',
                   lineHeight: 1,
-                  textTransform: 'uppercase',
                 }}
               >
                 {s.value}

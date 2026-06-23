@@ -109,8 +109,8 @@ export default function WhyGiftStrip() {
           style={{ maxWidth: "1120px", padding: 0, margin: 0 }}
         >
           {PILLARS.map((p, i) => (
-            <li key={p.label}>
-              <Reveal delay={(i % 4) * 70}>
+            <li key={p.label} className="h-full">
+              <Reveal delay={(i % 4) * 70} className="h-full">
                 <div
                   className="card"
                   style={{
@@ -167,19 +167,8 @@ export default function WhyGiftStrip() {
             </li>
           ))}
         </ul>
-
-        {/* Gentle nudge toward the occasion grid (primary on-page action) */}
-        <Reveal delay={140}>
-          <div className="text-center" style={{ marginTop: "36px" }}>
-            <a
-              href="#pick-occasion"
-              className="btn-teal font-display"
-              style={{ letterSpacing: "0.1em" }}
-            >
-              Pick an Occasion
-            </a>
-          </div>
-        </Reveal>
+        {/* (Removed the redundant mid-section "Pick an Occasion" CTA box — the
+            occasion grid with its own "Pick Your Occasion" heading is directly below.) */}
       </div>
     </section>
   );

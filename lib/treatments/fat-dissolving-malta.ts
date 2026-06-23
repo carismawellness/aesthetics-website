@@ -4,7 +4,7 @@ const t: Treatment = {
   slug: "fat-dissolving-malta",
   category: "Face",
   hero: {
-    title: "fat dissolving",
+    title: "Fat dissolving",
     subtitle: "Are you tired of dealing with stubborn localised fat?",
     body: "Embrace a new you with our reliable and impactful localized fat reduction solutions in Malta! Our knowledgeable team is focused on helping you realise a more contoured and youthful version of yourself, without the drawbacks of surgical alternatives.",
     prices: [
@@ -86,7 +86,7 @@ const t: Treatment = {
     additional: "Upper arms, inner thighs, flanks, bra fat, knee area, abdomen",
   },
   suitability: {
-    title: "is this suitable for you?",
+    title: "Is this suitable for you?",
     intro: "Fat dissolving targets small, stubborn pockets of fat that resist diet and exercise. It is a contouring treatment, not a weight loss solution. Realistic expectations and a consultation ensure this is the right fit for your goals.",
     suitableFor: [
       "You have a localised area of stubborn fat, such as under the chin or jawline",
@@ -104,7 +104,7 @@ const t: Treatment = {
     ],
   },
   experience: {
-    title: "your treatment experience",
+    title: "Your treatment experience",
     steps: [
       {
         title: "personalised consultation",
@@ -131,7 +131,7 @@ const t: Treatment = {
   },
   prepAftercare: {
     kicker: "PREPARATION & AFTERCARE",
-    title: "your session, step by step",
+    title: "Your session, step by step",
     intro: "Targeted contouring works best with the right preparation. Here is how to support your treatment journey.",
     cards: [
       {
@@ -170,7 +170,7 @@ const t: Treatment = {
     ],
   },
   trusted: {
-    title: "malta's trusted clinic for fat dissolving",
+    title: "Malta's trusted clinic for fat dissolving",
     subtitle: "DOCTOR-LED fat dissolving IN MALTA",
     asSeenOn: [
       "/assets/press/lovin-malta.jpeg",
@@ -207,7 +207,7 @@ const t: Treatment = {
   },
   difference: {
     kicker: "the carisma difference",
-    title: "malta's #1 leading wellness chain",
+    title: "Malta's #1 leading wellness chain",
     commitmentTitle: "our commitment",
     commitment: [
       "Natural, refined fat dissolving results,  never overdone, never frozen",
@@ -226,7 +226,7 @@ const t: Treatment = {
   },
   bookingForm: { title: "BOOK YOUR fat dissolving APPOINTMENT TODAY" },
   recommended: {
-    title: "recommended with fat dissolving",
+    title: "Recommended with fat dissolving",
     items: [
       {
         label: "Dermal fillers",
@@ -234,12 +234,12 @@ const t: Treatment = {
         image: "/assets/treatments/thread-lift-malta-rec-dermal-fillers.avif",
       },
       {
-        label: "thread lift",
+        label: "Thread lift",
         href: "/thread-lift-malta",
         image: "/assets/treatments/collagen-stimulator-malta-rec-botox.png",
       },
       {
-        label: "collagen stimulator",
+        label: "Collagen stimulator",
         href: "/collagen-stimulator-malta",
         image: "/assets/treatments/thread-lift-malta-rec-collagen-stimulator.avif",
       },

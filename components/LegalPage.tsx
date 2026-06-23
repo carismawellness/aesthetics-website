@@ -12,7 +12,7 @@ export const lp = {
   teal: "#4f7373", // accessible deep teal — headings / accents
   tealText: "#406060", // teal as small text / links (AA on white)
   tealHair: "#DEEBEB", // light teal hairlines
-  tealTint: "#eef3f3", // cool mist section background
+  tealTint: "#faf6ef", // warm ivory section background (was teal #eef3f3)
   beigeBg: "#faf7f2", // warm card background
   gold: "#706552", // heading / nav text token
   taupe: "#695c4e", // muted label / body-strong
@@ -175,16 +175,16 @@ export function LegalHero({
   lastUpdated: string;
 }) {
   return (
-    <section style={{ backgroundColor: lp.teal, paddingTop: "104px", paddingBottom: "72px" }}>
+    <section style={{ background: "linear-gradient(180deg, #faf6ef 0%, #f3ece0 100%)", paddingTop: "104px", paddingBottom: "72px" }}>
       <div className="mx-auto px-6 lg:px-0 text-center" style={{ maxWidth: "860px" }}>
-        <p style={{ ...labelStyle, color: "#DEEBEB", marginBottom: "20px" }}>{eyebrow}</p>
+        <p style={{ ...labelStyle, color: lp.tealText, marginBottom: "20px" }}>{eyebrow}</p>
         <h1
           style={{
             fontFamily: lp.serif,
             fontWeight: 400,
             fontSize: "clamp(34px, 5vw, 50px)",
             lineHeight: 1.18,
-            color: "#ffffff",
+            color: lp.teal,
             marginBottom: "20px",
           }}
         >
@@ -195,7 +195,7 @@ export function LegalHero({
             fontFamily: lp.sans,
             fontSize: "17px",
             lineHeight: 1.65,
-            color: "rgba(255,255,255,0.82)",
+            color: lp.body,
             maxWidth: "580px",
             margin: "0 auto 32px",
           }}
@@ -205,13 +205,13 @@ export function LegalHero({
         <span
           style={{
             display: "inline-block",
-            backgroundColor: "rgba(222,235,235,0.16)",
-            border: "1px solid rgba(222,235,235,0.40)",
+            backgroundColor: "rgba(243,236,224,0.7)",
+            border: "1px solid rgba(79,115,115,0.40)",
             borderRadius: "999px",
             padding: "6px 20px",
             fontFamily: lp.sans,
             fontSize: "13px",
-            color: "#DEEBEB",
+            color: lp.tealText,
             letterSpacing: "0.4px",
           }}
         >

@@ -57,7 +57,7 @@ export default function PackageEvidenceGrid({ evidence }: { evidence: EvidenceCa
             </div>
 
             <div style={{ background: 'linear-gradient(180deg, #f0f5f5 0%, #bdd1d1 100%)', borderRadius: 16, marginTop: -70, padding: '92px 30px 30px', position: 'relative', zIndex: 1 }}>
-              <h3 style={{ color: GREEN, fontFamily: SERIF, fontWeight: 400, fontSize: 20, lineHeight: 1.3, textTransform: 'uppercase', textAlign: 'center', margin: 0 }}>{e.title}</h3>
+              <h3 style={{ color: GREEN, fontFamily: SERIF, fontWeight: 400, fontSize: 20, lineHeight: 1.3, textAlign: 'center', margin: 0 }}>{e.title}</h3>
               <div style={{ width: 90, height: 1, backgroundColor: '#cfc8bf', margin: '16px auto 20px' }} aria-hidden="true" />
 
               <p

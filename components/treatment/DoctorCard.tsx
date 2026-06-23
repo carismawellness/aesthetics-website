@@ -49,7 +49,7 @@ function Tick() {
 
 export default function DoctorCard({
   kicker = "Meet your doctor",
-  heading = "Doctor-Led Care",
+  heading = "Doctor-led care",
   name,
   title,
   credentials,
@@ -125,7 +125,6 @@ export default function DoctorCard({
                   fontSize: "clamp(22px, 3vw, 30px)",
                   color: "var(--gold)",
                   letterSpacing: "0.04em",
-                  textTransform: "uppercase",
                   fontWeight: 400,
                   lineHeight: 1.2,
                   margin: 0,

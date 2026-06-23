@@ -4,7 +4,7 @@ const t: Treatment = {
   slug: "microneedling-malta",
   category: "Face",
   hero: {
-    title: "microneedling + mesotherapy malta",
+    title: "Microneedling + mesotherapy Malta",
     subtitle: "Doctor-Led Microneedling with Mesotherapy — Restore Your Skin from Within",
     body: "Is uneven skin texture, scarring, or dull skin holding you back? Rediscover smoother, brighter, more confident skin with our expert microneedling and mesotherapy treatments in Malta. Every treatment is performed by qualified doctors who combine collagen induction therapy with personalised mesotherapy cocktails, delivering natural, lasting results that restore your skin from within.",
     prices: [
@@ -46,7 +46,7 @@ const t: Treatment = {
     additional: "Pigmentation, stretch marks, neck, decolletage, hands, surgical scars",
   },
   suitability: {
-    title: "is this suitable for you?",
+    title: "Is this suitable for you?",
     intro: "Every skin tells a different story. Microneedling with mesotherapy is most effective when tailored to your specific skin concerns, whether that is scarring, texture, fine lines, or overall radiance. A free consultation with one of our doctors helps us assess your skin and design a treatment plan that works for you.",
     suitableFor: [
       "You want to improve acne scarring, enlarged pores, fine lines, or uneven texture",
@@ -64,7 +64,7 @@ const t: Treatment = {
     ],
   },
   experience: {
-    title: "your treatment experience",
+    title: "Your treatment experience",
     steps: [
       { title: "personalised consultation", desc: "We assess your skin condition, concerns, and medical history with one of our doctors to design your personalised microneedling plan.", image: "/assets/treatments/microneedling-malta-step1.png" },
       { title: "Structured Plan", desc: "Your doctor selects the mesotherapy cocktail and treatment protocol tailored to your skin type, concerns, and goals.", image: "/assets/treatments/microneedling-malta-step2.png" },
@@ -113,7 +113,7 @@ const t: Treatment = {
     ],
   },
   patientVideos: {
-    title: "real patients, real confidence",
+    title: "Real patients, real confidence",
     intro: "Every skin is unique. Every story is personal. Discover how our microneedling patients describe their journey to smoother, healthier skin at Carisma Aesthetics in Malta.",
     videos: [
       "/assets/treatments/microneedling-malta-video1.mp4",
@@ -122,7 +122,7 @@ const t: Treatment = {
     ],
   },
   trusted: {
-    title: "malta's trusted clinic for microneedling",
+    title: "Malta's trusted clinic for microneedling",
     subtitle: "DOCTOR-LED microneedling IN MALTA",
     asSeenOn: ["/assets/press/lovin-malta.jpeg", "/assets/press/malta-daily.png", "/assets/press/bay.jpeg", "/assets/press/times-of-malta.png", "/assets/press/malta-today.jpg"],
     images: ["/assets/treatments/microneedling-malta-trusted.png"],
@@ -136,7 +136,7 @@ const t: Treatment = {
   },
   difference: {
     kicker: "the carisma difference",
-    title: "malta’s #1 leading wellness chain",
+    title: "Malta’s #1 leading wellness chain",
     commitmentTitle: "our commitment",
     commitment: [
       "Natural, refined microneedling results — gradual improvement that respects your skin",
@@ -155,13 +155,13 @@ const t: Treatment = {
   },
   bookingForm: { title: "BOOK YOUR microneedling APPOINTMENT TODAY" },
   recommended: {
-    title: "recommended with microneedling",
+    title: "Recommended with microneedling",
     items: [
-      { label: "chemical peels", href: "/chemical-peels-malta", image: "/assets/treatments/microneedling-malta-rec-chemical-peels.png" },
-      { label: "prp", href: "/prp-malta", image: "/assets/treatments/microneedling-malta-rec-prp.png" },
+      { label: "Chemical peels", href: "/chemical-peels-malta", image: "/assets/treatments/microneedling-malta-rec-chemical-peels.png" },
+      { label: "PRP", href: "/prp-malta", image: "/assets/treatments/microneedling-malta-rec-prp.png" },
     ],
   },
-  faqTitle: "faqs about microneedling in malta",
+  faqTitle: "FAQs about microneedling in Malta",
   faq: [
     {
       q: "What is microneedling, and how does it work?",

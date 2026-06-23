@@ -47,7 +47,7 @@ const t: Treatment = {
     additional: "Inner arms, above the knee, under-eye area, jawline laxity, forehead skin quality",
   },
   suitability: {
-    title: "is this suitable for you?",
+    title: "Is this suitable for you?",
     intro: "Profhilo is a skin quality treatment, not a filler. It hydrates and firms from within without adding volume or changing your facial structure. If your skin feels tired or has lost its bounce, this may be what it needs.",
     suitableFor: [
       "Your skin feels dehydrated, dull, or has lost its firmness",
@@ -65,7 +65,7 @@ const t: Treatment = {
     ],
   },
   experience: {
-    title: "your treatment experience", cta: "BOOK YOUR FREE CONSULTATION",
+    title: "Your treatment experience", cta: "BOOK YOUR FREE CONSULTATION",
     steps: [
       { title: "personalised consultation", desc: "We assess your facial anatomy, skin condition, medical history, and Profhilo treatment goals with one of our doctors.", image: "/assets/treatments/profhilo-step1.png" },
       { title: "Structured Plan", desc: "Your doctor designs a medically guided Profhilo plan tailored to your facial structure and desired outcome.", image: "/assets/treatments/profhilo-step2.png" },
@@ -75,7 +75,7 @@ const t: Treatment = {
   },
   prepAftercare: {
     kicker: "Preparation & Aftercare",
-    title: "your session, step by step",
+    title: "Your session, step by step",
     intro: "This gentle bio-remodelling treatment requires minimal preparation. Here is what to expect at each stage.",
     cards: [
       {
@@ -114,7 +114,7 @@ const t: Treatment = {
     ],
   },
   trusted: {
-    title: "malta's trusted clinic for Profhilo",
+    title: "Malta's trusted clinic for Profhilo",
     subtitle: "Doctor-Led profhilo in Malta",
     asSeenOn: ["/assets/press/lovin-malta.jpeg", "/assets/press/malta-daily.png", "/assets/press/bay.jpeg", "/assets/press/times-of-malta.png", "/assets/press/malta-today.jpg"],
     images: ["/assets/treatments/trusted-clinic-collage.png"],
@@ -128,7 +128,7 @@ const t: Treatment = {
   },
   difference: {
     kicker: "the carisma difference",
-    title: "malta’s #1 leading wellness chain",
+    title: "Malta’s #1 leading wellness chain",
     commitmentTitle: "our commitment",
     commitment: [
       "Natural, refined profhilo results, never overdone, never frozen",
@@ -147,15 +147,15 @@ const t: Treatment = {
   },
   bookingForm: { title: "BOOK YOUR profhilo APPOINTMENT TODAY" },
   recommended: {
-    title: "recommended with mesotherapy",
+    title: "Recommended with mesotherapy",
     items: [
-      { label: "collagen stimulator", href: "/collagen-stimulator-malta", image: "/assets/treatments/profhilo-rec-collagen-stimulator.png" },
+      { label: "Collagen stimulator", href: "/collagen-stimulator-malta", image: "/assets/treatments/profhilo-rec-collagen-stimulator.png" },
       { label: "Microneedling", href: "/microneedling-malta", image: "/assets/treatments/profhilo-rec-microneedling.png" },
-      { label: "platelet rich plasma", href: "/prp-malta", image: "/assets/treatments/profhilo-rec-prp.png" },
-      { label: "chemical peels", href: "/chemical-peels-malta", image: "/assets/treatments/profhilo-rec-chemical-peels.png" },
+      { label: "Platelet rich plasma", href: "/prp-malta", image: "/assets/treatments/profhilo-rec-prp.png" },
+      { label: "Chemical peels", href: "/chemical-peels-malta", image: "/assets/treatments/profhilo-rec-chemical-peels.png" },
     ],
   },
-  faqTitle: "faqs about profhilo in malta",
+  faqTitle: "FAQs about Profhilo in Malta",
   faq: [
     { q: "What is Profhilo?", a: "Profhilo is an injectable skin treatment made with hyaluronic acid that helps improve hydration, firmness, and overall skin quality. It is designed to refresh the skin naturally rather than change your facial features." },
     { q: "What does Profhilo help with?", a: "Profhilo is commonly used to improve dullness, dehydration, early skin laxity, and the appearance of fine lines. It is ideal for people who want smoother, plumper, more radiant-looking skin." },

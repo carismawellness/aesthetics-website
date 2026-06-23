@@ -4,7 +4,7 @@ const t: Treatment = {
   slug: "dermal-fillers-malta",
   category: "Face",
   hero: {
-    title: "dermal fillers malta",
+    title: "Dermal fillers Malta",
     subtitle: "Enhancing Facial Features with Hyaluronic Acid",
     body: "Looking to reduce facial lines and restore a more youthful appearance? Consider the benefits of injectable dermal fillers in Malta. These cosmetic procedures utilize hyaluronic acid, a gel-like substance found naturally in the body, to treat facial wrinkles, smile lines, and facial creases.",
     prices: [
@@ -60,7 +60,7 @@ const t: Treatment = {
     additional: "Tear troughs, temples, marionette lines, pre-jowl sulcus, nose profile, lip border",
   },
   suitability: {
-    title: "is this suitable for you?",
+    title: "Is this suitable for you?",
     intro: "Dermal fillers restore volume and refine contours, but they work best when guided by a clear understanding of your facial structure. Your consultation ensures the treatment plan is designed around your anatomy, not a trend.",
     suitableFor: [
       "You have noticed volume loss in areas like cheeks, jawline, or temples",
@@ -78,7 +78,7 @@ const t: Treatment = {
     ],
   },
   experience: {
-    title: "your treatment experience", cta: "BOOK YOUR FREE CONSULTATION",
+    title: "Your treatment experience", cta: "BOOK YOUR FREE CONSULTATION",
     steps: [
       { title: "personalised consultation", desc: "We assess your facial anatomy, skin condition, medical history, and dermal filler goals with one of our doctors.", image: "/assets/treatments/dermal-fillers-malta-step1.png" },
       { title: "Structured Plan", desc: "Your doctor designs a medically guided dermal filler plan tailored to your facial structure and desired outcome.", image: "/assets/treatments/dermal-fillers-malta-step2.png" },
@@ -88,7 +88,7 @@ const t: Treatment = {
   },
   prepAftercare: {
     kicker: "Preparation & Aftercare",
-    title: "your session, step by step",
+    title: "Your session, step by step",
     intro: "Thoughtful preparation and aftercare help your results look and feel their best.",
     cards: [
       {
@@ -127,7 +127,7 @@ const t: Treatment = {
     ],
   },
   patientVideos: {
-    title: "real patients, real confidence",
+    title: "Real patients, real confidence",
     intro: "Every face is unique. Every story is personal. Discover how our Dermal fillers patients describe their journey to refined, natural results at Carisma Aesthetics in Malta.",
     videos: [
       "/assets/treatments/dermal-fillers-malta-video1.mp4",
@@ -136,7 +136,7 @@ const t: Treatment = {
     ],
   },
   trusted: {
-    title: "malta's trusted clinic for dermal fillers",
+    title: "Malta's trusted clinic for dermal fillers",
     subtitle: "DOCTOR-LED dermal fillers IN MALTA",
     asSeenOn: ["/assets/press/lovin-malta.jpeg", "/assets/press/malta-daily.png", "/assets/press/bay.jpeg", "/assets/press/times-of-malta.png", "/assets/press/malta-today.jpg"],
     images: ["/assets/treatments/trusted-clinic-collage.png"],
@@ -150,7 +150,7 @@ const t: Treatment = {
   },
   difference: {
     kicker: "the carisma difference",
-    title: "malta's #1 leading wellness chain",
+    title: "Malta's #1 leading wellness chain",
     commitmentTitle: "our commitment",
     commitment: [
       "Natural, refined dermal fillers results, never overdone, never frozen",
@@ -169,12 +169,12 @@ const t: Treatment = {
   },
   bookingForm: { title: "BOOK YOUR dermal fillers APPOINTMENT TODAY" },
   recommended: {
-    title: "recommended with dermal fillers",
+    title: "Recommended with dermal fillers",
     items: [
-      { label: "Lip Fillers", href: "/lip-fillers-malta", image: "/assets/treatments/lip-fillers-malta-hero.png" },
+      { label: "Lip fillers", href: "/lip-fillers-malta", image: "/assets/treatments/lip-fillers-malta-hero.png" },
       { label: "Microneedling", href: "/microneedling-malta", image: "/assets/treatments/rec-microneedling.jpg" },
-      { label: "platelet rich plasma", href: "/prp-malta", image: "/assets/treatments/rec-prp.jpg" },
-      { label: "mesotherapy", href: "/mesotherapy-malta", image: "/assets/treatments/rec-mesotherapy.jpg" },
+      { label: "Platelet rich plasma", href: "/prp-malta", image: "/assets/treatments/rec-prp.jpg" },
+      { label: "Mesotherapy", href: "/mesotherapy-malta", image: "/assets/treatments/rec-mesotherapy.jpg" },
     ],
   },
   faqTitle: "Frequently asked questions",

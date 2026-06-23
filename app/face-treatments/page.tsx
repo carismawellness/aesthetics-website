@@ -28,7 +28,7 @@ export default function FaceTreatmentsPage() {
         badge="#1 Voted Med-Aesthetics Clinic"
         eyebrow={FACE_LISTING.eyebrow}
         headline={[
-          { text: "Considered Facial Aesthetics" },
+          { text: "Considered facial aesthetics" },
           { text: "in Malta", em: true },
         ]}
         sub={FACE_LISTING.subhead}
@@ -40,7 +40,7 @@ export default function FaceTreatmentsPage() {
         }}
         proof={{
           rating: "4.9",
-          reviews: "200+",
+          reviews: "500+",
           statValue: "30+",
           statLabel: "years in wellness",
           awardText: "#1 Voted Clinic\nMalta Healthcare Awards",

@@ -77,7 +77,7 @@ function Eyebrow({ children, align = 'center' }: { children: React.ReactNode; al
 
 function SectionHeading({ children, align = 'center', size = 28 }: { children: React.ReactNode; align?: 'center' | 'left'; size?: number }) {
   return (
-    <h2 style={{ color: GOLD, fontFamily: SERIF, fontWeight: 400, fontSize: size, lineHeight: 1.4, letterSpacing: 'normal', textTransform: 'uppercase', textAlign: align, margin: 0 }}>
+    <h2 style={{ color: GOLD, fontFamily: SERIF, fontWeight: 400, fontSize: size, lineHeight: 1.4, letterSpacing: 'normal', textAlign: align, margin: 0 }}>
       {children}
     </h2>
   );
@@ -114,7 +114,7 @@ function Stars({ size = 18, withGoogle = false }: { size?: number; withGoogle?: 
         <img src={GOOGLE} alt="Google" loading="lazy" style={{ width: size + 4, height: size + 4 }} />
       )}
       <span style={{ color: GREEN, fontSize: size, letterSpacing: 2, lineHeight: 1 }}>{'★'.repeat(5)}</span>
-      <span style={{ color: TAUPE, fontFamily: BODY, fontSize: 14 }}>Over 200+ Reviews</span>
+      <span style={{ color: TAUPE, fontFamily: BODY, fontSize: 14 }}>Over 500+ Reviews</span>
     </span>
   );
 }
@@ -146,7 +146,7 @@ export default function PackagePage({ content: c }: { content: PackageContent })
         }
         proof={{
           rating: '4.9',
-          reviews: '200+',
+          reviews: '500+',
           statValue: '30+',
           statLabel: 'years in wellness',
           awardText: '#1 Voted Clinic\nMalta Healthcare Awards',
@@ -210,7 +210,7 @@ export default function PackagePage({ content: c }: { content: PackageContent })
       {/* ===================== 3. PRESS ===================== */}
       <section style={{ paddingTop: 24, paddingBottom: 48 }}>
         <div style={CONTAINER}>
-          <SectionHeading size={24}>malta&rsquo;s trusted clinic for<br />non surgical fat reduction</SectionHeading>
+          <SectionHeading size={24}>Malta&rsquo;s trusted clinic for<br />non-surgical fat reduction</SectionHeading>
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', gap: 40, marginTop: 28 }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={PRESS.maltaDaily} alt="Malta Daily" loading="lazy" style={{ height: 38, width: 'auto' }} />
@@ -335,7 +335,7 @@ export default function PackagePage({ content: c }: { content: PackageContent })
         <img src={DIFF_BG} alt="" aria-hidden loading="lazy" style={{ position: 'absolute', left: 0, top: '40%', width: '100%', opacity: 0.5, pointerEvents: 'none', zIndex: 0 }} />
         <div style={{ ...CONTAINER, position: 'relative', zIndex: 1 }}>
           <Eyebrow>the carisma difference</Eyebrow>
-          <div style={{ marginTop: 10 }}><SectionHeading>we are not<br />another diet clinic.</SectionHeading></div>
+          <div style={{ marginTop: 10 }}><SectionHeading>We are not<br />another diet clinic.</SectionHeading></div>
           <p style={{ ...body, textAlign: 'center', maxWidth: 720, margin: '18px auto 0' }}>{SHARED_DIFFERENCE_INTRO}</p>
 
           <div style={{ marginTop: 36, marginLeft: 'auto', marginRight: 'auto', maxWidth: 560, background: 'linear-gradient(150deg, #f0f5f5 0%, #bdd1d1 100%)', borderRadius: 18, padding: '34px 36px' }}>
@@ -481,7 +481,7 @@ export default function PackagePage({ content: c }: { content: PackageContent })
           <div style={{ position: 'relative', zIndex: 1 }}>
             <Eyebrow>the carisma difference</Eyebrow>
             <div style={{ width: 90, height: 1, backgroundColor: '#d9d2ca', margin: '10px auto 16px' }} />
-            <SectionHeading>malta&rsquo;s #1 leading wellness chain</SectionHeading>
+            <SectionHeading>Malta&rsquo;s #1 leading wellness chain</SectionHeading>
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48, marginTop: 40, alignItems: 'start' }} className="fr-2col">
               <div>
@@ -525,7 +525,7 @@ export default function PackagePage({ content: c }: { content: PackageContent })
       <section style={{ paddingTop: 32, paddingBottom: 64 }}>
         <div style={{ ...CONTAINER, maxWidth: 1100 }}>
           <Eyebrow>{c.evidenceEyebrow}</Eyebrow>
-          <div style={{ marginTop: 8 }}><SectionHeading size={25}>evidence based approach</SectionHeading></div>
+          <div style={{ marginTop: 8 }}><SectionHeading size={25}>Evidence-based approach</SectionHeading></div>
           <PackageEvidenceGrid evidence={c.evidence} />
           <div style={{ display: 'flex', justifyContent: 'center', marginTop: 44 }}><CTA variant="blue">Claim my spot now</CTA></div>
         </div>

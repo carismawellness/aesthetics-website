@@ -36,7 +36,7 @@ const CARDS = [
 ];
 
 /** Card plane geometry (matches ~1032×906 art → ~1.14 aspect). */
-const CARD_W = 2.5;
+const CARD_W = 3.6;
 const CARD_H = CARD_W * (906 / 1032);
 
 /** Build a RoundedBox-ish flat plane via a rounded-rectangle shape geometry. */
@@ -103,7 +103,7 @@ export default function GiftCardScene() {
 
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(38, width() / height(), 0.1, 100);
-    camera.position.set(0, 0, 9.2);
+    camera.position.set(0, 0, 8.4);
 
     // ── Geometry (shared) + soft drop-shadow sprite (shared) ──────────────
     const geometry = roundedPlane(CARD_W, CARD_H, 0.16);
@@ -131,8 +131,8 @@ export default function GiftCardScene() {
     scene.add(fan);
 
     const n = CARDS.length;
-    const ARC = 0.46; // radians between adjacent cards
-    const RADIUS = 6.2; // arc radius (cards sit on a shallow circle)
+    const ARC = 0.27; // radians between adjacent cards — tighter = more collated overlap
+    const RADIUS = 5.6; // arc radius (cards sit on a shallow circle)
 
     CARDS.forEach((src, i) => {
       const offset = i - (n - 1) / 2; // centred fan, e.g. -2.5 … 2.5

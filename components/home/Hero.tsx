@@ -7,7 +7,7 @@ export default function Hero() {
     <PageHero
       motif
       badge="#1 Voted Med-Aesthetics Clinic"
-      headline={[{ text: "#1 Voted Medical Aesthetics" }, { text: "Clinic in Malta", em: true }]}
+      headline={[{ text: "#1 voted medical aesthetics" }, { text: "clinic in Malta", em: true }]}
       sub="Doctor-led medical aesthetics in Malta, built around one belief: restoration, not change. Subtle, precise, never overdone, and always guided by a proper medical consultation first."
       bullets={[
         { text: "Medically qualified doctors" },
@@ -18,7 +18,7 @@ export default function Hero() {
       primaryCta={{ text: "Book Free Consultation", href: "/consultation" }}
       secondaryCta={{ text: "View Treatments", href: "/face-treatments" }}
       media={{ type: "video", src: "/assets/clinic-video.mp4", poster: "/assets/clinic-room.jpg", alt: "Carisma Aesthetics clinic in Malta", autoPlay: true }}
-      proof={{ rating: "4.9", reviews: "200+", statValue: "30+", statLabel: "years in wellness", awardText: "#1 Voted Clinic\nMalta Healthcare Awards" }}
+      proof={{ rating: "4.9", reviews: "500+", statValue: "30+", statLabel: "years in wellness", awardText: "#1 Voted Clinic\nMalta Healthcare Awards" }}
       compactHeadline
     />
   );

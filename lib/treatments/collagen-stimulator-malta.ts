@@ -4,7 +4,7 @@ const t: Treatment = {
   slug: "collagen-stimulator-malta",
   category: "Face",
   hero: {
-    title: "collagen stimulator (bio-revitalization)",
+    title: "Collagen stimulator (bio-revitalization)",
     subtitle: "Is your skin lacking collagen?",
     body: "Discover the power of Collagen Stimulator (Sculptra & Radiesse) treatment in Malta for natural skin rejuvenation. Boost collagen production, reduce wrinkles, and achieve youthful, radiant skin. Non-surgical facelift alternative",
     prices: [{ label: "", price: "From €399/vial" }],
@@ -41,7 +41,7 @@ const t: Treatment = {
     additional: "Pre-jowl area, nasolabial folds, marionette region, chin, midface lateral, brow area",
   },
   suitability: {
-    title: "IS THIS SUITABLE FOR YOU?",
+    title: "Is this suitable for you?",
     intro: "Collagen stimulators encourage your body to rebuild its own collagen over time. This is not an instant-result treatment. It is designed for those who prefer a gradual, natural-looking restoration that unfolds over weeks and months.",
     suitableFor: [
       "You want long-lasting rejuvenation that develops naturally over 1 to 3 months",
@@ -59,7 +59,7 @@ const t: Treatment = {
     ],
   },
   experience: {
-    title: "YOUR TREATMENT EXPERIENCE", cta: "BOOK YOUR FREE CONSULTATION",
+    title: "Your treatment experience", cta: "BOOK YOUR FREE CONSULTATION",
     steps: [
       { title: "personalised consultation", desc: "We assess your facial anatomy, skin condition, medical history, and collagen stimulator goals with one of our doctors.", image: "/assets/treatments/botox-step1.png" },
       { title: "Structured Plan", desc: "Your doctor designs a medically guided collagen stimulator plan tailored to your facial structure and desired outcome.", image: "/assets/treatments/botox-step2.png" },
@@ -69,7 +69,7 @@ const t: Treatment = {
   },
   prepAftercare: {
     kicker: "Preparation & Aftercare",
-    title: "Your Session, Step by Step",
+    title: "Your session, step by step",
     intro: "Your body does the work over the months ahead. Here is how to support the process from day one.",
     cards: [
       {
@@ -108,12 +108,12 @@ const t: Treatment = {
     ],
   },
   patientVideos: {
-    title: "Real Patients, Real Confidence",
+    title: "Real patients, real confidence",
     intro: "Every face is unique. Every story is personal. Discover how our collagen stimulator patients describe their journey to refined, natural results at Carisma Aesthetics in Malta.",
     videos: ["/assets/treatments/vid-collagen-stimulator-malta-1.mp4", "/assets/treatments/vid-collagen-stimulator-malta-2.mp4"],
   },
   trusted: {
-    title: "Malta's Trusted Clinic for Collagen Stimulator",
+    title: "Malta's trusted clinic for collagen stimulator",
     subtitle: "Doctor-Led Collagen Stimulator in Malta",
     asSeenOn: ["/assets/press/lovin-malta.jpeg", "/assets/press/malta-daily.png", "/assets/press/bay.jpeg", "/assets/press/times-of-malta.png", "/assets/press/malta-today.jpg"],
     images: ["/assets/treatments/trusted-clinic-collage.png"],
@@ -127,7 +127,7 @@ const t: Treatment = {
   },
   difference: {
     kicker: "The Carisma Difference",
-    title: "Malta's #1 Leading Wellness Chain",
+    title: "Malta's #1 leading wellness chain",
     commitmentTitle: "Our Commitment",
     commitment: [
       "Natural, refined collagen stimulator results,  never overdone, never frozen",
@@ -146,11 +146,11 @@ const t: Treatment = {
   },
   bookingForm: { title: "Book Your Collagen Stimulator Appointment Today" },
   recommended: {
-    title: "Recommended with Collagen Stimulator",
+    title: "Recommended with collagen stimulator",
     items: [
       { label: "Botox", href: "/wrinkle-relaxing-malta", image: "/assets/treatments/collagen-stimulator-malta-rec-botox.png" },
       { label: "Mesotherapy", href: "/mesotherapy-malta", image: "/assets/treatments/collagen-stimulator-malta-rec-mesotherapy.png" },
-      { label: "Dermal Fillers", href: "/dermal-fillers-malta", image: "/assets/treatments/collagen-stimulator-malta-rec-dermal-fillers.png" },
+      { label: "Dermal fillers", href: "/dermal-fillers-malta", image: "/assets/treatments/collagen-stimulator-malta-rec-dermal-fillers.png" },
       { label: "PRP", href: "/prp-malta", image: "/assets/treatments/collagen-stimulator-malta-rec-prp.png" },
     ],
   },
