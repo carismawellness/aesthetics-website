@@ -27,10 +27,10 @@ const t: Treatment = {
   ],
   beforeAfterTitle: "BOTOX RESULTS",
   beforeAfter: [
-    { before: "/assets/treatments/botox-r4-before.png", after: "/assets/treatments/botox-r4-after.png", name: "Maria C.", review: "My frown lines softened so naturally — I just look rested, not done." },
+    { before: "/assets/treatments/botox-r4-before.png", after: "/assets/treatments/botox-r4-after.png", name: "Mark C.", review: "My frown lines made me look permanently angry — now I just look rested, not done." },
     { before: "/assets/treatments/botox-r1-before.png", after: "/assets/treatments/botox-r1-after.png", name: "Elena P.", review: "The crow's feet around my eyes are gone, but I can still smile completely." },
     { before: "/assets/treatments/botox-r2-before.png", after: "/assets/treatments/botox-r2-after.png", name: "Sophie B.", review: "My forehead lines smoothed out without that frozen look I was so worried about." },
-    { before: "/assets/treatments/botox-r3-before.png", after: "/assets/treatments/botox-r3-after.png", name: "Rebecca M.", review: "The underarm treatment changed my life — no more sweat patches, total confidence." },
+    { before: "/assets/treatments/botox-r3-before.png", after: "/assets/treatments/botox-r3-after.png", name: "Rebecca M.", review: "A natural softening across my forehead and frown lines — my friends just say I look refreshed." },
   ],
   precision: {
     title: "PRECISION AREAS OF REFINEMENT",
@@ -79,16 +79,15 @@ const t: Treatment = {
   },
   guarantee: {
     kicker: "The Natural Confidence Guarantee",
-    title: "Natural results — or your follow-up is on us",
+    title: "Natural Confidence Guarantee",
     paragraphs: [
-      "The fears we hear most are the ones we're built around: I don't want to look overdone. I don't want to be pressured. What if I'm not happy? What if I don't even need it? What if they overdo it?",
-      "So we do the opposite. Every treatment starts with a doctor-led facial assessment — never a sales pitch — and a natural-first plan that treats only what you need. If you're ever not completely happy with how your result settles, your follow-up adjustment session is on us, until you're 100% satisfied with a result that still looks like you.",
+      "Every plan starts with a doctor-led facial assessment and a natural-first approach that is never overdone, backed by a free follow-up adjustment until you are 100% satisfied with a result that still looks like you.",
     ],
     cta: "Book Your Free Consultation",
     points: [
-      { value: "Doctor-led", label: "Assessment first", sub: "Every plan starts with a doctor, never a salesperson" },
-      { value: "Natural-first", label: "Never overdone", sub: "We'd rather under-treat and refine than overdo it" },
-      { value: "Free", label: "Follow-up session", sub: "Included until you're 100% satisfied" },
+      { value: "Doctor-led", label: "Assessment first", sub: "Never a salesperson" },
+      { value: "Natural-first", label: "Never overdone", sub: "We refine, never overfill" },
+      { value: "100%", label: "Satisfaction", sub: "Free follow-up until you are happy" },
     ],
   },
   experience: {

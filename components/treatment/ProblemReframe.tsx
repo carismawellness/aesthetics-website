@@ -62,7 +62,7 @@ export default function ProblemReframe({
         // so the section reads as a soft, set-apart emotional beat — not teal
         // wallpaper. A whisper-soft top sheen adds depth without alarm.
         background:
-          "linear-gradient(180deg, #ffffff 0%, var(--teal-100) 34%, var(--teal-100) 100%)",
+          "linear-gradient(180deg, #ffffff 0%, #f4f8f8 100%)",
       }}
     >
       <div className="container">
