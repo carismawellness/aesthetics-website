@@ -6,6 +6,9 @@ import PageHero from "@/components/PageHero";
 import BeforeAfterCarousel from "@/components/BeforeAfterCarousel";
 import CompositeSlideshow from "@/components/CompositeSlideshow";
 import VideoPlayer from "@/components/VideoPlayer";
+import SuitabilityCards from "@/components/treatment/SuitabilityCards";
+import RecommendedCards from "@/components/treatment/RecommendedCards";
+import TreatmentFaq from "@/components/treatment/TreatmentFaq";
 
 // Fallback hero image when a treatment defines neither image nor video.
 const HERO_FALLBACK_IMAGE = "/assets/hero-bg.png";
@@ -26,30 +29,6 @@ function splitHeadline(title: string): { text: string; em?: boolean }[] {
 function firstSentence(text: string): string {
   const m = text.match(/^(.*?[.!?])(\s|$)/);
   return (m ? m[1] : text).trim();
-}
-
-// P1 — teal-deep #4f7373 = 4.26:1 clears the 3:1 graphical-object bar (WCAG 1.4.11).
-// The ✓/✗ glyph itself is the non-colour cue for suitable vs not-ideal.
-function CheckIcon({ ok }: { ok: boolean }) {
-  return (
-    <svg
-      className="shrink-0"
-      width="26"
-      height="26"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="var(--teal-deep)"
-      strokeWidth="1.6"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      style={{ marginTop: "1px" }}
-      // P1 — aria-label provides non-visual meaning for the icon
-      aria-label={ok ? "Suitable" : "May not be ideal"}
-      role="img"
-    >
-      {ok ? <path d="M5 12.5l4.5 4.5L19 7" /> : <path d="M7 7l10 10M17 7L7 17" />}
-    </svg>
-  );
 }
 
 // P1 — accessible colors: text uses taupe (#756758, 5.0:1 on card bg);
@@ -157,6 +136,19 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
   const hasImage = Boolean(t.hero.image);
   const hasMedia = hasImage || Boolean(t.hero.heroVideo);
 
+  // Lift the price list into the hero's left column so it reads above the fold
+  // (PageHero already renders `bullets`). Benefit bullets first, then one bullet
+  // per price — label = treatment, text = price — keeping the keyword + Malta H1.
+  const benefitBullets =
+    t.hero.benefits && t.hero.benefits.length > 0
+      ? t.hero.benefits.map((b) => ({ text: b }))
+      : [];
+  const priceBullets =
+    t.hero.prices && t.hero.prices.length > 0
+      ? t.hero.prices.map((p) => ({ label: p.label, text: p.price }))
+      : [];
+  const heroBullets = [...benefitBullets, ...priceBullets];
+
   return (
     // P1 — <main> landmark wrapping all page content
     <main>
@@ -166,11 +158,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
         headline={splitHeadline(t.hero.title)}
         compactHeadline={t.hero.title.length > 22}
         sub={t.hero.subtitle ?? (t.hero.body ? firstSentence(t.hero.body) : undefined)}
-        bullets={
-          t.hero.benefits && t.hero.benefits.length > 0
-            ? t.hero.benefits.map((b) => ({ text: b }))
-            : undefined
-        }
+        bullets={heroBullets.length > 0 ? heroBullets : undefined}
         primaryCta={{ text: t.hero.cta ?? "Book Your Consultation", href: "/consultation" }}
         secondaryCta={{ text: "View Treatments", href: "/face-treatments" }}
         media={
@@ -203,24 +191,24 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
         }}
       />
 
-      {/* ── Hero detail strip — prices + treatment info, product tabs, brand logos,
-             and the Google-rating trust block that used to live inside the hero ── */}
+      {/* ── Hero detail strip — sits tight under the hero (minimal top padding so
+             it reads above the fold): supporting copy on the left, the TREATMENT
+             INFO card on the right. Prices now live in the hero bullets; the
+             product tabs, brand logos, and duplicate Google-rating block have
+             been removed. ── */}
       {(t.hero.location ||
         t.hero.body ||
         t.hero.note ||
-        (t.hero.prices && t.hero.prices.length > 0) ||
-        t.info ||
-        (t.hero.productTabs && t.hero.productTabs.length > 0) ||
-        (t.hero.brandLogos && t.hero.brandLogos.length > 0) ||
+        (t.info && hasMedia) ||
         t.pending) && (
         <section
           aria-label="Treatment overview"
-          style={{ padding: "clamp(56px,7vh,88px) 0" }}
+          style={{ padding: "clamp(20px,3vh,36px) 0 clamp(40px,5vh,64px)" }}
         >
           <div className="container">
             <div className="mx-auto" style={{ maxWidth: "1100px" }}>
               <div className="grid gap-8 md:grid-cols-2 items-start">
-                {/* Left: prices + supporting copy */}
+                {/* Left: supporting copy */}
                 <Reveal>
                   {t.hero.location && (
                     <p
@@ -253,42 +241,6 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                     </p>
                   )}
 
-                  {t.hero.prices && t.hero.prices.length > 0 && (
-                    // P10 — pricing section landmark
-                    <ul aria-label="Treatment pricing">
-                      {t.hero.prices.map((p) => {
-                        const m = p.price.match(/^(.*?)\s*(€\S+)\s*$/);
-                        const prefix = m ? m[1] : p.price;
-                        const amount = m ? m[2] : "";
-                        return (
-                          <li key={p.label} className="flex items-baseline gap-2" style={{ padding: "5px 0" }}>
-                            <span
-                              style={{ color: "var(--teal-deep)", fontSize: "11px", lineHeight: 1.7 }}
-                              aria-hidden="true"
-                            >
-                              ●
-                            </span>
-                            <span style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.5 }}>
-                              {p.label} {prefix}{" "}
-                              {/* P1 — underline is non-colour cue so price isn't distinguished by colour alone (WCAG 1.4.1) */}
-                              {amount && (
-                                <u
-                                  style={{
-                                    color: "var(--teal-text)",
-                                    textUnderlineOffset: "2px",
-                                    fontWeight: 600,
-                                  }}
-                                >
-                                  {amount}
-                                </u>
-                              )}
-                            </span>
-                          </li>
-                        );
-                      })}
-                    </ul>
-                  )}
-
                   {t.hero.note && (
                     <p
                       style={{
@@ -317,121 +269,60 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                   )}
                 </Reveal>
 
-                {/* Right: treatment-info card + product tabs + brand logos + trust block */}
-                <Reveal delay={120}>
-                  {t.info && hasMedia && <InfoCard info={t.info} />}
-
-                  {t.hero.productTabs && t.hero.productTabs.length > 0 && (
-                    <div className="flex gap-3" style={{ marginTop: "14px" }}>
-                      {t.hero.productTabs.map((tab) => (
-                        <span
-                          key={tab}
-                          className="font-display inline-flex items-center justify-center"
-                          style={{
-                            flex: 1,
-                            textAlign: "center",
-                            padding: "11px 14px",
-                            // P1 — teal-deep #4f7373 border = 4.26:1 clears the 3:1 UI-component-boundary bar (WCAG 1.4.11)
-                            border: "1px solid var(--teal-deep)",
-                            borderRadius: "var(--radius-card)",
-                            fontSize: "12px",
-                            letterSpacing: "0.1em",
-                            color: "var(--ink)",
-                            background: "var(--teal-100)",
-                          }}
-                        >
-                          {tab.startsWith("/") ? (
-                            // P3 — next/image for product tab logos
-                            <Image
-                              src={tab}
-                              alt=""
-                              width={80}
-                              height={30}
-                              style={{ height: "30px", width: "auto", maxWidth: "100%", objectFit: "contain" }}
-                            />
-                          ) : (
-                            tab
-                          )}
-                        </span>
-                      ))}
-                    </div>
-                  )}
-
-                  {t.hero.brandLogos && t.hero.brandLogos.length > 0 && (
-                    <div
-                      className="flex items-center justify-center"
-                      style={{
-                        marginTop: "14px",
-                        gap: "26px",
-                        background: "var(--white)",
-                        border: "1px solid var(--line)",
-                        borderRadius: "var(--radius-card)",
-                        padding: "14px 18px",
-                      }}
-                    >
-                      {t.hero.brandLogos.map((logo) => (
-                        // P3 — next/image for brand logos; decorative so alt=""
-                        <Image
-                          key={logo}
-                          src={logo}
-                          alt=""
-                          width={80}
-                          height={28}
-                          style={{ height: "28px", width: "auto", objectFit: "contain" }}
-                        />
-                      ))}
-                    </div>
-                  )}
-
-                  {/* Compact Google rating trust block */}
-                  <div
-                    className="flex items-center flex-wrap gap-x-2 gap-y-1"
-                    style={{ marginTop: "14px", fontSize: "13px", color: "var(--label)" }}
-                  >
-                    <svg width="17" height="17" viewBox="0 0 24 24" aria-label="Google" role="img">
-                      <path
-                        fill="#4285F4"
-                        d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.27-4.74 3.27-8.1z"
-                      />
-                      <path
-                        fill="#34A853"
-                        d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.99.66-2.26 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84A11 11 0 0 0 12 23z"
-                      />
-                      <path
-                        fill="#FBBC05"
-                        d="M5.84 14.1a6.6 6.6 0 0 1 0-4.2V7.06H2.18a11 11 0 0 0 0 9.88l3.66-2.84z"
-                      />
-                      <path
-                        fill="#EA4335"
-                        d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84C6.71 7.3 9.14 5.38 12 5.38z"
-                      />
-                    </svg>
-                    <span style={{ fontWeight: 600 }}>4.7</span>
-                    {/* P1 — star icons with aria-label describing the rating */}
-                    <span
-                      className="flex"
-                      style={{ color: "var(--teal)" }}
-                      aria-label="4.7 out of 5 stars"
-                      role="img"
-                    >
-                      {[0, 1, 2, 3, 4].map((i) => (
-                        <svg key={i} width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                        </svg>
-                      ))}
-                    </span>
-                    <span
-                      className="font-display"
-                      // P1 — teal-text #406060 = 5.76:1 passes AA
-                      style={{ color: "var(--teal-text)", fontSize: "11px", letterSpacing: "0.1em" }}
-                    >
-                      TOP-RATED CLINIC IN MALTA
-                    </span>
-                  </div>
-                </Reveal>
+                {/* Right: treatment-info card */}
+                {t.info && hasMedia && (
+                  <Reveal delay={120}>
+                    <InfoCard info={t.info} />
+                  </Reveal>
+                )}
               </div>
             </div>
           </div>
+        </section>
+      )}
+
+      {/* ── Before / After carousel — moved up to sit immediately under the
+             above-the-fold (hero + info strip), before everything else. Shows
+             all before/after pairs. ── */}
+      {(t.beforeAfter || t.beforeAfterTitle) && (
+        <section aria-label="Before and after results" style={{ padding: "70px 0" }}>
+          {t.beforeAfter && t.beforeAfter.length > 0 ? (
+            <BeforeAfterCarousel pairs={t.beforeAfter} title={t.beforeAfterTitle} />
+          ) : (
+            <div className="container text-center">
+              {t.beforeAfterTitle && (
+                <h2
+                  className="font-display"
+                  style={{
+                    fontSize: "clamp(20px,3vw,30px)",
+                    color: "var(--label)",
+                    marginBottom: "36px",
+                    lineHeight: 1.25,
+                  }}
+                >
+                  {t.beforeAfterTitle}
+                </h2>
+              )}
+              <div className="grid gap-4 sm:grid-cols-3">
+                {[1, 2, 3].map((n) => (
+                  <div
+                    key={n}
+                    className="flex items-center justify-center"
+                    style={{
+                      aspectRatio: "4/3",
+                      backgroundColor: "var(--white)",
+                      border: "1px solid var(--line)",
+                      borderRadius: "var(--radius-card)",
+                      color: "var(--muted)",
+                      fontSize: "13px",
+                    }}
+                  >
+                    Before / After {n}
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </section>
       )}
 
@@ -661,49 +552,6 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
         </section>
       )}
 
-      {/* ── Before / After carousel ── */}
-      {(t.beforeAfter || t.beforeAfterTitle) && (
-        <section aria-label="Before and after results" style={{ padding: "70px 0" }}>
-          {t.beforeAfter && t.beforeAfter.length > 0 ? (
-            <BeforeAfterCarousel pairs={t.beforeAfter} title={t.beforeAfterTitle} />
-          ) : (
-            <div className="container text-center">
-              {t.beforeAfterTitle && (
-                <h2
-                  className="font-display"
-                  style={{
-                    fontSize: "clamp(20px,3vw,30px)",
-                    color: "var(--label)",
-                    marginBottom: "36px",
-                    lineHeight: 1.25,
-                  }}
-                >
-                  {t.beforeAfterTitle}
-                </h2>
-              )}
-              <div className="grid gap-4 sm:grid-cols-3">
-                {[1, 2, 3].map((n) => (
-                  <div
-                    key={n}
-                    className="flex items-center justify-center"
-                    style={{
-                      aspectRatio: "4/3",
-                      backgroundColor: "var(--white)",
-                      border: "1px solid var(--line)",
-                      borderRadius: "var(--radius-card)",
-                      color: "var(--muted)",
-                      fontSize: "13px",
-                    }}
-                  >
-                    Before / After {n}
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-        </section>
-      )}
-
       {/* ── Precision areas ── */}
       {t.precision && (
         <section aria-labelledby="precision-heading" style={{ padding: "80px 0" }}>
@@ -822,81 +670,15 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
         </section>
       )}
 
-      {/* ── Suitability ── */}
+      {/* ── Suitability — subtle two-column ✓/✗ design (SuitabilityCards) ── */}
       {t.suitability && (
-        <section aria-labelledby="suitability-heading" style={{ padding: "80px 0", background: "#fff" }}>
-          <div className="container">
-            <h2
-              id="suitability-heading"
-              className="font-serif text-center"
-              style={{
-                fontSize: "clamp(24px,3.4vw,38px)",
-                color: "var(--gold)",
-                letterSpacing: "0.04em",
-                lineHeight: 1.25,
-              }}
-            >
-              {t.suitability.title}
-            </h2>
-            {t.suitability.intro && (
-              <p
-                className="text-center mx-auto"
-                style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.625, marginTop: "18px", maxWidth: "880px" }}
-              >
-                {t.suitability.intro}
-              </p>
-            )}
-            <div className="grid md:grid-cols-2 gap-6 mx-auto" style={{ marginTop: "48px", maxWidth: "1040px" }}>
-              {/* Suitable card */}
-              <Reveal
-                style={{
-                  background: "var(--cream)",
-                  borderRadius: "60px 16px 60px 16px",
-                  padding: "clamp(32px,3.5vw,48px)",
-                }}
-              >
-                <h3
-                  className="font-display"
-                  style={{ fontSize: "13px", color: "var(--label)", marginBottom: "28px", letterSpacing: "0.14em" }}
-                >
-                  SUITABLE FOR YOU IF
-                </h3>
-                <ul className="space-y-5">
-                  {(t.suitability.suitableFor ?? []).map((s) => (
-                    <li key={s} className="flex items-start gap-4">
-                      <CheckIcon ok />
-                      <span style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.625 }}>{s}</span>
-                    </li>
-                  ))}
-                </ul>
-              </Reveal>
-              {/* Not ideal card */}
-              <Reveal
-                delay={100}
-                style={{
-                  background: "var(--cream)",
-                  borderRadius: "16px 60px 16px 60px",
-                  padding: "clamp(32px,3.5vw,48px)",
-                }}
-              >
-                <h3
-                  className="font-display"
-                  style={{ fontSize: "13px", color: "var(--label)", marginBottom: "28px", letterSpacing: "0.14em" }}
-                >
-                  MAY NOT BE IDEAL IF
-                </h3>
-                <ul className="space-y-5">
-                  {(t.suitability.notIdeal ?? []).map((s) => (
-                    <li key={s} className="flex items-start gap-4">
-                      <CheckIcon ok={false} />
-                      <span style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.625 }}>{s}</span>
-                    </li>
-                  ))}
-                </ul>
-              </Reveal>
-            </div>
-          </div>
-        </section>
+        <SuitabilityCards
+          kicker="Is this treatment for you?"
+          title={t.suitability.title}
+          sub={t.suitability.intro}
+          suitableFor={t.suitability.suitableFor ?? []}
+          notIdeal={t.suitability.notIdeal ?? []}
+        />
       )}
 
       {/* ── Treatment experience — dashed timeline ── */}
@@ -1092,168 +874,9 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
         </section>
       )}
 
-      {/* ── Preparation & Aftercare ── */}
-      {t.prepAftercare && (
-        <section aria-labelledby="prep-heading" style={{ padding: "80px 0" }}>
-          <div className="container">
-            {t.prepAftercare.kicker && (
-              <p
-                className="font-display text-center"
-                style={{
-                  fontSize: "11px",
-                  // P1 — #96B2B2 (teal) on white FAILS; teal-text #406060 = 5.76:1 passes AA
-                  color: "var(--teal-text)",
-                  letterSpacing: "0.18em",
-                  textTransform: "uppercase",
-                  marginBottom: "14px",
-                }}
-              >
-                {t.prepAftercare.kicker}
-              </p>
-            )}
-            <h2
-              id="prep-heading"
-              className="font-serif text-center"
-              style={{
-                fontSize: "clamp(24px,3.4vw,38px)",
-                color: "var(--gold)",
-                letterSpacing: "0.04em",
-                lineHeight: 1.25,
-              }}
-            >
-              {t.prepAftercare.title}
-            </h2>
-            {t.prepAftercare.intro && (
-              <p
-                className="text-center mx-auto"
-                style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.625, marginTop: "18px", maxWidth: "760px" }}
-              >
-                {t.prepAftercare.intro}
-              </p>
-            )}
-            <div className="grid gap-6 md:grid-cols-3" style={{ marginTop: "48px" }}>
-              {t.prepAftercare.cards.map((c, i) => (
-                <Reveal
-                  key={c.label}
-                  delay={(i % 3) * 90}
-                  style={{
-                    borderRadius: "20px 56px 20px 56px",
-                    background: "linear-gradient(170deg,#ffffff 0%, #f1f6f7 60%, #e3ecee 100%)",
-                    border: "1px solid var(--line)",
-                    boxShadow: "0 12px 30px rgba(0,0,0,0.05)",
-                    padding: "clamp(26px,3vw,34px)",
-                  }}
-                >
-                  <div className="flex items-center gap-3" style={{ marginBottom: "16px" }}>
-                    {c.icon && (
-                      // P3 — next/image for card icons
-                      <Image
-                        src={c.icon}
-                        alt={c.label}
-                        width={40}
-                        height={40}
-                        style={{ height: "40px", width: "auto" }}
-                      />
-                    )}
-                    <span
-                      className="font-display"
-                      style={{ fontSize: "14px", color: "var(--label)", letterSpacing: "0.14em", textTransform: "uppercase" }}
-                    >
-                      {c.label}
-                    </span>
-                  </div>
-                  <p style={{ fontSize: "14.5px", color: "var(--label)", lineHeight: 1.625, marginBottom: "18px" }}>
-                    {c.lead}
-                  </p>
-                  <ul className="space-y-4">
-                    {c.points.map((p) => (
-                      <li key={p} className="flex items-start gap-3">
-                        <span
-                          // P1 — decorative bullet, aria-hidden
-                          aria-hidden="true"
-                          style={{ color: "var(--teal-text)", fontSize: "12px", lineHeight: 1.7 }}
-                        >
-                          ●
-                        </span>
-                        <span style={{ fontSize: "13.5px", color: "var(--label)", lineHeight: 1.55 }}>{p}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </Reveal>
-              ))}
-            </div>
-            {t.experience!.cta && (
-              <div className="text-center" style={{ marginTop: "48px" }}>
-                {/* P2 — min-h-[44px] for CTA tap target */}
-                <Link
-                  href="/consultation"
-                  className="btn btn-teal"
-                  style={{ display: "inline-flex", alignItems: "center", minHeight: "44px" }}
-                >
-                  {t.experience!.cta}
-                </Link>
-              </div>
-            )}
-          </div>
-        </section>
-      )}
-
-      {/* ── Real patients — autoplay video reels ── */}
-      {t.patientVideos && (
-        <section aria-labelledby="videos-heading" style={{ padding: "80px 0" }}>
-          <div className="container">
-            <h2
-              id="videos-heading"
-              className="font-serif text-center"
-              style={{
-                fontSize: "clamp(24px,3.4vw,38px)",
-                color: "var(--gold)",
-                letterSpacing: "0.04em",
-                lineHeight: 1.25,
-              }}
-            >
-              {t.patientVideos.title}
-            </h2>
-            {t.patientVideos.intro && (
-              <p
-                className="text-center mx-auto"
-                style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.625, marginTop: "18px", maxWidth: "820px" }}
-              >
-                {t.patientVideos.intro}
-              </p>
-            )}
-            {t.patientVideos.videos.length === 1 ? (
-              <div style={{ marginTop: "44px", maxWidth: "340px", marginInline: "auto" }}>
-                <div style={{ borderRadius: "28px 64px 28px 64px", overflow: "hidden", boxShadow: "0 16px 38px rgba(0,0,0,0.10)" }}>
-                  <VideoPlayer className="w-full" ratio="4 / 5" radius="28px 64px 28px 64px" src={t.patientVideos.videos[0]} label="Patient treatment video" />
-                </div>
-              </div>
-            ) : (
-              <div
-                style={{
-                  marginTop: "44px",
-                  display: "grid",
-                  gridTemplateColumns: "repeat(auto-fit, minmax(280px, 320px))",
-                  justifyContent: "center",
-                  gap: "24px",
-                }}
-              >
-                {t.patientVideos.videos.map((src, i) => (
-                  <Reveal
-                    key={src}
-                    delay={(i % 3) * 90}
-                    style={{ borderRadius: "28px 64px 28px 64px", overflow: "hidden", boxShadow: "0 16px 38px rgba(0,0,0,0.10)" }}
-                  >
-                    <VideoPlayer className="w-full" ratio="4 / 5" radius="28px 64px 28px 64px" src={src} label={`Patient treatment video ${i + 1}`} />
-                  </Reveal>
-                ))}
-              </div>
-            )}
-          </div>
-        </section>
-      )}
-
-      {/* ── Trusted clinic ── */}
+      {/* ── Trusted clinic — moved directly after the treatment-experience
+             section, ahead of the CTA band, patient videos, and Carisma
+             Difference (per the new section order). ── */}
       {t.trusted && (
         <section aria-labelledby="trusted-heading" style={{ padding: "70px 0 84px" }}>
           <div className="container">
@@ -1416,6 +1039,80 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
         </section>
       )}
 
+      {/* ── Call-to-action band — simple centred "Book Your Free Consultation"
+             on a light section (not a solid blue box). Sits under Trusted,
+             ahead of the patient videos. ── */}
+      <section aria-label="Book a consultation" style={{ padding: "16px 0 56px" }}>
+        <div className="container">
+          <div className="text-center">
+            {/* Opens the site-wide consultation popup (global interceptor on
+                href="/consultation"). */}
+            <Link
+              href="/consultation"
+              className="btn btn-teal"
+              style={{ borderRadius: 999, padding: "15px 32px" }}
+            >
+              Book Your Free Consultation
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Real patients — autoplay video reels ── */}
+      {t.patientVideos && (
+        <section aria-labelledby="videos-heading" style={{ padding: "80px 0" }}>
+          <div className="container">
+            <h2
+              id="videos-heading"
+              className="font-serif text-center"
+              style={{
+                fontSize: "clamp(24px,3.4vw,38px)",
+                color: "var(--gold)",
+                letterSpacing: "0.04em",
+                lineHeight: 1.25,
+              }}
+            >
+              {t.patientVideos.title}
+            </h2>
+            {t.patientVideos.intro && (
+              <p
+                className="text-center mx-auto"
+                style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.625, marginTop: "18px", maxWidth: "820px" }}
+              >
+                {t.patientVideos.intro}
+              </p>
+            )}
+            {t.patientVideos.videos.length === 1 ? (
+              <div style={{ marginTop: "44px", maxWidth: "340px", marginInline: "auto" }}>
+                <div style={{ borderRadius: "28px 64px 28px 64px", overflow: "hidden", boxShadow: "0 16px 38px rgba(0,0,0,0.10)" }}>
+                  <VideoPlayer className="w-full" ratio="4 / 5" radius="28px 64px 28px 64px" src={t.patientVideos.videos[0]} label="Patient treatment video" />
+                </div>
+              </div>
+            ) : (
+              <div
+                style={{
+                  marginTop: "44px",
+                  display: "grid",
+                  gridTemplateColumns: "repeat(auto-fit, minmax(280px, 320px))",
+                  justifyContent: "center",
+                  gap: "24px",
+                }}
+              >
+                {t.patientVideos.videos.map((src, i) => (
+                  <Reveal
+                    key={src}
+                    delay={(i % 3) * 90}
+                    style={{ borderRadius: "28px 64px 28px 64px", overflow: "hidden", boxShadow: "0 16px 38px rgba(0,0,0,0.10)" }}
+                  >
+                    <VideoPlayer className="w-full" ratio="4 / 5" radius="28px 64px 28px 64px" src={src} label={`Patient treatment video ${i + 1}`} />
+                  </Reveal>
+                ))}
+              </div>
+            )}
+          </div>
+        </section>
+      )}
+
       {/* ── The Carisma Difference ── */}
       {t.difference && (
         <section aria-labelledby="difference-heading" style={{ padding: "10px 0 84px" }}>
@@ -1564,52 +1261,108 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
         </section>
       )}
 
-      {/* ── Booking form ── */}
-      {t.bookingForm && (
-        <section aria-labelledby="booking-form-heading" style={{ padding: "30px 0 84px" }}>
+      {/* ── Preparation & Aftercare ── */}
+      {t.prepAftercare && (
+        <section aria-labelledby="prep-heading" style={{ padding: "80px 0" }}>
           <div className="container">
-            <div className="mx-auto" style={{ maxWidth: "1400px" }}>
-              <div
+            {t.prepAftercare.kicker && (
+              <p
+                className="font-display text-center"
                 style={{
-                  background: "linear-gradient(180deg,#527979 0%, #456b6b 100%)",
-                  borderRadius: "18px 56px 18px 18px",
-                  padding: "clamp(26px,3vw,40px) 32px",
-                  textAlign: "center",
-                  position: "relative",
-                  zIndex: 1,
-                  boxShadow: "0 14px 30px rgba(0,0,0,0.08)",
+                  fontSize: "11px",
+                  // P1 — #96B2B2 (teal) on white FAILS; teal-text #406060 = 5.76:1 passes AA
+                  color: "var(--teal-text)",
+                  letterSpacing: "0.18em",
+                  textTransform: "uppercase",
+                  marginBottom: "14px",
                 }}
               >
-                <h2
-                  id="booking-form-heading"
+                {t.prepAftercare.kicker}
+              </p>
+            )}
+            <h2
+              id="prep-heading"
+              className="font-serif text-center"
+              style={{
+                fontSize: "clamp(24px,3.4vw,38px)",
+                color: "var(--gold)",
+                letterSpacing: "0.04em",
+                lineHeight: 1.25,
+              }}
+            >
+              {t.prepAftercare.title}
+            </h2>
+            {t.prepAftercare.intro && (
+              <p
+                className="text-center mx-auto"
+                style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.625, marginTop: "18px", maxWidth: "760px" }}
+              >
+                {t.prepAftercare.intro}
+              </p>
+            )}
+            <div className="grid gap-6 md:grid-cols-3" style={{ marginTop: "48px" }}>
+              {t.prepAftercare.cards.map((c, i) => (
+                <Reveal
+                  key={c.label}
+                  delay={(i % 3) * 90}
                   style={{
-                    fontSize: "clamp(20px,3vw,33px)",
-                    // P1 — white on #527979 = 4.7:1 — passes AA
-                    color: "#fff",
-                    letterSpacing: "0.04em",
-                    textTransform: "uppercase",
-                    fontWeight: 400,
-                    lineHeight: 1.25,
+                    borderRadius: "20px 56px 20px 56px",
+                    background: "linear-gradient(170deg,#ffffff 0%, #f1f6f7 60%, #e3ecee 100%)",
+                    border: "1px solid var(--line)",
+                    boxShadow: "0 12px 30px rgba(0,0,0,0.05)",
+                    padding: "clamp(26px,3vw,34px)",
                   }}
                 >
-                  {t.bookingForm.title}
-                </h2>
-              </div>
-              <div
-                className="mx-auto flex justify-center"
-                style={{ marginTop: "20px", position: "relative" }}
-              >
-                {/* Opens the site-wide consultation popup (global interceptor on
-                    href="/consultation"). */}
+                  <div className="flex items-center gap-3" style={{ marginBottom: "16px" }}>
+                    {c.icon && (
+                      // P3 — next/image for card icons
+                      <Image
+                        src={c.icon}
+                        alt={c.label}
+                        width={40}
+                        height={40}
+                        style={{ height: "40px", width: "auto" }}
+                      />
+                    )}
+                    <span
+                      className="font-display"
+                      style={{ fontSize: "14px", color: "var(--label)", letterSpacing: "0.14em", textTransform: "uppercase" }}
+                    >
+                      {c.label}
+                    </span>
+                  </div>
+                  <p style={{ fontSize: "14.5px", color: "var(--label)", lineHeight: 1.625, marginBottom: "18px" }}>
+                    {c.lead}
+                  </p>
+                  <ul className="space-y-4">
+                    {c.points.map((p) => (
+                      <li key={p} className="flex items-start gap-3">
+                        <span
+                          // P1 — decorative bullet, aria-hidden
+                          aria-hidden="true"
+                          style={{ color: "var(--teal-text)", fontSize: "12px", lineHeight: 1.7 }}
+                        >
+                          ●
+                        </span>
+                        <span style={{ fontSize: "13.5px", color: "var(--label)", lineHeight: 1.55 }}>{p}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </Reveal>
+              ))}
+            </div>
+            {t.experience!.cta && (
+              <div className="text-center" style={{ marginTop: "48px" }}>
+                {/* P2 — min-h-[44px] for CTA tap target */}
                 <Link
                   href="/consultation"
                   className="btn btn-teal"
-                  style={{ fontSize: "13px", padding: "15px 44px", letterSpacing: "0.12em" }}
+                  style={{ display: "inline-flex", alignItems: "center", minHeight: "44px" }}
                 >
-                  Book Free Consultation
+                  {t.experience!.cta}
                 </Link>
               </div>
-            </div>
+            )}
           </div>
         </section>
       )}
@@ -1814,178 +1567,16 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
         </section>
       )}
 
-      {/* ── Recommended with — cross-sell cards ── */}
+      {/* ── Recommended with — cross-sell cards (RecommendedCards) ── */}
       {t.recommended && (
-        <section aria-labelledby="recommended-heading" style={{ padding: "20px 0 84px" }}>
-          <div className="container">
-            <h2
-              id="recommended-heading"
-              className="font-serif text-center"
-              style={{
-                fontSize: "clamp(24px,3.4vw,38px)",
-                color: "var(--gold)",
-                letterSpacing: "0.04em",
-                marginBottom: "48px",
-                lineHeight: 1.25,
-              }}
-            >
-              {t.recommended.title}
-            </h2>
-            <div
-              className="mx-auto"
-              style={{ maxWidth: "800px", display: "grid", gap: "32px", gridTemplateColumns: "repeat(2, 1fr)" }}
-            >
-              {t.recommended.items.map((it, i) => (
-                <Reveal key={it.href} delay={(i % 2) * 90}>
-                  <div
-                    className="overflow-hidden"
-                    style={{ borderRadius: "24px 24px 60px 24px", boxShadow: "0 14px 34px rgba(0,0,0,0.10)", position: "relative", aspectRatio: "3 / 2" }}
-                  >
-                    {/* P3 — next/image for recommended treatment images */}
-                    <Image
-                      src={it.image}
-                      alt={it.label}
-                      fill
-                      style={{ objectFit: "cover" }}
-                      sizes="(max-width: 640px) 50vw, 380px"
-                    />
-                  </div>
-                  <h3
-                    className="font-display"
-                    style={{
-                      fontSize: "14px",
-                      color: "var(--label)",
-                      letterSpacing: "0.1em",
-                      textTransform: "uppercase",
-                      margin: "18px 4px 14px",
-                    }}
-                  >
-                    {it.label}
-                  </h3>
-                  {/* P2 — min-h-[44px] for CTA; P4 — external link with proper rel */}
-                  <Link
-                    href={it.href}
-                    className="block text-center font-display cta-glow-teal"
-                    style={{
-                      color: "#fff",
-                      padding: "15px",
-                      minHeight: "44px",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      fontSize: "13px",
-                      letterSpacing: "0.16em",
-                      textTransform: "uppercase",
-                      borderRadius: "var(--radius-pill)",
-                    }}
-                  >
-                    Explore
-                  </Link>
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </section>
+        <RecommendedCards title={t.recommended.title} items={t.recommended.items} />
       )}
 
-      {/* ── FAQ accordion ── */}
-      {t.faq && t.faq.length > 0 && (
-        <section
-          aria-labelledby="faq-section-heading"
-          style={{ padding: "70px 0 90px", backgroundColor: "var(--cream)" }}
-        >
-          <div className="container">
-            {t.faqKicker && (
-              <p
-                className="font-display text-center"
-                style={{
-                  fontSize: "12px",
-                  // P1 — teal-text #406060 = 5.83:1 on var(--cream) — passes AA
-                  color: "var(--teal-text)",
-                  letterSpacing: "0.16em",
-                  textTransform: "uppercase",
-                  marginBottom: "10px",
-                }}
-              >
-                {t.faqKicker}
-              </p>
-            )}
-            <h2
-              id="faq-section-heading"
-              className="font-serif text-center"
-              style={{
-                fontSize: "clamp(24px,3.4vw,38px)",
-                color: "var(--gold)",
-                letterSpacing: "0.04em",
-                marginBottom: "44px",
-                lineHeight: 1.25,
-              }}
-            >
-              {t.faqTitle ?? "Frequently Asked Questions"}
-            </h2>
-            <div className="mx-auto" style={{ maxWidth: "820px" }}>
-              {t.faq.map((f, i) => {
-                // P1 (treatment-page-specific) — unique IDs for FAQ panels using native <details>
-                const panelId = `faq-details-${i}`;
-                return (
-                  <details
-                    key={f.q}
-                    id={panelId}
-                    style={{
-                      background: "#fff",
-                      border: "1px solid var(--line)",
-                      borderRadius: "var(--radius-card)",
-                      marginBottom: "12px",
-                      padding: "0 22px",
-                    }}
-                  >
-                    <summary
-                      className="flex items-center justify-between gap-4"
-                      style={{
-                        cursor: "pointer",
-                        // P2 — minimum 44px tap target height
-                        padding: "18px 0",
-                        minHeight: "44px",
-                        fontSize: "15px",
-                        fontWeight: 500,
-                        color: "var(--gold)",
-                        letterSpacing: "0.01em",
-                        // P6 — heading line height
-                        lineHeight: 1.375,
-                        // P2 — list-style removed visually; native details disclosure triangle stays
-                        listStyle: "none",
-                      }}
-                    >
-                      <span>{f.q}</span>
-                      {/* P1 — aria-hidden on decorative +; native <details> handles expanded state */}
-                      <span
-                        className="faq-plus shrink-0"
-                        aria-hidden="true"
-                        style={{ color: "var(--teal-deep)", fontSize: "22px", lineHeight: 1 }}
-                      >
-                        +
-                      </span>
-                    </summary>
-                    {/* P6 — body text line height 1.8 */}
-                    <p
-                      style={{
-                        fontSize: "14px",
-                        color: "var(--label)",
-                        lineHeight: 1.8,
-                        padding: "0 0 20px",
-                        // P6 — comfortable line length for answer text
-                        maxWidth: "72ch",
-                      }}
-                    >
-                      {f.a}
-                    </p>
-                  </details>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-      )}
+      {/* ── FAQ accordion — searchable (TreatmentFaq). Emit FAQPage JSON-LD on
+             the page itself, not here, to avoid a duplicate FAQPage block. ── */}
+      {t.faq?.length ? (
+        <TreatmentFaq kicker={t.faqKicker} title={t.faqTitle} items={t.faq} />
+      ) : null}
     </main>
   );
 }
