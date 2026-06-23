@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { A, Serif } from "./_shared";
 
 const COLUMNS = [
@@ -7,7 +8,7 @@ const COLUMNS = [
     alt: "Floral tattoo on shoulder before Pico laser removal treatment",
     points: [
       "Before your treatment, avoid direct sun exposure, tanning, or self-tanning products on the tattooed area for at least a few days.",
-      "Keep the area clean and well-hydrated. Do not apply harsh exfoliants, acids, or active skincare over the tattoo before your session",
+      "Keep the area clean and well-hydrated. Do not apply harsh exfoliants, acids, or active skincare over the tattoo before your session.",
       "Share your medical history, skin sensitivity, and any medications with your specialist so your treatment can be planned safely.",
     ],
   },
@@ -35,10 +36,13 @@ const COLUMNS = [
 
 export default function WhatToExpect() {
   return (
-    <section style={{ padding: "50px 0" }}>
+    <section
+      aria-labelledby="wte-heading"
+      style={{ padding: "50px 0" }}
+    >
       <div className="container">
-        <Serif style={{ textTransform: "uppercase" }}>
-          what to expect during your pico laser tattoo removal treatment?
+        <Serif id="wte-heading" style={{ textTransform: "uppercase" }}>
+          What to expect during your Pico laser tattoo removal treatment
         </Serif>
 
         <div className="wte-grid grid gap-8" style={{ marginTop: "36px" }}>
@@ -48,39 +52,59 @@ export default function WhatToExpect() {
                 className="font-display text-center"
                 style={{
                   fontSize: "14px",
-                  color: "var(--gold-deep)",
+                  color: "var(--gold)",
                   letterSpacing: "0.12em",
                   textTransform: "uppercase",
                   marginBottom: "16px",
                 }}
+                aria-hidden="true"
               >
                 {col.label}
               </p>
 
-              <img
-                src={`${A}/${col.image}`}
-                alt={col.alt}
-                className="rounded-xl"
+              <div
                 style={{
+                  position: "relative",
                   width: "100%",
                   aspectRatio: "5 / 4",
-                  objectFit: "cover",
-                  boxShadow: "0 12px 30px rgba(0,0,0,0.08)",
+                  borderRadius: "12px",
+                  overflow: "hidden",
                 }}
-              />
+              >
+                <Image
+                  src={`${A}/${col.image}`}
+                  alt={col.alt}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  style={{
+                    objectFit: "cover",
+                    borderRadius: "12px",
+                    boxShadow: "0 12px 30px rgba(0,0,0,0.08)",
+                  }}
+                />
+              </div>
 
-              <div className="space-y-3" style={{ marginTop: "16px" }}>
+              <div
+                role="list"
+                aria-label={`What to expect ${col.label}`}
+                className="space-y-3"
+                style={{ marginTop: "16px" }}
+              >
                 {col.points.map((point) => (
                   <div
                     key={point}
+                    role="listitem"
+                    className="wte-tile"
                     style={{
                       background: "rgba(255,255,255,0.6)",
-                      borderLeft: "3px solid var(--teal)",
-                      borderRadius: "6px",
+                      borderLeft: "3px solid var(--teal-deep)",
+                      borderRadius: "12px",
                       padding: "14px 16px",
                     }}
                   >
-                    <p style={{ fontSize: "13px", color: "var(--label)", lineHeight: 1.65 }}>{point}</p>
+                    <p style={{ fontSize: "13px", color: "var(--label)", lineHeight: 1.65 }}>
+                      {point}
+                    </p>
                   </div>
                 ))}
               </div>
@@ -91,6 +115,18 @@ export default function WhatToExpect() {
 
       {/* eslint-disable-next-line */}
       <style>{`
+        /* Content callout tiles: soft resting shadow that deepens on hover with a
+           gently darkening left accent. Decorative, non-text cues only. */
+        .wte-tile {
+          box-shadow: 0 1px 2px rgba(12,11,11,0.04), 0 6px 18px rgba(12,11,11,0.05);
+          transition: box-shadow 0.25s ease, border-color 0.25s ease;
+        }
+        @media (prefers-reduced-motion: no-preference) {
+          .wte-tile:hover {
+            box-shadow: 0 2px 6px rgba(12,11,11,0.08), 0 14px 34px rgba(12,11,11,0.10);
+            border-left-color: var(--teal-deep);
+          }
+        }
         @media (min-width: 768px) {
           .wte-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
         }

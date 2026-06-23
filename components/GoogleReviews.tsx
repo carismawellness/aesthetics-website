@@ -1,15 +1,20 @@
-import { CURATED_REVIEWS, REVIEW_SUMMARY, GOOGLE_PROFILE_URL, type Review } from "@/lib/reviews";
+import { CURATED_REVIEWS, REVIEW_SUMMARY, GOOGLE_PROFILE_URL } from "@/lib/reviews";
 
 /*
-  Google reviews block for the footer.
+  Google reviews block for the footer (legacy server component — NOT mounted in
+  the current Footer, which uses components/home/Reviews.tsx). Kept compiling.
 
   Live data: if GOOGLE_PLACES_API_KEY and GOOGLE_PLACES_PLACE_ID are set, this
   server component fetches the latest reviews from the Google Places API and
   caches them for a day (ISR). Otherwise it renders the curated real reviews
-  from lib/reviews.ts, so the section always shows content.
+  from lib/reviews.ts, so the section always shows content. A strict ≥4★ filter
+  is applied to whatever source supplies the cards.
 */
 
-type Feed = { rating: number; total: number; url: string; reviews: Review[] };
+// Flat shape this component renders (distinct from the richer lib `Review`).
+type LegacyReview = { name: string; initial: string; rating: number; text: string; when: string };
+
+type Feed = { rating: number; total: number; url: string; reviews: LegacyReview[] };
 
 async function fetchGoogleReviews(): Promise<Feed | null> {
   const key = process.env.GOOGLE_PLACES_API_KEY;
@@ -24,7 +29,7 @@ async function fetchGoogleReviews(): Promise<Feed | null> {
     const data = await res.json();
     if (data.status !== "OK" || !data.result) return null;
     const r = data.result;
-    const reviews: Review[] = (r.reviews ?? [])
+    const reviews: LegacyReview[] = (r.reviews ?? [])
       .filter((rv: { text?: string }) => rv.text && rv.text.trim().length > 0)
       .map((rv: { author_name?: string; rating?: number; text?: string; relative_time_description?: string }) => ({
         name: rv.author_name ?? "Google user",
@@ -32,7 +37,9 @@ async function fetchGoogleReviews(): Promise<Feed | null> {
         rating: rv.rating ?? 5,
         text: rv.text ?? "",
         when: rv.relative_time_description ?? "",
-      }));
+      }))
+      // ⭐ Strict ≥4★ filter — never render sub-4★ reviews.
+      .filter((rv: LegacyReview) => rv.rating >= 4);
     return {
       rating: r.rating ?? REVIEW_SUMMARY.rating,
       total: r.user_ratings_total ?? REVIEW_SUMMARY.total,
@@ -57,9 +64,9 @@ function GoogleG({ size = 18 }: { size?: number }) {
 
 function Stars({ rating = 5, size = 14 }: { rating?: number; size?: number }) {
   return (
-    <span className="inline-flex" style={{ color: "#f5b50a" }} aria-label={`${rating} out of 5 stars`}>
+    <span className="inline-flex" style={{ color: "#b8860b" }} aria-label={`${rating} out of 5 stars`}>
       {[0, 1, 2, 3, 4].map((i) => (
-        <svg key={i} width={size} height={size} viewBox="0 0 24 24" fill={i < Math.round(rating) ? "currentColor" : "#e2e2e2"}>
+        <svg key={i} width={size} height={size} viewBox="0 0 24 24" fill={i < Math.round(rating) ? "currentColor" : "#8a8a8a"}>
           <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
         </svg>
       ))}
@@ -67,13 +74,15 @@ function Stars({ rating = 5, size = 14 }: { rating?: number; size?: number }) {
   );
 }
 
-const AVATAR_COLORS = ["#7c9eb2", "#b29a7c", "#8fb29a", "#b27c93", "#9a8fb2", "#b2a07c"];
+// Aesthetics teal-palette avatar fills (white text clears AA on each).
+const AVATAR_COLORS = ["#4f7373", "#406060", "#5a6f6f", "#3a4a4a", "#6b7e7e", "#48646e"];
 
 export default async function GoogleReviews() {
   const live = await fetchGoogleReviews();
   const rating = live?.rating ?? REVIEW_SUMMARY.rating;
-  const total = live?.total ?? REVIEW_SUMMARY.total;
-  const showPlus = !live && REVIEW_SUMMARY.plus;
+  // Curated fallback count is shown as "500+"; a live API result overrides with the real Google total.
+  const total = live?.total ?? 500;
+  const showPlus = !live;
   const url = live?.url ?? GOOGLE_PROFILE_URL;
   const reviews = (live?.reviews?.length ? live.reviews : CURATED_REVIEWS).slice(0, 6);
 
@@ -87,7 +96,7 @@ export default async function GoogleReviews() {
             <span className="font-display" style={{ fontSize: "13px", letterSpacing: "0.14em", color: "var(--label)" }}>GOOGLE REVIEWS</span>
           </div>
           <div className="flex items-center gap-3" style={{ marginTop: "14px" }}>
-            <span className="font-serif" style={{ fontSize: "34px", color: "var(--gold)", lineHeight: 1 }}>{rating.toFixed(1)}</span>
+            <span className="font-serif" style={{ fontSize: "34px", color: "var(--teal-text)", lineHeight: 1 }}>{rating.toFixed(1)}</span>
             <span className="flex flex-col items-start">
               <Stars rating={rating} size={17} />
               <span style={{ fontSize: "12.5px", color: "var(--muted)", marginTop: "3px" }}>
@@ -100,7 +109,7 @@ export default async function GoogleReviews() {
         {/* review cards */}
         <div className="grid gap-6 md:grid-cols-3 mx-auto" style={{ maxWidth: "1080px" }}>
           {reviews.map((r, i) => (
-            <div key={r.name + i} className="bg-white rounded-lg" style={{ padding: "24px", border: "1px solid var(--line)", boxShadow: "0 10px 26px rgba(0,0,0,0.04)" }}>
+            <div key={r.name + i} className="review-card bg-white" style={{ padding: "24px", borderRadius: "var(--radius-card)", border: "1px solid var(--line)", boxShadow: "0 10px 26px rgba(0,0,0,0.04)" }}>
               <div className="flex items-center gap-3">
                 <span className="shrink-0 inline-flex items-center justify-center font-display" style={{ width: "40px", height: "40px", borderRadius: "50%", background: AVATAR_COLORS[i % AVATAR_COLORS.length], color: "#fff", fontSize: "16px" }}>
                   {r.initial}
@@ -119,7 +128,7 @@ export default async function GoogleReviews() {
 
         {/* CTA to full Google profile */}
         <div className="text-center" style={{ marginTop: "36px" }}>
-          <a href={url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2" style={{ border: "1px solid var(--line)", borderRadius: "999px", padding: "11px 24px", fontSize: "13px", color: "var(--label)" }}>
+          <a href={url} target="_blank" rel="noopener noreferrer" className="btn btn-outline inline-flex items-center gap-2" style={{ padding: "11px 24px", fontSize: "13px" }}>
             <GoogleG size={16} />
             Review us on Google
           </a>

@@ -2,8 +2,6 @@ import { Serif, Cta, Dot } from "./_shared";
 
 // Commitment section — "35+ years…" heading + two text columns + centered CTA.
 // Pure text section: inherits the page's shared marble background; no image of its own.
-// (The farhad-ibrahimzade unsplash photo captured in the slice belongs to the NEXT
-//  "SECURE YOUR PICO LASER" section, so it is intentionally NOT rendered here.)
 
 const COMMITMENT: [string, string][] = [
   ["Safe Tattoo Fading", "A careful approach designed to gradually fade unwanted ink."],
@@ -22,39 +20,86 @@ const WHY_TRUST = [
 
 export default function Commitment() {
   return (
-    <section style={{ padding: "40px 0 60px", background: "#ffffff" }}>
+    <section
+      aria-labelledby="commitment-heading"
+      style={{ padding: "40px 0 60px", background: "#ffffff" }}
+    >
       <div className="container">
-        <Serif>35+ years helping malta feel confident.</Serif>
-        <div className="grid gap-12 lg:grid-cols-2 mx-auto" style={{ maxWidth: "1000px", marginTop: "40px" }}>
+        <Serif>35+ years helping Malta feel confident.</Serif>
+        <p id="commitment-heading" className="sr-only">
+          Our commitment to safe, expert pico laser tattoo removal
+        </p>
+        <div
+          className="grid gap-12 lg:grid-cols-2 mx-auto"
+          style={{ maxWidth: "1000px", marginTop: "40px" }}
+        >
           <div>
-            <h3 className="font-display" style={{ fontSize: "14px", color: "var(--gold-deep)", letterSpacing: "0.08em", marginBottom: "18px" }}>OUR COMMITMENT</h3>
-            <ul className="space-y-4">
+            <h3
+              className="font-display"
+              style={{
+                fontSize: "14px",
+                color: "var(--gold)",
+                letterSpacing: "0.08em",
+                marginBottom: "18px",
+                textTransform: "uppercase",
+              }}
+            >
+              Our Commitment
+            </h3>
+            <ul className="space-y-4" role="list">
               {COMMITMENT.map(([t, d]) => (
                 <li key={t} className="flex items-start gap-3">
                   <Dot />
                   <span style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.6 }}>
-                    <b style={{ color: "var(--gold-deep)", fontWeight: 600 }}>{t}</b> — {d}
+                    <b style={{ color: "var(--gold)", fontWeight: 600 }}>{t}</b> &mdash; {d}
                   </span>
                 </li>
               ))}
             </ul>
           </div>
           <div>
-            <h3 className="font-display" style={{ fontSize: "14px", color: "var(--gold-deep)", letterSpacing: "0.08em", marginBottom: "18px" }}>WHY MALTA TRUSTS OUR PICO LASER TREATMENT</h3>
-            <ul className="space-y-4">
+            <h3
+              className="font-display"
+              style={{
+                fontSize: "14px",
+                color: "var(--gold)",
+                letterSpacing: "0.08em",
+                marginBottom: "18px",
+                textTransform: "uppercase",
+              }}
+            >
+              Why Malta Trusts Our Pico Laser Treatment
+            </h3>
+            <ul className="space-y-4" role="list">
               {WHY_TRUST.map((w) => (
                 <li key={w} className="flex items-start gap-3">
                   <Dot />
-                  <span style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.6 }}>{w}</span>
+                  <span style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.6 }}>
+                    {w}
+                  </span>
                 </li>
               ))}
             </ul>
           </div>
         </div>
         <div className="text-center" style={{ marginTop: "36px" }}>
-          <Cta label="Get My First Tatto removal Session" />
+          <Cta label="Get My First Tattoo Removal Session" />
         </div>
       </div>
+
+      <style>{`
+        .sr-only {
+          position: absolute;
+          width: 1px;
+          height: 1px;
+          padding: 0;
+          margin: -1px;
+          overflow: hidden;
+          clip: rect(0, 0, 0, 0);
+          white-space: nowrap;
+          border-width: 0;
+        }
+      `}</style>
     </section>
   );
 }

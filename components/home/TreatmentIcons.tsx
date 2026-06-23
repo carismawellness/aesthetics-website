@@ -1,6 +1,6 @@
 type Props = { size?: number; className?: string };
 
-const F = "#c4b5a5";  // face / beige
+const F = "#706552";  // face / brand brown (was warm tan #c4b5a5 — eradicated)
 const T = "#96b2b2";  // tool / teal
 const S = 1.4;
 

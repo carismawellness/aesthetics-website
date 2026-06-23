@@ -38,34 +38,92 @@
 @font-face {
   font-family: "Roboto Local";
   src: url("/assets/fonts/roboto.woff2") format("woff2");
-  font-weight: 300 700;
+  /* roboto.woff2 is a STATIC Regular master (usWeightClass 400, not a variable
+     font). Declaring a 300–700 range over a single 400 outline let the UA
+     faux-embolden base copy, so body text rendered bold everywhere. Pin the
+     face to its real weight (400) so paragraph copy reads at normal weight,
+     matching the Slimming site's body voice. */
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+/* Helvetica — clean neutral UI / alternate body face */
+@font-face {
+  font-family: "Helvetica Brand";
+  src: url("/assets/fonts/helvetica.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+/* Ani Lazy Day — decorative script for elegant accents (use sparingly, large only) */
+@font-face {
+  font-family: "Carisma Script";
+  src: url("/assets/fonts/ani-lazy-day.woff2") format("woff2");
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 
 :root {
-  /* Brand palette — sampled from the live site via pixel QC.
-     The live brand is COOL: muted teal accents + cool taupe + light teal
-     backgrounds (not warm cream). */
-  --gold: #a99e8d;          /* primary taupe-gold (headings, nav, prices) — sampled from live */
-  --gold-deep: #b79e61;     /* richer gold for star accents */
-  --label: #9b8d83;         /* muted label / bio taupe */
-  --teal: #96b2b2;          /* PRIMARY accent — Carisma Aesthetics sage-teal (buttons, highlights) */
-  --teal-deep: #7a9e9e;     /* sage teal hover */
-  --teal-200: #c5d6d6;      /* light sage teal */
-  --teal-100: #eef3f3;      /* lightest teal tint */
+  /* ============================================================
+     Carisma Aesthetics — BRAND PALETTE (2026 refresh)
+     Identity hues come straight from the brand palette board:
+       sage-teal #96B2B2 · light teal #DEEBEB · teal-mist #EEF3F3
+       taupe #9B8D83 · neutral grey #ECEAE7 · white #FFFFFF
+     (Warm beige #EFE7D7 has been ERADICATED — grounds are white + teal only.)
+     Bright identity hues are decorative (backgrounds / large graphics).
+     Each functional TEXT/FILL token keeps an AA-darkened variant so the
+     live site stays WCAG AA — never use a bright hue as small text on white.
+     ============================================================ */
+
+  /* — Identity (decorative: backgrounds, large graphics, fills) — */
+  --brand-teal:  #96b2b2;   /* signature sage-teal */
+  --brand-taupe: #9b8d83;   /* warm taupe accent */
+  --teal:        #96b2b2;   /* brand sage-teal (decorative / large fills) */
+  --teal-200:    #c5d6d6;   /* mid sage tint */
+  --teal-100:    #deebeb;   /* lightest teal tint — section background */
+  /* ── Warm beige ERADICATED (Jun 2026) ──────────────────────────────────
+     The old warm cream/beige wallpaper (#efe7d7) is gone site-wide. These
+     tokens now resolve to COOL teal-mist grounds so every legacy
+     `var(--beige)` reference (TreatmentPage, PackageFunnel, FaceUI, PageHero)
+     renders as a subtle blue-teal tint matching the Slimming design language.
+     Prefer white + gradient rhythm for large blocks; these flat tints are
+     gentle accents only. NO warm cream/beige/tan/sand anywhere. */
+  --beige:       #eef3f3;   /* (was #efe7d7) cool teal-mist accent ground */
+  --beige-2:     #deebeb;   /* (was #e7dbc7) light teal accent */
+  --gray-100:    #eceae7;   /* neutral light grey surface */
+  --cream:       #deebeb;   /* cool "mist" section background (hero, etc.) */
+  --cream-2:     #eef3f3;
+  --white:       #ffffff;
+
+  /* — Accessible TEXT / FILL variants (small text / icons / buttons) — */
+  --teal-deep: #4f7373;     /* accessible teal — button fill & icons carry WHITE text (>=4.5) */
+  --teal-text: #406060;     /* teal as small text/link — AA on white + teal-100/cream/beige tints (>=4.5) */
+  --gold: #706552;          /* heading / nav / price TEXT — AA on white/cream/beige (>=4.5) */
+  --gold-deep: #9c8344;     /* gold graphic / star accent — >=3:1 vs white */
+  --label: #695c4e;         /* muted label / bio taupe TEXT — AA on white + cream/beige tints (>=4.5) */
   --ink: #0c0b0b;           /* near-black (footer / award) */
-  --ink-soft: #2b2b2b;
-  --muted: #8f8f8f;         /* secondary text */
-  --line: #e2e2e2;          /* hairline borders */
-  --cream: #eef3f3;         /* cool "mist" section background (hero, etc.) */
-  --cream-2: #e7eeee;
-  --beige: #f6efe3;         /* warm beige band — "why" + "book consultation" */
-  --beige-2: #efe6d6;
-  --white: #ffffff;
+  /* Body copy = brand brown taupe (#706552 = 5.6:1 on white, AA) — matches the
+     slimming site's taupe body voice. NEVER near-black/green for paragraph copy. */
+  --ink-soft: #706552;
+  --muted: #636363;         /* secondary TEXT — AA on white + teal-100/cream/beige tints (>=4.5) */
+  --line: #e2e2e2;          /* decorative hairline borders (form fields use --field-border) */
+  --field-border: #8a8a8a;  /* form-field border — UI component >=3:1 vs white */
+  --placeholder: #717171;   /* placeholder text — >=4.5:1 vs white */
+  --focus-ring: #4f7373;    /* visible focus indicator — >=3:1 vs white & light tints */
+
+  /* RGB channels for translucent brand glows (CTA halo effect) */
+  --teal-rgb: 150, 178, 178;       /* --teal  #96b2b2 */
+  --teal-deep-rgb: 79, 115, 115;   /* --teal-deep #4f7373 */
+  --gold-rgb: 155, 141, 131;       /* --brand-taupe #9b8d83 */
+  --gold-deep-rgb: 156, 131, 68;   /* --gold-deep #9c8344 */
 
   --maxw: 1200px;
-  --radius: 8px;
+  --radius: 14px;            /* generic rounded surfaces (rounded design language) */
+  --radius-pill: 999px;      /* buttons are pills */
+  --radius-field: 12px;      /* inputs / selects / textareas */
+  --radius-card: 16px;       /* cards / panels / tiles */
+  --nav-clear: 104px;        /* fixed glass nav clearance — heroes reserve this */
 }
 
 @theme inline {
@@ -78,18 +136,42 @@
   --color-cream: var(--cream);
   --font-display: "Novecento Wide";
   --font-serif: "Trajan Pro";
-  --font-body: "Roboto Local";
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
+  --font-helvetica: "Helvetica Brand";
+  --font-script: "Carisma Script";
+  --color-brand-teal: var(--brand-teal);
+  --color-brand-taupe: var(--brand-taupe);
 }
 
-html {
-  scroll-behavior: smooth;
+/* Decorative script accent — large display use only (hero flourishes, quotes) */
+.font-script {
+  font-family: "Carisma Script", "Trajan Pro", cursive;
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 400;
 }
+/* Clean neutral UI / alternate body face */
+.font-helvetica {
+  font-family: "Helvetica Brand", -apple-system, "Segoe UI", sans-serif;
+}
+
+/* Native scroll only — no smooth-scroll hook (scroll-jacking removed). */
 
 body {
   background: var(--white);
-  color: var(--ink-soft);
-  font-family: "Roboto Local", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--ink-soft); /* brand brown taupe #706552 — matches Slimming body */
+  /* Match Slimming EXACTLY: system font first so body renders SF/Segoe at normal
+     weight. The bundled roboto.woff2 ("Roboto Local") renders heavy when used as
+     the primary body face — that was the all-bold body bug. Keep generic 'Roboto'
+     as a late fallback only (NOT "Roboto Local"). */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
+  font-synthesis: none;
   font-size: 16px;
+  /* Base/paragraph copy is NORMAL weight (400) so the body reads identically to
+     the Slimming site. Headings (.font-display / h1–h6 = Novecento 600), CTAs &
+     nav (.btn / .hero-outline = Novecento 600) and .font-serif (Trajan) set
+     their own heavier weights and are unaffected. */
+  font-weight: 400;
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
 }
@@ -114,13 +196,78 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.2;
 }
 
+/* ── No hanging lines (widows/orphans) ──
+   Balance headings & display/serif titles so a wrap never drops a single lone
+   word onto its own line; `pretty` keeps body copy from orphaning a last word.
+   Harmless on single-line elements (buttons, labels, nav). */
+h1, h2, h3, h4, h5, h6,
+.font-display, .font-serif {
+  text-wrap: balance;
+}
+p, li, figcaption, blockquote {
+  text-wrap: pretty;
+}
+
 a {
   color: inherit;
   text-decoration: none;
 }
 
+/* 1.4.1 Use of Color: in-content (prose) links must carry a non-color cue.
+   Structural/nav/button links opt out via .no-underline or by being a .btn. */
+main p a:not(.btn):not(.no-underline),
+main li a:not(.btn):not(.no-underline),
+.prose a:not(.btn):not(.no-underline) {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+}
+
+/* ── .link-underline ──
+   Animated underline-reveal for text/ghost links anywhere (nav, in-content,
+   footer). The underline grows from left on hover/focus; cursor is a pointer.
+   Pair with brand text colour via inline style/class — the underline inherits
+   currentColor so it stays the same AA-safe colour as the link text. */
+.link-underline {
+  position: relative;
+  cursor: pointer;
+  text-decoration: none;
+  padding-bottom: 1px;
+}
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.25s ease;
+}
+.link-underline:hover::after,
+.link-underline:focus-visible::after {
+  transform: scaleX(1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .link-underline::after { transition: none; }
+}
+
+/* 2.4.7 / 2.4.11 Focus visible: never remove the indicator. Visible ring >=3:1. */
+:focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+/* Mouse users (no keyboard) keep a clean look but focus is never fully removed. */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
 /* Buttons */
 .btn {
+  position: relative; /* anchors the .btn::after line/shine reveal */
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -131,32 +278,158 @@ a {
   font-size: 12px;
   font-weight: 600;
   padding: 14px 30px;
-  border-radius: 4px;
+  border-radius: var(--radius-pill); /* every button is a pill */
   transition: all 0.25s ease;
   cursor: pointer;
 }
-.btn-gold {
-  background: var(--gold);
-  color: var(--white);
+/* ── Slimming-style "line reveal" shine (recoloured teal) ──
+   Replicated from slimming globals.css `.btn::after` / `.cta-glow::after`: an
+   animated underline grows 0 → 60% from centre on hover, layered on top of the
+   teal glow + scale. Uses currentColor (white on teal CTAs, ink on outline
+   buttons) so it always matches the label. Applied to EVERY CTA via .btn +
+   the standalone .cta-glow-* utilities. */
+.btn::after,
+.cta-glow-teal::after,
+.cta-glow-gold::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0.55em;
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  transform: translateX(-50%);
+  transition: width 0.3s ease;
+  pointer-events: none;
 }
-.btn-gold:hover {
-  background: var(--gold-deep);
+.btn:hover::after,
+.cta-glow-teal:hover::after,
+.cta-glow-gold:hover::after {
+  width: 60%;
 }
+/* Standalone inline-styled CTAs (.cta-glow-* without .btn) still need the anchor. */
+.cta-glow-teal,
+.cta-glow-gold {
+  position: relative;
+}
+/* Universal hover lift: every button scales up smoothly. Solid CTAs layer their
+   own glow + translateY on top (see .btn-teal/.btn-gold:hover below). */
+.btn:hover {
+  transform: scale(1.04);
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn,
+  .btn:hover { transform: none; }
+  .btn::after,
+  .btn:hover::after,
+  .cta-glow-teal::after,
+  .cta-glow-teal:hover::after,
+  .cta-glow-gold::after,
+  .cta-glow-gold:hover::after { transition: none; }
+}
+/* ── Brand CTA effect: soft brand-colour gradient + blurred glow halo
+   (adapted from the LaserAway treatment, in Carisma colours).
+   Each button keeps its own colour family — teal→teal glow, gold→gold glow.
+   `.cta-glow-*` are standalone utilities for inline-styled CTAs. ── */
+.btn-gold,
 .btn-teal {
-  background: var(--teal);
   color: var(--white);
 }
-.btn-teal:hover {
-  background: var(--teal-deep);
+.cta-glow-teal,
+.cta-glow-gold {
+  transition: all 0.25s ease;
 }
+
+/* ── ONE shared brand CTA: teal (the "blue"), mirroring slimming's .cta-glow ──
+   Every primary CTA across the site resolves to this single teal treatment:
+   a very subtle low-contrast teal gradient fill (--teal-deep #4f7373 → a
+   slightly deeper teal), white uppercase Novecento label, a soft backdrop
+   box-shadow glow halo, pill radius. NO green, NO brown/gold button fills.
+   The legacy gold classes (.btn-gold / .cta-glow-gold) are intentionally
+   aliased onto the teal fill so every call site (dark heroes, theme="gold")
+   renders teal without touching markup. */
+.btn-gold,
+.cta-glow-gold,
+.btn-teal,
+.cta-glow-teal {
+  /* Very subtle teal gradient — lightest stop --teal-deep #4f7373 = 4.7:1, so
+     WHITE text passes AA across the ENTIRE fill. Low-contrast on purpose. */
+  background: linear-gradient(135deg, var(--teal-deep) 0%, #466b6b 55%, #3f6363 100%);
+  color: var(--white);
+  box-shadow:
+    0 0 22px rgba(var(--teal-rgb), 0.45),
+    0 8px 24px rgba(var(--teal-rgb), 0.5);
+}
+.btn-gold:hover,
+.cta-glow-gold:hover,
+.btn-teal:hover,
+.cta-glow-teal:hover {
+  background: linear-gradient(135deg, #466b6b 0%, var(--teal-deep) 65%, #355555 100%);
+  box-shadow:
+    0 0 30px rgba(var(--teal-rgb), 0.62),
+    0 12px 30px rgba(var(--teal-rgb), 0.68);
+  transform: translateY(-1px) scale(1.04); /* keep lift + glow, add universal scale */
+}
+/* ── Text / outline / ghost buttons: INVERT on hover (fill ink, light text)
+   + reveal an underline. White-on-ink = 19.66:1 (AAA). The scale comes from
+   the universal .btn:hover rule. ── */
 .btn-outline {
   border: 1px solid var(--ink);
   color: var(--ink);
   background: transparent;
+  text-decoration: none;
+  text-underline-offset: 3px;
 }
-.btn-outline:hover {
+.btn-outline:hover,
+.btn-outline:focus-visible {
   background: var(--ink);
   color: var(--white);
+  border-color: var(--ink);
+  text-decoration: underline;
+}
+/* .btn-ghost / .btn-text — borderless text buttons that share the invert+underline
+   reveal language. Use for tertiary actions ("Learn more", "Skip"). */
+.btn-ghost,
+.btn-text {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid transparent;
+  text-decoration: none;
+  text-underline-offset: 3px;
+}
+.btn-ghost:hover,
+.btn-ghost:focus-visible,
+.btn-text:hover,
+.btn-text:focus-visible {
+  background: var(--ink);
+  color: var(--white);
+  text-decoration: underline;
+}
+
+/* Secondary CTA outline buttons — teal and gold variants */
+.btn-outline-teal {
+  border: 1.5px solid var(--teal-deep);
+  color: var(--teal-deep);
+  background: transparent;
+}
+.btn-outline-teal:hover,
+.btn-outline-teal:focus-visible {
+  background: var(--teal-deep);
+  color: var(--white);
+  border-color: var(--teal-deep);
+}
+/* Secondary CTA outline: gold variant is aliased to TEAL so the paired
+   secondary button matches the unified teal CTA system (no brown fills). */
+.btn-outline-gold {
+  border: 1.5px solid var(--teal-deep);
+  color: var(--teal-deep);
+  background: transparent;
+}
+.btn-outline-gold:hover,
+.btn-outline-gold:focus-visible {
+  background: var(--teal-deep);
+  color: var(--white);
+  border-color: var(--teal-deep);
 }
 
 .container {
@@ -165,31 +438,212 @@ a {
   padding-inline: 20px;
 }
 
+/* ── One-viewport above-the-fold ──
+   Every page hero uses .hero-fit so it fills (and fits within) the viewport at
+   the 1440x900 baseline (~780px usable). The fixed glass nav overlays the top,
+   so we reserve --nav-clear and vertically centre the content. svh keeps it
+   honest on mobile browser chrome. */
+.hero-fit {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  padding-top: var(--nav-clear);
+  padding-bottom: clamp(16px, 3vh, 40px);
+  box-sizing: border-box;
+}
+/* On short laptops, let the hero shrink to content rather than force-stretch. */
+@media (max-height: 760px) {
+  .hero-fit { min-height: auto; }
+}
+
+/* Gentle bob for floating social-proof cards (independent phases). */
+@keyframes floatA { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+@keyframes floatB { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
+.float-a { animation: floatA 5.5s ease-in-out infinite; }
+.float-b { animation: floatB 6.5s ease-in-out infinite 0.6s; }
+@media (prefers-reduced-motion: reduce) {
+  .float-a, .float-b { animation: none; }
+}
+
+/* ── Shared PageHero primitives (adapted from the slimming design language) ──
+   Used by components/PageHero.tsx for a consistent above-the-fold across every
+   aesthetics page: glass badge pill, frosted floating proof cards, ghost CTA. */
+.hero-pill {
+  display: inline-flex; align-items: center; gap: 7px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(79, 115, 115, 0.18);
+  border-radius: 999px; padding: 7px 14px;
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+}
+.hero-glass {
+  background: rgba(255, 255, 255, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 16px 40px rgba(28, 30, 30, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px) saturate(160%); -webkit-backdrop-filter: blur(10px) saturate(160%);
+}
+.hero-outline {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 14px 28px; border-radius: 999px;
+  border: 1.5px solid var(--teal-text); color: var(--teal-text);
+  font-family: "Novecento Wide", sans-serif; font-size: 12px; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.hero-outline:hover { background: var(--teal-text); color: #fff; }
+
+/* Dark colourway (used by PageHero theme="dark" on the dark-stone pages). */
+.hero-pill-dark {
+  display: inline-flex; align-items: center; gap: 7px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(201, 169, 106, 0.30);
+  border-radius: 999px; padding: 7px 14px;
+  backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+}
+.hero-glass-dark {
+  background: rgba(28, 26, 23, 0.66);
+  border: 1px solid rgba(201, 169, 106, 0.28);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px) saturate(140%); -webkit-backdrop-filter: blur(10px) saturate(140%);
+}
+/* Dark-hero secondary ghost CTA — teal colorway (light teal reads on dark
+   stone; fills teal on hover) so no brown/gold button fill remains. */
+.hero-outline-dark {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 14px 28px; border-radius: 999px;
+  border: 1.5px solid rgba(150, 178, 178, 0.7); color: #c5d6d6;
+  font-family: "Novecento Wide", sans-serif; font-size: 12px; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.hero-outline-dark:hover { background: #c5d6d6; color: #14120e; }
+
 /* Form fields */
 .form-field {
   width: 100%;
   padding: 13px 16px;
-  border: 1px solid var(--line);
-  border-radius: 4px;
+  border: 1px solid var(--field-border); /* UI component >=3:1 vs white (3.45:1) */
+  border-radius: var(--radius-field); /* 12px rounded inputs */
   font-size: 14px;
   background: var(--white);
   color: var(--ink-soft);
-  transition: border-color 0.2s ease;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
-.form-field:focus {
+.form-field::placeholder {
+  color: var(--placeholder); /* >=4.5:1 vs white (4.88:1) */
+  opacity: 1; /* Firefox lowers placeholder opacity by default — keep full */
+}
+/* Focus: ink border (1px, 19.66:1 vs white) carries the contrast cue + a soft
+   4px halo for affordance. outline:none is replaced by the box-shadow ring, so
+   the indicator is never bare-removed (2.4.7 / 2.4.11). */
+.form-field:focus,
+.form-field:focus-visible {
   outline: none;
-  border-color: var(--gold);
+  border: 1px solid var(--ink);
+  box-shadow: 0 0 0 4px rgba(12, 11, 11, 0.12);
 }
 
-/* Marquee / announcement bar */
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+/* ── Cards / panels / tiles ──
+   16px radius, soft resting shadow + hairline border. On hover the shadow
+   deepens and the border darkens (decorative cues; not contrast-bearing). */
+.card {
+  border-radius: var(--radius-card);
+  background: var(--white);
+  border: 1px solid var(--line);
+  box-shadow: 0 1px 2px rgba(12, 11, 11, 0.04),
+              0 6px 18px rgba(12, 11, 11, 0.06);
+  transition: box-shadow 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
 }
-.marquee-track {
-  display: inline-flex;
+/* Slimming "Meet Your Doctor" lift: rise + slight scale + softer/larger shadow,
+   darker teal hairline. Broad coverage — every .card across the site inherits it. */
+.card:hover {
+  border-color: var(--teal-deep); /* darker teal hairline on hover */
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 4px 10px rgba(12, 11, 11, 0.10),
+              0 24px 56px -10px rgba(28, 30, 30, 0.20);
+}
+/* ── .card-lift — shared Slimming-style hover utility ──
+   Apply to any card/tile/panel (service cards, why-us cards, brand cards,
+   package cards, etc.) to get the doctors-card lift without per-component CSS.
+   Mirrors slimming's `.card-lift`, recoloured to the teal palette. */
+.card-lift {
+  border-radius: var(--radius-card);
+  background: var(--white);
+  border: 1px solid var(--line);
+  box-shadow: 0 1px 2px rgba(12, 11, 11, 0.04),
+              0 6px 18px rgba(12, 11, 11, 0.06);
+  transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+.card-lift:hover {
+  border-color: var(--teal-deep);
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 4px 10px rgba(12, 11, 11, 0.10),
+              0 24px 56px -10px rgba(28, 30, 30, 0.22);
+}
+@media (prefers-reduced-motion: reduce) {
+  .card:hover,
+  .card-lift,
+  .card-lift:hover { transform: none; }
+}
+
+/* ── Review / testimonial cards (marquee effect) ──
+   The premium raise + zoom on hover: lifts and gently scales with a deeper
+   shadow. Inherits .card resting styles when combined, or stands alone. */
+.review-card {
+  border-radius: var(--radius-card);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s ease;
+}
+.review-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 4px 10px rgba(12, 11, 11, 0.10),
+              0 24px 56px rgba(12, 11, 11, 0.16);
+  border-color: var(--label);
+}
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .card:hover,
+  .review-card,
+  .review-card:hover { transform: none; }
+}
+
+/* Accessibility — single site-wide skip link.
+   Off-screen-clipped by default (never visible on load/hover); revealed only
+   when keyboard-focused. Self-contained so it works regardless of utilities. */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
   white-space: nowrap;
-  animation: marquee 30s linear infinite;
+}
+.skip-link:focus,
+.skip-link:focus-visible {
+  position: fixed;
+  left: 16px;
+  top: 16px;
+  z-index: 9999;
+  width: auto;
+  height: auto;
+  overflow: visible;
+  clip: auto;
+  clip-path: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  background: #4f7373;
+  color: #ffffff;
+  font-family: "Novecento Wide", sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(28, 30, 30, 0.22);
+  outline: 2px solid #ffffff;
+  outline-offset: 2px;
 }
 
 /* subtle fade-up used on scroll sections */
@@ -221,6 +675,9 @@ summary { list-style: none; }
 summary::-webkit-details-marker { display: none; }
 .faq-plus { transition: transform 0.2s ease; }
 details[open] .faq-plus { transform: rotate(45deg); }
+@media (prefers-reduced-motion: reduce) {
+  .faq-plus { transition: none; }
+}
 
 /* ── Dark stone texture pages (hair-regrowth, pico-laser, medical-weight-loss, packages) ── */
 body.dark-texture-page {
@@ -239,11 +696,16 @@ body.dark-texture-page footer {
   --cream-2:  transparent;
   --beige:    transparent;
   --beige-2:  transparent;
+  /* All verified on the brightest texture patch (#303030) as worst case:
+     ink 10.33, ink-soft 8.04, muted 6.16, label 5.89 — all >=4.5. */
   --ink:      #e8e3da;
   --ink-soft: #d0c9bf;
   --muted:    #b8b0a6;
   --label:    #c9a96a;
-  --line:     rgba(255, 255, 255, 0.12);
+  --line:     rgba(255, 255, 255, 0.40); /* form/UI border >=3:1 on worst patch (3.48:1) */
+  --field-border: rgba(255, 255, 255, 0.40);
+  --placeholder:  #c4bdb2;               /* >=4.5:1 on worst patch */
+  --focus-ring:   #e8e3da;               /* light ring stands out on dark stone */
 }
 /* Footer sections transparent so the texture shows through */
 body.dark-texture-page footer section,
@@ -251,4 +713,38 @@ body.dark-texture-page footer > *,
 body.dark-texture-page footer div[style*="background"] {
   background-color: transparent !important;
   background: transparent !important;
+}
+
+/* ============================================================
+   MOTION SYSTEM — premium additive layers (lazy WebGL hero + micro-interactions)
+   Scroll reveals use the existing lightweight components/Reveal (CSS/IO).
+   See docs/design-system.md. Performance + CRO first:
+   transform/opacity only, no CLS, reduced-motion fully respected.
+   ============================================================ */
+
+/* Hero bokeh — always-painted CSS fallback (LCP-safe). WebGL layers on top via
+   components/motion/HeroBackdrop.tsx when conditions allow. Brand hues only. */
+.hero-bokeh-fallback {
+  background:
+    radial-gradient(38% 48% at 18% 28%, rgba(150, 178, 178, 0.30) 0%, rgba(150, 178, 178, 0) 70%),
+    radial-gradient(34% 44% at 82% 22%, rgba(222, 235, 235, 0.55) 0%, rgba(222, 235, 235, 0) 70%),
+    radial-gradient(46% 56% at 72% 82%, rgba(239, 231, 215, 0.45) 0%, rgba(239, 231, 215, 0) 72%);
+  filter: blur(6px);
+}
+
+/* Card / surface hover lift — subtle luxury depth. Transform-only. */
+.lift {
+  transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.4s ease;
+  will-change: transform;
+}
+.lift:hover {
+  transform: translateY(-6px) scale(1.02); /* match Slimming doctors-card lift */
+  box-shadow: 0 18px 40px -18px rgba(28, 30, 30, 0.38);
+}
+@media (prefers-reduced-motion: reduce) {
+  .lift,
+  .lift:hover {
+    transform: none;
+    transition: none;
+  }
 }

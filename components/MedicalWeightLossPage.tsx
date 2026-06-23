@@ -12,10 +12,12 @@
   before/after results carousel are interactive (hence "use client").
 */
 
-import { useRef, useState, type ReactNode } from "react";
+import { useState, type ReactNode } from "react";
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
+import PageHero from "@/components/PageHero";
 import FaqAccordion, { type Faq } from "@/components/FaqAccordion";
+import BookingButtons from "@/components/BookingButtons";
 
 const BOOK_HREF =
   "http://fresha.com/a/carisma-slimming-floriana-great-siege-road-wxxyuj9p/booking?menu=true&share=true&offerItems=sv%3A26105577&pId=2708191&dppub=true&employeeId=5084222";
@@ -26,15 +28,11 @@ const A = "/assets/mwl";
 
 function Cta({ children = "book your medical consultation" }: { children?: ReactNode }) {
   return (
-    <a
-      href={BOOK_HREF}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="btn btn-teal"
-      style={{ borderRadius: "2px" }}
-    >
-      {children}
-    </a>
+    <BookingButtons
+      freshaHref={BOOK_HREF}
+      primaryLabel={typeof children === "string" ? children : "book your medical consultation"}
+      consultLabel="Book Free Consultation"
+    />
   );
 }
 
@@ -48,7 +46,7 @@ function Bullet({ kind, children }: { kind: "check" | "cross"; children: ReactNo
         height={18}
         style={{ flexShrink: 0, marginTop: "3px", width: "18px", height: "18px" }}
       />
-      <span style={{ fontSize: "14.5px", color: "#9B8C81", lineHeight: 1.7 }}>{children}</span>
+      <span style={{ fontSize: "14.5px", color: "#655a50", lineHeight: 1.7 }}>{children}</span>
     </li>
   );
 }
@@ -86,7 +84,7 @@ function H2({
       style={{
         textAlign: "center",
         fontSize: serif ? "clamp(24px,3.4vw,30px)" : "clamp(22px,3vw,28px)",
-        color: "#9B8C81",
+        color: "#655a50",
         textTransform: serif ? "lowercase" : undefined,
         lineHeight: 1.25,
         margin: "0 auto 26px",
@@ -103,7 +101,26 @@ function H2({
 export default function MedicalWeightLossPage() {
   return (
     <main style={{ overflowX: "hidden" }}>
+      {/* rounded interaction system — cards lift + deepen shadow on hover,
+          carousel arrows scale (preserving their vertical centering) */}
+      <style>{`
+        .mwl-card:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 24px 50px rgba(120,140,140,0.22);
+        }
+        .mwl-arrow:hover,
+        .mwl-arrow:focus-visible {
+          transform: translateY(-50%) scale(1.1);
+          box-shadow: 0 10px 26px rgba(0,0,0,0.2);
+          border-color: var(--teal);
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .mwl-card:hover { transform: none; }
+          .mwl-arrow:hover, .mwl-arrow:focus-visible { transform: translateY(-50%); }
+        }
+      `}</style>
       <Hero />
+      <HeroExtras />
       <Results />
       <Clarity />
       <Trusted />
@@ -124,148 +141,54 @@ export default function MedicalWeightLossPage() {
 /* ---------- S1 HERO ---------- */
 
 function Hero() {
-  const bullets = [
-    { lead: "Calmer appetite:", text: "Ozempic and Mounjaro mimic natural fullness signals so you feel satisfied with smaller portions and less food noise." },
-    { lead: "Doctor monitored:", text: "Full eligibility assessment, body scan, blood work, safety screening, and regular reviews to manage side effects and adjust your dose." },
-    { lead: "Part of a full plan:", text: "Your GLP-1 prescription is paired with nutrition, movement, accountability, and body contouring treatments — never used on its own." },
-  ];
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [showPlay, setShowPlay] = useState(true);
-  const playWithSound = () => {
-    const v = videoRef.current;
-    if (!v) return;
-    v.muted = false;
-    v.volume = 1;
-    void v.play().catch(() => {});
-    setShowPlay(false);
-  };
-
   return (
-    <section id="hero" style={{ padding: "32px 0", backgroundColor: "var(--cream)" }}>
+    <PageHero
+      badge="Doctor-led GLP-1 weight loss"
+      headline={[
+        { text: "Doctor-led Ozempic & Mounjaro" },
+        { text: "weight loss in Malta", em: true },
+      ]}
+      sub="At Carisma Aesthetics, GLP-1 medications are never prescribed in isolation. Our doctor-led programme combines a full medical assessment, structured prescription support, nutrition guidance, and weekly monitoring to help you lose weight safely and sustain your results."
+      bullets={[
+        { label: "Calmer appetite:", text: "Ozempic and Mounjaro mimic natural fullness signals so you feel satisfied with smaller portions and less food noise." },
+        { label: "Doctor monitored:", text: "Full eligibility assessment, body scan, blood work, safety screening, and regular reviews to manage side effects and adjust your dose." },
+        { label: "Part of a full plan:", text: "Your GLP-1 prescription is paired with nutrition, movement, accountability, and body contouring treatments — never used on its own." },
+      ]}
+      primaryCta={{ text: "Book your medical consultation", href: BOOK_HREF, external: true }}
+      media={{
+        type: "video",
+        src: `${A}/hero.mp4`,
+        poster: `${A}/hero-doctor.png`,
+        alt: "Doctor-led medical weight loss in Malta",
+      }}
+      proof={{
+        rating: "4.9",
+        reviews: "200+",
+        statValue: "30+",
+        statLabel: "years in wellness",
+        awardText: "#1 Voted Clinic\nMalta Healthcare Awards",
+      }}
+    />
+  );
+}
+
+/* ---------- S1b HERO EXTRAS — GLP-1 wordmarks + prescribing disclaimer ---------- */
+
+function HeroExtras() {
+  return (
+    <section id="hero-extras" style={{ background: "var(--cream)", padding: "clamp(28px,4vh,48px) 0" }}>
       <div className="container">
-      <div
-        style={{
-          backgroundImage: `url(${A}/hero-frame.png)`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          borderRadius: "26px",
-          padding: "64px clamp(24px, 4vw, 64px)",
-          overflow: "hidden",
-        }}
-      >
-        <div
-          className="grid items-center"
-          style={{ gridTemplateColumns: "minmax(0,1fr) minmax(0,460px)", gap: "48px" }}
-        >
-          {/* LEFT — copy */}
-          <Reveal>
-            <p className="font-display" style={{ fontSize: "12px", color: "var(--gold)", letterSpacing: "0.14em", textTransform: "uppercase", marginBottom: "16px" }}>
-              Ozempic &amp; Mounjaro in Malta
-            </p>
-            <h1
-              className="font-serif"
-              style={{ fontSize: "clamp(26px,3.4vw,34px)", color: "var(--teal)", textTransform: "uppercase", letterSpacing: "0.05em", lineHeight: 1.3, marginBottom: "16px" }}
-            >
-              doctor-led ozempic &amp; mounjaro in malta
-            </h1>
-            <div style={{ width: "150px", height: "1px", background: "var(--gold)", opacity: 0.55, marginBottom: "20px" }} />
-            <p className="font-display" style={{ fontSize: "13.5px", color: "var(--gold)", fontWeight: 600, letterSpacing: "0.04em", textTransform: "uppercase", marginBottom: "18px" }}>
-              Considering <strong style={{ color: "#9B8C81", fontWeight: 700 }}>Ozempic</strong> or{" "}
-              <strong style={{ color: "#9B8C81", fontWeight: 700 }}>Mounjaro</strong> for{" "}
-              <strong style={{ color: "#9B8C81", fontWeight: 700 }}>weight loss</strong>?
-            </p>
-            <p style={{ fontSize: "14px", color: "#9B8C81", lineHeight: 1.75, marginBottom: "20px" }}>
-              At Carisma Aesthetics, GLP-1 medications are never prescribed in isolation. Our doctor-led programme
-              combines a full medical assessment, structured prescription support, nutrition guidance, and weekly
-              monitoring to help you lose weight safely and sustain your results.
-            </p>
-            <ul style={{ marginBottom: "24px" }}>
-              {bullets.map((b) => (
-                <li key={b.lead} className="flex items-start" style={{ gap: "10px", marginBottom: "12px" }}>
-                  <span style={{ flexShrink: 0, color: "var(--gold)", fontSize: "13px", lineHeight: 1.6 }}>&bull;</span>
-                  <span style={{ fontSize: "14px", color: "#9B8C81", lineHeight: 1.65 }}>
-                    <strong style={{ color: "#9B8C81", fontWeight: 700 }}>{b.lead}</strong> {b.text}
-                  </span>
-                </li>
-              ))}
-            </ul>
-
-            <div className="flex items-center" style={{ gap: "22px", marginBottom: "24px" }}>
-              <Image src={`${A}/ozempic-wordmark.png`} alt="Ozempic Semaglutide" width={176} height={51} style={{ height: "38px", width: "auto" }} />
-              <Image src={`${A}/mounjaro-wordmark.png`} alt="Mounjaro tirzepatide" width={152} height={51} style={{ height: "38px", width: "auto" }} />
-            </div>
-
-            <a
-              href={BOOK_HREF}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-display"
-              style={{ display: "block", textAlign: "center", background: "var(--teal)", color: "#fff", padding: "16px", borderRadius: "8px", letterSpacing: "0.12em", textTransform: "uppercase", fontSize: "13px" }}
-            >
-              book your medical consultation
-            </a>
-
-            <div className="flex items-center" style={{ marginTop: "22px" }}>
-              <Image src={`${A}/google-reviews-bar.png`} alt="G 4.9 — TOP-RATED CLINIC IN MALTA" width={313} height={20} style={{ height: "20px", width: "auto" }} />
-            </div>
-
-            <p style={{ fontSize: "11px", color: "#9B8C81", lineHeight: 1.6, marginTop: "20px" }}>
-              Eligibility and exact costs depend on your health, lab results, and the dose you need. You will always
-              receive a clear plan and pricing in your consultation before starting. Important: Ozempic and Mounjaro are
-              prescription-only and not suitable for everyone. This programme is offered only after a full medical
-              assessment by our doctor.
-            </p>
-          </Reveal>
-
-          {/* RIGHT — portrait video (leaf frame) + award */}
-          <Reveal delay={120}>
-            <div
-              className="relative"
-              style={{
-                width: "100%",
-                maxWidth: "460px",
-                aspectRatio: "405 / 540",
-                marginInline: "auto",
-                borderRadius: "80px 24px 80px 24px",
-                overflow: "hidden",
-                boxShadow: "0 20px 50px rgba(0,0,0,0.18)",
-              }}
-            >
-              <video
-                ref={videoRef}
-                src={`${A}/hero.mp4`}
-                poster={`${A}/hero-doctor.png`}
-                autoPlay
-                muted
-                loop
-                playsInline
-                style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-              />
-              {showPlay && (
-                <button
-                  type="button"
-                  onClick={playWithSound}
-                  aria-label="Play video with sound"
-                  className="absolute inset-0 flex items-center justify-center"
-                  style={{ background: "transparent", border: "none", cursor: "pointer" }}
-                >
-                  <span className="flex items-center justify-center" style={{ width: "66px", height: "66px", borderRadius: "50%", border: "2px solid rgba(255,255,255,0.9)", background: "rgba(0,0,0,0.18)" }}>
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff" aria-hidden style={{ marginLeft: "3px" }}>
-                      <path d="M8 5v14l11-7z" />
-                    </svg>
-                  </span>
-                </button>
-              )}
-            </div>
-            <div className="flex items-center justify-center" style={{ gap: "14px", marginTop: "24px" }}>
-              <Image src={`${A}/award-badge.png`} alt="Malta Healthcare, Wellness, Beauty & Best Spa Awards" width={114} height={72} style={{ height: "58px", width: "auto" }} />
-              <span className="font-serif" style={{ fontSize: "15px", color: "#9B8C81", letterSpacing: "0.08em", textTransform: "uppercase", lineHeight: 1.35, maxWidth: "150px" }}>
-                #1 Voted Clinic in Malta
-              </span>
-            </div>
-          </Reveal>
-        </div>
-      </div>
+        <Reveal>
+          <div className="flex items-center justify-center" style={{ gap: "32px", flexWrap: "wrap", marginBottom: "18px" }}>
+            <Image src={`${A}/ozempic-wordmark.png`} alt="Ozempic Semaglutide" width={176} height={51} style={{ height: "34px", width: "auto" }} />
+            <Image src={`${A}/mounjaro-wordmark.png`} alt="Mounjaro tirzepatide" width={152} height={51} style={{ height: "34px", width: "auto" }} />
+          </div>
+          <p style={{ maxWidth: "760px", margin: "0 auto", textAlign: "center", fontSize: "12px", color: "#655a50", lineHeight: 1.6 }}>
+            Eligibility and exact costs depend on your health, lab results, and the dose you need. You will always
+            receive a clear plan and pricing in your consultation before starting. Important: Ozempic and Mounjaro are
+            prescription-only and not suitable for everyone.
+          </p>
+        </Reveal>
       </div>
     </section>
   );
@@ -303,7 +226,7 @@ const RESULTS = [
 function ResultCard({ image, name, quote }: { image: string; name: string; quote: string }) {
   const [open, setOpen] = useState(false);
   return (
-    <div style={{ background: "#fff", borderRadius: "16px", padding: "16px 12px", boxShadow: "0 10px 28px rgba(120,140,140,0.12)" }}>
+    <div className="review-card" style={{ background: "#fff", borderRadius: "16px", padding: "16px 12px", boxShadow: "0 10px 28px rgba(120,140,140,0.12)" }}>
       <Image
         src={image}
         alt={`Before and after Ozempic / Mounjaro weight-loss result — ${name}, Carisma Aesthetics Malta`}
@@ -322,7 +245,7 @@ function ResultCard({ image, name, quote }: { image: string; name: string; quote
         <p
           style={{
             fontSize: "14px",
-            color: "#9B8C81",
+            color: "#655a50",
             lineHeight: 1.6,
             marginBottom: "6px",
             ...(open ? {} : { display: "-webkit-box", WebkitLineClamp: 2, WebkitBoxOrient: "vertical", overflow: "hidden" }),
@@ -333,11 +256,11 @@ function ResultCard({ image, name, quote }: { image: string; name: string; quote
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          style={{ background: "transparent", border: "none", padding: 0, cursor: "pointer", color: "#9B8C81", fontSize: "14px", textDecoration: "underline" }}
+          style={{ background: "transparent", border: "none", padding: 0, cursor: "pointer", color: "#655a50", fontSize: "14px", textDecoration: "underline" }}
         >
           {open ? "Read less" : "Read more"}
         </button>
-        <p style={{ fontSize: "16px", fontWeight: 600, color: "#9B8C81", letterSpacing: "0.04em", marginTop: "22px" }}>
+        <p style={{ fontSize: "16px", fontWeight: 600, color: "#655a50", letterSpacing: "0.04em", marginTop: "22px" }}>
           {name}
         </p>
       </div>
@@ -354,7 +277,7 @@ function Results() {
   return (
     <section id="results" style={{ background: "var(--white)", padding: "72px 0" }}>
       <div className="container text-center">
-        <h2 className="font-serif" style={{ fontSize: "clamp(22px,3.2vw,30px)", color: "var(--teal)", letterSpacing: "0.08em", textTransform: "uppercase", lineHeight: 1.3 }}>
+        <h2 className="font-serif" style={{ fontSize: "clamp(22px,3.2vw,30px)", color: "var(--teal-text)", letterSpacing: "0.08em", textTransform: "uppercase", lineHeight: 1.3 }}>
           ozempic &amp; mounjaro results
         </h2>
         <div style={{ width: "150px", height: "1px", background: "var(--teal)", opacity: 0.4, margin: "16px auto 44px" }} />
@@ -383,6 +306,7 @@ function CarouselArrow({ dir, onClick }: { dir: "left" | "right"; onClick: () =>
       type="button"
       aria-label={dir === "left" ? "Previous results" : "Next results"}
       onClick={onClick}
+      className="mwl-arrow"
       style={{
         position: "absolute",
         top: "40%",
@@ -394,12 +318,13 @@ function CarouselArrow({ dir, onClick }: { dir: "left" | "right"; onClick: () =>
         background: "var(--white)",
         border: "1px solid var(--line)",
         boxShadow: "0 6px 18px rgba(0,0,0,0.12)",
-        color: "var(--teal)",
+        color: "var(--teal-text)",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
         cursor: "pointer",
         zIndex: 2,
+        transition: "transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease",
       }}
     >
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -424,7 +349,7 @@ function Clarity() {
               margin: "0 auto 44px",
               textAlign: "center",
               fontSize: "15px",
-              color: "#9B8C81",
+              color: "#655a50",
               lineHeight: 1.8,
             }}
           >
@@ -437,7 +362,7 @@ function Clarity() {
 
         <div className="grid" style={{ gridTemplateColumns: "repeat(2, minmax(0,1fr))", gap: "40px", maxWidth: "920px", margin: "0 auto" }}>
           <Reveal>
-            <h3 className="font-display" style={{ fontSize: "16px", color: "#9B8C81", marginBottom: "20px" }}>
+            <h3 className="font-display" style={{ fontSize: "16px", color: "#655a50", marginBottom: "20px" }}>
               What medication helps with:
             </h3>
             <ul>
@@ -448,7 +373,7 @@ function Clarity() {
             </ul>
           </Reveal>
           <Reveal delay={100}>
-            <h3 className="font-display" style={{ fontSize: "16px", color: "#9B8C81", marginBottom: "20px" }}>
+            <h3 className="font-display" style={{ fontSize: "16px", color: "#655a50", marginBottom: "20px" }}>
               What medication does not do:
             </h3>
             <ul>
@@ -462,7 +387,7 @@ function Clarity() {
 
         <p
           className="font-serif"
-          style={{ maxWidth: "880px", margin: "40px auto 0", textAlign: "center", fontSize: "14px", color: "#9B8C81", lineHeight: 1.8 }}
+          style={{ maxWidth: "880px", margin: "40px auto 0", textAlign: "center", fontSize: "14px", color: "#655a50", lineHeight: 1.8 }}
         >
           That&rsquo;s why we combine Ozempic or Mounjaro support (if clinically appropriate) with nutrition structure,
           strength training habits, tracking, and a maintenance plan.
@@ -526,19 +451,21 @@ function Trusted() {
           {DIFFERENTIATORS.map((d, i) => (
             <Reveal key={d.label} delay={i * 80}>
               <div
+                className="mwl-card"
                 style={{
                   height: "100%",
                   background: "linear-gradient(150deg, #ffffff 0%, #f1f5f5 100%)",
                   borderRadius: "26px 26px 92px 26px",
                   boxShadow: "0 18px 40px rgba(120,140,140,0.12)",
                   padding: "30px 28px 38px",
+                  transition: "transform 0.25s ease, box-shadow 0.25s ease",
                 }}
               >
                 <Image src={d.icon} alt="" width={74} height={74} style={{ height: "58px", width: "auto", marginBottom: "22px" }} />
                 <p className="font-serif" style={{ color: "var(--gold)", fontSize: "13px", fontWeight: 700, letterSpacing: "0.06em", marginBottom: "12px", textTransform: "uppercase" }}>
                   {d.label}
                 </p>
-                <p style={{ fontSize: "13.5px", color: "#9B8C81", lineHeight: 1.7 }}>{d.body}</p>
+                <p style={{ fontSize: "13.5px", color: "#655a50", lineHeight: 1.7 }}>{d.body}</p>
               </div>
             </Reveal>
           ))}
@@ -556,7 +483,7 @@ function Eligibility() {
       <Reveal>
         <Eyebrow center>Ozempic &amp; Mounjaro eligibility criteria</Eyebrow>
         <H2>selective by intention successful by design</H2>
-        <p style={{ maxWidth: "900px", margin: "0 auto 44px", textAlign: "center", fontSize: "15px", color: "#9B8C81", lineHeight: 1.8 }}>
+        <p style={{ maxWidth: "900px", margin: "0 auto 44px", textAlign: "center", fontSize: "15px", color: "#655a50", lineHeight: 1.8 }}>
           Ozempic and Mounjaro can be powerful, but only when prescribed as part of a structured, doctor-supervised
           programme. Eligibility is determined through a proper medical assessment, including blood tests, food
           intolerance screening, safety checks, and clear protocols so your plan is appropriate, monitored, and
@@ -566,7 +493,7 @@ function Eligibility() {
 
       <div className="grid" style={{ gridTemplateColumns: "repeat(2, minmax(0,1fr))", gap: "40px", maxWidth: "920px", margin: "0 auto" }}>
         <Reveal>
-          <h3 className="font-display" style={{ fontSize: "16px", color: "#9B8C81", marginBottom: "20px" }}>suitable for:</h3>
+          <h3 className="font-display" style={{ fontSize: "16px", color: "#655a50", marginBottom: "20px" }}>suitable for:</h3>
           <ul>
             <Bullet kind="check">BMI ≥27</Bullet>
             <Bullet kind="check">Insulin resistence</Bullet>
@@ -575,7 +502,7 @@ function Eligibility() {
           </ul>
         </Reveal>
         <Reveal delay={100}>
-          <h3 className="font-display" style={{ fontSize: "16px", color: "#9B8C81", marginBottom: "20px" }}>unsuitable for:</h3>
+          <h3 className="font-display" style={{ fontSize: "16px", color: "#655a50", marginBottom: "20px" }}>unsuitable for:</h3>
           <ul>
             <Bullet kind="cross">Eating disorders</Bullet>
             <Bullet kind="cross">Very lean patients</Bullet>
@@ -602,7 +529,7 @@ function NumberedList({ items }: { items: string[] }) {
       {items.map((it, i) => (
         <li key={it} className="flex items-start" style={{ gap: "10px", marginBottom: "11px" }}>
           <span className="font-display" style={{ flexShrink: 0, color: "var(--gold)", fontWeight: 700, fontSize: "14px", lineHeight: 1.6 }}>{i + 1}.</span>
-          <span style={{ fontSize: "14px", color: "#9B8C81", lineHeight: 1.65 }}>{it}</span>
+          <span style={{ fontSize: "14px", color: "#655a50", lineHeight: 1.65 }}>{it}</span>
         </li>
       ))}
     </ol>
@@ -611,11 +538,11 @@ function NumberedList({ items }: { items: string[] }) {
 
 function CheckMark({ kind }: { kind: "check" | "cross" }) {
   return kind === "check" ? (
-    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--teal-text)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
       <path d="M4 12.5l5 5L20 6" />
     </svg>
   ) : (
-    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#b3a98f" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#756758" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
       <path d="M6 6l12 12M18 6L6 18" />
     </svg>
   );
@@ -632,7 +559,7 @@ function SuitColumn({ kind, title, items, style }: { kind: "check" | "cross"; ti
         {items.map((it) => (
           <li key={it} className="flex items-start" style={{ gap: "10px", marginBottom: "13px" }}>
             <span style={{ flexShrink: 0, color: "var(--gold)", fontSize: "12px", lineHeight: 1.6 }}>&bull;</span>
-            <span style={{ fontSize: "13.5px", color: "#9B8C81", lineHeight: 1.6 }}>{it}</span>
+            <span style={{ fontSize: "13.5px", color: "#655a50", lineHeight: 1.6 }}>{it}</span>
           </li>
         ))}
       </ul>
@@ -642,7 +569,7 @@ function SuitColumn({ kind, title, items, style }: { kind: "check" | "cross"; ti
 
 function Suitability({ suitable, notSuitable }: { suitable: string[]; notSuitable: string[] }) {
   return (
-    <div style={{ background: "var(--white)", borderRadius: "14px", boxShadow: "0 14px 34px rgba(120,140,140,0.10)", padding: "clamp(24px,3vw,36px)", height: "100%" }}>
+    <div className="mwl-card" style={{ background: "var(--white)", borderRadius: "16px", boxShadow: "0 14px 34px rgba(120,140,140,0.10)", padding: "clamp(24px,3vw,36px)", height: "100%", transition: "transform 0.25s ease, box-shadow 0.25s ease" }}>
       <div className="grid" style={{ gridTemplateColumns: "minmax(0,1fr) minmax(0,1fr)", gap: "0" }}>
         <SuitColumn kind="check" title="Suitable for" items={suitable} style={{ paddingRight: "26px" }} />
         <SuitColumn kind="cross" title="Not suitable for" items={notSuitable} style={{ paddingLeft: "26px", borderLeft: "1px solid var(--line)" }} />
@@ -663,7 +590,7 @@ function LeadList({ items }: { items: string[] }) {
 
 function P({ children, bold = false }: { children: ReactNode; bold?: boolean }) {
   return (
-    <p style={{ fontSize: "14.5px", color: "#9B8C81", fontWeight: bold ? 600 : 400, lineHeight: 1.8, marginBottom: "16px" }}>
+    <p style={{ fontSize: "14.5px", color: "#655a50", fontWeight: bold ? 600 : 400, lineHeight: 1.8, marginBottom: "16px" }}>
       {children}
     </p>
   );
@@ -892,7 +819,7 @@ function HowItWorks() {
     <section id="how-it-works" style={{ background: "var(--white)", padding: "72px 0" }}>
       <div className="container">
         <div className="text-center" style={{ marginBottom: "34px" }}>
-          <span className="font-display" style={{ display: "inline-block", fontSize: "15px", letterSpacing: "0.22em", textTransform: "uppercase", color: "#9B8C81", paddingBottom: "12px", borderBottom: "1px solid var(--line)" }}>
+          <span className="font-display" style={{ display: "inline-block", fontSize: "15px", letterSpacing: "0.22em", textTransform: "uppercase", color: "#655a50", paddingBottom: "12px", borderBottom: "1px solid var(--line)" }}>
             how it works
           </span>
         </div>
@@ -914,7 +841,7 @@ function HowItWorks() {
                   fontSize: "clamp(13px,1.6vw,16px)",
                   letterSpacing: "0.18em",
                   textTransform: "uppercase",
-                  color: "#9B8C81",
+                  color: "#655a50",
                   paddingBottom: "8px",
                   borderBottom: on ? "2px solid var(--gold)" : "2px solid transparent",
                   transition: "all 0.2s ease",
@@ -947,7 +874,7 @@ function HowItWorks() {
                       : { gridTemplateColumns: "minmax(0,1fr)" }
                   }
                 >
-                  <div style={{ background: "var(--white)", borderRadius: "14px", boxShadow: "0 14px 34px rgba(120,140,140,0.10)", padding: "clamp(24px,3vw,38px)" }}>
+                  <div style={{ background: "var(--white)", borderRadius: "16px", boxShadow: "0 14px 34px rgba(120,140,140,0.10)", padding: "clamp(24px,3vw,38px)" }}>
                     <div className="flex items-center" style={{ gap: "16px", marginBottom: "20px" }}>
                       <Image src={s.icon} alt="" width={56} height={56} style={{ width: "46px", height: "46px", objectFit: "contain", flexShrink: 0 }} />
                       <h3 className="font-serif" style={{ fontSize: "clamp(16px,2vw,19px)", color: "var(--gold)", letterSpacing: "0.04em", textTransform: "uppercase", lineHeight: 1.3 }}>{s.title}</h3>
@@ -972,7 +899,7 @@ function ExpertCare() {
     <section id="expert-care" style={{ background: "var(--white)", padding: "64px 0 80px" }}>
       <div className="container">
         <Reveal>
-          <h2 className="font-serif" style={{ textAlign: "center", fontSize: "clamp(22px,3.2vw,30px)", color: "var(--teal)", letterSpacing: "0.12em", textTransform: "uppercase", lineHeight: 1.4, marginBottom: "48px" }}>
+          <h2 className="font-serif" style={{ textAlign: "center", fontSize: "clamp(22px,3.2vw,30px)", color: "var(--teal-text)", letterSpacing: "0.12em", textTransform: "uppercase", lineHeight: 1.4, marginBottom: "48px" }}>
             led by expertise.<br />driven by results.
           </h2>
         </Reveal>
@@ -987,7 +914,7 @@ function ExpertCare() {
             />
           </Reveal>
           <Reveal delay={100}>
-            <h3 className="font-display" style={{ fontSize: "18px", color: "var(--teal)", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: "16px" }}>Dr Zaid Teebi</h3>
+            <h3 className="font-display" style={{ fontSize: "18px", color: "var(--teal-text)", letterSpacing: "0.08em", textTransform: "uppercase", marginBottom: "16px" }}>Dr Zaid Teebi</h3>
             <P>
               Dr Zaid Teebi is a medical doctor at Carisma with over 30+ years of clinical experience and an
               evidence-based focus on GLP-1 prescribing and metabolic health. A graduate of Imperial College London, he
@@ -999,14 +926,16 @@ function ExpertCare() {
               a wider programme that includes nutrition structure, habit-based strength training to protect metabolism,
               and a long-term maintenance plan.
             </P>
-            <blockquote className="font-serif" style={{ fontStyle: "italic", fontSize: "clamp(18px,2.4vw,24px)", color: "#9B8C81", lineHeight: 1.5, margin: "8px 0 24px" }}>
+            <blockquote className="font-serif" style={{ fontStyle: "italic", fontSize: "clamp(18px,2.4vw,24px)", color: "#655a50", lineHeight: 1.5, margin: "8px 0 24px" }}>
               &ldquo;Prescribing Ozempic or Mounjaro is the easy part. Building a programme that works after the
               medication stops, that&rsquo;s the real work.&rdquo;
               <span style={{ display: "block", fontStyle: "normal", fontSize: "15px", marginTop: "10px" }}>&mdash; Dr. Teebi</span>
             </blockquote>
-            <a href={BOOK_HREF} target="_blank" rel="noopener noreferrer" className="font-display" style={{ display: "block", textAlign: "center", background: "var(--teal)", color: "#fff", padding: "16px", borderRadius: "8px", letterSpacing: "0.12em", textTransform: "uppercase", fontSize: "13px" }}>
-              book your medical consultation
-            </a>
+            <BookingButtons
+              freshaHref={BOOK_HREF}
+              primaryLabel="book your medical consultation"
+              consultLabel="Book Free Consultation"
+            />
           </Reveal>
         </div>
       </div>
@@ -1028,7 +957,7 @@ function Promise() {
           </div>
           <h2
             className="font-serif"
-            style={{ textAlign: "center", fontSize: "clamp(24px,3.8vw,36px)", color: "var(--teal)", textTransform: "uppercase", letterSpacing: "0.1em", lineHeight: 1.45, marginBottom: "48px" }}
+            style={{ textAlign: "center", fontSize: "clamp(24px,3.8vw,36px)", color: "var(--teal-text)", textTransform: "uppercase", letterSpacing: "0.1em", lineHeight: 1.45, marginBottom: "48px" }}
           >
             up to 1kg per week<br />measured. verified. comitted.
           </h2>
@@ -1047,17 +976,17 @@ function Promise() {
               }}
             >
               <p className="font-serif" style={{ fontSize: "clamp(19px,2.4vw,26px)", letterSpacing: "0.03em", textTransform: "uppercase", lineHeight: 1.45 }}>
-                <span style={{ color: "var(--teal)", fontWeight: 700 }}>Only clinic in Malta</span>{" "}
+                <span style={{ color: "var(--teal-text)", fontWeight: 700 }}>Only clinic in Malta</span>{" "}
                 <span style={{ color: "var(--gold)" }}>to offer an extended care commitment on Ozempic &amp; Mounjaro programmes</span>
               </p>
             </div>
           </Reveal>
           <Reveal delay={100}>
-            <p style={{ fontSize: "15px", color: "#9B8C81", lineHeight: 1.8, marginBottom: "20px" }}>
+            <p style={{ fontSize: "15px", color: "#655a50", lineHeight: 1.8, marginBottom: "20px" }}>
               We are selective about who we prescribe Ozempic or Mounjaro to. We only accept those we genuinely believe
               we can help reach their healthy weight.
             </p>
-            <p style={{ fontSize: "15px", color: "#9B8C81", lineHeight: 1.8, marginBottom: "24px" }}>
+            <p style={{ fontSize: "15px", color: "#655a50", lineHeight: 1.8, marginBottom: "24px" }}>
               If you qualify and complete your programme and do not hit your target weight, we will extend your programme
               at no extra fee until we achieve your desired result.
             </p>
@@ -1075,7 +1004,7 @@ function Promise() {
               ].map((it) => (
                 <li key={it} className="flex items-start" style={{ gap: "10px", marginBottom: "12px" }}>
                   <span style={{ flexShrink: 0, color: "var(--gold)", fontSize: "12px", lineHeight: 1.7 }}>&bull;</span>
-                  <span style={{ fontSize: "14px", color: "#9B8C81", lineHeight: 1.6 }}>{it}</span>
+                  <span style={{ fontSize: "14px", color: "#655a50", lineHeight: 1.6 }}>{it}</span>
                 </li>
               ))}
             </ul>
@@ -1104,11 +1033,11 @@ function Safety() {
             </div>
           </Reveal>
           <Reveal delay={100}>
-            <p style={{ fontSize: "15px", color: "#9B8C81", lineHeight: 1.8, marginBottom: "22px" }}>
+            <p style={{ fontSize: "15px", color: "#655a50", lineHeight: 1.8, marginBottom: "22px" }}>
               We prescribe Ozempic and Mounjaro with strict screening, clear education, and ongoing monitoring. Most
               side effects are manageable when dosing and nutrition are structured, and follow-ups are consistent.
             </p>
-            <p style={{ fontSize: "14px", color: "#9B8C81", fontWeight: 600, marginBottom: "16px" }}>
+            <p style={{ fontSize: "14px", color: "#655a50", fontWeight: 600, marginBottom: "16px" }}>
               Common Ozempic and Mounjaro side effects and how we reduce them:
             </p>
             <ul>
@@ -1120,7 +1049,7 @@ function Safety() {
             </ul>
           </Reveal>
         </div>
-        <p style={{ maxWidth: "960px", margin: "32px auto 0", textAlign: "center", fontSize: "14.5px", color: "#9B8C81", lineHeight: 1.8 }}>
+        <p style={{ maxWidth: "960px", margin: "32px auto 0", textAlign: "center", fontSize: "14.5px", color: "#655a50", lineHeight: 1.8 }}>
           The biggest clinical mistake: prescribing Ozempic or Mounjaro without a system. Medication can quiet appetite,
           but it does not build muscle, teach eating, fix emotional drivers, or create long-term habits. That&rsquo;s
           why we pair every GLP-1 prescription with strength training, protein-first structure, behavioural coaching,
@@ -1173,8 +1102,8 @@ function Methodology() {
                 <div key={p.label} className="flex items-start" style={{ gap: "14px" }}>
                   <Image src={p.icon} alt="" width={24} height={24} style={{ width: "24px", height: "24px", flexShrink: 0, marginTop: "2px" }} />
                   <div>
-                    <p className="font-display" style={{ fontSize: "13px", color: "#9B8C81", letterSpacing: "0.08em", marginBottom: "6px" }}>{p.label}</p>
-                    <p style={{ fontSize: "13.5px", color: "#9B8C81", lineHeight: 1.7 }}>{p.body}</p>
+                    <p className="font-display" style={{ fontSize: "13px", color: "#655a50", letterSpacing: "0.08em", marginBottom: "6px" }}>{p.label}</p>
+                    <p style={{ fontSize: "13.5px", color: "#655a50", lineHeight: 1.7 }}>{p.body}</p>
                   </div>
                 </div>
               ))}
@@ -1209,14 +1138,14 @@ function Difference() {
         </Reveal>
         <div className="grid" style={{ gridTemplateColumns: "minmax(0,1fr) minmax(0,1fr)", gap: "48px", alignItems: "center", marginTop: "20px" }}>
           <Reveal>
-            <h3 className="font-display" style={{ fontSize: "15px", color: "#9B8C81", marginBottom: "16px" }}>our commitment</h3>
+            <h3 className="font-display" style={{ fontSize: "15px", color: "#655a50", marginBottom: "16px" }}>our commitment</h3>
             <ul style={{ marginBottom: "30px" }}>
               <Bullet kind="check">Visible inch loss and shape change, not vague promises</Bullet>
               <Bullet kind="check">Plans that work with your age, hormones and metabolism</Bullet>
               <Bullet kind="check">No crash diets, no banned foods, no endless hours of cardio</Bullet>
               <Bullet kind="check">Medical grade technology and treatments delivered by trained professionals</Bullet>
             </ul>
-            <h3 className="font-display" style={{ fontSize: "15px", color: "#9B8C81", marginBottom: "16px" }}>
+            <h3 className="font-display" style={{ fontSize: "15px", color: "#655a50", marginBottom: "16px" }}>
               Why Malta chooses Carisma for Ozempic &amp; Mounjaro
             </h3>
             <ul>
@@ -1227,7 +1156,7 @@ function Difference() {
             </ul>
           </Reveal>
           <Reveal delay={100}>
-            <div style={{ position: "relative", borderRadius: "10px", overflow: "hidden", boxShadow: "0 16px 38px rgba(0,0,0,0.10)", minHeight: "420px" }}>
+            <div style={{ position: "relative", borderRadius: "16px", overflow: "hidden", boxShadow: "0 16px 38px rgba(0,0,0,0.10)", minHeight: "420px" }}>
               <iframe
                 title="Carisma Aesthetics location"
                 src="https://maps.google.com/maps?q=Carisma%20Aesthetics%20Malta&z=14&output=embed"
@@ -1239,7 +1168,7 @@ function Difference() {
                 style={{ gap: "10px", position: "absolute", bottom: "16px", left: "16px", background: "var(--white)", padding: "10px 16px", borderRadius: "8px", boxShadow: "0 8px 22px rgba(0,0,0,0.14)" }}
               >
                 <Image src={`${A}/icon-parking.png`} alt="" width={31} height={35} style={{ width: "24px", height: "auto" }} />
-                <span className="font-display" style={{ fontSize: "11px", color: "#9B8C81", letterSpacing: "0.08em" }}>Complimentary on-site parking</span>
+                <span className="font-display" style={{ fontSize: "11px", color: "#655a50", letterSpacing: "0.08em" }}>Complimentary on-site parking</span>
               </div>
             </div>
           </Reveal>
@@ -1258,10 +1187,10 @@ function NotAnotherClinic() {
       <div className="container">
         <div className="grid" style={{ gridTemplateColumns: "minmax(0,1fr) minmax(0,1fr)", gap: "48px", alignItems: "center" }}>
           <Reveal>
-            <h2 className="font-display" style={{ fontSize: "clamp(22px,3vw,28px)", color: "#9B8C81", lineHeight: 1.25, marginBottom: "20px" }}>
+            <h2 className="font-display" style={{ fontSize: "clamp(22px,3vw,28px)", color: "#655a50", lineHeight: 1.25, marginBottom: "20px" }}>
               we are not another diet clinic.
             </h2>
-            <p style={{ fontSize: "15px", color: "#9B8C81", lineHeight: 1.85 }}>
+            <p style={{ fontSize: "15px", color: "#655a50", lineHeight: 1.85 }}>
               We&rsquo;re a doctor-led Ozempic and Mounjaro programme that blends medical insight, sustainable nutrition,
               and modern body technology into one high-touch system, so you don&rsquo;t just lose weight, you step into
               your strongest form.
@@ -1345,7 +1274,7 @@ function Faqs() {
   return (
     <section id="faqs" style={{ background: "var(--white)", padding: "72px 0" }}>
       <div className="container">
-        <h2 className="font-serif" style={{ textAlign: "center", fontSize: "clamp(20px,2.6vw,25px)", color: "var(--teal)", textTransform: "lowercase", marginBottom: "36px" }}>
+        <h2 className="font-serif" style={{ textAlign: "center", fontSize: "clamp(20px,2.6vw,25px)", color: "var(--teal-text)", textTransform: "lowercase", marginBottom: "36px" }}>
           faqs about ozempic &amp; mounjaro
         </h2>
         <Reveal>
@@ -1442,28 +1371,28 @@ function ResearchCardView({ card, col }: { card: ResearchCard; col: "left" | "ri
   const [open, setOpen] = useState(false);
   const h = card.imgHeight ?? 160;
   return (
-    <div style={{ background: "var(--white)", border: "1px solid var(--line)", borderRadius: "12px", boxShadow: "0 8px 24px rgba(0,0,0,0.05)" }}>
+    <div className="mwl-card" style={{ background: "var(--white)", border: "1px solid var(--line)", borderRadius: "16px", boxShadow: "0 8px 24px rgba(0,0,0,0.05)", transition: "transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease" }}>
       <div style={{ padding: "12px 12px 0" }}>
         <Image src={card.img} alt="" width={381} height={h} style={{ width: "100%", height: `${h}px`, objectFit: "cover", objectPosition: "center", display: "block", borderRadius: "0 28px 0 28px" }} />
       </div>
       <div style={{ padding: "24px" }}>
-        <h3 className="font-display" style={{ fontSize: "16px", color: "#9B8C81", textAlign: "center", lineHeight: 1.4, marginBottom: "16px" }}>
+        <h3 className="font-display" style={{ fontSize: "16px", color: "#655a50", textAlign: "center", lineHeight: 1.4, marginBottom: "16px" }}>
           {card.title}
         </h3>
         <div className="flex justify-center" style={{ marginBottom: "20px" }}>
-          <span className="font-display" style={{ fontSize: "11px", letterSpacing: "0.1em", color: "var(--white)", background: "var(--teal)", padding: "7px 16px", borderRadius: "20px" }}>
+          <span className="font-display" style={{ fontSize: "11px", letterSpacing: "0.1em", color: "var(--white)", background: "var(--teal-deep)", padding: "7px 16px", borderRadius: "20px" }}>
             {card.pill}
           </span>
         </div>
-        <p className="font-display" style={{ fontSize: "12px", color: "var(--teal)", letterSpacing: "0.1em", marginBottom: "8px" }}>WHAT IT DOES</p>
-        <p style={{ fontSize: "13.5px", color: "#9B8C81", lineHeight: 1.75, marginBottom: "18px" }}>{card.whatItDoes}</p>
+        <p className="font-display" style={{ fontSize: "12px", color: "var(--teal-text)", letterSpacing: "0.1em", marginBottom: "8px" }}>WHAT IT DOES</p>
+        <p style={{ fontSize: "13.5px", color: "#655a50", lineHeight: 1.75, marginBottom: "18px" }}>{card.whatItDoes}</p>
 
         <div style={{ display: open ? "block" : "none" }}>
-          <p className="font-display" style={{ fontSize: "12px", color: "var(--teal)", letterSpacing: "0.1em", marginBottom: "10px" }}>KEY RESULTS</p>
+          <p className="font-display" style={{ fontSize: "12px", color: "var(--teal-text)", letterSpacing: "0.1em", marginBottom: "10px" }}>KEY RESULTS</p>
           <ul style={{ margin: 0 }}>
             {card.keyResults.map((r, i) => (
-              <li key={i} style={{ fontSize: "13px", color: "#9B8C81", lineHeight: 1.7, marginBottom: "14px" }}>
-                {r.text} <strong style={{ color: "#9B8C81" }}>{r.cite}</strong>
+              <li key={i} style={{ fontSize: "13px", color: "#655a50", lineHeight: 1.7, marginBottom: "14px" }}>
+                {r.text} <strong style={{ color: "#655a50" }}>{r.cite}</strong>
               </li>
             ))}
           </ul>
@@ -1472,7 +1401,7 @@ function ResearchCardView({ card, col }: { card: ResearchCard; col: "left" | "ri
         <button
           type="button"
           onClick={() => setOpen((o) => !o)}
-          style={{ background: "transparent", border: "none", padding: 0, cursor: "pointer", color: "var(--teal)", fontSize: "13px", fontWeight: 600, marginTop: "6px" }}
+          style={{ background: "transparent", border: "none", padding: 0, cursor: "pointer", color: "var(--teal-text)", fontSize: "13px", fontWeight: 600, marginTop: "6px", textDecoration: "underline" }}
         >
           {open ? "Read less" : "Read more"}
         </button>
@@ -1510,7 +1439,7 @@ function EndBoundary() {
   return (
     <section style={{ background: "var(--white)", padding: "56px 0 16px" }}>
       <div className="container">
-        <h2 className="font-serif" style={{ textAlign: "center", fontSize: "clamp(26px,4vw,35px)", color: "#9B8C81", textTransform: "lowercase" }}>
+        <h2 className="font-serif" style={{ textAlign: "center", fontSize: "clamp(26px,4vw,35px)", color: "#655a50", textTransform: "lowercase" }}>
           real people, real reviews
         </h2>
       </div>

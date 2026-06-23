@@ -1,45 +1,349 @@
+"use client";
+
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import { HOME_SERVICES } from "@/lib/site";
 
-const BRACKET = "1px solid #e0dbd5";
+/*
+  Medical Aesthetics Procedures — premium treatment-card CLICK-THROUGH CAROUSEL.
+
+  Reworked (Jun 2026) from a multi-row grid (stacked down the page) into a single
+  horizontal carousel that mirrors the Slimming home "treatments" carousel
+  (components/ModalitiesCarousel): a scroll-snap flex track that browses the cards
+  side by side, white circular ‹/› arrow buttons, hidden scrollbar, and
+  atStart/atEnd state so arrows hide/disable at the ends. Desktop shows ~3-4 cards
+  + a peek; mobile shows ~1.2 cards and swipes.
+
+  The PREMIUM CARD DESIGN is preserved exactly: real treatment photo, the shared
+  hover lift + image zoom (.svc-card / .svc-img), the "Explore" pill that fills
+  teal with the button-shine line on hover, plus name + blurb. All 12 procedures
+  and their treatment-page links come straight from HOME_SERVICES.
+
+  Palette is brand teal only (#4f7373 / #406060 / #96b2b2 / #deebeb), brown copy
+  (#706552 / #695c4e), fonts Trajan (name) + Roboto (blurb) + Novecento (CTA).
+*/
+
+// One card advance per arrow click. Width + gap drive the scrollBy distance and
+// the snap targets; mobile overrides the card width in CSS (see .svc-card rule).
+const CARD_W = 320;
+const GAP = 24;
+const PAD = 24; // left/right breathing room inside the track
 
 export default function ServicesMarquee() {
+  const ref = useRef<HTMLDivElement>(null);
+  const [atStart, setAtStart] = useState(true);
+  const [atEnd, setAtEnd] = useState(false);
+
+  const sync = () => {
+    const el = ref.current;
+    if (!el) return;
+    setAtStart(el.scrollLeft <= 4);
+    setAtEnd(el.scrollLeft + el.clientWidth >= el.scrollWidth - 4);
+  };
+
+  useEffect(() => {
+    sync();
+    const el = ref.current;
+    if (el) el.addEventListener("scroll", sync, { passive: true });
+    window.addEventListener("resize", sync);
+    return () => {
+      if (el) el.removeEventListener("scroll", sync);
+      window.removeEventListener("resize", sync);
+    };
+  }, []);
+
+  const scroll = (dir: 1 | -1) =>
+    ref.current?.scrollBy({ left: dir * (CARD_W + GAP), behavior: "smooth" });
+
   return (
-    <section style={{ padding: "70px 0", backgroundColor: "var(--white)" }}>
+    <section
+      aria-labelledby="services-heading"
+      style={{
+        padding: "clamp(72px,9vw,112px) 0",
+        background:
+          "linear-gradient(180deg, var(--white) 0%, #f4f8f8 38%, var(--white) 100%)",
+      }}
+    >
+      {/* Scoped interaction styles — hover lift + image zoom + CTA fill/shine.
+          color/bg are !important on hover so they beat the inline pill colour
+          (otherwise teal text on a teal fill would be invisible). */}
+      <style>{`
+        .svc-card {
+          transition: transform .4s cubic-bezier(.16,1,.3,1),
+                      box-shadow .4s ease, border-color .3s ease;
+        }
+        .svc-img { transition: transform .55s cubic-bezier(.16,1,.3,1); }
+        @media (prefers-reduced-motion: no-preference) {
+          .svc-card:hover {
+            transform: translateY(-6px) scale(1.02);
+            border-color: var(--teal-deep);
+            box-shadow: 0 4px 10px rgba(12,11,11,0.10),
+                        0 26px 60px -12px rgba(28,30,30,0.22);
+          }
+          .svc-card:hover .svc-img { transform: scale(1.07); }
+        }
+        .svc-card:hover .svc-explore { background: var(--teal-deep) !important; color: #fff !important; }
+        .svc-card:hover .svc-explore span { color: #fff !important; }
+        /* CTA shine: a hairline grows from centre on hover (mirrors .btn::after). */
+        .svc-explore::after {
+          content: ""; position: absolute; left: 50%; bottom: 8px;
+          width: 0; height: 2px; background: currentColor;
+          transform: translateX(-50%); transition: width .3s ease; pointer-events: none;
+        }
+        .svc-card:hover .svc-explore::after { width: 46%; }
+        /* Mobile: cards fit the viewport (~1.2 cards + a peek) instead of a fixed
+           320px that overflows a phone; tighter side padding on the track. */
+        @media (max-width: 640px) {
+          .svc-track { padding-left: 16px !important; padding-right: 16px !important;
+                       scroll-padding-left: 16px !important; }
+          .svc-card { width: 82vw !important; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .svc-card, .svc-img, .svc-explore::after { transition: none !important; }
+        }
+      `}</style>
+
       <div className="container">
         <Reveal>
-          <h2 className="font-display text-center" style={{ fontSize: "clamp(22px,3vw,35px)", color: "var(--gold)", fontWeight: 400, letterSpacing: "0.1em" }}>
-            medical aesthetics procedures
+          <p
+            className="font-display text-center"
+            style={{
+              fontSize: "12px",
+              color: "var(--teal-text)",
+              letterSpacing: "0.22em",
+              fontWeight: 600,
+              marginBottom: "14px",
+            }}
+          >
+            Doctor-Led Treatments
+          </p>
+          <h2
+            id="services-heading"
+            className="font-serif text-center"
+            style={{
+              fontSize: "clamp(26px,3.4vw,40px)",
+              color: "var(--gold)",
+              fontWeight: 400,
+              letterSpacing: "0.04em",
+              textTransform: "uppercase",
+              lineHeight: 1.15,
+            }}
+          >
+            Medical Aesthetics Procedures
           </h2>
-          <div className="mx-auto" style={{ width: "205px", height: "1.5px", background: "#96b2b2", marginTop: "16px", marginBottom: "48px" }} />
+          <p
+            className="text-center mx-auto"
+            style={{
+              maxWidth: "560px",
+              marginTop: "16px",
+              color: "var(--label)",
+              fontSize: "15px",
+              lineHeight: 1.65,
+            }}
+          >
+            A complete menu of advanced, medically supervised treatments — each
+            tailored to refresh, restore and let you glow with confidence.
+          </p>
+          <div
+            aria-hidden="true"
+            className="mx-auto"
+            style={{
+              width: "120px",
+              height: "1.5px",
+              background:
+                "linear-gradient(90deg, transparent, var(--brand-teal), transparent)",
+              marginTop: "26px",
+              marginBottom: "clamp(40px,5vw,56px)",
+            }}
+          />
         </Reveal>
+      </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4" style={{ columnGap: "15px", rowGap: "32px" }}>
+      {/* Carousel — full-bleed so cards can peek off the container edges. */}
+      <div className="relative">
+        {/* Left arrow — hidden at the start of the track. */}
+        {!atStart && (
+          <button
+            onClick={() => scroll(-1)}
+            aria-label="Previous treatments"
+            className="hidden md:flex items-center justify-center absolute z-20 transition-transform duration-300 ease-out hover:scale-[1.04] motion-reduce:transition-none motion-reduce:hover:scale-100"
+            style={{
+              left: "16px",
+              top: "calc(50% - 26px)",
+              width: "52px",
+              height: "52px",
+              backgroundColor: "#ffffff",
+              boxShadow: "0 4px 16px rgba(0,0,0,0.18)",
+              color: "var(--teal-text)",
+              fontSize: "26px",
+              lineHeight: 1,
+              border: "none",
+              cursor: "pointer",
+              borderRadius: "999px",
+            }}
+          >
+            ‹
+          </button>
+        )}
+
+        {/* Scroll-snap track */}
+        <div
+          ref={ref}
+          className="svc-track flex overflow-x-auto [&::-webkit-scrollbar]:hidden"
+          style={{
+            gap: `${GAP}px`,
+            scrollSnapType: "x mandatory",
+            /* scroll-padding-left must match paddingLeft so snap targets are correct */
+            scrollPaddingLeft: `${PAD}px`,
+            scrollbarWidth: "none",
+            paddingLeft: `${PAD}px`,
+            paddingRight: `${PAD}px`,
+          }}
+        >
           {HOME_SERVICES.map((s, i) => (
-            <Reveal key={s.href} delay={(i % 4) * 70} className="flex justify-center">
-              <Link href={s.href} className="group flex justify-center">
-                {/* Bracket frame contains both the image and the label in the white space */}
-                {/* The PNG already has the bracket frame — just overlay the label inside */}
-                <div className="relative" style={{ width: "160px" }}>
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={s.image}
-                    alt={s.label}
-                    style={{ width: "100%", display: "block", objectFit: "contain" }}
-                    className="transition-transform duration-300 group-hover:scale-105"
-                  />
-                  <p className="font-display absolute" style={{ bottom: "14%", left: "50%", transform: "translateX(-50%)", textAlign: "center", fontSize: "clamp(9px,0.8vw,11px)", color: "#9b8d83", letterSpacing: "0.12em", fontWeight: 400, textTransform: "uppercase", lineHeight: 1.3, whiteSpace: "nowrap" }}>
-                    {s.label}
-                  </p>
-                </div>
-              </Link>
-            </Reveal>
+            <Link
+              key={s.href}
+              href={s.href}
+              className="svc-card group flex-shrink-0"
+              aria-label={`Learn more about ${s.label}`}
+              style={{
+                width: `${CARD_W}px`,
+                display: "flex",
+                flexDirection: "column",
+                scrollSnapAlign: "start",
+                background: "var(--white)",
+                border: "1px solid var(--line)",
+                borderRadius: "var(--radius-card)",
+                overflow: "hidden",
+                boxShadow:
+                  "0 1px 2px rgba(12,11,11,0.04), 0 10px 28px rgba(12,11,11,0.07)",
+                textDecoration: "none",
+              }}
+            >
+              {/* Photo */}
+              <div
+                style={{
+                  position: "relative",
+                  width: "100%",
+                  aspectRatio: "4 / 3",
+                  overflow: "hidden",
+                  background: "var(--teal-100)",
+                }}
+              >
+                <Image
+                  src={s.photo}
+                  alt={`${s.label} treatment at Carisma Aesthetics Malta`}
+                  fill
+                  sizes="(max-width:640px) 82vw, 320px"
+                  className="svc-img"
+                  style={{ objectFit: "cover", objectPosition: "center" }}
+                  loading={i < 4 ? "eager" : "lazy"}
+                />
+                {/* gentle bottom scrim so any future label/legibility holds */}
+                <div
+                  aria-hidden="true"
+                  style={{
+                    position: "absolute",
+                    inset: 0,
+                    background:
+                      "linear-gradient(180deg, rgba(79,115,115,0) 55%, rgba(64,96,96,0.18) 100%)",
+                  }}
+                />
+              </div>
+
+              {/* Body */}
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  flex: 1,
+                  padding: "22px 22px 24px",
+                }}
+              >
+                <h3
+                  className="font-serif"
+                  style={{
+                    color: "var(--gold)",
+                    fontSize: "17px",
+                    fontWeight: 400,
+                    letterSpacing: "0.05em",
+                    textTransform: "uppercase",
+                    lineHeight: 1.25,
+                    margin: "0 0 10px",
+                  }}
+                >
+                  {s.label}
+                </h3>
+                <p
+                  style={{
+                    color: "var(--ink-soft)",
+                    fontSize: "13.5px",
+                    lineHeight: 1.6,
+                    margin: "0 0 20px",
+                    flex: 1,
+                  }}
+                >
+                  {s.blurb}
+                </p>
+                <span
+                  className="svc-explore font-display"
+                  style={{
+                    position: "relative",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: "8px",
+                    alignSelf: "flex-start",
+                    minHeight: "44px",
+                    padding: "12px 22px",
+                    border: "1.5px solid var(--teal-deep)",
+                    color: "var(--teal-deep)",
+                    fontSize: "11px",
+                    letterSpacing: "0.16em",
+                    textTransform: "uppercase",
+                    fontWeight: 600,
+                    borderRadius: "var(--radius-pill)",
+                    transition: "background 0.3s ease, color 0.3s ease",
+                  }}
+                >
+                  Explore <span aria-hidden="true">&rarr;</span>
+                </span>
+              </div>
+            </Link>
           ))}
         </div>
 
-        <div className="flex justify-center" style={{ paddingTop: "48px" }}>
-          <div style={{ width: "1px", height: "80px", background: "var(--line)" }} />
+        {/* Right arrow — hidden at the end of the track. */}
+        {!atEnd && (
+          <button
+            onClick={() => scroll(1)}
+            aria-label="Next treatments"
+            className="hidden md:flex items-center justify-center absolute z-20 transition-transform duration-300 ease-out hover:scale-[1.04] motion-reduce:transition-none motion-reduce:hover:scale-100"
+            style={{
+              right: "16px",
+              top: "calc(50% - 26px)",
+              width: "52px",
+              height: "52px",
+              backgroundColor: "#ffffff",
+              boxShadow: "0 4px 16px rgba(0,0,0,0.18)",
+              color: "var(--teal-text)",
+              fontSize: "26px",
+              lineHeight: 1,
+              border: "none",
+              cursor: "pointer",
+              borderRadius: "999px",
+            }}
+          >
+            ›
+          </button>
+        )}
+      </div>
+
+      <div className="container">
+        <div className="flex justify-center" style={{ paddingTop: "clamp(48px,6vw,64px)" }}>
+          <div aria-hidden="true" style={{ width: "1px", height: "80px", background: "var(--line)" }} />
         </div>
       </div>
     </section>

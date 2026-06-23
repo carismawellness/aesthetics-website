@@ -1,69 +1,72 @@
 import type { Metadata } from "next";
-import Image from "next/image";
-import Link from "next/link";
 import { faceTreatments, FACE_LISTING } from "@/lib/face-treatments";
-import { TreatmentCard, CtaBanner, Eyebrow, SectionHeading } from "@/components/face/FaceUI";
+import { TreatmentCard, CtaBanner, SectionHeading } from "@/components/face/FaceUI";
 import Reveal from "@/components/Reveal";
+import PageHero from "@/components/PageHero";
 
 export const metadata: Metadata = {
   title: "Face Treatments | Carisma Aesthetics Malta",
-  description: FACE_LISTING.subhead,
+  description: "Expert face treatments in Malta — fillers, Botox, microneedling & more. Free consultation with medically qualified practitioners.",
+  // P1 SEO: canonical prevents duplicate-content issues
+  alternates: {
+    canonical: "https://www.carismaaesthetics.com/face-treatments",
+  },
+  openGraph: {
+    title: "Face Treatments Malta | Carisma Aesthetics",
+    description: "Expert face treatments in Malta — fillers, Botox, microneedling & more. Free consultation with medically qualified practitioners.",
+    url: "https://www.carismaaesthetics.com/face-treatments",
+    type: "website",
+  },
 };
 
 export default function FaceTreatmentsPage() {
   return (
-    <main>
-      {/* Listing hero — split layout: text left, image right (matches live site treatment page pattern) */}
-      <section style={{ background: "var(--cream)", overflow: "hidden" }}>
-        <div className="container" style={{ paddingTop: "0", paddingBottom: "0" }}>
-          <div className="grid grid-cols-1 lg:grid-cols-2" style={{ minHeight: "420px", alignItems: "stretch" }}>
-            {/* Left: copy */}
-            <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", paddingTop: "80px", paddingBottom: "80px", paddingRight: "clamp(0px,4vw,60px)" }}>
-              <Eyebrow>{FACE_LISTING.eyebrow}</Eyebrow>
-              <h1 className="font-display" style={{ fontSize: "clamp(26px,3.4vw,40px)", fontWeight: 600, letterSpacing: "0.08em", textTransform: "uppercase", lineHeight: 1.2, color: "var(--ink)", marginBottom: "0" }}>
-                {FACE_LISTING.title}
-              </h1>
-              {/* Teal divider — site-wide decorative separator */}
-              <div style={{ width: "200px", height: "1.5px", background: "var(--teal)", margin: "18px 0" }} />
-              <p style={{ fontSize: "clamp(14px,1vw,15px)", color: "var(--ink-soft)", lineHeight: 1.85, maxWidth: "520px" }}>{FACE_LISTING.subhead}</p>
-              <div style={{ marginTop: "28px" }}>
-                <Link href="/consultation" className="btn btn-teal" style={{ fontSize: "11px", letterSpacing: "0.14em", padding: "12px 26px" }}>
-                  Free Consultation
-                </Link>
-              </div>
-            </div>
-            {/* Right: hero image mosaic */}
-            <div className="hidden lg:grid" style={{ gridTemplateColumns: "1fr 1fr", gap: "4px", position: "relative" }}>
-              <div style={{ position: "relative", aspectRatio: "1", overflow: "hidden" }}>
-                <Image src="/assets/treatments/dermal-fillers-malta-hero.png" alt="Dermal Fillers" fill sizes="25vw" style={{ objectFit: "cover" }} />
-              </div>
-              <div style={{ position: "relative", aspectRatio: "1", overflow: "hidden" }}>
-                <Image src="/assets/treatments/lip-fillers-malta-hero.png" alt="Lip Fillers" fill sizes="25vw" style={{ objectFit: "cover" }} />
-              </div>
-              <div style={{ position: "relative", aspectRatio: "1", overflow: "hidden" }}>
-                <Image src="/assets/treatments/microneedling-malta-hero.png" alt="Microneedling" fill sizes="25vw" style={{ objectFit: "cover" }} />
-              </div>
-              <div style={{ position: "relative", aspectRatio: "1", overflow: "hidden" }}>
-                <Image src="/assets/treatments/chemical-peels-malta-hero.png" alt="Chemical Peels" fill sizes="25vw" style={{ objectFit: "cover" }} />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+    // P1: <main> landmark is already present — good. Added skip link target id.
+    <main id="main-content">
+      {/* Listing hero — shared PageHero (one <h1>, primary keyword + "Malta") */}
+      <PageHero
+        badge="#1 Voted Med-Aesthetics Clinic"
+        eyebrow={FACE_LISTING.eyebrow}
+        headline={[
+          { text: "Considered Facial Aesthetics" },
+          { text: "in Malta", em: true },
+        ]}
+        sub={FACE_LISTING.subhead}
+        primaryCta={{ text: "Book Free Consultation", href: "/consultation" }}
+        media={{
+          type: "image",
+          src: "/assets/treatments/dermal-fillers-malta-hero.png",
+          alt: "Face treatments at Carisma Aesthetics",
+        }}
+        proof={{
+          rating: "4.9",
+          reviews: "200+",
+          statValue: "30+",
+          statLabel: "years in wellness",
+          awardText: "#1 Voted Clinic\nMalta Healthcare Awards",
+        }}
+      />
 
       {/* Treatment grid */}
-      <section style={{ background: "var(--white)" }}>
+      {/* P1: aria-labelledby ties section to its visible heading */}
+      <section aria-labelledby="treatments-grid-heading" style={{ background: "var(--white)" }}>
         <div className="container" style={{ paddingTop: "72px", paddingBottom: "80px" }}>
-          <SectionHeading title={FACE_LISTING.gridHeading} />
-          {/* Teal underline accent */}
-          <div style={{ width: "48px", height: "2px", background: "var(--teal)", margin: "14px auto 0" }} />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" style={{ gap: "24px", marginTop: "48px" }}>
+          {/* P6: id prop on SectionHeading for aria-labelledby wiring */}
+          <SectionHeading title={FACE_LISTING.gridHeading} id="treatments-grid-heading" />
+          {/* P4: decorative underline accent — aria-hidden */}
+          <div aria-hidden="true" style={{ width: "48px", height: "2px", background: "var(--teal)", margin: "14px auto 0" }} />
+          {/* P10: each TreatmentCard is a full block-link with descriptive aria-label (set inside TreatmentCard) */}
+          {/* P5: responsive grid cols: 1 → 2 → 3 */}
+          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3" style={{ gap: "24px", marginTop: "48px", listStyle: "none", padding: 0 }}>
             {faceTreatments.map((t, i) => (
-              <Reveal key={t.slug} delay={(i % 3) * 80}>
-                <TreatmentCard t={t} variant="card" />
-              </Reveal>
+              // P1: <li> with <article>-equivalent semantics via the Link inside TreatmentCard
+              <li key={t.slug}>
+                <Reveal delay={(i % 3) * 80}>
+                  <TreatmentCard t={t} variant="card" />
+                </Reveal>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
 
