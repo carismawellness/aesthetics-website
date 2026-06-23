@@ -46,14 +46,27 @@ export type Treatment = {
     chart?: string;
     chartCaption?: string;
   };
-  /** guarantee band + before/after composite slideshow */
+  /** guarantee / risk-reversal band (rendered by treatment/GuaranteeBand) */
   guarantee?: {
+    kicker?: string;
     title: string;
     paragraphs: string[];
     cta?: string;
+    /** optional 3 proof pillars */
+    points?: { value?: string; label: string; sub?: string }[];
     beforeAfter?: string[];
     beforeAfterTitle?: string;
   };
+  /** trust/stats bar shown directly under the hero */
+  stats?: { value: string; label: string }[];
+  /** "what it does / won't do" expectation-setting grid */
+  clarity?: { kicker?: string; title?: string; sub?: string; does: string[]; doesnt: string[] };
+  /** client testimonial / review cards */
+  reviews?: { kicker?: string; title?: string; sub?: string; items: { name: string; quote: string; rating?: number; image?: string; location?: string }[] };
+  /** doctor-led profile */
+  doctor?: { kicker?: string; heading?: string; name: string; title: string; credentials?: string[]; image: string; quote?: string; bio?: string[] };
+  /** clinical-evidence cards */
+  evidence?: { kicker?: string; title?: string; sub?: string; items: { tag?: string; title: string; whatItDoes: string; keyResults: string; image?: string; source?: string }[] };
   /** standalone pricing grid rendered after the process timeline */
   pricingGrid?: { title: string; intro?: string; items: { name: string; price: string; desc: string }[] };
   /** membership tier cards (Bronze / Silver / Gold) */
