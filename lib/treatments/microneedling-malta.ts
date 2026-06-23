@@ -27,11 +27,11 @@ const t: Treatment = {
   ],
   beforeAfterTitle: "microneedling results",
   beforeAfter: [
-    { before: "/assets/treatments/microneedling-malta-ba1-before.png", after: "/assets/treatments/microneedling-malta-ba1-after.png" },
-    { before: "/assets/treatments/microneedling-malta-ba2-before.png", after: "/assets/treatments/microneedling-malta-ba2-after.png" },
-    { before: "/assets/treatments/microneedling-malta-ba3-before.png", after: "/assets/treatments/microneedling-malta-ba3-after.png" },
-    { before: "/assets/treatments/microneedling-malta-ba4-before.png", after: "/assets/treatments/microneedling-malta-ba4-after.png" },
-    { before: "/assets/treatments/microneedling-malta-ba5-before.png", after: "/assets/treatments/microneedling-malta-ba5-after.png" },
+    { before: "/assets/treatments/microneedling-malta-ba1-before.png", after: "/assets/treatments/microneedling-malta-ba1-after.png", name: "Daniel V.", review: "Years of pitted acne scars on my cheeks finally look smoother — my skin feels like mine again." },
+    { before: "/assets/treatments/microneedling-malta-ba2-before.png", after: "/assets/treatments/microneedling-malta-ba2-after.png", name: "Mariella S.", review: "The acne marks on my cheeks faded and my skin looks so much more even — I barely wear foundation now." },
+    { before: "/assets/treatments/microneedling-malta-ba3-before.png", after: "/assets/treatments/microneedling-malta-ba3-after.png", name: "Chloe A.", review: "My texture and little blemishes evened out and my whole face just glows now." },
+    { before: "/assets/treatments/microneedling-malta-ba4-before.png", after: "/assets/treatments/microneedling-malta-ba4-after.png", name: "Carmen B.", review: "The fine lines around my eyes softened beautifully — I look rested without looking done." },
+    { before: "/assets/treatments/microneedling-malta-ba5-before.png", after: "/assets/treatments/microneedling-malta-ba5-after.png", name: "Josephine R.", review: "My pores and sun spots are so much less noticeable — my skin looks years fresher." },
   ],
   precision: {
     title: "precision areas of refinement",
@@ -56,20 +56,44 @@ const t: Treatment = {
       "You want a treatment that improves skin quality without injectables",
     ],
     notIdeal: [
-      "You currently have an active acne breakout or skin infection",
-      "You have used isotretinoin (Accutane) within the last six months",
-      "You are pregnant, breastfeeding, or have active cold sores in the area",
-      "You have a history of keloid scarring that has not been assessed",
-      "You cannot commit to sun protection during the recovery period",
+      "You have an active breakout or skin infection right now — we will happily treat you once your skin has calmed",
+      "You have used isotretinoin (Accutane) in the last six months — a short wait keeps your skin safe, and we will be here",
+      "You are pregnant or breastfeeding — we will welcome you back warmly afterwards",
+      "You have a history of keloid scarring we have not assessed yet — let us take a careful look together first",
+      "You would rather not follow simple daily SPF during recovery — sun protection is what protects your results",
+    ],
+    personas: [
+      { title: "The acne-scar healer", desc: "Old breakouts left pitted scars or marks, and you want smoother, more even skin without surgery or heavy resurfacing." },
+      { title: "The dull, tired complexion", desc: "Your skin looks flat and lacklustre, and you want that fresh, lit-from-within glow back." },
+      { title: "The early-ageing preventer", desc: "Fine lines, larger pores, or uneven texture are creeping in, and you want to rebuild collagen before they deepen." },
+    ],
+  },
+  problem: {
+    kicker: "The real reason people book",
+    title: "Your skin feels older and more tired than you are",
+    body: [
+      "Doctor-led microneedling with mesotherapy gently rebuilds collagen from within — softening scars, refining texture, and bringing back the natural, healthy glow that still looks like you.",
+    ],
+  },
+  guarantee: {
+    kicker: "The Natural Confidence Guarantee",
+    title: "Natural Confidence Guarantee",
+    paragraphs: [
+      "Every plan starts with a doctor-led skin assessment and a natural-first approach focused on gradual, healthy renewal — backed by a free follow-up review until you are 100% satisfied with skin that still looks like you.",
+    ],
+    cta: "Book Your Free Consultation",
+    points: [
+      { value: "Doctor-led", label: "Assessment first", sub: "Never a salesperson" },
+      { value: "Natural-first", label: "Gradual renewal", sub: "We restore, never overtreat" },
+      { value: "100%", label: "Satisfaction", sub: "Free follow-up until you are happy" },
     ],
   },
   experience: {
     title: "Your treatment experience",
     steps: [
-      { title: "personalised consultation", desc: "We assess your skin condition, concerns, and medical history with one of our doctors to design your personalised microneedling plan.", image: "/assets/treatments/microneedling-malta-step1.png" },
-      { title: "Structured Plan", desc: "Your doctor selects the mesotherapy cocktail and treatment protocol tailored to your skin type, concerns, and goals.", image: "/assets/treatments/microneedling-malta-step2.png" },
-      { title: "Targeted Treatments", desc: "Your doctor performs microneedling with your personalised mesotherapy cocktail: precise, comfortable, and no downtime.", image: "/assets/treatments/microneedling-malta-step3.png" },
-      { title: "Ongoing Review & Adjustment", desc: "Your doctor reviews your skin's response and refines the plan to ensure optimal microneedling results over time.", image: "/assets/treatments/microneedling-malta-step4.png" },
+      { title: "Consultation & Plan", desc: "One of our doctors assesses your skin condition, concerns, and medical history, then selects the mesotherapy cocktail and protocol tailored to your skin.", image: "/assets/treatments/microneedling-malta-step1.png" },
+      { title: "Targeted Treatment", desc: "Your doctor performs microneedling with your personalised mesotherapy cocktail — precise, comfortable, and with minimal downtime.", image: "/assets/treatments/microneedling-malta-step3.png" },
+      { title: "Ongoing Review & Adjustment", desc: "Your doctor reviews your skin's response and refines the plan across your course to ensure optimal, lasting results over time.", image: "/assets/treatments/microneedling-malta-step4.png" },
     ],
   },
   prepAftercare: {
@@ -154,6 +178,26 @@ const t: Treatment = {
     mapQuery: "Carisma Aesthetics, Malta",
   },
   bookingForm: { title: "BOOK YOUR microneedling APPOINTMENT TODAY" },
+  planSummary: {
+    kicker: "Your microneedling plan",
+    title: "Malta's Doctor-Led Microneedling Plan",
+    benefits: [
+      { icon: "shield", title: "Doctor-Led Precision", desc: "Every session is performed by a medically qualified doctor — never a salon, with needle depth tailored to your skin." },
+      { icon: "sparkle", title: "Mesotherapy Included", desc: "A personalised vitamin and growth-factor cocktail is infused into the micro-channels for deeper nourishment and glow." },
+      { icon: "chart", title: "Cumulative, Lasting Results", desc: "A structured course rebuilds collagen over time, softening scars and refining texture for results that keep improving." },
+    ],
+    included: [
+      { label: "Free doctor-led skin consultation" },
+      { label: "Personalised mesotherapy cocktail selection" },
+      { label: "Medical-grade microneedling session", value: "from €149" },
+      { label: "Optional exosome boost", value: "+€50" },
+      { label: "Aftercare guidance & ongoing review" },
+    ],
+    price: "From €119",
+    priceLabel: "per session in a course of 5",
+    cta: { text: "Book Your Microneedling Appointment", href: "/consultation" },
+    reviews: "200+ verified reviews",
+  },
   recommended: {
     title: "Recommended with microneedling",
     items: [
