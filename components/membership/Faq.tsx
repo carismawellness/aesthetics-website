@@ -22,8 +22,8 @@ import { MEMBERSHIP_FAQS } from "./faqData";
  * translucent white card. No teal fills remain — teal stays accent-only.
  *
  * WCAG 2.2 AA verified with scripts/contrast.mjs. Worst case is the page's warm
- * champagne #f3ece0 the header/CTA sit over:
- *   gold #706552 on champagne #f3ece0 = 4.87 · teal-text #406060 = 5.84
+ * champagne #eef3f3 the header/CTA sit over:
+ *   gold #706552 on champagne #eef3f3 = 4.87 · teal-text #406060 = 5.84
  *   label #695c4e on champagne = 5.52         · teal-deep #3f6363 rule (UI) ✓
  *   accordion teal-text #406060 / brown #706552 on white card = 8.0 / 5.72
  *   white on .btn-teal #4f7373 = 5.21

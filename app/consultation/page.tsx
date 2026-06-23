@@ -115,7 +115,7 @@ function ContactItem({
     >
       {/* Icon circle — minimum 44×44px tap target */}
       <span
-        className="shrink-0 inline-flex items-center justify-center transition-colors duration-200 ease-in-out group-hover:bg-[#f3ece0]"
+        className="shrink-0 inline-flex items-center justify-center transition-colors duration-200 ease-in-out group-hover:bg-[#eef3f3]"
         style={{
           width: "44px",
           height: "44px",

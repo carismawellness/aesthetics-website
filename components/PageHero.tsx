@@ -50,6 +50,9 @@ export type HeroMedia = {
    *  distortion). Used by the membership hero. Backward-compatible: omit and the
    *  hero is unchanged. */
   fill?: boolean;
+  /** Optional object-position for the arch image (e.g. "center top") to control
+   *  framing when object-fit: cover crops. Defaults to "center". */
+  position?: string;
 };
 export type HeroProof = {
   rating?: string;
@@ -162,7 +165,7 @@ export default function PageHero({
   };
   const sectionBg = background || (dark
     ? "radial-gradient(120% 90% at 85% 10%, #1c1a17 0%, #14120e 55%, #0e0c09 100%)"
-    : "radial-gradient(120% 90% at 85% 10%, #ffffff 0%, #faf6ef 60%, #faf6ef 100%)");
+    : "radial-gradient(120% 90% at 85% 10%, #ffffff 0%, #deebeb 60%, #deebeb 100%)");
   const archBg = media.bg || (dark ? "#0c0c0c" : "linear-gradient(160deg, var(--teal-100) 0%, var(--gray-100) 55%, var(--beige) 100%)");
   const glassClass = dark ? "hero-glass-dark" : "hero-glass";
   const pillClass = dark ? "hero-pill-dark" : "hero-pill";
@@ -175,7 +178,7 @@ export default function PageHero({
          Light pages use a deeper teal so the lattice reads clearly over the
          pale teal-mist bed; the dark page uses gold. */}
       <HeroMotif color={dark ? "201, 169, 106" : "116, 156, 156"} />
-      <span aria-hidden style={{ position: "absolute", top: "-12%", right: "-8%", width: 460, height: 460, borderRadius: "50%", background: dark ? "rgba(201,169,106,0.16)" : "rgba(243,236,224,0.5)", filter: "blur(90px)", zIndex: 0 }} />
+      <span aria-hidden style={{ position: "absolute", top: "-12%", right: "-8%", width: 460, height: 460, borderRadius: "50%", background: dark ? "rgba(201,169,106,0.16)" : "rgba(238, 243, 243,0.5)", filter: "blur(90px)", zIndex: 0 }} />
 
       <div className="page-hero-grid" style={{ position: "relative", zIndex: 1, width: "100%", maxWidth: 1180, margin: "0 auto", display: "grid", gap: "clamp(10px,1.6vw,24px)", alignItems: "center" }}>
         {/* LEFT — message */}
@@ -271,7 +274,7 @@ export default function PageHero({
                 )
               ) : (
                 // eslint-disable-next-line @next/next/no-img-element
-                <img src={media.src} alt={media.alt || "Carisma Aesthetics Malta"} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: media.fit || "cover", display: "block" }} />
+                <img src={media.src} alt={media.alt || "Carisma Aesthetics Malta"} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: media.fit || "cover", objectPosition: media.position || "center", display: "block" }} />
               )}
             </div>
             )}

@@ -358,7 +358,7 @@ export default function Benefits() {
           position: relative;
           border-radius: 20px;
           background:
-            linear-gradient(180deg, rgba(255,255,255,0.85) 0%, rgba(250,246,239,0.85) 100%);
+            linear-gradient(180deg, rgba(255,255,255,0.85) 0%, rgba(222, 235, 235,0.85) 100%);
           backdrop-filter: blur(2px);
           border: 1px solid rgba(79, 115, 115, 0.14);
           box-shadow:
@@ -662,7 +662,7 @@ export default function Benefits() {
             overflow: "hidden",
             marginTop: "clamp(56px,8vw,88px)",
             background:
-              "linear-gradient(165deg, rgba(255,255,255,0.86) 0%, rgba(250,246,239,0.86) 52%, rgba(243,236,224,0.86) 100%)",
+              "linear-gradient(165deg, rgba(255,255,255,0.86) 0%, rgba(222, 235, 235,0.86) 52%, rgba(238, 243, 243,0.86) 100%)",
             backdropFilter: "blur(2px)",
             border: "1px solid rgba(112,101,82,0.16)",
             borderRadius: "28px",

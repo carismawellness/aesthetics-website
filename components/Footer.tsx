@@ -8,7 +8,7 @@ import SiteSearch from "@/components/SiteSearch";
 import FooterRose from "@/components/FooterRose";
 
 // ─── Shared design tokens (cross-file consistent) ────────────────────────────
-const GRADIENT = 'radial-gradient(120% 90% at 85% 10%, #eaf1f1 0%, #f6f4ef 45%, #ffffff 100%)';
+const GRADIENT = 'radial-gradient(120% 90% at 85% 10%, #eaf1f1 0%, #f4f9f9 45%, #ffffff 100%)';
 const INK   = '#1a1a1a';
 const TEXT  = '#333333';
 const MUTED = '#595959';

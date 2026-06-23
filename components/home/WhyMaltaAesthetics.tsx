@@ -273,7 +273,7 @@ export default function WhyMaltaAesthetics() {
                     display: "inline-flex",
                     alignItems: "center",
                     gap: 8,
-                    background: "#f3ece0",
+                    background: "#eef3f3",
                     borderRadius: 999,
                     padding: "8px 16px",
                     marginTop: 16,

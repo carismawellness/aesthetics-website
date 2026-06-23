@@ -14,10 +14,10 @@ import Link from "next/link";
    separation. Teal stays accent-only (icon chip, eyebrow, rule, links).
 
    WCAG AA (verified with scripts/contrast.mjs; worst-case ground = the
-   page's warm champagne #f3ece0 the translucent card sits over):
-     heading  --gold      #706552 on #f3ece0 → 4.87:1  (AA normal)
-     body     --ink-soft  #706552 on #f3ece0 → 4.87:1  (AA normal)
-     eyebrow  --teal-text #406060 on #f3ece0 → 5.84:1  (AA normal)
+   page's warm champagne #eef3f3 the translucent card sits over):
+     heading  --gold      #706552 on #eef3f3 → 4.87:1  (AA normal)
+     body     --ink-soft  #706552 on #eef3f3 → 4.87:1  (AA normal)
+     eyebrow  --teal-text #406060 on #eef3f3 → 5.84:1  (AA normal)
      icon chip white #fff on --teal-deep #4f7373 → 5.21:1 (AA normal)
    ──────────────────────────────────────────────────────────────── */
 

@@ -195,7 +195,7 @@ export default function MembershipSummary() {
                 display: "flex",
                 flexDirection: "column",
                 padding: "28px 24px",
-                background: "linear-gradient(180deg, #ffffff 0%, #faf6ef 100%)",
+                background: "linear-gradient(180deg, #ffffff 0%, #deebeb 100%)",
                 border: "1px solid rgba(79,115,115,0.12)",
                 borderTopLeftRadius: "16px",
                 borderTopRightRadius: "44px",

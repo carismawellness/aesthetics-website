@@ -19,8 +19,8 @@ import Link from "next/link";
  * rule, CTA). Server component, no required props.
  *
  * WCAG 2.2 AA verified with scripts/contrast.mjs. Worst case is the page's
- * warm champagne #f3ece0 the section/cards sit over:
- *   gold #706552 on champagne #f3ece0 = 4.87 · teal-text #406060 = 5.84
+ * warm champagne #eef3f3 the section/cards sit over:
+ *   gold #706552 on champagne #eef3f3 = 4.87 · teal-text #406060 = 5.84
  *   label #695c4e on champagne = 5.52         · gold on card #fff = 5.72
  *   white on .btn-teal #4f7373 = 5.21
  */

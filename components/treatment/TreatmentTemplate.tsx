@@ -128,7 +128,7 @@ function InfoCard({ info }: { info: NonNullable<Treatment["info"]> }) {
       aria-label="Treatment info"
       className="rounded-2xl"
       style={{
-        background: "rgba(243,236,224,0.6)",
+        background: "rgba(238, 243, 243,0.6)",
         border: "1px solid rgba(150,178,178,0.35)",
         padding: "22px 26px",
       }}
@@ -897,7 +897,7 @@ export default function TreatmentTemplate({ t }: { t: Treatment }) {
                         height: "18px",
                         borderRadius: "50%",
                         background: "var(--teal)",
-                        boxShadow: "0 0 0 5px #f3ece0",
+                        boxShadow: "0 0 0 5px #eef3f3",
                         flexShrink: 0,
                       }}
                       aria-hidden="true"
@@ -912,7 +912,7 @@ export default function TreatmentTemplate({ t }: { t: Treatment }) {
                   <div
                     style={{
                       borderRadius: "20px 56px 20px 56px",
-                      background: "linear-gradient(180deg,#ffffff 0%, #f3ece0 100%)",
+                      background: "linear-gradient(180deg,#ffffff 0%, #eef3f3 100%)",
                       padding: "10px",
                       boxShadow: "0 16px 38px rgba(0,0,0,0.07)",
                     }}
@@ -989,7 +989,7 @@ export default function TreatmentTemplate({ t }: { t: Treatment }) {
                         height: "18px",
                         borderRadius: "50%",
                         background: "var(--teal)",
-                        boxShadow: "0 0 0 5px #f3ece0",
+                        boxShadow: "0 0 0 5px #eef3f3",
                       }}
                       aria-hidden="true"
                     />
@@ -1010,7 +1010,7 @@ export default function TreatmentTemplate({ t }: { t: Treatment }) {
                   <div
                     style={{
                       borderRadius: "20px 56px 20px 56px",
-                      background: "linear-gradient(180deg,#ffffff 0%, #f3ece0 100%)",
+                      background: "linear-gradient(180deg,#ffffff 0%, #eef3f3 100%)",
                       padding: "10px",
                       boxShadow: "0 16px 38px rgba(0,0,0,0.07)",
                     }}

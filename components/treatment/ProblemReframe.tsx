@@ -56,7 +56,7 @@ export default function ProblemReframe({
       aria-labelledby={headingId}
       style={{
         padding: "clamp(72px,9vh,112px) 0",
-        // Faint warm-ivory ground (token remapped to #faf6ef in the 2026 palette)
+        // Faint warm-ivory ground (token remapped to #deebeb in the 2026 palette)
         // so the section reads as a soft, set-apart emotional beat — not teal
         // wallpaper. A whisper-soft top sheen adds depth without alarm.
         background:

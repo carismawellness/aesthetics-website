@@ -31,7 +31,7 @@ const A = "/assets/treatments";
 const GOLD = "var(--gold)"; // #706552
 const TEAL_TEXT = "var(--teal-text)"; // #406060
 const TEAL_DEEP = "var(--teal-deep)"; // #4f7373
-const CREAM = "var(--cream)"; // warm ivory #faf6ef (neutral token, remapped off teal)
+const CREAM = "var(--cream)"; // warm ivory #deebeb (neutral token, remapped off teal)
 const FOCUS = "#3f6363"; // teal-deep variant for UI strokes/focus
 const JOIN_HREF = "/membership/join";
 

@@ -14,11 +14,11 @@ import Reveal from "@/components/Reveal";
    white. The sage avatar chip stays as a small accent (allowed). No teal fill.
 
    WCAG 2.2 AA — every text/UI pair verified with scripts/contrast.mjs. Header/
-   intro now sit on the page field; worst case is champagne #f3ece0:
-     • #695c4e (label)        on #ffffff = 6.48:1 ✓   on #f3ece0 = 5.52:1 ✓
-     • #406060 (teal-text)    on #ffffff = 6.86:1 ✓   on #f3ece0 = 5.84:1 ✓
-     • #706552 (gold)         on #ffffff = 5.72:1 ✓   on #f3ece0 = 4.87:1 ✓
-     • #0c0b0b (ink)          on #ffffff = 19.66 ✓     on #f3ece0 = 17+  ✓
+   intro now sit on the page field; worst case is champagne #eef3f3:
+     • #695c4e (label)        on #ffffff = 6.48:1 ✓   on #eef3f3 = 5.52:1 ✓
+     • #406060 (teal-text)    on #ffffff = 6.86:1 ✓   on #eef3f3 = 5.84:1 ✓
+     • #706552 (gold)         on #ffffff = 5.72:1 ✓   on #eef3f3 = 4.87:1 ✓
+     • #0c0b0b (ink)          on #ffffff = 19.66 ✓     on #eef3f3 = 17+  ✓
      • #ffffff (white)        on #527979 (avatar) = 4.81:1 ✓   on teal CTA = 5.21:1 ✓
      • #9c8344 (gold-deep star, graphic/UI) on #ffffff = 3.66:1 ✓ (>3 UI)
    ───────────────────────────────────────────────────────────────────────── */
@@ -124,62 +124,6 @@ export default function MemberReviews() {
               Hundreds of women in Malta are already glowing for less every month
               with the Glow Club. Here is what membership feels like in their words.
             </p>
-          </div>
-        </Reveal>
-
-        {/* ── aggregate trust bar (CRO proof signal) ── */}
-        <Reveal delay={60}>
-          <div
-            className="flex flex-wrap items-center justify-center"
-            style={{
-              gap: "clamp(20px,5vw,56px)",
-              margin: "36px auto 8px",
-              maxWidth: "760px",
-            }}
-            aria-label="Membership at a glance"
-          >
-            {[
-              { stat: "4.9", label: "Average member rating" },
-              { stat: "10%", label: "Off every service, always" },
-              { stat: "15%", label: "Off all skincare products" },
-            ].map((item, i) => (
-              <div key={item.label} className="flex items-center" style={{ gap: "clamp(20px,5vw,56px)" }}>
-                {i > 0 && (
-                  <span
-                    aria-hidden="true"
-                    style={{
-                      width: "1px",
-                      height: "40px",
-                      background: "#d8d4cd",
-                    }}
-                  />
-                )}
-                <div className="text-center">
-                  <span
-                    className="font-serif block"
-                    style={{
-                      fontSize: "clamp(28px,4vw,38px)",
-                      color: "var(--gold)",
-                      lineHeight: 1,
-                    }}
-                  >
-                    {item.stat}
-                  </span>
-                  <span
-                    className="font-display block"
-                    style={{
-                      fontSize: "11px",
-                      color: TEAL_TEXT,
-                      letterSpacing: "0.1em",
-                      textTransform: "uppercase",
-                      marginTop: "8px",
-                    }}
-                  >
-                    {item.label}
-                  </span>
-                </div>
-              </div>
-            ))}
           </div>
         </Reveal>
 

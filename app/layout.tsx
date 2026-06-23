@@ -9,6 +9,7 @@ import WidowGuard from "@/components/WidowGuard";
 import MediaLegibilityGuard from "@/components/MediaLegibilityGuard";
 import PageLoader from "@/components/PageLoader";
 import ConsultationModal from "@/components/ConsultationModal";
+import GlowClubModal from "@/components/GlowClubModal";
 import StickyBookingBar from "@/components/StickyBookingBar";
 
 const pinyonScript = Pinyon_Script({
@@ -173,6 +174,10 @@ export default function RootLayout({
         {/* Site-wide consultation popup. Mounted once; intercepts every
             "/consultation" + fresha book-now CTA and opens the GHL form modal. */}
         <ConsultationModal />
+        {/* Site-wide Glow Club join popup. Mounted once; intercepts every
+            "/membership/join" CTA and opens the lead-capture form modal
+            (instead of navigating to the page). Mails to info@carismaaesthetics.com. */}
+        <GlowClubModal />
         {/* Site-wide sticky Liquid Gloss booking bar — shows on every Face/Body/Packages dropdown page. */}
         <StickyBookingBar />
 

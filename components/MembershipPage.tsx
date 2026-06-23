@@ -34,11 +34,13 @@ export default function MembershipPage() {
           { text: "Priority booking & a yearly complimentary consultation" },
         ]}
         primaryCta={{ text: "Join the Glow Club", href: "/membership/join" }}
+        background="transparent"
         media={{
           type: "image",
-          src: `${A}/mem-hero.jpg`,
+          src: `${A}/mem-hero-portrait.jpg`,
           alt: "Glow Club membership at Carisma Aesthetics Malta — exclusive aesthetics savings programme",
           fill: true,
+          position: "center top",
         }}
         proof={{
           rating: "4.9",

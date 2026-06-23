@@ -84,7 +84,7 @@ function DoctorCard({ doctor, index }: { doctor: Doctor; index: number }) {
           position: 'relative',
           width: '100%',
           aspectRatio: '3 / 4',
-          background: 'linear-gradient(180deg,#f6f4ef 0%,#eaf1f1 100%)',
+          background: 'linear-gradient(180deg,#f4f9f9 0%,#eaf1f1 100%)',
         }}
       >
         <Image

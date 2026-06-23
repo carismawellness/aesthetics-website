@@ -104,7 +104,7 @@ function RecommendedCard({ item }: { item: RecommendedItem }) {
           flex: 1,
           marginTop: -70,
           padding: "88px 28px 28px",
-          background: "linear-gradient(180deg, #ffffff 0%, rgba(243,236,224,0.5) 100%)",
+          background: "linear-gradient(180deg, #ffffff 0%, rgba(238, 243, 243,0.5) 100%)",
           border: "1px solid var(--line)",
           borderRadius: "var(--radius-card)",
           boxShadow: "0 8px 22px rgba(var(--teal-deep-rgb), 0.07)",

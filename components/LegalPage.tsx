@@ -12,7 +12,7 @@ export const lp = {
   teal: "#4f7373", // accessible deep teal — headings / accents
   tealText: "#406060", // teal as small text / links (AA on white)
   tealHair: "#DEEBEB", // light teal hairlines
-  tealTint: "#faf6ef", // warm ivory section background (was teal #eef3f3)
+  tealTint: "#deebeb", // warm ivory section background (was teal #eef3f3)
   beigeBg: "#faf7f2", // warm card background
   gold: "#706552", // heading / nav text token
   taupe: "#695c4e", // muted label / body-strong
@@ -175,7 +175,7 @@ export function LegalHero({
   lastUpdated: string;
 }) {
   return (
-    <section style={{ background: "linear-gradient(180deg, #faf6ef 0%, #f3ece0 100%)", paddingTop: "104px", paddingBottom: "72px" }}>
+    <section style={{ background: "linear-gradient(180deg, #deebeb 0%, #eef3f3 100%)", paddingTop: "104px", paddingBottom: "72px" }}>
       <div className="mx-auto px-6 lg:px-0 text-center" style={{ maxWidth: "860px" }}>
         <p style={{ ...labelStyle, color: lp.tealText, marginBottom: "20px" }}>{eyebrow}</p>
         <h1
@@ -205,7 +205,7 @@ export function LegalHero({
         <span
           style={{
             display: "inline-block",
-            backgroundColor: "rgba(243,236,224,0.7)",
+            backgroundColor: "rgba(238, 243, 243,0.7)",
             border: "1px solid rgba(79,115,115,0.40)",
             borderRadius: "999px",
             padding: "6px 20px",

@@ -30,8 +30,8 @@ const BODY = "#706552";        // brand brown body copy — 5.6:1 on white (AA)
 const BODY_SOFT = "#5c4f32";   // deeper taupe-brown for copy over light tints
 const GOLD_STAR = "#9c8344";   // gold star/graphic accent (decorative)
 const INK = "#0c0b0b";         // near-black (rare, badge/award text)
-const TINT = "#faf6ef";        // warm ivory — alternating section ground (was teal #deebeb)
-const TINT_SOFT = "#f7f0e4";   // light champagne section tint (was teal #eef3f3)
+const TINT = "#deebeb";        // warm ivory — alternating section ground (was teal #deebeb)
+const TINT_SOFT = "#deebeb";   // light champagne section tint (was teal #eef3f3)
 
 function TealBtn({
   children,
