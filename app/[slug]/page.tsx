@@ -1,10 +1,8 @@
 import { notFound } from "next/navigation";
 import JsonLd from "@/lib/seo/JsonLd";
 import TreatmentPage from "@/components/TreatmentPage";
-import ProtocolPage from "@/components/ProtocolPage";
 import BodyPackagePage from "@/components/BodyPackagePage";
 import { bodyPackages } from "@/lib/bodypkg";
-import { PROTOCOLS } from "@/lib/protocols";
 import PackageFunnel from "@/components/packages/PackageFunnel";
 import { PACKAGES } from "@/lib/packages";
 import { getTreatment, ALL_TREATMENT_SLUGS } from "@/lib/treatments";
@@ -224,7 +222,6 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
   const pkg = PACKAGES[slug];
   if (pkg) return <>{schemas}<PackageFunnel data={pkg} /></>;
   if (bodyPackages[slug]) return <>{schemas}<BodyPackagePage content={bodyPackages[slug]} /></>;
-  if (PROTOCOLS[slug]) return <>{schemas}<ProtocolPage d={PROTOCOLS[slug]} /></>;
   const t = getTreatment(slug);
   if (!t) notFound();
   return <>{schemas}<TreatmentPage t={t} /></>;
