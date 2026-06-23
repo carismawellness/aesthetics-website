@@ -25,6 +25,7 @@ import CollagenStimulatorMalta from "./treatments/collagen-stimulator-malta";
 import PolynucleotidesSalmonDna from "./treatments/polynucleotides-salmon-dna";
 import PrpMalta from "./treatments/prp-malta";
 import PicoLaserTattooRemoval from "./treatments/pico-laser-tattoo-removal";
+import PicoLaserPigmentationTreatment from "./treatments/pico-laser-pigmentation-treatment";
 import MedicalWeightLoss from "./treatments/medical-weight-loss";
 import MuscleStimulation1 from "./treatments/muscle-stimulation-1";
 import SkinTightening1 from "./treatments/skin-tightening-1";
@@ -53,6 +54,7 @@ export const TREATMENTS: Record<string, Treatment> = {
   "polynucleotides-salmon-dna": PolynucleotidesSalmonDna,
   "prp-malta": PrpMalta,
   "pico-laser-tattoo-removal": PicoLaserTattooRemoval,
+  "pico-laser-pigmentation-treatment": PicoLaserPigmentationTreatment,
   "medical-weight-loss": MedicalWeightLoss,
   "muscle-stimulation-1": MuscleStimulation1,
   "skin-tightening-1": SkinTightening1,

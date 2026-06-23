@@ -1,12 +1,7 @@
 import { notFound } from "next/navigation";
 import JsonLd from "@/lib/seo/JsonLd";
 import TreatmentPage from "@/components/TreatmentPage";
-import LaserHairRemovalPage from "@/components/LaserHairRemovalPage";
 import ProtocolPage from "@/components/ProtocolPage";
-import MedicalWeightLossPage from "@/components/MedicalWeightLossPage";
-import PicoLaserPage from "@/components/PicoLaserPage";
-import PigmentationPage from "@/components/PigmentationPage";
-import HairRegrowthPage from "@/components/HairRegrowthPage";
 import BodyPackagePage from "@/components/BodyPackagePage";
 import { bodyPackages } from "@/lib/bodypkg";
 import { PROTOCOLS } from "@/lib/protocols";
@@ -228,13 +223,8 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
 
   const pkg = PACKAGES[slug];
   if (pkg) return <>{schemas}<PackageFunnel data={pkg} /></>;
-  if (slug === "laser-hair-removal-malta") return <>{schemas}<LaserHairRemovalPage /></>;
   if (bodyPackages[slug]) return <>{schemas}<BodyPackagePage content={bodyPackages[slug]} /></>;
   if (PROTOCOLS[slug]) return <>{schemas}<ProtocolPage d={PROTOCOLS[slug]} /></>;
-  if (slug === "medical-weight-loss") return <>{schemas}<MedicalWeightLossPage /></>;
-  if (slug === "pico-laser-tattoo-removal") return <>{schemas}<PicoLaserPage /></>;
-  if (slug === "pico-laser-pigmentation-treatment") return <>{schemas}<PigmentationPage /></>;
-  if (slug === "hair-regrowth") return <>{schemas}<HairRegrowthPage /></>;
   const t = getTreatment(slug);
   if (!t) notFound();
   return <>{schemas}<TreatmentPage t={t} /></>;
