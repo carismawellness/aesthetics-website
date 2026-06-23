@@ -46,7 +46,7 @@ const BENEFITS = [
 
 const TRUST = [
   "#1 Voted Med-Aesthetics Clinic",
-  "4.9 ★ from 200+ reviews",
+  "4.9 ★ from 500+ reviews",
   "30+ years in wellness",
 ];
 

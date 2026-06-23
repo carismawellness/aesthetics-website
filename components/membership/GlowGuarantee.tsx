@@ -13,18 +13,22 @@ import Link from "next/link";
  * non-refundable, BUT that amount is credited toward your second procedure once
  * you join. No facts or pricing changed — presentation only.
  *
- * Server component, no required props — content baked in so the promise never
- * drifts. WCAG 2.2 AA verified with scripts/contrast.mjs on every text/UI pair:
- *   gold #706552 on panel #f3f8f8 = 5.34  · teal-text #406060 on #f3f8f8 = 6.4
- *   label #695c4e on #f3f8f8 = 6.04        · teal-deep #3f6363 icon = 6.17 (UI)
- *   gold #706552 on card #ffffff = 5.72    · white on .btn-teal #4f7373 = 5.21
+ * Background cleanup: the section is transparent so the membership page
+ * glow-field (warm ivory/champagne) shows through; proof cards use a soft
+ * translucent white. No teal fills remain — teal stays accent-only (icons,
+ * rule, CTA). Server component, no required props.
+ *
+ * WCAG 2.2 AA verified with scripts/contrast.mjs. Worst case is the page's
+ * warm champagne #f3ece0 the section/cards sit over:
+ *   gold #706552 on champagne #f3ece0 = 4.87 · teal-text #406060 = 5.84
+ *   label #695c4e on champagne = 5.52         · gold on card #fff = 5.72
+ *   white on .btn-teal #4f7373 = 5.21
  */
 
 const GOLD = "var(--gold)"; // #706552 — heading / eyebrow text
 const TEAL_TEXT = "var(--teal-text)"; // #406060 — body / promise text
 const LABEL = "var(--label)"; // #695c4e — muted supporting text
 const ICON = "#3f6363"; // teal-deep — icon strokes (UI >=3:1)
-const PANEL = "#f3f8f8"; // cool near-white panel ground
 
 type Pillar = {
   title: string;
@@ -73,7 +77,7 @@ export default function GlowGuarantee() {
     <section
       aria-labelledby="glow-guarantee-heading"
       style={{
-        background: `linear-gradient(180deg, #ffffff 0%, ${PANEL} 100%)`,
+        background: "transparent",
         padding: "clamp(56px,9vw,104px) 0",
       }}
     >
@@ -183,7 +187,8 @@ export default function GlowGuarantee() {
               key={p.title}
               className="card"
               style={{
-                background: "#ffffff",
+                background: "rgba(255,255,255,0.78)",
+                backdropFilter: "blur(2px)",
                 borderRadius: "var(--radius-card)",
                 padding: "32px 28px",
                 textAlign: "center",

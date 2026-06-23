@@ -15,12 +15,12 @@
 const SERIF = "var(--font-serif), Trajan Pro, serif";
 const WIDE = "var(--font-display), Novecento Wide, sans-serif";
 
-const TEAL_DEEP = "#4f7373"; // step number circle + heading — WHITE on it = 5.21:1
-const TEAL_TEXT = "#406060"; // "STEP" label + accents on mist = 5.62:1
+const TEAL_DEEP = "#4f7373"; // step number circle (accent) — WHITE on it = 5.21:1
+const TEAL_TEXT = "#406060"; // "STEP" label + accents — accent text
 const GOLD = "#706552"; // card subheading taupe-gold on white = 5.72:1
 const LABEL = "#695c4e"; // body taupe on white = 6.48:1
-const MIST = "#deebeb"; // cool section background token (--cream)
-const DASH = "#a9c4c4"; // decorative spine (UI graphic, non-text)
+const RING = "#faf6ef"; // warm ivory ring behind the step badge (was teal mist)
+const DASH = "#bcae9a"; // decorative spine, warm taupe (UI graphic, non-text)
 
 type Step = {
   word: string; // short timeline label (CONTRIBUTE / SAVE / SPEND)
@@ -52,7 +52,8 @@ const STEPS: Step[] = [
 
 const cardStyle: React.CSSProperties = {
   borderRadius: "18px 44px 18px 44px",
-  background: "linear-gradient(180deg, #ffffff 0%, #eef3f3 100%)",
+  background: "rgba(255,255,255,0.78)",
+  backdropFilter: "blur(2px)",
   boxShadow: "0 16px 38px rgba(79,115,115,0.10)",
   border: "1px solid rgba(79,115,115,0.10)",
   padding: "22px 26px",
@@ -110,7 +111,7 @@ function StepBadge({ n }: { n: number }) {
         fontFamily: SERIF,
         fontSize: 32,
         lineHeight: 1,
-        boxShadow: `0 0 0 6px ${MIST}`,
+        boxShadow: `0 0 0 6px ${RING}`,
         flexShrink: 0,
       }}
     >
@@ -123,7 +124,7 @@ export default function HowItWorks() {
   return (
     <section
       aria-labelledby="how-it-works-heading"
-      style={{ background: MIST, padding: "76px 0" }}
+      style={{ background: "transparent", padding: "76px 0" }}
     >
       <div className="container">
         {/* ── Header ── */}
@@ -188,18 +189,22 @@ export default function HowItWorks() {
               key={s.word}
               className="relative grid items-center"
               style={{
-                gridTemplateColumns: "64px 92px minmax(0, 1fr)",
-                columnGap: 24,
+                gridTemplateColumns: "64px 132px minmax(0, 1fr)",
+                columnGap: 28,
                 marginBottom: i === STEPS.length - 1 ? 0 : 32,
               }}
             >
               <div
                 className="flex justify-center"
-                style={{ position: "relative", zIndex: 1 }}
+                style={{ position: "relative", zIndex: 2 }}
               >
                 <StepBadge n={i + 1} />
               </div>
-              <div className="text-center" aria-hidden="true">
+              <div
+                className="text-center"
+                aria-hidden="true"
+                style={{ position: "relative", zIndex: 2, paddingRight: 4 }}
+              >
                 <div
                   style={{
                     fontFamily: WIDE,
@@ -214,11 +219,12 @@ export default function HowItWorks() {
                 <div
                   style={{
                     fontFamily: SERIF,
-                    fontSize: "clamp(18px, 2vw, 22px)",
+                    fontSize: "clamp(17px, 1.7vw, 21px)",
                     color: GOLD,
                     lineHeight: 1.2,
                     marginTop: 4,
                     letterSpacing: "0.04em",
+                    whiteSpace: "nowrap",
                   }}
                 >
                   {s.word}

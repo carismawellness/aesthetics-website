@@ -115,7 +115,7 @@ function ContactItem({
     >
       {/* Icon circle — minimum 44×44px tap target */}
       <span
-        className="shrink-0 inline-flex items-center justify-center transition-colors duration-200 ease-in-out group-hover:bg-[#DEEBEB]"
+        className="shrink-0 inline-flex items-center justify-center transition-colors duration-200 ease-in-out group-hover:bg-[#f3ece0]"
         style={{
           width: "44px",
           height: "44px",
@@ -197,7 +197,7 @@ export default function ConsultationPage() {
           }}
           proof={{
             rating: "4.9",
-            reviews: "200+",
+            reviews: "500+",
             statValue: "30+",
             statLabel: "years in wellness",
             awardText: "#1 Voted Clinic\nMalta Healthcare Awards",

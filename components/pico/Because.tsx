@@ -64,7 +64,7 @@ export default function Because() {
               className="flex items-center"
               style={{ marginTop: "14px", gap: "6px" }}
               role="img"
-              aria-label="Rated 4.9 out of 5 stars from over 200 customer reviews"
+              aria-label="Rated 4.9 out of 5 stars from over 500 customer reviews"
             >
               {[0, 1, 2, 3, 4].map((i) => (
                 <svg
@@ -82,7 +82,7 @@ export default function Because() {
                 style={{ fontSize: "12px", color: "var(--label)", marginLeft: "4px" }}
                 aria-hidden="true"
               >
-                4.9/5 from over 200 customer reviews
+                4.9/5 from over 500 customer reviews
               </span>
             </div>
           </div>

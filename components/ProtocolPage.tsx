@@ -59,7 +59,7 @@ export default function ProtocolPage({ d }: { d: ProtocolData }) {
         media={{ type: "video", src: d.hero.video, alt: `${d.hero.title} in Malta` }}
         proof={{
           rating: "4.9",
-          reviews: "200+",
+          reviews: "500+",
           statValue: "30+",
           statLabel: "years in wellness",
           awardText: "#1 Voted Clinic\nMalta Healthcare Awards",

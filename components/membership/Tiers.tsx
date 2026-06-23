@@ -27,16 +27,20 @@ import { useEffect, useRef, useState } from "react";
  *     unmount. The reserved 64px gem box means the canvas never shifts layout.
  *   • prefers-reduced-motion → no WebGL at all; the elegant static SVG stays.
  *
+ * Background cleanup: the section is transparent (the membership page glow-field
+ * — warm ivory/champagne — shows through) and ALL tier cards now sit on a light,
+ * warm translucent surface with dark text. The "popular" tier keeps its visual
+ * emphasis through a warmer champagne tint, gold hairline, deeper lift and gold
+ * CTA — no teal fill anywhere. Teal stays accent-only (header rule, check ticks).
+ *
  * Brand: Carisma Aesthetics — "Glow with Confidence". Cool sage-teal + taupe-gold.
- * Accessibility: every text/UI pair verified AA with scripts/contrast.mjs
+ * Accessibility: every text/UI pair verified AA with scripts/contrast.mjs. Worst
+ * case is the warm champagne #f3ece0 the translucent cards sit over:
+ *   - gold #706552 on champagne #f3ece0 .. 4.87  (AA)
+ *   - teal-text #406060 on champagne ..... 5.84  (AA)
+ *   - label #695c4e on champagne ......... 5.52  (AA)
  *   - gold #706552 on white .............. 5.72  (AA)
- *   - label #695c4e on cream ............. 5.30  (AA)
- *   - teal-text #406060 on white ......... 6.86  (AA)
- *   - muted #636363 on white ............. 6.01  (AA)
- *   - white on teal-deep #4f7373 ......... 5.21  (AA, popular-card CTA + ribbon)
- *   - white on solid teal #527979 ........ 4.81  (AA, popular-card body text)
  *   - ink #0c0b0b on gold #c8a96b ........ 8.75  (AAA, "Most popular" ribbon)
- *   - gold #706552 on glass #f4f6f6 ...... 5.42  (AA, light-card gem dais)
  * The 3D gems are decorative (aria-hidden) — no text sits on them, so their
  * tints carry no contrast requirement.
  */
@@ -46,8 +50,7 @@ const JOIN_HREF = "/membership/join";
 // WCAG AA palette (verified) — design-system tokens + this section's surfaces.
 const GOLD = "var(--gold)"; // #706552 — heading / price text
 const TEAL_TEXT = "var(--teal-text)"; // #406060 — small teal text
-const TEAL_DEEP = "var(--teal-deep)"; // #4f7373 — popular-card surface + CTA fill
-const POPULAR_BG = "#527979"; // solid teal — white body text reads at 4.81:1
+const TEAL_DEEP = "var(--teal-deep)"; // #4f7373 — accent: header rule + check stroke
 const RIBBON_BG = "#c8a96b"; // warm gold ribbon — ink reads at 8.75:1
 const LABEL = "var(--label)"; // #695c4e — muted taupe text
 const MUTED = "var(--muted)"; // #636363 — secondary text
@@ -405,7 +408,7 @@ function GemSlot({ tint, dark }: { tint: GemTint; dark: boolean }) {
         borderRadius: "50%",
         background: dark
           ? "radial-gradient(circle at 50% 38%, rgba(255,255,255,0.20), rgba(255,255,255,0.04) 70%)"
-          : "radial-gradient(circle at 50% 38%, #f4f6f6, #e7efef 72%)",
+          : "radial-gradient(circle at 50% 38%, #fdfaf4, #f3ece0 72%)",
         border: dark
           ? "1px solid rgba(255,255,255,0.30)"
           : "1px solid rgba(112,101,82,0.28)", // soft gold hairline
@@ -428,11 +431,7 @@ export default function Tiers() {
   return (
     <section
       aria-labelledby="glow-tiers-heading"
-      style={{
-        padding: "76px 0",
-        background:
-          "linear-gradient(180deg, #ffffff 0%, #fbfdfd 60%, #f4f8f8 100%)",
-      }}
+      style={{ padding: "76px 0", background: "transparent" }}
     >
       <div className="container">
         {/* ── Header ───────────────────────────────────────────── */}
@@ -503,16 +502,23 @@ export default function Tiers() {
           aria-label="Glow Club membership status tiers"
         >
           {TIERS.map((t) => {
-            const dark = !!t.popular;
+            // `featured` = the popular tier's VISUAL emphasis (lift, deeper
+            // shadow, ribbon, gold crown). It no longer implies a teal fill —
+            // all cards now sit on a light warm surface with dark text, so the
+            // page glow-field reads through and teal stays accent-only.
+            const featured = !!t.popular;
+            const dark = false; // text/UI always render for a light ground now
             const headingId = `tier-${t.name.replace(/\s+/g, "-").toLowerCase()}`;
-            const surface = dark
-              ? `linear-gradient(165deg, ${POPULAR_BG} 0%, ${POPULAR_BG} 60%, #466868 100%)`
-              : "linear-gradient(170deg, #ffffff 0%, #fbfcfc 100%)";
-            const nameColor = dark ? "#ffffff" : TEAL_TEXT;
-            const rewardColor = dark ? "#ffffff" : GOLD;
-            const subColor = dark ? "#ffffff" : LABEL;
-            const perkColor = dark ? "#ffffff" : LABEL;
-            const divider = dark ? "rgba(255,255,255,0.32)" : "var(--line)";
+            // Featured card gets a subtly warmer champagne-tinted translucent
+            // surface so it still stands apart from the plainer ivory tiers.
+            const surface = featured
+              ? "linear-gradient(170deg, rgba(255,255,255,0.92) 0%, rgba(247,240,228,0.92) 100%)"
+              : "linear-gradient(170deg, rgba(255,255,255,0.82) 0%, rgba(250,246,239,0.82) 100%)";
+            const nameColor = TEAL_TEXT;
+            const rewardColor = GOLD;
+            const subColor = LABEL;
+            const perkColor = LABEL;
+            const divider = "var(--line)";
 
             return (
               <li
@@ -524,16 +530,17 @@ export default function Tiers() {
                   display: "flex",
                   flexDirection: "column",
                   background: surface,
-                  border: dark
-                    ? `1px solid ${TEAL_DEEP}`
+                  backdropFilter: "blur(2px)",
+                  border: featured
+                    ? "1px solid rgba(199,169,107,0.55)" // warm gold hairline for the popular tier
                     : "1px solid rgba(112,101,82,0.16)", // soft gold hairline
                   borderRadius: "20px",
-                  padding: dark ? "54px 28px 32px" : "46px 28px 32px",
+                  padding: featured ? "54px 28px 32px" : "46px 28px 32px",
                   // Layered, premium shadow — the popular card lifts further.
-                  boxShadow: dark
-                    ? "0 2px 0 rgba(255,255,255,0.10) inset, 0 24px 56px -22px rgba(64,96,96,0.62), 0 8px 20px -14px rgba(64,96,96,0.4)"
+                  boxShadow: featured
+                    ? "0 1px 0 rgba(255,255,255,0.9) inset, 0 26px 60px -22px rgba(64,96,96,0.40), 0 8px 20px -14px rgba(112,101,82,0.22)"
                     : "0 1px 0 rgba(255,255,255,0.9) inset, 0 14px 36px -24px rgba(64,96,96,0.34), 0 4px 12px -10px rgba(112,101,82,0.18)",
-                  transform: dark ? "translateY(-6px)" : undefined,
+                  transform: featured ? "translateY(-6px)" : undefined,
                 }}
               >
                 {/* Subtle gold hairline crown — premium top accent */}
@@ -545,9 +552,8 @@ export default function Tiers() {
                     left: "18%",
                     right: "18%",
                     height: "1px",
-                    background: dark
-                      ? "linear-gradient(90deg, transparent, rgba(255,255,255,0.55), transparent)"
-                      : "linear-gradient(90deg, transparent, rgba(199,169,107,0.7), transparent)",
+                    background:
+                      "linear-gradient(90deg, transparent, rgba(199,169,107,0.7), transparent)",
                   }}
                 />
 
@@ -690,7 +696,7 @@ export default function Tiers() {
                 {/* CTA */}
                 <Link
                   href={JOIN_HREF}
-                  className={dark ? "btn btn-gold" : "btn btn-teal"}
+                  className={featured ? "btn btn-gold" : "btn btn-teal"}
                   style={{
                     marginTop: "26px",
                     width: "100%",

@@ -68,9 +68,10 @@ const t: Treatment = {
   experience: {
     title: "Your treatment experience",
     steps: [
-      { title: "Consultation & Plan", desc: "We assess your facial anatomy, medical history, and botox goals, then design a medically guided plan tailored to your facial structure and desired outcome.", image: "/assets/treatments/wrinkle-relaxing-malta-step1.png" },
-      { title: "Targeted Treatment", desc: "Your doctor administers botox using fine, precise injections — quick, comfortable, and with no downtime.", image: "/assets/treatments/wrinkle-relaxing-malta-step3.png" },
-      { title: "Ongoing Review & Adjustment", desc: "Your doctor monitors your response and refines your plan to ensure natural botox results over time.", image: "/assets/treatments/wrinkle-relaxing-malta-step4.png" },
+      { title: "Personalised Consultation", desc: "We assess your facial anatomy, skin condition, medical history, and botox goals with one of our doctors.", image: "/assets/treatments/wrinkle-relaxing-malta-step1.png" },
+      { title: "Structured Plan", desc: "Your doctor designs a medically guided botox plan tailored to your facial structure and desired outcome.", image: "/assets/treatments/wrinkle-relaxing-malta-step2.png" },
+      { title: "Targeted Treatments", desc: "Your doctor administers botox using fine, precise injections, quick, comfortable, and no downtime.", image: "/assets/treatments/wrinkle-relaxing-malta-step3.png" },
+      { title: "Ongoing Review & Adjustment", desc: "Your doctor monitors your response and refines the plan to ensure natural botox results over time.", image: "/assets/treatments/wrinkle-relaxing-malta-step4.png" },
     ],
   },
   prepAftercare: {

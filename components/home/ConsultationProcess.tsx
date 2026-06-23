@@ -36,8 +36,8 @@ const STEPS: TimelineStep[] = [
 
 const cardStyle: React.CSSProperties = {
   borderRadius: '18px 44px 18px 44px',
-  background: 'linear-gradient(180deg, #ffffff 0%, #deebeb 100%)',
-  boxShadow: '0 16px 38px rgba(79,115,115,0.10)',
+  background: 'linear-gradient(180deg, #ffffff 0%, #faf6ef 100%)',
+  boxShadow: '0 16px 38px rgba(60,50,40,0.08)',
 };
 
 function Card({ s }: { s: TimelineStep }) {
@@ -85,7 +85,7 @@ function Timeline() {
             <div className="flex justify-center" style={{ position: 'relative', zIndex: 1 }}>
               <span
                 aria-hidden
-                style={{ width: 18, height: 18, borderRadius: '50%', background: '#96b2b2', boxShadow: '0 0 0 5px #deebeb' }}
+                style={{ width: 18, height: 18, borderRadius: '50%', background: '#96b2b2', boxShadow: '0 0 0 5px #f3ece0' }}
               />
             </div>
             <div className="text-center">
@@ -108,7 +108,7 @@ function Timeline() {
             <div className="flex items-center gap-3" style={{ marginBottom: 12 }}>
               <span
                 aria-hidden
-                style={{ width: 16, height: 16, borderRadius: '50%', background: '#96b2b2', boxShadow: '0 0 0 4px #deebeb', flexShrink: 0 }}
+                style={{ width: 16, height: 16, borderRadius: '50%', background: '#96b2b2', boxShadow: '0 0 0 4px #f3ece0', flexShrink: 0 }}
               />
               <span style={{ fontFamily: SERIF, color: TEAL_TEXT, letterSpacing: '0.14em', fontSize: 14 }}>
                 Step <span style={{ fontSize: 24, color: TEAL_DEEP }}>{i + 1}</span>

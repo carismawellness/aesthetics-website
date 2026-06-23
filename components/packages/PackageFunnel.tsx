@@ -75,7 +75,7 @@ function BookCta({ href, save, label }: { href: string; save: number | null; lab
         >
           ★★★★★
         </span>
-        <span style={{ fontSize: "13px", color: "var(--label)" }}>4.9/5 from over 200 customer reviews</span>
+        <span style={{ fontSize: "13px", color: "var(--label)" }}>4.9/5 from over 500 customer reviews</span>
       </div>
     </div>
   );
@@ -266,7 +266,7 @@ export default function PackageFunnel({ data }: { data: PackageData }) {
         }
         proof={{
           rating: "4.9",
-          reviews: "200+",
+          reviews: "500+",
           statValue: "30+",
           statLabel: "years in wellness",
           awardText: "#1 Voted Clinic\nMalta Healthcare Awards",
@@ -274,9 +274,9 @@ export default function PackageFunnel({ data }: { data: PackageData }) {
       />
 
       {/* ===== OFFER / WHAT'S INCLUDED (price + package detail moved from the hero) ===== */}
-      <section aria-label="Package offer" style={{ background: "linear-gradient(180deg,#eef3f3 0%, #ffffff 100%)", padding: "clamp(40px,6vh,72px) 0" }}>
+      <section aria-label="Package offer" style={{ background: "linear-gradient(180deg,#faf6ef 0%, #ffffff 100%)", padding: "clamp(40px,6vh,72px) 0" }}>
         <div className="container">
-          <div className="mx-auto" style={{ maxWidth: "760px", borderRadius: "26px", background: "linear-gradient(160deg,#e8f0f0 0%, #f6fafa 45%, #eef4f4 100%)", border: "1px solid var(--line)", padding: "clamp(24px,3vw,40px)", boxShadow: "0 20px 60px rgba(0,0,0,0.05)" }}>
+          <div className="mx-auto" style={{ maxWidth: "760px", borderRadius: "26px", background: "linear-gradient(160deg,#f7f0e4 0%, #fdfaf4 45%, #faf6ef 100%)", border: "1px solid var(--line)", padding: "clamp(24px,3vw,40px)", boxShadow: "0 20px 60px rgba(0,0,0,0.05)" }}>
             <Reveal>
               <p style={{ fontSize: "14px", color: "var(--label)", lineHeight: 1.6, textAlign: "justify" }}>
                 {withBold(h.subtitle, h.subtitleBold)}

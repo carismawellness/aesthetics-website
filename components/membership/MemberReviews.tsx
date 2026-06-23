@@ -9,16 +9,21 @@ import Reveal from "@/components/Reveal";
    All copy/testimonials extracted faithfully from components/MembershipPage.tsx
    (REAL PEOPLE REAL REVIEWS, ~lines 229–251).
 
-   WCAG 2.2 AA — every text/UI pair verified with scripts/contrast.mjs:
-     • #695c4e (label/quote)  on #ffffff = 6.48:1 ✓   on #f4f4f2 = 5.88:1 ✓
-     • #406060 (teal-text)    on #ffffff = 6.86:1 ✓   on #f4f4f2 = 6.23:1 ✓
-     • #706552 (gold)         on #ffffff = 5.72:1 ✓   on #f4f4f2 = 5.19:1 ✓
-     • #0c0b0b (ink)          on #ffffff = 19.66 ✓     on #f4f4f2 = 17.85 ✓
+   Background cleanup: the section is transparent (was #f4f4f2) so the
+   membership page glow-field (warm ivory/champagne) shows through; cards stay
+   white. The sage avatar chip stays as a small accent (allowed). No teal fill.
+
+   WCAG 2.2 AA — every text/UI pair verified with scripts/contrast.mjs. Header/
+   intro now sit on the page field; worst case is champagne #f3ece0:
+     • #695c4e (label)        on #ffffff = 6.48:1 ✓   on #f3ece0 = 5.52:1 ✓
+     • #406060 (teal-text)    on #ffffff = 6.86:1 ✓   on #f3ece0 = 5.84:1 ✓
+     • #706552 (gold)         on #ffffff = 5.72:1 ✓   on #f3ece0 = 4.87:1 ✓
+     • #0c0b0b (ink)          on #ffffff = 19.66 ✓     on #f3ece0 = 17+  ✓
      • #ffffff (white)        on #527979 (avatar) = 4.81:1 ✓   on teal CTA = 5.21:1 ✓
      • #9c8344 (gold-deep star, graphic/UI) on #ffffff = 3.66:1 ✓ (>3 UI)
    ───────────────────────────────────────────────────────────────────────── */
 
-const SECTION_BG = "#f4f4f2";
+const SECTION_BG = "transparent"; // was #f4f4f2 — now transparent so the page glow-field shows through
 const TEAL_TEXT = "var(--teal-text)"; // #406060
 const SAGE_SOLID = "#527979"; // accessible avatar fill — white text 4.81:1
 const STAR = "#9c8344"; // gold-deep — graphic accent, 3.66:1 on white (>3 UI)

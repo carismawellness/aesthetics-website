@@ -124,7 +124,7 @@ export default function CenterHero({
   ctaPrimary,
   ctaSecondary,
 }: CenterHeroProps) {
-  const sectionBg = "radial-gradient(120% 90% at 50% 8%, #eef3f3 0%, #f6f4ef 45%, #ffffff 100%)";
+  const sectionBg = "radial-gradient(120% 90% at 50% 8%, #faf6ef 0%, #f6f4ef 45%, #ffffff 100%)";
 
   return (
     <section
@@ -150,7 +150,7 @@ export default function CenterHero({
           width: 620,
           height: 620,
           borderRadius: "50%",
-          background: "rgba(150,178,178,0.22)",
+          background: "rgba(243,236,224,0.5)",
           filter: "blur(110px)",
           zIndex: 0,
         }}
@@ -355,7 +355,7 @@ export default function CenterHero({
         >
           <Stars size={14} />
           <span style={{ fontFamily: BODY, fontSize: 13, color: "var(--muted)" }}>
-            <strong style={{ color: TEAL_DEEP, fontWeight: 600 }}>4.9</strong> · 200+ verified client reviews
+            <strong style={{ color: TEAL_DEEP, fontWeight: 600 }}>4.9</strong> · 500+ verified client reviews
           </span>
         </div>
 
@@ -368,7 +368,7 @@ export default function CenterHero({
               width: "100%",
               padding: "18px clamp(16px,2vw,24px)",
               borderRadius: "var(--radius-card)",
-              background: "rgba(150,178,178,0.10)",
+              background: "rgba(243,236,224,0.55)",
               border: "1px solid rgba(150,178,178,0.32)",
             }}
           >

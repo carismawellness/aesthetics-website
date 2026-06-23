@@ -63,7 +63,6 @@ const GOLD_DEEP = "var(--gold-deep)"; /* #9c8344 — foil hairlines / graphics (
 const TEAL_TEXT = "var(--teal-text)"; /* #406060 — body copy */
 const LABEL = "var(--label)"; /* #695c4e — muted supporting text */
 const TEAL_DEEP = "#3f6363"; /* teal-deep — icon strokes / hairlines (UI ≥3:1) */
-const PANEL = "#f3f8f8"; /* cool near-white panel ground */
 
 type Benefit = {
   big: string;
@@ -351,7 +350,7 @@ export default function Benefits() {
   return (
     <section
       aria-labelledby="glow-benefits-heading"
-      style={{ background: "#ffffff", padding: "clamp(64px,9vw,104px) 0" }}
+      style={{ background: "transparent", padding: "clamp(64px,9vw,104px) 0" }}
     >
       {/* Scoped premium styling for the elite tier cards. */}
       <style>{`
@@ -359,7 +358,8 @@ export default function Benefits() {
           position: relative;
           border-radius: 20px;
           background:
-            linear-gradient(180deg, #ffffff 0%, #fbfcfc 100%);
+            linear-gradient(180deg, rgba(255,255,255,0.85) 0%, rgba(250,246,239,0.85) 100%);
+          backdrop-filter: blur(2px);
           border: 1px solid rgba(79, 115, 115, 0.14);
           box-shadow:
             0 1px 0 rgba(255, 255, 255, 0.9) inset,
@@ -662,8 +662,9 @@ export default function Benefits() {
             overflow: "hidden",
             marginTop: "clamp(56px,8vw,88px)",
             background:
-              "linear-gradient(165deg, #ffffff 0%, " + PANEL + " 52%, #eef3f3 100%)",
-            border: "1px solid rgba(79,115,115,0.14)",
+              "linear-gradient(165deg, rgba(255,255,255,0.86) 0%, rgba(250,246,239,0.86) 52%, rgba(243,236,224,0.86) 100%)",
+            backdropFilter: "blur(2px)",
+            border: "1px solid rgba(112,101,82,0.16)",
             borderRadius: "28px",
             padding: "clamp(44px,6vw,72px) clamp(20px,5vw,56px)",
             boxShadow: "0 30px 70px rgba(79,115,115,0.12)",

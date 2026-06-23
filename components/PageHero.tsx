@@ -162,7 +162,7 @@ export default function PageHero({
   };
   const sectionBg = background || (dark
     ? "radial-gradient(120% 90% at 85% 10%, #1c1a17 0%, #14120e 55%, #0e0c09 100%)"
-    : "radial-gradient(120% 90% at 85% 10%, #eef3f3 0%, #f6f4ef 45%, #ffffff 100%)");
+    : "radial-gradient(120% 90% at 85% 10%, #faf6ef 0%, #f6f4ef 45%, #ffffff 100%)");
   const archBg = media.bg || (dark ? "#0c0c0c" : "linear-gradient(160deg, var(--teal-100) 0%, var(--gray-100) 55%, var(--beige) 100%)");
   const glassClass = dark ? "hero-glass-dark" : "hero-glass";
   const pillClass = dark ? "hero-pill-dark" : "hero-pill";
@@ -232,7 +232,7 @@ export default function PageHero({
           <div style={{ display: "flex", alignItems: "center", gap: 10, flexWrap: "wrap" }}>
             <Stars size={14} />
             <span style={{ fontFamily: BODY, fontSize: 13, color: c.body }}>
-              <strong style={{ color: c.proofStrong }}>{proof?.rating || "4.9"}</strong> · {proof?.reviews || "200+"} verified client reviews
+              <strong style={{ color: c.proofStrong }}>{proof?.rating || "4.9"}</strong> · {proof?.reviews || "500+"} verified client reviews
             </span>
           </div>
 

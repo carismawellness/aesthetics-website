@@ -45,7 +45,7 @@ function Stars() {
           <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
         </svg>
       ))}
-      <span style={{ fontSize: "12px", color: GOLD_TEXT, marginLeft: "4px" }}>4,9/5 from over 200 customer reviews</span>
+      <span style={{ fontSize: "12px", color: GOLD_TEXT, marginLeft: "4px" }}>4,9/5 from over 500 customer reviews</span>
     </div>
   );
 }
@@ -73,7 +73,7 @@ function Hero() {
       media={{ type: "image", src: `${A}/pig-hero-main.png`, alt: "Pigmentation treatment in Malta", aspect: "4 / 5" }}
       proof={{
         rating: "4.9",
-        reviews: "200+",
+        reviews: "500+",
         statValue: "30+",
         statLabel: "years in wellness",
         awardText: "#1 Voted Clinic\nMalta Healthcare Awards",

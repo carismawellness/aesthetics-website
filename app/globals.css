@@ -78,46 +78,56 @@
 :root {
   /* ============================================================
      Carisma Aesthetics — BRAND PALETTE (2026 refresh)
-     Identity hues come straight from the brand palette board:
-       sage-teal #96B2B2 · light teal #DEEBEB · teal-mist #EEF3F3
-       taupe #9B8D83 · neutral grey #ECEAE7 · white #FFFFFF
-     (Warm beige #EFE7D7 has been ERADICATED — grounds are white + teal only.)
-     Bright identity hues are decorative (backgrounds / large graphics).
+     BACKGROUNDS = warm ivory / champagne neutrals:
+       white #FFFFFF · ivory #FAF6EF · light-ivory #FDFAF4
+       champagne #F3ECE0 · light-champagne #F7F0E4 · neutral grey #ECEAE7
+     TEAL = ACCENT ONLY (buttons/CTAs, icons, links, badges, borders, text):
+       sage-teal #96B2B2 · mid sage #C5D6D6 · teal-deep #4F7373 · teal-text #406060
+     (Turquoise/teal as a large BACKGROUND fill has been ERADICATED — grounds
+     are warm ivory/champagne or white/transparent; teal is an accent only.)
      Each functional TEXT/FILL token keeps an AA-darkened variant so the
      live site stays WCAG AA — never use a bright hue as small text on white.
      ============================================================ */
 
-  /* — Identity (decorative: backgrounds, large graphics, fills) — */
-  --brand-teal:  #96b2b2;   /* signature sage-teal */
+  /* — TEAL is ACCENT ONLY (buttons / CTAs / icons / links / borders / text).
+       NEVER use --teal / --brand-teal / --teal-200 / --teal-deep / --teal-text
+       as a large page / section / band BACKGROUND fill. Backgrounds use the
+       warm ivory / champagne neutrals below (or white / transparent). — */
+  --brand-teal:  #96b2b2;   /* signature sage-teal — ACCENT (icons, badges, borders) */
   --brand-taupe: #9b8d83;   /* warm taupe accent */
-  --teal:        #96b2b2;   /* brand sage-teal (decorative / large fills) */
-  --teal-200:    #c5d6d6;   /* mid sage tint */
-  --teal-100:    #deebeb;   /* lightest teal tint — section background */
-  /* ── Warm beige ERADICATED (Jun 2026) ──────────────────────────────────
-     The old warm cream/beige wallpaper (#efe7d7) is gone site-wide. These
-     tokens now resolve to COOL teal-mist grounds so every legacy
-     `var(--beige)` reference (TreatmentPage, PackageFunnel, FaceUI, PageHero)
-     renders as a subtle blue-teal tint matching the Slimming design language.
-     Prefer white + gradient rhythm for large blocks; these flat tints are
-     gentle accents only. NO warm cream/beige/tan/sand anywhere. */
-  --beige:       #eef3f3;   /* (was #efe7d7) cool teal-mist accent ground */
-  --beige-2:     #deebeb;   /* (was #e7dbc7) light teal accent */
+  --teal:        #96b2b2;   /* brand sage-teal — ACCENT, not a background fill */
+  --teal-200:    #c5d6d6;   /* mid sage tint — ACCENT (chips, borders) */
+  /* ── Neutral BACKGROUND tokens → WARM IVORY / CHAMPAGNE (Jun 2026) ──────
+     Turquoise/teal was eradicated from every NEUTRAL ground. These tokens are
+     consumed as backgrounds across the site (TreatmentPage, PackageFunnel,
+     FaceUI, PageHero, MembershipPage, etc.), so remapping them here flips the
+     whole site from teal wallpaper to a clean warm ivory/champagne neutral in
+     one place. Palette: white #ffffff · ivory #faf6ef · light-ivory #fdfaf4 ·
+     champagne #f3ece0 · light-champagne #f7f0e4. NO teal/turquoise grounds. */
+  --teal-100:    #faf6ef;   /* (was #deebeb teal) → warm ivory section background */
+  --beige:       #f3ece0;   /* (was #eef3f3 teal) → champagne accent ground */
+  --beige-2:     #f7f0e4;   /* (was #deebeb teal) → light champagne accent */
   --gray-100:    #eceae7;   /* neutral light grey surface */
-  --cream:       #deebeb;   /* cool "mist" section background (hero, etc.) */
-  --cream-2:     #eef3f3;
+  --cream:       #faf6ef;   /* (was #deebeb teal) → warm ivory section background */
+  --cream-2:     #fdfaf4;   /* (was #eef3f3 teal) → light ivory */
   --white:       #ffffff;
+  /* Warm ivory / champagne background palette (explicit handles) */
+  --ivory:           #faf6ef;
+  --ivory-light:     #fdfaf4;
+  --champagne:       #f3ece0;
+  --champagne-light: #f7f0e4;
 
   /* — Accessible TEXT / FILL variants (small text / icons / buttons) — */
-  --teal-deep: #4f7373;     /* accessible teal — button fill & icons carry WHITE text (>=4.5) */
-  --teal-text: #406060;     /* teal as small text/link — AA on white + teal-100/cream/beige tints (>=4.5) */
-  --gold: #706552;          /* heading / nav / price TEXT — AA on white/cream/beige (>=4.5) */
+  --teal-deep: #4f7373;     /* accessible teal — button fill & icons carry WHITE text (>=4.5). ACCENT only — not a section background */
+  --teal-text: #406060;     /* teal as small text/link — AA on white + ivory/champagne tints (>=4.5) */
+  --gold: #706552;          /* heading / nav / price TEXT — AA on white/ivory/champagne (>=4.5) */
   --gold-deep: #9c8344;     /* gold graphic / star accent — >=3:1 vs white */
-  --label: #695c4e;         /* muted label / bio taupe TEXT — AA on white + cream/beige tints (>=4.5) */
+  --label: #695c4e;         /* muted label / bio taupe TEXT — AA on white + ivory/champagne tints (>=4.5) */
   --ink: #0c0b0b;           /* near-black (footer / award) */
   /* Body copy = brand brown taupe (#706552 = 5.6:1 on white, AA) — matches the
      slimming site's taupe body voice. NEVER near-black/green for paragraph copy. */
   --ink-soft: #706552;
-  --muted: #636363;         /* secondary TEXT — AA on white + teal-100/cream/beige tints (>=4.5) */
+  --muted: #636363;         /* secondary TEXT — AA on white + ivory/champagne tints (>=4.5) */
   --line: #e2e2e2;          /* decorative hairline borders (form fields use --field-border) */
   --field-border: #8a8a8a;  /* form-field border — UI component >=3:1 vs white */
   --placeholder: #717171;   /* placeholder text — >=4.5:1 vs white */
@@ -708,6 +718,7 @@ body.dark-texture-page footer {
   --cream-2:  transparent;
   --beige:    transparent;
   --beige-2:  transparent;
+  --teal-100: transparent; /* ivory ground token — keep transparent over dark stone */
   /* All verified on the brightest texture patch (#303030) as worst case:
      ink 10.33, ink-soft 8.04, muted 6.16, label 5.89 — all >=4.5. */
   --ink:      #e8e3da;
@@ -738,10 +749,56 @@ body.dark-texture-page footer div[style*="background"] {
    components/motion/HeroBackdrop.tsx when conditions allow. Brand hues only. */
 .hero-bokeh-fallback {
   background:
-    radial-gradient(38% 48% at 18% 28%, rgba(150, 178, 178, 0.30) 0%, rgba(150, 178, 178, 0) 70%),
-    radial-gradient(34% 44% at 82% 22%, rgba(222, 235, 235, 0.55) 0%, rgba(222, 235, 235, 0) 70%),
+    radial-gradient(38% 48% at 18% 28%, rgba(243, 236, 224, 0.55) 0%, rgba(243, 236, 224, 0) 70%),
+    radial-gradient(34% 44% at 82% 22%, rgba(250, 246, 239, 0.60) 0%, rgba(250, 246, 239, 0) 70%),
     radial-gradient(46% 56% at 72% 82%, rgba(239, 231, 215, 0.45) 0%, rgba(239, 231, 215, 0) 72%);
   filter: blur(6px);
+}
+
+/* ============================================================
+   .glow-field — SUBTLE ANIMATED GRADIENT (membership page ground)
+   One clean, continuous warm ivory→champagne field that VERY slowly drifts so
+   the whole MembershipPage reads as a single evolving background instead of a
+   patchwork of section fills. NO teal/turquoise — warm neutrals only:
+     white #ffffff → ivory #faf6ef → champagne #f3ece0.
+   How it works: an oversized linear base gradient pans across a 400% canvas
+   (~34s) while two soft radial "blooms" (warm ivory / light champagne) breathe
+   on long, offset loops (~28s / ~40s). Movement is tiny and the colours sit
+   within a few % of each other, so it stays extremely subtle — luxe, not flashy.
+
+   HOW TO APPLY: put `.glow-field` on the MembershipPage's outermost wrapper
+   (the <main>/section that currently stacks several teal/section fills), then
+   make the inner sections transparent (background: transparent / remove their
+   fills) so this one field shows through end-to-end. Dark text tokens stay AA
+   on every stop (#ffffff / #faf6ef / #f3ece0 — gold #706552 = 4.87:1 worst).
+   ============================================================ */
+.glow-field {
+  position: relative;
+  background-color: #faf6ef; /* solid fallback before paint */
+  /* Layer 1: warm-ivory bloom (top-left) · Layer 2: light-champagne bloom
+     (bottom-right) · Layer 3: the base ivory→champagne linear field. */
+  background-image:
+    radial-gradient(60% 55% at 18% 22%, rgba(255, 255, 255, 0.85) 0%, rgba(255, 255, 255, 0) 60%),
+    radial-gradient(58% 60% at 84% 78%, rgba(247, 240, 228, 0.85) 0%, rgba(247, 240, 228, 0) 62%),
+    linear-gradient(125deg, #ffffff 0%, #faf6ef 42%, #f3ece0 100%);
+  background-size: 160% 160%, 170% 170%, 400% 400%;
+  background-position: 18% 22%, 84% 78%, 0% 50%;
+  background-repeat: no-repeat;
+  /* ONE long, gentle loop drives all three layers together (each layer moves a
+     few %, on its own arc, so the field slowly breathes as a single ground). */
+  animation: glowFieldDrift 34s ease-in-out infinite;
+}
+@keyframes glowFieldDrift {
+  0%   { background-position: 18% 22%, 84% 78%,   0% 50%; }
+  50%  { background-position: 28% 34%, 72% 66%, 100% 50%; }
+  100% { background-position: 18% 22%, 84% 78%,   0% 50%; }
+}
+/* Freeze to a clean static gradient when the user prefers reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  .glow-field {
+    animation: none;
+    background-position: 18% 22%, 84% 78%, 0% 50%;
+  }
 }
 
 /* Card / surface hover lift — subtle luxury depth. Transform-only. */

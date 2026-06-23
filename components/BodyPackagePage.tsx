@@ -114,7 +114,7 @@ function Stars({ size = 18, withGoogle = false }: { size?: number; withGoogle?: 
         <img src={GOOGLE} alt="Google" loading="lazy" style={{ width: size + 4, height: size + 4 }} />
       )}
       <span style={{ color: GREEN, fontSize: size, letterSpacing: 2, lineHeight: 1 }}>{'★'.repeat(5)}</span>
-      <span style={{ color: TAUPE, fontFamily: BODY, fontSize: 14 }}>Over 200+ Reviews</span>
+      <span style={{ color: TAUPE, fontFamily: BODY, fontSize: 14 }}>Over 500+ Reviews</span>
     </span>
   );
 }
@@ -146,7 +146,7 @@ export default function PackagePage({ content: c }: { content: PackageContent })
         }
         proof={{
           rating: '4.9',
-          reviews: '200+',
+          reviews: '500+',
           statValue: '30+',
           statLabel: 'years in wellness',
           awardText: '#1 Voted Clinic\nMalta Healthcare Awards',

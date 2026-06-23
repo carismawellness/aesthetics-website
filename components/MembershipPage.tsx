@@ -19,7 +19,7 @@ const A = "/assets/treatments";
 
 export default function MembershipPage() {
   return (
-    <main id="main-content">
+    <main id="main-content" className="glow-field">
       {/* ════ 1 · HERO ════ */}
       <PageHero
         badge="#1 Voted Med-Aesthetics Clinic"
@@ -42,7 +42,7 @@ export default function MembershipPage() {
         }}
         proof={{
           rating: "4.9",
-          reviews: "200+",
+          reviews: "500+",
           statValue: "30+",
           statLabel: "years in wellness",
           awardText: "#1 Voted Clinic\nMalta Healthcare Awards",
@@ -74,11 +74,12 @@ export default function MembershipPage() {
       <MembershipFaq />
 
       {/* ════ 10 · JOIN THE GLOW CLUB — final CTA band ════
-           Cream band (var(--cream) #deebeb): teal button boundary passes
-           WCAG 1.4.11 (4.26:1 ≥ 3), heading/body/script taglines all ≥4.5:1. */}
+           Transparent so the page-wide warm ivory/champagne .glow-field shows
+           through (no section fill). Gold button boundary + heading/body/script
+           taglines remain ≥4.5:1 on the ivory/champagne ground. */}
       <section
         aria-labelledby="join-cta-heading"
-        style={{ background: "var(--cream)", padding: "76px 0 84px" }}
+        style={{ background: "transparent", padding: "76px 0 84px" }}
       >
         <div
           className="container text-center"

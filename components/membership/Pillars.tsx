@@ -8,13 +8,17 @@ import Link from "next/link";
    (hero bullets ~333-360, benefit/FAQ copy ~100-320). Restructured for
    conversion — every fact kept AS-IS.
 
-   WCAG AA (verified with scripts/contrast.mjs on the card's darkest
-   gradient stop #deebeb):
-     heading  --gold      #706552 on #deebeb → 4.68:1  (AA normal)
-     body     --ink-soft  #706552 on #deebeb → 4.68:1  (AA normal)
-     eyebrow  --teal-text #406060 on #deebeb → 5.62:1  (AA normal)
+   Background cleanup: section + cards no longer use teal fills. The section
+   is transparent so the single membership page glow-field (warm ivory /
+   champagne) shows through; cards use a soft translucent white for
+   separation. Teal stays accent-only (icon chip, eyebrow, rule, links).
+
+   WCAG AA (verified with scripts/contrast.mjs; worst-case ground = the
+   page's warm champagne #f3ece0 the translucent card sits over):
+     heading  --gold      #706552 on #f3ece0 → 4.87:1  (AA normal)
+     body     --ink-soft  #706552 on #f3ece0 → 4.87:1  (AA normal)
+     eyebrow  --teal-text #406060 on #f3ece0 → 5.84:1  (AA normal)
      icon chip white #fff on --teal-deep #4f7373 → 5.21:1 (AA normal)
-     check stroke #4f7373 on #deebeb → 4.26:1 (UI ≥3:1)
    ──────────────────────────────────────────────────────────────── */
 
 const GOLD = "var(--gold)"; /* #706552 — heading TEXT, AA on white/teal tints */
@@ -91,7 +95,7 @@ export default function Pillars() {
   return (
     <section
       aria-labelledby="glow-pillars-heading"
-      style={{ padding: "84px 0", background: "#ffffff" }}
+      style={{ padding: "84px 0", background: "transparent" }}
     >
       <div className="container">
         {/* Eyebrow + heading + rule */}
@@ -158,7 +162,8 @@ export default function Pillars() {
                 display: "flex",
                 flexDirection: "column",
                 padding: "30px 26px",
-                background: "linear-gradient(180deg, #eef3f3 0%, #deebeb 100%)",
+                background: "rgba(255,255,255,0.72)",
+                backdropFilter: "blur(2px)",
                 borderTopLeftRadius: "18px",
                 borderTopRightRadius: "90px",
                 borderBottomLeftRadius: "90px",

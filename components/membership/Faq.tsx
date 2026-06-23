@@ -17,9 +17,14 @@ import { MEMBERSHIP_FAQS } from "./faqData";
  * copy lives in the plain ./faqData module so the page can build matching
  * FAQPage JSON-LD from the SAME array (no schema/visible-content drift).
  *
- * WCAG 2.2 AA verified with scripts/contrast.mjs on every text/UI pair:
- *   gold #706552 on panel #f3f8f8 = 5.34   · teal-text #406060 on #f3f8f8 = 6.4
- *   label #695c4e on #f3f8f8 = 6.04         · teal-deep #3f6363 rule = 6.17 (UI)
+ * Background cleanup: the section is transparent so the membership page
+ * glow-field (warm ivory/champagne) shows through; the accordion sits on a soft
+ * translucent white card. No teal fills remain — teal stays accent-only.
+ *
+ * WCAG 2.2 AA verified with scripts/contrast.mjs. Worst case is the page's warm
+ * champagne #f3ece0 the header/CTA sit over:
+ *   gold #706552 on champagne #f3ece0 = 4.87 · teal-text #406060 = 5.84
+ *   label #695c4e on champagne = 5.52         · teal-deep #3f6363 rule (UI) ✓
  *   accordion teal-text #406060 / brown #706552 on white card = 8.0 / 5.72
  *   white on .btn-teal #4f7373 = 5.21
  */
@@ -28,14 +33,13 @@ const GOLD = "var(--gold)"; // #706552 — heading / eyebrow text
 const TEAL_TEXT = "var(--teal-text)"; // #406060 — body / intro text
 const LABEL = "var(--label)"; // #695c4e — muted supporting text
 const ICON = "#3f6363"; // teal-deep — divider rule + icon strokes (UI >=3:1)
-const PANEL = "#f3f8f8"; // cool near-white panel ground
 
 export default function MembershipFaq() {
   return (
     <section
       aria-labelledby="membership-faq-heading"
       style={{
-        background: `linear-gradient(180deg, ${PANEL} 0%, #ffffff 100%)`,
+        background: "transparent",
         padding: "clamp(56px,9vw,104px) 0",
       }}
     >
@@ -123,7 +127,8 @@ export default function MembershipFaq() {
         <div
           className="card mx-auto"
           style={{
-            background: "#ffffff",
+            background: "rgba(255,255,255,0.80)",
+            backdropFilter: "blur(2px)",
             borderRadius: "var(--radius-card)",
             padding: "clamp(20px,4vw,40px) clamp(18px,4vw,44px)",
             margin: "clamp(36px,6vw,56px) auto 0",
