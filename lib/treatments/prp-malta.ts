@@ -24,11 +24,11 @@ const t: Treatment = {
   ],
   beforeAfterTitle: "prp results",
   beforeAfter: [
-    { before: "/assets/treatments/prp-malta-ba1-before.png", after: "/assets/treatments/prp-malta-ba1-after.png", label: "Face Rejuvenation" },
-    { before: "/assets/treatments/prp-malta-ba2-before.png", after: "/assets/treatments/prp-malta-ba2-after.png", label: "Acne Scarring" },
-    { before: "/assets/treatments/prp-malta-ba3-before.png", after: "/assets/treatments/prp-malta-ba3-after.png", label: "Skin Quality" },
-    { before: "/assets/treatments/prp-malta-ba4-before.png", after: "/assets/treatments/prp-malta-ba4-after.png", label: "Hair Loss (Female)" },
-    { before: "/assets/treatments/prp-malta-ba5-before.png", after: "/assets/treatments/prp-malta-ba5-after.png", label: "Hair Loss (Male)" },
+    { before: "/assets/treatments/prp-malta-ba1-before.png", after: "/assets/treatments/prp-malta-ba1-after.png", label: "Face Rejuvenation", name: "Marina F.", review: "My skin looks genuinely fresher and the fine lines have softened — it still looks like my own face, just rested." },
+    { before: "/assets/treatments/prp-malta-ba2-before.png", after: "/assets/treatments/prp-malta-ba2-after.png", label: "Acne Scarring", name: "Daniel S.", review: "The pitted acne scars on my cheek are noticeably smoother after my course — my skin feels even again." },
+    { before: "/assets/treatments/prp-malta-ba3-before.png", after: "/assets/treatments/prp-malta-ba3-after.png", label: "Skin Quality", name: "Sophie A.", review: "My under-eye area and overall texture improved so much — I wear far less makeup now." },
+    { before: "/assets/treatments/prp-malta-ba4-before.png", after: "/assets/treatments/prp-malta-ba4-after.png", label: "Hair Loss (Female)", name: "Rebecca T.", review: "My crown was thinning and my part was widening — after a few sessions it looks fuller and I shed far less." },
+    { before: "/assets/treatments/prp-malta-ba5-before.png", after: "/assets/treatments/prp-malta-ba5-after.png", label: "Hair Loss (Male)", name: "James P.", review: "My hairline was receding at the temples — the regrowth has been gradual but real, and completely natural." },
   ],
   precision: {
     title: "precision areas of refinement",
@@ -53,20 +53,44 @@ const t: Treatment = {
       "You appreciate a treatment with no risk of allergic reaction",
     ],
     notIdeal: [
-      "You are looking for instant, same-day results",
-      "You have a blood disorder, platelet dysfunction, or are on anticoagulant therapy",
-      "You are pregnant, breastfeeding, or have an active infection in the area",
-      "You are experiencing advanced hair loss with no remaining active follicles",
-      "You are looking for volume or structural changes to your face",
+      "You want a same-day transformation — PRP works gradually as your own collagen rebuilds over the weeks that follow",
+      "You are looking to restore lost volume or reshape your features — that is what dermal fillers are designed for, and we are happy to guide you",
+      "You are pregnant or breastfeeding — we will warmly welcome you back once the time is right",
+      "You have a blood disorder or take blood thinners — a quick chat with your doctor helps us keep you safe",
+      "Your hair loss is very advanced with little active follicle left — we will be honest about what PRP can realistically achieve for you",
+    ],
+    personas: [
+      { title: "The natural-first patient", desc: "You would rather work with your own biology than introduce anything synthetic — PRP uses only your own plasma." },
+      { title: "The early hair-thinning worrier", desc: "You have noticed more shedding, a widening part, or a thinning crown, and you want to act before it progresses." },
+      { title: "The dull-or-scarred skin seeker", desc: "Your complexion looks tired, textured, or marked by old acne scars, and you want a gradual, real improvement in skin quality." },
+    ],
+  },
+  problem: {
+    kicker: "The real reason people book",
+    title: "You want to look like a fresher version of yourself — not someone else",
+    body: [
+      "Doctor-led PRP works with your own plasma to rebuild skin and reawaken hair gradually, so the result is genuinely yours — healthier, not altered.",
+    ],
+  },
+  guarantee: {
+    kicker: "The Natural Confidence Guarantee",
+    title: "Natural Confidence Guarantee",
+    paragraphs: [
+      "Every PRP plan starts with a doctor-led assessment and a natural-first approach using only your own plasma, backed by ongoing review across your course until you are 100% satisfied with a result that still looks like you.",
+    ],
+    cta: "Book Your Free Consultation",
+    points: [
+      { value: "Doctor-led", label: "Assessment first", sub: "Never a salesperson" },
+      { value: "Natural-first", label: "Your own plasma", sub: "Nothing synthetic, never overdone" },
+      { value: "100%", label: "Satisfaction", sub: "Ongoing review across your course" },
     ],
   },
   experience: {
     title: "Your treatment experience",
     steps: [
-      { title: "personalised consultation", desc: "We assess your skin or scalp condition, medical history, and PRP treatment goals with one of our doctors.", image: "/assets/treatments/prp-malta-step1.png" },
-      { title: "Structured Plan", desc: "Your doctor designs a personalised treatment protocol tailored to your specific concerns whether facial rejuvenation, hair restoration, or a vampire facial.", image: "/assets/treatments/prp-malta-step2.png" },
-      { title: "Targeted Treatments", desc: "Your doctor draws a blood sample, processes it in a centrifuge, and delivers the concentrated PRP via precise injection: comfortable and approximately 35-45 minutes.", image: "/assets/treatments/prp-malta-step3.jpg" },
-      { title: "Ongoing Review & Adjustment", desc: "Your doctor monitors your skin or hair response and adjusts the treatment protocol to maximise results across your course of sessions.", image: "/assets/treatments/prp-malta-step4.png" },
+      { title: "Personalised Consultation & Plan", desc: "We assess your skin or scalp, medical history, and PRP goals with one of our doctors, then design a protocol tailored to your concern — facial rejuvenation, hair restoration, or a vampire facial.", image: "/assets/treatments/prp-malta-step1.png" },
+      { title: "Targeted Treatment", desc: "Your doctor draws a small blood sample, concentrates your plasma rich platelets in a centrifuge, and delivers the PRP via precise injection — comfortable and around 35-45 minutes.", image: "/assets/treatments/prp-malta-step3.jpg" },
+      { title: "Ongoing Review & Adjustment", desc: "Your doctor monitors your skin or hair response and refines the protocol across your course of sessions to maximise your natural results.", image: "/assets/treatments/prp-malta-step4.png" },
     ],
     cta: "BOOK YOUR FREE CONSULTATION",
   },
@@ -148,6 +172,26 @@ const t: Treatment = {
     mapQuery: "Carisma Aesthetics, Malta",
   },
   bookingForm: { title: "BOOK YOUR PRP APPOINTMENT TODAY" },
+  planSummary: {
+    kicker: "Your PRP plan",
+    title: "Malta's Doctor-Led PRP Plan",
+    benefits: [
+      { icon: "shield", title: "Doctor-Led & Natural", desc: "Every session is performed by a medically qualified doctor using only your own plasma — never a salon, never synthetic." },
+      { icon: "sparkle", title: "Real, Gradual Results", desc: "We stimulate your own collagen and follicles for healthier skin and fuller hair that builds session on session." },
+      { icon: "clock", title: "A Course Built Around You", desc: "Your protocol is planned across three to four sessions and reviewed each time, so results are tracked and refined." },
+    ],
+    included: [
+      { label: "Free doctor-led consultation" },
+      { label: "Personalised PRP protocol for your skin or scalp" },
+      { label: "Medical-grade centrifuge processing of your own plasma" },
+      { label: "Expert PRP treatment", value: "from €149" },
+      { label: "Ongoing review & aftercare across your course" },
+    ],
+    price: "From €149",
+    priceLabel: "per session",
+    cta: { text: "Book Your PRP Appointment", href: "/consultation" },
+    reviews: "200+ verified reviews",
+  },
   recommended: {
     title: "Recommended with PRP treatment",
     items: [
