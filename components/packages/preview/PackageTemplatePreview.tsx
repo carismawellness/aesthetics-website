@@ -34,11 +34,18 @@ function GoogleRating() {
 export default function PackageTemplatePreview({ data, content }: { data: PackageData; content: PreviewContent }) {
   const h = data.hero;
   const { hero, offer, guarantee, closing } = content;
-  // Headline: emphasise a trailing "in Malta" if present.
+  // Headline two-tone split (deep teal-blue → lighter teal-blue):
+  // emphasise a trailing "in Malta" if present, otherwise the last word.
   const inMalta = / in Malta$/i.test(hero.h1);
-  const headline = inMalta
-    ? [{ text: hero.h1.replace(/ in Malta$/i, "") }, { text: "in Malta", em: true }]
-    : [{ text: hero.h1 }];
+  let headline: { text: string; em?: boolean }[];
+  if (inMalta) {
+    headline = [{ text: hero.h1.replace(/ in Malta$/i, "") }, { text: "in Malta", em: true }];
+  } else {
+    const words = hero.h1.trim().split(/\s+/);
+    headline = words.length <= 1
+      ? [{ text: hero.h1, em: true }]
+      : [{ text: words.slice(0, -1).join(" ") }, { text: words[words.length - 1], em: true }];
+  }
 
   return (
     <>

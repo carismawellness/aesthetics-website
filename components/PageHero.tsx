@@ -22,6 +22,13 @@ const SERIF = '"Trajan Pro", Georgia, serif';
 const WIDE = '"Novecento Wide", sans-serif';
 const BODY = "Roboto, sans-serif";
 
+/* Two-tone teal-blue headline split (mirrors Slimming's dark-green→light-green
+   treatment, in the Aesthetics "blue" / teal family — no brown, no green).
+   • TEAL_DEEP  — deep teal-blue, AA (>=4.5:1) on the pale hero ground; base line.
+   • TEAL_LIGHT — lighter teal-blue for the emphasised line, still AA on white. */
+const TEAL_DEEP = "#27484a"; // deep teal-blue — primary headline line / accents
+const TEAL_LIGHT = "#4f7373"; // lighter teal-blue — emphasised ("em") headline line
+
 export type HeroBullet = { label?: string; text: string };
 export type HeroMedia = {
   type: "video" | "image";
@@ -101,18 +108,19 @@ export default function PageHero({
 
   // Colourway
   const c = {
-    headline: dark ? "#c9a96a" : "var(--gold)",
-    em: dark ? "#e2c97a" : "var(--teal-text)",
-    // Body copy mirrors slimming's taupe (#6f6456) — aesthetics' brown --gold (#706552). AA on white.
-    body: dark ? "rgb(176,166,143)" : "var(--gold)",
-    eyebrow: dark ? "#c9a96a" : "var(--gold)",
-    bulletLabel: dark ? "#e2c97a" : "var(--gold)",
-    pillText: dark ? "#c9a96a" : "var(--gold)",
-    proofStrong: dark ? "#c9a96a" : "var(--teal-text)",
-    stat: dark ? "#c9a96a" : "var(--gold)",
+    // Two-tone teal-blue headline (Slimming-style split): deep line + lighter "em" line.
+    headline: dark ? "#c9a96a" : TEAL_DEEP,
+    em: dark ? "#e2c97a" : TEAL_LIGHT,
+    // Body copy: neutral grey (AA on white) at normal weight — no brown, no bold.
+    body: dark ? "rgb(176,166,143)" : "var(--muted)",
+    eyebrow: dark ? "#c9a96a" : TEAL_DEEP,
+    bulletLabel: dark ? "#e2c97a" : TEAL_DEEP,
+    pillText: dark ? "#c9a96a" : TEAL_DEEP,
+    proofStrong: dark ? "#c9a96a" : TEAL_DEEP,
+    stat: dark ? "#c9a96a" : TEAL_DEEP,
     statLabel: dark ? "rgba(176,166,143,0.85)" : "var(--muted)",
     awardText: dark ? "#e8e0cf" : "var(--ink)",
-    check: dark ? "#c9a96a" : "var(--teal-text)",
+    check: dark ? "#c9a96a" : TEAL_LIGHT,
     checkBg: dark ? "rgba(201,169,106,0.16)" : "rgba(150,178,178,0.22)",
   };
   const sectionBg = background || (dark
@@ -154,7 +162,7 @@ export default function PageHero({
           </h1>
 
           {sub && (
-            <p style={{ fontFamily: BODY, fontSize: "clamp(14px,1.1vw,15.5px)", lineHeight: 1.6, color: c.body, maxWidth: 520, margin: "0 0 20px", textWrap: "pretty" }}>{sub}</p>
+            <p style={{ fontFamily: BODY, fontSize: "clamp(14px,1.1vw,15.5px)", fontWeight: 400, lineHeight: 1.6, color: c.body, maxWidth: 520, margin: "0 0 20px", textWrap: "pretty" }}>{sub}</p>
           )}
 
           {bullets && bullets.length > 0 && (
@@ -164,8 +172,8 @@ export default function PageHero({
                   <span aria-hidden style={{ flexShrink: 0, width: 20, height: 20, borderRadius: "50%", background: c.checkBg, display: "grid", placeItems: "center", marginTop: 1 }}>
                     <svg width="11" height="11" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke={c.check} strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" /></svg>
                   </span>
-                  <span style={{ fontFamily: BODY, fontSize: 13.5, color: c.body, lineHeight: 1.5 }}>
-                    {b.label && <strong style={{ color: c.bulletLabel, fontWeight: 600 }}>{b.label} </strong>}
+                  <span style={{ fontFamily: BODY, fontSize: 13.5, fontWeight: 400, color: c.body, lineHeight: 1.5 }}>
+                    {b.label && <strong style={{ color: c.bulletLabel, fontWeight: 400 }}>{b.label} </strong>}
                     {b.text}
                   </span>
                 </li>
