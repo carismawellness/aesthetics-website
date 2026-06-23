@@ -1,15 +1,20 @@
-import { CURATED_REVIEWS, REVIEW_SUMMARY, GOOGLE_PROFILE_URL, type Review } from "@/lib/reviews";
+import { CURATED_REVIEWS, REVIEW_SUMMARY, GOOGLE_PROFILE_URL } from "@/lib/reviews";
 
 /*
-  Google reviews block for the footer.
+  Google reviews block for the footer (legacy server component — NOT mounted in
+  the current Footer, which uses components/home/Reviews.tsx). Kept compiling.
 
   Live data: if GOOGLE_PLACES_API_KEY and GOOGLE_PLACES_PLACE_ID are set, this
   server component fetches the latest reviews from the Google Places API and
   caches them for a day (ISR). Otherwise it renders the curated real reviews
-  from lib/reviews.ts, so the section always shows content.
+  from lib/reviews.ts, so the section always shows content. A strict ≥4★ filter
+  is applied to whatever source supplies the cards.
 */
 
-type Feed = { rating: number; total: number; url: string; reviews: Review[] };
+// Flat shape this component renders (distinct from the richer lib `Review`).
+type LegacyReview = { name: string; initial: string; rating: number; text: string; when: string };
+
+type Feed = { rating: number; total: number; url: string; reviews: LegacyReview[] };
 
 async function fetchGoogleReviews(): Promise<Feed | null> {
   const key = process.env.GOOGLE_PLACES_API_KEY;
@@ -24,7 +29,7 @@ async function fetchGoogleReviews(): Promise<Feed | null> {
     const data = await res.json();
     if (data.status !== "OK" || !data.result) return null;
     const r = data.result;
-    const reviews: Review[] = (r.reviews ?? [])
+    const reviews: LegacyReview[] = (r.reviews ?? [])
       .filter((rv: { text?: string }) => rv.text && rv.text.trim().length > 0)
       .map((rv: { author_name?: string; rating?: number; text?: string; relative_time_description?: string }) => ({
         name: rv.author_name ?? "Google user",
@@ -32,7 +37,9 @@ async function fetchGoogleReviews(): Promise<Feed | null> {
         rating: rv.rating ?? 5,
         text: rv.text ?? "",
         when: rv.relative_time_description ?? "",
-      }));
+      }))
+      // ⭐ Strict ≥4★ filter — never render sub-4★ reviews.
+      .filter((rv: LegacyReview) => rv.rating >= 4);
     return {
       rating: r.rating ?? REVIEW_SUMMARY.rating,
       total: r.user_ratings_total ?? REVIEW_SUMMARY.total,
