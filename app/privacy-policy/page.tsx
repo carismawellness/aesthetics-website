@@ -44,15 +44,14 @@ const LAST_UPDATED = "22 June 2026";
    Aesthetics brand, then replace the placeholders below.
    ============================================================ */
 const ENTITY = {
-  legalName: "Carisma Aesthetics Ltd.", // OWNER TO CONFIRM
-  companyNo: "[COMPANY REGISTRATION NUMBER — OWNER TO CONFIRM]",
-  regAddress:
-    "[REGISTERED ADDRESS — OWNER TO CONFIRM]", // e.g. clinic / registered office, Malta
+  legalName: "Carisma Aesthetics Ltd.",
+  companyNo: "C 106006",
+  vatNo: "MT30347620",
+  regAddress: "114, Triq il-Mizura, Swieqi SWQ 2064, Malta",
   clinicLocation: "St Julian's, Malta",
   email: "info@carismaaesthetics.com",
   phone: "+356 27802062",
-  dpoContact:
-    "[DATA PROTECTION OFFICER / PRIVACY CONTACT — OWNER TO CONFIRM]",
+  dpoContact: "the Carisma Aesthetics Data Protection contact",
 };
 
 const TOC = [
@@ -122,6 +121,8 @@ export default function PrivacyPolicyPage() {
           <strong>{ENTITY.legalName}</strong>
           <br />
           Company Registration Number: {ENTITY.companyNo}
+          <br />
+          VAT Number: {ENTITY.vatNo}
           <br />
           Registered Address: {ENTITY.regAddress}
           <br />

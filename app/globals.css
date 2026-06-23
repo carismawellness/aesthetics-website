@@ -136,7 +136,7 @@
   --color-cream: var(--cream);
   --font-display: "Novecento Wide";
   --font-serif: "Trajan Pro";
-  --font-body: "Roboto Local";
+  --font-body: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
   --font-helvetica: "Helvetica Brand";
   --font-script: "Carisma Script";
   --color-brand-teal: var(--brand-teal);
@@ -160,7 +160,12 @@
 body {
   background: var(--white);
   color: var(--ink-soft); /* brand brown taupe #706552 — matches Slimming body */
-  font-family: "Roboto Local", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  /* Match Slimming EXACTLY: system font first so body renders SF/Segoe at normal
+     weight. The bundled roboto.woff2 ("Roboto Local") renders heavy when used as
+     the primary body face — that was the all-bold body bug. Keep generic 'Roboto'
+     as a late fallback only (NOT "Roboto Local"). */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
+  font-synthesis: none;
   font-size: 16px;
   /* Base/paragraph copy is NORMAL weight (400) so the body reads identically to
      the Slimming site. Headings (.font-display / h1–h6 = Novecento 600), CTAs &
