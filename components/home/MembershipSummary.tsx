@@ -34,10 +34,7 @@ const MEMBERSHIP_HREF = "/membership";
 
 const GOLD = "var(--gold)"; // #706552 — heading / reward TEXT
 const TEAL_TEXT = "var(--teal-text)"; // #406060 — eyebrow / small accents
-const TEAL_DEEP = "var(--teal-deep)"; // #4f7373 — icon chips, popular-card surface
-const POPULAR_BG = "#527979"; // solid teal — white body reads at 4.81:1
-const RIBBON_BG = "#c8a96b"; // warm-gold ribbon — ink reads 8.75:1
-const INK = "var(--ink)"; // #0c0b0b — ribbon text
+const TEAL_DEEP = "var(--teal-deep)"; // #4f7373 — icon chips
 const LABEL = "var(--label)"; // #695c4e — body taupe
 const MUTED = "var(--muted)"; // #636363 — footnote
 const WIDE = '"Novecento Wide", sans-serif';
@@ -98,60 +95,6 @@ const PERKS: Perk[] = [
   },
 ];
 
-/* ── Three status tiers (names / rewards / thresholds verbatim) ───────── */
-type Tier = {
-  name: string;
-  reward: string;
-  threshold: string;
-  popular?: boolean;
-  gem: React.ReactNode;
-};
-
-function Gem({
-  base,
-  tl,
-  tr,
-  bl,
-  br,
-}: {
-  base: string;
-  tl: string;
-  tr: string;
-  bl: string;
-  br: string;
-}) {
-  return (
-    <svg width="44" height="44" viewBox="0 0 54 54" aria-hidden="true" focusable="false">
-      <polygon points="27,6 48,20 48,34 27,48 6,34 6,20" fill={base} opacity="0.9" />
-      <polygon points="27,6 48,20 27,28" fill={tr} />
-      <polygon points="27,6 6,20 27,28" fill={tl} />
-      <polygon points="27,48 48,34 27,28" fill={br} />
-      <polygon points="27,48 6,34 27,28" fill={bl} />
-    </svg>
-  );
-}
-
-const TIERS: Tier[] = [
-  {
-    name: "Signature Status",
-    reward: "Carisma Spa Day for two",
-    threshold: "€1,000+ lifetime spend",
-    gem: <Gem base="#C0C0C0" tl="#a8a8a8" tr="#d8d8d8" bl="#c8c8c8" br="#b0b0b0" />,
-  },
-  {
-    name: "Elite Status",
-    reward: "Signature Massage",
-    threshold: "€2,500+ lifetime spend",
-    popular: true,
-    gem: <Gem base="#D4AF37" tl="#b8921c" tr="#e8ca60" bl="#dcc050" br="#c9a230" />,
-  },
-  {
-    name: "Platinum Status",
-    reward: "€300 Aesthetics Voucher",
-    threshold: "€5,000+ lifetime spend",
-    gem: <Gem base="#96b2b2" tl="#7da0a0" tr="#b2cccc" bl="#a0c4c4" br="#88b0b0" />,
-  },
-];
 
 export default function MembershipSummary() {
   return (
@@ -172,11 +115,8 @@ export default function MembershipSummary() {
           border-color: ${TEAL_DEEP};
           box-shadow: 0 4px 10px rgba(12,11,11,0.08), 0 22px 48px -14px rgba(28,30,30,0.22);
         }
-        .ms-tier:hover {
-          box-shadow: 0 4px 10px rgba(12,11,11,0.08), 0 24px 52px -16px rgba(64,96,96,0.40);
-        }
         @media (prefers-reduced-motion: no-preference) {
-          .ms-card:hover, .ms-tier:hover { transform: translateY(-6px) scale(1.02); }
+          .ms-card:hover { transform: translateY(-6px) scale(1.02); }
         }
       `}</style>
 
@@ -308,151 +248,6 @@ export default function MembershipSummary() {
               </p>
             </li>
           ))}
-        </ul>
-
-        {/* ── Tier snapshot ──────────────────────────────────────── */}
-        <p
-          aria-hidden="true"
-          className="text-center"
-          style={{
-            fontFamily: WIDE,
-            fontSize: "11px",
-            fontWeight: 600,
-            letterSpacing: "0.18em",
-            textTransform: "uppercase",
-            color: TEAL_TEXT,
-            margin: "64px 0 0",
-          }}
-        >
-          Member status, the more you grow
-        </p>
-        <ul
-          role="list"
-          className="grid grid-cols-1 md:grid-cols-3 mx-auto"
-          style={{
-            gap: "20px",
-            listStyle: "none",
-            padding: 0,
-            margin: "24px auto 0",
-            maxWidth: "920px",
-            alignItems: "stretch",
-          }}
-          aria-label="Glow Club membership status tiers"
-        >
-          {TIERS.map((t) => {
-            const dark = !!t.popular;
-            const headingId = `ms-tier-${t.name.replace(/\s+/g, "-").toLowerCase()}`;
-            return (
-              <li
-                key={t.name}
-                className="ms-tier"
-                aria-labelledby={headingId}
-                style={{
-                  position: "relative",
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  textAlign: "center",
-                  background: dark ? POPULAR_BG : "#ffffff",
-                  border: dark ? `1px solid ${TEAL_DEEP}` : "1px solid #e4eded",
-                  borderRadius: "18px",
-                  padding: dark ? "40px 24px 30px" : "32px 24px 30px",
-                  boxShadow: dark
-                    ? "0 18px 44px -20px rgba(64,96,96,0.55)"
-                    : "0 8px 24px -18px rgba(64,96,96,0.30)",
-                  transition: "box-shadow .3s ease, transform .3s ease",
-                }}
-              >
-                {t.popular && (
-                  <span
-                    style={{
-                      position: "absolute",
-                      top: "-12px",
-                      left: "50%",
-                      transform: "translateX(-50%)",
-                      background: RIBBON_BG,
-                      color: INK,
-                      fontSize: "11px",
-                      fontWeight: 700,
-                      letterSpacing: "0.14em",
-                      textTransform: "uppercase",
-                      padding: "5px 15px",
-                      borderRadius: "999px",
-                      whiteSpace: "nowrap",
-                      boxShadow: "0 4px 12px -4px rgba(0,0,0,0.30)",
-                    }}
-                  >
-                    Most popular
-                  </span>
-                )}
-
-                <span aria-hidden="true" style={{ marginTop: dark ? 0 : "4px" }}>
-                  {t.gem}
-                </span>
-                <h3
-                  id={headingId}
-                  className="font-display"
-                  style={{
-                    fontSize: "12px",
-                    color: dark ? "#ffffff" : TEAL_TEXT,
-                    letterSpacing: "0.18em",
-                    textTransform: "uppercase",
-                    fontWeight: 600,
-                    margin: "14px 0 0",
-                  }}
-                >
-                  {t.name}
-                </h3>
-
-                <p
-                  className="font-serif"
-                  style={{
-                    fontSize: "19px",
-                    color: dark ? "#ffffff" : GOLD,
-                    fontWeight: 600,
-                    lineHeight: 1.3,
-                    margin: "16px 0 0",
-                  }}
-                >
-                  {t.reward}
-                </p>
-                <p
-                  style={{
-                    fontSize: "11px",
-                    letterSpacing: "0.04em",
-                    textTransform: "uppercase",
-                    color: dark ? "#ffffff" : LABEL,
-                    opacity: dark ? 0.95 : 1,
-                    fontWeight: 600,
-                    margin: "4px 0 0",
-                  }}
-                >
-                  Complimentary
-                </p>
-                <span
-                  aria-hidden="true"
-                  style={{
-                    width: "40px",
-                    height: "1px",
-                    background: dark ? "rgba(255,255,255,0.45)" : TEAL_DEEP,
-                    opacity: dark ? 1 : 0.4,
-                    margin: "14px auto",
-                  }}
-                />
-                <p
-                  style={{
-                    fontSize: "13px",
-                    color: dark ? "#ffffff" : LABEL,
-                    fontWeight: 500,
-                    lineHeight: 1.5,
-                    margin: 0,
-                  }}
-                >
-                  {t.threshold}
-                </p>
-              </li>
-            );
-          })}
         </ul>
 
         {/* ── CTA + reassurance ──────────────────────────────────── */}

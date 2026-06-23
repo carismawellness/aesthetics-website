@@ -1,13 +1,11 @@
 import type { Metadata } from "next";
 import Hero from "@/components/home/Hero";
 import ServicesMarquee from "@/components/home/ServicesMarquee";
-import WhyUs from "@/components/home/WhyUs";
 import WhyMaltaAesthetics from "@/components/home/WhyMaltaAesthetics";
 import ResultsCommitment from "@/components/home/ResultsCommitment";
 import ConsultationProcess from "@/components/home/ConsultationProcess";
 import MembershipSummary from "@/components/home/MembershipSummary";
 import GiftCardsSummary from "@/components/home/GiftCardsSummary";
-import BookConsultation from "@/components/home/BookConsultation";
 import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
@@ -38,13 +36,11 @@ export default function HomePage() {
     <main>
       <Hero />
       <Reveal><ServicesMarquee /></Reveal>
-      <Reveal><WhyUs /></Reveal>
       <Reveal><WhyMaltaAesthetics /></Reveal>
       <Reveal><ResultsCommitment /></Reveal>
       <Reveal><ConsultationProcess /></Reveal>
       <Reveal><MembershipSummary /></Reveal>
       <Reveal><GiftCardsSummary /></Reveal>
-      <Reveal><BookConsultation /></Reveal>
     </main>
   );
 }

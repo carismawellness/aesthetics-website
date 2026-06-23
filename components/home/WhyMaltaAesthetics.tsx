@@ -53,7 +53,7 @@ const differenceItems: ReactNode[] = [
 export default function WhyMaltaAesthetics() {
   return (
     <section
-      className="py-24"
+      className="py-14"
       aria-labelledby="why-malta-aesthetics-heading"
       style={{ backgroundColor: "#ffffff" }}
     >
@@ -62,12 +62,41 @@ export default function WhyMaltaAesthetics() {
           className="relative"
           style={{
             background:
-              "linear-gradient(192deg, #deebeb 44.74%, rgba(150, 178, 178, 0.45) 100%)",
+              "linear-gradient(160deg, #f4f8f8 0%, #edf4f4 55%, #e6f0f0 100%)",
             borderRadius: "16px",
-            padding: "40px 40px 48px",
+            padding: "clamp(26px, 3vw, 38px)",
             overflow: "hidden",
           }}
         >
+          {/* Faint rose-motif glow — decorative, mirrors Slimming's glow-orb technique */}
+          <div
+            aria-hidden
+            style={{
+              position: "absolute",
+              top: -100,
+              right: -80,
+              width: 320,
+              height: 320,
+              borderRadius: "50%",
+              background: "rgba(192, 140, 140, 0.13)",
+              filter: "blur(60px)",
+              pointerEvents: "none",
+            }}
+          />
+          <div
+            aria-hidden
+            style={{
+              position: "absolute",
+              bottom: -80,
+              left: -60,
+              width: 240,
+              height: 240,
+              borderRadius: "50%",
+              background: "rgba(150, 178, 178, 0.18)",
+              filter: "blur(50px)",
+              pointerEvents: "none",
+            }}
+          />
           <div className="relative" style={{ zIndex: 1 }}>
             {/* Eyebrow */}
             <p
@@ -91,13 +120,13 @@ export default function WhyMaltaAesthetics() {
             />
             <h2
               id="why-malta-aesthetics-heading"
-              className="text-center mb-12"
+              className="text-center mb-8"
               style={{
                 color: "#406060",
                 fontFamily: '"Trajan Pro", Georgia, serif',
                 fontWeight: 400,
-                fontSize: "25px",
-                lineHeight: "35px",
+                fontSize: "clamp(17px, 2vw, 22px)",
+                lineHeight: "1.45",
                 textTransform: "uppercase",
                 letterSpacing: "1px",
               }}
@@ -105,9 +134,9 @@ export default function WhyMaltaAesthetics() {
               why malta chooses carisma aesthetics
             </h2>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-stretch">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
               {/* Left — commitment checklists + CTA */}
-              <div className="space-y-12">
+              <div className="space-y-8">
                 <div>
                   <h3
                     className="mb-6"
@@ -214,16 +243,18 @@ export default function WhyMaltaAesthetics() {
                 <div>
                   <Link
                     href="/consultation"
-                    className="inline-flex items-center justify-center text-white transition-all duration-200 ease-in-out hover:opacity-90 active:scale-95"
+                    className="inline-flex items-center justify-center text-white transition-all duration-200 ease-in-out hover:brightness-110 active:scale-95"
                     style={{
                       backgroundColor: "#4f7373",
                       borderRadius: "999px",
                       fontFamily: '"Novecento Wide", sans-serif',
                       fontSize: "12px",
-                      letterSpacing: "1px",
+                      fontWeight: 700,
+                      letterSpacing: "1.5px",
                       textTransform: "uppercase",
-                      minHeight: "48px",
-                      padding: "0 32px",
+                      minHeight: "46px",
+                      padding: "0 30px",
+                      boxShadow: "0 6px 18px -4px rgba(79,115,115,0.55), 0 2px 6px -2px rgba(79,115,115,0.30)",
                     }}
                     aria-label="Book your free consultation"
                   >
@@ -245,7 +276,9 @@ export default function WhyMaltaAesthetics() {
                     borderRadius: "20px",
                     display: "block",
                     flex: 1,
-                    minHeight: "480px",
+                    minHeight: "320px",
+                    filter: "saturate(0.85) contrast(1.02)",
+                    boxShadow: "0 2px 16px -4px rgba(64,96,96,0.18)",
                   }}
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"

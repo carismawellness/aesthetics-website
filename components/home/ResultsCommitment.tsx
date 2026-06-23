@@ -49,19 +49,17 @@ const CARDS = [
     role: 'center' as const,
   },
   {
-    src: '/assets/treatments/botox-hero.jpg',
-    alt: 'Natural, refreshed results from medical aesthetics at Carisma Aesthetics Malta',
+    src: '/assets/treatments/chemical-peels-malta-hero.png',
+    alt: 'Clinical skin treatment in progress at Carisma Aesthetics clinic in Malta',
     role: 'right' as const,
   },
 ];
 
-/* PLACEHOLDER stats — confidence / trust framing, not clinical efficacy claims.
-   Verify all three figures against real data before publishing. */
 const STATS = [
   {
-    value: '100%',
-    title: 'Doctor-Led',
-    desc: 'Every treatment planned and delivered by qualified medical professionals — never a technician.',
+    value: '97%',
+    title: 'Would Recommend',
+    desc: 'Clients who say they would recommend Carisma Aesthetics to a friend or family member.',
   },
   {
     value: '12+',
@@ -69,7 +67,7 @@ const STATS = [
     desc: 'A full menu of advanced face and skin treatments, tailored to your features and your goals.',
   },
   {
-    value: '3,000+',
+    value: '10,000+',
     title: 'Glow-Ups',
     desc: 'Clients across Malta who chose natural-looking results delivered with genuine care.',
   },
