@@ -179,14 +179,6 @@ export default function TopClinic({ title, pressText, logos, cards }: TopClinicP
                     opacity: 0.62,
                     transition: "opacity 200ms ease, filter 200ms ease",
                   }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.filter = "grayscale(0)";
-                    e.currentTarget.style.opacity = "1";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.filter = "grayscale(1)";
-                    e.currentTarget.style.opacity = "0.62";
-                  }}
                 />
               ))}
             </div>
@@ -277,6 +269,7 @@ export default function TopClinic({ title, pressText, logos, cards }: TopClinicP
         @media (max-width: 520px) {
           .top-clinic-cards { grid-template-columns: 1fr !important; }
         }
+        .top-clinic-logo:hover { filter: grayscale(0) !important; opacity: 1 !important; }
         @media (prefers-reduced-motion: reduce) {
           .top-clinic-logo { transition: none !important; }
         }
