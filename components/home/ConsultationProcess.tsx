@@ -158,9 +158,9 @@ export default function ConsultationProcess() {
               letterSpacing: '2px',
             }}
           >
-            How a free consultation
+            How a Free Consultation Works
             <br />
-            works at our clinic
+            at Carisma Aesthetics, Malta
           </h2>
         </div>
 

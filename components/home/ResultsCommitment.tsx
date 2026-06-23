@@ -237,7 +237,7 @@ export default function ResultsCommitment() {
               margin: '22px 0 0',
             }}
           >
-            The Carisma results commitment
+            Award-Winning Aesthetic Clinic in Birkirkara, Malta
           </h2>
           <p style={{ color: BODY, fontFamily: SYS, fontSize: 'clamp(16px,1.7vw,19px)', lineHeight: 1.6, margin: '14px auto 0', maxWidth: 540 }}>
             Doctor-led. Natural-looking. Built around you — so you glow with confidence, never overdone.

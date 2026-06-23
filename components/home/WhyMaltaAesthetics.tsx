@@ -173,7 +173,7 @@ export default function WhyMaltaAesthetics() {
                 maxWidth: 760,
               }}
             >
-              Malta&rsquo;s #1 voted medical aesthetics clinic
+              Why Choose Carisma Aesthetics — Medically Qualified Team
             </h2>
 
             <div

@@ -142,7 +142,7 @@ export default function ServicesMarquee() {
               lineHeight: 1.15,
             }}
           >
-            Medical aesthetics procedures
+            Our Medical Aesthetic Treatments in Malta
           </h2>
           <p
             className="text-center mx-auto"

@@ -62,7 +62,7 @@ export default function GiftCardsSummary() {
                 lineHeight: 1.2,
               }}
             >
-              Give the Gift of Aesthetics
+              Give the Gift of Glowing Skin in Malta
             </h2>
             <div
               aria-hidden="true"

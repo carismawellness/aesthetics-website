@@ -158,7 +158,7 @@ export default function MembershipSummary() {
               margin: "18px auto 0",
             }}
           >
-            Save as you go, glow as you grow
+            Glow Club Membership Malta — Save on Every Treatment
           </h2>
           <p
             style={{
