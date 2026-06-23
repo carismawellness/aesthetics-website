@@ -326,62 +326,6 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
         </section>
       )}
 
-      {/* ── Lead form — below hero, anchored via #book ── */}
-      {t.hero.heroForm && (
-        <section
-          id="book"
-          aria-labelledby="book-heading"
-          style={{
-            padding: "clamp(36px,5vh,64px) 0",
-            backgroundColor: "var(--beige)",
-            scrollMarginTop: "var(--nav-clear)",
-          }}
-        >
-          <div className="container">
-            <h2
-              id="book-heading"
-              className="font-serif text-center"
-              style={{
-                fontSize: "clamp(24px,3.4vw,38px)",
-                color: "var(--gold)",
-                letterSpacing: "0.04em",
-                textTransform: "uppercase",
-                lineHeight: 1.25,
-              }}
-            >
-              Book Your Consultation
-            </h2>
-            <p
-              className="text-center"
-              style={{
-                fontSize: "14px",
-                color: "var(--label)",
-                marginTop: "10px",
-                maxWidth: "560px",
-                marginInline: "auto",
-                lineHeight: 1.625,
-              }}
-            >
-              Share a few details and our team will be in touch to arrange your complimentary consultation.
-            </p>
-            <div
-              className="flex justify-center"
-              style={{ marginTop: "26px" }}
-            >
-              {/* Opens the site-wide consultation popup (global interceptor on
-                  href="/consultation"). */}
-              <Link
-                href="/consultation"
-                className="btn btn-teal"
-                style={{ fontSize: "13px", padding: "15px 44px", letterSpacing: "0.12em" }}
-              >
-                Book Free Consultation
-              </Link>
-            </div>
-          </div>
-        </section>
-      )}
-
       {/* ── Treatment info — horizontal info-bar fallback when there is no media
              (the card form now lives in the hero overview strip above) ── */}
       {t.info && !hasMedia && (
@@ -1038,25 +982,6 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
           </div>
         </section>
       )}
-
-      {/* ── Call-to-action band — simple centred "Book Your Free Consultation"
-             on a light section (not a solid blue box). Sits under Trusted,
-             ahead of the patient videos. ── */}
-      <section aria-label="Book a consultation" style={{ padding: "16px 0 56px" }}>
-        <div className="container">
-          <div className="text-center">
-            {/* Opens the site-wide consultation popup (global interceptor on
-                href="/consultation"). */}
-            <Link
-              href="/consultation"
-              className="btn btn-teal"
-              style={{ borderRadius: 999, padding: "15px 32px" }}
-            >
-              Book Your Free Consultation
-            </Link>
-          </div>
-        </div>
-      </section>
 
       {/* ── Real patients — autoplay video reels ── */}
       {t.patientVideos && (
