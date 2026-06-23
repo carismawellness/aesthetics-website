@@ -82,7 +82,9 @@ export type Treatment = {
   beforeAfterTitle?: string;
   beforeAfter?: BeforeAfter[];
   precision?: { title: string; intro?: string; areas?: AreaItem[]; additional?: string; additionalTitle?: string; additionalIntro?: string };
-  suitability?: { title: string; intro?: string; suitableFor?: string[]; notIdeal?: string[] };
+  /** empathetic problem-reframe section (rendered by treatment/ProblemReframe) */
+  problem?: { kicker?: string; title: string; body?: string[]; points?: { title: string; desc: string }[] };
+  suitability?: { title: string; intro?: string; suitableFor?: string[]; notIdeal?: string[]; personas?: { title: string; desc: string }[] };
   experience?: { title: string; steps: Step[]; cta?: string };
   prepAftercare?: { kicker?: string; title: string; intro?: string; cards: { icon?: string; label: string; lead: string; points: string[] }[] };
   patientVideos?: { title: string; intro?: string; videos: string[] };

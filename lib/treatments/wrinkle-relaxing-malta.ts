@@ -58,11 +58,43 @@ const t: Treatment = {
       "You are comfortable with a quick treatment and minimal downtime",
     ],
     notIdeal: [
-      "You are looking for volume restoration rather than line softening",
-      "You prefer results that are visible immediately on day one",
-      "You are pregnant, breastfeeding, or managing certain neurological conditions",
-      "You expect every line to disappear completely",
-      "You are not yet ready for an in-person consultation to assess suitability",
+      "You're hoping to restore lost volume — that's what dermal fillers are for, not wrinkle relaxing",
+      "You need to see the full result the same day — it settles gently over 3–14 days",
+      "You're pregnant or breastfeeding — we'll happily welcome you back afterwards",
+      "You want every line gone completely — we soften and refresh, we never freeze your expression",
+      "You'd rather skip the quick doctor consultation — it's how we keep results safe and natural",
+    ],
+    personas: [
+      { title: "The expressive face", desc: "You smile, frown, and raise your brows — and those lines are starting to stay even when your face is relaxed." },
+      { title: "The tired-looking face", desc: "You feel well, but your forehead, eyes, or frown area make you look stressed or exhausted." },
+      { title: "The subtle-refinement patient", desc: "You don't want a dramatic change — you want a natural softening that still looks like you." },
+    ],
+  },
+  problem: {
+    kicker: "The real reason people book",
+    title: "You look more tired, tense, or stressed than you feel",
+    body: [
+      "It's rarely about chasing perfection or erasing every line. It's that your forehead, frown, or eyes can make you look exhausted, tense, or older than you actually feel — even on the days you're calm and well-rested.",
+      "Doctor-led wrinkle relaxing gently softens those expression lines while keeping your natural movement. You still look like you — just more rested, calmer, and refreshed.",
+    ],
+    points: [
+      { title: "Softer, not frozen", desc: "We relax the lines that age you while keeping every natural expression." },
+      { title: "Rested, not 'done'", desc: "People notice you look refreshed — not that you've had something done." },
+      { title: "Still you", desc: "A subtle softening that looks like you on your most well-rested day." },
+    ],
+  },
+  guarantee: {
+    kicker: "The Natural Confidence Guarantee",
+    title: "Natural results — or your follow-up is on us",
+    paragraphs: [
+      "The fears we hear most are the ones we're built around: I don't want to look overdone. I don't want to be pressured. What if I'm not happy? What if I don't even need it? What if they overdo it?",
+      "So we do the opposite. Every treatment starts with a doctor-led facial assessment — never a sales pitch — and a natural-first plan that treats only what you need. If you're ever not completely happy with how your result settles, your follow-up adjustment session is on us, until you're 100% satisfied with a result that still looks like you.",
+    ],
+    cta: "Book Your Free Consultation",
+    points: [
+      { value: "Doctor-led", label: "Assessment first", sub: "Every plan starts with a doctor, never a salesperson" },
+      { value: "Natural-first", label: "Never overdone", sub: "We'd rather under-treat and refine than overdo it" },
+      { value: "Free", label: "Follow-up session", sub: "Included until you're 100% satisfied" },
     ],
   },
   experience: {

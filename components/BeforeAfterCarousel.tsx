@@ -157,21 +157,20 @@ export default function BeforeAfterCarousel({ pairs, title }: { pairs: Pair[]; t
   const effPerView = Math.min(perView, Math.max(n, 1));
   const pageCount = Math.max(1, Math.ceil(n / effPerView));
 
-  // page = which window of cards is visible. Clamp if perView grows on resize.
-  const [page, setPage] = useState(0);
-  useEffect(() => {
-    setPage((p) => Math.min(p, pageCount - 1));
-  }, [pageCount]);
+  // page = which window of cards is visible. Clamped at RENDER (not via a
+  // setState-in-effect, which React/eslint flag as cascading renders): if a
+  // resize grows perView and shrinks pageCount, the visible page stays bounded.
+  const [rawPage, setPage] = useState(0);
+  const page = Math.min(rawPage, Math.max(0, pageCount - 1));
 
   const hasArrows = pageCount > 1;
   const atStart = page === 0;
   const atEnd = page >= pageCount - 1;
 
-  // Windowed (non-circular): prev/next disable at the ends, mirroring the
-  // constraint's "prev/next disabled at ends" requirement.
+  // Windowed (non-circular): prev/next disable at the ends.
   const go = useCallback(
-    (d: number) => setPage((p) => Math.min(Math.max(p + d, 0), pageCount - 1)),
-    [pageCount],
+    (d: number) => setPage(Math.min(Math.max(page + d, 0), pageCount - 1)),
+    [page, pageCount],
   );
 
   // Prefetch the next page's images so paging feels instant.

@@ -68,12 +68,16 @@ export default function SuitabilityCards({
   sub,
   suitableFor,
   notIdeal,
+  personas,
 }: {
   kicker?: string;
   title?: string;
   sub?: string;
   suitableFor: string[];
   notIdeal: string[];
+  /** richer "designed for" personas (title + desc) — when present they replace
+   *  the plain suitableFor bullets on the left column. */
+  personas?: { title: string; desc: string }[];
 }) {
   const colLabel: React.CSSProperties = {
     fontSize: 12,
@@ -109,18 +113,31 @@ export default function SuitabilityCards({
               marginTop: "clamp(40px,5vw,56px)",
             }}
           >
-            {/* Suitable for you */}
+            {/* Suitable for you — or, when personas are supplied, the human
+                "Designed for" list (each a named persona + a line of context). */}
             <div className="suit-col">
               <p className="font-display" style={{ ...colLabel, color: "var(--teal-text)" }}>
-                Suitable for you
+                {personas && personas.length > 0 ? "Designed for" : "Suitable for you"}
               </p>
-              <ul style={{ listStyle: "none", margin: "24px 0 0", padding: 0, display: "flex", flexDirection: "column", gap: 20 }}>
-                {suitableFor.map((s) => (
-                  <li key={s} style={{ display: "flex", gap: 14, alignItems: "flex-start" }}>
-                    <SuitTick />
-                    <span style={itemText}>{s}</span>
-                  </li>
-                ))}
+              <ul style={{ listStyle: "none", margin: "24px 0 0", padding: 0, display: "flex", flexDirection: "column", gap: 22 }}>
+                {personas && personas.length > 0
+                  ? personas.map((p) => (
+                      <li key={p.title} style={{ display: "flex", gap: 14, alignItems: "flex-start" }}>
+                        <SuitTick />
+                        <span>
+                          <span style={{ display: "block", fontSize: 15, fontWeight: 600, color: "var(--gold)", marginBottom: 3 }}>
+                            {p.title}
+                          </span>
+                          <span style={itemText}>{p.desc}</span>
+                        </span>
+                      </li>
+                    ))
+                  : suitableFor.map((s) => (
+                      <li key={s} style={{ display: "flex", gap: 14, alignItems: "flex-start" }}>
+                        <SuitTick />
+                        <span style={itemText}>{s}</span>
+                      </li>
+                    ))}
               </ul>
             </div>
 

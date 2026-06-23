@@ -4,13 +4,14 @@ import type { Treatment } from "@/lib/treatments";
 import Reveal from "@/components/Reveal";
 import PageHero from "@/components/PageHero";
 import BeforeAfterCarousel from "@/components/BeforeAfterCarousel";
-import CompositeSlideshow from "@/components/CompositeSlideshow";
 import VideoPlayer from "@/components/VideoPlayer";
 import SuitabilityCards from "@/components/treatment/SuitabilityCards";
 import RecommendedCards from "@/components/treatment/RecommendedCards";
 import TreatmentFaq from "@/components/treatment/TreatmentFaq";
 import PlanSummary from "@/components/treatment/PlanSummary";
 import TopClinic from "@/components/treatment/TopClinic";
+import ProblemReframe from "@/components/treatment/ProblemReframe";
+import GuaranteeBand from "@/components/treatment/GuaranteeBand";
 
 // Fallback hero image when a treatment defines neither image nor video.
 const HERO_FALLBACK_IMAGE = "/assets/hero-bg.png";
@@ -257,6 +258,16 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
         </section>
       )}
 
+      {/* ── Emotional problem reframe — right after the before/afters ── */}
+      {t.problem && (
+        <ProblemReframe
+          kicker={t.problem.kicker}
+          title={t.problem.title}
+          body={t.problem.body}
+          points={t.problem.points}
+        />
+      )}
+
       {/* ── Education ── */}
       {t.education && (
         <section
@@ -351,50 +362,15 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
       )}
 
       {/* ── Guarantee ── */}
+      {/* ── Guarantee — the Natural Confidence Guarantee (GuaranteeBand) ── */}
       {t.guarantee && (
-        <section aria-labelledby="guarantee-heading" style={{ padding: "80px 0" }}>
-          <div className="container">
-            <h2
-              id="guarantee-heading"
-              className="font-serif text-center"
-              style={{
-                fontSize: "clamp(24px,3.4vw,38px)",
-                color: "var(--gold)",
-                letterSpacing: "0.04em",
-                lineHeight: 1.25,
-              }}
-            >
-              {t.guarantee.title}
-            </h2>
-            <div className="mx-auto" style={{ marginTop: "24px", maxWidth: "780px" }}>
-              {t.guarantee.paragraphs.map((p, i) => (
-                <p
-                  key={i}
-                  style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.625, marginTop: i === 0 ? 0 : "16px", textAlign: "center" }}
-                >
-                  {p}
-                </p>
-              ))}
-            </div>
-            {t.guarantee.cta && (
-              <div className="text-center" style={{ marginTop: "30px" }}>
-                {/* P2 — min-h-[44px] for CTA tap target */}
-                <Link
-                  href="/consultation"
-                  className="btn btn-teal"
-                  style={{ display: "inline-flex", alignItems: "center", minHeight: "44px" }}
-                >
-                  {t.guarantee.cta}
-                </Link>
-              </div>
-            )}
-            {t.guarantee.beforeAfter && t.guarantee.beforeAfter.length > 0 && (
-              <div style={{ marginTop: "52px" }}>
-                <CompositeSlideshow images={t.guarantee.beforeAfter} title={t.guarantee.beforeAfterTitle} />
-              </div>
-            )}
-          </div>
-        </section>
+        <GuaranteeBand
+          kicker={t.guarantee.kicker}
+          title={t.guarantee.title}
+          paragraphs={t.guarantee.paragraphs}
+          cta={t.guarantee.cta}
+          points={t.guarantee.points}
+        />
       )}
 
       {/* ── Precision areas ── */}
@@ -523,6 +499,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
           sub={t.suitability.intro}
           suitableFor={t.suitability.suitableFor ?? []}
           notIdeal={t.suitability.notIdeal ?? []}
+          personas={t.suitability.personas}
         />
       )}
 
