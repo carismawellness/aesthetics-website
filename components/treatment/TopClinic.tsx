@@ -1,3 +1,6 @@
+"use client"; // logos use inline onMouseEnter/onMouseLeave hover handlers, which
+// require a Client Component (server components can't pass event handlers).
+
 import Reveal from "@/components/Reveal";
 
 /**
