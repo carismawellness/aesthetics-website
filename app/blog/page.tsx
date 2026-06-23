@@ -164,8 +164,8 @@ export default function BlogIndexPage() {
       <PageHero
         eyebrow="The Journal"
         headline={[
-          { text: "Medical Aesthetics" },
-          { text: "Blog Malta", em: true },
+          { text: "Aesthetics & Beauty Blog Malta" },
+          { text: "Expert Guides from Our Clinic", em: true },
         ]}
         sub="Expert guides on aesthetic treatments, skin and confidence — from Malta's #1 voted med-aesthetics clinic."
         primaryCta={{ text: "Book Free Consultation", href: "/consultation" }}
@@ -207,7 +207,7 @@ export default function BlogIndexPage() {
         style={{ padding: "64px 20px 96px" }}
       >
         {/* P1: visually hidden label for section */}
-        <h2 id="blog-articles-heading" className="sr-only">All Articles</h2>
+        <h2 id="blog-articles-heading" className="sr-only">Explore Our Medical Aesthetics Articles in Malta</h2>
 
         {posts.length === 0 ? (
           <div className="text-center" style={{ padding: "80px 0", color: "var(--muted)" }}>
@@ -264,7 +264,7 @@ export default function BlogIndexPage() {
               letterSpacing: "0.04em",
             }}
           >
-            Have a Question? Let Us Help.
+            Book Your Free Aesthetic Consultation in Malta Today
           </h2>
           <p
             style={{
