@@ -1,10 +1,7 @@
 import { notFound } from "next/navigation";
 import JsonLd from "@/lib/seo/JsonLd";
 import TreatmentPage from "@/components/TreatmentPage";
-import BodyPackagePage from "@/components/BodyPackagePage";
-import { bodyPackages } from "@/lib/bodypkg";
-import PackageFunnel from "@/components/packages/PackageFunnel";
-import { PACKAGES } from "@/lib/packages";
+import PackagePage from "@/components/PackagePage";
 import { getTreatment, ALL_TREATMENT_SLUGS } from "@/lib/treatments";
 
 export function generateStaticParams() {
@@ -183,13 +180,6 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       },
     };
   }
-  const pkg = PACKAGES[slug];
-  if (pkg) {
-    return {
-      title: `${pkg.hero.title} | Carisma Aesthetics Malta`,
-      description: pkg.hero.subtitle,
-    };
-  }
   const t = getTreatment(slug);
   if (!t) return {};
   return {
@@ -224,10 +214,8 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
     </>
   ) : null;
 
-  const pkg = PACKAGES[slug];
-  if (pkg) return <>{schemas}<PackageFunnel data={pkg} /></>;
-  if (bodyPackages[slug]) return <>{schemas}<BodyPackagePage content={bodyPackages[slug]} /></>;
   const t = getTreatment(slug);
   if (!t) notFound();
+  if (t.category === "Package") return <>{schemas}<PackagePage t={t} /></>;
   return <>{schemas}<TreatmentPage t={t} /></>;
 }
