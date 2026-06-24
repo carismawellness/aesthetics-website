@@ -2,7 +2,7 @@ import type { Treatment } from "../treatment-types";
 
 const t: Treatment = {
   slug: "muscle-stimulation",
-  category: "Body",
+  category: "Package",
   hero: {
     title: "EMSculpt NEO in Malta | Muscle Stimulation",
     subtitle: "3-in-1 body sculpt protocol",

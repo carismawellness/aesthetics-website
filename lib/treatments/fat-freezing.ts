@@ -2,7 +2,7 @@ import type { Treatment } from "../treatment-types";
 
 const t: Treatment = {
   slug: "fat-freezing",
-  category: "Body",
+  category: "Package",
   hero: {
     title: "Fat Freezing Malta | Body Contouring",
     subtitle: "fat eraser protocol",

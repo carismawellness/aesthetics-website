@@ -2,7 +2,7 @@ import type { Treatment } from "../treatment-types";
 
 const t: Treatment = {
   slug: "skin-tightening",
-  category: "Body",
+  category: "Package",
   hero: {
     title: "VelaShape III in Malta",
     subtitle: "4 in 1 skin tightening protocol",
@@ -175,7 +175,7 @@ const t: Treatment = {
       },
     ],
     includes: [
-      "4x Muscle Stimulation sessions with EMSculpt NEO (€400)",
+      "4x Skin Tightening sessions with VelaShape III (€400)",
       "4x access to spa & fitness facilities (€140)",
       "Tanita Body Composition Analysis (€60)",
       "€25 Carisma Aesthetics credit (€25)",

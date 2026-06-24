@@ -2,7 +2,7 @@ import type { Treatment } from "../treatment-types";
 
 const t: Treatment = {
   slug: "lymphatic-drainage",
-  category: "Body",
+  category: "Package",
   hero: {
     title: "Lymphatic drainage therapy",
     subtitle: "Expert LED BODY DETOX & CIRCULATION SUPPORT",

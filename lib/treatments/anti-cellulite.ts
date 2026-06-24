@@ -2,7 +2,7 @@ import type { Treatment } from "../treatment-types";
 
 const t: Treatment = {
   slug: "anti-cellulite",
-  category: "Body",
+  category: "Package",
   hero: {
     title: "Advanced cellulite smoothing",
     subtitle: "cellulift & contour protocol",
