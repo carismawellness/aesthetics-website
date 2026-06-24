@@ -4,7 +4,7 @@ const t: Treatment = {
   slug: "microneedling-malta",
   category: "Face",
   hero: {
-    title: "Microneedling + mesotherapy Malta",
+    title: "Microneedling Malta | Collagen Induction",
     subtitle: "Doctor-Led Microneedling with Mesotherapy — Restore Your Skin from Within",
     body: "Is uneven skin texture, scarring, or dull skin holding you back? Rediscover smoother, brighter, more confident skin with our expert microneedling and mesotherapy treatments in Malta. Every treatment is performed by qualified doctors who combine collagen induction therapy with personalised mesotherapy cocktails, delivering natural, lasting results that restore your skin from within.",
     prices: [
