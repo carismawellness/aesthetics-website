@@ -7,7 +7,7 @@ const t: Treatment = {
   slug: "polynucleotides-salmon-dna",
   category: "Face",
   hero: {
-    title: "Polynucleotides (salmon DNA)",
+    title: "Polynucleotides in Malta | Salmon DNA Skin Treatment",
     subtitle: "ARE YOU LOOKING TO RESTORE FIRMER, SMOOTHER, MORE RADIANT SKIN?",
     body: "Polynucleotides (Salmon DNA) boost hydration, repair damaged skin, and stimulate collagen — giving you smoother texture, improved elasticity, and a naturally refreshed glow.",
     prices: [{ label: "1ml", price: "from €249/ml" }],

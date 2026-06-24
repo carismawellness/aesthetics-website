@@ -285,7 +285,7 @@ export default function ProtocolPage({ d }: { d: ProtocolData }) {
                 <Reveal key={c.title} delay={(i % 3) * 80} className="text-left flex flex-col" style={{ background: "rgba(255,255,255,0.6)", border: "1px solid var(--line)", borderRadius: "16px", overflow: "hidden", boxShadow: "0 12px 30px rgba(0,0,0,0.05)" }}>
                   {c.image && (
                     // eslint-disable-next-line @next/next/no-img-element
-                    <img src={c.image} alt={c.title} className="w-full" style={{ display: "block", aspectRatio: "2 / 1", objectFit: "cover" }} />
+                    <Image src={c.image} alt={c.title} width={800} height={400} priority={false} quality={85} className="w-full" style={{ display: "block", aspectRatio: "2 / 1", objectFit: "cover" }} />
                   )}
                   <div style={{ padding: "24px" }}>
                     <h3 className="font-display" style={{ fontSize: "13px", color: AA_GOLD, letterSpacing: "0.04em", marginBottom: "14px", lineHeight: 1.4 }}>{c.title}</h3>
