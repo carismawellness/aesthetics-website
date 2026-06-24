@@ -86,16 +86,16 @@ const SLUG_SEO: Record<string, { title: string; description: string }> = {
       "Profhilo bio-remodelling treatment in Malta — the gold standard for skin hydration and laxity. Doctor-led injectable from €299. Natural, long-lasting results. Free consultation.",
   },
   "fat-freezing": {
-    title: "Fat Freezing Malta | Body Contouring | Carisma Aesthetics",
+    title: "CoolSculpting Malta | Fat Freezing Treatment | Carisma Aesthetics",
     description:
-      "Fat freezing in Malta using CoolSculpting technology. Non-surgical, FDA-cleared body contouring to permanently eliminate stubborn fat. Natural-looking results. Book your free consultation.",
+      "CoolSculpting fat freezing in Malta. Non-surgical, FDA-cleared body contouring to permanently eliminate stubborn fat. Natural-looking results. Book your free consultation.",
   },
-  "muscle-stimulation": {
+  "muscle-stimulation-1": {
     title: "EMSculpt NEO Malta | Body Sculpting | Carisma Aesthetics",
     description:
       "EMSculpt NEO in Malta — burn fat and build muscle simultaneously with Malta's only dual-technology body sculpting treatment. Visible results in 4 sessions. Book today.",
   },
-  "skin-tightening": {
+  "skin-tightening-1": {
     title: "VelaShape III Malta | Skin Tightening & Cellulite | Carisma Aesthetics",
     description:
       "VelaShape III skin tightening in Malta. Non-invasive radiofrequency and infrared treatment for tighter skin and cellulite reduction. Doctor-supervised. Free consultation.",
@@ -120,13 +120,13 @@ const SLUG_SEO: Record<string, { title: string; description: string }> = {
     description:
       "Polynucleotides (PDRN) treatment in Malta — regenerative salmon DNA injections to repair and renew skin. Reduces pigmentation, wrinkles and improves elasticity. Free consultation.",
   },
-  "lymphatic-drainage": {
+  "lympathic-drainage": {
     title: "Lymphatic Drainage Therapy Malta | Carisma Aesthetics",
     description:
       "Lymphatic drainage therapy in Malta. Professional treatment to reduce fluid retention, puffiness and support overall wellbeing. Available at Carisma Aesthetics. Book today.",
   },
   "thread-lift-malta": {
-    title: "Thread Lift Malta | Non-Surgical Facelift | Carisma Aesthetics",
+    title: "Thread Lift Malta | Non-Surgical Lifting | Carisma Aesthetics",
     description:
       "Thread lift in Malta — non-surgical facial rejuvenation from €239. Doctor-led lifting and repositioning for a refreshed, youthful appearance. Results last 8-12 months. Free consultation.",
   },

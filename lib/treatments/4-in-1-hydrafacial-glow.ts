@@ -9,7 +9,7 @@ const t: Treatment = {
   slug: "4-in-1-hydrafacial-glow",
   category: "Package",
   hero: {
-    title: "4-in-1 hydrafacial glow",
+    title: "4-in-1 HydraFacial Glow in Malta",
     subtitle: "Clogged pores, dull skin, and products that just don't work? If your glow's gone quiet, you're not alone. This is for Maltese skin that's ready for real results.",
     body: "With our 4-in-1 Hydrafacial Glow treatment, your skin gets exactly what it needs: deep cleansing, gentle resurfacing, and lasting hydration — all designed for Maltese skin and real-world results. After just one session, you'll see (and feel) the difference: smoother texture, balanced tone, and that luminous glow you thought you'd lost. No filters, no downtime — just confidence that shines through.",
     prices: [

@@ -120,7 +120,7 @@ export default function ProtocolPage({ d }: { d: ProtocolData }) {
               <div className="flex flex-wrap items-center justify-center" style={{ gap: "30px", marginTop: "30px" }}>
                 {d.trusted.pressLogos.map((l) => (
                   // eslint-disable-next-line @next/next/no-img-element
-                  <img key={l} src={l} alt="" style={{ height: "30px", width: "auto", objectFit: "contain" }} />
+                  <Image key={l} src={l} alt="" width={100} height={30} priority={false} style={{ width: "auto", objectFit: "contain" }} />
                 ))}
               </div>
             )}
@@ -130,7 +130,7 @@ export default function ProtocolPage({ d }: { d: ProtocolData }) {
                   {f.icon && (
                     <div className="flex justify-center" style={{ marginBottom: "14px", height: "56px", alignItems: "center" }}>
                       {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img src={f.icon} alt={f.label} style={{ maxHeight: "52px", width: "auto" }} />
+                      <Image src={f.icon} alt={f.label} width={52} height={52} priority={false} style={{ width: "auto" }} />
                     </div>
                   )}
                   <h3 className="font-display" style={{ fontSize: "13px", color: AA_GOLD, letterSpacing: "0.06em", marginBottom: "10px" }}>{f.label}</h3>
@@ -149,7 +149,7 @@ export default function ProtocolPage({ d }: { d: ProtocolData }) {
             <div className="grid gap-12 lg:grid-cols-2 items-center" style={{ marginTop: "40px" }}>
               <Reveal>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={d.eligibility.image} alt={d.eligibility.heading} className="w-full rounded-xl" style={{ display: "block", objectFit: "cover", aspectRatio: "1 / 1", boxShadow: "0 16px 40px rgba(0,0,0,0.12)" }} />
+                <Image src={d.eligibility.image} alt={d.eligibility.heading} width={600} height={600} priority={false} quality={85} className="w-full rounded-xl" style={{ display: "block", objectFit: "cover", aspectRatio: "1 / 1", boxShadow: "0 16px 40px rgba(0,0,0,0.12)" }} />
               </Reveal>
               <div>
                 <p className="font-display" style={{ fontSize: "15px", color: AA_GOLD, letterSpacing: "0.04em", marginBottom: "20px" }}>{d.eligibility.areasIntro}</p>
@@ -178,7 +178,7 @@ export default function ProtocolPage({ d }: { d: ProtocolData }) {
                     </div>
                     {d.modality.baImage && (
                       // eslint-disable-next-line @next/next/no-img-element
-                      <img src={d.modality.baImage} alt={d.modality.name} className="w-full rounded-lg" style={{ display: "block", marginBottom: "18px" }} />
+                      <Image src={d.modality.baImage} alt={d.modality.name} width={600} height={400} priority={false} quality={85} className="w-full rounded-lg" style={{ display: "block", marginBottom: "18px" }} />
                     )}
                     <p style={{ fontSize: "14px", color: AA_LABEL, lineHeight: 1.75 }}>{d.modality.intro}</p>
                   </div>
@@ -188,7 +188,7 @@ export default function ProtocolPage({ d }: { d: ProtocolData }) {
                     </ul>
                     {d.modality.sideImage && (
                       // eslint-disable-next-line @next/next/no-img-element
-                      <img src={d.modality.sideImage} alt="" className="mx-auto" style={{ display: "block", width: "150px", marginTop: "24px" }} />
+                      <Image src={d.modality.sideImage} alt="" width={150} height={150} priority={false} className="mx-auto" style={{ display: "block", marginTop: "24px" }} />
                     )}
                     <p className="font-display text-center" style={{ fontSize: "12px", color: AA_TEAL, letterSpacing: "0.08em", marginTop: "16px" }}>{d.modality.tagSub}</p>
                   </div>

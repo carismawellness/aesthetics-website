@@ -4,7 +4,7 @@ const t: Treatment = {
   slug: "thread-lift-malta",
   category: "Face",
   hero: {
-    title: "Thread lift",
+    title: "Thread Lift Malta | Non-Surgical Lifting",
     subtitle: "Ready to defy gravity and achieve a more youthful, lifted appearance without surgery?",
     body: "Looking for a non-surgical facelift option in Malta? Our Thread Lift treatments can help lift and tighten your skin, giving you a more youthful and refreshed appearance. Our experienced team uses the latest techniques and top-quality threads to ensure natural-looking, long-lasting results.",
     prices: [
