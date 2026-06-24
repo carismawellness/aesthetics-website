@@ -134,6 +134,80 @@ const t: Treatment = {
     mapQuery: "Carisma Aesthetics Malta",
   },
 
+  offer: {
+    priceNow: "€199",
+    priceWas: "€550",
+    saveLabel: "Save €351 today",
+    includedTitle: "Everything in your Fat Freezing Protocol",
+    included: [
+      "3x Fat Freezing sessions with CoolSculpting (€300)",
+      "4x access to spa & fitness facilities (€140)",
+      "Tanita Body Composition Analysis (€60)",
+      "€25 Carisma Aesthetics credit (€25)",
+      "Complimentary Parking Validation",
+    ],
+    urgency: "Due to high demand, packages are offered based on availability — book your consultation to secure your place.",
+    guaranteeChip: "Doctor-led · FDA-cleared technology · No surgery",
+    cta: { text: "Claim My Fat Freezing Package", href: "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2800348&share=true&pId=2708191", external: true },
+  },
+
+  dualPack: {
+    heading: ["malta's only dual technology", "starter pack for stubborn fat"],
+    mini: [
+      { title: "TARGETED CONTOURING", body: "CoolSculpting plus Lemon Bottle injections in one visit for your number one trouble spot." },
+      { title: "VISIBLE, TRACKABLE CHANGE", body: "Local fat reduction where you actually see it in clothes and photos, not just on the scale." },
+      { title: "HIGH-VALUE STARTER ACCESS", body: "€550 worth of treatments and clinic credit for €199, with the option to upgrade later." },
+    ],
+    includes: [
+      "3x Fat Freezing sessions with CoolSculpting (€360)",
+      "4x access to spa & fitness facilities (€140)",
+      "Tanita Body Composition Analysis (€60)",
+      "€25 Carisma Aesthetics credit (€25)",
+      "Complimentary Parking Validation",
+    ],
+    totalValue: "€550",
+    todayPrice: "€199 ONLY",
+    fineprint: [
+      "* Includes 3 fat freezing sessions, scheduled based on your clinical plan; additional areas charged at extra",
+      "** Sessions may be spaced over multiple weeks depending on area and suitability",
+      "** Due to high demand, packages are offered based on availability and may not always be guaranteed. Please inquire for current options.",
+    ],
+  },
+
+  evidence: {
+    kicker: "Evidence-based approach",
+    items: [
+      {
+        tag: "Moderate–high evidence",
+        title: "cryolipolysis (coolsculpting fat freezing)",
+        whatItDoes: "Applies controlled cooling to selectively injure fat cells under the skin. The damaged cells are cleared over weeks, which reduces the local fat layer without surgery.",
+        keyResults: "A systematic review of 19 clinical studies found average fat layer reductions of 10.3–25.5 percent on ultrasound and 14.7–28.5 percent on skinfold calipers, with no meaningful change in blood lipids or liver tests and mostly mild, temporary side effects. An abdominal study in women reported a 46.6 percent average reduction in fat thickness at 6 months after a single session, with no change in body weight or BMI, showing a true contour effect rather than general weight loss.",
+        image: "/wix/87fc13_e49f864318254f4b86704307b14ca6d8~mv2.png",
+      },
+      {
+        tag: "Targeted effect",
+        title: "localised body contouring, not general weight loss",
+        whatItDoes: "These technologies reshape specific areas that do not change much with diet or gym, such as lower belly, flanks or double chin, while overall weight often stays similar.",
+        keyResults: "In abdominal cryolipolysis follow up, fat thickness fell by almost half and circumferences dropped by about 1 cm while body weight, total fat mass and lean mass stayed stable, confirming a local contour effect rather than general slimming. Clinical notes on submental fat reduction with deoxycholic acid highlight that this type of fat often persists even in people who are not overweight and can be resistant to standard weight reduction measures, which is exactly the scenario this package targets.",
+        image: "/wix/87fc13_8094f30674bc47208fac989787bf0557~mv2.png",
+      },
+      {
+        tag: "Synergy",
+        title: "why we combine fat freezing and fat dissolving in one plan",
+        whatItDoes: "Cryolipolysis gently debulks and smooths a wider pad of fat, while injection lipolysis lets the doctor fine tune edges and smaller bulges inside the same zone. Together they allow more tailored shaping than either tool alone.",
+        keyResults: "Reviews of cryolipolysis confirm it as a safe, modestly to moderately effective method for focal adiposity reduction with high satisfaction and rare serious complications. Separate reviews of intralipotherapy conclude that modern adipocytolytic injectables have proven effectiveness for nonsurgical reduction of unaesthetic pockets of fat when used by trained clinicians. Combining two evidence based local fat reduction tools within a doctor led plan is consistent with current body contouring practice, which increasingly uses multimodal approaches to match the shape change to the patient's specific anatomy.",
+        image: "/wix/87fc13_3ffa5b43365244309f4c746206cc1ecc~mv2.png",
+      },
+    ],
+  },
+
+  closing: {
+    heading: "Ready to Freeze Away Stubborn Fat?",
+    sub: "CoolSculpting fat freezing in Malta — doctor-led, FDA-cleared, no surgery. Target your trouble spots and book your free consultation at Carisma Aesthetics.",
+    ctaLabel: "Book My Fat Freezing Consultation",
+    ctaHref: "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2800348&share=true&pId=2708191",
+  },
+
   bookingForm: {
     title: "Claim your spot now",
   },
