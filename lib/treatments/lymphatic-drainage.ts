@@ -185,6 +185,84 @@ const t: Treatment = {
     ],
   },
 
+  offer: {
+    priceNow: "€299",
+    priceWas: "€665",
+    saveLabel: "Save €366 today",
+    includedTitle: "Everything in your Lymphatic Drainage Package",
+    included: [
+      "4x Lymphatic drainage massage (€440)",
+      "4x access to spa & fitness facilities (€140)",
+      "Tanita Body Composition Analysis (€60)",
+      "€25 Carisma Aesthetics credit (€25)",
+      "Complimentary Parking Validation",
+    ],
+    guaranteeChip: "Doctor-supervised · Certified therapists · Relaxing experience",
+    urgency: "Limited appointment slots — book your consultation to secure your place",
+    cta: {
+      text: "Claim My Lymphatic Drainage Package",
+      href: "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2800348&share=true&pId=2708191",
+      external: true,
+    },
+  },
+
+  dualPack: {
+    heading: ["4 core pillars of our methodology", "Malta's only dual technology starter pack for stubborn fat"],
+    mini: [
+      { title: "ELIGIBILITY & ASSESSMENT", body: "Every lymphatic drainage journey begins with a professional consultation to assess suitability, health history, and individual concerns before treatment is recommended." },
+      { title: "LYMPHATIC FLOW & DETOX SUPPORT", body: "Gentle, targeted lymphatic techniques are used to stimulate lymph flow, helping reduce fluid retention, support detoxification, and improve circulation in a controlled, therapeutic way." },
+      { title: "SAFE, SUPPORTIVE APPROACH", body: "This is not an aggressive or cosmetic-only treatment. Lymphatic drainage is delivered as part of a structured wellness approach, prioritising comfort, safety, and sustainable results." },
+    ],
+    includes: [
+      "4x Lymphatic drainage massage (€440)",
+      "4x access to spa & fitness facilities (€140)",
+      "Tanita Body Composition Analysis (€60)",
+      "€25 Carisma Aesthetics credit (€25)",
+      "Complimentary Parking Validation",
+    ],
+    totalValue: "€665",
+    todayPrice: "€199 Only",
+    fineprint: [
+      "* Eligibility and treatment recommendations depend on your health history and individual needs. A clear plan will always be discussed during your consultation before starting. Lymphatic drainage is a supportive wellness therapy and may not be suitable for certain medical conditions. Treatment is provided following professional assessment by our medical team.",
+    ],
+  },
+
+  evidence: {
+    items: [
+      {
+        tag: "Moderate-high evidence",
+        title: "manual lymphatic drainage (mld) for swelling & fluid retention",
+        whatItDoes: "Manual Lymphatic Drainage uses light, rhythmic techniques to encourage lymph flow and help the body move excess fluid. It's commonly used to reduce swelling, heaviness, and that \"puffy\" feeling—especially in legs, abdomen, and face.",
+        keyResults: "Clinical literature supports MLD as a helpful approach for managing swelling and improving comfort in people prone to fluid build-up, particularly when performed as part of a structured plan. Patient-reported outcomes often include reduced limb heaviness, improved mobility, and improved day-to-day comfort when lymphatic techniques are used consistently.",
+      },
+      {
+        tag: "Moderate evidence",
+        title: "lymphatic drainage for post-procedure puffiness & recovery support",
+        whatItDoes: "After certain aesthetic or body procedures, lymphatic-focused techniques may support recovery by helping the body clear temporary fluid build-up, easing tightness, and improving comfort as tissues settle.",
+        keyResults: "Post-procedure protocols frequently include lymphatic-style massage as supportive care to help manage swelling and improve the recovery experience. Many clients report reduced puffiness and a more comfortable recovery when sessions are timed appropriately and delivered by trained practitioners.",
+      },
+      {
+        tag: "Moderate evidence",
+        title: "de-bloating & \"lightness\" effect via improved fluid movement",
+        whatItDoes: "Lymphatic drainage can help reduce the sensation of bloating and puffiness by supporting fluid movement—especially for people affected by travel, inactivity, hormonal cycles, or high-salt intake.",
+        keyResults: "In practice, many clients experience a visible \"de-puffed\" look and a lighter feeling shortly after a session, particularly in areas prone to water retention. When combined with hydration, movement, and consistent sessions, results tend to be more noticeable and longer-lasting.",
+      },
+      {
+        tag: "Moderate evidence",
+        title: "safety profile of professional lymphatic drainage (when screened properly)",
+        whatItDoes: "Lymphatic drainage is typically gentle and well-tolerated. With proper screening (e.g., infection, clot risk, heart/kidney conditions), it's commonly used as a supportive wellness and recovery approach.",
+        keyResults: "The technique is light-pressure and non-invasive, making it suitable for many people seeking swelling reduction and comfort—provided contraindications are ruled out. Most people report it feels relaxing, with common \"after effects\" being increased urination, lightness, and reduced tightness—especially when well hydrated.",
+      },
+    ],
+  },
+
+  closing: {
+    heading: "Ready to Feel Lighter and More Energised?",
+    sub: "Professional lymphatic drainage therapy in Malta — reduce fluid retention, ease puffiness, and support your wellbeing. Book your consultation at Carisma Aesthetics.",
+    ctaLabel: "Book My Lymphatic Drainage Session",
+    ctaHref: "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2800348&share=true&pId=2708191",
+  },
+
   faqKicker: "lymphatic drainage therapy FAQs",
   faqTitle: "Frequently asked questions",
   faq: [
