@@ -97,7 +97,7 @@ function BlogCard({ post }: { post: BlogPost }) {
             >
               {formattedDate}
             </time>
-            <span aria-hidden="true" style={{ color: "var(--line)" }}>·</span>
+            <span aria-hidden="true" style={{ color: "var(--muted)" }}>·</span>
             <span className="font-display" style={{ fontSize: "9.5px" }}>
               {post.readTime} min read
             </span>
@@ -195,7 +195,7 @@ export default function BlogIndexPage() {
               Home
             </Link>
           </li>
-          <li aria-hidden="true" style={{ color: "var(--line)" }}>/</li>
+          <li aria-hidden="true" style={{ color: "var(--muted)" }}>/</li>
           <li aria-current="page" style={{ color: "var(--muted)" }}>Blog</li>
         </ol>
       </nav>
