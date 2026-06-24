@@ -326,7 +326,7 @@ export default function BlogTemplate({ post }: { post: BlogPost }) {
               Home
             </Link>
           </li>
-          <li aria-hidden="true" style={{ color: "var(--line)" }}>/</li>
+          <li aria-hidden="true" style={{ color: "var(--muted)" }}>/</li>
           <li>
             <Link
               href="/blog"
@@ -336,7 +336,7 @@ export default function BlogTemplate({ post }: { post: BlogPost }) {
               Blog
             </Link>
           </li>
-          <li aria-hidden="true" style={{ color: "var(--line)" }}>/</li>
+          <li aria-hidden="true" style={{ color: "var(--muted)" }}>/</li>
           {/* P9: aria-current="page" on last breadcrumb item */}
           <li
             aria-current="page"
