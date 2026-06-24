@@ -195,6 +195,90 @@ const t: Treatment = {
     videos: ["/assets/treatments/vid-anti-cellulite.mp4"],
   },
 
+  offer: {
+    priceNow: "€199",
+    priceWas: "€625",
+    saveLabel: "Save €426 today",
+    includedTitle: "Everything in your Anti-Cellulite Package",
+    included: [
+      "4x Anti Cellulite sessions with the VelaShape (€400)",
+      "4x access to spa & fitness facilities (€140)",
+      "Tanita Body Composition Analysis (€60)",
+      "€25 Carisma Aesthetics credit (€25)",
+      "Complimentary Parking Validation",
+    ],
+    guaranteeChip: "Doctor-supervised · Multi-technology approach · No downtime",
+    urgency: "Limited appointment availability — book your consultation to secure your place",
+    cta: {
+      text: "Claim My Anti-Cellulite Package",
+      href: "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2800348&share=true&pId=2708191",
+      external: true,
+    },
+  },
+
+  dualPack: {
+    heading: ["malta's most advanced cellulite smoothing", "& contouring protocol"],
+    mini: [
+      { title: "Targeted CELLULITE CONTOURING", body: "Adjustable Intensity for Comfort & Results" },
+      { title: "VISIBLE, NOTICEABLE SMOOTHING", body: "Improvements you can see and feel. Skin appears smoother, more even, and more refined in clothes and movement — not just immediately after treatment, but progressively over sessions." },
+      { title: "High-Value starter Access", body: "A complete cellulite smoothing protocol at a reduced introductory price, ideal for trying CelluLift without long-term commitment." },
+    ],
+    includes: [
+      "4x Anti Cellulite sessions with the VelaShape (€400)",
+      "4x access to spa & fitness facilities (€140)",
+      "Tanita Body Composition Analysis (€60)",
+      "€25 Carisma Aesthetics credit (€25)",
+      "Complimentary Parking Validation",
+    ],
+    totalValue: "€625",
+    todayPrice: "€199 ONLY",
+    fineprint: [
+      "* Includes four sessions to be followed over the course of 2 weeks",
+      "** Additional sessions of Velashape III may be booked at €100 per session",
+      "*** Due to high demand, packages are offered based on availability and may not always be guaranteed. Please inquire for current options.",
+    ],
+  },
+
+  closing: {
+    heading: "Ready to Smooth Away Cellulite?",
+    sub: "Advanced cellulite treatment in Malta — multi-technology, doctor-supervised, no downtime. Book your free consultation at Carisma Aesthetics.",
+    ctaLabel: "Book My Anti-Cellulite Consultation",
+    ctaHref: "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2800348&share=true&pId=2708191",
+  },
+
+  evidence: {
+    items: [
+      {
+        tag: "Moderate evidence",
+        title: "mechanical massage & vacuum therapy for cellulite",
+        whatItDoes: "Mechanical massage combined with vacuum suction mobilises fibrous septae, improves blood flow, and reduces tissue stiffness associated with the dimpled appearance of cellulite.",
+        keyResults: "A clinical study published in Lasers in Surgery and Medicine found that vacuum-assisted massage significantly improved skin smoothness and reduced the appearance of cellulite after a short treatment course, with visible texture improvements reported by both clinicians and patients. A review of mechanical massage therapies concluded that repeated sessions improved tissue pliability and surface smoothness, particularly in the thighs and buttocks.",
+        image: "/assets/treatments/ac-research1.png",
+      },
+      {
+        tag: "Moderate evidence",
+        title: "velashape technology for cellulite appearance",
+        whatItDoes: "VelaShape combines radiofrequency, infrared heat, vacuum suction, and mechanical rollers to heat tissue, stimulate circulation, and improve skin texture associated with cellulite.",
+        keyResults: "Clinical trials reported in the Journal of Cosmetic and Laser Therapy showed measurable reductions in cellulite severity scores and improvements in skin smoothness after a course of VelaShape treatments. Patients demonstrated visible improvement in cellulite appearance without changes in overall body weight, confirming a contouring and texture effect rather than fat loss.",
+        image: "/assets/treatments/ac-research2.png",
+      },
+      {
+        tag: "Moderate evidence",
+        title: "lymphatic drainage massage & circulation support",
+        whatItDoes: "These technologies reshape specific areas that do not change much with diet or gym, such as lower belly, flanks or double chin, while overall weight often stays similar.",
+        keyResults: "In abdominal cryolipolysis follow up, fat thickness fell by almost half and circumferences dropped by about 1 cm while body weight, total fat mass and lean mass stayed stable, confirming a local contour effect rather than general slimming. Clinical notes on submental fat reduction highlight that this type of fat often persists even in people who are not overweight and can be resistant to standard weight reduction measures.",
+        image: "/assets/treatments/ac-research3.png",
+      },
+      {
+        tag: "Moderate evidence",
+        title: "safety and tolerability of non-invasive cellulite treatments",
+        whatItDoes: "Vacuum massage, RF, and lymphatic techniques are widely used non-invasive approaches for cellulite smoothing with a strong safety profile when delivered correctly.",
+        keyResults: "Large clinical reviews report that side effects are generally mild and temporary, such as redness or tenderness, with no serious adverse events reported when protocols are followed. Long-term studies confirm that these treatments do not damage deeper tissues and are suitable for repeated use.",
+        image: "/assets/treatments/ac-research4.png",
+      },
+    ],
+  },
+
   faqKicker: "anti-cellulite treatment FAQs",
   faqTitle: "Frequently asked questions",
   faq: [
