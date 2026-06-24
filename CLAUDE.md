@@ -50,6 +50,24 @@ differ from your training data. **Read the relevant guide in
   `app/robots.ts`** — Googlebot must be able to crawl a page to see its `noindex`.
 - Crawl/index rules live in `app/robots.ts` and `app/sitemap.ts`.
 
+## Performance / Core Web Vitals (mobile is the score that breaks)
+
+PageSpeed mobile runs on a throttled CPU + Slow-4G; desktop runs on a fast pipe.
+A heavy asset that desktop shrugs off will tank mobile — so **mobile and desktop
+are the same problem, not two.** When one score is great and the other is awful,
+suspect a single heavy resource starving the mobile connection, not two separate
+issues. Chasing them as separate problems is what makes the scores see-saw.
+
+- **The hero LCP must always be a static `next/image` with `priority`** — never a
+  video, and never an unsized `<img>`. Video is a progressive enhancement layered
+  on top: gate it off mobile / coarse-pointer / reduced-motion / Save-Data /
+  2g-3g, mount it only after first paint + idle, and use `preload="none"`. See
+  `components/HeroAutoplayVideo.tsx` ("THE RULE"). A 24 MB autoplay video with
+  `preload="auto"` once pushed mobile LCP to 15.4 s while desktop stayed at 0.9 s.
+- **Keep hero/clip videos ≤ ~5 MB, sized to their display box** (the arch is
+  ~480px wide → encode at 720px, not 1080px+). Re-encode oversized media with
+  ffmpeg (`scale=720:-2`, H.264 CRF ~27, `+faststart`) before committing.
+
 ## Structured data (JSON-LD)
 
 - Render JSON-LD as a `<script type="application/ld+json">` in the page/layout, per the
