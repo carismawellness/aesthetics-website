@@ -123,8 +123,7 @@ export default function RootLayout({
         />
 
         {/* Preload LCP-critical image FIRST (highest priority for Largest Contentful Paint) */}
-        {/* No type attribute allows browser to negotiate best format (AVIF, WebP, etc.) */}
-        <link rel="preload" as="image" href="/assets/doctor-giovanni.png" />
+        <link rel="preload" as="image" href="/assets/doctor-giovanni.png" type="image/png" />
 
         {/* Preload critical self-hosted fonts (lower priority than LCP image) */}
         <link rel="preload" as="font" href="/assets/fonts/novecento-wide-book.woff2" type="font/woff2" crossOrigin="" />
