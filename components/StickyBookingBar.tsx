@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { FACE_LINKS, BODY_LINKS, PACKAGE_LINKS } from "@/lib/site";
@@ -60,7 +61,18 @@ const GLASS: React.CSSProperties = {
 export default function StickyBookingBar() {
   const pathname = usePathname();
   const cfg = pathname ? CONFIG[pathname] : undefined;
-  if (!cfg) return null;
+
+  // Only show after the user scrolls past the hero (≈ one viewport height).
+  // Avoids competing with the hero's own CTA buttons above the fold.
+  const [pastHero, setPastHero] = useState(false);
+  useEffect(() => {
+    const check = () => setPastHero(window.scrollY > window.innerHeight * 0.8);
+    check();
+    window.addEventListener("scroll", check, { passive: true });
+    return () => window.removeEventListener("scroll", check);
+  }, []);
+
+  if (!cfg || !pastHero) return null;
 
   const isExternal = cfg.href.startsWith("http");
   const linkProps = isExternal
