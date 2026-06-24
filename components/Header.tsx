@@ -401,6 +401,36 @@ export default function Header() {
             >
               free consultation
             </Link>
+
+            {/* Compact footer */}
+            <div style={{ marginTop: 32, paddingTop: 24, borderTop: "1px solid rgba(64,96,96,0.28)" }}>
+              <p style={{ fontFamily: '"Novecento Wide", sans-serif', fontSize: 12, letterSpacing: "0.12em", textTransform: "uppercase", color: TEAL, margin: "0 0 10px" }}>
+                Carisma Aesthetics
+              </p>
+              <p style={{ fontFamily: 'Roboto, sans-serif', fontSize: 13, lineHeight: 1.6, color: NAV_INK, margin: "0 0 6px" }}>
+                Triq il-Kbira, Birkirkara BKR 1104, Malta
+              </p>
+              <a href={`mailto:${CONTACT.email}`} style={{ fontFamily: 'Roboto, sans-serif', fontSize: 13, color: TEAL, textDecoration: "none" }}>
+                {CONTACT.email}
+              </a>
+              <div className="flex items-center" style={{ gap: 18, marginTop: 16 }}>
+                <a href={CONTACT.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram" style={{ color: TEAL }}>
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
+                    <rect x="3" y="3" width="18" height="18" rx="5" />
+                    <circle cx="12" cy="12" r="4" />
+                    <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+                  </svg>
+                </a>
+                <a href={CONTACT.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook" style={{ color: TEAL }}>
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H8v3h3v7h3v-7h3l1-3h-4V9c0-.6.4-1 1-1z" />
+                  </svg>
+                </a>
+              </div>
+              <p style={{ fontFamily: 'Roboto, sans-serif', fontSize: 11.5, color: NAV_INK, margin: "18px 0 0" }}>
+                © {new Date().getFullYear()} Carisma Aesthetics. All rights reserved.
+              </p>
+            </div>
           </div>
         </div>
       )}
