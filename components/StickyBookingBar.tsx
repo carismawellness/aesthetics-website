@@ -127,7 +127,7 @@ export default function StickyBookingBar() {
           {...linkProps}
           style={{
             borderRadius: "9999px",
-            background: "var(--teal-deep)",
+            background: "linear-gradient(155deg, #3a6a73 0%, var(--teal-deep) 45%, #1a3d42 100%)",
             padding: "8px 18px",
             fontSize: "12.5px",
             fontWeight: 700,
@@ -164,7 +164,7 @@ export default function StickyBookingBar() {
           {...linkProps}
           style={{
             borderRadius: "9999px",
-            background: "var(--teal-deep)",
+            background: "linear-gradient(155deg, #3a6a73 0%, var(--teal-deep) 45%, #1a3d42 100%)",
             padding: "13px 26px",
             fontSize: "13px",
             fontWeight: 700,
