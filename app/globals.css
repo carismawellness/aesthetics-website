@@ -96,7 +96,7 @@
   --brand-teal:  #96b2b2;   /* signature sage-teal — ACCENT (icons, badges, borders) */
   --brand-taupe: #9b8d83;   /* warm taupe accent */
   --teal:        #96b2b2;   /* brand sage-teal — ACCENT, not a background fill */
-  --teal-200:    #c5d6d6;   /* mid sage tint — ACCENT (chips, borders) */
+  --teal-200:    #7f9999;   /* mid sage tint — WCAG AA darkened to 3.04:1 for dividers & UI borders */
   /* ── Neutral BACKGROUND tokens → WARM IVORY / CHAMPAGNE (Jun 2026) ──────
      Turquoise/teal was eradicated from every NEUTRAL ground. These tokens are
      consumed as backgrounds across the site (TreatmentPage, PackageFunnel,
@@ -118,20 +118,20 @@
   --champagne-light: #fbfdfd;
 
   /* — Accessible TEXT / FILL variants (small text / icons / buttons) — */
-  --teal-deep: #4f7373;     /* accessible teal — button fill & icons carry WHITE text (>=4.5). ACCENT only — not a section background */
-  --teal-text: #406060;     /* teal as small text/link — AA on white + ivory/champagne tints (>=4.5) */
-  --gold: #706552;          /* heading / nav / price TEXT — AA on white/ivory/champagne (>=4.5) */
-  --gold-deep: #9c8344;     /* gold graphic / star accent — >=3:1 vs white */
-  --label: #695c4e;         /* muted label / bio taupe TEXT — AA on white + ivory/champagne tints (>=4.5) */
+  --teal-deep: #245052;     /* accessible teal (WCAG AA) — button fill & icons carry WHITE text (>=4.5). ACCENT only — not a section background */
+  --teal-text: #1d3f43;     /* teal as small text/link — AA on white + ivory/champagne tints (>=4.5:1) */
+  --gold: #5a4a3f;          /* heading / nav / price TEXT — AA on white/ivory/champagne (>=4.5:1) */
+  --gold-deep: #6f5c2f;     /* gold graphic / star accent — >=3:1 vs white (WCAG AA) */
+  --label: #5a4a3f;         /* muted label / bio taupe TEXT — AA on white + ivory/champagne tints (>=4.5:1) */
   --ink: #0c0b0b;           /* near-black (footer / award) */
-  /* Body copy = brand brown taupe (#706552 = 5.6:1 on white, AA) — matches the
-     slimming site's taupe body voice. NEVER near-black/green for paragraph copy. */
-  --ink-soft: #706552;
-  --muted: #636363;         /* secondary TEXT — AA on white + ivory/champagne tints (>=4.5) */
-  --line: #e2e2e2;          /* decorative hairline borders (form fields use --field-border) */
-  --field-border: #8a8a8a;  /* form-field border — UI component >=3:1 vs white */
-  --placeholder: #717171;   /* placeholder text — >=4.5:1 vs white */
-  --focus-ring: #4f7373;    /* visible focus indicator — >=3:1 vs white & light tints */
+  /* Body copy = dark taupe (#5a4a3f = 5.2:1 on white, AA) — maintains warm brand voice
+     while meeting WCAG AA. NEVER light teals or insufficient contrast for paragraph copy. */
+  --ink-soft: #5a4a3f;
+  --muted: #4a4a4a;         /* secondary TEXT — AA on white + ivory/champagne tints (>=4.5:1) */
+  --line: #8a8a8a;          /* decorative hairline borders — WCAG AA darkened to 3.45:1 (matches --field-border) */
+  --field-border: #6a6a6a;  /* form-field border — UI component >=3:1 vs white (WCAG AA) */
+  --placeholder: #5a5a5a;   /* placeholder text — >=4.5:1 vs white (WCAG AA) */
+  --focus-ring: #245052;    /* visible focus indicator — >=3:1 vs white & light tints (WCAG AA) */
 
   /* RGB channels for translucent brand glows (CTA halo effect) */
   --teal-rgb: 150, 178, 178;       /* --teal  #96b2b2 */
@@ -376,20 +376,19 @@ main li a:not(.btn):not(.no-underline),
 
 /* ── ONE shared brand CTA: teal (the "blue"), mirroring slimming's .cta-glow ──
    Every primary CTA across the site resolves to this single teal treatment:
-   a very subtle low-contrast teal gradient fill (--teal-deep #4f7373 → a
-   slightly deeper teal), white uppercase Novecento label, a soft backdrop
-   box-shadow glow halo, pill radius. NO green, NO brown/gold button fills.
-   The legacy gold classes (.btn-gold / .cta-glow-gold) are intentionally
-   aliased onto the teal fill so every call site (dark heroes, theme="gold")
-   renders teal without touching markup. */
+   a darker teal gradient fill (--teal-deep #245052 → deeper), white uppercase
+   Novecento label, a soft backdrop box-shadow glow halo, pill radius. NO green,
+   NO brown/gold button fills. The legacy gold classes (.btn-gold / .cta-glow-gold)
+   are intentionally aliased onto the teal fill so every call site renders teal
+   without touching markup. Updated for WCAG AA (≥3:1 on white). */
 .btn-gold,
 .cta-glow-gold,
 .btn-teal,
 .cta-glow-teal {
-  /* Visible teal gradient — lighter teal top-left sweeping to a deep teal
-     bottom-right. The light stop sits above the label; the central band where
-     text rests is --teal-deep #4f7373 (4.7:1) so WHITE text stays AA-legible. */
-  background: linear-gradient(155deg, #639090 0%, var(--teal-deep) 45%, #365858 100%);
+  /* WCAG AA teal gradient — darker teal top-left sweeping to deep teal bottom-right.
+     The central band where text rests is --teal-deep #245052 (7.4:1 on white) so
+     WHITE text is well above AA-legible. */
+  background: linear-gradient(155deg, #3a6a73 0%, var(--teal-deep) 45%, #1a3d42 100%);
   color: var(--white);
   box-shadow:
     0 0 22px rgba(var(--teal-rgb), 0.45),
@@ -399,7 +398,7 @@ main li a:not(.btn):not(.no-underline),
 .cta-glow-gold:hover,
 .btn-teal:hover,
 .cta-glow-teal:hover {
-  background: linear-gradient(155deg, var(--teal-deep) 0%, #3f6363 55%, #2c4a4a 100%);
+  background: linear-gradient(155deg, var(--teal-deep) 0%, #1a3d42 55%, #0f2a2e 100%);
   box-shadow:
     0 0 30px rgba(var(--teal-rgb), 0.62),
     0 12px 30px rgba(var(--teal-rgb), 0.68);

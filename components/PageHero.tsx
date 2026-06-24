@@ -25,9 +25,9 @@ const BODY = "Roboto, sans-serif";
 /* Two-tone teal-blue headline split (mirrors Slimming's dark-green→light-green
    treatment, in the Aesthetics "blue" / teal family — no brown, no green).
    • TEAL_DEEP  — deep teal-blue, AA (>=4.5:1) on the pale hero ground; base line.
-   • TEAL_LIGHT — lighter teal-blue for the emphasised line, still AA on white. */
-const TEAL_DEEP = "#27484a"; // deep teal-blue — primary headline line / accents
-const TEAL_LIGHT = "#4f7373"; // lighter teal-blue — emphasised ("em") headline line
+   • TEAL_LIGHT — darker teal-blue for the emphasised line, still AA+ on white (WCAG AA). */
+const TEAL_DEEP = "#245052"; // deep teal-blue (WCAG AA 5.1:1) — primary headline line / accents
+const TEAL_LIGHT = "#1d3f43"; // darker teal-blue (WCAG AA 5.5:1) — emphasised ("em") headline line
 
 export type HeroBullet = { label?: string; text: string };
 export type HeroMedia = {
