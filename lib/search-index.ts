@@ -60,7 +60,7 @@ export const SEARCH_INDEX: SearchEntry[] = [
 
   // ── Face treatments (FACE_LINKS) ────────────────────────────────────────
   {
-    title: 'Wrinkle-Relax',
+    title: 'Botox',
     url: '/wrinkle-relaxing-malta',
     description: 'Anti-wrinkle injections to soften expression lines.',
     keywords: ['wrinkle', 'wrinkles', 'anti wrinkle', 'wrinkle relaxing', 'botox', 'anti-ageing injections', 'fine lines', 'frown lines', 'forehead', 'crows feet'],

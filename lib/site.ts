@@ -14,7 +14,7 @@ export const CONTACT = {
 export type NavLink = { label: string; href: string };
 
 export const FACE_LINKS: NavLink[] = [
-  { label: "Wrinkle Relaxing", href: "/wrinkle-relaxing-malta" },
+  { label: "Botox", href: "/wrinkle-relaxing-malta" },
   { label: "Fat Dissolving", href: "/fat-dissolving-malta" },
   { label: "Thread Lift", href: "/thread-lift-malta" },
   { label: "Chemical Peels", href: "/chemical-peels-malta" },

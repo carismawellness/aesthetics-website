@@ -5,7 +5,7 @@ const t: Treatment = {
   slug: "wrinkle-relaxing-malta",
   category: "Face",
   hero: {
-    title: "Wrinkle-Relaxing Botox in Malta | Doctor-Led Care Plan",
+    title: "Botox Malta | Doctor-Led Care Plan",
     subtitle: "Are wrinkles and fine lines getting in your way?",
     body: "Say goodbye to forehead lines, frown lines, and crow's feet with expert Botox treatments in Malta. Every session is performed by qualified doctors who specialise in facial anatomy, delivering natural, refined results that restore your confidence without changing who you are.",
     prices: [
