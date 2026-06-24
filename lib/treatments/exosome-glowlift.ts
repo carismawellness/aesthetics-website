@@ -4,7 +4,7 @@ const t: Treatment = {
   slug: "exosome-glowlift",
   category: "Package",
   hero: {
-    title: "Exosome glow lift",
+    title: "Exosome Glow Lift in Malta",
     subtitle: "Has your skin stopped responding to facials and serums?",
     body: "When facials stop working and your glow fades, exosomes offer the next step — real regeneration that smooths texture, firms the skin, and restores a healthy, lit-from-within glow. Every Glow Lift is performed by our medical team in Malta, combining microneedling with exosomes, LED therapy, and a glass-skin mask in one session.",
     benefits: [
