@@ -49,10 +49,10 @@ const BRANDS = [
 // API token, or a widget like Behold / EmbedSocial). That is out of static scope.
 // Each tile links to the clinic Instagram (IG_URL) in a new tab.
 const IG_SRCS = [
-  { src: '/assets/service-hydrafacial.png', alt: 'Hydrafacial treatment at Carisma Aesthetics' },
-  { src: '/assets/service-microneedling.png', alt: 'Microneedling treatment at Carisma Aesthetics' },
-  { src: '/assets/service-dermal-fillers.png', alt: 'Dermal fillers at Carisma Aesthetics' },
-  { src: '/assets/clinic-room.jpg', alt: 'Carisma Aesthetics clinic in Malta' },
+  { src: '/assets/clinic-interior-2.jpg', alt: 'Carisma Aesthetics clinic interior in Malta' },
+  { src: '/assets/clinic-treatment-room.jpg', alt: 'Treatment room at Carisma Aesthetics Malta' },
+  { src: '/assets/clinic-interior-1-resized.jpg', alt: 'Carisma Aesthetics medical aesthetics clinic' },
+  { src: '/assets/treatments/botox-hero.jpg', alt: 'Doctor-led Botox treatment at Carisma Aesthetics' },
 ];
 
 // Full-site footer navigation, grouped into columns. Every real page is sourced
