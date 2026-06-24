@@ -36,10 +36,10 @@ export const BODY_LINKS: NavLink[] = [
   { label: "Pico Laser Pigmentation", href: "/pico-laser-pigmentation-treatment" },
   { label: "Medical Weight-Loss", href: "/medical-weight-loss" },
   { label: "Fat Freezing", href: "/fat-freezing" },
-  { label: "Muscle Stimulation", href: "/muscle-stimulation-1" },
-  { label: "Skin Tightening", href: "/skin-tightening-1" },
+  { label: "Muscle Stimulation", href: "/muscle-stimulation" },
+  { label: "Skin Tightening", href: "/skin-tightening" },
   { label: "Anti-Cellulite", href: "/anti-cellulite" },
-  { label: "Lympathic Drainage", href: "/lympathic-drainage" },
+  { label: "Lymphatic Drainage", href: "/lymphatic-drainage" },
 ];
 
 export const PACKAGE_LINKS: NavLink[] = [

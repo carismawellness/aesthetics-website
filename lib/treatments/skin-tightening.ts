@@ -1,7 +1,7 @@
 import type { Treatment } from "../treatment-types";
 
 const t: Treatment = {
-  slug: "skin-tightening-1",
+  slug: "skin-tightening",
   category: "Body",
   hero: {
     title: "VelaShape III in Malta",

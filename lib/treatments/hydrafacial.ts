@@ -231,7 +231,7 @@ const t: Treatment = {
       { label: "Dermafillers", href: "/dermal-fillers-malta", image: "/assets/treatments/hydrafacial-rec-dermafillers.avif" },
       { label: "Botox", href: "/wrinkle-relaxing-malta", image: "/assets/treatments/hydrafacial-rec-botox.jpg" },
       { label: "Chemical peels", href: "/chemical-peels-malta", image: "/assets/treatments/hydrafacial-rec-chemical-peels.png" },
-      { label: "MFU Ultight", href: "/skin-tightening-1", image: "/assets/treatments/hydrafacial-rec-mfu.png" },
+      { label: "MFU Ultight", href: "/skin-tightening", image: "/assets/treatments/hydrafacial-rec-mfu.png" },
     ],
   },
   faqTitle: "FAQs about hydrafacial in Malta",

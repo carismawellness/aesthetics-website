@@ -182,10 +182,10 @@ const t: Treatment = {
   recommended: {
     title: "Recommended with CelluLift",
     items: [
-      { label: "Skin tightening", href: "/skin-tightening-1", image: "/assets/treatments/ac-feat1.png" },
-      { label: "Lymphatic drainage", href: "/lympathic-drainage", image: "/assets/treatments/ac-feat2.png" },
+      { label: "Skin tightening", href: "/skin-tightening", image: "/assets/treatments/ac-feat1.png" },
+      { label: "Lymphatic drainage", href: "/lymphatic-drainage", image: "/assets/treatments/ac-feat2.png" },
       { label: "Fat freezing", href: "/fat-freezing", image: "/assets/treatments/ac-feat3.png" },
-      { label: "Muscle stimulation", href: "/muscle-stimulation-1", image: "/assets/treatments/ac-feat4.png" },
+      { label: "Muscle stimulation", href: "/muscle-stimulation", image: "/assets/treatments/ac-feat4.png" },
     ],
   },
 

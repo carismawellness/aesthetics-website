@@ -27,10 +27,10 @@ import PrpMalta from "./treatments/prp-malta";
 import PicoLaserTattooRemoval from "./treatments/pico-laser-tattoo-removal";
 import PicoLaserPigmentationTreatment from "./treatments/pico-laser-pigmentation-treatment";
 import MedicalWeightLoss from "./treatments/medical-weight-loss";
-import MuscleStimulation1 from "./treatments/muscle-stimulation-1";
-import SkinTightening1 from "./treatments/skin-tightening-1";
+import MuscleStimulation from "./treatments/muscle-stimulation";
+import SkinTightening from "./treatments/skin-tightening";
 import AntiCellulite from "./treatments/anti-cellulite";
-import LympathicDrainage from "./treatments/lympathic-drainage";
+import LymphaticDrainage from "./treatments/lymphatic-drainage";
 import SnatchYourJawline from "./treatments/snatch-your-jawline";
 import T4In1HydrafacialGlow from "./treatments/4-in-1-hydrafacial-glow";
 import ExosomeGlowlift from "./treatments/exosome-glowlift";
@@ -56,10 +56,10 @@ export const TREATMENTS: Record<string, Treatment> = {
   "pico-laser-tattoo-removal": PicoLaserTattooRemoval,
   "pico-laser-pigmentation-treatment": PicoLaserPigmentationTreatment,
   "medical-weight-loss": MedicalWeightLoss,
-  "muscle-stimulation-1": MuscleStimulation1,
-  "skin-tightening-1": SkinTightening1,
+  "muscle-stimulation": MuscleStimulation,
+  "skin-tightening": SkinTightening,
   "anti-cellulite": AntiCellulite,
-  "lympathic-drainage": LympathicDrainage,
+  "lymphatic-drainage": LymphaticDrainage,
   "snatch-your-jawline": SnatchYourJawline,
   "4-in-1-hydrafacial-glow": T4In1HydrafacialGlow,
   "exosome-glowlift": ExosomeGlowlift,

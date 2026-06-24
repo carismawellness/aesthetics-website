@@ -93,10 +93,10 @@ import { lymphaticDrainage } from "./protocols/lymphatic-drainage";
 
 export const PROTOCOLS: Record<string, ProtocolData> = {
   "fat-freezing": fatFreezing,
-  "muscle-stimulation-1": muscleStimulation,
-  "skin-tightening-1": skinTightening,
+  "muscle-stimulation": muscleStimulation,
+  "skin-tightening": skinTightening,
   "anti-cellulite": antiCellulite,
-  "lympathic-drainage": lymphaticDrainage,
+  "lymphatic-drainage": lymphaticDrainage,
 };
 
 export const PROTOCOL_SLUGS = Object.keys(PROTOCOLS);

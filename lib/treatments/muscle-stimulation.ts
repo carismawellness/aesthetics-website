@@ -1,7 +1,7 @@
 import type { Treatment } from "../treatment-types";
 
 const t: Treatment = {
-  slug: "muscle-stimulation-1",
+  slug: "muscle-stimulation",
   category: "Body",
   hero: {
     title: "EMSculpt NEO Malta",

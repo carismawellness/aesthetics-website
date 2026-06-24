@@ -86,9 +86,9 @@ const SLUG_SEO: Record<string, { title: string; description: string }> = {
       "Profhilo bio-remodelling treatment in Malta — the gold standard for skin hydration and laxity. Doctor-led injectable from €299. Natural, long-lasting results. Free consultation.",
   },
   "fat-freezing": {
-    title: "CoolSculpting Malta | Fat Freezing Treatment | Carisma Aesthetics",
+    title: "Fat Freezing Malta | Body Contouring | Carisma Aesthetics",
     description:
-      "CoolSculpting fat freezing in Malta. Non-surgical, FDA-cleared body contouring to permanently eliminate stubborn fat. Natural-looking results. Book your free consultation.",
+      "Fat freezing in Malta using CoolSculpting technology. Non-surgical, FDA-cleared body contouring to permanently eliminate stubborn fat. Natural-looking results. Book your free consultation.",
   },
   "muscle-stimulation": {
     title: "EMSculpt NEO Malta | Body Sculpting | Carisma Aesthetics",

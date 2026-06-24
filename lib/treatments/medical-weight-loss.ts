@@ -129,10 +129,10 @@ const t: Treatment = {
   recommended: {
     title: "Recommended with Medical Weight Loss",
     items: [
-      { label: "Muscle stimulation", href: "/muscle-stimulation-1", image: "/assets/treatments/ms-feat1.png" },
+      { label: "Muscle stimulation", href: "/muscle-stimulation", image: "/assets/treatments/ms-feat1.png" },
       { label: "Fat freezing", href: "/fat-freezing", image: "/assets/treatments/ff-feat1.png" },
-      { label: "Skin tightening", href: "/skin-tightening-1", image: "/assets/treatments/st-feat1.png" },
-      { label: "Lymphatic drainage", href: "/lympathic-drainage", image: "/assets/treatments/lympathic-drainage-feat1.png" },
+      { label: "Skin tightening", href: "/skin-tightening", image: "/assets/treatments/st-feat1.png" },
+      { label: "Lymphatic drainage", href: "/lymphatic-drainage", image: "/assets/treatments/lympathic-drainage-feat1.png" },
     ],
   },
   faqTitle: "FAQs about Ozempic & Mounjaro in Malta",

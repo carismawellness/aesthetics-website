@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import PageHero from "@/components/PageHero";
 import FaqAccordion from "@/components/FaqAccordion";
@@ -97,7 +98,7 @@ export default function ProtocolPage({ d }: { d: ProtocolData }) {
             <div className="grid gap-12 lg:grid-cols-2 items-center" style={{ marginTop: "40px" }}>
               <Reveal>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={d.secret.image} alt={d.secret.heading} className="w-full rounded-xl" style={{ display: "block", objectFit: "cover", aspectRatio: "4 / 3", boxShadow: "0 16px 40px rgba(0,0,0,0.12)" }} />
+                <Image src={d.secret.image} alt={d.secret.heading} width={800} height={600} priority={false} quality={85} className="w-full rounded-xl" style={{ display: "block", objectFit: "cover", aspectRatio: "4 / 3", boxShadow: "0 16px 40px rgba(0,0,0,0.12)" }} />
               </Reveal>
               <div>
                 {d.secret.paragraphs[0] && <p style={{ fontSize: "14.5px", color: AA_LABEL, lineHeight: 1.8 }}>{d.secret.paragraphs[0]}</p>}

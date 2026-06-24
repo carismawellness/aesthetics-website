@@ -139,7 +139,7 @@ const t: Treatment = {
       { label: "Dermal fillers", href: "/dermal-fillers-malta", image: "/assets/treatments/fat-dissolving-malta-rec-dermal-fillers.avif" },
       { label: "Thread lift", href: "/thread-lift-malta", image: "/assets/treatments/fat-dissolving-malta-rec-thread-lift.avif" },
       { label: "Collagen stimulator", href: "/collagen-stimulator-malta", image: "/assets/treatments/fat-dissolving-malta-rec-collagen-stimulator.avif" },
-      { label: "Skin tightening", href: "/skin-tightening-1", image: "/assets/treatments/fat-dissolving-malta-trusted3.jpg" },
+      { label: "Skin tightening", href: "/skin-tightening", image: "/assets/treatments/fat-dissolving-malta-trusted3.jpg" },
     ],
   },
   bookingForm: {

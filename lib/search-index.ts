@@ -177,13 +177,13 @@ export const SEARCH_INDEX: SearchEntry[] = [
   },
   {
     title: 'Muscle Stimulation',
-    url: '/muscle-stimulation-1',
+    url: '/muscle-stimulation',
     description: 'EMS muscle stimulation to tone and build muscle.',
     keywords: ['muscle stimulation', 'ems', 'emsculpt', 'muscle toning', 'tone', 'abs', 'build muscle'],
   },
   {
     title: 'Skin Tightening',
-    url: '/skin-tightening-1',
+    url: '/skin-tightening',
     description: 'Radiofrequency skin tightening for firmer skin.',
     keywords: ['skin tightening', 'tighten skin', 'radiofrequency', 'rf', 'firming', 'sagging skin', 'loose skin'],
   },
@@ -195,7 +195,7 @@ export const SEARCH_INDEX: SearchEntry[] = [
   },
   {
     title: 'Lymphatic Drainage',
-    url: '/lympathic-drainage',
+    url: '/lymphatic-drainage',
     description: 'Lymphatic drainage to reduce fluid retention and bloating.',
     keywords: ['lymphatic drainage', 'lymphatic', 'drainage', 'detox', 'fluid retention', 'bloating', 'water retention', 'massage'],
   },

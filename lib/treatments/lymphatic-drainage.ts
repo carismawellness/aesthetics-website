@@ -1,7 +1,7 @@
 import type { Treatment } from "../treatment-types";
 
 const t: Treatment = {
-  slug: "lympathic-drainage",
+  slug: "lymphatic-drainage",
   category: "Body",
   hero: {
     title: "Lymphatic drainage therapy",
@@ -179,9 +179,9 @@ const t: Treatment = {
     title: "Recommended with lymphatic drainage",
     items: [
       { label: "Cellulite treatment", href: "/anti-cellulite", image: "/assets/treatments/ac-secret.png" },
-      { label: "Skin tightening", href: "/skin-tightening-1", image: "/assets/treatments/st-secret.png" },
+      { label: "Skin tightening", href: "/skin-tightening", image: "/assets/treatments/st-secret.png" },
       { label: "Fat freezing", href: "/fat-freezing", image: "/assets/treatments/ff-secret.png" },
-      { label: "Muscle stimulation", href: "/muscle-stimulation-1", image: "/assets/treatments/ms-secret.png" },
+      { label: "Muscle stimulation", href: "/muscle-stimulation", image: "/assets/treatments/ms-secret.png" },
     ],
   },
 
