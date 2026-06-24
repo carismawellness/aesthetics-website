@@ -20,6 +20,7 @@
    ============================================================ */
 
 import type { CSSProperties } from 'react';
+import Image from 'next/image';
 const BOOKING_URL = '/consultation';
 import {
   PackageContent,
@@ -189,8 +190,7 @@ export default function PackagePage({ content: c }: { content: PackageContent })
           <p style={{ color: BLUE, fontFamily: WIDE, fontSize: 16, letterSpacing: '0.5px', textTransform: 'uppercase', textAlign: 'center', margin: 0 }}>{c.secretSubheading}</p>
 
           <div style={{ display: 'grid', gridTemplateColumns: '0.9fr 1.1fr', gap: 48, alignItems: 'center', marginTop: 40 }} className="fr-2col">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={c.secretImage} alt={c.secretSubheading} loading="lazy" style={{ width: '100%', borderRadius: 16, display: 'block' }} />
+            <Image src={c.secretImage} alt={c.secretSubheading} width={400} height={300} style={{ width: '100%', height: 'auto', borderRadius: 16, display: 'block' }} quality={85} />
             <div>
               <p style={{ ...body, marginBottom: 18 }}>{c.secretIntro}</p>
               <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 18px', display: 'flex', flexDirection: 'column', gap: 10 }}>
@@ -212,16 +212,11 @@ export default function PackagePage({ content: c }: { content: PackageContent })
         <div style={CONTAINER}>
           <SectionHeading size={24}>Malta&rsquo;s trusted clinic for<br />non-surgical fat reduction</SectionHeading>
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', gap: 40, marginTop: 28 }}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={PRESS.maltaDaily} alt="Malta Daily" loading="lazy" style={{ height: 38, width: 'auto' }} />
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={PRESS.maltaToday} alt="Malta Today" loading="lazy" style={{ height: 34, width: 'auto' }} />
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={PRESS.lovin} alt="Lovin Malta" loading="lazy" style={{ height: 40, width: 'auto' }} />
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={PRESS.times} alt="Times of Malta" loading="lazy" style={{ height: 38, width: 'auto' }} />
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={PRESS.mtToday} alt="MT Today" loading="lazy" style={{ height: 38, width: 'auto' }} />
+            <Image src={PRESS.maltaDaily} alt="Malta Daily" width={145} height={38} style={{ height: 38, width: 'auto' }} quality={85} />
+            <Image src={PRESS.maltaToday} alt="Malta Today" width={130} height={34} style={{ height: 34, width: 'auto' }} quality={85} />
+            <Image src={PRESS.lovin} alt="Lovin Malta" width={125} height={40} style={{ height: 40, width: 'auto' }} quality={85} />
+            <Image src={PRESS.times} alt="Times of Malta" width={140} height={38} style={{ height: 38, width: 'auto' }} quality={85} />
+            <Image src={PRESS.mtToday} alt="MT Today" width={135} height={38} style={{ height: 38, width: 'auto' }} quality={85} />
           </div>
         </div>
       </section>
@@ -233,8 +228,7 @@ export default function PackagePage({ content: c }: { content: PackageContent })
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 22 }} className="fr-benefits">
             {c.benefits.map((b) => (
               <div key={b.title} style={{ background: 'linear-gradient(150deg, #f0f5f5 0%, #bdd1d1 100%)', borderRadius: '22px 22px 0 22px', padding: '28px 24px 34px' }}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={b.icon} alt="" loading="lazy" style={{ width: 52, height: 52, objectFit: 'contain', marginBottom: 18 }} />
+                <Image src={b.icon} alt="" width={52} height={52} style={{ objectFit: 'contain', marginBottom: 18 }} quality={85} />
                 <h3 style={{ color: TAUPE_DK, fontFamily: WIDE, fontWeight: 700, fontSize: 15, letterSpacing: '0.5px', textTransform: 'uppercase', margin: '0 0 12px', lineHeight: 1.3 }}>{b.title}</h3>
                 <p style={{ color: TAUPE, fontFamily: BODY, fontSize: 14, lineHeight: 1.6, margin: 0 }}>{b.body}</p>
               </div>
@@ -262,8 +256,7 @@ export default function PackagePage({ content: c }: { content: PackageContent })
               <CTA variant="blue" />
               <div style={{ marginTop: 18 }}><Stars withGoogle /></div>
             </div>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={c.valueProps.image} alt={c.valueProps.heading} loading="lazy" style={{ width: '100%', borderRadius: 16, display: 'block' }} />
+            <Image src={c.valueProps.image} alt={c.valueProps.heading} width={400} height={300} style={{ width: '100%', height: 'auto', borderRadius: 16, display: 'block' }} quality={85} />
           </div>
         </div>
       </section>
@@ -294,8 +287,7 @@ export default function PackagePage({ content: c }: { content: PackageContent })
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 24, marginTop: 40, flexWrap: 'wrap' }}>
               <CTA variant="blue" />
               <span style={{ display: 'inline-flex', alignItems: 'center', gap: 10, color: TAUPE, fontFamily: WIDE, fontSize: 13, letterSpacing: '1px', textTransform: 'uppercase' }}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={PARKING} alt="" loading="lazy" style={{ width: 22, height: 'auto' }} />
+                <Image src={PARKING} alt="" width={22} height={22} style={{ width: 22, height: 'auto' }} quality={85} />
                 Complimentary on-site parking
               </span>
             </div>
@@ -313,8 +305,7 @@ export default function PackagePage({ content: c }: { content: PackageContent })
           <SectionHeading>{c.eligHeading}</SectionHeading>
 
           <div style={{ display: 'grid', gridTemplateColumns: '0.85fr 1.15fr', gap: 44, alignItems: 'center', marginTop: 36 }} className="fr-2col">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={c.eligImage} alt={c.eligHeading} loading="lazy" style={{ width: '100%', borderRadius: 16, display: 'block' }} />
+            <Image src={c.eligImage} alt={c.eligHeading} width={400} height={300} style={{ width: '100%', height: 'auto', borderRadius: 16, display: 'block' }} quality={85} />
             <div>
               <p style={{ color: TAUPE_DK, fontFamily: WIDE, fontWeight: 700, fontSize: 15, letterSpacing: '0.5px', textTransform: 'uppercase', margin: '0 0 20px', lineHeight: 1.4 }}>{c.eligIntro}</p>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
@@ -360,11 +351,9 @@ export default function PackagePage({ content: c }: { content: PackageContent })
 
           <div style={{ marginTop: 36, background: 'linear-gradient(150deg, #f0f5f5 0%, #bdd1d1 100%)', borderRadius: 20, padding: 36, display: 'grid', gridTemplateColumns: '0.85fr 1.15fr', gap: 40, alignItems: 'center' }} className="fr-2col">
             <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={c.ptImage} alt="Before and after" loading="lazy" style={{ width: '100%', borderRadius: 12, display: 'block' }} />
+              <Image src={c.ptImage} alt="Before and after" width={400} height={300} style={{ width: '100%', height: 'auto', borderRadius: 12, display: 'block' }} quality={85} />
               {c.ptImage2 && (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img src={c.ptImage2} alt="" loading="lazy" style={{ width: 150, height: 'auto', borderRadius: 12 }} />
+                <Image src={c.ptImage2} alt="" width={150} height={150} style={{ width: 150, height: 'auto', borderRadius: 12 }} quality={85} />
               )}
             </div>
             <div>
@@ -398,8 +387,7 @@ export default function PackagePage({ content: c }: { content: PackageContent })
               {c.dualMini.map((m) => (
                 <div key={m.title} style={{ display: 'flex', gap: 16, alignItems: 'flex-start' }}>
                   <span style={{ flexShrink: 0, width: 54, height: 54, border: '1px solid #cdd9e6', borderRadius: 12, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img src={m.icon} alt="" loading="lazy" style={{ width: 24, height: 24, objectFit: 'contain' }} />
+                    <Image src={m.icon} alt="" width={24} height={24} style={{ objectFit: 'contain' }} quality={85} />
                   </span>
                   <div>
                     <p style={{ color: GREEN, fontFamily: WIDE, fontWeight: 700, fontSize: 13, letterSpacing: '0.5px', textTransform: 'uppercase', margin: '4px 0 6px' }}>{m.title}</p>
@@ -440,7 +428,7 @@ export default function PackagePage({ content: c }: { content: PackageContent })
           <SectionHeading>{c.offer.introHeading}</SectionHeading>
           <div style={{ display: 'grid', gridTemplateColumns: '0.9fr 1.1fr', gap: 44, alignItems: 'center', marginTop: 36 }} className="fr-2col">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={c.offer.introImage} alt={c.offer.introHeading} loading="lazy" style={{ width: '100%', borderRadius: 16, display: 'block' }} />
+            <Image src={c.offer.introImage} alt={c.offer.introHeading} width={400} height={300} style={{ width: '100%', height: 'auto', borderRadius: 16, display: 'block' }} quality={85} />
             <div>
               {c.offer.introParas.map((p) => (<p key={p} style={{ ...body, fontSize: 14, marginBottom: 14 }}>{p}</p>))}
               <div style={{ marginTop: 8 }}><CTA variant="blue" /></div>
@@ -466,7 +454,7 @@ export default function PackagePage({ content: c }: { content: PackageContent })
               <Stars withGoogle />
             </div>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={c.offer.cardImage} alt="" loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 16, display: 'block' }} />
+            <Image src={c.offer.cardImage} alt="" width={300} height={400} style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 16, display: 'block' }} quality={85} />
           </div>
         </div>
       </section>
@@ -502,8 +490,7 @@ export default function PackagePage({ content: c }: { content: PackageContent })
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 24, marginTop: 40, flexWrap: 'wrap' }}>
               <CTA variant="blue" />
               <span style={{ display: 'inline-flex', alignItems: 'center', gap: 10, color: TAUPE, fontFamily: WIDE, fontSize: 13, letterSpacing: '1px', textTransform: 'uppercase' }}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={PARKING} alt="" loading="lazy" style={{ width: 22, height: 'auto' }} />
+                <Image src={PARKING} alt="" width={22} height={22} style={{ width: 22, height: 'auto' }} quality={85} />
                 Complimentary on-site parking
               </span>
             </div>

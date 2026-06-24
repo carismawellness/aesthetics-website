@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import {
@@ -168,7 +169,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center shrink-0" onClick={() => setOpen(false)}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/assets/logo.png" alt="Carisma Aesthetics" className="header-logo" style={{ height: "26px", width: "auto", display: "block" }} />
+            <Image src="/assets/logo.png" alt="Carisma Aesthetics" className="header-logo" width={120} height={26} style={{ height: "26px", width: "auto", display: "block" }} quality={85} />
           </Link>
 
           {/* Desktop menu */}
