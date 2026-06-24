@@ -18,14 +18,14 @@ import {
 // Nav-link ink keeps the existing aesthetics token #423a30.
 const TEAL_FILL = "#4f7373";   // CTA fill (slimming GREEN_FILL → teal-deep)
 const TEAL = "#406060";        // small teal text / phone / icons (slimming GREEN → teal-text)
-const NAV_INK = "#423a30";     // nav-link ink (aesthetics existing token)
-const DROPDOWN_INK = "#423a30"; // dropdown/sub-item link ink (aesthetics existing token)
+const NAV_INK = "#245052";     // nav-link ink (brand teal)
+const DROPDOWN_INK = "#245052"; // dropdown/sub-item link ink (brand teal)
 
 type Dropdown = { label: string; href?: string; items?: NavLink[]; viewAllHref?: string };
 
-// Curate overloaded dropdowns: show the most popular ~7 treatments, then a
-// "View all →" link to the section index. Lists at/under the cap render in full.
-const MAX_DROPDOWN_ITEMS = 7;
+// Show all treatments in the dropdown; "View all →" always appears for menus
+// that have a viewAllHref. Raise the cap well above any realistic list length.
+const MAX_DROPDOWN_ITEMS = 20;
 
 const MENUS: Dropdown[] = [
   { label: "Face", items: FACE_LINKS, viewAllHref: "/face-treatments" },
@@ -244,7 +244,7 @@ export default function Header() {
                       />
                       {items.map((it) => (
                         <Link key={it.href} href={it.href} className="block hover:bg-black/5 hover:underline"
-                          style={{ padding: "9px 14px", borderRadius: "10px", color: DROPDOWN_INK, fontFamily: '"Roboto Local", sans-serif', fontSize: "13px", textDecoration: "none", transition: "background 0.3s ease" }}>
+                          style={{ padding: "9px 14px", borderRadius: "10px", color: DROPDOWN_INK, fontFamily: '"Roboto Local", sans-serif', fontSize: "13px", textDecoration: "none", transition: "background 0.3s ease", whiteSpace: "nowrap" }}>
                           {it.label}
                         </Link>
                       ))}

@@ -14,7 +14,7 @@ export const CONTACT = {
 export type NavLink = { label: string; href: string };
 
 export const FACE_LINKS: NavLink[] = [
-  { label: "Wrinkle-Relax", href: "/wrinkle-relaxing-malta" },
+  { label: "Wrinkle Relaxing", href: "/wrinkle-relaxing-malta" },
   { label: "Fat Dissolving", href: "/fat-dissolving-malta" },
   { label: "Thread Lift", href: "/thread-lift-malta" },
   { label: "Chemical Peels", href: "/chemical-peels-malta" },
@@ -23,11 +23,11 @@ export const FACE_LINKS: NavLink[] = [
   { label: "Hair Regrowth", href: "/hair-regrowth" },
   { label: "Collagen Stimulator", href: "/collagen-stimulator-malta" },
   { label: "Microneedling", href: "/microneedling-malta" },
-  { label: "Polynucleotides (Salmon DNA)", href: "/polynucleotides-salmon-dna" },
+  { label: "Polynucleotides", href: "/polynucleotides-salmon-dna" },
   { label: "Profhilo", href: "/profhilo" },
   { label: "Lip Fillers", href: "/lip-fillers-malta" },
   { label: "Hydrafacial", href: "/hydrafacial" },
-  { label: "PRP-Platelet Rich Plasma", href: "/prp-malta" },
+  { label: "PRP Therapy", href: "/prp-malta" },
 ];
 
 export const BODY_LINKS: NavLink[] = [
