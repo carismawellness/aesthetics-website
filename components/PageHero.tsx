@@ -299,21 +299,21 @@ export default function PageHero({
             )}
 
             {/* doctor-led pill — mid-left (dropped below the top-right award card so they never overlap) */}
-            <div className={`${glassClass} float-b proof-left`} style={{ position: "absolute", left: "clamp(4px,-0.5vw,20px)", top: "38%", borderRadius: 999, padding: "8px 14px", display: "flex", alignItems: "center", gap: 7, zIndex: 3, animationDelay: "-2.8s" }}>
+            <div className={`${glassClass} float-b proof-left`} style={{ position: "absolute", left: "clamp(6px, 2vw, 20px)", top: "38%", borderRadius: 999, padding: "8px 14px", display: "flex", alignItems: "center", gap: 7, zIndex: 3, animationDelay: "-2.8s" }}>
               <span aria-hidden style={{ width: 16, height: 16, borderRadius: "50%", background: c.checkBg, display: "grid", placeItems: "center" }}>
                 <svg width="9" height="9" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke={c.check} strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" /></svg>
               </span>
-              <span style={{ fontFamily: WIDE, fontSize: 10, letterSpacing: "0.1em", textTransform: "uppercase", color: c.proofStrong }}>Doctor-led</span>
+              <span style={{ fontFamily: WIDE, fontSize: "clamp(8px, 2vw, 10px)", letterSpacing: "0.1em", textTransform: "uppercase", color: c.proofStrong }}>Doctor-led</span>
             </div>
 
             {/* stat card — bottom-left */}
-            <div className={`${glassClass} float-a proof-left`} style={{ position: "absolute", left: "clamp(4px,-0.5vw,18px)", bottom: "9%", borderRadius: 16, padding: "11px 16px", display: "flex", alignItems: "center", gap: 10, zIndex: 3 }}>
-              <span style={{ fontFamily: SERIF, fontSize: 28, color: c.stat, lineHeight: 1 }}>{proof?.statValue || "30+"}</span>
-              <span style={{ fontFamily: WIDE, fontSize: 9.5, letterSpacing: "0.08em", textTransform: "uppercase", color: c.statLabel, lineHeight: 1.3, maxWidth: 86 }}>{proof?.statLabel || "years in wellness"}</span>
+            <div className={`${glassClass} float-a proof-left`} style={{ position: "absolute", left: "clamp(6px, 2vw, 18px)", bottom: "9%", borderRadius: 16, padding: "clamp(8px, 1.5vw, 11px) clamp(12px, 2vw, 16px)", display: "flex", alignItems: "center", gap: "clamp(6px, 1.5vw, 10px)", zIndex: 3 }}>
+              <span style={{ fontFamily: SERIF, fontSize: "clamp(20px, 4vw, 28px)", color: c.stat, lineHeight: 1, flexShrink: 0 }}>{proof?.statValue || "30+"}</span>
+              <span style={{ fontFamily: WIDE, fontSize: "clamp(7.5px, 1.8vw, 9.5px)", letterSpacing: "0.08em", textTransform: "uppercase", color: c.statLabel, lineHeight: 1.3, maxWidth: "clamp(70px, 18vw, 86px)" }}>{proof?.statLabel || "years in wellness"}</span>
             </div>
 
             {/* award / #1 voted — top-right */}
-            <div className={`${glassClass} float-b proof-right`} style={{ position: "absolute", right: "clamp(4px,-0.5vw,18px)", top: "5%", borderRadius: 16, padding: "10px 14px", display: "flex", alignItems: "center", gap: 10, maxWidth: "clamp(160px, 85vw, 210px)", zIndex: 3 }}>
+            <div className={`${glassClass} float-b proof-right`} style={{ position: "absolute", right: "clamp(6px, 2vw, 18px)", top: "5%", borderRadius: 16, padding: "clamp(8px, 1.5vw, 10px) clamp(10px, 2vw, 14px)", display: "flex", alignItems: "center", gap: "clamp(6px, 1.5vw, 10px)", maxWidth: "clamp(140px, 60vw, 210px)", zIndex: 3 }}>
               {proof?.awardSrc ? (
                 <Image
                   src={proof.awardSrc}
@@ -322,12 +322,12 @@ export default function PageHero({
                   height={36}
                   priority={false}
                   aria-hidden="true"
-                  style={{ borderRadius: "50%", flexShrink: 0 }}
+                  style={{ borderRadius: "50%", flexShrink: 0, width: "clamp(24px, 5vw, 36px)", height: "clamp(24px, 5vw, 36px)" }}
                 />
               ) : (
                 <Stars size={11} />
               )}
-              <span style={{ fontFamily: WIDE, fontSize: 9.5, letterSpacing: "0.07em", textTransform: "uppercase", color: c.awardText, lineHeight: 1.35, whiteSpace: "pre-line", fontWeight: 600 }}>{proof?.awardText || "#1 Voted Clinic\nMalta Healthcare Awards"}</span>
+              <span style={{ fontFamily: WIDE, fontSize: "clamp(7px, 1.8vw, 9.5px)", letterSpacing: "0.07em", textTransform: "uppercase", color: c.awardText, lineHeight: 1.35, whiteSpace: "pre-line", fontWeight: 600 }}>{proof?.awardText || "#1 Voted Clinic\nMalta Healthcare Awards"}</span>
             </div>
           </div>
 
