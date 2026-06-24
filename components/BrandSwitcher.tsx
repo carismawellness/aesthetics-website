@@ -150,23 +150,6 @@ export default function BrandSwitcher() {
               animation: 'bs-drop 0.2s cubic-bezier(.22,1,.36,1) both',
             }}
           >
-            {/* Header */}
-            <div style={{
-              padding: '10px 16px 9px',
-              borderBottom: '1px solid rgba(0,0,0,0.06)',
-            }}>
-              <span style={{
-                fontFamily: '"Novecento Wide", "Helvetica Neue", sans-serif',
-                fontSize: 9,
-                fontWeight: 700,
-                letterSpacing: '0.22em',
-                textTransform: 'uppercase',
-                color: '#9aaeae',
-              }}>
-                Carisma World
-              </span>
-            </div>
-
             {/* Brand rows */}
             {BRANDS.map((b, i) => (
               <a
