@@ -11,7 +11,7 @@ export type Faq = { q: string; a: string };
 // Clean accordion rows on a TRANSPARENT background so they blend into the page
 // gradient — no solid turquoise/teal block, no cards, no filled buttons.
 const TEAL_TEXT = "#406060";
-const BROWN = "#706552";
+const BROWN = "#3a3a3a";
 const DIVIDER = "#e4ddd2"; // tasteful thin hairline (warm, low-contrast)
 
 // Inline styles always win over CSS @media rules, so we gate transitions in JS.

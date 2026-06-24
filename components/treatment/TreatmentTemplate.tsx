@@ -63,7 +63,7 @@ function CheckIcon({ ok }: { ok: boolean }) {
 // P1 — accessible colors: text uses label/taupe (#5a4a3f, 5.2:1 on white);
 // icon strokes use teal-deep (#4f7373, 6.75:1) so graphical objects clear 3:1 (WCAG 1.4.11).
 // WCAG 2.2 AA fix (Jun 2026): changed INFO_COLOR from #756758 (4.03:1 FAIL) to #5a4a3f (5.2:1 PASS).
-const INFO_COLOR = "#5a4a3f";
+const INFO_COLOR = "#245052";
 const INFO_ICON = "#4f7373";
 
 function MetricIcon({ metric }: { metric: string }) {
