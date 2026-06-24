@@ -4,7 +4,7 @@ const t: Treatment = {
   slug: "snatch-your-jawline",
   category: "Package",
   hero: {
-    title: "Snatch Your Jawline Malta",
+    title: "Snatch Your Jawline in Malta",
     subtitle: "For those in Malta ready to redefine their profile — a non-surgical, low-downtime package that melts under-chin fat, softens sagging, and restores lasting jawline definition.",
     body: "Do you catch your reflection and wish your jawline looked sharper again? A softer chin line, a little sagging, or stubborn fat that resists every diet can quietly change how you feel about your profile. Our doctor-led Snatch Your Jawline package combines fat-dissolving and contouring to bring back that definition — no surgery, no theatre, minimal downtime. The result is a naturally sculpted jawline that still looks like you, only more confident in every photo and every room you walk into.",
     prices: [

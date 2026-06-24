@@ -132,7 +132,7 @@ const SLUG_SEO: Record<string, { title: string; description: string }> = {
   },
   // ─── Packages ──────────────────────────────────────────────────────────────
   "snatch-your-jawline": {
-    title: "Snatch Your Jawline Package | Carisma Aesthetics Malta",
+    title: "Snatch Your Jawline in Malta | Carisma Aesthetics Malta",
     description:
       "Sculpt and define your jawline in Malta with our combined fat-dissolving and contouring package. Natural, doctor-led results. Free consultation available.",
   },
