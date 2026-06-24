@@ -4,7 +4,7 @@ const t: Treatment = {
   slug: "fat-freezing",
   category: "Body",
   hero: {
-    title: "CoolSculpting in Malta",
+    title: "Fat Freezing Malta | Body Contouring",
     subtitle: "fat eraser protocol",
     body: "BURN STUBBORN FAT, NO SURGERY. For those who have tried dieting, eating healthier and moving more, but the love handles, stubborn belly fat and double chin still will not budge.",
     prices: [
