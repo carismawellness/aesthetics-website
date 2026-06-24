@@ -145,6 +145,32 @@ const t: Treatment = {
   bookingForm: {
     title: "Secure Your Jawline Sculpting Consultation",
   },
+  offer: {
+    priceNow: "€149",
+    priceWas: "€400",
+    saveLabel: "Save €251 today",
+    includedTitle: "Everything in your Jawline Package",
+    included: [
+      "Fat-Dissolving Injection (€150 value)",
+      "LED Radiance Therapy (€50 value)",
+      "Skin Tightening Laser (€100 value)",
+      "€40 Carisma Aesthetics Credit (€40 value)",
+      "In-Person Consultation (€60 value)",
+    ],
+    urgency: "Limited consultation slots — book today to secure your appointment",
+    guaranteeChip: "Doctor-led · Non-surgical · Minimal downtime",
+    cta: {
+      text: "Book My Jawline Consultation",
+      href: "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2800348&oiid=sv%3A25781412&share=true&pId=2708191",
+      external: true,
+    },
+  },
+  closing: {
+    heading: "Ready to Snatch Your Jawline?",
+    sub: "A sharper, more defined profile — non-surgical, doctor-led, minimal downtime. Book your free consultation at Carisma Aesthetics, Malta.",
+    ctaLabel: "Book My Jawline Consultation",
+    ctaHref: "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2800348&oiid=sv%3A25781412&share=true&pId=2708191",
+  },
   faqKicker: "jawline sculpting FAQs",
   faqTitle: "FAQs about Snatching Your Jawline in Malta",
   faq: [
