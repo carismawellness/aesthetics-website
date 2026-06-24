@@ -12,6 +12,7 @@ import ConsultationModal from "@/components/ConsultationModal";
 import GlowClubModal from "@/components/GlowClubModal";
 import StickyBookingBar from "@/components/StickyBookingBar";
 import DeferredChat from "@/components/DeferredChat";
+import DeferredAnalytics from "@/components/DeferredAnalytics";
 
 const pinyonScript = Pinyon_Script({
   weight: "400",
@@ -135,35 +136,11 @@ export default function RootLayout({
         <link rel="preload" as="font" href="/assets/fonts/roboto.woff2" type="font/woff2" crossOrigin="" />
         <link rel="preload" as="font" href="/assets/fonts/trajan-pro.woff2" type="font/woff2" crossOrigin="" />
 
-        {/* Google Tag Manager */}
-        <Script id="gtm-head" strategy="afterInteractive">{`
-          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-          })(window,document,'script','dataLayer','GTM-T3ZJC949');
-        `}</Script>
-
-        {/* Google Analytics */}
-        <Script src="https://www.googletagmanager.com/gtag/js?id=G-MKGQE17SN7" strategy="afterInteractive" />
-        <Script id="gtag-init" strategy="afterInteractive">{`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-MKGQE17SN7');
-        `}</Script>
-
-        {/* Klaviyo Onsite — loads the Sign-up Forms configured in Klaviyo
-            (company XvCJDh), including the "Spin to Win" wheel popup (form
-            Xw6vMW) used on the previous Wix site. Display timing, prizes,
-            Name/Email capture and the email flows are all managed inside
-            Klaviyo; this is the same snippet Wix injected. Also exposes the
-            global `klaviyo` object for identify()/track() if ever needed. */}
-        <Script
-          id="klaviyo-onsite"
-          src="https://static.klaviyo.com/onsite/js/XvCJDh/klaviyo.js?company_id=XvCJDh"
-          strategy="afterInteractive"
-        />
+        {/* GTM + Google Analytics + Klaviyo Onsite (Sign-up Forms / "Spin to Win"
+            wheel) are loaded on first interaction by <DeferredAnalytics> (mounted
+            in <body>) instead of eagerly here — ~700 KB of third-party JS was the
+            main drag on the mobile Speed-Index score. Same tags, same IDs, just
+            delayed until the visitor scrolls/taps (6s idle fallback). */}
       </head>
       <body className="min-h-full flex flex-col">
         {/* GTM noscript fallback */}
@@ -202,6 +179,8 @@ export default function RootLayout({
         {/* Site-wide sticky Liquid Gloss booking bar — shows on every Face/Body/Packages dropdown page. */}
         <StickyBookingBar />
 
+        {/* Marketing tags (GTM, GA, Klaviyo) — loaded on first interaction. */}
+        <DeferredAnalytics />
         {/* GHL form embed */}
         <Script src="https://link.msgsndr.com/js/form_embed.js" strategy="lazyOnload" />
         {/* Zoho SalesIQ live chat — loaded on first interaction (see DeferredChat):
