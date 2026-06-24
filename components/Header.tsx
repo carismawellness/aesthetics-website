@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { createPortal } from "react-dom";
+import BrandSwitcher from "@/components/BrandSwitcher";
 import {
   CONTACT,
   FACE_LINKS,
@@ -177,10 +178,13 @@ export default function Header() {
           className="flex items-center justify-between"
           style={{ ...pillStyle, minHeight: "52px", padding: "6px 10px 6px 20px" }}
         >
-          {/* Logo */}
-          <Link href="/" className="flex items-center shrink-0" onClick={() => setOpen(false)}>
-            <Image src="/assets/logos/carisma-wordmark.svg" alt="Carisma Aesthetics" className="header-logo" width={148} height={32} style={{ height: "32px", width: "auto", display: "block" }} unoptimized />
-          </Link>
+          {/* Logo + brand switcher */}
+          <div className="flex items-center shrink-0">
+            <Link href="/" className="flex items-center" onClick={() => setOpen(false)}>
+              <Image src="/assets/logos/carisma-wordmark-horizontal.svg" alt="Carisma Aesthetics" className="header-logo" width={140} height={36} style={{ height: "36px", width: "auto", display: "block" }} unoptimized />
+            </Link>
+            <BrandSwitcher />
+          </div>
 
           {/* Desktop menu */}
           <div className="hidden lg:flex items-center" style={{ gap: "26px" }}>
@@ -308,7 +312,7 @@ export default function Header() {
           {/* Top row: logo + close */}
           <div className="flex items-center justify-between shrink-0" style={{ padding: "16px clamp(16px,5vw,28px)" }}>
             <Link href="/" onClick={() => setOpen(false)} className="flex items-center">
-              <Image src="/assets/logos/carisma-wordmark.svg" alt="Carisma Aesthetics" className="header-logo--mobile" width={130} height={28} style={{ height: "28px", width: "auto", display: "block" }} unoptimized />
+              <Image src="/assets/logos/carisma-wordmark-horizontal.svg" alt="Carisma Aesthetics" className="header-logo--mobile" width={130} height={34} style={{ height: "34px", width: "auto", display: "block" }} unoptimized />
             </Link>
             <button
               onClick={() => setOpen(false)}
