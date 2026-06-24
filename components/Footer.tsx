@@ -1,7 +1,7 @@
 'use client';
 import Link from "next/link";
 import Image from "next/image";
-import { CONTACT, FACE_LINKS, BODY_LINKS, PACKAGE_LINKS, type NavLink } from "@/lib/site";
+import { CONTACT } from "@/lib/site";
 import DoctorsSection from "@/components/home/DoctorsSection";
 import Reviews from "@/components/home/Reviews";
 import SiteSearch from "@/components/SiteSearch";
@@ -9,7 +9,7 @@ import FooterRose from "@/components/FooterRose";
 
 // ─── Shared design tokens (cross-file consistent) ────────────────────────────
 const GRADIENT = 'radial-gradient(120% 90% at 85% 10%, #eaf1f1 0%, #f4f9f9 45%, #ffffff 100%)';
-const INK   = '#1a1a1a';
+const INK   = '#4f7373';  // brand teal — no black anywhere on aesthetics site
 const TEXT  = '#333333';
 const MUTED = '#595959';
 const TEAL  = '#4f7373';  // deep teal — WCAG AA on light backgrounds
@@ -23,31 +23,23 @@ const IG_URL = CONTACT.instagram;
 const FB_URL = CONTACT.facebook;
 
 // ─── Static data ─────────────────────────────────────────────────────────────
-// Designed brand panels (logo + Google-reviews strip already baked into each
-// image, exactly like Slimming's BrandBlock). Per-brand CTA colour mirrors
-// Slimming: gold for Spa, deep sage for Slimming. Aspect ratio 1128/328.
 const BRANDS = [
   {
     title: 'Carisma Spa & Wellness',
     img: '/assets/banner-spa.png',
     cta: 'Discover Our Spas',
     href: 'https://www.carismaspa.com',
-    btnColor: '#8c6d18', // deep gold — white text AA
+    btnColor: '#8c6d18',
   },
   {
     title: 'Carisma Slimming',
     img: '/assets/banner-slimming.png',
     cta: 'Discover Slimming',
     href: 'https://www.carismaslimming.com',
-    btnColor: '#4f7256', // Slimming deep sage — white text AA
+    btnColor: '#4f7256',
   },
 ];
 
-// Small Instagram preview — real Carisma Aesthetics clinic/treatment images only.
-// NOTE: these are site assets, NOT a live feed — to show the genuinely-latest
-// @carismaaesthetics posts, wire an Instagram feed integration (Instagram Graph
-// API token, or a widget like Behold / EmbedSocial). That is out of static scope.
-// Each tile links to the clinic Instagram (IG_URL) in a new tab.
 const IG_SRCS = [
   { src: '/assets/clinic-interior-2.jpg', alt: 'Carisma Aesthetics clinic interior in Malta' },
   { src: '/assets/clinic-treatment-room.jpg', alt: 'Treatment room at Carisma Aesthetics Malta' },
@@ -55,25 +47,14 @@ const IG_SRCS = [
   { src: '/assets/treatments/botox-hero.jpg', alt: 'Doctor-led Botox treatment at Carisma Aesthetics' },
 ];
 
-// Full-site footer navigation, grouped into columns. Every real page is sourced
-// from lib/site.ts (FACE_LINKS, BODY_LINKS, PACKAGE_LINKS) so the footer stays in
-// sync with the header nav; the "More" group holds the standalone pages.
-type NavGroup = { title: string; links: NavLink[] };
-
-const MORE_LINKS: NavLink[] = [
+const NAV_LINKS = [
   { label: 'Face Treatments', href: '/face-treatments' },
-  { label: 'Packages', href: '/membership' },
+  { label: 'Body Treatments', href: '/body-treatments' },
+  { label: 'Packages', href: '/packages' },
   { label: 'Membership', href: '/membership' },
   { label: 'Gifts & Vouchers', href: '/e-giftcards-vouchers' },
   { label: 'Book a Consultation', href: '/consultation' },
   { label: 'Blog', href: '/blog' },
-];
-
-const NAV_GROUPS: NavGroup[] = [
-  { title: 'Face', links: FACE_LINKS },
-  { title: 'Body', links: BODY_LINKS },
-  { title: 'Packages', links: PACKAGE_LINKS },
-  { title: 'More', links: MORE_LINKS },
 ];
 
 // ─── Micro helpers ────────────────────────────────────────────────────────────
@@ -96,8 +77,8 @@ function BrandsSection() {
         <div style={{ textAlign: 'center', marginBottom: 'clamp(24px, 5vw, 40px)' }}>
           <Eyebrow>The Carisma Wellness Group</Eyebrow>
           <Rule center />
-          <h3 id="footer-brands-h" style={{ fontFamily: SERIF, fontSize: 'clamp(20px,3vw,28px)', fontWeight: 400, color: INK, letterSpacing: '1px', marginBottom: '0' }}>
-            Malta&rsquo;s leading wellness group
+          <h3 id="footer-brands-h" style={{ fontFamily: SERIF, fontSize: 'clamp(20px,3vw,28px)', fontWeight: 400, color: INK, letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '0' }}>
+            Malta&rsquo;s Leading Wellness Group
           </h3>
         </div>
         <style>{`
@@ -164,15 +145,14 @@ function BrandsSection() {
 function FooterBase() {
   return (
     <div style={{ background: 'transparent' }}>
-      {/* Info grid */}
-      <div style={{ padding: '52px 0 44px', borderBottom: `1px solid ${HAIR}` }}>
+      {/* Info grid — 3-column layout matching Slimming: Brand | Explore | Get in Touch */}
+      <div style={{ padding: 'clamp(32px, 6vw, 52px) 0 clamp(28px, 5vw, 44px)', borderBottom: `1px solid ${HAIR}` }}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div style={{ display: 'grid', gridTemplateColumns: 'minmax(220px,300px) 1fr', gap: '44px' }} className="footer-info-grid">
-            <style>{`@media (max-width:767px){.footer-info-grid{grid-template-columns:1fr !important}}`}</style>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(190px,1fr))', gap: '44px' }}>
 
-            {/* Brand + socials + IG preview */}
+            {/* Brand */}
             <div>
-              <p style={{ fontFamily: SERIF, fontSize: '18px', fontWeight: 400, color: INK, letterSpacing: '1px', marginBottom: '12px' }}>Carisma Aesthetics</p>
+              <p style={{ fontFamily: SERIF, fontSize: '18px', fontWeight: 400, color: INK, letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '12px' }}>Carisma Aesthetics</p>
               <p style={{ fontFamily: BODY, fontSize: '13px', lineHeight: 1.75, color: TEXT, maxWidth: '210px', marginBottom: '20px' }}>
                 Glow with confidence — doctor-led medical aesthetics in Malta. Natural results, delivered with care.
               </p>
@@ -190,9 +170,9 @@ function FooterBase() {
                 ))}
               </div>
 
-              {/* Follow us — embedded under the brand column (desktop only) */}
+              {/* Follow us — desktop only */}
               <div className="hidden md:block" style={{ marginTop: '26px' }}>
-                <h4 style={{ fontFamily: WIDE, fontSize: '10px', fontWeight: 700, letterSpacing: '2.5px', textTransform: 'uppercase', color: MUTED, marginBottom: '12px' }}>Follow us</h4>
+                <h3 style={{ fontFamily: WIDE, fontSize: '10px', fontWeight: 700, letterSpacing: '2.5px', textTransform: 'uppercase', color: MUTED, marginBottom: '12px' }}>Follow us</h3>
                 <a href={IG_URL} target="_blank" rel="noopener noreferrer" style={{ fontFamily: BODY, fontSize: '13px', color: TEXT, textDecoration: 'none', display: 'inline-block', marginBottom: '12px', transition: 'color .2s' }}
                   onMouseEnter={e => ((e.currentTarget as HTMLAnchorElement).style.color = TEAL)}
                   onMouseLeave={e => ((e.currentTarget as HTMLAnchorElement).style.color = TEXT)}>
@@ -209,54 +189,47 @@ function FooterBase() {
               </div>
             </div>
 
-            {/* Explore (full-site nav, multi-column) + Get in touch underneath */}
+            {/* Explore — flat nav list */}
             <div>
-              <h4 style={{ fontFamily: WIDE, fontSize: '10px', fontWeight: 700, letterSpacing: '2.5px', textTransform: 'uppercase', color: MUTED, marginBottom: '18px' }}>Explore</h4>
+              <h3 style={{ fontFamily: WIDE, fontSize: '10px', fontWeight: 700, letterSpacing: '2.5px', textTransform: 'uppercase', color: MUTED, marginBottom: '18px' }}>Explore</h3>
               <nav aria-label="Footer navigation">
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(150px,1fr))', gap: '28px 24px' }}>
-                  {NAV_GROUPS.map((group) => (
-                    <div key={group.title}>
-                      <h5 style={{ fontFamily: WIDE, fontSize: '10px', fontWeight: 700, letterSpacing: '1.5px', textTransform: 'uppercase', color: TEAL, marginBottom: '12px' }}>{group.title}</h5>
-                      <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                        {group.links.map(({ label, href }) => (
-                          <li key={`${group.title}-${href}-${label}`}>
-                            <Link href={href} style={{ fontFamily: BODY, fontSize: '13px', lineHeight: 1.4, color: TEXT, textDecoration: 'none', transition: 'color .2s' }}
-                              onMouseEnter={e => ((e.currentTarget as HTMLAnchorElement).style.color = TEAL)}
-                              onMouseLeave={e => ((e.currentTarget as HTMLAnchorElement).style.color = TEXT)}>
-                              {label}
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
-                </div>
-              </nav>
-
-              {/* Get in touch — directly underneath Explore */}
-              <div style={{ marginTop: '36px' }}>
-                <h4 style={{ fontFamily: WIDE, fontSize: '10px', fontWeight: 700, letterSpacing: '2.5px', textTransform: 'uppercase', color: MUTED, marginBottom: '18px' }}>Get in touch</h4>
-                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexWrap: 'wrap', gap: '13px 32px' }}>
-                  {[
-                    { href: `tel:${CONTACT.tel}`, label: CONTACT.phone, icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.21 12.8a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.11 2h3a2 2 0 0 1 2 1.72c.128.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.572 2.81.7A2 2 0 0 1 22 16.92z" /></svg> },
-                    { href: `mailto:${CONTACT.email}`, label: CONTACT.email, icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><polyline points="22,6 12,13 2,6" /></svg> },
-                  ].map(({ href, label, icon }) => (
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '11px' }}>
+                  {NAV_LINKS.map(({ label, href }) => (
                     <li key={href}>
-                      <a href={href} style={{ display: 'flex', alignItems: 'center', gap: '9px', color: TEXT, fontFamily: BODY, fontSize: '13px', textDecoration: 'none', transition: 'color .2s' }}
+                      <Link href={href} style={{ fontFamily: BODY, fontSize: '13px', color: TEXT, textDecoration: 'none', transition: 'color .2s' }}
                         onMouseEnter={e => ((e.currentTarget as HTMLAnchorElement).style.color = TEAL)}
                         onMouseLeave={e => ((e.currentTarget as HTMLAnchorElement).style.color = TEXT)}>
-                        <span style={{ color: TEAL, flexShrink: 0 }}>{icon}</span>
                         {label}
-                      </a>
+                      </Link>
                     </li>
                   ))}
                 </ul>
-              </div>
+              </nav>
+            </div>
+
+            {/* Get in touch */}
+            <div>
+              <h3 style={{ fontFamily: WIDE, fontSize: '10px', fontWeight: 700, letterSpacing: '2.5px', textTransform: 'uppercase', color: MUTED, marginBottom: '18px' }}>Get in touch</h3>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '13px' }}>
+                {[
+                  { href: `tel:${CONTACT.tel}`, label: CONTACT.phone, icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.21 12.8a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.11 2h3a2 2 0 0 1 2 1.72c.128.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.572 2.81.7A2 2 0 0 1 22 16.92z" /></svg> },
+                  { href: `mailto:${CONTACT.email}`, label: CONTACT.email, icon: <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" /><polyline points="22,6 12,13 2,6" /></svg> },
+                ].map(({ href, label, icon }) => (
+                  <li key={href}>
+                    <a href={href} style={{ display: 'flex', alignItems: 'center', gap: '9px', color: TEXT, fontFamily: BODY, fontSize: '13px', textDecoration: 'none', transition: 'color .2s' }}
+                      onMouseEnter={e => ((e.currentTarget as HTMLAnchorElement).style.color = TEAL)}
+                      onMouseLeave={e => ((e.currentTarget as HTMLAnchorElement).style.color = TEXT)}>
+                      <span style={{ color: TEAL, flexShrink: 0 }}>{icon}</span>
+                      {label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
             </div>
 
           </div>
 
-          {/* Slim full-width search bar, directly under the info block (Slimming spec) */}
+          {/* Slim full-width search bar */}
           <div className="hidden md:block" style={{ marginTop: '40px', paddingTop: '32px', borderTop: `1px solid ${HAIR}` }}>
             <SiteSearch />
           </div>
