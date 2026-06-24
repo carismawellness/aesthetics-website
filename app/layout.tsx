@@ -143,6 +143,18 @@ export default function RootLayout({
           gtag('js', new Date());
           gtag('config', 'G-MKGQE17SN7');
         `}</Script>
+
+        {/* Klaviyo Onsite — loads the Sign-up Forms configured in Klaviyo
+            (company XvCJDh), including the "Spin to Win" wheel popup (form
+            Xw6vMW) used on the previous Wix site. Display timing, prizes,
+            Name/Email capture and the email flows are all managed inside
+            Klaviyo; this is the same snippet Wix injected. Also exposes the
+            global `klaviyo` object for identify()/track() if ever needed. */}
+        <Script
+          id="klaviyo-onsite"
+          src="https://static.klaviyo.com/onsite/js/XvCJDh/klaviyo.js?company_id=XvCJDh"
+          strategy="afterInteractive"
+        />
       </head>
       <body className="min-h-full flex flex-col">
         {/* GTM noscript fallback */}
