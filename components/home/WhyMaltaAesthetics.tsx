@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
+import LazyMap from "@/components/home/LazyMap";
 
 /**
  * "The Carisma Difference / Malta's #1 Voted Medical Aesthetics Clinic" —
@@ -250,22 +251,10 @@ export default function WhyMaltaAesthetics() {
 
               {/* RIGHT — Google map panel + parking pill */}
               <div style={{ display: "flex", flexDirection: "column" }}>
-                <iframe
+                <LazyMap
                   title="Carisma Aesthetics clinic location — Grand Hotel Excelsior, Floriana, Malta"
-                  aria-label="Google Maps showing Carisma Aesthetics at Grand Hotel Excelsior, Floriana, Malta"
+                  ariaLabel="Google Maps showing Carisma Aesthetics at Grand Hotel Excelsior, Floriana, Malta"
                   src="https://maps.google.com/maps?q=Grand%20Hotel%20Excelsior%2C%20Great%20Siege%20Road%2C%20Floriana%20FRN%201810%2C%20Malta&z=15&output=embed"
-                  width="100%"
-                  height="100%"
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  style={{
-                    border: 0,
-                    borderRadius: 20,
-                    display: "block",
-                    flex: 1,
-                    minHeight: 480,
-                    filter: "saturate(0.9) contrast(1.02)",
-                  }}
                 />
                 {/* Parking pill */}
                 <div

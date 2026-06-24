@@ -122,10 +122,14 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(siteSchema).replace(/</g, '\\u003c') }}
         />
 
-        {/* Preload LCP-critical image FIRST (highest priority for Largest Contentful Paint) */}
-        <link rel="preload" as="image" href="/assets/doctor-giovanni.png" type="image/png" />
+        {/* NOTE: do NOT preload doctor-giovanni.png here. It is a desktop-only
+            (`hidden md:block`), below-the-fold footer portrait — it is NOT the LCP
+            element on any page. Preloading the raw 1.5 MB PNG at high priority made
+            it compete with the real hero poster on mobile Slow-4G (it was never even
+            shown on mobile), wrecking LCP and Speed Index. Each page's true LCP
+            image is preloaded automatically by next/image `priority`. */}
 
-        {/* Preload critical self-hosted fonts (lower priority than LCP image) */}
+        {/* Preload critical self-hosted fonts */}
         <link rel="preload" as="font" href="/assets/fonts/novecento-wide-book.woff2" type="font/woff2" crossOrigin="" />
         <link rel="preload" as="font" href="/assets/fonts/roboto.woff2" type="font/woff2" crossOrigin="" />
         <link rel="preload" as="font" href="/assets/fonts/trajan-pro.woff2" type="font/woff2" crossOrigin="" />
