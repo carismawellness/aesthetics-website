@@ -253,7 +253,7 @@ export default function ServicesMarquee() {
                   sizes="(max-width:640px) 82vw, 320px"
                   className="svc-img"
                   style={{ objectFit: "cover", objectPosition: "center" }}
-                  loading={i < 4 ? "eager" : "lazy"}
+                  loading="lazy"
                 />
                 {/* gentle bottom scrim so any future label/legibility holds */}
                 <div

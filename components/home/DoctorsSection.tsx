@@ -91,8 +91,8 @@ function DoctorCard({ doctor, index }: { doctor: Doctor; index: number }) {
           src={doctor.image}
           alt={doctor.name}
           fill
-          sizes="(max-width: 640px) 92vw, (max-width: 1024px) 46vw, 33vw"
-          priority={index === 0}
+          sizes="(max-width: 1024px) 46vw, 33vw"
+          loading="lazy"
           style={{ objectFit: 'cover', objectPosition: 'top center' }}
         />
       </div>
