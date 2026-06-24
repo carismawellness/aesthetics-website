@@ -73,6 +73,7 @@ export default function PackageTemplatePreview({ data, content }: { data: Packag
         <div className="container">
           <Reveal className="lg lg--panel mx-auto" style={{ position: "relative", overflow: "hidden", maxWidth: "760px", padding: "clamp(26px,3.4vw,44px)" }}>
             <Motif mode="watermark" opacity={0.05} />
+            <h2 className="sr-only">What's Included in Your Glow Package</h2>
             <p className="font-display" style={{ fontSize: "11px", letterSpacing: "0.16em", textTransform: "uppercase", color: TEAL_DEEP }}>{hero.eyebrow}</p>
             <div className="flex items-end flex-wrap gap-x-3 gap-y-1" style={{ marginTop: "10px" }}>
               <span className="font-serif" style={{ fontSize: "clamp(34px,6vw,52px)", lineHeight: 1, color: "var(--ink)" }}>{offer.priceNow}</span>
@@ -110,7 +111,7 @@ export default function PackageTemplatePreview({ data, content }: { data: Packag
       <section aria-label="Customer testimonials" style={{ background: "var(--beige)", padding: "64px 0" }}>
         <div className="container">
           <h2 className="font-serif text-center" style={{ fontSize: "clamp(20px,2.6vw,28px)", color: "var(--gold)", letterSpacing: "0.04em", lineHeight: 1.3 }}>
-            Loved by women across Malta
+            What Our Clients Say
           </h2>
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4 items-start" style={{ marginTop: "40px" }}>
             {data.testimonials.slice(0, 4).map((t, i) => (
@@ -141,7 +142,7 @@ export default function PackageTemplatePreview({ data, content }: { data: Packag
       <section aria-label="Frequently asked questions" style={{ padding: "64px 0" }}>
         <div className="container">
           <div className="mx-auto" style={{ maxWidth: "820px" }}>
-            <h2 className="font-display" style={{ fontSize: "clamp(17px,2.2vw,22px)", color: "var(--gold)", letterSpacing: "0.12em", marginBottom: "26px" }}>FREQUENTLY ASKED QUESTIONS</h2>
+            <h2 className="font-display" style={{ fontSize: "clamp(18px,2.4vw,24px)", color: "var(--gold)", letterSpacing: "0.12em", marginBottom: "26px" }}>Frequently Asked Questions About HydraFacial</h2>
             {data.faq.map((f) => (
               <details key={f.q} style={{ borderBottom: "1px solid var(--line)" }}>
                 <summary className="flex items-center justify-between" style={{ listStyle: "none", cursor: "pointer", padding: "20px 0", minHeight: 44, gap: "20px", fontSize: "16px", color: "var(--gold)", lineHeight: 1.4 }}>
@@ -178,7 +179,7 @@ export default function PackageTemplatePreview({ data, content }: { data: Packag
       {data.recommended && (
         <section aria-label={data.recommended.heading} style={{ padding: "64px 0" }}>
           <div className="container">
-            <h2 className="font-display text-center" style={{ fontSize: "clamp(16px,2.2vw,22px)", color: "var(--gold)", letterSpacing: "0.12em" }}>{data.recommended.heading}</h2>
+            <h2 className="font-display text-center" style={{ fontSize: "clamp(17px,2.4vw,24px)", color: "var(--gold)", letterSpacing: "0.12em" }}>{data.recommended.heading}</h2>
             <div className={`grid gap-6 ${data.recommended.cards.length === 2 ? "sm:grid-cols-2" : "sm:grid-cols-3"} mx-auto`} style={{ marginTop: "36px", maxWidth: data.recommended.cards.length === 2 ? "620px" : "920px" }}>
               {data.recommended.cards.map((r, i) => (
                 <Reveal key={r.label} delay={(i % 3) * 80}>

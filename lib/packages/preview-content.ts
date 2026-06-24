@@ -27,12 +27,12 @@ export const hydrafacialPreview: PreviewContent = {
     guaranteeChip: "Doctor-led · Medical-grade · No downtime",
   },
   howItWorks: {
-    heading: "Your glow, in four simple steps",
+    heading: "Your 4-in-1 HydraFacial Treatment Process",
     steps: [
-      { n: 1, title: "Free skin consult", desc: "A qualified practitioner reviews your skin and goals, then tailors the session to you." },
-      { n: 2, title: "Your 4-in-1 HydraFacial", desc: "Cleanse, exfoliate, extract and hydrate — plus LED and dermaplaning for an instant glow." },
-      { n: 3, title: "Aftercare & glow plan", desc: "Leave with a simple, personalised routine to protect and extend your results." },
-      { n: 4, title: "See the difference", desc: "Smoother texture and a luminous glow from session one — most clients rebook to maintain it." },
+      { n: 1, title: "Step 1: Free Skin Consultation", desc: "A qualified practitioner reviews your skin and goals, then tailors the session to you." },
+      { n: 2, title: "Step 2: Your Medical-Grade HydraFacial", desc: "Cleanse, exfoliate, extract and hydrate — plus LED and dermaplaning for an instant glow." },
+      { n: 3, title: "Step 3: Personalized Aftercare Plan", desc: "Leave with a simple, personalised routine to protect and extend your results." },
+      { n: 4, title: "Step 4: See Your Results", desc: "Smoother texture and a luminous glow from session one — most clients rebook to maintain it." },
     ],
   },
   guarantee: {
@@ -49,8 +49,8 @@ export const hydrafacialPreview: PreviewContent = {
     ctaLabel: "Book my consultation",
   },
   closing: {
-    heading: "Ready to get your glow back?",
-    sub: "Secure your 4-in-1 HydraFacial Glow Package for €99 while launch slots last.",
+    heading: "Ready to Claim Your €99 Glow?",
+    sub: "Secure your 4-in-1 HydraFacial Glow Package while launch slots last — doctor-led, medical-grade, zero downtime.",
     ctaLabel: "Claim my €99 glow",
   },
 };
