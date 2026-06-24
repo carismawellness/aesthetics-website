@@ -168,7 +168,7 @@ export default function PlanSummary({
   return (
     <section
       aria-labelledby="plan-summary-heading"
-      style={{ padding: "clamp(72px, 9vh, 112px) 0" }}
+      style={{ padding: "clamp(48px, 6vw, 88px) 0" }}
     >
       <div style={{ maxWidth: 1040, marginInline: "auto", paddingInline: 24 }}>
         <SectionHeader kicker={kicker} title={title} id="plan-summary-heading" />
@@ -181,13 +181,13 @@ export default function PlanSummary({
               convention in ClarityGrid / SuitabilityCards). */}
           <style>{`
             .plan-summary-grid {
-              margin-top: 40px;
+              margin-top: clamp(24px, 3.5vw, 36px);
               background: linear-gradient(150deg, var(--teal-100) 0%, #fbfdfd 100%);
               border-radius: var(--radius-card);
-              padding: 22px;
+              padding: clamp(16px, 2vw, 22px);
               display: grid;
               grid-template-columns: 1fr 1fr;
-              gap: 22px;
+              gap: clamp(16px, 2.5vw, 22px);
               align-items: stretch;
             }
             @media (max-width: 720px) {

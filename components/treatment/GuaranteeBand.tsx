@@ -33,7 +33,7 @@ export default function GuaranteeBand({
   const summary = paragraphs[0];
 
   return (
-    <section style={{ padding: "clamp(48px,6vh,72px) 0", background: "linear-gradient(180deg, #ffffff 0%, var(--teal-100) 50%, #ffffff 100%)" }}>
+    <section style={{ padding: "clamp(40px,5vw,64px) 0", background: "linear-gradient(180deg, #ffffff 0%, var(--teal-100) 50%, #ffffff 100%)" }}>
       <div className="container">
         <Reveal>
           <div style={{ maxWidth: 920, marginInline: "auto", textAlign: "center" }}>
@@ -41,7 +41,7 @@ export default function GuaranteeBand({
             <h2
               className="font-serif"
               style={{
-                fontSize: "clamp(26px, 3.8vw, 40px)",
+                fontSize: "clamp(22px, 3.5vw, 36px)",
                 color: "var(--gold)",
                 letterSpacing: "0.03em",
                 fontWeight: 400,
@@ -57,12 +57,12 @@ export default function GuaranteeBand({
             {summary && (
               <p
                 style={{
-                  fontSize: "clamp(15px, 1.6vw, 16.5px)",
-                  lineHeight: 1.65,
+                  fontSize: "clamp(13.5px, 1.5vw, 15px)",
+                  lineHeight: 1.6,
                   color: "var(--ink-soft)",
-                  maxWidth: 560,
+                  maxWidth: 540,
                   marginInline: "auto",
-                  marginTop: 16,
+                  marginTop: "clamp(12px, 2vw, 16px)",
                   textWrap: "pretty",
                 }}
               >
@@ -90,7 +90,8 @@ export default function GuaranteeBand({
                   @media (max-width: 680px) {
                     .guarantee-figures {
                       grid-template-columns: 1fr;
-                      max-width: 360px;
+                      max-width: 100%;
+                      gap: clamp(10px, 2.5vw, 14px);
                     }
                   }
                 `}</style>
@@ -102,11 +103,11 @@ export default function GuaranteeBand({
                           className="font-serif"
                           style={{
                             display: "block",
-                            fontSize: "clamp(24px, 3vw, 34px)",
+                            fontSize: "clamp(20px, 2.5vw, 28px)",
                             color: "var(--teal-deep)",
                             letterSpacing: "0.01em",
                             lineHeight: 1.05,
-                            marginBottom: 10,
+                            marginBottom: 8,
                           }}
                         >
                           {p.value}

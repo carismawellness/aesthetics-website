@@ -174,7 +174,7 @@ export default function PageHero({
   const primaryClass = dark ? "btn btn-gold" : "btn btn-teal";
 
   return (
-    <section className="hero-fit" style={{ position: "relative", overflow: "hidden", paddingInline: "clamp(16px,4vw,40px)", background: sectionBg }}>
+    <section className="hero-fit" style={{ position: "relative", overflow: "hidden", paddingInline: "clamp(14px,3.5vw,40px)", background: sectionBg }}>
       {/* Animated constellation motif — drifting linked dots (every page).
          Light pages use a deeper teal so the lattice reads clearly over the
          pale teal-mist bed; the dark page uses gold. */}
@@ -196,7 +196,7 @@ export default function PageHero({
             <p style={{ fontFamily: WIDE, fontSize: 12, letterSpacing: "0.22em", textTransform: "uppercase", color: c.eyebrow, margin: "0 0 14px" }}>{eyebrow}</p>
           )}
 
-          <h1 style={{ fontFamily: SERIF, fontWeight: 400, fontSize: headlineSize, lineHeight: 1.1, color: c.headline, margin: "0 0 18px", maxWidth: 640, textWrap: "balance" }}>
+          <h1 style={{ fontFamily: SERIF, fontWeight: 400, fontSize: headlineSize, lineHeight: 1.1, color: c.headline, margin: "0 0 18px", maxWidth: "clamp(320px, 95vw, 640px)", textWrap: "balance", overflowWrap: "break-word" }}>
             {headline.map((l, i) => (
               <span key={i} style={{ display: "block", color: l.em ? c.em : undefined }}>{l.text}</span>
             ))}
@@ -299,7 +299,7 @@ export default function PageHero({
             )}
 
             {/* doctor-led pill — mid-left (dropped below the top-right award card so they never overlap) */}
-            <div className={`${glassClass} float-b proof-left`} style={{ position: "absolute", left: "clamp(-18px,-1.8vw,-4px)", top: "38%", borderRadius: 999, padding: "8px 14px", display: "flex", alignItems: "center", gap: 7, zIndex: 3, animationDelay: "-2.8s" }}>
+            <div className={`${glassClass} float-b proof-left`} style={{ position: "absolute", left: "clamp(4px,-0.5vw,20px)", top: "38%", borderRadius: 999, padding: "8px 14px", display: "flex", alignItems: "center", gap: 7, zIndex: 3, animationDelay: "-2.8s" }}>
               <span aria-hidden style={{ width: 16, height: 16, borderRadius: "50%", background: c.checkBg, display: "grid", placeItems: "center" }}>
                 <svg width="9" height="9" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke={c.check} strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" /></svg>
               </span>
@@ -307,13 +307,13 @@ export default function PageHero({
             </div>
 
             {/* stat card — bottom-left */}
-            <div className={`${glassClass} float-a proof-left`} style={{ position: "absolute", left: "clamp(-20px,-1.8vw,-2px)", bottom: "9%", borderRadius: 16, padding: "11px 16px", display: "flex", alignItems: "center", gap: 10, zIndex: 3 }}>
+            <div className={`${glassClass} float-a proof-left`} style={{ position: "absolute", left: "clamp(4px,-0.5vw,18px)", bottom: "9%", borderRadius: 16, padding: "11px 16px", display: "flex", alignItems: "center", gap: 10, zIndex: 3 }}>
               <span style={{ fontFamily: SERIF, fontSize: 28, color: c.stat, lineHeight: 1 }}>{proof?.statValue || "30+"}</span>
               <span style={{ fontFamily: WIDE, fontSize: 9.5, letterSpacing: "0.08em", textTransform: "uppercase", color: c.statLabel, lineHeight: 1.3, maxWidth: 86 }}>{proof?.statLabel || "years in wellness"}</span>
             </div>
 
             {/* award / #1 voted — top-right */}
-            <div className={`${glassClass} float-b proof-right`} style={{ position: "absolute", right: "clamp(-18px,-1.2vw,-2px)", top: "5%", borderRadius: 16, padding: "10px 14px", display: "flex", alignItems: "center", gap: 10, maxWidth: 210, zIndex: 3 }}>
+            <div className={`${glassClass} float-b proof-right`} style={{ position: "absolute", right: "clamp(4px,-0.5vw,18px)", top: "5%", borderRadius: 16, padding: "10px 14px", display: "flex", alignItems: "center", gap: 10, maxWidth: "clamp(160px, 85vw, 210px)", zIndex: 3 }}>
               {proof?.awardSrc ? (
                 <Image
                   src={proof.awardSrc}
@@ -350,9 +350,9 @@ export default function PageHero({
           .arch-box { width: auto; max-width: 100%; height: min(60vh, 540px); }
           .arch-box--below { height: min(46vh, 440px); }
         }
-        @media (max-width: 899px) {
-          .proof-left { left: 8px !important; }
-          .proof-right { right: 8px !important; }
+        @media (max-width: 640px) {
+          .proof-left { left: 6px !important; }
+          .proof-right { right: 6px !important; }
         }
       `}</style>
     </section>

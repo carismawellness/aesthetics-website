@@ -96,7 +96,7 @@ export default function SuitabilityCards({
   return (
     <section
       aria-labelledby="suitability-heading"
-      style={{ padding: "clamp(72px,9vh,112px) 0", background: "#fff" }}
+      style={{ padding: "clamp(48px,6vw,88px) 0", background: "#fff" }}
     >
       <div className="container">
         <SectionHeader id="suitability-heading" kicker={kicker} title={title} sub={sub} />
@@ -110,7 +110,7 @@ export default function SuitabilityCards({
             style={{
               maxWidth: 860,
               marginInline: "auto",
-              marginTop: "clamp(40px,5vw,56px)",
+              marginTop: "clamp(28px,4vw,44px)",
             }}
           >
             {/* Suitable for you — or, when personas are supplied, the human
@@ -166,11 +166,11 @@ export default function SuitabilityCards({
         .suit-grid {
           display: grid;
           grid-template-columns: 1fr;
-          gap: 40px;
+          gap: clamp(28px, 3.5vw, 36px);
         }
         .suit-col--second {
           border-top: 1px solid var(--line);
-          padding-top: 40px;
+          padding-top: clamp(24px, 3vw, 32px);
         }
         @media (min-width: 768px) {
           .suit-grid {
