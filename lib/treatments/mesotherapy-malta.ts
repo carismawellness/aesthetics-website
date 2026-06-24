@@ -4,7 +4,7 @@ const t: Treatment = {
   slug: "mesotherapy-malta",
   category: "Face",
   hero: {
-    title: "Mesotherapy & skin boosters",
+    title: "Mesotherapy Malta | Skin Boosters",
     subtitle: "Are you seeking a brighter, smoother, and more youthful complexion?",
     body: "Looking for a non-invasive way to rejuvenate your skin? Our Mesotherapy treatments in Malta can help! Our team uses a personalized blend of skin boosters (hyaluronic acid), vitamins, minerals, and amino acids to restore your skin's natural radiance and vitality.",
     prices: [
@@ -160,7 +160,7 @@ const t: Treatment = {
   },
   difference: {
     kicker: "the carisma difference",
-    title: "Malta’s #1 leading wellness chain",
+    title: "Malta's #1 leading wellness chain",
     commitmentTitle: "our commitment",
     commitment: [
       "Natural, refined mesotherapy results, never overdone",
@@ -170,7 +170,7 @@ const t: Treatment = {
     ],
     whyTitle: "Why Malta Chooses Carisma for Mesotherapy",
     why: [
-      "Created by the team behind Malta’s leading spa and medical aesthetics centres",
+      "Created by the team behind Malta's leading spa and medical aesthetics centres",
       "Doctor-led mesotherapy treatments with a focus on safety and long-term results",
       "A personalised journey from consultation to aftercare",
       "Seamless experience with ongoing support and guidance",

@@ -106,7 +106,7 @@ const SLUG_SEO: Record<string, { title: string; description: string }> = {
       "Advanced cellulite smoothing treatment in Malta. Multi-technology approach targeting stubborn cellulite to improve skin texture and smoothness. Free consultation.",
   },
   "mesotherapy-malta": {
-    title: "Mesotherapy Malta | Skin Booster Injections | Carisma Aesthetics",
+    title: "Mesotherapy Malta | Skin Boosters | Carisma Aesthetics",
     description:
       "Mesotherapy skin booster treatments in Malta from €149. Hyaluronic acid cocktails for deep hydration, radiance and anti-ageing. Doctor-led. Free consultation.",
   },
