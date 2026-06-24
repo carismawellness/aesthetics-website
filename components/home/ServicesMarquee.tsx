@@ -74,7 +74,7 @@ export default function ServicesMarquee() {
     <section
       aria-labelledby="services-heading"
       style={{
-        padding: "clamp(72px,9vw,112px) 0",
+        padding: "clamp(48px,6vw,88px) 0",
         background: "transparent",
       }}
     >
@@ -205,12 +205,14 @@ export default function ServicesMarquee() {
           className="svc-track flex overflow-x-auto [&::-webkit-scrollbar]:hidden"
           style={{
             gap: `${GAP}px`,
-            scrollSnapType: "x mandatory",
+            scrollSnapType: "x proximity",
+            scrollBehavior: "smooth",
             /* scroll-padding-left must match paddingLeft so snap targets are correct */
             scrollPaddingLeft: `${PAD}px`,
             scrollbarWidth: "none",
             paddingLeft: `${PAD}px`,
             paddingRight: `${PAD}px`,
+            overscrollBehavior: "none",
           }}
         >
           {/* Cards rendered TWICE so the loop is seamless in both directions. */}

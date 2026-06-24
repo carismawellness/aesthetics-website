@@ -109,7 +109,7 @@ export default function ResultsCommitment() {
       data-armed={armed && !revealed ? '' : undefined}
       className={`rc${revealed ? ' rc--in' : ''}`}
       style={{
-        padding: 'clamp(46px,10vw,128px) 0',
+        padding: 'clamp(36px,6vw,88px) 0',
         background: "transparent",
       }}
     >
