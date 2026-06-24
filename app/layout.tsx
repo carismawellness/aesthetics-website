@@ -124,6 +124,7 @@ export default function RootLayout({
 
         {/* Preload critical self-hosted fonts */}
         <link rel="preload" as="font" href="/assets/fonts/novecento-wide-book.woff2" type="font/woff2" crossOrigin="" />
+        <link rel="preload" as="font" href="/assets/fonts/roboto.woff2" type="font/woff2" crossOrigin="" />
         <link rel="preload" as="font" href="/assets/fonts/trajan-pro.woff2" type="font/woff2" crossOrigin="" />
 
         {/* Google Tag Manager */}
