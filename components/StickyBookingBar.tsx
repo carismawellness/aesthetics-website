@@ -1,21 +1,20 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import StickyCta from "@/components/packages/preview/StickyCta";
+import Link from "next/link";
 import { FACE_LINKS, BODY_LINKS, PACKAGE_LINKS } from "@/lib/site";
-import { PACKAGES } from "@/lib/packages";
+import { getTreatment } from "@/lib/treatments";
 
 /*
   Site-wide sticky Liquid Gloss booking bar. Mounted once in the root layout; it
-  renders the exact <StickyCta> from the package preview on every Face, Body and
-  Packages dropdown page (matched by exact pathname). One mount covers all ~27
-  pages and any future ones — no per-page or per-template edits.
+  renders on every Face, Body and Packages dropdown page (matched by exact
+  pathname). One mount covers all ~27 pages and any future ones — no per-page
+  or per-template edits.
 
-  - Packages → Fresha booking link + price label (e.g. "4 in 1 Hydrafacial · €99").
+  - Packages → Fresha booking link + offer price label (e.g. "4 in 1 Hydrafacial · €99").
   - Face/Body treatments → "/consultation" (caught by the site-wide ConsultationModal),
     label = the treatment name.
-  Pages not in a dropdown (home, blog, membership, the noindexed preview route, etc.)
-  render nothing.
+  Pages not in a dropdown render nothing.
 */
 
 type BarConfig = {
@@ -26,27 +25,19 @@ type BarConfig = {
   secondaryLabel?: string;
 };
 
-// Carisma Aesthetics Fresha booking page (all services) — primary booking CTA
-// for Face/Body treatments. Opens in a new tab and bypasses the popup.
 const AESTHETICS_FRESHA_BOOK =
   "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2800348&share=true&pId=2708191";
 
-// Extract the "Today: €N" price from a package's hero.total, if present.
-function priceFromTotal(total?: string): string | null {
-  const m = total?.match(/Today:\s*€\s*([\d.,]+)/i);
-  return m ? `€${m[1]}` : null;
-}
-
 const CONFIG: Record<string, BarConfig> = {};
 
-// Packages — Fresha booking + price.
+// Packages — Fresha booking + price from unified treatment data.
 for (const link of PACKAGE_LINKS) {
   const slug = link.href.replace(/^\//, "");
-  const pkg = PACKAGES[slug];
-  if (!pkg) continue;
-  const price = priceFromTotal(pkg.hero.total);
+  const t = getTreatment(slug);
+  if (!t) continue;
+  const price = (t as { offer?: { priceNow?: string } }).offer?.priceNow;
   CONFIG[link.href] = {
-    href: pkg.bookHref,
+    href: t.hero.bookHref ?? AESTHETICS_FRESHA_BOOK,
     priceLabel: price ? `${link.label} · ${price}` : link.label,
     ctaLabel: "Claim my spot",
   };
@@ -70,13 +61,30 @@ export default function StickyBookingBar() {
   const pathname = usePathname();
   const cfg = pathname ? CONFIG[pathname] : undefined;
   if (!cfg) return null;
+
+  const isExternal = cfg.href.startsWith("http");
+
   return (
-    <StickyCta
-      freshaHref={cfg.href}
-      priceLabel={cfg.priceLabel}
-      ctaLabel={cfg.ctaLabel}
-      secondaryHref={cfg.secondaryHref}
-      secondaryLabel={cfg.secondaryLabel}
-    />
+    <div className="fixed bottom-0 left-0 right-0 z-50 flex items-center justify-between gap-3 border-t border-[var(--line)] bg-white px-4 py-3 shadow-[0_-2px_16px_rgba(0,0,0,0.07)] md:px-6">
+      <p className="truncate text-sm font-medium text-[var(--ink)]">{cfg.priceLabel}</p>
+      <div className="flex shrink-0 gap-2">
+        {cfg.secondaryHref && (
+          <Link
+            href={cfg.secondaryHref}
+            className="rounded-full border border-[var(--teal-deep)] px-4 py-2 text-sm font-semibold text-[var(--teal-deep)] transition-opacity hover:opacity-80"
+          >
+            {cfg.secondaryLabel}
+          </Link>
+        )}
+        <a
+          href={cfg.href}
+          target={isExternal ? "_blank" : undefined}
+          rel={isExternal ? "noopener noreferrer" : undefined}
+          className="rounded-full bg-[var(--teal-deep)] px-4 py-2 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+        >
+          {cfg.ctaLabel}
+        </a>
+      </div>
+    </div>
   );
 }
