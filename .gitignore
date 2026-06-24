@@ -47,3 +47,4 @@ consultation-submissions.jsonl
 dev.log
 dev.*.log
 .claude/worktrees/
+.worktrees/
