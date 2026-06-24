@@ -23,20 +23,22 @@ const IG_URL = CONTACT.instagram;
 const FB_URL = CONTACT.facebook;
 
 // ─── Static data ─────────────────────────────────────────────────────────────
+// Plain brand photos + white CARISMA wordmark overlays — same asset pattern as the
+// Carisma Slimming footer (photo + dark gradient + white logo + glass CTA pill).
 const BRANDS = [
   {
     title: 'Carisma Spa & Wellness',
-    img: '/assets/banner-spa.png',
+    img: '/wix/brand-spa.webp',
+    logo: '/wix/brand-spa-logo.png',
     cta: 'Discover Our Spas',
     href: 'https://www.carismaspa.com',
-    btnColor: '#8c6d18',
   },
   {
     title: 'Carisma Slimming',
-    img: '/assets/banner-slimming.png',
+    img: '/wix/brand-slimming.webp',
+    logo: '/wix/brand-slimming-logo.png',
     cta: 'Discover Slimming',
     href: 'https://www.carismaslimming.com',
-    btnColor: '#4f7256',
   },
 ];
 
@@ -81,11 +83,9 @@ function BrandsSection() {
             Malta&rsquo;s Leading Wellness Group
           </h3>
         </div>
-        {/* Two side-by-side brand cards — same structure as the Carisma Slimming
-            footer (two-up grid, dark gradient, white CTA pill with arrow). The
-            designed banners already carry the white logo + Google-reviews strip on
-            their LEFT, so each card uses objectPosition:left at a ~2:1 aspect to
-            keep the logo/reviews intact while trimming only the right photo edge. */}
+        {/* Two side-by-side brand cards — identical design language to the Carisma
+            Slimming footer: plain photo + dark left-to-right gradient + white CARISMA
+            wordmark (centre-left) + translucent glass CTA pill at bottom-left. */}
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px,1fr))', gap: '20px' }}>
           {BRANDS.map((brand) => (
             <a
@@ -94,37 +94,50 @@ function BrandsSection() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`${brand.cta} — opens in new tab`}
-              data-brand-cta
-              style={{ position: 'relative', display: 'block', height: 'clamp(210px, 52vw, 264px)', borderRadius: '20px', overflow: 'hidden', boxShadow: '0 10px 40px rgba(0,0,0,0.10)', textDecoration: 'none' }}
+              data-brand-card
+              style={{ position: 'relative', display: 'block', height: 'clamp(230px, 30vw, 300px)', borderRadius: '20px', overflow: 'hidden', boxShadow: '0 10px 40px rgba(0,0,0,0.12)', textDecoration: 'none' }}
             >
               <Image
                 src={brand.img}
                 alt={brand.title}
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
-                style={{ objectFit: 'cover', objectPosition: 'left center' }}
+                style={{ objectFit: 'cover' }}
                 loading="lazy"
               />
-              {/* gradient strengthens the bottom-right so the CTA pill stays legible */}
-              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(300deg, rgba(2,20,20,0.45) 0%, rgba(2,20,20,0.12) 45%, transparent 70%)' }} />
+              {/* dark gradient, heaviest on the left where the logo + CTA sit */}
+              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(105deg, rgba(2,22,22,0.78) 0%, rgba(2,22,22,0.45) 48%, rgba(2,22,22,0.12) 100%)' }} />
+              {/* logo (centre-left) + glass CTA pill (bottom-left) */}
+              <div style={{ position: 'absolute', inset: 0, padding: 'clamp(24px,3vw,36px)', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start' }}>
+                <Image
+                  src={brand.logo}
+                  alt={`${brand.title} logo`}
+                  width={200}
+                  height={107}
+                  style={{ width: 'clamp(150px, 20vw, 190px)', height: 'auto', objectFit: 'contain', objectPosition: 'left' }}
+                />
+              </div>
               <span
-                className="btn"
+                data-brand-cta
                 style={{
                   position: 'absolute',
-                  right: '20px',
-                  bottom: '20px',
+                  left: 'clamp(24px,3vw,36px)',
+                  bottom: 'clamp(24px,3vw,32px)',
                   minHeight: '44px',
                   display: 'inline-flex',
                   alignItems: 'center',
-                  gap: '8px',
-                  backgroundColor: brand.btnColor,
+                  gap: '9px',
+                  background: 'rgba(255,255,255,0.14)',
+                  border: '1px solid rgba(255,255,255,0.55)',
+                  backdropFilter: 'blur(8px)',
+                  WebkitBackdropFilter: 'blur(8px)',
                   color: '#fff',
                   fontFamily: WIDE,
                   fontSize: '11px',
                   fontWeight: 700,
-                  letterSpacing: '1px',
+                  letterSpacing: '1.5px',
                   textTransform: 'uppercase',
-                  padding: '12px 22px',
+                  padding: '13px 24px',
                   borderRadius: '999px',
                 }}
               >
@@ -134,11 +147,12 @@ function BrandsSection() {
           ))}
         </div>
         <style>{`
-          [data-brand-cta] { transition: transform 200ms ease; }
-          [data-brand-cta]:hover { transform: translateY(-4px); }
-          [data-brand-cta]:active { transform: translateY(-1px); }
+          [data-brand-card] { transition: transform 220ms ease, box-shadow 220ms ease; }
+          [data-brand-card]:hover { transform: translateY(-4px); box-shadow: 0 18px 50px rgba(0,0,0,0.18); }
+          [data-brand-card] [data-brand-cta] { transition: background 200ms ease; }
+          [data-brand-card]:hover [data-brand-cta] { background: rgba(255,255,255,0.26); }
           @media (prefers-reduced-motion: reduce) {
-            [data-brand-cta]:hover, [data-brand-cta]:active { transform: none; }
+            [data-brand-card]:hover { transform: none; }
           }
         `}</style>
       </div>
