@@ -96,12 +96,16 @@ const legacyRedirects: { source: string; destination: string }[] = [
 
 const nextConfig: NextConfig = {
   images: {
+    formats: ['image/avif', 'image/webp'],
     // Allow next/image to optimize the legacy Wix CDN assets still referenced on
     // a few pages (e.g. the gift-card occasion mockups). Without this the image
     // optimizer returns 400 Bad Request for the remote host.
     remotePatterns: [
       { protocol: "https", hostname: "static.wixstatic.com" },
     ],
+    // Optimize images aggressively for performance
+    minimumCacheTTL: 31536000, // 1 year for immutable assets
+    dangerouslyAllowSVG: true,
   },
   async headers() {
     return [

@@ -154,7 +154,7 @@ export default function JoinPage() {
                     marginBottom: "10px",
                   }}
                 >
-                  What members enjoy
+                  Glow Club Membership Benefits & Exclusive Discounts
                 </h2>
                 <p
                   style={{

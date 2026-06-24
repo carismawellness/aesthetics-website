@@ -363,5 +363,5 @@ export const FACE_LISTING = {
   title: "Considered facial aesthetics, led by medical expertise",
   subhead:
     "A curated range of advanced face treatments — from injectable artistry to skin regeneration — each delivered with a careful, doctor-led approach and a single goal: results that look refined, balanced and unmistakably you.",
-  gridHeading: "Explore our face treatments",
+  gridHeading: "Advanced Face Treatments: Fillers, Botox & Skin Regeneration in Malta",
 };
