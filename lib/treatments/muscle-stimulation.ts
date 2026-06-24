@@ -108,6 +108,116 @@ const t: Treatment = {
     videos: ["/assets/treatments/vid-muscle-stimulation-1.mp4"],
   },
 
+  offer: {
+    priceNow: "€199 for 4 sessions",
+    priceWas: "€625",
+    saveLabel: "Save €426 today",
+    includedTitle: "Everything in your EMSculpt NEO Package",
+    included: [
+      "4x Muscle Stimulation sessions with EMSculpt NEO (€400)",
+      "4x access to spa & fitness facilities (€140)",
+      "Tanita Body Composition Analysis (€60)",
+      "€25 Carisma Aesthetics credit (€25)",
+      "Complimentary Parking Validation",
+    ],
+    urgency: "Limited appointment slots — book your consultation to secure your place",
+    guaranteeChip: "Doctor-supervised · Medical-grade technology · No surgery",
+    cta: {
+      text: "Claim My EMSculpt Package",
+      href: "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2800348&share=true&pId=2708191",
+      external: true,
+    },
+  },
+
+  dualPack: {
+    heading: ["malta's only dual technology", "starter pack for stubborn fat"],
+    mini: [
+      {
+        title: "Targeted BODY SCULPTING",
+        body: "EMSculpt Neo sessions are focused on your main problem areas — such as the tummy, hips, bum or thighs — delivering powerful muscle contractions to areas that are hard to tone naturally.",
+      },
+      {
+        title: "Visible, TRACKABLE DEFINITION",
+        body: "Muscle engagement you can feel and results you can see. Improved firmness and definition show in clothes and posture, not just on the scale.",
+      },
+      {
+        title: "High-Value starter Access",
+        body: "A full EMSculpt Neo sculpting protocol at a reduced introductory price, with the option to continue or upgrade after completing your sessions.",
+      },
+    ],
+    includes: [
+      "4x Muscle Stimulation sessions with EMSculpt NEO (€400)",
+      "4x access to spa & fitness facilities (€140)",
+      "Tanita Body Composition Analysis (€60)",
+      "€25 Carisma Aesthetics credit (€25)",
+      "Complimentary Parking Validation",
+    ],
+    totalValue: "€625",
+    todayPrice: "€199 Only.",
+    fineprint: [
+      "* Includes four sessions to be followed over the course of 2 weeks",
+      "** Additional sessions of EMSculpt NEO may be booked at €100 per session",
+      "*** Due to high demand, packages are offered based on availability and may not always be guaranteed. Please inquire for current options.",
+    ],
+  },
+
+  closing: {
+    heading: "Ready to Sculpt and Strengthen?",
+    sub: "EMSculpt NEO in Malta — burn fat and build muscle simultaneously with Malta's only dual-technology body sculpting treatment. Book your free consultation.",
+    ctaLabel: "Book My EMSculpt Consultation",
+    ctaHref: "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2800348&share=true&pId=2708191",
+  },
+
+  recommended: {
+    title: "Treatments That Work Well Together",
+    items: [
+      { label: "Fat Freezing", href: "/fat-freezing", image: "/assets/treatments/fat-freezing-hero.jpg" },
+      { label: "Skin Tightening", href: "/skin-tightening-1", image: "/assets/treatments/skin-tightening-hero.jpg" },
+      { label: "Anti-Cellulite", href: "/anti-cellulite", image: "/assets/treatments/anti-cellulite-hero.jpg" },
+    ],
+  },
+
+  evidence: {
+    items: [
+      {
+        tag: "EVIDENCE-BACKED PROTOCOL",
+        title: "clinically proven body contouring results",
+        whatItDoes:
+          "Uses a combination of high-intensity focused electromagnetic (HIFEM) energy and radiofrequency (RF) heating to simultaneously stimulate powerful muscle contractions and heat fat cells. This dual action helps build muscle, reduce fat thickness, and improve skin firmness in targeted areas without surgery or downtime.",
+        keyResults:
+          "Clinical studies on combined HIFEM + RF treatments have shown an average reduction of around 29–30% in subcutaneous fat thickness and approximately 25% increase in muscle thickness in the treated area, measured by imaging techniques such as MRI and ultrasound, with high patient satisfaction and no serious adverse effects reported. Aesthetic Surgery Journal Clinical Studies Research also indicates improvements in abdominal firmness and waist circumference reduction after a series of sessions, with results continuing to improve over several weeks as the body metabolizes affected fat cells and muscle fibers adapt to repeated supramaximal contractions. Peer-Reviewed Body Contouring Studies",
+        image: "/assets/treatments/ms-evidence-1.jpg",
+      },
+      {
+        tag: "STRONG EVIDENCE",
+        title: "muscle building & fat reduction technology (hifem + rf)",
+        whatItDoes:
+          "Uses high-intensity focused electromagnetic (HIFEM) energy to trigger thousands of powerful supramaximal muscle contractions, while synchronized radiofrequency (RF) heating raises fat cell temperature. This combination supports muscle growth and strength while helping reduce fat thickness and improve skin firmness in treated areas.",
+        keyResults:
+          "Clinical imaging studies have reported average increases of around 16–25% in muscle thickness and reductions of approximately 19–30% in subcutaneous fat thickness following a series of treatments, with improvements measured using MRI, CT, or ultrasound. Aesthetic Surgery Journal Studies Participants commonly reported improved abdominal tone and firmness, with visible contour changes developing over several weeks as muscle fibers adapt and the body processes affected fat cells. Peer-Reviewed Body Contouring Research",
+        image: "/assets/treatments/ms-evidence-2.jpg",
+      },
+      {
+        tag: "MODERATE–STRONG EVIDENCE",
+        title: "radiofrequency skin tightening & firmness",
+        whatItDoes:
+          "Delivers controlled radiofrequency (RF) energy to gently heat the deeper layers of the skin. This thermal stimulation supports collagen remodeling and tissue tightening, helping improve skin firmness and texture in areas affected by mild laxity.",
+        keyResults:
+          "Clinical studies on RF-based body treatments show improvements in skin tightness and elasticity, with many patients experiencing visible firming and smoother skin texture over a series of sessions. Dermatologic Surgery & Aesthetic Medicine Studies Histological research suggests RF heating can stimulate collagen remodeling, contributing to gradual tightening effects that continue to develop in the weeks following treatment. Peer-Reviewed RF Research",
+        image: "/assets/treatments/ms-evidence-3.jpg",
+      },
+      {
+        tag: "EMERGING EVIDENCE",
+        title: "fat cell reduction via thermal stress",
+        whatItDoes:
+          "Applies controlled heat to fat tissue, raising the temperature of fat cells to levels that can stress their structure. Over time, the body naturally processes and clears some of these affected fat cells, contributing to gradual reduction in localized fat thickness.",
+        keyResults:
+          "Studies on thermal-based body contouring technologies have shown measurable reductions in subcutaneous fat thickness in treated areas, typically observed several weeks after treatment as the body metabolizes affected cells. Aesthetic Device Clinical Research Reported side effects are generally mild and temporary, such as warmth, redness, or tenderness in the treated area, with most patients returning to normal activity immediately. Clinical Safety Reviews",
+        image: "/assets/treatments/ms-evidence-4.jpg",
+      },
+    ],
+  },
+
   faqTitle: "Frequently asked questions",
   faq: [
     {
