@@ -67,6 +67,17 @@ issues. Chasing them as separate problems is what makes the scores see-saw.
 - **Keep hero/clip videos ≤ ~5 MB, sized to their display box** (the arch is
   ~480px wide → encode at 720px, not 1080px+). Re-encode oversized media with
   ffmpeg (`scale=720:-2`, H.264 CRF ~27, `+faststart`) before committing.
+- **No continuously-animating canvas above the fold on mobile.** A rAF loop that
+  repaints the hero every frame (e.g. `HeroMotif`, `HeroScene`) stops Lighthouse's
+  Speed Index from ever settling and burns the mobile main thread. Gate it like
+  `HeroMotif`/`HeroBackdrop` do: on coarse-pointer / small / reduced-motion draw
+  ONE static frame (or nothing) and never start the loop. Pointer-driven motion is
+  pointless on touch anyway.
+- **`next/image` source size ≠ shipped bytes.** It serves a viewport-sized AVIF, so
+  a 6.8 MB PNG source can ship as ~9 KB on mobile. Before "optimizing images,"
+  MEASURE the actual served bytes (`curl /_next/image?url=…&w=640 -H 'Accept: image/avif'`)
+  — re-encoding sources rarely moves the score. The score levers are FCP/LCP/TBT/SI,
+  not the "enormous payloads"/"image delivery" DIAGNOSTICS (which don't affect score).
 
 ## Structured data (JSON-LD)
 
