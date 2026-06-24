@@ -66,7 +66,7 @@ export default function SiteSearch() {
           type="text"
           role="combobox"
           aria-expanded={showPanel}
-          aria-controls={listboxId}
+          aria-controls={showPanel ? listboxId : undefined}
           aria-autocomplete="list"
           aria-label="Search the site"
           placeholder="WHAT ARE YOU LOOKING FOR?"
