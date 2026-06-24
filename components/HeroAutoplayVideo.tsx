@@ -1,21 +1,27 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
 /* ──────────────────────────────────────────────────────────────────────────
-   HeroAutoplayVideo — opt-in auto-loading hero video.
+   HeroAutoplayVideo — LCP-safe hero media.
 
-   Used ONLY where PageHero receives media.autoPlay === true (currently the
-   home hero). Unlike the shared <VideoPlayer> (poster + click-to-play), this
-   variant starts the video on its own: muted + loop + playsInline so iOS/Safari
-   autoplay the muted track, and preload="auto" so bytes load immediately rather
-   than waiting on a poster + click.
+   Used ONLY where PageHero receives media.autoPlay === true (the home hero).
 
-   Accessibility: respects prefers-reduced-motion. When the user prefers reduced
-   motion we DON'T autoplay — we keep the poster (first-frame) static image and
-   render no video, matching the rest of the site's restraint.
+   THE RULE (do not regress this):
+   The Largest Contentful Paint is ALWAYS the static poster, rendered through
+   next/image with priority — a small, responsive, viewport-sized AVIF/WebP that
+   loads first and competes with nothing. The video is a progressive enhancement
+   layered ON TOP that:
+     • never loads on mobile / coarse-pointer / reduced-motion / Save-Data /
+       slow connections (poster is the whole experience there), and
+     • on capable desktops, is mounted only AFTER first paint + idle, with
+       preload deferred, so its bytes never contend with the LCP image.
 
-   A sound toggle lets the user unmute (the same affordance as VideoPlayer).
+   This is why mobile and desktop scores move together instead of see-sawing:
+   LCP is decoupled from the (heavy) video entirely. A 24 MB autoplay video
+   downloading on mobile Slow-4G was saturating the connection and pushing LCP
+   past 15 s; the poster-first model keeps LCP ≈ FCP on every device.
    ────────────────────────────────────────────────────────────────────────── */
 
 function SoundOnIcon() {
@@ -51,31 +57,51 @@ export default function HeroAutoplayVideo({
   radius?: number | string;
 }) {
   const ref = useRef<HTMLVideoElement>(null);
-  const [reduced, setReduced] = useState(false);
   const [muted, setMuted] = useState(true);
 
-  // Detect reduced-motion preference on the client. Until we know, render the
-  // poster only (no autoplay) so we never force motion on a reduced-motion user.
-  const [ready, setReady] = useState(false);
+  // Whether to mount the <video> at all (capable device/network), and whether it
+  // has buffered enough to fade in over the poster. Default: video OFF — the
+  // poster alone is shipped until we prove the device/network can afford more.
+  const [mountVideo, setMountVideo] = useState(false);
+  const [videoReady, setVideoReady] = useState(false);
+
   useEffect(() => {
-    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
-    setReduced(mq.matches);
-    setReady(true);
-    const onChange = (e: MediaQueryListEvent) => setReduced(e.matches);
-    mq.addEventListener("change", onChange);
-    return () => mq.removeEventListener("change", onChange);
+    if (typeof window === "undefined") return;
+
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const small = window.matchMedia("(max-width: 820px)").matches;
+    const coarse = window.matchMedia("(pointer: coarse)").matches;
+
+    // Respect Save-Data and slow effective connection types (2g/3g).
+    const conn = (navigator as unknown as {
+      connection?: { saveData?: boolean; effectiveType?: string };
+    }).connection;
+    const saveData = conn?.saveData === true;
+    const slowNet = /(^|-)2g$|3g/.test(conn?.effectiveType ?? "");
+
+    // Mobile, touch, reduced-motion, data-saver, or a slow link → poster only.
+    if (reduce || small || coarse || saveData || slowNet) return;
+
+    // Capable desktop: defer the video until the browser is idle (i.e. after the
+    // LCP poster has painted), so video bytes never race the LCP image.
+    const idle =
+      window.requestIdleCallback ?? ((cb: () => void) => window.setTimeout(cb, 400));
+    const handle = idle(() => setMountVideo(true));
+    return () => {
+      if (window.cancelIdleCallback && typeof handle === "number") {
+        window.cancelIdleCallback(handle);
+      }
+    };
   }, []);
 
-  // Kick off playback once we've confirmed motion is allowed. autoPlay on the
-  // element handles most browsers; this is a belt-and-braces retry for the ones
-  // that gate the attribute.
+  // Once the deferred <video> is mounted, kick playback (muted autoplay).
   useEffect(() => {
-    if (!ready || reduced) return;
+    if (!mountVideo) return;
     const v = ref.current;
     if (!v) return;
     v.muted = true;
     v.play().catch(() => {});
-  }, [ready, reduced]);
+  }, [mountVideo]);
 
   const toggleSound = (e: React.MouseEvent) => {
     e.stopPropagation();
@@ -87,62 +113,81 @@ export default function HeroAutoplayVideo({
     setMuted(next);
   };
 
-  // Reduced motion (or before hydration): static poster, no video bytes, no motion.
-  if (!ready || reduced) {
-    return (
-      // eslint-disable-next-line @next/next/no-img-element
-      <img
-        src={poster || ""}
-        alt={alt || "Carisma Aesthetics Malta"}
-        style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit, display: "block", borderRadius: radius }}
-      />
-    );
-  }
-
   return (
     <div style={{ position: "absolute", inset: 0, overflow: "hidden", borderRadius: radius, isolation: "isolate" }}>
-      {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
-      <video
-        ref={ref}
-        src={src}
-        poster={poster}
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="auto"
-        aria-label={alt}
-        style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit, display: "block", borderRadius: radius }}
-      />
+      {/* LCP element — always present, prioritized, responsive. next/image serves a
+          viewport-sized AVIF/WebP, so mobile gets ~30–60 KB instead of the full poster. */}
+      {poster && (
+        <Image
+          src={poster}
+          alt={alt || "Carisma Aesthetics Malta"}
+          fill
+          priority
+          sizes="(min-width: 900px) 480px, 100vw"
+          quality={80}
+          style={{ objectFit, display: "block" }}
+        />
+      )}
 
-      {/* Sound on/off — lets the user opt into audio (starts muted for autoplay) */}
-      <button
-        type="button"
-        onClick={toggleSound}
-        aria-label={muted ? "Unmute video" : "Mute video"}
-        title={muted ? "Unmute" : "Mute"}
-        style={{
-          position: "absolute",
-          bottom: 12,
-          right: 12,
-          width: 42,
-          height: 42,
-          borderRadius: "50%",
-          border: "none",
-          cursor: "pointer",
-          background: "rgba(20,22,20,0.72)",
-          backdropFilter: "blur(2px)",
-          WebkitBackdropFilter: "blur(2px)",
-          color: "#fff",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          padding: 0,
-          zIndex: 3,
-        }}
-      >
-        {muted ? <SoundOffIcon /> : <SoundOnIcon />}
-      </button>
+      {/* Progressive enhancement — deferred video, faded in over the poster only
+          once it can play. Never mounted on mobile/reduced-motion/Save-Data/slow. */}
+      {mountVideo && (
+        <>
+          {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
+          <video
+            ref={ref}
+            src={src}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="none"
+            aria-label={alt}
+            onCanPlay={() => setVideoReady(true)}
+            style={{
+              position: "absolute",
+              inset: 0,
+              width: "100%",
+              height: "100%",
+              objectFit,
+              display: "block",
+              borderRadius: radius,
+              opacity: videoReady ? 1 : 0,
+              transition: "opacity 600ms ease",
+            }}
+          />
+
+          {videoReady && (
+            <button
+              type="button"
+              onClick={toggleSound}
+              aria-label={muted ? "Unmute video" : "Mute video"}
+              title={muted ? "Unmute" : "Mute"}
+              style={{
+                position: "absolute",
+                bottom: 12,
+                right: 12,
+                width: 42,
+                height: 42,
+                borderRadius: "50%",
+                border: "none",
+                cursor: "pointer",
+                background: "rgba(20,22,20,0.72)",
+                backdropFilter: "blur(2px)",
+                WebkitBackdropFilter: "blur(2px)",
+                color: "#fff",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                padding: 0,
+                zIndex: 3,
+              }}
+            >
+              {muted ? <SoundOffIcon /> : <SoundOnIcon />}
+            </button>
+          )}
+        </>
+      )}
     </div>
   );
 }
