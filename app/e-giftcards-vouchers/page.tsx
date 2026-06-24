@@ -119,12 +119,56 @@ const faqJsonLd = {
   })),
 };
 
+const productJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  name: "Carisma Aesthetics E-Gift Voucher",
+  description: "Digital gift vouchers for Carisma Aesthetics treatments. Deliver instantly to your loved ones with custom messages. Valid for 12 months at all Carisma Aesthetics locations in Malta.",
+  image: "https://www.carismaaesthetics.com/og-aesthetics.jpg",
+  brand: {
+    "@type": "Brand",
+    name: "Carisma Aesthetics",
+  },
+  provider: {
+    "@type": "Organization",
+    name: "Carisma Aesthetics",
+    url: "https://www.carismaaesthetics.com",
+    areaServed: "MT",
+  },
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.9",
+    reviewCount: "500",
+  },
+  offers: {
+    "@type": "AggregateOffer",
+    priceCurrency: "EUR",
+    availability: "https://schema.org/InStock",
+    offerCount: "1",
+    offers: [
+      {
+        "@type": "Offer",
+        name: "Carisma Aesthetics E-Gift Voucher",
+        description: "Digital gift voucher delivered instantly",
+        price: "Variable",
+        priceCurrency: "EUR",
+        availability: "https://schema.org/InStock",
+        url: "https://www.carismaaesthetics.com/e-giftcards-vouchers",
+      },
+    ],
+  },
+};
+
 export default function GiftsPage() {
   return (
     <main>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd).replace(/</g, "\\u003c") }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd).replace(/</g, "\\u003c") }}
         />
         {/* ===== HERO ===== */}
         <PageHero
