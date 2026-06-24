@@ -116,6 +116,32 @@ const t: Treatment = {
     cta: { text: "Claim My Exosome Glow Lift", href: "/consultation" },
     reviews: "200+ verified reviews",
   },
+  offer: {
+    priceNow: "€175",
+    priceWas: "€365",
+    saveLabel: "Save €190 today",
+    includedTitle: "Everything in your Glow Lift Package",
+    included: [
+      "Microneedling with Exosomes (€200)",
+      "LED Light Therapy (€50)",
+      "Glass Skin Face Mask (€30)",
+      "In-person Skin Consultation (€60)",
+      "€25 Aesthetics Credit (€25)",
+    ],
+    guaranteeChip: "Doctor-led · Medical-grade · Natural results",
+    urgency: "Limited consultation slots — secure your appointment today",
+    cta: {
+      text: "Book My Exosome Glow Lift",
+      href: "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2800348&share=true&pId=2708191",
+      external: true,
+    },
+  },
+  closing: {
+    heading: "Ready for Your Exosome Glow Lift?",
+    sub: "Smoother, firmer, luminous skin — doctor-led microneedling with exosomes and LED therapy at Carisma Aesthetics, Malta.",
+    ctaLabel: "Book My Glow Lift Consultation",
+    ctaHref: "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2800348&share=true&pId=2708191",
+  },
   recommended: {
     title: "Recommended with the Exosome Glow Lift",
     items: [
