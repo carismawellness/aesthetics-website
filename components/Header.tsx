@@ -99,7 +99,7 @@ export default function Header() {
   };
   const scheduleClose = () => {
     cancelClose();
-    closeTimer.current = setTimeout(() => setHover(null), 140);
+    closeTimer.current = setTimeout(() => setHover(null), 350);
   };
   // Clear any pending timer on unmount.
   useEffect(() => cancelClose, []);
@@ -199,12 +199,12 @@ export default function Header() {
                 <div
                   key={m.label}
                   className="relative"
-                  style={{ display: "flex", alignItems: "center" }}
+                  style={{ display: "flex", alignItems: "center", padding: "10px 0" }}
                   onMouseEnter={() => openMenu(m.label)}
                   onMouseLeave={scheduleClose}
                 >
                   <button
-                    style={{ ...navLink, background: "none", border: "none", cursor: "pointer", padding: "20px 0", display: "flex", alignItems: "center", gap: "4px" }}
+                    style={{ ...navLink, background: "none", border: "none", cursor: "pointer", padding: "4px 0", display: "flex", alignItems: "center", gap: "4px" }}
                     className="hover:underline transition"
                     aria-haspopup="true"
                     aria-expanded={hover === m.label}
@@ -225,7 +225,7 @@ export default function Header() {
                       onMouseLeave={scheduleClose}
                       style={{
                       position: "absolute",
-                      top: "calc(100% - 4px)",
+                      top: "calc(100% - 2px)",
                       left: "50%",
                       transform: "translateX(-50%)",
                       background: "rgba(255,255,255,0.82)",
@@ -241,18 +241,17 @@ export default function Header() {
                       columnGap: "6px",
                       zIndex: 100,
                     }}>
-                      {/* Invisible hover bridge: spans the full panel width and
-                          covers the gap up to the trigger, so moving the cursor
-                          from the (narrow) button down into the (wide, centered)
-                          panel never crosses dead space and closes the menu. */}
+                      {/* Invisible hover bridge: wider than the panel and tall
+                          enough so diagonal cursor paths from the (narrow) trigger
+                          into the (wide, centered) panel never cross dead space. */}
                       <span
                         aria-hidden
                         style={{
                           position: "absolute",
                           bottom: "100%",
-                          left: 0,
-                          right: 0,
-                          height: "18px",
+                          left: "-60px",
+                          right: "-60px",
+                          height: "32px",
                           background: "transparent",
                         }}
                       />
