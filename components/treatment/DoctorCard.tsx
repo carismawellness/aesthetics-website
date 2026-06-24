@@ -119,32 +119,58 @@ export default function DoctorCard({
 
             {/* RIGHT — name, title, credentials, bio, pull-quote, CTA */}
             <div>
-              <h3
+              <h2
                 className="font-serif"
                 style={{
                   fontSize: "clamp(22px, 3vw, 30px)",
                   color: "var(--gold)",
                   letterSpacing: "0.04em",
                   fontWeight: 400,
-                  lineHeight: 1.2,
+                  lineHeight: 1.3,
                   margin: 0,
                 }}
               >
+                {/* E-E-A-T: Elevate credentials to heading hierarchy */}
                 {name}
-              </h3>
-              <p
-                className="font-display"
-                style={{
-                  fontSize: 12.5,
-                  color: "var(--teal-text)",
-                  letterSpacing: "0.18em",
-                  textTransform: "uppercase",
-                  fontWeight: 600,
-                  margin: "10px 0 0",
-                }}
-              >
-                {title}
-              </p>
+                {credentials && credentials.length > 0 && (
+                  <>
+                    <br />
+                    <span
+                      className="font-display"
+                      style={{
+                        fontSize: 12.5,
+                        color: "var(--teal-text)",
+                        letterSpacing: "0.18em",
+                        textTransform: "uppercase",
+                        fontWeight: 600,
+                        display: "block",
+                        marginTop: 10,
+                      }}
+                    >
+                      {title} Specializing in {credentials[0]}
+                    </span>
+                  </>
+                )}
+                {!credentials && (
+                  <>
+                    <br />
+                    <span
+                      className="font-display"
+                      style={{
+                        fontSize: 12.5,
+                        color: "var(--teal-text)",
+                        letterSpacing: "0.18em",
+                        textTransform: "uppercase",
+                        fontWeight: 600,
+                        display: "block",
+                        marginTop: 10,
+                      }}
+                    >
+                      {title}
+                    </span>
+                  </>
+                )}
+              </h2>
 
               {credentials && credentials.length > 0 && (
                 <ul
