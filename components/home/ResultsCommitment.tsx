@@ -25,7 +25,7 @@ import Link from 'next/link';
  * publicly.
  */
 
-const INK = '#0c0b0b'; // near-black heading (--ink)
+const INK = '#245052'; // brand deep teal heading (no black anywhere on the site)
 const TEAL_DEEP = '#4f7373'; // accessible teal — big numbers / CTA fill (AA, white text passes)
 const TEAL_TEXT = '#406060'; // teal as small text / divider / eyebrow (AA on white + light tints)
 const TEAL_100 = '#f7fafa'; // lightest teal tint — section background gradient stop

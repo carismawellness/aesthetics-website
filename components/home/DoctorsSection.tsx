@@ -7,7 +7,7 @@ import { DOCTORS, type Doctor } from '@/lib/site';
 /* ── Shared design tokens (light gradient footer) ──────────────────────────
    Ported 1:1 from the Carisma Slimming DoctorShowcase, recoloured green → teal:
    slimming sage #4f7256 → teal #4f7373 ; decorative #8EB093 → #96B2B2.        */
-const INK = '#1a1a1a'; // headings
+const INK = '#4f7373'; // headings — brand teal (no black anywhere on the site)
 const BODY = '#333333'; // body text
 const MUTED = '#595959'; // meta
 const TEAL = '#4f7373'; // links / CTA (AA on white text)

@@ -64,7 +64,7 @@ const checklistItem: React.CSSProperties = {
 };
 
 const colHeading: React.CSSProperties = {
-  color: "#000000",
+  color: "#4f7373",
   fontFamily: WIDE,
   fontSize: 15,
   fontWeight: 400,

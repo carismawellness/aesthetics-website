@@ -34,7 +34,7 @@ type Props = {
 
 function PlayIcon() {
   return (
-    <svg width="26" height="26" viewBox="0 0 24 24" fill="#1a1a1a" aria-hidden style={{ marginLeft: "3px" }}>
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="#4f7373" aria-hidden style={{ marginLeft: "3px" }}>
       <path d="M8 5v14l11-7z" />
     </svg>
   );

@@ -81,61 +81,66 @@ function BrandsSection() {
             Malta&rsquo;s Leading Wellness Group
           </h3>
         </div>
-        <style>{`
-          [data-brand-cta] { transition: transform 200ms ease; }
-          [data-brand-cta]:hover { transform: scale(1.04); }
-          [data-brand-cta]:active { transform: scale(0.97); }
-          @media (prefers-reduced-motion: reduce) {
-            [data-brand-cta]:hover, [data-brand-cta]:active { transform: none; }
-          }
-        `}</style>
-        {/* Full-width designed panels (logo + reviews baked in) with the CTA pill
-            hanging off the bottom-right edge — a faithful match to Slimming's BrandBlock.
-            No dark overlay, no text title, no crop (card aspect = banner aspect). */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '52px' }}>
+        {/* Two side-by-side brand cards — same structure as the Carisma Slimming
+            footer (two-up grid, dark gradient, white CTA pill with arrow). The
+            designed banners already carry the white logo + Google-reviews strip on
+            their LEFT, so each card uses objectPosition:left at a ~2:1 aspect to
+            keep the logo/reviews intact while trimming only the right photo edge. */}
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px,1fr))', gap: '20px' }}>
           {BRANDS.map((brand) => (
-            <div key={brand.title} style={{ position: 'relative', width: '100%', aspectRatio: '1128 / 328' }}>
+            <a
+              key={brand.title}
+              href={brand.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`${brand.cta} — opens in new tab`}
+              data-brand-cta
+              style={{ position: 'relative', display: 'block', height: 'clamp(210px, 52vw, 264px)', borderRadius: '20px', overflow: 'hidden', boxShadow: '0 10px 40px rgba(0,0,0,0.10)', textDecoration: 'none' }}
+            >
               <Image
                 src={brand.img}
                 alt={brand.title}
                 fill
-                sizes="(max-width: 1024px) 100vw, 1100px"
-                style={{ objectFit: 'cover', borderRadius: '16px', boxShadow: '0 10px 40px rgba(0,0,0,0.10)' }}
+                sizes="(max-width: 768px) 100vw, 50vw"
+                style={{ objectFit: 'cover', objectPosition: 'left center' }}
                 loading="lazy"
               />
-              <a
-                href={brand.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`${brand.cta} — opens in new tab`}
-                data-brand-cta
+              {/* gradient strengthens the bottom-right so the CTA pill stays legible */}
+              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(300deg, rgba(2,20,20,0.45) 0%, rgba(2,20,20,0.12) 45%, transparent 70%)' }} />
+              <span
                 className="btn"
                 style={{
                   position: 'absolute',
-                  right: 0,
-                  bottom: '-20px',
-                  width: '278px',
-                  maxWidth: '78%',
-                  minHeight: '48px',
+                  right: '20px',
+                  bottom: '20px',
+                  minHeight: '44px',
                   display: 'inline-flex',
                   alignItems: 'center',
-                  justifyContent: 'center',
+                  gap: '8px',
                   backgroundColor: brand.btnColor,
                   color: '#fff',
                   fontFamily: WIDE,
-                  fontSize: '12px',
+                  fontSize: '11px',
                   fontWeight: 700,
-                  letterSpacing: '0.5px',
+                  letterSpacing: '1px',
                   textTransform: 'uppercase',
-                  textDecoration: 'none',
+                  padding: '12px 22px',
                   borderRadius: '999px',
                 }}
               >
-                {brand.cta}
-              </a>
-            </div>
+                {brand.cta} →
+              </span>
+            </a>
           ))}
         </div>
+        <style>{`
+          [data-brand-cta] { transition: transform 200ms ease; }
+          [data-brand-cta]:hover { transform: translateY(-4px); }
+          [data-brand-cta]:active { transform: translateY(-1px); }
+          @media (prefers-reduced-motion: reduce) {
+            [data-brand-cta]:hover, [data-brand-cta]:active { transform: none; }
+          }
+        `}</style>
       </div>
     </section>
   );
