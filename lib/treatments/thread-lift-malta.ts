@@ -34,9 +34,9 @@ const t: Treatment = {
     title: "PRECISION AREAS OF REFINEMENT",
     intro: "Medical-grade threads are placed beneath the skin to lift and reposition tissue. Below are the primary zones of treatment.",
     areas: [
-      { zone: "Midface", icon: "/assets/treatments/icon-forehead.png", name: "Midface Lift", desc: "Repositions sagging cheek tissue upward to restore a naturally lifted, youthful midface contour." },
-      { zone: "Jowls", icon: "/assets/treatments/icon-brow.png", name: "Jowl Reduction", desc: "Lifts and tightens the jowl area to redefine the transition from face to jawline." },
-      { zone: "Jawline", icon: "/assets/treatments/icon-eyes.png", name: "Jawline Contour", desc: "Creates a sharper, more defined jaw profile through precise thread placement along the mandible." },
+      { zone: "Midface", icon: "/assets/treatments/dermal-fillers-malta-icon-cheeks.png", name: "Midface Lift", desc: "Repositions sagging cheek tissue upward to restore a naturally lifted, youthful midface contour." },
+      { zone: "Jowls", icon: "/assets/treatments/dermal-fillers-malta-icon-chin.png", name: "Jowl Reduction", desc: "Lifts and tightens the jowl area to redefine the transition from face to jawline." },
+      { zone: "Jawline", icon: "/assets/treatments/dermal-fillers-malta-icon-jawline.png", name: "Jawline Contour", desc: "Creates a sharper, more defined jaw profile through precise thread placement along the mandible." },
       { zone: "Neck", icon: "/assets/treatments/icon-neck.png", name: "Neck Lift", desc: "Addresses neck laxity and banding for a smoother, more refined neck-to-jaw transition." },
     ],
     additionalTitle: "Thread placement strategy is assessed by the doctor based on your tissue laxity and facial anatomy.",
