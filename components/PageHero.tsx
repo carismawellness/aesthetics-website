@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import VideoPlayer from "@/components/VideoPlayer";
 import HeroAutoplayVideo from "@/components/HeroAutoplayVideo";
 import HeroMotif from "@/components/motion/HeroMotif";
@@ -283,8 +284,15 @@ export default function PageHero({
                   <VideoPlayer fill radius={ARCH_RADIUS} src={media.src} poster={media.poster} label={media.alt} objectFit={media.fit || "cover"} />
                 )
               ) : (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img src={media.src} alt={media.alt || "Carisma Aesthetics Malta"} style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: media.fit || "cover", objectPosition: media.position || "center", display: "block" }} />
+                <Image
+                  src={media.src}
+                  alt={media.alt || "Carisma Aesthetics Malta"}
+                  width={800}
+                  height={1000}
+                  priority={true}
+                  quality={85}
+                  style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: media.fit || "cover", objectPosition: media.position || "center", display: "block" }}
+                />
               )}
             </div>
             )}
@@ -306,8 +314,15 @@ export default function PageHero({
             {/* award / #1 voted — top-right */}
             <div className={`${glassClass} float-b proof-right`} style={{ position: "absolute", right: "clamp(-18px,-1.2vw,-2px)", top: "5%", borderRadius: 16, padding: "10px 14px", display: "flex", alignItems: "center", gap: 10, maxWidth: 210, zIndex: 3 }}>
               {proof?.awardSrc ? (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img src={proof.awardSrc} alt="" aria-hidden style={{ width: 36, height: 36, borderRadius: "50%", flexShrink: 0 }} />
+                <Image
+                  src={proof.awardSrc}
+                  alt=""
+                  width={36}
+                  height={36}
+                  priority={false}
+                  aria-hidden="true"
+                  style={{ borderRadius: "50%", flexShrink: 0 }}
+                />
               ) : (
                 <Stars size={11} />
               )}
