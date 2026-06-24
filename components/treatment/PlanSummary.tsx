@@ -141,7 +141,7 @@ function Dot() {
 export type PlanSummaryProps = {
   kicker?: string;
   title: string;
-  benefits: { icon?: IconKey; title: string; desc: string }[];
+  benefits: { icon?: IconKey; title: string; credential?: string; desc: string }[];
   included: { label: string; value?: string }[];
   totalValue?: string;
   price?: string;
@@ -231,12 +231,26 @@ export default function PlanSummary({
                         color: "var(--teal-text)",
                         fontSize: 13,
                         letterSpacing: "0.12em",
-                        margin: "4px 0 6px",
+                        margin: "4px 0 2px",
                         lineHeight: 1.3,
                       }}
                     >
                       {b.title}
                     </h3>
+                    {b.credential && (
+                      <p
+                        style={{
+                          color: "var(--gold-deep)",
+                          fontSize: 11.5,
+                          letterSpacing: "0.08em",
+                          margin: "2px 0 6px",
+                          lineHeight: 1.3,
+                          fontWeight: 600,
+                        }}
+                      >
+                        {b.credential}
+                      </p>
+                    )}
                     <p style={{ color: "var(--ink-soft)", fontSize: 14, lineHeight: 1.55, margin: 0 }}>
                       {b.desc}
                     </p>

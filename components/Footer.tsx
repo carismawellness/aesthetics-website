@@ -96,9 +96,9 @@ function BrandsSection() {
         <div style={{ textAlign: 'center', marginBottom: 'clamp(24px, 5vw, 40px)' }}>
           <Eyebrow>The Carisma Wellness Group</Eyebrow>
           <Rule center />
-          <h2 id="footer-brands-h" style={{ fontFamily: SERIF, fontSize: 'clamp(20px,3vw,28px)', fontWeight: 400, color: INK, letterSpacing: '1px', marginBottom: '0' }}>
+          <h3 id="footer-brands-h" style={{ fontFamily: SERIF, fontSize: 'clamp(20px,3vw,28px)', fontWeight: 400, color: INK, letterSpacing: '1px', marginBottom: '0' }}>
             Malta&rsquo;s leading wellness group
-          </h2>
+          </h3>
         </div>
         <style>{`
           [data-brand-cta] { transition: transform 200ms ease; }

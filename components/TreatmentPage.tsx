@@ -24,9 +24,12 @@ const AESTHETICS_FRESHA_BOOK =
 
 // Split the treatment title into at most two headline lines for PageHero, with
 // the last line rendered teal (em). Keeps the primary keyword + "Malta" intact.
+// Strips the SEO pipe (e.g., "Title | SEO suffix" → "Title") before splitting.
 function splitHeadline(title: string): { text: string; em?: boolean }[] {
-  const words = title.trim().split(/\s+/);
-  if (words.length <= 1) return [{ text: title, em: true }];
+  // Remove pipe and everything after it (SEO suffix for metadata only)
+  const cleanTitle = title.split(" | ")[0].trim();
+  const words = cleanTitle.split(/\s+/);
+  if (words.length <= 1) return [{ text: cleanTitle, em: true }];
   // Break near the middle so neither line is a lone word where avoidable.
   const breakAt = Math.ceil(words.length / 2);
   const first = words.slice(0, breakAt).join(" ");

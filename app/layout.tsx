@@ -2,15 +2,18 @@ import type { Metadata } from "next";
 import "./globals.css";
 import "./effects.css";
 import Script from "next/script";
+import dynamic from "next/dynamic";
 import { Pinyon_Script } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WidowGuard from "@/components/WidowGuard";
 import MediaLegibilityGuard from "@/components/MediaLegibilityGuard";
 import PageLoader from "@/components/PageLoader";
-import ConsultationModal from "@/components/ConsultationModal";
-import GlowClubModal from "@/components/GlowClubModal";
 import StickyBookingBar from "@/components/StickyBookingBar";
+
+// Code-split modals into separate bundles (loaded on-demand, not on every page)
+const ConsultationModal = dynamic(() => import("@/components/ConsultationModal"));
+const GlowClubModal = dynamic(() => import("@/components/GlowClubModal"));
 
 const pinyonScript = Pinyon_Script({
   weight: "400",
@@ -122,7 +125,11 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(siteSchema).replace(/</g, '\\u003c') }}
         />
 
-        {/* Preload critical self-hosted fonts */}
+        {/* Preload LCP-critical image FIRST (highest priority for Largest Contentful Paint) */}
+        {/* No type attribute allows browser to negotiate best format (AVIF, WebP, etc.) */}
+        <link rel="preload" as="image" href="/assets/doctor-giovanni.png" />
+
+        {/* Preload critical self-hosted fonts (lower priority than LCP image) */}
         <link rel="preload" as="font" href="/assets/fonts/novecento-wide-book.woff2" type="font/woff2" crossOrigin="" />
         <link rel="preload" as="font" href="/assets/fonts/roboto.woff2" type="font/woff2" crossOrigin="" />
         <link rel="preload" as="font" href="/assets/fonts/trajan-pro.woff2" type="font/woff2" crossOrigin="" />

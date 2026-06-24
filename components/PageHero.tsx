@@ -289,6 +289,7 @@ export default function PageHero({
                   alt={media.alt || "Carisma Aesthetics Malta"}
                   width={800}
                   height={1000}
+                  sizes="100vw"
                   priority={true}
                   quality={85}
                   style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: media.fit || "cover", objectPosition: media.position || "center", display: "block" }}

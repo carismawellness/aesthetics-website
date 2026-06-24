@@ -190,7 +190,7 @@ export default function PackagePage({ content: c }: { content: PackageContent })
           <p style={{ color: BLUE, fontFamily: WIDE, fontSize: 16, letterSpacing: '0.5px', textTransform: 'uppercase', textAlign: 'center', margin: 0 }}>{c.secretSubheading}</p>
 
           <div style={{ display: 'grid', gridTemplateColumns: '0.9fr 1.1fr', gap: 48, alignItems: 'center', marginTop: 40 }} className="fr-2col">
-            <Image src={c.secretImage} alt={c.secretSubheading} width={400} height={300} style={{ width: '100%', height: 'auto', borderRadius: 16, display: 'block' }} quality={85} />
+            <Image src={c.secretImage} alt={c.secretSubheading} width={400} height={300} sizes="(max-width: 768px) 100vw, 45vw" style={{ width: '100%', height: 'auto', borderRadius: 16, display: 'block' }} quality={85} />
             <div>
               <p style={{ ...body, marginBottom: 18 }}>{c.secretIntro}</p>
               <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 18px', display: 'flex', flexDirection: 'column', gap: 10 }}>
@@ -256,7 +256,7 @@ export default function PackagePage({ content: c }: { content: PackageContent })
               <CTA variant="blue" />
               <div style={{ marginTop: 18 }}><Stars withGoogle /></div>
             </div>
-            <Image src={c.valueProps.image} alt={c.valueProps.heading} width={400} height={300} style={{ width: '100%', height: 'auto', borderRadius: 16, display: 'block' }} quality={85} />
+            <Image src={c.valueProps.image} alt={c.valueProps.heading} width={400} height={300} sizes="(max-width: 768px) 100vw, 45vw" style={{ width: '100%', height: 'auto', borderRadius: 16, display: 'block' }} quality={85} />
           </div>
         </div>
       </section>
@@ -305,7 +305,7 @@ export default function PackagePage({ content: c }: { content: PackageContent })
           <SectionHeading>{c.eligHeading}</SectionHeading>
 
           <div style={{ display: 'grid', gridTemplateColumns: '0.85fr 1.15fr', gap: 44, alignItems: 'center', marginTop: 36 }} className="fr-2col">
-            <Image src={c.eligImage} alt={c.eligHeading} width={400} height={300} style={{ width: '100%', height: 'auto', borderRadius: 16, display: 'block' }} quality={85} />
+            <Image src={c.eligImage} alt={c.eligHeading} width={400} height={300} sizes="(max-width: 768px) 100vw, 45vw" style={{ width: '100%', height: 'auto', borderRadius: 16, display: 'block' }} quality={85} />
             <div>
               <p style={{ color: TAUPE_DK, fontFamily: WIDE, fontWeight: 700, fontSize: 15, letterSpacing: '0.5px', textTransform: 'uppercase', margin: '0 0 20px', lineHeight: 1.4 }}>{c.eligIntro}</p>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
@@ -351,7 +351,7 @@ export default function PackagePage({ content: c }: { content: PackageContent })
 
           <div style={{ marginTop: 36, background: 'linear-gradient(150deg, #f0f5f5 0%, #bdd1d1 100%)', borderRadius: 20, padding: 36, display: 'grid', gridTemplateColumns: '0.85fr 1.15fr', gap: 40, alignItems: 'center' }} className="fr-2col">
             <div style={{ display: 'flex', flexDirection: 'column', gap: 18 }}>
-              <Image src={c.ptImage} alt="Before and after" width={400} height={300} style={{ width: '100%', height: 'auto', borderRadius: 12, display: 'block' }} quality={85} />
+              <Image src={c.ptImage} alt="Before and after" width={400} height={300} sizes="(max-width: 768px) 100vw, 45vw" style={{ width: '100%', height: 'auto', borderRadius: 12, display: 'block' }} quality={85} />
               {c.ptImage2 && (
                 <Image src={c.ptImage2} alt="" width={150} height={150} style={{ width: 150, height: 'auto', borderRadius: 12 }} quality={85} />
               )}
@@ -428,7 +428,7 @@ export default function PackagePage({ content: c }: { content: PackageContent })
           <SectionHeading>{c.offer.introHeading}</SectionHeading>
           <div style={{ display: 'grid', gridTemplateColumns: '0.9fr 1.1fr', gap: 44, alignItems: 'center', marginTop: 36 }} className="fr-2col">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <Image src={c.offer.introImage} alt={c.offer.introHeading} width={400} height={300} style={{ width: '100%', height: 'auto', borderRadius: 16, display: 'block' }} quality={85} />
+            <Image src={c.offer.introImage} alt={c.offer.introHeading} width={400} height={300} sizes="(max-width: 768px) 100vw, 45vw" style={{ width: '100%', height: 'auto', borderRadius: 16, display: 'block' }} quality={85} />
             <div>
               {c.offer.introParas.map((p) => (<p key={p} style={{ ...body, fontSize: 14, marginBottom: 14 }}>{p}</p>))}
               <div style={{ marginTop: 8 }}><CTA variant="blue" /></div>
@@ -454,7 +454,7 @@ export default function PackagePage({ content: c }: { content: PackageContent })
               <Stars withGoogle />
             </div>
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <Image src={c.offer.cardImage} alt="" width={300} height={400} style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 16, display: 'block' }} quality={85} />
+            <Image src={c.offer.cardImage} alt="" width={300} height={400} sizes="(max-width: 768px) 100vw, 33vw" style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 16, display: 'block' }} quality={85} />
           </div>
         </div>
       </section>

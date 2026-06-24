@@ -299,7 +299,7 @@ export default function Header() {
           <div className="flex items-center justify-between shrink-0" style={{ padding: "16px clamp(16px,5vw,28px)" }}>
             <Link href="/" onClick={() => setOpen(false)} className="flex items-center">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/assets/logo.png" alt="Carisma Aesthetics" className="header-logo--mobile" style={{ height: "22px", width: "auto", display: "block" }} />
+              <Image src="/assets/logo.png" alt="Carisma Aesthetics" className="header-logo--mobile" width={100} height={22} style={{ height: "22px", width: "auto", display: "block" }} quality={85} />
             </Link>
             <button
               onClick={() => setOpen(false)}

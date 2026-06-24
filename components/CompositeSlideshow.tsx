@@ -55,7 +55,7 @@ export default function CompositeSlideshow({ images, title }: { images: string[]
       <Reveal className="relative mx-auto" style={{ maxWidth: "620px" }}>
         <div className="overflow-hidden" style={{ borderRadius: "var(--radius-card)", border: "1px solid var(--line)", boxShadow: "0 16px 38px rgba(0,0,0,0.10)" }}>
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <Image src={images[idx]} alt={`${title ?? "Before and after"} ${idx + 1}`} className="w-full" width={600} height={400} style={{ display: "block", height: "auto" }} quality={85} />
+          <Image src={images[idx]} alt={`${title ?? "Before and after"} ${idx + 1}`} className="w-full" width={600} height={400} sizes="(max-width: 620px) 100vw, 620px" style={{ display: "block", height: "auto" }} quality={85} />
         </div>
         {n > 1 && (
           <>
