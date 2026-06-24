@@ -111,4 +111,32 @@ export type Treatment = {
   faq?: { q: string; a: string }[];
   /** true when full content has not yet been extracted from the live page */
   pending?: boolean;
+  /** Price-anchor card shown immediately after the hero (package pages only).
+   *  Mined from V2 preview + bodypkg hero pricing. */
+  offer?: {
+    priceNow: string;       // e.g. "€199"
+    priceWas?: string;      // anchor/strikethrough, e.g. "€550"
+    saveLabel?: string;     // e.g. "Save €351 today"
+    includedTitle?: string; // "Everything in your package"
+    included: string[];     // line items
+    urgency?: string;       // scarcity microcopy shown below the price
+    guaranteeChip?: string; // e.g. "Doctor-led · No surgery · No downtime"
+    cta: { text: string; href: string; external?: boolean };
+  };
+  /** Second-tier pricing upsell (body packages only — starter vs. full pack). */
+  dualPack?: {
+    heading: string[];      // multi-line heading, each entry = one line
+    mini: { title: string; body: string }[];  // 2-3 bullet mini-benefits
+    includes: string[];
+    totalValue: string;     // e.g. "€280"
+    todayPrice: string;     // e.g. "€149 ONLY"
+    fineprint: string[];
+  };
+  /** Final CTA band shown below the FAQ, above the footer (package pages only). */
+  closing?: {
+    heading: string;
+    sub: string;
+    ctaLabel: string;
+    ctaHref?: string;   // defaults to hero.bookHref
+  };
 };
