@@ -155,9 +155,9 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 inset-x-0 z-50">
-      {/* Logo sizing rules (slimming): mobile ~20px, mobile-menu ~22px. */}
-      <style>{`@media (max-width:1023px){.header-logo{height:20px !important}}
-.header-logo--mobile{height:22px !important}`}</style>
+      {/* Logo sizing rules: desktop 32px, mobile 28px, mobile-menu 28px. */}
+      <style>{`@media (max-width:1023px){.header-logo{height:28px !important}}
+.header-logo--mobile{height:28px !important}`}</style>
 
       {/* Floating glass pill */}
       <div style={{ padding: "12px clamp(12px,3vw,28px) 0", maxWidth: "1280px", margin: "0 auto" }}>
@@ -168,8 +168,7 @@ export default function Header() {
         >
           {/* Logo */}
           <Link href="/" className="flex items-center shrink-0" onClick={() => setOpen(false)}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <Image src="/assets/logo.png" alt="Carisma Aesthetics" className="header-logo" width={120} height={26} style={{ height: "26px", width: "auto", display: "block" }} quality={85} />
+            <Image src="/assets/logos/carisma-wordmark.svg" alt="Carisma Aesthetics" className="header-logo" width={148} height={32} style={{ height: "32px", width: "auto", display: "block" }} unoptimized />
           </Link>
 
           {/* Desktop menu */}
@@ -298,8 +297,7 @@ export default function Header() {
           {/* Top row: logo + close */}
           <div className="flex items-center justify-between shrink-0" style={{ padding: "16px clamp(16px,5vw,28px)" }}>
             <Link href="/" onClick={() => setOpen(false)} className="flex items-center">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <Image src="/assets/logo.png" alt="Carisma Aesthetics" className="header-logo--mobile" width={100} height={22} style={{ height: "22px", width: "auto", display: "block" }} quality={85} />
+              <Image src="/assets/logos/carisma-wordmark.svg" alt="Carisma Aesthetics" className="header-logo--mobile" width={130} height={28} style={{ height: "28px", width: "auto", display: "block" }} unoptimized />
             </Link>
             <button
               onClick={() => setOpen(false)}
