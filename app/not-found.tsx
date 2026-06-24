@@ -6,10 +6,10 @@ export default function NotFound() {
       <p className="font-display" style={{ fontSize: "11px", color: "#4a7d7d", letterSpacing: "0.22em", textTransform: "uppercase", marginBottom: "20px" }}>
         Page not found
       </p>
-      <h1 className="font-serif" style={{ fontSize: "clamp(60px,10vw,120px)", color: "var(--gold)", opacity: 1, lineHeight: 1, marginBottom: "8px" }}>
+      <h1 className="font-serif" style={{ fontSize: "clamp(60px,10vw,120px)", color: "var(--teal-deep)", opacity: 1, lineHeight: 1, marginBottom: "8px" }}>
         404
       </h1>
-      <h2 className="font-serif" style={{ fontSize: "clamp(22px,3vw,34px)", color: "var(--gold)", letterSpacing: "0.04em", marginBottom: "20px" }}>
+      <h2 className="font-serif" style={{ fontSize: "clamp(22px,3vw,34px)", color: "var(--teal-deep)", letterSpacing: "0.04em", marginBottom: "20px" }}>
         This page doesn&apos;t exist
       </h2>
       <p style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.7, maxWidth: "480px", marginBottom: "40px" }}>

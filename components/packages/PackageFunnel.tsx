@@ -176,7 +176,7 @@ function withBold(text: string, bold?: string[]) {
 
 function SerifHeading({ text, align = "center", size = "clamp(22px,3vw,32px)", style }: { text: string; align?: "center" | "left"; size?: string; style?: React.CSSProperties }) {
   return (
-    <h2 className="font-serif" style={{ fontSize: size, color: "var(--gold)", letterSpacing: "0.05em", lineHeight: 1.25, textAlign: align, ...style }}>
+    <h2 className="font-serif" style={{ fontSize: size, color: "var(--teal-deep)", letterSpacing: "0.05em", lineHeight: 1.25, textAlign: align, ...style }}>
       {multiline(text)}
     </h2>
   );
@@ -385,7 +385,7 @@ export default function PackageFunnel({ data }: { data: PackageData }) {
                     {/* Benefit icons are decorative — title provides the context */}
                     <Image src={b.icon} alt="" role="presentation" width={48} height={48} loading="lazy" style={{ height: "48px", width: "auto" }} />
                   </div>
-                  <h3 className="font-display" style={{ fontSize: "13px", color: "var(--label)", letterSpacing: "0.08em", marginBottom: "10px" }}>{b.title}</h3>
+                  <h3 className="font-display" style={{ fontSize: "13px", color: "var(--teal-deep)", letterSpacing: "0.08em", marginBottom: "10px" }}>{b.title}</h3>
                   <p style={{ fontSize: "13px", color: "var(--muted)", lineHeight: 1.6 }}>{b.desc}</p>
                 </Reveal>
               ))}
@@ -653,7 +653,7 @@ export default function PackageFunnel({ data }: { data: PackageData }) {
         <div className="container">
           <div className="mx-auto" style={{ maxWidth: "820px" }}>
             <div className="flex flex-wrap items-center justify-between gap-4" style={{ marginBottom: "30px" }}>
-              <h2 className="font-display" style={{ fontSize: "clamp(17px,2.2vw,22px)", color: "var(--gold)", letterSpacing: "0.12em" }}>FREQUENTLY ASKED QUESTIONS</h2>
+              <h2 className="font-display" style={{ fontSize: "clamp(17px,2.2vw,22px)", color: "var(--teal-deep)", letterSpacing: "0.12em" }}>FREQUENTLY ASKED QUESTIONS</h2>
               <div className="flex items-center gap-2" style={{ minWidth: "220px" }}>
                 <label htmlFor={`${baseId}-faq-search`} className="sr-only">Search FAQs</label>
                 <input
@@ -738,11 +738,11 @@ export default function PackageFunnel({ data }: { data: PackageData }) {
       {/* ===== AWARD WINNING / WHY CARISMA ===== */}
       <section aria-label="Award-winning clinic" style={{ background: "var(--beige)", padding: "64px 0" }}>
         <div className="container">
-          <h2 className="font-display text-center" style={{ fontSize: "clamp(20px,2.8vw,30px)", color: "var(--label)", letterSpacing: "0.04em", lineHeight: 1.3 }}>
+          <h2 className="font-display text-center" style={{ fontSize: "clamp(20px,2.8vw,30px)", color: "var(--teal-deep)", letterSpacing: "0.04em", lineHeight: 1.3 }}>
             <strong style={{ color: "var(--ink-soft)" }}>#1 AWARD WINNING</strong> CHAIN IN MALTA WITH<br /><strong style={{ color: "var(--ink-soft)" }}>30+ YEARS</strong> IN WELLNESS
           </h2>
           <Reveal className="mx-auto" style={{ marginTop: "44px", maxWidth: "640px", background: "var(--white)", border: "1px solid var(--gold)", outline: "1px solid var(--gold)", outlineOffset: "8px", borderRadius: "var(--radius-card)", padding: "clamp(30px,4vw,48px)" }}>
-            <h3 className="font-display text-center" style={{ fontSize: "clamp(17px,2.2vw,22px)", color: "var(--gold)", letterSpacing: "0.08em" }}>WHY CARISMA AESTHETICS?</h3>
+            <h3 className="font-display text-center" style={{ fontSize: "clamp(17px,2.2vw,22px)", color: "var(--teal-deep)", letterSpacing: "0.08em" }}>WHY CARISMA AESTHETICS?</h3>
             <div className="mx-auto" style={{ width: "120px", height: "1px", background: "var(--gold)", margin: "14px auto 26px" }} aria-hidden="true" />
             <ul className="space-y-5" aria-label="Reasons to choose Carisma Aesthetics">
               {WHY_CARISMA.map((p) => (<li key={p} className="flex items-start gap-3"><span style={{ color: "var(--label)", fontSize: "12px", lineHeight: 1.8 }} aria-hidden="true">•</span><span className="font-display" style={{ fontSize: "12px", color: "var(--label)", letterSpacing: "0.06em", lineHeight: 1.6 }}>{p}</span></li>))}
@@ -754,7 +754,7 @@ export default function PackageFunnel({ data }: { data: PackageData }) {
       {/* ===== RECOMMENDED ===== */}
       <section aria-label={data.recommended.heading} style={{ padding: "70px 0" }}>
         <div className="container">
-          <h2 className="font-display text-center" style={{ fontSize: "clamp(16px,2.2vw,22px)", color: "var(--gold)", letterSpacing: "0.12em" }}>{data.recommended.heading}</h2>
+          <h2 className="font-display text-center" style={{ fontSize: "clamp(16px,2.2vw,22px)", color: "var(--teal-deep)", letterSpacing: "0.12em" }}>{data.recommended.heading}</h2>
           <div className={`grid gap-6 ${data.recommended.cards.length === 2 ? "sm:grid-cols-2" : "sm:grid-cols-3"} mx-auto`} style={{ marginTop: "40px", maxWidth: data.recommended.cards.length === 2 ? "620px" : "920px" }}>
             {data.recommended.cards.map((r, i) => (
               <Reveal key={r.label} delay={(i % 3) * 80}>

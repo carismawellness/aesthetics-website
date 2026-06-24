@@ -284,7 +284,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
               className="font-serif text-center"
               style={{
                 fontSize: "clamp(24px,3.4vw,38px)",
-                color: "var(--gold)",
+                color: "var(--teal-deep)",
                 letterSpacing: "0.04em",
                 lineHeight: 1.25,
               }}
@@ -516,7 +516,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
               className="font-serif text-center"
               style={{
                 fontSize: "clamp(24px,3.4vw,38px)",
-                color: "var(--gold)",
+                color: "var(--teal-deep)",
                 letterSpacing: "0.06em",
                 marginBottom: "56px",
                 lineHeight: 1.25,

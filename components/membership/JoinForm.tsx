@@ -157,7 +157,7 @@ export default function JoinForm() {
           className="font-serif"
           style={{
             fontSize: "clamp(20px,2.6vw,26px)",
-            color: "var(--gold)",
+            color: "var(--teal-deep)",
             letterSpacing: "0.06em",
             fontWeight: 400,
             marginBottom: "12px",

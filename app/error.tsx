@@ -8,7 +8,7 @@ export default function Error({ reset }: { reset: () => void }) {
       <p className="font-display" style={{ fontSize: "11px", color: "var(--teal)", letterSpacing: "0.22em", textTransform: "uppercase", marginBottom: "20px" }}>
         Something went wrong
       </p>
-      <h1 className="font-serif" style={{ fontSize: "clamp(22px,3vw,34px)", color: "var(--gold)", letterSpacing: "0.04em", marginBottom: "20px" }}>
+      <h1 className="font-serif" style={{ fontSize: "clamp(22px,3vw,34px)", color: "var(--teal-deep)", letterSpacing: "0.04em", marginBottom: "20px" }}>
         We hit an unexpected error
       </h1>
       <p style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.7, maxWidth: "480px", marginBottom: "40px" }}>

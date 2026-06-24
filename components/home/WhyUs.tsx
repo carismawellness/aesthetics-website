@@ -68,7 +68,7 @@ export default function WhyUs() {
 
             <div className="relative" style={{ zIndex: 1 }}>
               {/* h3 is correct: this card heading is subordinate to the section h2 above */}
-              <h3 className="font-display text-center" style={{ fontSize: "clamp(20px,3vw,30px)", color: "var(--gold)", letterSpacing: "0.1em", fontWeight: 400 }}>
+              <h3 className="font-display text-center" style={{ fontSize: "clamp(20px,3vw,30px)", color: "var(--teal-deep)", letterSpacing: "0.1em", fontWeight: 400 }}>
                 Why Carisma Aesthetics?
               </h3>
               <div aria-hidden="true" className="mx-auto" style={{ width: "120px", height: "1px", background: "var(--gold)", margin: "18px auto 34px" }} />

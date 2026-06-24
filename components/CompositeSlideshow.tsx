@@ -50,7 +50,7 @@ export default function CompositeSlideshow({ images, title }: { images: string[]
   return (
     <div className="text-center">
       {title && (
-        <h3 className="font-display" style={{ fontSize: "clamp(15px,2vw,18px)", color: "var(--label)", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "24px" }}>{title}</h3>
+        <h3 className="font-display" style={{ fontSize: "clamp(15px,2vw,18px)", color: "var(--teal-deep)", letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "24px" }}>{title}</h3>
       )}
       <Reveal className="relative mx-auto" style={{ maxWidth: "620px" }}>
         <div className="overflow-hidden" style={{ borderRadius: "var(--radius-card)", border: "1px solid var(--line)", boxShadow: "0 16px 38px rgba(0,0,0,0.10)" }}>

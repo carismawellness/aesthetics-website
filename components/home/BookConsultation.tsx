@@ -39,7 +39,7 @@ export default function BookConsultation() {
               style={{
                 zIndex: 1,
                 fontSize: "clamp(28px,3.6vw,40px)",
-                color: "var(--gold)",
+                color: "var(--teal-deep)",
                 textTransform: "uppercase",
                 fontWeight: 300,
                 letterSpacing: "0.04em",

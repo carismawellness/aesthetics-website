@@ -136,7 +136,7 @@ export default function ServicesMarquee() {
             className="font-serif text-center"
             style={{
               fontSize: "clamp(26px,3.4vw,40px)",
-              color: "var(--gold)",
+              color: "var(--teal-deep)",
               fontWeight: 400,
               letterSpacing: "0.04em",
               lineHeight: 1.15,
@@ -279,7 +279,7 @@ export default function ServicesMarquee() {
                 <h3
                   className="font-serif"
                   style={{
-                    color: "var(--gold)",
+                    color: "var(--teal-deep)",
                     fontSize: "17px",
                     fontWeight: 400,
                     letterSpacing: "0.05em",

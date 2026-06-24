@@ -183,7 +183,7 @@ export function SuitabilityCompare({ ideal, notIdeal }: { ideal: string[]; notId
           </ul>
         </div>
         <div style={{ background: "var(--white)", border: "1px solid var(--line)", borderRadius: "var(--radius-card)", padding: "30px 28px" }}>
-          <h3 className="font-display" style={{ fontSize: "14px", fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--label)", marginBottom: "18px" }}>May not be ideal if</h3>
+          <h3 className="font-display" style={{ fontSize: "14px", fontWeight: 600, letterSpacing: "0.1em", textTransform: "uppercase", color: "var(--teal-deep)", marginBottom: "18px" }}>May not be ideal if</h3>
           <ul style={{ display: "grid", gap: "12px" }}>
             {notIdeal.map((s) => (
               <li key={s} className="flex items-start" style={{ gap: "12px" }}>
