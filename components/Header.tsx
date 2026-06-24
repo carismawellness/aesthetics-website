@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 import { createPortal } from "react-dom";
 import {
   CONTACT,
@@ -11,6 +12,14 @@ import {
   PACKAGE_LINKS,
   type NavLink,
 } from "@/lib/site";
+
+// Pages where StickyBookingBar renders its own floating pill — suppress the
+// Header's mobile bottom CTA on these to avoid two overlapping CTAs on mobile.
+const STICKY_BAR_PAGES = new Set([
+  ...FACE_LINKS.map((l) => l.href),
+  ...BODY_LINKS.map((l) => l.href),
+  ...PACKAGE_LINKS.map((l) => l.href),
+]);
 
 // ── Aesthetics palette (slimming green → aesthetics teal) ──────────────────
 // CTA fill / active ink:  --teal-deep #4f7373 (white text passes AA)
@@ -64,6 +73,8 @@ function PhoneIcon() {
 }
 
 export default function Header() {
+  const pathname = usePathname();
+  const hasStickyBar = !!pathname && STICKY_BAR_PAGES.has(pathname);
   const [open, setOpen] = useState(false);
   const [expanded, setExpanded] = useState<string | null>(null);
   const [hover, setHover] = useState<string | null>(null);
@@ -391,10 +402,9 @@ export default function Header() {
         </div>
       )}
 
-      {/* Mobile-only sticky bottom CTA — present on every page, hidden while the
-          full-page menu is open. Portaled to <body> so the in-flow spacer can
-          reserve room after the footer (existing aesthetics mobile behaviour). */}
-      {mounted && !open &&
+      {/* Mobile-only sticky bottom CTA — present on non-treatment pages; hidden
+          on treatment/package pages where StickyBookingBar renders its own pill. */}
+      {mounted && !open && !hasStickyBar &&
         createPortal(
           <>
             <div
