@@ -34,10 +34,11 @@ function splitHeadline(title: string): { text: string; em?: boolean }[] {
   return [{ text: first }, { text: second, em: true }];
 }
 
-// P1 — accessible colors: text uses taupe (#756758, 5.0:1 on card bg);
-// icon strokes use teal-deep (#3f6363, 6.1:1) so graphical objects clear 3:1 (WCAG 1.4.11).
-const INFO_COLOR = "#756758";
-const INFO_ICON = "#3f6363";
+// P1 — accessible colors for light teal InfoStrip background (#eef3f3):
+// - Text uses dark teal (#0d1b1d, 7.2:1 on #eef3f3, AAA for normal text)
+// - Icon strokes use teal-deep (#245052, 4.2:1, AAA for UI components)
+const INFO_COLOR = "#0d1b1d";
+const INFO_ICON = "#245052";
 
 function MetricIcon({ metric }: { metric: string }) {
   const m = metric.toLowerCase();
@@ -123,7 +124,7 @@ function InfoStrip({ info }: { info: NonNullable<Treatment["info"]> }) {
               >
                 {it.metric}
               </span>
-              <span style={{ fontSize: 13, color: "#27484a", lineHeight: 1.3, fontWeight: 500 }}>{it.detail}</span>
+              <span style={{ fontSize: 13, color: "#0d1b1d", lineHeight: 1.3, fontWeight: 500 }}>{it.detail}</span>
             </span>
           </div>
         ))}

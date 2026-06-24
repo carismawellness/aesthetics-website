@@ -521,12 +521,12 @@ main li a:not(.btn):not(.no-underline),
 .hero-outline {
   display: inline-flex; align-items: center; justify-content: center;
   padding: 14px 28px; border-radius: 999px;
-  border: 1.5px solid var(--teal-text); color: var(--teal-text);
+  border: 1.5px solid var(--teal-deep); color: var(--link-text);
   font-family: "Novecento Wide", sans-serif; font-size: 12px; font-weight: 600;
   letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none;
   transition: background 0.2s ease, color 0.2s ease;
 }
-.hero-outline:hover { background: var(--teal-text); color: #fff; }
+.hero-outline:hover { background: var(--link-text); color: #fff; }
 
 /* Dark colourway (used by PageHero theme="dark" on the dark-stone pages). */
 .hero-pill-dark {

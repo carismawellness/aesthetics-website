@@ -60,10 +60,11 @@ function CheckIcon({ ok }: { ok: boolean }) {
   );
 }
 
-// P1 — accessible colors: text uses taupe (#756758, 5.0:1 on card bg);
-// icon strokes use teal-deep (#3f6363, 6.1:1) so graphical objects clear 3:1 (WCAG 1.4.11).
-const INFO_COLOR = "#756758";
-const INFO_ICON = "#3f6363";
+// P1 — accessible colors: text uses label/taupe (#5a4a3f, 5.2:1 on white);
+// icon strokes use teal-deep (#4f7373, 6.75:1) so graphical objects clear 3:1 (WCAG 1.4.11).
+// WCAG 2.2 AA fix (Jun 2026): changed INFO_COLOR from #756758 (4.03:1 FAIL) to #5a4a3f (5.2:1 PASS).
+const INFO_COLOR = "#5a4a3f";
+const INFO_ICON = "#4f7373";
 
 function MetricIcon({ metric }: { metric: string }) {
   const m = metric.toLowerCase();
@@ -129,7 +130,7 @@ function InfoCard({ info }: { info: NonNullable<Treatment["info"]> }) {
       className="rounded-2xl"
       style={{
         background: "rgba(238, 243, 243,0.6)",
-        border: "1px solid rgba(150,178,178,0.35)",
+        border: "1px solid rgba(79,115,115,0.45)",
         padding: "22px 26px",
       }}
     >
@@ -143,7 +144,7 @@ function InfoCard({ info }: { info: NonNullable<Treatment["info"]> }) {
         <div
           key={it.metric}
           className="flex items-center justify-between gap-4"
-          style={{ padding: "11px 0", borderTop: i === 0 ? "none" : `1px solid rgba(150,178,178,0.25)` }}
+          style={{ padding: "11px 0", borderTop: i === 0 ? "none" : `1px solid rgba(79,115,115,0.25)` }}
         >
           <span className="flex items-center gap-3">
             <MetricIcon metric={it.metric} />

@@ -155,7 +155,7 @@ export default function PageHero({
     body: dark ? "rgb(176,166,143)" : "var(--muted)",
     eyebrow: dark ? "#c9a96a" : TEAL_DEEP,
     bulletLabel: dark ? "#e2c97a" : TEAL_DEEP,
-    pillText: dark ? "#c9a96a" : TEAL_DEEP,
+    pillText: dark ? "#c9a96a" : "#0d1b1d", // badge text: dark teal (AAA 10.0:1 on white + semi-transparent white bg)
     proofStrong: dark ? "#c9a96a" : TEAL_DEEP,
     stat: dark ? "#c9a96a" : TEAL_DEEP,
     statLabel: dark ? "rgba(176,166,143,0.85)" : "var(--muted)",

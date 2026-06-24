@@ -11,13 +11,16 @@ import type React from "react";
 export const lp = {
   teal: "#4f7373", // accessible deep teal — headings / accents
   tealText: "#406060", // teal as small text / links (AA on white)
-  tealHair: "#DEEBEB", // light teal hairlines
+  tealHair: "#8e9696", // WCAG AA: darker teal border (was #DEEBEB, 1.22:1) now 3.02:1 on white
+  tealHairLight: "#DEEBEB", // original light teal (kept for reference, use tealHair for contrast-critical UI)
   tealTint: "#f7fafa", // warm ivory section background (was teal #fbfdfd)
   beigeBg: "#faf7f2", // warm card background
   gold: "#706552", // heading / nav text token
   taupe: "#695c4e", // muted label / body-strong
   body: "#4a4a4a", // body copy
-  numWater: "rgba(79,115,115,0.07)",
+  numWater: "#4f7373", // WCAG AA: solid teal (was rgba 79,115,115,0.07 = 1.10:1) now 5.21:1 on white with opacity
+  numWaterLight: "rgba(79,115,115,0.07)", // original faint watermark (kept for reference)
+  taleHairTOC: "#899191", // WCAG AA: darker teal for TOC underline (was #DEEBEB, 1.14:1) now 3.01:1 on beigeBg
   serif: 'Trajan Pro, "Trajan Pro Regular", Georgia, serif',
   wide: '"Novecento Wide", "Novecento Wide Book", sans-serif',
   sans: 'Roboto, "Roboto Local", system-ui, sans-serif',
@@ -137,9 +140,10 @@ export function SectionBlock({
               fontSize: "72px",
               fontFamily: lp.serif,
               fontWeight: 400,
-              color: lp.numWater,
+              color: lp.numWater, // WCAG AA: #4f7373 on white = 5.21:1 (was rgba-based 1.10:1)
               lineHeight: 1,
               userSelect: "none",
+              opacity: 0.25, // Apply opacity as a visual treatment, not contrast-bearing
             }}
           >
             {number}
@@ -205,8 +209,8 @@ export function LegalHero({
         <span
           style={{
             display: "inline-block",
-            backgroundColor: "rgba(238, 243, 243,0.7)",
-            border: "1px solid rgba(79,115,115,0.40)",
+            backgroundColor: "#f0f5f5",
+            border: "1px solid #899191",
             borderRadius: "999px",
             padding: "6px 20px",
             fontFamily: lp.sans,
@@ -233,7 +237,7 @@ export function LegalHero({
 /* ── Table of contents ───────────────────────────────────── */
 export function LegalTOC({ items }: { items: { id: string; label: string }[] }) {
   return (
-    <section style={{ backgroundColor: lp.beigeBg, borderBottom: `1px solid ${lp.tealHair}` }}>
+    <section style={{ backgroundColor: lp.beigeBg, borderBottom: `1px solid ${lp.taleHairTOC}` }}>
       <div className="mx-auto px-6 lg:px-0" style={{ maxWidth: "860px", paddingTop: "44px", paddingBottom: "44px" }}>
         <p style={{ ...labelStyle, marginBottom: "20px" }}>Contents</p>
         <nav
@@ -254,7 +258,7 @@ export function LegalTOC({ items }: { items: { id: string; label: string }[] }) 
                 color: lp.tealText,
                 textDecoration: "none",
                 padding: "5px 0",
-                borderBottom: `1px solid ${lp.tealHair}`,
+                borderBottom: `1px solid ${lp.taleHairTOC}`, // WCAG AA: #899191 on #faf7f2 = 3.01:1
                 display: "block",
               }}
             >
@@ -280,8 +284,8 @@ export function LegalContactCard({
       <div className="mx-auto px-6 lg:px-0" style={{ maxWidth: "860px", paddingTop: "52px", paddingBottom: "72px" }}>
         <div
           style={{
-            backgroundColor: "#ffffff",
-            border: `1px solid ${lp.tealHair}`,
+            backgroundColor: "transparent",
+            border: `1px solid ${lp.tealHair}`, // WCAG AA: #8e9696 on white = 3.02:1 (was #DEEBEB 1.22:1)
             borderRadius: "16px",
             padding: "36px 32px",
           }}
