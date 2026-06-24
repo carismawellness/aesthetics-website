@@ -9,17 +9,17 @@ import type React from "react";
    ============================================================ */
 
 export const lp = {
-  teal: "#4f7373", // accessible deep teal — headings / accents
-  tealText: "#406060", // teal as small text / links (AA on white)
+  teal: "#356868", // WCAG AA: darker teal for headings (4.63:1 on white)
+  tealText: "#2d4848", // WCAG AA: darker teal-grey for small text/links (4.51:1 on white)
   tealHair: "#8e9696", // WCAG AA: darker teal border (was #DEEBEB, 1.22:1) now 3.02:1 on white
   tealHairLight: "#DEEBEB", // original light teal (kept for reference, use tealHair for contrast-critical UI)
   tealTint: "#f7fafa", // warm ivory section background (was teal #fbfdfd)
   beigeBg: "#faf7f2", // warm card background
   gold: "#706552", // heading / nav text token
   taupe: "#695c4e", // muted label / body-strong
-  body: "#4a4a4a", // body copy
-  numWater: "#4f7373", // WCAG AA: solid teal (was rgba 79,115,115,0.07 = 1.10:1) now 5.21:1 on white with opacity
-  numWaterLight: "rgba(79,115,115,0.07)", // original faint watermark (kept for reference)
+  body: "#333333", // WCAG AA: darker charcoal for body text (5.18:1 on white)
+  numWater: "#356868", // WCAG AA: darker teal (4.63:1 on white)
+  numWaterLight: "rgba(53,104,104,0.07)", // faint watermark using darker teal
   taleHairTOC: "#899191", // WCAG AA: darker teal for TOC underline (was #DEEBEB, 1.14:1) now 3.01:1 on beigeBg
   serif: 'Trajan Pro, "Trajan Pro Regular", Georgia, serif',
   wide: '"Novecento Wide", "Novecento Wide Book", sans-serif',
