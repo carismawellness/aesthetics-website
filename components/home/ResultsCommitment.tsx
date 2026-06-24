@@ -39,18 +39,18 @@ const SYS = '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif
    All paths are real, verified assets in /public/assets. */
 const CARDS = [
   {
-    src: '/assets/hero-person.jpg',
-    alt: 'Confident woman after a doctor-led aesthetic treatment at Carisma Aesthetics Malta',
+    src: '/assets/clinic-interior-2.jpg',
+    alt: 'Carisma Aesthetics clinic interior — premium treatment suite in Birkirkara, Malta',
     role: 'left' as const,
   },
   {
-    src: '/assets/clinic-room.jpg',
-    alt: 'Doctor-led consultation and treatment room at Carisma Aesthetics clinic in Malta',
+    src: '/assets/clinic-interior-1-resized.jpg',
+    alt: 'Professional consultation room at the Carisma Aesthetics clinic in Malta',
     role: 'center' as const,
   },
   {
-    src: '/assets/treatments/chemical-peels-malta-hero.png',
-    alt: 'Clinical skin treatment in progress at Carisma Aesthetics clinic in Malta',
+    src: '/assets/clinic-treatment-room.jpg',
+    alt: 'Doctor-led aesthetic treatment in progress at Carisma Aesthetics Malta',
     role: 'right' as const,
   },
 ];
@@ -237,7 +237,7 @@ export default function ResultsCommitment() {
               margin: '22px 0 0',
             }}
           >
-            Award-Winning Aesthetic Clinic in Birkirkara, Malta
+            Award-Winning Aesthetic Clinic
           </h2>
           <p style={{ color: BODY, fontFamily: SYS, fontSize: 'clamp(16px,1.7vw,19px)', lineHeight: 1.6, margin: '14px auto 0', maxWidth: 540 }}>
             Doctor-led. Natural-looking. Built around you — so you glow with confidence, never overdone.
