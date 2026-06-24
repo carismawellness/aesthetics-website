@@ -11,6 +11,7 @@ import PageLoader from "@/components/PageLoader";
 import ConsultationModal from "@/components/ConsultationModal";
 import GlowClubModal from "@/components/GlowClubModal";
 import StickyBookingBar from "@/components/StickyBookingBar";
+import DeferredChat from "@/components/DeferredChat";
 
 const pinyonScript = Pinyon_Script({
   weight: "400",
@@ -203,12 +204,11 @@ export default function RootLayout({
 
         {/* GHL form embed */}
         <Script src="https://link.msgsndr.com/js/form_embed.js" strategy="lazyOnload" />
-        {/* Zoho SalesIQ live chat */}
-        <Script
-          src="https://salesiq.zohopublic.eu/widget?wc=siqe6e51d1708cab04770be4f5ea650f0521bf4a11c156999fedb6a0ec11f0d0d48"
-          strategy="lazyOnload"
-          id="zsiqscript"
-        />
+        {/* Zoho SalesIQ live chat — loaded on first interaction (see DeferredChat):
+            its ~2.4 MB payload is the single largest transfer and was landing in
+            the mobile Speed-Index/LCP window. Chat still appears the moment a real
+            visitor scrolls or taps. */}
+        <DeferredChat />
       </body>
     </html>
   );
