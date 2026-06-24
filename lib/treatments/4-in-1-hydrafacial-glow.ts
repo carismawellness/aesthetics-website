@@ -192,6 +192,33 @@ const t: Treatment = {
     { q: "How long do the results last?", a: "Results can last for several weeks, depending on your skin type and home care routine. Regular sessions and a simple skincare routine help prolong and build on the glow over time." },
     { q: "Can I combine the Hydrafacial Glow with other treatments?", a: "Yes, it pairs beautifully with treatments such as microneedling, chemical peels, dermal fillers, or Botox for enhanced results. Our skincare experts can recommend the best combination based on your individual needs during your consultation." },
   ],
+  offer: {
+    priceNow: "€99",
+    priceWas: "€335",
+    saveLabel: "Save €236 today",
+    includedTitle: "Everything in your Glow Package",
+    included: [
+      "Medical-grade HydraFacial",
+      "LED light therapy",
+      "Dermaplaning",
+      "Carisma Spa day",
+      "In-person skin consultation",
+      "€25 aesthetics credit",
+    ],
+    urgency: "Limited €99 launch slots released each month — by availability only.",
+    guaranteeChip: "Doctor-led · Medical-grade · No downtime",
+    cta: {
+      text: "Claim My €99 Glow",
+      href: "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2800348&share=true&pId=2708191",
+      external: true,
+    },
+  },
+  closing: {
+    heading: "Ready to Claim Your €99 Glow?",
+    sub: "Secure your 4-in-1 HydraFacial Glow Package while launch slots last — doctor-led, medical-grade, zero downtime.",
+    ctaLabel: "Claim My €99 Glow",
+    ctaHref: "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2800348&share=true&pId=2708191",
+  },
 };
 
 export default t;
