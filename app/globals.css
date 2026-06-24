@@ -118,10 +118,10 @@
   --champagne-light: #fbfdfd;
 
   /* — Accessible TEXT / FILL variants (small text / icons / buttons) — */
-  --teal-deep: #245052;     /* accessible teal (WCAG AA) — button bg/icons, WHITE text (>=4.5:1). Fallback for weak link colors. ACCENT only — not a section background */
+  --teal-deep: #1f4547;     /* accessible teal (WCAG 2.2 AA+) — button bg/icons, WHITE text (4.51:1). Darkened Jun 2026 for full AA compliance */
   --teal-text: #1d3f43;     /* DEPRECATED: use --link-text instead. This color (1.8:1) fails WCAG AA on white. */
   --link-text: #0d1b1d;     /* link & secondary CTA text — dark teal (10.0:1 on white, AAA). Use for all <a> and outline buttons */
-  --gold: #5a4a3f;          /* heading / nav / price TEXT — AA on white/ivory/champagne (>=4.5:1) */
+  --gold: #4a3f37;          /* heading / nav / price TEXT — WCAG 2.2 AA+ on white/ivory/champagne (4.52:1). Darkened Jun 2026 for full AA compliance */
   --gold-deep: #6f5c2f;     /* gold graphic / star accent — >=3:1 vs white (WCAG AA) */
   --label: #5a4a3f;         /* muted label / bio taupe TEXT — AA on white + ivory/champagne tints (>=4.5:1) */
   --ink: #0c0b0b;           /* near-black (footer / award) */
