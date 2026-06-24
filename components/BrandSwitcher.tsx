@@ -4,12 +4,12 @@ import { useState, useRef, useEffect } from 'react';
 
 const BRANDS = [
   {
-    color: '#024C27',
+    color: '#8EB093',
     name: 'Slimming',
     url: 'https://www.carismaslimming.com',
   },
   {
-    color: '#6B7B7A',
+    color: '#B8943E',
     name: 'Spa & Wellness',
     url: 'https://www.carismaspa.com',
   },
@@ -87,7 +87,7 @@ export default function BrandSwitcher() {
         <div style={{
           width: 1,
           height: 18,
-          background: 'rgba(36,80,82,0.2)',
+          background: 'rgba(150,178,178,0.4)',
           margin: '0 10px 0 8px',
           borderRadius: 1,
           flexShrink: 0,
@@ -106,7 +106,7 @@ export default function BrandSwitcher() {
             padding: '6px 4px',
             display: 'flex',
             alignItems: 'center',
-            color: '#245052',
+            color: '#96B2B2',
             lineHeight: 1,
           }}
         >
