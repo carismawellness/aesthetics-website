@@ -194,6 +194,32 @@ const t: Treatment = {
       { label: "Platelet-rich plasma", href: "/prp-malta", image: "/assets/treatments/thread-lift-malta-rec-prp.avif" },
     ],
   },
+  offer: {
+    priceNow: "€239",
+    priceWas: "€430",
+    saveLabel: "Save €191 today",
+    includedTitle: "Everything in your Ultimate Facelift Package",
+    included: [
+      "2x medical-grade lifting threads (€300 value)",
+      "Hyaluronic acid glow & hydration serum (€20 value)",
+      "In-person doctor-led consultation (€60 value)",
+      "€25 Aesthetics Credit for you",
+      "€25 Aesthetics Credit for your friend",
+    ],
+    guaranteeChip: "Doctor-led · Non-surgical · Natural-looking results",
+    urgency: "Limited appointment availability — book your consultation today",
+    cta: {
+      text: "Book My Ultimate Facelift Consultation",
+      href: "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2800348&share=true&pId=2708191",
+      external: true,
+    },
+  },
+  closing: {
+    heading: "Ready for Your Ultimate Facelift?",
+    sub: "Full facial rejuvenation — non-surgical, doctor-led, personalised to you. Book your free consultation at Carisma Aesthetics, Malta.",
+    ctaLabel: "Book My Facelift Consultation",
+    ctaHref: "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2800348&share=true&pId=2708191",
+  },
   faqTitle: "FAQs about the Ultimate Facelift in Malta",
   faq: [
     {
