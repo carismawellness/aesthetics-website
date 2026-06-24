@@ -18,6 +18,7 @@ const t: Treatment = {
     note: "* Includes four sessions to be followed over the course of 2 - 4 weeks\n*** Due to high demand, packages are offered based on availability and may not always be guaranteed. Please inquire for current options.",
     cta: "Claim your spot now",
     image: "/assets/treatments/ms-side.png",
+    heroVideo: "/assets/treatments/vid-muscle-stimulation-1.mp4",
   },
 
   // "The secret to a more defined, confident look" section

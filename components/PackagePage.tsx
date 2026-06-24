@@ -102,6 +102,75 @@ function MetricIcon({ metric }: { metric: string }) {
   );
 }
 
+// Compact price anchor block for the hero's left column — shows the offer
+// price (now / was / save badge) plus included items inline, replacing the
+// full-width OfferStack card that used to sit below the hero.
+function PackageOfferInline({ offer }: { offer: NonNullable<Treatment["offer"]> }) {
+  return (
+    <div
+      style={{
+        padding: "16px 20px",
+        borderRadius: "var(--radius-card)",
+        background: "linear-gradient(135deg, rgba(238,243,243,0.65) 0%, rgba(255,255,255,0.85) 100%)",
+        border: "1px solid rgba(150,178,178,0.22)",
+        backdropFilter: "blur(8px)",
+        WebkitBackdropFilter: "blur(8px)",
+      }}
+    >
+      {/* Price row */}
+      <div style={{ display: "flex", alignItems: "baseline", gap: "10px", flexWrap: "wrap", marginBottom: offer.included?.length ? "12px" : 0 }}>
+        <span
+          className="font-serif"
+          style={{ fontSize: "clamp(26px,3.5vw,34px)", color: "var(--teal-deep)", letterSpacing: "0.02em", lineHeight: 1 }}
+        >
+          {offer.priceNow}
+        </span>
+        {offer.priceWas && (
+          <span style={{ fontSize: "17px", color: "var(--muted)", textDecoration: "line-through", lineHeight: 1 }}>
+            {offer.priceWas}
+          </span>
+        )}
+        {offer.saveLabel && (
+          <span
+            className="font-display"
+            style={{
+              background: "var(--teal-deep)",
+              color: "#fff",
+              fontSize: "9.5px",
+              fontWeight: 700,
+              letterSpacing: "0.1em",
+              textTransform: "uppercase",
+              padding: "3px 10px",
+              borderRadius: "9999px",
+            }}
+          >
+            {offer.saveLabel}
+          </span>
+        )}
+      </div>
+      {/* Included list */}
+      {offer.included && offer.included.length > 0 && (
+        <ul style={{ margin: 0, padding: 0, listStyle: "none", display: "flex", flexDirection: "column", gap: "5px" }}>
+          {offer.included.map((item) => (
+            <li key={item} style={{ display: "flex", alignItems: "flex-start", gap: "7px" }}>
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true" style={{ flexShrink: 0, marginTop: "2px" }}>
+                <circle cx="7" cy="7" r="6.5" stroke="var(--teal-deep)" strokeWidth="1"/>
+                <path d="M4 7l2 2 4-4" stroke="var(--teal-deep)" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+              <span style={{ fontSize: "12.5px", color: "var(--label)", lineHeight: 1.5 }}>{item}</span>
+            </li>
+          ))}
+        </ul>
+      )}
+      {offer.guaranteeChip && (
+        <p style={{ fontSize: "11px", color: "var(--muted)", marginTop: "10px", letterSpacing: "0.04em" }}>
+          {offer.guaranteeChip}
+        </p>
+      )}
+    </div>
+  );
+}
+
 // Compact horizontal treatment-info strip — the same metric language as the old
 // vertical card, but a single tidy row (icon → metric → detail) shown at the
 // bottom of the hero's LEFT column (under the reviews) so the RIGHT column stays
@@ -189,7 +258,10 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
           t.hero.note ??
           (t.pending ? "Detailed treatment information for this page is being finalised." : undefined)
         }
-        belowContent={t.info && t.info.length > 0 ? <InfoStrip info={t.info} /> : undefined}
+        belowContent={
+          t.offer ? <PackageOfferInline offer={t.offer} /> :
+          t.info && t.info.length > 0 ? <InfoStrip info={t.info} /> : undefined
+        }
         media={
           t.hero.heroVideo
             ? {
@@ -219,9 +291,6 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
           awardText: "#1 Voted Clinic\nMalta Healthcare Awards",
         }}
       />
-
-      {/* ── Offer / price-anchor (package pages only) ── */}
-      {t.offer && <OfferStack offer={t.offer} />}
 
       {/* ── Before / After carousel — sits immediately under the above-the-fold
              hero (which now carries the body copy + TREATMENT INFO card),
