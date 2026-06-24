@@ -60,6 +60,9 @@ const GLASS: React.CSSProperties = {
 
 export default function StickyBookingBar() {
   const pathname = usePathname();
+  // Don't show on home page — hero has its own prominent CTAs
+  if (pathname === "/") return null;
+
   const cfg = pathname ? CONFIG[pathname] : undefined;
 
   // Only show after the user scrolls past the hero (≈ one viewport height).
