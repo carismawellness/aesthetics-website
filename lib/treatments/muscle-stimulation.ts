@@ -173,9 +173,9 @@ const t: Treatment = {
   recommended: {
     title: "Treatments That Work Well Together",
     items: [
-      { label: "Fat Freezing", href: "/fat-freezing", image: "/assets/treatments/fat-freezing-hero.jpg" },
-      { label: "Skin Tightening", href: "/skin-tightening-1", image: "/assets/treatments/skin-tightening-hero.jpg" },
-      { label: "Anti-Cellulite", href: "/anti-cellulite", image: "/assets/treatments/anti-cellulite-hero.jpg" },
+      { label: "Fat Freezing", href: "/fat-freezing", image: "/assets/treatments/ff-secret.png" },
+      { label: "Skin Tightening", href: "/skin-tightening", image: "/assets/treatments/skin-tightening-hero-poster.png" },
+      { label: "Anti-Cellulite", href: "/anti-cellulite", image: "/assets/treatments/ac-secret.png" },
     ],
   },
 
@@ -188,7 +188,7 @@ const t: Treatment = {
           "Uses a combination of high-intensity focused electromagnetic (HIFEM) energy and radiofrequency (RF) heating to simultaneously stimulate powerful muscle contractions and heat fat cells. This dual action helps build muscle, reduce fat thickness, and improve skin firmness in targeted areas without surgery or downtime.",
         keyResults:
           "Clinical studies on combined HIFEM + RF treatments have shown an average reduction of around 29–30% in subcutaneous fat thickness and approximately 25% increase in muscle thickness in the treated area, measured by imaging techniques such as MRI and ultrasound, with high patient satisfaction and no serious adverse effects reported. Aesthetic Surgery Journal Clinical Studies Research also indicates improvements in abdominal firmness and waist circumference reduction after a series of sessions, with results continuing to improve over several weeks as the body metabolizes affected fat cells and muscle fibers adapt to repeated supramaximal contractions. Peer-Reviewed Body Contouring Studies",
-        image: "/assets/treatments/ms-evidence-1.jpg",
+        image: "/assets/treatments/ms-research1.jpg",
       },
       {
         tag: "STRONG EVIDENCE",
@@ -197,7 +197,7 @@ const t: Treatment = {
           "Uses high-intensity focused electromagnetic (HIFEM) energy to trigger thousands of powerful supramaximal muscle contractions, while synchronized radiofrequency (RF) heating raises fat cell temperature. This combination supports muscle growth and strength while helping reduce fat thickness and improve skin firmness in treated areas.",
         keyResults:
           "Clinical imaging studies have reported average increases of around 16–25% in muscle thickness and reductions of approximately 19–30% in subcutaneous fat thickness following a series of treatments, with improvements measured using MRI, CT, or ultrasound. Aesthetic Surgery Journal Studies Participants commonly reported improved abdominal tone and firmness, with visible contour changes developing over several weeks as muscle fibers adapt and the body processes affected fat cells. Peer-Reviewed Body Contouring Research",
-        image: "/assets/treatments/ms-evidence-2.jpg",
+        image: "/assets/treatments/ms-research2.jpg",
       },
       {
         tag: "MODERATE–STRONG EVIDENCE",
@@ -206,7 +206,7 @@ const t: Treatment = {
           "Delivers controlled radiofrequency (RF) energy to gently heat the deeper layers of the skin. This thermal stimulation supports collagen remodeling and tissue tightening, helping improve skin firmness and texture in areas affected by mild laxity.",
         keyResults:
           "Clinical studies on RF-based body treatments show improvements in skin tightness and elasticity, with many patients experiencing visible firming and smoother skin texture over a series of sessions. Dermatologic Surgery & Aesthetic Medicine Studies Histological research suggests RF heating can stimulate collagen remodeling, contributing to gradual tightening effects that continue to develop in the weeks following treatment. Peer-Reviewed RF Research",
-        image: "/assets/treatments/ms-evidence-3.jpg",
+        image: "/assets/treatments/ms-research3.jpg",
       },
       {
         tag: "EMERGING EVIDENCE",
@@ -215,7 +215,7 @@ const t: Treatment = {
           "Applies controlled heat to fat tissue, raising the temperature of fat cells to levels that can stress their structure. Over time, the body naturally processes and clears some of these affected fat cells, contributing to gradual reduction in localized fat thickness.",
         keyResults:
           "Studies on thermal-based body contouring technologies have shown measurable reductions in subcutaneous fat thickness in treated areas, typically observed several weeks after treatment as the body metabolizes affected cells. Aesthetic Device Clinical Research Reported side effects are generally mild and temporary, such as warmth, redness, or tenderness in the treated area, with most patients returning to normal activity immediately. Clinical Safety Reviews",
-        image: "/assets/treatments/ms-evidence-4.jpg",
+        image: "/assets/treatments/ms-research4.jpg",
       },
     ],
   },

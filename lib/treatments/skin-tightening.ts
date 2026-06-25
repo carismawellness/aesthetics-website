@@ -197,9 +197,9 @@ const t: Treatment = {
   recommended: {
     title: "Treatments That Work Well Together",
     items: [
-      { label: "Anti-Cellulite", href: "/anti-cellulite", image: "/assets/treatments/anti-cellulite-hero.jpg" },
-      { label: "Fat Freezing", href: "/fat-freezing", image: "/assets/treatments/fat-freezing-hero.jpg" },
-      { label: "Muscle Stimulation", href: "/muscle-stimulation-1", image: "/assets/treatments/muscle-stimulation-hero.jpg" },
+      { label: "Anti-Cellulite", href: "/anti-cellulite", image: "/assets/treatments/ac-secret.png" },
+      { label: "Fat Freezing", href: "/fat-freezing", image: "/assets/treatments/ff-secret.png" },
+      { label: "Muscle Stimulation", href: "/muscle-stimulation", image: "/assets/treatments/ms-side.png" },
     ],
   },
   evidence: {
