@@ -14,7 +14,7 @@ const t: Treatment = {
     ],
     cta: "book your fat dissolving session now",
     bookHref: "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2800348&oiid=sv%3A25753622&share=true&pId=2708191",
-    image: "/assets/treatments/fat-dissolving-hero.jpg",
+    image: "/fat-dissolving-hero-aqualyx.jpg",
     productTabs: ["/assets/treatments/fd-logo-aqualyx.png", "/assets/treatments/fd-logo-lemon-bottle.png"],
     heroForm: true,
   },
