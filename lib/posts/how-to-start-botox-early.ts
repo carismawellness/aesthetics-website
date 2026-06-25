@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "how-to-start-botox-early",
   "title": "How to Start Botox Early: Preventive Anti-Aging Tips",
-  "metaTitle": "How to Start Botox Early: Preventive Anti-Aging Tips",
-  "metaDescription": "Expert guide to how to start botox early. Learn about treatments and tips from Carisma Aesthetics in Malta.",
+  "metaTitle": "Botox Early in Malta: Complete Guide | Carisma",
+  "metaDescription": "Start botox early in Malta for preventive anti-aging benefits. Expert guidance and treatment options available. Book free consultation today.",
   "category": "Injectables",
   "publishDate": "2026-06-25",
   "readTime": 5,
