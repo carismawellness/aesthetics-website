@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "how-to-treat-acne",
   "title": "How To Treat Acne",
-  "metaTitle": "How To Treat Acne | Carisma Aesthetics Malta",
-  "metaDescription": "Expert guide on how to treat acne at Carisma Aesthetics Malta.",
+  "metaTitle": "Treat Acne in Malta: Complete Guide | Carisma",
+  "metaDescription": "Treat acne in Malta with professional solutions. Learn effective treatments & skin-clearing benefits. Book free consultation today.",
   "category": "Skincare",
   "publishDate": "2026-06-25",
   "readTime": 5,

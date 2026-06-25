@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "how-to-treat-dry-skin",
   "title": "How to Treat Dry Skin: Complete Guide to Relief and Recovery",
-  "metaTitle": "How to Treat Dry Skin | Carisma Aesthetics Malta",
-  "metaDescription": "Complete guide to treating dry skin with expert skincare tips and professional treatments. Restore comfort and radiance to your skin.",
+  "metaTitle": "Treat Dry Skin in Malta: Complete Guide | Carisma",
+  "metaDescription": "Treat dry skin in Malta with proven hydration treatments. Restore moisture, comfort & glow. Book your free consultation.",
   "category": "Skincare",
   "publishDate": "2026-06-25",
   "readTime": 1,

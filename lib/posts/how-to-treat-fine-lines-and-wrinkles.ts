@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "how-to-treat-fine-lines-and-wrinkles",
   "title": "How to Treat Fine Lines and Wrinkles: Prevention and Solutions",
-  "metaTitle": "How to Treat Fine Lines and Wrinkles | Carisma Aesthetics Malta",
-  "metaDescription": "Learn effective ways to treat fine lines and wrinkles with prevention strategies and professional aesthetic treatments.",
+  "metaTitle": "Treat Fine Lines in Malta: Complete Guide | Carisma",
+  "metaDescription": "Treat fine lines & wrinkles in Malta with professional solutions. Reduce signs of aging & restore youthful skin. Free consultation.",
   "category": "Anti-Aging",
   "publishDate": "2026-06-25",
   "readTime": 1,

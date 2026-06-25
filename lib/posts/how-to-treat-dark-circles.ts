@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "how-to-treat-dark-circles",
   "title": "How To Treat Dark Circles",
-  "metaTitle": "How To Treat Dark Circles | Carisma Aesthetics Malta",
-  "metaDescription": "Expert guide on how to treat dark circles at Carisma Aesthetics Malta.",
+  "metaTitle": "Treat Dark Circles in Malta: Complete Guide | Carisma",
+  "metaDescription": "Treat dark circles in Malta with expert solutions. Brighten eyes & reduce fatigue look. Book your free consultation now.",
   "category": "Eye Treatments",
   "publishDate": "2026-06-25",
   "readTime": 5,

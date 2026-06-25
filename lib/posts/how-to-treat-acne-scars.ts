@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "how-to-treat-acne-scars",
   "title": "How To Treat Acne Scars",
-  "metaTitle": "How To Treat Acne Scars | Carisma Aesthetics Malta",
-  "metaDescription": "Expert guide on how to treat acne scars at Carisma Aesthetics Malta.",
+  "metaTitle": "Treat Acne Scars in Malta: Complete Guide | Carisma",
+  "metaDescription": "Treat acne scars in Malta with proven aesthetic treatments. Restore smooth, clear skin. Book free consultation with experts.",
   "category": "Skincare",
   "publishDate": "2026-06-25",
   "readTime": 5,
