@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "improving-skin-hydration",
   "title": "Improving Skin Hydration: Treatments and Routines for Plump, Supple Skin",
-  "metaTitle": "Improve Skin Hydration Malta — Professional Treatments",
-  "metaDescription": "Dehydrated skin looks tired and ages faster. Professional hydrating treatments and expert skincare routines at Carisma Aesthetics restore moisture.",
+  "metaTitle": "Skin Hydration Malta: Facials & Treatments | Carisma",
+  "metaDescription": "Restore skin moisture with professional hydrating treatments at Carisma Aesthetics. Plump, supple skin starts with expert care. Book now.",
   "category": "Skincare",
   "publishDate": "2026-06-08",
   "readTime": 5,
@@ -18,7 +18,7 @@ export const post: BlogPost = {
     {
         "type": "heading",
         "level": 2,
-        "text": "Understanding the Concern"
+        "text": "Skin Hydration Malta: Facials & Treatments"
     },
     {
         "type": "paragraph",
@@ -48,5 +48,16 @@ export const post: BlogPost = {
         "href": "/contact"
     }
 ],
-  "internalLinks": []
+  "internalLinks": [
+    {
+      "anchorText": "HydraFacial",
+      "href": "/hydrafacial-for-aging-skin",
+      "context": "Advanced hydrating facial treatment"
+    },
+    {
+      "anchorText": "professional skincare",
+      "href": "/face-treatments/anti-aging",
+      "context": "Expert anti-aging facial treatments in Malta"
+    }
+  ]
 };

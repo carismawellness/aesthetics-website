@@ -3,13 +3,25 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "identifying-signs-of-skin-aging",
   "title": "Identifying Signs of Skin Aging: What to Look for and When to Act",
-  "metaTitle": "Signs of Skin Aging — Early Detection and Prevention",
-  "metaDescription": "Learn to recognize the early signs of skin aging: fine lines, loss of elasticity, dark spots, and more. Discover preventative treatments at Carisma Aesthetics Malta.",
+  "metaTitle": "Skin Aging Signs Malta: Early Detection | Carisma",
+  "metaDescription": "Recognize early skin aging signs: fine lines, loss of elasticity, spots. Start preventative treatments in Malta. Book your consultation now.",
   "category": "Anti-Aging",
   "publishDate": "2026-06-25",
   "readTime": 7,
   "coverImage": "https://static.wixstatic.com/media/aesthetics-skin-aging.jpg",
   "excerpt": "Skin aging is a natural process, but recognizing early signs helps you act quickly. Fine lines, loss of elasticity, and uneven texture are your skin's way of asking for support...",
+  "internalLinks": [
+    {
+      "anchorText": "HydraFacial treatments",
+      "href": "/hydrafacial-for-aging-skin",
+      "context": "Professional hydrating facials that combat aging signs"
+    },
+    {
+      "anchorText": "dermal fillers",
+      "href": "/dermal-fillers-malta",
+      "context": "Volume restoration and anti-aging solution"
+    }
+  ],
   "content": [
     {
       "type": "paragraph",
@@ -17,8 +29,8 @@ export const post: BlogPost = {
     },
     {
       "type": "heading",
-      "level": 3,
-      "text": "Fine Lines and Wrinkles",
+      "level": 2,
+      "text": "Skin Aging Signs Malta: Early Detection"
     },
     {
       "type": "paragraph",
@@ -83,6 +95,5 @@ export const post: BlogPost = {
       "label": "Book Your Consultation",
       "href": "/contact",
     },
-  ],
-  "internalLinks": []
+  ]
 };

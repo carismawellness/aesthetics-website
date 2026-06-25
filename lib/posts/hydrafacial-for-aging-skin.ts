@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "hydrafacial-for-aging-skin",
   "title": "HydraFacial for Aging Skin: Reveal Your Youthful Glow",
-  "metaTitle": "HydraFacial Anti-Aging Benefits | Fine Lines & Wrinkles | Carisma Aesthetics Malta",
-  "metaDescription": "Discover how HydraFacial targets fine lines, wrinkles, loss of firmness, and dull skin tone. Learn why it's the anti-aging treatment women 40+ love.",
+  "metaTitle": "HydraFacial Malta: Anti-Aging | Carisma Aesthetics",
+  "metaDescription": "HydraFacial in Malta targets fine lines, wrinkles, and aging skin. Reveal youthful glow with proven anti-aging results. Book your consultation today.",
   "category": "Anti-Aging",
   "publishDate": "2026-06-25",
   "readTime": 6,
@@ -15,6 +15,16 @@ export const post: BlogPost = {
       "anchorText": "Anti-aging facials",
       "href": "/face-treatments/anti-aging",
       "context": "Professional anti-aging treatments at Carisma Aesthetics"
+    },
+    {
+      "anchorText": "RF microneedling",
+      "href": "/wrinkle-relaxing-malta",
+      "context": "Advanced collagen-stimulating treatment"
+    },
+    {
+      "anchorText": "injectables",
+      "href": "/dermal-fillers-malta",
+      "context": "Botox and filler treatments for fine lines"
     }
   ],
   "content": [
@@ -25,7 +35,7 @@ export const post: BlogPost = {
     {
       "type": "heading",
       "level": 2,
-      "text": "Why Aging Skin Needs HydraFacial"
+      "text": "HydraFacial Malta: Anti-Aging"
     },
     {
       "type": "paragraph",
