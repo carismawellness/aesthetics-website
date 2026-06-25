@@ -33,7 +33,7 @@ const SLUG_SEO: Record<string, { title: string; description: string }> = {
       "Safe and effective Pico laser tattoo removal in Malta. Advanced picosecond technology fades tattoos of all colours with minimal discomfort. All skin types. Free consultation.",
   },
   "pico-laser-pigmentation-treatment": {
-    title: "Pico Laser Pigmentation Treatment Malta | #1 Award Winning Clinic | Carisma Aesthetics",
+    title: "Laser Pigmentation Removal Treatment Malta | #1 Award Winning Clinic | Carisma Aesthetics",
     description:
       "Pico laser pigmentation treatment in Malta. Targets sun spots, melasma, age spots and uneven skin tone with precision. Minimal downtime. Free consultation.",
   },

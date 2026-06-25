@@ -158,7 +158,7 @@ export const SEARCH_INDEX: SearchEntry[] = [
     keywords: ['tattoo removal', 'pico laser', 'pico', 'remove tattoo', 'laser tattoo', 'ink removal'],
   },
   {
-    title: 'Pico Laser Pigmentation',
+    title: 'Laser Pigmentation Removal',
     url: '/pico-laser-pigmentation-treatment',
     description: 'Pico laser treatment for pigmentation and dark spots.',
     keywords: ['pigmentation', 'pico laser pigmentation', 'dark spots', 'sun spots', 'melasma', 'hyperpigmentation', 'pico'],

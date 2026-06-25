@@ -7,7 +7,7 @@ const t: Treatment = {
   slug: "pico-laser-pigmentation-treatment",
   category: "Body",
   hero: {
-    title: "Pico Laser Pigmentation Treatment in Malta",
+    title: "Laser Pigmentation Removal Treatment in Malta",
     subtitle: "Sun spots, age spots, melasma, or uneven tone holding you back?",
     body: "Advanced Pico laser technology to visibly reduce unwanted pigmentation and restore a clearer, brighter, more even-looking complexion. Ultra-short laser pulses target excess pigment beneath the skin, helping break it into tiny particles so your body can naturally clear it over time. Every skin concern is different, so your treatment plan is personalised based on your pigmentation type, depth, skin tone, and goals, performed by medically qualified specialists at our St Julian's clinic in Malta.",
     prices: [
@@ -123,7 +123,7 @@ const t: Treatment = {
   },
   trusted: {
     title: "Malta's trusted clinic for pigmentation",
-    subtitle: "Advanced Pico Laser Pigmentation Care in Malta",
+    subtitle: "Advanced Laser Pigmentation Removal Care in Malta",
     asSeenOn: [
       "/assets/press/lovin-malta.jpeg",
       "/assets/press/malta-daily.png",
@@ -142,7 +142,7 @@ const t: Treatment = {
   },
   planSummary: {
     kicker: "Your pigmentation plan",
-    title: "Malta's Doctor-Led Pico Laser Pigmentation Plan",
+    title: "Malta's Doctor-Led Laser Pigmentation Removal Plan",
     benefits: [
       { icon: "target", title: "Precise Pigment Targeting", desc: "Ultra-short Pico pulses break down excess pigment beneath the skin so your body can clear it gradually." },
       { icon: "sparkle", title: "Clearer, More Even Tone", desc: "We fade sun spots, age spots, and post-acne marks for brighter, more balanced-looking skin — never forced." },
@@ -161,7 +161,7 @@ const t: Treatment = {
     reviews: "500+ verified reviews",
   },
   recommended: {
-    title: "Recommended with Pico Laser Pigmentation",
+    title: "Recommended with Laser Pigmentation Removal",
     items: [
       { label: "Chemical peels", href: "/chemical-peels-malta", image: `${A}/chemical-peels-malta-hero.png` },
       { label: "Mesotherapy", href: "/mesotherapy-malta", image: `${A}/mesotherapy-malta-hero.png` },
@@ -169,7 +169,7 @@ const t: Treatment = {
       { label: "Hydrafacial", href: "/hydrafacial", image: `${A}/hydrafacial-hero.jpg` },
     ],
   },
-  faqTitle: "FAQs about Pico Laser Pigmentation in Malta",
+  faqTitle: "FAQs about Laser Pigmentation Removal in Malta",
   faq: [
     { q: "What is Pico Laser pigmentation treatment?", a: "Pico Laser treatment uses ultra-short laser pulses to target unwanted pigment beneath the skin. The pigment is broken into smaller particles, which the body can gradually clear over time, helping the skin look clearer, brighter, and more even." },
     { q: "What pigmentation concerns can it treat?", a: "It may help improve the appearance of sun spots, freckles, age spots, post-inflammatory pigmentation (PIH), uneven skin tone, and selected types of melasma. Suitability is confirmed during consultation based on your skin type, pigmentation depth, and treatment area." },

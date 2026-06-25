@@ -33,7 +33,7 @@ export const FACE_LINKS: NavLink[] = [
 export const BODY_LINKS: NavLink[] = [
   { label: "Laser Hair Removal", href: "/laser-hair-removal-malta" },
   { label: "Pico Laser Tattoo Removal", href: "/pico-laser-tattoo-removal" },
-  { label: "Pico Laser Pigmentation", href: "/pico-laser-pigmentation-treatment" },
+  { label: "Laser Pigmentation Removal", href: "/pico-laser-pigmentation-treatment" },
   { label: "Medical Weight-Loss", href: "/medical-weight-loss" },
   { label: "Fat Freezing", href: "/fat-freezing" },
   { label: "Muscle Stimulation", href: "/muscle-stimulation" },
