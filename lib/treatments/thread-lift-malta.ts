@@ -12,6 +12,7 @@ const t: Treatment = {
       { label: "Semi-permanent", price: "from €2100 (not PDO thread)" },
     ],
     cta: "BOOK YOUR THREAD LIFT SESSION NOW",
+    bookHref: "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2800348&oiid=sv%3A25753677&share=true&pId=2708191",
     image: "/assets/treatments/thread-lift-malta-hero.avif",
     productTabs: ["/assets/treatments/thread-lift-malta-logo-springthread.png"],
     heroForm: true,
