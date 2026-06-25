@@ -35,7 +35,7 @@ const BRANDS = [
   },
   {
     title: 'Carisma Slimming',
-    img: '/wix/brand-slimming.webp',
+    img: '/wix/brand-slimming-clean.webp',
     logo: '/wix/brand-slimming-logo.png',
     cta: 'Discover Slimming',
     href: 'https://www.carismaslimming.com',
