@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "bridal-glow-must-have-aesthetic-treatments-for-the-perfect-wedding-day-look",
   "title": "Bridal Glow: Must-Have Aesthetic Treatments for the Perfect Wedding Day Look",
-  "metaTitle": "Bridal Glow Aesthetic Treatments | Plan Your Wedding Day Look",
-  "metaDescription": "Get that radiant bridal glow with our must-have aesthetic treatments. Perfect skin for your wedding day starts here. Book your treatment today.",
+  "metaTitle": "Bridal Skin Treatments Malta | Wedding Day Glow Guide",
+  "metaDescription": "Achieve flawless bridal glow with must-have aesthetic treatments. Expert skin prep for your wedding day in Malta. Consult now.",
   "category": "Bridal",
   "publishDate": "2025-08-26",
   "readTime": 4,

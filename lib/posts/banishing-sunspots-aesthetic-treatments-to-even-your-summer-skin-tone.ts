@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "banishing-sunspots-aesthetic-treatments-to-even-your-summer-skin-tone",
   "title": "Banishing Sunspots: Aesthetic Treatments to Even Your Summer Skin Tone",
-  "metaTitle": "Sunspot Removal Treatments | Even Your Skin Tone",
-  "metaDescription": "Say goodbye to sunspots with our proven aesthetic treatments. Even your skin tone and restore your natural radiance.",
+  "metaTitle": "Sunspot Removal Malta | Laser & Aesthetic Treatments",
+  "metaDescription": "Remove sunspots & age spots with laser therapy and peels. Even your skin tone this summer. Book a consultation in Malta.",
   "category": "Skincare",
   "publishDate": "2025-08-20",
   "readTime": 4,

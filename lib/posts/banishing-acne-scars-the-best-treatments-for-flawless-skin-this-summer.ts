@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "banishing-acne-scars-the-best-treatments-for-flawless-skin-this-summer",
   "title": "Banishing Acne Scars: The Best Treatments for Flawless Skin This Summer",
-  "metaTitle": "Acne Scar Treatment Malta: Complete Guide | Carisma",
-  "metaDescription": "Acne scar treatment in Malta: benefits, cost & expert advice. Book free consultation with Carisma Aesthetics.",
+  "metaTitle": "Best Acne Scar Treatments Malta | Expert Results",
+  "metaDescription": "Remove acne scars with proven treatments: microneedling, laser resurfacing & more. Expert care in Malta. Free consultation.",
   "category": "Skincare",
   "publishDate": "2025-06-29",
   "readTime": 4,
