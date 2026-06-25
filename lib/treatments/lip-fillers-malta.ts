@@ -14,6 +14,7 @@ const t: Treatment = {
     body: "Get plump and luscious lips with our expert lip fillers in Malta. Say goodbye to thin lips and hello to the perfect pout.",
     prices: [{ label: "1ml", price: "from €219/ml" }],
     cta: "BOOK YOUR SESSION NOW",
+    bookHref: "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2800348&oiid=sv%3A25753795&share=true&pId=2708191",
     image: "/assets/treatments/lip-fillers-malta-hero.png",
     brandLogos: ["/assets/treatments/lip-fillers-malta-logo-teoxane.png", "/assets/treatments/lip-fillers-malta-logo-juvederm.png", "/assets/treatments/lip-fillers-malta-logo-croma.png"],
     imageRatio: "2494 / 1988",
