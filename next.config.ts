@@ -138,8 +138,19 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
-      // Legacy Wix blog: ~404 /post/* URLs (new slugs differ entirely) → blog index.
-      { source: "/post/:slug*", destination: "/blog", permanent: true },
+      // Canonicalise the public Vercel preview alias → production domain so the
+      // raw aesthetics-pied.vercel.app host can't get indexed and compete with
+      // www.carismaaesthetics.com (duplicate content). Only the production alias
+      // host matches — the canonical domain's own requests never loop.
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "aesthetics-pied.vercel.app" }],
+        destination: "https://www.carismaaesthetics.com/:path*",
+        permanent: true,
+      },
+      // Legacy Wix blog: the ~405 /post/* URLs are now served natively (ported from
+      // Wix into lib/posts → app/post/[slug]) at their ORIGINAL URLs for SEO
+      // continuity, so they are intentionally NOT redirected here.
       // Legacy Wix store: ~101 /product-page/* URLs (no storefront on new site) → home.
       { source: "/product-page/:slug*", destination: "/", permanent: true },
       ...legacyRedirects.map((r) => ({ ...r, permanent: true })),
