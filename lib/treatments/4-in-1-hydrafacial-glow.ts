@@ -22,6 +22,7 @@ const t: Treatment = {
       { label: "Total Value: €335 – Today", price: "€99 Only" },
     ],
     cta: "CLAIM MY SPOT NOW",
+    bookHref: "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2800348&oiid=sv%3A25781423&share=true&pId=2708191",
     note: "Due to high demand, packages are offered based on availability and may not always be guaranteed. Please inquire for current options.",
   },
   info: [
