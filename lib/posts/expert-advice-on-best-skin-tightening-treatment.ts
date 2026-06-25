@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "expert-advice-on-best-skin-tightening-treatment",
   "title": "Expert Advice On Best Skin Tightening Treatment",
-  "metaTitle": "Expert Advice On Best Skin Tightening Treatment — Carisma Aesthetics",
-  "metaDescription": "Discover expert advice on expert advice on best skin tightening treatment at Carisma Aesthetics Malta. Learn about treatments and skincare tips.",
+  "metaTitle": "Best Skin Tightening Treatments in Malta | Carisma",
+  "metaDescription": "Non-surgical skin tightening in Malta: HIFU, radiofrequency & more. Expert treatments for firmer, lifted skin. Book consultation today.",
   "category": "Procedures",
   "publishDate": "2026-06-25",
   "readTime": 5,

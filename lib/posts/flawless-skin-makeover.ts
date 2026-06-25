@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "flawless-skin-makeover",
   "title": "Flawless Skin Makeover: Professional Treatments",
-  "metaTitle": "Flawless Skin Makeover Malta: Guide | Carisma Aesthetics",
-  "metaDescription": "Flawless skin makeover in Malta: benefits, cost & expert advice. Book free consultation with Carisma Aesthetics.",
+  "metaTitle": "Professional Flawless Skin Makeover Treatments in Malta",
+  "metaDescription": "Transform your skin with professional flawless skin makeover treatments. Expert skincare solutions at Carisma Aesthetics. Schedule your free consultation.",
   "category": "Skincare",
   "publishDate": "2026-06-25",
   "readTime": 5,

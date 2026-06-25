@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "injectables-for-lip-enhancement",
   "title": "Lip Enhancement with Fillers: The Art of Natural-Looking Fuller Lips",
-  "metaTitle": "Lip Enhancement Malta: Complete Guide | Carisma",
-  "metaDescription": "Lip enhancement in Malta: achieve fuller lips with dermal fillers. Learn benefits, cost & expert advice. Book free consultation with Carisma.",
+  "metaTitle": "Lip Fillers Malta — Natural Enhancement | Carisma Aesthetics",
+  "metaDescription": "Natural-looking lip fillers in Malta. Add volume, define borders & enhance shape. €350–€600, results last 6–12 months. Expert injections.",
   "category": "Injectables",
   "publishDate": "2026-06-25",
   "readTime": 5,

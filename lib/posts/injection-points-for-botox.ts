@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "injection-points-for-botox",
   "title": "Injection Points for Botox: Complete Guide to Treatment Areas",
-  "metaTitle": "Botox Injection Points Malta: Treatment Guide",
-  "metaDescription": "Botox injection points in Malta: forehead, crow's feet, frown lines & more. Precise placement for natural results. Book consultation.",
+  "metaTitle": "Botox Injection Points Malta | Forehead, Eyes & Frown Lines",
+  "metaDescription": "Discover all Botox injection points: forehead lines, crow's feet, frown lines, bunny lines & more. Precise placement for natural facial enhancement.",
   "category": "Injectables",
   "publishDate": "2026-06-25",
   "readTime": 6,

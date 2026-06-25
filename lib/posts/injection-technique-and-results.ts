@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "injection-technique-and-results",
   "title": "Injection Technique and Results: What to Expect from Your Aesthetic Treatment",
-  "metaTitle": "Botox & Filler Injection Technique Malta: Results",
-  "metaDescription": "Injection technique for Botox & fillers in Malta: results timeline, aftercare, and natural-looking outcomes. Book consultation.",
+  "metaTitle": "Injection Technique & Results Timeline | Botox & Fillers Malta",
+  "metaDescription": "Botox & filler results timeline: when you'll see changes, duration & expectations. Expert injection techniques for natural-looking outcomes.",
   "category": "Injectables",
   "publishDate": "2026-06-25",
   "readTime": 8,

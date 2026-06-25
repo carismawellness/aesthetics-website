@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "injectables-for-men",
   "title": "Injectables for Men: Why More Men Are Choosing Botox and Fillers",
-  "metaTitle": "Injectables for Men in Malta: Complete Guide",
-  "metaDescription": "Injectables for men in Malta: maintain masculine features with Botox & fillers. Learn treatments, costs, practitioners. Book free consultation.",
+  "metaTitle": "Botox & Fillers for Men | Malta Guide | Carisma Aesthetics",
+  "metaDescription": "Injectables for men in Malta: Botox, fillers & jaw definition that preserve masculine features. Costs €200–€500. Expert male practitioners.",
   "category": "Injectables",
   "publishDate": "2026-06-25",
   "readTime": 5,

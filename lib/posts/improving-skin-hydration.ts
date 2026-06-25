@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "improving-skin-hydration",
   "title": "Improving Skin Hydration: Treatments and Routines for Plump, Supple Skin",
-  "metaTitle": "Skin Hydration Malta: Complete Guide | Carisma",
-  "metaDescription": "Improve skin hydration in Malta with professional facials and treatments. Restore moisture, glow & elasticity. Book free consultation.",
+  "metaTitle": "Improve Skin Hydration: Professional Treatments & Tips",
+  "metaDescription": "Restore plump, supple skin with hydration treatments. Learn proven methods to improve skin hydration and achieve lasting glow.",
   "category": "Skincare",
   "publishDate": "2026-06-08",
   "readTime": 5,

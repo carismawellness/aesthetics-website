@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "choosing-the-right-facial-treatment",
   "title": "Choosing the Right Facial Treatment for Your Skin Type",
-  "metaTitle": "Choosing the Right Facial Treatment for Your Skin Type",
-  "metaDescription": "Find the perfect facial treatment for your unique skin type. Learn about options like hydrating facials, chemical peels, and microneedling in Malta.",
+  "metaTitle": "Facial Treatments for Your Skin Type | Malta Guide",
+  "metaDescription": "Choose the perfect facial: hydrating, chemical peels, microneedling & more. Expert guide tailored to your skin type in Malta.",
   "category": "Skincare",
   "readTime": 6,
   "publishDate": "2026-06-25",

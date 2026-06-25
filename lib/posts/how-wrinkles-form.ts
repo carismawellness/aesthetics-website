@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "how-wrinkles-form",
   "title": "How Wrinkles Form: The Science Behind Aging Skin",
-  "metaTitle": "What Causes Wrinkles — Science of Skin Aging",
-  "metaDescription": "Understand how wrinkles form at a cellular level and learn evidence-based prevention and treatment options.",
+  "metaTitle": "How Wrinkles Form: Causes, Prevention & Treatment",
+  "metaDescription": "How wrinkles form: collagen loss, sun damage & facial expressions. Learn prevention strategies and proven anti-aging treatments.",
   "category": "Anti-Aging",
   "publishDate": "2026-06-25",
   "readTime": 5,

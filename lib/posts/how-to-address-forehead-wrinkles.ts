@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "how-to-address-forehead-wrinkles",
   "title": "How to Address Forehead Wrinkles: Treatments and Prevention",
-  "metaTitle": "How to Address Forehead Wrinkles | Carisma Aesthetics Malta",
-  "metaDescription": "Discover effective treatments for forehead wrinkles at Carisma Aesthetics. From anti-aging skincare to professional treatments like botox and injectables.",
+  "metaTitle": "Forehead Wrinkles: Treatments & Prevention | Malta",
+  "metaDescription": "Smooth forehead wrinkles with proven treatments: botox, injectables, skincare. Expert care at Carisma Aesthetics Malta. Book your consultation today.",
   "category": "Anti-Aging",
   "publishDate": "2026-01-15",
   "readTime": 1,

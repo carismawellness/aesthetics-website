@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "hydra-facial-vs-traditional-facials",
   "title": "HydraFacial vs Traditional Facials: Which is Best?",
-  "metaTitle": "HydraFacial vs Facials Malta: Complete Guide | Carisma",
-  "metaDescription": "HydraFacial vs traditional facials in Malta: benefits, cost & expert advice. Book free consultation with Carisma Aesthetics.",
+  "metaTitle": "HydraFacial vs Traditional Facials Malta | Which is Best?",
+  "metaDescription": "Compare HydraFacial vs traditional facials: benefits, results & costs. Expert guide to choosing the right facial treatment in Malta.",
   "category": "Procedures",
   "publishDate": "2026-06-25",
   "readTime": 5,

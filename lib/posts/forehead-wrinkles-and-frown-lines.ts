@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "forehead-wrinkles-and-frown-lines",
   "title": "Forehead Wrinkles and Frown Lines: Treatments",
-  "metaTitle": "Forehead Wrinkles & Frown Lines Malta: Guide | Carisma",
-  "metaDescription": "Forehead wrinkles and frown lines in Malta: benefits, cost & expert advice. Book free consultation with Carisma Aesthetics.",
+  "metaTitle": "Forehead Wrinkles & Frown Lines: Effective Treatment Solutions",
+  "metaDescription": "Smooth forehead wrinkles and frown lines with proven aesthetic treatments. Expert care at Carisma Aesthetics Malta. Get your free consultation.",
   "category": "Anti-Aging",
   "publishDate": "2026-06-25",
   "readTime": 5,

@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "hair-removal-and-skin-care",
   "title": "Hair Removal and Skincare: Why You Can't Just Pluck and Pray",
-  "metaTitle": "Hair Removal & Skin Care: Safe Methods to Avoid Damage — Malta",
-  "metaDescription": "Proper hair removal techniques to protect skin: laser, threading, waxing. Avoid ingrown hairs and irritation.",
+  "metaTitle": "Hair Removal Methods: Safe Techniques | Malta",
+  "metaDescription": "Safe hair removal for all skin types: laser, waxing, threading. Prevent ingrown hairs, scars & skin damage. Expert guide inside.",
   "category": "Skincare",
   "publishDate": "2026-06-17",
   "readTime": 6,

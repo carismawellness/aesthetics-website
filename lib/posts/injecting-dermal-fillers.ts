@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "injecting-dermal-fillers",
   "title": "The Art and Science of Injecting Dermal Fillers: A Practitioner's Perspective",
-  "metaTitle": "Dermal Filler Injection Technique in Malta | Carisma Aesthetics",
-  "metaDescription": "Dermal filler injection in Malta: benefits, cost & expert advice. Master injection techniques. Book free consultation with Carisma Aesthetics.",
+  "metaTitle": "Dermal Filler Injection Technique Malta | Expert Guide",
+  "metaDescription": "Master dermal filler injection techniques: layering, placement & needles vs cannulas. Natural results from skilled practitioners. Learn more.",
   "category": "Injectables",
   "publishDate": "2026-06-25",
   "readTime": 6,

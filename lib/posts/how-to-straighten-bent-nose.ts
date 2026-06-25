@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "how-to-straighten-bent-nose",
   "title": "How To Straighten Bent Nose",
-  "metaTitle": "How To Straighten Bent Nose | Carisma Aesthetics Malta",
-  "metaDescription": "Expert guide on how to straighten bent nose at Carisma Aesthetics Malta.",
+  "metaTitle": "Non-Surgical Nose Job Malta | Rhinoplasty Alternative",
+  "metaDescription": "Straighten a bent or crooked nose without surgery. Non-invasive rhinoplasty alternative in Malta. Expert techniques & results.",
   "category": "Procedures",
   "publishDate": "2026-06-25",
   "readTime": 5,

@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "fine-lines-vs-wrinkles",
   "title": "Fine Lines vs Wrinkles: What's the Difference?",
-  "metaTitle": "Fine Lines vs Wrinkles Malta: Complete Guide | Carisma",
-  "metaDescription": "Fine lines vs wrinkles in Malta: benefits, cost & expert advice. Book free consultation with Carisma Aesthetics.",
+  "metaTitle": "Fine Lines vs Wrinkles: Differences & Best Treatments in Malta",
+  "metaDescription": "Discover the difference between fine lines and wrinkles. Explore expert treatments at Carisma Aesthetics Malta. Book your free consultation today.",
   "category": "Anti-Aging",
   "publishDate": "2026-06-25",
   "readTime": 5,

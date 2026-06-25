@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "acne-scar-treatment-malta",
   "title": "Acne Scar Treatment Malta: Smooth and Restore Your Skin",
-  "metaTitle": "Microneedling for Scars Malta: Complete Guide",
-  "metaDescription": "Microneedling for scars in Malta: proven scar reduction, benefits, costs & expert advice. Book your free consultation today.",
+  "metaTitle": "Acne Scar Treatment Malta | Microneedling & Laser | Carisma",
+  "metaDescription": "Professional acne scar removal in Malta: microneedling, laser therapy & chemical peels. Proven results. Free consultation with Carisma Aesthetics.",
   "category": "Skincare",
   "publishDate": "2026-06-12",
   "readTime": 7,

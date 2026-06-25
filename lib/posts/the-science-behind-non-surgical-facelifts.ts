@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "the-science-behind-non-surgical-facelifts",
   "title": "The Science Behind Non-Surgical Facelifts",
-  "metaTitle": "Non-Surgical Facelifts Malta: Complete Science Guide",
-  "metaDescription": "Non-surgical facelifts in Malta: dermal fillers, threads, HIFU & more. Lift & rejuvenate without surgery. Book free consultation.",
+  "metaTitle": "Non-Surgical Facelifts Malta | HIFU, Threads & Dermal Fillers",
+  "metaDescription": "Discover how non-surgical facelifts work: HIFU, thread lifts, dermal fillers & more. Natural results without downtime. Expert guide.",
   "category": "Aesthetics",
   "publishDate": "2025-03-13",
   "readTime": 3,
