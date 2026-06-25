@@ -31,6 +31,8 @@ const MODAL_TITLE_ID = "consultation-modal-title";
 export default function ConsultationModal() {
   const [isOpen, setIsOpen] = useState(false);
   const [hasOpened, setHasOpened] = useState(false);
+  const [iframeHeight, setIframeHeight] = useState(760);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
   const closeBtnRef = useRef<HTMLButtonElement>(null);
   /* The element focus returns to when the dialog closes (the trigger). */
@@ -116,6 +118,23 @@ export default function ConsultationModal() {
     }
     restoreFocusRef.current?.focus?.();
   }, [isOpen]);
+
+  /* Auto-resize the GHL iframe when it reports its content height via postMessage. */
+  useEffect(() => {
+    const onMessage = (e: MessageEvent) => {
+      if (!e.data) return;
+      // GHL / LeadConnector sends resize events in several formats
+      const h: unknown =
+        e.data.height ??
+        e.data.frameHeight ??
+        (e.data.action === "resize" ? e.data.value : undefined);
+      if (typeof h === "number" && h > 200) {
+        setIframeHeight(h + 24); // 24px buffer for GHL's own bottom padding
+      }
+    };
+    window.addEventListener("message", onMessage);
+    return () => window.removeEventListener("message", onMessage);
+  }, []);
 
   /* Focus trap: keep Tab / Shift+Tab inside the dialog. */
   const onTrapKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
@@ -233,17 +252,19 @@ export default function ConsultationModal() {
           </button>
         </div>
 
-        {/* GHL consultation form — scrollable wrapper so the full form is always reachable */}
-        <div style={{ flex: 1, overflowY: "auto", minHeight: 0, WebkitOverflowScrolling: "touch" } as React.CSSProperties}>
+        {/* GHL consultation form — scrollable wrapper; iframe height auto-adjusts via
+            postMessage from GHL and falls back to 760px so the full form is visible */}
+        <div style={{ flex: 1, overflowY: "auto", minHeight: 0 }}>
           {hasOpened && (
             <iframe
+              ref={iframeRef}
               src={FORM_SRC}
               id={`modal-consult-${FORM_ID}`}
               title="Book Your Free Consultation"
               aria-label="Book Your Free Consultation — powered by GHL"
               style={{
                 width: "100%",
-                height: "640px",
+                height: `${iframeHeight}px`,
                 border: "none",
                 display: "block",
               }}
