@@ -35,6 +35,7 @@ const t: Treatment = {
     ],
     location: "St Julian's, Malta",
     cta: "Book Your Hair Regrowth Consultation",
+    bookHref: "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2800348&eid=4994303&oiid=sv%3A27490604&share=true&pId=2708191",
     note: "Over 1,000 patients treated · Guaranteed programs limited to 12 patients per month",
     heroVideo: "/assets/treatments/vid-hair-regrowth.mp4",
     image: "/assets/treatments/hair-regrowth-hero-bg.jpg",
