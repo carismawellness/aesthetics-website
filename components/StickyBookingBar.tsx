@@ -40,8 +40,10 @@ for (const link of PACKAGE_LINKS) {
 
 for (const link of [...FACE_LINKS, ...BODY_LINKS]) {
   if (CONFIG[link.href]) continue;
+  const slug = link.href.replace(/^\//, "");
+  const t = getTreatment(slug);
   CONFIG[link.href] = {
-    href: AESTHETICS_FRESHA_BOOK,
+    href: t?.hero.bookHref ?? AESTHETICS_FRESHA_BOOK,
     priceLabel: link.label,
     ctaLabel: "Book Appointment",
     secondaryHref: "/consultation",
