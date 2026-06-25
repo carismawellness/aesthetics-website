@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "injectables-and-allergies",
   "title": "Injectables and Allergies: What You Need to Know Before Treatment",
-  "metaTitle": "Injectables & Allergies Malta: Safety Guide | Carisma",
-  "metaDescription": "Allergies and injectables: Is it safe? Learn about Botox/fillers with allergies, screening, safety at Carisma Aesthetics Malta. Consult today.",
+  "metaTitle": "Injectables & Allergies Malta: Safety Guide",
+  "metaDescription": "Injectables with allergies in Malta: safe Botox & filler options, allergy screening, and contraindications. Book free consultation.",
   "category": "Injectables",
   "publishDate": "2026-06-25",
   "readTime": 5,

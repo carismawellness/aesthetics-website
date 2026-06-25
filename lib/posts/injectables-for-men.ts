@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "injectables-for-men",
   "title": "Injectables for Men: Why More Men Are Choosing Botox and Fillers",
-  "metaTitle": "Injectables for Men Malta: Botox & Fillers | Carisma",
-  "metaDescription": "Botox & fillers for men in Malta: natural results that maintain masculine features. Learn why men choose injectables. Book consultation today.",
+  "metaTitle": "Injectables for Men in Malta: Complete Guide",
+  "metaDescription": "Injectables for men in Malta: maintain masculine features with Botox & fillers. Learn treatments, costs, practitioners. Book free consultation.",
   "category": "Injectables",
   "publishDate": "2026-06-25",
   "readTime": 5,

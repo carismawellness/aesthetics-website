@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "injection-sites-for-dermal-fillers",
   "title": "Injection Sites for Dermal Fillers: Strategic Placement for Natural Results",
-  "metaTitle": "Dermal Filler Injection Sites Malta: Placement | Carisma",
-  "metaDescription": "Dermal filler placement in Malta: cheeks, lips, under-eye & more. Strategic injection sites for natural volume. Book your consultation.",
+  "metaTitle": "Dermal Filler Injection Sites Malta: Placement",
+  "metaDescription": "Dermal filler injection sites in Malta: cheeks, lips, under-eye & more. Strategic placement for natural volume. Book consultation.",
   "category": "Injectables",
   "publishDate": "2026-06-25",
   "readTime": 7,

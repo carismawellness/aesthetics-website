@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "injectables-and-pregnancy",
   "title": "Injectables and Pregnancy: What's Safe Before, During, and After",
-  "metaTitle": "Botox & Fillers Pregnancy: Safety Guide | Carisma Malta",
-  "metaDescription": "Injectables during pregnancy? Learn safety, timing, expert advice for Botox & fillers before and after. Get guidance from Carisma Aesthetics.",
+  "metaTitle": "Botox & Fillers During Pregnancy: Safety Guide Malta",
+  "metaDescription": "Injectables and pregnancy in Malta: is it safe? Get expert timing, before/after guidance, breastfeeding advice. Book free consultation.",
   "category": "Injectables",
   "publishDate": "2026-06-25",
   "readTime": 5,
