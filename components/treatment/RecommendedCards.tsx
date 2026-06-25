@@ -244,6 +244,13 @@ export default function RecommendedCards({
   const window_ = hasOverflow
     ? Array.from({ length: visible }, (_, i) => items[(idx + i) % count])
     : items;
+  // Number of columns actually rendered — never more than the cards shown, so a
+  // short list (e.g. 2 recommendations) stays centred instead of hugging the left.
+  const cols = Math.min(visible, count);
+  // Shrink the row container proportionally to the column count so cards keep
+  // their normal ~1/3 width and the group centres (via mx-auto) instead of
+  // stretching to fill the full 3-column width.
+  const rowMaxWidth = Math.round((1120 / 3) * cols);
 
   return (
     <section style={{ padding: "clamp(72px,9vh,112px) 0", background: "var(--white)" }}>
@@ -287,15 +294,16 @@ export default function RecommendedCards({
       <div className="container">
         <SectionHeader kicker={kicker} title={title} sub={sub} />
 
-        <div className="relative mx-auto" style={{ maxWidth: 1120, marginTop: "clamp(40px, 5vw, 56px)" }}>
+        <div className="relative mx-auto" style={{ maxWidth: rowMaxWidth, marginTop: "clamp(40px, 5vw, 56px)" }}>
           {/* Single row only — a windowed slice paginated by the arrows below,
               never wrapping to a second row. */}
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: `repeat(${visible}, minmax(0, 1fr))`,
+              gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))`,
               gap: "clamp(20px, 2.4vw, 32px)",
               alignItems: "stretch",
+              justifyContent: "center",
             }}
           >
             {window_.map((item, i) => (
