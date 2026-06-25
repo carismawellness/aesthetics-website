@@ -13,6 +13,7 @@ const t: Treatment = {
       { label: "3 sessions", price: "from €499 (€167/session)" },
     ],
     cta: "BOOK YOUR MESOTHERAPY SESSION NOW",
+    bookHref: "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2800348&oiid=sv%3A25753601&share=true&pId=2708191",
     image: "/assets/treatments/mesotherapy-malta-hero.png",
     imageRatio: "468 / 373",
     productTabs: ["/assets/treatments/mesotherapy-malta-logo-bcn.png", "/assets/treatments/mesotherapy-malta-logo-teoxane.png", "/assets/treatments/mesotherapy-malta-logo-fillmed.png", "/assets/treatments/mesotherapy-malta-logo-croma.png"],
