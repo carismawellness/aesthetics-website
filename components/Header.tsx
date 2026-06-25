@@ -234,10 +234,10 @@ export default function Header() {
                       border: "1px solid rgba(255,255,255,0.7)",
                       borderRadius: "16px",
                       boxShadow: "0 16px 40px rgba(28,30,30,0.16), inset 0 1px 0 rgba(255,255,255,0.85)",
-                      width: "420px",
+                      width: "448px",
                       padding: "10px",
                       display: "grid",
-                      gridTemplateColumns: "1fr 1fr",
+                      gridTemplateColumns: "minmax(0,1fr) minmax(0,1fr)",
                       columnGap: "6px",
                       zIndex: 100,
                     }}>
