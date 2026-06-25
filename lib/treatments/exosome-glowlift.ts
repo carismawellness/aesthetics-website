@@ -17,6 +17,7 @@ const t: Treatment = {
     prices: [{ label: "Total Value: €365 – Today", price: "€175 Only" }],
     note: "Limited to just 15 clients.",
     cta: "CLAIM MY SPOT NOW",
+    bookHref: "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2800348&oiid=sv%3A25781430&share=true&pId=2708191",
     location: "Carisma Aesthetics, St. Julian's, Malta",
   },
   info: [
