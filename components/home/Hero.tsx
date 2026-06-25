@@ -16,7 +16,7 @@ export default function Hero() {
         { text: "Advanced, cutting-edge technology" },
       ]}
       primaryCta={{ text: "Book Free Consultation", href: "/consultation" }}
-      secondaryCta={{ text: "View Treatments", href: "/face-treatments" }}
+      secondaryCta={{ text: "Take the Quiz", href: "/quiz" }}
       media={{ type: "video", src: "/assets/clinic-video.mp4", poster: "/assets/clinic-room.jpg", alt: "Carisma Aesthetics clinic in Malta", autoPlay: true }}
       proof={{ rating: "4.9", reviews: "500+", statValue: "30+", statLabel: "years in wellness", awardText: "#1 Voted Clinic\nMalta Healthcare Awards" }}
       compactHeadline

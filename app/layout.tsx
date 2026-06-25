@@ -9,6 +9,7 @@ import WidowGuard from "@/components/WidowGuard";
 import MediaLegibilityGuard from "@/components/MediaLegibilityGuard";
 import PageLoader from "@/components/PageLoader";
 import ConsultationModal from "@/components/ConsultationModal";
+import QuizModal from "@/components/QuizModal";
 import GlowClubModal from "@/components/GlowClubModal";
 import StickyBookingBar from "@/components/StickyBookingBar";
 import DeferredChat from "@/components/DeferredChat";
@@ -172,6 +173,9 @@ export default function RootLayout({
         {/* Site-wide consultation popup. Mounted once; intercepts every
             "/consultation" + fresha book-now CTA and opens the GHL form modal. */}
         <ConsultationModal />
+        {/* Site-wide quiz popup. Mounted once; intercepts every href="/quiz" CTA
+            and opens the smart-questionnaire iframe instead of navigating. */}
+        <QuizModal />
         {/* Site-wide Glow Club join popup. Mounted once; intercepts every
             "/membership/join" CTA and opens the lead-capture form modal
             (instead of navigating to the page). Mails to info@carismaaesthetics.com. */}
