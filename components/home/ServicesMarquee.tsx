@@ -34,41 +34,48 @@ const GAP = 24;
 const PAD = 24; // left/right breathing room inside the track
 
 export default function ServicesMarquee() {
-  const ref = useRef<HTMLDivElement>(null);
+  const ref        = useRef<HTMLDivElement>(null);
+  const lockedRef  = useRef(false);          // prevent stacking scrollBy calls
+  const timerRef   = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  // Infinite loop: the cards are rendered TWICE back-to-back. We keep the active
-  // scroll position inside the SECOND set so there's always a full set of cards
-  // on both sides. When the user crosses a set boundary we silently shift by one
-  // set (no smooth) so the track never reaches a hard start/end — arrows stay
-  // always enabled.
-  const sync = () => {
+  // Teleport-only sync — runs AFTER scrolling stops (debounced).
+  // Never fires during an active smooth-scroll animation, so it can't
+  // interrupt in-flight scrollBys and cause the jitter/freeze.
+  const doSync = () => {
     const el = ref.current;
     if (!el) return;
     const half = el.scrollWidth / 2;
     if (half <= 0) return;
-    if (el.scrollLeft >= half * 1.5) {
-      el.scrollLeft -= half;
-    } else if (el.scrollLeft < half * 0.5) {
-      el.scrollLeft += half;
-    }
+    if (el.scrollLeft >= half * 1.5) el.scrollLeft -= half;
+    else if (el.scrollLeft < half * 0.5) el.scrollLeft += half;
+  };
+
+  const onScroll = () => {
+    if (timerRef.current) clearTimeout(timerRef.current);
+    timerRef.current = setTimeout(doSync, 120);
   };
 
   useEffect(() => {
     const el = ref.current;
     if (el) {
-      // Start centred in the second set so the user can scroll both directions.
       el.scrollLeft = el.scrollWidth / 2;
-      el.addEventListener("scroll", sync, { passive: true });
+      el.addEventListener("scroll", onScroll, { passive: true });
     }
-    window.addEventListener("resize", sync);
     return () => {
-      if (el) el.removeEventListener("scroll", sync);
-      window.removeEventListener("resize", sync);
+      if (el) el.removeEventListener("scroll", onScroll);
+      if (timerRef.current) clearTimeout(timerRef.current);
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const scroll = (dir: 1 | -1) =>
+  // Gate: ignore arrow clicks until the current smooth scroll finishes.
+  // Smooth scroll for CARD_W + GAP takes ≈ 300-350 ms in all browsers.
+  const scroll = (dir: 1 | -1) => {
+    if (lockedRef.current) return;
+    lockedRef.current = true;
     ref.current?.scrollBy({ left: dir * (CARD_W + GAP), behavior: "smooth" });
+    setTimeout(() => { lockedRef.current = false; }, 380);
+  };
 
   return (
     <section
