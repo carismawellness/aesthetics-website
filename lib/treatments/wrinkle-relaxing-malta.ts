@@ -15,6 +15,7 @@ const t: Treatment = {
       { label: "Underarms Sweating", price: "from €399" },
     ],
     cta: "BOOK YOUR BOTOX APPOINTMENT NOW",
+    bookHref: "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2800348&oiid=sv%3A25754231&share=true&pId=2708191",
     image: "/assets/treatments/wrinkle-relaxing-malta-hero.jpg",
     heroForm: true,
   },
