@@ -420,7 +420,7 @@ export default function Header() {
                 Carisma Aesthetics
               </p>
               <p style={{ fontFamily: 'Roboto, sans-serif', fontSize: 13, lineHeight: 1.6, color: NAV_INK, margin: "0 0 6px" }}>
-                InterContinental Malta, St George&apos;s Bay, St Julian&apos;s STJ 3310, Malta
+                St George&apos;s Bay, St Julian&apos;s STJ 3310, Malta
               </p>
               <a href={`mailto:${CONTACT.email}`} style={{ fontFamily: 'Roboto, sans-serif', fontSize: 13, color: TEAL, textDecoration: "none" }}>
                 {CONTACT.email}

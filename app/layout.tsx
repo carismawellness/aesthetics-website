@@ -80,7 +80,7 @@ const siteSchema = {
   "paymentAccepted": "Cash, Credit Card",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "InterContinental Malta, St George's Bay",
+    "streetAddress": "St George's Bay",
     "addressLocality": "St Julian's",
     "addressRegion": "MT",
     "postalCode": "STJ 3310",
