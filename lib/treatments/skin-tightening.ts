@@ -17,6 +17,7 @@ const t: Treatment = {
     ],
     note: "TOTAL VALUE: €625. TODAY: €199 for 4 sessions · €100 for individual sessions\n* Includes four sessions to be followed over the course of 2-4 weeks\n** Additional sessions of Velashape III may be booked at €100 per session",
     cta: "claim your spot now",
+    bookHref: "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2843963&oiid=sv%3A25821456&share=true&pId=2708191",
   },
   precision: {
     title: "Treat visible fat bulges in 7 areas of the body",
