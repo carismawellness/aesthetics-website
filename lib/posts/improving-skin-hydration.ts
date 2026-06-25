@@ -1,0 +1,52 @@
+import type { BlogPost } from "../blog-types";
+
+export const post: BlogPost = {
+  "slug": "improving-skin-hydration",
+  "title": "Improving Skin Hydration: Treatments and Routines for Plump, Supple Skin",
+  "metaTitle": "Improve Skin Hydration Malta — Professional Treatments",
+  "metaDescription": "Dehydrated skin looks tired and ages faster. Professional hydrating treatments and expert skincare routines at Carisma Aesthetics restore moisture.",
+  "category": "Skincare",
+  "publishDate": "2026-06-08",
+  "readTime": 5,
+  "coverImage": "https://static.wixstatic.com/media/d87add9f-ad57-47b3-a705-d335c7362653/placeholder.jpg",
+  "excerpt": "Dehydrated skin is one of the most common concerns we treat. The good news is that proper hydration can transform skin appearance quickly...",
+  "content": [
+    {
+        "type": "paragraph",
+        "html": "Dehydrated skin is one of the most common concerns we treat. The good news is that proper hydration can transform skin appearance quickly..."
+    },
+    {
+        "type": "heading",
+        "level": 2,
+        "text": "Understanding the Concern"
+    },
+    {
+        "type": "paragraph",
+        "html": "This is a comprehensive guide to understanding and addressing this aesthetic concern. Professional assessment is the first step to selecting the right treatment approach for your unique needs."
+    },
+    {
+        "type": "heading",
+        "level": 2,
+        "text": "Professional Treatment Options"
+    },
+    {
+        "type": "paragraph",
+        "html": "At Carisma Aesthetics, we offer evidence-based treatments tailored to your specific concerns and skin type. Each treatment is selected for proven results and natural-looking outcomes."
+    },
+    {
+        "type": "heading",
+        "level": 2,
+        "text": "Why Choose Carisma Aesthetics?"
+    },
+    {
+        "type": "paragraph",
+        "html": "Our practitioners combine clinical expertise with genuine care. We listen to your goals, provide honest recommendations, and ensure you feel informed and confident in every decision."
+    },
+    {
+        "type": "cta",
+        "label": "Book Your Consultation",
+        "href": "/contact"
+    }
+],
+  "internalLinks": []
+};
