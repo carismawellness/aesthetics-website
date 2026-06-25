@@ -3,13 +3,17 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "injection-technique-and-results",
   "title": "Injection Technique and Results: What to Expect from Your Aesthetic Treatment",
-  "metaTitle": "Injection Technique and Results: Botox and Filler Results Explained",
-  "metaDescription": "Learn about advanced injection techniques used in aesthetic medicine and understand realistic timelines for seeing results from Botox and dermal fillers.",
+  "metaTitle": "Injection Technique & Results Malta | Botox & Fillers",
+  "metaDescription": "Advanced injection techniques & realistic timelines for Botox & fillers in Malta. Learn results timeline & expectations. Start your treatment now.",
   "category": "Injectables",
   "publishDate": "2026-06-25",
   "readTime": 8,
   "coverImage": "",
   "excerpt": "The technique used during injectable treatments directly impacts your results. Discover how precision injection methods create natural-looking enhancement and what timeline to expect.",
+  "internalLinks": [
+    { "anchorText": "Botox", "href": "/wrinkle-relaxing-malta", "context": "Understand Botox results and timeline" },
+    { "anchorText": "dermal fillers", "href": "/dermal-fillers-malta", "context": "Learn about filler results and integration" }
+  ],
   "content": [
     {
       "type": "paragraph",
@@ -18,7 +22,7 @@ export const post: BlogPost = {
     {
       "type": "heading",
       "level": 2,
-      "text": "Advanced Injection Techniques"
+      "text": "Injection Technique & Results Malta | Botox & Fillers"
     },
     {
       "type": "paragraph",

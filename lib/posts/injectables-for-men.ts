@@ -3,14 +3,17 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "injectables-for-men",
   "title": "Injectables for Men: Why More Men Are Choosing Botox and Fillers",
-  "metaTitle": "Injectables for Men | Botox & Fillers | Carisma Aesthetics Malta",
-  "metaDescription": "Learn why men choose Botox and fillers. Discover natural-looking injectables designed for masculine features at Carisma Aesthetics in Malta.",
+  "metaTitle": "Injectables for Men Malta: Botox & Fillers | Carisma",
+  "metaDescription": "Botox & fillers for men in Malta: natural results that maintain masculine features. Learn why men choose injectables. Book consultation today.",
   "category": "Injectables",
   "publishDate": "2026-06-25",
   "readTime": 5,
   "coverImage": "https://via.placeholder.com/1200x630?text=injectables-for-men",
   "excerpt": "Injectables aren't just for women. More men are choosing Botox and fillers to maintain a competitive, youthful appearance—without looking 'done.' This guide explains why.",
-  "internalLinks": [],
+  "internalLinks": [
+    { "anchorText": "Botox", "href": "/wrinkle-relaxing-malta", "context": "Explore Botox treatments for men" },
+    { "anchorText": "fillers", "href": "/dermal-fillers-malta", "context": "Learn about dermal fillers for masculine features" }
+  ],
   "content": [
     {
       "type": "paragraph",
@@ -19,7 +22,7 @@ export const post: BlogPost = {
     {
       "type": "heading",
       "level": 2,
-      "text": "Why Men Choose Injectables"
+      "text": "Injectables for Men Malta: Botox & Fillers | Carisma"
     },
     {
       "type": "list",

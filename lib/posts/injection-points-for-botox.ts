@@ -3,13 +3,17 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "injection-points-for-botox",
   "title": "Injection Points for Botox: Complete Guide to Treatment Areas",
-  "metaTitle": "Injection Points for Botox: Complete Guide to Treatment Areas in Malta",
-  "metaDescription": "Learn about the key injection points for Botox treatments, including forehead, frown lines, crow's feet, and other facial areas for wrinkle reduction.",
+  "metaTitle": "Botox Injection Points Malta: Facial Areas | Carisma",
+  "metaDescription": "Botox injection points explained: forehead, crow's feet, frown lines & more. Precise placement for natural results in Malta. Get started today.",
   "category": "Injectables",
   "publishDate": "2026-06-25",
   "readTime": 6,
   "coverImage": "",
   "excerpt": "Understanding the precise injection points for Botox is essential for achieving natural-looking results. This guide covers all the key facial areas treated with Botox.",
+  "internalLinks": [
+    { "anchorText": "Botox", "href": "/wrinkle-relaxing-malta", "context": "Learn more about Botox treatments" },
+    { "anchorText": "dermal fillers", "href": "/dermal-fillers-malta", "context": "Complement Botox with dermal filler treatments" }
+  ],
   "content": [
     {
       "type": "paragraph",
@@ -18,7 +22,7 @@ export const post: BlogPost = {
     {
       "type": "heading",
       "level": 2,
-      "text": "Primary Botox Injection Areas"
+      "text": "Botox Injection Points Malta: Facial Areas | Carisma"
     },
     {
       "type": "list",

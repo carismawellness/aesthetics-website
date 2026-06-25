@@ -3,14 +3,25 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "injectables-101",
   "title": "Injectables 101: A Beginner's Guide to Botox, Fillers, and Anti-Aging Treatments",
-  "metaTitle": "Injectables 101: Botox & Fillers Guide | Carisma Aesthetics Malta",
-  "metaDescription": "New to injectables? This beginner's guide explains Botox vs fillers, how they work, results, cost, and how to choose the right treatment for you in Malta.",
+  "metaTitle": "Botox & Fillers Malta: Beginner's Guide | Carisma",
+  "metaDescription": "Injectables 101: Learn Botox vs fillers, results, costs in Malta. Complete guide for first-time treatment. Get expert care at Carisma Aesthetics.",
   "category": "Injectables",
   "publishDate": "2026-06-25",
   "readTime": 6,
   "coverImage": "https://via.placeholder.com/1200x630?text=injectables-101",
   "excerpt": "Confused about injectables? This comprehensive beginner's guide breaks down the differences between Botox, fillers, and other injectables, helping you understand which treatment is right for your concerns.",
-  "internalLinks": [],
+  "internalLinks": [
+    {
+      "anchorText": "Botox treatment",
+      "href": "/wrinkle-relaxing-malta",
+      "context": "Professional Botox injections for dynamic wrinkles"
+    },
+    {
+      "anchorText": "dermal fillers",
+      "href": "/dermal-fillers-malta",
+      "context": "Volume restoration and facial enhancement"
+    }
+  ],
   "content": [
     {
       "type": "paragraph",
@@ -19,6 +30,11 @@ export const post: BlogPost = {
     {
       "type": "heading",
       "level": 2,
+      "text": "Botox & Fillers Malta: Beginner's Guide"
+    },
+    {
+      "type": "heading",
+      "level": 3,
       "text": "The Two Main Categories of Injectables"
     },
     {

@@ -3,14 +3,25 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "injectables-and-allergies",
   "title": "Injectables and Allergies: What You Need to Know Before Treatment",
-  "metaTitle": "Injectables & Allergies: Safety Guide for Botox & Fillers | Carisma Malta",
-  "metaDescription": "Can you get injectables if you have allergies? Learn about allergy concerns, ingredient sensitivities, and safety screening before Botox or filler treatment in Malta.",
+  "metaTitle": "Injectables & Allergies Malta: Safety Guide | Carisma",
+  "metaDescription": "Allergies and injectables: Is it safe? Learn about Botox/fillers with allergies, screening, safety at Carisma Aesthetics Malta. Consult today.",
   "category": "Injectables",
   "publishDate": "2026-06-25",
   "readTime": 5,
   "coverImage": "https://via.placeholder.com/1200x630?text=injectables-and-allergies",
   "excerpt": "If you have allergies, you may wonder whether injectables are safe for you. This guide addresses allergy concerns, ingredient sensitivities, and how practitioners screen for contraindications.",
-  "internalLinks": [],
+  "internalLinks": [
+    {
+      "anchorText": "Botox consultation",
+      "href": "/wrinkle-relaxing-malta",
+      "context": "Safe injectable treatment with proper screening"
+    },
+    {
+      "anchorText": "filler options",
+      "href": "/dermal-fillers-malta",
+      "context": "Hyaluronic acid fillers with allergy considerations"
+    }
+  ],
   "content": [
     {
       "type": "paragraph",
@@ -19,6 +30,11 @@ export const post: BlogPost = {
     {
       "type": "heading",
       "level": 2,
+      "text": "Injectables & Allergies Malta: Safety Guide"
+    },
+    {
+      "type": "heading",
+      "level": 3,
       "text": "Botox and Allergies"
     },
     {

@@ -3,13 +3,17 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "injection-sites-for-dermal-fillers",
   "title": "Injection Sites for Dermal Fillers: Strategic Placement for Natural Results",
-  "metaTitle": "Injection Sites for Dermal Fillers: Strategic Placement for Natural Results in Malta",
-  "metaDescription": "Discover the best injection sites for dermal fillers, including cheeks, lips, nasolabial folds, and under-eye treatment. Learn how strategic placement creates natural-looking volume.",
+  "metaTitle": "Dermal Filler Injection Sites Malta: Placement | Carisma",
+  "metaDescription": "Dermal filler placement in Malta: cheeks, lips, under-eye & more. Strategic injection sites for natural volume. Book your consultation.",
   "category": "Injectables",
   "publishDate": "2026-06-25",
   "readTime": 7,
   "coverImage": "",
   "excerpt": "The placement of dermal filler injections is crucial for achieving natural-looking volume enhancement. This guide explains the key injection sites and how they transform facial aesthetics.",
+  "internalLinks": [
+    { "anchorText": "dermal fillers", "href": "/dermal-fillers-malta", "context": "Explore dermal filler treatment options" },
+    { "anchorText": "Botox", "href": "/wrinkle-relaxing-malta", "context": "Combine with Botox for comprehensive facial enhancement" }
+  ],
   "content": [
     {
       "type": "paragraph",
@@ -18,7 +22,7 @@ export const post: BlogPost = {
     {
       "type": "heading",
       "level": 2,
-      "text": "Key Injection Sites for Dermal Fillers"
+      "text": "Dermal Filler Injection Sites Malta: Placement | Carisma"
     },
     {
       "type": "list",

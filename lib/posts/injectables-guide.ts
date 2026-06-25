@@ -3,14 +3,18 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "injectables-guide",
   "title": "The Complete Injectables Guide: Everything You Need to Know",
-  "metaTitle": "Complete Injectables Guide | Botox, Fillers & More | Carisma Malta",
-  "metaDescription": "Your comprehensive guide to injectables. Learn about Botox, fillers, skin boosters, and how to choose the right treatment for your aesthetic goals.",
+  "metaTitle": "Injectables Guide Malta: Botox, Fillers & More | Carisma",
+  "metaDescription": "Complete injectables guide for Malta: Botox, fillers, skin boosters explained. Learn benefits, cost & results. Book your consultation now.",
   "category": "Injectables",
   "publishDate": "2026-06-25",
   "readTime": 8,
   "coverImage": "https://via.placeholder.com/1200x630?text=injectables-complete-guide",
   "excerpt": "Confused by injectable options? This comprehensive guide covers every major injectable treatment, how they work, cost, and how to create your ideal treatment plan.",
-  "internalLinks": [],
+  "internalLinks": [
+    { "anchorText": "Botox", "href": "/wrinkle-relaxing-malta", "context": "Explore neuromodulator treatments" },
+    { "anchorText": "dermal fillers", "href": "/dermal-fillers-malta", "context": "Learn about filler options and treatments" },
+    { "anchorText": "skin treatments", "href": "/skin-treatments-malta", "context": "Discover skin boosters and rejuvenation" }
+  ],
   "content": [
     {
       "type": "paragraph",
@@ -19,7 +23,7 @@ export const post: BlogPost = {
     {
       "type": "heading",
       "level": 2,
-      "text": "The Three Main Categories of Injectables"
+      "text": "Injectables Guide Malta: Botox, Fillers & More | Carisma"
     },
     {
       "type": "paragraph",

@@ -3,14 +3,17 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "injectables-for-lip-enhancement",
   "title": "Lip Enhancement with Fillers: The Art of Natural-Looking Fuller Lips",
-  "metaTitle": "Lip Fillers Malta | Lip Enhancement | Carisma Aesthetics",
-  "metaDescription": "Enhance your lips with dermal fillers. Learn about natural lip enhancement techniques, results, cost, and aftercare at Carisma Aesthetics in Malta.",
+  "metaTitle": "Lip Fillers Malta: Natural Enhancement | Carisma Aesthetics",
+  "metaDescription": "Enhance your lips with dermal fillers in Malta. Learn techniques, results, cost & aftercare. Book your consultation with Carisma Aesthetics.",
   "category": "Injectables",
   "publishDate": "2026-06-25",
   "readTime": 5,
   "coverImage": "https://via.placeholder.com/1200x630?text=lip-enhancement",
   "excerpt": "Fuller, more defined lips enhance your smile and facial balance. Modern lip filler techniques create natural-looking, proportionate results that complement your unique face.",
-  "internalLinks": [],
+  "internalLinks": [
+    { "anchorText": "dermal fillers", "href": "/dermal-fillers-malta", "context": "Learn more about dermal filler treatments" },
+    { "anchorText": "Botox", "href": "/wrinkle-relaxing-malta", "context": "Explore Botox and wrinkle relaxing treatments" }
+  ],
   "content": [
     {
       "type": "paragraph",
@@ -19,7 +22,7 @@ export const post: BlogPost = {
     {
       "type": "heading",
       "level": 2,
-      "text": "What Lip Fillers Can Do"
+      "text": "Lip Fillers Malta: Natural Enhancement | Carisma Aesthetics"
     },
     {
       "type": "list",

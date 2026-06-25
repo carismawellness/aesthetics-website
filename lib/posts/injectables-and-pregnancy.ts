@@ -3,14 +3,25 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "injectables-and-pregnancy",
   "title": "Injectables and Pregnancy: What's Safe Before, During, and After",
-  "metaTitle": "Injectables During Pregnancy: Safety Guide for Botox & Fillers | Carisma Malta",
-  "metaDescription": "Can you get Botox or fillers while pregnant? Learn about safety, timing, and expert recommendations for injectables before conception and after delivery.",
+  "metaTitle": "Botox & Fillers Pregnancy: Safety Guide | Carisma Malta",
+  "metaDescription": "Injectables during pregnancy? Learn safety, timing, expert advice for Botox & fillers before and after. Get guidance from Carisma Aesthetics.",
   "category": "Injectables",
   "publishDate": "2026-06-25",
   "readTime": 5,
   "coverImage": "https://via.placeholder.com/1200x630?text=injectables-and-pregnancy",
   "excerpt": "Pregnancy changes your body—including your skin. This guide covers the safety of injectables during pregnancy and explains the best timing for treatments before conception and after delivery.",
-  "internalLinks": [],
+  "internalLinks": [
+    {
+      "anchorText": "pregnancy-safe skincare",
+      "href": "/improving-skin-hydration",
+      "context": "Safe facial treatments and hydration options during pregnancy"
+    },
+    {
+      "anchorText": "post-pregnancy treatments",
+      "href": "/wrinkle-relaxing-malta",
+      "context": "Botox and fillers after pregnancy and breastfeeding"
+    }
+  ],
   "content": [
     {
       "type": "paragraph",
@@ -19,6 +30,11 @@ export const post: BlogPost = {
     {
       "type": "heading",
       "level": 2,
+      "text": "Botox & Fillers Pregnancy: Safety Guide"
+    },
+    {
+      "type": "heading",
+      "level": 3,
       "text": "The Short Answer: Avoid Injectables During Pregnancy"
     },
     {
