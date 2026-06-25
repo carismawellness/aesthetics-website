@@ -52,6 +52,26 @@ export default function DeferredAnalytics() {
       document.head.appendChild(s);
     };
 
+    // Intercept fbq Lead events to ensure value/currency are always present.
+    // GTM fires fbq('track','Lead') without params; this patch adds them before
+    // the call reaches Meta, so Events Manager shows enriched Lead events.
+    const patchFbq = () => {
+      const fbq = (w as unknown as Record<string, unknown>).fbq as ((...a: unknown[]) => unknown) & { queue?: unknown[][] } | undefined;
+      if (typeof fbq !== "function") { setTimeout(patchFbq, 150); return; }
+      if ((fbq as unknown as Record<string, boolean>).__enriched) return;
+      const orig = fbq;
+      const patched = (...args: unknown[]) => {
+        if (args[0] === "track" && args[1] === "Lead") {
+          const p = (args[2] as Record<string, unknown>) ?? {};
+          args[2] = { value: 75, currency: "EUR", ...p };
+        }
+        return orig(...args);
+      };
+      Object.assign(patched, orig);
+      (patched as unknown as Record<string, boolean>).__enriched = true;
+      (w as unknown as Record<string, unknown>).fbq = patched;
+    };
+
     const load = () => {
       if (done) return;
       done = true;
@@ -60,6 +80,8 @@ export default function DeferredAnalytics() {
       // Google Tag Manager
       w.dataLayer!.push({ "gtm.start": Date.now(), event: "gtm.js" });
       inject(`https://www.googletagmanager.com/gtm.js?id=${GTM_ID}`, "gtm-script");
+      // Patch fbq once GTM has had time to inject the Meta pixel
+      setTimeout(patchFbq, 500);
 
       // Google Analytics (gtag)
       inject(`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`, "gtag-script");
