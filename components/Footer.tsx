@@ -105,10 +105,10 @@ function BrandsSection() {
                 style={{ objectFit: 'cover' }}
                 loading="lazy"
               />
-              {/* subtle gradient — bottom-left corner only so the photo fills the card */}
-              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg, rgba(2,22,22,0.52) 0%, rgba(2,22,22,0.18) 45%, transparent 75%)' }} />
-              {/* logo (centre-left) + glass CTA pill (bottom-left) */}
-              <div style={{ position: 'absolute', inset: 0, padding: 'clamp(24px,3vw,36px)', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start' }}>
+              {/* bottom scrim only — keeps CTA readable, full photo shows everywhere else */}
+              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.50) 0%, transparent 50%)' }} />
+              {/* logo (bottom-left, above CTA) */}
+              <div style={{ position: 'absolute', inset: 0, padding: 'clamp(24px,3vw,36px)', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', alignItems: 'flex-start', paddingBottom: 'calc(clamp(24px,3vw,32px) + 56px)' }}>
                 <Image
                   src={brand.logo}
                   alt={`${brand.title} logo`}
