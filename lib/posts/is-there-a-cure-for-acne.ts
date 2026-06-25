@@ -4,7 +4,7 @@ export const post: BlogPost = {
   "slug": "is-there-a-cure-for-acne",
   "title": "Is There a Cure for Acne? The Honest Answer",
   "metaTitle": "Acne Treatment Malta: Complete Guide | Carisma",
-  "metaDescription": "Acne treatment in Malta: benefits, cost & expert advice. Book free consultation with Carisma Aesthetics.",
+  "metaDescription": "Acne treatment in Malta: effective solutions & proven methods for clear skin. Learn benefits, cost & expert advice. Book free consultation with Carisma.",
   "category": "Skincare",
   "publishDate": "2026-06-25",
   "readTime": 5,

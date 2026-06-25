@@ -4,7 +4,7 @@ export const post: BlogPost = {
   "slug": "is-there-a-natural-alternative-to-botox",
   "title": "Is There a Natural Alternative to Botox?",
   "metaTitle": "Botox Alternatives Malta: Complete Guide | Carisma",
-  "metaDescription": "Botox alternatives in Malta: benefits, cost & expert advice. Book free consultation with Carisma Aesthetics.",
+  "metaDescription": "Botox alternatives in Malta: explore natural options for wrinkles. Learn benefits, cost & expert advice. Book free consultation with Carisma.",
   "category": "Anti-Aging",
   "publishDate": "2026-06-25",
   "readTime": 5,

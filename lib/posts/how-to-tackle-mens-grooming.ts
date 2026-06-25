@@ -4,7 +4,7 @@ export const post: BlogPost = {
   "slug": "how-to-tackle-mens-grooming",
   "title": "How To Tackle Mens Grooming",
   "metaTitle": "Men & Aesthetic Treatments Malta: Complete Guide",
-  "metaDescription": "Men & aesthetic treatments in Malta: benefits, cost & expert advice. Book free consultation with Carisma Aesthetics.",
+  "metaDescription": "Men & aesthetic treatments in Malta: grooming solutions, benefits, costs & expert advice. Book your free consultation today.",
   "category": "Beauty",
   "publishDate": "2026-06-25",
   "readTime": 5,

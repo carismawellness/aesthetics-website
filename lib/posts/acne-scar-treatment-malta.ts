@@ -4,7 +4,7 @@ export const post: BlogPost = {
   "slug": "acne-scar-treatment-malta",
   "title": "Acne Scar Treatment Malta: Smooth and Restore Your Skin",
   "metaTitle": "Microneedling for Scars Malta: Complete Guide",
-  "metaDescription": "Microneedling for scars in Malta: benefits, cost & expert advice. Book free consultation with Carisma Aesthetics.",
+  "metaDescription": "Microneedling for scars in Malta: proven scar reduction, benefits, costs & expert advice. Book your free consultation today.",
   "category": "Skincare",
   "publishDate": "2026-06-12",
   "readTime": 7,

@@ -4,7 +4,7 @@ export const post: BlogPost = {
   "slug": "injectables-for-lip-enhancement",
   "title": "Lip Enhancement with Fillers: The Art of Natural-Looking Fuller Lips",
   "metaTitle": "Lip Enhancement Malta: Complete Guide | Carisma",
-  "metaDescription": "Lip enhancement in Malta: benefits, cost & expert advice. Book free consultation with Carisma Aesthetics.",
+  "metaDescription": "Lip enhancement in Malta: achieve fuller lips with dermal fillers. Learn benefits, cost & expert advice. Book free consultation with Carisma.",
   "category": "Injectables",
   "publishDate": "2026-06-25",
   "readTime": 5,

@@ -4,7 +4,7 @@ export const post: BlogPost = {
   "slug": "injectables-101",
   "title": "Injectables 101: A Beginner's Guide to Botox, Fillers, and Anti-Aging Treatments",
   "metaTitle": "Injectables Malta: Complete Guide | Carisma Aesthetics",
-  "metaDescription": "Injectables in Malta: benefits, cost & expert advice. Book free consultation with Carisma Aesthetics.",
+  "metaDescription": "Injectables in Malta: comprehensive guide to benefits, cost & expert advice on Botox & fillers. Book your free consultation with Carisma Aesthetics.",
   "category": "Injectables",
   "publishDate": "2026-06-25",
   "readTime": 6,

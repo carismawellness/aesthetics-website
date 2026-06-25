@@ -4,7 +4,7 @@ export const post: BlogPost = {
   "slug": "aesthetic-treatments-men-are-loving-this-summer",
   "title": "Aesthetic Treatments Men Are Loving This Summer",
   "metaTitle": "Male Beauty Treatments Malta: Growing Trend | Carisma",
-  "metaDescription": "Male beauty treatments in Malta: benefits, cost & expert advice. Book free consultation with Carisma Aesthetics.",
+  "metaDescription": "Male beauty treatments in Malta: trending aesthetic solutions, benefits, costs & expert advice. Book your free consultation.",
   "category": "Aesthetics",
   "publishDate": "2025-06-09",
   "readTime": 4,

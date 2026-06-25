@@ -4,7 +4,7 @@ export const post: BlogPost = {
   "slug": "russian-lips-structure-volume-elegance",
   "title": "Russian Lips: Lifted. Defined. Effortlessly Elegant.",
   "metaTitle": "Russian Lip Technique Malta: Natural Elegant Lips",
-  "metaDescription": "Russian lips in Malta: benefits, cost & expert advice. Book free consultation with Carisma Aesthetics.",
+  "metaDescription": "Russian lip technique in Malta: discover the benefits, costs & expert advice on lifted, defined lips. Book your free consultation with Carisma Aesthetics.",
   "category": "Aesthetics",
   "publishDate": "2026-01-14",
   "readTime": 2,

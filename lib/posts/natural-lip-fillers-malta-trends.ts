@@ -4,7 +4,7 @@ export const post: BlogPost = {
   "slug": "natural-lip-fillers-malta-trends",
   "title": "Natural Lip Fillers in Malta: What’s Trending This Year",
   "metaTitle": "Lip Fillers Malta: Complete Guide | Carisma Aesthetics",
-  "metaDescription": "Lip fillers in Malta: benefits, cost & expert advice. Book free consultation with Carisma Aesthetics today.",
+  "metaDescription": "Lip fillers in Malta: discover natural-looking results, benefits, costs & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Aesthetics",
   "publishDate": "2025-05-30",
   "readTime": 3,

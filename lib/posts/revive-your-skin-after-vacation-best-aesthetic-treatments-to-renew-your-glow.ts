@@ -4,7 +4,7 @@ export const post: BlogPost = {
   "slug": "revive-your-skin-after-vacation-best-aesthetic-treatments-to-renew-your-glow",
   "title": "Post-Holiday Aesthetic Treatments You Need After Travel",
   "metaTitle": "Post-Holiday Skin Revival Malta: Top Aesthetic Treatments",
-  "metaDescription": "Post-holiday skin revival in Malta: benefits, cost & expert advice. Book free consultation with Carisma Aesthetics.",
+  "metaDescription": "Revive your skin after vacation in Malta: discover the best aesthetic treatments, benefits & costs. Book your free consultation at Carisma Aesthetics.",
   "category": "Aesthetics",
   "readTime": 4,
   "publishDate": "2025-06-11",

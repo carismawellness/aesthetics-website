@@ -4,7 +4,7 @@ export const post: BlogPost = {
   "slug": "information-about-anti-wrinkle-treatments",
   "title": "The Complete Guide to Anti-Wrinkle Treatments in Malta",
   "metaTitle": "Anti-Wrinkle Injections Malta: Complete Guide",
-  "metaDescription": "Anti-wrinkle injections in Malta: benefits, cost & expert advice. Book free consultation with Carisma Aesthetics.",
+  "metaDescription": "Anti-wrinkle injections in Malta: reduce wrinkles naturally, benefits, costs & expert advice. Book your free consultation today.",
   "category": "Anti-Aging",
   "publishDate": "2026-01-28",
   "readTime": 9,
