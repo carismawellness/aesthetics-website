@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { ALL_TREATMENT_SLUGS } from "@/lib/treatments";
 import { faceTreatmentSlugs } from "@/lib/face-treatments";
 import { BLOG_REGISTRY } from "@/lib/blogs";
+import { POST_REGISTRY } from "@/lib/posts";
 
 // Canonical production origin (WWW per migration decision). Served at /sitemap.xml.
 const BASE_URL = "https://www.carismaaesthetics.com";
@@ -47,8 +48,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  // Ported Wix blog posts (/post/<slug>) — original URLs preserved for SEO.
+  const postRoutes: MetadataRoute.Sitemap = Object.values(POST_REGISTRY).map((post) => ({
+    url: url(`/post/${post.slug}`),
+    lastModified: post.publishDate ? new Date(post.publishDate) : LAST_MODIFIED,
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }));
+
   // De-duplicate by URL (a nav slug could overlap a static route).
-  const all = [...staticRoutes, ...treatmentRoutes, ...faceRoutes, ...blogRoutes];
+  const all = [...staticRoutes, ...treatmentRoutes, ...faceRoutes, ...blogRoutes, ...postRoutes];
   const seen = new Set<string>();
   return all.filter((entry) => {
     if (seen.has(entry.url)) return false;

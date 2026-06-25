@@ -134,12 +134,12 @@ function RenderBlock({ block }: { block: BlogBlock }) {
 
 // ─── Related post card ─────────────────────────────────────────────────────────
 
-function RelatedCard({ post }: { post: BlogPost }) {
+function RelatedCard({ post, basePath = "/blog" }: { post: BlogPost; basePath?: string }) {
   return (
     /* P6 / BLOG-SPECIFIC: <article> for each related card */
     <article>
       <Link
-        href={`/blog/${post.slug}`}
+        href={`${basePath}/${post.slug}`}
         className="group card review-card block overflow-hidden transition-all duration-200 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
         style={{
           borderRadius: "var(--radius-card)",
@@ -209,8 +209,8 @@ function RelatedCard({ post }: { post: BlogPost }) {
 // ─── Share button ──────────────────────────────────────────────────────────────
 // BLOG-SPECIFIC: social share buttons with proper aria-labels
 
-function ShareButtons({ title, slug }: { title: string; slug: string }) {
-  const url = `https://www.carismaaesthetics.com/blog/${slug}`;
+function ShareButtons({ title, slug, basePath = "/blog" }: { title: string; slug: string; basePath?: string }) {
+  const url = `https://www.carismaaesthetics.com${basePath}/${slug}`;
   const encodedUrl = encodeURIComponent(url);
   const encodedTitle = encodeURIComponent(title);
 
@@ -272,13 +272,24 @@ function ShareButtons({ title, slug }: { title: string; slug: string }) {
 
 // ─── Main BlogTemplate ─────────────────────────────────────────────────────────
 
-export default function BlogTemplate({ post }: { post: BlogPost }) {
-  const relatedByCategory = getRelatedBlogs(post.slug, post.category, 3);
+export default function BlogTemplate({
+  post,
+  basePath = "/blog",
+  baseLabel = "Blog",
+  related: relatedProp,
+}: {
+  post: BlogPost;
+  basePath?: string;
+  baseLabel?: string;
+  related?: BlogPost[];
+}) {
+  const relatedByCategory = relatedProp ? [] : getRelatedBlogs(post.slug, post.category, 3);
 
   // If fewer than 3 related in category, pad from other posts
-  const allPosts = getAllBlogs();
+  const allPosts = relatedProp ? [] : getAllBlogs();
   const related =
-    relatedByCategory.length >= 3
+    relatedProp ??
+    (relatedByCategory.length >= 3
       ? relatedByCategory
       : [
           ...relatedByCategory,
@@ -289,7 +300,7 @@ export default function BlogTemplate({ post }: { post: BlogPost }) {
                 !relatedByCategory.some((r) => r.slug === p.slug)
             )
             .slice(0, 3 - relatedByCategory.length),
-        ];
+        ]);
 
   const formattedDate = new Date(post.publishDate).toLocaleDateString("en-GB", {
     day: "numeric",
@@ -329,11 +340,11 @@ export default function BlogTemplate({ post }: { post: BlogPost }) {
           <li aria-hidden="true" style={{ color: "var(--muted)" }}>/</li>
           <li>
             <Link
-              href="/blog"
+              href={basePath}
               className="transition-colors duration-200 hover:underline focus-visible:outline-none focus-visible:underline"
               style={{ color: "var(--teal-text)" }}
             >
-              Blog
+              {baseLabel}
             </Link>
           </li>
           <li aria-hidden="true" style={{ color: "var(--muted)" }}>/</li>
@@ -445,7 +456,7 @@ export default function BlogTemplate({ post }: { post: BlogPost }) {
           <span aria-hidden="true" style={{ color: "var(--line)" }}>|</span>
           {/* P1: BLOG-SPECIFIC: category link with aria-label */}
           <Link
-            href={`/blog?category=${encodeURIComponent(post.category)}`}
+            href={`${basePath}?category=${encodeURIComponent(post.category)}`}
             className="font-display transition-colors duration-200 hover:underline focus-visible:outline-none focus-visible:underline"
             style={{ fontSize: "10px", color: "var(--teal-text)" }}
             aria-label={`View all articles in ${post.category}`}
@@ -486,7 +497,7 @@ export default function BlogTemplate({ post }: { post: BlogPost }) {
                   Carisma Aesthetics Medical Team
                 </span>
               </span>
-              <ShareButtons title={post.title} slug={post.slug} />
+              <ShareButtons title={post.title} slug={post.slug} basePath={basePath} />
             </address>
           </header>
 
@@ -556,7 +567,7 @@ export default function BlogTemplate({ post }: { post: BlogPost }) {
                 {" · "}
                 {post.readTime} min read
               </p>
-              <ShareButtons title={post.title} slug={post.slug} />
+              <ShareButtons title={post.title} slug={post.slug} basePath={basePath} />
             </div>
           </footer>
         </article>
@@ -601,7 +612,7 @@ export default function BlogTemplate({ post }: { post: BlogPost }) {
               }}
             >
               {related.map((p) => (
-                <RelatedCard key={p.slug} post={p} />
+                <RelatedCard key={p.slug} post={p} basePath={basePath} />
               ))}
             </div>
           </div>

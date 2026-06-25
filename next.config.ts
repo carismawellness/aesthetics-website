@@ -148,11 +148,6 @@ const nextConfig: NextConfig = {
         destination: "https://www.carismaaesthetics.com/:path*",
         permanent: true,
       },
-      // Legacy Wix blog: the ~405 /post/* URLs are being ported natively into
-      // lib/posts → app/post/[slug] at their ORIGINAL URLs. Until ALL posts are
-      // ported, keep this catch-all so un-ported /post/* URLs 308 → /blog instead
-      // of 404ing. REMOVE this line once lib/posts holds all 405 posts.
-      { source: "/post/:slug*", destination: "/blog", permanent: true },
       // Legacy Wix store: ~101 /product-page/* URLs (no storefront on new site) → home.
       { source: "/product-page/:slug*", destination: "/", permanent: true },
       ...legacyRedirects.map((r) => ({ ...r, permanent: true })),
