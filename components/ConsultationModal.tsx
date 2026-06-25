@@ -119,11 +119,34 @@ export default function ConsultationModal() {
     restoreFocusRef.current?.focus?.();
   }, [isOpen]);
 
-  /* Auto-resize the GHL iframe when it reports its content height via postMessage. */
+  /* Listen to the GHL iframe's postMessages:
+       (a) auto-resize when it reports its content height, and
+       (b) on form SUBMIT, send the visitor to /thank-you. The GHL form lives in
+           a cross-origin iframe, so its own redirect would only navigate the
+           iframe — we redirect the TOP window instead so the visitor lands on a
+           real /thank-you page AND the page-level GTM conversion + Meta Pixel
+           fire (gclid cookie is first-party on this domain, so it carries). */
   useEffect(() => {
     const onMessage = (e: MessageEvent) => {
       if (!e.data) return;
-      // GHL / LeadConnector sends resize events in several formats
+
+      // (b) Submit detection — conservative: leadconnector origin + a submit-like
+      // keyword (resize messages use action:"resize" and won't match).
+      const d = e.data;
+      const sig =
+        typeof d === "string"
+          ? d
+          : (d && (d.type || d.event || d.eventName || d.action)) || "";
+      if (
+        typeof e.origin === "string" &&
+        e.origin.includes("leadconnectorhq") &&
+        /submit|success|complete|thank|confirmed/i.test(String(sig))
+      ) {
+        window.location.assign("/thank-you");
+        return;
+      }
+
+      // (a) Resize
       const h: unknown =
         e.data.height ??
         e.data.frameHeight ??

@@ -21,6 +21,10 @@ import { useEffect } from "react";
 
 const GTM_ID = "GTM-T3ZJC949";
 const GA_ID = "G-MKGQE17SN7";
+// Meta Pixel (browser side). The Lead conversion is owned server-side by the
+// GHL Conversions API, so the browser pixel fires PageView ONLY — no browser
+// Lead — to avoid double-counting against CAPI (which controls its own event_id).
+const META_PIXEL_ID = "878798843817476";
 const KLAVIYO_SRC =
   "https://static.klaviyo.com/onsite/js/XvCJDh/klaviyo.js?company_id=XvCJDh";
 
@@ -77,10 +81,29 @@ export default function DeferredAnalytics() {
       done = true;
       cleanup();
 
+      // Meta Pixel — define the fbq stub, load fbevents, fire PageView only.
+      const wf = w as unknown as Record<string, unknown>;
+      if (!wf.fbq) {
+        const n = function (...a: unknown[]) {
+          const nn = n as unknown as { callMethod?: (...x: unknown[]) => void; queue: unknown[][] };
+          nn.callMethod ? nn.callMethod.apply(n, a) : nn.queue.push(a);
+        } as unknown as Record<string, unknown>;
+        wf.fbq = n;
+        if (!wf._fbq) wf._fbq = n;
+        n.push = n;
+        n.loaded = true;
+        n.version = "2.0";
+        n.queue = [];
+        inject("https://connect.facebook.net/en_US/fbevents.js", "fb-pixel");
+      }
+      const fbq = wf.fbq as (...a: unknown[]) => void;
+      fbq("init", META_PIXEL_ID);
+      fbq("track", "PageView");
+
       // Google Tag Manager
       w.dataLayer!.push({ "gtm.start": Date.now(), event: "gtm.js" });
       inject(`https://www.googletagmanager.com/gtm.js?id=${GTM_ID}`, "gtm-script");
-      // Patch fbq once GTM has had time to inject the Meta pixel
+      // Enrich any later fbq Lead events (e.g. fired by GTM) with value/currency.
       setTimeout(patchFbq, 500);
 
       // Google Analytics (gtag)
