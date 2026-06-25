@@ -15,45 +15,93 @@ import { post as p10 } from './bridal-glow-must-have-aesthetic-treatments-for-th
 import { post as p11 } from './can-you-get-botox-in-summer-spoiler-yes';
 import { post as p12 } from './can-you-get-fillers-in-summer-everything-you-should-know';
 import { post as p13 } from './cheek-fillers-malta';
-import { post as p14 } from './cleanse-and-renew-the-essential-summer-skin-detox-for-autumn-prep';
-import { post as p15 } from './cosmetic-injections-everything-you-need-to-know-about-botox-and-fillers';
-import { post as p16 } from './debunking-common-myths-about-botox-and-fillers';
-import { post as p17 } from './dermal-fillers-malta-guide';
-import { post as p18 } from './enhance-your-summer-look-natural-beauty-boosting-treatments-you-ll-love';
-import { post as p19 } from './erase-the-tired-look-aesthetic-treatments-to-revive-your-eyes';
-import { post as p20 } from './flawless-skin-for-all-your-summer-memories';
-import { post as p21 } from './glp-1-weight-loss-treatment-malta';
-import { post as p22 } from './hifu-facial-treatment-malta';
-import { post as p23 } from './hydration-volume-what-makes-hyaluronic-fillers-so-popular';
-import { post as p24 } from './jawline-filler-malta';
-import { post as p25 } from './laser-hair-removal-malta-complete-guide';
-import { post as p26 } from './lift-and-tighten-non-surgical-skin-tightening-treatments-explained';
-import { post as p27 } from './lip-trends-2025-what-s-hot-this-summer';
-import { post as p28 } from './microneedling-this-summer-yes-or-no';
-import { post as p29 } from './natural-beauty-tweaks-you-ll-adore-this-summer';
-import { post as p30 } from './natural-lip-fillers-malta-trends';
-import { post as p31 } from './new-year-new-me-a-sophisticated-approach-to-skin-confidence-through-aesthetic-care';
-import { post as p32 } from './non-invasive-facial-contouring-sculpt-your-perfect-summer-look';
-import { post as p33 } from './non-surgical-achieve-your-summer-body-goals';
-import { post as p34 } from './not-just-a-moisturiser-the-injectable-glow-booster-you-need';
-import { post as p35 } from './pigmentation-treatment-malta';
-import { post as p36 } from './prp-facial-malta';
-import { post as p37 } from './revive-your-skin-after-vacation-best-aesthetic-treatments-to-renew-your-glow';
-import { post as p38 } from './russian-lips-structure-volume-elegance';
-import { post as p39 } from './skin-boosters-radiant-hydrated-skin';
-import { post as p40 } from './smooth-for-summer-why-spring-is-the-best-time-to-start-laser-hair-removal';
-import { post as p41 } from './stay-ahead-emerging-aesthetic-procedures-to-consider';
-import { post as p42 } from './summer-microneedling-what-to-know-before-you-book';
-import { post as p43 } from './summer-skin-survival-essential-tips-to-protect-heal-and-glow';
-import { post as p44 } from './tear-trough-filler-malta';
-import { post as p45 } from './the-best-beauty-treatments-to-repair-and-regenerate-your-skin';
-import { post as p46 } from './the-must-know-aesthetic-trends-for-august';
-import { post as p47 } from './the-science-behind-non-surgical-facelifts';
-import { post as p48 } from './the-secret-to-summer-skin-start-in-june';
-import { post as p49 } from './under-eye-filler-faqs-everything-you-need-to-know';
-import { post as p50 } from './why-summer-dehydration-happens';
-import { post as p51 } from './year-round-glow-how-to-preserve-your-summer-skin-radiance';
-import { post as p52 } from './youthful-skin-starts-here-collagen-boosting-aesthetic-treatments-this-summer';
+import { post as p14 } from './choosing-the-right-anti-aging-treatment';
+import { post as p15 } from './choosing-the-right-facial-treatment';
+import { post as p16 } from './cleanse-and-renew-the-essential-summer-skin-detox-for-autumn-prep';
+import { post as p17 } from './clear-skin-goals';
+import { post as p18 } from './clinical-spa-vs-medical-spa';
+import { post as p19 } from './collagen-boosting-treatments';
+import { post as p20 } from './combination-treatments-for-best-results';
+import { post as p21 } from './complete-guide-anti-wrinkle-injectables';
+import { post as p22 } from './complete-guide-dermal-fillers-malta';
+import { post as p23 } from './complete-guide-laser-hair-removal';
+import { post as p24 } from './cosmetic-injections-everything-you-need-to-know-about-botox-and-fillers';
+import { post as p25 } from './debunking-common-myths-about-botox-and-fillers';
+import { post as p26 } from './dermal-fillers-malta-guide';
+import { post as p27 } from './eliminate-wrinkles-with-anti-wrinkle-injectables';
+import { post as p28 } from './emotional-effects-of-skin-problems';
+import { post as p29 } from './empty-nest-syndrome-and-a-makeover';
+import { post as p30 } from './enhance-your-beauty-with-dermal-fillers';
+import { post as p31 } from './enhance-your-summer-look-natural-beauty-boosting-treatments-you-ll-love';
+import { post as p32 } from './enhanced-skin-care';
+import { post as p33 } from './enhancement-without-surgery';
+import { post as p34 } from './enjoying-skin-care-treatments-with-confidence';
+import { post as p35 } from './environmental-damage-to-skin';
+import { post as p36 } from './enzymatic-peels';
+import { post as p37 } from './erase-the-tired-look-aesthetic-treatments-to-revive-your-eyes';
+import { post as p38 } from './exclusive-benefits-member-skin-packages';
+import { post as p39 } from './exercise-and-skin-health';
+import { post as p40 } from './exercise-to-combat-signs-of-aging';
+import { post as p41 } from './exfoliating-scrubs-and-brushes';
+import { post as p42 } from './experience-the-magic-of-dermal-fillers';
+import { post as p43 } from './expert-advice-for-skin-care';
+import { post as p44 } from './expert-advice-on-anti-wrinkle-treatments';
+import { post as p45 } from './expert-advice-on-best-skin-tightening-treatment';
+import { post as p46 } from './expert-advice-on-hair-removal';
+import { post as p47 } from './expert-advice-on-skincare-concerns';
+import { post as p48 } from './flawless-skin-for-all-your-summer-memories';
+import { post as p49 } from './glp-1-weight-loss-treatment-malta';
+import { post as p50 } from './hair-growth-vitamins';
+import { post as p51 } from './hair-loss-after-weight-loss';
+import { post as p52 } from './hair-loss-and-stress';
+import { post as p53 } from './hair-loss-in-women';
+import { post as p54 } from './hair-loss-prevention';
+import { post as p55 } from './hair-removal-and-skin-care';
+import { post as p56 } from './hair-removal-for-large-areas';
+import { post as p57 } from './hair-removal-for-sensitive-skin';
+import { post as p58 } from './hair-removal-myths';
+import { post as p59 } from './hair-removal-preparation';
+import { post as p60 } from './hifu-facial-treatment-malta';
+import { post as p61 } from './hifu-skin-tightening';
+import { post as p62 } from './hint-of-color-for-enhanced-features';
+import { post as p63 } from './hm-let-me-think-about-what-i-really-want';
+import { post as p64 } from './home-care-after-botox-and-fillers';
+import { post as p65 } from './home-remedies-for-acne';
+import { post as p66 } from './home-remedies-for-dark-circles';
+import { post as p67 } from './home-remedies-for-dry-skin';
+import { post as p68 } from './home-remedies-for-wrinkles';
+import { post as p69 } from './homeostasis-in-skin-care';
+import { post as p70 } from './how-to-prevent-acne-scars';
+import { post as p71 } from './hydration-volume-what-makes-hyaluronic-fillers-so-popular';
+import { post as p72 } from './jawline-filler-malta';
+import { post as p73 } from './laser-hair-removal-malta-complete-guide';
+import { post as p74 } from './lift-and-tighten-non-surgical-skin-tightening-treatments-explained';
+import { post as p75 } from './lip-trends-2025-what-s-hot-this-summer';
+import { post as p76 } from './microneedling-this-summer-yes-or-no';
+import { post as p77 } from './natural-beauty-tweaks-you-ll-adore-this-summer';
+import { post as p78 } from './natural-lip-fillers-malta-trends';
+import { post as p79 } from './new-year-new-me-a-sophisticated-approach-to-skin-confidence-through-aesthetic-care';
+import { post as p80 } from './non-invasive-facial-contouring-sculpt-your-perfect-summer-look';
+import { post as p81 } from './non-surgical-achieve-your-summer-body-goals';
+import { post as p82 } from './not-just-a-moisturiser-the-injectable-glow-booster-you-need';
+import { post as p83 } from './pigmentation-treatment-malta';
+import { post as p84 } from './prp-facial-malta';
+import { post as p85 } from './revive-your-skin-after-vacation-best-aesthetic-treatments-to-renew-your-glow';
+import { post as p86 } from './russian-lips-structure-volume-elegance';
+import { post as p87 } from './skin-boosters-radiant-hydrated-skin';
+import { post as p88 } from './smooth-for-summer-why-spring-is-the-best-time-to-start-laser-hair-removal';
+import { post as p89 } from './stay-ahead-emerging-aesthetic-procedures-to-consider';
+import { post as p90 } from './summer-microneedling-what-to-know-before-you-book';
+import { post as p91 } from './summer-skin-survival-essential-tips-to-protect-heal-and-glow';
+import { post as p92 } from './tear-trough-filler-malta';
+import { post as p93 } from './the-best-beauty-treatments-to-repair-and-regenerate-your-skin';
+import { post as p94 } from './the-must-know-aesthetic-trends-for-august';
+import { post as p95 } from './the-science-behind-non-surgical-facelifts';
+import { post as p96 } from './the-secret-to-summer-skin-start-in-june';
+import { post as p97 } from './under-eye-filler-faqs-everything-you-need-to-know';
+import { post as p98 } from './why-summer-dehydration-happens';
+import { post as p99 } from './year-round-glow-how-to-preserve-your-summer-skin-radiance';
+import { post as p100 } from './youthful-skin-starts-here-collagen-boosting-aesthetic-treatments-this-summer';
 
 export const POST_REGISTRY: Record<string, BlogPost> = {
   [p0.slug]: p0,
@@ -109,6 +157,54 @@ export const POST_REGISTRY: Record<string, BlogPost> = {
   [p50.slug]: p50,
   [p51.slug]: p51,
   [p52.slug]: p52,
+  [p53.slug]: p53,
+  [p54.slug]: p54,
+  [p55.slug]: p55,
+  [p56.slug]: p56,
+  [p57.slug]: p57,
+  [p58.slug]: p58,
+  [p59.slug]: p59,
+  [p60.slug]: p60,
+  [p61.slug]: p61,
+  [p62.slug]: p62,
+  [p63.slug]: p63,
+  [p64.slug]: p64,
+  [p65.slug]: p65,
+  [p66.slug]: p66,
+  [p67.slug]: p67,
+  [p68.slug]: p68,
+  [p69.slug]: p69,
+  [p70.slug]: p70,
+  [p71.slug]: p71,
+  [p72.slug]: p72,
+  [p73.slug]: p73,
+  [p74.slug]: p74,
+  [p75.slug]: p75,
+  [p76.slug]: p76,
+  [p77.slug]: p77,
+  [p78.slug]: p78,
+  [p79.slug]: p79,
+  [p80.slug]: p80,
+  [p81.slug]: p81,
+  [p82.slug]: p82,
+  [p83.slug]: p83,
+  [p84.slug]: p84,
+  [p85.slug]: p85,
+  [p86.slug]: p86,
+  [p87.slug]: p87,
+  [p88.slug]: p88,
+  [p89.slug]: p89,
+  [p90.slug]: p90,
+  [p91.slug]: p91,
+  [p92.slug]: p92,
+  [p93.slug]: p93,
+  [p94.slug]: p94,
+  [p95.slug]: p95,
+  [p96.slug]: p96,
+  [p97.slug]: p97,
+  [p98.slug]: p98,
+  [p99.slug]: p99,
+  [p100.slug]: p100,
 };
 
 export * from "./helpers";
