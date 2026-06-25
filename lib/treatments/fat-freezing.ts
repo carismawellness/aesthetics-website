@@ -15,6 +15,7 @@ const t: Treatment = {
       { label: "TOTAL VALUE: €550 — TODAY: €199 ONLY", price: "€199" },
     ],
     cta: "Claim your spot now",
+    bookHref: "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2843963&oiid=sv%3A25821439&share=true&pId=2708191",
     heroVideo: "/assets/treatments/fat-freezing-hero.mp4",
     note: "* Includes 3 fat freezing sessions, scheduled based on your clinical plan; additional areas charged at extra. Sessions may be spaced over multiple weeks depending on area and suitability. Due to high demand, packages are offered based on availability and may not always be guaranteed. Please inquire for current options.",
   },
