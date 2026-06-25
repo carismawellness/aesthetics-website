@@ -15,6 +15,7 @@ const t: Treatment = {
       { label: "Large / Extra Large", price: "from €199" },
     ],
     cta: "Book Your Tattoo Removal Appointment",
+    bookHref: "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2800348&eid=4994306&oiid=sv%3A27820468&share=true&pId=2708191",
     image: "/assets/treatments/pico-laser-tattoo-removal-hero.png",
     heroBgColor: "url('/assets/treatments/pico-laser-tattoo-removal-bg.png') center/cover no-repeat",
   },
