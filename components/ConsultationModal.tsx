@@ -233,8 +233,8 @@ export default function ConsultationModal() {
           </button>
         </div>
 
-        {/* GHL consultation form — stretches to fill remaining height */}
-        <div style={{ flex: 1, display: "flex", flexDirection: "column", minHeight: 0 }}>
+        {/* GHL consultation form — scrollable wrapper so the full form is always reachable */}
+        <div style={{ flex: 1, overflowY: "auto", minHeight: 0, WebkitOverflowScrolling: "touch" } as React.CSSProperties}>
           {hasOpened && (
             <iframe
               src={FORM_SRC}
@@ -242,11 +242,10 @@ export default function ConsultationModal() {
               title="Book Your Free Consultation"
               aria-label="Book Your Free Consultation — powered by GHL"
               style={{
-                flex: 1,
                 width: "100%",
+                height: "640px",
                 border: "none",
                 display: "block",
-                minHeight: 0,
               }}
               data-layout="{'id':'INLINE'}"
               data-form-id={FORM_ID}
