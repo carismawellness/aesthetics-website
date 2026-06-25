@@ -40,7 +40,7 @@ const SYS = '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif
 const CARDS = [
   {
     src: '/assets/clinic-interior-2.jpg',
-    alt: 'Carisma Aesthetics clinic interior — premium treatment suite in Birkirkara, Malta',
+    alt: "Carisma Aesthetics clinic interior — premium treatment suite in St Julian's, Malta",
     role: 'left' as const,
   },
   {

@@ -8,7 +8,7 @@ import LazyMap from "@/components/home/LazyMap";
  * (components/PackagePage.tsx): eyebrow → 110px rule → BIG Trajan headline,
  * then a two-column items-stretch layout on the warm→teal gradient card with a
  * centred motif watermark. LEFT = two circle-tick checklists + a single CTA
- * pinned to the bottom; RIGHT = the Grand Hotel Excelsior Google map + the
+ * pinned to the bottom; RIGHT = the InterContinental Malta Google map + the
  * complimentary on-site parking pill.
  *
  * Re-skinned to the Aesthetics teal palette (no green, no cream, no brown
@@ -252,9 +252,9 @@ export default function WhyMaltaAesthetics() {
               {/* RIGHT — Google map panel + parking pill */}
               <div style={{ display: "flex", flexDirection: "column" }}>
                 <LazyMap
-                  title="Carisma Aesthetics clinic location — Grand Hotel Excelsior, Floriana, Malta"
-                  ariaLabel="Google Maps showing Carisma Aesthetics at Grand Hotel Excelsior, Floriana, Malta"
-                  src="https://maps.google.com/maps?q=Grand%20Hotel%20Excelsior%2C%20Great%20Siege%20Road%2C%20Floriana%20FRN%201810%2C%20Malta&z=15&output=embed"
+                  title="Carisma Aesthetics clinic location — InterContinental Malta, St Julian's, Malta"
+                  ariaLabel="Google Maps showing Carisma Aesthetics at InterContinental Malta, St Julian's, Malta"
+                  src="https://maps.google.com/maps?q=InterContinental%20Malta%2C%20St%20George%27s%20Bay%2C%20St%20Julian%27s%20STJ%203310%2C%20Malta&z=15&output=embed"
                 />
                 {/* Parking pill */}
                 <div
