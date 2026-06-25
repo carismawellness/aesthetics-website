@@ -26,6 +26,7 @@ const t: Treatment = {
       { label: "Full Legs", price: "from €109" },
     ],
     cta: "Book Your Laser Hair Removal Appointment",
+    bookHref: "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2800348&oiid=sv%3A25799966&share=true&pId=2708191",
     image: "/assets/treatments/laser-hero-photo2.png",
     note: "Minors may undergo this procedure only with a parent or legal guardian present during the session.",
     heroForm: true,
