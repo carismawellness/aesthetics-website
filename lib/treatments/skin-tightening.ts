@@ -7,7 +7,7 @@ const t: Treatment = {
     title: "VelaShape III in Malta",
     subtitle: "4 in 1 skin tightening protocol",
     body: "Smoother, firmer, and tighter skin in 4 focused sessions. Our 4 in 1 course with the VelaShape III uses radiofrequency, infrared heat, vacuum and mechanical massage together to stimulate collagen to tighten and smoothen your skin.",
-    image: "/assets/treatments/st-feat1.png",
+    image: "/assets/treatments/skin-tightening-hero-poster.png",
     heroVideo: "/assets/treatments/skin-tightening-hero.mp4",
     prices: [
       { label: "4x Skin tightening sessions with the VelaShape", price: "€400" },
