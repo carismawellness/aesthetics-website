@@ -362,12 +362,6 @@ export default function ServicesMarquee() {
           </button>
         }
       </div>
-
-      <div className="container">
-        <div className="flex justify-center" style={{ paddingTop: "clamp(48px,6vw,64px)" }}>
-          <div aria-hidden="true" style={{ width: "1px", height: "80px", background: "var(--line)" }} />
-        </div>
-      </div>
     </section>
   );
 }
