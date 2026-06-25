@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "expert-advice-on-hair-removal",
   "title": "Expert Advice On Hair Removal",
-  "metaTitle": "Expert Advice On Hair Removal — Carisma Aesthetics",
-  "metaDescription": "Discover expert advice on expert advice on hair removal at Carisma Aesthetics Malta. Learn about treatments and skincare tips.",
+  "metaTitle": "Hair Removal Malta: Complete Guide | Carisma Aesthetics",
+  "metaDescription": "Hair removal in Malta: benefits, cost & expert advice. Book free consultation with Carisma Aesthetics.",
   "category": "Procedures",
   "publishDate": "2026-06-25",
   "readTime": 5,

@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "russian-lips-structure-volume-elegance",
   "title": "Russian Lips: Lifted. Defined. Effortlessly Elegant.",
-  "metaTitle": "Russian Lips: Lifted. Defined. Effortlessly Elegant.",
-  "metaDescription": "Russian Lip Technique enhances lip shape and lift using hyaluronic acid filler, offering natural lip enhancement with refined definition and balance.",
+  "metaTitle": "Russian Lip Technique Malta: Natural Elegant Lips",
+  "metaDescription": "Russian lips in Malta: benefits, cost & expert advice. Book free consultation with Carisma Aesthetics.",
   "category": "Aesthetics",
   "publishDate": "2026-01-14",
   "readTime": 2,

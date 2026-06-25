@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "erase-the-tired-look-aesthetic-treatments-to-revive-your-eyes",
   "title": "Erase the Tired Look: Aesthetic Treatments to Revive Your Eyes",
-  "metaTitle": "Eye Treatment | Erase Tired Eyes",
-  "metaDescription": "Look refreshed and rejuvenated with our eye treatments. Erase the tired look and restore youthful eyes.",
+  "metaTitle": "Eye Treatments Malta: Complete Guide | Carisma Aesthetics",
+  "metaDescription": "Eye treatments in Malta: benefits, cost & expert advice. Book free consultation with Carisma Aesthetics.",
   "category": "Eye Treatments",
   "publishDate": "2025-06-23",
   "readTime": 4,

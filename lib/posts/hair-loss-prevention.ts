@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "hair-loss-prevention",
   "title": "Hair Loss Prevention: Evidence-Based Strategies to Keep the Hair You Have",
-  "metaTitle": "Prevent Hair Loss: Science-Backed Strategies & Treatments",
-  "metaDescription": "How to prevent hair loss: nutrition, stress management, treatments (minoxidil, PRP). Protect your hair now.",
+  "metaTitle": "Hair Loss Prevention in Malta: Complete Guide | Carisma",
+  "metaDescription": "Hair loss prevention in Malta: benefits, cost & expert advice. Book free consultation with Carisma Aesthetics.",
   "category": "Wellness",
   "publishDate": "2026-06-16",
   "readTime": 6,

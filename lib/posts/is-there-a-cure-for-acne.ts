@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "is-there-a-cure-for-acne",
   "title": "Is There a Cure for Acne? The Honest Answer",
-  "metaTitle": "Is There a Cure for Acne? The Honest Answer | Carisma Aesthetics Malta",
-  "metaDescription": "Acne treatment options in Malta: skincare routines, professional treatments, and realistic expectations. Find the right solution for your skin at Carisma Aesthetics.",
+  "metaTitle": "Acne Treatment Malta: Complete Guide | Carisma",
+  "metaDescription": "Acne treatment in Malta: benefits, cost & expert advice. Book free consultation with Carisma Aesthetics.",
   "category": "Skincare",
   "publishDate": "2026-06-25",
   "readTime": 5,

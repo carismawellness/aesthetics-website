@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "is-there-a-natural-alternative-to-botox",
   "title": "Is There a Natural Alternative to Botox?",
-  "metaTitle": "Natural Alternatives to Botox | Carisma Aesthetics Malta",
-  "metaDescription": "Explore natural and non-invasive alternatives to Botox for anti-aging and wrinkle reduction.",
+  "metaTitle": "Botox Alternatives Malta: Complete Guide | Carisma",
+  "metaDescription": "Botox alternatives in Malta: benefits, cost & expert advice. Book free consultation with Carisma Aesthetics.",
   "category": "Anti-Aging",
   "publishDate": "2026-06-25",
   "readTime": 5,

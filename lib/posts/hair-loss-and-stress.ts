@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "hair-loss-and-stress",
   "title": "Hair Loss and Stress: How Anxiety Triggers Shedding and What to Do",
-  "metaTitle": "Stress-Related Hair Loss: Telogen Effluvium & Solutions — Malta",
-  "metaDescription": "How chronic stress causes hair loss (telogen effluvium). Science-backed strategies to stop stress-induced shedding.",
+  "metaTitle": "Hair Loss & Stress in Malta: Complete Guide | Carisma",
+  "metaDescription": "Hair loss and stress in Malta: benefits, cost & expert advice. Book free consultation with Carisma Aesthetics.",
   "category": "Wellness",
   "publishDate": "2026-06-18",
   "readTime": 6,

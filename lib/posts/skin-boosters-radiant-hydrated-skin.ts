@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "skin-boosters-radiant-hydrated-skin",
   "title": "Skin Boosters: A Modern Treatment for Deep Skin Hydration",
-  "metaTitle": "Skin Boosters: A Modern Treatment for Deep Skin Hydration",
-  "metaDescription": "Discover skin boosters that deeply hydrate and rejuvenate your skin. Learn how Profhilo improves skin texture, elasticity, and natural glow.",
+  "metaTitle": "Skin Boosters in Malta: Complete Guide | Carisma Aesthetics",
+  "metaDescription": "Skin boosters in Malta: benefits, cost & expert advice. Discover Profhilo for deep hydration. Book free consultation with Carisma Aesthetics.",
   "category": "Aesthetics",
   "publishDate": "2026-03-25",
   "readTime": 2,

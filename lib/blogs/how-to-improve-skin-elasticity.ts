@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "how-to-improve-skin-elasticity",
   "title": "How to Improve Skin Elasticity: Science-Backed Methods",
-  "metaTitle": "How to Improve Skin Elasticity — Restore Firmness & Bounce",
-  "metaDescription": "Proven methods to improve skin elasticity and restore firmness. Skincare, treatments, and lifestyle tips from Carisma Aesthetics.",
+  "metaTitle": "Improve Skin Elasticity Malta: Complete Guide | Carisma",
+  "metaDescription": "Improve skin elasticity in Malta with proven skincare, professional treatments & lifestyle tips. Restore firmness & bounce. Book free consultation.",
   "category": "Skincare",
   "publishDate": "2026-06-25",
   "readTime": 1,

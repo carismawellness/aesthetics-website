@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "injectables-101",
   "title": "Injectables 101: A Beginner's Guide to Botox, Fillers, and Anti-Aging Treatments",
-  "metaTitle": "Botox & Fillers Malta: Beginner's Guide | Carisma",
-  "metaDescription": "Injectables 101: Learn Botox vs fillers, results, costs in Malta. Complete guide for first-time treatment. Get expert care at Carisma Aesthetics.",
+  "metaTitle": "Injectables Malta: Complete Guide | Carisma Aesthetics",
+  "metaDescription": "Injectables in Malta: benefits, cost & expert advice. Book free consultation with Carisma Aesthetics.",
   "category": "Injectables",
   "publishDate": "2026-06-25",
   "readTime": 6,

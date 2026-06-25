@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "natural-lip-fillers-malta-trends",
   "title": "Natural Lip Fillers in Malta: What’s Trending This Year",
-  "metaTitle": "Natural Lip Fillers in Malta: What’s Trending This Year",
-  "metaDescription": "Explore 2025’s top lip filler trends in Malta with Carisma Aesthetics—from Russian lips to subtle hydration. Natural, elegant results start here.",
+  "metaTitle": "Lip Fillers Malta: Complete Guide | Carisma Aesthetics",
+  "metaDescription": "Lip fillers in Malta: benefits, cost & expert advice. Book free consultation with Carisma Aesthetics today.",
   "category": "Aesthetics",
   "publishDate": "2025-05-30",
   "readTime": 3,

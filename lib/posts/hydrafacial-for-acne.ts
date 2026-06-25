@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "hydrafacial-for-acne",
   "title": "HydraFacial for Acne: Clear Skin Without Irritation",
-  "metaTitle": "HydraFacial for Acne Malta: Clear Skin | Carisma Aesthetics",
-  "metaDescription": "HydraFacial for acne in Malta: benefits, results & expert advice. Clear breakouts without irritation. Book free consultation today.",
+  "metaTitle": "HydraFacial for Acne Malta: Complete Guide | Carisma",
+  "metaDescription": "HydraFacial for acne in Malta: benefits, cost & expert advice. Book free consultation with Carisma Aesthetics.",
   "category": "Skincare",
   "publishDate": "2026-06-25",
   "readTime": 6,

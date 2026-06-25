@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "hydrafacial-for-aging-skin",
   "title": "HydraFacial for Aging Skin: Reveal Your Youthful Glow",
-  "metaTitle": "HydraFacial Malta: Anti-Aging | Carisma Aesthetics",
-  "metaDescription": "HydraFacial in Malta targets fine lines, wrinkles, and aging skin. Reveal youthful glow with proven anti-aging results. Book your consultation today.",
+  "metaTitle": "HydraFacial for Aging Skin Malta: Complete Guide | Carisma",
+  "metaDescription": "HydraFacial for aging skin in Malta: benefits, cost & expert advice. Book free consultation with Carisma Aesthetics.",
   "category": "Anti-Aging",
   "publishDate": "2026-06-25",
   "readTime": 6,
