@@ -13,6 +13,7 @@ const t: Treatment = {
       { label: "5 sessions", price: "from €649 (€217/session)" },
     ],
     cta: "BOOK YOUR CHEMICAL PEEL SESSION NOW",
+    bookHref: "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2800348&oiid=sv%3A25753594&share=true&pId=2708191",
     image: "/assets/treatments/chemical-peels-malta-hero.png",
     productTabs: ["/assets/treatments/chemical-peels-malta-logo-medpeel.png", "/assets/treatments/chemical-peels-malta-logo-mesoestetic.png"],
     heroForm: true,
