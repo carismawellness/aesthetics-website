@@ -832,3 +832,14 @@ body.dark-texture-page footer div[style*="background"] {
     transition: none;
   }
 }
+
+/* Hide scrollbar visually while keeping the element scrollable (e.g. modal form). */
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE & legacy Edge */
+  scrollbar-width: none;    /* Firefox */
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;            /* Chrome, Safari, Edge (Chromium) */
+  width: 0;
+  height: 0;
+}

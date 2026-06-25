@@ -277,7 +277,7 @@ export default function ConsultationModal() {
 
         {/* GHL consultation form — scrollable wrapper; iframe height auto-adjusts via
             postMessage from GHL and falls back to 760px so the full form is visible */}
-        <div style={{ flex: 1, overflowY: "auto", minHeight: 0 }}>
+        <div className="no-scrollbar" style={{ flex: 1, overflowY: "auto", minHeight: 0 }}>
           {hasOpened && (
             <iframe
               ref={iframeRef}
