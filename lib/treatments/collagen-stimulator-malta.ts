@@ -9,6 +9,7 @@ const t: Treatment = {
     body: "Discover the power of Collagen Stimulator (Sculptra & Radiesse) treatment in Malta for natural skin rejuvenation. Boost collagen production, reduce wrinkles, and achieve youthful, radiant skin. Non-surgical facelift alternative",
     prices: [{ label: "", price: "From €399/vial" }],
     cta: "BOOK YOUR COLLAGEN STIMULATOR SESSION NOW",
+    bookHref: "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2800348&oiid=sv%3A25753672&share=true&pId=2708191",
     image: "/assets/treatments/collagen-stimulator-malta-hero.png",
     productTabs: ["RADIESSE", "SCULPTRA"],
     heroForm: true,
