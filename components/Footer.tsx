@@ -280,6 +280,8 @@ function FooterBase() {
 export default function Footer() {
   return (
     <footer style={{ background: GRADIENT, position: 'relative', overflow: 'hidden', isolation: 'isolate' }}>
+      {/* top bleed: dissolves the preceding white section into the footer gradient */}
+      <div aria-hidden style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 100, background: 'linear-gradient(to bottom, #ffffff, transparent)', zIndex: 2, pointerEvents: 'none' }} />
       {/* decorative rose hidden on mobile (it overlapped the copyright) */}
       <div className="hidden md:block"><FooterRose /></div>
       <div style={{ position: 'relative', zIndex: 1 }}>
