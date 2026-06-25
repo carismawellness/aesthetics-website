@@ -13,6 +13,7 @@ const t: Treatment = {
       { label: "5 sessions", price: "from €599 (€119/session)" },
     ],
     cta: "BOOK YOUR MICRONEEDLING+MESOTHERAPY NOW",
+    bookHref: "https://www.fresha.com/a/carisma-aesthetics-st-julians-st-julians-stj-3310-malta-uip7g6p8/booking?menu=true&share=true&offerItems=sv%3A25753494&pId=2708191&dppub=true&cartId=e37ff293-83da-4329-a26e-b2877e3aae0d",
     image: "/assets/treatments/microneedling-malta-hero.png",
     brandLogos: ["/assets/treatments/microneedling-malta-logo-bcn.png", "/assets/treatments/microneedling-malta-logo-fillmed.png"],
     imageRatio: "450 / 358",
