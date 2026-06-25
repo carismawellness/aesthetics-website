@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "how-to-care-for-your-skin-after-a-peel",
   "title": "How to Care for Your Skin After a Peel",
-  "metaTitle": "Post-Peel Skincare | Care Instructions After Treatment",
-  "metaDescription": "Essential aftercare tips to ensure optimal results following a chemical peel treatment.",
+  "metaTitle": "Post-Peel Skincare Malta: Complete Care Guide",
+  "metaDescription": "Post-peel skincare in Malta ensures healing & results. Learn essential aftercare tips & book your free consultation today.",
   "category": "Skincare",
   "publishDate": "2025-11-25",
   "readTime": 1,

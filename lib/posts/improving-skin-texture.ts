@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "improving-skin-texture",
   "title": "Improving Skin Texture: Professional Treatments for Smooth, Refined Skin",
-  "metaTitle": "Improve Skin Texture Malta — Smoothing Treatments & Options",
-  "metaDescription": "Rough or uneven skin texture? Professional treatments like microneedling, peels, and laser at Carisma Aesthetics refine and smooth skin.",
+  "metaTitle": "Improve Skin Texture in Malta: Complete Guide | Carisma",
+  "metaDescription": "Smooth & refine skin texture in Malta with professional treatments. Microneedling, peels & laser. Book free consultation at Carisma.",
   "category": "Skincare",
   "publishDate": "2026-06-06",
   "readTime": 5,

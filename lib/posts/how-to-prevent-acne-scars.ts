@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "how-to-prevent-acne-scars",
   "title": "Ultimate Guide: How to Prevent Acne Scars and Achieve Clear Skin",
-  "metaTitle": "How to Prevent Acne Scars in Malta — Expert Guide",
-  "metaDescription": "Learn how to prevent acne scars and achieve clear skin. Expert dermatology guidance from Carisma Aesthetics in Malta.",
+  "metaTitle": "Prevent Acne Scars Malta: Complete Expert Guide",
+  "metaDescription": "Prevent acne scars in Malta with expert guidance. Learn prevention & treatment options. Book your free consultation now.",
   "category": "Skincare",
   "publishDate": "2023-07-11",
   "readTime": 3,
