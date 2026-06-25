@@ -12,6 +12,7 @@ const t: Treatment = {
     body: "Polynucleotides (Salmon DNA) boost hydration, repair damaged skin, and stimulate collagen — giving you smoother texture, improved elasticity, and a naturally refreshed glow.",
     prices: [{ label: "1ml", price: "from €249/ml" }],
     cta: "BOOK YOUR SESSION NOW",
+    bookHref: "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2800348&oiid=sv%3A25753643&share=true&pId=2708191",
     image: "/assets/treatments/polynucleotides-salmon-dna-hero.webp",
     brandLogos: ["/assets/treatments/polynucleotides-salmon-dna-ameela.png"],
     imageRatio: "450 / 358",
