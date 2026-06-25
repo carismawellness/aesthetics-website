@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "the-secret-to-summer-skin-start-in-june",
   "title": "Malta’s Ultimate Summer Skin Prep Plan: Treatments to Try Now",
-  "metaTitle": "Malta’s Ultimate Summer Skin Prep Plan: Treatments to Try Now",
-  "metaDescription": "Get glowing skin this summer with Carisma Aesthetics in Malta. Start in June with Profhilo, microneedling, and laser hair removal for flawless results.",
+  "metaTitle": "Summer Skin Prep in Malta: June Treatments Guide",
+  "metaDescription": "Summer skin prep in Malta: start in June with Profhilo, microneedling & laser hair removal. Achieve glowing, radiant skin. Book consultation.",
   "category": "Aesthetics",
   "publishDate": "2025-06-01",
   "readTime": 3,

@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "the-must-know-aesthetic-trends-for-august",
   "title": "The Must-Know Aesthetic Trends for August",
-  "metaTitle": "August Aesthetic Trends | Latest Beauty Treatments",
-  "metaDescription": "Discover the latest aesthetic trends for August. Stay ahead with the hottest beauty and wellness treatments.",
+  "metaTitle": "August Aesthetic Trends in Malta | Beauty Treatments",
+  "metaDescription": "August aesthetic trends in Malta: RF microneedling, ultrasound body sculpting, laser resurfacing. Minimal downtime. Book consultation today.",
   "category": "Trends",
   "publishDate": "2025-06-27",
   "readTime": 4,

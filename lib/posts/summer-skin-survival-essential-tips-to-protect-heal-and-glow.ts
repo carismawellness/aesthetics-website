@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "summer-skin-survival-essential-tips-to-protect-heal-and-glow",
   "title": "Summer Skin Survival: Essential Tips to Protect, Heal, and Glow",
-  "metaTitle": "Summer Skin Survival: Essential Tips to Protect, Heal, and Glow",
-  "metaDescription": "It's time to think about protecting and preparing your skin for summer! Discover the best tips you need to achieve healthy, hydrated, and radiant skin.",
+  "metaTitle": "Summer Skin Care Malta: Protect, Heal & Glow Tips",
+  "metaDescription": "Summer skin care in Malta: sunscreen, hydration boosters & aesthetic treatments. Protect skin from UV damage, heal & maintain radiance. Book now.",
   "category": "Aesthetics",
   "publishDate": "2025-06-19",
   "readTime": 4,

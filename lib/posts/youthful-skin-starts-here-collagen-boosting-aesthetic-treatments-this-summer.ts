@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "youthful-skin-starts-here-collagen-boosting-aesthetic-treatments-this-summer",
   "title": "Youthful Skin Starts Here: Collagen-Boosting Aesthetic Treatments This Summer",
-  "metaTitle": "Collagen Boosting Treatments | Youthful Skin",
-  "metaDescription": "Boost collagen and restore youthful skin with our aesthetic treatments. Look younger and feel confident.",
+  "metaTitle": "Collagen Boosting Treatments Malta: Complete Guide",
+  "metaDescription": "Collagen-boosting treatments in Malta restore youthful, radiant skin. Stimulate natural collagen with proven methods. Book your consultation.",
   "category": "Anti-Aging",
   "publishDate": "2025-06-25",
   "readTime": 4,
