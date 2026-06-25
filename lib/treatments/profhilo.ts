@@ -14,6 +14,7 @@ const t: Treatment = {
       { label: "3 sessions", price: "from €649 (€216/session)" },
     ],
     cta: "BOOK YOUR PROFHILO SESSION NOW",
+    bookHref: "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2800348&oiid=sv%3A25753632&share=true&pId=2708191",
     image: "/assets/treatments/profhilo-hero.avif",
     brandLogos: ["/assets/treatments/profhilo-logo.png"],
     imageRatio: "450 / 358",
