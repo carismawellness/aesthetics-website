@@ -102,7 +102,7 @@ export default function Header() {
   };
   const scheduleClose = () => {
     cancelClose();
-    closeTimer.current = setTimeout(() => setHover(null), 350);
+    closeTimer.current = setTimeout(() => setHover(null), 160);
   };
   // Clear any pending timer on unmount.
   useEffect(() => cancelClose, []);
@@ -198,6 +198,7 @@ export default function Header() {
                 );
               }
               const { items, showViewAll } = curate(m);
+              const isOpen = hover === m.label;
               return (
                 <div
                   key={m.label}
@@ -210,27 +211,34 @@ export default function Header() {
                     style={{ ...navLink, background: "none", border: "none", cursor: "pointer", padding: "4px 0", display: "flex", alignItems: "center", gap: "4px" }}
                     className="hover:underline transition"
                     aria-haspopup="true"
-                    aria-expanded={hover === m.label}
+                    aria-expanded={isOpen}
                     onClick={() => setHover((p) => (p === m.label ? null : m.label))}
                   >
                     {m.label}
                     <svg
                       width="10" height="10" viewBox="0 0 24 24" fill="none"
                       stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
-                      style={{ transition: "transform 0.2s ease", transform: hover === m.label ? "rotate(180deg)" : "rotate(0deg)", opacity: 0.7 }}
+                      style={{ transition: "transform 0.25s cubic-bezier(0.22,1,0.36,1)", transform: isOpen ? "rotate(180deg)" : "rotate(0deg)", opacity: 0.7 }}
                     >
                       <polyline points="6 9 12 15 18 9" />
                     </svg>
                   </button>
-                  {hover === m.label && (
-                    <div
-                      onMouseEnter={cancelClose}
-                      onMouseLeave={scheduleClose}
-                      style={{
+                  {/* Panel is always mounted; open/close is driven by CSS so it
+                      fades + slides in AND out smoothly (no abrupt pop). */}
+                  <div
+                    onMouseEnter={cancelClose}
+                    onMouseLeave={scheduleClose}
+                    role="menu"
+                    aria-hidden={!isOpen}
+                    style={{
                       position: "absolute",
                       top: "calc(100% - 2px)",
                       left: "50%",
-                      transform: "translateX(-50%)",
+                      transform: `translateX(-50%) translateY(${isOpen ? "0" : "8px"})`,
+                      opacity: isOpen ? 1 : 0,
+                      visibility: isOpen ? "visible" : "hidden",
+                      pointerEvents: isOpen ? "auto" : "none",
+                      transition: "opacity 0.2s ease, transform 0.24s cubic-bezier(0.22,1,0.36,1), visibility 0.2s",
                       background: "rgba(255,255,255,0.82)",
                       backdropFilter: "blur(22px) saturate(180%)",
                       WebkitBackdropFilter: "blur(22px) saturate(180%)",
@@ -259,19 +267,18 @@ export default function Header() {
                         }}
                       />
                       {items.map((it) => (
-                        <Link key={it.href} href={it.href} className="block hover:bg-black/5 hover:underline"
+                        <Link key={it.href} href={it.href} tabIndex={isOpen ? undefined : -1} className="block hover:bg-black/5 hover:underline"
                           style={{ padding: "9px 14px", borderRadius: "10px", color: DROPDOWN_INK, fontFamily: '"Roboto Local", sans-serif', fontSize: "13px", textDecoration: "none", transition: "background 0.3s ease" }}>
                           {it.label}
                         </Link>
                       ))}
                       {showViewAll && (
-                        <Link href={m.viewAllHref!} className="block hover:bg-black/5 hover:underline"
+                        <Link href={m.viewAllHref!} tabIndex={isOpen ? undefined : -1} className="block hover:bg-black/5 hover:underline"
                           style={{ gridColumn: "1 / -1", marginTop: "4px", borderTop: "1px solid rgba(64,96,96,0.16)", paddingTop: "10px", padding: "10px 14px 4px", color: TEAL, fontFamily: '"Roboto Local", sans-serif', fontSize: "13px", fontWeight: 600, textDecoration: "none", transition: "background 0.3s ease" }}>
                           View all →
                         </Link>
                       )}
                     </div>
-                  )}
                 </div>
               );
             })}
