@@ -8,6 +8,7 @@ const t: Treatment = {
     subtitle: "4 in 1 skin tightening protocol",
     body: "Smoother, firmer, and tighter skin in 4 focused sessions. Our 4 in 1 course with the VelaShape III uses radiofrequency, infrared heat, vacuum and mechanical massage together to stimulate collagen to tighten and smoothen your skin.",
     image: "/assets/treatments/st-feat1.png",
+    heroVideo: "/assets/treatments/skin-tightening-hero.mp4",
     prices: [
       { label: "4x Skin tightening sessions with the VelaShape", price: "€400" },
       { label: "4x access to spa & fitness facilities", price: "€140" },
