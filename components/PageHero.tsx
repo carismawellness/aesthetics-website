@@ -174,6 +174,7 @@ export default function PageHero({
   const primaryClass = dark ? "btn btn-gold" : "btn btn-teal";
 
   return (
+    <>
     <section className="hero-fit" style={{ position: "relative", overflow: "hidden", paddingInline: "clamp(14px,3.5vw,40px)", background: sectionBg }}>
       {/* Animated constellation motif — drifting linked dots (every page).
          Light pages use a deeper teal so the lattice reads clearly over the
@@ -356,5 +357,20 @@ export default function PageHero({
         }
       `}</style>
     </section>
+    {/* Gradient bleed — dissolves the hero's bottom edge into the next section */}
+    <div
+      aria-hidden
+      style={{
+        height: 100,
+        marginTop: -100,
+        background: dark
+          ? "linear-gradient(to bottom, transparent, #0e0c09)"
+          : "linear-gradient(to bottom, transparent, #ffffff)",
+        position: "relative",
+        zIndex: 10,
+        pointerEvents: "none",
+      }}
+    />
+    </>
   );
 }

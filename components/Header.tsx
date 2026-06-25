@@ -234,7 +234,7 @@ export default function Header() {
                       border: "1px solid rgba(255,255,255,0.7)",
                       borderRadius: "16px",
                       boxShadow: "0 16px 40px rgba(28,30,30,0.16), inset 0 1px 0 rgba(255,255,255,0.85)",
-                      width: "360px",
+                      width: "420px",
                       padding: "10px",
                       display: "grid",
                       gridTemplateColumns: "1fr 1fr",
@@ -257,7 +257,7 @@ export default function Header() {
                       />
                       {items.map((it) => (
                         <Link key={it.href} href={it.href} className="block hover:bg-black/5 hover:underline"
-                          style={{ padding: "9px 14px", borderRadius: "10px", color: DROPDOWN_INK, fontFamily: '"Roboto Local", sans-serif', fontSize: "13px", textDecoration: "none", transition: "background 0.3s ease", whiteSpace: "nowrap" }}>
+                          style={{ padding: "9px 14px", borderRadius: "10px", color: DROPDOWN_INK, fontFamily: '"Roboto Local", sans-serif', fontSize: "13px", textDecoration: "none", transition: "background 0.3s ease" }}>
                           {it.label}
                         </Link>
                       ))}
