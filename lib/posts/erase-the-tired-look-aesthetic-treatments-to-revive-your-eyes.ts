@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "erase-the-tired-look-aesthetic-treatments-to-revive-your-eyes",
   "title": "Erase the Tired Look: Aesthetic Treatments to Revive Your Eyes",
-  "metaTitle": "Eye Treatments Malta: Complete Guide | Carisma Aesthetics",
-  "metaDescription": "Eye treatments in Malta: benefits, cost & expert advice. Book free consultation with Carisma Aesthetics.",
+  "metaTitle": "Under-Eye Treatments Malta: Dark Circles, Bags & Fine Lines | Carisma",
+  "metaDescription": "Aesthetic eye treatments in Malta for dark circles, puffiness & fine lines. Dermal fillers, laser & skin-tightening. Refreshed eyes in minutes.",
   "category": "Eye Treatments",
   "publishDate": "2025-06-23",
   "readTime": 4,
