@@ -8,7 +8,6 @@ import {
   INJECTABLE_COMFORT,
   TIMELINE,
   REFERRAL,
-  CONSULTATION,
   type QuizOption,
 } from './quizData';
 
@@ -22,7 +21,7 @@ const SERIF      = '"Trajan Pro", Georgia, serif';
 const WIDE       = '"Novecento Wide", sans-serif';
 const BODY       = 'Roboto, sans-serif';
 
-type StepId = 'concerns' | 'areas' | 'injectableComfort' | 'timeline' | 'referral' | 'consultation' | 'contact';
+type StepId = 'concerns' | 'areas' | 'injectableComfort' | 'timeline' | 'referral' | 'contact';
 
 const STEPS: { id: StepId; title: string; sub: string }[] = [
   { id: 'concerns',          title: 'What would you like to improve?',        sub: 'Choose all that apply — we\'ll match treatments to every concern.' },
@@ -30,7 +29,6 @@ const STEPS: { id: StepId; title: string; sub: string }[] = [
   { id: 'injectableComfort', title: 'How do you feel about injectables?',     sub: 'This helps us tailor recommendations around your comfort level.' },
   { id: 'timeline',          title: 'What\'s your timeline?',                 sub: 'Helps us pace a plan that works around your life.' },
   { id: 'referral',          title: 'Where did you hear about us?',           sub: 'Last quick one before your personalised results.' },
-  { id: 'consultation',      title: 'Would you like a consultation?',         sub: 'Our doctors can walk you through every option in a calm, no-pressure environment.' },
   { id: 'contact',           title: 'Where should we send your plan?',        sub: 'Enter your details so we can share your results and personalised treatment recommendations.' },
 ];
 
@@ -45,7 +43,6 @@ export default function AestheticsQuiz({ onClose }: { onClose: () => void }) {
   const [injectableComfort, setInjectableComfort] = useState('');
   const [timeline, setTimeline] = useState('');
   const [referral, setReferral] = useState('');
-  const [consultation, setConsultation] = useState('');
   const [firstName, setFirstName] = useState('');
   const [surname, setSurname] = useState('');
   const [email, setEmail] = useState('');
@@ -77,10 +74,9 @@ export default function AestheticsQuiz({ onClose }: { onClose: () => void }) {
       case 'injectableComfort': return injectableComfort !== '';
       case 'timeline':          return timeline !== '';
       case 'referral':          return referral !== '';
-      case 'consultation':      return consultation !== '';
       case 'contact':           return !!firstName.trim() && !!surname.trim() && validEmail(email) && validPhone(phone);
     }
-  }, [step.id, concerns, injectableComfort, timeline, referral, consultation, firstName, surname, email, phone]);
+  }, [step.id, concerns, injectableComfort, timeline, referral, firstName, surname, email, phone]);
 
   const goNext = () => {
     if (step.id === 'contact') {
@@ -115,7 +111,6 @@ export default function AestheticsQuiz({ onClose }: { onClose: () => void }) {
           injectableComfort,
           timeline,
           referral,
-          consultation,
         }),
       });
     } catch {
@@ -220,9 +215,6 @@ export default function AestheticsQuiz({ onClose }: { onClose: () => void }) {
         )}
         {step.id === 'referral' && (
           <OptionGrid options={REFERRAL} selected={referral ? [referral] : []} multi={false} compact onToggle={(v) => setReferral(v)} groupLabel="Where you heard about us" />
-        )}
-        {step.id === 'consultation' && (
-          <OptionGrid options={CONSULTATION} selected={consultation ? [consultation] : []} multi={false} onToggle={(v) => setConsultation(v)} groupLabel="Consultation preference" />
         )}
 
         {step.id === 'contact' && (
