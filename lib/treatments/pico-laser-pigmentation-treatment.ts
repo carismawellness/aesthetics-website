@@ -17,6 +17,7 @@ const t: Treatment = {
       { label: "Melasma – hormonal / diffuse pigmentation, full-face PIH", price: "from €199" },
     ],
     cta: "Book Your Pigmentation Treatment Appointment",
+    bookHref: "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?eid=4994306&oiid=sv%3A28152726&share=true&pId=2708191",
     image: `${A}/pig-hero-main.png`,
     imageRatio: "4 / 5",
     heroForm: true,
