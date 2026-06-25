@@ -55,8 +55,7 @@ export const post: BlogPost = {
       "type": "paragraph",
       "html": "At Carisma Aesthetics, our practitioners perform a detailed facial analysis to determine the optimal injection sites for your individual needs. Book your consultation to explore dermal filler options tailored to you."
     }
-  ],
-  "internalLinks": []
+  ]
 };
 
 export default post;

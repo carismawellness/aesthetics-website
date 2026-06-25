@@ -17,6 +17,7 @@ const t: Treatment = {
       { label: "Today", price: "€239 Only" },
     ],
     cta: "CLAIM MY SPOT NOW",
+    bookHref: "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2800348&oiid=sv%3A25781408&share=true&pId=2708191",
     note: "*any additional threads used will be charged at €120 each; ** Suitability for this procedure is strictly subject to Dr approval",
     image: "/assets/treatments/thread-lift-malta-hero.avif",
     bgImage: "/assets/treatments/thread-lift-malta-hero-bg.png",

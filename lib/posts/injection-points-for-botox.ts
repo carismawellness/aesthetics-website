@@ -46,8 +46,7 @@ export const post: BlogPost = {
       "type": "paragraph",
       "html": "At Carisma Aesthetics, our experienced practitioners assess your unique facial anatomy to determine the ideal injection points for your desired results. Book a consultation today to discuss your options."
     }
-  ],
-  "internalLinks": []
+  ]
 };
 
 export default post;

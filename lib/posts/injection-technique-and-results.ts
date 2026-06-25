@@ -68,8 +68,7 @@ export const post: BlogPost = {
       "type": "paragraph",
       "html": "A skilled injector's technique determines whether your results look natural and proportionate. This is why choosing an experienced practitioner is the most important decision you can make."
     }
-  ],
-  "internalLinks": []
+  ]
 };
 
 export default post;
