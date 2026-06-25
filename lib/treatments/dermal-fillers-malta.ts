@@ -12,6 +12,7 @@ const t: Treatment = {
       { label: "2ml", price: "from €399 (€175/ml)" },
     ],
     cta: "BOOK YOUR DERMAL FILLER SESSION NOW",
+    bookHref: "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2800348&oiid=sv%3A25753795&share=true&pId=2708191",
     image: "/assets/treatments/dermal-fillers-malta-hero.png",
     imageRatio: "5 / 4",
     productTabs: ["/assets/treatments/dermal-fillers-malta-logo-juvederm.png", "/assets/treatments/dermal-fillers-malta-logo-croma.png", "/assets/treatments/dermal-fillers-malta-logo-teoxane.png"],
