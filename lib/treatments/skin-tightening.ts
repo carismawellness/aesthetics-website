@@ -63,17 +63,14 @@ const t: Treatment = {
       {
         title: "Targeted SKIN TIGHTENING",
         desc: "Four focused VelaShape III sessions designed to treat one or more priority areas such as the tummy, hips, thighs or bum, depending on your goals.",
-        image: "/assets/treatments/st-feat1.png",
       },
       {
         title: "Visible, NOTICEABLE IMPROVEMENT",
         desc: "Skin feels firmer and smoother over the course of treatments, with improvements you can see in clothes and feel to the touch — not just on a machine.",
-        image: "/assets/treatments/st-feat2.png",
       },
       {
         title: "COLLAGEN-STIMULATING TECHNOLOGY",
         desc: "Radiofrequency and infrared energy work together with vacuum and mechanical massage to support collagen production and improve skin texture.",
-        image: "/assets/treatments/st-feat3.png",
       },
     ],
     cta: "claim your spot now",
