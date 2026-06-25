@@ -12,6 +12,13 @@ import { post as hairRegrowthTreatmentsScience } from './hair-regrowth-treatment
 import { post as antiWrinkleInjectionsGuide } from './anti-wrinkle-injections-guide';
 import { post as medicallyQualifiedAestheticsClinicMalta } from './medically-qualified-aesthetics-clinic-malta';
 import { post as medicalWeightLossMaltaGuide } from './medical-weight-loss-malta-guide';
+import { post as prpFacialMalta } from './prp-facial-malta';
+import { post as jawlineFillerMalta } from './jawline-filler-malta';
+import { post as cheekFillersMalta } from './cheek-fillers-malta';
+import { post as antiAgeingTreatmentsMalta } from './anti-ageing-treatments-malta';
+import { post as acneScarTreatmentMalta } from './acne-scar-treatment-malta';
+import { post as dermalFillersMaltaGuide } from './dermal-fillers-malta-guide';
+import { post as glp1WeightLossTreatmentMalta } from './glp-1-weight-loss-treatment-malta';
 
 export const BLOG_REGISTRY: Record<string, BlogPost> = {
   [whatToExpectLaserHairRemoval.slug]: whatToExpectLaserHairRemoval,
@@ -22,6 +29,13 @@ export const BLOG_REGISTRY: Record<string, BlogPost> = {
   [antiWrinkleInjectionsGuide.slug]: antiWrinkleInjectionsGuide,
   [medicallyQualifiedAestheticsClinicMalta.slug]: medicallyQualifiedAestheticsClinicMalta,
   [medicalWeightLossMaltaGuide.slug]: medicalWeightLossMaltaGuide,
+  [prpFacialMalta.slug]: prpFacialMalta,
+  [jawlineFillerMalta.slug]: jawlineFillerMalta,
+  [cheekFillersMalta.slug]: cheekFillersMalta,
+  [antiAgeingTreatmentsMalta.slug]: antiAgeingTreatmentsMalta,
+  [acneScarTreatmentMalta.slug]: acneScarTreatmentMalta,
+  [dermalFillersMaltaGuide.slug]: dermalFillersMaltaGuide,
+  [glp1WeightLossTreatmentMalta.slug]: glp1WeightLossTreatmentMalta,
 };
 
 export const ALL_BLOG_SLUGS: string[] = Object.keys(BLOG_REGISTRY);
