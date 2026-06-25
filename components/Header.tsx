@@ -31,6 +31,9 @@ const TEAL = "#406060";        // small teal text / phone / icons (slimming GREE
 const NAV_INK = "#245052";     // nav-link ink (brand teal)
 const DROPDOWN_INK = "#245052"; // dropdown/sub-item link ink (brand teal)
 
+// External Fresha booking link used by the header "free consultation" CTAs.
+const FRESHA_BOOKING = "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2800348&oiid=sv%3A25754425&share=true&pId=2708191";
+
 type Dropdown = { label: string; href?: string; items?: NavLink[]; viewAllHref?: string };
 
 // Show all treatments in the dropdown; "View all →" always appears for menus
@@ -280,7 +283,7 @@ export default function Header() {
               <PhoneIcon />
               <span style={{ color: TEAL, fontFamily: '"Novecento Wide", sans-serif', fontSize: "13px", fontWeight: 600, letterSpacing: "0.5px" }}>{CONTACT.phoneDigits}</span>
             </a>
-            <Link href="/consultation" className="cta-glow-teal" style={{ ...ctaStyle }}>free consultation</Link>
+            <a href={FRESHA_BOOKING} target="_blank" rel="noopener noreferrer" className="cta-glow-teal" style={{ ...ctaStyle }}>free consultation</a>
           </div>
 
           {/* Mobile hamburger */}
@@ -393,14 +396,16 @@ export default function Header() {
               <PhoneIcon />
               <span style={{ color: TEAL, fontFamily: '"Novecento Wide", sans-serif', fontSize: "16px", fontWeight: 600, letterSpacing: "0.5px" }}>{CONTACT.phoneDigits}</span>
             </a>
-            <Link
-              href="/consultation"
+            <a
+              href={FRESHA_BOOKING}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() => setOpen(false)}
               className="cta-glow-teal block text-center w-full"
               style={{ ...ctaStyle, marginTop: "10px", padding: "14px", fontSize: "13px" }}
             >
               free consultation
-            </Link>
+            </a>
 
             {/* Compact footer */}
             <div style={{ marginTop: 32, paddingTop: 24, borderTop: "1px solid rgba(64,96,96,0.28)" }}>
@@ -457,13 +462,15 @@ export default function Header() {
                 boxShadow: "0 -8px 28px rgba(28,30,30,0.12)",
               }}
             >
-              <Link
-                href="/consultation"
+              <a
+                href={FRESHA_BOOKING}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="cta-glow-teal block text-center w-full"
                 style={{ ...ctaStyle, padding: "14px", fontSize: "13px" }}
               >
                 Book Your Free Consultation
-              </Link>
+              </a>
             </div>
           </>,
           document.body
