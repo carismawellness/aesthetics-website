@@ -19,6 +19,7 @@ const t: Treatment = {
       { label: "Hydrafacial Signature (80 mins)", price: "€199" },
     ],
     cta: "BOOK HYDRAFACIAL NOW",
+    bookHref: "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2800348&oiid=sv%3A25753415&share=true&pId=2708191",
     image: "/assets/treatments/hydrafacial-hero.jpg",
   },
   beforeAfterTitle: "hydrafacial results",
