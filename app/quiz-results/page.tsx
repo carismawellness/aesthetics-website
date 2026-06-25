@@ -12,7 +12,7 @@ const TREATMENTS = [
     id: 'wrinkle-relaxing',
     name: 'Anti-Wrinkle Injections',
     tagline: "Doctor-administered muscle-relaxing injections that soften expression lines — forehead, crow's feet, frown lines — for a naturally refreshed look.",
-    image: '/assets/service-botox.png',
+    image: '/assets/treatments/wrinkle-relaxing-malta-hero.jpg',
     stats: [
       { label: 'Treatment time', value: '15–30 min' },
       { label: 'Results visible', value: '3–5 days' },
@@ -24,7 +24,7 @@ const TREATMENTS = [
     id: 'dermal-fillers',
     name: 'Dermal Fillers',
     tagline: 'Hyaluronic acid fillers restore lost volume, redefine contours and soften deep lines — with results that look beautifully natural.',
-    image: '/assets/service-dermal-fillers.png',
+    image: '/assets/treatments/dermal-fillers-malta-hero.png',
     stats: [
       { label: 'Treatment time', value: '30–45 min' },
       { label: 'Results', value: 'Immediate' },
@@ -36,7 +36,7 @@ const TREATMENTS = [
     id: 'microneedling',
     name: 'Microneedling',
     tagline: "Controlled micro-injuries trigger the skin's natural collagen response — improving texture, minimising pores, and fading acne scars over a course of treatments.",
-    image: '/assets/service-microneedling.jpg',
+    image: '/assets/treatments/microneedling-malta-hero.png',
     stats: [
       { label: 'Downtime', value: '24–48 hrs' },
       { label: 'Course', value: '3–6 sessions' },
@@ -48,7 +48,7 @@ const TREATMENTS = [
     id: 'chemical-peels',
     name: 'Chemical Peels',
     tagline: "Medical-grade acid peels exfoliate the skin's surface to reduce pigmentation, even skin tone and refine texture — customised to your skin type.",
-    image: '/assets/service-chemical-peel.png',
+    image: '/assets/treatments/chemical-peels-malta-hero.png',
     stats: [
       { label: 'Downtime', value: 'Minimal–3 days' },
       { label: 'Glow', value: 'Immediate' },
@@ -60,7 +60,7 @@ const TREATMENTS = [
     id: 'collagen-stimulator',
     name: 'Collagen Stimulator',
     tagline: 'Biostimulators like Sculptra or Radiesse trigger deep collagen production for gradual, long-lasting improvements in skin quality and volume.',
-    image: '/assets/clinic-treatment-room.jpg',
+    image: '/assets/treatments/collagen-stimulator-malta-hero.png',
     stats: [
       { label: 'Results appear', value: '4–6 weeks' },
       { label: 'Lasts', value: '18–24 months' },
@@ -72,7 +72,7 @@ const TREATMENTS = [
     id: 'thread-lift',
     name: 'Thread Lift',
     tagline: 'Dissolvable sutures gently lift sagging skin on the face and neck — providing an immediate lifting effect with ongoing collagen stimulation.',
-    image: '/assets/service-thread-lift.png',
+    image: '/assets/treatments/thread-lift-malta-hero.avif',
     stats: [
       { label: 'Treatment time', value: '45–90 min' },
       { label: 'Lift visible', value: 'Immediate' },
@@ -84,7 +84,7 @@ const TREATMENTS = [
     id: 'lip-fillers',
     name: 'Lip Enhancement',
     tagline: 'Precise filler placement that adds natural-looking volume, defines the lip border and corrects asymmetry — never overdone.',
-    image: '/assets/service-lip-fillers.png',
+    image: '/assets/treatments/lip-fillers-malta-hero.png',
     stats: [
       { label: 'Treatment time', value: '20–30 min' },
       { label: 'Results', value: 'Immediate' },
