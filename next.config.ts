@@ -18,8 +18,10 @@ const adRewrites: { source: string; destination: string }[] = [
 
   // --- Treatment URL aliases (Wix used both; cleaner → canonical with -1 suffix) ---
   { source: "/hydra-facial-malta",    destination: "/hydrafacial" },
-  { source: "/skin-tightening",       destination: "/skin-tightening-1" },
-  { source: "/muscle-stimulation",    destination: "/muscle-stimulation-1" },
+  // NOTE: /skin-tightening and /muscle-stimulation are the LIVE canonical [slug]
+  // routes (200) — Next matches the filesystem route before afterFiles rewrites,
+  // so rewriting them was a dead no-op. The old Wix "-1" variants are handled as
+  // 301 redirects in legacyRedirects instead.
   { source: "/fat-reduction",         destination: "/fat-freezing" },
   { source: "/anti-callulite",        destination: "/anti-cellulite" },
   { source: "/glp-ozempic",           destination: "/medical-weight-loss" },
@@ -75,6 +77,11 @@ const legacyRedirects: { source: string; destination: string }[] = [
   { source: "/book-consultation", destination: "/consultation" },
   { source: "/book",              destination: "/consultation" },
   { source: "/treatments",        destination: "/face-treatments" },
+
+  // --- Old Wix duplicate-slug variants (sitemap-indexed → must not 404) ---
+  { source: "/muscle-stimulation-1", destination: "/muscle-stimulation" },
+  { source: "/skin-tightening-1",    destination: "/skin-tightening" },
+  { source: "/lympathic-drainage",   destination: "/lymphatic-drainage" }, // Wix typo (missing h)
 
   // --- Brand / keyword slug consolidation ---
   { source: "/botox-malta",                 destination: "/wrinkle-relaxing-malta" },
