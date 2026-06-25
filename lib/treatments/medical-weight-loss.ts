@@ -9,7 +9,7 @@
 import type { Treatment } from "../treatment-types";
 
 const BOOK_HREF =
-  "http://fresha.com/a/carisma-slimming-floriana-great-siege-road-wxxyuj9p/booking?menu=true&share=true&offerItems=sv%3A26105577&pId=2708191&dppub=true&employeeId=5084222";
+  "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2843963&eid=5084222&oiid=sv%3A26105577&share=true&pId=2708191";
 
 const t: Treatment = {
   slug: "medical-weight-loss",
