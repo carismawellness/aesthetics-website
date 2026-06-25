@@ -105,8 +105,8 @@ function BrandsSection() {
                 style={{ objectFit: 'cover' }}
                 loading="lazy"
               />
-              {/* dark gradient, heaviest on the left where the logo + CTA sit */}
-              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(105deg, rgba(2,22,22,0.78) 0%, rgba(2,22,22,0.45) 48%, rgba(2,22,22,0.12) 100%)' }} />
+              {/* subtle gradient — bottom-left corner only so the photo fills the card */}
+              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(135deg, rgba(2,22,22,0.52) 0%, rgba(2,22,22,0.18) 45%, transparent 75%)' }} />
               {/* logo (centre-left) + glass CTA pill (bottom-left) */}
               <div style={{ position: 'absolute', inset: 0, padding: 'clamp(24px,3vw,36px)', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'flex-start' }}>
                 <Image
