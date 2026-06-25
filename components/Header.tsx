@@ -181,7 +181,7 @@ export default function Header() {
           {/* Logo + brand switcher */}
           <div className="flex items-center shrink-0">
             <Link href="/" className="flex items-center" onClick={() => setOpen(false)}>
-              <Image src="/assets/logos/carisma-wordmark-horizontal.svg" alt="Carisma Aesthetics" className="header-logo" width={140} height={36} style={{ height: "36px", width: "auto", display: "block" }} unoptimized />
+              <Image src="/assets/logos/carisma-wordmark-horizontal.svg" alt="Carisma Aesthetics" className="header-logo" width={140} height={36} style={{ height: "36px", width: "auto", display: "block", filter: "brightness(0.6)" }} unoptimized />
             </Link>
             <BrandSwitcher />
           </div>
@@ -311,7 +311,7 @@ export default function Header() {
           {/* Top row: logo + close */}
           <div className="flex items-center justify-between shrink-0" style={{ padding: "16px clamp(16px,5vw,28px)" }}>
             <Link href="/" onClick={() => setOpen(false)} className="flex items-center">
-              <Image src="/assets/logos/carisma-wordmark-horizontal.svg" alt="Carisma Aesthetics" className="header-logo--mobile" width={130} height={34} style={{ height: "34px", width: "auto", display: "block" }} unoptimized />
+              <Image src="/assets/logos/carisma-wordmark-horizontal.svg" alt="Carisma Aesthetics" className="header-logo--mobile" width={130} height={34} style={{ height: "34px", width: "auto", display: "block", filter: "brightness(0.6)" }} unoptimized />
             </Link>
             <button
               onClick={() => setOpen(false)}

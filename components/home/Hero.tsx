@@ -7,7 +7,7 @@ export default function Hero() {
     <PageHero
       motif
       badge="#1 Voted Med-Aesthetics Clinic"
-      headline={[{ text: "Doctor-led medical aesthetics in Malta" }, { text: "— Glow with Confidence", em: true }]}
+      headline={[{ text: "Doctor-led medical aesthetics in Malta" }]}
       sub="Doctor-led medical aesthetics in Malta, built around one belief: restoration, not change. Subtle, precise, never overdone, and always guided by a proper medical consultation first."
       bullets={[
         { text: "Medically qualified doctors" },
