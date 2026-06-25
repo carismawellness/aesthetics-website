@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "eliminate-wrinkles-with-anti-wrinkle-injectables",
   "title": "Eliminate Wrinkles with Anti-Wrinkle Injectables",
-  "metaTitle": "Eliminate Wrinkles with Anti-Wrinkle Injectables | Carisma Aesthetics Malta",
-  "metaDescription": "Learn about eliminate wrinkles with anti-wrinkle injectables at Carisma Aesthetics in Malta. Expert aesthetic treatments and skincare advice.",
+  "metaTitle": "Anti-Wrinkle Injectables Malta: Complete Guide | Carisma",
+  "metaDescription": "Anti-wrinkle injectables in Malta: benefits, cost & expert advice. Book free consultation with Carisma Aesthetics.",
   "category": "Injectables",
   "publishDate": "2026-06-25",
   "readTime": 5,
