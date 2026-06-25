@@ -11,6 +11,7 @@ const t: Treatment = {
       { label: "Jawline Sculpting Package", price: "from €149" },
     ],
     cta: "BOOK YOUR JAWLINE CONSULTATION",
+    bookHref: "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2800348&oiid=sv%3A25781412&share=true&pId=2708191",
     image: "/assets/treatments/fat-dissolving-hero.jpg",
     heroForm: true,
   },
