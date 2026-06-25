@@ -17,6 +17,7 @@ const t: Treatment = {
       { label: "TOTAL VALUE: €665 TODAY", price: "€299 ONLY" },
     ],
     cta: "Claim Your Spot Now",
+    bookHref: "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2843963&oiid=sv%3A25821465&share=true&pId=2708191",
     note: "* Eligibility and treatment recommendations depend on your health history and individual needs. A clear plan will always be discussed during your consultation before starting. Lymphatic drainage is a supportive wellness therapy and may not be suitable for certain medical conditions. Treatment is provided following professional assessment by our medical team.",
     heroVideo: "/assets/treatments/vid-lympathic-drainage.mp4",
   },
