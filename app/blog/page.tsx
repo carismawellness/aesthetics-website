@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import PageHero from "@/components/PageHero";
-import { getAllBlogs } from "@/lib/blogs";
+import { getAllPosts } from "@/lib/posts";
 import type { BlogPost } from "@/lib/blog-types";
 
 export const metadata: Metadata = {
@@ -42,7 +42,7 @@ function BlogCard({ post }: { post: BlogPost }) {
     /* P6: <article> element for blog cards; heading hierarchy H2 for card titles */
     <article>
       <Link
-        href={`/blog/${post.slug}`}
+        href={`/post/${post.slug}`}
         className="group card review-card block overflow-hidden transition-all duration-200 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
         style={{
           borderRadius: "var(--radius-card)",
@@ -154,7 +154,7 @@ function BlogCard({ post }: { post: BlogPost }) {
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default function BlogIndexPage() {
-  const posts = getAllBlogs();
+  const posts = getAllPosts();
   const heroImage = posts[0]?.coverImage || "/assets/clinic-room.jpg";
 
   return (
