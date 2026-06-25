@@ -21,8 +21,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: url("/blog"), lastModified: LAST_MODIFIED, changeFrequency: "weekly", priority: 0.8 },
     { url: url("/privacy-policy"), lastModified: LAST_MODIFIED, changeFrequency: "yearly", priority: 0.3 },
     { url: url("/terms-conditions"), lastModified: LAST_MODIFIED, changeFrequency: "yearly", priority: 0.3 },
-    // wrinkles-fine-lines-packages is not in PACKAGE_LINKS nav array — add explicitly.
-    { url: `${BASE_URL}/wrinkles-fine-lines-packages`, lastModified: LAST_MODIFIED, changeFrequency: "monthly" as const, priority: 0.7 },
   ];
 
   // Treatment detail pages (/<slug>) — every nav-linked face/body/package treatment.

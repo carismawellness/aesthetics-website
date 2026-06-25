@@ -10,7 +10,7 @@ import GiftHeroCards from "@/components/gifts/GiftHeroCards";
 import { giftFaqs } from "@/components/gifts/giftFaqData";
 
 export const metadata: Metadata = {
-  title: "E-Gift Vouchers | Carisma Aesthetics - #1 Award Winning Chain in Malta",
+  title: { absolute: "E-Gift Vouchers | Carisma Aesthetics - #1 Award Winning Chain in Malta" },
   description: "Give the gift of glowing skin. Carisma Aesthetics gift vouchers for any treatment — delivered digitally. Perfect for any occasion.",
   alternates: {
     canonical: "https://www.carismaaesthetics.com/e-giftcards-vouchers",

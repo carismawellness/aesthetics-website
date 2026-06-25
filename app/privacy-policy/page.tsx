@@ -12,7 +12,7 @@ import {
 } from "@/components/LegalPage";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Carisma Aesthetics Malta",
+  title: { absolute: "Privacy Policy | Carisma Aesthetics Malta" },
   description:
     "How Carisma Aesthetics collects, uses, and protects your personal and health data. GDPR and Malta Data Protection Act compliant privacy policy for our medical-aesthetics clinic in Malta.",
   alternates: { canonical: "https://www.carismaaesthetics.com/privacy-policy" },

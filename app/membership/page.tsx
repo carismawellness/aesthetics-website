@@ -3,7 +3,7 @@ import MembershipPage from "@/components/MembershipPage";
 import { MEMBERSHIP_FAQS } from "@/components/membership/faqData";
 
 export const metadata: Metadata = {
-  title: "Glow Club Membership in Malta | Carisma Aesthetics",
+  title: { absolute: "Glow Club Membership in Malta | Carisma Aesthetics" },
   description:
     "Join the Glow Club at Carisma Aesthetics Malta. Save month by month, then spend with 10% off aesthetics & spa services, 15% off skincare, priority booking and a yearly complimentary consultation.",
   alternates: { canonical: "https://www.carismaaesthetics.com/membership" },

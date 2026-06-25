@@ -12,7 +12,7 @@ import {
 } from "@/components/LegalPage";
 
 export const metadata: Metadata = {
-  title: "Terms & Conditions | Carisma Aesthetics Malta",
+  title: { absolute: "Terms & Conditions | Carisma Aesthetics Malta" },
   description:
     "Terms & Conditions for Carisma Aesthetics, a doctor-led medical-aesthetics clinic in Malta. Bookings, deposits, cancellations, consent to treatment, medical disclaimers, and governing law.",
   alternates: { canonical: "https://www.carismaaesthetics.com/terms-conditions" },

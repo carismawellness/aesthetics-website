@@ -87,12 +87,12 @@ const SLUG_SEO: Record<string, { title: string; description: string }> = {
     description:
       "CoolSculpting fat freezing in Malta. Non-surgical, FDA-cleared body contouring to permanently eliminate stubborn fat. Natural-looking results. Book your free consultation.",
   },
-  "muscle-stimulation-1": {
+  "muscle-stimulation": {
     title: "EMSculpt NEO Malta | Body Sculpting | Carisma Aesthetics",
     description:
       "EMSculpt NEO in Malta — burn fat and build muscle simultaneously with Malta's only dual-technology body sculpting treatment. Visible results in 4 sessions. Book today.",
   },
-  "skin-tightening-1": {
+  "skin-tightening": {
     title: "VelaShape III Malta | Skin Tightening & Cellulite | Carisma Aesthetics",
     description:
       "VelaShape III skin tightening in Malta. Non-invasive radiofrequency and infrared treatment for tighter skin and cellulite reduction. Doctor-supervised. Free consultation.",
