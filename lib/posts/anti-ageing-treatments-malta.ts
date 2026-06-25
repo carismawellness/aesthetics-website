@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "anti-ageing-treatments-malta",
   "title": "Anti-Ageing Treatments in Malta: Combat Fine Lines and Wrinkles",
-  "metaTitle": "Anti-Ageing Treatments Malta — Reduce Wrinkles & Fine Lines",
-  "metaDescription": "Anti-ageing treatments in Malta: Botox, fillers, laser, and more. Reduce wrinkles and fine lines naturally. Carisma Aesthetics. Book now.",
+  "metaTitle": "Anti-Ageing Treatments Malta: Complete Guide | Carisma",
+  "metaDescription": "Anti-ageing treatments in Malta: benefits, cost & expert advice. Botox, fillers & more. Book free consultation with Carisma Aesthetics.",
   "category": "Anti-Aging",
   "publishDate": "2026-06-08",
   "readTime": 8,

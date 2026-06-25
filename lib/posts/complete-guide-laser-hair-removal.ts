@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "complete-guide-laser-hair-removal",
   "title": "Complete Guide to Laser Hair Removal: Permanent Hair Reduction Explained",
-  "metaTitle": "Complete Guide to Laser Hair Removal: Permanent Hair Reduction Explained",
-  "metaDescription": "Everything you need to know about laser hair removal including how it works, costs, results, and aftercare.",
+  "metaTitle": "Laser Hair Removal in Malta | Complete Guide | Carisma",
+  "metaDescription": "Laser hair removal in Malta: benefits, cost & expert advice. Permanent hair reduction explained. Book free consultation with Carisma Aesthetics.",
   "category": "Body Contouring",
   "readTime": 7,
   "publishDate": "2026-06-25",
