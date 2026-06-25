@@ -17,6 +17,7 @@ const t: Treatment = {
     ],
     note: "* Includes four sessions to be followed over the course of 2 - 4 weeks\n*** Due to high demand, packages are offered based on availability and may not always be guaranteed. Please inquire for current options.",
     cta: "Claim your spot now",
+    bookHref: "https://www.fresha.com/a/carisma-slimming-floriana-great-siege-road-wxxyuj9p/booking?menu=true&share=true&offerItems=sv%3A25821422&pId=2708191&dppub=true&cartId=50c3edb4-f3e1-4685-88f1-986787454b83",
     image: "/assets/treatments/ms-side.png",
     heroVideo: "/assets/treatments/vid-muscle-stimulation-1.mp4",
   },
