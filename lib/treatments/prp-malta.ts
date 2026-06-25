@@ -11,6 +11,7 @@ const t: Treatment = {
       { label: "PRP for hair loss -", price: "from €149" },
     ],
     cta: "BOOK YOUR PRP SESSION NOW",
+    bookHref: "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2800348&oiid=sv%3A25753658&share=true&pId=2708191",
     image: "/assets/treatments/prp-malta-hero.png",
     imageRatio: "468 / 373",
     heroForm: true,
