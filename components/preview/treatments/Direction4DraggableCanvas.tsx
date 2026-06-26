@@ -2,703 +2,665 @@
 
 /**
  * Direction 4 — "Infinite Draggable Canvas"
- * ------------------------------------------
- * All 12 treatments rendered as textured planes floating on a 2D plane in 3D
- * space (raw three.js — NO fiber/drei). Drag with momentum/inertia to roam; the
- * grid wraps INFINITELY (toroidal) so panning never dead-ends. Raycast hover
- * scales/sharpens the focused tile and recedes/dims the rest (cheap shader
- * desaturate, not blur). Click a tile → router.push(href). A crisp DOM caption
- * overlay tracks the hovered tile.
  *
- * Heavy WebGL is fully gated: prefers-reduced-motion, coarse-pointer, ≤768px and
- * Save-Data all fall back to a polished native scroll-snap carousel of the real
- * photo cards. WebGL mounts only after first paint + idle, pauses when offscreen,
- * and tears down completely on unmount (no orphan canvas, no leaks).
+ * DOM renders the eyebrow + title + subcopy above a full-bleed ~80vh WebGL canvas.
+ * Inside the canvas, the 12 treatment photos are textured planes arranged in a
+ * staggered (brick/offset) 2D field. The field is draggable in x AND y with
+ * momentum/inertia and wraps INFINITELY: the tile span is computed and the field
+ * offset is wrapped modulo that span, while a 3×3 tiling makes the wrap seamless
+ * in every direction.
+ *
+ * Interaction:
+ *  - Pointer drag pans the field; the rendered position lerps toward a target,
+ *    and on release the residual pointer velocity drives momentum that decays.
+ *  - A raycaster picks the hovered plane: it scales up, sharpens (full color +
+ *    brightness), and lifts in z; the others slightly recede, desaturate and
+ *    "blur" (faked via reduced opacity + desaturated tint in the fragment shader —
+ *    no postprocessing). An HTML caption overlay (label + blurb + Explore →) and a
+ *    custom "drag" cursor hint track the pointer.
+ *  - Click/tap navigates to the tile href, but only if the pointer barely moved
+ *    (drag is thresholded so a pan never fires a navigation).
+ *
+ * Palette: light teal-tinted ground, soft vignette, rounded plane corners via an
+ * SDF rounded-rect mask in the fragment shader. Calm medical-luxury, not a demo.
+ *
+ * MANDATORY fallback (reduced-motion OR coarse-pointer OR width<768 OR Save-Data):
+ * a clean horizontal CSS scroll-snap carousel of the same 12 cards with captions +
+ * Explore links — NO WebGL, NO rAF.
+ *
+ * WebGL is mounted only after first paint + idle (requestIdleCallback → setTimeout
+ * fallback) and the rAF loop only runs while the section is near/in the viewport
+ * (IntersectionObserver); it pauses offscreen. Full cleanup on unmount.
  */
 
 import { useEffect, useMemo, useRef, useState } from "react";
-import { useRouter } from "next/navigation";
-import Image from "next/image";
 import * as THREE from "three";
-import { SERVICES, type ServiceItem } from "@/components/preview/treatments/data";
+import { HOME_SERVICES } from "@/lib/site";
 
-/* ------------------------------------------------------------------ */
-/* Grid geometry constants                                            */
-/* ------------------------------------------------------------------ */
+const EYEBROW = "Doctor-Led Treatments";
+const TITLE = "Our Medical Aesthetic Treatments";
+const SUBCOPY =
+  "A complete menu of advanced, medically supervised treatments — each tailored to refresh, restore and let you glow with confidence.";
+
+// ---- Brand tokens (mirrors the global CSS vars from the spec) ----
+const C = {
+  tealDeep: "#245052",
+  teal: "#96b2b2",
+  teal100: "#f7fafa",
+  taupe: "#9b8d83",
+  inkSoft: "#3a3a3a",
+  line: "#8a8a8a",
+  white: "#ffffff",
+} as const;
+
+// ---- Layout of the field (world units). One "tile" = COLS×ROWS planes. ----
 const COLS = 4;
-const ROWS = 3; // 4 × 3 = 12 tiles
-const TILE_W = 2.05; // world units
-const TILE_H = 2.55;
-const GAP_X = 0.85;
-const GAP_Y = 0.75;
-const CELL_W = TILE_W + GAP_X;
-const CELL_H = TILE_H + GAP_Y;
-const GRID_W = COLS * CELL_W; // toroidal wrap period (x)
-const GRID_H = ROWS * CELL_H; // toroidal wrap period (y)
+const ROWS = 3; // 4 × 3 = 12 treatments
+const PLANE_W = 2.6;
+const PLANE_H = 1.9;
+const GAP_X = 0.55;
+const GAP_Y = 0.55;
+const BRICK_OFFSET = (PLANE_W + GAP_X) * 0.5; // half-cell horizontal stagger per row
 
-// Deterministic organic scatter per index (no Math.random so SSR/CSR agree and
-// the layout is stable across remounts).
-function scatter(i: number): { ox: number; oy: number; rot: number } {
-  const a = Math.sin(i * 12.9898) * 43758.5453;
-  const b = Math.sin(i * 78.233) * 12543.987;
-  const c = Math.sin(i * 39.425) * 9123.11;
-  const f = (n: number) => n - Math.floor(n); // fract
-  return {
-    ox: (f(a) - 0.5) * 0.42,
-    oy: (f(b) - 0.5) * 0.42,
-    rot: (f(c) - 0.5) * 0.07,
-  };
+const CELL_W = PLANE_W + GAP_X;
+const CELL_H = PLANE_H + GAP_Y;
+const TILE_SPAN_X = COLS * CELL_W;
+const TILE_SPAN_Y = ROWS * CELL_H;
+
+const DRAG_CLICK_THRESHOLD = 7; // px of movement above which a release is a drag, not a click
+
+type Cell = {
+  /** index into HOME_SERVICES */
+  service: number;
+  /** base position within a single tile (centered around 0) */
+  bx: number;
+  by: number;
+};
+
+function buildCells(): Cell[] {
+  const cells: Cell[] = [];
+  let i = 0;
+  for (let r = 0; r < ROWS; r++) {
+    for (let c = 0; c < COLS; c++) {
+      const stagger = (r % 2) * BRICK_OFFSET;
+      // Center the tile around origin so wrapping feels symmetric.
+      const bx = (c - (COLS - 1) / 2) * CELL_W + stagger - BRICK_OFFSET / 2;
+      const by = ((ROWS - 1) / 2 - r) * CELL_H;
+      cells.push({ service: i % 12, bx, by });
+      i++;
+    }
+  }
+  return cells;
 }
 
-/* ------------------------------------------------------------------ */
-/* Shaders — rounded-corner SDF + cover-fit UV + desaturate/dim       */
-/* ------------------------------------------------------------------ */
-const VERT = /* glsl */ `
-  varying vec2 vUv;
-  void main() {
-    vUv = uv;
-    gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
-  }
-`;
+// Wrap a value into [-span/2, span/2) — keeps tile copies centred on the field offset.
+function wrap(v: number, span: number): number {
+  const h = span / 2;
+  return ((((v + h) % span) + span) % span) - h;
+}
 
-const FRAG = /* glsl */ `
-  precision highp float;
-  varying vec2 vUv;
-  uniform sampler2D uTex;
-  uniform float uHasTex;     // 1.0 once texture is loaded
-  uniform vec2  uTexAspect;  // cover-fit scale factors
-  uniform float uRadius;     // corner radius (0..0.5 of min dim)
-  uniform float uFocus;      // 0 = receded, 1 = focused
-  uniform float uAspect;     // tile width / height (for even radius)
-  uniform vec3  uTint;       // brand ground tint for placeholder
-  uniform float uShadow;     // soft drop-shadow strength
+// requestIdleCallback typing (ES2017 lib has no dom type for it).
+type IdleHandle = number;
+interface IdleWindow {
+  requestIdleCallback?: (cb: () => void, opts?: { timeout: number }) => IdleHandle;
+  cancelIdleCallback?: (h: IdleHandle) => void;
+}
 
-  // Rounded-box signed distance (centered uv in -0.5..0.5, half-extents h)
-  float sdRoundBox(vec2 p, vec2 b, float r){
-    vec2 q = abs(p) - b + r;
-    return min(max(q.x, q.y), 0.0) + length(max(q, 0.0)) - r;
-  }
-
-  void main() {
-    // Cover-fit: scale uv around center so the photo fills without stretching.
-    vec2 uv = (vUv - 0.5) * uTexAspect + 0.5;
-
-    vec2 p = vUv - 0.5;
-    // Account for non-square tile so corners look uniform.
-    vec2 b = vec2(0.5 * uAspect, 0.5);
-    float r = uRadius * (uAspect < 1.0 ? uAspect : 1.0);
-    float d = sdRoundBox(p * vec2(uAspect, 1.0), b, r);
-
-    float aa = fwidth(d) * 1.25;
-    float inside = smoothstep(aa, -aa, d);
-
-    // Soft drop shadow just outside the card edge.
-    float shadow = smoothstep(0.10, 0.0, d) * uShadow;
-
-    vec4 tex = texture2D(uTex, clamp(uv, 0.0, 1.0));
-    vec3 col = mix(uTint, tex.rgb, uHasTex);
-
-    // Desaturate + dim receded tiles (cheap — avoids real blur).
-    float lum = dot(col, vec3(0.299, 0.587, 0.114));
-    float sat = mix(0.55, 1.0, uFocus);          // recede → toward grayscale
-    col = mix(vec3(lum), col, sat);
-    float dim = mix(0.74, 1.0, uFocus);          // recede → darker
-    col *= dim;
-    // Subtle contrast lift on the focused tile.
-    col = mix(vec3(0.5), col, mix(0.94, 1.07, uFocus));
-
-    // Premultiplied-ish output: shadow falls outside the card.
-    vec3 outCol = col;
-    float alpha = inside;
-
-    // Composite shadow underneath transparent area as soft dark teal.
-    vec3 shadowCol = vec3(0.10, 0.18, 0.18);
-    outCol = mix(shadowCol, outCol, inside);
-    alpha = max(alpha, shadow);
-
-    if (alpha < 0.004) discard;
-    gl_FragColor = vec4(outCol, alpha);
-  }
-`;
-
-type TileUniforms = {
-  uTex: { value: THREE.Texture };
-  uHasTex: { value: number };
-  uTexAspect: { value: THREE.Vector2 };
-  uRadius: { value: number };
-  uFocus: { value: number };
-  uAspect: { value: number };
-  uTint: { value: THREE.Color };
-  uShadow: { value: number };
-};
-
-type Tile = {
-  group: THREE.Group; // holds positional offset + wrap
-  mesh: THREE.Mesh<THREE.PlaneGeometry, THREE.ShaderMaterial>;
-  uniforms: TileUniforms;
-  baseX: number; // un-wrapped grid position
-  baseY: number;
-  rot: number;
-  focusTarget: number; // 0/1 lerp target
-  zTarget: number;
-  scaleTarget: number;
-  index: number;
-};
-
-/* ================================================================== */
-/*  Component                                                          */
-/* ================================================================== */
 export default function Direction4DraggableCanvas() {
-  const router = useRouter();
-  const services = useMemo<ServiceItem[]>(() => SERVICES, []);
+  const sectionRef = useRef<HTMLElement>(null);
+  const canvasWrapRef = useRef<HTMLDivElement>(null);
+  const captionRef = useRef<HTMLDivElement>(null);
+  const cursorRef = useRef<HTMLDivElement>(null);
 
-  const mountRef = useRef<HTMLDivElement | null>(null);
-  const [lite, setLite] = useState<boolean | null>(null); // null = undecided (SSR)
-  const [activeIndex, setActiveIndex] = useState<number | null>(null);
-  const [showHint, setShowHint] = useState(true);
+  const services = useMemo(() => HOME_SERVICES, []);
+  const cells = useMemo(buildCells, []);
 
-  /* ---- Decide WebGL vs lite fallback on the client only ---- */
+  // Decide rich vs fallback after mount so SSR markup is the safe fallback.
+  const [rich, setRich] = useState<boolean>(false);
+  // Caption state (label/blurb/href + visible) is React for the HTML overlay.
+  const [hovered, setHovered] = useState<number | null>(null);
+
+  const hoveredRef = useRef<number | null>(null);
+  hoveredRef.current = hovered;
+
+  // ---- Capability gate ----
   useEffect(() => {
-    let cancelled = false;
-    // Defer out of the effect body (avoids synchronous cascading render) and
-    // run only after mount where window/navigator are available.
-    const id = window.setTimeout(() => {
-      if (cancelled) return;
-      const rm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      const coarse = window.matchMedia("(pointer: coarse)").matches;
-      const small = window.innerWidth < 768;
-      const nav = navigator as Navigator & { connection?: { saveData?: boolean } };
-      const saveData = Boolean(nav.connection?.saveData);
-      setLite(rm || coarse || small || saveData);
-    }, 0);
-    return () => {
-      cancelled = true;
-      window.clearTimeout(id);
-    };
+    if (typeof window === "undefined") return;
+    const nav = navigator as Navigator & { connection?: { saveData?: boolean } };
+    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const coarse = window.matchMedia("(pointer: coarse)").matches;
+    const small = window.innerWidth < 768;
+    const saveData = nav.connection?.saveData === true;
+    if (!reduce && !coarse && !small && !saveData) setRich(true);
   }, []);
 
-  /* ---- WebGL scene (only when !lite) ---- */
+  // ---- WebGL scene (mounted after first paint + idle, only when rich) ----
   useEffect(() => {
-    if (lite !== false) return; // wait for decision; skip in lite mode
-    const mount = mountRef.current;
-    if (!mount) return;
+    if (!rich) return;
+    if (!canvasWrapRef.current) return;
+    // Non-null, stable reference captured by all nested closures below.
+    const wrapEl: HTMLDivElement = canvasWrapRef.current;
 
     let disposed = false;
+    let idleHandle: IdleHandle | null = null;
+    let timeoutHandle: ReturnType<typeof setTimeout> | null = null;
+
+    // Mutable scene handles, captured by cleanup.
     let renderer: THREE.WebGLRenderer | null = null;
     let scene: THREE.Scene | null = null;
     let camera: THREE.OrthographicCamera | null = null;
-    let raf = 0;
-    let idleHandle: number | null = null;
+    let rafId = 0;
+    let io: IntersectionObserver | null = null;
+    let ro: ResizeObserver | null = null;
     let running = false;
+    let inView = false;
 
-    const tiles: Tile[] = [];
     const textures: THREE.Texture[] = [];
     const geometries: THREE.BufferGeometry[] = [];
     const materials: THREE.ShaderMaterial[] = [];
+    const meshes: THREE.Mesh[] = [];
+    // Per-mesh metadata for raycast → service mapping + per-mesh animated factor.
+    const meshService: number[] = [];
+    const meshFocus: number[] = []; // 0..1 smoothed focus factor per mesh
 
-    // Pan / momentum state (world units).
-    const pan = { x: 0, y: 0 };
-    const vel = { x: 0, y: 0 };
-    const pointer = { x: 0, y: 0, down: false, moved: false };
-    const last = { x: 0, y: 0 };
-    const downAt = { x: 0, y: 0, t: 0 };
-    let hovered = -1;
-    let interacted = false;
+    // Field offset + velocity (world units).
+    const offset = { x: 0, y: 0 };
+    const target = { x: 0, y: 0 };
+    const velocity = { x: 0, y: 0 };
 
+    // Pointer drag bookkeeping.
+    const pointerNDC = new THREE.Vector2(-2, -2); // off-screen by default
+    let pointerInside = false;
+    let dragging = false;
+    let lastX = 0;
+    let lastY = 0;
+    let downX = 0;
+    let downY = 0;
     const raycaster = new THREE.Raycaster();
-    const ndc = new THREE.Vector2();
 
-    // Visible world half-extents (set in resize) for tile wrapping.
-    const view = { halfW: 6, halfH: 4 };
+    // World units per CSS pixel (set from camera frustum + viewport box).
+    let worldPerPxX = 0.01;
+    let worldPerPxY = 0.01;
 
-    const loader = new THREE.TextureLoader();
-    loader.crossOrigin = "anonymous";
+    const VERT = /* glsl */ `
+      varying vec2 vUv;
+      void main() {
+        vUv = uv;
+        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+      }
+    `;
 
-    const groundTint = new THREE.Color("#eef4f4");
+    // Rounded-rect SDF mask + focus-driven desaturation/dim. No postprocessing.
+    const FRAG = /* glsl */ `
+      precision highp float;
+      varying vec2 vUv;
+      uniform sampler2D uTex;
+      uniform float uFocus;     // 0 = receded, 1 = focused
+      uniform float uAspect;    // plane aspect (w/h) for square corner radius
+      uniform vec3  uTint;      // teal-tinted ground bleed for receded planes
+      uniform float uHasTex;    // 1 if texture loaded, else 0 (placeholder)
 
-    /* --- Build scene --- */
-    scene = new THREE.Scene();
-    scene.background = null;
+      // Signed distance to a rounded box centred at origin, half-size b, radius r.
+      float sdRoundRect(vec2 p, vec2 b, float r) {
+        vec2 q = abs(p) - b + r;
+        return min(max(q.x, q.y), 0.0) + length(max(q, 0.0)) - r;
+      }
 
-    camera = new THREE.OrthographicCamera(-6, 6, 4, -4, 0.1, 100);
-    camera.position.z = 10;
+      void main() {
+        // Map uv (0..1) to centred coords in aspect-corrected space.
+        vec2 p = (vUv - 0.5) * vec2(uAspect, 1.0);
+        vec2 b = vec2(0.5 * uAspect, 0.5);
+        float r = 0.075;
+        float d = sdRoundRect(p, b, r);
+        // Crisp-ish edge with a touch of AA.
+        float aa = fwidth(d) * 1.2;
+        float mask = 1.0 - smoothstep(-aa, aa, d);
+        if (mask <= 0.001) discard;
 
-    renderer = new THREE.WebGLRenderer({
-      antialias: true,
-      alpha: true,
-      powerPreference: "high-performance",
-    });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-    renderer.setClearColor(0x000000, 0);
-    const canvas = renderer.domElement;
-    canvas.style.display = "block";
-    canvas.style.width = "100%";
-    canvas.style.height = "100%";
-    canvas.style.cursor = "grab";
-    canvas.style.touchAction = "none";
+        vec3 col = uHasTex > 0.5 ? texture2D(uTex, vUv).rgb : uTint;
 
-    // Build the 12 tiles.
-    services.forEach((svc, i) => {
-      const col = i % COLS;
-      const row = Math.floor(i / COLS);
-      const sc = scatter(i);
-      const baseX = (col - (COLS - 1) / 2) * CELL_W + sc.ox;
-      const baseY = ((ROWS - 1) / 2 - row) * CELL_H + sc.oy;
+        // Desaturate + dim receded planes; brighten + saturate focused ones.
+        float lum = dot(col, vec3(0.299, 0.587, 0.114));
+        float desat = mix(0.55, 1.0, uFocus);            // toward grey when unfocused
+        col = mix(vec3(lum), col, desat);
+        col = mix(col * 0.86, col * 1.06, uFocus);        // dim → slight lift
+        // Cool teal wash on the receded planes (medical-luxury calm).
+        col = mix(mix(col, uTint, 0.18), col, uFocus);
 
-      const geo = new THREE.PlaneGeometry(TILE_W, TILE_H, 1, 1);
-      geometries.push(geo);
+        // Subtle inner border glow (sage hairline) near the rounded edge.
+        float edge = smoothstep(0.012, 0.0, abs(d));
+        col += edge * vec3(0.06, 0.10, 0.10) * (0.4 + 0.6 * uFocus);
 
-      const placeholder = new THREE.Texture();
-      const uniforms: TileUniforms = {
-        uTex: { value: placeholder },
-        uHasTex: { value: 0 },
-        uTexAspect: { value: new THREE.Vector2(1, 1) },
-        uRadius: { value: 0.06 },
-        uFocus: { value: 0.35 },
-        uAspect: { value: TILE_W / TILE_H },
-        uTint: { value: groundTint.clone() },
-        uShadow: { value: 0.0 },
-      };
+        // Soft drop in opacity for receded planes to fake depth-of-field.
+        float alpha = mask * mix(0.82, 1.0, uFocus);
+        gl_FragColor = vec4(col, alpha);
+      }
+    `;
 
-      const mat = new THREE.ShaderMaterial({
+    const tintColor = new THREE.Color(C.teal100);
+
+    function makeMaterial(tex: THREE.Texture | null): THREE.ShaderMaterial {
+      return new THREE.ShaderMaterial({
         vertexShader: VERT,
         fragmentShader: FRAG,
-        uniforms: uniforms as unknown as { [k: string]: THREE.IUniform },
         transparent: true,
         depthWrite: false,
-      });
-      materials.push(mat);
-
-      const mesh = new THREE.Mesh(geo, mat);
-      mesh.rotation.z = sc.rot;
-      mesh.userData.index = i;
-
-      const group = new THREE.Group();
-      group.add(mesh);
-      scene!.add(group);
-
-      const tile: Tile = {
-        group,
-        mesh,
-        uniforms,
-        baseX,
-        baseY,
-        rot: sc.rot,
-        focusTarget: 0,
-        zTarget: 0,
-        scaleTarget: 1,
-        index: i,
-      };
-      tiles.push(tile);
-
-      // Load texture (cover-fit aspect computed on load).
-      loader.load(
-        svc.photo,
-        (tex) => {
-          if (disposed) {
-            tex.dispose();
-            return;
-          }
-          tex.colorSpace = THREE.SRGBColorSpace;
-          tex.anisotropy = renderer ? renderer.capabilities.getMaxAnisotropy() : 1;
-          tex.generateMipmaps = true;
-          tex.minFilter = THREE.LinearMipmapLinearFilter;
-          tex.magFilter = THREE.LinearFilter;
-          tex.needsUpdate = true;
-          textures.push(tex);
-
-          const tileAspect = TILE_W / TILE_H;
-          const imgAspect =
-            (tex.image as { width: number; height: number }).width /
-            (tex.image as { width: number; height: number }).height;
-          // Cover-fit: shrink the longer image axis in UV space.
-          let sx = 1;
-          let sy = 1;
-          if (imgAspect > tileAspect) {
-            sx = tileAspect / imgAspect; // image wider → crop sides
-          } else {
-            sy = imgAspect / tileAspect; // image taller → crop top/bottom
-          }
-          uniforms.uTexAspect.value.set(sx, sy);
-          uniforms.uTex.value = tex;
-          uniforms.uHasTex.value = 1;
+        uniforms: {
+          uTex: { value: tex },
+          uFocus: { value: 0 },
+          uAspect: { value: PLANE_W / PLANE_H },
+          uTint: { value: new THREE.Color().copy(tintColor) },
+          uHasTex: { value: tex ? 1 : 0 },
         },
-        undefined,
-        () => {
-          /* missing photo → keep tinted placeholder */
-        }
-      );
-    });
-
-    /* --- Resize --- */
-    function resize() {
-      if (!renderer || !camera || !mount) return;
-      const w = mount.clientWidth || 1;
-      const h = mount.clientHeight || 1;
-      renderer.setSize(w, h, false);
-      const aspect = w / h;
-      // Frame ~one grid-width of content; scale the ortho frustum to aspect.
-      const halfH = 4.2;
-      const halfW = halfH * aspect;
-      camera.left = -halfW;
-      camera.right = halfW;
-      camera.top = halfH;
-      camera.bottom = -halfH;
-      camera.updateProjectionMatrix();
-      view.halfW = halfW;
-      view.halfH = halfH;
+      });
     }
-    resize();
 
-    /* --- Pointer / drag handling --- */
-    function setNdc(clientX: number, clientY: number) {
-      const r = canvas.getBoundingClientRect();
-      ndc.x = ((clientX - r.left) / r.width) * 2 - 1;
-      ndc.y = -((clientY - r.top) / r.height) * 2 + 1;
-      pointer.x = clientX;
-      pointer.y = clientY;
+    function sizeRenderer() {
+      if (!renderer || !camera) return;
+      const w = wrapEl.clientWidth || 1;
+      const h = wrapEl.clientHeight || 1;
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      renderer.setSize(w, h, false);
+
+      // Fit the field comfortably: pick a vertical world height, derive width from aspect.
+      const viewH = TILE_SPAN_Y * 1.15;
+      const viewW = viewH * (w / h);
+      camera.left = -viewW / 2;
+      camera.right = viewW / 2;
+      camera.top = viewH / 2;
+      camera.bottom = -viewH / 2;
+      camera.updateProjectionMatrix();
+
+      worldPerPxX = viewW / w;
+      worldPerPxY = viewH / h;
+    }
+
+    function buildScene() {
+      if (disposed) return;
+      const sc = new THREE.Scene();
+      scene = sc;
+      camera = new THREE.OrthographicCamera(-1, 1, 1, -1, 0.1, 100);
+      camera.position.z = 10;
+
+      renderer = new THREE.WebGLRenderer({
+        antialias: true,
+        alpha: true,
+        powerPreference: "high-performance",
+      });
+      renderer.setClearColor(0x000000, 0);
+      const canvas = renderer.domElement;
+      canvas.style.width = "100%";
+      canvas.style.height = "100%";
+      canvas.style.display = "block";
+      canvas.style.touchAction = "none";
+      wrapEl.appendChild(canvas);
+
+      const geo = new THREE.PlaneGeometry(PLANE_W, PLANE_H, 1, 1);
+      geometries.push(geo);
+
+      const loader = new THREE.TextureLoader();
+      loader.crossOrigin = "anonymous";
+
+      // Load one texture per service (12), shared across the 3×3 tiling.
+      const serviceTex: (THREE.Texture | null)[] = services.map(() => null);
+      services.forEach((s, si) => {
+        loader.load(
+          s.photo,
+          (tex) => {
+            if (disposed) {
+              tex.dispose();
+              return;
+            }
+            tex.colorSpace = THREE.SRGBColorSpace;
+            tex.minFilter = THREE.LinearMipmapLinearFilter;
+            tex.magFilter = THREE.LinearFilter;
+            tex.generateMipmaps = true;
+            const maxAniso = renderer ? renderer.capabilities.getMaxAnisotropy() : 1;
+            tex.anisotropy = Math.min(4, maxAniso);
+            tex.needsUpdate = true;
+            textures.push(tex);
+            serviceTex[si] = tex;
+            // Wire this texture into every mesh that shows this service.
+            meshes.forEach((m, mi) => {
+              if (meshService[mi] === si) {
+                const mat = m.material as THREE.ShaderMaterial;
+                mat.uniforms.uTex.value = tex;
+                mat.uniforms.uHasTex.value = 1;
+              }
+            });
+          },
+          undefined,
+          () => {
+            /* missing photo → placeholder tint material stays; non-fatal */
+          },
+        );
+      });
+
+      // Instantiate the 3×3 tiling of the COLS×ROWS field.
+      for (let ti = -1; ti <= 1; ti++) {
+        for (let tj = -1; tj <= 1; tj++) {
+          cells.forEach((cell) => {
+            const mat = makeMaterial(serviceTex[cell.service]);
+            materials.push(mat);
+            const mesh = new THREE.Mesh(geo, mat);
+            mesh.position.set(
+              cell.bx + ti * TILE_SPAN_X,
+              cell.by + tj * TILE_SPAN_Y,
+              0,
+            );
+            mesh.userData.bx = cell.bx;
+            mesh.userData.by = cell.by;
+            sc.add(mesh);
+            meshes.push(mesh);
+            meshService.push(cell.service);
+            meshFocus.push(0);
+          });
+        }
+      }
+
+      sizeRenderer();
+    }
+
+    // ---- Pointer handlers ----
+    function clientToNDC(clientX: number, clientY: number) {
+      const rect = wrapEl.getBoundingClientRect();
+      pointerNDC.x = ((clientX - rect.left) / rect.width) * 2 - 1;
+      pointerNDC.y = -(((clientY - rect.top) / rect.height) * 2 - 1);
     }
 
     function onPointerDown(e: PointerEvent) {
-      pointer.down = true;
-      pointer.moved = false;
-      last.x = e.clientX;
-      last.y = e.clientY;
-      downAt.x = e.clientX;
-      downAt.y = e.clientY;
-      downAt.t = performance.now();
-      vel.x = 0;
-      vel.y = 0;
-      canvas.style.cursor = "grabbing";
-      canvas.setPointerCapture(e.pointerId);
-    }
-
-    function worldPerPxX() {
-      const r = canvas.getBoundingClientRect();
-      return (view.halfW * 2) / Math.max(1, r.width);
-    }
-    function worldPerPxY() {
-      const r = canvas.getBoundingClientRect();
-      return (view.halfH * 2) / Math.max(1, r.height);
+      dragging = true;
+      lastX = e.clientX;
+      lastY = e.clientY;
+      downX = e.clientX;
+      downY = e.clientY;
+      velocity.x = 0;
+      velocity.y = 0;
+      pointerInside = true;
+      clientToNDC(e.clientX, e.clientY);
+      (e.target as Element).setPointerCapture?.(e.pointerId);
+      if (cursorRef.current) cursorRef.current.dataset.grabbing = "true";
     }
 
     function onPointerMove(e: PointerEvent) {
-      setNdc(e.clientX, e.clientY);
-      if (pointer.down) {
-        const dx = (e.clientX - last.x) * worldPerPxX();
-        const dy = (e.clientY - last.y) * worldPerPxY();
-        // Dragging right moves content right (pan follows pointer).
-        pan.x += dx;
-        pan.y -= dy;
-        vel.x = dx;
-        vel.y = -dy;
-        last.x = e.clientX;
-        last.y = e.clientY;
-        if (Math.hypot(e.clientX - downAt.x, e.clientY - downAt.y) > 4) {
-          pointer.moved = true;
-          if (!interacted) {
-            interacted = true;
-            setShowHint(false);
-          }
-        }
+      pointerInside = true;
+      clientToNDC(e.clientX, e.clientY);
+      // Move the custom cursor hint.
+      if (cursorRef.current) {
+        const rect = wrapEl.getBoundingClientRect();
+        cursorRef.current.style.transform = `translate(${e.clientX - rect.left}px, ${
+          e.clientY - rect.top
+        }px)`;
       }
+      if (!dragging) return;
+      const dx = e.clientX - lastX;
+      const dy = e.clientY - lastY;
+      lastX = e.clientX;
+      lastY = e.clientY;
+      // Drag direction matches a photo-grab feel: pull content with the pointer.
+      target.x += dx * worldPerPxX;
+      target.y -= dy * worldPerPxY;
+      // Track velocity for momentum on release (world units/frame approx).
+      velocity.x = dx * worldPerPxX;
+      velocity.y = -dy * worldPerPxY;
     }
 
-    function endDrag(e: PointerEvent) {
-      if (!pointer.down) return;
-      pointer.down = false;
-      canvas.style.cursor = "grab";
-      try {
-        canvas.releasePointerCapture(e.pointerId);
-      } catch {
-        /* ignore */
-      }
+    function navigate(href: string) {
+      window.location.href = href;
     }
 
     function onPointerUp(e: PointerEvent) {
-      const wasDrag = pointer.moved;
-      endDrag(e);
-      // Treat as click if pointer barely moved and was quick.
-      if (!wasDrag && hovered >= 0) {
-        const svc = services[hovered];
-        if (svc) router.push(svc.href);
+      if (!dragging) return;
+      dragging = false;
+      if (cursorRef.current) cursorRef.current.dataset.grabbing = "false";
+      const movedTotal = Math.abs(e.clientX - downX) + Math.abs(e.clientY - downY);
+      if (movedTotal < DRAG_CLICK_THRESHOLD) {
+        // Treat as a click — raycast and navigate.
+        clientToNDC(e.clientX, e.clientY);
+        const hit = pickMesh();
+        velocity.x = 0;
+        velocity.y = 0;
+        if (hit !== null) navigate(services[meshService[hit]].href);
       }
+      // else: momentum (velocity) carries the field; decays in the loop.
     }
 
-    function onPointerLeave(e: PointerEvent) {
-      endDrag(e);
-      hovered = -1;
-      setActiveIndex(null);
+    function onPointerLeave() {
+      pointerInside = false;
+      pointerNDC.set(-2, -2);
+      if (!dragging && hoveredRef.current !== null) setHovered(null);
     }
 
-    function onWheel(e: WheelEvent) {
-      // Allow trackpad two-finger pan to roam horizontally/vertically.
-      e.preventDefault();
-      pan.x -= e.deltaX * worldPerPxX();
-      pan.y += e.deltaY * worldPerPxY();
-      if (!interacted) {
-        interacted = true;
-        setShowHint(false);
-      }
-    }
-
-    canvas.addEventListener("pointerdown", onPointerDown);
-    canvas.addEventListener("pointermove", onPointerMove);
-    canvas.addEventListener("pointerup", onPointerUp);
-    canvas.addEventListener("pointercancel", endDrag);
-    canvas.addEventListener("pointerleave", onPointerLeave);
-    canvas.addEventListener("wheel", onWheel, { passive: false });
-
-    /* --- Wrap a base coordinate into the visible band around pan --- */
-    function wrapAround(base: number, panv: number, period: number, half: number) {
-      // Position of the tile in panned space, wrapped to the nearest copy that
-      // is closest to screen center (creates the infinite/toroidal illusion).
-      let p = base + panv;
-      const margin = half + Math.max(CELL_W, CELL_H);
-      // Bring p into (-margin, margin) by adding/subtracting period.
-      p = ((((p + margin) % period) + period) % period) - margin;
-      return p;
-    }
-
-    /* --- Hover raycast --- */
-    function updateHover() {
-      if (!camera) return;
-      raycaster.setFromCamera(ndc, camera);
-      const meshes = tiles.map((t) => t.mesh);
+    function pickMesh(): number | null {
+      if (!camera) return null;
+      raycaster.setFromCamera(pointerNDC, camera);
       const hits = raycaster.intersectObjects(meshes, false);
-      let newHover = -1;
-      if (hits.length > 0 && !pointer.down) {
-        const m = hits[0].object as THREE.Mesh;
-        newHover = (m.userData.index as number) ?? -1;
-      }
-      if (newHover !== hovered) {
-        hovered = newHover;
-        setActiveIndex(hovered >= 0 ? hovered : null);
-        canvas.style.cursor = pointer.down
-          ? "grabbing"
-          : hovered >= 0
-            ? "pointer"
-            : "grab";
-      }
+      if (hits.length === 0) return null;
+      const obj = hits[0].object;
+      return meshes.indexOf(obj as THREE.Mesh);
     }
 
-    /* --- Animation loop --- */
-    const tmpClock = { last: performance.now() };
+    // ---- Render loop ----
+    const dampPos = 0.12; // lerp toward target
+    const friction = 0.92; // momentum decay
+    const focusLerp = 0.14;
+
     function frame() {
       if (disposed || !renderer || !scene || !camera) return;
-      raf = requestAnimationFrame(frame);
 
-      const now = performance.now();
-      const dt = Math.min(0.05, (now - tmpClock.last) / 1000);
-      tmpClock.last = now;
-
-      // Inertia: apply velocity then decay when not dragging.
-      if (!pointer.down) {
-        pan.x += vel.x;
-        pan.y += vel.y;
-        const decay = Math.pow(0.92, dt * 60);
-        vel.x *= decay;
-        vel.y *= decay;
-        if (Math.abs(vel.x) < 1e-4) vel.x = 0;
-        if (Math.abs(vel.y) < 1e-4) vel.y = 0;
+      // Apply momentum to the target when not actively dragging.
+      if (!dragging) {
+        if (Math.abs(velocity.x) > 1e-4 || Math.abs(velocity.y) > 1e-4) {
+          target.x += velocity.x;
+          target.y += velocity.y;
+          velocity.x *= friction;
+          velocity.y *= friction;
+        }
       }
 
-      updateHover();
+      // Smooth offset toward target.
+      offset.x += (target.x - offset.x) * dampPos;
+      offset.y += (target.y - offset.y) * dampPos;
 
-      // Position + animate tiles.
-      const lerp = 1 - Math.pow(0.001, dt); // smooth ~per-second lerp
-      for (const t of tiles) {
-        const px = wrapAround(t.baseX, pan.x, GRID_W, view.halfW);
-        const py = wrapAround(t.baseY, pan.y, GRID_H, view.halfH);
-        t.group.position.x = px;
-        t.group.position.y = py;
+      // Position every mesh using its tile-relative base + wrapped offset, so the
+      // field repeats seamlessly in all directions (infinite wrap).
+      for (let i = 0; i < meshes.length; i++) {
+        const m = meshes[i];
+        const bx = m.userData.bx as number;
+        const by = m.userData.by as number;
+        m.position.x = wrap(bx + offset.x, TILE_SPAN_X);
+        m.position.y = wrap(by + offset.y, TILE_SPAN_Y);
+      }
 
-        const isHover = t.index === hovered;
-        t.focusTarget = hovered < 0 ? 0.5 : isHover ? 1 : 0;
-        t.zTarget = isHover ? 1.4 : 0;
-        t.scaleTarget = isHover ? 1.16 : hovered < 0 ? 1 : 0.93;
+      // Hover pick (only when pointer is inside the canvas).
+      let pickedMesh: number | null = null;
+      if (pointerInside) pickedMesh = pickMesh();
+      const pickedService = pickedMesh !== null ? meshService[pickedMesh] : null;
 
-        // Lerp focus uniform, z (group) and scale (mesh).
-        t.uniforms.uFocus.value += (t.focusTarget - t.uniforms.uFocus.value) * lerp;
-        t.uniforms.uShadow.value +=
-          ((isHover ? 0.5 : 0.22) - t.uniforms.uShadow.value) * lerp;
-        t.group.position.z += (t.zTarget - t.group.position.z) * lerp;
-        const s = t.mesh.scale.x + (t.scaleTarget - t.mesh.scale.x) * lerp;
-        t.mesh.scale.setScalar(s);
+      // Update caption overlay (React) only on change.
+      if (pickedService !== hoveredRef.current) setHovered(pickedService);
+
+      // Animate per-mesh focus: focused service → 1, others recede. When nothing
+      // is hovered, everything settles to a calm mid value (cohesive field).
+      const anyHover = pickedService !== null;
+      for (let i = 0; i < meshes.length; i++) {
+        const isFocused = anyHover && meshService[i] === pickedService;
+        const goal = anyHover ? (isFocused ? 1 : 0.12) : 0.62;
+        meshFocus[i] += (goal - meshFocus[i]) * focusLerp;
+        const mat = materials[i];
+        mat.uniforms.uFocus.value = meshFocus[i];
+        // Lift focused planes toward the camera + scale up subtly.
+        const lift = meshFocus[i];
+        meshes[i].position.z = lift * 0.6;
+        const s = 1 + lift * 0.085;
+        meshes[i].scale.set(s, s, 1);
       }
 
       renderer.render(scene, camera);
+      if (running) rafId = requestAnimationFrame(frame);
     }
 
-    /* --- Visibility-gated start/stop --- */
-    function start() {
+    function startLoop() {
       if (running || disposed) return;
       running = true;
-      tmpClock.last = performance.now();
-      raf = requestAnimationFrame(frame);
+      rafId = requestAnimationFrame(frame);
     }
-    function stop() {
+    function stopLoop() {
       running = false;
-      if (raf) cancelAnimationFrame(raf);
-      raf = 0;
+      if (rafId) cancelAnimationFrame(rafId);
+      rafId = 0;
     }
 
-    const io = new IntersectionObserver(
-      (entries) => {
-        const e = entries[0];
-        if (!e) return;
-        if (e.isIntersecting) start();
-        else stop();
-      },
-      { threshold: 0.05 }
-    );
+    function init() {
+      if (disposed) return;
+      buildScene();
 
-    let ro: ResizeObserver | null = null;
-
-    /* --- Mount after first paint + idle --- */
-    function mountScene() {
-      if (disposed || !renderer || !mount) return;
-      mount.appendChild(canvas);
-      resize();
-      ro = new ResizeObserver(() => resize());
-      ro.observe(mount);
-      io.observe(mount);
-      start();
-    }
-
-    const ric = (
-      window as Window & {
-        requestIdleCallback?: (cb: () => void) => number;
+      const canvas = renderer ? renderer.domElement : null;
+      if (canvas) {
+        canvas.addEventListener("pointerdown", onPointerDown);
+        canvas.addEventListener("pointermove", onPointerMove);
+        canvas.addEventListener("pointerup", onPointerUp);
+        canvas.addEventListener("pointercancel", onPointerUp);
+        canvas.addEventListener("pointerleave", onPointerLeave);
       }
-    ).requestIdleCallback;
-    if (typeof ric === "function") {
-      idleHandle = ric(() => mountScene());
-    } else {
-      idleHandle = window.setTimeout(mountScene, 200);
+
+      // Resize handling.
+      ro = new ResizeObserver(() => sizeRenderer());
+      ro.observe(wrapEl);
+
+      // Only run the loop while the section is near/in viewport.
+      io = new IntersectionObserver(
+        (entries) => {
+          for (const entry of entries) {
+            inView = entry.isIntersecting;
+            if (inView) startLoop();
+            else stopLoop();
+          }
+        },
+        { root: null, rootMargin: "200px 0px", threshold: 0.01 },
+      );
+      const target0 = sectionRef.current ?? wrapEl;
+      io.observe(target0);
     }
 
-    /* --- Cleanup --- */
+    // Mount the heavy scene after first paint + idle.
+    const idleWin = window as unknown as IdleWindow;
+    if (typeof idleWin.requestIdleCallback === "function") {
+      idleHandle = idleWin.requestIdleCallback(() => init(), { timeout: 1500 });
+    } else {
+      timeoutHandle = setTimeout(() => init(), 200);
+    }
+
+    // ---- Cleanup ----
     return () => {
       disposed = true;
-      stop();
-      const cic = (
-        window as Window & { cancelIdleCallback?: (h: number) => void }
-      ).cancelIdleCallback;
-      if (idleHandle != null) {
-        if (typeof cic === "function") cic(idleHandle);
-        else clearTimeout(idleHandle);
+      if (idleHandle !== null && typeof idleWin.cancelIdleCallback === "function") {
+        idleWin.cancelIdleCallback(idleHandle);
       }
-      io.disconnect();
+      if (timeoutHandle) clearTimeout(timeoutHandle);
+      stopLoop();
+      if (io) io.disconnect();
       if (ro) ro.disconnect();
 
-      canvas.removeEventListener("pointerdown", onPointerDown);
-      canvas.removeEventListener("pointermove", onPointerMove);
-      canvas.removeEventListener("pointerup", onPointerUp);
-      canvas.removeEventListener("pointercancel", endDrag);
-      canvas.removeEventListener("pointerleave", onPointerLeave);
-      canvas.removeEventListener("wheel", onWheel);
+      const canvas = renderer ? renderer.domElement : null;
+      if (canvas) {
+        canvas.removeEventListener("pointerdown", onPointerDown);
+        canvas.removeEventListener("pointermove", onPointerMove);
+        canvas.removeEventListener("pointerup", onPointerUp);
+        canvas.removeEventListener("pointercancel", onPointerUp);
+        canvas.removeEventListener("pointerleave", onPointerLeave);
+      }
 
-      for (const g of geometries) g.dispose();
-      for (const m of materials) m.dispose();
-      for (const tex of textures) tex.dispose();
-      tiles.forEach((t) => {
-        t.uniforms.uTex.value?.dispose?.();
-        scene?.remove(t.group);
-      });
+      meshes.forEach((m) => scene?.remove(m));
+      materials.forEach((m) => m.dispose());
+      geometries.forEach((g) => g.dispose());
+      textures.forEach((t) => t.dispose());
 
       if (renderer) {
         renderer.dispose();
         renderer.forceContextLoss();
+        const el = renderer.domElement;
+        if (el.parentNode) el.parentNode.removeChild(el);
       }
-      if (canvas.parentElement) canvas.parentElement.removeChild(canvas);
+      renderer = null;
       scene = null;
       camera = null;
-      renderer = null;
     };
-  }, [lite, services, router]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [rich]);
 
-  const active = activeIndex != null ? services[activeIndex] : null;
+  const hoveredService = hovered !== null ? services[hovered] : null;
 
-  /* ================================================================ */
-  /*  Render                                                          */
-  /* ================================================================ */
   return (
     <section
-      id="treatments-draggable-canvas"
+      ref={sectionRef}
+      id="d4-section"
       aria-labelledby="d4-heading"
       className="d4-section"
     >
-      <style>{d4Css}</style>
+      <style>{d4CSS}</style>
 
-      {/* Header */}
-      <header className="d4-head">
-        <p className="font-display d4-eyebrow">Doctor-Led Treatments</p>
-        <h2 id="d4-heading" className="font-serif d4-title">
-          Our Medical Aesthetic Treatments
+      <div className="d4-head">
+        <p className="d4-eyebrow font-serif">{EYEBROW}</p>
+        <h2 id="d4-heading" className="d4-title font-serif">
+          {TITLE}
         </h2>
-        <p className="d4-sub">
-          A complete menu of advanced, medically supervised treatments — each tailored
-          to refresh, restore and let you glow with confidence.
-        </p>
-      </header>
+        <p className="d4-sub">{SUBCOPY}</p>
+      </div>
 
-      {/* ---- WebGL stage (desktop) ---- */}
-      {lite === false && (
+      {rich ? (
         <div className="d4-stage">
-          <div ref={mountRef} className="d4-canvas-mount" aria-hidden="true" />
+          <div className="d4-canvas-wrap" ref={canvasWrapRef} aria-hidden="true" />
 
-          {/* Hint */}
-          <div className={`d4-hint ${showHint ? "" : "is-hidden"}`} aria-hidden="true">
-            <span className="d4-hint-dot" />
-            Drag to explore
+          {/* Custom drag-cursor hint */}
+          <div className="d4-cursor" ref={cursorRef} data-grabbing="false">
+            <span className="d4-cursor-dot" />
+            <span className="d4-cursor-label font-display">Drag</span>
           </div>
 
-          {/* Crisp DOM caption overlay (tracks hovered tile) */}
-          <div className={`d4-caption ${active ? "is-on" : ""}`} aria-hidden={!active}>
-            {active && (
+          {/* HTML caption overlay for the hovered tile */}
+          <div
+            ref={captionRef}
+            className={`d4-caption ${hoveredService ? "is-on" : ""}`}
+            role="status"
+            aria-live="polite"
+          >
+            {hoveredService && (
               <>
-                <h3 className="font-serif d4-caption-name">{active.label}</h3>
-                <p className="d4-caption-blurb">{active.blurb}</p>
-                <a
-                  className="font-display d4-caption-link"
-                  href={active.href}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    router.push(active.href);
-                  }}
-                >
+                <span className="d4-caption-label font-serif">
+                  {hoveredService.label}
+                </span>
+                <span className="d4-caption-blurb">{hoveredService.blurb}</span>
+                <a className="d4-caption-cta font-display" href={hoveredService.href}>
                   Explore <span aria-hidden="true">→</span>
                 </a>
               </>
             )}
           </div>
-        </div>
-      )}
 
-      {/* ---- Lite fallback: native scroll-snap carousel (mobile / reduced motion) ---- */}
-      {lite === true && (
-        <div className="d4-lite" role="list" aria-label="Medical aesthetic treatments">
-          {services.map((s, i) => (
-            <a
-              key={s.href + i}
-              role="listitem"
-              className="d4-lite-card"
-              href={s.href}
-            >
-              <span className="d4-lite-media">
-                <Image
-                  src={s.photo}
-                  alt={s.label}
-                  fill
-                  sizes="(max-width: 768px) 72vw, 320px"
-                  className="d4-lite-img"
-                  loading="lazy"
-                />
+          {/* Accessibility: real links to every treatment, visually hidden but
+              available to keyboard + assistive tech (canvas is decorative). */}
+          <nav className="d4-sr-links" aria-label="All treatments">
+            {services.map((s) => (
+              <a key={s.href} href={s.href}>
+                {s.label}
+              </a>
+            ))}
+          </nav>
+        </div>
+      ) : (
+        // ---- Fallback: clean horizontal scroll-snap carousel (no WebGL/rAF) ----
+        <div className="d4-fallback" role="list" aria-label="Treatments">
+          {services.map((s) => (
+            <a className="d4-fcard" role="listitem" key={s.href} href={s.href}>
+              <span className="d4-fcard-media">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={s.photo} alt={s.label} loading="lazy" decoding="async" />
               </span>
-              <span className="d4-lite-body">
-                <span className="font-serif d4-lite-name">{s.label}</span>
-                <span className="d4-lite-blurb">{s.blurb}</span>
-                <span className="font-display d4-lite-link">
+              <span className="d4-fcard-body">
+                <span className="d4-fcard-label font-serif">{s.label}</span>
+                <span className="d4-fcard-blurb">{s.blurb}</span>
+                <span className="d4-fcard-cta font-display">
                   Explore <span aria-hidden="true">→</span>
                 </span>
               </span>
@@ -706,249 +668,246 @@ export default function Direction4DraggableCanvas() {
           ))}
         </div>
       )}
-
-      {/* ---- Accessible DOM fallback: always-present link list (visually hidden on
-              the WebGL path so the canvas is navigable without it). When lite,
-              the carousel above already provides links, so hide this. ---- */}
-      <ul className="d4-sr-links">
-        {services.map((s, i) => (
-          <li key={"sr-" + s.href + i}>
-            <a href={s.href}>
-              {s.label} — {s.blurb}
-            </a>
-          </li>
-        ))}
-      </ul>
     </section>
   );
 }
 
-/* ------------------------------------------------------------------ */
-/* Scoped CSS                                                         */
-/* ------------------------------------------------------------------ */
-const d4Css = `
-.d4-section {
+// ---- Scoped styles (all classes prefixed d4-) ----
+const d4CSS = `
+.d4-section{
   position: relative;
   width: 100%;
-  padding: clamp(3.5rem, 7vw, 6rem) 0 clamp(3rem, 5vw, 5rem);
+  padding: clamp(3rem, 6vw, 5.5rem) 0 clamp(3.5rem, 7vw, 6rem);
   background:
-    radial-gradient(120% 80% at 50% -10%, var(--teal-100, #f7fafa) 0%, #ffffff 55%, #fbfdfd 100%);
+    radial-gradient(120% 80% at 50% -10%, var(--teal-100, #f7fafa) 0%, var(--white, #fff) 55%),
+    var(--white, #fff);
   overflow: hidden;
   isolation: isolate;
 }
-
-.d4-head {
-  max-width: 760px;
+.d4-head{
+  max-width: 56rem;
   margin: 0 auto clamp(1.75rem, 3vw, 2.75rem);
-  padding: 0 1.5rem;
+  padding: 0 clamp(1.25rem, 4vw, 2.5rem);
   text-align: center;
 }
-.d4-eyebrow {
+.d4-eyebrow{
   margin: 0 0 0.85rem;
-  font-size: 0.72rem;
-  letter-spacing: 0.28em;
+  font-size: clamp(.7rem, 1.1vw, .8rem);
+  letter-spacing: .26em;
   text-transform: uppercase;
   color: var(--brand-taupe, #9b8d83);
+  font-weight: 400;
 }
-.d4-title {
-  margin: 0 0 0.9rem;
-  font-size: clamp(1.7rem, 3.6vw, 2.6rem);
-  line-height: 1.12;
-  letter-spacing: 0.01em;
+.d4-title{
+  margin: 0 0 1rem;
+  font-size: clamp(1.7rem, 4.2vw, 3rem);
+  line-height: 1.08;
+  letter-spacing: .012em;
   color: var(--teal-deep, #245052);
   font-weight: 400;
 }
-.d4-sub {
+.d4-sub{
   margin: 0 auto;
-  max-width: 56ch;
-  font-size: clamp(0.95rem, 1.3vw, 1.05rem);
-  line-height: 1.6;
+  max-width: 40rem;
+  font-size: clamp(.95rem, 1.4vw, 1.05rem);
+  line-height: 1.65;
   color: var(--ink-soft, #3a3a3a);
-  opacity: 0.86;
 }
 
-/* Stage */
-.d4-stage {
+/* ---------- Rich WebGL stage ---------- */
+.d4-stage{
   position: relative;
   width: 100%;
-  height: clamp(420px, 62vh, 640px);
-  margin-top: 0.5rem;
+  height: 80vh;
+  min-height: 520px;
+  max-height: 880px;
+  cursor: none;
 }
-.d4-canvas-mount {
+.d4-canvas-wrap{
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
+  /* soft teal-tinted ground + gentle vignette so planes float on light */
+  background:
+    radial-gradient(140% 100% at 50% 35%,
+      rgba(150,178,178,0.10) 0%,
+      rgba(247,250,250,0.55) 45%,
+      rgba(255,255,255,0) 78%);
+}
+/* vignette frame above the canvas to keep it premium + contained */
+.d4-stage::after{
+  content:"";
+  position:absolute; inset:0;
+  pointer-events:none;
+  box-shadow: inset 0 0 120px 24px rgba(255,255,255,0.92);
+  z-index: 3;
 }
 
-/* Hint */
-.d4-hint {
+/* Custom cursor hint */
+.d4-cursor{
   position: absolute;
-  left: 50%;
-  bottom: 1.25rem;
-  transform: translateX(-50%);
-  display: inline-flex;
+  top: 0; left: 0;
+  z-index: 5;
+  pointer-events: none;
+  display: flex;
   align-items: center;
-  gap: 0.55rem;
-  padding: 0.5rem 1rem;
-  border-radius: var(--radius-pill, 999px);
-  background: rgba(255, 255, 255, 0.72);
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
-  border: 1px solid color-mix(in srgb, var(--brand-teal, #96b2b2) 45%, transparent);
+  gap: .5rem;
+  transform: translate(-100px,-100px);
+  margin-left: -2px; margin-top: -2px;
+  transition: opacity .25s ease;
+}
+.d4-cursor-dot{
+  width: 10px; height: 10px;
+  border-radius: 999px;
+  background: var(--teal-deep, #245052);
+  box-shadow: 0 0 0 6px rgba(36,80,82,0.12), 0 0 16px rgba(150,178,178,0.6);
+  transition: transform .2s cubic-bezier(.16,1,.3,1);
+}
+.d4-cursor[data-grabbing="true"] .d4-cursor-dot{ transform: scale(1.7); }
+.d4-cursor-label{
+  font-size: .58rem;
+  letter-spacing: .22em;
+  text-transform: uppercase;
   color: var(--teal-deep, #245052);
-  font-size: 0.74rem;
-  letter-spacing: 0.04em;
-  pointer-events: none;
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  background: rgba(255,255,255,0.82);
+  padding: .22rem .5rem;
+  border-radius: 999px;
+  border: 1px solid var(--brand-teal, #96b2b2);
+  backdrop-filter: blur(4px);
+  transition: opacity .25s ease;
 }
-.d4-hint.is-hidden {
-  opacity: 0;
-  transform: translateX(-50%) translateY(8px);
-}
-.d4-hint-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--brand-teal, #96b2b2);
-  box-shadow: 0 0 0 0 color-mix(in srgb, var(--brand-teal, #96b2b2) 60%, transparent);
-  animation: d4pulse 2s ease-out infinite;
-}
-@keyframes d4pulse {
-  0%   { box-shadow: 0 0 0 0 color-mix(in srgb, var(--brand-teal, #96b2b2) 55%, transparent); }
-  70%  { box-shadow: 0 0 0 9px transparent; }
-  100% { box-shadow: 0 0 0 0 transparent; }
-}
+.d4-cursor[data-grabbing="true"] .d4-cursor-label{ opacity: 0; }
 
-/* Caption overlay */
-.d4-caption {
+/* HTML caption overlay */
+.d4-caption{
   position: absolute;
-  left: clamp(1rem, 3vw, 2.25rem);
-  bottom: clamp(1rem, 3vw, 2.25rem);
-  max-width: min(340px, 70vw);
-  padding: 1.1rem 1.25rem 1.2rem;
+  left: clamp(1rem, 4vw, 3rem);
+  bottom: clamp(1rem, 4vw, 2.5rem);
+  z-index: 4;
+  max-width: min(26rem, 78vw);
+  padding: 1.05rem 1.25rem 1.15rem;
+  display: flex;
+  flex-direction: column;
+  gap: .45rem;
   border-radius: var(--radius-card, 16px);
-  background: rgba(255, 255, 255, 0.82);
-  -webkit-backdrop-filter: blur(14px) saturate(1.1);
-  backdrop-filter: blur(14px) saturate(1.1);
-  border: 1px solid color-mix(in srgb, var(--brand-teal, #96b2b2) 40%, transparent);
-  box-shadow: 0 18px 50px -22px rgba(36, 80, 82, 0.5);
+  background: rgba(255,255,255,0.86);
+  border: 1px solid rgba(150,178,178,0.55);
+  box-shadow: 0 18px 50px -22px rgba(36,80,82,0.4);
+  backdrop-filter: blur(10px) saturate(1.05);
+  -webkit-backdrop-filter: blur(10px) saturate(1.05);
   opacity: 0;
-  transform: translateY(14px) scale(0.985);
-  transition: opacity 0.45s cubic-bezier(.16,1,.3,1), transform 0.45s cubic-bezier(.16,1,.3,1);
+  transform: translateY(14px) scale(.985);
   pointer-events: none;
+  transition: opacity .4s cubic-bezier(.16,1,.3,1),
+              transform .5s cubic-bezier(.16,1,.3,1);
 }
-.d4-caption.is-on {
+.d4-caption.is-on{
   opacity: 1;
   transform: translateY(0) scale(1);
   pointer-events: auto;
 }
-.d4-caption-name {
-  margin: 0 0 0.35rem;
-  font-size: 1.18rem;
-  line-height: 1.15;
+.d4-caption-label{
+  font-size: clamp(1.05rem, 1.8vw, 1.35rem);
   color: var(--teal-deep, #245052);
-  font-weight: 400;
+  letter-spacing: .01em;
 }
-.d4-caption-blurb {
-  margin: 0 0 0.85rem;
-  font-size: 0.9rem;
+.d4-caption-blurb{
+  font-size: .86rem;
   line-height: 1.5;
   color: var(--ink-soft, #3a3a3a);
-  opacity: 0.9;
 }
-.d4-caption-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-size: 0.7rem;
-  letter-spacing: 0.18em;
+.d4-caption-cta{
+  margin-top: .15rem;
+  align-self: flex-start;
+  font-size: .62rem;
+  letter-spacing: .2em;
   text-transform: uppercase;
   color: var(--white, #fff);
   background: var(--teal-deep, #245052);
-  padding: 0.5rem 0.95rem;
-  border-radius: var(--radius-pill, 999px);
+  padding: .5rem .9rem;
+  border-radius: 999px;
   text-decoration: none;
-  transition: transform 0.3s cubic-bezier(.16,1,.3,1), background 0.3s ease;
+  transition: transform .3s cubic-bezier(.16,1,.3,1), background .3s ease;
 }
-.d4-caption-link:hover {
-  transform: translateY(-2px);
-  background: color-mix(in srgb, var(--teal-deep, #245052) 88%, #000);
-}
-.d4-caption-link span { transition: transform 0.3s ease; }
-.d4-caption-link:hover span { transform: translateX(3px); }
+.d4-caption-cta:hover{ transform: translateY(-2px); background:#1d4143; }
+.d4-caption-cta span{ display:inline-block; transition: transform .3s cubic-bezier(.16,1,.3,1); }
+.d4-caption-cta:hover span{ transform: translateX(4px); }
 
-/* Lite fallback carousel */
-.d4-lite {
+/* Visually-hidden but focusable real links for a11y/SEO */
+.d4-sr-links{
+  position:absolute; width:1px; height:1px; overflow:hidden;
+  clip: rect(0 0 0 0); clip-path: inset(50%);
+  white-space: nowrap;
+}
+.d4-sr-links a:focus{
+  position:fixed; top:1rem; left:1rem; z-index:50;
+  width:auto; height:auto; clip:auto; clip-path:none;
+  background:#fff; color:var(--teal-deep,#245052);
+  padding:.5rem .9rem; border-radius:8px;
+  box-shadow:0 8px 30px rgba(0,0,0,.18);
+}
+
+/* ---------- Fallback carousel ---------- */
+.d4-fallback{
   display: flex;
   gap: 1rem;
-  padding: 0.5rem clamp(1.25rem, 6vw, 2rem) 1.5rem;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
+  padding: .5rem clamp(1.25rem, 5vw, 2.5rem) 1.75rem;
+  scrollbar-width: thin;
 }
-.d4-lite::-webkit-scrollbar { display: none; }
-.d4-lite-card {
-  scroll-snap-align: center;
-  flex: 0 0 auto;
-  width: min(72vw, 300px);
+.d4-fallback::-webkit-scrollbar{ height: 6px; }
+.d4-fallback::-webkit-scrollbar-thumb{
+  background: var(--brand-teal, #96b2b2); border-radius: 999px;
+}
+.d4-fcard{
+  scroll-snap-align: start;
+  flex: 0 0 78%;
+  max-width: 320px;
   display: flex;
   flex-direction: column;
   border-radius: var(--radius-card, 16px);
   overflow: hidden;
-  background: #fff;
-  border: 1px solid color-mix(in srgb, var(--brand-teal, #96b2b2) 32%, transparent);
-  box-shadow: 0 14px 40px -26px rgba(36, 80, 82, 0.45);
+  background: var(--white, #fff);
+  border: 1px solid rgba(150,178,178,0.45);
+  box-shadow: 0 12px 34px -20px rgba(36,80,82,0.35);
   text-decoration: none;
+  transition: transform .35s cubic-bezier(.16,1,.3,1),
+              box-shadow .35s cubic-bezier(.16,1,.3,1);
 }
-.d4-lite-media {
+@media (min-width:480px){ .d4-fcard{ flex-basis: 60%; } }
+.d4-fcard:active{ transform: scale(.99); }
+.d4-fcard-media{
   position: relative;
-  display: block;
-  width: 100%;
-  aspect-ratio: 4 / 5;
+  display:block;
+  aspect-ratio: 4 / 3;
   background: var(--teal-100, #f7fafa);
+  overflow:hidden;
 }
-.d4-lite-img { object-fit: cover; }
-.d4-lite-body {
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-  padding: 0.95rem 1rem 1.1rem;
+.d4-fcard-media img{
+  width:100%; height:100%; object-fit: cover; display:block;
 }
-.d4-lite-name {
-  font-size: 1.05rem;
+.d4-fcard-body{
+  display:flex; flex-direction:column; gap:.4rem;
+  padding: 1rem 1.05rem 1.15rem;
+}
+.d4-fcard-label{
+  font-size: 1.1rem; color: var(--teal-deep, #245052); letter-spacing:.01em;
+}
+.d4-fcard-blurb{
+  font-size:.85rem; line-height:1.5; color: var(--ink-soft, #3a3a3a);
+}
+.d4-fcard-cta{
+  margin-top:.25rem;
+  font-size:.6rem; letter-spacing:.2em; text-transform:uppercase;
   color: var(--teal-deep, #245052);
 }
-.d4-lite-blurb {
-  font-size: 0.85rem;
-  line-height: 1.45;
-  color: var(--ink-soft, #3a3a3a);
-  opacity: 0.86;
-}
-.d4-lite-link {
-  margin-top: 0.25rem;
-  font-size: 0.66rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--teal-deep, #245052);
-}
+.d4-fcard-cta span{ display:inline-block; }
 
-/* Visually-hidden accessible link list (keeps canvas navigable) */
-.d4-sr-links {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  clip-path: inset(50%);
-  white-space: nowrap;
-  border: 0;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .d4-caption, .d4-caption-link, .d4-hint, .d4-hint-dot { transition: none; animation: none; }
+@media (prefers-reduced-motion: reduce){
+  .d4-caption, .d4-caption-cta, .d4-caption-cta span,
+  .d4-cursor-dot, .d4-fcard{ transition: none !important; }
 }
 `;
