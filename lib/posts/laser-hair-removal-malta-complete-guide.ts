@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "laser-hair-removal-malta-complete-guide",
   "title": "The Complete Guide to Laser Hair Removal in Malta: What to Expect, What It Costs, and How to Choose the Right Clinic",
-  "metaTitle": "The Complete Guide to Laser Hair Removal in Malta: What to Expect, What It Costs, and How to Choose the Right Clinic",
-  "metaDescription": "Everything you need to know about laser hair removal in Malta. How it works, realistic results, costs, skin types, and how to choose a clinic you can trust.",
+  "metaTitle": "Laser Hair Removal Malta: Complete Guide | Carisma",
+  "metaDescription": "Laser hair removal in Malta: how it works, cost, results & safety. Choose the right clinic. Book free consultation with Carisma Aesthetics.",
   "category": "Aesthetics",
   "publishDate": "2026-04-07",
   "readTime": 5,

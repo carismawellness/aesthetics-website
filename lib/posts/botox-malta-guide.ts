@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "botox-malta-guide",
   "title": "Botox in Malta: An Honest Guide to What It Does, What It Costs, and How to Choose the Right Injector",
-  "metaTitle": "Botox in Malta: An Honest Guide to What It Does, What It Costs, and How to Choose the Right Injector",
-  "metaDescription": "Thinking about Botox in Malta? Get honest answers on how it works, realistic results, what it costs, and how to find a practitioner you can trust. Carisma Aesthetics, St Julian's.",
+  "metaTitle": "Botox in Malta: Complete Guide to Cost & Results | Carisma",
+  "metaDescription": "Botox in Malta: how it works, realistic results & cost. Expert tips from certified practitioners. Book your free consultation at Carisma Aesthetics.",
   "category": "Aesthetics",
   "publishDate": "2026-04-14",
   "readTime": 6,

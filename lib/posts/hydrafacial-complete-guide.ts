@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "hydrafacial-complete-guide",
   "title": "HydraFacial Complete Guide: Everything You Need to Know",
-  "metaTitle": "HydraFacial Treatment Guide | How It Works | Carisma Aesthetics Malta",
-  "metaDescription": "Complete guide to HydraFacial treatments. Learn how HydraFacial works, benefits, results timeline, and why it's perfect for all skin types.",
+  "metaTitle": "HydraFacial Malta: Complete Guide | Carisma Aesthetics",
+  "metaDescription": "HydraFacial in Malta: how it works, benefits for all skin types & results. Book your free consultation with Carisma Aesthetics today.",
   "category": "Skincare",
   "publishDate": "2026-06-25",
   "readTime": 7,

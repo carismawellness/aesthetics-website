@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "cheek-fillers-malta",
   "title": "Cheek Fillers in Malta: Add Volume and Definition",
-  "metaTitle": "Cheek Fillers Malta — Restore Volume & Lift",
-  "metaDescription": "Cheek fillers in Malta restore volume, lift, and definition. Natural results at Carisma Aesthetics. Book your free consultation today.",
+  "metaTitle": "Cheek Fillers Malta: Volume & Lift | Carisma Aesthetics",
+  "metaDescription": "Cheek fillers in Malta restore volume, lift & definition for natural results. Book your free consultation with Carisma Aesthetics now.",
   "category": "Injectables",
   "publishDate": "2026-06-10",
   "readTime": 6,
