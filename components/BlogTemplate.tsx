@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import type { BlogPost, BlogBlock } from "@/lib/blog-types";
 import { getRelatedBlogs, getAllBlogs } from "@/lib/blogs";
+import ReadingProgress from "@/components/ReadingProgress";
 
 // ─── Block renderer ────────────────────────────────────────────────────────────
 
@@ -311,6 +312,7 @@ export default function BlogTemplate({
   return (
     /* P1: <main> landmark for content */
     <main style={{ background: "linear-gradient(180deg, #ffffff 0%, var(--teal-100) 50%, #ffffff 100%)", minHeight: "100vh" }}>
+      <ReadingProgress />
       {/* ── Breadcrumb nav ────────────────────────────────────── */}
       {/* P9: Breadcrumb with aria-label="Breadcrumb" and aria-current on last item */}
       <nav
