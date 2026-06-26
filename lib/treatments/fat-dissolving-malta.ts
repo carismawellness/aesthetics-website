@@ -27,31 +27,16 @@ const t: Treatment = {
   ],
   beforeAfterTitle: "fat dissolving results",
   beforeAfter: [
-    {
-      before: "/assets/treatments/fat-dissolving-malta-ba1-before.jpg",
-      after: "/assets/treatments/fat-dissolving-malta-ba1-after.jpg",
-      label: "Double Chin Reduction",
-    },
-    {
-      before: "/assets/treatments/fat-dissolving-malta-ba2-before.jpg",
-      after: "/assets/treatments/fat-dissolving-malta-ba2-after.jpg",
-      label: "Jawline Contouring",
-    },
-    {
-      before: "/assets/treatments/fat-dissolving-malta-ba3-before.jpg",
-      after: "/assets/treatments/fat-dissolving-malta-ba3-after.jpg",
-      label: "Under Chin Fat Reduction",
-    },
-    {
-      before: "/assets/treatments/fat-dissolving-malta-ba4-before.jpg",
-      after: "/assets/treatments/fat-dissolving-malta-ba4-after.jpg",
-      label: "Chin & Neck Sculpting",
-    },
-    {
-      before: "/assets/treatments/fat-dissolving-malta-ba5-before.jpg",
-      after: "/assets/treatments/fat-dissolving-malta-ba5-after.jpg",
-      label: "Facial Contouring",
-    },
+    { before: "/assets/treatments/fat-dissolving-malta-ba1-2.jpg", after: "/assets/treatments/fat-dissolving-malta-ba1-1.jpg", label: "Jawline and under-chin fat", name: "Maria C.", review: "The bit of softness under my jaw used to bug me in side photos. A few weeks on and the line looks much tidier." },
+    { before: "/assets/treatments/fat-dissolving-malta-ba2-1.jpg", after: "/assets/treatments/fat-dissolving-malta-ba2-2.jpg", label: "Lower-face jaw fullness", name: "Elena B.", review: "My lower face always looked a little heavy to me. It sits flatter now and the jaw has a cleaner edge from the side." },
+    { before: "/assets/treatments/fat-dissolving-malta-ba3-1.jpg", after: "/assets/treatments/fat-dissolving-malta-ba3-2.jpg", label: "Chin and jaw contour", name: "Roberta F.", review: "There was a bit of fullness round my chin that filler never touched. This sorted it and my side profile looks sharper." },
+    { before: "/assets/treatments/fat-dissolving-malta-ba4-1.jpg", after: "/assets/treatments/fat-dissolving-malta-ba4-2.jpg", label: "Cheek and mid-face fat", name: "Daniela M.", review: "My cheeks were rounder than I wanted. They look a touch slimmer now and the cheekbone shows through. Glad I did it." },
+    { before: "/assets/treatments/fat-dissolving-malta-ba5-1.jpg", after: "/assets/treatments/fat-dissolving-malta-ba5-2.jpg", label: "Jowl and jawline fat", name: "Christine A.", review: "That little pocket near my jowl had been there for ages. It softened off nicely and the jaw looks tighter side on." },
+    { before: "/assets/treatments/fat-dissolving-malta-ba6-1.jpg", after: "/assets/treatments/fat-dissolving-malta-ba6-2.jpg", label: "Full cheeks and jaw", name: "Nadia P.", review: "Wasn't sure it would change much, honestly. My cheeks are less puffy now and the whole face reads more defined." },
+    { before: "/assets/treatments/fat-dissolving-malta-ba7-1.jpg", after: "/assets/treatments/fat-dissolving-malta-ba7-2.jpg", label: "Cheek and lower-face fat", name: "Julia S.", review: "Small change but you can tell. The puffiness in my cheeks has eased and the lower face looks more clearly drawn." },
+    { before: "/assets/treatments/fat-dissolving-malta-ba8-1.jpg", after: "/assets/treatments/fat-dissolving-malta-ba8-2.jpg", label: "Lower-face jowl fat", name: "Roberta V.", review: "I'd noticed my lower face going a bit heavy. A couple of sessions later it sits much neater along the jaw." },
+    { before: "/assets/treatments/fat-dissolving-malta-ba9-1.jpg", after: "/assets/treatments/fat-dissolving-malta-ba9-2.jpg", label: "Double chin fat", name: "Anna L.", review: "The double chin was the thing I hated in every photo. It's come right down and my neckline looks so much longer now." },
+    { before: "/assets/treatments/fat-dissolving-malta-ba10-2.jpg", after: "/assets/treatments/fat-dissolving-malta-ba10-1.jpg", label: "Lower-face fullness", name: "Suzanne G.", review: "My lower face had filled out over the years. The fullness has eased off and the jaw looks more defined from the side. Pleased." },
   ],
   precision: {
     title: "precision areas of refinement",
