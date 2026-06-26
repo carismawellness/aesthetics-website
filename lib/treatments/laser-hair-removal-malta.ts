@@ -167,7 +167,7 @@ const t: Treatment = {
       "A central, discreet location at the InterContinental, St. Julian's",
       "Flexible scheduling with ongoing support throughout your course",
     ],
-    mapQuery: "Carisma Aesthetics, Malta",
+    mapQuery: "InterContinental Malta, St Julian's, Malta",
   },
   bookingForm: { title: "Book Your Laser Hair Removal Appointment Today" },
   planSummary: {

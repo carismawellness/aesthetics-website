@@ -161,7 +161,7 @@ const t: Treatment = {
       "Personalized treatments tailored to your unique skin needs.",
       "A long-standing legacy of real results and satisfied clients.",
     ],
-    mapQuery: "Carisma Aesthetics, Malta",
+    mapQuery: "InterContinental Malta, St Julian's, Malta",
   },
   bookingForm: { title: "SECURE YOUR EXCLUSIVE FACELIFT REJUVENATION OFFER NOW" },
   planSummary: {

@@ -177,7 +177,7 @@ const t: Treatment = {
       "A personalised journey from consultation to aftercare",
       "Seamless experience with ongoing support and guidance",
     ],
-    mapQuery: "Carisma Aesthetics, Malta",
+    mapQuery: "InterContinental Malta, St Julian's, Malta",
   },
   bookingForm: { title: "Book Your Chemical Peel Appointment Today" },
   planSummary: {

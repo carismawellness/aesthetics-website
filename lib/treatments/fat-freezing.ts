@@ -131,7 +131,7 @@ const t: Treatment = {
       "All in one approach: assessment, nutrition, movement and treatments",
       "High touch support with weekly check ins and WhatsApp coaching",
     ],
-    mapQuery: "Carisma Aesthetics Malta",
+    mapQuery: "InterContinental Malta, St Julian's, Malta",
   },
 
   offer: {

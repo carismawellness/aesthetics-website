@@ -253,7 +253,7 @@ export default function ProtocolPage({ d }: { d: ProtocolData }) {
                   </ul>
                 </div>
                 <div style={{ borderRadius: "32px 12px 32px 12px", overflow: "hidden", boxShadow: "0 16px 38px rgba(0,0,0,0.10)", minHeight: "360px" }}>
-                  <iframe title="Carisma Aesthetics location" src="https://maps.google.com/maps?q=Carisma%20Aesthetics%20Malta&z=14&output=embed" loading="lazy" style={{ border: 0, width: "100%", height: "100%", minHeight: "360px", display: "block" }} />
+                  <iframe title="Carisma Aesthetics location — InterContinental Malta, St Julian's" src="https://maps.google.com/maps?q=InterContinental%20Malta%2C%20St%20Julian%27s%2C%20Malta&z=14&output=embed" loading="lazy" style={{ border: 0, width: "100%", height: "100%", minHeight: "360px", display: "block" }} />
                 </div>
               </div>
               <div className="flex flex-col sm:flex-row items-center justify-between gap-6" style={{ marginTop: "40px" }}>

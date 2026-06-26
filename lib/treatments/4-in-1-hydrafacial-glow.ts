@@ -166,7 +166,7 @@ const t: Treatment = {
       "Clinically proven products used in every session.",
       "A legacy of care, safety, and radiant transformations.",
     ],
-    mapQuery: "Carisma Aesthetics, Malta",
+    mapQuery: "InterContinental Malta, St Julian's, Malta",
   },
   recommended: {
     title: "Recommended with the Hydrafacial Glow",

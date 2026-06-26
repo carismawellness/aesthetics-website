@@ -223,7 +223,7 @@ const t: Treatment = {
       "A relaxing experience at our InterContinental Hotel clinic with complimentary spa access",
       "Seamless experience with ongoing support and guidance",
     ],
-    mapQuery: "Carisma Aesthetics, Malta",
+    mapQuery: "InterContinental Malta, St Julian's, Malta",
   },
   recommended: {
     title: "Recommended with hydrafacial",
