@@ -155,9 +155,9 @@ function BlogCard({ post, href }: { post: BlogPost; href?: string }) {
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default function BlogIndexPage() {
-  const posts = getAllPosts();
   const nativePosts = getAllBlogs();
-  const heroImage = posts[0]?.coverImage || nativePosts[0]?.coverImage || "/assets/clinic-room.jpg";
+  const posts = getAllPosts().filter((p) => !p.coverImage.includes("placeholder.jpg"));
+  const heroImage = nativePosts[0]?.coverImage || posts[0]?.coverImage || "/assets/clinic-room.jpg";
 
   return (
     /* P1: <main> landmark */
@@ -202,11 +202,42 @@ export default function BlogIndexPage() {
         </ol>
       </nav>
 
-      {/* ── Post grid ───────────────────────────────── */}
+      {/* ── Expert Guides (native /blog/[slug] posts) — shown first ───────────── */}
+      {nativePosts.length > 0 && (
+        <section
+          className="container"
+          aria-labelledby="native-blog-heading"
+          style={{ padding: "64px 20px 96px" }}
+        >
+          <h2
+            id="native-blog-heading"
+            className="font-serif mb-10"
+            style={{
+              fontSize: "clamp(16px, 2vw, 22px)",
+              color: "var(--teal-deep)",
+              letterSpacing: "0.04em",
+            }}
+          >
+            Expert Guides &amp; Treatment Advice
+          </h2>
+          <div
+            className="grid gap-8"
+            style={{
+              gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 320px), 1fr))",
+            }}
+          >
+            {nativePosts.map((post) => (
+              <BlogCard key={post.slug} post={post} href={`/blog/${post.slug}`} />
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* ── Post grid (Wix-ported posts) ─────────────────────────────────────── */}
       <section
         className="container"
         aria-labelledby="blog-articles-heading"
-        style={{ padding: "64px 20px 96px" }}
+        style={{ padding: "0 20px 96px" }}
       >
         {/* P1: visually hidden label for section */}
         <h2 id="blog-articles-heading" className="sr-only">Explore Our Medical Aesthetics Articles in Malta</h2>
@@ -246,37 +277,6 @@ export default function BlogIndexPage() {
           </div>
         )}
       </section>
-
-      {/* ── Native blog posts (/blog/[slug]) ────────── */}
-      {nativePosts.length > 0 && (
-        <section
-          className="container"
-          aria-labelledby="native-blog-heading"
-          style={{ padding: "0 20px 96px" }}
-        >
-          <h2
-            id="native-blog-heading"
-            className="font-serif mb-10"
-            style={{
-              fontSize: "clamp(16px, 2vw, 22px)",
-              color: "var(--teal-deep)",
-              letterSpacing: "0.04em",
-            }}
-          >
-            Expert Guides & Treatment Advice
-          </h2>
-          <div
-            className="grid gap-8"
-            style={{
-              gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 320px), 1fr))",
-            }}
-          >
-            {nativePosts.map((post) => (
-              <BlogCard key={post.slug} post={post} href={`/blog/${post.slug}`} />
-            ))}
-          </div>
-        </section>
-      )}
 
       {/* ── Bottom CTA ──────────────────────────────── */}
       <section
