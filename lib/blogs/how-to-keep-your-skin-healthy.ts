@@ -47,7 +47,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "Chronic stress triggers inflammation and cortisol release, which can cause breakouts and accelerate aging. Practice meditation, exercise, or other stress-reducing activities.",
+      "html": "Chronic stress triggers inflammation and cortisol release, which can cause breakouts and accelerate aging. Practice meditation, <a href=\"https://www.carismaspa.com/massages\" target=\"_blank\" rel=\"noopener noreferrer\">massages Malta</a>, or other stress-reducing activities.",
     },
     {
       "type": "paragraph",

@@ -327,7 +327,12 @@ export default function GiftsPage() {
               }}
             >
               E-gift vouchers are non-refundable and cannot be exchanged for cash.
-              Valid for 12 months from purchase date at all Carisma Aesthetics locations in Malta.
+              Valid for 12 months from purchase date at all Carisma Aesthetics locations in Malta.{" "}
+              Pair with a{" "}
+              <a href="https://www.carismaspa.com/spa-day" target="_blank" rel="noopener noreferrer" style={{ color: "var(--teal)", textDecoration: "underline" }}>
+                spa day Malta
+              </a>
+              {" "}at Carisma Spa for the complete wellness gift.
             </p>
           </div>
         </section>

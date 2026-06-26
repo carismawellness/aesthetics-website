@@ -22,7 +22,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "GLP-1 treatments work by regulating appetite and blood sugar. They help people feel fuller longer and reduce cravings, leading to sustainable weight loss when combined with lifestyle changes.",
+      "html": "GLP-1 treatments work by regulating appetite and blood sugar. They help people feel fuller longer and reduce cravings, leading to sustainable weight loss when combined with lifestyle changes and a structured <a href=\"https://www.carismaslimming.com/medical-weight-loss\" target=\"_blank\" rel=\"noopener noreferrer\">weight loss programme</a>.",
     },
     {
       "type": "heading",

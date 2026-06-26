@@ -74,7 +74,7 @@ export const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: 'Medical weight loss shrinks fat cells; complementary aesthetic treatments help reshape and tighten the body as you lose weight. When significant weight is lost relatively quickly, skin laxity and localised stubborn pockets can remain even after the number on the scale drops. Our team integrates these concerns into your plan from the outset.',
+      html: 'Medical weight loss shrinks fat cells; complementary aesthetic treatments help reshape and tighten the body as you lose weight. When significant weight is lost relatively quickly, skin laxity and localised stubborn pockets can remain even after the number on the scale drops — specialist <a href="https://www.carismaslimming.com/skin-tightening" target="_blank" rel="noopener noreferrer">skin tightening treatments</a> at Carisma Slimming are designed precisely for this stage of a weight-loss journey. Our treatments also incorporate <a href="https://www.carismaslimming.com/lymphatic-drainage" target="_blank" rel="noopener noreferrer">Lymphatic Drainage</a> to support detoxification and reduce fluid retention throughout the programme. Our team integrates these concerns into your plan from the outset.',
     },
     {
       type: 'list',

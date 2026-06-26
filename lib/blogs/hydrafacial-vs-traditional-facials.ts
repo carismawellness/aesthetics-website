@@ -24,11 +24,11 @@ export const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: 'A traditional facial is the classic spa treatment most people think of when they hear "facial." It typically includes a skin analysis, cleansing, steam to open the pores, manual extraction of blackheads and whiteheads, exfoliation (usually a scrub or mild enzyme mask), a targeted mask, and a soothing moisturiser. The experience is deeply relaxing — warm towels, gentle massage, aromatherapy — and a skilled aesthetician tailors each step to your skin type.',
+      html: 'A traditional facial is the classic <a href="https://www.carismaspa.com/spa-day" target="_blank" rel="noopener noreferrer">spa day Malta</a> treatment most people think of when they hear "facial." It typically includes a skin analysis, cleansing, steam to open the pores, manual extraction of blackheads and whiteheads, exfoliation (usually a scrub or mild enzyme mask), a targeted mask, and a soothing moisturiser. The experience is deeply relaxing — warm towels, gentle massage, aromatherapy — and a skilled aesthetician tailors each step to your skin type.',
     },
     {
       type: 'paragraph',
-      html: 'Traditional facials are excellent for general skin maintenance, stress relief, and clients who want a pampering ritual. They can be customised with add-ons such as eye treatments or facial massage, and they tend to be more affordable than medical-grade procedures. However, the results rely heavily on the products used and the skill of the therapist, and they rarely penetrate beyond the surface layers of the skin.',
+      html: 'Traditional facials are excellent for general skin maintenance, stress relief, and clients who want a pampering ritual — for a more immersive relaxation experience, <a href="https://www.carismaspa.com/" target="_blank" rel="noopener noreferrer">Carisma Spa</a> offers a full day-spa menu including massages, hammam, and wellness treatments. They can be customised with add-ons such as eye treatments or facial massage, and they tend to be more affordable than medical-grade procedures. However, the results rely heavily on the products used and the skill of the therapist, and they rarely penetrate beyond the surface layers of the skin.',
     },
     {
       type: 'heading',
