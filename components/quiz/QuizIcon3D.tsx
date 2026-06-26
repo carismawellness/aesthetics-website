@@ -3,61 +3,135 @@
 import { useEffect, useRef } from 'react';
 import * as THREE from 'three';
 
+const SIZE = 150;
+const HEX  = '#2AD4E0'; // electric teal-cyan
+
 export default function QuizIcon3D() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-
     const canvas = canvasRef.current;
     if (!canvas) return;
-
-    const SIZE = 120;
-    const scene = new THREE.Scene();
-    const camera = new THREE.PerspectiveCamera(42, 1, 0.1, 100);
-    camera.position.z = 3.2;
 
     const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.setSize(SIZE, SIZE);
     renderer.setClearColor(0x000000, 0);
 
-    // Teal-palette ambient + point lights
-    const ambient = new THREE.AmbientLight('#DEEBEB', 1.1);
-    scene.add(ambient);
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(40, 1, 0.1, 100);
+    camera.position.z = 3.6;
 
-    const key = new THREE.PointLight('#96B2B2', 3.5, 8);
-    key.position.set(2, 2, 3);
-    scene.add(key);
+    const col = new THREE.Color(HEX);
+    const gc: THREE.BufferGeometry[] = [];
+    const mc: THREE.Material[] = [];
 
-    const fill = new THREE.PointLight('#4F7373', 2.0, 8);
-    fill.position.set(-2, -1, 2);
-    scene.add(fill);
+    const mesh = (geo: THREE.BufferGeometry, mat: THREE.Material, parent: THREE.Object3D = body) => {
+      gc.push(geo); mc.push(mat);
+      const m = new THREE.Mesh(geo, mat);
+      parent.add(m); return m;
+    };
 
-    // TorusKnot — same shape as slimming but teal toned
-    const geo = new THREE.TorusKnotGeometry(0.55, 0.18, 200, 24, 2, 3);
-    const mat = new THREE.MeshStandardMaterial({
-      color: '#96B2B2',
-      metalness: 0.25,
-      roughness: 0.45,
+    // Body group — slow drift rotation applied here
+    const body = new THREE.Group();
+    scene.add(body);
+
+    /* ── Pulsing core ─────────────────────────────────────────────────── */
+    const coreMat = new THREE.MeshStandardMaterial({
+      color: col, emissive: col, emissiveIntensity: 3,
+      metalness: 0, roughness: 0,
     });
-    const knot = new THREE.Mesh(geo, mat);
-    scene.add(knot);
+    const core = mesh(new THREE.SphereGeometry(0.17, 24, 24), coreMat);
 
+    /* ── Halo bloom sphere ────────────────────────────────────────────── */
+    mesh(
+      new THREE.SphereGeometry(0.30, 24, 24),
+      new THREE.MeshBasicMaterial({
+        color: col, transparent: true, opacity: 0.12,
+        blending: THREE.AdditiveBlending, depthWrite: false,
+      }),
+    );
+
+    /* ── Gyroscope rings ──────────────────────────────────────────────── */
+    const mkRing = (opacity: number, rx = 0, ry = 0): THREE.Mesh => {
+      const geo = new THREE.TorusGeometry(0.72, 0.017, 8, 100);
+      const mat = new THREE.MeshBasicMaterial({
+        color: col, transparent: true, opacity,
+        blending: THREE.AdditiveBlending, depthWrite: false,
+      });
+      gc.push(geo); mc.push(mat);
+      const m = new THREE.Mesh(geo, mat);
+      m.rotation.x = rx; m.rotation.y = ry;
+      body.add(m); return m;
+    };
+
+    const ring1 = mkRing(0.88);
+    const ring2 = mkRing(0.72, Math.PI / 2.5);
+    const ring3 = mkRing(0.55, -Math.PI / 2.5, Math.PI / 6);
+
+    /* ── Wireframe icosahedron ────────────────────────────────────────── */
+    const icoGeo = new THREE.IcosahedronGeometry(0.90, 1);
+    const edgesGeo = new THREE.EdgesGeometry(icoGeo);
+    const edgeMat = new THREE.LineBasicMaterial({
+      color: col, transparent: true, opacity: 0.18,
+      blending: THREE.AdditiveBlending,
+    });
+    gc.push(icoGeo, edgesGeo); mc.push(edgeMat);
+    const wireframe = new THREE.LineSegments(edgesGeo, edgeMat);
+    body.add(wireframe);
+
+    /* ── Orbiting data node ───────────────────────────────────────────── */
+    const dotGeo = new THREE.SphereGeometry(0.045, 8, 8);
+    const dotMat = new THREE.MeshBasicMaterial({
+      color: col, blending: THREE.AdditiveBlending,
+    });
+    gc.push(dotGeo); mc.push(dotMat);
+    const dotPivot = new THREE.Group();
+    dotPivot.rotation.x = Math.PI / 3.5;
+    const dot = new THREE.Mesh(dotGeo, dotMat);
+    dot.position.set(0.72, 0, 0);
+    dotPivot.add(dot);
+    body.add(dotPivot);
+
+    /* ── Lights ───────────────────────────────────────────────────────── */
+    scene.add(new THREE.PointLight(col, 2.2, 4));
+    scene.add(new THREE.AmbientLight(0xffffff, 0.15));
+
+    /* ── Animate ──────────────────────────────────────────────────────── */
     let raf = 0;
-    const animate = (t: number) => {
+    const animate = (ms: number) => {
       raf = requestAnimationFrame(animate);
-      const secs = t * 0.001;
-      knot.rotation.y = secs * 0.48;
-      knot.rotation.x = secs * 0.24;
+      const t = ms * 0.001;
+
+      // Global slow drift
+      body.rotation.y = t * 0.14;
+      body.rotation.x = Math.sin(t * 0.28) * 0.18;
+
+      // Independent ring spins (Z local)
+      ring1.rotation.z = t * 0.58;
+      ring2.rotation.z = -t * 0.44;
+      ring3.rotation.z = t * 0.32;
+
+      // Wireframe counter-drifts
+      wireframe.rotation.y = -t * 0.22;
+
+      // Core pulse
+      const p = 0.88 + Math.sin(t * 3.2) * 0.12;
+      core.scale.setScalar(p);
+      coreMat.emissiveIntensity = 2.6 + Math.sin(t * 3.2) * 1.2;
+
+      // Orbiting node
+      dotPivot.rotation.z = t * 2.0;
+
       renderer.render(scene, camera);
     };
     raf = requestAnimationFrame(animate);
 
     return () => {
       cancelAnimationFrame(raf);
-      geo.dispose();
-      mat.dispose();
+      gc.forEach(g => g.dispose());
+      mc.forEach(m => m.dispose());
       renderer.dispose();
     };
   }, []);
@@ -65,9 +139,9 @@ export default function QuizIcon3D() {
   return (
     <canvas
       ref={canvasRef}
-      width={120}
-      height={120}
-      style={{ display: 'block', pointerEvents: 'none' }}
+      width={SIZE}
+      height={SIZE}
+      style={{ display: 'block', width: `${SIZE}px`, height: `${SIZE}px`, pointerEvents: 'none' }}
       aria-hidden
     />
   );

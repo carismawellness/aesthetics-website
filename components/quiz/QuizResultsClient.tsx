@@ -479,8 +479,8 @@ export default function QuizResultsClient({ firstName, concerns, areas, recs }: 
             }}
           />
 
-          {/* 3D spinning icon — desktop only, gated off mobile/reduced-motion inside component */}
-          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '28px' }}>
+          {/* 3D AI holographic icon */}
+          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
             <QuizIcon3D />
           </div>
 
