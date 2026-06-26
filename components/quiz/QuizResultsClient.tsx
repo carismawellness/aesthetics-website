@@ -479,8 +479,11 @@ export default function QuizResultsClient({ firstName, concerns, areas, recs }: 
             }}
           />
 
-          {/* 3D AI holographic icon */}
-          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '20px' }}>
+          {/* 3D AI holographic icon — CSS drop-shadow fakes bloom on the canvas content */}
+          <div style={{
+            display: 'flex', justifyContent: 'center', marginBottom: '20px',
+            filter: 'drop-shadow(0 0 16px rgba(42,212,224,0.75)) drop-shadow(0 0 48px rgba(42,212,224,0.30))',
+          }}>
             <QuizIcon3D />
           </div>
 
