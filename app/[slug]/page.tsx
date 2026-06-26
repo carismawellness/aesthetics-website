@@ -117,7 +117,7 @@ const SLUG_SEO: Record<string, { title: string; description: string }> = {
     description:
       "Polynucleotides (PDRN) treatment in Malta — regenerative salmon DNA injections to repair and renew skin. Reduces pigmentation, wrinkles and improves elasticity. Free consultation.",
   },
-  "lympathic-drainage": {
+  "lymphatic-drainage": {
     title: "Lymphatic Drainage Therapy Malta | Carisma Aesthetics",
     description:
       "Lymphatic drainage therapy in Malta. Professional treatment to reduce fluid retention, puffiness and support overall wellbeing. Available at Carisma Aesthetics. Book today.",
@@ -171,7 +171,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         url: `https://www.carismaaesthetics.com/${slug}`,
         siteName: "Carisma Aesthetics",
         type: "website" as const,
-        images: [{ url: "/og-aesthetics.png", width: 1277, height: 1330 }],
+        images: [{ url: "/og-aesthetics.jpg", width: 1200, height: 630 }],
       },
       twitter: {
         card: "summary_large_image" as const,

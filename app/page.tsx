@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { CONTACT } from "@/lib/site";
 import Hero from "@/components/home/Hero";
 import ServicesMarquee from "@/components/home/ServicesMarquee";
 import WhyMaltaAesthetics from "@/components/home/WhyMaltaAesthetics";
@@ -10,7 +11,7 @@ import Reveal from "@/components/Reveal";
 
 export const metadata: Metadata = {
   title: "Carisma Aesthetics | Medical Aesthetic Clinic Malta",
-  description: "Medical aesthetics in Malta led by medically qualified practitioners. Botox from €59, lip fillers from €219. Natural results, consultation-first approach. Book today.",
+  description: "Medical aesthetics in Malta led by medically qualified practitioners. Botox from €59, lip fillers from €219. Natural results, consultation-first. Book today.",
   alternates: {
     canonical: "https://www.carismaaesthetics.com/",
   },
@@ -40,12 +41,12 @@ export default function HomePage() {
     image: "https://www.carismaaesthetics.com/og-aesthetics.jpg",
     url: "https://www.carismaaesthetics.com/",
     areaServed: "Malta",
-    telephone: "+356 7964 6220",
+    telephone: CONTACT.tel,
     priceRange: "€59 - €500+",
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: "4.9",
-      reviewCount: "100+",
+      reviewCount: 100,
       bestRating: "5",
       worstRating: "1",
     },

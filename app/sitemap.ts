@@ -9,7 +9,7 @@ const BASE_URL = "https://www.carismaaesthetics.com";
 const url = (path: string) => `${BASE_URL}${path}`;
 
 // Shared lastModified date for evergreen/static pages.
-const LAST_MODIFIED = new Date('2026-06-22');
+const LAST_MODIFIED = new Date();
 
 export default function sitemap(): MetadataRoute.Sitemap {
   // Evergreen top-level pages.
@@ -20,8 +20,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: url("/membership"), lastModified: LAST_MODIFIED, changeFrequency: "monthly", priority: 0.8 },
     { url: url("/e-giftcards-vouchers"), lastModified: LAST_MODIFIED, changeFrequency: "monthly", priority: 0.7 },
     { url: url("/blog"), lastModified: LAST_MODIFIED, changeFrequency: "weekly", priority: 0.8 },
-    { url: url("/privacy-policy"), lastModified: LAST_MODIFIED, changeFrequency: "yearly", priority: 0.3 },
-    { url: url("/terms-conditions"), lastModified: LAST_MODIFIED, changeFrequency: "yearly", priority: 0.3 },
   ];
 
   // Treatment detail pages (/<slug>) — every nav-linked face/body/package treatment.

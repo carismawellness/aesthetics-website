@@ -13,7 +13,12 @@ export const metadata: Metadata = {
     url: 'https://www.carismaaesthetics.com/consultation',
     images: [{ url: '/og-aesthetics.jpg', width: 1200, height: 630, alt: 'Free Aesthetics Consultation Malta' }],
   },
-  twitter: { card: 'summary_large_image', images: ['/og-aesthetics.jpg'] },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Book Your Free Consultation | Carisma Aesthetics Malta',
+    description: 'Free consultation with qualified doctors. No pressure, no obligation — just clarity.',
+    images: ['/og-aesthetics.jpg'],
+  },
 };
 
 const FRESHA_CONSULT =

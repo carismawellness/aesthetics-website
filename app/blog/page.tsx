@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import PageHero from "@/components/PageHero";
 import { getAllPosts } from "@/lib/posts";
+import { getAllBlogs } from "@/lib/blogs";
 import type { BlogPost } from "@/lib/blog-types";
 
 export const metadata: Metadata = {
@@ -31,7 +32,7 @@ export const metadata: Metadata = {
 
 // ─── Blog Card ────────────────────────────────────────────────────────────────
 
-function BlogCard({ post }: { post: BlogPost }) {
+function BlogCard({ post, href }: { post: BlogPost; href?: string }) {
   const formattedDate = new Date(post.publishDate).toLocaleDateString("en-GB", {
     day: "numeric",
     month: "short",
@@ -42,7 +43,7 @@ function BlogCard({ post }: { post: BlogPost }) {
     /* P6: <article> element for blog cards; heading hierarchy H2 for card titles */
     <article>
       <Link
-        href={`/post/${post.slug}`}
+        href={href ?? `/post/${post.slug}`}
         className="group card review-card block overflow-hidden transition-all duration-200 ease-in-out focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2"
         style={{
           borderRadius: "var(--radius-card)",
@@ -155,7 +156,8 @@ function BlogCard({ post }: { post: BlogPost }) {
 
 export default function BlogIndexPage() {
   const posts = getAllPosts();
-  const heroImage = posts[0]?.coverImage || "/assets/clinic-room.jpg";
+  const nativePosts = getAllBlogs();
+  const heroImage = posts[0]?.coverImage || nativePosts[0]?.coverImage || "/assets/clinic-room.jpg";
 
   return (
     /* P1: <main> landmark */
@@ -244,6 +246,37 @@ export default function BlogIndexPage() {
           </div>
         )}
       </section>
+
+      {/* ── Native blog posts (/blog/[slug]) ────────── */}
+      {nativePosts.length > 0 && (
+        <section
+          className="container"
+          aria-labelledby="native-blog-heading"
+          style={{ padding: "0 20px 96px" }}
+        >
+          <h2
+            id="native-blog-heading"
+            className="font-serif mb-10"
+            style={{
+              fontSize: "clamp(16px, 2vw, 22px)",
+              color: "var(--teal-deep)",
+              letterSpacing: "0.04em",
+            }}
+          >
+            Expert Guides & Treatment Advice
+          </h2>
+          <div
+            className="grid gap-8"
+            style={{
+              gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 320px), 1fr))",
+            }}
+          >
+            {nativePosts.map((post) => (
+              <BlogCard key={post.slug} post={post} href={`/blog/${post.slug}`} />
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* ── Bottom CTA ──────────────────────────────── */}
       <section
