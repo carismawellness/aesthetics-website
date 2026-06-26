@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "iodine-and-skin-health",
   "title": "Iodine and Skin Health: The Connection",
-  "metaTitle": "Iodine and Skin Health: The Connection — Carisma Aesthetics",
-  "metaDescription": "Understand how iodine affects your skin health and what role it plays in maintaining a clear complexion.",
+  "metaTitle": "Iodine Skin Healt Malta | Carisma Aesthetics",
+  "metaDescription": "Iodine Skin Health in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Wellness",
   "publishDate": "2026-06-25",
   "readTime": 5,

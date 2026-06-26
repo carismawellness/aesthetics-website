@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "idiopathic-hair-loss",
   "title": "Idiopathic Hair Loss: Understanding Causes and Treatment Options",
-  "metaTitle": "Idiopathic Hair Loss — Causes, Solutions & Treatment Malta",
-  "metaDescription": "What is idiopathic hair loss? Explore causes, treatments, and solutions at Carisma Aesthetics. Professional hair loss consultations in Malta.",
+  "metaTitle": "Idiopathic Hair L Malta | Carisma Aesthetics",
+  "metaDescription": "Idiopathic Hair Loss in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Wellness",
   "publishDate": "2026-06-15",
   "readTime": 5,

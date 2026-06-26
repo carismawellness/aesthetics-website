@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "illuminate-dull-skin",
   "title": "Illuminate Dull Skin: Professional Treatments to Restore Radiance",
-  "metaTitle": "Illuminate Dull Skin Malta — Professional Treatments & Results",
-  "metaDescription": "Dull skin? Professional treatments at Carisma Aesthetics restore luminosity. Facials, peels, and lasers. Book your skin consultation in St Julian's.",
+  "metaTitle": "Illuminate Dull S Malta | Carisma Aesthetics",
+  "metaDescription": "Illuminate Dull Skin in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Skincare",
   "publishDate": "2026-06-14",
   "readTime": 5,

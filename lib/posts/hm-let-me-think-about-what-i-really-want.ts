@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "hm-let-me-think-about-what-i-really-want",
   "title": "How to Choose the Right Aesthetic Treatment for You",
-  "metaTitle": "How to Choose the Right Aesthetic Treatment in Malta",
-  "metaDescription": "Discover how to choose the right aesthetic treatment for your goals. Expert guidance from Carisma Aesthetics.",
+  "metaTitle": "Hm Let Me Think I Malta | Carisma Aesthetics",
+  "metaDescription": "Hm Let Me Think I Really Want in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Aesthetics",
   "publishDate": "2026-06-25",
   "readTime": 5,

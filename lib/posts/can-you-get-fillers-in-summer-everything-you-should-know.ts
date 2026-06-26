@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "can-you-get-fillers-in-summer-everything-you-should-know",
   "title": "Can You Get Fillers in Summer?",
-  "metaTitle": "Can You Get Fillers in Summer?",
-  "metaDescription": "Everything You Need to Know for a Radiant, Worry-Free Glow Considering a refresh this summer? You're not alone — and yes, you absolutely...",
+  "metaTitle": "Fillers Summer Ev Malta | Carisma Aesthetics",
+  "metaDescription": "Fillers Summer Everything Should Know in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Aesthetics",
   "publishDate": "2025-09-23",
   "readTime": 3,

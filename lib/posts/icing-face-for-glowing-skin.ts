@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "icing-face-for-glowing-skin",
   "title": "Icing Face for Glowing Skin: DIY Cold Therapy and Professional Treatments",
-  "metaTitle": "Icing Face for Glowing Skin: DIY Cold Therapy and Professional Treatments",
-  "metaDescription": "Discover the benefits of facial ice therapy for reducing inflammation, tightening pores, and achieving a naturally glowing complexion.",
+  "metaTitle": "Icing Face Glowin Malta | Carisma Aesthetics",
+  "metaDescription": "Icing Face Glowing Skin in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Skincare",
   "publishDate": "2026-06-25",
   "readTime": 4,

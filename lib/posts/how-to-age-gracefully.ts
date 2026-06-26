@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "how-to-age-gracefully",
   "title": "How to Age Gracefully: Skincare and Wellness Tips",
-  "metaTitle": "How to Age Gracefully | Skincare and Wellness",
-  "metaDescription": "Learn how to age gracefully with proper skincare routines and wellness practices from Carisma Aesthetics experts.",
+  "metaTitle": "Age Gracefully Malta: Complete Guide | Carisma Aesthetics",
+  "metaDescription": "Age Gracefully in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Skincare",
   "publishDate": "2026-01-10",
   "readTime": 1,

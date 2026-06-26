@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "lip-trends-2025-what-s-hot-this-summer",
   "title": "Lip Filler Trends 2025 You Need to Know for a Confident Glow",
-  "metaTitle": "Lip Filler Trends 2025 You Need to Know for a Confident Glow",
-  "metaDescription": "Subtle, Sculpted, and Authentically You Lips have always held a special place in beauty — but in 2025, they're taking center stage with a...",
+  "metaTitle": "Lip Trends 2025 H Malta | Carisma Aesthetics",
+  "metaDescription": "Lip Trends 2025 Hot Summer in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Aesthetics",
   "publishDate": "2025-10-01",
   "readTime": 2,

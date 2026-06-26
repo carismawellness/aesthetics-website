@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "irregularities-in-skin-tone",
   "title": "Irregularities in Skin Tone: Treatment Options for Even, Radiant Skin",
-  "metaTitle": "Skin Tone Irregularities \u2014 Solutions for Even Complexion",
-  "metaDescription": "Address uneven skin tone with professional treatments. Laser therapy, peels, and more at Carisma Aesthetics. Achieve radiant skin.",
+  "metaTitle": "Irregularities Sk Malta | Carisma Aesthetics",
+  "metaDescription": "Irregularities Skin Tone in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Skincare",
   "publishDate": "2026-06-02",
   "readTime": 1,

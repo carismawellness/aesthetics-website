@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "identify-your-skin-type",
   "title": "Identify Your Skin Type: The First Step to Perfect Skincare",
-  "metaTitle": "Identify Your Skin Type — Essential Guide for Effective Skincare",
-  "metaDescription": "Is your skin oily, dry, combination, or sensitive? Learn how to identify your skin type and choose the right skincare routine at Carisma Aesthetics Malta.",
+  "metaTitle": "Identify Skin Typ Malta | Carisma Aesthetics",
+  "metaDescription": "Identify Skin Type in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Skincare",
   "publishDate": "2026-06-25",
   "readTime": 6,

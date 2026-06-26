@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "itulah-mungkin-tidak-apa-apa",
   "title": "Itulah Mungkin Tidak Apa Apa",
-  "metaTitle": "Itulah Mungkin Tidak Apa Apa",
-  "metaDescription": "This post is being migrated from Wix. Content to be added.",
+  "metaTitle": "Itulah Mungkin Ti Malta | Carisma Aesthetics",
+  "metaDescription": "Itulah Mungkin Tidak Apa Apa in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Aesthetics",
   "readTime": 1,
   "publishDate": "2026-06-25",

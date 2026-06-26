@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "the-science-behind-non-surgical-facelifts",
   "title": "The Science Behind Non-Surgical Facelifts",
-  "metaTitle": "The Science Behind Non-Surgical Facelifts",
-  "metaDescription": "Discover how non-surgical facelifts use HIFU, dermal fillers, and thread lifts to lift, tighten, and rejuvenate skin—no surgery, no downtime.",
+  "metaTitle": "Science Behind No Malta | Carisma Aesthetics",
+  "metaDescription": "Science Behind Non Surgical Facelifts in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Aesthetics",
   "publishDate": "2025-03-13",
   "readTime": 3,

@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "how-women-age-differently-from-men",
   "title": "How Women Age Differently From Men: Science Explained",
-  "metaTitle": "Why Women Age Differently — Biological & Lifestyle Factors",
-  "metaDescription": "Explore the biological differences in aging between men and women, and how to address age-specific skincare needs.",
+  "metaTitle": "Women Age Differe Malta | Carisma Aesthetics",
+  "metaDescription": "Women Age Differently Men in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Anti-Aging",
   "publishDate": "2026-06-25",
   "readTime": 5,

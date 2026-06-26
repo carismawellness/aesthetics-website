@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "intensive-anti-aging-regimen",
   "title": "Intensive Anti-Aging Regimen",
-  "metaTitle": "Intensive Anti-Aging Regimen — Carisma Aesthetics",
-  "metaDescription": "A comprehensive anti-aging treatment plan combining multiple procedures for maximum rejuvenation results.",
+  "metaTitle": "Intensive Anti Ag Malta | Carisma Aesthetics",
+  "metaDescription": "Intensive Anti Aging Regimen in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Anti-Aging",
   "publishDate": "2026-06-25",
   "readTime": 7,

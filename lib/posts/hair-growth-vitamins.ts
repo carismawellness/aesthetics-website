@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "hair-growth-vitamins",
   "title": "Hair Growth Vitamins: Which Supplements Actually Work for Thicker Hair",
-  "metaTitle": "Hair Growth Vitamins & Supplements for Thick, Strong Hair in Malta",
-  "metaDescription": "Discover the best vitamins for hair growth: biotin, collagen, iron, and B-complex. Evidence-based results for thicker, stronger hair.",
+  "metaTitle": "Hair Growth Vitam Malta | Carisma Aesthetics",
+  "metaDescription": "Hair Growth Vitamins in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Wellness",
   "publishDate": "2026-06-16",
   "readTime": 6,

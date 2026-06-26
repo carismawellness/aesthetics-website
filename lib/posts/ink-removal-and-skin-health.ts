@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "ink-removal-and-skin-health",
   "title": "Ink Removal and Skin Health: Safe Tattoo Removal Methods",
-  "metaTitle": "Tattoo Removal and Skin Health: Modern Methods Available in Malta",
-  "metaDescription": "Discover safe and effective tattoo removal options including laser removal, what to expect during treatment, and how to care for your skin during the removal process.",
+  "metaTitle": "Ink Removal Skin  Malta | Carisma Aesthetics",
+  "metaDescription": "Ink Removal Skin Health in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Procedures",
   "publishDate": "2026-06-25",
   "readTime": 8,

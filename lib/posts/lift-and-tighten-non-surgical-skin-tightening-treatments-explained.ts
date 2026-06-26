@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "lift-and-tighten-non-surgical-skin-tightening-treatments-explained",
   "title": "Lift and Tighten: Non-Surgical Skin Tightening Treatments Explained",
-  "metaTitle": "Lift and Tighten: Non-Surgical Skin Tightening Treatments Explained",
-  "metaDescription": "Surgery isn't for you, but you want firmer skin. Discover non-invasive treatments to effectively firm and lift your face.",
+  "metaTitle": "Lift Tighten Non  Malta | Carisma Aesthetics",
+  "metaDescription": "Lift Tighten Non Surgical Skin Tightening Treatments Explained in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthe...",
   "category": "Aesthetics",
   "publishDate": "2025-06-21",
   "readTime": 4,

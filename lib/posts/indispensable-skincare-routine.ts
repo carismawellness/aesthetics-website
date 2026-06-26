@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "indispensable-skincare-routine",
   "title": "The Indispensable Skincare Routine",
-  "metaTitle": "Indispensable Skincare Routine: Your Complete Guide",
-  "metaDescription": "Discover the essential steps for an effective skincare routine that works for your skin type.",
+  "metaTitle": "Indispensable Ski Malta | Carisma Aesthetics",
+  "metaDescription": "Indispensable Skincare Routine in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Skincare",
   "publishDate": "2025-06-01",
   "readTime": 4,

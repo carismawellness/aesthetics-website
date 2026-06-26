@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "ionizing-radiation-and-skin",
   "title": "Ionizing Radiation and Skin: Protecting Your Complexion from Harmful Exposure",
-  "metaTitle": "Ionizing Radiation and Skin \u2014 Damage Prevention and Protection",
-  "metaDescription": "Learn how ionizing radiation affects skin health and how to protect your complexion. Expert guidance from Carisma Aesthetics Malta.",
+  "metaTitle": "Ionizing Radiatio Malta | Carisma Aesthetics",
+  "metaDescription": "Ionizing Radiation Skin in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Anti-Aging",
   "publishDate": "2026-06-24",
   "readTime": 1,

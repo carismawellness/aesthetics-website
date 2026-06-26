@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "improving-circulation-for-skin-health",
   "title": "Improving Circulation for Skin Health: Treatments That Boost Blood Flow",
-  "metaTitle": "Improve Skin Circulation Malta — Professional Treatment Options",
-  "metaDescription": "Poor circulation affects skin health and appearance. Learn how professional treatments at Carisma Aesthetics improve blood flow and skin vitality.",
+  "metaTitle": "Improving Circula Malta | Carisma Aesthetics",
+  "metaDescription": "Improving Circulation Skin Health in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Skincare",
   "publishDate": "2026-06-13",
   "readTime": 5,

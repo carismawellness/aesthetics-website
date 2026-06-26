@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "introducing-adults-to-skincare",
   "title": "Introducing Adults to Skincare",
-  "metaTitle": "Introducing Adults to Skincare — Carisma Aesthetics",
-  "metaDescription": "A comprehensive guide to introducing effective skincare routines for adults.",
+  "metaTitle": "Introducing Adult Malta | Carisma Aesthetics",
+  "metaDescription": "Introducing Adults Skincare in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Skincare",
   "publishDate": "2026-06-25",
   "readTime": 5,

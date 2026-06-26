@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "injuries-to-face-and-scarring",
   "title": "Injuries to Face and Scarring: Treatment Options Available in Malta",
-  "metaTitle": "Facial Injuries and Scarring: Professional Treatment Options in Malta",
-  "metaDescription": "Explore effective treatments for facial scars and injury marks, including laser therapy, dermal fillers, microneedling, and surgical options available at Carisma Aesthetics.",
+  "metaTitle": "Injuries Face Sca Malta | Carisma Aesthetics",
+  "metaDescription": "Injuries Face Scarring in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Procedures",
   "publishDate": "2026-06-25",
   "readTime": 8,

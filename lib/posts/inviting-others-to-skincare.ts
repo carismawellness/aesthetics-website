@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "inviting-others-to-skincare",
   "title": "Inviting Others to Your Skincare Journey",
-  "metaTitle": "Inviting Others to Your Skincare Journey — Carisma Aesthetics",
-  "metaDescription": "Share your skincare success with others. Learn how to invite friends and family to professional skincare consultations.",
+  "metaTitle": "Inviting Others S Malta | Carisma Aesthetics",
+  "metaDescription": "Inviting Others Skincare in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Skincare",
   "publishDate": "2026-06-25",
   "readTime": 5,

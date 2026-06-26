@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "the-must-know-aesthetic-trends-for-august",
   "title": "The Must-Know Aesthetic Trends for August",
-  "metaTitle": "August Aesthetic Trends | Latest Beauty Treatments",
-  "metaDescription": "Discover the latest aesthetic trends for August. Stay ahead with the hottest beauty and wellness treatments.",
+  "metaTitle": "Must Know Aesthet Malta | Carisma Aesthetics",
+  "metaDescription": "Must Know Aesthetic Trends August in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Trends",
   "publishDate": "2025-06-27",
   "readTime": 4,

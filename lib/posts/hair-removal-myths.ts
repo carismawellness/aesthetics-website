@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "hair-removal-myths",
   "title": "Hair Removal Myths Debunked: Shaving Doesn't Make Hair Grow Back Thicker",
-  "metaTitle": "Hair Removal Myths: Shaving, Plucking, Laser — What's True?",
-  "metaDescription": "Debunk common hair removal myths: does shaving cause thick regrowth? Is laser hair removal permanent? Facts vs. fiction.",
+  "metaTitle": "Hair Removal Myth Malta | Carisma Aesthetics",
+  "metaDescription": "Hair Removal Myths in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Skincare",
   "publishDate": "2026-06-17",
   "readTime": 6,

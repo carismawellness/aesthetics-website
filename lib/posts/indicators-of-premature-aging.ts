@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "indicators-of-premature-aging",
   "title": "Indicators of Premature Aging",
-  "metaTitle": "Signs and Indicators of Premature Aging — Carisma Aesthetics",
-  "metaDescription": "Learn the key indicators and signs of premature aging and what treatments can help.",
+  "metaTitle": "Indicators Premat Malta | Carisma Aesthetics",
+  "metaDescription": "Indicators Premature Aging in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Anti-Aging",
   "publishDate": "2026-06-25",
   "readTime": 5,

@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "identifying-your-skin-care-needs",
   "title": "Identifying Your Skincare Needs: A Personalized Approach to Healthy Skin",
-  "metaTitle": "Identify Your Skincare Needs — Create Your Perfect Routine",
-  "metaDescription": "What does your skin really need? Learn to assess your skincare concerns and build a personalized routine at Carisma Aesthetics Malta.",
+  "metaTitle": "Identifying Skin  Malta | Carisma Aesthetics",
+  "metaDescription": "Identifying Skin Care Needs in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Skincare",
   "publishDate": "2026-06-25",
   "readTime": 6,

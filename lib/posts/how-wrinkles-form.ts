@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "how-wrinkles-form",
   "title": "How Wrinkles Form: The Science Behind Aging Skin",
-  "metaTitle": "What Causes Wrinkles — Science of Skin Aging",
-  "metaDescription": "Understand how wrinkles form at a cellular level and learn evidence-based prevention and treatment options.",
+  "metaTitle": "Wrinkles Form Malta: Complete Guide | Carisma Aesthetics",
+  "metaDescription": "Wrinkles Form in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Anti-Aging",
   "publishDate": "2026-06-25",
   "readTime": 5,

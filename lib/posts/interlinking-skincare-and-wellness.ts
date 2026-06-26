@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "interlinking-skincare-and-wellness",
   "title": "Interlinking Skincare and Wellness: The Complete Guide",
-  "metaTitle": "Interlinking Skincare and Wellness: A Holistic Beauty Approach",
-  "metaDescription": "Explore the deep connection between skincare and overall wellness. Learn how to achieve beautiful skin through holistic health practices in Malta.",
+  "metaTitle": "Interlinking Skin Malta | Carisma Aesthetics",
+  "metaDescription": "Interlinking Skincare Wellness in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Skincare",
   "readTime": 1,
   "publishDate": "2026-04-15",

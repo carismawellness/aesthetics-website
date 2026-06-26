@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "identity-and-beauty",
   "title": "Identity and Beauty: Feeling Confident in Your Own Skin",
-  "metaTitle": "Identity and Beauty — Confidence Starts With Self-Acceptance",
-  "metaDescription": "Beauty is personal. Discover how aesthetic treatments can boost your confidence without changing who you are. Carisma Aesthetics Malta.",
+  "metaTitle": "Identity Beauty Malta: Complete Guide | Carisma Aesthetics",
+  "metaDescription": "Identity Beauty in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Aesthetics",
   "publishDate": "2026-06-25",
   "readTime": 6,

@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "jawline-filler-malta",
   "title": "Jawline Filler in Malta: The Non-Surgical Way to Define Your Face",
-  "metaTitle": "Jawline Filler Malta — Non-Surgical Jaw Contouring",
-  "metaDescription": "Jawline fillers in Malta: non-surgical definition and sculpting. Dermal fillers provide sharp, natural results. Carisma Aesthetics. Free consultation.",
+  "metaTitle": "Jawline Filler Malta: Complete Guide | Carisma Aesthetics",
+  "metaDescription": "Jawline Filler Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics today. Glow with confidence.",
   "category": "Injectables",
   "publishDate": "2026-05-26",
   "readTime": 7,

@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "expert-advice-for-skin-care",
   "title": "Expert Advice For Skin Care",
-  "metaTitle": "Expert Advice For Skin Care — Carisma Aesthetics",
-  "metaDescription": "Discover expert advice on expert advice for skin care at Carisma Aesthetics Malta. Learn about treatments and skincare tips.",
+  "metaTitle": "Expert Advice Ski Malta | Carisma Aesthetics",
+  "metaDescription": "Expert Advice Skin Care in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Skincare",
   "publishDate": "2026-06-25",
   "readTime": 5,

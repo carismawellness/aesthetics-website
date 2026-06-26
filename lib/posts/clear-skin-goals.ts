@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "clear-skin-goals",
   "title": "Clear Skin Goals: A Step-by-Step Plan to Achieve Your Best Skin",
-  "metaTitle": "Clear Skin Goals: A Step-by-Step Plan to Achieve Your Best Skin",
-  "metaDescription": "Set and achieve clear skin goals with our step-by-step guide to skincare and aesthetic treatments in Malta.",
+  "metaTitle": "Clear Skin Goals Malta: Complete Guide | Carisma Aesthetics",
+  "metaDescription": "Clear Skin Goals in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Skincare",
   "readTime": 5,
   "publishDate": "2026-06-25",

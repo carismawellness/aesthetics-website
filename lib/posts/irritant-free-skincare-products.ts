@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "irritant-free-skincare-products",
   "title": "Irritant-Free Skincare Products: What Actually Works for Sensitive Skin",
-  "metaTitle": "Irritant-Free Skincare: Gentle Products for Sensitive Skin",
-  "metaDescription": "Find the best irritant-free skincare products. Learn which ingredients to avoid and which soothe sensitive skin. Expert guide by Carisma Aesthetics.",
+  "metaTitle": "Irritant Free Ski Malta | Carisma Aesthetics",
+  "metaDescription": "Irritant Free Skincare Products in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Skincare",
   "readTime": 1,
   "publishDate": "2026-06-04",

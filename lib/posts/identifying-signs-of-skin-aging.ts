@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "identifying-signs-of-skin-aging",
   "title": "Identifying Signs of Skin Aging: What to Look for and When to Act",
-  "metaTitle": "Signs of Skin Aging — Early Detection and Prevention",
-  "metaDescription": "Learn to recognize the early signs of skin aging: fine lines, loss of elasticity, dark spots, and more. Discover preventative treatments at Carisma Aesthetics Malta.",
+  "metaTitle": "Identifying Signs Malta | Carisma Aesthetics",
+  "metaDescription": "Identifying Signs Skin Aging in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Anti-Aging",
   "publishDate": "2026-06-25",
   "readTime": 7,

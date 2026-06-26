@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "stay-ahead-emerging-aesthetic-procedures-to-consider",
   "title": "Stay Ahead: Emerging Aesthetic Procedures to Consider",
-  "metaTitle": "Stay Ahead: Emerging Aesthetic Procedures to Consider",
-  "metaDescription": "Discover the latest emerging aesthetic procedures reshaping beauty in 2025, from non-surgical body contouring to regenerative aesthetics and more.",
+  "metaTitle": "Stay Ahead Emergi Malta | Carisma Aesthetics",
+  "metaDescription": "Stay Ahead Emerging Aesthetic Procedures Consider in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Aesthetics",
   "publishDate": "2025-03-11",
   "readTime": 4,

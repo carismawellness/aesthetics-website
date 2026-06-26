@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "beauty-she-ll-love-the-ultimate-mother-s-day-aesthetic-gift-guide",
   "title": "Beauty She’ll Love: The Ultimate Mother’s Day Aesthetic Gift Guide",
-  "metaTitle": "Beauty She’ll Love: The Ultimate Mother’s Day Aesthetic Gift Guide",
-  "metaDescription": "Celebrate Mother’s Day with aesthetic treatments she’ll truly love—from HydraFacials to skin boosters. Discover glow-boosting gifts at Carisma Aesthetics.",
+  "metaTitle": "Beauty She Love U Malta | Carisma Aesthetics",
+  "metaDescription": "Beauty She Love Ultimate Mother Day Aesthetic Gift Guide in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Aesthetics",
   "publishDate": "2025-05-12",
   "readTime": 3,

@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "internal-medicine-approach-to-skincare",
   "title": "The Internal Medicine Approach to Skincare",
-  "metaTitle": "Internal Medicine Approach to Skincare in Malta",
-  "metaDescription": "Discover how integrative medical professionals combine internal health optimization with aesthetic treatments for superior skin results.",
+  "metaTitle": "Internal Medicine Malta | Carisma Aesthetics",
+  "metaDescription": "Internal Medicine Approach Skincare in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Skincare",
   "readTime": 1,
   "publishDate": "2026-03-15",

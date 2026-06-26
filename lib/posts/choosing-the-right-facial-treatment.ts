@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "choosing-the-right-facial-treatment",
   "title": "Choosing the Right Facial Treatment for Your Skin Type",
-  "metaTitle": "Choosing the Right Facial Treatment for Your Skin Type",
-  "metaDescription": "Find the perfect facial treatment for your unique skin type. Learn about options like hydrating facials, chemical peels, and microneedling in Malta.",
+  "metaTitle": "Choosing Right Fa Malta | Carisma Aesthetics",
+  "metaDescription": "Choosing Right Facial Treatment in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Skincare",
   "readTime": 6,
   "publishDate": "2026-06-25",

@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "intergenerational-beauty-standards",
   "title": "Beauty Standards Across Generations: How They Have Changed and Why It Matters",
-  "metaTitle": "Beauty Standards Across Generations: How They Have Changed and Why It Matters",
-  "metaDescription": "Explore how beauty standards have changed across generations and what this means for your skincare and aesthetic choices. Carisma Aesthetics perspective.",
+  "metaTitle": "Intergenerational Malta | Carisma Aesthetics",
+  "metaDescription": "Intergenerational Beauty Standards in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Aesthetics",
   "publishDate": "2026-06-24",
   "readTime": 6,

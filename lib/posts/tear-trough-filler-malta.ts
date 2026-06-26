@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "tear-trough-filler-malta",
   "title": "Tear Trough Filler in Malta: Erase Years of Under-Eye Tiredness",
-  "metaTitle": "Tear Trough Filler Malta: Under-Eye Volume | Carisma",
-  "metaDescription": "Tear trough filler restores under-eye volume naturally in Malta. Erase tiredness with expert treatment. Book free consultation with Carisma Aesthetics.",
+  "metaTitle": "Tear Trough Fille Malta | Carisma Aesthetics",
+  "metaDescription": "Tear Trough Filler Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics today. Glow with confidence.",
   "category": "Aesthetics",
   "publishDate": "2026-06-16",
   "readTime": 8,

@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "ivy-league-and-appearance",
   "title": "Ivy League And Appearance",
-  "metaTitle": "Ivy League And Appearance",
-  "metaDescription": "This post is being migrated from Wix. Content to be added.",
+  "metaTitle": "Ivy League Appear Malta | Carisma Aesthetics",
+  "metaDescription": "Ivy League Appearance in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Anti-Aging",
   "readTime": 1,
   "publishDate": "2026-06-25",

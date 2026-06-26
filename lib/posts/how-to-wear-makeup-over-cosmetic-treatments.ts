@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "how-to-wear-makeup-over-cosmetic-treatments",
   "title": "How to Wear Makeup After Cosmetic Treatments",
-  "metaTitle": "Makeup After Aesthetic Treatments — When & How",
-  "metaDescription": "Learn when it's safe to wear makeup after treatments and how to do it without compromising results.",
+  "metaTitle": "Wear Makeup Over  Malta | Carisma Aesthetics",
+  "metaDescription": "Wear Makeup Over Cosmetic Treatments in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Beauty",
   "publishDate": "2026-06-25",
   "readTime": 5,

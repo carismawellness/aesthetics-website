@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "year-round-glow-how-to-preserve-your-summer-skin-radiance",
   "title": "Year-Round Glow: How to Preserve Your Summer Skin Radiance",
-  "metaTitle": "Year-Round Glow: How to Preserve Your Summer Skin Radiance",
-  "metaDescription": "Summer's end doesn't have to mean the end of your glow. After months of golden light, outdoor adventures, and healthy color, many clients...",
+  "metaTitle": "Year Round Glow P Malta | Carisma Aesthetics",
+  "metaDescription": "Year Round Glow Preserve Summer Skin Radiance in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Skincare",
   "readTime": 4,
   "publishDate": "2025-06-17",

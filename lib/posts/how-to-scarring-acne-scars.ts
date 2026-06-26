@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "how-to-scarring-acne-scars",
   "title": "How to Address Scarring from Acne Scars: Treatment Options",
-  "metaTitle": "How to Address Scarring from Acne Scars: Treatment Options",
-  "metaDescription": "Expert guide to how to scarring acne scars. Learn about treatments and tips from Carisma Aesthetics in Malta.",
+  "metaTitle": "Scarring Acne Sca Malta | Carisma Aesthetics",
+  "metaDescription": "Scarring Acne Scars in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Body Contouring",
   "publishDate": "2026-06-25",
   "readTime": 5,

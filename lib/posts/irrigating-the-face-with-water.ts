@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "irrigating-the-face-with-water",
   "title": "Irrigating the Face with Water: Why Simple Can Be Powerful",
-  "metaTitle": "Irrigating the Face with Water: Simple Skincare Done Right",
-  "metaDescription": "Discover the importance of rinsing your face with water after skincare products. Learn why proper face rinsing prevents irritation and enhances skin health.",
+  "metaTitle": "Irrigating Face W Malta | Carisma Aesthetics",
+  "metaDescription": "Irrigating Face Water in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Skincare",
   "readTime": 3,
   "publishDate": "2026-06-01",

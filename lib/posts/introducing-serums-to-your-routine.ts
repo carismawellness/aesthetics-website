@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "introducing-serums-to-your-routine",
   "title": "Introducing Serums to Your Routine",
-  "metaTitle": "Introducing Serums to Your Routine — Carisma Aesthetics",
-  "metaDescription": "Discover how to incorporate serums into your skincare regimen for maximum benefits.",
+  "metaTitle": "Introducing Serum Malta | Carisma Aesthetics",
+  "metaDescription": "Introducing Serums Routine in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Skincare",
   "publishDate": "2026-06-25",
   "readTime": 5,

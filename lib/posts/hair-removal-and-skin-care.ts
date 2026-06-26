@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "hair-removal-and-skin-care",
   "title": "Hair Removal and Skincare: Why You Can't Just Pluck and Pray",
-  "metaTitle": "Hair Removal & Skin Care: Safe Methods to Avoid Damage — Malta",
-  "metaDescription": "Proper hair removal techniques to protect skin: laser, threading, waxing. Avoid ingrown hairs and irritation.",
+  "metaTitle": "Hair Removal Skin Malta | Carisma Aesthetics",
+  "metaDescription": "Hair Removal Skin Care in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Skincare",
   "publishDate": "2026-06-17",
   "readTime": 6,

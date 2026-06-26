@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "collagen-boosting-treatments",
   "title": "Collagen-Boosting Treatments: Restore Firmness and Elasticity Naturally",
-  "metaTitle": "Collagen-Boosting Treatments: Restore Firmness and Elasticity Naturally",
-  "metaDescription": "Discover collagen-boosting treatments that restore skin firmness and elasticity. Learn about options like microneedling and PRP in Malta.",
+  "metaTitle": "Collagen Boosting Malta | Carisma Aesthetics",
+  "metaDescription": "Collagen Boosting Treatments in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Anti-Aging",
   "readTime": 7,
   "publishDate": "2026-06-25",

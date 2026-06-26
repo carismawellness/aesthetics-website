@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "improving-confidence-through-cosmetic-treatments",
   "title": "Improving Confidence Through Cosmetic Treatments: A Holistic Approach",
-  "metaTitle": "Cosmetic Treatments for Confidence Malta — Carisma Aesthetics",
-  "metaDescription": "Cosmetic treatments go beyond appearance. Discover how professional aesthetics enhance confidence and well-being at Carisma Aesthetics Malta.",
+  "metaTitle": "Improving Confide Malta | Carisma Aesthetics",
+  "metaDescription": "Improving Confidence Through Cosmetic Treatments in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Aesthetics",
   "publishDate": "2026-06-12",
   "readTime": 5,

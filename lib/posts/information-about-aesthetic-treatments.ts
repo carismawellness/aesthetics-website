@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "information-about-aesthetic-treatments",
   "title": "A Comprehensive Guide to Aesthetic Treatments in Malta",
-  "metaTitle": "A Comprehensive Guide to Aesthetic Treatments in Malta",
-  "metaDescription": "Explore popular aesthetic treatments available in Malta, from injectables to skin treatments. Learn what each treatment does and how to choose the right one for you.",
+  "metaTitle": "Information Aesth Malta | Carisma Aesthetics",
+  "metaDescription": "Information Aesthetic Treatments in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Aesthetics",
   "publishDate": "2026-01-25",
   "readTime": 12,

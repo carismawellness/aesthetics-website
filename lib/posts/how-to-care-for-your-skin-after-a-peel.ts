@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "how-to-care-for-your-skin-after-a-peel",
   "title": "How to Care for Your Skin After a Peel",
-  "metaTitle": "Post-Peel Skincare | Care Instructions After Treatment",
-  "metaDescription": "Essential aftercare tips to ensure optimal results following a chemical peel treatment.",
+  "metaTitle": "Care Skin Peel Malta: Complete Guide | Carisma Aesthetics",
+  "metaDescription": "Care Skin Peel in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Skincare",
   "publishDate": "2025-11-25",
   "readTime": 1,

@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "injection-points-for-botox",
   "title": "Injection Points for Botox: Complete Guide to Treatment Areas",
-  "metaTitle": "Injection Points for Botox: Complete Guide to Treatment Areas in Malta",
-  "metaDescription": "Learn about the key injection points for Botox treatments, including forehead, frown lines, crow's feet, and other facial areas for wrinkle reduction.",
+  "metaTitle": "Injection Points  Malta | Carisma Aesthetics",
+  "metaDescription": "Injection Points Botox in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Injectables",
   "publishDate": "2026-06-25",
   "readTime": 6,

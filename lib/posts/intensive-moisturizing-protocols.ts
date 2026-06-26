@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "intensive-moisturizing-protocols",
   "title": "Intensive Moisturizing Protocols",
-  "metaTitle": "Intensive Moisturizing Protocols — Carisma Aesthetics",
-  "metaDescription": "Professional moisturizing protocols for intensive skin hydration and barrier repair.",
+  "metaTitle": "Intensive Moistur Malta | Carisma Aesthetics",
+  "metaDescription": "Intensive Moisturizing Protocols in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Skincare",
   "publishDate": "2026-06-25",
   "readTime": 5,

@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "inferences-about-age-from-appearance",
   "title": "What Your Appearance Says About Your Age: Insights and Solutions",
-  "metaTitle": "Age Assessment from Appearance | Aesthetic Solutions",
-  "metaDescription": "Understand how appearance reflects age and discover aesthetic treatments to maintain a youthful look.",
+  "metaTitle": "Inferences Age Ap Malta | Carisma Aesthetics",
+  "metaDescription": "Inferences Age Appearance in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Anti-Aging",
   "publishDate": "2025-06-01",
   "readTime": 4,

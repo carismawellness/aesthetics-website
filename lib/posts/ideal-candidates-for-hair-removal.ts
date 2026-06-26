@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "ideal-candidates-for-hair-removal",
   "title": "Ideal Candidates for Laser Hair Removal: What Makes You a Good Fit",
-  "metaTitle": "Ideal Candidates for Laser Hair Removal — The Complete Guide",
-  "metaDescription": "Is laser hair removal right for you? Learn about ideal candidates, skin types, and what to expect from permanent hair reduction at Carisma Aesthetics Malta.",
+  "metaTitle": "Ideal Candidates  Malta | Carisma Aesthetics",
+  "metaDescription": "Ideal Candidates Hair Removal in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Body Contouring",
   "publishDate": "2026-06-25",
   "readTime": 8,

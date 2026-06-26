@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "how-to-use-retinoids",
   "title": "How to Use Retinoids: A Beginner's Guide",
-  "metaTitle": "Using Retinoids Safely — Dosage, Timing & Benefits",
-  "metaDescription": "Complete guide to using retinoids: how to start, build tolerance, and maximize results while minimizing irritation.",
+  "metaTitle": "Use Retinoids Malta: Complete Guide | Carisma Aesthetics",
+  "metaDescription": "Use Retinoids in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Skincare",
   "publishDate": "2026-06-25",
   "readTime": 5,

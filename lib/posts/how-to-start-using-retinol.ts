@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "how-to-start-using-retinol",
   "title": "How to Start Using Retinol: A Beginner's Introduction",
-  "metaTitle": "How to Start Using Retinol: A Beginner's Introduction",
-  "metaDescription": "Expert guide to how to start using retinol. Learn about treatments and tips from Carisma Aesthetics in Malta.",
+  "metaTitle": "Start Using Retin Malta | Carisma Aesthetics",
+  "metaDescription": "Start Using Retinol in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Skincare",
   "publishDate": "2026-06-25",
   "readTime": 5,

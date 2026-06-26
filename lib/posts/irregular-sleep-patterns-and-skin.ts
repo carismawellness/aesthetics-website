@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "irregular-sleep-patterns-and-skin",
   "title": "Irregular Sleep Patterns and Skin: How Sleep Quality Impacts Your Complexion",
-  "metaTitle": "Irregular Sleep Patterns and Skin \u2014 Sleep's Role in Beauty",
-  "metaDescription": "Discover how sleep affects skin health and how poor sleep patterns cause premature aging. Beauty sleep tips from Carisma Aesthetics.",
+  "metaTitle": "Irregular Sleep P Malta | Carisma Aesthetics",
+  "metaDescription": "Irregular Sleep Patterns Skin in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Anti-Aging",
   "publishDate": "2026-06-16",
   "readTime": 1,

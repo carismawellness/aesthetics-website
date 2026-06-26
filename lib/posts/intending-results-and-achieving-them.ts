@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "intending-results-and-achieving-them",
   "title": "Intending Results and Achieving Them",
-  "metaTitle": "Intending Results and Achieving Them — Carisma Aesthetics",
-  "metaDescription": "Setting realistic aesthetic treatment expectations and achieving your desired beauty outcomes.",
+  "metaTitle": "Intending Results Malta | Carisma Aesthetics",
+  "metaDescription": "Intending Results Achieving Them in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Aesthetics",
   "publishDate": "2026-06-25",
   "readTime": 5,

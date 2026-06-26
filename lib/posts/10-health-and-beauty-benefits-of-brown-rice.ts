@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "10-health-and-beauty-benefits-of-brown-rice",
   "title": "10 Health and Beauty Benefits of Brown Rice",
-  "metaTitle": "10 Health and Beauty Benefits of Brown Rice",
-  "metaDescription": "Unlock the secrets of brown rice and discover its 10 health and beauty benefits. Learn how this nutrient-rich whole grain supports skin health, heart disease prevention, and blood sugar regulation. Incorporate brown rice into your diet for radiant wellness.",
+  "metaTitle": "10 Health Beauty  Malta | Carisma Aesthetics",
+  "metaDescription": "10 Health Beauty Benefits Brown Rice in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Aesthetics",
   "publishDate": "2024-04-18",
   "readTime": 3,

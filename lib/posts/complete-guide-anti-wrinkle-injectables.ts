@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "complete-guide-anti-wrinkle-injectables",
   "title": "Complete Guide to Anti-Wrinkle Injectables: Botox and Beyond",
-  "metaTitle": "Complete Guide to Anti-Wrinkle Injectables: Botox and Beyond",
-  "metaDescription": "Everything you need to know about anti-wrinkle injectables including Botox, Dysport, and other neuromodulators available in Malta.",
+  "metaTitle": "Complete Guide An Malta | Carisma Aesthetics",
+  "metaDescription": "Complete Guide Anti Wrinkle Injectables in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Injectables",
   "readTime": 8,
   "publishDate": "2026-06-25",

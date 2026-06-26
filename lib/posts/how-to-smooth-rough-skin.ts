@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "how-to-smooth-rough-skin",
   "title": "How to Smooth Rough Skin: Treatments and Tips for Texture",
-  "metaTitle": "How to Smooth Rough Skin: Treatments and Tips for Texture",
-  "metaDescription": "Expert guide to how to smooth rough skin. Learn about treatments and tips from Carisma Aesthetics in Malta.",
+  "metaTitle": "Smooth Rough Skin Malta: Complete Guide | Carisma Aesthetics",
+  "metaDescription": "Smooth Rough Skin in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Skincare",
   "publishDate": "2026-06-25",
   "readTime": 5,

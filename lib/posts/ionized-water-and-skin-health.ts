@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "ionized-water-and-skin-health",
   "title": "Ionized Water and Skin Health: Separating Science from Marketing",
-  "metaTitle": "Ionized Water and Skin Health \u2014 The Science Explained",
-  "metaDescription": "Is ionized water really good for your skin? Learn what dermatologists say about ionized water and evidence-based skincare at Carisma Aesthetics Malta.",
+  "metaTitle": "Ionized Water Ski Malta | Carisma Aesthetics",
+  "metaDescription": "Ionized Water Skin Health in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Skincare",
   "publishDate": "2026-06-14",
   "readTime": 1,

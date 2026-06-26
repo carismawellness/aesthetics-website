@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "hypothyroidism-and-skin-changes",
   "title": "Hypothyroidism and Skin Changes: Understanding the Connection",
-  "metaTitle": "Hypothyroidism and Skin Changes: Understanding the Connection",
-  "metaDescription": "Learn how thyroid health affects your skin and what treatments can help address cosmetic concerns related to hypothyroidism.",
+  "metaTitle": "Hypothyroidism Sk Malta | Carisma Aesthetics",
+  "metaDescription": "Hypothyroidism Skin Changes in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Wellness",
   "publishDate": "2026-06-25",
   "readTime": 4,

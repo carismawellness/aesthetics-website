@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "identifying-problem-skin",
   "title": "Identifying Problem Skin: Common Issues and How to Fix Them",
-  "metaTitle": "Identifying Problem Skin — Solutions for Common Skin Concerns",
-  "metaDescription": "Do you have acne, sensitivity, congestion, or other skin issues? Learn to identify problem skin and find the right treatments at Carisma Aesthetics Malta.",
+  "metaTitle": "Identifying Probl Malta | Carisma Aesthetics",
+  "metaDescription": "Identifying Problem Skin in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Skincare",
   "publishDate": "2026-06-25",
   "readTime": 7,

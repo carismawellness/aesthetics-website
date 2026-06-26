@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "the-best-beauty-treatments-to-repair-and-regenerate-your-skin",
   "title": "The Best Beauty Treatments to Repair and Regenerate Your Skin",
-  "metaTitle": "The Best Beauty Treatments to Repair and Regenerate Your Skin",
-  "metaDescription": "Discover the best skin repair treatments to rejuvenate your complexion. From facial peels to laser therapy, boost collagen, hydration & skin renewal naturally.",
+  "metaTitle": "Best Beauty Treat Malta | Carisma Aesthetics",
+  "metaDescription": "Best Beauty Treatments Repair Regenerate Skin in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Aesthetics",
   "publishDate": "2025-04-02",
   "readTime": 5,

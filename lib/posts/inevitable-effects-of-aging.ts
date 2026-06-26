@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "inevitable-effects-of-aging",
   "title": "The Inevitable Effects of Aging: Embracing Natural Changes",
-  "metaTitle": "Effects of Aging on Skin | Anti-Aging Solutions",
-  "metaDescription": "Explore the natural effects of aging on skin and discover treatment options to maintain youthful appearance.",
+  "metaTitle": "Inevitable Effect Malta | Carisma Aesthetics",
+  "metaDescription": "Inevitable Effects Aging in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Anti-Aging",
   "publishDate": "2025-06-01",
   "readTime": 4,

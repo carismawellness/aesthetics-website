@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "how-to-brighten-dull-skin",
   "title": "How to Brighten Dull Skin: Effective Solutions",
-  "metaTitle": "How to Brighten Dull Skin | Skincare Solutions",
-  "metaDescription": "Discover professional and at-home solutions to brighten dull, tired-looking skin.",
+  "metaTitle": "Brighten Dull Ski Malta | Carisma Aesthetics",
+  "metaDescription": "Brighten Dull Skin in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Skincare",
   "publishDate": "2025-12-05",
   "readTime": 1,

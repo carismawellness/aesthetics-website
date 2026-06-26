@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "improving-skin-health",
   "title": "Improving Skin Health: Professional Treatments and Evidence-Based Care",
-  "metaTitle": "Improve Skin Health Malta — Professional Skincare Solutions",
-  "metaDescription": "Healthy skin is the foundation of beauty. Professional treatments and expert care at Carisma Aesthetics address underlying skin concerns.",
+  "metaTitle": "Improving Skin He Malta | Carisma Aesthetics",
+  "metaDescription": "Improving Skin Health in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Skincare",
   "publishDate": "2026-06-09",
   "readTime": 5,

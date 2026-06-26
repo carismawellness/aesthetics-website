@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "interesting-facts-about-botox",
   "title": "10 Surprising Facts About Botox You Probably Didn't Know",
-  "metaTitle": "10 Surprising Facts About Botox You Probably Didn't Know",
-  "metaDescription": "Explore surprising facts about Botox—from its medical origins to its various uses beyond wrinkles. Everything you need to know. Carisma Aesthetics, Malta.",
+  "metaTitle": "Interesting Facts Malta | Carisma Aesthetics",
+  "metaDescription": "Interesting Facts Botox in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Injectables",
   "publishDate": "2026-06-24",
   "readTime": 5,

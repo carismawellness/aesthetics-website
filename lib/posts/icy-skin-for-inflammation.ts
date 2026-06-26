@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "icy-skin-for-inflammation",
   "title": "Icy Skin for Inflammation: Soothe Your Skin with Cold Therapy",
-  "metaTitle": "Icy Skin Treatments for Inflammation — Quick Relief",
-  "metaDescription": "Combat skin inflammation with icy skin treatments. Cold therapy reduces redness and soothes irritated skin. Learn about cryotherapy and cooling treatments at Carisma Aesthetics.",
+  "metaTitle": "Icy Skin Inflamma Malta | Carisma Aesthetics",
+  "metaDescription": "Icy Skin Inflammation in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Skincare",
   "publishDate": "2026-06-25",
   "readTime": 5,

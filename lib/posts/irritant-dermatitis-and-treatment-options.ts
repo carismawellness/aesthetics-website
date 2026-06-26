@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "irritant-dermatitis-and-treatment-options",
   "title": "Irritant Dermatitis and Treatment Options: Restore Skin Barrier Health",
-  "metaTitle": "Irritant Dermatitis Treatment: Heal Inflamed Skin",
-  "metaDescription": "Understand irritant dermatitis causes and treatments. Learn how to repair skin barrier damage. Professional aesthetic treatments for dermatitis relief.",
+  "metaTitle": "Irritant Dermatit Malta | Carisma Aesthetics",
+  "metaDescription": "Irritant Dermatitis Treatment Options in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Skincare",
   "readTime": 1,
   "publishDate": "2026-06-03",

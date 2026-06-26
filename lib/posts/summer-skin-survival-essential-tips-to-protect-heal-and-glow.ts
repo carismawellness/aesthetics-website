@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "summer-skin-survival-essential-tips-to-protect-heal-and-glow",
   "title": "Summer Skin Survival: Essential Tips to Protect, Heal, and Glow",
-  "metaTitle": "Summer Skin Survival: Essential Tips to Protect, Heal, and Glow",
-  "metaDescription": "It's time to think about protecting and preparing your skin for summer! Discover the best tips you need to achieve healthy, hydrated, and radiant skin.",
+  "metaTitle": "Summer Skin Survi Malta | Carisma Aesthetics",
+  "metaDescription": "Summer Skin Survival Essential Tips Protect Heal Glow in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Aesthetics",
   "publishDate": "2025-06-19",
   "readTime": 4,

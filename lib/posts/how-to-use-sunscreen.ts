@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "how-to-use-sunscreen",
   "title": "How to Use Sunscreen Properly: Complete Guide",
-  "metaTitle": "Proper Sunscreen Application — Amount, Frequency & Tips",
-  "metaDescription": "Learn how to use sunscreen correctly for maximum protection. Expert guide on amount, reapplication, and best practices.",
+  "metaTitle": "Use Sunscreen Malta: Complete Guide | Carisma Aesthetics",
+  "metaDescription": "Use Sunscreen in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Skincare",
   "publishDate": "2026-06-25",
   "readTime": 5,

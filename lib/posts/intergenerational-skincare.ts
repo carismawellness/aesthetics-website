@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "intergenerational-skincare",
   "title": "Skincare Across Generations: What Your Skin Actually Needs at Every Age",
-  "metaTitle": "Skincare Across Generations: What Your Skin Actually Needs at Every Age",
-  "metaDescription": "Learn what your skin needs at different life stages—from teens to 50+. Science-backed skincare guidance for every generation. Carisma Aesthetics, Malta.",
+  "metaTitle": "Intergenerational Malta | Carisma Aesthetics",
+  "metaDescription": "Intergenerational Skincare in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Skincare",
   "publishDate": "2026-06-24",
   "readTime": 7,

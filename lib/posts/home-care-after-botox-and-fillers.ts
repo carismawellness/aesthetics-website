@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "home-care-after-botox-and-fillers",
   "title": "Home Care After Botox and Fillers: Essential Aftercare Guide",
-  "metaTitle": "Aftercare After Botox and Fillers in Malta \u2014 Expert Guide",
-  "metaDescription": "Learn how to care for your skin after Botox and filler treatments. Complete aftercare guide from Carisma Aesthetics.",
+  "metaTitle": "Home Care Botox F Malta | Carisma Aesthetics",
+  "metaDescription": "Home Care Botox Fillers in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Injectables",
   "publishDate": "2026-06-25",
   "readTime": 5,

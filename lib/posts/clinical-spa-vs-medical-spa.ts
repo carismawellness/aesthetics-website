@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "clinical-spa-vs-medical-spa",
   "title": "Clinical Spa vs Medical Spa: Understanding the Difference",
-  "metaTitle": "Clinical Spa vs Medical Spa: Understanding the Difference",
-  "metaDescription": "What's the difference between a clinical spa and a medical spa? Learn about treatment capabilities and safety standards.",
+  "metaTitle": "Clinical Spa Vs M Malta | Carisma Aesthetics",
+  "metaDescription": "Clinical Spa Vs Medical Spa in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Beauty",
   "readTime": 5,
   "publishDate": "2026-06-25",

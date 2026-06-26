@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "exclusive-benefits-member-skin-packages",
   "title": "Exclusive Benefits Member Skin Packages",
-  "metaTitle": "Exclusive Benefits Member Skin Packages — Carisma Aesthetics",
-  "metaDescription": "Discover expert advice on exclusive benefits member skin packages at Carisma Aesthetics Malta. Learn about treatments and skincare tips.",
+  "metaTitle": "Exclusive Benefit Malta | Carisma Aesthetics",
+  "metaDescription": "Exclusive Benefits Member Skin Packages in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Beauty",
   "publishDate": "2026-06-25",
   "readTime": 5,

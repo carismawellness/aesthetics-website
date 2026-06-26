@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "choosing-the-right-anti-aging-treatment",
   "title": "Choosing the Right Anti-Aging Treatment: A Complete Guide to Options in Malta",
-  "metaTitle": "Choosing the Right Anti-Aging Treatment: A Complete Guide to Options in Malta",
-  "metaDescription": "Explore anti-aging treatments available in Malta including Botox, fillers, lasers, and collagen stimulators. Find the right treatment for your skin.",
+  "metaTitle": "Choosing Right An Malta | Carisma Aesthetics",
+  "metaDescription": "Choosing Right Anti Aging Treatment in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Anti-Aging",
   "readTime": 8,
   "publishDate": "2026-06-25",

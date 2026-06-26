@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "glp-1-weight-loss-treatment-malta",
   "title": "GLP-1 Weight Loss Treatment in Malta: Semaglutide & Tirzepatide",
-  "metaTitle": "GLP-1 Weight Loss Malta — Semaglutide & Tirzepatide",
-  "metaDescription": "GLP-1 weight loss treatments in Malta: semaglutide and tirzepatide. Medical weight loss program at Carisma. Book your consultation.",
+  "metaTitle": "Glp 1 Weight Loss Malta | Carisma Aesthetics",
+  "metaDescription": "Glp 1 Weight Loss Treatment Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics today.",
   "category": "Wellness",
   "publishDate": "2026-06-20",
   "readTime": 9,

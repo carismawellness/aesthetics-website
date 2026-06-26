@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "improving-skin-quality",
   "title": "Improving Skin Quality: Comprehensive Treatments for Texture, Tone, and Clarity",
-  "metaTitle": "Improve Skin Quality Malta — Professional Treatments",
-  "metaDescription": "Improve skin quality with professional treatments at Carisma Aesthetics. Address texture, tone, clarity, and aging concerns in Malta.",
+  "metaTitle": "Improving Skin Qu Malta | Carisma Aesthetics",
+  "metaDescription": "Improving Skin Quality in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Skincare",
   "publishDate": "2026-06-07",
   "readTime": 5,

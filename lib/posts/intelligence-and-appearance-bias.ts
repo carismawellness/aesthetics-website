@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "intelligence-and-appearance-bias",
   "title": "Intelligence and Appearance Bias",
-  "metaTitle": "Intelligence and Appearance Bias — Carisma Aesthetics",
-  "metaDescription": "Exploring the intersection of intelligence perception and appearance bias in beauty and aesthetics.",
+  "metaTitle": "Intelligence Appe Malta | Carisma Aesthetics",
+  "metaDescription": "Intelligence Appearance Bias in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Wellness",
   "publishDate": "2026-06-25",
   "readTime": 5,

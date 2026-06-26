@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "interdisciplinary-approach-to-beauty-medicine",
   "title": "Interdisciplinary Approach to Beauty Medicine",
-  "metaTitle": "Interdisciplinary Approach to Beauty Medicine — Carisma Aesthetics",
-  "metaDescription": "How a multidisciplinary approach combines different specialties for comprehensive aesthetic solutions.",
+  "metaTitle": "Interdisciplinary Malta | Carisma Aesthetics",
+  "metaDescription": "Interdisciplinary Approach Beauty Medicine in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Aesthetics",
   "publishDate": "2026-06-25",
   "readTime": 6,

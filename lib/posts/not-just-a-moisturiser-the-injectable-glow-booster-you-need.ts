@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "not-just-a-moisturiser-the-injectable-glow-booster-you-need",
   "title": "The Glow That Starts Beneath the Surface",
-  "metaTitle": "Profhilo – The Glow That Starts Beneath the Surface",
-  "metaDescription": "Injectable skin boosters are the perfect alternative to your moisturizer. Give your skin what it deserves: a natural glow, quality hydration, and a smooth texture this spring.",
+  "metaTitle": "Just Moisturiser  Malta | Carisma Aesthetics",
+  "metaDescription": "Just Moisturiser Injectable Glow Booster Need in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Aesthetics",
   "publishDate": "2025-09-03",
   "readTime": 2,

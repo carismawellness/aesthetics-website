@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "back-from-the-beach-give-your-skin-the-love-it-deserves",
   "title": "Back from the Beach? Give Your Skin a Gentle Reset",
-  "metaTitle": "Post-Summer Skin Care That Brings Back Your Natural Glow",
-  "metaDescription": "Are you back from a beach getaway? It's time to give your skin the care it deserves. Come discover our beauty treatments to repair your skin after your day.",
+  "metaTitle": "Back Beach Skin L Malta | Carisma Aesthetics",
+  "metaDescription": "Back Beach Skin Love Deserves in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Aesthetics",
   "publishDate": "2025-09-12",
   "readTime": 2,

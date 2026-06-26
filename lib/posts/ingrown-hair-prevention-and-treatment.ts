@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "ingrown-hair-prevention-and-treatment",
   "title": "Ingrown Hair: Prevention Strategies and Effective Treatment Options",
-  "metaTitle": "Ingrown Hair: Prevention Strategies and Effective Treatment Options",
-  "metaDescription": "Learn how to prevent ingrown hairs and the best treatment options available. Get expert advice on laser hair removal and professional treatments in Malta.",
+  "metaTitle": "Ingrown Hair Prev Malta | Carisma Aesthetics",
+  "metaDescription": "Ingrown Hair Prevention Treatment in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Skincare",
   "publishDate": "2026-02-12",
   "readTime": 7,

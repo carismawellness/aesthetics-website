@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "hair-loss-in-women",
   "title": "Hair Loss in Women: Why It Happens, When to Worry, and What Actually Works",
-  "metaTitle": "Female Hair Loss: Causes, Treatments, Solutions in Malta — Carisma",
-  "metaDescription": "Female hair loss causes: hormones, nutrition, stress, genetics. Evidence-based treatments that work for women.",
+  "metaTitle": "Hair Loss Women Malta: Complete Guide | Carisma Aesthetics",
+  "metaDescription": "Hair Loss Women in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Wellness",
   "publishDate": "2026-06-19",
   "readTime": 6,

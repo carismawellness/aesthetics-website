@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "smooth-for-summer-why-spring-is-the-best-time-to-start-laser-hair-removal",
   "title": "Smooth for Summer: Why Spring is the Best Time to Start Laser Hair Removal",
-  "metaTitle": "Smooth for Summer: Why Spring is the Best Time to Start Laser Hair Removal",
-  "metaDescription": "Ready for summer skin? Spring is the best time to start laser hair removal. Discover why timing matters for smooth, hair-free results at Carisma Aesthetics.",
+  "metaTitle": "Smooth Summer Spr Malta | Carisma Aesthetics",
+  "metaDescription": "Smooth Summer Spring Best Time Start Laser Hair Removal in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Aesthetics",
   "publishDate": "2025-05-12",
   "readTime": 3,

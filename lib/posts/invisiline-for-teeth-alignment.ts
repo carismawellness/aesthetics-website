@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "invisiline-for-teeth-alignment",
   "title": "Invisiline for Teeth Alignment: A Modern Approach",
-  "metaTitle": "Invisiline for Teeth Alignment: A Modern Approach — Carisma Aesthetics",
-  "metaDescription": "Discover how Invisiline technology offers a discreet solution for teeth alignment. Learn about the benefits at Carisma Aesthetics.",
+  "metaTitle": "Invisiline Teeth  Malta | Carisma Aesthetics",
+  "metaDescription": "Invisiline Teeth Alignment in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Beauty",
   "publishDate": "2026-06-25",
   "readTime": 5,

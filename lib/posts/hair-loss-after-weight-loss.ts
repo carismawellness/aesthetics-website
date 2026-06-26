@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "hair-loss-after-weight-loss",
   "title": "Hair Loss After Weight Loss: Why It Happens and How to Stop It",
-  "metaTitle": "Telogen Effluvium: Hair Loss After Weight Loss — Carisma Aesthetics",
-  "metaDescription": "Why you lose hair after weight loss and how to minimize shedding. Evidence-based strategies for post-weight-loss hair regrowth.",
+  "metaTitle": "Hair Loss Weight  Malta | Carisma Aesthetics",
+  "metaDescription": "Hair Loss Weight Loss in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Wellness",
   "publishDate": "2026-06-20",
   "readTime": 6,

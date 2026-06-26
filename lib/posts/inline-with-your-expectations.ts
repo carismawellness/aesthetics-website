@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "inline-with-your-expectations",
   "title": "Inline with Your Expectations: Setting Realistic Goals for Aesthetic Treatments",
-  "metaTitle": "Realistic Aesthetic Treatment Goals: What to Expect from Your Procedures",
-  "metaDescription": "Learn how to set realistic expectations for aesthetic treatments. Understand the importance of goal-setting with your practitioner for satisfying results.",
+  "metaTitle": "Inline Expectatio Malta | Carisma Aesthetics",
+  "metaDescription": "Inline Expectations in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Wellness",
   "publishDate": "2026-06-25",
   "readTime": 6,

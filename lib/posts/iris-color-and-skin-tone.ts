@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "iris-color-and-skin-tone",
   "title": "Iris Color and Skin Tone: The Connection Between Your Eyes and Complexion",
-  "metaTitle": "Iris Color and Skin Tone \u2014 Understanding the Beauty Connection",
-  "metaDescription": "Explore the relationship between iris color and skin tone. Discover which aesthetics treatments complement your natural coloring at Carisma.",
+  "metaTitle": "Iris Color Skin T Malta | Carisma Aesthetics",
+  "metaDescription": "Iris Color Skin Tone in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Beauty",
   "publishDate": "2026-06-21",
   "readTime": 1,

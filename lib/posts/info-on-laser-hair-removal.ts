@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "info-on-laser-hair-removal",
   "title": "Everything You Need to Know About Laser Hair Removal in Malta",
-  "metaTitle": "Everything You Need to Know About Laser Hair Removal in Malta",
-  "metaDescription": "Complete guide to laser hair removal treatments in Malta. Learn how it works, what to expect, costs, and results. Get expert advice from Carisma Aesthetics, St Julian's.",
+  "metaTitle": "Info Laser Hair R Malta | Carisma Aesthetics",
+  "metaDescription": "Info Laser Hair Removal in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Skincare",
   "publishDate": "2026-01-15",
   "readTime": 8,

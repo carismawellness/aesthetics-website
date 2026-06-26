@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "intellectual-property-in-cosmetic-medicine",
   "title": "Intellectual Property in Cosmetic Medicine",
-  "metaTitle": "Intellectual Property in Cosmetic Medicine — Carisma Aesthetics",
-  "metaDescription": "Understanding intellectual property rights and innovation in cosmetic medicine treatments and procedures.",
+  "metaTitle": "Intellectual Prop Malta | Carisma Aesthetics",
+  "metaDescription": "Intellectual Property Cosmetic Medicine in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Wellness",
   "publishDate": "2026-06-25",
   "readTime": 5,

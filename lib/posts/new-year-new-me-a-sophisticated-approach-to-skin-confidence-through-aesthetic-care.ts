@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "new-year-new-me-a-sophisticated-approach-to-skin-confidence-through-aesthetic-care",
   "title": "New Year, New Me: A Sophisticated Approach to Skin Confidence Through Aesthetic Care",
-  "metaTitle": "New Year, New Me: A Sophisticated Approach to Skin Confidence Through Aesthetic Care",
-  "metaDescription": "A new year often brings a quiet invitation to reset—not to reinvent who you are, but to reconnect with how you want to feel. In the world of beauty and wellness",
+  "metaTitle": "New Year New Me S Malta | Carisma Aesthetics",
+  "metaDescription": "New Year New Me Sophisticated Approach Skin Confidence Through Aesthetic Care in Malta: benefits, cost & expert advice. Book your free consultation with...",
   "category": "Aesthetics",
   "publishDate": "2026-01-08",
   "readTime": 4,

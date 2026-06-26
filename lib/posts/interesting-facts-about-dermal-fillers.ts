@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "interesting-facts-about-dermal-fillers",
   "title": "Dermal Fillers Explained: How They Work, When to Use Them, and What to Expect",
-  "metaTitle": "Dermal Fillers Explained: How They Work, When to Use Them, and What to Expect",
-  "metaDescription": "Learn how dermal fillers work, when they are appropriate, and what to expect. Expert guidance on natural-looking results. Carisma Aesthetics, Malta.",
+  "metaTitle": "Interesting Facts Malta | Carisma Aesthetics",
+  "metaDescription": "Interesting Facts Dermal Fillers in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Injectables",
   "publishDate": "2026-06-24",
   "readTime": 7,

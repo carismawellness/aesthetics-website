@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "injection-technique-and-results",
   "title": "Injection Technique and Results: What to Expect from Your Aesthetic Treatment",
-  "metaTitle": "Injection Technique and Results: Botox and Filler Results Explained",
-  "metaDescription": "Learn about advanced injection techniques used in aesthetic medicine and understand realistic timelines for seeing results from Botox and dermal fillers.",
+  "metaTitle": "Injection Techniq Malta | Carisma Aesthetics",
+  "metaDescription": "Injection Technique Results in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Injectables",
   "publishDate": "2026-06-25",
   "readTime": 8,

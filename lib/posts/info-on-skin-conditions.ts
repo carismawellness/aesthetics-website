@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "info-on-skin-conditions",
   "title": "Understanding Common Skin Conditions and Treatment Options in Malta",
-  "metaTitle": "Understanding Common Skin Conditions and Treatment Options in Malta",
-  "metaDescription": "Learn about common skin conditions like acne, rosacea, and pigmentation issues. Discover effective treatments available at Carisma Aesthetics in Malta.",
+  "metaTitle": "Info Skin Conditi Malta | Carisma Aesthetics",
+  "metaDescription": "Info Skin Conditions in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Skincare",
   "publishDate": "2026-01-20",
   "readTime": 10,

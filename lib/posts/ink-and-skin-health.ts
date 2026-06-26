@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "ink-and-skin-health",
   "title": "Ink and Skin Health: Understanding Tattoo Safety and Health Implications",
-  "metaTitle": "Ink and Skin Health: Tattoo Safety, Risks, and Health Considerations in Malta",
-  "metaDescription": "Explore the relationship between tattoo ink and skin health, including potential risks, proper aftercare, and how to ensure safe tattooing practices.",
+  "metaTitle": "Ink Skin Health Malta: Complete Guide | Carisma Aesthetics",
+  "metaDescription": "Ink Skin Health in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Wellness",
   "publishDate": "2026-06-25",
   "readTime": 7,
