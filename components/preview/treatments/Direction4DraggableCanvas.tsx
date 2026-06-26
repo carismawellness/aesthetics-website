@@ -113,15 +113,19 @@ export default function Direction4DraggableCanvas() {
   const cursorRef = useRef<HTMLDivElement>(null);
 
   const services = useMemo(() => HOME_SERVICES, []);
-  const cells = useMemo(buildCells, []);
+  const cells = useMemo(() => buildCells(), []);
 
   // Decide rich vs fallback after mount so SSR markup is the safe fallback.
   const [rich, setRich] = useState<boolean>(false);
   // Caption state (label/blurb/href + visible) is React for the HTML overlay.
   const [hovered, setHovered] = useState<number | null>(null);
 
+  // Mirror `hovered` into a ref so the rAF loop can read/compare it without
+  // closing over a stale value (synced in an effect, never during render).
   const hoveredRef = useRef<number | null>(null);
-  hoveredRef.current = hovered;
+  useEffect(() => {
+    hoveredRef.current = hovered;
+  }, [hovered]);
 
   // ---- Capability gate ----
   useEffect(() => {
