@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     locale: "en_MT",
     images: [
       {
-        url: "/og-aesthetics.jpg",
+        url: "/opengraph-image",
         width: 1200,
         height: 630,
         alt: "Carisma Aesthetics — Glow with Confidence",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     title: "Carisma Aesthetics | Medical Aesthetic Clinic Malta",
     description:
       "Medical aesthetics in Malta led by medically qualified practitioners. Botox from €59, lip fillers from €219. Natural results, consultation-first.",
-    images: ["/og-aesthetics.jpg"],
+    images: ["/opengraph-image"],
   },
 };
 
