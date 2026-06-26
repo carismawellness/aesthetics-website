@@ -56,7 +56,7 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: 'Our <a href="https://www.carismaaesthetics.com/wrinkle-relaxing-malta" style="color:var(--teal);text-decoration:underline;">wrinkle relaxing treatments in Malta</a> cover the full range of Botox approaches, from preventative micro-dosing through to full upper face relaxation, tailored to your anatomy and goals.',
+      html: 'Our <a href="https://www.carismaaesthetics.com/wrinkle-relaxing-malta" style="color:var(--teal);text-decoration:underline;">anti-wrinkle injections Malta</a> cover the full range of Botox approaches, from preventative micro-dosing through to full upper face relaxation, tailored to your anatomy and goals.',
     },
     {
       type: 'heading',
@@ -83,7 +83,7 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: `You have been noticing the lines more consistently, at rest, not just when you are animated. You want to stay ahead of the progression without committing to heavier treatment. Baby Botox at this stage works well alongside complementary treatments. Many patients at Carisma Aesthetics pair it with <a href="https://www.carismaaesthetics.com/collagen-stimulator-malta" style="color:var(--teal);text-decoration:underline;">collagen stimulator treatments</a> or <a href="https://www.carismaaesthetics.com/microneedling-malta" style="color:var(--teal);text-decoration:underline;">microneedling</a> to address skin quality and volume at the same time as muscle relaxation, a layered approach that delivers results that feel genuinely natural.`,
+      html: `You have been noticing the lines more consistently, at rest, not just when you are animated. You want to stay ahead of the progression without committing to heavier treatment. Baby Botox at this stage works well alongside complementary treatments. Many patients at Carisma Aesthetics pair it with <a href="https://www.carismaaesthetics.com/collagen-stimulator-malta" style="color:var(--teal);text-decoration:underline;">collagen stimulator Malta</a> or <a href="https://www.carismaaesthetics.com/microneedling-malta" style="color:var(--teal);text-decoration:underline;">microneedling Malta</a> to address skin quality and volume at the same time as muscle relaxation, a layered approach that delivers results that feel genuinely natural.`,
     },
     {
       type: 'heading',
@@ -92,7 +92,7 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: `You want to look like yourself again, a rested, confident, and present version, rather than a version that looks like you have clearly had something done. Baby Botox at this stage is typically used in combination with other treatments. On its own, lighter doses may not fully address deeper-set lines, and your practitioner may recommend a blend of baby Botox for texture and expression softening alongside <a href="https://www.carismaaesthetics.com/dermal-fillers-malta" style="color:var(--teal);text-decoration:underline;">dermal fillers</a> to restore subtle volume. Results may vary for each individual, and the right approach is always personalised to your face, not a formula.`,
+      html: `You want to look like yourself again, a rested, confident, and present version, rather than a version that looks like you have clearly had something done. Baby Botox at this stage is typically used in combination with other treatments. On its own, lighter doses may not fully address deeper-set lines, and your practitioner may recommend a blend of baby Botox for texture and expression softening alongside <a href="https://www.carismaaesthetics.com/dermal-fillers-malta" style="color:var(--teal);text-decoration:underline;">dermal fillers Malta</a> to restore subtle volume. Results may vary for each individual, and the right approach is always personalised to your face, not a formula.`,
     },
     {
       type: 'image',
@@ -207,7 +207,7 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: 'Yes, and for many patients this combination approach delivers the most natural-looking, comprehensive results. Baby Botox works particularly well alongside <a href="https://www.carismaaesthetics.com/collagen-stimulator-malta" style="color:var(--teal);text-decoration:underline;">skin booster treatments</a>, which improve skin hydration and elasticity from within, and <a href="https://www.carismaaesthetics.com/prp-malta" style="color:var(--teal);text-decoration:underline;">PRP</a>, which supports collagen production and overall skin quality. For patients looking to address both muscle relaxation and subtle volume loss, combining baby Botox with a conservative amount of <a href="https://www.carismaaesthetics.com/dermal-fillers-malta" style="color:var(--teal);text-decoration:underline;">dermal filler</a> can create a result that addresses multiple aspects of facial appearance in a single visit. Your practitioner at Carisma Aesthetics will discuss the approach that makes most sense for your goals during your consultation, with no obligation to do more than you are comfortable with.',
+      html: 'Yes, and for many patients this combination approach delivers the most natural-looking, comprehensive results. Baby Botox works particularly well alongside <a href="https://www.carismaaesthetics.com/collagen-stimulator-malta" style="color:var(--teal);text-decoration:underline;">collagen stimulator Malta</a>, which improve skin hydration and elasticity from within, and <a href="https://www.carismaaesthetics.com/prp-malta" style="color:var(--teal);text-decoration:underline;">PRP treatment Malta</a>, which supports collagen production and overall skin quality. For patients looking to address both muscle relaxation and subtle volume loss, combining baby Botox with a conservative amount of <a href="https://www.carismaaesthetics.com/dermal-fillers-malta" style="color:var(--teal);text-decoration:underline;">dermal fillers Malta</a> can create a result that addresses multiple aspects of facial appearance in a single visit. Your practitioner at Carisma Aesthetics will discuss the approach that makes most sense for your goals during your consultation, with no obligation to do more than you are comfortable with.',
     },
     {
       type: 'paragraph',
@@ -219,7 +219,11 @@ const post: BlogPost = {
       href: 'https://www.carismaaesthetics.com/',
     },
   ],
-  internalLinks: [],
+  internalLinks: [
+    { anchorText: 'Anti-Wrinkle Injections Malta', href: '/wrinkle-relaxing-malta', context: 'Baby Botox links to main wrinkle treatment page' },
+    { anchorText: 'Collagen Stimulator Malta', href: '/collagen-stimulator-malta', context: 'Preventative skin treatment alternative' },
+    { anchorText: 'Dermal Fillers Malta', href: '/dermal-fillers-malta', context: 'Complementary injectable treatment' },
+  ],
 };
 
 export { post };

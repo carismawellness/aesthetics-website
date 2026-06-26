@@ -140,15 +140,15 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: 'Our <a href="https://www.carismaaesthetics.com/chemical-peels-malta" style="color:var(--teal);text-decoration:underline;">chemical peels in Malta</a> are one of the most proven approaches to managing active acne and the post-inflammatory marks it produces. Medical-grade peels use controlled concentrations of acids, typically salicylic, glycolic, mandelic or lactic acid, to accelerate skin cell turnover, dissolve the debris blocking follicles, reduce bacterial load within pores, and reveal fresher, less congested skin beneath. For clients with hormonally-driven breakouts and associated hyperpigmentation, a course of peels timed around the menstrual cycle and Malta\'s seasonal UV intensity can be genuinely transformative. Your practitioner at Carisma will advise on the appropriate peel strength and timing based on your skin type and concerns, as results may vary for each individual.',
+      html: 'Our <a href="https://www.carismaaesthetics.com/chemical-peels-malta" style="color:var(--teal);text-decoration:underline;">chemical peels Malta</a> are one of the most proven approaches to managing active acne and the post-inflammatory marks it produces. Medical-grade peels use controlled concentrations of acids, typically salicylic, glycolic, mandelic or lactic acid, to accelerate skin cell turnover, dissolve the debris blocking follicles, reduce bacterial load within pores, and reveal fresher, less congested skin beneath. For clients with hormonally-driven breakouts and associated hyperpigmentation, a course of peels timed around the menstrual cycle and Malta\'s seasonal UV intensity can be genuinely transformative. Your practitioner at Carisma will advise on the appropriate peel strength and timing based on your skin type and concerns, as results may vary for each individual.',
     },
     {
       type: 'paragraph',
-      html: 'For clients who also have acne scarring, enlarged pores, or skin texture changes from previous breakouts, <a href="https://www.carismaaesthetics.com/microneedling-malta" style="color:var(--teal);text-decoration:underline;">microneedling in Malta</a> is a powerful complement to chemical peel treatment. Microneedling creates controlled micro-channels in the skin that stimulate the body\'s natural collagen and elastin production. Over a course of treatments, this process works to remodel scar tissue, tighten pore appearance, and restore a smoother, more even skin surface. When combined with post-acne care and appropriate SPF protection, microneedling addresses the textural legacy that adult breakouts leave behind.',
+      html: 'For clients who also have acne scarring, enlarged pores, or skin texture changes from previous breakouts, <a href="https://www.carismaaesthetics.com/microneedling-malta" style="color:var(--teal);text-decoration:underline;">microneedling Malta</a> is a powerful complement to chemical peel treatment. Microneedling creates controlled micro-channels in the skin that stimulate the body\'s natural collagen and elastin production. Over a course of treatments, this process works to remodel scar tissue, tighten pore appearance, and restore a smoother, more even skin surface. When combined with post-acne care and appropriate SPF protection, microneedling addresses the textural legacy that adult breakouts leave behind.',
     },
     {
       type: 'paragraph',
-      html: 'Other options available at Carisma include <a href="https://www.carismaaesthetics.com/prp-malta" style="color:var(--teal);text-decoration:underline;">PRP therapy</a>, which harnesses your own platelet-rich plasma to support skin healing and regeneration, and <a href="https://www.carismaaesthetics.com/collagen-stimulator-malta" style="color:var(--teal);text-decoration:underline;">collagen stimulator treatments</a> for clients who want to address skin quality more broadly while managing post-acne changes. A <a href="https://www.carismaaesthetics.com/" style="color:var(--teal);text-decoration:underline;">free consultation at Carisma Aesthetics</a> is the most reliable starting point, as the right combination of treatments depends on your specific skin, your hormonal profile, and where you are in your acne journey.',
+      html: 'Other options available at Carisma include <a href="https://www.carismaaesthetics.com/prp-malta" style="color:var(--teal);text-decoration:underline;">PRP treatment Malta</a>, which harnesses your own platelet-rich plasma to support skin healing and regeneration, and <a href="https://www.carismaaesthetics.com/collagen-stimulator-malta" style="color:var(--teal);text-decoration:underline;">collagen stimulator Malta</a> for clients who want to address skin quality more broadly while managing post-acne changes. A <a href="https://www.carismaaesthetics.com/" style="color:var(--teal);text-decoration:underline;">free consultation at Carisma Aesthetics</a> is the most reliable starting point, as the right combination of treatments depends on your specific skin, your hormonal profile, and where you are in your acne journey.',
     },
     {
       type: 'heading',
@@ -211,7 +211,7 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: 'If you have been managing adult acne in Malta through every cleanser, serum and skincare system available and your skin still is not reflecting the effort you are putting in, you may have reached the point where professional support can make the difference. At Carisma Aesthetics, Malta\'s top-rated medical aesthetics clinic, we offer personalised consultations that assess your skin, your hormonal patterns, and your lifestyle to build a treatment plan that is genuinely tailored to you. Whether you are considering <a href="https://www.carismaaesthetics.com/chemical-peels-malta" style="color:var(--teal);text-decoration:underline;">chemical peels</a> to address active breakouts and post-acne pigmentation, <a href="https://www.carismaaesthetics.com/microneedling-malta" style="color:var(--teal);text-decoration:underline;">microneedling</a> to restore texture and minimise scarring, or simply an honest conversation about what your skin needs, we are here for it. Clear, confident skin in Malta\'s climate is possible, and you deserve the right support to reveal it.',
+      html: 'If you have been managing adult acne in Malta through every cleanser, serum and skincare system available and your skin still is not reflecting the effort you are putting in, you may have reached the point where professional support can make the difference. At Carisma Aesthetics, Malta\'s top-rated medical aesthetics clinic, we offer personalised consultations that assess your skin, your hormonal patterns, and your lifestyle to build a treatment plan that is genuinely tailored to you. Whether you are considering <a href="https://www.carismaaesthetics.com/chemical-peels-malta" style="color:var(--teal);text-decoration:underline;">chemical peels Malta</a> to address active breakouts and post-acne pigmentation, <a href="https://www.carismaaesthetics.com/microneedling-malta" style="color:var(--teal);text-decoration:underline;">microneedling Malta</a> to restore texture and minimise scarring, or simply an honest conversation about what your skin needs, we are here for it. Clear, confident skin in Malta\'s climate is possible, and you deserve the right support to reveal it.',
     },
     {
       type: 'cta',
@@ -219,7 +219,11 @@ const post: BlogPost = {
       href: 'https://www.carismaaesthetics.com/',
     },
   ],
-  internalLinks: [],
+  internalLinks: [
+    { anchorText: 'Chemical Peels Malta', href: '/chemical-peels-malta', context: 'Effective treatment for adult acne' },
+    { anchorText: 'Microneedling Malta', href: '/microneedling-malta', context: 'Skin texture treatment post-acne' },
+    { anchorText: 'PRP Treatment Malta', href: '/prp-malta', context: 'Regenerative treatment for acne-damaged skin' },
+  ],
 };
 
 export { post };

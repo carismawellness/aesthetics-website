@@ -120,7 +120,7 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: `For your <a href="https://www.carismaaesthetics.com/lip-fillers-malta" style="color:var(--teal);text-decoration:underline;">lip fillers</a> to deliver their full value, in both quality of result and longevity, consistent sun protection from the day of your treatment onwards is one of the highest-impact habits you can build.`,
+      html: `For your <a href="https://www.carismaaesthetics.com/lip-fillers-malta" style="color:var(--teal);text-decoration:underline;">lip fillers Malta</a> to deliver their full value, in both quality of result and longevity, consistent sun protection from the day of your treatment onwards is one of the highest-impact habits you can build.`,
     },
     {
       type: 'image',
@@ -204,7 +204,7 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: `These habits also benefit your overall skin health. If you are considering complementary treatments, such as <a href="https://www.carismaaesthetics.com/dermal-fillers-malta" style="color:var(--teal);text-decoration:underline;">dermal fillers</a> for other areas of the face or <a href="https://www.carismaaesthetics.com/collagen-stimulator-malta" style="color:var(--teal);text-decoration:underline;">collagen stimulating treatments</a>, consistent sun protection enhances and prolongs those results too, creating a compounding benefit across your entire aesthetic care routine.`,
+      html: `These habits also benefit your overall skin health. If you are considering complementary treatments, such as <a href="https://www.carismaaesthetics.com/dermal-fillers-malta" style="color:var(--teal);text-decoration:underline;">dermal fillers Malta</a> for other areas of the face or <a href="https://www.carismaaesthetics.com/collagen-stimulator-malta" style="color:var(--teal);text-decoration:underline;">collagen stimulator Malta</a>, consistent sun protection enhances and prolongs those results too, creating a compounding benefit across your entire aesthetic care routine.`,
     },
     {
       type: 'heading',
@@ -279,7 +279,11 @@ const post: BlogPost = {
       href: 'https://www.carismaaesthetics.com/',
     },
   ],
-  internalLinks: [],
+  internalLinks: [
+    { anchorText: 'Lip Fillers Malta', href: '/lip-fillers-malta', context: 'Aftercare guide links to lip filler treatment page' },
+    { anchorText: 'Dermal Fillers Malta', href: '/dermal-fillers-malta', context: 'Related filler treatment' },
+    { anchorText: 'Microneedling Malta', href: '/microneedling-malta', context: 'Complementary skin treatment' },
+  ],
 };
 
 export { post };

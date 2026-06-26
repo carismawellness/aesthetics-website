@@ -44,7 +44,7 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: 'For those considering their first treatment, our <a href="https://www.carismaaesthetics.com/microneedling-malta" style="color:var(--teal);text-decoration:underline;">microneedling in Malta</a> page covers everything you need to know about the procedure at Carisma Aesthetics.',
+      html: 'For those considering their first treatment, our <a href="https://www.carismaaesthetics.com/microneedling-malta" style="color:var(--teal);text-decoration:underline;">microneedling Malta</a> page covers everything you need to know about the procedure at Carisma Aesthetics.',
     },
     {
       type: 'heading',
@@ -140,7 +140,7 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: 'For some clients, particularly those seeking comprehensive skin renewal, combining RF microneedling with <a href="https://www.carismaaesthetics.com/prp-malta" style="color:var(--teal);text-decoration:underline;">PRP therapy</a> or a <a href="https://www.carismaaesthetics.com/collagen-stimulator-malta" style="color:var(--teal);text-decoration:underline;">collagen stimulator treatment</a> can further enhance results. Your practitioner will discuss all options during your <a href="https://www.carismaaesthetics.com/" style="color:var(--teal);text-decoration:underline;">free consultation</a>.',
+      html: 'For some clients, particularly those seeking comprehensive skin renewal, combining RF microneedling with <a href="https://www.carismaaesthetics.com/prp-malta" style="color:var(--teal);text-decoration:underline;">PRP treatment Malta</a> or a <a href="https://www.carismaaesthetics.com/collagen-stimulator-malta" style="color:var(--teal);text-decoration:underline;">collagen stimulator Malta</a> can further enhance results. Your practitioner will discuss all options during your <a href="https://www.carismaaesthetics.com/" style="color:var(--teal);text-decoration:underline;">free consultation</a>.',
     },
     {
       type: 'heading',
@@ -161,7 +161,7 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: 'If you are treating yourself during Malta\'s summer months, your practitioner will advise you to be especially diligent about SPF 50+ application, avoiding direct midday sun for at least two weeks post-treatment, and wearing a physical UV barrier such as a hat when outdoors. For clients managing existing sun damage alongside texture or scarring concerns, a <a href="https://www.carismaaesthetics.com/chemical-peels-malta" style="color:var(--teal);text-decoration:underline;">chemical peel</a> integrated into your treatment plan in the cooler months can address pigmentation concerns in parallel.',
+      html: 'If you are treating yourself during Malta\'s summer months, your practitioner will advise you to be especially diligent about SPF 50+ application, avoiding direct midday sun for at least two weeks post-treatment, and wearing a physical UV barrier such as a hat when outdoors. For clients managing existing sun damage alongside texture or scarring concerns, a <a href="https://www.carismaaesthetics.com/chemical-peels-malta" style="color:var(--teal);text-decoration:underline;">chemical peels Malta</a> integrated into your treatment plan in the cooler months can address pigmentation concerns in parallel.',
     },
     {
       type: 'paragraph',
@@ -224,7 +224,7 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: 'Yes, and for many clients a combined approach delivers the most comprehensive results. RF microneedling pairs particularly well with <a href="https://www.carismaaesthetics.com/prp-malta" style="color:var(--teal);text-decoration:underline;">PRP (platelet-rich plasma) therapy</a>, where your own growth factors are applied to the skin immediately after microneedling to accelerate healing and enhance collagen production. For clients concerned about overall volume loss or skin quality, a <a href="https://www.carismaaesthetics.com/collagen-stimulator-malta" style="color:var(--teal);text-decoration:underline;">collagen stimulator</a> can be introduced as a complementary treatment in a staged plan. Your practitioner at Carisma Aesthetics will design a personalised treatment sequence based on your skin\'s needs rather than a one-size-fits-all protocol.',
+      html: 'Yes, and for many clients a combined approach delivers the most comprehensive results. RF microneedling pairs particularly well with <a href="https://www.carismaaesthetics.com/prp-malta" style="color:var(--teal);text-decoration:underline;">PRP treatment Malta</a>, where your own growth factors are applied to the skin immediately after microneedling to accelerate healing and enhance collagen production. For clients concerned about overall volume loss or skin quality, a <a href="https://www.carismaaesthetics.com/collagen-stimulator-malta" style="color:var(--teal);text-decoration:underline;">collagen stimulator Malta</a> can be introduced as a complementary treatment in a staged plan. Your practitioner at Carisma Aesthetics will design a personalised treatment sequence based on your skin\'s needs rather than a one-size-fits-all protocol.',
     },
     {
       type: 'cta',
@@ -232,7 +232,11 @@ const post: BlogPost = {
       href: 'https://www.carismaaesthetics.com/',
     },
   ],
-  internalLinks: [],
+  internalLinks: [
+    { anchorText: 'Microneedling Malta', href: '/microneedling-malta', context: 'Comparison guide links to main microneedling page' },
+    { anchorText: 'PRP Treatment Malta', href: '/prp-malta', context: 'Frequently combined with microneedling' },
+    { anchorText: 'Collagen Stimulator Malta', href: '/collagen-stimulator-malta', context: 'Complementary collagen-boosting treatment' },
+  ],
 };
 
 export { post };

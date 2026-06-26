@@ -159,7 +159,7 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: `After dissolution, the skin is assessed during a follow-up appointment. For patients who wish to continue with <a href="https://www.carismaaesthetics.com/dermal-fillers-malta" style="color:var(--teal);text-decoration:underline;">dermal fillers</a>, a new treatment plan can be designed once the previous filler has cleared. This is actually an opportunity to start fresh with a more refined approach, using better technique, more appropriate product selection, and a conservative volume strategy that protects your results long-term.`,
+      html: `After dissolution, the skin is assessed during a follow-up appointment. For patients who wish to continue with <a href="https://www.carismaaesthetics.com/dermal-fillers-malta" style="color:var(--teal);text-decoration:underline;">dermal fillers Malta</a>, a new treatment plan can be designed once the previous filler has cleared. This is actually an opportunity to start fresh with a more refined approach, using better technique, more appropriate product selection, and a conservative volume strategy that protects your results long-term.`,
     },
     {
       type: 'paragraph',
@@ -188,11 +188,11 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: `For <a href="https://www.carismaaesthetics.com/lip-fillers-malta" style="color:var(--teal);text-decoration:underline;">lip filler</a> patients in particular, the local context reinforces the value of seeing a practitioner who understands the full picture: not just where to place the product, but how your skin, lifestyle, and environment will interact with it over time.`,
+      html: `For <a href="https://www.carismaaesthetics.com/lip-fillers-malta" style="color:var(--teal);text-decoration:underline;">lip fillers Malta</a> patients in particular, the local context reinforces the value of seeing a practitioner who understands the full picture: not just where to place the product, but how your skin, lifestyle, and environment will interact with it over time.`,
     },
     {
       type: 'paragraph',
-      html: `If you are considering a <a href="https://www.carismaaesthetics.com/collagen-stimulator-malta" style="color:var(--teal);text-decoration:underline;">collagen stimulator treatment</a> alongside your fillers, this is worth discussing at your consultation as a way to maintain the structural support that keeps filler in place and looking natural.`,
+      html: `If you are considering a <a href="https://www.carismaaesthetics.com/collagen-stimulator-malta" style="color:var(--teal);text-decoration:underline;">collagen stimulator Malta</a> alongside your fillers, this is worth discussing at your consultation as a way to maintain the structural support that keeps filler in place and looking natural.`,
     },
     {
       type: 'heading',
@@ -259,7 +259,11 @@ const post: BlogPost = {
       href: 'https://www.carismaaesthetics.com/',
     },
   ],
-  internalLinks: [],
+  internalLinks: [
+    { anchorText: 'Dermal Fillers Malta', href: '/dermal-fillers-malta', context: 'Migration guide links to main filler page' },
+    { anchorText: 'Lip Fillers Malta', href: '/lip-fillers-malta', context: 'Related lip filler treatment' },
+    { anchorText: 'Anti-Wrinkle Injections Malta', href: '/wrinkle-relaxing-malta', context: 'Related injectable treatment' },
+  ],
 };
 
 export { post };

@@ -21,7 +21,7 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: `Malta is not London. The UV index here runs at extreme levels from May through September. What would be a low-stakes week of mild pinkness in a northern European city becomes a genuine skin risk when your newly treated face meets a Mediterranean afternoon. Knowing the exact recovery window, what your skin needs from you day by day, and where Malta\'s climate changes the rules gives you everything you need to plan your <a href="https://www.carismaaesthetics.com/microneedling-malta" style="color:var(--teal);text-decoration:underline;">microneedling treatment</a> around your life, not against it. Results may vary for each individual, and a personalised consultation will give you the clearest picture for your skin type and goals.`,
+      html: `Malta is not London. The UV index here runs at extreme levels from May through September. What would be a low-stakes week of mild pinkness in a northern European city becomes a genuine skin risk when your newly treated face meets a Mediterranean afternoon. Knowing the exact recovery window, what your skin needs from you day by day, and where Malta\'s climate changes the rules gives you everything you need to plan your <a href="https://www.carismaaesthetics.com/microneedling-malta" style="color:var(--teal);text-decoration:underline;">microneedling Malta</a> around your life, not against it. Results may vary for each individual, and a personalised consultation will give you the clearest picture for your skin type and goals.`,
     },
     {
       type: 'image',
@@ -141,7 +141,7 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: 'Many clients find it helpful to pair their microneedling course with a <a href="https://www.carismaaesthetics.com/collagen-stimulator-malta" style="color:var(--teal);text-decoration:underline;">collagen stimulator treatment</a> timed between sessions to amplify and sustain the collagen response.',
+      html: 'Many clients find it helpful to pair their microneedling course with a <a href="https://www.carismaaesthetics.com/collagen-stimulator-malta" style="color:var(--teal);text-decoration:underline;">collagen stimulator Malta</a> timed between sessions to amplify and sustain the collagen response.',
     },
     {
       type: 'image',
@@ -264,7 +264,11 @@ const post: BlogPost = {
       href: 'https://www.carismaaesthetics.com/',
     },
   ],
-  internalLinks: [],
+  internalLinks: [
+    { anchorText: 'Microneedling Malta', href: '/microneedling-malta', context: 'Downtime guide links to main microneedling page' },
+    { anchorText: 'Chemical Peels Malta', href: '/chemical-peels-malta', context: 'Complementary treatment with similar downtime' },
+    { anchorText: 'Anti-Wrinkle Injections Malta', href: '/wrinkle-relaxing-malta', context: 'Lower-downtime injectable alternative' },
+  ],
 };
 
 export { post };

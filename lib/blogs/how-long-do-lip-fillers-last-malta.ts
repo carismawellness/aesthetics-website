@@ -17,7 +17,7 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: `You have done your research. You have scrolled through before-and-after photos, read reviews, and now you are sitting with one very specific question: how long will this actually last? It is one of the most common things women ask before their first lip filler appointment in Malta, and it is a completely reasonable thing to want to understand before you invest in a treatment. The answer is not a single number, because your results depend on factors that are unique to you. But it is also not a mystery. Once you understand what drives longevity, you can make smarter decisions about timing, maintenance, and how to protect your investment. This guide walks you through everything you need to know, based on how we approach <a href="https://www.carismaaesthetics.com/lip-fillers-malta" style="color:var(--teal);text-decoration:underline;">lip fillers in Malta</a> at Carisma Aesthetics.`,
+      html: `You have done your research. You have scrolled through before-and-after photos, read reviews, and now you are sitting with one very specific question: how long will this actually last? It is one of the most common things women ask before their first lip filler appointment in Malta, and it is a completely reasonable thing to want to understand before you invest in a treatment. The answer is not a single number, because your results depend on factors that are unique to you. But it is also not a mystery. Once you understand what drives longevity, you can make smarter decisions about timing, maintenance, and how to protect your investment. This guide walks you through everything you need to know, based on how we approach <a href="https://www.carismaaesthetics.com/lip-fillers-malta" style="color:var(--teal);text-decoration:underline;">lip fillers Malta</a> at Carisma Aesthetics.`,
     },
     {
       type: 'image',
@@ -177,7 +177,7 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: `The best time to book is before you feel like you need to, not after your results have fully faded. Our team at Carisma Aesthetics will always give you an honest assessment at consultation, including a recommended timeline that fits your goals and your life in Malta. You can explore the full treatment detail on our <a href="https://www.carismaaesthetics.com/lip-fillers-malta" style="color:var(--teal);text-decoration:underline;">lip fillers Malta page</a> or take a look at our broader range of <a href="https://www.carismaaesthetics.com/dermal-fillers-malta" style="color:var(--teal);text-decoration:underline;">dermal fillers in Malta</a> if you are considering treating other areas alongside your lips.`,
+      html: `The best time to book is before you feel like you need to, not after your results have fully faded. Our team at Carisma Aesthetics will always give you an honest assessment at consultation, including a recommended timeline that fits your goals and your life in Malta. You can explore the full treatment detail on our <a href="https://www.carismaaesthetics.com/lip-fillers-malta" style="color:var(--teal);text-decoration:underline;">lip fillers Malta</a> or take a look at our broader range of <a href="https://www.carismaaesthetics.com/dermal-fillers-malta" style="color:var(--teal);text-decoration:underline;">dermal fillers Malta</a> if you are considering treating other areas alongside your lips.`,
     },
     {
       type: 'heading',
@@ -248,7 +248,11 @@ const post: BlogPost = {
       href: 'https://www.carismaaesthetics.com/',
     },
   ],
-  internalLinks: [],
+  internalLinks: [
+    { anchorText: 'Lip Fillers Malta', href: '/lip-fillers-malta', context: 'Longevity guide links to lip filler treatment page' },
+    { anchorText: 'Dermal Fillers Malta', href: '/dermal-fillers-malta', context: 'Related filler treatment' },
+    { anchorText: 'Collagen Stimulator Malta', href: '/collagen-stimulator-malta', context: 'Longer-lasting alternative treatment' },
+  ],
 };
 
 export { post };

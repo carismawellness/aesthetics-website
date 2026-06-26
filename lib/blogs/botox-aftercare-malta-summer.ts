@@ -115,7 +115,7 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: `Once your 48-hour window has passed, you can return to normal outdoor life in Malta, but your <a href="https://www.carismaaesthetics.com/wrinkle-relaxing-malta" style="color:var(--teal);text-decoration:underline;">wrinkle relaxing results</a> will stay looking their best far longer if you commit to daily SPF protection.`,
+      html: `Once your 48-hour window has passed, you can return to normal outdoor life in Malta, but your <a href="https://www.carismaaesthetics.com/wrinkle-relaxing-malta" style="color:var(--teal);text-decoration:underline;">anti-wrinkle injections Malta</a> will stay looking their best far longer if you commit to daily SPF protection.`,
     },
     {
       type: 'paragraph',
@@ -127,7 +127,7 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: `If you are considering pairing your wrinkle relaxing treatment with additional skin-enhancing services, <a href="https://www.carismaaesthetics.com/chemical-peels-malta" style="color:var(--teal);text-decoration:underline;">chemical peels</a> and <a href="https://www.carismaaesthetics.com/microneedling-malta" style="color:var(--teal);text-decoration:underline;">microneedling</a> should be scheduled at least two weeks before your injections or two weeks after, never in the same session and never in the immediate summer sun period without adequate SPF management.`,
+      html: `If you are considering pairing your wrinkle relaxing treatment with additional skin-enhancing services, <a href="https://www.carismaaesthetics.com/chemical-peels-malta" style="color:var(--teal);text-decoration:underline;">chemical peels Malta</a> and <a href="https://www.carismaaesthetics.com/microneedling-malta" style="color:var(--teal);text-decoration:underline;">microneedling Malta</a> should be scheduled at least two weeks before your injections or two weeks after, never in the same session and never in the immediate summer sun period without adequate SPF management.`,
     },
     {
       type: 'paragraph',
@@ -181,11 +181,11 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: `<strong>Summer is not the wrong season, it is just the season that requires planning.</strong> Many of our patients at Carisma Aesthetics choose to have <a href="https://www.carismaaesthetics.com/wrinkle-relaxing-malta" style="color:var(--teal);text-decoration:underline;">wrinkle relaxing treatment</a> in late May or early June so they feel their most confident heading into peak summer, with results fully settled before the social season peaks.`,
+      html: `<strong>Summer is not the wrong season, it is just the season that requires planning.</strong> Many of our patients at Carisma Aesthetics choose to have <a href="https://www.carismaaesthetics.com/wrinkle-relaxing-malta" style="color:var(--teal);text-decoration:underline;">anti-wrinkle injections Malta</a> in late May or early June so they feel their most confident heading into peak summer, with results fully settled before the social season peaks.`,
     },
     {
       type: 'paragraph',
-      html: `<strong>Consider complementary treatments that work well in summer.</strong> <a href="https://www.carismaaesthetics.com/collagen-stimulator-malta" style="color:var(--teal);text-decoration:underline;">Profhilo and collagen stimulators</a> address skin laxity and deep hydration without the same sun-sensitivity concerns, and can be an excellent companion treatment scheduled alongside or after your wrinkle relaxing appointments.`,
+      html: `<strong>Consider complementary treatments that work well in summer.</strong> <a href="https://www.carismaaesthetics.com/collagen-stimulator-malta" style="color:var(--teal);text-decoration:underline;">collagen stimulator Malta</a> address skin laxity and deep hydration without the same sun-sensitivity concerns, and can be an excellent companion treatment scheduled alongside or after your wrinkle relaxing appointments.`,
     },
     {
       type: 'heading',
@@ -260,7 +260,11 @@ const post: BlogPost = {
       href: 'https://www.carismaaesthetics.com/',
     },
   ],
-  internalLinks: [],
+  internalLinks: [
+    { anchorText: 'Anti-Wrinkle Injections Malta', href: '/wrinkle-relaxing-malta', context: 'Botox aftercare guide links to main treatment page' },
+    { anchorText: 'Chemical Peels Malta', href: '/chemical-peels-malta', context: 'Complementary skin treatment' },
+    { anchorText: 'Microneedling Malta', href: '/microneedling-malta', context: 'Complementary skin treatment' },
+  ],
 };
 
 export { post };

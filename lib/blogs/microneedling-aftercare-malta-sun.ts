@@ -148,7 +148,7 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: `The third, and most encouraging, consideration is that autumn, winter, and early spring in Malta offer genuinely ideal microneedling conditions. From October through April, UV index levels drop considerably, sun exposure is far easier to manage, and the healing process can proceed with less risk. For anyone pursuing a course of three or more sessions to address <a href="https://www.carismaaesthetics.com/microneedling-malta" style="color:var(--teal);text-decoration:underline;">texture concerns or acne scarring</a>, scheduling the series between October and March is the most strategically sound approach for clients who live here.`,
+      html: `The third, and most encouraging, consideration is that autumn, winter, and early spring in Malta offer genuinely ideal microneedling conditions. From October through April, UV index levels drop considerably, sun exposure is far easier to manage, and the healing process can proceed with less risk. For anyone pursuing a course of three or more sessions to address <a href="https://www.carismaaesthetics.com/microneedling-malta" style="color:var(--teal);text-decoration:underline;">microneedling Malta</a>, scheduling the series between October and March is the most strategically sound approach for clients who live here.`,
     },
     {
       type: 'paragraph',
@@ -219,7 +219,7 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: `At Carisma Aesthetics, every <a href="https://www.carismaaesthetics.com/microneedling-malta" style="color:var(--teal);text-decoration:underline;">microneedling treatment in Malta</a> includes a full aftercare consultation tailored to your skin type, your lifestyle, and the specific challenges of living in or visiting a high-UV Mediterranean environment. Whether you are in your early thirties and investing proactively in your skin health, managing texture or pigmentation concerns in your forties, or restoring confidence and radiance in your fifties, your treatment plan is built around you, not a generic protocol.`,
+      html: `At Carisma Aesthetics, every <a href="https://www.carismaaesthetics.com/microneedling-malta" style="color:var(--teal);text-decoration:underline;">microneedling Malta</a> includes a full aftercare consultation tailored to your skin type, your lifestyle, and the specific challenges of living in or visiting a high-UV Mediterranean environment. Whether you are in your early thirties and investing proactively in your skin health, managing texture or pigmentation concerns in your forties, or restoring confidence and radiance in your fifties, your treatment plan is built around you, not a generic protocol.`,
     },
     {
       type: 'paragraph',
@@ -231,7 +231,11 @@ const post: BlogPost = {
       href: 'https://www.carismaaesthetics.com/',
     },
   ],
-  internalLinks: [],
+  internalLinks: [
+    { anchorText: 'Microneedling Malta', href: '/microneedling-malta', context: 'Aftercare guide links to main microneedling page' },
+    { anchorText: 'Chemical Peels Malta', href: '/chemical-peels-malta', context: 'Complementary skin resurfacing treatment' },
+    { anchorText: 'PRP Treatment Malta', href: '/prp-malta', context: 'Healing-enhancing treatment often paired with microneedling' },
+  ],
 };
 
 export { post };

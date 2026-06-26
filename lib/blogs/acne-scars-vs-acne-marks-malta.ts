@@ -62,7 +62,7 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: `The good news: PIH is a temporary condition. With diligent sun protection and the right topical support, vitamin C, niacinamide, azelaic acid, or retinoids, it can fade gradually over three to twelve months. Professional-grade <a href="https://www.carismaaesthetics.com/chemical-peels-malta" style="color:var(--teal);text-decoration:underline;">chemical peels</a> can significantly accelerate this timeline by encouraging controlled exfoliation and cellular renewal.`,
+      html: `The good news: PIH is a temporary condition. With diligent sun protection and the right topical support, vitamin C, niacinamide, azelaic acid, or retinoids, it can fade gradually over three to twelve months. Professional-grade <a href="https://www.carismaaesthetics.com/chemical-peels-malta" style="color:var(--teal);text-decoration:underline;">chemical peels Malta</a> can significantly accelerate this timeline by encouraging controlled exfoliation and cellular renewal.`,
     },
     {
       type: 'heading',
@@ -97,7 +97,7 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: `<strong>Boxcar scars</strong> are wider, U-shaped depressions with clearly defined edges. They tend to appear on the cheeks and temples and respond well to treatments that stimulate collagen remodelling, such as <a href="https://www.carismaaesthetics.com/microneedling-malta" style="color:var(--teal);text-decoration:underline;">microneedling</a>.`,
+      html: `<strong>Boxcar scars</strong> are wider, U-shaped depressions with clearly defined edges. They tend to appear on the cheeks and temples and respond well to treatments that stimulate collagen remodelling, such as <a href="https://www.carismaaesthetics.com/microneedling-malta" style="color:var(--teal);text-decoration:underline;">microneedling Malta</a>.`,
     },
     {
       type: 'paragraph',
@@ -158,7 +158,7 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: `<a href="https://www.carismaaesthetics.com/chemical-peels-malta" style="color:var(--teal);text-decoration:underline;">Chemical peels</a> are one of the most effective clinical options for accelerating the fading of post-inflammatory hyperpigmentation. Superficial to medium-depth peels using glycolic, lactic, salicylic, or mandelic acid encourage the controlled shedding of pigmented surface cells and support the emergence of fresher, more evenly toned skin beneath. A course of three to six peels, spaced four weeks apart, is a typical starting point for PIH. Results may vary for each individual based on skin tone, depth of pigmentation, and adherence to aftercare.`,
+      html: `<a href="https://www.carismaaesthetics.com/chemical-peels-malta" style="color:var(--teal);text-decoration:underline;">chemical peels Malta</a> are one of the most effective clinical options for accelerating the fading of post-inflammatory hyperpigmentation. Superficial to medium-depth peels using glycolic, lactic, salicylic, or mandelic acid encourage the controlled shedding of pigmented surface cells and support the emergence of fresher, more evenly toned skin beneath. A course of three to six peels, spaced four weeks apart, is a typical starting point for PIH. Results may vary for each individual based on skin tone, depth of pigmentation, and adherence to aftercare.`,
     },
     {
       type: 'paragraph',
@@ -174,7 +174,7 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: `<a href="https://www.carismaaesthetics.com/microneedling-malta" style="color:var(--teal);text-decoration:underline;">Microneedling</a> is the most evidence-supported first-line clinical treatment for atrophic acne scars, particularly boxcar and rolling types. A device creates micro-channels in the skin at a controlled depth, triggering the skin's natural wound-healing cascade and stimulating new collagen production. Over a course of treatments, typically four to six sessions spaced four to six weeks apart, the skin gradually fills in shallow to moderate depressions, improves overall texture, and tightens. <a href="https://www.carismaaesthetics.com/prp-malta" style="color:var(--teal);text-decoration:underline;">PRP (platelet-rich plasma)</a> is frequently used alongside microneedling to enhance and accelerate the collagen response.`,
+      html: `<a href="https://www.carismaaesthetics.com/microneedling-malta" style="color:var(--teal);text-decoration:underline;">microneedling Malta</a> is the most evidence-supported first-line clinical treatment for atrophic acne scars, particularly boxcar and rolling types. A device creates micro-channels in the skin at a controlled depth, triggering the skin's natural wound-healing cascade and stimulating new collagen production. Over a course of treatments, typically four to six sessions spaced four to six weeks apart, the skin gradually fills in shallow to moderate depressions, improves overall texture, and tightens. <a href="https://www.carismaaesthetics.com/prp-malta" style="color:var(--teal);text-decoration:underline;">PRP treatment Malta</a> is frequently used alongside microneedling to enhance and accelerate the collagen response.`,
     },
     {
       type: 'paragraph',
@@ -257,7 +257,11 @@ const post: BlogPost = {
       href: 'https://www.carismaaesthetics.com/',
     },
   ],
-  internalLinks: [],
+  internalLinks: [
+    { anchorText: 'Microneedling Malta', href: '/microneedling-malta', context: 'Top treatment for acne scars' },
+    { anchorText: 'Chemical Peels Malta', href: '/chemical-peels-malta', context: 'Effective for acne marks and pigmentation' },
+    { anchorText: 'PRP Treatment Malta', href: '/prp-malta', context: 'Regenerative treatment for acne scarring' },
+  ],
 };
 
 export { post };

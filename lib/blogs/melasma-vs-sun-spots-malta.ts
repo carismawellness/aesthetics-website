@@ -95,7 +95,7 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: `<strong>Response to treatment:</strong> Sun spots generally respond faster and more predictably to targeted treatments. Melasma often requires a longer, more layered approach and benefits from treatments that address pigment at multiple skin depths, including professionally administered <a href="https://www.carismaaesthetics.com/chemical-peels-malta" style="color:var(--teal);text-decoration:underline;">chemical peels</a>, which can gradually and safely reduce melasma without the risk of post-inflammatory darkening that more aggressive procedures can cause.`,
+      html: `<strong>Response to treatment:</strong> Sun spots generally respond faster and more predictably to targeted treatments. Melasma often requires a longer, more layered approach and benefits from treatments that address pigment at multiple skin depths, including professionally administered <a href="https://www.carismaaesthetics.com/chemical-peels-malta" style="color:var(--teal);text-decoration:underline;">chemical peels Malta</a>, which can gradually and safely reduce melasma without the risk of post-inflammatory darkening that more aggressive procedures can cause.`,
     },
     {
       type: 'paragraph',
@@ -122,7 +122,7 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: `This also changes the treatment calculus. Some pigmentation treatments used successfully in northern European climates carry heightened risks in Malta's environment. Certain laser treatments, for example, generate heat and post-treatment photosensitivity that, combined with Malta's ambient UV levels, can lead to post-inflammatory hyperpigmentation, meaning new dark marks can form where treatment occurred. For this reason, many practitioners experienced in Mediterranean skin will often recommend starting with carefully dosed <a href="https://www.carismaaesthetics.com/chemical-peels-malta" style="color:var(--teal);text-decoration:underline;">chemical peels</a> and topical protocols before escalating to more aggressive interventions, particularly for melasma. This is not a lesser approach: it is a smarter one for our climate.`,
+      html: `This also changes the treatment calculus. Some pigmentation treatments used successfully in northern European climates carry heightened risks in Malta's environment. Certain laser treatments, for example, generate heat and post-treatment photosensitivity that, combined with Malta's ambient UV levels, can lead to post-inflammatory hyperpigmentation, meaning new dark marks can form where treatment occurred. For this reason, many practitioners experienced in Mediterranean skin will often recommend starting with carefully dosed <a href="https://www.carismaaesthetics.com/chemical-peels-malta" style="color:var(--teal);text-decoration:underline;">chemical peels Malta</a> and topical protocols before escalating to more aggressive interventions, particularly for melasma. This is not a lesser approach: it is a smarter one for our climate.`,
     },
     {
       type: 'paragraph',
@@ -148,15 +148,15 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: `<strong>Chemical peels:</strong> Professionally applied acids exfoliate the layers of skin where pigment has accumulated, revealing fresher, more evenly toned skin beneath. A course of <a href="https://www.carismaaesthetics.com/chemical-peels-malta" style="color:var(--teal);text-decoration:underline;">chemical peels</a> is often highly effective for superficial sun spots, particularly on the face and décolletage.`,
+      html: `<strong>Chemical peels:</strong> Professionally applied acids exfoliate the layers of skin where pigment has accumulated, revealing fresher, more evenly toned skin beneath. A course of <a href="https://www.carismaaesthetics.com/chemical-peels-malta" style="color:var(--teal);text-decoration:underline;">chemical peels Malta</a> is often highly effective for superficial sun spots, particularly on the face and décolletage.`,
     },
     {
       type: 'paragraph',
-      html: `<strong>Microneedling:</strong> <a href="https://www.carismaaesthetics.com/microneedling-malta" style="color:var(--teal);text-decoration:underline;">Microneedling</a> stimulates collagen production and can be combined with targeted serums to encourage skin cell renewal in areas of sun damage, helping to gradually lift and rebalance pigmentation.`,
+      html: `<strong>Microneedling:</strong> <a href="https://www.carismaaesthetics.com/microneedling-malta" style="color:var(--teal);text-decoration:underline;">microneedling Malta</a> stimulates collagen production and can be combined with targeted serums to encourage skin cell renewal in areas of sun damage, helping to gradually lift and rebalance pigmentation.`,
     },
     {
       type: 'paragraph',
-      html: `<strong>PRP (Platelet-Rich Plasma):</strong> <a href="https://www.carismaaesthetics.com/prp-malta" style="color:var(--teal);text-decoration:underline;">PRP therapy</a> harnesses the skin's own growth factors to encourage cellular renewal, making it a strong option for women looking to support overall skin health while addressing sun-related changes.`,
+      html: `<strong>PRP (Platelet-Rich Plasma):</strong> <a href="https://www.carismaaesthetics.com/prp-malta" style="color:var(--teal);text-decoration:underline;">PRP treatment Malta</a> harnesses the skin's own growth factors to encourage cellular renewal, making it a strong option for women looking to support overall skin health while addressing sun-related changes.`,
     },
     {
       type: 'heading',
@@ -239,7 +239,7 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: `There is no single best treatment. Effective melasma management typically combines professional in-clinic procedures with at-home topical care and consistent sun protection. In Malta's climate, a course of professionally administered <a href="https://www.carismaaesthetics.com/chemical-peels-malta" style="color:var(--teal);text-decoration:underline;">chemical peels</a> is often recommended as a first-line approach, as they can reduce pigment gradually and safely without the post-inflammatory risk that some laser treatments carry in high-UV environments. Topical ingredients such as azelaic acid, tranexamic acid, and retinoids support and consolidate in-clinic progress. Results may vary for each individual, and a personalised consultation is the best place to begin.`,
+      html: `There is no single best treatment. Effective melasma management typically combines professional in-clinic procedures with at-home topical care and consistent sun protection. In Malta's climate, a course of professionally administered <a href="https://www.carismaaesthetics.com/chemical-peels-malta" style="color:var(--teal);text-decoration:underline;">chemical peels Malta</a> is often recommended as a first-line approach, as they can reduce pigment gradually and safely without the post-inflammatory risk that some laser treatments carry in high-UV environments. Topical ingredients such as azelaic acid, tranexamic acid, and retinoids support and consolidate in-clinic progress. Results may vary for each individual, and a personalised consultation is the best place to begin.`,
     },
     {
       type: 'heading',
@@ -269,7 +269,11 @@ const post: BlogPost = {
       href: 'https://www.carismaaesthetics.com/',
     },
   ],
-  internalLinks: [],
+  internalLinks: [
+    { anchorText: 'Chemical Peels Malta', href: '/chemical-peels-malta', context: 'Effective for both melasma and sun spots' },
+    { anchorText: 'Microneedling Malta', href: '/microneedling-malta', context: 'Complementary treatment for pigmentation' },
+    { anchorText: 'PRP Treatment Malta', href: '/prp-malta', context: 'Skin brightening regenerative treatment' },
+  ],
 };
 
 export { post };

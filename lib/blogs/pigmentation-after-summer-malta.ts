@@ -91,7 +91,7 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: 'This is why autumn so often brings a double concern: both general sun pigmentation and darkened acne marks appearing simultaneously. The good news is that many professional treatments address both simultaneously, particularly <a href="https://www.carismaaesthetics.com/chemical-peels-malta" style="color:var(--teal);text-decoration:underline;">chemical peels</a>, which work on melanin-related pigmentation and post-inflammatory marks through the same mechanism of controlled exfoliation and skin renewal.',
+      html: 'This is why autumn so often brings a double concern: both general sun pigmentation and darkened acne marks appearing simultaneously. The good news is that many professional treatments address both simultaneously, particularly <a href="https://www.carismaaesthetics.com/chemical-peels-malta" style="color:var(--teal);text-decoration:underline;">chemical peels Malta</a>, which work on melanin-related pigmentation and post-inflammatory marks through the same mechanism of controlled exfoliation and skin renewal.',
     },
     {
       type: 'heading',
@@ -123,7 +123,7 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: 'At Carisma Aesthetics, our <a href="https://www.carismaaesthetics.com/chemical-peels-malta" style="color:var(--teal);text-decoration:underline;">chemical peels in Malta</a> are selected based on your skin type, the depth and type of pigmentation, and the time of year. A professional assessment ensures the right peel strength is used, because post-summer skin that is already sensitised needs a calibrated approach, not a one-size-fits-all solution. A course of three to six peels, typically spaced two to four weeks apart, is often recommended for meaningful, lasting results.',
+      html: 'At Carisma Aesthetics, our <a href="https://www.carismaaesthetics.com/chemical-peels-malta" style="color:var(--teal);text-decoration:underline;">chemical peels Malta</a> are selected based on your skin type, the depth and type of pigmentation, and the time of year. A professional assessment ensures the right peel strength is used, because post-summer skin that is already sensitised needs a calibrated approach, not a one-size-fits-all solution. A course of three to six peels, typically spaced two to four weeks apart, is often recommended for meaningful, lasting results.',
     },
     {
       type: 'heading',
@@ -132,11 +132,11 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: 'For pigmentation that sits in the deeper layers of skin, or for women dealing with melasma (which has a hormonal component alongside UV triggers), surface-level treatments alone may not be sufficient. <a href="https://www.carismaaesthetics.com/microneedling-malta" style="color:var(--teal);text-decoration:underline;">Microneedling</a> creates controlled micro-channels in the skin that stimulate collagen production and skin renewal at a deeper level than topical acids.',
+      html: 'For pigmentation that sits in the deeper layers of skin, or for women dealing with melasma (which has a hormonal component alongside UV triggers), surface-level treatments alone may not be sufficient. <a href="https://www.carismaaesthetics.com/microneedling-malta" style="color:var(--teal);text-decoration:underline;">microneedling Malta</a> creates controlled micro-channels in the skin that stimulate collagen production and skin renewal at a deeper level than topical acids.',
     },
     {
       type: 'paragraph',
-      html: 'When combined with <a href="https://www.carismaaesthetics.com/prp-malta" style="color:var(--teal);text-decoration:underline;">PRP (platelet-rich plasma)</a>, microneedling can enhance the skin\'s own repair mechanisms, supporting more even melanin distribution and improved texture overall. This combination is particularly well-suited to women who have been accumulating sun damage over several summers and are looking to address the overall quality and tone of their skin, not just individual spots.',
+      html: 'When combined with <a href="https://www.carismaaesthetics.com/prp-malta" style="color:var(--teal);text-decoration:underline;">PRP treatment Malta</a>, microneedling can enhance the skin\'s own repair mechanisms, supporting more even melanin distribution and improved texture overall. This combination is particularly well-suited to women who have been accumulating sun damage over several summers and are looking to address the overall quality and tone of their skin, not just individual spots.',
     },
     {
       type: 'heading',
@@ -220,7 +220,7 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: 'Autumn in Malta is genuinely the best moment to do something about the pigmentation that summer has left behind. Your skin is ready: the UV is easing, the conditions for renewal are ideal, and the cells carrying this summer\'s melanin are rising to the surface right now. At Carisma Aesthetics, our team of medical aesthetics practitioners will assess exactly what type of pigmentation you are dealing with, recommend the right course of treatment, whether that begins with a tailored <a href="https://www.carismaaesthetics.com/chemical-peels-malta" style="color:var(--teal);text-decoration:underline;">chemical peel</a>, advances to microneedling, or combines multiple modalities, and build a plan designed for your skin, your timeline, and Malta\'s specific seasons. You do not need to settle for uneven tone as the price of a Maltese summer. Let us help you restore the luminous, even complexion you want to carry into the year ahead.',
+      html: 'Autumn in Malta is genuinely the best moment to do something about the pigmentation that summer has left behind. Your skin is ready: the UV is easing, the conditions for renewal are ideal, and the cells carrying this summer\'s melanin are rising to the surface right now. At Carisma Aesthetics, our team of medical aesthetics practitioners will assess exactly what type of pigmentation you are dealing with, recommend the right course of treatment, whether that begins with a tailored <a href="https://www.carismaaesthetics.com/chemical-peels-malta" style="color:var(--teal);text-decoration:underline;">chemical peels Malta</a>, advances to microneedling, or combines multiple modalities, and build a plan designed for your skin, your timeline, and Malta\'s specific seasons. You do not need to settle for uneven tone as the price of a Maltese summer. Let us help you restore the luminous, even complexion you want to carry into the year ahead.',
     },
     {
       type: 'cta',
@@ -228,7 +228,11 @@ const post: BlogPost = {
       href: 'https://www.carismaaesthetics.com/',
     },
   ],
-  internalLinks: [],
+  internalLinks: [
+    { anchorText: 'Chemical Peels Malta', href: '/chemical-peels-malta', context: 'Leading pigmentation treatment' },
+    { anchorText: 'Microneedling Malta', href: '/microneedling-malta', context: 'Complementary skin resurfacing treatment' },
+    { anchorText: 'PRP Treatment Malta', href: '/prp-malta', context: 'Regenerative treatment to even skin tone' },
+  ],
 };
 
 export { post };

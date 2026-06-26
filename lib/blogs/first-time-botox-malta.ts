@@ -40,7 +40,7 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: 'The important distinction for first-timers is the word "dynamic." Botox addresses dynamic wrinkles, which are lines created by expression, such as the furrow between your brows when you concentrate, the horizontal lines that appear when you raise your eyebrows, or the fan-shaped creases at the outer corners of your eyes when you smile. It does not address static wrinkles (lines present even when your face is completely relaxed), nor does it add volume, which is the role of <a href="https://www.carismaaesthetics.com/dermal-fillers-malta" style="color:var(--teal);text-decoration:underline;">dermal fillers</a>.',
+      html: 'The important distinction for first-timers is the word "dynamic." Botox addresses dynamic wrinkles, which are lines created by expression, such as the furrow between your brows when you concentrate, the horizontal lines that appear when you raise your eyebrows, or the fan-shaped creases at the outer corners of your eyes when you smile. It does not address static wrinkles (lines present even when your face is completely relaxed), nor does it add volume, which is the role of <a href="https://www.carismaaesthetics.com/dermal-fillers-malta" style="color:var(--teal);text-decoration:underline;">dermal fillers Malta</a>.',
     },
     {
       type: 'paragraph',
@@ -65,7 +65,7 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: 'At Carisma Aesthetics, every <a href="https://www.carismaaesthetics.com/wrinkle-relaxing-malta" style="color:var(--teal);text-decoration:underline;">wrinkle relaxing treatment in Malta</a> begins with a thorough facial assessment and an honest conversation about what is realistic for you individually.',
+      html: 'At Carisma Aesthetics, every <a href="https://www.carismaaesthetics.com/wrinkle-relaxing-malta" style="color:var(--teal);text-decoration:underline;">anti-wrinkle injections Malta</a> begins with a thorough facial assessment and an honest conversation about what is realistic for you individually.',
     },
     {
       type: 'heading',
@@ -238,7 +238,7 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: 'At Carisma Aesthetics, we believe that first appointments set the tone for everything that follows. Our approach to <a href="https://www.carismaaesthetics.com/wrinkle-relaxing-malta" style="color:var(--teal);text-decoration:underline;">wrinkle relaxing treatments in Malta</a> is always conservative, personalised, and led by medical expertise. We have helped hundreds of women in Malta feel quietly, confidently refreshed, without anyone being able to put their finger on exactly why. That is the outcome we aim for every time.',
+      html: 'At Carisma Aesthetics, we believe that first appointments set the tone for everything that follows. Our approach to <a href="https://www.carismaaesthetics.com/wrinkle-relaxing-malta" style="color:var(--teal);text-decoration:underline;">anti-wrinkle injections Malta</a> is always conservative, personalised, and led by medical expertise. We have helped hundreds of women in Malta feel quietly, confidently refreshed, without anyone being able to put their finger on exactly why. That is the outcome we aim for every time.',
     },
     {
       type: 'paragraph',
@@ -250,7 +250,11 @@ const post: BlogPost = {
       href: 'https://www.carismaaesthetics.com/',
     },
   ],
-  internalLinks: [],
+  internalLinks: [
+    { anchorText: 'Anti-Wrinkle Injections Malta', href: '/wrinkle-relaxing-malta', context: 'First-time guide links to treatment page' },
+    { anchorText: 'Lip Fillers Malta', href: '/lip-fillers-malta', context: 'Related injectable treatment' },
+    { anchorText: 'Dermal Fillers Malta', href: '/dermal-fillers-malta', context: 'Related injectable treatment' },
+  ],
 };
 
 export { post };

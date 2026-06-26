@@ -120,7 +120,7 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: `<a href="https://www.carismaaesthetics.com/chemical-peels-malta" style="color:var(--teal);text-decoration:underline;">Chemical peels in Malta</a> represent one of the most established and evidence-supported approaches to post acne hyperpigmentation. A peel uses carefully formulated acids, including glycolic acid, salicylic acid, mandelic acid, or TCA at varying concentrations, to accelerate cell turnover and remove the melanin-rich surface layers that carry the discolouration.`,
+      html: `<a href="https://www.carismaaesthetics.com/chemical-peels-malta" style="color:var(--teal);text-decoration:underline;">chemical peels Malta</a> represent one of the most established and evidence-supported approaches to post acne hyperpigmentation. A peel uses carefully formulated acids, including glycolic acid, salicylic acid, mandelic acid, or TCA at varying concentrations, to accelerate cell turnover and remove the melanin-rich surface layers that carry the discolouration.`,
     },
     {
       type: 'paragraph',
@@ -147,7 +147,7 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: `<a href="https://www.carismaaesthetics.com/microneedling-malta" style="color:var(--teal);text-decoration:underline;">Microneedling</a> creates controlled micro-channels in the skin using fine needles, triggering a natural healing cascade that stimulates collagen production and accelerates the turnover of pigmented cells. For post acne hyperpigmentation, it is particularly effective when the discolouration is accompanied by any textural irregularity, such as shallow rolling marks, enlarged pores, or general unevenness.`,
+      html: `<a href="https://www.carismaaesthetics.com/microneedling-malta" style="color:var(--teal);text-decoration:underline;">microneedling Malta</a> creates controlled micro-channels in the skin using fine needles, triggering a natural healing cascade that stimulates collagen production and accelerates the turnover of pigmented cells. For post acne hyperpigmentation, it is particularly effective when the discolouration is accompanied by any textural irregularity, such as shallow rolling marks, enlarged pores, or general unevenness.`,
     },
     {
       type: 'paragraph',
@@ -301,7 +301,11 @@ const post: BlogPost = {
       href: 'https://www.carismaaesthetics.com/',
     },
   ],
-  internalLinks: [],
+  internalLinks: [
+    { anchorText: 'Chemical Peels Malta', href: '/chemical-peels-malta', context: 'First-line treatment for post-acne pigmentation' },
+    { anchorText: 'Microneedling Malta', href: '/microneedling-malta', context: 'Collagen-stimulating treatment for PIH' },
+    { anchorText: 'PRP Treatment Malta', href: '/prp-malta', context: 'Growth-factor treatment to support skin renewal' },
+  ],
 };
 
 export { post };

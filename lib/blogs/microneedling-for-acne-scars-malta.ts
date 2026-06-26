@@ -57,7 +57,7 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: 'Not all acne scars are identical, and understanding what you are dealing with helps set realistic expectations for your treatment plan at our <a href="https://www.carismaaesthetics.com/microneedling-malta" style="color:var(--teal);text-decoration:underline;">microneedling in Malta</a> clinic. According to the <a href="https://www.bad.org.uk/patient-information-leaflets/acne/" target="_blank" rel="noopener" style="color:var(--teal);text-decoration:underline;">British Association of Dermatologists</a>, acne scarring falls into several distinct categories, each of which responds differently to treatment.',
+      html: 'Not all acne scars are identical, and understanding what you are dealing with helps set realistic expectations for your treatment plan at our <a href="https://www.carismaaesthetics.com/microneedling-malta" style="color:var(--teal);text-decoration:underline;">microneedling Malta</a> clinic. According to the <a href="https://www.bad.org.uk/patient-information-leaflets/acne/" target="_blank" rel="noopener" style="color:var(--teal);text-decoration:underline;">British Association of Dermatologists</a>, acne scarring falls into several distinct categories, each of which responds differently to treatment.',
     },
     {
       type: 'heading',
@@ -105,7 +105,7 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: 'For very deep or long-standing scarring, a course of more than six sessions may be recommended. Some patients also choose to complement their microneedling programme with a <a href="https://www.carismaaesthetics.com/prp-malta" style="color:var(--teal);text-decoration:underline;">PRP treatment</a> (platelet-rich plasma), which uses your own growth factors to accelerate the collagen response, or with <a href="https://www.carismaaesthetics.com/chemical-peels-malta" style="color:var(--teal);text-decoration:underline;">chemical peels</a> to address surface texture and pigmentation alongside the structural work happening deeper in the skin.',
+      html: 'For very deep or long-standing scarring, a course of more than six sessions may be recommended. Some patients also choose to complement their microneedling programme with a <a href="https://www.carismaaesthetics.com/prp-malta" style="color:var(--teal);text-decoration:underline;">PRP treatment Malta</a> (platelet-rich plasma), which uses your own growth factors to accelerate the collagen response, or with <a href="https://www.carismaaesthetics.com/chemical-peels-malta" style="color:var(--teal);text-decoration:underline;">chemical peels Malta</a> to address surface texture and pigmentation alongside the structural work happening deeper in the skin.',
     },
     {
       type: 'heading',
@@ -207,7 +207,7 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: 'Yes, and for deeper or more complex scarring, combination approaches often deliver the most comprehensive results. At Carisma Aesthetics in Malta, microneedling is frequently paired with <a href="https://www.carismaaesthetics.com/prp-malta" style="color:var(--teal);text-decoration:underline;">PRP therapy</a>, which uses growth factors derived from your own blood to enhance collagen production, or with <a href="https://www.carismaaesthetics.com/chemical-peels-malta" style="color:var(--teal);text-decoration:underline;">chemical peels</a> to address surface texture and pigmentation alongside the structural improvements happening in the dermis. A <a href="https://www.carismaaesthetics.com/collagen-stimulator-malta" style="color:var(--teal);text-decoration:underline;">collagen stimulator treatment</a> may also be discussed as a complementary option depending on your skin\'s needs. Your practitioner will recommend the combination that makes most sense for your goals.',
+      html: 'Yes, and for deeper or more complex scarring, combination approaches often deliver the most comprehensive results. At Carisma Aesthetics in Malta, microneedling is frequently paired with <a href="https://www.carismaaesthetics.com/prp-malta" style="color:var(--teal);text-decoration:underline;">PRP treatment Malta</a>, which uses growth factors derived from your own blood to enhance collagen production, or with <a href="https://www.carismaaesthetics.com/chemical-peels-malta" style="color:var(--teal);text-decoration:underline;">chemical peels Malta</a> to address surface texture and pigmentation alongside the structural improvements happening in the dermis. A <a href="https://www.carismaaesthetics.com/collagen-stimulator-malta" style="color:var(--teal);text-decoration:underline;">collagen stimulator Malta</a> may also be discussed as a complementary option depending on your skin\'s needs. Your practitioner will recommend the combination that makes most sense for your goals.',
     },
     {
       type: 'heading',
@@ -228,7 +228,11 @@ const post: BlogPost = {
       href: 'https://www.carismaaesthetics.com/',
     },
   ],
-  internalLinks: [],
+  internalLinks: [
+    { anchorText: 'Microneedling Malta', href: '/microneedling-malta', context: 'Acne scar guide links to main microneedling page' },
+    { anchorText: 'PRP Treatment Malta', href: '/prp-malta', context: 'Often combined with microneedling for enhanced results' },
+    { anchorText: 'Chemical Peels Malta', href: '/chemical-peels-malta', context: 'Complementary acne scar treatment' },
+  ],
 };
 
 export { post };

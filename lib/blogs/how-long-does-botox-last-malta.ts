@@ -36,7 +36,7 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: `One of the most common questions new patients bring to their first <a href="https://www.carismaaesthetics.com/wrinkle-relaxing-malta" style="color:var(--teal);text-decoration:underline;">wrinkle relaxing consultation</a> is simply: when will I see something? The honest answer is that Botox is not instant, and that is actually by design.`,
+      html: `One of the most common questions new patients bring to their first <a href="https://www.carismaaesthetics.com/wrinkle-relaxing-malta" style="color:var(--teal);text-decoration:underline;">anti-wrinkle injections Malta</a> is simply: when will I see something? The honest answer is that Botox is not instant, and that is actually by design.`,
     },
     {
       type: 'paragraph',
@@ -154,7 +154,7 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: `For patients who want to complement their Botox results and support overall skin quality year-round, combining treatment with options like <a href="https://www.carismaaesthetics.com/collagen-stimulator-malta" style="color:var(--teal);text-decoration:underline;">collagen stimulator treatments</a> or <a href="https://www.carismaaesthetics.com/chemical-peels-malta" style="color:var(--teal);text-decoration:underline;">medical-grade chemical peels</a> can meaningfully enhance what you see between injectable appointments.`,
+      html: `For patients who want to complement their Botox results and support overall skin quality year-round, combining treatment with options like <a href="https://www.carismaaesthetics.com/collagen-stimulator-malta" style="color:var(--teal);text-decoration:underline;">collagen stimulator Malta</a> or <a href="https://www.carismaaesthetics.com/chemical-peels-malta" style="color:var(--teal);text-decoration:underline;">chemical peels Malta</a> can meaningfully enhance what you see between injectable appointments.`,
     },
     {
       type: 'heading',
@@ -175,7 +175,7 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: `For patients exploring the full range of injectable options, <a href="https://www.carismaaesthetics.com/dermal-fillers-malta" style="color:var(--teal);text-decoration:underline;">dermal fillers</a> and <a href="https://www.carismaaesthetics.com/lip-fillers-malta" style="color:var(--teal);text-decoration:underline;">lip fillers</a> address different structural concerns and have their own longevity profiles. Your consultation is the best place to discuss how these treatments can work together.`,
+      html: `For patients exploring the full range of injectable options, <a href="https://www.carismaaesthetics.com/dermal-fillers-malta" style="color:var(--teal);text-decoration:underline;">dermal fillers Malta</a> and <a href="https://www.carismaaesthetics.com/lip-fillers-malta" style="color:var(--teal);text-decoration:underline;">lip fillers Malta</a> address different structural concerns and have their own longevity profiles. Your consultation is the best place to discuss how these treatments can work together.`,
     },
     {
       type: 'heading',
@@ -250,7 +250,11 @@ const post: BlogPost = {
       href: 'https://www.carismaaesthetics.com/',
     },
   ],
-  internalLinks: [],
+  internalLinks: [
+    { anchorText: 'Anti-Wrinkle Injections Malta', href: '/wrinkle-relaxing-malta', context: 'Links to main Botox treatment page' },
+    { anchorText: 'Dermal Fillers Malta', href: '/dermal-fillers-malta', context: 'Related injectable treatment' },
+    { anchorText: 'Collagen Stimulator Malta', href: '/collagen-stimulator-malta', context: 'Longer-lasting volume treatment' },
+  ],
 };
 
 export { post };

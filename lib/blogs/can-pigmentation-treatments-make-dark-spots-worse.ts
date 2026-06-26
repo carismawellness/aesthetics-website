@@ -34,7 +34,7 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: 'What is actually happening is a process driven by accelerated cell turnover. When a treatment like a <a href="https://www.carismaaesthetics.com/chemical-peels-malta" style="color:var(--teal);text-decoration:underline;">chemical peel</a> stimulates the skin to shed its outermost layers more quickly, the pigmented cells sitting deeper in the epidermis are brought to the surface faster than they would travel on their own. As those cells concentrate near the surface, the spots temporarily appear more saturated. Think of it as the pigment rising to meet the light before it is shed away entirely.',
+      html: 'What is actually happening is a process driven by accelerated cell turnover. When a treatment like a <a href="https://www.carismaaesthetics.com/chemical-peels-malta" style="color:var(--teal);text-decoration:underline;">chemical peels Malta</a> stimulates the skin to shed its outermost layers more quickly, the pigmented cells sitting deeper in the epidermis are brought to the surface faster than they would travel on their own. As those cells concentrate near the surface, the spots temporarily appear more saturated. Think of it as the pigment rising to meet the light before it is shed away entirely.',
     },
     {
       type: 'paragraph',
@@ -134,15 +134,15 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: 'At the lower end of risk for reactive skin types, superficial <a href="https://www.carismaaesthetics.com/chemical-peels-malta" style="color:var(--teal);text-decoration:underline;">chemical peels</a> using lactic acid or mandelic acid work gently on the surface layer without triggering the deeper inflammatory response that leads to PIH. These are often the starting point for pigmentation concerns in skin that tends toward reactivity. They improve tone gradually and support the skin\'s natural renewal without pushing melanocytes into overdrive.',
+      html: 'At the lower end of risk for reactive skin types, superficial <a href="https://www.carismaaesthetics.com/chemical-peels-malta" style="color:var(--teal);text-decoration:underline;">chemical peels Malta</a> using lactic acid or mandelic acid work gently on the surface layer without triggering the deeper inflammatory response that leads to PIH. These are often the starting point for pigmentation concerns in skin that tends toward reactivity. They improve tone gradually and support the skin\'s natural renewal without pushing melanocytes into overdrive.',
     },
     {
       type: 'paragraph',
-      html: '<a href="https://www.carismaaesthetics.com/microneedling-malta" style="color:var(--teal);text-decoration:underline;">Microneedling</a> with appropriate depth settings and a careful recovery protocol can also be effective for post-acne marks and sun-induced pigmentation. The controlled micro-channels stimulate collagen and encourage even cell turnover, but because it is a physical treatment, preparation and sun avoidance are critical.',
+      html: '<a href="https://www.carismaaesthetics.com/microneedling-malta" style="color:var(--teal);text-decoration:underline;">microneedling Malta</a> with appropriate depth settings and a careful recovery protocol can also be effective for post-acne marks and sun-induced pigmentation. The controlled micro-channels stimulate collagen and encourage even cell turnover, but because it is a physical treatment, preparation and sun avoidance are critical.',
     },
     {
       type: 'paragraph',
-      html: '<a href="https://www.carismaaesthetics.com/prp-malta" style="color:var(--teal);text-decoration:underline;">PRP (platelet-rich plasma)</a> works by supporting the skin\'s own healing and renewal processes using growth factors derived from your own blood. Because it works with the skin rather than by removing layers of it, the inflammatory burden is lower, making it a helpful option for sensitive or reactive skin types.',
+      html: '<a href="https://www.carismaaesthetics.com/prp-malta" style="color:var(--teal);text-decoration:underline;">PRP treatment Malta</a> works by supporting the skin\'s own healing and renewal processes using growth factors derived from your own blood. Because it works with the skin rather than by removing layers of it, the inflammatory burden is lower, making it a helpful option for sensitive or reactive skin types.',
     },
     {
       type: 'paragraph',
@@ -246,7 +246,7 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: 'If you have been researching whether it is safe to begin treating your pigmentation in Malta, the honest answer is that it can be very safe and very effective, when the timing is right, the treatment is matched to your skin type, and the plan includes real protection from Malta\'s sun. At Carisma Aesthetics, our <a href="https://www.carismaaesthetics.com/chemical-peels-malta" style="color:var(--teal);text-decoration:underline;">chemical peel treatments</a> are chosen and administered based on a thorough assessment of your skin, your concerns, and your lifestyle. Whether you are starting to notice early sun spots in your late twenties, managing acne marks in your thirties, or looking to restore a clearer, more even tone at any age, there is a plan that can be personalised to where your skin is right now.',
+      html: 'If you have been researching whether it is safe to begin treating your pigmentation in Malta, the honest answer is that it can be very safe and very effective, when the timing is right, the treatment is matched to your skin type, and the plan includes real protection from Malta\'s sun. At Carisma Aesthetics, our <a href="https://www.carismaaesthetics.com/chemical-peels-malta" style="color:var(--teal);text-decoration:underline;">chemical peels Malta</a> are chosen and administered based on a thorough assessment of your skin, your concerns, and your lifestyle. Whether you are starting to notice early sun spots in your late twenties, managing acne marks in your thirties, or looking to restore a clearer, more even tone at any age, there is a plan that can be personalised to where your skin is right now.',
     },
     {
       type: 'cta',
@@ -254,7 +254,11 @@ const post: BlogPost = {
       href: 'https://www.carismaaesthetics.com/',
     },
   ],
-  internalLinks: [],
+  internalLinks: [
+    { anchorText: 'Chemical Peels Malta', href: '/chemical-peels-malta', context: 'Safe pigmentation treatment when correctly applied' },
+    { anchorText: 'Microneedling Malta', href: '/microneedling-malta', context: 'Gentle pigmentation treatment option' },
+    { anchorText: 'PRP Treatment Malta', href: '/prp-malta', context: 'Low-risk regenerative pigmentation treatment' },
+  ],
 };
 
 export { post };

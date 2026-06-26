@@ -40,11 +40,11 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: `Botox (botulinum toxin type A) works by temporarily relaxing specific facial muscles. When those muscles contract less, the overlying skin stops creasing and the lines associated with expression, including forehead lines, frown lines between the brows, and crow\'s feet around the eyes, soften or disappear. The treatment does not add anything to the face; it gently quiets the muscle movement that causes the wrinkle in the first place. You can learn more about the clinical evidence behind this approach via <a href="https://www.nhs.uk/conditions/cosmetic-procedures/botulinum-toxin/" target="_blank" rel="noopener" style="color:var(--teal);text-decoration:underline;">NHS guidance on Botox treatment</a>. Our <a href="https://www.carismaaesthetics.com/wrinkle-relaxing-malta" style="color:var(--teal);text-decoration:underline;">wrinkle relaxing treatments in Malta</a> use precisely this approach to create a smoother, more rested appearance.`,
+      html: `Botox (botulinum toxin type A) works by temporarily relaxing specific facial muscles. When those muscles contract less, the overlying skin stops creasing and the lines associated with expression, including forehead lines, frown lines between the brows, and crow\'s feet around the eyes, soften or disappear. The treatment does not add anything to the face; it gently quiets the muscle movement that causes the wrinkle in the first place. You can learn more about the clinical evidence behind this approach via <a href="https://www.nhs.uk/conditions/cosmetic-procedures/botulinum-toxin/" target="_blank" rel="noopener" style="color:var(--teal);text-decoration:underline;">NHS guidance on Botox treatment</a>. Our <a href="https://www.carismaaesthetics.com/wrinkle-relaxing-malta" style="color:var(--teal);text-decoration:underline;">anti-wrinkle injections Malta</a> use precisely this approach to create a smoother, more rested appearance.`,
     },
     {
       type: 'paragraph',
-      html: `Dermal fillers, by contrast, are injectable gels, most commonly made from hyaluronic acid, a substance your skin produces naturally, that physically restore volume, contour, and structure. As we get older, the face loses fat, bone density, and collagen. Fillers replenish what time has diminished: lifting hollows under the eyes, restoring cheek projection, defining the jawline, or enhancing the lips. For a full overview of what to expect from this type of treatment, the <a href="https://www.nhs.uk/conditions/cosmetic-procedures/dermal-fillers/" target="_blank" rel="noopener" style="color:var(--teal);text-decoration:underline;">NHS guidance on dermal fillers</a> provides a helpful clinical reference. You can also read more about how we approach this at our <a href="https://www.carismaaesthetics.com/dermal-fillers-malta" style="color:var(--teal);text-decoration:underline;">dermal fillers page</a>.`,
+      html: `Dermal fillers, by contrast, are injectable gels, most commonly made from hyaluronic acid, a substance your skin produces naturally, that physically restore volume, contour, and structure. As we get older, the face loses fat, bone density, and collagen. Fillers replenish what time has diminished: lifting hollows under the eyes, restoring cheek projection, defining the jawline, or enhancing the lips. For a full overview of what to expect from this type of treatment, the <a href="https://www.nhs.uk/conditions/cosmetic-procedures/dermal-fillers/" target="_blank" rel="noopener" style="color:var(--teal);text-decoration:underline;">NHS guidance on dermal fillers</a> provides a helpful clinical reference. You can also read more about how we approach this at our <a href="https://www.carismaaesthetics.com/dermal-fillers-malta" style="color:var(--teal);text-decoration:underline;">dermal fillers Malta</a>.`,
     },
     {
       type: 'paragraph',
@@ -75,7 +75,7 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: `Fillers are designed for the mid and lower face, where volume loss and structural changes are the primary concern. The most popular treatment areas include the lips, cheeks, nasolabial folds (the lines from nose to mouth), marionette lines, the chin, and the tear trough area beneath the eyes. Fillers can also restore definition to a jawline that has softened with age. Our <a href="https://www.carismaaesthetics.com/lip-fillers-malta" style="color:var(--teal);text-decoration:underline;">lip fillers in Malta</a> are among our most requested treatments, used not to create a dramatic change but to restore natural proportion and definition that the lips gradually lose over time.`,
+      html: `Fillers are designed for the mid and lower face, where volume loss and structural changes are the primary concern. The most popular treatment areas include the lips, cheeks, nasolabial folds (the lines from nose to mouth), marionette lines, the chin, and the tear trough area beneath the eyes. Fillers can also restore definition to a jawline that has softened with age. Our <a href="https://www.carismaaesthetics.com/lip-fillers-malta" style="color:var(--teal);text-decoration:underline;">lip fillers Malta</a> are among our most requested treatments, used not to create a dramatic change but to restore natural proportion and definition that the lips gradually lose over time.`,
     },
     {
       type: 'paragraph',
@@ -152,7 +152,7 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: `For patients who want longer-lasting skin quality rather than targeted volume, treatments like <a href="https://www.carismaaesthetics.com/collagen-stimulator-malta" style="color:var(--teal);text-decoration:underline;">Profhilo or collagen stimulators</a> and <a href="https://www.carismaaesthetics.com/prp-malta" style="color:var(--teal);text-decoration:underline;">PRP</a> work in a different way entirely, stimulating your own collagen production rather than adding or relaxing. These are worth exploring alongside injectable options for a comprehensive skin health strategy.`,
+      html: `For patients who want longer-lasting skin quality rather than targeted volume, treatments like <a href="https://www.carismaaesthetics.com/collagen-stimulator-malta" style="color:var(--teal);text-decoration:underline;">collagen stimulator Malta</a> and <a href="https://www.carismaaesthetics.com/prp-malta" style="color:var(--teal);text-decoration:underline;">PRP treatment Malta</a> work in a different way entirely, stimulating your own collagen production rather than adding or relaxing. These are worth exploring alongside injectable options for a comprehensive skin health strategy.`,
     },
     {
       type: 'heading',
@@ -214,7 +214,7 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: `For adding volume, enhancing shape, or defining the lip border, dermal fillers are the appropriate treatment. <a href="https://www.carismaaesthetics.com/lip-fillers-malta" style="color:var(--teal);text-decoration:underline;">Lip fillers</a> use hyaluronic acid to create natural-looking fullness that can be tailored precisely to your anatomy. Botox can be used in a "lip flip" technique where a small amount is placed above the upper lip to gently roll it outward, creating the appearance of a fuller lip without adding volume. This is a subtle technique suited to patients who want a very understated change. For most patients seeking visible lip enhancement, fillers are the more effective option.`,
+      html: `For adding volume, enhancing shape, or defining the lip border, dermal fillers are the appropriate treatment. <a href="https://www.carismaaesthetics.com/lip-fillers-malta" style="color:var(--teal);text-decoration:underline;">lip fillers Malta</a> use hyaluronic acid to create natural-looking fullness that can be tailored precisely to your anatomy. Botox can be used in a "lip flip" technique where a small amount is placed above the upper lip to gently roll it outward, creating the appearance of a fuller lip without adding volume. This is a subtle technique suited to patients who want a very understated change. For most patients seeking visible lip enhancement, fillers are the more effective option.`,
     },
     {
       type: 'heading',
@@ -244,7 +244,11 @@ const post: BlogPost = {
       href: 'https://www.carismaaesthetics.com/',
     },
   ],
-  internalLinks: [],
+  internalLinks: [
+    { anchorText: 'Anti-Wrinkle Injections Malta', href: '/wrinkle-relaxing-malta', context: 'Botox vs fillers comparison links to Botox page' },
+    { anchorText: 'Dermal Fillers Malta', href: '/dermal-fillers-malta', context: 'Botox vs fillers comparison links to fillers page' },
+    { anchorText: 'Lip Fillers Malta', href: '/lip-fillers-malta', context: 'Related filler treatment' },
+  ],
 };
 
 export { post };

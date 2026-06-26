@@ -17,7 +17,7 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: 'This guide walks you through the lip filler swelling stages day by day, written specifically for patients in Malta. Because yes, our climate, lifestyle, and social calendar do play a role in how you manage recovery. Whether you are booked in for a subtle enhancement before a summer event or you are considering <a href="https://www.carismaaesthetics.com/lip-fillers-malta" style="color:var(--teal);text-decoration:underline;">lip fillers in Malta</a> for the very first time, understanding what to expect at each stage helps you feel calm, informed, and in control throughout the healing process.',
+      html: 'This guide walks you through the lip filler swelling stages day by day, written specifically for patients in Malta. Because yes, our climate, lifestyle, and social calendar do play a role in how you manage recovery. Whether you are booked in for a subtle enhancement before a summer event or you are considering <a href="https://www.carismaaesthetics.com/lip-fillers-malta" style="color:var(--teal);text-decoration:underline;">lip fillers Malta</a> for the very first time, understanding what to expect at each stage helps you feel calm, informed, and in control throughout the healing process.',
     },
     {
       type: 'image',
@@ -135,7 +135,7 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: 'This is your result. This is the point at which your treating practitioner will invite you in for a follow-up to assess symmetry, volume, and whether any refinement is desired. For patients considering <a href="https://www.carismaaesthetics.com/dermal-fillers-malta" style="color:var(--teal);text-decoration:underline;">dermal fillers</a> in other areas of the face alongside their lip treatment, the two-week review is also a useful point to assess the overall picture before any additional work.',
+      html: 'This is your result. This is the point at which your treating practitioner will invite you in for a follow-up to assess symmetry, volume, and whether any refinement is desired. For patients considering <a href="https://www.carismaaesthetics.com/dermal-fillers-malta" style="color:var(--teal);text-decoration:underline;">dermal fillers Malta</a> in other areas of the face alongside their lip treatment, the two-week review is also a useful point to assess the overall picture before any additional work.',
     },
     {
       type: 'image',
@@ -229,7 +229,7 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: 'For patients who want to complement their lip treatment with broader facial rejuvenation, treatments like <a href="https://www.carismaaesthetics.com/wrinkle-relaxing-malta" style="color:var(--teal);text-decoration:underline;">wrinkle relaxing injections</a> or <a href="https://www.carismaaesthetics.com/collagen-stimulator-malta" style="color:var(--teal);text-decoration:underline;">Profhilo collagen stimulator</a> can be discussed at your consultation, with appropriate timing planned around social commitments and recovery windows.',
+      html: 'For patients who want to complement their lip treatment with broader facial rejuvenation, treatments like <a href="https://www.carismaaesthetics.com/wrinkle-relaxing-malta" style="color:var(--teal);text-decoration:underline;">anti-wrinkle injections Malta</a> or <a href="https://www.carismaaesthetics.com/collagen-stimulator-malta" style="color:var(--teal);text-decoration:underline;">collagen stimulator Malta</a> can be discussed at your consultation, with appropriate timing planned around social commitments and recovery windows.',
     },
     {
       type: 'heading',
@@ -301,7 +301,7 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: 'Our practitioners take the time to understand what you want to enhance, explain the realistic timeline for your specific treatment plan, and answer every question you have before a single decision is made. Whether you are considering <a href="https://www.carismaaesthetics.com/lip-fillers-malta" style="color:var(--teal);text-decoration:underline;">lip fillers in Malta</a> for the first time or returning for a refinement, you deserve to go into it feeling calm, confident, and completely informed.',
+      html: 'Our practitioners take the time to understand what you want to enhance, explain the realistic timeline for your specific treatment plan, and answer every question you have before a single decision is made. Whether you are considering <a href="https://www.carismaaesthetics.com/lip-fillers-malta" style="color:var(--teal);text-decoration:underline;">lip fillers Malta</a> for the first time or returning for a refinement, you deserve to go into it feeling calm, confident, and completely informed.',
     },
     {
       type: 'cta',
@@ -309,7 +309,11 @@ const post: BlogPost = {
       href: 'https://www.carismaaesthetics.com/',
     },
   ],
-  internalLinks: [],
+  internalLinks: [
+    { anchorText: 'Lip Fillers Malta', href: '/lip-fillers-malta', context: 'Swelling guide links to lip filler treatment page' },
+    { anchorText: 'Dermal Fillers Malta', href: '/dermal-fillers-malta', context: 'Related filler treatment page' },
+    { anchorText: 'Anti-Wrinkle Injections Malta', href: '/wrinkle-relaxing-malta', context: 'Related injectable treatment' },
+  ],
 };
 
 export { post };

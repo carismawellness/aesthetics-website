@@ -150,19 +150,19 @@ const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: `Microneedling creates controlled micro-injuries in the skin using fine needles, stimulating the skin's natural collagen production response. Research consistently shows it to be effective for atrophic scars across skin tones, including the Mediterranean skin types common in Malta. A <a href="https://pubmed.ncbi.nlm.nih.gov/26053498/" target="_blank" rel="noopener" style="color:var(--teal);text-decoration:underline;">PubMed systematic review on classification and treatment of acne scars</a> confirms that scar subtype classification is essential to selecting the most appropriate intervention, and that microneedling performs particularly well for rolling and boxcar scars. For deeper ice pick scars, it is often combined with other approaches. A typical course involves three to six sessions spaced four to six weeks apart, with ongoing improvement continuing for months as new collagen matures. You can read more about <a href="https://www.carismaaesthetics.com/microneedling-malta" style="color:var(--teal);text-decoration:underline;">microneedling for acne scars in Malta</a> on our dedicated service page.`,
+      html: `Microneedling creates controlled micro-injuries in the skin using fine needles, stimulating the skin's natural collagen production response. Research consistently shows it to be effective for atrophic scars across skin tones, including the Mediterranean skin types common in Malta. A <a href="https://pubmed.ncbi.nlm.nih.gov/26053498/" target="_blank" rel="noopener" style="color:var(--teal);text-decoration:underline;">PubMed systematic review on classification and treatment of acne scars</a> confirms that scar subtype classification is essential to selecting the most appropriate intervention, and that microneedling performs particularly well for rolling and boxcar scars. For deeper ice pick scars, it is often combined with other approaches. A typical course involves three to six sessions spaced four to six weeks apart, with ongoing improvement continuing for months as new collagen matures. You can read more about <a href="https://www.carismaaesthetics.com/microneedling-malta" style="color:var(--teal);text-decoration:underline;">microneedling Malta</a> on our dedicated service page.`,
     },
     {
       type: 'paragraph',
-      html: `Chemical peels use carefully selected acids to remove the outer layers of skin, encouraging cell turnover and reducing surface-level pigmentation and texture. Superficial peels are well-suited to post-inflammatory hyperpigmentation and mild texture concerns, with minimal downtime. Medium-depth peels can begin to address slightly deeper scar structure. <a href="https://www.carismaaesthetics.com/chemical-peels-malta" style="color:var(--teal);text-decoration:underline;">Chemical peels in Malta</a> are a particularly useful option for patients whose primary concern is discolouration rather than structural indentation.`,
+      html: `Chemical peels use carefully selected acids to remove the outer layers of skin, encouraging cell turnover and reducing surface-level pigmentation and texture. Superficial peels are well-suited to post-inflammatory hyperpigmentation and mild texture concerns, with minimal downtime. Medium-depth peels can begin to address slightly deeper scar structure. <a href="https://www.carismaaesthetics.com/chemical-peels-malta" style="color:var(--teal);text-decoration:underline;">chemical peels Malta</a> are a particularly useful option for patients whose primary concern is discolouration rather than structural indentation.`,
     },
     {
       type: 'paragraph',
-      html: `PRP (platelet-rich plasma) uses your own growth factors to support skin repair and collagen remodelling. It is often used alongside microneedling to enhance the skin's healing response. <a href="https://www.carismaaesthetics.com/prp-malta" style="color:var(--teal);text-decoration:underline;">PRP in Malta</a> is particularly valued by patients who prefer a treatment approach that uses the body's own biology rather than external substances.`,
+      html: `PRP (platelet-rich plasma) uses your own growth factors to support skin repair and collagen remodelling. It is often used alongside microneedling to enhance the skin's healing response. <a href="https://www.carismaaesthetics.com/prp-malta" style="color:var(--teal);text-decoration:underline;">PRP treatment Malta</a> is particularly valued by patients who prefer a treatment approach that uses the body's own biology rather than external substances.`,
     },
     {
       type: 'paragraph',
-      html: `Dermal fillers can be used to temporarily restore volume beneath specific atrophic scars, physically elevating indented areas from beneath. This is particularly relevant for boxcar and rolling scars. <a href="https://www.carismaaesthetics.com/dermal-fillers-malta" style="color:var(--teal);text-decoration:underline;">Dermal fillers in Malta</a> used for scar support are placed with precision and are reversible.`,
+      html: `Dermal fillers can be used to temporarily restore volume beneath specific atrophic scars, physically elevating indented areas from beneath. This is particularly relevant for boxcar and rolling scars. <a href="https://www.carismaaesthetics.com/dermal-fillers-malta" style="color:var(--teal);text-decoration:underline;">dermal fillers Malta</a> used for scar support are placed with precision and are reversible.`,
     },
     {
       type: 'paragraph',
@@ -258,7 +258,11 @@ const post: BlogPost = {
       href: 'https://www.carismaaesthetics.com/',
     },
   ],
-  internalLinks: [],
+  internalLinks: [
+    { anchorText: 'Microneedling Malta', href: '/microneedling-malta', context: 'Primary treatment for atrophic acne scars' },
+    { anchorText: 'Chemical Peels Malta', href: '/chemical-peels-malta', context: 'Effective for shallow acne scarring' },
+    { anchorText: 'PRP Treatment Malta', href: '/prp-malta', context: 'Regenerative treatment to support scar remodelling' },
+  ],
 };
 
 export { post };
