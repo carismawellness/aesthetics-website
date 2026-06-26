@@ -100,7 +100,7 @@ export default function WhyMaltaAesthetics() {
   return (
     <section
       aria-labelledby="why-malta-aesthetics-heading"
-      style={{ paddingTop: 60, paddingBottom: 84, backgroundColor: "transparent" }}
+      style={{ paddingTop: 60, paddingBottom: "clamp(28px,4vw,56px)", backgroundColor: "transparent" }}
     >
       <div
         className="mx-auto px-4 sm:px-6 lg:px-8"
