@@ -160,7 +160,7 @@ export default function ConsultationProcess() {
           >
             How a Free Consultation Works
             <br />
-            at Carisma Aesthetics, Malta
+            at Carisma Aesthetics
           </h2>
         </div>
 
