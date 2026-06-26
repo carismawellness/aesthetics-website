@@ -80,16 +80,16 @@ const siteSchema = {
   "paymentAccepted": "Cash, Credit Card",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Triq il-Kbira",
-    "addressLocality": "Birkirkara",
+    "streetAddress": "InterContinental Malta, St George's Bay",
+    "addressLocality": "St Julian's",
     "addressRegion": "MT",
-    "postalCode": "BKR 1104",
+    "postalCode": "STJ 3310",
     "addressCountry": "MT",
   },
   "geo": {
     "@type": "GeoCoordinates",
-    "latitude": 35.8942,
-    "longitude": 14.4636,
+    "latitude": 35.9237893,
+    "longitude": 14.4882933,
   },
   "openingHoursSpecification": {
     "@type": "OpeningHoursSpecification",
