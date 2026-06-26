@@ -7,11 +7,7 @@ export default function QuizIcon3D() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
-    // Gate off mobile and reduced-motion — no rAF loop on touch devices
-    if (
-      window.matchMedia('(pointer: coarse)').matches ||
-      window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    ) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
     const canvas = canvasRef.current;
     if (!canvas) return;
