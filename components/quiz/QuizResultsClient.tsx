@@ -10,6 +10,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger);
 
 const ParticleScene = dynamic(() => import('./ParticleScene'), { ssr: false });
+const QuizIcon3D = dynamic(() => import('./QuizIcon3D'), { ssr: false });
 
 /* ── Brand tokens ─────────────────────────────────────────────────────── */
 const SERIF    = '"Trajan Pro", Georgia, serif';
@@ -477,6 +478,11 @@ export default function QuizResultsClient({ firstName, concerns, areas, recs }: 
               margin: '0 auto 24px',
             }}
           />
+
+          {/* 3D spinning icon — desktop only, gated off mobile/reduced-motion inside component */}
+          <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '28px' }}>
+            <QuizIcon3D />
+          </div>
 
           {/* Subtitle */}
           {(concerns.length > 0 || areas.length > 0) && (
