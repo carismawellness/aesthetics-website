@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useEffect, useRef, useState } from 'react';
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
@@ -181,14 +182,13 @@ function TreatmentCard({ rec, rank }: { rec: TreatmentRec; rank: number }) {
       }}>
         {/* Image col */}
         <div style={{ position: 'relative', overflow: 'hidden' }}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
+          <Image
             src={rec.image}
             alt={rec.name}
+            fill
             loading="lazy"
+            sizes="(max-width: 768px) 40vw, 260px"
             style={{
-              position: 'absolute', inset: 0,
-              width: '100%', height: '100%',
               objectFit: 'cover',
               filter: 'brightness(0.72) saturate(0.85)',
               transition: 'filter 0.3s ease, transform 0.4s ease',
