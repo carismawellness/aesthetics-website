@@ -48,7 +48,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "Quality sleep and stress management are non-negotiable for beautiful skin. During sleep, your skin repairs itself and collagen production peaks. Aim for 7-9 hours nightly. Chronic stress elevates cortisol, which can trigger inflammation and breakouts — regular relaxation treatments at <a href=\"https://www.carismaspa.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Carisma Spa</a> can support cortisol reduction alongside your skincare routine.",
+      "html": "Quality sleep and stress management are non-negotiable for beautiful skin. During sleep, your skin repairs itself and collagen production peaks. Aim for 7-9 hours nightly. Chronic stress elevates cortisol, which can trigger inflammation and breakouts — regular <a href=\"https://www.carismaspa.com/massages\" target=\"_blank\" rel=\"noopener noreferrer\">relaxation massages</a> at Carisma Spa can support cortisol reduction alongside your skincare routine.",
     },
     {
       "type": "paragraph",

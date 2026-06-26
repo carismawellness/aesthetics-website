@@ -28,7 +28,7 @@ export const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: 'Traditional facials are excellent for general skin maintenance, stress relief, and clients who want a pampering ritual — for a more immersive relaxation experience, <a href="https://www.carismaspa.com/" target="_blank" rel="noopener noreferrer">Carisma Spa</a> offers a full day-spa menu including massages, hammam, and wellness treatments. They can be customised with add-ons such as eye treatments or facial massage, and they tend to be more affordable than medical-grade procedures. However, the results rely heavily on the products used and the skill of the therapist, and they rarely penetrate beyond the surface layers of the skin.',
+      html: 'Traditional facials are excellent for general skin maintenance, stress relief, and clients who want a pampering ritual — for a more immersive relaxation experience, our sister brand offers a full <a href="https://www.carismaspa.com/spa-day" target="_blank" rel="noopener noreferrer">day spa Malta</a> menu including massages, hammam, and wellness treatments. They can be customised with add-ons such as eye treatments or facial massage, and they tend to be more affordable than medical-grade procedures. However, the results rely heavily on the products used and the skill of the therapist, and they rarely penetrate beyond the surface layers of the skin.',
     },
     {
       type: 'heading',
