@@ -190,6 +190,19 @@ const t: Treatment = {
       a: "Getting a prescription is easy; building a programme that delivers lasting results is not. At Carisma, your Ozempic or Mounjaro prescription is one part of a wider system: medical monitoring, personalised nutrition, strength-training guidance, weekly accountability, body-contouring treatments, aesthetics support for Ozempic-face prevention, and a defined exit strategy. We do not prescribe and forget — we guide you through every phase.",
     },
   ],
+  beforeAfterTitle: "MEDICAL WEIGHT LOSS RESULTS",
+  beforeAfter: [
+    { before: "/assets/treatments/medical-weight-loss-ba1-1.jpg", after: "/assets/treatments/medical-weight-loss-ba1-2.jpg", label: "Flank and back fat", name: "Maria C.", review: "The rolls on my lower back used to show through every fitted top. They have softened a lot and my waistline looks straighter from behind now." },
+    { before: "/assets/treatments/medical-weight-loss-ba2-1.jpg", after: "/assets/treatments/medical-weight-loss-ba2-2.jpg", label: "Back-thigh cellulite", name: "Roberta F.", review: "The backs of my legs were really dimpled. The skin sits smoother now and they feel firmer when I sit, which I honestly did not expect." },
+    { before: "/assets/treatments/medical-weight-loss-ba3-1.jpg", after: "/assets/treatments/medical-weight-loss-ba3-2.jpg", label: "Front thigh dimpling", name: "Daniela B.", review: "There is less of that orange peel look across the front of my legs. Not all gone, but the difference in shorts is enough that I noticed." },
+    { before: "/assets/treatments/medical-weight-loss-ba4-1.jpg", after: "/assets/treatments/medical-weight-loss-ba4-2.jpg", label: "Lower-abdomen fat", name: "Elena P.", review: "The little pouch under my belly button has come down. My jeans button up without me holding my breath, which is the bit I am happiest about." },
+    { before: "/assets/treatments/medical-weight-loss-ba5-1.jpg", after: "/assets/treatments/medical-weight-loss-ba5-2.jpg", label: "Thigh fat and cellulite", name: "Nadia S.", review: "My thighs felt heavy and the cellulite bothered me. They look smoother and my legs feel lighter, so leggings sit better than they used to." },
+    { before: "/assets/treatments/medical-weight-loss-ba6-2.jpg", after: "/assets/treatments/medical-weight-loss-ba6-1.jpg", label: "Waist and flank fat", name: "Christine A.", review: "From the side my middle used to round out quite a bit. It sits flatter now and my waist looks more defined when I turn in the mirror." },
+    { before: "/assets/treatments/medical-weight-loss-ba7-1.jpg", after: "/assets/treatments/medical-weight-loss-ba7-2.jpg", label: "Thigh and buttock cellulite", name: "Stephanie M.", review: "The cellulite high on my thighs has calmed right down. They look smoother in a swimsuit and feel less heavy, so I am pleased I went for it." },
+    { before: "/assets/treatments/medical-weight-loss-ba8-1.jpg", after: "/assets/treatments/medical-weight-loss-ba8-2.jpg", label: "Abdominal fat", name: "Antonella G.", review: "My lower tummy used to push out from the side. It looks flatter and more toned now, and it has stayed that way for a few months." },
+    { before: "/assets/treatments/medical-weight-loss-ba9-2.jpg", after: "/assets/treatments/medical-weight-loss-ba9-1.jpg", label: "Abdomen and waist fat", name: "Julia R.", review: "My waist has come in and the softness around my middle is much calmer. The side profile of my tummy looks tidier than it did before." },
+    { before: "/assets/treatments/medical-weight-loss-ba10-1.jpg", after: "/assets/treatments/medical-weight-loss-ba10-2.jpg", label: "Waist and lower-back fat", name: "Francesca V.", review: "The rolls across my lower back had bugged me for ages. My back looks smoother now and my waist comes in more, both at the same time." },
+  ],
 };
 
 export default t;

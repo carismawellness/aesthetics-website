@@ -235,6 +235,19 @@ const t: Treatment = {
       },
     ],
   },
+  beforeAfterTitle: "SKIN TIGHTENING RESULTS",
+  beforeAfter: [
+    { before: "/assets/treatments/skin-tightening-ba1-1.jpg", after: "/assets/treatments/skin-tightening-ba1-2.jpg", label: "Crepey upper-arm skin", name: "Maria C.", review: "My upper arms had gone really crepey and soft. They feel firmer now and I have stopped hiding them in summer tops." },
+    { before: "/assets/treatments/skin-tightening-ba2-1.jpg", after: "/assets/treatments/skin-tightening-ba2-2.jpg", label: "Loose abdominal skin", name: "Roberta F.", review: "After losing weight the skin on my tummy was so slack. It sits tighter and smoother now, and I feel a lot better in a swimsuit." },
+    { before: "/assets/treatments/skin-tightening-ba3-2.jpg", after: "/assets/treatments/skin-tightening-ba3-1.jpg", label: "Crepey lower-abdomen skin", name: "Daniela B.", review: "Two pregnancies left the skin on my lower belly loose and creased. It reads firmer now and the texture has settled down nicely." },
+    { before: "/assets/treatments/skin-tightening-ba4-1.jpg", after: "/assets/treatments/skin-tightening-ba4-2.jpg", label: "Crepey above-knee skin", name: "Nadia P.", review: "The skin just above my knee was deeply lined and crepey. It looks a lot smoother now and I do not fuss over it anymore." },
+    { before: "/assets/treatments/skin-tightening-ba5-1.jpg", after: "/assets/treatments/skin-tightening-ba5-2.jpg", label: "Outer-thigh skin laxity", name: "Christine A.", review: "My outer thighs had loads of dimpling and loose texture. The skin sits tighter now and looks far more even in the mirror." },
+    { before: "/assets/treatments/skin-tightening-ba6-2.jpg", after: "/assets/treatments/skin-tightening-ba6-1.jpg", label: "Lax thigh and hip skin", name: "Elena V.", review: "My hip and thigh skin had gone soft and a bit loose. It feels firmer to the touch now and the surface looks smoother in clothes." },
+    { before: "/assets/treatments/skin-tightening-ba7-2.jpg", after: "/assets/treatments/skin-tightening-ba7-1.jpg", label: "Loose flank skin", name: "Stephanie M.", review: "I had a stubborn loose roll on my side that would not budge. My waist looks flatter and tighter now and clothes sit so much better." },
+    { before: "/assets/treatments/skin-tightening-ba8-1.jpg", after: "/assets/treatments/skin-tightening-ba8-2.jpg", label: "Crepey lower-belly skin", name: "Joanne S.", review: "The loose crepey skin under my belly button used to crease whenever I sat down. It sits much firmer now and looks smoother in clothes." },
+    { before: "/assets/treatments/skin-tightening-ba9-2.jpg", after: "/assets/treatments/skin-tightening-ba9-1.jpg", label: "Thigh laxity and dimpling", name: "Charlene B.", review: "The back of my thighs and knees were dimpled and a bit saggy. They look smoother and more toned now, especially in shorts." },
+    { before: "/assets/treatments/skin-tightening-ba10-1.jpg", after: "/assets/treatments/skin-tightening-ba10-2.jpg", label: "Loose abdominal skin", name: "Petra R.", review: "My stomach had loosened and the skin creased around my navel. It looks tighter and a good deal smoother now, really pleased with it." },
+  ],
 };
 
 export default t;

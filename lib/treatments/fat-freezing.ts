@@ -255,6 +255,19 @@ const t: Treatment = {
       a: "The €25 credit is loaded to your Carisma Aesthetics account after your first session and can be used toward any future treatment or product in the clinic.",
     },
   ],
+  beforeAfterTitle: "FAT FREEZING RESULTS",
+  beforeAfter: [
+    { before: "/assets/treatments/fat-freezing-ba1-1.jpg", after: "/assets/treatments/fat-freezing-ba1-2.jpg", label: "Lower-belly fat", name: "Maria C.", review: "The lower part of my tummy was always the bit I couldn't shift. It sits flatter now and my jeans do up easier." },
+    { before: "/assets/treatments/fat-freezing-ba2-1.jpg", after: "/assets/treatments/fat-freezing-ba2-2.jpg", label: "Lower-belly pouch", name: "Elena B.", review: "Side on I had a bit of a pouch that bugged me. A few sessions in and my waistline looks smoother from that angle." },
+    { before: "/assets/treatments/fat-freezing-ba3-1.jpg", after: "/assets/treatments/fat-freezing-ba3-2.jpg", label: "Lower-abdomen fat", name: "Roberta M.", review: "My belly used to round out below the navel. It looks a good bit trimmer from the side now, glad I gave it a go." },
+    { before: "/assets/treatments/fat-freezing-ba4-1.jpg", after: "/assets/treatments/fat-freezing-ba4-2.jpg", label: "Stubborn belly fat", name: "Daniela F.", review: "After two kids the tummy fat just stayed put. There's a real difference around my middle now and my clothes sit better." },
+    { before: "/assets/treatments/fat-freezing-ba5-1.jpg", after: "/assets/treatments/fat-freezing-ba5-2.jpg", label: "Belly and flank fat", name: "Nadia P.", review: "The fullness around my lower back and tummy has gone down a fair bit. It took a couple of months but I can see it side on." },
+    { before: "/assets/treatments/fat-freezing-ba6-1.jpg", after: "/assets/treatments/fat-freezing-ba6-2.jpg", label: "Stubborn belly fat", name: "Christine A.", review: "My stomach used to push out a little even after I'd lost weight. It's flatter now and I feel more comfortable in fitted tops." },
+    { before: "/assets/treatments/fat-freezing-ba7-1.jpg", after: "/assets/treatments/fat-freezing-ba7-2.jpg", label: "Belly fat", name: "Mark V.", review: "Had a belly that no amount of dieting was touching. The side profile is much flatter now, glad I booked in for it." },
+    { before: "/assets/treatments/fat-freezing-ba8-2.jpg", after: "/assets/treatments/fat-freezing-ba8-1.jpg", label: "Flank and waist fat", name: "Sofia G.", review: "The little roll on my side that showed in tighter clothes has softened a lot. My waist looks more defined from the side." },
+    { before: "/assets/treatments/fat-freezing-ba9-1.jpg", after: "/assets/treatments/fat-freezing-ba9-2.jpg", label: "Lower-belly fat", name: "Julian S.", review: "The lower belly was the area I wanted sorted and it's come down well. My trousers fit better and you can see it side on." },
+    { before: "/assets/treatments/fat-freezing-ba10-1.jpg", after: "/assets/treatments/fat-freezing-ba10-2.jpg", label: "Abdomen and flanks", name: "Luana D.", review: "My midsection looks tighter and the soft bits at the sides have eased off. Took some patience but I'm pleased with it now." },
+  ],
 };
 
 export default t;

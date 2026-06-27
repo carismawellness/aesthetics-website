@@ -323,6 +323,19 @@ const t: Treatment = {
       a: "Yes. CelluLift is often combined with skin tightening or body contouring treatments to enhance overall results. Your practitioner will advise what combinations are suitable.",
     },
   ],
+  beforeAfterTitle: "ANTI-CELLULITE RESULTS",
+  beforeAfter: [
+    { before: "/assets/treatments/anti-cellulite-ba1-1.jpg", after: "/assets/treatments/anti-cellulite-ba1-2.jpg", label: "Upper arm crepey skin", name: "Daniela B.", review: "My arms went all crinkly near the elbow and I hated it in short sleeves. The skin sits flatter now and feels firmer when I touch it." },
+    { before: "/assets/treatments/anti-cellulite-ba2-1.jpg", after: "/assets/treatments/anti-cellulite-ba2-2.jpg", label: "Outer thigh cellulite", name: "Roberta C.", review: "The dimpling on the side of my thigh used to show through shorts. It has softened a lot and the leg looks far more even." },
+    { before: "/assets/treatments/anti-cellulite-ba3-1.jpg", after: "/assets/treatments/anti-cellulite-ba3-2.jpg", label: "Thigh and buttock cellulite", name: "Maria F.", review: "I honestly didn't expect a big change, but the lumpy bit at the back of my thigh has calmed right down. It feels firmer when I sit." },
+    { before: "/assets/treatments/anti-cellulite-ba4-1.jpg", after: "/assets/treatments/anti-cellulite-ba4-2.jpg", label: "Eye and cheek crepiness", name: "Christine A.", review: "Those fine creases by my eye were what bothered me most. The skin reads smoother now, a little plumper, mostly in daylight." },
+    { before: "/assets/treatments/anti-cellulite-ba5-1.jpg", after: "/assets/treatments/anti-cellulite-ba5-2.jpg", label: "Decolletage crepe lines", name: "Nadia P.", review: "Years in the sun left those vertical creases on my chest. They have faded a fair bit and the area feels tighter than before." },
+    { before: "/assets/treatments/anti-cellulite-ba6-1.jpg", after: "/assets/treatments/anti-cellulite-ba6-2.jpg", label: "Lower back skin laxity", name: "Elena M.", review: "After losing weight the skin on my lower back went soft and creased. It looks noticeably firmer now and the crinkling has settled." },
+    { before: "/assets/treatments/anti-cellulite-ba7-1.jpg", after: "/assets/treatments/anti-cellulite-ba7-2.jpg", label: "Abdominal skin laxity", name: "Joanne S.", review: "Two pregnancies left my tummy loose and crinkled. It has tightened up nicely and the folds around my belly button are much softer." },
+    { before: "/assets/treatments/anti-cellulite-ba8-1.jpg", after: "/assets/treatments/anti-cellulite-ba8-2.jpg", label: "Abdomen and flank texture", name: "Sofia G.", review: "The crinkly texture on my side and tummy used to catch the light. It looks much smoother now and feels more toned to me." },
+    { before: "/assets/treatments/anti-cellulite-ba9-1.jpg", after: "/assets/treatments/anti-cellulite-ba9-2.jpg", label: "Lower belly laxity", name: "Rebecca V.", review: "My lower belly had that pinched, creased look whenever I sat. It sits flatter now and feels firmer, which I'm really pleased about." },
+    { before: "/assets/treatments/anti-cellulite-ba10-1.jpg", after: "/assets/treatments/anti-cellulite-ba10-2.jpg", label: "Neck and chest lines", name: "Antonella Z.", review: "The lines running across my neck always aged me. They have softened and the skin near my collarbone looks fresher than it did." },
+  ],
 };
 
 export default t;

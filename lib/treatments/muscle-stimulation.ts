@@ -262,6 +262,19 @@ const t: Treatment = {
       a: "EMS Neo is safe when performed by trained professionals. It is not suitable for individuals with pacemakers, metal implants in the treatment area, certain medical conditions, or during pregnancy. A full medical screening is completed before treatment.",
     },
   ],
+  beforeAfterTitle: "MUSCLE STIMULATION RESULTS",
+  beforeAfter: [
+    { before: "/assets/treatments/muscle-stimulation-ba1-1.jpg", after: "/assets/treatments/muscle-stimulation-ba1-2.jpg", label: "Abdominal toning", name: "Mark B.", review: "My stomach sits flatter now and there's a bit of shape to it where it used to just be soft. Took a few weeks but I'm pleased." },
+    { before: "/assets/treatments/muscle-stimulation-ba2-1.jpg", after: "/assets/treatments/muscle-stimulation-ba2-2.jpg", label: "Upper arm toning", name: "Maria C.", review: "The back of my arm feels firmer than it was. It's a subtle change but I notice it when my arm hangs loose." },
+    { before: "/assets/treatments/muscle-stimulation-ba3-1.jpg", after: "/assets/treatments/muscle-stimulation-ba3-2.jpg", label: "Tummy toning", name: "Roberta F.", review: "From the side my tummy used to stick out a fair bit and now it's a lot flatter. Wasn't expecting that much honestly." },
+    { before: "/assets/treatments/muscle-stimulation-ba4-1.jpg", after: "/assets/treatments/muscle-stimulation-ba4-2.jpg", label: "Midsection toning", name: "Luca A.", review: "Front on my belly was just round and soft before. Now it looks tighter and I can see a little shape coming through." },
+    { before: "/assets/treatments/muscle-stimulation-ba5-1.jpg", after: "/assets/treatments/muscle-stimulation-ba5-2.jpg", label: "Core and waistline", name: "Daniela P.", review: "My waist looks more shaped from the side and the stomach feels firmer to me. It crept up slowly over a few weeks." },
+    { before: "/assets/treatments/muscle-stimulation-ba6-1.jpg", after: "/assets/treatments/muscle-stimulation-ba6-2.jpg", label: "Abdominal definition", name: "Steve M.", review: "There's actual definition across my stomach now instead of a flat soft front. Happy I stuck with the sessions." },
+    { before: "/assets/treatments/muscle-stimulation-ba7-1.jpg", after: "/assets/treatments/muscle-stimulation-ba7-2.jpg", label: "Upper arm firming", name: "Elena V.", review: "The soft bit under my arm has tightened up. Nothing dramatic, but my arm looks neater in a sleeveless top now." },
+    { before: "/assets/treatments/muscle-stimulation-ba8-1.jpg", after: "/assets/treatments/muscle-stimulation-ba8-2.jpg", label: "Waist and bra-line toning", name: "Nadia S.", review: "The fullness around my side and bra line has settled down. My waist sits in a bit more, which I'm really happy with." },
+    { before: "/assets/treatments/muscle-stimulation-ba9-1.jpg", after: "/assets/treatments/muscle-stimulation-ba9-2.jpg", label: "Back and flank toning", name: "Julian C.", review: "My lower back and sides look tighter and the soft area over the waistband has eased off. Good result for me." },
+    { before: "/assets/treatments/muscle-stimulation-ba10-1.jpg", after: "/assets/treatments/muscle-stimulation-ba10-2.jpg", label: "Back and bra-line toning", name: "Christine G.", review: "The rolls around my bra strap have smoothed out and my back looks tidier in clothes. It took some patience but worth it." },
+  ],
 };
 
 export default t;

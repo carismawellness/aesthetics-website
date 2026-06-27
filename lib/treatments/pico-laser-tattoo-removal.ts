@@ -27,13 +27,16 @@ const t: Treatment = {
   ],
   beforeAfterTitle: "PICO LASER TATTOO REMOVAL RESULTS",
   beforeAfter: [
-    {
-      before: "/assets/treatments/pico-before.png",
-      after: "/assets/treatments/pico-after.png",
-      name: "Morina G.",
-      review:
-        "I wanted to fade an old tattoo before a cover-up, and the team explained exactly what to expect. It faded gradually after each session and felt safe and well managed the whole way through.",
-    },
+    { before: "/assets/treatments/pico-laser-tattoo-removal-ba1-1.jpg", after: "/assets/treatments/pico-laser-tattoo-removal-ba1-2.jpg", label: "Roman numeral foot tattoo", name: "Roberta C.", review: "The dates I had on my foot are gone and you honestly cannot tell anything was ever inked there. The skin looks clear." },
+    { before: "/assets/treatments/pico-laser-tattoo-removal-ba2-2.jpg", after: "/assets/treatments/pico-laser-tattoo-removal-ba2-1.jpg", label: "Fairy shoulder tattoo", name: "Christine V.", review: "My old fairy was big and dark so I wasn't sure it would shift. It faded session by session and now it's just a soft outline." },
+    { before: "/assets/treatments/pico-laser-tattoo-removal-ba3-1.jpg", after: "/assets/treatments/pico-laser-tattoo-removal-ba3-2.jpg", label: "Solid black sun tattoo", name: "Mark A.", review: "The solid black sun on my leg was the part I worried about most. It has lightened so much now you really have to look for it." },
+    { before: "/assets/treatments/pico-laser-tattoo-removal-ba4-1.jpg", after: "/assets/treatments/pico-laser-tattoo-removal-ba4-2.jpg", label: "Doves and heart tattoo", name: "Nadia P.", review: "The doves and heart on my back have cleared up well. My skin tone looks even again, which honestly surprised me a bit." },
+    { before: "/assets/treatments/pico-laser-tattoo-removal-ba5-2.jpg", after: "/assets/treatments/pico-laser-tattoo-removal-ba5-1.jpg", label: "Crown hand tattoo", name: "Julian R.", review: "Hand pieces are stubborn so I kept my hopes low. The crown has faded right back and even the fingers are starting to clear." },
+    { before: "/assets/treatments/pico-laser-tattoo-removal-ba6-2.jpg", after: "/assets/treatments/pico-laser-tattoo-removal-ba6-1.jpg", label: "Feather back tattoo", name: "Daniela B.", review: "My feather faded a little more after each session. It took some patience but the back is nearly clear now and I'm really pleased." },
+    { before: "/assets/treatments/pico-laser-tattoo-removal-ba7-1.jpg", after: "/assets/treatments/pico-laser-tattoo-removal-ba7-2.jpg", label: "Star wrist tattoo", name: "Elena M.", review: "The little stars on my wrist have basically lifted off. There's only a faint shadow left now and it keeps fading." },
+    { before: "/assets/treatments/pico-laser-tattoo-removal-ba8-1.jpg", after: "/assets/treatments/pico-laser-tattoo-removal-ba8-2.jpg", label: "Name and dagger tattoo", name: "Steve G.", review: "Old name and dagger on my arm, nearly invisible now, just a ghost of it left. Glad I finally got round to sorting it." },
+    { before: "/assets/treatments/pico-laser-tattoo-removal-ba9-1.jpg", after: "/assets/treatments/pico-laser-tattoo-removal-ba9-2.jpg", label: "Birds and script tattoo", name: "Maria F.", review: "The birds and lettering across my back have lifted nicely. It went gradually and the area looks clear and soft now." },
+    { before: "/assets/treatments/pico-laser-tattoo-removal-ba10-2.jpg", after: "/assets/treatments/pico-laser-tattoo-removal-ba10-1.jpg", label: "Ornamental hand tattoo", name: "Andre C.", review: "My hand tattoo was dense and dark, so I expected a slog. It's faded right down to a faint trace and the fingers are lighter too." },
   ],
   problem: {
     kicker: "The real reason people book",

@@ -300,6 +300,19 @@ const t: Treatment = {
       a: "After treatment, you may be advised to stay well hydrated and allow your body time to respond. Some people notice increased urination or a lighter feeling shortly after the session. Your practitioner may also recommend follow-up sessions or simple lifestyle tips to support results.",
     },
   ],
+  beforeAfterTitle: "LYMPHATIC DRAINAGE RESULTS",
+  beforeAfter: [
+    { before: "/assets/treatments/lymphatic-drainage-ba1-1.jpg", after: "/assets/treatments/lymphatic-drainage-ba1-2.jpg", label: "Waist bloating", name: "Maria C.", review: "My middle used to feel puffy and tight by the afternoon. After a handful of sessions it sits flatter and my tops fit the way they should." },
+    { before: "/assets/treatments/lymphatic-drainage-ba2-1.jpg", after: "/assets/treatments/lymphatic-drainage-ba2-2.jpg", label: "Abdominal bloating", name: "Elena B.", review: "By evening my tummy would feel swollen and heavy. It stays much calmer and lighter through the day now." },
+    { before: "/assets/treatments/lymphatic-drainage-ba3-1.jpg", after: "/assets/treatments/lymphatic-drainage-ba3-2.jpg", label: "Puffy knees", name: "Roberta M.", review: "My knees always looked a bit heavy and congested. They feel less puffy and the skin round them is smoother than before." },
+    { before: "/assets/treatments/lymphatic-drainage-ba4-1.jpg", after: "/assets/treatments/lymphatic-drainage-ba4-2.jpg", label: "Ankle swelling", name: "Daniela G.", review: "My ankles would swell up by the end of the day. They're noticeably less puffy now and my shoes go on without a fight." },
+    { before: "/assets/treatments/lymphatic-drainage-ba5-1.jpg", after: "/assets/treatments/lymphatic-drainage-ba5-2.jpg", label: "Lower-tummy bloating", name: "Nadia F.", review: "I held a lot of fluid low on my belly. After the treatments it looks flatter from the side and I feel less heavy." },
+    { before: "/assets/treatments/lymphatic-drainage-ba6-1.jpg", after: "/assets/treatments/lymphatic-drainage-ba6-2.jpg", label: "Lower-belly puffiness", name: "Christine A.", review: "The soft, bloated feeling around my waist has settled down a lot. My side profile looks tidier and I feel lighter." },
+    { before: "/assets/treatments/lymphatic-drainage-ba7-1.jpg", after: "/assets/treatments/lymphatic-drainage-ba7-2.jpg", label: "Abdominal puffiness", name: "Stephanie V.", review: "My stomach used to feel tight and swollen most days. It's flatter now and the puffiness I'd get has really eased." },
+    { before: "/assets/treatments/lymphatic-drainage-ba8-1.jpg", after: "/assets/treatments/lymphatic-drainage-ba8-2.jpg", label: "Leg and knee puffiness", name: "Rachel S.", review: "My lower legs felt heavy and a little swollen. They look smoother now and they don't ache by the end of a long day." },
+    { before: "/assets/treatments/lymphatic-drainage-ba9-2.jpg", after: "/assets/treatments/lymphatic-drainage-ba9-1.jpg", label: "Lower-abdomen bloating", name: "Antonella P.", review: "From the side my lower tummy used to stick out from all the bloat. It sits much flatter now and I feel more comfortable in my clothes." },
+    { before: "/assets/treatments/lymphatic-drainage-ba10-1.jpg", after: "/assets/treatments/lymphatic-drainage-ba10-2.jpg", label: "Thigh dimpling", name: "Francesca Z.", review: "The dimpling on my thighs has softened quite a bit. The skin looks more even and my legs feel lighter than they did." },
+  ],
 };
 
 export default t;

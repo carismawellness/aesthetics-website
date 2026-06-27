@@ -11,7 +11,7 @@ Every treatment page renders a scrollable before/after carousel. This skill is t
 
 There is no CMS. Each page's before/afters live in a typed array inside the page's data module.
 
-- **Component:** `components/BeforeAfterCarousel.tsx` — pages it 3 / 2 / 1 across desktop / tablet / mobile, arrows + dots, prefetches the next page. Do not redesign it; feed it data.
+- **Component:** `components/BeforeAfterCarousel.tsx` — pages it 3 / 2 / 1 across desktop / tablet / mobile, arrows + dots, prefetches the next page. Do not redesign it; feed it data. **The source frames are pre-designed with their own rounded corners + soft border, so the tile renders them whole: `object-fit: contain` at the frames' native `823 / 1068` ratio, with NO card border-radius, shadow or background competing with the artwork. Keep new source frames at that ratio (or update the tile ratio) so they fill with no letterbox.**
 - **Data:** `lib/treatments/<slug>.ts` exports a `Treatment` with:
   - `beforeAfterTitle?: string` — section heading, e.g. `"BOTOX RESULTS"`.
   - `beforeAfter: BeforeAfter[]` — the pairs (aim for 10).
