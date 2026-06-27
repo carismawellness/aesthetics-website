@@ -29,7 +29,9 @@ The four things every pair must carry: **the before/after**, **the treatment inv
 
 ## Image pipeline
 
-Source frames arrive as a folder per treatment (e.g. `~/Desktop/Before Afters./<Treatment>/`), 20 frames = 10 pairs in sequence (frame 1 before, frame 2 after, …). Map each folder to its registry slug (Face/Body/Package). Then:
+Source frames arrive as a folder per treatment (e.g. `~/Desktop/Before Afters./<Treatment>/`), 20 frames = 10 pairs. Map each folder to its registry slug (Face/Body/Package). Then:
+
+> **⚠️ PAIRING IS NOT POSITIONAL — verify every pair by eye.** Folders do NOT all share one layout. Observed layouts: **(A) interleaved** (frame 1 before, 2 after, 3 before, …), **(B) split** (frames 1-10 are the befores, 11-20 the afters; frame *i* pairs with *i+10*), and **(C) irregular** (no fixed rule — must match by sight). Assuming interleaved everywhere once mismatched **142 of 270 pairs** (a tattoo "before" glued to a different tattoo, an arm "before" to a thigh "after"). The fix: a vision agent reads all 20 frames and groups them into 10 genuine pairs by matching **same person + same body area**, choosing the BEFORE as the one with more of the concern. ALWAYS run a second independent same-subject audit before publishing, and remember some folders simply don't contain 10 clean pairs (e.g. an "anti-cellulite" folder that's really mixed body-firming shots) — when that happens, surface it rather than forcing 10.
 
 1. **Compress + resize** each frame to ~760px wide JPEG (cards display ~190px, and `next/image` re-encodes to AVIF/WebP on serve, so the source only needs to be modest). macOS one-liner:
    ```bash
