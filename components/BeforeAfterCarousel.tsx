@@ -64,7 +64,7 @@ function PairCard({
       role="group"
       aria-label={`${treatmentLabel} — before and after (result ${index + 1} of ${total})`}
     >
-      <div className="grid grid-cols-2 gap-3">
+      <div className="grid grid-cols-2 gap-1.5">
         {(["BEFORE", "AFTER"] as const).map((lbl) => {
           const src = lbl === "BEFORE" ? pair.before : pair.after;
           return (
