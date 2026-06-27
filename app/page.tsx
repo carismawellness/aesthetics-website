@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { CONTACT } from "@/lib/site";
 import Hero from "@/components/home/Hero";
-import ServicesMarqueeElevated from "@/components/home/ServicesMarqueeElevated";
+import ServicesMarqueeOverlay from "@/components/home/ServicesMarqueeOverlay";
 import WhyMaltaAesthetics from "@/components/home/WhyMaltaAesthetics";
 import ResultsCommitment from "@/components/home/ResultsCommitment";
 import ConsultationProcess from "@/components/home/ConsultationProcess";
@@ -107,7 +107,7 @@ export default function HomePage() {
             <div style={{ position: "absolute", top: "88%", right: "-4%", width: 380, height: 380, borderRadius: "50%", background: "radial-gradient(circle, rgba(150,178,178,0.10) 0%, rgba(150,178,178,0) 70%)", filter: "blur(40px)" }} />
           </div>
           <div style={{ position: "relative", zIndex: 1 }}>
-            <ServicesMarqueeElevated />
+            <ServicesMarqueeOverlay />
             <Reveal><WhyMaltaAesthetics /></Reveal>
             <Reveal><ResultsCommitment /></Reveal>
             <Reveal><ConsultationProcess /></Reveal>

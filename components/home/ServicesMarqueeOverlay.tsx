@@ -209,12 +209,6 @@ export default function ServicesMarqueeOverlay() {
       style={{ padding: "clamp(56px,7vw,100px) 0", position: "relative" }}
     >
       <style>{`
-        .svc-ov-eyebrow {
-          display: inline-block; border: 1px solid rgba(150,178,178,0.55);
-          border-radius: 999px; padding: 6px 15px;
-          font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
-          color: var(--teal-deep); font-weight: 600;
-        }
         .svc-ov-rv { opacity: 0; transform: translateY(16px);
           transition: opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1); }
         .svc-ov.is-revealed .svc-ov-rv { opacity: 1; transform: none; }
@@ -274,20 +268,28 @@ export default function ServicesMarqueeOverlay() {
         }
       `}</style>
 
-      {/* Header */}
+      {/* Header — matched to the Carisma Slimming proportions: small tracked eyebrow,
+          64px hairline, large uppercase Trajan heading, calm 16px subcopy. */}
       <div className="container" style={{ textAlign: "center" }}>
-        <span className="svc-ov-eyebrow svc-ov-rv font-display">Doctor-Led Treatments</span>
+        <p className="svc-ov-rv font-display"
+           style={{ fontSize: 12, fontWeight: 700, letterSpacing: "0.25em",
+                    textTransform: "uppercase", color: "var(--teal-deep)", margin: 0 }}>
+          Doctor-Led Treatments
+        </p>
+        <div aria-hidden="true" className="svc-ov-rv"
+             style={{ width: 64, height: 1, background: "var(--teal-deep)",
+                      margin: "16px auto 20px", transitionDelay: "40ms" }} />
         <h2 id="svc-ov-heading" className="svc-ov-rv font-serif"
-            style={{ marginTop: 18, fontSize: "clamp(28px,3.9vw,47px)", fontWeight: 400,
-                     letterSpacing: "0.04em", lineHeight: 1.12, transitionDelay: "60ms" }}>
-          <span style={{ color: "var(--teal-deep)" }}>Our Medical Aesthetic </span>
-          <span style={{ color: "var(--brand-taupe)" }}>Treatments</span>
+            style={{ fontSize: "clamp(22px,3vw,34px)", fontWeight: 400, color: "var(--teal-deep)",
+                     letterSpacing: "0.03em", lineHeight: 1.25, textTransform: "uppercase",
+                     margin: 0, transitionDelay: "60ms" }}>
+          Our Medical Aesthetic Treatments in Malta
         </h2>
         <p className="svc-ov-rv mx-auto"
-           style={{ maxWidth: 560, marginTop: 16, color: "var(--ink-soft)", fontSize: 15.5,
-                    lineHeight: 1.7, transitionDelay: "120ms" }}>
-          Personalised, medically supervised treatments designed to refresh, restore
-          and let you glow with confidence.
+           style={{ maxWidth: 620, marginTop: 18, color: "var(--ink-soft)", fontSize: 16,
+                    lineHeight: 1.6, transitionDelay: "120ms" }}>
+          A complete menu of advanced, medically supervised treatments — each tailored
+          to refresh, restore and let you glow with confidence.
         </p>
       </div>
 
