@@ -190,6 +190,19 @@ const t: Treatment = {
       a: "Getting a prescription is easy; building a programme that delivers lasting results is not. At Carisma, your Ozempic or Mounjaro prescription is one part of a wider system: medical monitoring, personalised nutrition, strength-training guidance, weekly accountability, body-contouring treatments, aesthetics support for Ozempic-face prevention, and a defined exit strategy. We do not prescribe and forget — we guide you through every phase.",
     },
   ],
+  beforeAfterTitle: "MEDICAL WEIGHT LOSS RESULTS",
+  beforeAfter: [
+    { before: "/assets/treatments/medical-weight-loss-ba1-1.jpg", after: "/assets/treatments/medical-weight-loss-ba6-1.jpg", label: "Lower back slimming", name: "Marie C.", review: "The soft rolls across my lower back have flattened and my waistband no longer digs in." },
+    { before: "/assets/treatments/medical-weight-loss-ba1-2.jpg", after: "/assets/treatments/medical-weight-loss-ba6-2.jpg", label: "Waist and hip slimming", name: "Elena V.", review: "My belly does not push out the way it used to and my side profile sits much flatter now." },
+    { before: "/assets/treatments/medical-weight-loss-ba2-1.jpg", after: "/assets/treatments/medical-weight-loss-ba7-1.jpg", label: "Back thigh smoothing", name: "Sofia B.", review: "The dimpling on the backs of my thighs has calmed down and the skin reads smoother." },
+    { before: "/assets/treatments/medical-weight-loss-ba2-2.jpg", after: "/assets/treatments/medical-weight-loss-ba7-2.jpg", label: "Thigh and knee texture", name: "Rita D.", review: "My knees look less puffy and the bumpy bits above them have settled." },
+    { before: "/assets/treatments/medical-weight-loss-ba3-1.jpg", after: "/assets/treatments/medical-weight-loss-ba8-1.jpg", label: "Front thigh smoothing", name: "Anna F.", review: "My thighs are slimmer and the cottage cheese texture is far less obvious in normal light." },
+    { before: "/assets/treatments/medical-weight-loss-ba3-2.jpg", after: "/assets/treatments/medical-weight-loss-ba8-2.jpg", label: "Waistline definition", name: "Julia P.", review: "There is a proper dip back at my waist and the heaviness around my middle has eased." },
+    { before: "/assets/treatments/medical-weight-loss-ba4-1.jpg", after: "/assets/treatments/medical-weight-loss-ba9-1.jpg", label: "Tummy slimming", name: "Claire M.", review: "My stomach sits flatter below the navel and fitted leggings feel comfortable again." },
+    { before: "/assets/treatments/medical-weight-loss-ba4-2.jpg", after: "/assets/treatments/medical-weight-loss-ba9-2.jpg", label: "Lower tummy slimming", name: "Hannah R.", review: "The little pouch under my belly button has gone down and my waist looks tidier from the side." },
+    { before: "/assets/treatments/medical-weight-loss-ba5-1.jpg", after: "/assets/treatments/medical-weight-loss-ba10-1.jpg", label: "Midsection slimming", name: "Petra L.", review: "My waist has narrowed and the soft area around my side tattoo has firmed up." },
+    { before: "/assets/treatments/medical-weight-loss-ba5-2.jpg", after: "/assets/treatments/medical-weight-loss-ba10-2.jpg", label: "Back and bra-line slimming", name: "Nadia S.", review: "The rolls across my back and along my bra line have smoothed out and my outline looks leaner." },
+  ],
 };
 
 export default t;

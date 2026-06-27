@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "how-to-schedule-maintenance-treatments",
   "title": "How to Schedule Maintenance Treatments: A Guide to Consistency",
-  "metaTitle": "How to Schedule Maintenance Treatments: A Guide to Consistency",
-  "metaDescription": "Expert guide to how to schedule maintenance treatments. Learn about treatments and tips from Carisma Aesthetics in Malta.",
+  "metaTitle": "Schedule Maintena Malta | Carisma Aesthetics",
+  "metaDescription": "Schedule Maintenance Treatments in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Skincare",
   "publishDate": "2026-06-25",
   "readTime": 5,

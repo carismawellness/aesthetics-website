@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "how-to-use-serums-correctly",
   "title": "How to Use Serums Correctly: Layering & Application",
-  "metaTitle": "Serum Application Guide — Layering Order & Tips",
-  "metaDescription": "Discover the correct way to use serums for maximum efficacy. Expert tips on layering, timing, and product combinations.",
+  "metaTitle": "Use Serums Correc Malta | Carisma Aesthetics",
+  "metaDescription": "Use Serums Correctly in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Skincare",
   "publishDate": "2026-06-25",
   "readTime": 5,

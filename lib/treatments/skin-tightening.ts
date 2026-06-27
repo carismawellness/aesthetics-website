@@ -92,7 +92,7 @@ const t: Treatment = {
       "All in one approach: assessment, nutrition, movement and treatments",
       "High touch support with weekly check ins and WhatsApp coaching",
     ],
-    mapQuery: "Carisma Aesthetics Malta",
+    mapQuery: "InterContinental Malta, St Julian's, Malta",
   },
   faqTitle: "Frequently asked questions",
   faq: [
@@ -234,6 +234,19 @@ const t: Treatment = {
       },
     ],
   },
+  beforeAfterTitle: "SKIN TIGHTENING RESULTS",
+  beforeAfter: [
+    { before: "/assets/treatments/skin-tightening-ba1-1.jpg", after: "/assets/treatments/skin-tightening-ba6-1.jpg", label: "Upper arm laxity", name: "Marthese B.", review: "The crinkly skin on the back of my arm has firmed up and the fine lines barely show now." },
+    { before: "/assets/treatments/skin-tightening-ba1-2.jpg", after: "/assets/treatments/skin-tightening-ba6-2.jpg", label: "Thigh dimpling", name: "Claudia F.", review: "The dimples on the back of my thigh have flattened out and the skin feels firmer when I sit." },
+    { before: "/assets/treatments/skin-tightening-ba2-1.jpg", after: "/assets/treatments/skin-tightening-ba7-1.jpg", label: "Abdominal laxity", name: "Roberta M.", review: "My tummy holds its shape now and the loose skin around my waist has pulled in noticeably." },
+    { before: "/assets/treatments/skin-tightening-ba2-2.jpg", after: "/assets/treatments/skin-tightening-ba7-2.jpg", label: "Flank skin folds", name: "Daniel C.", review: "The fold of skin on my side has settled down and my shirts sit cleaner across my lower back." },
+    { before: "/assets/treatments/skin-tightening-ba3-1.jpg", after: "/assets/treatments/skin-tightening-ba8-1.jpg", label: "Lower belly laxity", name: "Stephanie A.", review: "The soft area under my belly button feels tighter and the stretch marks have faded a fair bit." },
+    { before: "/assets/treatments/skin-tightening-ba3-2.jpg", after: "/assets/treatments/skin-tightening-ba8-2.jpg", label: "Stomach crepiness", name: "Pauline G.", review: "The crinkled texture across my stomach has smoothed out and it no longer creases when I bend." },
+    { before: "/assets/treatments/skin-tightening-ba4-1.jpg", after: "/assets/treatments/skin-tightening-ba9-1.jpg", label: "Above-knee crepiness", name: "Antonella V.", review: "The deep wrinkles above my knee have softened and the skin looks much tighter in the mirror." },
+    { before: "/assets/treatments/skin-tightening-ba4-2.jpg", after: "/assets/treatments/skin-tightening-ba9-2.jpg", label: "Thigh cellulite", name: "Charlene Z.", review: "The lumpy look on my thighs has evened out and the skin feels firmer to the touch." },
+    { before: "/assets/treatments/skin-tightening-ba5-1.jpg", after: "/assets/treatments/skin-tightening-ba10-1.jpg", label: "Outer thigh cellulite", name: "Nadia S.", review: "The bumpy patch on my outer thigh has calmed right down and sits smoother under my swimsuit." },
+    { before: "/assets/treatments/skin-tightening-ba5-2.jpg", after: "/assets/treatments/skin-tightening-ba10-2.jpg", label: "Navel skin laxity", name: "Gabriella P.", review: "The loose crepey skin around my belly button has firmed up and the fine creases have eased." },
+  ],
 };
 
 export default t;

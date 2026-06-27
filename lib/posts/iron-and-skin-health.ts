@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "iron-and-skin-health",
   "title": "Iron and Skin Health: How Iron Deficiency Affects Your Complexion",
-  "metaTitle": "Iron and Skin Health \u2014 Nutritional Support for Glowing Skin",
-  "metaDescription": "Learn how iron impacts skin health and what happens when levels are low. Nutritional skincare advice from Carisma Aesthetics Malta.",
+  "metaTitle": "Iron Skin Health Malta: Complete Guide | Carisma Aesthetics",
+  "metaDescription": "Iron Skin Health in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Wellness",
   "publishDate": "2026-06-21",
   "readTime": 1,

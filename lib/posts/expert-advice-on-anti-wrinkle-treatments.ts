@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "expert-advice-on-anti-wrinkle-treatments",
   "title": "Expert Advice On Anti Wrinkle Treatments",
-  "metaTitle": "Expert Advice On Anti Wrinkle Treatments — Carisma Aesthetics",
-  "metaDescription": "Discover expert advice on expert advice on anti wrinkle treatments at Carisma Aesthetics Malta. Learn about treatments and skincare tips.",
+  "metaTitle": "Expert Advice Ant Malta | Carisma Aesthetics",
+  "metaDescription": "Expert Advice Anti Wrinkle Treatments in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Anti-Aging",
   "publishDate": "2026-06-25",
   "readTime": 5,

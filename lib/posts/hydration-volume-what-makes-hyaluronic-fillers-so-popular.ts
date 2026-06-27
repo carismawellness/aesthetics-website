@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "hydration-volume-what-makes-hyaluronic-fillers-so-popular",
   "title": "Hydration & Volume: Why Hyaluronic Fillers Are So Loved",
-  "metaTitle": "Hydration & Volume: Why Hyaluronic Fillers Are So Loved",
-  "metaDescription": "Hyaluronic fillers restore hydration, enhance facial volume, and support natural facial rejuvenation through safe, non-surgical aesthetic treatments.",
+  "metaTitle": "Hydration Volume  Malta | Carisma Aesthetics",
+  "metaDescription": "Hydration Volume Makes Hyaluronic Fillers Popular in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Aesthetics",
   "publishDate": "2026-01-22",
   "readTime": 5,

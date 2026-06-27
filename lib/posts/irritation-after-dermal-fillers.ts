@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "irritation-after-dermal-fillers",
   "title": "Irritation After Dermal Fillers: What Is Normal and When to Worry",
-  "metaTitle": "Irritation After Fillers: Recovery & When to Call",
-  "metaDescription": "Learn about normal reactions after dermal fillers and what might signal a problem. Expert guidance on filler aftercare from Carisma Aesthetics.",
+  "metaTitle": "Irritation Dermal Malta | Carisma Aesthetics",
+  "metaDescription": "Irritation Dermal Fillers in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Injectables",
   "readTime": 1,
   "publishDate": "2026-06-06",

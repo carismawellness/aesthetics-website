@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "irish-skin-care",
   "title": "Irish Skin Care: How to Protect Your Complexion in a Cool, Damp Climate",
-  "metaTitle": "Irish Skin Care \u2014 Tailored Routines for Cool, Damp Weather",
-  "metaDescription": "Discover Irish skincare secrets and routines suited to cool, damp climates. Expert tips from Carisma Aesthetics for healthy, radiant skin.",
+  "metaTitle": "Irish Skin Care Malta: Complete Guide | Carisma Aesthetics",
+  "metaDescription": "Irish Skin Care in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Skincare",
   "publishDate": "2026-06-22",
   "readTime": 1,

@@ -102,7 +102,7 @@ const t: Treatment = {
       "All in one approach: assessment, nutrition, movement and treatments",
       "High touch support with weekly check ins and WhatsApp coaching",
     ],
-    mapQuery: "Carisma Aesthetics Malta",
+    mapQuery: "InterContinental Malta, St Julian's, Malta",
   },
 
   patientVideos: {
@@ -262,6 +262,19 @@ const t: Treatment = {
       q: "10. Are there any risks or contraindications?",
       a: "EMS Neo is safe when performed by trained professionals. It is not suitable for individuals with pacemakers, metal implants in the treatment area, certain medical conditions, or during pregnancy. A full medical screening is completed before treatment.",
     },
+  ],
+  beforeAfterTitle: "MUSCLE STIMULATION RESULTS",
+  beforeAfter: [
+    { before: "/assets/treatments/muscle-stimulation-ba1-1.jpg", after: "/assets/treatments/muscle-stimulation-ba6-1.jpg", label: "Abdominal toning", name: "Daniel C.", review: "My stomach holds a flatter line now and the muscle down the centre actually shows when I stand relaxed." },
+    { before: "/assets/treatments/muscle-stimulation-ba1-2.jpg", after: "/assets/treatments/muscle-stimulation-ba6-2.jpg", label: "Upper arm firming", name: "Elena V.", review: "The back of my upper arm sits firmer against my side and the loose feel in sleeveless tops has gone." },
+    { before: "/assets/treatments/muscle-stimulation-ba2-1.jpg", after: "/assets/treatments/muscle-stimulation-ba7-1.jpg", label: "Arm definition", name: "Priya M.", review: "When I lift my arm out the underside stays tighter instead of hanging, and the shape reads firmer." },
+    { before: "/assets/treatments/muscle-stimulation-ba2-2.jpg", after: "/assets/treatments/muscle-stimulation-ba7-2.jpg", label: "Lower belly toning", name: "Sofia B.", review: "From the side my lower belly no longer pushes forward, it sits flatter under the waistband than it used to." },
+    { before: "/assets/treatments/muscle-stimulation-ba3-1.jpg", after: "/assets/treatments/muscle-stimulation-ba8-1.jpg", label: "Tummy contouring", name: "Hannah R.", review: "The rounded curve below my navel has eased off and my profile looks straighter when I check the mirror sideways." },
+    { before: "/assets/treatments/muscle-stimulation-ba3-2.jpg", after: "/assets/treatments/muscle-stimulation-ba8-2.jpg", label: "Core toning", name: "Marija K.", review: "My midsection feels tighter and the soft fold across my lower stomach has settled so my core looks more even." },
+    { before: "/assets/treatments/muscle-stimulation-ba4-1.jpg", after: "/assets/treatments/muscle-stimulation-ba9-1.jpg", label: "Torso sculpting", name: "Marco F.", review: "My belly used to round out over my shorts and now it sits flat, the whole front looks leaner and more even." },
+    { before: "/assets/treatments/muscle-stimulation-ba4-2.jpg", after: "/assets/treatments/muscle-stimulation-ba9-2.jpg", label: "Back and flank toning", name: "Luca P.", review: "The soft area around my lower back has firmed up and you can see the muscle running down either side now." },
+    { before: "/assets/treatments/muscle-stimulation-ba5-1.jpg", after: "/assets/treatments/muscle-stimulation-ba10-1.jpg", label: "Arm circumference reduction", name: "Claudia S.", review: "The tape sits a couple of centimetres lower at the same spot and the arm feels firmer where it used to be soft." },
+    { before: "/assets/treatments/muscle-stimulation-ba5-2.jpg", after: "/assets/treatments/muscle-stimulation-ba10-2.jpg", label: "Bra line smoothing", name: "Andrea T.", review: "The rolls sitting under my bra strap have smoothed down and my back reads cleaner from the rear in fitted tops." },
   ],
 };
 

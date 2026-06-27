@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "increasing-skin-firmness",
   "title": "Increasing Skin Firmness",
-  "metaTitle": "Proven Methods to Increase Skin Firmness — Carisma Aesthetics",
-  "metaDescription": "Expert guide to aesthetic treatments that increase skin firmness and tighten loose skin.",
+  "metaTitle": "Increasing Skin F Malta | Carisma Aesthetics",
+  "metaDescription": "Increasing Skin Firmness in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Skincare",
   "publishDate": "2026-06-25",
   "readTime": 5,

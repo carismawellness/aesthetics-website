@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "inviting-friends-to-cosmetic-consultations",
   "title": "Inviting Friends to Cosmetic Consultations",
-  "metaTitle": "Inviting Friends to Cosmetic Consultations — Carisma Aesthetics",
-  "metaDescription": "How to invite friends to professional cosmetic consultations and make the experience enjoyable together.",
+  "metaTitle": "Inviting Friends  Malta | Carisma Aesthetics",
+  "metaDescription": "Inviting Friends Cosmetic Consultations in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Beauty",
   "publishDate": "2026-06-25",
   "readTime": 5,

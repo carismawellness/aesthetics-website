@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "ideal-candidates-for-botox",
   "title": "Ideal Candidates for Botox: Is It Right for You?",
-  "metaTitle": "Ideal Candidates for Botox — What You Need to Know",
-  "metaDescription": "Are you a good candidate for Botox? Learn who benefits most from this popular anti-aging treatment at Carisma Aesthetics Malta.",
+  "metaTitle": "Ideal Candidates  Malta | Carisma Aesthetics",
+  "metaDescription": "Ideal Candidates Botox in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Injectables",
   "publishDate": "2026-06-25",
   "readTime": 7,

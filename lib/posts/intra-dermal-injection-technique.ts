@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "intra-dermal-injection-technique",
   "title": "Intra-Dermal Injection Technique",
-  "metaTitle": "Intra-Dermal Injection Technique — Carisma Aesthetics",
-  "metaDescription": "Learn about intra-dermal injection techniques used in aesthetic medicine for optimal results.",
+  "metaTitle": "Intra Dermal Inje Malta | Carisma Aesthetics",
+  "metaDescription": "Intra Dermal Injection Technique in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Injectables",
   "publishDate": "2026-06-25",
   "readTime": 5,

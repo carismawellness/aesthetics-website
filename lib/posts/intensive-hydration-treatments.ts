@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "intensive-hydration-treatments",
   "title": "Intensive Hydration Treatments",
-  "metaTitle": "Intensive Hydration Treatments — Carisma Aesthetics",
-  "metaDescription": "Deep hydration treatments for dehydrated skin: options, benefits, and how to maintain results.",
+  "metaTitle": "Intensive Hydrati Malta | Carisma Aesthetics",
+  "metaDescription": "Intensive Hydration Treatments in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Skincare",
   "publishDate": "2026-06-25",
   "readTime": 6,

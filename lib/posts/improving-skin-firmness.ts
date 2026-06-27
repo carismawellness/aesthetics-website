@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "improving-skin-firmness",
   "title": "Improving Skin Firmness: Advanced Treatments for Lifted, Taut Skin",
-  "metaTitle": "Skin Firmness Treatments Malta — Professional Options",
-  "metaDescription": "Loss of skin firmness is normal with age. Professional treatments like Ultherapy and RF tightening restore firmness. Book at Carisma Aesthetics.",
+  "metaTitle": "Improving Skin Fi Malta | Carisma Aesthetics",
+  "metaDescription": "Improving Skin Firmness in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Skincare",
   "publishDate": "2026-06-10",
   "readTime": 5,

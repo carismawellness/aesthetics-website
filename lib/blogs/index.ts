@@ -19,6 +19,26 @@ import { post as antiAgeingTreatmentsMalta } from './anti-ageing-treatments-malt
 import { post as acneScarTreatmentMalta } from './acne-scar-treatment-malta';
 import { post as dermalFillersMaltaGuide } from './dermal-fillers-malta-guide';
 import { post as glp1WeightLossTreatmentMalta } from './glp-1-weight-loss-treatment-malta';
+import { post as botoxAftercareMaltaSummer } from './botox-aftercare-malta-summer';
+import { post as howLongDoesBotoxLastMalta } from './how-long-does-botox-last-malta';
+import { post as firstTimeBotoxMalta } from './first-time-botox-malta';
+import { post as botoxVsFillersMalta } from './botox-vs-fillers-malta';
+import { post as babyBotoxMalta } from './baby-botox-malta';
+import { post as lipFillerSwellingStageMalta } from './lip-filler-swelling-stages-malta';
+import { post as lipFillerAftercareMaltaHeatSun } from './lip-filler-aftercare-malta-heat-sun';
+import { post as howLongDoLipFillersLastMalta } from './how-long-do-lip-fillers-last-malta';
+import { post as fillerMigrationSigns } from './filler-migration-signs';
+import { post as microneedlingAftercareMaltaSun } from './microneedling-aftercare-malta-sun';
+import { post as microneedlingForAcneScarsMalta } from './microneedling-for-acne-scars-malta';
+import { post as rfMicroneedlingVsMicroneedlingMalta } from './rf-microneedling-vs-microneedling-malta';
+import { post as microneedlingDowntimeMaltaHoliday } from './microneedling-downtime-malta-holiday';
+import { post as acneScarsVsAcneMarksMalta } from './acne-scars-vs-acne-marks-malta';
+import { post as typesOfAcneScarsMalta } from './types-of-acne-scars-malta';
+import { post as pigmentationAfterSummerMalta } from './pigmentation-after-summer-malta';
+import { post as melasmaVsSunSpotsMalta } from './melasma-vs-sun-spots-malta';
+import { post as postAcneHyperpigmentationMalta } from './post-acne-hyperpigmentation-malta';
+import { post as canPigmentationTreatmentsMakeDarkSpotsWorse } from './can-pigmentation-treatments-make-dark-spots-worse';
+import { post as adultAcneMaltaSweatHormonesSPF } from './adult-acne-malta-sweat-hormones-spf';
 
 export const BLOG_REGISTRY: Record<string, BlogPost> = {
   [whatToExpectLaserHairRemoval.slug]: whatToExpectLaserHairRemoval,
@@ -36,6 +56,26 @@ export const BLOG_REGISTRY: Record<string, BlogPost> = {
   [acneScarTreatmentMalta.slug]: acneScarTreatmentMalta,
   [dermalFillersMaltaGuide.slug]: dermalFillersMaltaGuide,
   [glp1WeightLossTreatmentMalta.slug]: glp1WeightLossTreatmentMalta,
+  [botoxAftercareMaltaSummer.slug]: botoxAftercareMaltaSummer,
+  [howLongDoesBotoxLastMalta.slug]: howLongDoesBotoxLastMalta,
+  [firstTimeBotoxMalta.slug]: firstTimeBotoxMalta,
+  [botoxVsFillersMalta.slug]: botoxVsFillersMalta,
+  [babyBotoxMalta.slug]: babyBotoxMalta,
+  [lipFillerSwellingStageMalta.slug]: lipFillerSwellingStageMalta,
+  [lipFillerAftercareMaltaHeatSun.slug]: lipFillerAftercareMaltaHeatSun,
+  [howLongDoLipFillersLastMalta.slug]: howLongDoLipFillersLastMalta,
+  [fillerMigrationSigns.slug]: fillerMigrationSigns,
+  [microneedlingAftercareMaltaSun.slug]: microneedlingAftercareMaltaSun,
+  [microneedlingForAcneScarsMalta.slug]: microneedlingForAcneScarsMalta,
+  [rfMicroneedlingVsMicroneedlingMalta.slug]: rfMicroneedlingVsMicroneedlingMalta,
+  [microneedlingDowntimeMaltaHoliday.slug]: microneedlingDowntimeMaltaHoliday,
+  [acneScarsVsAcneMarksMalta.slug]: acneScarsVsAcneMarksMalta,
+  [typesOfAcneScarsMalta.slug]: typesOfAcneScarsMalta,
+  [pigmentationAfterSummerMalta.slug]: pigmentationAfterSummerMalta,
+  [melasmaVsSunSpotsMalta.slug]: melasmaVsSunSpotsMalta,
+  [postAcneHyperpigmentationMalta.slug]: postAcneHyperpigmentationMalta,
+  [canPigmentationTreatmentsMakeDarkSpotsWorse.slug]: canPigmentationTreatmentsMakeDarkSpotsWorse,
+  [adultAcneMaltaSweatHormonesSPF.slug]: adultAcneMaltaSweatHormonesSPF,
 };
 
 export const ALL_BLOG_SLUGS: string[] = Object.keys(BLOG_REGISTRY);

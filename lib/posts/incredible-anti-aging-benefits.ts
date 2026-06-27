@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "incredible-anti-aging-benefits",
   "title": "Incredible Anti-Aging Benefits",
-  "metaTitle": "Incredible Anti-Aging Benefits of Modern Aesthetic Treatments — Carisma Aesthetics",
-  "metaDescription": "Discover the remarkable anti-aging benefits you can achieve with professional aesthetic treatments.",
+  "metaTitle": "Incredible Anti A Malta | Carisma Aesthetics",
+  "metaDescription": "Incredible Anti Aging Benefits in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Anti-Aging",
   "publishDate": "2026-06-25",
   "readTime": 5,

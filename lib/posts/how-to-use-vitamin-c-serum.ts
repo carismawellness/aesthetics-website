@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "how-to-use-vitamin-c-serum",
   "title": "How to Use Vitamin C Serum: Benefits & Application",
-  "metaTitle": "Vitamin C Serum Guide — How to Use & Maximize Benefits",
-  "metaDescription": "Master vitamin C serum: proper application, layering, storage tips, and how to avoid oxidation.",
+  "metaTitle": "Use Vitamin C Ser Malta | Carisma Aesthetics",
+  "metaDescription": "Use Vitamin C Serum in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Skincare",
   "publishDate": "2026-06-25",
   "readTime": 5,

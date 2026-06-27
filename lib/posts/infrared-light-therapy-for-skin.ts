@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "infrared-light-therapy-for-skin",
   "title": "Infrared Light Therapy for Skin: A Modern Approach to Skin Health",
-  "metaTitle": "Infrared Light Therapy for Skin: A Modern Approach to Skin Health",
-  "metaDescription": "Learn about infrared light therapy benefits for skin health, anti-aging, and healing. Discover how this non-invasive treatment works at Carisma Aesthetics.",
+  "metaTitle": "Infrared Light Th Malta | Carisma Aesthetics",
+  "metaDescription": "Infrared Light Therapy Skin in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Skincare",
   "publishDate": "2026-02-08",
   "readTime": 8,

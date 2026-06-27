@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "hifu-skin-tightening",
   "title": "HIFU Skin Tightening: Non-Surgical Lifting for Firmer Skin",
-  "metaTitle": "HIFU Skin Tightening in Malta \u2014 Non-Surgical Facelift",
-  "metaDescription": "Discover how HIFU skin tightening works. Lift and firm your skin without surgery. Expert care at Carisma Aesthetics. Book your free consultation.",
+  "metaTitle": "Hifu Skin Tighten Malta | Carisma Aesthetics",
+  "metaDescription": "Hifu Skin Tightening in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Anti-Aging",
   "publishDate": "2026-06-25",
   "readTime": 5,

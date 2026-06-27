@@ -64,19 +64,19 @@ function PairCard({
       role="group"
       aria-label={`${treatmentLabel} — before and after (result ${index + 1} of ${total})`}
     >
-      <div className="grid grid-cols-2 gap-3">
+      <div className="grid grid-cols-2 gap-1.5">
         {(["BEFORE", "AFTER"] as const).map((lbl) => {
           const src = lbl === "BEFORE" ? pair.before : pair.after;
           return (
             <div
               key={lbl}
-              className="relative overflow-hidden"
+              className="relative"
               style={{
-                borderRadius: "var(--radius-card)",
-                // Fixed aspect ratio prevents CLS as pages change.
-                aspectRatio: "4 / 5",
-                background: "var(--cream)",
-                boxShadow: "0 10px 28px rgba(28,30,30,0.12)",
+                // The source frames are pre-designed with their own rounded
+                // corners + soft border, so we show them whole at their native
+                // ratio (object-fit: contain below) — no card corner, shadow or
+                // crop competing with the artwork. Fixed ratio still prevents CLS.
+                aspectRatio: "823 / 1068",
               }}
             >
               {src ? (
@@ -84,7 +84,7 @@ function PairCard({
                   src={src}
                   alt={getAlt(lbl)}
                   fill
-                  style={{ objectFit: "cover" }}
+                  style={{ objectFit: "contain" }}
                   sizes="(max-width: 640px) 45vw, (max-width: 1024px) 23vw, 190px"
                   priority={priority && lbl === "BEFORE"}
                   quality={80}

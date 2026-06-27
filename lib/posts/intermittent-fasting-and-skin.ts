@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "intermittent-fasting-and-skin",
   "title": "Intermittent Fasting and Skin Health: What You Need to Know",
-  "metaTitle": "Intermittent Fasting and Skin Health: The Science",
-  "metaDescription": "Learn how intermittent fasting affects your skin health, including benefits and scientific evidence for skin improvement.",
+  "metaTitle": "Intermittent Fast Malta | Carisma Aesthetics",
+  "metaDescription": "Intermittent Fasting Skin in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Wellness",
   "readTime": 1,
   "publishDate": "2026-03-28",

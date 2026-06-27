@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "increase-collagen-production",
   "title": "Increase Collagen Production",
-  "metaTitle": "How to Increase Collagen Production — Carisma Aesthetics",
-  "metaDescription": "Learn proven aesthetic treatments and methods to boost collagen production for firmer, more youthful skin.",
+  "metaTitle": "Increase Collagen Malta | Carisma Aesthetics",
+  "metaDescription": "Increase Collagen Production in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Skincare",
   "publishDate": "2026-06-25",
   "readTime": 5,

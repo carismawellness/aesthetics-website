@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "home-remedies-for-dry-skin",
   "title": "Home Remedies for Dry Skin: Skincare Solutions",
-  "metaTitle": "Dry Skin Treatment in Malta \u2014 Home Care and Professional Help",
-  "metaDescription": "Explore home remedies for dry skin and professional treatments. Complete skincare guide from Carisma Aesthetics.",
+  "metaTitle": "Home Remedies Dry Malta | Carisma Aesthetics",
+  "metaDescription": "Home Remedies Dry Skin in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Skincare",
   "publishDate": "2026-06-25",
   "readTime": 5,

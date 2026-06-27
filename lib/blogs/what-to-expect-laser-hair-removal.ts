@@ -128,7 +128,7 @@ export const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: 'Many of our laser hair removal clients also explore complementary treatments to achieve their wider aesthetic goals. If you are working on a full-body confidence refresh, our <a href="/face-treatments" style="color:var(--teal);text-decoration:underline;">Face Treatments</a> — including HydraFacials, peels, and injectables — pair beautifully with a laser programme. Clients who are undergoing body transformation journeys sometimes combine laser with our <a href="/medical-weight-loss" style="color:var(--teal);text-decoration:underline;">Medical Weight Loss Malta</a> programme for a comprehensive approach to looking and feeling their best.',
+      html: 'Many of our laser hair removal clients also explore complementary treatments to achieve their wider aesthetic goals. If you are working on a full-body confidence refresh, our <a href="/face-treatments" style="color:var(--teal);text-decoration:underline;">Face Treatments</a> — including HydraFacials, peels, and injectables — pair beautifully with a laser programme. Clients who are undergoing body transformation journeys sometimes combine laser with our <a href="/medical-weight-loss" style="color:var(--teal);text-decoration:underline;">Medical Weight Loss Malta</a> programme for a comprehensive approach to looking and feeling their best. For body-contouring alongside a weight-loss journey, <a href="https://www.carismaslimming.com/fat-reduction" target="_blank" rel="noopener noreferrer">fat reduction treatments</a> at Carisma Slimming are a natural complement.',
     },
     {
       type: 'paragraph',

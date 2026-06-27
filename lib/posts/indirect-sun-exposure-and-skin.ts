@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "indirect-sun-exposure-and-skin",
   "title": "Indirect Sun Exposure and Skin",
-  "metaTitle": "Understanding Indirect Sun Exposure Effects on Skin — Carisma Aesthetics",
-  "metaDescription": "How indirect and ambient sun exposure affects your skin and protective skincare strategies.",
+  "metaTitle": "Indirect Sun Expo Malta | Carisma Aesthetics",
+  "metaDescription": "Indirect Sun Exposure Skin in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Skincare",
   "publishDate": "2026-06-25",
   "readTime": 5,

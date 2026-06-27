@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "ideal-age-for-cosmetic-treatments",
   "title": "Ideal Age for Cosmetic Treatments: When to Start Your Aesthetic Journey",
-  "metaTitle": "Ideal Age for Cosmetic Treatments — Start When It's Right for You",
-  "metaDescription": "Wondering when to begin cosmetic treatments? Learn about the ideal age and timing for injectables, fillers, laser treatments, and more at Carisma Aesthetics Malta.",
+  "metaTitle": "Ideal Age Cosmeti Malta | Carisma Aesthetics",
+  "metaDescription": "Ideal Age Cosmetic Treatments in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Anti-Aging",
   "publishDate": "2026-06-25",
   "readTime": 6,

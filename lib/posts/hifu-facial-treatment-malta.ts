@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "hifu-facial-treatment-malta",
   "title": "HIFU Facial Treatment in Malta: How It Works and Who It's For",
-  "metaTitle": "HIFU Facial Treatment Malta — Non-Surgical Facelift",
-  "metaDescription": "Discover how HIFU facial treatment works in Malta. Lift and tighten skin without surgery. Expert care at Carisma Aesthetics. Book your free consultation.",
+  "metaTitle": "Hifu Facial Treat Malta | Carisma Aesthetics",
+  "metaDescription": "Hifu Facial Treatment Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics today. Glow with confidence.",
   "category": "Aesthetics",
   "publishDate": "2026-06-23",
   "readTime": 7,

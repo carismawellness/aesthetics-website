@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "pigmentation-treatment-malta",
   "title": "Pigmentation Treatment Malta: Fade Brown Spots and Uneven Skin Tone",
-  "metaTitle": "Pigmentation Treatment Malta — Fade Brown Spots & Sun Damage",
-  "metaDescription": "Brown spots, melasma, or uneven skin tone in Malta? Discover effective pigmentation treatments at Carisma Aesthetics. Book a free consultation today.",
+  "metaTitle": "Pigmentation Trea Malta | Carisma Aesthetics",
+  "metaDescription": "Pigmentation Treatment Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics today.",
   "category": "Aesthetics",
   "publishDate": "2026-06-09",
   "readTime": 7,

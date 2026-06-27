@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "non-surgical-achieve-your-summer-body-goals",
   "title": "Non-Surgical: Achieve Your Summer Body Goals",
-  "metaTitle": "Non-Surgical Body Contouring | Summer Body Goals",
-  "metaDescription": "Achieve your summer body goals with non-surgical treatments. Sculpt and tone without downtime. Book now.",
+  "metaTitle": "Non Surgical Achi Malta | Carisma Aesthetics",
+  "metaDescription": "Non Surgical Achieve Summer Body Goals in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Body Contouring",
   "publishDate": "2025-08-08",
   "readTime": 4,

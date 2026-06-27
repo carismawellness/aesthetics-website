@@ -167,7 +167,7 @@ const t: Treatment = {
       "A central, discreet location at the InterContinental, St. Julian's",
       "Flexible scheduling with ongoing support throughout your course",
     ],
-    mapQuery: "Carisma Aesthetics, Malta",
+    mapQuery: "InterContinental Malta, St Julian's, Malta",
   },
   bookingForm: { title: "Book Your Laser Hair Removal Appointment Today" },
   planSummary: {
@@ -241,6 +241,19 @@ const t: Treatment = {
       q: "Why laser hair removal at Carisma?",
       a: "Carisma is Malta's leading wellness chain, with 30+ years of experience and the country's first and only Alma Soprano — a medical-grade triple-wavelength SHR® laser that is faster, safer, and more comfortable than older technologies. Every treatment is performed by medically qualified practitioners, and we back it with a simple promise: see visible hair reduction in 3 sessions, or your next session is free.",
     },
+  ],
+  beforeAfterTitle: "LASER HAIR REMOVAL RESULTS",
+  beforeAfter: [
+    { before: "/assets/treatments/laser-hair-removal-malta-ba1-1.jpg", after: "/assets/treatments/laser-hair-removal-malta-ba6-1.jpg", label: "Lower leg hair", name: "Daniel C.", review: "My calf was always thick with dark hair. The skin stays clear now and I have stopped reaching for the razor." },
+    { before: "/assets/treatments/laser-hair-removal-malta-ba5-1.jpg", after: "/assets/treatments/laser-hair-removal-malta-ba10-1.jpg", label: "Thigh hair", name: "Maya L.", review: "My thigh had scattered dark hairs that I kept shaving. The regrowth is very light now and the skin feels even." },
+    { before: "/assets/treatments/laser-hair-removal-malta-ba5-2.jpg", after: "/assets/treatments/laser-hair-removal-malta-ba10-2.jpg", label: "Leg hair reduction", name: "Julia S.", review: "I used to shave my legs every other day. The hair comes back slowly now and the skin stays soft between visits." },
+    { before: "/assets/treatments/laser-hair-removal-malta-ba3-1.jpg", after: "/assets/treatments/laser-hair-removal-malta-ba8-1.jpg", label: "Back hair removal", name: "Marco B.", review: "My back was covered in thick hair and I dreaded the beach. It is clear now and far easier to keep tidy." },
+    { before: "/assets/treatments/laser-hair-removal-malta-ba2-1.jpg", after: "/assets/treatments/laser-hair-removal-malta-ba7-1.jpg", label: "Facial cheek hair", name: "Nadia P.", review: "The fine hair along my cheek showed up in daylight. It is much lighter now and the skin looks clearer." },
+    { before: "/assets/treatments/laser-hair-removal-malta-ba2-2.jpg", after: "/assets/treatments/laser-hair-removal-malta-ba7-2.jpg", label: "Jawline hair", name: "Sophie R.", review: "I had pale hairs running along my jaw near my ear. After the sessions the area feels smooth and stays that way for weeks." },
+    { before: "/assets/treatments/laser-hair-removal-malta-ba3-2.jpg", after: "/assets/treatments/laser-hair-removal-malta-ba6-2.jpg", label: "Neck hair reduction", name: "Lara M.", review: "Light hairs ran down the side of my neck and bothered me. They are barely there now and the skin feels soft." },
+    { before: "/assets/treatments/laser-hair-removal-malta-ba4-2.jpg", after: "/assets/treatments/laser-hair-removal-malta-ba9-2.jpg", label: "Nape hairline", name: "Chiara V.", review: "Stray hairs at the back of my neck always showed when I wore my hair up. The hairline looks neat now." },
+    { before: "/assets/treatments/laser-hair-removal-malta-ba1-2.jpg", after: "/assets/treatments/laser-hair-removal-malta-ba8-2.jpg", label: "Underarm hair", name: "Elena T.", review: "My underarm had dark hairs that grew back quickly. It stays smooth now and I rarely need to shave." },
+    { before: "/assets/treatments/laser-hair-removal-malta-ba4-1.jpg", after: "/assets/treatments/laser-hair-removal-malta-ba9-1.jpg", label: "Underarm hair", name: "Rita F.", review: "My underarm hair was thick and curly. The growth is much sparser now and the few hairs left are very fine." },
   ],
 };
 

@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "intermediate-aging-signs",
   "title": "Intermediate Aging Signs: What to Look For in Your 30s and 40s",
-  "metaTitle": "Intermediate Aging Signs: Treatments for Your 30s & 40s",
-  "metaDescription": "Discover intermediate aging signs and professional aesthetic treatments available in Malta to address fine lines, volume loss, and more.",
+  "metaTitle": "Intermediate Agin Malta | Carisma Aesthetics",
+  "metaDescription": "Intermediate Aging Signs in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Anti-Aging",
   "readTime": 1,
   "publishDate": "2026-04-10",

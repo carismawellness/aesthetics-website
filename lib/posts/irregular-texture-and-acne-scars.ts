@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "irregular-texture-and-acne-scars",
   "title": "Irregular Texture and Acne Scars: Smooth Skin Solutions at Carisma Aesthetics",
-  "metaTitle": "Irregular Texture and Acne Scars \u2014 Effective Treatment Options",
-  "metaDescription": "Treat acne scars and irregular skin texture with professional solutions. Microneedling, lasers, and more at Carisma Aesthetics Malta.",
+  "metaTitle": "Irregular Texture Malta | Carisma Aesthetics",
+  "metaDescription": "Irregular Texture Acne Scars in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Skincare",
   "publishDate": "2026-06-04",
   "readTime": 1,

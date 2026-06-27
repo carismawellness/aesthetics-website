@@ -132,7 +132,7 @@ const t: Treatment = {
       "All in one approach: assessment, nutrition, movement and treatments",
       "High touch support with weekly check ins and WhatsApp coaching",
     ],
-    mapQuery: "Carisma Aesthetics Malta",
+    mapQuery: "InterContinental Malta, St Julian's, Malta",
   },
 
   offer: {
@@ -255,6 +255,19 @@ const t: Treatment = {
       q: "How does the €25 Carisma Aesthetics credit work?",
       a: "The €25 credit is loaded to your Carisma Aesthetics account after your first session and can be used toward any future treatment or product in the clinic.",
     },
+  ],
+  beforeAfterTitle: "FAT FREEZING RESULTS",
+  beforeAfter: [
+    { before: "/assets/treatments/fat-freezing-ba1-1.jpg", after: "/assets/treatments/fat-freezing-ba5-2.jpg", label: "Lower belly fat", name: "Rachel M.", review: "My lower tummy used to sit over my waistband. From the front it looks flatter now and my tops hang better." },
+    { before: "/assets/treatments/fat-freezing-ba1-2.jpg", after: "/assets/treatments/fat-freezing-ba6-2.jpg", label: "Protruding tummy", name: "Nicole F.", review: "From the side my belly pushed out past my leggings. The curve has settled down and my profile reads a lot slimmer." },
+    { before: "/assets/treatments/fat-freezing-ba2-1.jpg", after: "/assets/treatments/fat-freezing-ba3-1.jpg", label: "Rounded lower belly", name: "Daniela P.", review: "The soft roll low on my belly was the part I could never shift. It has flattened and my side view looks neater." },
+    { before: "/assets/treatments/fat-freezing-ba7-2.jpg", after: "/assets/treatments/fat-freezing-ba2-2.jpg", label: "Post pregnancy tummy", name: "Sofia R.", review: "After my pregnancy my tummy stayed soft and rounded below the navel. It sits flatter now and the lower bulge has eased." },
+    { before: "/assets/treatments/fat-freezing-ba3-2.jpg", after: "/assets/treatments/fat-freezing-ba8-2.jpg", label: "Lower tummy pooch", name: "Hannah B.", review: "There was a little pooch low on my stomach that stuck around. From the side it has smoothed right down." },
+    { before: "/assets/treatments/fat-freezing-ba4-1.jpg", after: "/assets/treatments/fat-freezing-ba7-1.jpg", label: "Waistline fat", name: "Emma C.", review: "The bit that sat above my waistband has flattened out. My side profile looks tighter and my jeans do up more easily." },
+    { before: "/assets/treatments/fat-freezing-ba9-1.jpg", after: "/assets/treatments/fat-freezing-ba8-1.jpg", label: "Flank fat", name: "Claire V.", review: "The soft area over my hip used to spill above my shorts. It has smoothed down and my waist looks more defined now." },
+    { before: "/assets/treatments/fat-freezing-ba9-2.jpg", after: "/assets/treatments/fat-freezing-ba4-2.jpg", label: "Belly fat", name: "James T.", review: "My stomach used to hang over the front of my trousers. It sits in more now and feels firmer along the lower part." },
+    { before: "/assets/treatments/fat-freezing-ba5-1.jpg", after: "/assets/treatments/fat-freezing-ba10-1.jpg", label: "Love handles", name: "Maria S.", review: "My love handles were the bit I hated in photos. The side looks straighter now and my underwear stopped digging in." },
+    { before: "/assets/treatments/fat-freezing-ba6-1.jpg", after: "/assets/treatments/fat-freezing-ba10-2.jpg", label: "Stomach fat", name: "Laura D.", review: "My tummy looks flatter and a little more toned from the front. It is a small change but I notice it getting dressed." },
   ],
 };
 

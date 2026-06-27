@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "interior-design-and-self-care",
   "title": "Your Environment Affects Your Skin: How Interior Design and Space Impact Self-Care",
-  "metaTitle": "Your Environment Affects Your Skin: How Interior Design and Space Impact Self-Care",
-  "metaDescription": "Discover how your living environment affects skin health and self-care routines. Create a space that supports your wellness. Carisma Aesthetics insights.",
+  "metaTitle": "Interior Design S Malta | Carisma Aesthetics",
+  "metaDescription": "Interior Design Self Care in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Wellness",
   "publishDate": "2026-06-24",
   "readTime": 5,

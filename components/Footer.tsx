@@ -42,13 +42,6 @@ const BRANDS = [
   },
 ];
 
-const IG_SRCS = [
-  { src: '/assets/clinic-interior-2.jpg', alt: 'Carisma Aesthetics clinic interior in Malta' },
-  { src: '/assets/clinic-treatment-room.jpg', alt: 'Treatment room at Carisma Aesthetics Malta' },
-  { src: '/assets/clinic-interior-1-resized.jpg', alt: 'Carisma Aesthetics medical aesthetics clinic' },
-  { src: '/assets/treatments/botox-hero.jpg', alt: 'Doctor-led Botox treatment at Carisma Aesthetics' },
-];
-
 const NAV_LINKS = [
   { label: 'Face Treatments', href: '/face-treatments' },
   { label: 'Body Treatments', href: '/body-treatments' },
@@ -187,24 +180,6 @@ function FooterBase() {
                     {icon}
                   </a>
                 ))}
-              </div>
-
-              {/* Follow us — desktop only */}
-              <div className="hidden md:block" style={{ marginTop: '26px' }}>
-                <h3 style={{ fontFamily: WIDE, fontSize: '10px', fontWeight: 700, letterSpacing: '2.5px', textTransform: 'uppercase', color: MUTED, marginBottom: '12px' }}>Follow us</h3>
-                <a href={IG_URL} target="_blank" rel="noopener noreferrer" style={{ fontFamily: BODY, fontSize: '13px', color: TEXT, textDecoration: 'none', display: 'inline-block', marginBottom: '12px', transition: 'color .2s' }}
-                  onMouseEnter={e => ((e.currentTarget as HTMLAnchorElement).style.color = TEAL)}
-                  onMouseLeave={e => ((e.currentTarget as HTMLAnchorElement).style.color = TEXT)}>
-                  @carismaaesthetics
-                </a>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: '7px', maxWidth: '212px' }}>
-                  {IG_SRCS.map((img, i) => (
-                    <a key={i} href={IG_URL} target="_blank" rel="noopener noreferrer" aria-label={`${img.alt} — Instagram`}
-                      style={{ display: 'block', aspectRatio: '1/1', borderRadius: '10px', overflow: 'hidden', position: 'relative' }}>
-                      <Image src={img.src} alt={img.alt} fill style={{ objectFit: 'cover' }} sizes="110px" loading="lazy" />
-                    </a>
-                  ))}
-                </div>
               </div>
             </div>
 

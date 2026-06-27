@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "hair-removal-for-large-areas",
   "title": "Hair Removal for Large Areas: The Best Options for Legs, Back, and Chest",
-  "metaTitle": "Hair Removal for Large Body Areas: Efficient & Lasting Solutions",
-  "metaDescription": "Best hair removal for large areas: laser vs. waxing. Permanent results on legs, back, chest.",
+  "metaTitle": "Hair Removal Larg Malta | Carisma Aesthetics",
+  "metaDescription": "Hair Removal Large Areas in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Skincare",
   "publishDate": "2026-06-20",
   "readTime": 6,

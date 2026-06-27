@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "intravascular-procedures",
   "title": "Intravascular Procedures",
-  "metaTitle": "Intravascular Procedures — Carisma Aesthetics",
-  "metaDescription": "Explore intravascular procedures and how they contribute to aesthetic wellness.",
+  "metaTitle": "Intravascular Pro Malta | Carisma Aesthetics",
+  "metaDescription": "Intravascular Procedures in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Procedures",
   "publishDate": "2026-06-25",
   "readTime": 5,

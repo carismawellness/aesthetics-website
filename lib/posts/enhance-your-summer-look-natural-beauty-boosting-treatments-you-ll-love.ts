@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "enhance-your-summer-look-natural-beauty-boosting-treatments-you-ll-love",
   "title": "Enhance Your Summer Look: Natural Beauty Boosting Treatments You'll Love",
-  "metaTitle": "Summer Beauty Treatments | Natural Enhancement",
-  "metaDescription": "Enhance your natural beauty this summer with our non-invasive aesthetic treatments. Look refreshed and confident.",
+  "metaTitle": "Enhance Summer Lo Malta | Carisma Aesthetics",
+  "metaDescription": "Enhance Summer Look Natural Beauty Boosting Treatments Love in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Beauty",
   "publishDate": "2025-08-12",
   "readTime": 4,

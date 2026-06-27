@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "involving-teens-in-skincare",
   "title": "Involving Teens in Skincare: Building Healthy Habits Early",
-  "metaTitle": "Involving Teens in Skincare: Building Healthy Habits Early — Carisma Aesthetics",
-  "metaDescription": "Teach teens the importance of skincare. Learn how to develop healthy aesthetic habits from a young age.",
+  "metaTitle": "Involving Teens S Malta | Carisma Aesthetics",
+  "metaDescription": "Involving Teens Skincare in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Skincare",
   "publishDate": "2026-06-25",
   "readTime": 5,

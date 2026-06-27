@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "international-perspectives-on-beauty",
   "title": "International Perspectives on Beauty: Beyond Trends",
-  "metaTitle": "International Perspectives on Beauty: Beyond Trends",
-  "metaDescription": "Discover timeless beauty perspectives from around the world and how they inform modern, sustainable aesthetic enhancement practices.",
+  "metaTitle": "International Per Malta | Carisma Aesthetics",
+  "metaDescription": "International Perspectives Beauty in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Beauty",
   "readTime": 1,
   "publishDate": "2026-02-20",

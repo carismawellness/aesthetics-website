@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "internal-factors-in-aging",
   "title": "Internal Factors in Aging: The Foundation of Beautiful Skin",
-  "metaTitle": "Internal Factors in Aging: How to Support Skin from Within",
-  "metaDescription": "Discover the internal factors driving skin aging and learn evidence-based strategies to support collagen and skin health from the inside.",
+  "metaTitle": "Internal Factors  Malta | Carisma Aesthetics",
+  "metaDescription": "Internal Factors Aging in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Anti-Aging",
   "readTime": 1,
   "publishDate": "2026-03-20",

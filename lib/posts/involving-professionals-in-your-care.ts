@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "involving-professionals-in-your-care",
   "title": "Involving Professionals in Your Skincare and Aesthetic Care",
-  "metaTitle": "Involving Professionals in Your Skincare and Aesthetic Care — Carisma Aesthetics",
-  "metaDescription": "Professional guidance elevates your skincare results. Learn why consulting experts matters for your aesthetic journey.",
+  "metaTitle": "Involving Profess Malta | Carisma Aesthetics",
+  "metaDescription": "Involving Professionals Care in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Skincare",
   "publishDate": "2026-06-25",
   "readTime": 5,

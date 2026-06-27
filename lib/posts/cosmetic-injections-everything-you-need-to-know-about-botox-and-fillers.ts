@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "cosmetic-injections-everything-you-need-to-know-about-botox-and-fillers",
   "title": "Cosmetic Injections: Everything You Need to Know About Botox and Fillers",
-  "metaTitle": "Cosmetic Injections: Everything You Need to Know About Botox and Fillers",
-  "metaDescription": "Explore how Botox and dermal fillers reduce wrinkles, restore volume & refresh your look. Learn about cosmetic injections, anti-aging, and skincare.",
+  "metaTitle": "Cosmetic Injectio Malta | Carisma Aesthetics",
+  "metaDescription": "Cosmetic Injections Everything Need Know Botox Fillers in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Aesthetics",
   "publishDate": "2025-04-22",
   "readTime": 5,

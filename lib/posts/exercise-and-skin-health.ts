@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "exercise-and-skin-health",
   "title": "Exercise And Skin Health",
-  "metaTitle": "Exercise And Skin Health — Carisma Aesthetics",
-  "metaDescription": "Discover expert advice on exercise and skin health at Carisma Aesthetics Malta. Learn about treatments and skincare tips.",
+  "metaTitle": "Exercise Skin Hea Malta | Carisma Aesthetics",
+  "metaDescription": "Exercise Skin Health in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Wellness",
   "publishDate": "2026-06-25",
   "readTime": 5,

@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "increasing-collagen-and-elastin",
   "title": "Increasing Collagen and Elastin",
-  "metaTitle": "Increasing Collagen and Elastin for Youthful Skin — Carisma Aesthetics",
-  "metaDescription": "Professional treatments to increase collagen and elastin production for firmer, more elastic skin.",
+  "metaTitle": "Increasing Collag Malta | Carisma Aesthetics",
+  "metaDescription": "Increasing Collagen Elastin in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Anti-Aging",
   "publishDate": "2026-06-25",
   "readTime": 5,

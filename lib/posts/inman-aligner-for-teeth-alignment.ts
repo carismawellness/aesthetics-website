@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "inman-aligner-for-teeth-alignment",
   "title": "Inman Aligner for Teeth Alignment: Fast, Removable Orthodontic Solution",
-  "metaTitle": "Inman Aligner: Quick Teeth Alignment Solution in Malta",
-  "metaDescription": "Learn about the Inman Aligner, a removable appliance for rapid teeth alignment. Discover how it works, benefits, and whether it's right for your smile goals.",
+  "metaTitle": "Inman Aligner Tee Malta | Carisma Aesthetics",
+  "metaDescription": "Inman Aligner Teeth Alignment in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Beauty",
   "publishDate": "2026-06-25",
   "readTime": 7,

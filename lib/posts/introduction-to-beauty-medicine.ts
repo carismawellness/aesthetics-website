@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "introduction-to-beauty-medicine",
   "title": "Introduction to Beauty Medicine",
-  "metaTitle": "Introduction to Beauty Medicine — Carisma Aesthetics",
-  "metaDescription": "An overview of beauty medicine and how it enhances natural beauty through professional treatments.",
+  "metaTitle": "Introduction Beau Malta | Carisma Aesthetics",
+  "metaDescription": "Introduction Beauty Medicine in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Beauty",
   "publishDate": "2026-06-25",
   "readTime": 5,

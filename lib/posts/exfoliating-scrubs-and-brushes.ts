@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "exfoliating-scrubs-and-brushes",
   "title": "Exfoliating Scrubs And Brushes",
-  "metaTitle": "Exfoliating Scrubs And Brushes — Carisma Aesthetics",
-  "metaDescription": "Discover expert advice on exfoliating scrubs and brushes at Carisma Aesthetics Malta. Learn about treatments and skincare tips.",
+  "metaTitle": "Exfoliating Scrub Malta | Carisma Aesthetics",
+  "metaDescription": "Exfoliating Scrubs Brushes in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Skincare",
   "publishDate": "2026-06-25",
   "readTime": 5,

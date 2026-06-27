@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "intrinsic-skin-aging-factors",
   "title": "Intrinsic Skin Aging Factors",
-  "metaTitle": "Intrinsic Skin Aging Factors — Carisma Aesthetics",
-  "metaDescription": "Understand the intrinsic factors that contribute to skin aging and how to address them.",
+  "metaTitle": "Intrinsic Skin Ag Malta | Carisma Aesthetics",
+  "metaDescription": "Intrinsic Skin Aging Factors in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Anti-Aging",
   "publishDate": "2026-06-25",
   "readTime": 5,

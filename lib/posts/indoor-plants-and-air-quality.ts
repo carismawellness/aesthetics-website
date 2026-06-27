@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "indoor-plants-and-air-quality",
   "title": "Indoor Plants and Air Quality: Nature's Solution for Healthier Skin",
-  "metaTitle": "Indoor Plants Improve Air Quality for Skin Health",
-  "metaDescription": "Discover how indoor plants can improve air quality and support healthier, clearer skin.",
+  "metaTitle": "Indoor Plants Air Malta | Carisma Aesthetics",
+  "metaDescription": "Indoor Plants Air Quality in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Wellness",
   "publishDate": "2025-06-01",
   "readTime": 4,

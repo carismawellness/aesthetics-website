@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "irritation-after-laser-hair-removal",
   "title": "Irritation After Laser Hair Removal: Recovery and Aftercare",
-  "metaTitle": "Irritation After Laser Hair Removal: Aftercare Tips",
-  "metaDescription": "Understand irritation after laser hair removal treatments. Learn proper aftercare to minimize irritation and maximize results. Carisma Aesthetics guide.",
+  "metaTitle": "Irritation Laser  Malta | Carisma Aesthetics",
+  "metaDescription": "Irritation Laser Hair Removal in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Procedures",
   "readTime": 1,
   "publishDate": "2026-06-07",

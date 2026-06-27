@@ -11,13 +11,13 @@ import { giftFaqs } from "@/components/gifts/giftFaqData";
 
 export const metadata: Metadata = {
   title: { absolute: "E-Gift Vouchers | Carisma Aesthetics - #1 Award Winning Chain in Malta" },
-  description: "Give the gift of glowing skin. Carisma Aesthetics gift vouchers for any treatment — delivered digitally. Perfect for any occasion.",
+  description: "Give the gift of glowing skin. Carisma Aesthetics e-gift vouchers for any treatment, delivered by email instantly. Valid 12 months at all Malta locations.",
   alternates: {
     canonical: "https://www.carismaaesthetics.com/e-giftcards-vouchers",
   },
   openGraph: {
     title: "E-Gift Vouchers | Carisma Aesthetics - #1 Award Winning Chain in Malta",
-    description: "Give the gift of glowing skin. Carisma Aesthetics gift vouchers for any treatment — delivered digitally. Perfect for any occasion.",
+    description: "Give the gift of glowing skin. Carisma Aesthetics e-gift vouchers for any treatment, delivered by email instantly. Valid 12 months at all Malta locations.",
     url: "https://www.carismaaesthetics.com/e-giftcards-vouchers",
     siteName: "Carisma Aesthetics",
     type: "website",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "E-Gift Vouchers | Carisma Aesthetics - #1 Award Winning Chain in Malta",
-    description: "Give the gift of glowing skin. Carisma Aesthetics gift vouchers for any treatment — delivered digitally. Perfect for any occasion.",
+    description: "Give the gift of glowing skin. Carisma Aesthetics e-gift vouchers for any treatment, delivered by email instantly. Valid 12 months at all Malta locations.",
     images: ["/og-aesthetics.jpg"],
   },
 };
@@ -327,7 +327,12 @@ export default function GiftsPage() {
               }}
             >
               E-gift vouchers are non-refundable and cannot be exchanged for cash.
-              Valid for 12 months from purchase date at all Carisma Aesthetics locations in Malta.
+              Valid for 12 months from purchase date at all Carisma Aesthetics locations in Malta.{" "}
+              Pair with a{" "}
+              <a href="https://www.carismaspa.com/spa-day" target="_blank" rel="noopener noreferrer" style={{ color: "var(--teal)", textDecoration: "underline" }}>
+                spa day Malta
+              </a>
+              {" "}at Carisma Spa for the complete wellness gift.
             </p>
           </div>
         </section>

@@ -28,13 +28,16 @@ const t: Treatment = {
   ],
   beforeAfterTitle: "PICO LASER TATTOO REMOVAL RESULTS",
   beforeAfter: [
-    {
-      before: "/assets/treatments/pico-before.png",
-      after: "/assets/treatments/pico-after.png",
-      name: "Morina G.",
-      review:
-        "I wanted to fade an old tattoo before a cover-up, and the team explained exactly what to expect. It faded gradually after each session and felt safe and well managed the whole way through.",
-    },
+    { before: "/assets/treatments/pico-laser-tattoo-removal-ba1-1.jpg", after: "/assets/treatments/pico-laser-tattoo-removal-ba6-1.jpg", label: "Foot numerals fading", name: "Marija C.", review: "The dark numerals along my foot have lifted right down. There is only a faint shadow left where the date used to sit." },
+    { before: "/assets/treatments/pico-laser-tattoo-removal-ba2-1.jpg", after: "/assets/treatments/pico-laser-tattoo-removal-ba7-1.jpg", label: "Wrist stars fading", name: "Sophie A.", review: "The black stars on my wrist have softened to a pale bluish blur. I stopped covering it with my watch." },
+    { before: "/assets/treatments/pico-laser-tattoo-removal-ba2-2.jpg", after: "/assets/treatments/pico-laser-tattoo-removal-ba7-2.jpg", label: "Shoulder figure fading", name: "Rachel M.", review: "The grey outline on my shoulder has dropped back to a faint trace. It no longer shows through a vest top." },
+    { before: "/assets/treatments/pico-laser-tattoo-removal-ba1-2.jpg", after: "/assets/treatments/pico-laser-tattoo-removal-ba9-1.jpg", label: "Back feather fading", name: "Elena B.", review: "My feather has gone from solid black to a soft wash across the skin. The detail in the barbs is nearly gone." },
+    { before: "/assets/treatments/pico-laser-tattoo-removal-ba4-1.jpg", after: "/assets/treatments/pico-laser-tattoo-removal-ba6-2.jpg", label: "Back lettering fading", name: "Christine F.", review: "The two doves and the heart on my back have broken up into a light haze. The script is hard to read now." },
+    { before: "/assets/treatments/pico-laser-tattoo-removal-ba3-1.jpg", after: "/assets/treatments/pico-laser-tattoo-removal-ba8-1.jpg", label: "Calf sun fading", name: "David S.", review: "The solid black sun on my calf has lightened a lot. What is left reads as a faint grey smudge on the skin." },
+    { before: "/assets/treatments/pico-laser-tattoo-removal-ba3-2.jpg", after: "/assets/treatments/pico-laser-tattoo-removal-ba10-1.jpg", label: "Neck symbol fading", name: "Mark P.", review: "The symbol on my neck has lifted enough that it sits as a pale blur. Far less obvious when my collar is open." },
+    { before: "/assets/treatments/pico-laser-tattoo-removal-ba4-2.jpg", after: "/assets/treatments/pico-laser-tattoo-removal-ba8-2.jpg", label: "Knee tattoo fading", name: "Andrew G.", review: "The old dagger and the name banner above my knee have faded right back. Only a pale ghost of the lines remains." },
+    { before: "/assets/treatments/pico-laser-tattoo-removal-ba5-1.jpg", after: "/assets/treatments/pico-laser-tattoo-removal-ba9-2.jpg", label: "Leg script fading", name: "Luke R.", review: "The birds and the lettering down my leg have lightened into the skin. You have to look closely to pick them out now." },
+    { before: "/assets/treatments/pico-laser-tattoo-removal-ba5-2.jpg", after: "/assets/treatments/pico-laser-tattoo-removal-ba10-2.jpg", label: "Hand tattoo fading", name: "Tomas R.", review: "The heavy design across my hand has dropped to a faint grey outline. The finger work has gone much lighter too." },
   ],
   problem: {
     kicker: "The real reason people book",

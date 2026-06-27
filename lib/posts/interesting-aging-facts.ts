@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "interesting-aging-facts",
   "title": "The Science of Skin Aging: Facts That Might Surprise You",
-  "metaTitle": "The Science of Skin Aging: Facts That Might Surprise You",
-  "metaDescription": "Discover the science behind skin aging—collagen loss, sun damage, and genetic factors. Learn what actually works to slow aging. Carisma Aesthetics.",
+  "metaTitle": "Interesting Aging Malta | Carisma Aesthetics",
+  "metaDescription": "Interesting Aging Facts in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Anti-Aging",
   "publishDate": "2026-06-24",
   "readTime": 6,

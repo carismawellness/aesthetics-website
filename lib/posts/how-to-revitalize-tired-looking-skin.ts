@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "how-to-revitalize-tired-looking-skin",
   "title": "How to Revitalize Tired-Looking Skin: A Comprehensive Guide",
-  "metaTitle": "How to Revitalize Tired-Looking Skin: A Comprehensive Guide",
-  "metaDescription": "Expert guide to how to revitalize tired looking skin. Learn about treatments and tips from Carisma Aesthetics in Malta.",
+  "metaTitle": "Revitalize Tired  Malta | Carisma Aesthetics",
+  "metaDescription": "Revitalize Tired Looking Skin in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Skincare",
   "publishDate": "2026-06-25",
   "readTime": 5,

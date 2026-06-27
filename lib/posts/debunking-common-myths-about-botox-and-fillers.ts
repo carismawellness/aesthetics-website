@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "debunking-common-myths-about-botox-and-fillers",
   "title": "Debunking Common Myths About Botox and Fillers",
-  "metaTitle": "Debunking Common Myths About Botox and Fillers",
-  "metaDescription": "Curious about Botox and fillers? We debunk common myths and reveal the truth about these popular aesthetic treatments, from results to safety and longevity.",
+  "metaTitle": "Debunking Common  Malta | Carisma Aesthetics",
+  "metaDescription": "Debunking Common Myths Botox Fillers in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Aesthetics",
   "publishDate": "2025-03-31",
   "readTime": 3,

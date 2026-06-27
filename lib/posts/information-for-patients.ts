@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "information-for-patients",
   "title": "Patient Information: What You Should Know Before Your Aesthetic Treatment",
-  "metaTitle": "Patient Information: What You Should Know Before Your Aesthetic Treatment",
-  "metaDescription": "Important information for patients considering aesthetic treatments. Learn about consultation, preparation, aftercare, and realistic expectations.",
+  "metaTitle": "Information Patie Malta | Carisma Aesthetics",
+  "metaDescription": "Information Patients in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Wellness",
   "publishDate": "2026-02-05",
   "readTime": 7,

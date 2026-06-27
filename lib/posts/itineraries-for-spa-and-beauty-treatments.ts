@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "itineraries-for-spa-and-beauty-treatments",
   "title": "Itineraries For Spa And Beauty Treatments",
-  "metaTitle": "Itineraries For Spa And Beauty Treatments",
-  "metaDescription": "This post is being migrated from Wix. Content to be added.",
+  "metaTitle": "Itineraries Spa B Malta | Carisma Aesthetics",
+  "metaDescription": "Itineraries Spa Beauty Treatments in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Wellness",
   "readTime": 1,
   "publishDate": "2026-06-25",

@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "interesting-facts-about-skin",
   "title": "Fascinating Facts About Skin: The Science Behind Your Body's Largest Organ",
-  "metaTitle": "Fascinating Facts About Skin: The Science Behind Your Body's Largest Organ",
-  "metaDescription": "Discover amazing facts about skin—structure, function, aging, and how to care for it. Expert insights from Carisma Aesthetics, Malta.",
+  "metaTitle": "Interesting Facts Malta | Carisma Aesthetics",
+  "metaDescription": "Interesting Facts Skin in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Skincare",
   "publishDate": "2026-06-24",
   "readTime": 6,

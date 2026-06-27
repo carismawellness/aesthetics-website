@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "improving-lip-shape-naturally",
   "title": "Improving Lip Shape Naturally: Subtle Treatments for Fuller, Defined Lips",
-  "metaTitle": "Improve Lip Shape Malta — Natural-Looking Treatments",
-  "metaDescription": "Want fuller, more defined lips? Discover natural-looking lip treatments at Carisma Aesthetics. Fillers, care routines, and professional options in Malta.",
+  "metaTitle": "Improving Lip Sha Malta | Carisma Aesthetics",
+  "metaDescription": "Improving Lip Shape Naturally in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Injectables",
   "publishDate": "2026-06-11",
   "readTime": 5,

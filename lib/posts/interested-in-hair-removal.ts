@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "interested-in-hair-removal",
   "title": "Hair Removal in Malta: Your Complete Guide to Options, Results, and Realistic Expectations",
-  "metaTitle": "Hair Removal in Malta: Your Complete Guide to Options, Results, and Realistic Expectations",
-  "metaDescription": "Explore hair removal options in Malta—from laser to traditional methods. Learn about effectiveness, costs, and what to expect. Carisma Aesthetics, St Julian's.",
+  "metaTitle": "Interested Hair R Malta | Carisma Aesthetics",
+  "metaDescription": "Interested Hair Removal in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Aesthetics",
   "publishDate": "2026-06-24",
   "readTime": 7,

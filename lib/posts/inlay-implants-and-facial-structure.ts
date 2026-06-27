@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "inlay-implants-and-facial-structure",
   "title": "Inlay Implants and Facial Structure: Surgical Options for Facial Contouring",
-  "metaTitle": "Facial Implants and Structure: Surgical Enhancement Options in Malta",
-  "metaDescription": "Explore facial implant options for chin, cheek, and jaw augmentation. Learn how implants enhance facial structure and proportion for a balanced, defined appearance.",
+  "metaTitle": "Inlay Implants Fa Malta | Carisma Aesthetics",
+  "metaDescription": "Inlay Implants Facial Structure in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Procedures",
   "publishDate": "2026-06-25",
   "readTime": 9,

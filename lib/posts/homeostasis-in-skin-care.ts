@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "homeostasis-in-skin-care",
   "title": "Homeostasis in Skincare: Balance for Healthy Skin",
-  "metaTitle": "Skin Homeostasis in Malta \u2014 Balanced Skincare Approach",
-  "metaDescription": "Understand how skin homeostasis works. Expert skincare advice for balanced, healthy skin from Carisma Aesthetics.",
+  "metaTitle": "Homeostasis Skin  Malta | Carisma Aesthetics",
+  "metaDescription": "Homeostasis Skin Care in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Skincare",
   "publishDate": "2026-06-25",
   "readTime": 5,

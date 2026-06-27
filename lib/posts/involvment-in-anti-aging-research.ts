@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "involvment-in-anti-aging-research",
   "title": "Involvement in Anti-Aging Research: What's New",
-  "metaTitle": "Involvement in Anti-Aging Research: What's New — Carisma Aesthetics",
-  "metaDescription": "Stay updated on the latest anti-aging research and treatments. Discover cutting-edge advancements at Carisma Aesthetics.",
+  "metaTitle": "Involvment Anti A Malta | Carisma Aesthetics",
+  "metaDescription": "Involvment Anti Aging Research in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Anti-Aging",
   "publishDate": "2026-06-25",
   "readTime": 5,

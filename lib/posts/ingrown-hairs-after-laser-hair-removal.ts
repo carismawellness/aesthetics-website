@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "ingrown-hairs-after-laser-hair-removal",
   "title": "Ingrown Hairs After Laser Hair Removal: Prevention and Management",
-  "metaTitle": "Ingrown Hairs After Laser Hair Removal: Prevention and Management",
-  "metaDescription": "Why ingrown hairs can occur after laser treatment and how to prevent and treat them. Expert care tips from Carisma Aesthetics in Malta.",
+  "metaTitle": "Ingrown Hairs Las Malta | Carisma Aesthetics",
+  "metaDescription": "Ingrown Hairs Laser Hair Removal in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Procedures",
   "publishDate": "2026-02-15",
   "readTime": 6,

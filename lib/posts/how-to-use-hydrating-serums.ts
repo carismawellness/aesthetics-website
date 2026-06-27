@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "how-to-use-hydrating-serums",
   "title": "How to Use Hydrating Serums for Best Results",
-  "metaTitle": "Hydrating Serums: How to Use & Layer Correctly",
-  "metaDescription": "Master the art of using hydrating serums. Learn the right order, how to apply, and which ingredients work together.",
+  "metaTitle": "Use Hydrating Ser Malta | Carisma Aesthetics",
+  "metaDescription": "Use Hydrating Serums in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Skincare",
   "publishDate": "2026-06-25",
   "readTime": 5,

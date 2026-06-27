@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "iontophoresis-for-anti-wrinkle-treatments",
   "title": "Iontophoresis for Anti-Wrinkle Treatments: Non-Invasive Skin Rejuvenation",
-  "metaTitle": "Iontophoresis Anti-Wrinkle Treatments \u2014 Non-Invasive Solutions",
-  "metaDescription": "Discover iontophoresis technology for anti-wrinkle treatments. Explore non-invasive facial rejuvenation options at Carisma Aesthetics.",
+  "metaTitle": "Iontophoresis Ant Malta | Carisma Aesthetics",
+  "metaDescription": "Iontophoresis Anti Wrinkle Treatments in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Injectables",
   "publishDate": "2026-06-06",
   "readTime": 1,

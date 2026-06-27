@@ -27,31 +27,16 @@ const t: Treatment = {
   ],
   beforeAfterTitle: "fat dissolving results",
   beforeAfter: [
-    {
-      before: "/assets/treatments/fat-dissolving-malta-ba1-before.jpg",
-      after: "/assets/treatments/fat-dissolving-malta-ba1-after.jpg",
-      label: "Double Chin Reduction",
-    },
-    {
-      before: "/assets/treatments/fat-dissolving-malta-ba2-before.jpg",
-      after: "/assets/treatments/fat-dissolving-malta-ba2-after.jpg",
-      label: "Jawline Contouring",
-    },
-    {
-      before: "/assets/treatments/fat-dissolving-malta-ba3-before.jpg",
-      after: "/assets/treatments/fat-dissolving-malta-ba3-after.jpg",
-      label: "Under Chin Fat Reduction",
-    },
-    {
-      before: "/assets/treatments/fat-dissolving-malta-ba4-before.jpg",
-      after: "/assets/treatments/fat-dissolving-malta-ba4-after.jpg",
-      label: "Chin & Neck Sculpting",
-    },
-    {
-      before: "/assets/treatments/fat-dissolving-malta-ba5-before.jpg",
-      after: "/assets/treatments/fat-dissolving-malta-ba5-after.jpg",
-      label: "Facial Contouring",
-    },
+    { before: "/assets/treatments/fat-dissolving-malta-ba1-2.jpg", after: "/assets/treatments/fat-dissolving-malta-ba1-1.jpg", label: "Under-chin fullness", name: "Hannah P.", review: "The softness under my chin has settled and my jaw reads a lot cleaner when I look at my side profile now." },
+    { before: "/assets/treatments/fat-dissolving-malta-ba2-1.jpg", after: "/assets/treatments/fat-dissolving-malta-ba2-2.jpg", label: "Double chin", name: "Chloe M.", review: "My under-chin used to round out my profile and the line from chin to neck looks much sharper in the after photo." },
+    { before: "/assets/treatments/fat-dissolving-malta-ba3-1.jpg", after: "/assets/treatments/fat-dissolving-malta-ba3-2.jpg", label: "Lower face fullness", name: "Maria S.", review: "My lower cheeks felt heavy before and my jawline sits noticeably tighter now, especially in photos." },
+    { before: "/assets/treatments/fat-dissolving-malta-ba4-1.jpg", after: "/assets/treatments/fat-dissolving-malta-ba4-2.jpg", label: "Jawline contour", name: "Elena R.", review: "The soft area along my jaw has come down and the edge of my jaw looks neater from the side." },
+    { before: "/assets/treatments/fat-dissolving-malta-ba5-1.jpg", after: "/assets/treatments/fat-dissolving-malta-ba5-2.jpg", label: "Chin and jaw", name: "Sophie L.", review: "The little pocket under my chin has gone and my side view feels far more in proportion than it did." },
+    { before: "/assets/treatments/fat-dissolving-malta-ba6-1.jpg", after: "/assets/treatments/fat-dissolving-malta-ba6-2.jpg", label: "Cheek fullness", name: "Amber K.", review: "My face used to look quite round and now my cheekbones and jaw stand out more in straight-on photos." },
+    { before: "/assets/treatments/fat-dissolving-malta-ba7-1.jpg", after: "/assets/treatments/fat-dissolving-malta-ba7-2.jpg", label: "Lower face slimming", name: "Daniela V.", review: "There was extra width across my lower face before and my features sit more balanced when I face the camera." },
+    { before: "/assets/treatments/fat-dissolving-malta-ba8-1.jpg", after: "/assets/treatments/fat-dissolving-malta-ba8-2.jpg", label: "Submental fat", name: "Karen B.", review: "The fullness under my jaw has eased and my neck looks longer when I tip my head back." },
+    { before: "/assets/treatments/fat-dissolving-malta-ba9-1.jpg", after: "/assets/treatments/fat-dissolving-malta-ba9-2.jpg", label: "Cheek and jaw", name: "Nadia C.", review: "My cheeks sat heavy before and there is a clearer line running along my jaw in the second photo." },
+    { before: "/assets/treatments/fat-dissolving-malta-ba10-1.jpg", after: "/assets/treatments/fat-dissolving-malta-ba10-2.jpg", label: "Jowl and neck", name: "Lisa T.", review: "The heaviness around my jaw and under my chin has settled and my face looks more contoured side on." },
   ],
   precision: {
     title: "precision areas of refinement",
@@ -223,7 +208,7 @@ const t: Treatment = {
       "A personalised journey from consultation to aftercare",
       "Seamless experience with ongoing support and guidance",
     ],
-    mapQuery: "Carisma Aesthetics, Malta",
+    mapQuery: "InterContinental Malta, St Julian's, Malta",
   },
   bookingForm: { title: "BOOK YOUR fat dissolving APPOINTMENT TODAY" },
   recommended: {

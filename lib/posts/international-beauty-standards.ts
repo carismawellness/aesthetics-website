@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "international-beauty-standards",
   "title": "International Beauty Standards: Celebrating Global Perspectives",
-  "metaTitle": "International Beauty Standards: A Global Perspective",
-  "metaDescription": "Explore diverse global beauty standards and how modern aesthetic treatments can enhance your natural beauty while respecting cultural preferences.",
+  "metaTitle": "International Bea Malta | Carisma Aesthetics",
+  "metaDescription": "International Beauty Standards in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Beauty",
   "readTime": 1,
   "publishDate": "2026-03-10",

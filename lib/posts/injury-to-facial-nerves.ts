@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "injury-to-facial-nerves",
   "title": "Injury to Facial Nerves: Understanding Facial Nerve Damage and Recovery",
-  "metaTitle": "Facial Nerve Injury: Causes, Symptoms, and Treatment Options in Malta",
-  "metaDescription": "Learn about facial nerve injuries, their causes, symptoms, and available treatment options. Professional care and rehabilitation can improve outcomes significantly.",
+  "metaTitle": "Injury Facial Ner Malta | Carisma Aesthetics",
+  "metaDescription": "Injury Facial Nerves in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Procedures",
   "publishDate": "2026-06-25",
   "readTime": 8,

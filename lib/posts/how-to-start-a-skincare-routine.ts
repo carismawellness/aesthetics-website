@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "how-to-start-a-skincare-routine",
   "title": "How to Start a Skincare Routine: A Beginner's Guide",
-  "metaTitle": "How to Start a Skincare Routine: A Beginner's Guide",
-  "metaDescription": "Expert guide to how to start a skincare routine. Learn about treatments and tips from Carisma Aesthetics in Malta.",
+  "metaTitle": "Start Skincare Ro Malta | Carisma Aesthetics",
+  "metaDescription": "Start Skincare Routine in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Skincare",
   "publishDate": "2026-06-25",
   "readTime": 5,

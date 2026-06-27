@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "interface-between-skin-and-environment",
   "title": "Skin and Environment: How External Factors Damage Your Skin and How to Protect It",
-  "metaTitle": "Skin and Environment: How External Factors Damage Your Skin and How to Protect It",
-  "metaDescription": "Understand how environmental factors—sun, pollution, weather—damage skin. Learn protection strategies. Expert advice from Carisma Aesthetics, Malta.",
+  "metaTitle": "Interface Between Malta | Carisma Aesthetics",
+  "metaDescription": "Interface Between Skin Environment in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Skincare",
   "publishDate": "2026-06-24",
   "readTime": 6,

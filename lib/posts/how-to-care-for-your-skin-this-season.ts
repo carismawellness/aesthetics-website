@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "how-to-care-for-your-skin-this-season",
   "title": "How to Care for Your Skin This Season",
-  "metaTitle": "Seasonal Skincare | Care Your Skin This Season",
-  "metaDescription": "Seasonal skincare tips to keep your skin healthy and glowing throughout the year.",
+  "metaTitle": "Care Skin Season Malta: Complete Guide | Carisma Aesthetics",
+  "metaDescription": "Care Skin Season in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Skincare",
   "publishDate": "2025-11-20",
   "readTime": 1,

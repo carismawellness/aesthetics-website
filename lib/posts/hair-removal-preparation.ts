@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "hair-removal-preparation",
   "title": "Hair Removal Preparation: How to Prepare Skin Before Waxing or Laser",
-  "metaTitle": "Pre-Hair Removal Skincare: Waxing & Laser Prep Guide",
-  "metaDescription": "How to prepare skin before hair removal: what to avoid, exfoliation timing, medication interactions.",
+  "metaTitle": "Hair Removal Prep Malta | Carisma Aesthetics",
+  "metaDescription": "Hair Removal Preparation in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Skincare",
   "publishDate": "2026-06-20",
   "readTime": 6,

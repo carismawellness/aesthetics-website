@@ -9,6 +9,8 @@ export async function generateStaticParams() {
   return ALL_BLOG_SLUGS.map((slug) => ({ slug }));
 }
 
+export const dynamicParams = false;
+
 // ─── generateMetadata ──────────────────────────────────────────────────────────
 
 export async function generateMetadata({

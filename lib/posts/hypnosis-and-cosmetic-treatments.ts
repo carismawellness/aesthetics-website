@@ -3,8 +3,8 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "hypnosis-and-cosmetic-treatments",
   "title": "Hypnosis and Cosmetic Treatments: Mind-Body Approaches to Beauty",
-  "metaTitle": "Hypnosis and Cosmetic Treatments: Mind-Body Approaches to Beauty",
-  "metaDescription": "Discover how hypnosis complements aesthetic treatments to enhance results and support your beauty goals.",
+  "metaTitle": "Hypnosis Cosmetic Malta | Carisma Aesthetics",
+  "metaDescription": "Hypnosis Cosmetic Treatments in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics.",
   "category": "Wellness",
   "publishDate": "2026-06-25",
   "readTime": 4,

@@ -3,8 +3,8 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "ionization-and-skin",
   "title": "Ionization and Skin: Understanding How Ionized Products Affect Your Complexion",
-  "metaTitle": "Ionization and Skin \u2014 How Ionized Water Impacts Your Complexion",
-  "metaDescription": "Discover how ionization affects skin health at Carisma Aesthetics. Learn about the science behind ionized water and skincare benefits.",
+  "metaTitle": "Ionization Skin Malta: Complete Guide | Carisma Aesthetics",
+  "metaDescription": "Ionization Skin in Malta: benefits, cost & expert advice. Book your free consultation with Carisma Aesthetics. Glow with confidence.",
   "category": "Wellness",
   "publishDate": "2026-06-07",
   "readTime": 1,

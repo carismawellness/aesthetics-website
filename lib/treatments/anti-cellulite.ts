@@ -151,7 +151,7 @@ const t: Treatment = {
       "All in one approach: assessment, nutrition, movement and treatments",
       "High touch support with weekly check ins and WhatsApp coaching",
     ],
-    mapQuery: "Carisma Aesthetics Malta",
+    mapQuery: "InterContinental Malta, St Julian's, Malta",
   },
 
   bookingForm: {
@@ -322,6 +322,19 @@ const t: Treatment = {
       q: "Can CelluLift be combined with other treatments?",
       a: "Yes. CelluLift is often combined with skin tightening or body contouring treatments to enhance overall results. Your practitioner will advise what combinations are suitable.",
     },
+  ],
+  beforeAfterTitle: "ANTI-CELLULITE RESULTS",
+  beforeAfter: [
+    { before: "/assets/treatments/anti-cellulite-ba1-1.jpg", after: "/assets/treatments/anti-cellulite-ba6-1.jpg", label: "Crepey arm skin", name: "Marianne C.", review: "The crinkled skin above my elbow looks firmer now and my arms feel a lot less papery in short sleeves." },
+    { before: "/assets/treatments/anti-cellulite-ba1-2.jpg", after: "/assets/treatments/anti-cellulite-ba6-2.jpg", label: "Thigh cellulite", name: "Roberta F.", review: "The dimpling on the side of my thigh has settled and the skin reads much smoother when I wear shorts." },
+    { before: "/assets/treatments/anti-cellulite-ba2-1.jpg", after: "/assets/treatments/anti-cellulite-ba7-1.jpg", label: "Thigh texture", name: "Daniela B.", review: "The bumpy patches on the back of my thigh have evened out and the area feels firmer to the touch." },
+    { before: "/assets/treatments/anti-cellulite-ba2-2.jpg", after: "/assets/treatments/anti-cellulite-ba7-2.jpg", label: "Crow's feet", name: "Josephine M.", review: "The deep lines fanning from the corner of my eye have softened and my skin sits flatter through the day." },
+    { before: "/assets/treatments/anti-cellulite-ba3-1.jpg", after: "/assets/treatments/anti-cellulite-ba8-1.jpg", label: "Chest crepiness", name: "Antonella S.", review: "The fine creasing across my chest has eased and the skin looks fuller and more even in a low neckline." },
+    { before: "/assets/treatments/anti-cellulite-ba3-2.jpg", after: "/assets/treatments/anti-cellulite-ba8-2.jpg", label: "Crepey tummy skin", name: "Charlene V.", review: "The lines radiating around my belly button have calmed down and the skin no longer creases when I sit." },
+    { before: "/assets/treatments/anti-cellulite-ba4-1.jpg", after: "/assets/treatments/anti-cellulite-ba9-1.jpg", label: "Loose tummy skin", name: "Stephanie G.", review: "My tummy used to fold over the waistband, and it sits flatter now with the skin feeling tighter." },
+    { before: "/assets/treatments/anti-cellulite-ba4-2.jpg", after: "/assets/treatments/anti-cellulite-ba9-2.jpg", label: "Stretch marks", name: "Nadia P.", review: "The stretch marks along my side have faded and the texture there looks far more even than before." },
+    { before: "/assets/treatments/anti-cellulite-ba5-1.jpg", after: "/assets/treatments/anti-cellulite-ba10-1.jpg", label: "Lax tummy skin", name: "Christine A.", review: "The loose, crinkled skin around my navel has firmed up and my stomach looks smoother under a fitted top." },
+    { before: "/assets/treatments/anti-cellulite-ba5-2.jpg", after: "/assets/treatments/anti-cellulite-ba10-2.jpg", label: "Neck lines", name: "Lucia D.", review: "The creases across my neck have softened and the skin towards my collarbone feels firmer than it did." },
   ],
 };
 
