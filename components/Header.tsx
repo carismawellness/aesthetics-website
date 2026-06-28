@@ -132,12 +132,16 @@ function NavDropdown({
   // Anchor the panel + the invisible hover-bridge per group so the cursor can
   // travel from the (narrow) trigger into the (wide) panel without crossing
   // dead space, and so the panel never spills off the viewport edge.
+  // Centre the panel under its trigger in every state. The top-nav items cluster
+  // around the centre logo, so centring keeps each panel on-screen; the previous
+  // group-edge anchoring pushed the first item's panel off the viewport edge and
+  // clipped a column of links. (All branches intentionally identical.)
   const panelAnchor: React.CSSProperties =
     align === "center"
       ? { left: "50%", transform: `translateX(-50%) translateY(${isOpen ? "0" : "8px"})` }
       : align === "right"
-      ? { right: 0, transform: `translateY(${isOpen ? "0" : "8px"})` }
-      : { left: 0, transform: `translateY(${isOpen ? "0" : "8px"})` };
+      ? { left: "50%", transform: `translateX(-50%) translateY(${isOpen ? "0" : "8px"})` }
+      : { left: "50%", transform: `translateX(-50%) translateY(${isOpen ? "0" : "8px"})` };
 
   return (
     <div
