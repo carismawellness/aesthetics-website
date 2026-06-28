@@ -301,19 +301,6 @@ const t: Treatment = {
       a: "After treatment, you may be advised to stay well hydrated and allow your body time to respond. Some people notice increased urination or a lighter feeling shortly after the session. Your practitioner may also recommend follow-up sessions or simple lifestyle tips to support results.",
     },
   ],
-  beforeAfterTitle: "LYMPHATIC DRAINAGE RESULTS",
-  beforeAfter: [
-    { before: "/assets/treatments/lymphatic-drainage-ba7-1.jpg", after: "/assets/treatments/lymphatic-drainage-ba4-1.jpg", label: "Puffy soft abdomen", name: "Marija C.", review: "My stomach used to sit soft and puffy in the morning. It looks flatter now and my tummy feels far less heavy after a session." },
-    { before: "/assets/treatments/lymphatic-drainage-ba5-1.jpg", after: "/assets/treatments/lymphatic-drainage-ba9-1.jpg", label: "Lower belly fullness", name: "Sandra B.", review: "The fullness that pushed out below my swimwear has settled and my side profile reads much flatter through the lower belly." },
-    { before: "/assets/treatments/lymphatic-drainage-ba9-2.jpg", after: "/assets/treatments/lymphatic-drainage-ba6-1.jpg", label: "Bloated waistline", name: "Laura S.", review: "My waist used to round out at the front by evening. From the side it now sits tighter and the bloating has eased a good deal." },
-    { before: "/assets/treatments/lymphatic-drainage-ba1-1.jpg", after: "/assets/treatments/lymphatic-drainage-ba4-2.jpg", label: "Heavy puffy midsection", name: "Anna M.", review: "I always felt heavy and held water through the middle. Things feel lighter now and the puffiness goes down and stays down between sessions." },
-    { before: "/assets/treatments/lymphatic-drainage-ba2-2.jpg", after: "/assets/treatments/lymphatic-drainage-ba7-2.jpg", label: "Dull congested legs", name: "Rita F.", review: "My lower legs looked dull and the skin around my knees felt congested. They read brighter now and the heavy look has lifted." },
-    { before: "/assets/treatments/lymphatic-drainage-ba3-1.jpg", after: "/assets/treatments/lymphatic-drainage-ba5-2.jpg", label: "Puffy heavy thighs", name: "Daniela G.", review: "My thighs used to feel puffy and tight by the end of the day. The uneven fullness above my knees has smoothed out a fair bit." },
-    { before: "/assets/treatments/lymphatic-drainage-ba10-1.jpg", after: "/assets/treatments/lymphatic-drainage-ba8-2.jpg", label: "Dimpled thigh texture", name: "Carmen V.", review: "The dimpling across the front of my thighs has calmed down and the skin looks noticeably more even when I catch it in the light." },
-    { before: "/assets/treatments/lymphatic-drainage-ba1-2.jpg", after: "/assets/treatments/lymphatic-drainage-ba6-2.jpg", label: "Orange peel texture", name: "Elena P.", review: "The orange peel look in this close-up has settled and the skin reads smoother and a little more refined than it did before." },
-    { before: "/assets/treatments/lymphatic-drainage-ba3-2.jpg", after: "/assets/treatments/lymphatic-drainage-ba10-2.jpg", label: "Crepey loose arm", name: "Helena T.", review: "The crepey folds on my upper arm had really bothered me. The skin here looks firmer now and the loose creasing has softened." },
-    { before: "/assets/treatments/lymphatic-drainage-ba2-1.jpg", after: "/assets/treatments/lymphatic-drainage-ba8-1.jpg", label: "Crepey puffy ankle", name: "Nadia R.", review: "The crepey, puffy look around my ankle has eased and the area feels less tight and swollen by the end of a long day." },
-  ],
 };
 
 export default t;
