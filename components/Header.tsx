@@ -395,7 +395,7 @@ export default function Header() {
                     menu={m}
                     isOpen={hover === m.label}
                     triggerStyle={topNavLink}
-                    align="right"
+                    align="left"
                     onOpen={() => openMenu(m.label)}
                     onToggle={() => setHover((p) => (p === m.label ? null : m.label))}
                     cancelClose={cancelClose}
