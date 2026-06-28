@@ -56,14 +56,14 @@ function curate(m: Dropdown): { items: NavLink[]; showViewAll: boolean } {
   return { items: all, showViewAll: false };
 }
 
-// Top split-bar (homepage, scroll-top) renders each menu as a single simple
-// link to its primary destination: explicit href → viewAllHref → first item → /.
-type SimpleLink = { label: string; href: string };
+// Top split-bar (homepage, scroll-top) flanks the centered logo with the SAME
+// menus as the pill — items with `.items` get the shared hover dropdown
+// (NavDropdown); items without (Membership, Gifts) stay simple links to their
+// primary destination: explicit href → viewAllHref → first item → /.
 const menuHref = (m: Dropdown): string =>
   m.href ?? m.viewAllHref ?? m.items?.[0]?.href ?? "/";
-const TOP_LINKS: SimpleLink[] = MENUS.map((m) => ({ label: m.label, href: menuHref(m) }));
-const TOP_LEFT: SimpleLink[] = TOP_LINKS.slice(0, Math.ceil(TOP_LINKS.length / 2));
-const TOP_RIGHT: SimpleLink[] = TOP_LINKS.slice(Math.ceil(TOP_LINKS.length / 2));
+const TOP_LEFT: Dropdown[] = MENUS.slice(0, Math.ceil(MENUS.length / 2));
+const TOP_RIGHT: Dropdown[] = MENUS.slice(Math.ceil(MENUS.length / 2));
 
 // Slimming nav-link spec, exact px (green → aesthetics nav ink).
 const navLink: React.CSSProperties = {
@@ -77,11 +77,147 @@ const navLink: React.CSSProperties = {
   whiteSpace: "nowrap",
 };
 
+// Top split-nav trigger spec — mirrors the `.cms-topnav__link` CSS exactly so a
+// NavDropdown <button> renders identically to a simple top-nav <Link>.
+const topNavLink: React.CSSProperties = {
+  color: "#245052",
+  fontFamily: '"Novecento Wide", sans-serif',
+  fontSize: "12px",
+  fontWeight: 400,
+  letterSpacing: "1.5px",
+  textDecoration: "none",
+  textTransform: "uppercase",
+  whiteSpace: "nowrap",
+};
+
 function PhoneIcon() {
   return (
     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke={TEAL} strokeWidth="2">
       <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.21 12.8a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.11 2h3a2 2 0 0 1 2 1.72c.128.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.572 2.81.7A2 2 0 0 1 22 16.92z" />
     </svg>
+  );
+}
+
+// ── Shared desktop dropdown — reused by BOTH the floating pill nav and the
+// homepage top split-nav so they look + behave identically (same hover state,
+// same open-on-enter / close-on-leave intent timers, same panel markup,
+// "View all →", item list). The ONLY difference between call-sites is `align`,
+// which anchors the absolutely-positioned panel so it never overflows the
+// viewport edge: the pill centers it (translateX(-50%)); the left top-nav group
+// is right-aligned (panel hangs left, right:0); the right group is left-aligned
+// (panel hangs right, left:0).
+type DropAlign = "center" | "left" | "right";
+
+function NavDropdown({
+  menu,
+  isOpen,
+  triggerStyle,
+  onOpen,
+  onToggle,
+  cancelClose,
+  scheduleClose,
+  align,
+}: {
+  menu: Dropdown;
+  isOpen: boolean;
+  triggerStyle: React.CSSProperties;
+  onOpen: () => void;
+  onToggle: () => void;
+  cancelClose: () => void;
+  scheduleClose: () => void;
+  align: DropAlign;
+}) {
+  const { items, showViewAll } = curate(menu);
+
+  // Anchor the panel + the invisible hover-bridge per group so the cursor can
+  // travel from the (narrow) trigger into the (wide) panel without crossing
+  // dead space, and so the panel never spills off the viewport edge.
+  const panelAnchor: React.CSSProperties =
+    align === "center"
+      ? { left: "50%", transform: `translateX(-50%) translateY(${isOpen ? "0" : "8px"})` }
+      : align === "right"
+      ? { right: 0, transform: `translateY(${isOpen ? "0" : "8px"})` }
+      : { left: 0, transform: `translateY(${isOpen ? "0" : "8px"})` };
+
+  return (
+    <div
+      className="relative"
+      style={{ display: "flex", alignItems: "center", padding: "10px 0" }}
+      onMouseEnter={onOpen}
+      onMouseLeave={scheduleClose}
+    >
+      <button
+        style={{ ...triggerStyle, background: "none", border: "none", cursor: "pointer", padding: "4px 0", display: "flex", alignItems: "center", gap: "4px" }}
+        className="hover:underline transition"
+        aria-haspopup="true"
+        aria-expanded={isOpen}
+        onClick={onToggle}
+      >
+        {menu.label}
+        <svg
+          width="10" height="10" viewBox="0 0 24 24" fill="none"
+          stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
+          style={{ transition: "transform 0.25s cubic-bezier(0.22,1,0.36,1)", transform: isOpen ? "rotate(180deg)" : "rotate(0deg)", opacity: 0.7 }}
+        >
+          <polyline points="6 9 12 15 18 9" />
+        </svg>
+      </button>
+      {/* Panel is always mounted; open/close is driven by CSS so it
+          fades + slides in AND out smoothly (no abrupt pop). */}
+      <div
+        onMouseEnter={cancelClose}
+        onMouseLeave={scheduleClose}
+        role="menu"
+        aria-hidden={!isOpen}
+        style={{
+          position: "absolute",
+          top: "calc(100% - 2px)",
+          ...panelAnchor,
+          opacity: isOpen ? 1 : 0,
+          visibility: isOpen ? "visible" : "hidden",
+          pointerEvents: isOpen ? "auto" : "none",
+          transition: "opacity 0.2s ease, transform 0.24s cubic-bezier(0.22,1,0.36,1), visibility 0.2s",
+          background: "rgba(255,255,255,0.82)",
+          backdropFilter: "blur(22px) saturate(180%)",
+          WebkitBackdropFilter: "blur(22px) saturate(180%)",
+          border: "1px solid rgba(255,255,255,0.7)",
+          borderRadius: "16px",
+          boxShadow: "0 16px 40px rgba(28,30,30,0.16), inset 0 1px 0 rgba(255,255,255,0.85)",
+          width: "448px",
+          padding: "10px",
+          display: "grid",
+          gridTemplateColumns: "minmax(0,1fr) minmax(0,1fr)",
+          columnGap: "6px",
+          zIndex: 100,
+        }}>
+          {/* Invisible hover bridge: wider than the panel and tall
+              enough so diagonal cursor paths from the (narrow) trigger
+              into the (wide) panel never cross dead space. */}
+          <span
+            aria-hidden
+            style={{
+              position: "absolute",
+              bottom: "100%",
+              left: "-60px",
+              right: "-60px",
+              height: "32px",
+              background: "transparent",
+            }}
+          />
+          {items.map((it) => (
+            <Link key={it.href} href={it.href} tabIndex={isOpen ? undefined : -1} className="block hover:bg-black/5 hover:underline"
+              style={{ padding: "9px 14px", borderRadius: "10px", color: DROPDOWN_INK, fontFamily: '"Roboto Local", sans-serif', fontSize: "13px", textDecoration: "none", transition: "background 0.3s ease" }}>
+              {it.label}
+            </Link>
+          ))}
+          {showViewAll && (
+            <Link href={menu.viewAllHref!} tabIndex={isOpen ? undefined : -1} className="block hover:bg-black/5 hover:underline"
+              style={{ gridColumn: "1 / -1", marginTop: "4px", borderTop: "1px solid rgba(64,96,96,0.16)", paddingTop: "10px", padding: "10px 14px 4px", color: TEAL, fontFamily: '"Roboto Local", sans-serif', fontSize: "13px", fontWeight: 600, textDecoration: "none", transition: "background 0.3s ease" }}>
+              View all →
+            </Link>
+          )}
+        </div>
+    </div>
   );
 }
 
@@ -246,9 +382,23 @@ export default function Header() {
         <div className={`cms-topnav${scrolled ? " cms-topnav--hidden" : ""}`} aria-hidden={scrolled}>
           <div className="cms-topnav__row">
             <nav className="cms-topnav__group cms-topnav__group--left" aria-label="Primary">
-              {TOP_LEFT.map((m) => (
-                <Link key={m.label} href={m.href} className="cms-topnav__link">{m.label}</Link>
-              ))}
+              {TOP_LEFT.map((m) =>
+                !m.items ? (
+                  <Link key={m.label} href={menuHref(m)} className="cms-topnav__link">{m.label}</Link>
+                ) : (
+                  <NavDropdown
+                    key={m.label}
+                    menu={m}
+                    isOpen={hover === m.label}
+                    triggerStyle={topNavLink}
+                    align="right"
+                    onOpen={() => openMenu(m.label)}
+                    onToggle={() => setHover((p) => (p === m.label ? null : m.label))}
+                    cancelClose={cancelClose}
+                    scheduleClose={scheduleClose}
+                  />
+                ),
+              )}
             </nav>
             <Link href="/" className="cms-topnav__brand" aria-label="Carisma Aesthetics — home">
               <img
@@ -258,9 +408,23 @@ export default function Header() {
               />
             </Link>
             <nav className="cms-topnav__group cms-topnav__group--right" aria-label="Secondary">
-              {TOP_RIGHT.map((m) => (
-                <Link key={m.label} href={m.href} className="cms-topnav__link">{m.label}</Link>
-              ))}
+              {TOP_RIGHT.map((m) =>
+                !m.items ? (
+                  <Link key={m.label} href={menuHref(m)} className="cms-topnav__link">{m.label}</Link>
+                ) : (
+                  <NavDropdown
+                    key={m.label}
+                    menu={m}
+                    isOpen={hover === m.label}
+                    triggerStyle={topNavLink}
+                    align="left"
+                    onOpen={() => openMenu(m.label)}
+                    onToggle={() => setHover((p) => (p === m.label ? null : m.label))}
+                    cancelClose={cancelClose}
+                    scheduleClose={scheduleClose}
+                  />
+                ),
+              )}
             </nav>
           </div>
         </div>
@@ -284,99 +448,26 @@ export default function Header() {
             <BrandSwitcher />
           </div>
 
-          {/* Desktop menu */}
+          {/* Desktop menu — pill nav. Items with a submenu render through the
+              shared NavDropdown (center-anchored); simple links stay links. */}
           <div className="hidden lg:flex items-center" style={{ gap: "26px" }}>
-            {MENUS.map((m) => {
-              if (!m.items) {
-                return (
-                  <Link key={m.label} href={m.href!} style={navLink} className="hover:underline transition">{m.label}</Link>
-                );
-              }
-              const { items, showViewAll } = curate(m);
-              const isOpen = hover === m.label;
-              return (
-                <div
+            {MENUS.map((m) =>
+              !m.items ? (
+                <Link key={m.label} href={m.href!} style={navLink} className="hover:underline transition">{m.label}</Link>
+              ) : (
+                <NavDropdown
                   key={m.label}
-                  className="relative"
-                  style={{ display: "flex", alignItems: "center", padding: "10px 0" }}
-                  onMouseEnter={() => openMenu(m.label)}
-                  onMouseLeave={scheduleClose}
-                >
-                  <button
-                    style={{ ...navLink, background: "none", border: "none", cursor: "pointer", padding: "4px 0", display: "flex", alignItems: "center", gap: "4px" }}
-                    className="hover:underline transition"
-                    aria-haspopup="true"
-                    aria-expanded={isOpen}
-                    onClick={() => setHover((p) => (p === m.label ? null : m.label))}
-                  >
-                    {m.label}
-                    <svg
-                      width="10" height="10" viewBox="0 0 24 24" fill="none"
-                      stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
-                      style={{ transition: "transform 0.25s cubic-bezier(0.22,1,0.36,1)", transform: isOpen ? "rotate(180deg)" : "rotate(0deg)", opacity: 0.7 }}
-                    >
-                      <polyline points="6 9 12 15 18 9" />
-                    </svg>
-                  </button>
-                  {/* Panel is always mounted; open/close is driven by CSS so it
-                      fades + slides in AND out smoothly (no abrupt pop). */}
-                  <div
-                    onMouseEnter={cancelClose}
-                    onMouseLeave={scheduleClose}
-                    role="menu"
-                    aria-hidden={!isOpen}
-                    style={{
-                      position: "absolute",
-                      top: "calc(100% - 2px)",
-                      left: "50%",
-                      transform: `translateX(-50%) translateY(${isOpen ? "0" : "8px"})`,
-                      opacity: isOpen ? 1 : 0,
-                      visibility: isOpen ? "visible" : "hidden",
-                      pointerEvents: isOpen ? "auto" : "none",
-                      transition: "opacity 0.2s ease, transform 0.24s cubic-bezier(0.22,1,0.36,1), visibility 0.2s",
-                      background: "rgba(255,255,255,0.82)",
-                      backdropFilter: "blur(22px) saturate(180%)",
-                      WebkitBackdropFilter: "blur(22px) saturate(180%)",
-                      border: "1px solid rgba(255,255,255,0.7)",
-                      borderRadius: "16px",
-                      boxShadow: "0 16px 40px rgba(28,30,30,0.16), inset 0 1px 0 rgba(255,255,255,0.85)",
-                      width: "448px",
-                      padding: "10px",
-                      display: "grid",
-                      gridTemplateColumns: "minmax(0,1fr) minmax(0,1fr)",
-                      columnGap: "6px",
-                      zIndex: 100,
-                    }}>
-                      {/* Invisible hover bridge: wider than the panel and tall
-                          enough so diagonal cursor paths from the (narrow) trigger
-                          into the (wide, centered) panel never cross dead space. */}
-                      <span
-                        aria-hidden
-                        style={{
-                          position: "absolute",
-                          bottom: "100%",
-                          left: "-60px",
-                          right: "-60px",
-                          height: "32px",
-                          background: "transparent",
-                        }}
-                      />
-                      {items.map((it) => (
-                        <Link key={it.href} href={it.href} tabIndex={isOpen ? undefined : -1} className="block hover:bg-black/5 hover:underline"
-                          style={{ padding: "9px 14px", borderRadius: "10px", color: DROPDOWN_INK, fontFamily: '"Roboto Local", sans-serif', fontSize: "13px", textDecoration: "none", transition: "background 0.3s ease" }}>
-                          {it.label}
-                        </Link>
-                      ))}
-                      {showViewAll && (
-                        <Link href={m.viewAllHref!} tabIndex={isOpen ? undefined : -1} className="block hover:bg-black/5 hover:underline"
-                          style={{ gridColumn: "1 / -1", marginTop: "4px", borderTop: "1px solid rgba(64,96,96,0.16)", paddingTop: "10px", padding: "10px 14px 4px", color: TEAL, fontFamily: '"Roboto Local", sans-serif', fontSize: "13px", fontWeight: 600, textDecoration: "none", transition: "background 0.3s ease" }}>
-                          View all →
-                        </Link>
-                      )}
-                    </div>
-                </div>
-              );
-            })}
+                  menu={m}
+                  isOpen={hover === m.label}
+                  triggerStyle={navLink}
+                  align="center"
+                  onOpen={() => openMenu(m.label)}
+                  onToggle={() => setHover((p) => (p === m.label ? null : m.label))}
+                  cancelClose={cancelClose}
+                  scheduleClose={scheduleClose}
+                />
+              ),
+            )}
           </div>
 
           {/* Right — phone + CTA (search lives in the footer) */}
