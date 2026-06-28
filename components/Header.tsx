@@ -56,6 +56,15 @@ function curate(m: Dropdown): { items: NavLink[]; showViewAll: boolean } {
   return { items: all, showViewAll: false };
 }
 
+// Top split-bar (homepage, scroll-top) renders each menu as a single simple
+// link to its primary destination: explicit href → viewAllHref → first item → /.
+type SimpleLink = { label: string; href: string };
+const menuHref = (m: Dropdown): string =>
+  m.href ?? m.viewAllHref ?? m.items?.[0]?.href ?? "/";
+const TOP_LINKS: SimpleLink[] = MENUS.map((m) => ({ label: m.label, href: menuHref(m) }));
+const TOP_LEFT: SimpleLink[] = TOP_LINKS.slice(0, Math.ceil(TOP_LINKS.length / 2));
+const TOP_RIGHT: SimpleLink[] = TOP_LINKS.slice(Math.ceil(TOP_LINKS.length / 2));
+
 // Slimming nav-link spec, exact px (green → aesthetics nav ink).
 const navLink: React.CSSProperties = {
   color: NAV_INK,
@@ -78,6 +87,7 @@ function PhoneIcon() {
 
 export default function Header() {
   const pathname = usePathname();
+  const isHome = pathname === "/";
   const hasStickyBar = !!pathname && STICKY_BAR_PAGES.has(pathname);
   const [open, setOpen] = useState(false);
   const [expanded, setExpanded] = useState<string | null>(null);
@@ -172,10 +182,95 @@ export default function Header() {
     <header className="fixed top-0 inset-x-0 z-50">
       {/* Logo sizing rules — identical to Carisma Slimming: desktop 26px, ≤767px 20px, mobile-menu 22px. */}
       <style>{`@media (max-width:767px){.header-logo{height:20px !important}}
-.header-logo--mobile{height:22px !important}`}</style>
+.header-logo--mobile{height:22px !important}
+
+        /* ── Homepage top split-nav (cross-fades into the pill on scroll) ── */
+        .cms-topnav {
+          display: none;
+          position: absolute;
+          inset: 0 0 auto 0;
+          padding: 26px clamp(28px, 5vw, 72px) 0;
+          transition: opacity .55s cubic-bezier(.22,1,.36,1), transform .55s cubic-bezier(.22,1,.36,1);
+        }
+        @media (min-width: 1024px) {
+          .cms-topnav { display: block; opacity: 1; transform: translateY(0); }
+          .cms-topnav--hidden { opacity: 0; transform: translateY(-18px); pointer-events: none; }
+        }
+        .cms-topnav__row {
+          display: grid;
+          grid-template-columns: 1fr auto 1fr;
+          align-items: center;
+          gap: clamp(1.5rem, 3vw, 2.75rem);
+          max-width: 1480px;
+          margin: 0 auto;
+        }
+        .cms-topnav__group { display: flex; align-items: center; gap: clamp(1.25rem, 3.5vw, 3.5rem); }
+        /* Both groups hug the centered logo: left group right-aligned, right group
+           left-aligned, so the nearest link sits beside the lockup (not at the page edge). */
+        .cms-topnav__group--left { justify-content: flex-end; }
+        .cms-topnav__group--right { justify-content: flex-start; }
+        .cms-topnav__link {
+          color: #245052;
+          font-family: "Novecento Wide", sans-serif;
+          font-size: 12px;
+          font-weight: 400;
+          letter-spacing: 1.5px;
+          text-transform: uppercase;
+          text-decoration: none;
+          white-space: nowrap;
+          transition: color .25s ease;
+        }
+        .cms-topnav__link:hover { color: #96B2B2; }
+        .cms-topnav__brand { display: inline-flex; align-items: center; justify-content: center; }
+        /* Real vertical lockup SVG (vector-crisp): ~104px desktop, ~70px mobile. */
+        .cms-topnav__logo { height: 104px; width: auto; display: block; }
+        @media (max-width: 767px) { .cms-topnav__logo { height: 70px; } }
+
+        /* ── Pill wrapper — the morph target (desktop homepage only) ── */
+        .cms-pillwrap {
+          transition: opacity .55s cubic-bezier(.22,1,.36,1), transform .55s cubic-bezier(.22,1,.36,1);
+        }
+        @media (min-width: 1024px) {
+          /* Homepage at top: pill hidden + tucked up & shrunk; on scroll it "pops" in. */
+          .cms-pillwrap--home { opacity: 0; transform: translateY(-14px) scale(0.96); pointer-events: none; }
+          .cms-pillwrap--home.cms-pillwrap--shown { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
+        }
+        /* Mobile keeps the existing pill (and its hamburger) visible at all times —
+           the split-nav / vertical lockup is a desktop-only homepage treatment. */
+        @media (prefers-reduced-motion: reduce) {
+          .cms-topnav, .cms-pillwrap { transition: opacity .2s linear; transform: none !important; }
+        }`}</style>
+
+      {/* ── Homepage top split-nav (desktop) — flanks the centered vertical lockup ── */}
+      {isHome && (
+        <div className={`cms-topnav${scrolled ? " cms-topnav--hidden" : ""}`} aria-hidden={scrolled}>
+          <div className="cms-topnav__row">
+            <nav className="cms-topnav__group cms-topnav__group--left" aria-label="Primary">
+              {TOP_LEFT.map((m) => (
+                <Link key={m.label} href={m.href} className="cms-topnav__link">{m.label}</Link>
+              ))}
+            </nav>
+            <Link href="/" className="cms-topnav__brand" aria-label="Carisma Aesthetics — home">
+              <img
+                src="/assets/logos/carisma-vertical-lockup.svg"
+                alt="Carisma Aesthetics"
+                className="cms-topnav__logo"
+              />
+            </Link>
+            <nav className="cms-topnav__group cms-topnav__group--right" aria-label="Secondary">
+              {TOP_RIGHT.map((m) => (
+                <Link key={m.label} href={m.href} className="cms-topnav__link">{m.label}</Link>
+              ))}
+            </nav>
+          </div>
+        </div>
+      )}
 
       {/* Floating glass pill */}
-      <div style={{ padding: "12px clamp(12px,3vw,28px) 0", maxWidth: "1280px", margin: "0 auto" }}>
+      <div
+        className={isHome ? `cms-pillwrap cms-pillwrap--home${scrolled ? " cms-pillwrap--shown" : ""}` : undefined}
+        style={{ padding: "12px clamp(12px,3vw,28px) 0", maxWidth: "1280px", margin: "0 auto" }}
+      >
         <nav
           aria-label="Main navigation"
           className="flex items-center justify-between"
