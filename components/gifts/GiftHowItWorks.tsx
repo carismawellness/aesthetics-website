@@ -1,4 +1,5 @@
 import Reveal from "@/components/Reveal";
+import SectionHeading from "@/components/SectionHeading";
 import HeroBackdrop from "@/components/motion/HeroBackdrop";
 
 /**
@@ -37,44 +38,12 @@ export default function GiftHowItWorks() {
       <div className="container" style={{ position: "relative", zIndex: 1 }}>
         {/* ── Heading ── */}
         <Reveal>
-          <div className="text-center" style={{ maxWidth: "640px", margin: "0 auto" }}>
-            <span
-              className="font-display"
-              style={{
-                display: "inline-block",
-                fontSize: "12px",
-                color: "var(--teal-text)",
-                letterSpacing: "0.16em",
-                textTransform: "uppercase",
-                marginBottom: "14px",
-              }}
-            >
-              Gifting Made Effortless
-            </span>
-            <h2
-              id="gift-how-heading"
-              className="font-serif"
-              style={{
-                fontSize: "clamp(26px, 4vw, 38px)",
-                color: "var(--gold)",
-                letterSpacing: "0.04em",
-                fontWeight: 400,
-                lineHeight: 1.2,
-              }}
-            >
-              How it works
-            </h2>
-            <p
-              style={{
-                marginTop: "16px",
-                fontSize: "16px",
-                color: "var(--muted)",
-                lineHeight: 1.7,
-              }}
-            >
-              A thoughtful, luxurious gift in three simple steps — done in under a minute.
-            </p>
-          </div>
+          <SectionHeading
+            id="gift-how-heading"
+            eyebrow="Gifting Made Effortless"
+            title="How it works"
+            subtitle="A thoughtful, luxurious gift in three simple steps — done in under a minute."
+          />
         </Reveal>
 
         {/* ── Step cards / timeline ── */}

@@ -1,5 +1,6 @@
 import Reveal from "@/components/Reveal";
 import GiftHeroCards from "@/components/gifts/GiftHeroCards";
+import SectionHeading from "@/components/SectionHeading";
 
 /**
  * GiftCardsSummary — home-page e-gift-voucher section for Carisma Aesthetics.
@@ -36,59 +37,21 @@ export default function GiftCardsSummary() {
       <div className="container">
         {/* ── Heading block ── */}
         <Reveal>
-          <div className="text-center mx-auto" style={{ maxWidth: "680px" }}>
-            <span
-              className="font-display"
-              style={{
-                display: "inline-block",
-                fontSize: "12px",
-                color: "var(--teal-text)",
-                letterSpacing: "0.18em",
-                textTransform: "uppercase",
-                fontWeight: 600,
-                marginBottom: "14px",
-              }}
-            >
-              E-Gift Vouchers
-            </span>
-            <h2
-              id="gift-summary-heading"
-              className="font-serif"
-              style={{
-                fontSize: "clamp(26px, 4vw, 40px)",
-                color: "var(--teal-deep)",
-                letterSpacing: "0.03em",
-                fontWeight: 400,
-                lineHeight: 1.2,
-              }}
-            >
-              Give the Gift of Glowing Skin
-            </h2>
-            <div
-              aria-hidden="true"
-              className="mx-auto"
-              style={{
-                width: "96px",
-                height: "1px",
-                background: "var(--teal)",
-                opacity: 0.7,
-                margin: "20px auto 0",
-              }}
-            />
-            <p
-              style={{
-                marginTop: "22px",
-                fontSize: "16px",
-                color: "var(--muted)",
-                lineHeight: 1.75,
-              }}
-            >
-              The effortless way to give a glow they will remember. A Carisma
-              Aesthetics e-voucher is delivered instantly, valid for a full 12
-              months, and redeemable on any treatment at any of our clinics in
-              Malta — a beautiful card for every occasion.
-            </p>
-          </div>
+          <SectionHeading
+            className="mx-auto"
+            style={{ maxWidth: "680px" }}
+            eyebrow="E-Gift Vouchers"
+            title="Give the Gift of Glowing Skin"
+            subtitle={
+              <>
+                The effortless way to give a glow they will remember. A Carisma
+                Aesthetics e-voucher is delivered instantly, valid for a full 12
+                months, and redeemable on any treatment at any of our clinics in
+                Malta — a beautiful card for every occasion.
+              </>
+            }
+            id="gift-summary-heading"
+          />
         </Reveal>
 
         {/* ── Fanned occasion gift cards — the same visual used in the gift-cards

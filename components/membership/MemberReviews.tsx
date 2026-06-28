@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
+import SectionHeading from "@/components/SectionHeading";
 
 /* ─────────────────────────────────────────────────────────────────────────
    MemberReviews — Glow Club social-proof section
@@ -86,45 +87,13 @@ export default function MemberReviews() {
       <div className="container">
         {/* ── eyebrow + heading ── */}
         <Reveal>
-          <div className="text-center" style={{ maxWidth: "640px", margin: "0 auto" }}>
-            <p
-              className="font-display"
-              style={{
-                fontSize: "12px",
-                color: TEAL_TEXT,
-                letterSpacing: "0.18em",
-                textTransform: "uppercase",
-                margin: "0 0 14px",
-                fontWeight: 700,
-              }}
-            >
-              Loved by our members
-            </p>
-            <h2
-              id="member-reviews-heading"
-              className="font-serif"
-              style={{
-                fontSize: "clamp(26px,4vw,40px)",
-                color: "var(--ink)",
-                lineHeight: 1.25,
-                margin: 0,
-              }}
-            >
-              Real people, real glow
-            </h2>
-            <p
-              style={{
-                fontSize: "16px",
-                color: "var(--label)",
-                lineHeight: 1.7,
-                margin: "16px auto 0",
-                maxWidth: "520px",
-              }}
-            >
-              Hundreds of women in Malta are already glowing for less every month
-              with the Glow Club. Here is what membership feels like in their words.
-            </p>
-          </div>
+          <SectionHeading
+            eyebrow="Loved by our members"
+            title="Real people, real glow"
+            subtitle="Hundreds of women in Malta are already glowing for less every month with the Glow Club. Here is what membership feels like in their words."
+            id="member-reviews-heading"
+            subtitleMaxWidth={520}
+          />
         </Reveal>
 
         {/* ── testimonial cards ── */}

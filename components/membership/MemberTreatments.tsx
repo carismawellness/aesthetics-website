@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
+import SectionHeading from "@/components/SectionHeading";
 
 /* ──────────────────────────────────────────────────────────────────
    MemberTreatments — CRO section for the Glow Club membership rebuild.
@@ -72,68 +73,14 @@ export default function MemberTreatments() {
       style={{ padding: "72px 0" }}
     >
       <div className="container text-center">
-        {/* eyebrow */}
+        {/* eyebrow + heading + rule + subhead */}
         <Reveal>
-          <p
-            className="font-display"
-            style={{
-              fontSize: "12px",
-              letterSpacing: "0.18em",
-              textTransform: "uppercase",
-              color: GOLD,
-              margin: 0,
-            }}
-          >
-            Members glow for less
-          </p>
-        </Reveal>
-
-        {/* heading */}
-        <Reveal delay={60}>
-          <h2
+          <SectionHeading
+            eyebrow="Members glow for less"
+            title="Your favourite treatments, at member prices"
+            subtitle="Every Glow Club member enjoys 10% off all aesthetic services and 15% off skincare — so the treatments you already love simply cost less, every single visit."
             id="member-treatments-heading"
-            className="font-serif"
-            style={{
-              fontSize: "clamp(22px,3vw,32px)",
-              color: GOLD,
-              letterSpacing: "0.08em",
-              fontWeight: 400,
-              lineHeight: 1.3,
-              margin: "12px 0 0",
-            }}
-          >
-            Your favourite treatments, at member prices
-          </h2>
-        </Reveal>
-
-        {/* rule */}
-        <div
-          aria-hidden="true"
-          className="mx-auto"
-          style={{
-            width: "70px",
-            height: "1px",
-            background: FOCUS,
-            opacity: 0.5,
-            margin: "14px auto 0",
-          }}
-        />
-
-        {/* subhead — Sarah's warm, confident framing */}
-        <Reveal delay={120}>
-          <p
-            style={{
-              maxWidth: "560px",
-              margin: "20px auto 0",
-              fontSize: "16px",
-              lineHeight: 1.7,
-              color: TEAL_TEXT,
-            }}
-          >
-            Every Glow Club member enjoys 10% off all aesthetic services and 15%
-            off skincare — so the treatments you already love simply cost less,
-            every single visit.
-          </p>
+          />
         </Reveal>
 
         {/* tile hover + focus styling (lifts + zooms; respects reduced motion) */}

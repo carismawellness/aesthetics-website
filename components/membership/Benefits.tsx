@@ -9,6 +9,7 @@ import {
   type CSSProperties,
 } from "react";
 import { gsap } from "gsap";
+import SectionHeading from "@/components/SectionHeading";
 
 /* ────────────────────────────────────────────────────────────────
    Glow Club — detailed member benefits + EXCLUSIVE 10% member discount
@@ -491,60 +492,12 @@ export default function Benefits() {
 
       <div className="container">
         {/* ── Heading block ── */}
-        <div className="mx-auto text-center" style={{ maxWidth: "680px" }}>
-          <p
-            aria-hidden="true"
-            style={{
-              color: TEAL_TEXT,
-              fontFamily: '"Novecento Wide", sans-serif',
-              fontSize: "12px",
-              fontWeight: 600,
-              letterSpacing: "0.22em",
-              textTransform: "uppercase",
-              margin: 0,
-            }}
-          >
-            Everything your membership unlocks
-          </p>
-          <h2
-            id="glow-benefits-heading"
-            className="font-serif"
-            style={{
-              color: GOLD,
-              fontSize: "clamp(22px,3.2vw,34px)",
-              fontWeight: 400,
-              lineHeight: 1.25,
-              letterSpacing: "0.05em",
-              margin: "16px auto 0",
-            }}
-          >
-            Your Glow Club benefits
-          </h2>
-          <div
-            aria-hidden="true"
-            className="mx-auto"
-            style={{
-              width: "70px",
-              height: "1px",
-              background: TEAL_DEEP,
-              opacity: 0.5,
-              margin: "16px auto 0",
-            }}
-          />
-          <p
-            style={{
-              color: TEAL_TEXT,
-              fontSize: "clamp(16px,1.6vw,18px)",
-              lineHeight: 1.7,
-              margin: "20px auto 0",
-              maxWidth: "560px",
-            }}
-          >
-            Real, lasting perks designed around you — so every visit feels a
-            little more rewarding, and your glow keeps going between
-            appointments.
-          </p>
-        </div>
+        <SectionHeading
+          eyebrow="Everything your membership unlocks"
+          title="Your Glow Club benefits"
+          subtitle="Real, lasting perks designed around you — so every visit feels a little more rewarding, and your glow keeps going between appointments."
+          id="glow-benefits-heading"
+        />
 
         {/* ── Imagery + benefit roster ── */}
         <div

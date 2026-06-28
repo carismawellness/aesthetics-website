@@ -1,4 +1,5 @@
 import Reveal from "@/components/Reveal";
+import SectionHeading from "@/components/SectionHeading";
 
 // Closing CTA band for the gifts page. Emotive headline + one supporting line
 // + a single primary teal CTA pointing back to the on-page occasion grid
@@ -20,48 +21,14 @@ export default function GiftFinalCta() {
               margin: "0 auto",
             }}
           >
-            {/* Eyebrow */}
-            <p
-              className="font-display"
-              style={{
-                fontSize: "clamp(11px,1.6vw,13px)",
-                color: "var(--teal-text)",
-                letterSpacing: "0.18em",
-                textTransform: "uppercase",
-                fontWeight: 600,
-                marginBottom: "16px",
-              }}
-            >
-              The Gift of Glow
-            </p>
-
-            {/* Emotive headline — brand gold on the light premium ground */}
-            <h2
+            {/* Eyebrow + emotive headline + supporting line */}
+            <SectionHeading
               id="gift-final-cta-heading"
-              className="font-serif"
-              style={{
-                fontSize: "clamp(28px,4.5vw,44px)",
-                lineHeight: 1.15,
-                color: "var(--gold)",
-                margin: 0,
-              }}
-            >
-              Give a gift she&rsquo;ll never forget
-            </h2>
-
-            {/* Supporting line */}
-            <p
-              style={{
-                fontSize: "clamp(15px,1.9vw,18px)",
-                lineHeight: 1.7,
-                color: "var(--muted)",
-                maxWidth: "560px",
-                margin: "18px auto 0",
-              }}
-            >
-              One thoughtful voucher, endless ways to glow. She chooses the
-              treatment she&rsquo;ll love — you give the confidence that comes with it.
-            </p>
+              eyebrow="The Gift of Glow"
+              title="Give a gift she’ll never forget"
+              subtitle="One thoughtful voucher, endless ways to glow. She chooses the treatment she’ll love — you give the confidence that comes with it."
+              subtitleMaxWidth={560}
+            />
 
             {/* Primary CTA → on-page occasion grid */}
             <div style={{ marginTop: "32px" }}>

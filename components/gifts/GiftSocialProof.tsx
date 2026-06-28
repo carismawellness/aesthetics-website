@@ -1,4 +1,5 @@
 import Reveal from "@/components/Reveal";
+import SectionHeading from "@/components/SectionHeading";
 import {
   REVIEW_SUMMARY,
   CURATED_REVIEWS,
@@ -39,32 +40,11 @@ export default function GiftSocialProof() {
         {/* Aggregate + intro */}
         <Reveal>
           <div style={{ maxWidth: "720px", margin: "0 auto", textAlign: "center" }}>
-            <p
-              className="font-display"
-              style={{
-                fontSize: "clamp(12px,1.6vw,14px)",
-                color: TEAL_TEXT,
-                letterSpacing: "0.18em",
-                textTransform: "uppercase",
-                fontWeight: 600,
-                margin: 0,
-              }}
-            >
-              Loved by Women Across Malta
-            </p>
-
-            <h2
+            <SectionHeading
               id="gift-social-proof-heading"
-              className="font-serif"
-              style={{
-                fontSize: "clamp(26px,3.4vw,38px)",
-                color: GOLD,
-                lineHeight: 1.18,
-                margin: "14px 0 0",
-              }}
-            >
-              A gift they'll thank you for
-            </h2>
+              eyebrow="Loved by Women Across Malta"
+              title="A gift they'll thank you for"
+            />
 
             {/* Headline aggregate score */}
             <div

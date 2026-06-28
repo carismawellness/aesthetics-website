@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Reveal from "@/components/Reveal";
 import BookingButtons from "@/components/BookingButtons";
+import SectionHeading from "@/components/SectionHeading";
 
 const FRESHA_CONSULT =
   "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2800348&oiid=sv%3A25754425&share=true&pId=2708191";
@@ -33,34 +34,13 @@ export default function BookConsultation() {
                 style={{ width: "100%", height: "auto" }}
               />
             </div>
-            <h2
+            <SectionHeading
+              className="relative"
+              style={{ zIndex: 1 }}
               id="book-heading"
-              className="relative font-display text-center"
-              style={{
-                zIndex: 1,
-                fontSize: "clamp(28px,3.6vw,40px)",
-                color: "var(--teal-deep)",
-                textTransform: "uppercase",
-                fontWeight: 300,
-                letterSpacing: "0.04em",
-                lineHeight: 1.4,
-              }}
-            >
-              Book Your Consultation
-            </h2>
-            <p
-              className="relative font-display text-center"
-              style={{
-                zIndex: 1,
-                fontSize: "12px",
-                color: "var(--label)",
-                letterSpacing: "0.1em",
-                marginTop: "14px",
-                lineHeight: 1.6,
-              }}
-            >
-              Book instantly online or fill in a short form and we&apos;ll be in touch
-            </p>
+              title="Book Your Consultation"
+              subtitle="Book instantly online or fill in a short form and we'll be in touch"
+            />
           </div>
         </Reveal>
 

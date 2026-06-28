@@ -1,5 +1,6 @@
 import Link from "next/link";
 import PageHero from "@/components/PageHero";
+import SectionHeading from "@/components/SectionHeading";
 import Pillars from "@/components/membership/Pillars";
 import HowItWorks from "@/components/membership/HowItWorks";
 import Tiers from "@/components/membership/Tiers";
@@ -87,19 +88,10 @@ export default function MembershipPage() {
           className="container text-center"
           style={{ maxWidth: "720px" }}
         >
-          <h2
+          <SectionHeading
+            title="Ready to start saving towards your glow?"
             id="join-cta-heading"
-            className="font-serif"
-            style={{
-              fontSize: "clamp(24px,4vw,38px)",
-              color: "var(--teal-text)",
-              letterSpacing: "0.06em",
-              fontWeight: 400,
-              lineHeight: 1.25,
-            }}
-          >
-            Ready to start saving towards your glow?
-          </h2>
+          />
           <p
             style={{
               fontFamily: "var(--font-pinyon), cursive",

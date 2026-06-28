@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { DOCTORS, type Doctor } from '@/lib/site';
+import SectionHeading from '@/components/SectionHeading';
 
 /* ── Shared design tokens (light gradient footer) ──────────────────────────
    Ported 1:1 from the Carisma Slimming DoctorShowcase, recoloured green → teal:
@@ -250,46 +251,14 @@ export default function DoctorsSection() {
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading block */}
-        <div style={{ textAlign: 'center', maxWidth: 640, margin: '0 auto clamp(36px,5vw,56px)' }}>
-          <p
-            style={{
-              color: MUTED,
-              fontFamily: WIDE,
-              fontSize: 12,
-              letterSpacing: 2.2,
-              textTransform: 'uppercase',
-              margin: 0,
-            }}
-          >
-            Our Medical Team
-          </p>
-          <h2
-            id="doctors-heading"
-            style={{
-              color: INK,
-              fontFamily: SERIF,
-              fontWeight: 400,
-              fontSize: 'clamp(28px,4.4vw,44px)',
-              lineHeight: 1.12,
-              letterSpacing: 0.5,
-              margin: '10px 0 0',
-            }}
-          >
-            Meet your doctors
-          </h2>
-          <p
-            style={{
-              color: BODY,
-              fontFamily: BODY_FONT,
-              fontSize: 16,
-              lineHeight: 1.65,
-              margin: '16px auto 0',
-            }}
-          >
-            The qualified medical team behind your results — combining decades of clinical
-            experience with a calm, considered approach to your care.
-          </p>
-        </div>
+        <SectionHeading
+          style={{ maxWidth: 640, margin: '0 auto clamp(36px,5vw,56px)' }}
+          eyebrow="Our Medical Team"
+          title="Meet your doctors"
+          subtitle="The qualified medical team behind your results — combining decades of clinical experience with a calm, considered approach to your care."
+          id="doctors-heading"
+          divider={false}
+        />
 
         {/* Photo-forward grid */}
         <div className="doctor-grid">

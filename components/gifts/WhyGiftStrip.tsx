@@ -1,4 +1,5 @@
 import Reveal from "@/components/Reveal";
+import SectionHeading from "@/components/SectionHeading";
 
 // "Why a Carisma gift" value strip — placed directly under the hero.
 // Four benefit pillars that build trust/desire and gently push toward the
@@ -73,34 +74,12 @@ export default function WhyGiftStrip() {
     <section aria-labelledby="why-gift-heading" style={{ padding: "8px 0 56px" }}>
       <div className="container">
         <Reveal>
-          <h2
+          <SectionHeading
             id="why-gift-heading"
-            className="font-display text-center"
-            style={{
-              fontSize: "clamp(13px,1.8vw,15px)",
-              color: "var(--teal-text)",
-              letterSpacing: "0.16em",
-              fontWeight: 600,
-              textTransform: "uppercase",
-              marginBottom: "8px",
-            }}
-          >
-            Why a Carisma Gift
-          </h2>
-        </Reveal>
-        <Reveal delay={70}>
-          <p
-            className="font-serif text-center"
-            style={{
-              fontSize: "clamp(18px,2.4vw,24px)",
-              color: "var(--gold)",
-              lineHeight: 1.3,
-              maxWidth: "620px",
-              margin: "0 auto 40px",
-            }}
-          >
-            The effortless way to give a glow they will remember.
-          </p>
+            title="Why a Carisma Gift"
+            subtitle="The effortless way to give a glow they will remember."
+            style={{ marginBottom: "40px" }}
+          />
         </Reveal>
 
         <ul

@@ -3,6 +3,7 @@ import Image from "next/image";
 import type { BlogPost, BlogBlock } from "@/lib/blog-types";
 import { getRelatedBlogs, getAllBlogs } from "@/lib/blogs";
 import ReadingProgress from "@/components/ReadingProgress";
+import SectionHeading from "@/components/SectionHeading";
 
 // ─── Block renderer ────────────────────────────────────────────────────────────
 
@@ -582,27 +583,13 @@ export default function BlogTemplate({
           style={{ background: "#fff", padding: "72px 0" }}
         >
           <div className="container">
-            <div className="text-center mb-12">
-              <p
-                aria-hidden="true"
-                className="font-display mb-3"
-                style={{ fontSize: "10px", color: "var(--label)", letterSpacing: "0.22em" }}
-              >
-                Continue Reading
-              </p>
-              {/* P6: H2 for "You Might Also Like" section */}
-              <h2
-                id="related-posts-heading"
-                className="font-serif"
-                style={{
-                  fontSize: "clamp(20px, 3vw, 30px)",
-                  color: "var(--teal-text)",
-                  letterSpacing: "0.04em",
-                }}
-              >
-                You Might Also Like
-              </h2>
-            </div>
+            {/* P6: H2 for "You Might Also Like" section */}
+            <SectionHeading
+              id="related-posts-heading"
+              eyebrow="Continue Reading"
+              title="You Might Also Like"
+              className="mb-12"
+            />
 
             {/* P5: responsive grid — 1 col mobile, auto-fit on wider screens */}
             <div
@@ -631,36 +618,15 @@ export default function BlogTemplate({
         }}
       >
         <div className="container">
-          <p
-            aria-hidden="true"
-            className="font-display mb-3"
-            style={{ fontSize: "10px", color: "#fff", letterSpacing: "0.22em" }}
-          >
-            Carisma Aesthetics — Malta
-          </p>
-          <h2
+          <SectionHeading
             id="blog-post-cta-heading"
-            className="font-serif mb-5"
-            style={{
-              fontSize: "clamp(20px, 3.5vw, 34px)",
-              color: "#fff",
-              letterSpacing: "0.04em",
-              lineHeight: 1.3,
-            }}
-          >
-            Ready to Begin Your Journey?
-          </h2>
-          <p
-            style={{
-              color: "#fff",
-              fontSize: "15px",
-              maxWidth: "520px",
-              margin: "0 auto 32px",
-              lineHeight: 1.7,
-            }}
-          >
-            Book a free consultation with our medically qualified team and get a personalised plan tailored to your goals.
-          </p>
+            tone="dark"
+            eyebrow="Carisma Aesthetics — Malta"
+            title="Ready to Begin Your Journey?"
+            subtitle="Book a free consultation with our medically qualified team and get a personalised plan tailored to your goals."
+            subtitleMaxWidth={520}
+            style={{ marginBottom: "32px" }}
+          />
           {/* P2: min 44px tap target; P10: primary CTA */}
           <Link
             href="/consultation"

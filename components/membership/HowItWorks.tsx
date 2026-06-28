@@ -12,6 +12,8 @@
    via scripts/contrast.mjs.
    ────────────────────────────────────────────────────────────────────────── */
 
+import SectionHeading from "@/components/SectionHeading";
+
 const SERIF = "var(--font-serif), Trajan Pro, serif";
 const WIDE = "var(--font-display), Novecento Wide, sans-serif";
 
@@ -128,45 +130,12 @@ export default function HowItWorks() {
     >
       <div className="container">
         {/* ── Header ── */}
-        <div className="mx-auto text-center" style={{ maxWidth: 680 }}>
-          <p
-            style={{
-              fontFamily: WIDE,
-              fontSize: 12,
-              letterSpacing: "0.18em",
-              textTransform: "uppercase",
-              color: TEAL_TEXT,
-              margin: "0 0 14px",
-            }}
-          >
-            How the Glow Club works
-          </p>
-          <h2
-            id="how-it-works-heading"
-            className="font-serif"
-            style={{
-              fontFamily: SERIF,
-              fontSize: "clamp(28px, 4.5vw, 40px)",
-              color: TEAL_DEEP,
-              lineHeight: 1.15,
-              margin: 0,
-            }}
-          >
-            Three simple steps to glow for less
-          </h2>
-          <p
-            style={{
-              fontSize: 16,
-              color: LABEL,
-              lineHeight: 1.7,
-              margin: "18px auto 0",
-              maxWidth: 560,
-            }}
-          >
-            Save a little each month into your Glow balance, then spend it at
-            member-only prices on the treatments and products you already love.
-          </p>
-        </div>
+        <SectionHeading
+          eyebrow="How the Glow Club works"
+          title="Three simple steps to glow for less"
+          subtitle="Save a little each month into your Glow balance, then spend it at member-only prices on the treatments and products you already love."
+          id="how-it-works-heading"
+        />
 
         {/* ── Desktop timeline ── */}
         <div

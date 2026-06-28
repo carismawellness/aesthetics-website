@@ -11,6 +11,8 @@
    Headings: Trajan Pro / Novecento Wide. Body: system font, normal weight.
    ────────────────────────────────────────────────────────────────────────── */
 
+import SectionHeading from '@/components/SectionHeading';
+
 const SERIF = 'Trajan Pro, Georgia, serif'; // STEP label + step number
 const WIDE = 'Novecento Wide, sans-serif'; // card heading
 const BODY = '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif'; // body copy
@@ -131,38 +133,18 @@ export default function ConsultationProcess() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Eyebrow + heading */}
-        <div className="text-center mb-14">
-          <p
-            aria-hidden="true"
-            style={{
-              color: '#406060',
-              fontFamily: 'Novecento Wide, sans-serif',
-              fontSize: '12px',
-              fontWeight: 600,
-              letterSpacing: '3px',
-              textTransform: 'uppercase',
-              marginBottom: '14px',
-            }}
-          >
-            Free Consultation · Doctor-Led
-          </p>
-          <div className="mx-auto mb-5" aria-hidden="true" style={{ width: '64px', height: '1px', backgroundColor: '#4f7373' }} />
-          <h2
-            id="consultation-process-heading"
-            style={{
-              color: '#4f7373',
-              fontFamily: 'Trajan Pro, Georgia, serif',
-              fontWeight: 400,
-              fontSize: '38px',
-              lineHeight: '1.25',
-              letterSpacing: '2px',
-            }}
-          >
-            How a Free Consultation Works
-            <br />
-            at Carisma Aesthetics
-          </h2>
-        </div>
+        <SectionHeading
+          className="mb-14"
+          eyebrow="Free Consultation · Doctor-Led"
+          title={
+            <>
+              How a Free Consultation Works
+              <br />
+              at Carisma Aesthetics
+            </>
+          }
+          id="consultation-process-heading"
+        />
 
         {/* Intro */}
         <p

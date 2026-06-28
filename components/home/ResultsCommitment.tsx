@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import SectionHeading from '@/components/SectionHeading';
 
 /**
  * ResultsCommitment — "The Carisma Results Commitment" section (Carisma Aesthetics).
@@ -27,7 +28,6 @@ import Link from 'next/link';
 
 const INK = '#245052'; // brand deep teal heading (no black anywhere on the site)
 const TEAL_DEEP = '#4f7373'; // accessible teal — big numbers / CTA fill (AA, white text passes)
-const TEAL_TEXT = '#406060'; // teal as small text / divider / eyebrow (AA on white + light tints)
 const TEAL_100 = '#f7fafa'; // lightest teal tint — section background gradient stop
 const BODY = '#706552'; // brand taupe-brown body (--ink-soft, AA on near-white)
 const SERIF = '"Trajan Pro", Georgia, serif'; // headings + big numbers (uppercase only)
@@ -209,40 +209,16 @@ export default function ResultsCommitment() {
 
       <div className="max-w-5xl mx-auto px-6 sm:px-8">
         {/* ── Heading ── */}
-        <div className="rc-rise" style={{ textAlign: 'center', maxWidth: 680, margin: '0 auto' }}>
-          <span
-            style={{
-              display: 'inline-block',
-              padding: '7px 16px',
-              borderRadius: 999,
-              border: `1px solid ${TEAL_TEXT}`,
-              background: 'rgba(64,96,96,0.06)',
-              color: TEAL_TEXT,
-              fontFamily: WIDE,
-              fontSize: 11,
-              letterSpacing: '0.22em',
-              textTransform: 'uppercase',
-            }}
-          >
-            Our Commitment
-          </span>
-          <h2
-            id="results-commitment-heading"
-            style={{
-              color: INK,
-              fontFamily: SERIF,
-              fontWeight: 400,
-              fontSize: 'clamp(27px,3.8vw,42px)',
-              lineHeight: 1.16,
-              margin: '22px 0 0',
-            }}
-          >
-            Award-Winning Aesthetic Clinic
-          </h2>
-          <p style={{ color: BODY, fontFamily: SYS, fontSize: 'clamp(16px,1.7vw,19px)', lineHeight: 1.6, margin: '14px auto 0', maxWidth: 540 }}>
-            Doctor-led. Natural-looking. Built around you — so you glow with confidence, never overdone.
-          </p>
-        </div>
+        <SectionHeading
+          className="rc-rise"
+          style={{ maxWidth: 680, margin: '0 auto' }}
+          eyebrow="Our Commitment"
+          title="Award-Winning Aesthetic Clinic"
+          subtitle="Doctor-led. Natural-looking. Built around you — so you glow with confidence, never overdone."
+          id="results-commitment-heading"
+          divider={false}
+          subtitleMaxWidth={540}
+        />
 
         {/* ── Fanned image cluster ── */}
         <div className="rc-fan rc-rise rc-d1" style={{ marginTop: 'clamp(40px,6vw,64px)' }}>

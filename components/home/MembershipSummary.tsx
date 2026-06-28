@@ -1,4 +1,5 @@
 import Link from "next/link";
+import SectionHeading from "@/components/SectionHeading";
 
 /* ──────────────────────────────────────────────────────────────────────────
    MembershipSummary — home-page summary of the Carisma Aesthetics "Glow Club".
@@ -33,11 +34,9 @@ import Link from "next/link";
 const MEMBERSHIP_HREF = "/membership";
 
 const GOLD = "var(--gold)"; // #706552 — heading / reward TEXT
-const TEAL_TEXT = "var(--teal-text)"; // #406060 — eyebrow / small accents
 const TEAL_DEEP = "var(--teal-deep)"; // #4f7373 — icon chips
 const LABEL = "var(--label)"; // #695c4e — body taupe
 const MUTED = "var(--muted)"; // #636363 — footnote
-const WIDE = '"Novecento Wide", sans-serif';
 
 /* ── Four headline benefits (verbatim discount facts) ─────────────────── */
 type Perk = { title: string; body: string; icon: React.ReactNode };
@@ -120,60 +119,21 @@ export default function MembershipSummary() {
 
       <div className="container">
         {/* ── Header ─────────────────────────────────────────────── */}
-        <div className="mx-auto text-center" style={{ maxWidth: "760px" }}>
-          <p
-            aria-hidden="true"
-            style={{
-              fontFamily: WIDE,
-              fontSize: "12px",
-              fontWeight: 600,
-              letterSpacing: "0.22em",
-              textTransform: "uppercase",
-              color: TEAL_TEXT,
-              margin: 0,
-            }}
-          >
-            The Glow Club · Membership
-          </p>
-          <div
-            aria-hidden="true"
-            className="mx-auto"
-            style={{
-              width: "70px",
-              height: "1px",
-              background: TEAL_DEEP,
-              opacity: 0.45,
-              margin: "14px auto 0",
-            }}
-          />
-          <h2
-            id="membership-summary-heading"
-            className="font-serif"
-            style={{
-              fontSize: "clamp(26px,3.6vw,40px)",
-              color: GOLD,
-              fontWeight: 400,
-              lineHeight: 1.25,
-              letterSpacing: "0.05em",
-              margin: "18px auto 0",
-            }}
-          >
-            Glow Club Membership — Save More. Glow More.
-          </h2>
-          <p
-            style={{
-              fontSize: "16px",
-              color: LABEL,
-              lineHeight: 1.7,
-              margin: "18px auto 0",
-              maxWidth: "600px",
-            }}
-          >
-            One simple monthly membership. Save a little each month into your Glow
-            balance, then spend it on the treatments and products you love — with
-            exclusive member discounts that apply from day one.
-          </p>
-        </div>
+        <SectionHeading
+          className="mx-auto"
+          style={{ maxWidth: "760px" }}
+          eyebrow="The Glow Club · Membership"
+          title="Glow Club Membership — Save More. Glow More."
+          subtitle={
+            <>
+              One simple monthly membership. Save a little each month into your Glow
+              balance, then spend it on the treatments and products you love — with
+              exclusive member discounts that apply from day one.
+            </>
+          }
+          id="membership-summary-heading"
+          subtitleMaxWidth={600}
+        />
 
         {/* ── Benefit grid ───────────────────────────────────────── */}
         <ul

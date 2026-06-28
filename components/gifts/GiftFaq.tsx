@@ -1,4 +1,5 @@
 import Reveal from "@/components/Reveal";
+import SectionHeading from "@/components/SectionHeading";
 import FaqAccordion from "@/components/FaqAccordion";
 import { giftFaqs } from "./giftFaqData";
 
@@ -13,45 +14,13 @@ export default function GiftFaq() {
     >
       <div className="container">
         <Reveal>
-          <p
-            className="font-display text-center"
-            style={{
-              fontSize: "clamp(12px,1.6vw,14px)",
-              color: "var(--teal-text)",
-              letterSpacing: "0.16em",
-              textTransform: "uppercase",
-              marginBottom: "12px",
-            }}
-          >
-            Good to Know
-          </p>
-
-          <h2
+          <SectionHeading
             id="gift-faq-heading"
-            className="font-serif text-center"
-            style={{
-              fontSize: "clamp(26px,3.4vw,38px)",
-              color: "var(--gold)",
-              lineHeight: 1.2,
-              fontWeight: 400,
-            }}
-          >
-            Gifting questions, answered
-          </h2>
-
-          <p
-            className="mx-auto text-center"
-            style={{
-              maxWidth: "560px",
-              marginTop: "16px",
-              fontSize: "15px",
-              color: "var(--muted)",
-              lineHeight: 1.7,
-            }}
-          >
-            Everything you need to give a Carisma Aesthetics gift with complete
-            confidence — delivery, validity, and how it's redeemed.
-          </p>
+            eyebrow="Good to Know"
+            title="Gifting questions, answered"
+            subtitle="Everything you need to give a Carisma Aesthetics gift with complete confidence — delivery, validity, and how it's redeemed."
+            subtitleMaxWidth={560}
+          />
         </Reveal>
 
         <Reveal delay={90} style={{ marginTop: "44px" }}>

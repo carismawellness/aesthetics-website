@@ -5,6 +5,7 @@ import Reveal from "@/components/Reveal";
 import PageHero from "@/components/PageHero";
 import BeforeAfterCarousel from "@/components/BeforeAfterCarousel";
 import VideoPlayer from "@/components/VideoPlayer";
+import SectionHeader from "@/components/treatment/SectionHeader";
 import SuitabilityCards from "@/components/treatment/SuitabilityCards";
 import RecommendedCards from "@/components/treatment/RecommendedCards";
 import TreatmentFaq from "@/components/treatment/TreatmentFaq";
@@ -279,32 +280,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
           style={{ padding: "80px 0", background: "linear-gradient(180deg, #ffffff 0%, var(--cream) 50%, #ffffff 100%)" }}
         >
           <div className="container">
-            <h2
-              id="education-heading"
-              className="font-serif text-center"
-              style={{
-                fontSize: "clamp(24px,3.4vw,38px)",
-                color: "var(--teal-deep)",
-                letterSpacing: "0.04em",
-                lineHeight: 1.25,
-              }}
-            >
-              {t.education.title}
-            </h2>
-            {t.education.subtitle && (
-              <p
-                className="font-display text-center"
-                style={{
-                  fontSize: "14px",
-                  color: "var(--label)",
-                  letterSpacing: "0.14em",
-                  textTransform: "uppercase",
-                  marginTop: "12px",
-                }}
-              >
-                {t.education.subtitle}
-              </p>
-            )}
+            <SectionHeader id="education-heading" title={t.education.title} sub={t.education.subtitle} />
             <div className="mx-auto" style={{ marginTop: "26px", maxWidth: "820px" }}>
               {t.education.paragraphs.map((p, i) => (
                 // P6 — body text line height leading-relaxed (1.625)
@@ -381,21 +357,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
       {t.precision && (
         <section aria-labelledby="precision-heading" style={{ padding: "80px 0" }}>
           <div className="container">
-            <h2
-              id="precision-heading"
-              className="font-display text-center"
-              style={{ fontSize: "clamp(20px,3vw,30px)", color: "var(--label)", lineHeight: 1.25 }}
-            >
-              {t.precision.title}
-            </h2>
-            {t.precision.intro && (
-              <p
-                className="text-center mx-auto"
-                style={{ fontSize: "15px", color: "var(--muted)", lineHeight: 1.625, marginTop: "16px", maxWidth: "760px" }}
-              >
-                {t.precision.intro}
-              </p>
-            )}
+            <SectionHeader id="precision-heading" title={t.precision.title} sub={t.precision.intro} />
             {t.precision.areas && t.precision.areas.length > 0 && (
               <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4" style={{ marginTop: "44px" }}>
                 {t.precision.areas.map((a, i) => (
@@ -511,19 +473,9 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
       {t.experience && (
         <section aria-labelledby="experience-heading" style={{ padding: "80px 0" }}>
           <div className="container">
-            <h2
-              id="experience-heading"
-              className="font-serif text-center"
-              style={{
-                fontSize: "clamp(24px,3.4vw,38px)",
-                color: "var(--teal-deep)",
-                letterSpacing: "0.06em",
-                marginBottom: "56px",
-                lineHeight: 1.25,
-              }}
-            >
-              {t.experience.title}
-            </h2>
+            <div style={{ marginBottom: "56px" }}>
+              <SectionHeader id="experience-heading" title={t.experience.title} />
+            </div>
 
             {/* Mobile layout */}
             <div className="md:hidden" style={{ maxWidth: "480px", margin: "0 auto" }}>
@@ -716,26 +668,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
       {t.patientVideos && (
         <section aria-labelledby="videos-heading" style={{ padding: "80px 0" }}>
           <div className="container">
-            <h2
-              id="videos-heading"
-              className="font-serif text-center"
-              style={{
-                fontSize: "clamp(24px,3.4vw,38px)",
-                color: "var(--gold)",
-                letterSpacing: "0.04em",
-                lineHeight: 1.25,
-              }}
-            >
-              {t.patientVideos.title}
-            </h2>
-            {t.patientVideos.intro && (
-              <p
-                className="text-center mx-auto"
-                style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.625, marginTop: "18px", maxWidth: "820px" }}
-              >
-                {t.patientVideos.intro}
-              </p>
-            )}
+            <SectionHeader id="videos-heading" title={t.patientVideos.title} sub={t.patientVideos.intro} />
             {t.patientVideos.videos.length === 1 ? (
               <div style={{ marginTop: "44px", maxWidth: "340px", marginInline: "auto" }}>
                 <div style={{ borderRadius: "28px 64px 28px 64px", overflow: "hidden", boxShadow: "0 16px 38px rgba(0,0,0,0.10)" }}>
@@ -781,35 +714,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                 padding: "clamp(32px,4vw,60px)",
               }}
             >
-              {t.difference.kicker && (
-                <div className="text-center">
-                  <p
-                    className="font-display"
-                    // P1 — teal-text #406060 = 5.83:1 on worst gradient stop — passes AA
-                    style={{ fontSize: "11px", color: "var(--teal-text)", letterSpacing: "0.18em", textTransform: "uppercase" }}
-                  >
-                    {t.difference.kicker}
-                  </p>
-                  <div
-                    className="mx-auto"
-                    style={{ width: "80px", height: "1px", background: "var(--teal)", margin: "10px auto 0" }}
-                    aria-hidden="true"
-                  />
-                </div>
-              )}
-              <h2
-                id="difference-heading"
-                className="font-serif text-center"
-                style={{
-                  fontSize: "clamp(24px,3.4vw,38px)",
-                  color: "var(--gold)",
-                  letterSpacing: "0.04em",
-                  marginTop: "20px",
-                  lineHeight: 1.25,
-                }}
-              >
-                {t.difference.title}
-              </h2>
+              <SectionHeader id="difference-heading" kicker={t.difference.kicker} title={t.difference.title} />
 
               <div className="grid gap-12 lg:grid-cols-2 items-stretch" style={{ marginTop: "44px" }}>
                 {/* left: commitment + why */}
@@ -919,41 +824,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
       {t.prepAftercare && (
         <section aria-labelledby="prep-heading" style={{ padding: "80px 0" }}>
           <div className="container">
-            {t.prepAftercare.kicker && (
-              <p
-                className="font-display text-center"
-                style={{
-                  fontSize: "11px",
-                  // P1 — #96B2B2 (teal) on white FAILS; teal-text #406060 = 5.76:1 passes AA
-                  color: "var(--teal-text)",
-                  letterSpacing: "0.18em",
-                  textTransform: "uppercase",
-                  marginBottom: "14px",
-                }}
-              >
-                {t.prepAftercare.kicker}
-              </p>
-            )}
-            <h2
-              id="prep-heading"
-              className="font-serif text-center"
-              style={{
-                fontSize: "clamp(24px,3.4vw,38px)",
-                color: "var(--gold)",
-                letterSpacing: "0.04em",
-                lineHeight: 1.25,
-              }}
-            >
-              {t.prepAftercare.title}
-            </h2>
-            {t.prepAftercare.intro && (
-              <p
-                className="text-center mx-auto"
-                style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.625, marginTop: "18px", maxWidth: "760px" }}
-              >
-                {t.prepAftercare.intro}
-              </p>
-            )}
+            <SectionHeader id="prep-heading" kicker={t.prepAftercare.kicker} title={t.prepAftercare.title} sub={t.prepAftercare.intro} />
             <div className="grid gap-6 md:grid-cols-3" style={{ marginTop: "48px" }}>
               {t.prepAftercare.cards.map((c, i) => (
                 <Reveal
@@ -1037,26 +908,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
           style={{ padding: "80px 0", background: "linear-gradient(180deg, #ffffff 0%, var(--cream) 50%, #ffffff 100%)" }}
         >
           <div className="container">
-            <h2
-              id="pricing-heading"
-              className="font-serif text-center"
-              style={{
-                fontSize: "clamp(24px,3.4vw,38px)",
-                color: "var(--gold)",
-                letterSpacing: "0.04em",
-                lineHeight: 1.25,
-              }}
-            >
-              {t.pricingGrid.title}
-            </h2>
-            {t.pricingGrid.intro && (
-              <p
-                className="text-center mx-auto"
-                style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.625, marginTop: "16px", maxWidth: "760px" }}
-              >
-                {t.pricingGrid.intro}
-              </p>
-            )}
+            <SectionHeader id="pricing-heading" title={t.pricingGrid.title} sub={t.pricingGrid.intro} />
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3" style={{ marginTop: "44px" }}>
               {t.pricingGrid.items.map((it, i) => (
                 <Reveal
@@ -1109,26 +961,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
       {t.membership && (
         <section aria-labelledby="membership-heading" style={{ padding: "80px 0" }}>
           <div className="container">
-            <h2
-              id="membership-heading"
-              className="font-serif text-center"
-              style={{
-                fontSize: "clamp(24px,3.4vw,38px)",
-                color: "var(--gold)",
-                letterSpacing: "0.04em",
-                lineHeight: 1.25,
-              }}
-            >
-              {t.membership.title}
-            </h2>
-            {t.membership.intro && (
-              <p
-                className="text-center mx-auto"
-                style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.625, marginTop: "18px", maxWidth: "880px" }}
-              >
-                {t.membership.intro}
-              </p>
-            )}
+            <SectionHeader id="membership-heading" title={t.membership.title} sub={t.membership.intro} />
             <div className="grid gap-8 md:grid-cols-3 mx-auto" style={{ marginTop: "48px", maxWidth: "1040px" }}>
               {t.membership.tiers.map((tier, i) => (
                 <Reveal

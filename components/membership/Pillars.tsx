@@ -1,4 +1,5 @@
 import Link from "next/link";
+import SectionHeading from "@/components/SectionHeading";
 
 /* ────────────────────────────────────────────────────────────────
    Glow Club — "Why join" 4-pillar value grid
@@ -99,55 +100,12 @@ export default function Pillars() {
     >
       <div className="container">
         {/* Eyebrow + heading + rule */}
-        <p
-          aria-hidden="true"
-          className="text-center"
-          style={{
-            color: TEAL_TEXT,
-            fontFamily: '"Novecento Wide", sans-serif',
-            fontSize: "12px",
-            fontWeight: 600,
-            letterSpacing: "0.22em",
-            textTransform: "uppercase",
-            margin: 0,
-          }}
-        >
-          Why join the Glow Club
-        </p>
-        <div
-          aria-hidden="true"
-          className="mx-auto"
-          style={{ width: "70px", height: "1px", background: TEAL_DEEP, opacity: 0.45, margin: "14px auto 0" }}
-        />
-        <h2
+        <SectionHeading
+          eyebrow="Why join the Glow Club"
+          title="Four ways the Glow Club rewards you"
+          subtitle="A monthly savings membership built around you — save towards the treatments you love, then spend with exclusive member perks."
           id="glow-pillars-heading"
-          className="font-serif text-center"
-          style={{
-            color: GOLD,
-            fontSize: "clamp(22px,3vw,32px)",
-            fontWeight: 400,
-            lineHeight: 1.3,
-            letterSpacing: "0.06em",
-            margin: "18px auto 0",
-            maxWidth: "640px",
-          }}
-        >
-          Four ways the Glow Club rewards you
-        </h2>
-        <p
-          className="text-center"
-          style={{
-            color: INK_SOFT,
-            fontFamily: '"Roboto Local", Roboto, sans-serif',
-            fontSize: "16px",
-            lineHeight: 1.6,
-            maxWidth: "600px",
-            margin: "16px auto 0",
-          }}
-        >
-          A monthly savings membership built around you — save towards the
-          treatments you love, then spend with exclusive member perks.
-        </p>
+        />
 
         {/* Pillar grid */}
         <ul

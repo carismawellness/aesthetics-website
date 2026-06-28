@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { WHY_POINTS } from "@/lib/site";
 import Reveal from "@/components/Reveal";
+import SectionHeading from "@/components/SectionHeading";
 
 export default function WhyUs() {
   return (
@@ -27,15 +28,18 @@ export default function WhyUs() {
       <div className="container">
         {/* Kicker — two lines, emphasis on "#1 Award Winning" and "30+ Years" */}
         <Reveal>
-          <h2
+          <SectionHeading
+            className="mx-auto"
+            style={{ maxWidth: "780px", marginBottom: "56px" }}
             id="why-heading"
-            className="font-display text-center mx-auto"
-            style={{ fontSize: "clamp(19px,2.6vw,30px)", letterSpacing: "0.08em", lineHeight: 1.55, maxWidth: "780px", marginBottom: "56px", color: "var(--gold)", fontWeight: 400 }}
-          >
-            <span style={{ fontWeight: 700 }}>#1 Award Winning</span> Chain in Malta with
-            <br />
-            <span style={{ fontWeight: 700 }}>30+ Years</span> in Wellness
-          </h2>
+            title={
+              <>
+                <span style={{ fontWeight: 700 }}>#1 Award Winning</span> Chain in Malta with
+                <br />
+                <span style={{ fontWeight: 700 }}>30+ Years</span> in Wellness
+              </>
+            }
+          />
         </Reveal>
 
         {/* Card with offset double-frame + bottom notch + faint wave */}

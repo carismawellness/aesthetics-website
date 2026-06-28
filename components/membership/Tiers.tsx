@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import SectionHeading from "@/components/SectionHeading";
 
 /**
  * Tiers — the Glow Club CONVERSION CORE, elevated to feel ELITE / LUXURY.
@@ -435,59 +436,22 @@ export default function Tiers() {
     >
       <div className="container">
         {/* ── Header ───────────────────────────────────────────── */}
-        <div className="text-center mx-auto" style={{ maxWidth: "760px" }}>
-          <p
-            style={{
-              fontSize: "12px",
-              letterSpacing: "0.22em",
-              textTransform: "uppercase",
-              color: TEAL_TEXT,
-              fontWeight: 600,
-              marginBottom: "16px",
-            }}
-          >
-            The Glow Club
-          </p>
-          <h2
-            id="glow-tiers-heading"
-            className="font-serif"
-            style={{
-              fontSize: "clamp(26px,3.4vw,38px)",
-              color: GOLD,
-              fontWeight: 400,
-              lineHeight: 1.25,
-              letterSpacing: "0.04em",
-            }}
-          >
-            Save as you go, glow as you grow
-          </h2>
-          <div
-            aria-hidden="true"
-            className="mx-auto"
-            style={{
-              width: "70px",
-              height: "1px",
-              background: TEAL_DEEP,
-              opacity: 0.5,
-              margin: "18px auto 0",
-            }}
-          />
-          <p
-            style={{
-              fontSize: "15px",
-              color: MUTED,
-              lineHeight: 1.8,
-              marginTop: "22px",
-            }}
-          >
-            One simple monthly membership. The more your lifetime contributions
-            grow, the more you unlock — and your{" "}
-            <b style={{ color: GOLD, fontWeight: 600 }}>
-              10% member discount on every treatment
-            </b>{" "}
-            applies from the very first day.
-          </p>
-        </div>
+        <SectionHeading
+          eyebrow="The Glow Club"
+          title="Save as you go, glow as you grow"
+          subtitle={
+            <>
+              One simple monthly membership. The more your lifetime contributions
+              grow, the more you unlock — and your{" "}
+              <b style={{ color: GOLD, fontWeight: 600 }}>
+                10% member discount on every treatment
+              </b>{" "}
+              applies from the very first day.
+            </>
+          }
+          id="glow-tiers-heading"
+          subtitleMaxWidth={760}
+        />
 
         {/* ── Status / pricing cards ───────────────────────────── */}
         <ul

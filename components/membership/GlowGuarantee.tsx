@@ -1,4 +1,5 @@
 import Link from "next/link";
+import SectionHeading from "@/components/SectionHeading";
 
 /**
  * GlowGuarantee — the risk-reversal "Glow Guarantee" block for the Carisma
@@ -83,91 +84,25 @@ export default function GlowGuarantee() {
     >
       <div className="container">
         {/* ── Heading block ── */}
-        <div
-          className="mx-auto text-center"
-          style={{ maxWidth: "720px" }}
-        >
-          <span
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "8px",
-              padding: "7px 18px",
-              borderRadius: "999px",
-              border: `1px solid ${GOLD}`,
-              background: "rgba(112,101,82,0.06)",
-              color: GOLD,
-              fontSize: "11px",
-              fontWeight: 600,
-              letterSpacing: "0.2em",
-              textTransform: "uppercase",
-            }}
-          >
-            <svg
-              width="13"
-              height="13"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke={GOLD}
-              strokeWidth="1.8"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              aria-hidden="true"
-              focusable="false"
-            >
-              <path d="M12 3l7 3v5c0 4.6-3.1 7.6-7 9-3.9-1.4-7-4.4-7-9V6z" />
-            </svg>
-            Our Promise to You
-          </span>
-
-          <h2
-            id="glow-guarantee-heading"
-            className="font-serif"
-            style={{
-              color: GOLD,
-              fontSize: "clamp(24px,3.4vw,38px)",
-              fontWeight: 400,
-              lineHeight: 1.2,
-              letterSpacing: "0.04em",
-              margin: "22px 0 0",
-            }}
-          >
-            The Glow Guarantee
-          </h2>
-
-          <div
-            aria-hidden="true"
-            className="mx-auto"
-            style={{
-              width: "70px",
-              height: "1px",
-              background: ICON,
-              opacity: 0.5,
-              margin: "16px auto 0",
-            }}
-          />
-
-          <p
-            style={{
-              color: TEAL_TEXT,
-              fontSize: "clamp(16px,1.6vw,18px)",
-              lineHeight: 1.7,
-              margin: "22px auto 0",
-              maxWidth: "560px",
-            }}
-          >
-            Join with complete peace of mind. While your{" "}
-            <strong style={{ color: GOLD, fontWeight: 600 }}>
-              first month is non-refundable
-            </strong>
-            , we hold that amount as a credit toward your{" "}
-            <strong style={{ color: GOLD, fontWeight: 600 }}>
-              second procedure
-            </strong>{" "}
-            once you join the Glow Club — so every cent you invest works toward
-            the results you came for.
-          </p>
-        </div>
+        <SectionHeading
+          eyebrow="Our Promise to You"
+          title="The Glow Guarantee"
+          subtitle={
+            <>
+              Join with complete peace of mind. While your{" "}
+              <strong style={{ color: GOLD, fontWeight: 600 }}>
+                first month is non-refundable
+              </strong>
+              , we hold that amount as a credit toward your{" "}
+              <strong style={{ color: GOLD, fontWeight: 600 }}>
+                second procedure
+              </strong>{" "}
+              once you join the Glow Club — so every cent you invest works toward
+              the results you came for.
+            </>
+          }
+          id="glow-guarantee-heading"
+        />
 
         {/* ── Proof pillars ── */}
         <ul

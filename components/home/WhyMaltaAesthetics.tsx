@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import LazyMap from "@/components/home/LazyMap";
+import SectionHeading from "@/components/SectionHeading";
 
 /**
  * "The Carisma Difference / Malta's #1 Voted Medical Aesthetics Clinic" —
@@ -19,7 +20,6 @@ import LazyMap from "@/components/home/LazyMap";
 const BODY =
   '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif';
 const WIDE = '"Novecento Wide", sans-serif';
-const SERIF = '"Trajan Pro", Georgia, serif';
 
 const commitmentItems: ReactNode[] = [
   "Natural-looking results that enhance your features — never overdone, never frozen",
@@ -136,46 +136,11 @@ export default function WhyMaltaAesthetics() {
           />
 
           <div style={{ position: "relative", zIndex: 1 }}>
-            {/* Eyebrow */}
-            <p
-              className="text-center"
-              aria-hidden="true"
-              style={{
-                color: "#406060",
-                fontFamily: WIDE,
-                fontSize: 14,
-                fontWeight: 600,
-                letterSpacing: "3px",
-                textTransform: "uppercase",
-              }}
-            >
-              the carisma difference
-            </p>
-            <div
-              aria-hidden="true"
-              style={{
-                width: 110,
-                height: 1,
-                backgroundColor: "#96b2b2",
-                margin: "10px auto 16px",
-              }}
-            />
-            <h2
+            <SectionHeading
+              eyebrow="the carisma difference"
+              title="Why Choose Carisma Aesthetics — Medically Qualified Team"
               id="why-malta-aesthetics-heading"
-              className="text-center"
-              style={{
-                color: "#27484a",
-                fontFamily: SERIF,
-                fontWeight: 400,
-                fontSize: "clamp(24px, 3.4vw, 38px)",
-                lineHeight: 1.2,
-                letterSpacing: "1px",
-                margin: "0 auto",
-                maxWidth: 760,
-              }}
-            >
-              Why Choose Carisma Aesthetics — Medically Qualified Team
-            </h2>
+            />
 
             <div
               className="grid grid-cols-1 lg:grid-cols-2"
