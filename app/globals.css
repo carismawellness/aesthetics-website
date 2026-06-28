@@ -221,7 +221,7 @@ body {
    so it stays exempt. */
 [style*="Trajan"],
 .font-serif {
-  text-transform: uppercase !important;
+  text-transform: lowercase !important;
 }
 
 h1, h2, h3, h4, h5, h6 {
