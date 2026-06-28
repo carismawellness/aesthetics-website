@@ -254,9 +254,13 @@ export default function PageHero({
         {/* RIGHT — arch media + floating proof (+ optional belowMedia card) */}
         <div className="page-hero-media" style={{ position: "relative", justifySelf: "center", width: "100%", display: "flex", flexDirection: "column", alignItems: "center", gap: belowMedia ? "clamp(16px,2.4vh,28px)" : 0 }}>
           {/* arch wrapper — floating proof cards position against THIS, not the column.
-             In fill mode the wrapper spans the full column so the arch (width:100%)
-             sits flush to its edges and the cards anchor to the arch's true edges. */}
-          <div style={{ position: "relative", display: "flex", justifyContent: "center", width: fill ? "100%" : undefined }}>
+             The wrapper spans the full media column so the arch's `max-width: 100%`
+             actually resolves to the column width and CANNOT overflow left onto the
+             copy/CTA column — a height-derived arch (height × imageRatio) is otherwise
+             unconstrained and a wide imageRatio (e.g. landscape) bulges over the CTA.
+             Exception: bespoke `mediaSlot` (gifts) keeps an auto-width wrapper so its
+             fanned cards can float/overflow freely. fill mode already spans the column. */}
+          <div style={{ position: "relative", display: "flex", justifyContent: "center", width: mediaSlot && !fill ? undefined : "100%" }}>
             {mediaSlot ? (
               /* Bespoke media (e.g. gifts fanned-cards): transparent sized wrapper,
                  NO arch box/overflow — lets the custom visual float & overflow freely.
