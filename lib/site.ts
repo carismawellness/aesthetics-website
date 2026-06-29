@@ -129,7 +129,7 @@ export const HOME_SERVICES: Service[] = [
     label: "Fat dissolving",
     href: "/fat-dissolving-malta",
     image: "/assets/service-fat-dissolving.png",
-    photo: "/assets/treatments/fat-dissolving-hero.jpg",
+    photo: "/fat-dissolving-hero-aqualyx.jpg",
     blurb: "Target stubborn pockets of fat under the chin and body for a sculpted, defined contour.",
   },
   {
