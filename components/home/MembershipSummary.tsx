@@ -101,7 +101,7 @@ export default function MembershipSummary() {
       aria-labelledby="membership-summary-heading"
       style={{
         background: "transparent",
-        padding: "92px 0",
+        padding: "clamp(40px,7vw,92px) 0",
       }}
     >
       {/* Scoped hover-lift — mirrors the home WhyUs / Slimming "Meet Your Doctor"
