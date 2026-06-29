@@ -50,20 +50,43 @@ export default function ServicesMarqueeOverlay() {
   const lastT = useRef(0);
   const moved = useRef(false);
 
-  const minX = -(SERVICES.length - 1) * STEP;
-  const clampFallback = (x: number) => Math.max(minX, Math.min(0, x));
+  // Card pitch is measured from the DOM so the infinite-loop wrap is seamless
+  // regardless of the responsive card width (desktop 340px, mobile 78vw).
+  const stepRef = useRef(STEP);
+  const setWRef = useRef(SET_W);
+  const startLoopRef = useRef<() => void>(() => {});
+
+  const clampFallback = (x: number) => {
+    const minX = -(SERVICES.length - 1) * stepRef.current;
+    return Math.max(minX, Math.min(0, x));
+  };
 
   // ---- capability gate ----
+  // The looping engine now runs on touch/small screens too (so the carousel
+  // wraps last → first like desktop); only reduced-motion / data-saver opt out.
   useEffect(() => {
-    const coarse = window.matchMedia("(pointer: coarse)").matches;
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    const small = window.innerWidth < 768;
     const conn = (navigator as Navigator & { connection?: { saveData?: boolean } }).connection;
     const saveData = conn?.saveData === true;
-    const enable = !(coarse || reduce || small || saveData);
+    const enable = !(reduce || saveData);
     richRef.current = enable;
     setRich(enable);
   }, []);
+
+  // ---- measure real card pitch (handles 78vw mobile cards + resize) ----
+  useEffect(() => {
+    const measure = () => {
+      const first = trackRef.current?.children?.[0] as HTMLElement | undefined;
+      const w = first?.getBoundingClientRect().width;
+      if (w && w > 0) {
+        stepRef.current = w + GAP;
+        setWRef.current = stepRef.current * SERVICES.length;
+      }
+    };
+    measure();
+    window.addEventListener("resize", measure);
+    return () => window.removeEventListener("resize", measure);
+  }, [rich]);
 
   // ---- one-shot reveal ----
   useEffect(() => {
@@ -81,49 +104,57 @@ export default function ServicesMarqueeOverlay() {
     return () => io.disconnect();
   }, []);
 
-  const applyTransform = useCallback(
-    (x: number) => {
-      const track = trackRef.current;
-      if (track) track.style.transform = `translate3d(${x}px,0,0)`;
-      const prog = progressRef.current;
-      if (prog) {
-        const p = richRef.current
-          ? (((-x % SET_W) + SET_W) % SET_W) / SET_W
-          : -x / (-minX || 1);
-        prog.style.transform = `scaleX(${Math.max(0.08, Math.min(1, p))})`;
-      }
-    },
-    [minX]
-  );
+  const applyTransform = useCallback((x: number) => {
+    const track = trackRef.current;
+    if (track) track.style.transform = `translate3d(${x}px,0,0)`;
+    const prog = progressRef.current;
+    if (prog) {
+      const setW = setWRef.current;
+      const minX = -(SERVICES.length - 1) * stepRef.current;
+      const p = richRef.current
+        ? (((-x % setW) + setW) % setW) / setW
+        : -x / (-minX || 1);
+      prog.style.transform = `scaleX(${Math.max(0.08, Math.min(1, p))})`;
+    }
+  }, []);
 
-  // ---- rich rAF loop (eased momentum) ----
+  // ---- rich rAF loop (eased momentum + seamless wrap) ----
+  // Self-suspends once motion settles, so on mobile the section does NOT
+  // repaint every frame while idle — it only animates during interaction.
   useEffect(() => {
     if (!rich) {
       currentX.current = 0;
       targetX.current = 0;
       applyTransform(0);
+      startLoopRef.current = () => {};
       return;
     }
     const loop = () => {
+      const setW = setWRef.current;
       currentX.current += (targetX.current - currentX.current) * 0.12;
-      if (currentX.current <= -SET_W) { currentX.current += SET_W; targetX.current += SET_W; }
-      else if (currentX.current > 0) { currentX.current -= SET_W; targetX.current -= SET_W; }
+      if (currentX.current <= -setW) { currentX.current += setW; targetX.current += setW; }
+      else if (currentX.current > 0) { currentX.current -= setW; targetX.current -= setW; }
       applyTransform(currentX.current);
+      if (!dragging.current && Math.abs(targetX.current - currentX.current) < 0.5) {
+        rafRef.current = null; // settled → suspend until next interaction
+        return;
+      }
       rafRef.current = requestAnimationFrame(loop);
     };
-    const start = () => { if (rafRef.current == null) rafRef.current = requestAnimationFrame(loop); };
+    const kick = () => { if (rafRef.current == null) rafRef.current = requestAnimationFrame(loop); };
     const stop = () => { if (rafRef.current != null) { cancelAnimationFrame(rafRef.current); rafRef.current = null; } };
+    startLoopRef.current = kick;
     currentX.current = 0;
     targetX.current = 0;
+    applyTransform(0);
     const el = viewportRef.current;
     const io = new IntersectionObserver(
-      (entries) => entries.forEach((e) => (e.isIntersecting ? start() : stop())),
+      (entries) => entries.forEach((e) => { if (!e.isIntersecting) stop(); }),
       { threshold: 0 }
     );
     if (el) io.observe(el);
-    return () => { io.disconnect(); stop(); };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [rich]);
+    return () => { io.disconnect(); stop(); startLoopRef.current = () => {}; };
+  }, [rich, applyTransform]);
 
   // ---- wheel router: vertical → page, horizontal → row ----
   useEffect(() => {
@@ -136,6 +167,7 @@ export default function ServicesMarqueeOverlay() {
         e.preventDefault();
         if (richRef.current) {
           targetX.current -= e.deltaX;
+          startLoopRef.current();
         } else {
           targetX.current = clampFallback(targetX.current - e.deltaX);
           currentX.current = targetX.current;
@@ -151,9 +183,10 @@ export default function ServicesMarqueeOverlay() {
 
   const nudge = (dir: 1 | -1) => {
     if (richRef.current) {
-      targetX.current -= dir * STEP;
+      targetX.current -= dir * stepRef.current;
+      startLoopRef.current();
     } else {
-      targetX.current = clampFallback(targetX.current - dir * STEP);
+      targetX.current = clampFallback(targetX.current - dir * stepRef.current);
       currentX.current = targetX.current;
       if (trackRef.current) trackRef.current.style.transition = "transform .5s cubic-bezier(.16,1,.3,1)";
       applyTransform(currentX.current);
@@ -170,6 +203,7 @@ export default function ServicesMarqueeOverlay() {
     lastT.current = e.timeStamp;
     if (trackRef.current) trackRef.current.style.transition = "none";
     (e.currentTarget as HTMLElement).setPointerCapture?.(e.pointerId);
+    if (richRef.current) startLoopRef.current();
   };
   const onPointerMove = (e: React.PointerEvent) => {
     if (!dragging.current) return;
@@ -180,7 +214,7 @@ export default function ServicesMarqueeOverlay() {
     lastDragX.current = e.clientX;
     lastT.current = e.timeStamp;
     const next = dragStartTarget.current + dx;
-    if (richRef.current) { targetX.current = next; currentX.current = next; }
+    if (richRef.current) { targetX.current = next; currentX.current = next; startLoopRef.current(); }
     else { targetX.current = clampFallback(next); currentX.current = targetX.current; applyTransform(currentX.current); }
   };
   const endDrag = () => {
@@ -188,8 +222,9 @@ export default function ServicesMarqueeOverlay() {
     dragging.current = false;
     if (richRef.current) {
       targetX.current += velocity.current * 180;
+      startLoopRef.current();
     } else {
-      const snapped = Math.round(targetX.current / STEP) * STEP;
+      const snapped = Math.round(targetX.current / stepRef.current) * stepRef.current;
       targetX.current = clampFallback(snapped);
       currentX.current = targetX.current;
       if (trackRef.current) trackRef.current.style.transition = "transform .5s cubic-bezier(.16,1,.3,1)";
