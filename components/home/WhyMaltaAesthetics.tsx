@@ -56,7 +56,7 @@ const checklistItem: React.CSSProperties = {
   display: "flex",
   gap: 12,
   alignItems: "flex-start",
-  color: "#b0a68f",
+  color: "#7a6e52",
   fontFamily: BODY,
   fontSize: 14,
   fontWeight: 400,

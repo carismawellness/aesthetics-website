@@ -58,7 +58,7 @@ function Card({ s }: { s: TimelineStep }) {
       >
         {s.title}
       </h3>
-      <p style={{ fontFamily: BODY, fontSize: 14.5, fontWeight: 400, color: '#b0a68f', lineHeight: 1.6, margin: 0 }}>
+      <p style={{ fontFamily: BODY, fontSize: 14.5, fontWeight: 400, color: '#7a6e52', lineHeight: 1.6, margin: 0 }}>
         {s.desc}
       </p>
     </div>
@@ -148,7 +148,7 @@ export default function ConsultationProcess() {
         {/* Intro */}
         <p
           className="text-center mx-auto mb-4"
-          style={{ maxWidth: '680px', color: '#b0a68f', fontFamily: BODY, fontSize: '15px', fontWeight: 400, lineHeight: '1.7' }}
+          style={{ maxWidth: '680px', color: '#7a6e52', fontFamily: BODY, fontSize: '15px', fontWeight: 400, lineHeight: '1.7' }}
         >
           Every treatment at Carisma Aesthetics starts with a complimentary, no-pressure consultation with a doctor — so
           your plan is built around your skin, your goals and your comfort. Here&rsquo;s exactly what to expect.
