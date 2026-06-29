@@ -9,8 +9,8 @@ import SectionHeading from '@/components/SectionHeading';
    Ported 1:1 from the Carisma Slimming DoctorShowcase, recoloured green → teal:
    slimming sage #4f7256 → teal #4f7373 ; decorative #8EB093 → #96B2B2.        */
 const INK = '#4f7373'; // headings — brand teal (no black anywhere on the site)
-const BODY = '#333333'; // body text
-const MUTED = '#595959'; // meta
+const BODY = '#7a6e52'; // body text — brand warm taupe (AA on white)
+const MUTED = '#7a6e52'; // meta — brand warm taupe
 const TEAL = '#4f7373'; // links / CTA (AA on white text)
 const TEAL_SOFT = '#96B2B2'; // decorative only
 const HAIRLINE = '#DEEBEB';
