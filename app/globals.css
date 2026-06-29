@@ -125,9 +125,9 @@
   --gold-deep: #1d3f43;     /* graphic / star accent — remapped to dark teal */
   --label: #245052;         /* muted label / bio TEXT — remapped to brand teal */
   --ink: #245052;           /* brand deep teal — NO black anywhere on the site (white text on it stays WCAG AA) */
-  /* Body copy — dark neutral, no brown */
-  --ink-soft: #3a3a3a;
-  --muted: #4a4a4a;         /* secondary TEXT — AA on white + ivory/champagne tints (>=4.5:1) */
+  /* Body copy — brand warm taupe (per brand palette), not neutral grey */
+  --ink-soft: #b0a68f;
+  --muted: #b0a68f;         /* secondary TEXT — brand warm taupe */
   --line: #8a8a8a;          /* decorative hairline borders — WCAG AA darkened to 3.45:1 (matches --field-border) */
   --field-border: #6a6a6a;  /* form-field border — UI component >=3:1 vs white (WCAG AA) */
   --placeholder: #5a5a5a;   /* placeholder text — >=4.5:1 vs white (WCAG AA) */

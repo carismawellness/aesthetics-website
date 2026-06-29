@@ -29,7 +29,7 @@ import SectionHeading from '@/components/SectionHeading';
 const INK = '#245052'; // brand deep teal heading (no black anywhere on the site)
 const TEAL_DEEP = '#4f7373'; // accessible teal — big numbers / CTA fill (AA, white text passes)
 const TEAL_100 = '#f7fafa'; // lightest teal tint — section background gradient stop
-const BODY = '#706552'; // brand taupe-brown body (--ink-soft, AA on near-white)
+const BODY = '#b0a68f'; // brand warm taupe body
 const SERIF = '"Trajan Pro", Georgia, serif'; // headings + big numbers (uppercase only)
 const WIDE = '"Novecento Wide", sans-serif'; // eyebrow / stat titles / CTA label
 const SYS = '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif'; // body (normal weight)
