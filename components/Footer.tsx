@@ -10,8 +10,8 @@ import FooterRose from "@/components/FooterRose";
 // ─── Shared design tokens (cross-file consistent) ────────────────────────────
 const GRADIENT = 'radial-gradient(120% 90% at 85% 10%, #eaf1f1 0%, #f4f9f9 45%, #ffffff 100%)';
 const INK   = '#4f7373';  // brand teal — no black anywhere on aesthetics site
-const TEXT  = '#333333';
-const MUTED = '#595959';
+const TEXT  = '#7a6e52';  // brand warm taupe body (AA on light footer)
+const MUTED = '#7a6e52';  // brand warm taupe — secondary text
 const TEAL  = '#4f7373';  // deep teal — WCAG AA on light backgrounds
 const DECO  = '#96B2B2';  // decorative-only teal
 const HAIR  = '#DEEBEB';  // hairlines
