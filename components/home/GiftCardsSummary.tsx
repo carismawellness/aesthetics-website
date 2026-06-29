@@ -29,7 +29,7 @@ export default function GiftCardsSummary() {
       aria-labelledby="gift-summary-heading"
       style={{
         background: "transparent",
-        padding: "clamp(72px, 9vw, 120px) 0",
+        padding: "clamp(44px, 8vw, 120px) 0",
         scrollMarginTop: "var(--nav-clear)",
         overflow: "hidden",
       }}
