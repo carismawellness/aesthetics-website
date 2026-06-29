@@ -24,6 +24,7 @@ import { post as howLongDoesBotoxLastMalta } from './how-long-does-botox-last-ma
 import { post as firstTimeBotoxMalta } from './first-time-botox-malta';
 import { post as botoxVsFillersMalta } from './botox-vs-fillers-malta';
 import { post as babyBotoxMalta } from './baby-botox-malta';
+import { post as botoxCostMalta } from './botox-cost-malta';
 import { post as lipFillerSwellingStageMalta } from './lip-filler-swelling-stages-malta';
 import { post as lipFillerAftercareMaltaHeatSun } from './lip-filler-aftercare-malta-heat-sun';
 import { post as howLongDoLipFillersLastMalta } from './how-long-do-lip-fillers-last-malta';
@@ -61,6 +62,7 @@ export const BLOG_REGISTRY: Record<string, BlogPost> = {
   [firstTimeBotoxMalta.slug]: firstTimeBotoxMalta,
   [botoxVsFillersMalta.slug]: botoxVsFillersMalta,
   [babyBotoxMalta.slug]: babyBotoxMalta,
+  [botoxCostMalta.slug]: botoxCostMalta,
   [lipFillerSwellingStageMalta.slug]: lipFillerSwellingStageMalta,
   [lipFillerAftercareMaltaHeatSun.slug]: lipFillerAftercareMaltaHeatSun,
   [howLongDoLipFillersLastMalta.slug]: howLongDoLipFillersLastMalta,
