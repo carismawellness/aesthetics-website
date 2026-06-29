@@ -143,7 +143,7 @@ export const HOME_SERVICES: Service[] = [
     label: "Laser hair removal",
     href: "/laser-hair-removal-malta",
     image: "/assets/service-laser.png",
-    photo: "/assets/treatments/laser-hero.png",
+    photo: "/assets/treatments/laser-hero-photo2.png",
     blurb: "Achieve lasting smoothness with medical-grade laser technology, safe for every area.",
   },
 ];
