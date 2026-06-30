@@ -109,7 +109,7 @@ export default function TopClinic({ title, pressText, logos, cards }: TopClinicP
   return (
     <section
       aria-labelledby="top-clinic-heading"
-      style={{ padding: "clamp(72px, 9vh, 112px) 0" }}
+      style={{ padding: "clamp(40px, 8vw, 112px) 0" }}
     >
       <div className="container">
         <Reveal>
