@@ -19,7 +19,7 @@ import { useEffect } from "react";
    for the score. To revert, restore the inline <Script> tags in app/layout.tsx.
    ────────────────────────────────────────────────────────────────────────── */
 
-const GTM_ID = "GTM-T3ZJC949";
+const GTM_ID = "GTM-5JP7D7GP";
 const GA_ID = "G-MKGQE17SN7";
 // Meta Pixel (browser side). The Lead conversion is owned server-side by the
 // GHL Conversions API, so the browser pixel fires PageView ONLY — no browser
