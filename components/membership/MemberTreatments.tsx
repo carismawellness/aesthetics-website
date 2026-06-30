@@ -70,7 +70,7 @@ export default function MemberTreatments() {
   return (
     <section
       aria-labelledby="member-treatments-heading"
-      style={{ padding: "72px 0" }}
+      style={{ padding: "clamp(40px,8vw,72px) 0" }}
     >
       <div className="container text-center">
         {/* eyebrow + heading + rule + subhead */}
@@ -201,7 +201,7 @@ export default function MemberTreatments() {
               style={{
                 fontSize: "15px",
                 lineHeight: 1.65,
-                color: TEAL_TEXT,
+                color: "#7a6e52",
                 margin: "0 0 18px",
               }}
             >
@@ -219,7 +219,7 @@ export default function MemberTreatments() {
             <p
               style={{
                 fontSize: "12px",
-                color: "var(--label)",
+                color: "#7a6e52",
                 margin: "14px 0 0",
               }}
             >

@@ -90,7 +90,7 @@ export default function GiftCardsSummary() {
               style={{
                 marginTop: "16px",
                 fontSize: "12.5px",
-                color: "var(--label)",
+                color: "#7a6e52",
                 letterSpacing: "0.04em",
                 lineHeight: 1.7,
               }}

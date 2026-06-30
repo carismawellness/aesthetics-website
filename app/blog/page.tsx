@@ -207,7 +207,7 @@ export default function BlogIndexPage() {
         <section
           className="container"
           aria-labelledby="native-blog-heading"
-          style={{ padding: "64px 20px 96px" }}
+          style={{ padding: "clamp(40px,8vw,64px) 20px clamp(48px,10vw,96px)" }}
         >
           <h2
             id="native-blog-heading"
@@ -237,7 +237,7 @@ export default function BlogIndexPage() {
       <section
         className="container"
         aria-labelledby="blog-articles-heading"
-        style={{ padding: "0 20px 96px" }}
+        style={{ padding: "0 20px clamp(48px,10vw,96px)" }}
       >
         {/* P1: visually hidden label for section */}
         <h2 id="blog-articles-heading" className="sr-only">Explore Our Medical Aesthetics Articles in Malta</h2>
@@ -283,7 +283,7 @@ export default function BlogIndexPage() {
         aria-labelledby="blog-cta-heading"
         style={{
           background: "linear-gradient(180deg, #ffffff 0%, var(--teal-deep) 50%, #ffffff 100%)",
-          padding: "64px 20px",
+          padding: "clamp(40px,8vw,64px) 20px",
           textAlign: "center",
         }}
       >

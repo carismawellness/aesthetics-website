@@ -8,7 +8,7 @@ const FRESHA_CONSULT =
 
 export default function BookConsultation() {
   return (
-    <section aria-labelledby="book-heading" style={{ backgroundColor: "var(--white)", padding: "72px 0 100px" }}>
+    <section aria-labelledby="book-heading" style={{ backgroundColor: "var(--white)", padding: "clamp(40px,7vw,72px) 0 clamp(44px,9vw,100px)" }}>
       <div className="container">
         {/* Heading block (contained, not full-width) — Slimming-style cool teal
             gradient ground (white → light teal), NO warm beige. */}

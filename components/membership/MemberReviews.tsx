@@ -82,7 +82,7 @@ export default function MemberReviews() {
   return (
     <section
       aria-labelledby="member-reviews-heading"
-      style={{ background: SECTION_BG, padding: "84px 0" }}
+      style={{ background: SECTION_BG, padding: "clamp(44px,9vw,84px) 0" }}
     >
       <div className="container">
         {/* ── eyebrow + heading ── */}
@@ -156,7 +156,7 @@ export default function MemberReviews() {
                   <blockquote
                     style={{
                       fontSize: "14px",
-                      color: "var(--label)",
+                      color: "#7a6e52",
                       lineHeight: 1.8,
                       fontStyle: "italic",
                       flex: 1,
@@ -204,7 +204,7 @@ export default function MemberReviews() {
             <p
               style={{
                 fontSize: "15px",
-                color: "var(--label)",
+                color: "#7a6e52",
                 lineHeight: 1.7,
                 margin: "0 auto 22px",
                 maxWidth: "440px",

@@ -35,8 +35,7 @@ const MEMBERSHIP_HREF = "/membership";
 
 const GOLD = "var(--gold)"; // #706552 — heading / reward TEXT
 const TEAL_DEEP = "var(--teal-deep)"; // #4f7373 — icon chips
-const LABEL = "var(--label)"; // #695c4e — body taupe
-const MUTED = "var(--muted)"; // #636363 — footnote
+const MUTED = "var(--muted)"; // #7a6e52 — footnote (brand warm taupe)
 
 /* ── Four headline benefits (verbatim discount facts) ─────────────────── */
 type Perk = { title: string; body: string; icon: React.ReactNode };
@@ -195,7 +194,7 @@ export default function MembershipSummary() {
               </h3>
               <p
                 style={{
-                  color: LABEL,
+                  color: "#7a6e52",
                   fontSize: "14px",
                   lineHeight: 1.65,
                   margin: 0,

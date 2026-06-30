@@ -13,7 +13,7 @@ export default function StatsBar({ items }: { items: StatItem[] }) {
   if (!items?.length) return null;
 
   return (
-    <section style={{ padding: "clamp(72px,9vh,112px) 0" }}>
+    <section style={{ padding: "clamp(44px,9vh,112px) 0" }}>
       <div className="container">
         <div
           style={{

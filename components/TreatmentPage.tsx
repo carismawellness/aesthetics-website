@@ -286,7 +286,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                 // P6 — body text line height leading-relaxed (1.625)
                 <p
                   key={i}
-                  style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.625, marginTop: i === 0 ? 0 : "16px", textAlign: "center" }}
+                  style={{ fontSize: "15px", color: "#7a6e52", lineHeight: 1.625, marginTop: i === 0 ? 0 : "16px", textAlign: "center" }}
                 >
                   {p}
                 </p>
@@ -308,7 +308,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                 </div>
                 {t.education.imageCaption && (
                   <figcaption
-                    style={{ fontSize: "13px", color: "var(--label)", lineHeight: 1.6, marginTop: "14px" }}
+                    style={{ fontSize: "13px", color: "#7a6e52", lineHeight: 1.6, marginTop: "14px" }}
                   >
                     {t.education.imageCaption}
                   </figcaption>
@@ -330,7 +330,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                 </div>
                 {t.education.chartCaption && (
                   <figcaption
-                    style={{ fontSize: "13px", color: "var(--label)", lineHeight: 1.6, marginTop: "14px" }}
+                    style={{ fontSize: "13px", color: "#7a6e52", lineHeight: 1.6, marginTop: "14px" }}
                   >
                     {t.education.chartCaption}
                   </figcaption>
@@ -702,7 +702,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
 
       {/* ── The Carisma Difference ── */}
       {t.difference && (
-        <section aria-labelledby="difference-heading" style={{ padding: "10px 0 84px" }}>
+        <section aria-labelledby="difference-heading" style={{ padding: "10px 0 clamp(44px,8vw,84px)" }}>
           <div className="container">
             <div
               className="mx-auto"
@@ -737,7 +737,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                         <span aria-hidden="true" style={{ color: "var(--label)", fontSize: "12px", lineHeight: 1.7 }}>
                           •
                         </span>
-                        <span style={{ fontSize: "14.5px", color: "var(--label)", lineHeight: 1.625 }}>{it}</span>
+                        <span style={{ fontSize: "14.5px", color: "#7a6e52", lineHeight: 1.625 }}>{it}</span>
                       </li>
                     ))}
                   </ul>
@@ -759,7 +759,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                         <span aria-hidden="true" style={{ color: "var(--label)", fontSize: "12px", lineHeight: 1.7 }}>
                           •
                         </span>
-                        <span style={{ fontSize: "14.5px", color: "var(--label)", lineHeight: 1.625 }}>{it}</span>
+                        <span style={{ fontSize: "14.5px", color: "#7a6e52", lineHeight: 1.625 }}>{it}</span>
                       </li>
                     ))}
                   </ul>
@@ -1020,7 +1020,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                       <circle cx="12" cy="12" r="9" />
                       <path d="M5 12.5l4.5 4.5L19 7" />
                     </svg>
-                    <span style={{ fontSize: "14px", color: "var(--label)" }}>{tier.sessions}</span>
+                    <span style={{ fontSize: "14px", color: "#7a6e52" }}>{tier.sessions}</span>
                   </div>
                   <div className="flex items-center justify-center gap-2" style={{ marginTop: "12px" }}>
                     <svg

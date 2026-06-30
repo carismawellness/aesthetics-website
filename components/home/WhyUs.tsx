@@ -10,7 +10,7 @@ export default function WhyUs() {
       style={{
         /* Slimming-style ground: white → very light teal → soft mist (no warm beige) */
         background: "linear-gradient(180deg, var(--white) 0%, var(--teal-100) 55%, var(--cream-2) 100%)",
-        padding: "126px 0",
+        padding: "clamp(44px,10vw,126px) 0",
       }}
     >
       {/* Card hover: Slimming "Meet Your Doctor" lift — translateY up + scale +

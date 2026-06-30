@@ -20,7 +20,7 @@ const WIDE = "var(--font-display), Novecento Wide, sans-serif";
 const TEAL_DEEP = "#4f7373"; // step number circle (accent) — WHITE on it = 5.21:1
 const TEAL_TEXT = "#406060"; // "STEP" label + accents — accent text
 const GOLD = "#706552"; // card subheading taupe-gold on white = 5.72:1
-const LABEL = "#695c4e"; // body taupe on white = 6.48:1
+const LABEL = "#7a6e52"; // body taupe on white = 6.48:1
 const RING = "#f7fafa"; // warm ivory ring behind the step badge (was teal mist)
 const DASH = "#bcae9a"; // decorative spine, warm taupe (UI graphic, non-text)
 
@@ -126,7 +126,7 @@ export default function HowItWorks() {
   return (
     <section
       aria-labelledby="how-it-works-heading"
-      style={{ background: "transparent", padding: "76px 0" }}
+      style={{ background: "transparent", padding: "clamp(40px,8vw,76px) 0" }}
     >
       <div className="container">
         {/* ── Header ── */}

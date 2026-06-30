@@ -471,7 +471,7 @@ export default function BlogTemplate({
 
       {/* ── Article body ──────────────────────────────────────── */}
       {/* P6 / BLOG-SPECIFIC: <article> with <header> and <footer>, rel="author" */}
-      <div className="container" style={{ padding: "56px 20px 80px" }}>
+      <div className="container" style={{ padding: "clamp(36px,8vw,56px) 20px clamp(44px,9vw,80px)" }}>
         <article
           style={{
             background: "#fff",
@@ -509,7 +509,7 @@ export default function BlogTemplate({
             className="font-serif mb-10"
             style={{
               fontSize: "17px",
-              color: "var(--teal-text)",
+              color: "#7a6e52",
               lineHeight: 1.8,
               borderLeft: "3px solid var(--teal-deep)",
               paddingLeft: "20px",
@@ -580,7 +580,7 @@ export default function BlogTemplate({
       {related.length > 0 && (
         <section
           aria-labelledby="related-posts-heading"
-          style={{ background: "#fff", padding: "72px 0" }}
+          style={{ background: "#fff", padding: "clamp(44px,9vw,72px) 0" }}
         >
           <div className="container">
             {/* P6: H2 for "You Might Also Like" section */}
@@ -613,7 +613,7 @@ export default function BlogTemplate({
         aria-labelledby="blog-post-cta-heading"
         style={{
           background: "linear-gradient(180deg, #ffffff 0%, var(--teal-deep) 50%, #ffffff 100%)",
-          padding: "72px 20px",
+          padding: "clamp(44px,9vw,72px) 20px",
           textAlign: "center",
         }}
       >

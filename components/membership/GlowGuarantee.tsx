@@ -171,7 +171,7 @@ export default function GlowGuarantee() {
               </h3>
               <p
                 style={{
-                  color: LABEL,
+                  color: "#7a6e52",
                   fontSize: "14.5px",
                   lineHeight: 1.7,
                   margin: 0,
@@ -191,7 +191,7 @@ export default function GlowGuarantee() {
           <p
             className="font-serif"
             style={{
-              color: TEAL_TEXT,
+              color: "#7a6e52",
               fontSize: "clamp(17px,1.7vw,20px)",
               fontStyle: "italic",
               lineHeight: 1.6,

@@ -23,7 +23,7 @@ export default function ThankYouPage() {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        padding: "64px 24px",
+        padding: "clamp(40px,8vw,64px) 24px",
         background:
           "radial-gradient(1200px 600px at 50% -10%, var(--beige), var(--white))",
       }}

@@ -247,7 +247,7 @@ export default function ReviewsCarousel({
   if (!count) return null;
 
   return (
-    <section style={{ padding: "clamp(72px,9vh,112px) 0" }}>
+    <section style={{ padding: "clamp(44px,9vh,112px) 0" }}>
       <style>{`
         .rc-readmore:focus-visible,
         .rc-arrow:focus-visible {

@@ -405,7 +405,7 @@ export default function JoinForm() {
         <p
           style={{
             fontSize: "12px",
-            color: "var(--label)",
+            color: "#7a6e52",
             textAlign: "center",
             lineHeight: 1.5,
             margin: 0,

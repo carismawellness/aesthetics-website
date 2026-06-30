@@ -104,7 +104,7 @@ export default function TreatmentFaq({
     .filter(({ f }) => (f.q + ' ' + f.a).toLowerCase().includes(query.trim().toLowerCase()));
 
   return (
-    <section aria-labelledby="faq-heading" style={{ paddingTop: 84, paddingBottom: 84, backgroundColor: '#ffffff' }}>
+    <section aria-labelledby="faq-heading" style={{ paddingTop: 'clamp(44px,8vw,84px)', paddingBottom: 'clamp(44px,8vw,84px)', backgroundColor: '#ffffff' }}>
       <div style={{ maxWidth: 960, marginLeft: 'auto', marginRight: 'auto', paddingLeft: 24, paddingRight: 24 }}>
         {/* Header row: large Trajan title on the left, hairline search on the right (same row). */}
         <div

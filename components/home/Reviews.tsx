@@ -22,7 +22,7 @@ import {
 
 // ── Brand tokens (aesthetics teal, WCAG AA) ───────────────────────────────
 const INK = '#3a4a4a';      // warm teal-charcoal; AA on white
-const BODY_C = '#333333';   // body text
+const BODY_C = '#7a6e52';   // body text — brand warm taupe
 const META = '#595959';     // muted / meta
 const TEAL = '#4f7373';     // links / icons / accent fill (white text = AA)
 const TEAL_TEXT = '#406060';// teal as small text / eyebrow (AA on white)

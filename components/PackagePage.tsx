@@ -158,7 +158,7 @@ function PackageOfferInline({ offer }: { offer: NonNullable<Treatment["offer"]> 
                 <circle cx="7" cy="7" r="6.5" stroke="var(--teal-deep)" strokeWidth="1"/>
                 <path d="M4 7l2 2 4-4" stroke="var(--teal-deep)" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
-              <span style={{ fontSize: "12.5px", color: "var(--label)", lineHeight: 1.5 }}>{item}</span>
+              <span style={{ fontSize: "12.5px", color: "#7a6e52", lineHeight: 1.5 }}>{item}</span>
             </li>
           ))}
         </ul>
@@ -297,7 +297,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
              hero (which now carries the body copy + TREATMENT INFO card),
              before everything else. Shows all before/after pairs. ── */}
       {(t.beforeAfter || t.beforeAfterTitle) && (
-        <section aria-label="Before and after results" style={{ padding: "70px 0" }}>
+        <section aria-label="Before and after results" style={{ padding: "clamp(40px,8vw,70px) 0" }}>
           {t.beforeAfter && t.beforeAfter.length > 0 ? (
             <BeforeAfterCarousel pairs={t.beforeAfter} title={t.beforeAfterTitle} />
           ) : (
@@ -352,7 +352,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
       {t.education && (
         <section
           aria-labelledby="education-heading"
-          style={{ padding: "80px 0", background: "linear-gradient(180deg, #ffffff 0%, var(--cream) 50%, #ffffff 100%)" }}
+          style={{ padding: "clamp(44px,8vw,80px) 0", background: "linear-gradient(180deg, #ffffff 0%, var(--cream) 50%, #ffffff 100%)" }}
         >
           <div className="container">
             <SectionHeader id="education-heading" title={t.education.title} sub={t.education.subtitle} />
@@ -361,7 +361,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                 // P6 — body text line height leading-relaxed (1.625)
                 <p
                   key={i}
-                  style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.625, marginTop: i === 0 ? 0 : "16px", textAlign: "center" }}
+                  style={{ fontSize: "15px", color: "#7a6e52", lineHeight: 1.625, marginTop: i === 0 ? 0 : "16px", textAlign: "center" }}
                 >
                   {p}
                 </p>
@@ -430,7 +430,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
 
       {/* ── Precision areas ── */}
       {t.precision && (
-        <section aria-labelledby="precision-heading" style={{ padding: "80px 0" }}>
+        <section aria-labelledby="precision-heading" style={{ padding: "clamp(44px,8vw,80px) 0" }}>
           <div className="container">
             <SectionHeader id="precision-heading" title={t.precision.title} sub={t.precision.intro} />
             {t.precision.areas && t.precision.areas.length > 0 && (
@@ -546,9 +546,9 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
 
       {/* ── Treatment experience — dashed timeline ── */}
       {t.experience && (
-        <section aria-labelledby="experience-heading" style={{ padding: "80px 0" }}>
+        <section aria-labelledby="experience-heading" style={{ padding: "clamp(44px,8vw,80px) 0" }}>
           <div className="container">
-            <div style={{ marginBottom: "56px" }}>
+            <div style={{ marginBottom: "clamp(32px,5vw,56px)" }}>
               <SectionHeader id="experience-heading" title={t.experience.title} />
             </div>
 
@@ -741,7 +741,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
 
       {/* ── Real patients — autoplay video reels ── */}
       {t.patientVideos && (
-        <section aria-labelledby="videos-heading" style={{ padding: "80px 0" }}>
+        <section aria-labelledby="videos-heading" style={{ padding: "clamp(44px,8vw,80px) 0" }}>
           <div className="container">
             <SectionHeader id="videos-heading" title={t.patientVideos.title} sub={t.patientVideos.intro} />
             {t.patientVideos.videos.length === 1 ? (
@@ -777,7 +777,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
 
       {/* ── The Carisma Difference ── */}
       {t.difference && (
-        <section aria-labelledby="difference-heading" style={{ padding: "10px 0 84px" }}>
+        <section aria-labelledby="difference-heading" style={{ padding: "10px 0 clamp(44px,8vw,84px)" }}>
           <div className="container">
             <div
               className="mx-auto"
@@ -812,7 +812,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                         <span aria-hidden="true" style={{ color: "var(--label)", fontSize: "12px", lineHeight: 1.7 }}>
                           •
                         </span>
-                        <span style={{ fontSize: "14.5px", color: "var(--label)", lineHeight: 1.625 }}>{it}</span>
+                        <span style={{ fontSize: "14.5px", color: "#7a6e52", lineHeight: 1.625 }}>{it}</span>
                       </li>
                     ))}
                   </ul>
@@ -834,7 +834,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                         <span aria-hidden="true" style={{ color: "var(--label)", fontSize: "12px", lineHeight: 1.7 }}>
                           •
                         </span>
-                        <span style={{ fontSize: "14.5px", color: "var(--label)", lineHeight: 1.625 }}>{it}</span>
+                        <span style={{ fontSize: "14.5px", color: "#7a6e52", lineHeight: 1.625 }}>{it}</span>
                       </li>
                     ))}
                   </ul>
@@ -897,7 +897,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
 
       {/* ── Preparation & Aftercare ── */}
       {t.prepAftercare && (
-        <section aria-labelledby="prep-heading" style={{ padding: "80px 0" }}>
+        <section aria-labelledby="prep-heading" style={{ padding: "clamp(44px,8vw,80px) 0" }}>
           <div className="container">
             <SectionHeader id="prep-heading" kicker={t.prepAftercare.kicker} title={t.prepAftercare.title} sub={t.prepAftercare.intro} />
             <div className="grid gap-6 md:grid-cols-3" style={{ marginTop: "48px" }}>
@@ -983,7 +983,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
         <section
           aria-labelledby="pricing-heading"
           aria-label="Treatment pricing"
-          style={{ padding: "80px 0", background: "linear-gradient(180deg, #ffffff 0%, var(--cream) 50%, #ffffff 100%)" }}
+          style={{ padding: "clamp(44px,8vw,80px) 0", background: "linear-gradient(180deg, #ffffff 0%, var(--cream) 50%, #ffffff 100%)" }}
         >
           <div className="container">
             <SectionHeader id="pricing-heading" title={t.pricingGrid.title} sub={t.pricingGrid.intro} />
@@ -1037,7 +1037,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
 
       {/* ── Membership tiers ── */}
       {t.membership && (
-        <section aria-labelledby="membership-heading" style={{ padding: "80px 0" }}>
+        <section aria-labelledby="membership-heading" style={{ padding: "clamp(44px,8vw,80px) 0" }}>
           <div className="container">
             <SectionHeader id="membership-heading" title={t.membership.title} sub={t.membership.intro} />
             <div className="grid gap-8 md:grid-cols-3 mx-auto" style={{ marginTop: "48px", maxWidth: "1040px" }}>

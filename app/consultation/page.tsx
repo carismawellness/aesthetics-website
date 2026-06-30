@@ -212,7 +212,7 @@ export default function ConsultationPage() {
         {/* ===== WHAT TO EXPECT ===== */}
         <section
           aria-labelledby={STEPS_ID}
-          style={{ backgroundColor: "var(--white)", padding: "72px 0 64px" }}
+          style={{ backgroundColor: "var(--white)", padding: "clamp(44px,8vw,72px) 0 clamp(40px,7vw,64px)" }}
         >
           <div className="container">
             <Reveal>
@@ -298,7 +298,7 @@ export default function ConsultationPage() {
                     <p
                       style={{
                         fontSize: "14px",
-                        color: "#5b5249",
+                        color: "#7a6e52",
                         lineHeight: 1.75,
                       }}
                     >
@@ -314,7 +314,7 @@ export default function ConsultationPage() {
         {/* ===== CONTACT STRIP ===== */}
         <section
           aria-labelledby={CONTACT_ID}
-          style={{ background: "linear-gradient(180deg, #ffffff 0%, var(--cream) 50%, #ffffff 100%)", padding: "64px 0 72px" }}
+          style={{ background: "linear-gradient(180deg, #ffffff 0%, var(--cream) 50%, #ffffff 100%)", padding: "clamp(40px,7vw,64px) 0 clamp(44px,8vw,72px)" }}
         >
           <div className="container">
             <Reveal>

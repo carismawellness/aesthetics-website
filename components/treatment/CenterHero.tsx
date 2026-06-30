@@ -251,7 +251,7 @@ export default function CenterHero({
               fontSize: "clamp(15px,1.4vw,18px)",
               fontWeight: 400,
               lineHeight: 1.5,
-              color: TEAL_LIGHT,
+              color: "#7a6e52",
               maxWidth: 600,
               margin: "14px 0 0",
               textWrap: "pretty",
@@ -380,7 +380,7 @@ export default function CenterHero({
                     <span className="font-display" style={{ fontSize: 10, color: INFO_COLOR, letterSpacing: "0.08em", lineHeight: 1.3 }}>
                       {it.metric}
                     </span>
-                    <span style={{ fontFamily: BODY, fontSize: 13.5, color: TEAL_DEEP, lineHeight: 1.3, fontWeight: 500 }}>
+                    <span style={{ fontFamily: BODY, fontSize: 13.5, color: "#7a6e52", lineHeight: 1.3, fontWeight: 500 }}>
                       {it.detail}
                     </span>
                   </span>

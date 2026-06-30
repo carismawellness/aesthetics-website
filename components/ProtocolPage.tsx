@@ -37,7 +37,7 @@ function PackageList({ items, totalValue, today }: { items: { label: string; pri
         {items.map((it) => (
           <li key={it.label} className="flex items-start gap-3">
             <TealDot />
-            <span style={{ fontSize: "14px", color: AA_LABEL, lineHeight: 1.5 }}>{it.label} {it.price && <span style={{ color: AA_TEAL }}>({it.price})</span>}</span>
+            <span style={{ fontSize: "14px", color: "#7a6e52", lineHeight: 1.5 }}>{it.label} {it.price && <span style={{ color: AA_TEAL }}>({it.price})</span>}</span>
           </li>
         ))}
       </ul>
@@ -68,19 +68,19 @@ export default function ProtocolPage({ d }: { d: ProtocolData }) {
       />
 
       {/* ===== OFFER / PACKAGE (was in hero) ===== */}
-      <section style={{ background: "url('/assets/hero-bg.png') center / cover no-repeat", padding: "48px 0 56px" }}>
+      <section style={{ background: "url('/assets/hero-bg.png') center / cover no-repeat", padding: "clamp(36px,7vw,48px) 0 clamp(40px,7vw,56px)" }}>
         <div className="container">
           <div className="mx-auto text-center" style={{ maxWidth: "680px", background: "rgba(255,255,255,0.6)", border: "1px solid var(--line)", borderRadius: "16px", padding: "clamp(28px,3vw,40px)" }}>
             <Reveal>
               <p className="font-display" style={{ fontSize: "15px", color: AA_GOLD, letterSpacing: "0.04em" }}>{d.hero.tagline}</p>
               <div className="mx-auto text-left" style={{ maxWidth: "460px" }}>
                 <PackageList items={d.hero.items} totalValue={d.hero.totalValue} today={d.hero.today} />
-                <p style={{ fontSize: "13px", color: AA_MUTED, marginTop: "6px" }}>{d.hero.individualNote}</p>
+                <p style={{ fontSize: "13px", color: "#7a6e52", marginTop: "6px" }}>{d.hero.individualNote}</p>
               </div>
               <div style={{ marginTop: "24px" }}><Cta label={d.hero.cta} /></div>
               {d.hero.finePrint.length > 0 && (
                 <div style={{ marginTop: "20px" }}>
-                  {d.hero.finePrint.map((f, i) => (<p key={i} style={{ fontSize: "11px", color: AA_MUTED, lineHeight: 1.6 }}>{f}</p>))}
+                  {d.hero.finePrint.map((f, i) => (<p key={i} style={{ fontSize: "11px", color: "#7a6e52", lineHeight: 1.6 }}>{f}</p>))}
                 </div>
               )}
             </Reveal>
@@ -91,7 +91,7 @@ export default function ProtocolPage({ d }: { d: ProtocolData }) {
       {/* ===== MARBLE BODY ===== */}
       <div style={{ background: `url('${ASSET}/laser-marble.jpg') top center / cover` }}>
         {/* SECRET */}
-        <section style={{ padding: "70px 0" }}>
+        <section style={{ padding: "clamp(40px,8vw,70px) 0" }}>
           <div className="container">
             <Serif>{d.secret.heading}</Serif>
             <p className="font-display text-center" style={{ fontSize: "13px", color: AA_LABEL, letterSpacing: "0.06em", marginTop: "12px", textTransform: "uppercase" }}>{d.secret.sub}</p>
@@ -101,11 +101,11 @@ export default function ProtocolPage({ d }: { d: ProtocolData }) {
                 <Image src={d.secret.image} alt={d.secret.heading} width={800} height={600} priority={false} quality={85} className="w-full rounded-xl" style={{ display: "block", objectFit: "cover", aspectRatio: "4 / 3", boxShadow: "0 16px 40px rgba(0,0,0,0.12)" }} />
               </Reveal>
               <div>
-                {d.secret.paragraphs[0] && <p style={{ fontSize: "14.5px", color: AA_LABEL, lineHeight: 1.8 }}>{d.secret.paragraphs[0]}</p>}
+                {d.secret.paragraphs[0] && <p style={{ fontSize: "14.5px", color: "#7a6e52", lineHeight: 1.8 }}>{d.secret.paragraphs[0]}</p>}
                 <ul className="space-y-3" style={{ marginTop: "18px" }}>
-                  {d.secret.bullets.map((b) => (<li key={b} className="flex items-start gap-3"><TealDot /><span style={{ fontSize: "14px", color: AA_LABEL, lineHeight: 1.6 }}>{b}</span></li>))}
+                  {d.secret.bullets.map((b) => (<li key={b} className="flex items-start gap-3"><TealDot /><span style={{ fontSize: "14px", color: "#7a6e52", lineHeight: 1.6 }}>{b}</span></li>))}
                 </ul>
-                {d.secret.paragraphs.slice(1).map((p, i) => (<p key={i} style={{ fontSize: "14.5px", color: AA_LABEL, lineHeight: 1.8, marginTop: "16px" }}>{p}</p>))}
+                {d.secret.paragraphs.slice(1).map((p, i) => (<p key={i} style={{ fontSize: "14.5px", color: "#7a6e52", lineHeight: 1.8, marginTop: "16px" }}>{p}</p>))}
                 <div style={{ marginTop: "26px" }}><Cta label={d.secret.cta} /></div>
               </div>
             </div>
@@ -113,7 +113,7 @@ export default function ProtocolPage({ d }: { d: ProtocolData }) {
         </section>
 
         {/* TRUSTED + features */}
-        <section style={{ padding: "50px 0 70px" }}>
+        <section style={{ padding: "clamp(36px,7vw,50px) 0 clamp(40px,8vw,70px)" }}>
           <div className="container text-center">
             <Serif>{d.trusted.heading}<br />{d.trusted.headingSub}</Serif>
             {d.trusted.pressLogos && d.trusted.pressLogos.length > 0 && (
@@ -134,7 +134,7 @@ export default function ProtocolPage({ d }: { d: ProtocolData }) {
                     </div>
                   )}
                   <h3 className="font-display" style={{ fontSize: "13px", color: AA_GOLD, letterSpacing: "0.06em", marginBottom: "10px" }}>{f.label}</h3>
-                  <p style={{ fontSize: "13px", color: AA_LABEL, lineHeight: 1.65 }}>{f.desc}</p>
+                  <p style={{ fontSize: "13px", color: "#7a6e52", lineHeight: 1.65 }}>{f.desc}</p>
                 </Reveal>
               ))}
             </div>
@@ -142,7 +142,7 @@ export default function ProtocolPage({ d }: { d: ProtocolData }) {
         </section>
 
         {/* ELIGIBILITY */}
-        <section style={{ padding: "70px 0" }}>
+        <section style={{ padding: "clamp(40px,8vw,70px) 0" }}>
           <div className="container">
             <Kicker>{d.eligibility.kicker}</Kicker>
             <Serif style={{ marginTop: "8px" }}>{d.eligibility.heading}</Serif>
@@ -165,7 +165,7 @@ export default function ProtocolPage({ d }: { d: ProtocolData }) {
 
         {/* MODALITY */}
         {d.modality && (
-          <section style={{ padding: "60px 0" }}>
+          <section style={{ padding: "clamp(40px,7vw,60px) 0" }}>
             <div className="container">
               <Kicker>{d.modality.kicker}</Kicker>
               <Serif style={{ marginTop: "8px" }}>{d.modality.heading}</Serif>
@@ -180,11 +180,11 @@ export default function ProtocolPage({ d }: { d: ProtocolData }) {
                       // eslint-disable-next-line @next/next/no-img-element
                       <Image src={d.modality.baImage} alt={d.modality.name} width={600} height={400} priority={false} quality={85} className="w-full rounded-lg" style={{ display: "block", marginBottom: "18px" }} />
                     )}
-                    <p style={{ fontSize: "14px", color: AA_LABEL, lineHeight: 1.75 }}>{d.modality.intro}</p>
+                    <p style={{ fontSize: "14px", color: "#7a6e52", lineHeight: 1.75 }}>{d.modality.intro}</p>
                   </div>
                   <div>
                     <ul className="space-y-3">
-                      {d.modality.bullets.map((b) => (<li key={b} className="flex items-start gap-3"><TealDot /><span style={{ fontSize: "13.5px", color: AA_LABEL, lineHeight: 1.65 }}>{b}</span></li>))}
+                      {d.modality.bullets.map((b) => (<li key={b} className="flex items-start gap-3"><TealDot /><span style={{ fontSize: "13.5px", color: "#7a6e52", lineHeight: 1.65 }}>{b}</span></li>))}
                     </ul>
                     {d.modality.sideImage && (
                       // eslint-disable-next-line @next/next/no-img-element
@@ -199,42 +199,42 @@ export default function ProtocolPage({ d }: { d: ProtocolData }) {
         )}
 
         {/* DIFFERENCE 1 — we are not another diet clinic */}
-        <section style={{ padding: "60px 0" }}>
+        <section style={{ padding: "clamp(40px,7vw,60px) 0" }}>
           <div className="container text-center">
             <Kicker>{d.difference1.kicker}</Kicker>
             <Serif style={{ marginTop: "8px" }}>{d.difference1.heading}</Serif>
-            <p className="mx-auto" style={{ maxWidth: "820px", fontSize: "14.5px", color: AA_LABEL, lineHeight: 1.8, marginTop: "20px" }}>{d.difference1.intro}</p>
+            <p className="mx-auto" style={{ maxWidth: "820px", fontSize: "14.5px", color: "#7a6e52", lineHeight: 1.8, marginTop: "20px" }}>{d.difference1.intro}</p>
             <ul className="mx-auto grid gap-3 sm:grid-cols-2 text-left" style={{ maxWidth: "880px", marginTop: "30px" }}>
-              {d.difference1.bullets.map((b) => (<li key={b} className="flex items-start gap-3"><TealDot /><span style={{ fontSize: "14px", color: AA_LABEL, lineHeight: 1.6 }}>{b}</span></li>))}
+              {d.difference1.bullets.map((b) => (<li key={b} className="flex items-start gap-3"><TealDot /><span style={{ fontSize: "14px", color: "#7a6e52", lineHeight: 1.6 }}>{b}</span></li>))}
             </ul>
           </div>
         </section>
 
         {/* STARTER PACK recap */}
-        <section style={{ padding: "60px 0" }}>
+        <section style={{ padding: "clamp(40px,7vw,60px) 0" }}>
           <div className="container">
             <Serif>{d.starterPack.heading}</Serif>
             <div className="grid gap-6 md:grid-cols-3" style={{ marginTop: "40px" }}>
               {d.starterPack.cols.map((c, i) => (
                 <Reveal key={c.title} delay={(i % 3) * 80} className="text-center" style={{ background: "rgba(255,255,255,0.55)", border: "1px solid var(--line)", borderRadius: "16px", padding: "28px 24px", boxShadow: "0 12px 30px rgba(0,0,0,0.05)" }}>
                   <h3 className="font-display" style={{ fontSize: "13px", color: AA_GOLD, letterSpacing: "0.06em", marginBottom: "12px" }}>{c.title}</h3>
-                  <p style={{ fontSize: "13.5px", color: AA_LABEL, lineHeight: 1.7 }}>{c.desc}</p>
+                  <p style={{ fontSize: "13.5px", color: "#7a6e52", lineHeight: 1.7 }}>{c.desc}</p>
                 </Reveal>
               ))}
             </div>
             <div className="mx-auto text-center" style={{ maxWidth: "640px", marginTop: "40px", background: "rgba(255,255,255,0.6)", border: "1px solid var(--line)", borderRadius: "16px", padding: "clamp(26px,3vw,36px)" }}>
               <ul className="space-y-2.5 text-left mx-auto" style={{ maxWidth: "440px" }}>
-                {d.starterPack.items.map((it) => (<li key={it.label} className="flex items-start gap-3"><TealDot /><span style={{ fontSize: "14px", color: AA_LABEL, lineHeight: 1.5 }}>{it.label} {it.price && <span style={{ color: AA_TEAL }}>({it.price})</span>}</span></li>))}
+                {d.starterPack.items.map((it) => (<li key={it.label} className="flex items-start gap-3"><TealDot /><span style={{ fontSize: "14px", color: "#7a6e52", lineHeight: 1.5 }}>{it.label} {it.price && <span style={{ color: AA_TEAL }}>({it.price})</span>}</span></li>))}
               </ul>
               <p className="font-display" style={{ fontSize: "16px", color: AA_GOLD, letterSpacing: "0.04em", marginTop: "22px" }}>{d.starterPack.totalValue} <span style={{ color: AA_TEAL }}>{d.starterPack.today}</span></p>
               <div style={{ marginTop: "22px" }}><Cta label={d.starterPack.cta} /></div>
-              {d.starterPack.finePrint.map((f, i) => (<p key={i} style={{ fontSize: "11px", color: AA_MUTED, lineHeight: 1.6, marginTop: i ? "2px" : "16px" }}>{f}</p>))}
+              {d.starterPack.finePrint.map((f, i) => (<p key={i} style={{ fontSize: "11px", color: "#7a6e52", lineHeight: 1.6, marginTop: i ? "2px" : "16px" }}>{f}</p>))}
             </div>
           </div>
         </section>
 
         {/* DIFFERENCE 2 — commitment + why + map */}
-        <section style={{ padding: "30px 0 70px" }}>
+        <section style={{ padding: "30px 0 clamp(40px,8vw,70px)" }}>
           <div className="container">
             <div className="mx-auto" style={{ maxWidth: "1120px", borderRadius: "32px", background: "rgba(255,255,255,0.5)", border: "1px solid var(--line)", padding: "clamp(30px,4vw,56px)" }}>
               <div className="text-center">
@@ -245,11 +245,11 @@ export default function ProtocolPage({ d }: { d: ProtocolData }) {
                 <div>
                   <h3 className="font-display" style={{ fontSize: "13px", color: AA_LABEL, letterSpacing: "0.1em", textTransform: "uppercase", marginBottom: "16px" }}>{d.difference2.commitmentTitle}</h3>
                   <ul className="space-y-3">
-                    {d.difference2.commitment.map((c) => (<li key={c} className="flex items-start gap-3"><TealDot /><span style={{ fontSize: "14px", color: AA_LABEL, lineHeight: 1.6 }}>{c}</span></li>))}
+                    {d.difference2.commitment.map((c) => (<li key={c} className="flex items-start gap-3"><TealDot /><span style={{ fontSize: "14px", color: "#7a6e52", lineHeight: 1.6 }}>{c}</span></li>))}
                   </ul>
                   <h3 className="font-display" style={{ fontSize: "13px", color: AA_LABEL, letterSpacing: "0.1em", textTransform: "uppercase", margin: "30px 0 16px" }}>{d.difference2.whyTitle}</h3>
                   <ul className="space-y-3">
-                    {d.difference2.why.map((c) => (<li key={c} className="flex items-start gap-3"><TealDot /><span style={{ fontSize: "14px", color: AA_LABEL, lineHeight: 1.6 }}>{c}</span></li>))}
+                    {d.difference2.why.map((c) => (<li key={c} className="flex items-start gap-3"><TealDot /><span style={{ fontSize: "14px", color: "#7a6e52", lineHeight: 1.6 }}>{c}</span></li>))}
                   </ul>
                 </div>
                 <div style={{ borderRadius: "32px 12px 32px 12px", overflow: "hidden", boxShadow: "0 16px 38px rgba(0,0,0,0.10)", minHeight: "360px" }}>
@@ -268,7 +268,7 @@ export default function ProtocolPage({ d }: { d: ProtocolData }) {
         </section>
 
         {/* FAQ */}
-        <section style={{ padding: "60px 0" }}>
+        <section style={{ padding: "clamp(40px,7vw,60px) 0" }}>
           <div className="container">
             <h2 className="font-serif text-center" style={{ fontSize: "clamp(22px,3vw,30px)", color: AA_GOLD, letterSpacing: "0.06em", fontWeight: 400, marginBottom: "40px" }}>Frequently asked questions</h2>
             <FaqAccordion items={d.faq} />
@@ -276,7 +276,7 @@ export default function ProtocolPage({ d }: { d: ProtocolData }) {
         </section>
 
         {/* RESEARCH */}
-        <section style={{ padding: "40px 0 90px" }}>
+        <section style={{ padding: "40px 0 clamp(44px,9vw,90px)" }}>
           <div className="container text-center">
             <Kicker>{d.research.heading}</Kicker>
             <Serif style={{ marginTop: "8px" }}>{d.research.sub}</Serif>
@@ -290,10 +290,10 @@ export default function ProtocolPage({ d }: { d: ProtocolData }) {
                   <div style={{ padding: "24px" }}>
                     <h3 className="font-display" style={{ fontSize: "13px", color: AA_GOLD, letterSpacing: "0.04em", marginBottom: "14px", lineHeight: 1.4 }}>{c.title}</h3>
                     <p className="font-display" style={{ fontSize: "10px", color: AA_TEAL, letterSpacing: "0.1em", marginBottom: "6px" }}>WHAT IT DOES</p>
-                    <p style={{ fontSize: "13px", color: AA_LABEL, lineHeight: 1.65, marginBottom: "14px" }}>{c.whatItDoes}</p>
+                    <p style={{ fontSize: "13px", color: "#7a6e52", lineHeight: 1.65, marginBottom: "14px" }}>{c.whatItDoes}</p>
                     <p className="font-display" style={{ fontSize: "10px", color: AA_TEAL, letterSpacing: "0.1em", marginBottom: "6px" }}>KEY RESULTS</p>
                     <ul className="space-y-2">
-                      {c.keyResults.map((k, j) => (<li key={j} className="flex items-start gap-2"><TealDot /><span style={{ fontSize: "12.5px", color: AA_LABEL, lineHeight: 1.6 }}>{k}</span></li>))}
+                      {c.keyResults.map((k, j) => (<li key={j} className="flex items-start gap-2"><TealDot /><span style={{ fontSize: "12.5px", color: "#7a6e52", lineHeight: 1.6 }}>{k}</span></li>))}
                     </ul>
                     <p className="font-display" style={{ fontSize: "11px", color: AA_GOLD, letterSpacing: "0.06em", marginTop: "16px", textTransform: "uppercase" }}>{c.evidence}</p>
                   </div>

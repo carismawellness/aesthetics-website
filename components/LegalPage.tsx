@@ -17,7 +17,7 @@ export const lp = {
   beigeBg: "#faf7f2", // warm card background
   gold: "#706552", // heading / nav text token
   taupe: "#695c4e", // muted label / body-strong
-  body: "#333333", // WCAG AA: darker charcoal for body text (5.18:1 on white)
+  body: "#7a6e52", // warm taupe body text — matches Botox/TreatmentPage convention
   numWater: "#356868", // WCAG AA: darker teal (4.63:1 on white)
   numWaterLight: "rgba(53,104,104,0.07)", // faint watermark using darker teal
   taleHairTOC: "#899191", // WCAG AA: darker teal for TOC underline (was #DEEBEB, 1.14:1) now 3.01:1 on beigeBg
@@ -179,7 +179,7 @@ export function LegalHero({
   lastUpdated: string;
 }) {
   return (
-    <section style={{ background: "linear-gradient(180deg, #ffffff 0%, #f7fafa 50%, #ffffff 100%)", paddingTop: "104px", paddingBottom: "72px" }}>
+    <section style={{ background: "linear-gradient(180deg, #ffffff 0%, #f7fafa 50%, #ffffff 100%)", paddingTop: "clamp(56px,12vw,104px)", paddingBottom: "clamp(44px,8vw,72px)" }}>
       <div className="mx-auto px-6 lg:px-0 text-center" style={{ maxWidth: "860px" }}>
         <p style={{ ...labelStyle, color: lp.tealText, marginBottom: "20px" }}>{eyebrow}</p>
         <h1
@@ -281,7 +281,7 @@ export function LegalContactCard({
 }) {
   return (
     <section style={{ background: `linear-gradient(180deg, #ffffff 0%, ${lp.tealTint} 50%, #ffffff 100%)` }}>
-      <div className="mx-auto px-6 lg:px-0" style={{ maxWidth: "860px", paddingTop: "52px", paddingBottom: "72px" }}>
+      <div className="mx-auto px-6 lg:px-0" style={{ maxWidth: "860px", paddingTop: "52px", paddingBottom: "clamp(44px,8vw,72px)" }}>
         <div
           style={{
             backgroundColor: "transparent",

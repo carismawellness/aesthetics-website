@@ -432,7 +432,7 @@ export default function Tiers() {
   return (
     <section
       aria-labelledby="glow-tiers-heading"
-      style={{ padding: "76px 0", background: "transparent" }}
+      style={{ padding: "clamp(40px,8vw,76px) 0", background: "transparent" }}
     >
       <div className="container">
         {/* ── Header ───────────────────────────────────────────── */}
@@ -481,7 +481,7 @@ export default function Tiers() {
             const nameColor = TEAL_TEXT;
             const rewardColor = GOLD;
             const subColor = LABEL;
-            const perkColor = LABEL;
+            const perkColor = "#7a6e52";
             const divider = "var(--line)";
 
             return (
@@ -607,7 +607,7 @@ export default function Tiers() {
                   <p
                     style={{
                       fontSize: "13px",
-                      color: subColor,
+                      color: "#7a6e52",
                       lineHeight: 1.6,
                       marginTop: "8px",
                       fontWeight: 500,
@@ -618,7 +618,7 @@ export default function Tiers() {
                   <p
                     style={{
                       fontSize: "13px",
-                      color: subColor,
+                      color: "#7a6e52",
                       lineHeight: 1.7,
                       marginTop: "12px",
                       fontStyle: "italic",

@@ -209,7 +209,7 @@ export default function GiftsPage() {
         <section
           id="pick-occasion"
           aria-labelledby="occasions-heading"
-          style={{ padding: "30px 0 90px", scrollMarginTop: "var(--nav-clear)" }}
+          style={{ padding: "30px 0 clamp(48px,9vw,90px)", scrollMarginTop: "var(--nav-clear)" }}
         >
           <div className="container">
             <h2
@@ -322,7 +322,7 @@ export default function GiftsPage() {
                 marginTop: "40px",
                 textAlign: "center",
                 fontSize: "12px",
-                color: "var(--label)",
+                color: "#7a6e52",
                 lineHeight: 1.7,
               }}
             >

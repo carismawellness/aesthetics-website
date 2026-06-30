@@ -96,7 +96,7 @@ export default function Pillars() {
   return (
     <section
       aria-labelledby="glow-pillars-heading"
-      style={{ padding: "84px 0", background: "transparent" }}
+      style={{ padding: "clamp(44px,9vw,84px) 0", background: "transparent" }}
     >
       <div className="container">
         {/* Eyebrow + heading + rule */}

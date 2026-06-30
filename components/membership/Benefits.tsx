@@ -590,7 +590,7 @@ export default function Benefits() {
                       style={{
                         display: "block",
                         fontSize: "11.5px",
-                        color: LABEL,
+                        color: "#7a6e52",
                         marginTop: "5px",
                         fontStyle: "italic",
                         lineHeight: 1.5,
@@ -713,7 +713,7 @@ export default function Benefits() {
             </h3>
             <p
               style={{
-                color: TEAL_TEXT,
+                color: "#7a6e52",
                 fontSize: "15.5px",
                 lineHeight: 1.7,
                 margin: "16px auto 0",

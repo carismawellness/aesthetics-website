@@ -50,7 +50,7 @@ export default function FaceTreatmentsPage() {
       {/* Treatment grid */}
       {/* P1: aria-labelledby ties section to its visible heading */}
       <section aria-labelledby="treatments-grid-heading" style={{ background: "var(--white)" }}>
-        <div className="container" style={{ paddingTop: "72px", paddingBottom: "80px" }}>
+        <div className="container" style={{ paddingTop: "clamp(44px,8vw,72px)", paddingBottom: "clamp(44px,8vw,80px)" }}>
           {/* P6: id prop on SectionHeading for aria-labelledby wiring */}
           <SectionHeading title={FACE_LISTING.gridHeading} id="treatments-grid-heading" />
           {/* P4: decorative underline accent — aria-hidden */}

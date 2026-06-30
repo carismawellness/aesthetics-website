@@ -82,7 +82,7 @@ export default function MembershipPage() {
            taglines remain ≥4.5:1 on the ivory/champagne ground. */}
       <section
         aria-labelledby="join-cta-heading"
-        style={{ background: "transparent", padding: "76px 0 84px" }}
+        style={{ background: "transparent", padding: "clamp(40px,8vw,76px) 0 clamp(44px,9vw,84px)" }}
       >
         <div
           className="container text-center"
@@ -106,7 +106,7 @@ export default function MembershipPage() {
           <p
             style={{
               fontSize: "15px",
-              color: "var(--teal-text)",
+              color: "#7a6e52",
               lineHeight: 1.7,
               margin: "20px auto 0",
               maxWidth: "520px",
