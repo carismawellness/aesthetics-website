@@ -241,7 +241,7 @@ export default function ServicesMarqueeOverlay() {
     <section
       aria-labelledby="svc-ov-heading"
       className={`svc-ov${revealed ? " is-revealed" : ""}`}
-      style={{ padding: "clamp(56px,7vw,100px) 0", position: "relative" }}
+      style={{ padding: "clamp(36px,7vw,100px) 0", position: "relative" }}
     >
       <style>{`
         .svc-ov-rv { opacity: 0; transform: translateY(16px);
