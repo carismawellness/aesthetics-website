@@ -856,7 +856,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                       {c.label}
                     </span>
                   </div>
-                  <p style={{ fontSize: "14.5px", color: "var(--label)", lineHeight: 1.625, marginBottom: "18px" }}>
+                  <p style={{ fontSize: "14.5px", color: "#7a6e52", lineHeight: 1.625, marginBottom: "18px" }}>
                     {c.lead}
                   </p>
                   <ul className="space-y-4">
@@ -869,7 +869,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                         >
                           ●
                         </span>
-                        <span style={{ fontSize: "13.5px", color: "var(--label)", lineHeight: 1.55 }}>{p}</span>
+                        <span style={{ fontSize: "13.5px", color: "#7a6e52", lineHeight: 1.55 }}>{p}</span>
                       </li>
                     ))}
                   </ul>
