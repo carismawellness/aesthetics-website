@@ -70,34 +70,49 @@ export default function MobileStickyConsultCTA() {
           : "none",
       }}
     >
-      <a
-        href="/consultation"
-        aria-label="Book Your Free Consultation"
-        className="cta-glow-teal"
+      {/* Frosted-glass shell around the pill */}
+      <div
         style={{
           display: "inline-flex",
-          alignItems: "center",
-          justifyContent: "center",
-          minHeight: 48,
-          padding: "13px 30px",
+          padding: "7px",
           borderRadius: "999px",
-          background:
-            "linear-gradient(155deg, #3a6a73 0%, var(--teal-deep) 45%, #1a3d42 100%)",
-          color: "#fff",
-          fontFamily: WIDE,
-          fontWeight: 700,
-          fontSize: "12.5px",
-          letterSpacing: "0.08em",
-          textTransform: "uppercase",
-          textDecoration: "none",
-          whiteSpace: "nowrap",
+          background: "rgba(255,255,255,0.70)",
+          backdropFilter: "blur(24px) saturate(200%)",
+          WebkitBackdropFilter: "blur(24px) saturate(200%)",
+          border: "1px solid rgba(255,255,255,0.45)",
           boxShadow:
-            "0 6px 24px rgba(36,80,82,0.38), 0 1px 0 rgba(255,255,255,0.15) inset",
-          border: "1px solid rgba(255,255,255,0.18)",
+            "0 8px 32px rgba(0,0,0,0.10), 0 1px 0 rgba(255,255,255,0.75) inset, 0 -1px 0 rgba(0,0,0,0.04) inset",
         }}
       >
-        Book Your Free Consultation
-      </a>
+        <a
+          href="/consultation"
+          aria-label="Book Your Free Consultation"
+          className="cta-glow-teal"
+          style={{
+            display: "inline-flex",
+            alignItems: "center",
+            justifyContent: "center",
+            minHeight: 48,
+            padding: "13px 30px",
+            borderRadius: "999px",
+            background:
+              "linear-gradient(155deg, #3a6a73 0%, var(--teal-deep) 45%, #1a3d42 100%)",
+            color: "#fff",
+            fontFamily: WIDE,
+            fontWeight: 700,
+            fontSize: "12.5px",
+            letterSpacing: "0.08em",
+            textTransform: "uppercase",
+            textDecoration: "none",
+            whiteSpace: "nowrap",
+            boxShadow:
+              "0 6px 24px rgba(36,80,82,0.38), 0 1px 0 rgba(255,255,255,0.15) inset",
+            border: "1px solid rgba(255,255,255,0.18)",
+          }}
+        >
+          Book Your Free Consultation
+        </a>
+      </div>
     </div>
   );
 }
