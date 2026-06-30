@@ -543,7 +543,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                         </h3>
                       )}
                       {s.desc && (
-                        <p style={{ fontSize: "14.5px", color: "var(--label)", lineHeight: 1.625 }}>{s.desc}</p>
+                        <p style={{ fontSize: "14.5px", color: "#7a6e52", lineHeight: 1.625 }}>{s.desc}</p>
                       )}
                     </div>
                   </div>
@@ -641,7 +641,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                         </h3>
                       )}
                       {s.desc && (
-                        <p style={{ fontSize: "14.5px", color: "var(--label)", lineHeight: 1.625 }}>{s.desc}</p>
+                        <p style={{ fontSize: "14.5px", color: "#7a6e52", lineHeight: 1.625 }}>{s.desc}</p>
                       )}
                     </div>
                   </div>
