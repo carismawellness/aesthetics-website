@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { createPortal } from "react-dom";
 import BrandSwitcher from "@/components/BrandSwitcher";
+import MobileStickyConsultCTA from "@/components/MobileStickyConsultCTA";
 import {
   CONTACT,
   FACE_LINKS,
@@ -637,41 +638,12 @@ export default function Header() {
         </div>
       )}
 
-      {/* Mobile-only sticky bottom CTA — present on non-treatment pages; hidden
-          on treatment/package pages where StickyBookingBar renders its own pill. */}
+      {/* Mobile-only sticky bottom CTA — a resized floating pill that reveals on
+          scroll (fade + slide-up) and opens the consultation popup in-tab.
+          Present on non-treatment pages; hidden on treatment/package pages where
+          StickyBookingBar renders its own pill. */}
       {mounted && !open && !hasStickyBar &&
-        createPortal(
-          <>
-            <div
-              aria-hidden
-              className="lg:hidden"
-              style={{ height: "calc(64px + env(safe-area-inset-bottom, 0px))" }}
-            />
-            <div
-              className="lg:hidden fixed inset-x-0 bottom-0"
-              style={{
-                zIndex: 40,
-                padding: "10px clamp(12px,4vw,20px) calc(10px + env(safe-area-inset-bottom, 0px))",
-                background: "rgba(255,255,255,0.82)",
-                backdropFilter: "blur(18px) saturate(180%)",
-                WebkitBackdropFilter: "blur(18px) saturate(180%)",
-                borderTop: "1px solid rgba(255,255,255,0.7)",
-                boxShadow: "0 -8px 28px rgba(28,30,30,0.12)",
-              }}
-            >
-              <a
-                href={FRESHA_BOOKING}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="cta-glow-teal block text-center w-full"
-                style={{ ...ctaStyle, padding: "14px", fontSize: "13px" }}
-              >
-                Book Your Free Consultation
-              </a>
-            </div>
-          </>,
-          document.body
-        )}
+        createPortal(<MobileStickyConsultCTA />, document.body)}
     </header>
   );
 }
