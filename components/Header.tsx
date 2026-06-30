@@ -30,7 +30,7 @@ const STICKY_BAR_PAGES = new Set([
 const TEAL_FILL = "#4f7373";   // CTA fill (slimming GREEN_FILL → teal-deep)
 const TEAL = "#406060";        // small teal text / phone / icons (slimming GREEN → teal-text)
 const NAV_INK = "#245052";     // nav-link ink (brand teal)
-const DROPDOWN_INK = "#8A7F63"; // dropdown/sub-item treatment link ink (brand warm taupe, darkened for readability)
+const DROPDOWN_INK = "#73684C"; // dropdown/sub-item treatment link ink (brand warm taupe, darkened for readability)
 
 // External Fresha booking link used by the header "free consultation" CTAs.
 const FRESHA_BOOKING = "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2800348&oiid=sv%3A25754425&share=true&pId=2708191";
