@@ -410,7 +410,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                       {a.name}
                     </h3>
                     {a.desc && (
-                      <p style={{ fontSize: "13.5px", color: "var(--label)", lineHeight: 1.625 }}>{a.desc}</p>
+                      <p style={{ fontSize: "13.5px", color: "#7a6e52", lineHeight: 1.625 }}>{a.desc}</p>
                     )}
                   </Reveal>
                 ))}
@@ -441,7 +441,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                   {t.precision.additionalTitle ?? "Additional Treatment Areas"}
                 </h3>
                 {t.precision.additionalIntro && (
-                  <p style={{ fontSize: "15px", color: "var(--label)", lineHeight: 1.625, marginBottom: "12px" }}>
+                  <p style={{ fontSize: "15px", color: "#7a6e52", lineHeight: 1.625, marginBottom: "12px" }}>
                     {t.precision.additionalIntro}
                   </p>
                 )}
