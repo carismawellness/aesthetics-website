@@ -182,7 +182,7 @@ function NavDropdown({
           visibility: isOpen ? "visible" : "hidden",
           pointerEvents: isOpen ? "auto" : "none",
           transition: "opacity 0.2s ease, transform 0.24s cubic-bezier(0.22,1,0.36,1), visibility 0.2s",
-          background: "rgba(255,255,255,0.82)",
+          background: "rgba(255,255,255,0.97)",
           backdropFilter: "blur(22px) saturate(180%)",
           WebkitBackdropFilter: "blur(22px) saturate(180%)",
           border: "1px solid rgba(255,255,255,0.7)",
