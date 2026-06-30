@@ -222,7 +222,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
              hero (which now carries the body copy + TREATMENT INFO card),
              before everything else. Shows all before/after pairs. ── */}
       {(t.beforeAfter || t.beforeAfterTitle) && (
-        <section aria-label="Before and after results" style={{ padding: "70px 0" }}>
+        <section aria-label="Before and after results" style={{ padding: "clamp(40px,7vw,70px) 0" }}>
           {t.beforeAfter && t.beforeAfter.length > 0 ? (
             <BeforeAfterCarousel pairs={t.beforeAfter} title={t.beforeAfterTitle} />
           ) : (
@@ -277,7 +277,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
       {t.education && (
         <section
           aria-labelledby="education-heading"
-          style={{ padding: "80px 0", background: "linear-gradient(180deg, #ffffff 0%, var(--cream) 50%, #ffffff 100%)" }}
+          style={{ padding: "clamp(44px,8vw,80px) 0", background: "linear-gradient(180deg, #ffffff 0%, var(--cream) 50%, #ffffff 100%)" }}
         >
           <div className="container">
             <SectionHeader id="education-heading" title={t.education.title} sub={t.education.subtitle} />
@@ -355,7 +355,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
 
       {/* ── Precision areas ── */}
       {t.precision && (
-        <section aria-labelledby="precision-heading" style={{ padding: "80px 0" }}>
+        <section aria-labelledby="precision-heading" style={{ padding: "clamp(44px,8vw,80px) 0" }}>
           <div className="container">
             <SectionHeader id="precision-heading" title={t.precision.title} sub={t.precision.intro} />
             {t.precision.areas && t.precision.areas.length > 0 && (
@@ -471,7 +471,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
 
       {/* ── Treatment experience — dashed timeline ── */}
       {t.experience && (
-        <section aria-labelledby="experience-heading" style={{ padding: "80px 0" }}>
+        <section aria-labelledby="experience-heading" style={{ padding: "clamp(44px,8vw,80px) 0" }}>
           <div className="container">
             <div style={{ marginBottom: "56px" }}>
               <SectionHeader id="experience-heading" title={t.experience.title} />
@@ -666,7 +666,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
 
       {/* ── Real patients — autoplay video reels ── */}
       {t.patientVideos && (
-        <section aria-labelledby="videos-heading" style={{ padding: "80px 0" }}>
+        <section aria-labelledby="videos-heading" style={{ padding: "clamp(44px,8vw,80px) 0" }}>
           <div className="container">
             <SectionHeader id="videos-heading" title={t.patientVideos.title} sub={t.patientVideos.intro} />
             {t.patientVideos.videos.length === 1 ? (
@@ -822,7 +822,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
 
       {/* ── Preparation & Aftercare ── */}
       {t.prepAftercare && (
-        <section aria-labelledby="prep-heading" style={{ padding: "80px 0" }}>
+        <section aria-labelledby="prep-heading" style={{ padding: "clamp(44px,8vw,80px) 0" }}>
           <div className="container">
             <SectionHeader id="prep-heading" kicker={t.prepAftercare.kicker} title={t.prepAftercare.title} sub={t.prepAftercare.intro} />
             <div className="grid gap-6 md:grid-cols-3" style={{ marginTop: "48px" }}>
@@ -905,7 +905,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
         <section
           aria-labelledby="pricing-heading"
           aria-label="Treatment pricing"
-          style={{ padding: "80px 0", background: "linear-gradient(180deg, #ffffff 0%, var(--cream) 50%, #ffffff 100%)" }}
+          style={{ padding: "clamp(44px,8vw,80px) 0", background: "linear-gradient(180deg, #ffffff 0%, var(--cream) 50%, #ffffff 100%)" }}
         >
           <div className="container">
             <SectionHeader id="pricing-heading" title={t.pricingGrid.title} sub={t.pricingGrid.intro} />
@@ -959,7 +959,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
 
       {/* ── Membership tiers ── */}
       {t.membership && (
-        <section aria-labelledby="membership-heading" style={{ padding: "80px 0" }}>
+        <section aria-labelledby="membership-heading" style={{ padding: "clamp(44px,8vw,80px) 0" }}>
           <div className="container">
             <SectionHeader id="membership-heading" title={t.membership.title} sub={t.membership.intro} />
             <div className="grid gap-8 md:grid-cols-3 mx-auto" style={{ marginTop: "48px", maxWidth: "1040px" }}>
