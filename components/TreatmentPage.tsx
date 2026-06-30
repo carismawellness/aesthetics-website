@@ -41,7 +41,7 @@ function splitHeadline(title: string): { text: string; em?: boolean }[] {
 // P1 — accessible colors for light teal InfoStrip background (#eef3f3):
 // - Text uses dark teal (#0d1b1d, 7.2:1 on #eef3f3, AAA for normal text)
 // - Icon strokes use teal-deep (#245052, 4.2:1, AAA for UI components)
-const INFO_COLOR = "#0d1b1d";
+const INFO_COLOR = "#7a6e52";
 const INFO_ICON = "#245052";
 
 function MetricIcon({ metric }: { metric: string }) {
@@ -128,7 +128,7 @@ function InfoStrip({ info }: { info: NonNullable<Treatment["info"]> }) {
               >
                 {it.metric}
               </span>
-              <span style={{ fontSize: 13, color: "#0d1b1d", lineHeight: 1.3, fontWeight: 500 }}>{it.detail}</span>
+              <span style={{ fontSize: 13, color: "#7a6e52", lineHeight: 1.3, fontWeight: 500 }}>{it.detail}</span>
             </span>
           </div>
         ))}
