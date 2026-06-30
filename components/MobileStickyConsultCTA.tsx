@@ -97,7 +97,7 @@ export default function MobileStickyConsultCTA() {
             borderRadius: "999px",
             background:
               "linear-gradient(155deg, #3a6a73 0%, var(--teal-deep) 45%, #1a3d42 100%)",
-            color: "#fff",
+            color: "#e2c97a",
             fontFamily: WIDE,
             fontWeight: 700,
             fontSize: "11px",
