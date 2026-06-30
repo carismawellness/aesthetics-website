@@ -165,7 +165,7 @@ export default function StickyBookingBar() {
         </a>
       </div>
 
-      {/* ── Mobile — single CTA pill, centered, clears live-chat icon ── */}
+      {/* ── Mobile — single CTA pill in a frosted-glass shell, centered ── */}
       <div
         className="flex sm:hidden"
         style={{
@@ -174,6 +174,10 @@ export default function StickyBookingBar() {
           left: "50%",
           transform: "translateX(-50%)",
           zIndex: 49,
+          padding: "5px",
+          borderRadius: "9999px",
+          background: "rgba(255,255,255,0.70)",
+          ...GLASS,
         }}
       >
         <a
@@ -182,8 +186,8 @@ export default function StickyBookingBar() {
           style={{
             borderRadius: "9999px",
             background: "linear-gradient(155deg, #3a6a73 0%, var(--teal-deep) 45%, #1a3d42 100%)",
-            padding: "13px 26px",
-            fontSize: "13px",
+            padding: "10px 22px",
+            fontSize: "11px",
             fontWeight: 700,
             color: "#fff",
             letterSpacing: "0.05em",
