@@ -31,6 +31,7 @@ const TEAL_FILL = "#4f7373";   // CTA fill (slimming GREEN_FILL → teal-deep)
 const TEAL = "#406060";        // small teal text / phone / icons (slimming GREEN → teal-text)
 const NAV_INK = "#245052";     // nav-link ink (brand teal)
 const DROPDOWN_INK = "#245052"; // dropdown/sub-item link ink (brand teal)
+const GOLD_LINK = "#b8860b";    // featured-treatment highlight (Botox) — readable gold on the light menu
 
 // External Fresha booking link used by the header "free consultation" CTAs.
 const FRESHA_BOOKING = "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2800348&oiid=sv%3A25754425&share=true&pId=2708191";
@@ -211,7 +212,7 @@ function NavDropdown({
           />
           {items.map((it) => (
             <Link key={it.href} href={it.href} tabIndex={isOpen ? undefined : -1} className="block hover:bg-black/5 hover:underline"
-              style={{ padding: "9px 14px", borderRadius: "10px", color: DROPDOWN_INK, fontFamily: '"Roboto Local", sans-serif', fontSize: "13px", textDecoration: "none", transition: "background 0.3s ease" }}>
+              style={{ padding: "9px 14px", borderRadius: "10px", color: it.label === "Botox" ? GOLD_LINK : DROPDOWN_INK, fontFamily: '"Roboto Local", sans-serif', fontSize: "13px", textDecoration: "none", transition: "background 0.3s ease" }}>
               {it.label}
             </Link>
           ))}
@@ -568,7 +569,7 @@ export default function Header() {
                           href={it.href}
                           onClick={() => setOpen(false)}
                           className="block"
-                          style={{ padding: "9px 12px", fontFamily: '"Roboto Local", sans-serif', fontSize: "14px", color: DROPDOWN_INK, textDecoration: "none" }}
+                          style={{ padding: "9px 12px", fontFamily: '"Roboto Local", sans-serif', fontSize: "14px", color: it.label === "Botox" ? GOLD_LINK : DROPDOWN_INK, textDecoration: "none" }}
                         >
                           {it.label}
                         </Link>
