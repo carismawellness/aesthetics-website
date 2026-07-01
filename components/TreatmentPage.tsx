@@ -233,7 +233,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                   style={{
                     fontSize: "clamp(20px,3vw,30px)",
                     color: "var(--label)",
-                    marginBottom: "36px",
+                    marginBottom: "clamp(18px,4.5vw,36px)",
                     lineHeight: 1.25,
                   }}
                 >
@@ -473,7 +473,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
       {t.experience && (
         <section aria-labelledby="experience-heading" style={{ padding: "clamp(44px,8vw,80px) 0" }}>
           <div className="container">
-            <div style={{ marginBottom: "56px" }}>
+            <div style={{ marginBottom: "clamp(28px,4.5vw,56px)" }}>
               <SectionHeader id="experience-heading" title={t.experience.title} />
             </div>
 

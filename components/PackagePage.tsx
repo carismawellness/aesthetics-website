@@ -308,7 +308,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                   style={{
                     fontSize: "clamp(20px,3vw,30px)",
                     color: "var(--label)",
-                    marginBottom: "36px",
+                    marginBottom: "clamp(18px,4.5vw,36px)",
                     lineHeight: 1.25,
                   }}
                 >
