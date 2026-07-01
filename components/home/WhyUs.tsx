@@ -30,7 +30,7 @@ export default function WhyUs() {
         <Reveal>
           <SectionHeading
             className="mx-auto"
-            style={{ maxWidth: "780px", marginBottom: "56px" }}
+            style={{ maxWidth: "780px", marginBottom: "clamp(28px,4.5vw,56px)" }}
             id="why-heading"
             title={
               <>

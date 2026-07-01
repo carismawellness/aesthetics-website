@@ -93,7 +93,7 @@ export default function ThankYouPage() {
             display: "flex",
             flexDirection: "column",
             gap: "14px",
-            marginBottom: "36px",
+            marginBottom: "clamp(18px,4.5vw,36px)",
           }}
         >
           {paragraphs.map((text) => (

@@ -7,7 +7,7 @@ export default function DualPack({ dualPack }: Props) {
   return (
     <section
       aria-labelledby="dual-heading"
-      style={{ padding: "clamp(60px,7vh,88px) 0", background: "#ffffff" }}
+      style={{ padding: "clamp(40px,7vh,88px) 0", background: "#ffffff" }}
     >
       <div className="container">
         <Reveal>

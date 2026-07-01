@@ -30,7 +30,7 @@ export default function GiftHowItWorks() {
   return (
     <section
       aria-labelledby="gift-how-heading"
-      style={{ position: "relative", overflow: "hidden", padding: "clamp(56px, 8vw, 96px) 0" }}
+      style={{ position: "relative", overflow: "hidden", padding: "clamp(40px, 8vw, 96px) 0" }}
     >
       {/* Lazy WebGL bokeh ambient for depth behind the steps. Desktop + in-view +
           idle only; reduced-motion / mobile get the static CSS gradient fallback. */}

@@ -301,7 +301,7 @@ export default function BeforeAfterCarousel({ pairs, title }: { pairs: Pair[]; t
       {title && (
         <h2
           className="font-display"
-          style={{ fontSize: "clamp(20px,3vw,30px)", color: "var(--label)", marginBottom: "36px" }}
+          style={{ fontSize: "clamp(20px,3vw,30px)", color: "var(--label)", marginBottom: "clamp(18px,4.5vw,36px)" }}
         >
           {title}
         </h2>

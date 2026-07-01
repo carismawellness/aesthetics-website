@@ -261,8 +261,8 @@ export function TrustStrip({ logos, benefits }: { logos: string[]; benefits: str
 export function CarismaDifference({ commitments }: { commitments: string[] }) {
   return (
     <section aria-labelledby="carisma-diff-heading" style={{ background: "linear-gradient(180deg, #ffffff 0%, var(--beige) 50%, #ffffff 100%)" }}>
-      <div className="container" style={{ paddingTop: "96px", paddingBottom: "96px" }}>
-        <h2 id="carisma-diff-heading" className="font-display" style={{ textAlign: "center", fontSize: "clamp(34px,4.6vw,48px)", fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase", color: "var(--ink)", lineHeight: 1.2, marginBottom: "44px" }}>The Carisma difference</h2>
+      <div className="container" style={{ paddingTop: "clamp(48px,9.6vw,96px)", paddingBottom: "clamp(48px,9.6vw,96px)" }}>
+        <h2 id="carisma-diff-heading" className="font-display" style={{ textAlign: "center", fontSize: "clamp(34px,4.6vw,48px)", fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase", color: "var(--ink)", lineHeight: 1.2, marginBottom: "clamp(22px,4.5vw,44px)" }}>The Carisma difference</h2>
         <ul className="grid grid-cols-1 sm:grid-cols-2" style={{ gap: "18px 36px", maxWidth: "920px", marginInline: "auto" }}>
           {commitments.map((c) => (
             <li key={c} className="flex items-start" style={{ gap: "14px" }}>
@@ -280,7 +280,7 @@ export function CarismaDifference({ commitments }: { commitments: string[] }) {
 export function CtaBanner({ heading, sub, buttonLabel = "Book a Consultation" }: { heading: string; sub?: string; buttonLabel?: string }) {
   return (
     <section aria-labelledby="cta-banner-heading" style={{ background: "linear-gradient(180deg, #ffffff 0%, var(--beige) 50%, #ffffff 100%)" }}>
-      <div className="container" style={{ paddingTop: "80px", paddingBottom: "80px", textAlign: "center" }}>
+      <div className="container" style={{ paddingTop: "clamp(40px,8vw,80px)", paddingBottom: "clamp(40px,8vw,80px)", textAlign: "center" }}>
         <h2 id="cta-banner-heading" className="font-display" style={{ fontSize: "clamp(24px,3vw,34px)", fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase", color: "var(--ink)", lineHeight: 1.25, maxWidth: "760px", marginInline: "auto" }}>{heading}</h2>
         {sub && <p style={{ fontSize: "15px", color: "var(--ink-soft)", lineHeight: 1.7, maxWidth: "620px", margin: "16px auto 0" }}>{sub}</p>}
         <div style={{ marginTop: "28px" }}><BookingButtons consultLabel={buttonLabel} /></div>
@@ -324,7 +324,7 @@ export function FaqSection({ faqs }: { faqs: Faq[] }) {
 export function Section({ children, tone = "white", "aria-labelledby": ariaLabelledby, "aria-label": ariaLabel }: { children: React.ReactNode; tone?: "white" | "cream"; "aria-labelledby"?: string; "aria-label"?: string }) {
   return (
     <section style={{ background: tone === "cream" ? "linear-gradient(180deg, #ffffff 0%, var(--cream) 50%, #ffffff 100%)" : "var(--white)" }} aria-labelledby={ariaLabelledby} aria-label={ariaLabel}>
-      <div className="container" style={{ paddingTop: "96px", paddingBottom: "96px" }}>{children}</div>
+      <div className="container" style={{ paddingTop: "clamp(48px,9.6vw,96px)", paddingBottom: "clamp(48px,9.6vw,96px)" }}>{children}</div>
     </section>
   );
 }

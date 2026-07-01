@@ -71,14 +71,14 @@ const PILLARS: Pillar[] = [
 
 export default function WhyGiftStrip() {
   return (
-    <section aria-labelledby="why-gift-heading" style={{ padding: "8px 0 56px" }}>
+    <section aria-labelledby="why-gift-heading" style={{ padding: "8px 0 clamp(28px,5.6vw,56px)" }}>
       <div className="container">
         <Reveal>
           <SectionHeading
             id="why-gift-heading"
             title="Why a Carisma Gift"
             subtitle="The effortless way to give a glow they will remember."
-            style={{ marginBottom: "40px" }}
+            style={{ marginBottom: "clamp(20px,4.5vw,40px)" }}
           />
         </Reveal>
 

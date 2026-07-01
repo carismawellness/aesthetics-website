@@ -6,7 +6,7 @@ import SectionHeading from "@/components/SectionHeading";
 // (#pick-occasion). Server component — no client JS needed.
 export default function GiftFinalCta() {
   return (
-    <section aria-labelledby="gift-final-cta-heading" style={{ padding: "0 0 90px" }}>
+    <section aria-labelledby="gift-final-cta-heading" style={{ padding: "0 0 clamp(45px,9vw,90px)" }}>
       <div className="container">
         <Reveal>
           <div

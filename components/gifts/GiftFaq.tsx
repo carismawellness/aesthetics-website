@@ -10,7 +10,7 @@ export default function GiftFaq() {
   return (
     <section
       aria-labelledby="gift-faq-heading"
-      style={{ padding: "20px 0 96px" }}
+      style={{ padding: "20px 0 clamp(48px,9.6vw,96px)" }}
     >
       <div className="container">
         <Reveal>

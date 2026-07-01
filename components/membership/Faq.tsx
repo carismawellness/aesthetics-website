@@ -39,7 +39,7 @@ export default function MembershipFaq() {
       aria-labelledby="membership-faq-heading"
       style={{
         background: "transparent",
-        padding: "clamp(56px,9vw,104px) 0",
+        padding: "clamp(40px,9vw,104px) 0",
       }}
     >
       <div className="container">

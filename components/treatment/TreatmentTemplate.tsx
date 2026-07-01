@@ -532,7 +532,7 @@ export default function TreatmentTemplate({ t }: { t: Treatment }) {
       {t.education && (
         <section
           aria-labelledby="education-heading"
-          style={{ padding: "80px 0", background: "linear-gradient(180deg, #ffffff 0%, var(--cream) 50%, #ffffff 100%)" }}
+          style={{ padding: "clamp(40px,8vw,80px) 0", background: "linear-gradient(180deg, #ffffff 0%, var(--cream) 50%, #ffffff 100%)" }}
         >
           <div className="container">
             <h2
@@ -625,7 +625,7 @@ export default function TreatmentTemplate({ t }: { t: Treatment }) {
 
       {/* ── Before / After carousel ── */}
       {(t.beforeAfter || t.beforeAfterTitle) && (
-        <section aria-label="Before and after results" style={{ padding: "70px 0" }}>
+        <section aria-label="Before and after results" style={{ padding: "clamp(36px,7vw,70px) 0" }}>
           {t.beforeAfter && t.beforeAfter.length > 0 ? (
             <BeforeAfterCarousel pairs={t.beforeAfter} title={t.beforeAfterTitle} />
           ) : (
@@ -636,7 +636,7 @@ export default function TreatmentTemplate({ t }: { t: Treatment }) {
                   style={{
                     fontSize: "clamp(20px,3vw,30px)",
                     color: "var(--label)",
-                    marginBottom: "36px",
+                    marginBottom: "clamp(18px,4.5vw,36px)",
                     lineHeight: 1.25,
                   }}
                 >
@@ -671,7 +671,7 @@ export default function TreatmentTemplate({ t }: { t: Treatment }) {
       {t.reviews && t.reviews.items.length > 0 && <ReviewsCarousel kicker={t.reviews.kicker} title={t.reviews.title} sub={t.reviews.sub} items={t.reviews.items} />}
       {t.doctor && <DoctorCard kicker={t.doctor.kicker} heading={t.doctor.heading} name={t.doctor.name} title={t.doctor.title} credentials={t.doctor.credentials} image={t.doctor.image} quote={t.doctor.quote} bio={t.doctor.bio} />}
       {t.precision && (
-        <section aria-labelledby="precision-heading" style={{ padding: "80px 0" }}>
+        <section aria-labelledby="precision-heading" style={{ padding: "clamp(40px,8vw,80px) 0" }}>
           <div className="container">
             <h2
               id="precision-heading"
@@ -789,7 +789,7 @@ export default function TreatmentTemplate({ t }: { t: Treatment }) {
 
       {/* ── Suitability ── */}
       {t.suitability && (
-        <section aria-labelledby="suitability-heading" style={{ padding: "80px 0", background: "#fff" }}>
+        <section aria-labelledby="suitability-heading" style={{ padding: "clamp(40px,8vw,80px) 0", background: "#fff" }}>
           <div className="container">
             <h2
               id="suitability-heading"
@@ -867,7 +867,7 @@ export default function TreatmentTemplate({ t }: { t: Treatment }) {
       {/* ── Treatment experience — dashed timeline ── */}
       {t.guarantee && <GuaranteeBand kicker={t.guarantee.kicker} title={t.guarantee.title} paragraphs={t.guarantee.paragraphs} cta={t.guarantee.cta} points={t.guarantee.points} />}
       {t.experience && (
-        <section aria-labelledby="experience-heading" style={{ padding: "80px 0" }}>
+        <section aria-labelledby="experience-heading" style={{ padding: "clamp(40px,8vw,80px) 0" }}>
           <div className="container">
             <h2
               id="experience-heading"
@@ -1060,7 +1060,7 @@ export default function TreatmentTemplate({ t }: { t: Treatment }) {
 
       {/* ── Preparation & Aftercare ── */}
       {t.prepAftercare && (
-        <section aria-labelledby="prep-heading" style={{ padding: "80px 0" }}>
+        <section aria-labelledby="prep-heading" style={{ padding: "clamp(40px,8vw,80px) 0" }}>
           <div className="container">
             {t.prepAftercare.kicker && (
               <p
@@ -1166,7 +1166,7 @@ export default function TreatmentTemplate({ t }: { t: Treatment }) {
 
       {/* ── Real patients — autoplay video reels ── */}
       {t.patientVideos && (
-        <section aria-labelledby="videos-heading" style={{ padding: "80px 0" }}>
+        <section aria-labelledby="videos-heading" style={{ padding: "clamp(40px,8vw,80px) 0" }}>
           <div className="container">
             <h2
               id="videos-heading"
@@ -1221,7 +1221,7 @@ export default function TreatmentTemplate({ t }: { t: Treatment }) {
 
       {/* ── Trusted clinic ── */}
       {t.trusted && (
-        <section aria-labelledby="trusted-heading" style={{ padding: "70px 0 84px" }}>
+        <section aria-labelledby="trusted-heading" style={{ padding: "clamp(36px,7vw,70px) 0 clamp(42px,8vw,84px)" }}>
           <div className="container">
             <h2
               id="trusted-heading"
@@ -1384,7 +1384,7 @@ export default function TreatmentTemplate({ t }: { t: Treatment }) {
 
       {/* ── The Carisma Difference ── */}
       {t.difference && (
-        <section aria-labelledby="difference-heading" style={{ padding: "10px 0 84px" }}>
+        <section aria-labelledby="difference-heading" style={{ padding: "10px 0 clamp(42px,8vw,84px)" }}>
           <div className="container">
             <div
               className="mx-auto"
@@ -1532,7 +1532,7 @@ export default function TreatmentTemplate({ t }: { t: Treatment }) {
 
       {/* ── Booking form ── */}
       {t.bookingForm && (
-        <section aria-labelledby="booking-form-heading" style={{ padding: "30px 0 84px" }}>
+        <section aria-labelledby="booking-form-heading" style={{ padding: "30px 0 clamp(42px,8vw,84px)" }}>
           <div className="container">
             <div className="mx-auto" style={{ maxWidth: "1400px" }}>
               <div
@@ -1584,7 +1584,7 @@ export default function TreatmentTemplate({ t }: { t: Treatment }) {
 
       {/* ── Membership tiers ── */}
       {t.membership && (
-        <section aria-labelledby="membership-heading" style={{ padding: "80px 0" }}>
+        <section aria-labelledby="membership-heading" style={{ padding: "clamp(40px,8vw,80px) 0" }}>
           <div className="container">
             <h2
               id="membership-heading"
@@ -1708,7 +1708,7 @@ export default function TreatmentTemplate({ t }: { t: Treatment }) {
       {t.pricingGrid && <PricingCards kicker="Transparent pricing" title={t.pricingGrid.title} sub={t.pricingGrid.intro} items={t.pricingGrid.items} />}
       {t.evidence && t.evidence.items.length > 0 && <EvidenceCards kicker={t.evidence.kicker} title={t.evidence.title} sub={t.evidence.sub} items={t.evidence.items} />}
       {t.recommended && (
-        <section aria-labelledby="recommended-heading" style={{ padding: "20px 0 84px" }}>
+        <section aria-labelledby="recommended-heading" style={{ padding: "20px 0 clamp(42px,8vw,84px)" }}>
           <div className="container">
             <h2
               id="recommended-heading"
@@ -1717,7 +1717,7 @@ export default function TreatmentTemplate({ t }: { t: Treatment }) {
                 fontSize: "clamp(24px,3.4vw,38px)",
                 color: "var(--gold)",
                 letterSpacing: "0.04em",
-                marginBottom: "48px",
+                marginBottom: "clamp(24px,4.5vw,48px)",
                 lineHeight: 1.25,
               }}
             >
@@ -1785,7 +1785,7 @@ export default function TreatmentTemplate({ t }: { t: Treatment }) {
       {t.faq && t.faq.length > 0 && (
         <section
           aria-labelledby="faq-section-heading"
-          style={{ padding: "70px 0 90px", background: "linear-gradient(180deg, #ffffff 0%, var(--cream) 50%, #ffffff 100%)" }}
+          style={{ padding: "clamp(36px,7vw,70px) 0 clamp(45px,9vw,90px)", background: "linear-gradient(180deg, #ffffff 0%, var(--cream) 50%, #ffffff 100%)" }}
         >
           <div className="container">
             {t.faqKicker && (
@@ -1810,7 +1810,7 @@ export default function TreatmentTemplate({ t }: { t: Treatment }) {
                 fontSize: "clamp(24px,3.4vw,38px)",
                 color: "var(--gold)",
                 letterSpacing: "0.04em",
-                marginBottom: "44px",
+                marginBottom: "clamp(22px,4.5vw,44px)",
                 lineHeight: 1.25,
               }}
             >

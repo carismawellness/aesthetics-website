@@ -87,10 +87,10 @@ export default async function GoogleReviews() {
   const reviews = (live?.reviews?.length ? live.reviews : CURATED_REVIEWS).slice(0, 6);
 
   return (
-    <section style={{ backgroundColor: "var(--white)", padding: "64px 0 24px" }}>
+    <section style={{ backgroundColor: "var(--white)", padding: "clamp(32px,6.4vw,64px) 0 24px" }}>
       <div className="container">
         {/* summary header */}
-        <div className="flex flex-col items-center text-center" style={{ marginBottom: "40px" }}>
+        <div className="flex flex-col items-center text-center" style={{ marginBottom: "clamp(20px,4.5vw,40px)" }}>
           <div className="flex items-center gap-3">
             <GoogleG size={30} />
             <span className="font-display" style={{ fontSize: "13px", letterSpacing: "0.14em", color: "var(--label)" }}>GOOGLE REVIEWS</span>

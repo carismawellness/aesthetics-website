@@ -34,7 +34,7 @@ export default function GiftSocialProof() {
   return (
     <section
       aria-labelledby="gift-social-proof-heading"
-      style={{ padding: "70px 0 90px", background: "var(--beige)" }}
+      style={{ padding: "clamp(35px,7vw,70px) 0 clamp(45px,9vw,90px)", background: "var(--beige)" }}
     >
       <div className="container">
         {/* Aggregate + intro */}

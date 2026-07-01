@@ -270,7 +270,7 @@ export default function ProtocolPage({ d }: { d: ProtocolData }) {
         {/* FAQ */}
         <section style={{ padding: "clamp(40px,7vw,60px) 0" }}>
           <div className="container">
-            <h2 className="font-serif text-center" style={{ fontSize: "clamp(22px,3vw,30px)", color: AA_GOLD, letterSpacing: "0.06em", fontWeight: 400, marginBottom: "40px" }}>Frequently asked questions</h2>
+            <h2 className="font-serif text-center" style={{ fontSize: "clamp(22px,3vw,30px)", color: AA_GOLD, letterSpacing: "0.06em", fontWeight: 400, marginBottom: "clamp(20px,4.5vw,40px)" }}>Frequently asked questions</h2>
             <FaqAccordion items={d.faq} />
           </div>
         </section>

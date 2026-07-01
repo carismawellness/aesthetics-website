@@ -236,7 +236,7 @@ export default function ConsultationPage() {
                   color: "var(--ink)",
                   letterSpacing: "0.08em",
                   fontWeight: 600,
-                  marginBottom: "52px",
+                  marginBottom: "clamp(26px,4.5vw,52px)",
                   lineHeight: 1.25,
                 }}
               >
@@ -338,7 +338,7 @@ export default function ConsultationPage() {
                   color: "var(--ink)",
                   letterSpacing: "0.08em",
                   fontWeight: 600,
-                  marginBottom: "48px",
+                  marginBottom: "clamp(24px,4.5vw,48px)",
                   lineHeight: 1.25,
                 }}
               >

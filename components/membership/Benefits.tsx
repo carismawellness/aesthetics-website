@@ -351,7 +351,7 @@ export default function Benefits() {
   return (
     <section
       aria-labelledby="glow-benefits-heading"
-      style={{ background: "transparent", padding: "clamp(64px,9vw,104px) 0" }}
+      style={{ background: "transparent", padding: "clamp(40px,9vw,104px) 0" }}
     >
       {/* Scoped premium styling for the elite tier cards. */}
       <style>{`

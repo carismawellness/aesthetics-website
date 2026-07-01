@@ -79,7 +79,7 @@ export default function GlowGuarantee() {
       aria-labelledby="glow-guarantee-heading"
       style={{
         background: "transparent",
-        padding: "clamp(56px,9vw,104px) 0",
+        padding: "clamp(40px,9vw,104px) 0",
       }}
     >
       <div className="container">
