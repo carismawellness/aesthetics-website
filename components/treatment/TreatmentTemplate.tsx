@@ -876,7 +876,7 @@ export default function TreatmentTemplate({ t }: { t: Treatment }) {
                 fontSize: "clamp(24px,3.4vw,38px)",
                 color: "var(--gold)",
                 letterSpacing: "0.06em",
-                marginBottom: "56px",
+                marginBottom: "clamp(28px,5vw,56px)",
                 lineHeight: 1.25,
               }}
             >
