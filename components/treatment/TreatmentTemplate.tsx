@@ -224,7 +224,7 @@ export default function TreatmentTemplate({ t }: { t: Treatment }) {
         t.pending) && (
         <section
           aria-label="Treatment overview"
-          style={{ padding: "clamp(56px,7vh,88px) 0" }}
+          style={{ padding: "clamp(40px,7vh,88px) 0" }}
         >
           <div className="container">
             <div className="mx-auto" style={{ maxWidth: "1100px" }}>

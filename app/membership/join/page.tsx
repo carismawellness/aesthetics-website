@@ -55,7 +55,7 @@ const FORM_ID = "glow-club-join-heading";
 export default function JoinPage() {
   return (
     <main id="main-content">
-      <section style={{ background: "linear-gradient(180deg, #ffffff 0%, var(--cream) 50%, #ffffff 100%)", padding: "64px 0 24px" }}>
+      <section style={{ background: "linear-gradient(180deg, #ffffff 0%, var(--cream) 50%, #ffffff 100%)", padding: "clamp(32px,6vw,64px) 0 24px" }}>
         <div className="container">
           <Reveal>
             <p
@@ -132,7 +132,7 @@ export default function JoinPage() {
 
       <section
         aria-labelledby={FORM_ID}
-        style={{ background: "var(--white)", padding: "8px 0 72px" }}
+        style={{ background: "var(--white)", padding: "8px 0 clamp(40px,8vw,72px)" }}
       >
         <div className="container">
           <div
