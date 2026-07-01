@@ -17,7 +17,7 @@ export default function ClosingCta({ closing, bookHref }: Props) {
     <section
       aria-labelledby="closing-heading"
       style={{
-        padding: "clamp(40px,7vh,88px) 0",
+        padding: "clamp(40px,7vw,88px) 0",
         background: "linear-gradient(160deg,#eef4f5 0%,#ffffff 50%,#e6eef0 100%)",
         borderTop: "1px solid var(--line)",
       }}

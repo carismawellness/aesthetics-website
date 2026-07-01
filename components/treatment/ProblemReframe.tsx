@@ -57,7 +57,7 @@ export default function ProblemReframe({
       style={{
         // Compact emotional beat. Soft teal ground that fades to white at BOTH
         // edges so it never creates a hard seam against neighbouring sections.
-        padding: "clamp(40px,5vh,64px) 0",
+        padding: "clamp(40px,5vw,64px) 0",
         background:
           "linear-gradient(180deg, #ffffff 0%, var(--teal-100) 50%, #ffffff 100%)",
       }}

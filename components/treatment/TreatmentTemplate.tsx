@@ -224,7 +224,7 @@ export default function TreatmentTemplate({ t }: { t: Treatment }) {
         t.pending) && (
         <section
           aria-label="Treatment overview"
-          style={{ padding: "clamp(40px,7vh,88px) 0" }}
+          style={{ padding: "clamp(40px,7vw,88px) 0" }}
         >
           <div className="container">
             <div className="mx-auto" style={{ maxWidth: "1100px" }}>
@@ -450,7 +450,7 @@ export default function TreatmentTemplate({ t }: { t: Treatment }) {
           id="book"
           aria-labelledby="book-heading"
           style={{
-            padding: "clamp(36px,5vh,64px) 0",
+            padding: "clamp(36px,5vw,64px) 0",
             background: "linear-gradient(180deg, #ffffff 0%, var(--beige) 50%, #ffffff 100%)",
             scrollMarginTop: "var(--nav-clear)",
           }}
@@ -502,7 +502,7 @@ export default function TreatmentTemplate({ t }: { t: Treatment }) {
       {/* ── Treatment info — horizontal info-bar fallback when there is no media
              (the card form now lives in the hero overview strip above) ── */}
       {t.info && !hasMedia && (
-        <section aria-label="Treatment information" style={{ padding: "clamp(28px,4vh,48px) 0" }}>
+        <section aria-label="Treatment information" style={{ padding: "clamp(28px,4vw,48px) 0" }}>
           <div className="container">
             <div className="card mx-auto" style={{ padding: "22px 20px", maxWidth: "900px" }}>
               <div

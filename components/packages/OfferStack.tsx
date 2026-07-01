@@ -9,7 +9,7 @@ export default function OfferStack({ offer }: Props) {
   return (
     <section
       aria-labelledby="offer-heading"
-      style={{ padding: "clamp(40px,5vh,64px) 0", background: "linear-gradient(180deg,#ffffff,#f4f8f8)" }}
+      style={{ padding: "clamp(40px,5vw,64px) 0", background: "linear-gradient(180deg,#ffffff,#f4f8f8)" }}
     >
       <div className="container">
         <Reveal>

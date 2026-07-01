@@ -186,7 +186,7 @@ export default function EvidenceCards({
   if (!items?.length) return null;
 
   return (
-    <section style={{ padding: "clamp(44px,9vh,112px) 0", background: "var(--white)" }}>
+    <section style={{ padding: "clamp(44px,8vw,80px) 0", background: "var(--white)" }}>
       <div className="container">
         <SectionHeader kicker={kicker} title={title} sub={sub} />
 
