@@ -168,7 +168,7 @@ export default function PlanSummary({
   return (
     <section
       aria-labelledby="plan-summary-heading"
-      style={{ padding: "clamp(48px, 6vw, 88px) 0" }}
+      style={{ padding: "clamp(48px, 6vw, 88px) 0 0" }}
     >
       <div style={{ maxWidth: 1040, marginInline: "auto", paddingInline: 24 }}>
         <SectionHeader kicker={kicker} title={title} id="plan-summary-heading" />
