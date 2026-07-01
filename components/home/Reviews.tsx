@@ -289,10 +289,10 @@ export default function Reviews() {
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 10 }}>
           {/* Primary stats — big and bold */}
           <div style={{ display: 'flex', alignItems: 'center', gap: 20, flexWrap: 'wrap', justifyContent: 'center' }}>
-            <span style={{ fontFamily: SERIF, fontSize: 64, color: INK, lineHeight: 1, fontWeight: 400 }}>4.7</span>
+            <span style={{ fontFamily: SERIF, fontSize: 64, color: TEAL_TEXT, lineHeight: 1, fontWeight: 400 }}>4.7</span>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 6 }}>
               <Stars rating={5} size={24} />
-              <span style={{ fontFamily: BODY, fontSize: 20, fontWeight: 600, color: INK, letterSpacing: '-0.3px' }}>500+ verified reviews</span>
+              <span style={{ fontFamily: BODY, fontSize: 20, fontWeight: 600, color: TEAL_TEXT, letterSpacing: '-0.3px' }}>500+ verified reviews</span>
             </div>
           </div>
           {/* Secondary — platform attribution */}
