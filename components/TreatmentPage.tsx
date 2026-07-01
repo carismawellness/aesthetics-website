@@ -355,7 +355,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
 
       {/* ── Precision areas ── */}
       {t.precision && (
-        <section aria-labelledby="precision-heading" style={{ padding: "clamp(22px,5vw,80px) 0 clamp(44px,8vw,80px)" }}>
+        <section aria-labelledby="precision-heading" style={{ padding: "clamp(22px,5vw,80px) 0 clamp(8px,2vw,28px)" }}>
           <div className="container">
             <SectionHeader id="precision-heading" title={t.precision.title} sub={t.precision.intro} />
             {t.precision.areas && t.precision.areas.length > 0 && (
