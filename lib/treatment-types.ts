@@ -3,7 +3,9 @@
 
 export type PriceItem = { label: string; price: string };
 export type InfoItem = { metric: string; detail: string };
-export type AreaItem = { name: string; desc: string; zone?: string; icon?: string };
+// `media` renders a full card-top photo, `video` a muted autoplay clip (with
+// optional `poster`); either replaces the small centred `icon`.
+export type AreaItem = { name: string; desc: string; zone?: string; icon?: string; media?: string; video?: string; poster?: string };
 export type Step = { title: string; desc: string; image?: string };
 export type BeforeAfter = { before: string; after: string; label?: string; name?: string; review?: string };
 

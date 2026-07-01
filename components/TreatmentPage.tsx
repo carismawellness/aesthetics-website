@@ -373,7 +373,39 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                       boxShadow: "0 12px 30px rgba(0,0,0,0.05)",
                     }}
                   >
-                    {a.icon && (
+                    {a.video ? (
+                      // Card-top clip (e.g. live scalp-scanning). Poster + click-to-play,
+                      // matching the site's VideoPlayer style; radius echoes the card shape.
+                      <VideoPlayer
+                        src={a.video}
+                        poster={a.poster ?? a.media}
+                        ratio="4 / 3"
+                        radius="8px 28px 8px 28px"
+                        label={a.name}
+                        style={{ marginBottom: "20px", boxShadow: "0 10px 24px rgba(0,0,0,0.10)" }}
+                      />
+                    ) : a.media ? (
+                      // Card-top photo, filling the frame like the live-site cards.
+                      <div
+                        style={{
+                          position: "relative",
+                          width: "100%",
+                          aspectRatio: "4 / 3",
+                          borderRadius: "8px 28px 8px 28px",
+                          overflow: "hidden",
+                          marginBottom: "20px",
+                          boxShadow: "0 10px 24px rgba(0,0,0,0.10)",
+                        }}
+                      >
+                        <Image
+                          src={a.media}
+                          alt={a.name}
+                          fill
+                          sizes="(max-width: 640px) 90vw, (max-width: 1024px) 45vw, 22vw"
+                          style={{ objectFit: "cover" }}
+                        />
+                      </div>
+                    ) : a.icon ? (
                       <div className="flex justify-center" style={{ marginBottom: "16px" }}>
                         {/* P3 — next/image for area icons */}
                         <Image
@@ -384,7 +416,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
                           style={{ height: "70px", width: "auto" }}
                         />
                       </div>
-                    )}
+                    ) : null}
                     {a.zone && (
                       <div
                         className="font-display"

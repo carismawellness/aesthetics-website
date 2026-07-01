@@ -87,25 +87,28 @@ const t: Treatment = {
     areas: [
       {
         zone: "01",
-        icon: "/assets/treatments/hair-regrowth-density-scan.png",
+        video: "/assets/treatments/hair-regrowth-scalp-scanning.mp4",
+        poster: "/assets/treatments/hair-regrowth-scalp-scanning-poster.jpg",
         name: "AI Scalp Imaging & Density Mapping",
         desc: "Establishes your clinical baseline, follicle density, thinning zones, and growth potential. Repeated at Day 0 and Day 90 to measure real results in numbers.",
       },
       {
         zone: "02",
-        icon: "/assets/treatments/hair-regrowth-scalp-imaging.png",
+        video: "/assets/treatments/hair-regrowth-exosome-hydropen.mp4",
+        poster: "/assets/treatments/hair-regrowth-exosome-hydropen-poster.jpg",
         name: "Exosome Therapy via HydroPen",
         desc: "Lab-purified exosomes delivered deep into the scalp via the 36-pin HydroPen. Clinical studies show 25% greater results than PRP alone.",
       },
       {
         zone: "03",
-        icon: "/assets/treatments/hair-regrowth-prp-centrifuge.png",
+        media: "/assets/treatments/hair-regrowth-prp-centrifuge.jpg",
         name: "PRP Follicle Reactivation",
         desc: "Growth factors concentrated from your own blood, injected precisely into the scalp to reactivate dormant follicles and stimulate new growth.",
       },
       {
         zone: "04",
-        icon: "/assets/treatments/hair-regrowth-consult-tablet.png",
+        video: "/assets/treatments/hair-regrowth-scalprx.mp4",
+        poster: "/assets/treatments/hair-regrowth-scalprx-poster.jpg",
         name: "ScalpRx Prescription Protocol",
         desc: "A personalised prescription for minoxidil, finasteride, and ketoconazole, written by Dr. Giovanni and dispensed by Melita Health & Beauty pharmacy.",
       },
