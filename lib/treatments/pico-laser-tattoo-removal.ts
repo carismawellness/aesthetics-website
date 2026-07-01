@@ -5,7 +5,7 @@ const t: Treatment = {
   slug: "pico-laser-tattoo-removal",
   category: "Body",
   hero: {
-    title: "Pico Laser Tattoo Removal in Malta — Fade Ink Safely",
+    title: "Pico Laser Tattoo Removal in Malta, Fade Ink Safely",
     subtitle: "Do you have a tattoo you no longer want to carry?",
     body: "With our advanced Pico laser tattoo removal treatment, ultra-short picosecond pulses target unwanted tattoo pigment beneath the skin, breaking the ink into tiny particles so your body can naturally clear them over time. Every tattoo is different, so your plan is personalised to your tattoo size, colour, depth, age, skin type, and removal goals for safer fading and better-looking results. Your skin has a new story to tell, and we will help you begin it with confidence.",
     prices: [

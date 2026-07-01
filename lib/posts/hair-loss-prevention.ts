@@ -9,7 +9,7 @@ export const post: BlogPost = {
   "publishDate": "2026-06-16",
   "readTime": 6,
   "coverImage": "https://static.wixstatic.com/media/example.jpg",
-  "excerpt": "Hair loss prevention is far easier than regrowing hair later — catching problems early can preserve decades of your follicles' productive life....",
+  "excerpt": "Hair loss prevention is far easier than regrowing hair later, catching problems early can preserve decades of your follicles' productive life....",
   "content": [
     {
       "type": "paragraph",

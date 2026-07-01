@@ -53,14 +53,14 @@ const t: Treatment = {
     kicker: "The real reason people book",
     title: "Your skin looks more tired and dull than you feel",
     body: [
-      "A doctor-led HydraFacial deep-cleanses, exfoliates, and floods your skin with hydration in one session — so you walk out visibly fresher and glowing, with zero downtime.",
+      "A doctor-led HydraFacial deep-cleanses, exfoliates, and floods your skin with hydration in one session, so you walk out visibly fresher and glowing, with zero downtime.",
     ],
   },
   guarantee: {
     kicker: "The Natural Confidence Guarantee",
     title: "Natural Confidence Guarantee",
     paragraphs: [
-      "Every HydraFacial starts with a skin assessment and a serum protocol chosen for your skin — never a one-size-fits-all facial, backed by expert guidance and a free follow-up until you are 100% happy with your glow.",
+      "Every HydraFacial starts with a skin assessment and a serum protocol chosen for your skin, never a one-size-fits-all facial, backed by expert guidance and a free follow-up until you are 100% happy with your glow.",
     ],
     cta: "Book Your Free Consultation",
     points: [
@@ -86,18 +86,18 @@ const t: Treatment = {
       "You want to combine HydraFacial with other treatments such as microneedling or Botox",
     ],
     notIdeal: [
-      "You have an active skin infection, rash, or open wound — we will happily welcome you back once it has settled",
-      "You are mid-flare with painful, pustular acne — we will guide you on calming it first, then glow you up",
-      "You have had a peel, laser, or microneedling in the last 2 weeks — we will simply space your visits a little",
-      "You have an active cold sore — best to reschedule until it has fully healed",
-      "You are unsure about an ingredient — we will check every serum with you at consultation first",
+      "You have an active skin infection, rash, or open wound, we will happily welcome you back once it has settled",
+      "You are mid-flare with painful, pustular acne, we will guide you on calming it first, then glow you up",
+      "You have had a peel, laser, or microneedling in the last 2 weeks, we will simply space your visits a little",
+      "You have an active cold sore, best to reschedule until it has fully healed",
+      "You are unsure about an ingredient, we will check every serum with you at consultation first",
     ],
   },
   experience: {
     title: "Your treatment experience",
     steps: [
       { title: "Consultation & Plan", desc: "We assess your skin type, concerns, and goals, then select the ideal HydraFacial protocol, serum cocktail, and targeted boosters for your session.", image: "/assets/treatments/hydrafacial-step1.png" },
-      { title: "Your HydraFacial", desc: "Your aesthetician performs your personalised HydraFacial — cleansing, extracting, and infusing nourishing serums in a single comfortable session.", image: "/assets/treatments/hydrafacial-step3.jpg" },
+      { title: "Your HydraFacial", desc: "Your aesthetician performs your personalised HydraFacial, cleansing, extracting, and infusing nourishing serums in a single comfortable session.", image: "/assets/treatments/hydrafacial-step3.jpg" },
       { title: "Ongoing Review & Adjustment", desc: "We review your skin's response and recommend the ideal maintenance frequency and booster adjustments to maximise your results over time.", image: "/assets/treatments/hydrafacial-step4.png" },
     ],
     cta: "BOOK YOUR FREE CONSULTATION",
@@ -173,8 +173,8 @@ const t: Treatment = {
     kicker: "Your HydraFacial plan",
     title: "Malta's Doctor-Led HydraFacial Plan",
     benefits: [
-      { icon: "sparkle", title: "Visible Glow, First Session", desc: "Deep-cleansed, exfoliated, and hydrated in one sitting — you walk out clearer and radiant, with zero downtime." },
-      { icon: "target", title: "Serums Tailored to Your Skin", desc: "Your protocol and booster cocktail are chosen for your exact concerns — never a one-size-fits-all facial." },
+      { icon: "sparkle", title: "Visible Glow, First Session", desc: "Deep-cleansed, exfoliated, and hydrated in one sitting, you walk out clearer and radiant, with zero downtime." },
+      { icon: "target", title: "Serums Tailored to Your Skin", desc: "Your protocol and booster cocktail are chosen for your exact concerns, never a one-size-fits-all facial." },
       { icon: "shield", title: "Complimentary Spa Experience", desc: "Every HydraFacial includes spa access and free parking at our InterContinental Hotel clinic in St. Julian's." },
     ],
     included: [
@@ -216,7 +216,7 @@ const t: Treatment = {
     title: "Malta’s #1 leading wellness chain",
     commitmentTitle: "our commitment",
     commitment: [
-      "Natural, radiant results — your skin at its healthiest, not an artificial finish",
+      "Natural, radiant results, your skin at its healthiest, not an artificial finish",
       "Doctor-led treatments with advanced facial anatomy expertise",
       "Safe, ethical care using medical-grade serums and advanced technology",
       "A personalised journey from consultation to aftercare",

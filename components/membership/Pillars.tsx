@@ -47,7 +47,7 @@ const PILLARS: Pillar[] = [
   {
     eyebrow: "Save month by month",
     title: "Build your Glow balance",
-    body: "Set aside a little each month — anywhere from €20 to €200 — and watch your balance grow towards the treatments you love. Deposit €40 a month and you’ll have €240 ready to spend in just six months.",
+    body: "Set aside a little each month, anywhere from €20 to €200, and watch your balance grow towards the treatments you love. Deposit €40 a month and you’ll have €240 ready to spend in just six months.",
     icon: (
       <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true" {...stroke}>
         <path d="M3 8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v1" />
@@ -59,7 +59,7 @@ const PILLARS: Pillar[] = [
   {
     eyebrow: "Members save more",
     title: "10% off every service",
-    body: "Enjoy your member-exclusive 10% discount on all aesthetics & spa services as you spend your Glow credit — from your favourite facial to that mid-year Botox session, kept beautifully affordable.",
+    body: "Enjoy your member-exclusive 10% discount on all aesthetics & spa services as you spend your Glow credit, from your favourite facial to that mid-year Botox session, kept beautifully affordable.",
     icon: (
       <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true" {...stroke}>
         <path d="M9 21H5a2 2 0 0 1-2-2v-4l11-11a2 2 0 0 1 2.8 0l3.2 3.2a2 2 0 0 1 0 2.8L9 21Z" />
@@ -70,7 +70,7 @@ const PILLARS: Pillar[] = [
   {
     eyebrow: "Take your glow home",
     title: "15% off skincare products",
-    body: "A generous 15% off all retail skincare, so the radiant results you create in-clinic carry on at home. Keep your shelf — and your skin — looking its very best between visits.",
+    body: "A generous 15% off all retail skincare, so the radiant results you create in-clinic carry on at home. Keep your shelf, and your skin, looking its very best between visits.",
     icon: (
       <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true" {...stroke}>
         <path d="M9 3h6v3l1.5 1.5A3 3 0 0 1 17.5 10v8a3 3 0 0 1-3 3h-5a3 3 0 0 1-3-3v-8a3 3 0 0 1 1.5-2.6L9 6V3Z" />
@@ -81,7 +81,7 @@ const PILLARS: Pillar[] = [
   {
     eyebrow: "You come first",
     title: "Priority booking & yearly consultation",
-    body: "Skip the wait with priority booking on the appointments that matter, plus one complimentary expert consultation every year to map your next glow-up — guidance from Sarah’s team, on the house.",
+    body: "Skip the wait with priority booking on the appointments that matter, plus one complimentary expert consultation every year to map your next glow-up, guidance from Sarah’s team, on the house.",
     icon: (
       <svg width="26" height="26" viewBox="0 0 24 24" aria-hidden="true" {...stroke}>
         <rect x="3.5" y="5" width="17" height="15" rx="2" />
@@ -103,7 +103,7 @@ export default function Pillars() {
         <SectionHeading
           eyebrow="Why join the Glow Club"
           title="Four ways the Glow Club rewards you"
-          subtitle="A monthly savings membership built around you — save towards the treatments you love, then spend with exclusive member perks."
+          subtitle="A monthly savings membership built around you, save towards the treatments you love, then spend with exclusive member perks."
           id="glow-pillars-heading"
         />
 
@@ -206,7 +206,7 @@ export default function Pillars() {
               margin: "0 auto 22px",
             }}
           >
-            Your first month is non-refundable — but it’s never lost. We credit it
+            Your first month is non-refundable, but it’s never lost. We credit it
             straight towards your second procedure with us once you join.
           </p>
           <Link

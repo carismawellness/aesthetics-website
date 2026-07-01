@@ -216,7 +216,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "By embracing the latest advancements in aesthetic science, non-surgical facelifts are making it easier than ever to achieve a youthful, lifted appearance—without the downtime. Are you ready to experience the future of facial rejuvenation?"
+      "html": "By embracing the latest advancements in aesthetic science, non-surgical facelifts are making it easier than ever to achieve a youthful, lifted appearance, without the downtime. Are you ready to experience the future of facial rejuvenation?"
     }
   ],
   "internalLinks": [

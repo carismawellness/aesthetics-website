@@ -130,7 +130,7 @@ export function BeforeAfter({ name, pairs }: { name: string; pairs: BeforeAfter[
   const p = pairs[0];
   return (
     <Section aria-labelledby="before-after-heading">
-      <SectionHeading eyebrow="Results" title={`${name} — before & after`} id="before-after-heading" />
+      <SectionHeading eyebrow="Results" title={`${name}, before & after`} id="before-after-heading" />
       <Reveal className="mx-auto" style={{ marginTop: "44px", maxWidth: "720px" }}>
         <div className="grid grid-cols-2" style={{ gap: "20px" }}>
           {([["Before", p.before], ["After", p.after]] as const).map(([label, src]) => (

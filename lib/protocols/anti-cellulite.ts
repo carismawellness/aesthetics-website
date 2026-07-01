@@ -35,8 +35,8 @@ export const antiCellulite: ProtocolData = {
     sub: "smooth stubborn cellulite and uneven texture with precision",
     image: `${A}/ac-secret.png`,
     paragraphs: [
-      "You eat well, stay active, and take care of yourself — yet cellulite on your thighs, bum or hips still shows through. No matter how fit you feel, the uneven, dimpled texture can make certain outfits uncomfortable and affect your confidence. The scale may move, but the look of your skin doesn’t.",
-      "If this sounds familiar, it’s not a lack of effort. Cellulite is largely caused by circulation, fluid retention, and connective tissue structure — not weight alone. CelluLift combines targeted VelaShape vacuum roller treatments with lymphatic drainage massage to help smooth texture, improve circulation, and leave skin looking more even and contoured.",
+      "You eat well, stay active, and take care of yourself, yet cellulite on your thighs, bum or hips still shows through. No matter how fit you feel, the uneven, dimpled texture can make certain outfits uncomfortable and affect your confidence. The scale may move, but the look of your skin doesn’t.",
+      "If this sounds familiar, it’s not a lack of effort. Cellulite is largely caused by circulation, fluid retention, and connective tissue structure, not weight alone. CelluLift combines targeted VelaShape vacuum roller treatments with lymphatic drainage massage to help smooth texture, improve circulation, and leave skin looking more even and contoured.",
     ],
     bullets: [
       "You exercise regularly, but the bumpy texture never fully smooths out",
@@ -51,7 +51,7 @@ export const antiCellulite: ProtocolData = {
     headingSub: "Non surgical fat reduction",
     pressLogos: PRESS,
     features: [
-      { icon: `${A}/ac-feat1.png`, label: "TARGETED CELLULITE CONTOURING", desc: "Focus on areas most affected by cellulite — thighs, bum and hips — using targeted VelaShape vacuum roller treatments to improve texture and contour." },
+      { icon: `${A}/ac-feat1.png`, label: "TARGETED CELLULITE CONTOURING", desc: "Focus on areas most affected by cellulite, thighs, bum and hips, using targeted VelaShape vacuum roller treatments to improve texture and contour." },
       { icon: `${A}/ac-feat2.png`, label: "MULTI-ACTION SMOOTHING APPROACH", desc: "CelluLift combines VelaShape vacuum roller sessions with lymphatic drainage massage to improve circulation, reduce fluid retention, and smooth the appearance of cellulite." },
       { icon: `${A}/ac-feat3.png`, label: "Expert DESIGNED PLAN", desc: "Your in-person consultation determines the right areas to treat, how sessions are scheduled, and what realistic tightening results you can expect." },
       { icon: `${A}/ac-feat4.png`, label: "SAFE AND CLINICALLY CERTIFIED", desc: "All treatments are performed by trained medical professionals using EU-approved, clinically tested technology with no surgery and no downtime." },
@@ -72,7 +72,7 @@ export const antiCellulite: ProtocolData = {
     tagSub: "Smooths the appearance of cellulite, improves skin texture and refines contour in one comfortable treatment.",
     baImage: `${A}/ac-ba.png`,
     sideImage: `${A}/ac-side.png`,
-    intro: "CelluLift uses VelaShape III vacuum roller technology to target the structural causes of visible cellulite. Each session combines radiofrequency, infrared heat, vacuum suction and mechanical rollers to soften fibrous tissue, boost circulation and support lymphatic flow. This multi-action approach helps smooth uneven texture and improve the overall look and feel of the skin. Over the weeks following treatment, skin can appear more even, firmer and refined — particularly in areas prone to cellulite such as the thighs, hips and bum.",
+    intro: "CelluLift uses VelaShape III vacuum roller technology to target the structural causes of visible cellulite. Each session combines radiofrequency, infrared heat, vacuum suction and mechanical rollers to soften fibrous tissue, boost circulation and support lymphatic flow. This multi-action approach helps smooth uneven texture and improve the overall look and feel of the skin. Over the weeks following treatment, skin can appear more even, firmer and refined, particularly in areas prone to cellulite such as the thighs, hips and bum.",
     bullets: [
       "Clinically proven approach: VelaShape technology has been shown in studies to improve the appearance of cellulite and uneven skin texture.",
       "Visible smoothing: Vacuum and mechanical massage encourage blood flow and lymphatic drainage for a lighter, smoother feel.",
@@ -98,7 +98,7 @@ export const antiCellulite: ProtocolData = {
     heading: "Malta’s most advanced cellulite smoothing & contouring protocol",
     cols: [
       { title: "Targeted CELLULITE CONTOURING", desc: "Adjustable Intensity for Comfort & Results" },
-      { title: "VISIBLE, NOTICEABLE SMOOTHING", desc: "Improvements you can see and feel. Skin appears smoother, more even, and more refined in clothes and movement — not just immediately after treatment, but progressively over sessions." },
+      { title: "VISIBLE, NOTICEABLE SMOOTHING", desc: "Improvements you can see and feel. Skin appears smoother, more even, and more refined in clothes and movement, not just immediately after treatment, but progressively over sessions." },
       { title: "High-Value starter Access", desc: "A complete cellulite smoothing protocol at a reduced introductory price, ideal for trying CelluLift without long-term commitment." },
     ],
     items: PACKAGE,

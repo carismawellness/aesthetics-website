@@ -67,7 +67,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "Combination skin is tricky—some areas are oily while others are dry. HydraFacial solutions allow us to customize treatment by zone. We can use stronger extraction in the T-zone and lighter serums on dry cheeks, delivering exactly what each area needs."
+      "html": "Combination skin is tricky, some areas are oily while others are dry. HydraFacial solutions allow us to customize treatment by zone. We can use stronger extraction in the T-zone and lighter serums on dry cheeks, delivering exactly what each area needs."
     },
     {
       "type": "list",
@@ -86,12 +86,12 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "Sensitive skin requires a gentle approach. HydraFacial can be customized to be incredibly gentle—we use soothing serums, reduce vacuum intensity, and skip harsh ingredients. The result is a nourishing treatment without irritation."
+      "html": "Sensitive skin requires a gentle approach. HydraFacial can be customized to be incredibly gentle, we use soothing serums, reduce vacuum intensity, and skip harsh ingredients. The result is a nourishing treatment without irritation."
     },
     {
       "type": "list",
       "items": [
-        "Gentle vacuum pressure—no harsh scrubbing or chemicals",
+        "Gentle vacuum pressure, no harsh scrubbing or chemicals",
         "Calming serums reduce redness and inflammation",
         "Hypoallergenic booster options available",
         "No downtime or irritation",
@@ -105,7 +105,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "The real customization power comes from boosters—concentrated serums that address specific concerns. Choose the one that matches your skin's needs:"
+      "html": "The real customization power comes from boosters, concentrated serums that address specific concerns. Choose the one that matches your skin's needs:"
     },
     {
       "type": "paragraph",

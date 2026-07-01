@@ -34,8 +34,8 @@ export const muscleStimulation: ProtocolData = {
     sub: "SCULPT, TIGHTEN AND DEFINE STUBBORN AREAS WITH PRECISION",
     image: `${A}/ms-secret.png`,
     paragraphs: [
-      "You’re eating well, staying active, and making an effort — yet certain areas still feel soft or undefined. Your tummy doesn’t feel as firm as it should, your hips or bum lack shape, and your clothes don’t reflect the work you’re putting in. The scale may move slightly, but your body definition doesn’t.",
-      "If this sounds familiar, effort isn’t the issue. Some areas need direct muscle activation and targeted fat reduction. EMSculpt Neo uses high-intensity electromagnetic energy combined with radiofrequency to stimulate powerful muscle contractions, reduce local fat, and tighten the skin — helping your body finally look stronger, firmer, and more defined.",
+      "You’re eating well, staying active, and making an effort, yet certain areas still feel soft or undefined. Your tummy doesn’t feel as firm as it should, your hips or bum lack shape, and your clothes don’t reflect the work you’re putting in. The scale may move slightly, but your body definition doesn’t.",
+      "If this sounds familiar, effort isn’t the issue. Some areas need direct muscle activation and targeted fat reduction. EMSculpt Neo uses high-intensity electromagnetic energy combined with radiofrequency to stimulate powerful muscle contractions, reduce local fat, and tighten the skin, helping your body finally look stronger, firmer, and more defined.",
     ],
     bullets: [
       "You exercise regularly, but some areas still won’t tone up",
@@ -95,7 +95,7 @@ export const muscleStimulation: ProtocolData = {
   starterPack: {
     heading: "Malta’s only dual technology starter pack for stubborn fat",
     cols: [
-      { title: "Targeted BODY SCULPTING", desc: "EMSculpt Neo sessions are focused on your main problem areas — such as the tummy, hips, bum or thighs — delivering powerful muscle contractions to areas that are hard to tone naturally." },
+      { title: "Targeted BODY SCULPTING", desc: "EMSculpt Neo sessions are focused on your main problem areas, such as the tummy, hips, bum or thighs, delivering powerful muscle contractions to areas that are hard to tone naturally." },
       { title: "Visible, TRACKABLE DEFINITION", desc: "Muscle engagement you can feel and results you can see. Improved firmness and definition show in clothes and posture, not just on the scale." },
       { title: "High-Value starter Access", desc: "A full EMSculpt Neo sculpting protocol at a reduced introductory price, with the option to continue or upgrade after completing your sessions." },
     ],
@@ -149,7 +149,7 @@ export const muscleStimulation: ProtocolData = {
         image: `${A}/ms-research1.png`,
         title: "clinically proven body contouring results",
         whatItDoes: "Uses a combination of high-intensity focused electromagnetic (HIFEM) energy and radiofrequency (RF) heating to simultaneously stimulate powerful muscle contractions and heat fat cells. This dual action helps build muscle, reduce fat thickness, and improve skin firmness in targeted areas without surgery or downtime.",
-        keyResults: ["Builds muscle while reducing stubborn fat in one treatment plan", "Visible changes typically develop over 4–12 weeks", "Ideal for contouring, toning, and tightening — not weight loss"],
+        keyResults: ["Builds muscle while reducing stubborn fat in one treatment plan", "Visible changes typically develop over 4–12 weeks", "Ideal for contouring, toning, and tightening, not weight loss"],
         evidence: "SCIENCE-BACKED PROTOCOL",
       },
       {

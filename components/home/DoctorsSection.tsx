@@ -255,7 +255,7 @@ export default function DoctorsSection() {
           style={{ maxWidth: 640, margin: '0 auto clamp(36px,5vw,56px)' }}
           eyebrow="Our Medical Team"
           title="Meet your doctors"
-          subtitle="The qualified medical team behind your results — combining decades of clinical experience with a calm, considered approach to your care."
+          subtitle="The qualified medical team behind your results, combining decades of clinical experience with a calm, considered approach to your care."
           id="doctors-heading"
           divider={false}
         />

@@ -34,9 +34,9 @@ const t: Treatment = {
     title: "What is all the hype with debloating",
     subtitle: "SUPPORTS DETOXIFICATION, CIRCULATION & FLUID BALANCE",
     paragraphs: [
-      "You eat well, try to stay active, and take care of yourself — yet your body still feels bloated, tight, or sluggish. Swelling comes and goes, your skin feels puffy, and recovery feels slower than it should. You know something feels \"off,\" but it's hard to explain — and harder to fix on your own.",
+      "You eat well, try to stay active, and take care of yourself, yet your body still feels bloated, tight, or sluggish. Swelling comes and goes, your skin feels puffy, and recovery feels slower than it should. You know something feels \"off,\" but it's hard to explain, and harder to fix on your own.",
       "If you're reading this and thinking, \"This sounds like me,\" the issue may not be lifestyle or effort. Often, it's your lymphatic system struggling to drain efficiently. When lymph flow is slow, fluids and toxins can build up in the body.",
-      "Lymphatic Drainage Therapy gently stimulates your lymphatic system, supporting natural detoxification, improved circulation, and reduced fluid retention — helping your body feel lighter, more balanced, and refreshed again.",
+      "Lymphatic Drainage Therapy gently stimulates your lymphatic system, supporting natural detoxification, improved circulation, and reduced fluid retention, helping your body feel lighter, more balanced, and refreshed again.",
     ],
     image: "/assets/treatments/lympathic-drainage-benefits.png",
   },
@@ -45,7 +45,7 @@ const t: Treatment = {
     kicker: "The real reason people book",
     title: "Your body feels heavy and puffy, no matter how well you live",
     body: [
-      "Gentle, expert-guided lymphatic drainage helps your body release the fluid it's holding onto — so you feel lighter, less bloated, and more like yourself again.",
+      "Gentle, expert-guided lymphatic drainage helps your body release the fluid it's holding onto, so you feel lighter, less bloated, and more like yourself again.",
     ],
   },
 
@@ -73,10 +73,10 @@ const t: Treatment = {
       { title: "The sluggish-circulation type", desc: "You sit or travel a lot, your legs feel tired and congested, and you want a gentle reset that helps everything move again." },
     ],
     notIdeal: [
-      "You're expecting permanent fat loss — lymphatic drainage relieves fluid and bloating, it isn't a weight-loss treatment",
-      "You have an active infection or untreated medical condition — we'll ask you to clear it first, then welcome you back",
-      "You're pregnant — we'll happily see you afterwards once it's safe to begin",
-      "You'd rather skip the consultation — it's how we keep the therapy safe and tailored to you",
+      "You're expecting permanent fat loss, lymphatic drainage relieves fluid and bloating, it isn't a weight-loss treatment",
+      "You have an active infection or untreated medical condition, we'll ask you to clear it first, then welcome you back",
+      "You're pregnant, we'll happily see you afterwards once it's safe to begin",
+      "You'd rather skip the consultation, it's how we keep the therapy safe and tailored to you",
     ],
   },
 
@@ -154,8 +154,8 @@ const t: Treatment = {
     kicker: "Your lymphatic drainage plan",
     title: "Malta's Doctor-Led Lymphatic Drainage Plan",
     benefits: [
-      { icon: "shield", title: "Medically Guided Care", desc: "Every session is overseen by our medical team — suitability is assessed first, never sold." },
-      { icon: "sparkle", title: "Gentle, Natural Relief", desc: "Light, targeted techniques reduce fluid and bloating so your body feels lighter — never harsh or aggressive." },
+      { icon: "shield", title: "Medically Guided Care", desc: "Every session is overseen by our medical team, suitability is assessed first, never sold." },
+      { icon: "sparkle", title: "Gentle, Natural Relief", desc: "Light, targeted techniques reduce fluid and bloating so your body feels lighter, never harsh or aggressive." },
       { icon: "value", title: "Complete Starter Bundle", desc: "Four sessions plus spa & fitness access, a Tanita body analysis, and clinic credit in one plan." },
     ],
     included: [
@@ -200,7 +200,7 @@ const t: Treatment = {
       "Complimentary Parking Validation",
     ],
     guaranteeChip: "Doctor-supervised · Certified therapists · Relaxing experience",
-    urgency: "Limited appointment slots — book your consultation to secure your place",
+    urgency: "Limited appointment slots, book your consultation to secure your place",
     cta: {
       text: "Claim My Lymphatic Drainage Package",
       href: "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2800348&share=true&pId=2708191",
@@ -234,7 +234,7 @@ const t: Treatment = {
       {
         tag: "Moderate-high evidence",
         title: "manual lymphatic drainage (mld) for swelling & fluid retention",
-        whatItDoes: "Manual Lymphatic Drainage uses light, rhythmic techniques to encourage lymph flow and help the body move excess fluid. It's commonly used to reduce swelling, heaviness, and that \"puffy\" feeling—especially in legs, abdomen, and face.",
+        whatItDoes: "Manual Lymphatic Drainage uses light, rhythmic techniques to encourage lymph flow and help the body move excess fluid. It's commonly used to reduce swelling, heaviness, and that \"puffy\" feeling, especially in legs, abdomen, and face.",
         keyResults: "Clinical literature supports MLD as a helpful approach for managing swelling and improving comfort in people prone to fluid build-up, particularly when performed as part of a structured plan. Patient-reported outcomes often include reduced limb heaviness, improved mobility, and improved day-to-day comfort when lymphatic techniques are used consistently.",
       },
       {
@@ -246,21 +246,21 @@ const t: Treatment = {
       {
         tag: "Moderate evidence",
         title: "de-bloating & \"lightness\" effect via improved fluid movement",
-        whatItDoes: "Lymphatic drainage can help reduce the sensation of bloating and puffiness by supporting fluid movement—especially for people affected by travel, inactivity, hormonal cycles, or high-salt intake.",
+        whatItDoes: "Lymphatic drainage can help reduce the sensation of bloating and puffiness by supporting fluid movement, especially for people affected by travel, inactivity, hormonal cycles, or high-salt intake.",
         keyResults: "In practice, many clients experience a visible \"de-puffed\" look and a lighter feeling shortly after a session, particularly in areas prone to water retention. When combined with hydration, movement, and consistent sessions, results tend to be more noticeable and longer-lasting.",
       },
       {
         tag: "Moderate evidence",
         title: "safety profile of professional lymphatic drainage (when screened properly)",
         whatItDoes: "Lymphatic drainage is typically gentle and well-tolerated. With proper screening (e.g., infection, clot risk, heart/kidney conditions), it's commonly used as a supportive wellness and recovery approach.",
-        keyResults: "The technique is light-pressure and non-invasive, making it suitable for many people seeking swelling reduction and comfort—provided contraindications are ruled out. Most people report it feels relaxing, with common \"after effects\" being increased urination, lightness, and reduced tightness—especially when well hydrated.",
+        keyResults: "The technique is light-pressure and non-invasive, making it suitable for many people seeking swelling reduction and comfort, provided contraindications are ruled out. Most people report it feels relaxing, with common \"after effects\" being increased urination, lightness, and reduced tightness, especially when well hydrated.",
       },
     ],
   },
 
   closing: {
     heading: "Ready to Feel Lighter and More Energised?",
-    sub: "Professional lymphatic drainage therapy in Malta — reduce fluid retention, ease puffiness, and support your wellbeing. Book your consultation at Carisma Aesthetics.",
+    sub: "Professional lymphatic drainage therapy in Malta, reduce fluid retention, ease puffiness, and support your wellbeing. Book your consultation at Carisma Aesthetics.",
     ctaLabel: "Book My Lymphatic Drainage Session",
     ctaHref: "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2800348&share=true&pId=2708191",
   },

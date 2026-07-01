@@ -59,23 +59,23 @@ const t: Treatment = {
       "You appreciate a treatment with no risk of allergic reaction",
     ],
     notIdeal: [
-      "You want a same-day transformation — PRP works gradually as your own collagen rebuilds over the weeks that follow",
-      "You are looking to restore lost volume or reshape your features — that is what dermal fillers are designed for, and we are happy to guide you",
-      "You are pregnant or breastfeeding — we will warmly welcome you back once the time is right",
-      "You have a blood disorder or take blood thinners — a quick chat with your doctor helps us keep you safe",
-      "Your hair loss is very advanced with little active follicle left — we will be honest about what PRP can realistically achieve for you",
+      "You want a same-day transformation, PRP works gradually as your own collagen rebuilds over the weeks that follow",
+      "You are looking to restore lost volume or reshape your features, that is what dermal fillers are designed for, and we are happy to guide you",
+      "You are pregnant or breastfeeding, we will warmly welcome you back once the time is right",
+      "You have a blood disorder or take blood thinners, a quick chat with your doctor helps us keep you safe",
+      "Your hair loss is very advanced with little active follicle left, we will be honest about what PRP can realistically achieve for you",
     ],
     personas: [
-      { title: "The natural-first patient", desc: "You would rather work with your own biology than introduce anything synthetic — PRP uses only your own plasma." },
+      { title: "The natural-first patient", desc: "You would rather work with your own biology than introduce anything synthetic, PRP uses only your own plasma." },
       { title: "The early hair-thinning worrier", desc: "You have noticed more shedding, a widening part, or a thinning crown, and you want to act before it progresses." },
       { title: "The dull-or-scarred skin seeker", desc: "Your complexion looks tired, textured, or marked by old acne scars, and you want a gradual, real improvement in skin quality." },
     ],
   },
   problem: {
     kicker: "The real reason people book",
-    title: "You want to look like a fresher version of yourself — not someone else",
+    title: "You want to look like a fresher version of yourself, not someone else",
     body: [
-      "Doctor-led PRP works with your own plasma to rebuild skin and reawaken hair gradually, so the result is genuinely yours — healthier, not altered.",
+      "Doctor-led PRP works with your own plasma to rebuild skin and reawaken hair gradually, so the result is genuinely yours, healthier, not altered.",
     ],
   },
   guarantee: {
@@ -94,8 +94,8 @@ const t: Treatment = {
   experience: {
     title: "Your treatment experience",
     steps: [
-      { title: "Personalised Consultation & Plan", desc: "We assess your skin or scalp, medical history, and PRP goals with one of our doctors, then design a protocol tailored to your concern — facial rejuvenation, hair restoration, or a vampire facial.", image: "/assets/treatments/prp-malta-step1.png" },
-      { title: "Targeted Treatment", desc: "Your doctor draws a small blood sample, concentrates your plasma rich platelets in a centrifuge, and delivers the PRP via precise injection — comfortable and around 35-45 minutes.", image: "/assets/treatments/prp-malta-step3.jpg" },
+      { title: "Personalised Consultation & Plan", desc: "We assess your skin or scalp, medical history, and PRP goals with one of our doctors, then design a protocol tailored to your concern, facial rejuvenation, hair restoration, or a vampire facial.", image: "/assets/treatments/prp-malta-step1.png" },
+      { title: "Targeted Treatment", desc: "Your doctor draws a small blood sample, concentrates your plasma rich platelets in a centrifuge, and delivers the PRP via precise injection, comfortable and around 35-45 minutes.", image: "/assets/treatments/prp-malta-step3.jpg" },
       { title: "Ongoing Review & Adjustment", desc: "Your doctor monitors your skin or hair response and refines the protocol across your course of sessions to maximise your natural results.", image: "/assets/treatments/prp-malta-step4.png" },
     ],
     cta: "BOOK YOUR FREE CONSULTATION",
@@ -163,7 +163,7 @@ const t: Treatment = {
     title: "Malta’s #1 leading wellness chain",
     commitmentTitle: "our commitment",
     commitment: [
-      "Natural, gradual results — restoration, not transformation",
+      "Natural, gradual results, restoration, not transformation",
       "Doctor-led treatments with advanced regenerative medicine expertise",
       "Safe, ethical care using your own plasma rich platelets",
       "A personalised journey from consultation to aftercare",
@@ -182,7 +182,7 @@ const t: Treatment = {
     kicker: "Your PRP plan",
     title: "Malta's Doctor-Led PRP Plan",
     benefits: [
-      { icon: "shield", title: "Doctor-Led & Natural", desc: "Every session is performed by a medically qualified doctor using only your own plasma — never a salon, never synthetic." },
+      { icon: "shield", title: "Doctor-Led & Natural", desc: "Every session is performed by a medically qualified doctor using only your own plasma, never a salon, never synthetic." },
       { icon: "sparkle", title: "Real, Gradual Results", desc: "We stimulate your own collagen and follicles for healthier skin and fuller hair that builds session on session." },
       { icon: "clock", title: "A Course Built Around You", desc: "Your protocol is planned across three to four sessions and reviewed each time, so results are tracked and refined." },
     ],
@@ -221,7 +221,7 @@ const t: Treatment = {
     },
     {
       q: "What is the difference between PRP and microneedling?",
-      a: "PRP and microneedling are complementary treatments that work through different mechanisms. Microneedling creates controlled micro-channels in the skin to stimulate collagen production through the body’s natural healing response. PRP therapy uses your own plasma rich platelets — rich in growth factors, to accelerate healing, boost collagen synthesis, and promote cellular regeneration. When combined into a vampire facial, the microneedling creates channels that allow the PRP to penetrate deeper into the skin, amplifying the regenerative effect. At Carisma, our doctors frequently recommend PRP microneedling for patients seeking maximum skin rejuvenation results.",
+      a: "PRP and microneedling are complementary treatments that work through different mechanisms. Microneedling creates controlled micro-channels in the skin to stimulate collagen production through the body’s natural healing response. PRP therapy uses your own plasma rich platelets, rich in growth factors, to accelerate healing, boost collagen synthesis, and promote cellular regeneration. When combined into a vampire facial, the microneedling creates channels that allow the PRP to penetrate deeper into the skin, amplifying the regenerative effect. At Carisma, our doctors frequently recommend PRP microneedling for patients seeking maximum skin rejuvenation results.",
     },
     {
       q: "What is a vampire facial?",
@@ -245,7 +245,7 @@ const t: Treatment = {
     },
     {
       q: "Can PRP be combined with other treatments?",
-      a: "Yes. The treatment is highly versatile and can be combined with several other treatments for enhanced results. The most popular combination is PRP with microneedling — the vampire facial — which amplifies collagen stimulation and allows the plasma rich platelets to penetrate deeper into the skin. It can also complement dermal filler treatments, laser therapy, and other skin rejuvenation procedures. Your doctor at our aesthetic clinic in Malta will recommend the best combination approach during your consultation based on your individual concerns and goals.",
+      a: "Yes. The treatment is highly versatile and can be combined with several other treatments for enhanced results. The most popular combination is PRP with microneedling, the vampire facial, which amplifies collagen stimulation and allows the plasma rich platelets to penetrate deeper into the skin. It can also complement dermal filler treatments, laser therapy, and other skin rejuvenation procedures. Your doctor at our aesthetic clinic in Malta will recommend the best combination approach during your consultation based on your individual concerns and goals.",
     },
   ],
 };

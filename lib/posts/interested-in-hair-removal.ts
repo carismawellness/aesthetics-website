@@ -27,11 +27,11 @@ export const post: BlogPost = {
     {
       "type": "list",
       "items": [
-        "<strong>Shaving</strong> — temporary, convenient, but requires frequent repetition",
-        "<strong>Waxing</strong> — lasts 3-6 weeks, can cause irritation in sensitive skin",
-        "<strong>Hair removal creams</strong> — temporary, risk of chemical sensitivity",
-        "<strong>Laser hair removal</strong> — semi-permanent, most effective for darker hair on lighter skin",
-        "<strong>Electrolysis</strong> — permanent but time-consuming and can be uncomfortable"
+        "<strong>Shaving</strong>, temporary, convenient, but requires frequent repetition",
+        "<strong>Waxing</strong>, lasts 3-6 weeks, can cause irritation in sensitive skin",
+        "<strong>Hair removal creams</strong>, temporary, risk of chemical sensitivity",
+        "<strong>Laser hair removal</strong>, semi-permanent, most effective for darker hair on lighter skin",
+        "<strong>Electrolysis</strong>, permanent but time-consuming and can be uncomfortable"
       ]
     },
     {

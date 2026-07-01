@@ -72,7 +72,7 @@ export const fatFreezing: ProtocolData = {
     tagSub: "Proven efficacy",
     baImage: `${A}/ff-ba.png`,
     sideImage: `${A}/ff-lemon.png`,
-    intro: "CoolSculpting is an FDA cleared cryolipolysis technology that uses controlled cooling to target only the fat cells under the skin without surgery or needles. The treated fat cells crystallise, die off, and are gradually cleared by your body over the following weeks. Freezes away up to 20%—25% of treated fat permanently via a process called cryolipolysis and naturally eliminates it from the body.",
+    intro: "CoolSculpting is an FDA cleared cryolipolysis technology that uses controlled cooling to target only the fat cells under the skin without surgery or needles. The treated fat cells crystallise, die off, and are gradually cleared by your body over the following weeks. Freezes away up to 20% to 25% of treated fat permanently via a process called cryolipolysis and naturally eliminates it from the body.",
     bullets: [
       "Backed by clinical research with over 17 million treatments performed worldwide.",
       "Results start to appear from 1–3 months, with full contour change often seen by 3–6 months as the body clears the damaged fat cells.",

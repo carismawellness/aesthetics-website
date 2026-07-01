@@ -9,7 +9,7 @@ export const post: BlogPost = {
   "publishDate": "2026-06-20",
   "readTime": 6,
   "coverImage": "https://static.wixstatic.com/media/example.jpg",
-  "excerpt": "Removing hair from large body areas requires a different calculus than facial hair removal — efficiency, cost, and permanence all shift....",
+  "excerpt": "Removing hair from large body areas requires a different calculus than facial hair removal, efficiency, cost, and permanence all shift....",
   "content": [
     {
       "type": "paragraph",

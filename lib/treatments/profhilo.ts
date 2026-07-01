@@ -56,7 +56,7 @@ const t: Treatment = {
     kicker: "The real reason people book",
     title: "Your skin looks tired and flat, even when you feel good",
     body: [
-      "Doctor-led Profhilo deeply rehydrates and gently firms your skin from within — so it looks fresher, plumper, and more radiant, while still looking completely like you.",
+      "Doctor-led Profhilo deeply rehydrates and gently firms your skin from within, so it looks fresher, plumper, and more radiant, while still looking completely like you.",
     ],
   },
   guarantee: {
@@ -83,16 +83,16 @@ const t: Treatment = {
       "You are looking for a subtle, gradual improvement that builds over time",
     ],
     notIdeal: [
-      "You are looking for volume or contouring — that is what dermal fillers are for, and we are happy to guide you there",
-      "You want to see the full result the same day — Profhilo works gradually as your skin rebuilds over a few weeks",
-      "You are pregnant or breastfeeding — we will warmly welcome you back afterwards",
-      "You want immediate lifting or tightening — Profhilo refreshes skin quality rather than lifting structure",
-      "You would rather skip the quick doctor consultation — it is how we keep your results safe and natural",
+      "You are looking for volume or contouring, that is what dermal fillers are for, and we are happy to guide you there",
+      "You want to see the full result the same day, Profhilo works gradually as your skin rebuilds over a few weeks",
+      "You are pregnant or breastfeeding, we will warmly welcome you back afterwards",
+      "You want immediate lifting or tightening, Profhilo refreshes skin quality rather than lifting structure",
+      "You would rather skip the quick doctor consultation, it is how we keep your results safe and natural",
     ],
     personas: [
       { title: "The dull, tired complexion", desc: "You feel well, but your skin looks flat, dehydrated, and has lost the healthy glow it used to have." },
       { title: "The early-laxity face", desc: "Your skin is starting to feel less firm and a little crepey, especially across the cheeks, neck, or jawline." },
-      { title: "The natural-refinement patient", desc: "You do not want filler or a changed face — you want your own skin to simply look fresher, plumper, and more rested." },
+      { title: "The natural-refinement patient", desc: "You do not want filler or a changed face, you want your own skin to simply look fresher, plumper, and more rested." },
     ],
   },
   experience: {
@@ -152,7 +152,7 @@ const t: Treatment = {
       { title: "medically qualified practitioners", desc: "Every profhilo treatment is performed by a qualified doctor." },
       { title: "Advanced Facial Anatomy Expertise", desc: "Precision profhilo techniques tailored to your unique facial anatomy." },
       { title: "Personalised Treatment Plans", desc: "Your profhilo plan is designed to enhance, never overcorrect." },
-      { title: "Clinically Approved Products", desc: "Clinically Approved Products — CE-marked, clinically approved profhilo and evidence-based protocols." },
+      { title: "Clinically Approved Products", desc: "Clinically Approved Products, CE-marked, clinically approved profhilo and evidence-based protocols." },
       { title: "Thousands of Treatments Performed", desc: "Experience and results you can trust, right here in Malta." },
     ],
   },
@@ -180,8 +180,8 @@ const t: Treatment = {
     kicker: "Your Profhilo plan",
     title: "Malta's Doctor-Led Profhilo Plan",
     benefits: [
-      { icon: "shield", title: "Doctor-Led Precision", desc: "Every treatment is performed by a medically qualified doctor — never a salon, never nurse-only." },
-      { icon: "sparkle", title: "Natural, Hydrated Results", desc: "We deeply rehydrate and firm your skin while keeping your face exactly as it is — fresher, never changed." },
+      { icon: "shield", title: "Doctor-Led Precision", desc: "Every treatment is performed by a medically qualified doctor, never a salon, never nurse-only." },
+      { icon: "sparkle", title: "Natural, Hydrated Results", desc: "We deeply rehydrate and firm your skin while keeping your face exactly as it is, fresher, never changed." },
       { icon: "clock", title: "Personalised Protocol", desc: "A two-session course four weeks apart, planned around your skin quality for a gradual, lasting glow." },
     ],
     included: [

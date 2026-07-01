@@ -9,7 +9,7 @@ export const post: BlogPost = {
   "publishDate": "2026-06-15",
   "readTime": 5,
   "coverImage": "https://static.wixstatic.com/media/d87add9f-ad57-47b3-a705-d335c7362653/placeholder.jpg",
-  "excerpt": "Hair loss without an identifiable cause — called idiopathic hair loss — can be distressing. Understanding what's happening and exploring treatment options is the first step...",
+  "excerpt": "Hair loss without an identifiable cause, called idiopathic hair loss, can be distressing. Understanding what's happening and exploring treatment options is the first step...",
   "content": [
     {
         "type": "paragraph",

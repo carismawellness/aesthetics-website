@@ -93,14 +93,14 @@ const post: BlogPost = {
     {
       type: 'list',
       items: [
-        'Main purpose — Botox relaxes muscles to soften movement lines; fillers add volume to restore shape and structure.',
-        'Best for — Botox: dynamic lines (forehead, frown, crow’s feet); fillers: static concerns (lips, cheeks, jaw, folds).',
-        'Main ingredient — Botox: botulinum toxin (prescription-only); fillers: hyaluronic acid gel.',
-        'Face area — Botox is mostly upper face; fillers are mostly lower and mid-face.',
-        'Results visible — Botox: 3 to 7 days, full effect at 2 weeks; fillers: immediately, settling over 1 to 2 weeks.',
-        'Results last — Botox: 3 to 4 months; fillers: 6 to 18 months depending on product and area.',
-        'Reversible? — Botox: no (wears off naturally); fillers: yes (dissolved with hyaluronidase).',
-        'Downtime — both minimal; fillers may cause short-term swelling.',
+        'Main purpose, Botox relaxes muscles to soften movement lines; fillers add volume to restore shape and structure.',
+        'Best for, Botox: dynamic lines (forehead, frown, crow’s feet); fillers: static concerns (lips, cheeks, jaw, folds).',
+        'Main ingredient, Botox: botulinum toxin (prescription-only); fillers: hyaluronic acid gel.',
+        'Face area, Botox is mostly upper face; fillers are mostly lower and mid-face.',
+        'Results visible, Botox: 3 to 7 days, full effect at 2 weeks; fillers: immediately, settling over 1 to 2 weeks.',
+        'Results last, Botox: 3 to 4 months; fillers: 6 to 18 months depending on product and area.',
+        'Reversible? Botox: no (wears off naturally); fillers: yes (dissolved with hyaluronidase).',
+        'Downtime, both minimal; fillers may cause short-term swelling.',
       ],
     },
     {

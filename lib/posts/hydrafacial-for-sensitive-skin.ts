@@ -9,7 +9,7 @@ export const post: BlogPost = {
   "publishDate": "2026-06-25",
   "readTime": 5,
   "coverImage": "https://static.wixstatic.com/media/d87add9f-ad57-47b3-a705-d335c7362653/placeholder.jpg",
-  "excerpt": "Sensitive skin deserves gentle care. HydraFacial can be customized specifically for reactive, easily irritated skin—delivering professional results without the harsh chemicals, strong exfoliation, or downtime that triggers flare-ups.",
+  "excerpt": "Sensitive skin deserves gentle care. HydraFacial can be customized specifically for reactive, easily irritated skin, delivering professional results without the harsh chemicals, strong exfoliation, or downtime that triggers flare-ups.",
   "internalLinks": [
     {
       "anchorText": "Sensitive skin treatments",
@@ -29,7 +29,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "Traditional facials use manual exfoliation (scrubbing), harsh chemical peels, or rough extractions—all of which irritate sensitive skin. HydraFacial eliminates these problems. There's no harsh scrubbing. The vacuum pressure is adjustable so we can reduce intensity. The extraction is gentle. Most importantly, we choose only soothing, hypoallergenic serums—no harsh actives that trigger sensitivity."
+      "html": "Traditional facials use manual exfoliation (scrubbing), harsh chemical peels, or rough extractions, all of which irritate sensitive skin. HydraFacial eliminates these problems. There's no harsh scrubbing. The vacuum pressure is adjustable so we can reduce intensity. The extraction is gentle. Most importantly, we choose only soothing, hypoallergenic serums, no harsh actives that trigger sensitivity."
     },
     {
       "type": "heading",
@@ -117,7 +117,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "<strong>Immediately After Treatment:</strong> Skin looks hydrated and glowing—with zero irritation. No redness, no burning, no discomfort."
+      "html": "<strong>Immediately After Treatment:</strong> Skin looks hydrated and glowing, with zero irritation. No redness, no burning, no discomfort."
     },
     {
       "type": "paragraph",
@@ -144,7 +144,7 @@ export const post: BlogPost = {
     {
       "type": "list",
       "items": [
-        "Tell us about every product you use—we need to know your triggers",
+        "Tell us about every product you use, we need to know your triggers",
         "List any allergies or sensitivities upfront",
         "Avoid new products for 2 weeks before treatment",
         "Skip actives (retinoids, vitamin C, acids) for 3-5 days before",
@@ -164,7 +164,7 @@ export const post: BlogPost = {
         "Skip makeup for at least 24 hours if possible",
         "Avoid heat (hot water, saunas, intense exercise) for 24 hours",
         "Use SPF 30+ daily, even on cloudy days",
-        "Stay hydrated—drink plenty of water"
+        "Stay hydrated, drink plenty of water"
       ]
     },
     {
@@ -174,7 +174,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "At Carisma Aesthetics, we understand that sensitive skin isn't weak—it's just different. It requires customization, patience, and expertise. Our practitioners have extensive experience working with reactive skin and creating treatment plans that deliver results without compromise. We'll never push a harsh treatment. We'll always prioritize your comfort and skin health."
+      "html": "At Carisma Aesthetics, we understand that sensitive skin isn't weak, it's just different. It requires customization, patience, and expertise. Our practitioners have extensive experience working with reactive skin and creating treatment plans that deliver results without compromise. We'll never push a harsh treatment. We'll always prioritize your comfort and skin health."
     },
     {
       "type": "paragraph",

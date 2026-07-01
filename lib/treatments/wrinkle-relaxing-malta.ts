@@ -65,23 +65,23 @@ const t: Treatment = {
       "You are comfortable with a quick treatment and minimal downtime",
     ],
     notIdeal: [
-      "You're hoping to restore lost volume — that's what dermal fillers are for, not wrinkle relaxing",
-      "You need to see the full result the same day — it settles gently over 3–14 days",
-      "You're pregnant or breastfeeding — we'll happily welcome you back afterwards",
-      "You want every line gone completely — we soften and refresh, we never freeze your expression",
-      "You'd rather skip the quick doctor consultation — it's how we keep results safe and natural",
+      "You're hoping to restore lost volume, that's what dermal fillers are for, not wrinkle relaxing",
+      "You need to see the full result the same day, it settles gently over 3–14 days",
+      "You're pregnant or breastfeeding, we'll happily welcome you back afterwards",
+      "You want every line gone completely, we soften and refresh, we never freeze your expression",
+      "You'd rather skip the quick doctor consultation, it's how we keep results safe and natural",
     ],
     personas: [
-      { title: "The expressive face", desc: "You smile, frown, and raise your brows — and those lines are starting to stay even when your face is relaxed." },
+      { title: "The expressive face", desc: "You smile, frown, and raise your brows, and those lines are starting to stay even when your face is relaxed." },
       { title: "The tired-looking face", desc: "You feel well, but your forehead, eyes, or frown area make you look stressed or exhausted." },
-      { title: "The subtle-refinement patient", desc: "You don't want a dramatic change — you want a natural softening that still looks like you." },
+      { title: "The subtle-refinement patient", desc: "You don't want a dramatic change, you want a natural softening that still looks like you." },
     ],
   },
   problem: {
     kicker: "The real reason people book",
     title: "You look more tired, tense, or stressed than you feel",
     body: [
-      "Doctor-led wrinkle relaxing gently softens those expression lines while keeping your natural movement — so you still look like you, just more rested.",
+      "Doctor-led wrinkle relaxing gently softens those expression lines while keeping your natural movement, so you still look like you, just more rested.",
     ],
   },
   guarantee: {
@@ -112,7 +112,7 @@ const t: Treatment = {
     intro: "A smooth botox experience begins with a few simple steps. Here is what to know before, during, and after your session at our Malta clinic.",
     cards: [
       { icon: "/assets/treatments/wrinkle-relaxing-malta-icon-prep-before.png", label: "Before", lead: "Arrive informed and ready for a comfortable session.", points: ["Share your concerns and medical history", "Disclose all medications and supplements", "Avoid alcohol and blood thinners for 24 hours", "Pause strenuous exercise the day before"] },
-      { icon: "/assets/treatments/wrinkle-relaxing-malta-icon-prep-during.png", label: "During", lead: "Treatment is quick, precise, and guided by your comfort.", points: ["Targeted areas are marked before injection by your doctor", "Fine needles deliver precise, controlled doses of botox", "Mild pressure is normal — communicate freely", "Session takes 15–30 minutes"] },
+      { icon: "/assets/treatments/wrinkle-relaxing-malta-icon-prep-during.png", label: "During", lead: "Treatment is quick, precise, and guided by your comfort.", points: ["Targeted areas are marked before injection by your doctor", "Fine needles deliver precise, controlled doses of botox", "Mild pressure is normal, communicate freely", "Session takes 15–30 minutes"] },
       { icon: "/assets/treatments/wrinkle-relaxing-malta-icon-prep-after.png", label: "After", lead: "A few precautions help your results settle beautifully.", points: ["No touching or massaging for 24 hours", "Avoid exercise, alcohol, and saunas for 24 hours", "Stay upright for the first 4 hours", "Results appear in 3–5 days, full effect at 2 weeks"] },
     ],
   },
@@ -130,7 +130,7 @@ const t: Treatment = {
       { title: "Medically Qualified Practitioners", desc: "Every botox treatment is performed by a qualified doctor." },
       { title: "Advanced Facial Anatomy Expertise", desc: "Precision botox techniques tailored to your unique facial anatomy." },
       { title: "Personalised Treatment Plans", desc: "Your botox plan is designed to enhance, never overcorrect." },
-      { title: "Clinically Approved Products", desc: "Clinically Approved Products — CE-marked, clinically approved botox and evidence-based protocols." },
+      { title: "Clinically Approved Products", desc: "Clinically Approved Products, CE-marked, clinically approved botox and evidence-based protocols." },
       { title: "Thousands of Treatments Performed", desc: "Experience and results you can trust, right here in Malta." },
     ],
   },
@@ -158,9 +158,9 @@ const t: Treatment = {
     kicker: "Your botox plan",
     title: "Malta's Doctor-Led Botox Plan",
     benefits: [
-      { icon: "shield", title: "Doctor-Led Precision", desc: "Every treatment is performed by a medically qualified doctor — never a salon, never nurse-only." },
-      { icon: "sparkle", title: "Natural, Refined Results", desc: "We soften the lines that bother you while keeping your full expression — refreshed, never frozen." },
-      { icon: "clock", title: "Complimentary 2-Week Review", desc: "We review your result at two weeks and perfect it with a touch-up if needed — included free." },
+      { icon: "shield", title: "Doctor-Led Precision", desc: "Every treatment is performed by a medically qualified doctor, never a salon, never nurse-only." },
+      { icon: "sparkle", title: "Natural, Refined Results", desc: "We soften the lines that bother you while keeping your full expression, refreshed, never frozen." },
+      { icon: "clock", title: "Complimentary 2-Week Review", desc: "We review your result at two weeks and perfect it with a touch-up if needed, included free." },
     ],
     included: [
       { label: "Free doctor-led consultation" },

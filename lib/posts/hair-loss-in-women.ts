@@ -9,7 +9,7 @@ export const post: BlogPost = {
   "publishDate": "2026-06-19",
   "readTime": 6,
   "coverImage": "https://static.wixstatic.com/media/example.jpg",
-  "excerpt": "Women's hair loss is fundamentally different from male pattern baldness — the causes, presentation, and solutions are distinct....",
+  "excerpt": "Women's hair loss is fundamentally different from male pattern baldness, the causes, presentation, and solutions are distinct....",
   "content": [
     {
       "type": "paragraph",

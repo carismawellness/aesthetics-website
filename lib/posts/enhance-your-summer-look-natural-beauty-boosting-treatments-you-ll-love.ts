@@ -9,11 +9,11 @@ export const post: BlogPost = {
   "publishDate": "2025-08-12",
   "readTime": 4,
   "coverImage": "https://static.wixstatic.com/media/11062b_6bcdc7f909734ddb8c04806ce1ac8927~mv2.jpg",
-  "excerpt": "Summer is a season of light, warmth, and vitality—and your beauty routine should reflect that. As temperatures rise and the sun shines brighter, it's the perfect time to refresh your aesthetic routine with treatments that enhance your natural beauty.",
+  "excerpt": "Summer is a season of light, warmth, and vitality, and your beauty routine should reflect that. As temperatures rise and the sun shines brighter, it's the perfect time to refresh your aesthetic routine with treatments that enhance your natural beauty.",
   "content": [
     {
       "type": "paragraph",
-      "html": "Summer is a season of light, warmth, and vitality—and your beauty routine should reflect that. As temperatures rise and the sun shines brighter, it's the perfect time to refresh your aesthetic routine with treatments that enhance your natural beauty."
+      "html": "Summer is a season of light, warmth, and vitality, and your beauty routine should reflect that. As temperatures rise and the sun shines brighter, it's the perfect time to refresh your aesthetic routine with treatments that enhance your natural beauty."
     },
     {
       "type": "heading",
@@ -22,7 +22,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "Modern aesthetic treatments focus on enhancing what you already have—more defined cheekbones, fuller lips, brighter eyes—without looking overdone. The goal is to look like the best version of yourself."
+      "html": "Modern aesthetic treatments focus on enhancing what you already have, more defined cheekbones, fuller lips, brighter eyes, without looking overdone. The goal is to look like the best version of yourself."
     },
     {
       "type": "heading",

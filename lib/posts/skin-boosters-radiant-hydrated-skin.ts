@@ -9,7 +9,7 @@ export const post: BlogPost = {
   "publishDate": "2026-03-25",
   "readTime": 2,
   "coverImage": "https://static.wixstatic.com/media/f940f0_5807179bda844a51adfb491b8f9199ab~mv2.png",
-  "excerpt": "The Secret to Radiant, Hydrated Skin Sometimes your skin needs more than a moisturizer to maintain a healthy glow. That’s where skin boosters — particularly Profhilo  —  have become one of the most sought-after treatments in modern aesthetics. At Carisma Aesthetics , skin boosters are valued for their ability to deeply hydrate, smooth, and refresh the skin while maintaining a completely natural appearance. Here is why skin boosters have become a popular treatment for patients seeking radiant,...",
+  "excerpt": "The Secret to Radiant, Hydrated Skin Sometimes your skin needs more than a moisturizer to maintain a healthy glow. That’s where skin boosters, particularly Profhilo, have become one of the most sought-after treatments in modern aesthetics. At Carisma Aesthetics , skin boosters are valued for their ability to deeply hydrate, smooth, and refresh the skin while maintaining a completely natural appearance. Here is why skin boosters have become a popular treatment for patients seeking radiant,...",
   "content": [
     {
       "type": "heading",
@@ -18,7 +18,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "Sometimes your skin needs more than a moisturizer to maintain a healthy glow. That’s where <strong>skin boosters — particularly </strong><a href=\"/profhilo\" style=\"color:var(--teal);text-decoration:underline;\"><strong>Profhilo</strong></a><strong> —</strong> have become one of the most sought-after treatments in modern aesthetics."
+      "html": "Sometimes your skin needs more than a moisturizer to maintain a healthy glow. That’s where <strong>skin boosters, particularly </strong><a href=\"/profhilo\" style=\"color:var(--teal);text-decoration:underline;\"><strong>Profhilo</strong></a><strong>, </strong> have become one of the most sought-after treatments in modern aesthetics."
     },
     {
       "type": "paragraph",
@@ -103,7 +103,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "Weddings. Holidays. Parties. <a href=\"http://Sunsets.Skin\" target=\"_blank\" rel=\"noopener\" style=\"color:var(--teal);text-decoration:underline;\">Sunsets.Skin</a> boosters help your skin catch the light — beautifully. They refine texture, smooth fine lines, and give that just-had-a-facial radiance that lasts for weeks."
+      "html": "Weddings. Holidays. Parties. <a href=\"http://Sunsets.Skin\" target=\"_blank\" rel=\"noopener\" style=\"color:var(--teal);text-decoration:underline;\">Sunsets.Skin</a> boosters help your skin catch the light, beautifully. They refine texture, smooth fine lines, and give that just-had-a-facial radiance that lasts for weeks."
     },
     {
       "type": "paragraph",

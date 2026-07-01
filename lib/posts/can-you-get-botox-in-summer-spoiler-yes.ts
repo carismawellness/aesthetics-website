@@ -9,7 +9,7 @@ export const post: BlogPost = {
   "publishDate": "2025-10-07",
   "readTime": 2,
   "coverImage": "https://static.wixstatic.com/media/4011704d8ef941c6b1b362b46800220f.jpg",
-  "excerpt": "Sunshine, travel, social events — summer is the season of connection, celebration, and feeling your best. And if you've been wondering...",
+  "excerpt": "Sunshine, travel, social events, summer is the season of connection, celebration, and feeling your best. And if you've been wondering...",
   "content": [],
   "internalLinks": []
 };

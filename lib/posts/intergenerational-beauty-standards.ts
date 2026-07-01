@@ -9,11 +9,11 @@ export const post: BlogPost = {
   "publishDate": "2026-06-24",
   "readTime": 6,
   "coverImage": "https://static.wixstatic.com/media/f940f0_placeholder.jpg",
-  "excerpt": "Beauty standards are not fixed or universal—they shift across generations, cultures, and time periods. Understanding this context helps you make aesthetic decisions based on what you actually want, not what you feel pressured to want...",
+  "excerpt": "Beauty standards are not fixed or universal, they shift across generations, cultures, and time periods. Understanding this context helps you make aesthetic decisions based on what you actually want, not what you feel pressured to want...",
   "content": [
     {
       "type": "paragraph",
-      "html": "Beauty standards are not fixed or universal—they shift across generations, cultures, and time periods. Understanding this context helps you make aesthetic decisions based on what you actually want, not what you feel pressured to want."
+      "html": "Beauty standards are not fixed or universal, they shift across generations, cultures, and time periods. Understanding this context helps you make aesthetic decisions based on what you actually want, not what you feel pressured to want."
     },
     {
       "type": "heading",
@@ -43,7 +43,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "Aesthetic treatments should be about enhancing your confidence and how you feel in your own skin—not conforming to a standard that may shift in five years. At Carisma Aesthetics, we focus on bringing out your natural beauty and helping you feel genuinely confident, regardless of what any particular generation considers 'beautiful.'"
+      "html": "Aesthetic treatments should be about enhancing your confidence and how you feel in your own skin, not conforming to a standard that may shift in five years. At Carisma Aesthetics, we focus on bringing out your natural beauty and helping you feel genuinely confident, regardless of what any particular generation considers 'beautiful.'"
     }
   ],
   "internalLinks": []

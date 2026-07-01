@@ -40,7 +40,7 @@ const SYS = '-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif
 const CARDS = [
   {
     src: '/assets/clinic-interior-2.jpg',
-    alt: "Carisma Aesthetics clinic interior — premium treatment suite in St Julian's, Malta",
+    alt: "Carisma Aesthetics clinic interior, premium treatment suite in St Julian's, Malta",
     role: 'left' as const,
   },
   {
@@ -214,7 +214,7 @@ export default function ResultsCommitment() {
           style={{ maxWidth: 680, margin: '0 auto' }}
           eyebrow="Our Commitment"
           title="Award-Winning Aesthetic Clinic"
-          subtitle="Doctor-led. Natural-looking. Built around you — so you glow with confidence, never overdone."
+          subtitle="Doctor-led. Natural-looking. Built around you, so you glow with confidence, never overdone."
           id="results-commitment-heading"
           divider={false}
           subtitleMaxWidth={540}

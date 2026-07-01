@@ -22,7 +22,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "The trend toward 'enhancement over alteration' continues strong. Clients want subtle, sophisticated improvements that look like the best version of themselves—not dramatic changes. Skin boosters, light rejuvenation, and strategic contouring lead the way."
+      "html": "The trend toward 'enhancement over alteration' continues strong. Clients want subtle, sophisticated improvements that look like the best version of themselves, not dramatic changes. Skin boosters, light rejuvenation, and strategic contouring lead the way."
     },
     {
       "type": "heading",

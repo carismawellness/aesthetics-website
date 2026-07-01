@@ -9,7 +9,7 @@ export const post: BlogPost = {
   "publishDate": "2026-06-25",
   "readTime": 6,
   "coverImage": "https://static.wixstatic.com/media/d87add9f-ad57-47b3-a705-d335c7362653/placeholder.jpg",
-  "excerpt": "As skin ages, it loses collagen, elasticity, and natural hydration. HydraFacial combats these changes with peptides, antioxidants, and deep hydration—giving you firmer, more radiant, youthful-looking skin.",
+  "excerpt": "As skin ages, it loses collagen, elasticity, and natural hydration. HydraFacial combats these changes with peptides, antioxidants, and deep hydration, giving you firmer, more radiant, youthful-looking skin.",
   "internalLinks": [
     {
       "anchorText": "Anti-aging facials",
@@ -30,7 +30,7 @@ export const post: BlogPost = {
   "content": [
     {
       "type": "paragraph",
-      "html": "Aging skin presents unique challenges: fine lines, wrinkles, loss of firmness, uneven texture, and a dull, tired appearance. Many anti-aging treatments promise results but require painful recovery or carry risks. HydraFacial offers a different solution—a treatment that improves all signs of aging while leaving your skin glowing, hydrated, and visibly younger."
+      "html": "Aging skin presents unique challenges: fine lines, wrinkles, loss of firmness, uneven texture, and a dull, tired appearance. Many anti-aging treatments promise results but require painful recovery or carry risks. HydraFacial offers a different solution, a treatment that improves all signs of aging while leaving your skin glowing, hydrated, and visibly younger."
     },
     {
       "type": "heading",
@@ -61,7 +61,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "Peptide serums in HydraFacial boost collagen and elastin production—the proteins responsible for skin firmness and elasticity. Over time, these serums improve skin texture and give a subtle lift to sagging areas. While HydraFacial isn't a surgical facelift, consistent treatments noticeably improve skin laxity."
+      "html": "Peptide serums in HydraFacial boost collagen and elastin production, the proteins responsible for skin firmness and elasticity. Over time, these serums improve skin texture and give a subtle lift to sagging areas. While HydraFacial isn't a surgical facelift, consistent treatments noticeably improve skin laxity."
     },
     {
       "type": "heading",

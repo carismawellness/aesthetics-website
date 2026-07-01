@@ -9,7 +9,7 @@ export const post: BlogPost = {
   "publishDate": "2026-06-25",
   "readTime": 6,
   "coverImage": "https://static.wixstatic.com/media/d87add9f-ad57-47b3-a705-d335c7362653/placeholder.jpg",
-  "excerpt": "Hydration isn't just about feeling fresh—it's a cornerstone of anti-aging. Dehydrated skin shows every wrinkle, sags faster, and ages dramatically. Well-hydrated skin looks younger, plumper, and more resilient. Learn the science and the strategy.",
+  "excerpt": "Hydration isn't just about feeling fresh, it's a cornerstone of anti-aging. Dehydrated skin shows every wrinkle, sags faster, and ages dramatically. Well-hydrated skin looks younger, plumper, and more resilient. Learn the science and the strategy.",
   "internalLinks": [
     {
       "anchorText": "anti-aging facials",
@@ -25,7 +25,7 @@ export const post: BlogPost = {
   "content": [
     {
       "type": "paragraph",
-      "html": "One of the most overlooked anti-aging strategies is hydration. Many people focus on collagen, fillers, and treatments—while ignoring the fact that dehydrated skin ages 5-10 years faster. A well-hydrated face looks plump, smooth, and youthful. A dehydrated face looks gaunt, lined, and exhausted. The difference is dramatic."
+      "html": "One of the most overlooked anti-aging strategies is hydration. Many people focus on collagen, fillers, and treatments, while ignoring the fact that dehydrated skin ages 5-10 years faster. A well-hydrated face looks plump, smooth, and youthful. A dehydrated face looks gaunt, lined, and exhausted. The difference is dramatic."
     },
     {
       "type": "heading",
@@ -34,7 +34,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "Your skin cells are approximately 70% water. When they're hydrated, they're plump and round—fine lines are invisible. When they're dehydrated, they shrivel and flatten—every line becomes exaggerated. This is why wrinkles look worse when your skin is dry and softer when your skin is hydrated."
+      "html": "Your skin cells are approximately 70% water. When they're hydrated, they're plump and round, fine lines are invisible. When they're dehydrated, they shrivel and flatten, every line becomes exaggerated. This is why wrinkles look worse when your skin is dry and softer when your skin is hydrated."
     },
     {
       "type": "heading",
@@ -66,7 +66,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "Dehydrated skin appears dull because light reflects unevenly off rough, shriveled cells. Hydrated skin has a smooth surface that reflects light evenly—creating a luminous, healthy appearance."
+      "html": "Dehydrated skin appears dull because light reflects unevenly off rough, shriveled cells. Hydrated skin has a smooth surface that reflects light evenly, creating a luminous, healthy appearance."
     },
     {
       "type": "heading",
@@ -88,7 +88,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "This is why women often notice their skin becoming drier in their 40s—it's not just environmental; it's biological."
+      "html": "This is why women often notice their skin becoming drier in their 40s, it's not just environmental; it's biological."
     },
     {
       "type": "heading",

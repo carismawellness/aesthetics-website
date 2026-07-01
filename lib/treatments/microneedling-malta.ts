@@ -5,7 +5,7 @@ const t: Treatment = {
   category: "Face",
   hero: {
     title: "Microneedling Malta | Collagen Induction",
-    subtitle: "Doctor-Led Microneedling with Mesotherapy — Restore Your Skin from Within",
+    subtitle: "Doctor-Led Microneedling with Mesotherapy, Restore Your Skin from Within",
     body: "Is uneven skin texture, scarring, or dull skin holding you back? Rediscover smoother, brighter, more confident skin with our expert microneedling and mesotherapy treatments in Malta. Every treatment is performed by qualified doctors who combine collagen induction therapy with personalised mesotherapy cocktails, delivering natural, lasting results that restore your skin from within.",
     prices: [
       { label: "1 session", price: "from €149 (+€50 for Exosomes)" },
@@ -62,11 +62,11 @@ const t: Treatment = {
       "You want a treatment that improves skin quality without injectables",
     ],
     notIdeal: [
-      "You have an active breakout or skin infection right now — we will happily treat you once your skin has calmed",
-      "You have used isotretinoin (Accutane) in the last six months — a short wait keeps your skin safe, and we will be here",
-      "You are pregnant or breastfeeding — we will welcome you back warmly afterwards",
-      "You have a history of keloid scarring we have not assessed yet — let us take a careful look together first",
-      "You would rather not follow simple daily SPF during recovery — sun protection is what protects your results",
+      "You have an active breakout or skin infection right now, we will happily treat you once your skin has calmed",
+      "You have used isotretinoin (Accutane) in the last six months, a short wait keeps your skin safe, and we will be here",
+      "You are pregnant or breastfeeding, we will welcome you back warmly afterwards",
+      "You have a history of keloid scarring we have not assessed yet, let us take a careful look together first",
+      "You would rather not follow simple daily SPF during recovery, sun protection is what protects your results",
     ],
     personas: [
       { title: "The acne-scar healer", desc: "Old breakouts left pitted scars or marks, and you want smoother, more even skin without surgery or heavy resurfacing." },
@@ -78,14 +78,14 @@ const t: Treatment = {
     kicker: "The real reason people book",
     title: "Your skin feels older and more tired than you are",
     body: [
-      "Doctor-led microneedling with mesotherapy gently rebuilds collagen from within — softening scars, refining texture, and bringing back the natural, healthy glow that still looks like you.",
+      "Doctor-led microneedling with mesotherapy gently rebuilds collagen from within, softening scars, refining texture, and bringing back the natural, healthy glow that still looks like you.",
     ],
   },
   guarantee: {
     kicker: "The Natural Confidence Guarantee",
     title: "Natural Confidence Guarantee",
     paragraphs: [
-      "Every plan starts with a doctor-led skin assessment and a natural-first approach focused on gradual, healthy renewal — backed by a free follow-up review until you are 100% satisfied with skin that still looks like you.",
+      "Every plan starts with a doctor-led skin assessment and a natural-first approach focused on gradual, healthy renewal, backed by a free follow-up review until you are 100% satisfied with skin that still looks like you.",
     ],
     cta: "Book Your Free Consultation",
     points: [
@@ -98,7 +98,7 @@ const t: Treatment = {
     title: "Your treatment experience",
     steps: [
       { title: "Consultation & Plan", desc: "One of our doctors assesses your skin condition, concerns, and medical history, then selects the mesotherapy cocktail and protocol tailored to your skin.", image: "/assets/treatments/microneedling-malta-step1.png" },
-      { title: "Targeted Treatment", desc: "Your doctor performs microneedling with your personalised mesotherapy cocktail — precise, comfortable, and with minimal downtime.", image: "/assets/treatments/microneedling-malta-step3.png" },
+      { title: "Targeted Treatment", desc: "Your doctor performs microneedling with your personalised mesotherapy cocktail, precise, comfortable, and with minimal downtime.", image: "/assets/treatments/microneedling-malta-step3.png" },
       { title: "Ongoing Review & Adjustment", desc: "Your doctor reviews your skin's response and refines the plan across your course to ensure optimal, lasting results over time.", image: "/assets/treatments/microneedling-malta-step4.png" },
     ],
   },
@@ -169,7 +169,7 @@ const t: Treatment = {
     title: "Malta’s #1 leading wellness chain",
     commitmentTitle: "our commitment",
     commitment: [
-      "Natural, refined microneedling results — gradual improvement that respects your skin",
+      "Natural, refined microneedling results, gradual improvement that respects your skin",
       "Doctor-led treatments with personalised mesotherapy cocktails",
       "Safe, ethical care using clinically approved devices and products",
       "A personalised journey from consultation to aftercare",
@@ -188,7 +188,7 @@ const t: Treatment = {
     kicker: "Your microneedling plan",
     title: "Malta's Doctor-Led Microneedling Plan",
     benefits: [
-      { icon: "shield", title: "Doctor-Led Precision", desc: "Every session is performed by a medically qualified doctor — never a salon, with needle depth tailored to your skin." },
+      { icon: "shield", title: "Doctor-Led Precision", desc: "Every session is performed by a medically qualified doctor, never a salon, with needle depth tailored to your skin." },
       { icon: "sparkle", title: "Mesotherapy Included", desc: "A personalised vitamin and growth-factor cocktail is infused into the micro-channels for deeper nourishment and glow." },
       { icon: "chart", title: "Cumulative, Lasting Results", desc: "A structured course rebuilds collagen over time, softening scars and refining texture for results that keep improving." },
     ],

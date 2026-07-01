@@ -9,11 +9,11 @@ export const post: BlogPost = {
   "publishDate": "2025-06-19",
   "readTime": 4,
   "coverImage": "https://static.wixstatic.com/media/f940f0_f12bc0cc23a24a28aae5f7d62f4f0a05~mv2.jpg",
-  "excerpt": "Summer is synonymous with sunshine, travel, and long days outdoors—but it's also the season when your skin faces its greatest challenges....",
+  "excerpt": "Summer is synonymous with sunshine, travel, and long days outdoors, but it's also the season when your skin faces its greatest challenges....",
   "content": [
     {
       "type": "paragraph",
-      "html": "Summer is synonymous with sunshine, travel, and long days outdoors—but it's also the season when your skin faces its greatest challenges. Increased exposure to UV rays, heat, humidity, sweat, and air pollution can all contribute to premature aging, pigmentation, dehydration, and breakouts."
+      "html": "Summer is synonymous with sunshine, travel, and long days outdoors, but it's also the season when your skin faces its greatest challenges. Increased exposure to UV rays, heat, humidity, sweat, and air pollution can all contribute to premature aging, pigmentation, dehydration, and breakouts."
     },
     {
       "type": "paragraph",
@@ -226,7 +226,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "Summer skin care is not just about avoiding sunburn—it's about protecting your skin's integrity, healing from environmental stress, and preserving that radiant, healthy glow."
+      "html": "Summer skin care is not just about avoiding sunburn, it's about protecting your skin's integrity, healing from environmental stress, and preserving that radiant, healthy glow."
     },
     {
       "type": "paragraph",

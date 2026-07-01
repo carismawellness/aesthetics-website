@@ -20,7 +20,7 @@ export const post: BlogPost = {
   "content": [
     {
       "type": "paragraph",
-      "html": "Summer is beautiful—but it's brutal on skin. Heat increases water loss, humidity confuses your skin barrier, sun exposure damages collagen, and sweat clogs pores. The result? Dehydrated, stressed, aging skin. Here are our expert tips to keep your skin hydrated, protected, and glowing all summer."
+      "html": "Summer is beautiful, but it's brutal on skin. Heat increases water loss, humidity confuses your skin barrier, sun exposure damages collagen, and sweat clogs pores. The result? Dehydrated, stressed, aging skin. Here are our expert tips to keep your skin hydrated, protected, and glowing all summer."
     },
     {
       "type": "heading",
@@ -29,7 +29,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "Your winter moisturizer will feel suffocating in summer heat. Switch to a lightweight hydrating serum with hyaluronic acid or glycerin—these provide hydration without heaviness. Apply to damp skin, then use a light gel moisturizer on top."
+      "html": "Your winter moisturizer will feel suffocating in summer heat. Switch to a lightweight hydrating serum with hyaluronic acid or glycerin, these provide hydration without heaviness. Apply to damp skin, then use a light gel moisturizer on top."
     },
     {
       "type": "heading",
@@ -47,7 +47,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "Summer sweat clogs pores and traps bacteria. Use a gentle cleanser morning and night, plus a quick rinse after workouts or outdoor activities. Avoid hot water—use lukewarm water instead to prevent stripping natural oils."
+      "html": "Summer sweat clogs pores and traps bacteria. Use a gentle cleanser morning and night, plus a quick rinse after workouts or outdoor activities. Avoid hot water, use lukewarm water instead to prevent stripping natural oils."
     },
     {
       "type": "heading",
@@ -173,12 +173,12 @@ export const post: BlogPost = {
     {
       "type": "list",
       "items": [
-        "Skipping SPF because you're hydrating—UV damage is irreversible",
-        "Using hot water to cleanse—heat strips natural oils faster",
-        "Over-exfoliating due to increased sweat—keep exfoliation to 1x weekly",
-        "Using heavy winter moisturizers—they suffocate summer skin",
-        "Not reapplying sunscreen—\"waterproof\" washes off with sweat",
-        "Assuming humidity = hydration—humidity without serums actually dries skin"
+        "Skipping SPF because you're hydrating, UV damage is irreversible",
+        "Using hot water to cleanse, heat strips natural oils faster",
+        "Over-exfoliating due to increased sweat, keep exfoliation to 1x weekly",
+        "Using heavy winter moisturizers, they suffocate summer skin",
+        "Not reapplying sunscreen, \"waterproof\" washes off with sweat",
+        "Assuming humidity = hydration, humidity without serums actually dries skin"
       ]
     },
     {

@@ -22,7 +22,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "Dermal fillers are injectable substances—typically hyaluronic acid—that add volume beneath the skin's surface. They restore lost volume, define facial features, and smooth lines caused by volume loss rather than muscle movement."
+      "html": "Dermal fillers are injectable substances, typically hyaluronic acid, that add volume beneath the skin's surface. They restore lost volume, define facial features, and smooth lines caused by volume loss rather than muscle movement."
     },
     {
       "type": "heading",

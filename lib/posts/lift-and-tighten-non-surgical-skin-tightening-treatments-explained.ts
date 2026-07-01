@@ -9,11 +9,11 @@ export const post: BlogPost = {
   "publishDate": "2025-06-21",
   "readTime": 4,
   "coverImage": "https://static.wixstatic.com/media/f940f0_2faf5057ac3a47a9b31b90b6bbc9db84~mv2.png",
-  "excerpt": "As we age, our skin gradually loses collagen and elastin—two proteins essential for maintaining firmness and elasticity. This process,...",
+  "excerpt": "As we age, our skin gradually loses collagen and elastin, two proteins essential for maintaining firmness and elasticity. This process,...",
   "content": [
     {
       "type": "paragraph",
-      "html": "As we age, our skin gradually loses collagen and elastin—two proteins essential for maintaining firmness and elasticity. This process, combined with environmental factors and lifestyle habits, can lead to sagging, fine lines, and a loss of youthful contour. Fortunately, modern aesthetic medicine offers highly effective, non-invasive skin tightening treatments designed to restore lift and definition—without surgery or downtime."
+      "html": "As we age, our skin gradually loses collagen and elastin, two proteins essential for maintaining firmness and elasticity. This process, combined with environmental factors and lifestyle habits, can lead to sagging, fine lines, and a loss of youthful contour. Fortunately, modern aesthetic medicine offers highly effective, non-invasive skin tightening treatments designed to restore lift and definition, without surgery or downtime."
     },
     {
       "type": "paragraph",
@@ -88,7 +88,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "<strong>Ultherapy®</strong> is the gold standard for ultrasound skin tightening. It delivers focused ultrasound energy to deeper skin layers, triggering collagen synthesis at the foundational layer used in surgical facelifts—without breaking the skin."
+      "html": "<strong>Ultherapy®</strong> is the gold standard for ultrasound skin tightening. It delivers focused ultrasound energy to deeper skin layers, triggering collagen synthesis at the foundational layer used in surgical facelifts, without breaking the skin."
     },
     {
       "type": "paragraph",
@@ -232,7 +232,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "Non-surgical tightening delivers subtle to moderate lifting—perfect for those who want a refreshed, youthful look without drastic changes."
+      "html": "Non-surgical tightening delivers subtle to moderate lifting, perfect for those who want a refreshed, youthful look without drastic changes."
     },
     {
       "type": "paragraph",
@@ -257,7 +257,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "If you’ve been looking for a way to lift, firm, and refresh your look—without the commitment or downtime of surgery—non-surgical skin tightening could be your ideal solution. Whether you choose radiofrequency, ultrasound, or laser-based technology, these treatments help restore collagen, redefine contours, and bring back your skin’s youthful resilience."
+      "html": "If you’ve been looking for a way to lift, firm, and refresh your look, without the commitment or downtime of surgery, non-surgical skin tightening could be your ideal solution. Whether you choose radiofrequency, ultrasound, or laser-based technology, these treatments help restore collagen, redefine contours, and bring back your skin’s youthful resilience."
     },
     {
       "type": "paragraph",
@@ -265,7 +265,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "And if you're ready to elevate your entire wellness experience, explore the luxurious spa rituals offered at <a href=\"https://www.carismaspa.com/\" target=\"_blank\" rel=\"noopener\" style=\"color:var(--teal);text-decoration:underline;\">Carisma Spa &amp; Wellness</a>—where beauty meets holistic care."
+      "html": "And if you're ready to elevate your entire wellness experience, explore the luxurious spa rituals offered at <a href=\"https://www.carismaspa.com/\" target=\"_blank\" rel=\"noopener\" style=\"color:var(--teal);text-decoration:underline;\">Carisma Spa &amp; Wellness</a>, where beauty meets holistic care."
     }
   ],
   "internalLinks": [

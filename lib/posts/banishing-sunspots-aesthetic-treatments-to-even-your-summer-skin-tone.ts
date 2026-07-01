@@ -9,11 +9,11 @@ export const post: BlogPost = {
   "publishDate": "2025-08-20",
   "readTime": 4,
   "coverImage": "https://static.wixstatic.com/media/f940f0_724d3c7375eb484bb26d6506d0dd9d45~mv2.webp",
-  "excerpt": "As much as we love soaking in the sunshine during the summer months, the reality is that sun exposure often leaves its mark—literally. Sunspots, age spots, and uneven pigmentation can make even the most glowing complexion look tired and uneven.",
+  "excerpt": "As much as we love soaking in the sunshine during the summer months, the reality is that sun exposure often leaves its mark, literally. Sunspots, age spots, and uneven pigmentation can make even the most glowing complexion look tired and uneven.",
   "content": [
     {
       "type": "paragraph",
-      "html": "As much as we love soaking in the sunshine during the summer months, the reality is that sun exposure often leaves its mark—literally. Sunspots, age spots, and uneven pigmentation can make even the most glowing complexion look tired and uneven."
+      "html": "As much as we love soaking in the sunshine during the summer months, the reality is that sun exposure often leaves its mark, literally. Sunspots, age spots, and uneven pigmentation can make even the most glowing complexion look tired and uneven."
     },
     {
       "type": "heading",

@@ -3,7 +3,7 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "how-to-layer-serums",
   "title": "How to Layer Serums: The Art of Skincare Layering",
-  "metaTitle": "How to Layer Serums — Skincare Layering Guide",
+  "metaTitle": "How to Layer Serums, Skincare Layering Guide",
   "metaDescription": "Master the correct way to layer serums for maximum effectiveness. Ingredient compatibility and order tips from Carisma Aesthetics.",
   "category": "Skincare",
   "publishDate": "2026-06-25",
@@ -18,7 +18,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "Serums are concentrated formulations designed to address specific concerns. By layering them strategically, you can tackle multiple issues—hydration, anti-aging, brightening—in one routine.",
+      "html": "Serums are concentrated formulations designed to address specific concerns. By layering them strategically, you can tackle multiple issues, hydration, anti-aging, brightening, in one routine.",
     },
     {
       "type": "heading",

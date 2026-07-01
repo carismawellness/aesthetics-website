@@ -31,7 +31,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "Laser hair removal can be used on virtually any body area—legs, underarms, bikini line, face, arms, back, and more. Treatment time depends on the size of the area being treated."
+      "html": "Laser hair removal can be used on virtually any body area, legs, underarms, bikini line, face, arms, back, and more. Treatment time depends on the size of the area being treated."
     },
     {
       "type": "heading",
@@ -40,7 +40,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "Most people require 4-6 sessions spaced 4-6 weeks apart for optimal results. Hair does not disappear after one session—multiple treatments are needed to catch all hairs in their active growth phase."
+      "html": "Most people require 4-6 sessions spaced 4-6 weeks apart for optimal results. Hair does not disappear after one session, multiple treatments are needed to catch all hairs in their active growth phase."
     },
     {
       "type": "paragraph",

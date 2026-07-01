@@ -35,7 +35,7 @@ export const DIRECTIONS = [
     name: "Editorial Horizontal Scroll",
     tech: "GSAP ScrollTrigger",
     tagline:
-      "Vertical scroll moves you sideways through oversized editorial cards — giant numerals, clip-path reveals, kinetic captions.",
+      "Vertical scroll moves you sideways through oversized editorial cards, giant numerals, clip-path reveals, kinetic captions.",
   },
   {
     id: "aurora-grid",
@@ -59,7 +59,7 @@ export const DIRECTIONS = [
     name: "Cinematic Coverflow",
     tech: "three.js depth carousel",
     tagline:
-      "A depth-arranged stack — the active treatment centred and large, neighbours curving back with depth-of-field and reflection.",
+      "A depth-arranged stack, the active treatment centred and large, neighbours curving back with depth-of-field and reflection.",
   },
 ] as const;
 

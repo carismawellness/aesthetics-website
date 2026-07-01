@@ -40,7 +40,7 @@ type Pillar = {
 const PILLARS: Pillar[] = [
   {
     title: "Nothing is ever lost",
-    desc: "Your first month is non-refundable — but every cent is held for you, credited in full toward your second procedure the moment you join.",
+    desc: "Your first month is non-refundable, but every cent is held for you, credited in full toward your second procedure the moment you join.",
     icon: (
       // Coin / saved-value
       <>
@@ -51,7 +51,7 @@ const PILLARS: Pillar[] = [
   },
   {
     title: "An investment in you",
-    desc: "Think of it less as a fee and more as a head start — your contribution becomes Glow credit toward the treatments you already want.",
+    desc: "Think of it less as a fee and more as a head start, your contribution becomes Glow credit toward the treatments you already want.",
     icon: (
       // Sparkle / glow
       <>
@@ -97,7 +97,7 @@ export default function GlowGuarantee() {
               <strong style={{ color: GOLD, fontWeight: 600 }}>
                 second procedure
               </strong>{" "}
-              once you join the Glow Club — so every cent you invest works toward
+              once you join the Glow Club, so every cent you invest works toward
               the results you came for.
             </>
           }
@@ -198,7 +198,7 @@ export default function GlowGuarantee() {
               margin: "0 0 28px",
             }}
           >
-            “Your confidence comes first — so we made sure that joining always
+            “Your confidence comes first, so we made sure that joining always
             works in your favour.”
             <span
               style={{

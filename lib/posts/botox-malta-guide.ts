@@ -9,11 +9,11 @@ export const post: BlogPost = {
   "publishDate": "2026-04-14",
   "readTime": 6,
   "coverImage": "https://static.wixstatic.com/media/f940f0_04ca038125c045e9a339203af49b7f8f~mv2.jpg",
-  "excerpt": "Botox  is the most requested aesthetic treatment in Malta. It is also one of the most misrepresented — by practitioners who downplay what is involved, by social media that filters out anything that did not go perfectly, and by a general culture of vagueness around a treatment that actually deserves straightforward, honest information. If you are considering Botox in Malta for the first time, or if you have had it before and want to understand it better, this guide gives you what you need to...",
+  "excerpt": "Botox  is the most requested aesthetic treatment in Malta. It is also one of the most misrepresented, by practitioners who downplay what is involved, by social media that filters out anything that did not go perfectly, and by a general culture of vagueness around a treatment that actually deserves straightforward, honest information. If you are considering Botox in Malta for the first time, or if you have had it before and want to understand it better, this guide gives you what you need to...",
   "content": [
     {
       "type": "paragraph",
-      "html": "<a href=\"/wrinkle-relaxing-malta\" style=\"color:var(--teal);text-decoration:underline;\">Botox</a> is the most requested aesthetic treatment in Malta. It is also one of the most misrepresented — by practitioners who downplay what is involved, by social media that filters out anything that did not go perfectly, and by a general culture of vagueness around a treatment that actually deserves straightforward, honest information. If you are considering Botox in Malta for the first time, or if you have had it before and want to understand it better, this guide gives you what you need to make a genuinely informed decision."
+      "html": "<a href=\"/wrinkle-relaxing-malta\" style=\"color:var(--teal);text-decoration:underline;\">Botox</a> is the most requested aesthetic treatment in Malta. It is also one of the most misrepresented, by practitioners who downplay what is involved, by social media that filters out anything that did not go perfectly, and by a general culture of vagueness around a treatment that actually deserves straightforward, honest information. If you are considering Botox in Malta for the first time, or if you have had it before and want to understand it better, this guide gives you what you need to make a genuinely informed decision."
     },
     {
       "type": "heading",
@@ -22,15 +22,15 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "<a href=\"/wrinkle-relaxing-malta\" style=\"color:var(--teal);text-decoration:underline;\">Botox</a> is the brand name for botulinum toxin type A — a purified protein that temporarily relaxes targeted muscles by blocking the nerve signals that cause them to contract. When injected in precise amounts into specific facial muscles, it softens or eliminates the lines and wrinkles that those muscle movements create."
+      "html": "<a href=\"/wrinkle-relaxing-malta\" style=\"color:var(--teal);text-decoration:underline;\">Botox</a> is the brand name for botulinum toxin type A, a purified protein that temporarily relaxes targeted muscles by blocking the nerve signals that cause them to contract. When injected in precise amounts into specific facial muscles, it softens or eliminates the lines and wrinkles that those muscle movements create."
     },
     {
       "type": "paragraph",
-      "html": "The key word is <em>temporarily</em>. Botox is not permanent. Results typically last between 3 and 6 months, after which the nerve signals gradually return and muscle activity resumes. This is not a flaw — it is one of the features that makes Botox one of the safest and most widely used aesthetic treatments in the world. If you do not like the result, you wait, and it resolves."
+      "html": "The key word is <em>temporarily</em>. Botox is not permanent. Results typically last between 3 and 6 months, after which the nerve signals gradually return and muscle activity resumes. This is not a flaw, it is one of the features that makes Botox one of the safest and most widely used aesthetic treatments in the world. If you do not like the result, you wait, and it resolves."
     },
     {
       "type": "paragraph",
-      "html": "It is worth clarifying: Botox treats <em>dynamic wrinkles</em> — lines created by repeated muscle movement, such as frowning, squinting, or raising the eyebrows. It is not effective on <em>static wrinkles</em>, which are present at rest and are caused by volume loss or skin laxity. Those are addressed differently, with dermal fillers or skin treatments. A good practitioner will tell you this during consultation and recommend the appropriate treatment for your concern — not simply sell you what you asked for."
+      "html": "It is worth clarifying: Botox treats <em>dynamic wrinkles</em>, lines created by repeated muscle movement, such as frowning, squinting, or raising the eyebrows. It is not effective on <em>static wrinkles</em>, which are present at rest and are caused by volume loss or skin laxity. Those are addressed differently, with dermal fillers or skin treatments. A good practitioner will tell you this during consultation and recommend the appropriate treatment for your concern, not simply sell you what you asked for."
     },
     {
       "type": "heading",
@@ -39,35 +39,35 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "<strong>Forehead lines</strong> — the horizontal lines that appear when you raise your eyebrows. One of the most commonly treated areas and one where results are very predictable with an experienced injector."
+      "html": "<strong>Forehead lines</strong>, the horizontal lines that appear when you raise your eyebrows. One of the most commonly treated areas and one where results are very predictable with an experienced injector."
     },
     {
       "type": "paragraph",
-      "html": "<strong>Frown lines (glabella)</strong> — the vertical lines between the eyebrows, sometimes called the \"11s.\" Often the first area people notice and the one that tends to make people look more tired or stern than they feel. Botox here is highly effective."
+      "html": "<strong>Frown lines (glabella)</strong>, the vertical lines between the eyebrows, sometimes called the \"11s.\" Often the first area people notice and the one that tends to make people look more tired or stern than they feel. Botox here is highly effective."
     },
     {
       "type": "paragraph",
-      "html": "<strong>Crow's feet</strong> — the fine lines that radiate from the outer corners of the eyes when smiling or squinting. A delicate area that requires precise placement to soften lines without affecting the natural expressiveness of the eye."
+      "html": "<strong>Crow's feet</strong>, the fine lines that radiate from the outer corners of the eyes when smiling or squinting. A delicate area that requires precise placement to soften lines without affecting the natural expressiveness of the eye."
     },
     {
       "type": "paragraph",
-      "html": "<strong>Brow lift</strong> — small amounts of Botox placed strategically to relax the muscles that pull the brow down, creating a subtle lift without surgery."
+      "html": "<strong>Brow lift</strong>, small amounts of Botox placed strategically to relax the muscles that pull the brow down, creating a subtle lift without surgery."
     },
     {
       "type": "paragraph",
-      "html": "<strong>Bunny lines</strong> — the diagonal creases on either side of the nose bridge that appear when scrunching the nose. Often treated alongside frown lines."
+      "html": "<strong>Bunny lines</strong>, the diagonal creases on either side of the nose bridge that appear when scrunching the nose. Often treated alongside frown lines."
     },
     {
       "type": "paragraph",
-      "html": "<strong>Lip lines</strong> — fine vertical lines above the upper lip, sometimes called smoker's lines, though they are common in non-smokers too. Small doses of Botox here smooth the lines and subtly enhance lip definition."
+      "html": "<strong>Lip lines</strong>, fine vertical lines above the upper lip, sometimes called smoker's lines, though they are common in non-smokers too. Small doses of Botox here smooth the lines and subtly enhance lip definition."
     },
     {
       "type": "paragraph",
-      "html": "<strong>Masseter (jaw slimming)</strong> — Botox injected into the masseter muscle, which is responsible for chewing, to slim the lower face and relieve jaw tension. Increasingly popular and highly effective."
+      "html": "<strong>Masseter (jaw slimming)</strong>, Botox injected into the masseter muscle, which is responsible for chewing, to slim the lower face and relieve jaw tension. Increasingly popular and highly effective."
     },
     {
       "type": "paragraph",
-      "html": "<strong>Hyperhidrosis (excessive sweating)</strong> — Botox into the underarms, palms, or feet to significantly reduce excessive sweating. One of the most life-changing applications of the treatment that rarely gets discussed."
+      "html": "<strong>Hyperhidrosis (excessive sweating)</strong>, Botox into the underarms, palms, or feet to significantly reduce excessive sweating. One of the most life-changing applications of the treatment that rarely gets discussed."
     },
     {
       "type": "heading",
@@ -76,11 +76,11 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "The needles used for <a href=\"/wrinkle-relaxing-malta\" style=\"color:var(--teal);text-decoration:underline;\">Botox injections</a> are extremely fine — significantly thinner than those used for blood tests or vaccinations. Most people describe the sensation as a series of small pinches, each lasting less than a second. The appointment itself is typically complete within 15 to 30 minutes."
+      "html": "The needles used for <a href=\"/wrinkle-relaxing-malta\" style=\"color:var(--teal);text-decoration:underline;\">Botox injections</a> are extremely fine, significantly thinner than those used for blood tests or vaccinations. Most people describe the sensation as a series of small pinches, each lasting less than a second. The appointment itself is typically complete within 15 to 30 minutes."
     },
     {
       "type": "paragraph",
-      "html": "There is no anaesthetic required for most areas, though a topical numbing cream can be applied beforehand for particularly sensitive zones if requested. Immediately after the appointment, small bumps may be visible at the injection sites — these resolve within 20 to 30 minutes. Most people return to work or normal activities the same day."
+      "html": "There is no anaesthetic required for most areas, though a topical numbing cream can be applied beforehand for particularly sensitive zones if requested. Immediately after the appointment, small bumps may be visible at the injection sites, these resolve within 20 to 30 minutes. Most people return to work or normal activities the same day."
     },
     {
       "type": "paragraph",
@@ -93,7 +93,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "<a href=\"/wrinkle-relaxing-malta\" style=\"color:var(--teal);text-decoration:underline;\">Botox pricing in Malta</a> is typically charged either per area or per unit of product used. Both models have merit — per-unit pricing is more transparent because you know exactly how much product is being used. Per-area pricing is simpler but can obscure whether you are receiving an appropriate dose."
+      "html": "<a href=\"/wrinkle-relaxing-malta\" style=\"color:var(--teal);text-decoration:underline;\">Botox pricing in Malta</a> is typically charged either per area or per unit of product used. Both models have merit, per-unit pricing is more transparent because you know exactly how much product is being used. Per-area pricing is simpler but can obscure whether you are receiving an appropriate dose."
     },
     {
       "type": "paragraph",
@@ -105,7 +105,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "Be cautious of pricing significantly below these ranges. Botox is a prescription-only medicine in Malta. Clinics offering treatments at unusually low prices are often cutting costs somewhere — in the quality or quantity of product used, in the level of clinical oversight, or in the qualifications of the person holding the syringe."
+      "html": "Be cautious of pricing significantly below these ranges. Botox is a prescription-only medicine in Malta. Clinics offering treatments at unusually low prices are often cutting costs somewhere, in the quality or quantity of product used, in the level of clinical oversight, or in the qualifications of the person holding the syringe."
     },
     {
       "type": "paragraph",
@@ -123,16 +123,16 @@ export const post: BlogPost = {
     {
       "type": "list",
       "items": [
-        "<strong>Medical qualification matters.</strong> In Malta, botulinum toxin is a prescription medicine and should only be administered by a qualified medical practitioner — a doctor, dentist, or nurse prescriber with appropriate training in aesthetic medicine. Always verify the qualifications of the person who will be treating you, not just the clinic's general credentials.",
+        "<strong>Medical qualification matters.</strong> In Malta, botulinum toxin is a prescription medicine and should only be administered by a qualified medical practitioner, a doctor, dentist, or nurse prescriber with appropriate training in aesthetic medicine. Always verify the qualifications of the person who will be treating you, not just the clinic's general credentials.",
         "<strong>Experience in aesthetics specifically.</strong> A qualified doctor with no specialist aesthetic training is not the same as a doctor who has performed thousands of facial injections. Ask how long the practitioner has been performing Botox, how many treatments they do per month, and whether they have specific training in facial anatomy for aesthetics.",
         "<strong>A consultation before a needle.</strong> No reputable practitioner should agree to treat you without first assessing your face at rest and in movement, discussing your concerns, explaining what is realistic, and confirming there are no contraindications. If a clinic skips the consultation and goes straight to booking, that is a warning sign.",
-        "<strong>Before and after photographs.</strong> Ask to see examples of previous patients (with appropriate consent). Look for results that look natural — refreshed rather than frozen, subtle rather than startling.",
-        "<strong>Honesty about what Botox cannot do.</strong> The best practitioners will tell you when Botox is not the right solution for your concern and recommend something else. Clinics that agree to everything you ask for without clinical assessment are not practising medicine — they are selling."
+        "<strong>Before and after photographs.</strong> Ask to see examples of previous patients (with appropriate consent). Look for results that look natural, refreshed rather than frozen, subtle rather than startling.",
+        "<strong>Honesty about what Botox cannot do.</strong> The best practitioners will tell you when Botox is not the right solution for your concern and recommend something else. Clinics that agree to everything you ask for without clinical assessment are not practising medicine, they are selling."
       ]
     },
     {
       "type": "paragraph",
-      "html": "<em><em>\"I had been nervous about Botox for years, mostly because of the horror stories you see online. At Carisma, the doctor spent 20 minutes assessing my face and explaining what she could and could not do before picking up a needle. The result was so natural my husband did not even notice — he just said I looked well-rested. That is exactly what I wanted.\" — Isabelle from Attard</em></em>"
+      "html": "<em><em>\"I had been nervous about Botox for years, mostly because of the horror stories you see online. At Carisma, the doctor spent 20 minutes assessing my face and explaining what she could and could not do before picking up a needle. The result was so natural my husband did not even notice, he just said I looked well-rested. That is exactly what I wanted.\", Isabelle from Attard</em></em>"
     },
     {
       "type": "heading",
@@ -146,8 +146,8 @@ export const post: BlogPost = {
     {
       "type": "list",
       "items": [
-        "<strong>Do</strong> keep upright — avoid lying flat for 4 hours after your appointment",
-        "<strong>Do</strong> move the treated muscles gently — frowning, raising eyebrows — this may help the product settle, though evidence on this is mixed",
+        "<strong>Do</strong> keep upright, avoid lying flat for 4 hours after your appointment",
+        "<strong>Do</strong> move the treated muscles gently, frowning, raising eyebrows, this may help the product settle, though evidence on this is mixed",
         "<strong>Avoid</strong> rubbing or massaging the treated areas",
         "<strong>Avoid</strong> strenuous exercise, saunas, and steam rooms for 24 hours",
         "<strong>Avoid</strong> alcohol for 24 hours",

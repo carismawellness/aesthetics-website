@@ -25,14 +25,14 @@ const LEAD_SUBJECT = "Glow Club membership signup";
    the headline member treatments shown on /membership. The value the lead
    selects is appended to the message so it survives any CRM mapping. */
 const INTEREST_OPTIONS = [
-  "Signature tier — Spa Day for two reward",
-  "Elite tier — Signature Massage reward",
-  "Platinum tier — €300 Aesthetics voucher reward",
+  "Signature tier, Spa Day for two reward",
+  "Elite tier, Signature Massage reward",
+  "Platinum tier, €300 Aesthetics voucher reward",
   "Botox",
   "Dermal fillers",
   "Lip fillers",
   "Microneedling",
-  "Not sure yet — help me choose",
+  "Not sure yet, help me choose",
 ] as const;
 
 type Status = "idle" | "loading" | "success" | "error";
@@ -175,7 +175,7 @@ export default function JoinForm() {
           }}
         >
           Thank you for your interest in the Glow Club. One of our team will be in
-          touch shortly to set up your membership and answer any questions —
+          touch shortly to set up your membership and answer any questions,
           beautifully yours, Sarah.
         </p>
       </div>

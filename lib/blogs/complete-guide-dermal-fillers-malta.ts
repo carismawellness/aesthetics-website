@@ -10,7 +10,7 @@ export const post: BlogPost = {
   readTime: 7,
   coverImage: '/assets/blog/complete-guide-dermal-fillers-malta-cover.jpg',
   excerpt:
-    'Dermal fillers are one of the most popular non-surgical treatments in Malta, offering immediate volume restoration and facial contouring with minimal downtime. This guide covers everything — from how hyaluronic acid fillers work to what you can realistically expect from your first appointment at Carisma Aesthetics.',
+    'Dermal fillers are one of the most popular non-surgical treatments in Malta, offering immediate volume restoration and facial contouring with minimal downtime. This guide covers everything, from how hyaluronic acid fillers work to what you can realistically expect from your first appointment at Carisma Aesthetics.',
   content: [
     {
       type: 'heading',
@@ -19,11 +19,11 @@ export const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: 'Dermal fillers are injectable gels — most commonly formulated from hyaluronic acid (HA), a substance that occurs naturally in the body — used to restore lost volume, soften lines, and enhance facial contours. Unlike <a href="/wrinkle-relaxing-malta" style="color:var(--teal);text-decoration:underline;">Anti-Wrinkle Treatments</a> that relax muscles, fillers physically add structure beneath the skin, making them ideal for volumising cheeks, defining the jawline, smoothing nasolabial folds, and augmenting lips.',
+      html: 'Dermal fillers are injectable gels, most commonly formulated from hyaluronic acid (HA), a substance that occurs naturally in the body, used to restore lost volume, soften lines, and enhance facial contours. Unlike <a href="/wrinkle-relaxing-malta" style="color:var(--teal);text-decoration:underline;">Anti-Wrinkle Treatments</a> that relax muscles, fillers physically add structure beneath the skin, making them ideal for volumising cheeks, defining the jawline, smoothing nasolabial folds, and augmenting lips.',
     },
     {
       type: 'paragraph',
-      html: 'At Carisma Aesthetics, all dermal filler treatments are performed by medically qualified doctors using CE-marked products from trusted brands including Juvéderm, Teoxane, and Croma. This doctor-led approach ensures that placement is anatomically precise and that results look natural — never overfilled or artificial.',
+      html: 'At Carisma Aesthetics, all dermal filler treatments are performed by medically qualified doctors using CE-marked products from trusted brands including Juvéderm, Teoxane, and Croma. This doctor-led approach ensures that placement is anatomically precise and that results look natural, never overfilled or artificial.',
     },
     {
       type: 'heading',
@@ -32,7 +32,7 @@ export const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: 'Hyaluronic acid is a glycosaminoglycan that binds water molecules, giving tissues their plumpness and hydration. When HA filler is injected into a target area, it integrates with surrounding tissue and draws in moisture to create immediate, natural-looking volume. Over time — typically six to twelve months — the body gradually metabolises the HA through normal enzymatic processes, so results are long-lasting but not permanent. This is also why fillers are reversible: hyaluronidase enzyme can dissolve HA filler if needed, providing an important safety mechanism.',
+      html: 'Hyaluronic acid is a glycosaminoglycan that binds water molecules, giving tissues their plumpness and hydration. When HA filler is injected into a target area, it integrates with surrounding tissue and draws in moisture to create immediate, natural-looking volume. Over time, typically six to twelve months, the body gradually metabolises the HA through normal enzymatic processes, so results are long-lasting but not permanent. This is also why fillers are reversible: hyaluronidase enzyme can dissolve HA filler if needed, providing an important safety mechanism.',
     },
     {
       type: 'heading',
@@ -80,7 +80,7 @@ export const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: 'Patients frequently ask about the difference between fillers and Botox. Both are injectables, but they work through entirely different mechanisms. <a href="/wrinkle-relaxing-malta" style="color:var(--teal);text-decoration:underline;">Anti-Wrinkle Treatments</a> use botulinum toxin to temporarily relax the muscles responsible for dynamic expression lines — crow\'s feet, forehead lines, frown lines. Dermal fillers, by contrast, add physical volume and are best suited to static lines (visible at rest), hollowed areas, and features you wish to enhance. Many patients benefit from both treatments used in combination, a strategy sometimes called a liquid face lift.',
+      html: 'Patients frequently ask about the difference between fillers and Botox. Both are injectables, but they work through entirely different mechanisms. <a href="/wrinkle-relaxing-malta" style="color:var(--teal);text-decoration:underline;">Anti-Wrinkle Treatments</a> use botulinum toxin to temporarily relax the muscles responsible for dynamic expression lines, crow\'s feet, forehead lines, frown lines. Dermal fillers, by contrast, add physical volume and are best suited to static lines (visible at rest), hollowed areas, and features you wish to enhance. Many patients benefit from both treatments used in combination, a strategy sometimes called a liquid face lift.',
     },
     {
       type: 'heading',
@@ -125,11 +125,11 @@ export const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: 'When performed by a medically qualified practitioner with a thorough understanding of facial anatomy, dermal fillers carry a low risk profile. Common, temporary side effects include mild swelling, redness, and bruising at injection sites — all of which resolve within a few days. Rare but more serious complications, such as vascular occlusion, are minimised when treatment is carried out in a clinical setting by a trained doctor who knows how to recognise and manage adverse events promptly. This is why choosing a doctor-led clinic in Malta is so important.',
+      html: 'When performed by a medically qualified practitioner with a thorough understanding of facial anatomy, dermal fillers carry a low risk profile. Common, temporary side effects include mild swelling, redness, and bruising at injection sites, all of which resolve within a few days. Rare but more serious complications, such as vascular occlusion, are minimised when treatment is carried out in a clinical setting by a trained doctor who knows how to recognise and manage adverse events promptly. This is why choosing a doctor-led clinic in Malta is so important.',
     },
     {
       type: 'paragraph',
-      html: 'If you are considering complementary skin health treatments alongside fillers, explore our <a href="/face-treatments" style="color:var(--teal);text-decoration:underline;">Face Treatments</a> page for a full overview of what Carisma Aesthetics offers — including HydraFacial, microneedling, PRP, and more.',
+      html: 'If you are considering complementary skin health treatments alongside fillers, explore our <a href="/face-treatments" style="color:var(--teal);text-decoration:underline;">Face Treatments</a> page for a full overview of what Carisma Aesthetics offers, including HydraFacial, microneedling, PRP, and more.',
     },
     {
       type: 'heading',
@@ -156,7 +156,7 @@ export const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: 'For patients seeking holistic results, dermal fillers pair beautifully with a range of other treatments. Skin quality boosters such as the <a href="/4-in-1-hydrafacial-glow" style="color:var(--teal);text-decoration:underline;">HydraFacial Treatment</a> help improve texture, hydration, and radiance — complementing the structural enhancement fillers provide. Patients who experience hair thinning alongside facial ageing may also benefit from our <a href="/hair-regrowth" style="color:var(--teal);text-decoration:underline;">Hair Regrowth Treatment</a>, which uses clinically proven methods to stimulate follicle activity, or explore a dedicated <a href="https://www.carismahairclinic.com/" target="_blank" rel="noopener noreferrer">hair loss treatment Malta</a> specialist for advanced restoration options. Your Carisma doctor will build a treatment timeline that delivers cohesive, progressive results across all your concerns.',
+      html: 'For patients seeking holistic results, dermal fillers pair beautifully with a range of other treatments. Skin quality boosters such as the <a href="/4-in-1-hydrafacial-glow" style="color:var(--teal);text-decoration:underline;">HydraFacial Treatment</a> help improve texture, hydration, and radiance, complementing the structural enhancement fillers provide. Patients who experience hair thinning alongside facial ageing may also benefit from our <a href="/hair-regrowth" style="color:var(--teal);text-decoration:underline;">Hair Regrowth Treatment</a>, which uses clinically proven methods to stimulate follicle activity, or explore a dedicated <a href="https://www.carismahairclinic.com/" target="_blank" rel="noopener noreferrer">hair loss treatment Malta</a> specialist for advanced restoration options. Your Carisma doctor will build a treatment timeline that delivers cohesive, progressive results across all your concerns.',
     },
     {
       type: 'heading',
@@ -165,7 +165,7 @@ export const post: BlogPost = {
     },
     {
       type: 'paragraph',
-      html: 'Carisma Aesthetics is Malta\'s leading doctor-led aesthetics clinic, trusted by thousands of patients for natural, refined results. Every treatment is performed by a qualified doctor with specialist training in facial anatomy. We use only CE-marked, clinically approved filler products and follow evidence-based injection protocols designed to enhance — never alter — your natural features. Our philosophy is simple: every face is unique, every plan is personalised, and every result should look like the best version of you.',
+      html: 'Carisma Aesthetics is Malta\'s leading doctor-led aesthetics clinic, trusted by thousands of patients for natural, refined results. Every treatment is performed by a qualified doctor with specialist training in facial anatomy. We use only CE-marked, clinically approved filler products and follow evidence-based injection protocols designed to enhance, never alter, your natural features. Our philosophy is simple: every face is unique, every plan is personalised, and every result should look like the best version of you.',
     },
     {
       type: 'cta',

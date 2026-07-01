@@ -20,13 +20,13 @@ const t: Treatment = {
   category: "Face",
   hero: {
     title: "Hair Loss Treatment Malta",
-    subtitle: "Doctor-led, guaranteed regrowth in 90 days — no surgery, no guesswork.",
-    body: "Malta's only doctor-led, exosome-powered hair loss clinic that reverses thinning hair without surgery. We combine PRP and exosome therapy, delivered in-clinic by our medical team, with a doctor-issued prescription for minoxidil, finasteride, and ketoconazole — dispensed by our licensed pharmacy partner, Melita Health & Beauty. One clinically measured, fully managed, results-guaranteed program with baseline and follow-up density scans, so you see your progress in numbers, not just in the mirror.",
+    subtitle: "Doctor-led, guaranteed regrowth in 90 days, no surgery, no guesswork.",
+    body: "Malta's only doctor-led, exosome-powered hair loss clinic that reverses thinning hair without surgery. We combine PRP and exosome therapy, delivered in-clinic by our medical team, with a doctor-issued prescription for minoxidil, finasteride, and ketoconazole, dispensed by our licensed pharmacy partner, Melita Health & Beauty. One clinically measured, fully managed, results-guaranteed program with baseline and follow-up density scans, so you see your progress in numbers, not just in the mirror.",
     benefits: [
       "AI-powered scalp imaging & density mapping at Day 0 and Day 90",
       "Exosome hair therapy via 36-pin HydroPen delivery",
       "PRP follicle reactivation therapy from your own blood",
-      "ScalpRx prescription protocol — minoxidil, finasteride & ketoconazole (dispensed by Melita Health & Beauty)",
+      "ScalpRx prescription protocol, minoxidil, finasteride & ketoconazole (dispensed by Melita Health & Beauty)",
     ],
     prices: [
       { label: "Single session (Hair Regrowth 30)", price: "from €399" },
@@ -64,14 +64,14 @@ const t: Treatment = {
     kicker: "The real reason people book",
     title: "Every morning you notice a little more scalp than hair",
     body: [
-      "Thinning hair quietly chips away at how confident you feel — doctor-led regenerative treatment reactivates your own follicles so you can stop counting strands and feel like yourself again.",
+      "Thinning hair quietly chips away at how confident you feel, doctor-led regenerative treatment reactivates your own follicles so you can stop counting strands and feel like yourself again.",
     ],
   },
   guarantee: {
     kicker: "The Natural Confidence Guarantee",
     title: "Natural Confidence Guarantee",
     paragraphs: [
-      "Every program starts with a doctor-led scalp assessment and AI density scan — never a sales pitch — and follows a clinically measured, natural-first plan. If you qualify, complete your 90-day protocol exactly as prescribed, and your follow-up density scan shows no visible improvement, we extend your treatment at no cost. We are the only hair loss clinic in Malta to offer this.",
+      "Every program starts with a doctor-led scalp assessment and AI density scan, never a sales pitch, and follows a clinically measured, natural-first plan. If you qualify, complete your 90-day protocol exactly as prescribed, and your follow-up density scan shows no visible improvement, we extend your treatment at no cost. We are the only hair loss clinic in Malta to offer this.",
     ],
     cta: "Book Your Hair Regrowth Consultation",
     points: [
@@ -83,13 +83,13 @@ const t: Treatment = {
   precision: {
     title: "No fads. Only what works.",
     intro:
-      "For years, advanced hair loss treatments like exosome therapy and medically supervised minoxidil and finasteride protocols were limited to elite clinics abroad. For the first time in Malta, Carisma's doctor-led clinic offers the same standard of care — PRP and exosome therapy performed in-clinic by our medical team, paired with a doctor-issued prescription dispensed by our licensed pharmacy partner, Melita Health & Beauty. Each part of the program plays a distinct role in bringing your follicles back to life.",
+      "For years, advanced hair loss treatments like exosome therapy and medically supervised minoxidil and finasteride protocols were limited to elite clinics abroad. For the first time in Malta, Carisma's doctor-led clinic offers the same standard of care, PRP and exosome therapy performed in-clinic by our medical team, paired with a doctor-issued prescription dispensed by our licensed pharmacy partner, Melita Health & Beauty. Each part of the program plays a distinct role in bringing your follicles back to life.",
     areas: [
       {
         zone: "01",
         icon: "/assets/treatments/hair-regrowth-density-scan.png",
         name: "AI Scalp Imaging & Density Mapping",
-        desc: "Establishes your clinical baseline — follicle density, thinning zones, and growth potential. Repeated at Day 0 and Day 90 to measure real results in numbers.",
+        desc: "Establishes your clinical baseline, follicle density, thinning zones, and growth potential. Repeated at Day 0 and Day 90 to measure real results in numbers.",
       },
       {
         zone: "02",
@@ -107,18 +107,18 @@ const t: Treatment = {
         zone: "04",
         icon: "/assets/treatments/hair-regrowth-consult-tablet.png",
         name: "ScalpRx Prescription Protocol",
-        desc: "A personalised prescription for minoxidil, finasteride, and ketoconazole — written by Dr. Giovanni and dispensed by Melita Health & Beauty pharmacy.",
+        desc: "A personalised prescription for minoxidil, finasteride, and ketoconazole, written by Dr. Giovanni and dispensed by Melita Health & Beauty pharmacy.",
       },
     ],
   },
   suitability: {
     title: "Selective by intention. Successful by design.",
     intro:
-      "Noticing your hair thinning, shedding, or receding more each year? Tried minoxidil, supplements, and every at-home fix only to end up where you started? You're not alone — hair loss affects over 50% of men and 40% of women at some point. We're selective about who we accept and only take on patients we genuinely believe we can help, because early-stage thinning responds strongly to regenerative treatment when addressed in time. If follicles are beyond recovery, we tell you honestly and may point you to trusted hair transplant partners instead.",
+      "Noticing your hair thinning, shedding, or receding more each year? Tried minoxidil, supplements, and every at-home fix only to end up where you started? You're not alone, hair loss affects over 50% of men and 40% of women at some point. We're selective about who we accept and only take on patients we genuinely believe we can help, because early-stage thinning responds strongly to regenerative treatment when addressed in time. If follicles are beyond recovery, we tell you honestly and may point you to trusted hair transplant partners instead.",
     personas: [
       {
         title: "The early-stage thinner",
-        desc: "You've spotted a widening part, a receding hairline, or more scalp at the crown — and you want to act before it progresses.",
+        desc: "You've spotted a widening part, a receding hairline, or more scalp at the crown, and you want to act before it progresses.",
       },
       {
         title: "The tried-everything sceptic",
@@ -126,15 +126,15 @@ const t: Treatment = {
       },
       {
         title: "The no-surgery seeker",
-        desc: "You don't want a transplant's cost, scarring, or downtime — you want natural regrowth from your own follicles, guided by a doctor.",
+        desc: "You don't want a transplant's cost, scarring, or downtime, you want natural regrowth from your own follicles, guided by a doctor.",
       },
     ],
     notIdeal: [
-      "Your follicles are no longer biologically active — advanced baldness needs a different route, and we'll point you to trusted transplant partners",
-      "A scalp condition or active inflammation needs settling first — we'll treat that before regeneration can work",
-      "An underlying issue (thyroid, iron, hormones) should be stabilised first — we'll guide you, then welcome you back",
-      "You're hoping for instant, one-session results — real regrowth is measured over 90 days, not days",
-      "You'd rather not commit to a consistent medical plan — the guarantee depends on following it through",
+      "Your follicles are no longer biologically active, advanced baldness needs a different route, and we'll point you to trusted transplant partners",
+      "A scalp condition or active inflammation needs settling first, we'll treat that before regeneration can work",
+      "An underlying issue (thyroid, iron, hormones) should be stabilised first, we'll guide you, then welcome you back",
+      "You're hoping for instant, one-session results, real regrowth is measured over 90 days, not days",
+      "You'd rather not commit to a consistent medical plan, the guarantee depends on following it through",
     ],
   },
   experience: {
@@ -175,7 +175,7 @@ const t: Treatment = {
       },
       {
         title: "Measured, Not Guessed",
-        desc: "AI scalp imaging at Day 0 and Day 90 proves your results in numbers — the foundation of our performance guarantee.",
+        desc: "AI scalp imaging at Day 0 and Day 90 proves your results in numbers, the foundation of our performance guarantee.",
       },
       {
         title: "Non-Surgical, No Downtime",
@@ -183,7 +183,7 @@ const t: Treatment = {
       },
       {
         title: "Everything Managed for You",
-        desc: "Consultation, in-clinic treatment, and prescriptions handled at one Malta clinic — backed by a measurable results guarantee.",
+        desc: "Consultation, in-clinic treatment, and prescriptions handled at one Malta clinic, backed by a measurable results guarantee.",
       },
     ],
   },
@@ -194,17 +194,17 @@ const t: Treatment = {
       {
         icon: "shield",
         title: "Doctor-Led & Guaranteed",
-        desc: "Overseen by a regenerative hair specialist and backed by a 100% performance guarantee — the only one of its kind in Malta.",
+        desc: "Overseen by a regenerative hair specialist and backed by a 100% performance guarantee, the only one of its kind in Malta.",
       },
       {
         icon: "chart",
         title: "Measured in Numbers",
-        desc: "AI density scans at Day 0 and Day 90 prove your regrowth — patients average a 21-28% increase in density.",
+        desc: "AI density scans at Day 0 and Day 90 prove your regrowth, patients average a 21-28% increase in density.",
       },
       {
         icon: "sparkle",
         title: "Natural, Gradual Regrowth",
-        desc: "Your own follicles reactivated with PRP, exosomes, and prescription therapy — results that look and feel authentically yours.",
+        desc: "Your own follicles reactivated with PRP, exosomes, and prescription therapy, results that look and feel authentically yours.",
       },
     ],
     included: [
@@ -233,7 +233,7 @@ const t: Treatment = {
   faq: [
     {
       q: "What exactly is the Hair Reset Program?",
-      a: "The Hair Reset Program is a doctor-led hair loss program at Carisma Aesthetics Malta that combines two in-clinic treatments — PRP hair therapy and exosome scalp therapy — with a doctor-issued prescription for proven medications, including minoxidil, finasteride, and ketoconazole. The prescription is written by our doctor and dispensed by our licensed pharmacy partner, Melita Health & Beauty (not by the clinic), to reactivate dormant follicles and restore natural hair growth without surgery. It is Malta's only exosome-powered hair loss treatment clinic.",
+      a: "The Hair Reset Program is a doctor-led hair loss program at Carisma Aesthetics Malta that combines two in-clinic treatments, PRP hair therapy and exosome scalp therapy, with a doctor-issued prescription for proven medications, including minoxidil, finasteride, and ketoconazole. The prescription is written by our doctor and dispensed by our licensed pharmacy partner, Melita Health & Beauty (not by the clinic), to reactivate dormant follicles and restore natural hair growth without surgery. It is Malta's only exosome-powered hair loss treatment clinic.",
     },
     {
       q: "Who is the program best suited for?",
@@ -241,11 +241,11 @@ const t: Treatment = {
     },
     {
       q: "How soon will I start seeing results?",
-      a: "Most patients at our Malta hair loss clinic notice visible improvement between 8 and 12 weeks of treatment, with measurable density increases confirmed through scalp imaging. Patients on the full protocol — PRP, exosomes, minoxidil, and finasteride — typically see the strongest results.",
+      a: "Most patients at our Malta hair loss clinic notice visible improvement between 8 and 12 weeks of treatment, with measurable density increases confirmed through scalp imaging. Patients on the full protocol, PRP, exosomes, minoxidil, and finasteride, typically see the strongest results.",
     },
     {
       q: "How is this different from PRP alone?",
-      a: "Traditional PRP hair treatment only stimulates growth factors from your blood. Our Hair Reset Protocol enriches PRP with lab-purified exosomes, which amplify follicle repair and accelerate hair regrowth at a cellular level — clinical studies show 25% greater results with exosome treatment compared to PRP alone. Combined with prescription minoxidil and finasteride, this is Malta's most comprehensive non-surgical hair loss treatment.",
+      a: "Traditional PRP hair treatment only stimulates growth factors from your blood. Our Hair Reset Protocol enriches PRP with lab-purified exosomes, which amplify follicle repair and accelerate hair regrowth at a cellular level, clinical studies show 25% greater results with exosome treatment compared to PRP alone. Combined with prescription minoxidil and finasteride, this is Malta's most comprehensive non-surgical hair loss treatment.",
     },
     {
       q: "Is it painful?",
@@ -253,7 +253,7 @@ const t: Treatment = {
     },
     {
       q: "Will I need to take time off work?",
-      a: "No. The procedure is non-surgical with zero downtime — you can resume normal activity immediately.",
+      a: "No. The procedure is non-surgical with zero downtime, you can resume normal activity immediately.",
     },
     {
       q: "Is it safe?",
@@ -261,7 +261,7 @@ const t: Treatment = {
     },
     {
       q: "How does the guarantee work?",
-      a: "If you qualify for our hair loss treatment and complete your 90-day protocol — including all prescribed in-clinic sessions, minoxidil and finasteride use, and home-care steps — and your follow-up density scan shows no visible improvement, we will extend your treatment at no cost. Carisma Aesthetics is the only hair loss treatment clinic in Malta to offer this guarantee. To keep results measurable and medically valid, patients must complete all sessions on schedule, use the recommended oral and topical treatments consistently, avoid unapproved scalp products, and maintain stable health with no major hormonal, nutritional, or medical changes.",
+      a: "If you qualify for our hair loss treatment and complete your 90-day protocol, including all prescribed in-clinic sessions, minoxidil and finasteride use, and home-care steps, and your follow-up density scan shows no visible improvement, we will extend your treatment at no cost. Carisma Aesthetics is the only hair loss treatment clinic in Malta to offer this guarantee. To keep results measurable and medically valid, patients must complete all sessions on schedule, use the recommended oral and topical treatments consistently, avoid unapproved scalp products, and maintain stable health with no major hormonal, nutritional, or medical changes.",
     },
     {
       q: "How long do the results last?",

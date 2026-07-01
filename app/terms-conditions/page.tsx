@@ -91,7 +91,7 @@ export default function TermsConditionsPage() {
       <LegalHero
         eyebrow="Terms & Conditions"
         title="Terms & Conditions"
-        tagline="The terms that govern your relationship with Carisma Aesthetics — please read them carefully before booking a consultation or treatment."
+        tagline="The terms that govern your relationship with Carisma Aesthetics, please read them carefully before booking a consultation or treatment."
         lastUpdated={LAST_UPDATED}
       />
 
@@ -136,10 +136,10 @@ export default function TermsConditionsPage() {
       <SectionBlock id="definitions" number="03" title="Definitions">
         <BulletList
           items={[
-            <><strong>&ldquo;Treatment&rdquo;</strong> — any aesthetic or medical-aesthetic procedure, service, or product provided by the Clinic.</>,
-            <><strong>&ldquo;Patient&rdquo;</strong> or <strong>&ldquo;you&rdquo;</strong> — any person who books, attends, or receives a consultation or Treatment.</>,
-            <><strong>&ldquo;Consultation&rdquo;</strong> — the clinical assessment carried out before Treatment to determine suitability.</>,
-            <><strong>&ldquo;Deposit&rdquo;</strong> — any amount paid in advance to secure an appointment or Treatment.</>,
+            <><strong>&ldquo;Treatment&rdquo;</strong>, any aesthetic or medical-aesthetic procedure, service, or product provided by the Clinic.</>,
+            <><strong>&ldquo;Patient&rdquo;</strong> or <strong>&ldquo;you&rdquo;</strong>, any person who books, attends, or receives a consultation or Treatment.</>,
+            <><strong>&ldquo;Consultation&rdquo;</strong>, the clinical assessment carried out before Treatment to determine suitability.</>,
+            <><strong>&ldquo;Deposit&rdquo;</strong>, any amount paid in advance to secure an appointment or Treatment.</>,
           ]}
         />
       </SectionBlock>
@@ -167,7 +167,7 @@ export default function TermsConditionsPage() {
           make a Treatment unsafe and may invalidate any liability on our part.
         </P>
         <P>
-          Treatment may be declined or postponed where it is not clinically suitable for you — for example due
+          Treatment may be declined or postponed where it is not clinically suitable for you, for example due
           to pregnancy or breastfeeding, certain medical conditions or medications, recent procedures, or
           unrealistic expectations.
         </P>
@@ -347,8 +347,8 @@ export default function TermsConditionsPage() {
 
       <SectionBlock id="ip" number="20" title="Intellectual Property" alt>
         <P>
-          All content on our website and in our materials — including text, images, logos, branding, and
-          design — is owned by or licensed to Carisma Aesthetics and is protected by intellectual-property
+          All content on our website and in our materials, including text, images, logos, branding, and
+          design, is owned by or licensed to Carisma Aesthetics and is protected by intellectual-property
           laws. You may not copy, reproduce, or reuse it without our prior written permission.
         </P>
       </SectionBlock>

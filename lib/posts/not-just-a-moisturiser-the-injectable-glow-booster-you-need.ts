@@ -17,7 +17,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "At <a href=\"/\" style=\"color:var(--teal);text-decoration:underline;\">Carisma Aesthetics</a>, we believe your skin deserves more than surface-level care. That’s why we’re shining the spotlight on <a href=\"/profhilo\" style=\"color:var(--teal);text-decoration:underline;\"><strong>Profhilo</strong></a>—the skin booster that hydrates from within and brings out your most radiant self."
+      "html": "At <a href=\"/\" style=\"color:var(--teal);text-decoration:underline;\">Carisma Aesthetics</a>, we believe your skin deserves more than surface-level care. That’s why we’re shining the spotlight on <a href=\"/profhilo\" style=\"color:var(--teal);text-decoration:underline;\"><strong>Profhilo</strong></a>, the skin booster that hydrates from within and brings out your most radiant self."
     },
     {
       "type": "heading",
@@ -30,7 +30,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "That’s where <strong>skin boosters</strong> step in. They work below the surface to improve texture, tone, and firmness—without changing your features. Just healthier, glowier skin."
+      "html": "That’s where <strong>skin boosters</strong> step in. They work below the surface to improve texture, tone, and firmness, without changing your features. Just healthier, glowier skin."
     },
     {
       "type": "heading",
@@ -39,7 +39,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "<a href=\"/profhilo\" style=\"color:var(--teal);text-decoration:underline;\">Profhilo</a> is an injectable made from <strong>pure hyaluronic acid</strong>—a substance your body already makes. Tiny amounts are placed just under the skin, in the areas that need the most love: face, neck, or hands."
+      "html": "<a href=\"/profhilo\" style=\"color:var(--teal);text-decoration:underline;\">Profhilo</a> is an injectable made from <strong>pure hyaluronic acid</strong>, a substance your body already makes. Tiny amounts are placed just under the skin, in the areas that need the most love: face, neck, or hands."
     },
     {
       "type": "paragraph",
@@ -56,7 +56,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "All with <strong>no harsh chemicals</strong> and <strong>no fake volume</strong>—just your own skin doing what it does best."
+      "html": "All with <strong>no harsh chemicals</strong> and <strong>no fake volume</strong>, just your own skin doing what it does best."
     },
     {
       "type": "heading",
@@ -65,7 +65,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "Think of <a href=\"/profhilo\" style=\"color:var(--teal);text-decoration:underline;\">Profhilo</a> as quiet luxury. It doesn’t scream for attention—it just makes your skin look naturally better."
+      "html": "Think of <a href=\"/profhilo\" style=\"color:var(--teal);text-decoration:underline;\">Profhilo</a> as quiet luxury. It doesn’t scream for attention, it just makes your skin look naturally better."
     },
     {
       "type": "paragraph",
@@ -82,7 +82,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "Whether you’re prepping for an event, feeling dull after winter, or just ready for a refresh—Profhilo fits beautifully into your skin routine."
+      "html": "Whether you’re prepping for an event, feeling dull after winter, or just ready for a refresh, Profhilo fits beautifully into your skin routine."
     },
     {
       "type": "heading",
@@ -104,7 +104,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "It’s sometimes called the “lunchtime injectable”—because it’s that simple."
+      "html": "It’s sometimes called the “lunchtime injectable”, because it’s that simple."
     },
     {
       "type": "heading",
@@ -138,7 +138,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "“It feels like my skin is drinking water—constantly.”"
+      "html": "“It feels like my skin is drinking water, constantly.”"
     },
     {
       "type": "paragraph",
@@ -168,7 +168,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "Moisturisers are great—but <a href=\"/profhilo\" style=\"color:var(--teal);text-decoration:underline;\">Profhilo</a> goes where they can’t."
+      "html": "Moisturisers are great, but <a href=\"/profhilo\" style=\"color:var(--teal);text-decoration:underline;\">Profhilo</a> goes where they can’t."
     },
     {
       "type": "paragraph",

@@ -227,7 +227,7 @@ export default function Direction2EditorialScroll() {
   const eyebrow = "Doctor-Led Treatments";
   const title = "Our Medical Aesthetic Treatments";
   const subcopy =
-    "A complete menu of advanced, medically supervised treatments — each tailored to refresh, restore and let you glow with confidence.";
+    "A complete menu of advanced, medically supervised treatments, each tailored to refresh, restore and let you glow with confidence.";
 
   return (
     <section

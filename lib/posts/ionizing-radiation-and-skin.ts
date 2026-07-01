@@ -11,7 +11,7 @@ export const post: BlogPost = {
   "coverImage": "https://static.wixstatic.com/media/ionizing-radiation.jpg",
   "excerpt": "Ionizing radiation can damage skin cells and accelerate aging. Understand the risks and discover protection strategies to maintain healthy, youthful skin.",
   "content": [
-    {"type": "paragraph", "html": "Ionizing radiation—from UV rays, medical imaging, and environmental sources—can damage skin at the cellular level, causing premature aging, pigmentation issues, and increased skin cancer risk."},
+    {"type": "paragraph", "html": "Ionizing radiation, from UV rays, medical imaging, and environmental sources, can damage skin at the cellular level, causing premature aging, pigmentation issues, and increased skin cancer risk."},
     {"type": "heading", "level": 2, "text": "How Ionizing Radiation Damages Skin"},
     {"type": "paragraph", "html": "Ionizing radiation has enough energy to remove electrons from atoms, creating free radicals that damage collagen, elastin, and DNA in skin cells. This accelerates visible aging and increases cancer risk."},
     {"type": "heading", "level": 2, "text": "Protective Strategies"},

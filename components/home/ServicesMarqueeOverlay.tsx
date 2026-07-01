@@ -323,7 +323,7 @@ export default function ServicesMarqueeOverlay() {
         <p className="svc-ov-rv mx-auto"
            style={{ maxWidth: 620, marginTop: 18, color: "var(--ink-soft)", fontSize: 16,
                     lineHeight: 1.6, transitionDelay: "120ms" }}>
-          A complete menu of advanced, medically supervised treatments — each tailored
+          A complete menu of advanced, medically supervised treatments, each tailored
           to refresh, restore and let you glow with confidence.
         </p>
       </div>

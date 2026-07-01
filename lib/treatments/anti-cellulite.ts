@@ -14,7 +14,7 @@ const t: Treatment = {
       { label: "Tanita Body Composition Analysis", price: "€60" },
       { label: "€25 Carisma Aesthetics credit", price: "€25" },
       { label: "Complimentary Parking Validation", price: "" },
-      { label: "TOTAL VALUE: €625 — TODAY: €199 ONLY", price: "€199" },
+      { label: "TOTAL VALUE: €625, TODAY: €199 ONLY", price: "€199" },
     ],
     cta: "claim your spot now",
   },
@@ -23,17 +23,17 @@ const t: Treatment = {
     title: "Smooth stubborn cellulite and uneven texture with precision",
     subtitle: "the secret to a more defined, confident look",
     paragraphs: [
-      "You eat well, stay active, and take care of yourself — yet cellulite on your thighs, bum or hips still shows through. No matter how fit you feel, the uneven, dimpled texture can make certain outfits uncomfortable and affect your confidence. The scale may move, but the look of your skin doesn't.",
-      "If this sounds familiar, it's not a lack of effort. Cellulite is largely caused by circulation, fluid retention, and connective tissue structure — not weight alone. CelluLift combines targeted VelaShape vacuum roller treatments with lymphatic drainage massage to help smooth texture, improve circulation, and leave skin looking more even and contoured.",
+      "You eat well, stay active, and take care of yourself, yet cellulite on your thighs, bum or hips still shows through. No matter how fit you feel, the uneven, dimpled texture can make certain outfits uncomfortable and affect your confidence. The scale may move, but the look of your skin doesn't.",
+      "If this sounds familiar, it's not a lack of effort. Cellulite is largely caused by circulation, fluid retention, and connective tissue structure, not weight alone. CelluLift combines targeted VelaShape vacuum roller treatments with lymphatic drainage massage to help smooth texture, improve circulation, and leave skin looking more even and contoured.",
     ],
     image: "/assets/treatments/ac-eligibility.png",
   },
 
   problem: {
     kicker: "The real reason people book",
-    title: "You avoid shorts, swimwear and bright lights — not the gym",
+    title: "You avoid shorts, swimwear and bright lights, not the gym",
     body: [
-      "Our CelluLift protocol smooths the dimpled, uneven texture on your thighs, hips and bum so you feel comfortable in your own skin again — without surgery and without downtime.",
+      "Our CelluLift protocol smooths the dimpled, uneven texture on your thighs, hips and bum so you feel comfortable in your own skin again, without surgery and without downtime.",
     ],
   },
 
@@ -41,7 +41,7 @@ const t: Treatment = {
     kicker: "The Natural Confidence Guarantee",
     title: "Natural Confidence Guarantee",
     paragraphs: [
-      "Every CelluLift plan starts with a body assessment and an honest, natural-first approach that targets the structural causes of cellulite — never vague promises — backed by a complimentary follow-up review until you are 100% satisfied with smoother, more even skin that still looks like you.",
+      "Every CelluLift plan starts with a body assessment and an honest, natural-first approach that targets the structural causes of cellulite, never vague promises, backed by a complimentary follow-up review until you are 100% satisfied with smoother, more even skin that still looks like you.",
     ],
     cta: "claim your spot now",
     points: [
@@ -66,7 +66,7 @@ const t: Treatment = {
   suitability: {
     title: "Is this suitable for you?",
     intro:
-      "Cellulite shows differently on every body. CelluLift works best when the plan is matched to your areas, your skin and your goals. A consultation helps us understand exactly what will improve your texture and contour — and set honest expectations.",
+      "Cellulite shows differently on every body. CelluLift works best when the plan is matched to your areas, your skin and your goals. A consultation helps us understand exactly what will improve your texture and contour, and set honest expectations.",
     suitableFor: [
       "You have visible dimpling on your thighs, hips or bum that hasn't budged with diet or exercise",
       "You are close to your goal weight and want to refine skin texture, not lose weight",
@@ -75,16 +75,16 @@ const t: Treatment = {
       "You want an honest assessment of what cellulite smoothing can realistically achieve",
     ],
     notIdeal: [
-      "You are mainly looking to lose weight — CelluLift refines texture, so we'd start you with our body or slimming programmes instead",
-      "You need a complete, permanent fix — cellulite is structural, so we smooth and improve it, and maintenance keeps results looking their best",
-      "You want the full result after one visit — texture improves progressively over the protocol, not overnight",
-      "You're pregnant or breastfeeding — we'll happily welcome you back afterwards",
-      "You'd rather skip the quick consultation — it's how we keep your plan safe, realistic and right for your skin",
+      "You are mainly looking to lose weight, CelluLift refines texture, so we'd start you with our body or slimming programmes instead",
+      "You need a complete, permanent fix, cellulite is structural, so we smooth and improve it, and maintenance keeps results looking their best",
+      "You want the full result after one visit, texture improves progressively over the protocol, not overnight",
+      "You're pregnant or breastfeeding, we'll happily welcome you back afterwards",
+      "You'd rather skip the quick consultation, it's how we keep your plan safe, realistic and right for your skin",
     ],
     personas: [
       { title: "The close-to-goal body", desc: "You eat well and stay active, but stubborn dimpling on your thighs or bum won't shift no matter how fit you get." },
-      { title: "The cover-up dresser", desc: "You reach for longer shorts, sarongs and the dim side of the room — and you'd love to stop thinking about it." },
-      { title: "The texture-not-size patient", desc: "You're not chasing weight loss — you simply want smoother, more even skin that looks better in clothes and out of them." },
+      { title: "The cover-up dresser", desc: "You reach for longer shorts, sarongs and the dim side of the room, and you'd love to stop thinking about it." },
+      { title: "The texture-not-size patient", desc: "You're not chasing weight loss, you simply want smoother, more even skin that looks better in clothes and out of them." },
     ],
   },
 
@@ -93,7 +93,7 @@ const t: Treatment = {
     steps: [
       {
         title: "TARGETED CELLULITE CONTOURING",
-        desc: "We focus on the areas most affected by cellulite — thighs, bum and hips — using targeted VelaShape vacuum roller treatments to improve texture and contour.",
+        desc: "We focus on the areas most affected by cellulite, thighs, bum and hips, using targeted VelaShape vacuum roller treatments to improve texture and contour.",
         image: "/assets/treatments/ac-feat1.png",
       },
       {
@@ -103,7 +103,7 @@ const t: Treatment = {
       },
       {
         title: "EXPERT-DESIGNED PLAN",
-        desc: "Your in-person consultation sets the right areas to treat and how sessions are scheduled — all delivered by trained professionals using EU-approved technology with no surgery and no downtime.",
+        desc: "Your in-person consultation sets the right areas to treat and how sessions are scheduled, all delivered by trained professionals using EU-approved technology with no surgery and no downtime.",
         image: "/assets/treatments/ac-feat3.png",
       },
     ],
@@ -125,7 +125,7 @@ const t: Treatment = {
       },
       {
         title: "VISIBLE, NOTICEABLE SMOOTHING",
-        desc: "Improvements you can see and feel. Skin appears smoother, more even, and more refined in clothes and movement — not just immediately after treatment, but progressively over sessions.",
+        desc: "Improvements you can see and feel. Skin appears smoother, more even, and more refined in clothes and movement, not just immediately after treatment, but progressively over sessions.",
       },
       {
         title: "High-Value starter Access",
@@ -162,8 +162,8 @@ const t: Treatment = {
     kicker: "Your CelluLift plan",
     title: "Malta's Cellulite Smoothing Protocol",
     benefits: [
-      { icon: "target", title: "Targeted Vacuum Roller Therapy", desc: "Four VelaShape sessions focused exactly where cellulite shows most — thighs, hips and bum — for smoother, more even texture." },
-      { icon: "sparkle", title: "Multi-Action Smoothing", desc: "Radiofrequency, infrared, vacuum suction and lymphatic drainage work together to soften dimpling and boost circulation — no surgery, no downtime." },
+      { icon: "target", title: "Targeted Vacuum Roller Therapy", desc: "Four VelaShape sessions focused exactly where cellulite shows most, thighs, hips and bum, for smoother, more even texture." },
+      { icon: "sparkle", title: "Multi-Action Smoothing", desc: "Radiofrequency, infrared, vacuum suction and lymphatic drainage work together to soften dimpling and boost circulation, no surgery, no downtime." },
       { icon: "chart", title: "Tracked, Progressive Results", desc: "A Tanita body composition analysis sets your baseline so you can see real change across the protocol, not just hope for it." },
     ],
     included: [
@@ -208,7 +208,7 @@ const t: Treatment = {
       "Complimentary Parking Validation",
     ],
     guaranteeChip: "Doctor-supervised · Multi-technology approach · No downtime",
-    urgency: "Limited appointment availability — book your consultation to secure your place",
+    urgency: "Limited appointment availability, book your consultation to secure your place",
     cta: {
       text: "Claim My Anti-Cellulite Package",
       href: "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2800348&share=true&pId=2708191",
@@ -220,7 +220,7 @@ const t: Treatment = {
     heading: ["malta's most advanced cellulite smoothing", "& contouring protocol"],
     mini: [
       { title: "Targeted CELLULITE CONTOURING", body: "Adjustable Intensity for Comfort & Results" },
-      { title: "VISIBLE, NOTICEABLE SMOOTHING", body: "Improvements you can see and feel. Skin appears smoother, more even, and more refined in clothes and movement — not just immediately after treatment, but progressively over sessions." },
+      { title: "VISIBLE, NOTICEABLE SMOOTHING", body: "Improvements you can see and feel. Skin appears smoother, more even, and more refined in clothes and movement, not just immediately after treatment, but progressively over sessions." },
       { title: "High-Value starter Access", body: "A complete cellulite smoothing protocol at a reduced introductory price, ideal for trying CelluLift without long-term commitment." },
     ],
     includes: [
@@ -241,7 +241,7 @@ const t: Treatment = {
 
   closing: {
     heading: "Ready to Smooth Away Cellulite?",
-    sub: "Advanced cellulite treatment in Malta — multi-technology, doctor-supervised, no downtime. Book your free consultation at Carisma Aesthetics.",
+    sub: "Advanced cellulite treatment in Malta, multi-technology, doctor-supervised, no downtime. Book your free consultation at Carisma Aesthetics.",
     ctaLabel: "Book My Anti-Cellulite Consultation",
     ctaHref: "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2800348&share=true&pId=2708191",
   },
@@ -284,7 +284,7 @@ const t: Treatment = {
   faq: [
     {
       q: "What is included in the CelluLift protocol?",
-      a: "The protocol includes four VelaShape vacuum roller sessions combined with lymphatic drainage, plus a Tanita body composition analysis, spa and fitness access, and a Carisma Aesthetics credit — all designed to smooth cellulite, improve circulation, and refine skin texture.",
+      a: "The protocol includes four VelaShape vacuum roller sessions combined with lymphatic drainage, plus a Tanita body composition analysis, spa and fitness access, and a Carisma Aesthetics credit, all designed to smooth cellulite, improve circulation, and refine skin texture.",
     },
     {
       q: "Who is this treatment best suited for?",

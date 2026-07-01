@@ -3,7 +3,7 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "how-to-have-beautiful-skin-in-your-40s",
   "title": "How to Have Beautiful Skin in Your 40s: Fighting Visible Aging",
-  "metaTitle": "Beautiful Skin in Your 40s — Combat Fine Lines & Wrinkles",
+  "metaTitle": "Beautiful Skin in Your 40s, Combat Fine Lines & Wrinkles",
   "metaDescription": "Skincare strategies and professional treatments for beautiful skin in your 40s. Address fine lines, loss of elasticity, and more at Carisma Aesthetics.",
   "category": "Skincare",
   "publishDate": "2026-06-25",

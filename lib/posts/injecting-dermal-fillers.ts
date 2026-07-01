@@ -14,7 +14,7 @@ export const post: BlogPost = {
   "content": [
     {
       "type": "paragraph",
-      "html": "Dermal fillers are not just about the product—they're about the skill, knowledge, and artistry of the injector. Two practitioners using the exact same filler can produce dramatically different results. This guide explains the science and art behind effective filler injection."
+      "html": "Dermal fillers are not just about the product, they're about the skill, knowledge, and artistry of the injector. Two practitioners using the exact same filler can produce dramatically different results. This guide explains the science and art behind effective filler injection."
     },
     {
       "type": "heading",
@@ -90,7 +90,7 @@ export const post: BlogPost = {
         "Ask about training and certification",
         "Request before-and-after photos of actual clients",
         "Schedule a consultation to assess their understanding of facial anatomy",
-        "Trust your instinct—skilled practitioners listen and don't push you into treatments you don't want"
+        "Trust your instinct, skilled practitioners listen and don't push you into treatments you don't want"
       ]
     }
   ]

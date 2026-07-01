@@ -59,7 +59,7 @@ function PriceTile({ item }: { item: PriceItem }) {
     <Link
       href="/consultation"
       className="pricing-tile"
-      aria-label={`${item.name} — ${item.price}. Book a consultation`}
+      aria-label={`${item.name}, ${item.price}. Book a consultation`}
     >
       {/* Floating teal icon badge — overlaps the top edge of the card. */}
       <span aria-hidden className="pricing-tile__badge">

@@ -43,7 +43,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "A well-designed skincare space—with good lighting, comfortable temperature, and organized storage—encourages consistency. Consistency is what transforms skincare from a chore into a self-care ritual that actually works."
+      "html": "A well-designed skincare space, with good lighting, comfortable temperature, and organized storage, encourages consistency. Consistency is what transforms skincare from a chore into a self-care ritual that actually works."
     },
     {
       "type": "paragraph",

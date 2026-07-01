@@ -31,7 +31,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "We believe in enhancement—subtle improvements that let your natural beauty shine. You should still recognize yourself in the mirror and feel authentically you.",
+      "html": "We believe in enhancement, subtle improvements that let your natural beauty shine. You should still recognize yourself in the mirror and feel authentically you.",
     },
     {
       "type": "heading",

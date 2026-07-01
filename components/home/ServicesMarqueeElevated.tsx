@@ -437,7 +437,7 @@ export default function ServicesMarqueeElevated() {
         <p className="svc-elev-rv text-center mx-auto"
            style={{ maxWidth: 580, marginTop: 18, color: "var(--ink-soft)",
                     fontSize: 15.5, lineHeight: 1.7, transitionDelay: "120ms" }}>
-          A complete menu of advanced, medically supervised treatments — each
+          A complete menu of advanced, medically supervised treatments, each
           tailored to refresh, restore and let you glow with confidence.
         </p>
         <div aria-hidden="true" className="svc-elev-rv mx-auto"

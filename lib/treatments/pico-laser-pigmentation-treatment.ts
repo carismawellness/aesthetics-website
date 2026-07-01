@@ -44,16 +44,16 @@ const t: Treatment = {
   ],
   problem: {
     kicker: "The real reason people book",
-    title: "It is not about the spots — it is about feeling like yourself again",
+    title: "It is not about the spots, it is about feeling like yourself again",
     body: [
-      "Doctor-led Pico laser gently targets the excess pigment beneath your skin while caring for the surface — so your tone looks clearer and more even, and you feel confident showing your skin without heavy makeup.",
+      "Doctor-led Pico laser gently targets the excess pigment beneath your skin while caring for the surface, so your tone looks clearer and more even, and you feel confident showing your skin without heavy makeup.",
     ],
   },
   guarantee: {
     kicker: "The Natural Confidence Guarantee",
     title: "Natural Confidence Guarantee",
     paragraphs: [
-      "Every plan starts with a doctor-led skin and pigmentation assessment and a natural-first, gradual approach that is never rushed or overpromised — with honest guidance on how many sessions you may need and clear aftercare from start to finish.",
+      "Every plan starts with a doctor-led skin and pigmentation assessment and a natural-first, gradual approach that is never rushed or overpromised, with honest guidance on how many sessions you may need and clear aftercare from start to finish.",
     ],
     cta: "Book Your Free Consultation",
     points: [
@@ -83,16 +83,16 @@ const t: Treatment = {
     suitableFor: [
       "You have sun spots, age spots, or freckles you would like to fade",
       "You have post-acne marks or uneven skin tone that bother you",
-      "You want a careful, gradual, professional approach — not harsh or rushed treatment",
+      "You want a careful, gradual, professional approach, not harsh or rushed treatment",
       "You are open to a personalised plan based on your skin tone and pigmentation depth",
       "You are comfortable with a treatment that builds results over multiple sessions",
     ],
     notIdeal: [
-      "You want everything gone in a single visit — pigmentation fades gradually over several sessions",
-      "You have recently been in strong sun or used self-tan — we will happily welcome you back once your skin has settled",
-      "You are pregnant or breastfeeding — we will plan your treatment for afterwards",
-      "Your melasma is hormonally driven — we can still help, but we will be honest that it can recur and needs ongoing sun care",
-      "You would rather skip the skin assessment — it is how we keep your treatment safe and your results even",
+      "You want everything gone in a single visit, pigmentation fades gradually over several sessions",
+      "You have recently been in strong sun or used self-tan, we will happily welcome you back once your skin has settled",
+      "You are pregnant or breastfeeding, we will plan your treatment for afterwards",
+      "Your melasma is hormonally driven, we can still help, but we will be honest that it can recur and needs ongoing sun care",
+      "You would rather skip the skin assessment, it is how we keep your treatment safe and your results even",
     ],
     personas: [
       { title: "The sun-spot face", desc: "Years of Malta sunshine have left spots and uneven tone on your face, hands, or décolleté that makeup no longer hides." },
@@ -132,7 +132,7 @@ const t: Treatment = {
     title: "Malta's Doctor-Led Laser Pigmentation Removal Plan",
     benefits: [
       { icon: "target", title: "Precise Pigment Targeting", desc: "Ultra-short Pico pulses break down excess pigment beneath the skin so your body can clear it gradually." },
-      { icon: "sparkle", title: "Clearer, More Even Tone", desc: "We fade sun spots, age spots, and post-acne marks for brighter, more balanced-looking skin — never forced." },
+      { icon: "sparkle", title: "Clearer, More Even Tone", desc: "We fade sun spots, age spots, and post-acne marks for brighter, more balanced-looking skin, never forced." },
       { icon: "shield", title: "Safe, Personalised Care", desc: "A doctor-led assessment first, with honest guidance on sessions and clear aftercare throughout." },
     ],
     included: [
@@ -167,7 +167,7 @@ const t: Treatment = {
     { q: "Is Pico Laser suitable for every skin type?", a: "Pico laser can be used on a range of skin tones, but suitability varies depending on the pigmentation type and individual skin characteristics. Your specialist will assess your skin carefully during consultation before recommending treatment." },
     { q: "What should I avoid before my appointment?", a: "Before your treatment, avoid direct sun exposure, tanning, or self-tanning products on the treatment area for at least a few days. Avoid harsh exfoliants, acids, retinoids, or active skincare before your session. Share your full medical history and any medications with your specialist." },
     { q: "What aftercare is required?", a: "Keep the treated area clean and moisturised as advised. Avoid picking, scratching, or rubbing the treated skin. Protect it from sun exposure with SPF and follow all aftercare instructions given by your practitioner to support safe healing." },
-    { q: "Can pigmentation return after treatment?", a: "In some cases, pigmentation can recur — particularly with melasma or pigmentation triggered by ongoing sun exposure. Protecting your skin from the sun and following your aftercare plan can help maintain results. Your specialist will discuss realistic long-term expectations during consultation." },
+    { q: "Can pigmentation return after treatment?", a: "In some cases, pigmentation can recur, particularly with melasma or pigmentation triggered by ongoing sun exposure. Protecting your skin from the sun and following your aftercare plan can help maintain results. Your specialist will discuss realistic long-term expectations during consultation." },
     { q: "How much does Pico Laser pigmentation treatment cost in Malta?", a: "Pigmentation treatment at Carisma starts from €79 for a small area such as 1–3 isolated spots or a single freckle cluster. Medium areas with multiple spots or one defined zone start from €99, and larger areas such as a full face zone, hands, décolleté, or neck start from €149. Melasma and diffuse or full-face PIH start from €199. Book a free consultation at our St Julian's clinic for a personalised quote." },
   ],
 };

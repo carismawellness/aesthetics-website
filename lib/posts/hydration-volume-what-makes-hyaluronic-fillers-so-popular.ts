@@ -9,15 +9,15 @@ export const post: BlogPost = {
   "publishDate": "2026-01-22",
   "readTime": 5,
   "coverImage": "https://static.wixstatic.com/media/11062b_4275ff0112cf47898952a61162a3d80e~mv2.jpg",
-  "excerpt": "There’s a reason hyaluronic fillers are everywhere—from skincare conversations to aesthetic clinics. They’re simple, effective, and tailored to you. Whether you want smoother skin, a touch of volume, or that soft summer glow, hyaluronic fillers  offer results that look natural and feel like you—just fresher. At Carisma Aesthetics , we use these treatments to subtly enhance your features, restore lost hydration, and help you feel your best—without dramatic changes. hyaluronic acid 1. What Are...",
+  "excerpt": "There’s a reason hyaluronic fillers are everywhere, from skincare conversations to aesthetic clinics. They’re simple, effective, and tailored to you. Whether you want smoother skin, a touch of volume, or that soft summer glow, hyaluronic fillers  offer results that look natural and feel like you, just fresher. At Carisma Aesthetics , we use these treatments to subtly enhance your features, restore lost hydration, and help you feel your best, without dramatic changes. hyaluronic acid 1. What Are...",
   "content": [
     {
       "type": "paragraph",
-      "html": "There’s a reason hyaluronic fillers are everywhere—from skincare conversations to aesthetic clinics. They’re simple, effective, and tailored to you. Whether you want smoother skin, a touch of volume, or that soft summer glow, <strong>hyaluronic </strong><a href=\"https://www.carismaspa.com/product-page/dermal-filler-carisma-aesthetics\" target=\"_blank\" rel=\"noopener\" style=\"color:var(--teal);text-decoration:underline;\"><strong>fillers</strong></a> offer results that look natural and feel like you—just fresher."
+      "html": "There’s a reason hyaluronic fillers are everywhere, from skincare conversations to aesthetic clinics. They’re simple, effective, and tailored to you. Whether you want smoother skin, a touch of volume, or that soft summer glow, <strong>hyaluronic </strong><a href=\"https://www.carismaspa.com/product-page/dermal-filler-carisma-aesthetics\" target=\"_blank\" rel=\"noopener\" style=\"color:var(--teal);text-decoration:underline;\"><strong>fillers</strong></a> offer results that look natural and feel like you, just fresher."
     },
     {
       "type": "paragraph",
-      "html": "At <a href=\"/\" style=\"color:var(--teal);text-decoration:underline;\"><strong>Carisma Aesthetics</strong></a>, we use these treatments to subtly enhance your features, restore lost hydration, and help you feel your best—without dramatic changes."
+      "html": "At <a href=\"/\" style=\"color:var(--teal);text-decoration:underline;\"><strong>Carisma Aesthetics</strong></a>, we use these treatments to subtly enhance your features, restore lost hydration, and help you feel your best, without dramatic changes."
     },
     {
       "type": "heading",
@@ -26,7 +26,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "Hyaluronic acid (HA) is a naturally occurring substance in your body, particularly in your skin, joints, and eyes. It's known for its ability to retain moisture—up to 1000 times its weight in water. As we age, our body’s natural production of HA slows down, leading to the loss of skin hydration, volume, and elasticity. This is where <strong>hyaluronic fillers</strong> come into play."
+      "html": "Hyaluronic acid (HA) is a naturally occurring substance in your body, particularly in your skin, joints, and eyes. It's known for its ability to retain moisture, up to 1000 times its weight in water. As we age, our body’s natural production of HA slows down, leading to the loss of skin hydration, volume, and elasticity. This is where <strong>hyaluronic fillers</strong> come into play."
     },
     {
       "type": "paragraph",
@@ -86,7 +86,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "Some individuals may experience minor swelling or bruising, but these side effects typically subside within a day or two. Because of this, <strong>hyaluronic fillers</strong> are often referred to as a \"lunchtime procedure\"—allowing you to fit beauty enhancements into your busy schedule with ease."
+      "html": "Some individuals may experience minor swelling or bruising, but these side effects typically subside within a day or two. Because of this, <strong>hyaluronic fillers</strong> are often referred to as a \"lunchtime procedure\", allowing you to fit beauty enhancements into your busy schedule with ease."
     },
     {
       "type": "heading",
@@ -159,7 +159,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "This instant gratification is one of the primary reasons people love fillers—they're perfect for those looking for quick results ahead of important events or special occasions."
+      "html": "This instant gratification is one of the primary reasons people love fillers, they're perfect for those looking for quick results ahead of important events or special occasions."
     },
     {
       "type": "heading",

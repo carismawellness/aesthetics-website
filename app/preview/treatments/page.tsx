@@ -4,7 +4,7 @@ import TreatmentsShowcase from "@/components/preview/treatments/TreatmentsShowca
 // Internal preview — never indexed. Googlebot may still crawl to see the noindex,
 // so do NOT also Disallow this in robots.ts.
 export const metadata: Metadata = {
-  title: "Treatments Section — 5 Directions (Preview)",
+  title: "Treatments Section, 5 Directions (Preview)",
   description:
     "Internal preview: five Awwwards-tier rebuilds of the treatments section. Pick one.",
   robots: { index: false, follow: false },
@@ -40,7 +40,7 @@ export default function TreatmentsPreviewPage() {
             lineHeight: 1.15,
           }}
         >
-          Treatments Section — 5 Directions
+          Treatments Section, 5 Directions
         </h1>
         <p
           style={{

@@ -10,7 +10,7 @@
 export const giftFaqs: { q: string; a: string }[] = [
   {
     q: "How quickly is the gift card delivered?",
-    a: "Instantly. The moment your purchase is complete, your e-gift voucher is delivered by email — ready to forward to the lucky recipient or to print and hand over yourself. No waiting, no postage, no stress. Perfect even for a last-minute gift.",
+    a: "Instantly. The moment your purchase is complete, your e-gift voucher is delivered by email, ready to forward to the lucky recipient or to print and hand over yourself. No waiting, no postage, no stress. Perfect even for a last-minute gift.",
   },
   {
     q: "How long is the gift card valid?",
@@ -18,7 +18,7 @@ export const giftFaqs: { q: string; a: string }[] = [
   },
   {
     q: "How does the recipient redeem it?",
-    a: "It couldn't be simpler. The recipient brings their e-voucher — on their phone or printed — to their appointment and the value is applied at checkout. They can book online or call any of our clinics to arrange a time that works for them.",
+    a: "It couldn't be simpler. The recipient brings their e-voucher, on their phone or printed, to their appointment and the value is applied at checkout. They can book online or call any of our clinics to arrange a time that works for them.",
   },
   {
     q: "Can the gift card be used on any treatment, at any clinic?",
@@ -26,11 +26,11 @@ export const giftFaqs: { q: string; a: string }[] = [
   },
   {
     q: "Can amounts be combined or used across more than one visit?",
-    a: "Absolutely. The gift card value can be put toward a higher-priced treatment, and any remaining balance stays on the card to use at a future appointment — so nothing goes to waste within the 12-month validity.",
+    a: "Absolutely. The gift card value can be put toward a higher-priced treatment, and any remaining balance stays on the card to use at a future appointment, so nothing goes to waste within the 12-month validity.",
   },
   {
     q: "Can I personalise the message?",
-    a: "Yes — and we encourage it. When you pick an occasion, you'll be able to add a personal message so your gift feels thoughtful and unmistakably from you. It's the easy way to make a beautiful gift feel even more meaningful.",
+    a: "Yes, and we encourage it. When you pick an occasion, you'll be able to add a personal message so your gift feels thoughtful and unmistakably from you. It's the easy way to make a beautiful gift feel even more meaningful.",
   },
   {
     q: "Is the gift card refundable?",
@@ -38,6 +38,6 @@ export const giftFaqs: { q: string; a: string }[] = [
   },
   {
     q: "Do you offer physical gift cards?",
-    a: "Our gift cards are digital, which means they arrive instantly and never get lost in the post. If you'd like a physical keepsake, simply print your e-voucher — it presents beautifully tucked inside a card.",
+    a: "Our gift cards are digital, which means they arrive instantly and never get lost in the post. If you'd like a physical keepsake, simply print your e-voucher, it presents beautifully tucked inside a card.",
   },
 ];

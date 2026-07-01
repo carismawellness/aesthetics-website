@@ -284,7 +284,7 @@ export default function ConsultationModal() {
               src={FORM_SRC}
               id={`modal-consult-${FORM_ID}`}
               title="Book Your Free Consultation"
-              aria-label="Book Your Free Consultation — powered by GHL"
+              aria-label="Book Your Free Consultation, powered by GHL"
               style={{
                 width: "100%",
                 height: `${iframeHeight}px`,

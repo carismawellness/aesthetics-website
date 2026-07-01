@@ -42,7 +42,7 @@ const t: Treatment = {
     kicker: "The real reason people book",
     title: "Your face looks flatter or more tired than you feel inside",
     body: [
-      "Doctor-led dermal fillers gently restore the volume that time has taken — lifting and refining your contours so you look rested and like yourself, never overfilled.",
+      "Doctor-led dermal fillers gently restore the volume that time has taken, lifting and refining your contours so you look rested and like yourself, never overfilled.",
     ],
   },
   guarantee: {
@@ -81,23 +81,23 @@ const t: Treatment = {
       "You appreciate that results are adjustable and reversible",
     ],
     notIdeal: [
-      "You want to soften expression lines, not add volume — that is what wrinkle relaxing is for, and we will happily guide you there",
-      "You are hoping to improve skin texture or pigmentation alone — a skin booster or peel may suit you better, and we will advise",
-      "You are pregnant or breastfeeding — we will warmly welcome you back when the time is right",
-      "You are looking for a permanent surgical change — fillers are temporary and gently adjustable by design",
-      "You take blood-thinning medication — we simply ask for medical clearance first to keep you safe",
+      "You want to soften expression lines, not add volume, that is what wrinkle relaxing is for, and we will happily guide you there",
+      "You are hoping to improve skin texture or pigmentation alone, a skin booster or peel may suit you better, and we will advise",
+      "You are pregnant or breastfeeding, we will warmly welcome you back when the time is right",
+      "You are looking for a permanent surgical change, fillers are temporary and gently adjustable by design",
+      "You take blood-thinning medication, we simply ask for medical clearance first to keep you safe",
     ],
     personas: [
       { title: "The face that has lost volume", desc: "Your cheeks, temples, or jawline have softened over time, and you want that natural fullness restored without looking overdone." },
-      { title: "The balance-and-definition patient", desc: "You love your features but want subtle harmony — a defined jaw, lifted cheeks, or a smoother profile that simply fits your face." },
-      { title: "The natural-refinement patient", desc: "You do not want a dramatic change — you want refined, believable contouring that still looks completely like you." },
+      { title: "The balance-and-definition patient", desc: "You love your features but want subtle harmony, a defined jaw, lifted cheeks, or a smoother profile that simply fits your face." },
+      { title: "The natural-refinement patient", desc: "You do not want a dramatic change, you want refined, believable contouring that still looks completely like you." },
     ],
   },
   experience: {
     title: "Your treatment experience", cta: "BOOK YOUR FREE CONSULTATION",
     steps: [
       { title: "Consultation & Personalised Plan", desc: "One of our doctors assesses your facial anatomy, skin, and goals, then designs a medically guided filler plan tailored to your structure and desired outcome.", image: "/assets/treatments/dermal-fillers-malta-step1.png" },
-      { title: "Targeted Treatment", desc: "Your doctor administers dermal fillers with fine, precise injections — quick, comfortable, and with little to no downtime.", image: "/assets/treatments/dermal-fillers-malta-step3.png" },
+      { title: "Targeted Treatment", desc: "Your doctor administers dermal fillers with fine, precise injections, quick, comfortable, and with little to no downtime.", image: "/assets/treatments/dermal-fillers-malta-step3.png" },
       { title: "Ongoing Review & Adjustment", desc: "Your doctor monitors how you settle and refines the plan to ensure natural, balanced dermal filler results over time.", image: "/assets/treatments/dermal-fillers-malta-step4.png" },
     ],
   },
@@ -159,7 +159,7 @@ const t: Treatment = {
       { title: "medically qualified practitioners", desc: "Every dermal fillers treatment is performed by a qualified doctor." },
       { title: "Advanced Facial Anatomy Expertise", desc: "Precision dermal fillers techniques tailored to your unique facial anatomy." },
       { title: "Personalised Treatment Plans", desc: "Your dermal fillers plan is designed to enhance, never overcorrect." },
-      { title: "Clinically Approved Products", desc: "Clinically Approved Products — CE-marked, clinically approved dermal filler and evidence-based protocols." },
+      { title: "Clinically Approved Products", desc: "Clinically Approved Products, CE-marked, clinically approved dermal filler and evidence-based protocols." },
       { title: "Thousands of Treatments Performed", desc: "Experience and results you can trust, right here in Malta." },
     ],
   },
@@ -187,9 +187,9 @@ const t: Treatment = {
     kicker: "Your dermal filler plan",
     title: "Malta's Doctor-Led Dermal Filler Plan",
     benefits: [
-      { icon: "shield", title: "Doctor-Led Precision", desc: "Every treatment is performed by a medically qualified doctor with advanced facial-anatomy expertise — never a salon, never nurse-only." },
-      { icon: "sparkle", title: "Natural, Refined Results", desc: "We restore volume and define contours while keeping you looking like you — balanced and refreshed, never overfilled." },
-      { icon: "clock", title: "Complimentary 2-Week Review", desc: "We review how your filler has settled at two weeks and perfect it if needed — included free." },
+      { icon: "shield", title: "Doctor-Led Precision", desc: "Every treatment is performed by a medically qualified doctor with advanced facial-anatomy expertise, never a salon, never nurse-only." },
+      { icon: "sparkle", title: "Natural, Refined Results", desc: "We restore volume and define contours while keeping you looking like you, balanced and refreshed, never overfilled." },
+      { icon: "clock", title: "Complimentary 2-Week Review", desc: "We review how your filler has settled at two weeks and perfect it if needed, included free." },
     ],
     included: [
       { label: "Free doctor-led consultation & facial assessment" },

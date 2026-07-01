@@ -9,7 +9,7 @@ export const post: BlogPost = {
   "publishDate": "2026-06-25",
   "readTime": 6,
   "coverImage": "https://static.wixstatic.com/media/d87add9f-ad57-47b3-a705-d335c7362653/placeholder.jpg",
-  "excerpt": "Struggling with acne? HydraFacial offers a breakthrough treatment that clears breakouts, unclogs pores, and prevents new spots—without the harsh chemicals, irritation, or downtime of traditional acne treatments.",
+  "excerpt": "Struggling with acne? HydraFacial offers a breakthrough treatment that clears breakouts, unclogs pores, and prevents new spots, without the harsh chemicals, irritation, or downtime of traditional acne treatments.",
   "internalLinks": [
     {
       "anchorText": "HydraFacial for acne",
@@ -20,7 +20,7 @@ export const post: BlogPost = {
   "content": [
     {
       "type": "paragraph",
-      "html": "Acne is frustrating. Traditional treatments—harsh chemicals, oral medications, aggressive extractions—often leave skin irritated, inflamed, and potentially damaged. HydraFacial offers a different approach: gentle, effective acne clearing that actually improves skin health while it works."
+      "html": "Acne is frustrating. Traditional treatments, harsh chemicals, oral medications, aggressive extractions, often leave skin irritated, inflamed, and potentially damaged. HydraFacial offers a different approach: gentle, effective acne clearing that actually improves skin health while it works."
     },
     {
       "type": "heading",
@@ -29,7 +29,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "HydraFacial targets acne through multiple mechanisms. First, the vortex technology provides acid-free extraction—meaning no harsh chemicals, just gentle vacuum pressure that removes oil, bacteria, and dead skin cells from deep within pores. Second, the salicylic acid booster penetrates pores to dissolve sebum and prevent future breakouts. Third, calming serums reduce inflammation and redness associated with active acne."
+      "html": "HydraFacial targets acne through multiple mechanisms. First, the vortex technology provides acid-free extraction, meaning no harsh chemicals, just gentle vacuum pressure that removes oil, bacteria, and dead skin cells from deep within pores. Second, the salicylic acid booster penetrates pores to dissolve sebum and prevent future breakouts. Third, calming serums reduce inflammation and redness associated with active acne."
     },
     {
       "type": "heading",
@@ -42,7 +42,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "In HydraFacial, the vortex technology ensures the salicylic acid penetrates deeply—so you get professional-strength acne treatment without the irritation of stronger prescriptions."
+      "html": "In HydraFacial, the vortex technology ensures the salicylic acid penetrates deeply, so you get professional-strength acne treatment without the irritation of stronger prescriptions."
     },
     {
       "type": "heading",
@@ -57,7 +57,7 @@ export const post: BlogPost = {
         "Reduces active breakouts and inflammation",
         "Minimizes acne scars and post-inflammatory hyperpigmentation",
         "No irritation or damage to the skin barrier",
-        "No downtime—you can go straight back to normal activities",
+        "No downtime, you can go straight back to normal activities",
         "Safe for all acne stages, from mild to moderate",
         "Works on the face, chest, shoulders, and back"
       ]
@@ -121,7 +121,7 @@ export const post: BlogPost = {
     {
       "type": "list",
       "items": [
-        "Avoid touching or picking at acne spots—let the treatment handle it",
+        "Avoid touching or picking at acne spots, let the treatment handle it",
         "Stop using retinoids, vitamin C, and exfoliants for 2-3 days before treatment",
         "If you're on acne medications, inform your practitioner",
         "Come with clean skin but no active acne treatments applied",
@@ -136,7 +136,7 @@ export const post: BlogPost = {
     {
       "type": "list",
       "items": [
-        "Avoid sun exposure for 24 hours—use SPF 30+ after that",
+        "Avoid sun exposure for 24 hours, use SPF 30+ after that",
         "Skip strong active ingredients for 48 hours",
         "Keep skin moisturized to support the healing barrier",
         "Avoid sweating, hot showers, and chlorine for 24 hours",
@@ -155,7 +155,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "Ready to clear your skin and keep it that way? <a href=\"/contact\" style=\"color:var(--teal);text-decoration:underline;\">Book your acne consultation</a> and discover the HydraFacial difference. We'll create a personalized treatment plan that gets you clear skin—and keeps it clear."
+      "html": "Ready to clear your skin and keep it that way? <a href=\"/contact\" style=\"color:var(--teal);text-decoration:underline;\">Book your acne consultation</a> and discover the HydraFacial difference. We'll create a personalized treatment plan that gets you clear skin, and keeps it clear."
     }
   ]
 };

@@ -35,7 +35,7 @@ const T = "/assets/treatments";
 
 // ---- Shared, reusable scaffolding (original copy) ----
 const STEPS: Step[] = [
-  { n: 1, label: "Consultation", text: "We start by listening. A practitioner reviews your medical history, studies your facial proportions and agrees a realistic, honest plan with you — no pressure to proceed." },
+  { n: 1, label: "Consultation", text: "We start by listening. A practitioner reviews your medical history, studies your facial proportions and agrees a realistic, honest plan with you, no pressure to proceed." },
   { n: 2, label: "The treatment", text: "Your session is carried out in a calm, clinical setting using premium products and a technique mapped precisely to your anatomy and the result you want." },
   { n: 3, label: "Aftercare", text: "You leave with clear, written guidance and direct access to the team. Most clients return to normal life the same day with only simple precautions to follow." },
   { n: 4, label: "Review", text: "We see you again to assess how your skin has responded, refine if needed and plan the cadence that keeps your result looking effortless over time." },
@@ -43,13 +43,13 @@ const STEPS: Step[] = [
 
 const PREP = {
   before: "Arrive with clean skin and avoid blood-thinning supplements, alcohol and intensive actives for 24–48 hours so your skin is calm and predictable.",
-  during: "Relax — sessions are short and comfortable. We use numbing where helpful and check in with you throughout so you stay informed and at ease.",
+  during: "Relax, sessions are short and comfortable. We use numbing where helpful and check in with you throughout so you stay informed and at ease.",
   after: "Keep the area clean, skip heat, heavy exercise and makeup for the advised window, and hydrate. Any redness typically settles quickly.",
 };
 
 const BENEFITS = [
   "Carried out by medically qualified, experienced practitioners",
-  "A plan mapped to your individual facial anatomy — never a fixed protocol",
+  "A plan mapped to your individual facial anatomy, never a fixed protocol",
   "Premium, clinically proven products and devices only",
   "Refined, natural-looking results that still look like you",
   "Considered aftercare with ongoing review and support",
@@ -57,7 +57,7 @@ const BENEFITS = [
 
 const COMMITMENTS = [
   "A measured, doctor-led approach rather than a one-size formula",
-  "Straight answers about what will — and won't — make a difference",
+  "Straight answers about what will, and won't, make a difference",
   "Subtle enhancement that protects your natural expression",
   "Care that continues well beyond the appointment itself",
 ];
@@ -75,7 +75,7 @@ export const faceTreatments: FaceTreatment[] = [
     category: "Face",
     tagline: "Restore lost volume and redefine contour with soft, natural results.",
     eyebrow: "Premium injectable artistry",
-    heroSubhead: "A refined way to replace the volume that time quietly removes — lifting the cheeks, smoothing folds and rebalancing proportion so your face looks rested, not reworked.",
+    heroSubhead: "A refined way to replace the volume that time quietly removes, lifting the cheeks, smoothing folds and rebalancing proportion so your face looks rested, not reworked.",
     heroImage: `${T}/dermal-fillers-malta-hero.png`,
     cardImage: "/assets/treatments/dermal-fillers-malta-hero.png",
     infoStats: [
@@ -110,7 +110,7 @@ export const faceTreatments: FaceTreatment[] = [
     category: "Face",
     tagline: "Stimulate your own collagen to refine texture, pores and scarring.",
     eyebrow: "Collagen induction therapy",
-    heroSubhead: "A controlled, regenerative treatment that prompts your skin to rebuild itself — smoothing texture, softening scarring and restoring a healthy, even glow from within.",
+    heroSubhead: "A controlled, regenerative treatment that prompts your skin to rebuild itself, smoothing texture, softening scarring and restoring a healthy, even glow from within.",
     heroImage: `${T}/microneedling-malta-hero.png`,
     cardImage: "/assets/treatments/microneedling-malta-hero.png",
     infoStats: [
@@ -134,7 +134,7 @@ export const faceTreatments: FaceTreatment[] = [
     faqs: [
       { q: "How many sessions will I need?", a: "Most people see the best results from a short course of three to four sessions spaced a few weeks apart, with occasional maintenance afterwards." },
       { q: "What does recovery look like?", a: "Expect a light, sunburn-like flush for a day or two. It settles quickly, and we provide simple aftercare to support smooth healing." },
-      { q: "Can it be combined with other treatments?", a: "Yes. It pairs well with bio-stimulating and hydration treatments — we will suggest the right sequence during your consultation." },
+      { q: "Can it be combined with other treatments?", a: "Yes. It pairs well with bio-stimulating and hydration treatments, we will suggest the right sequence during your consultation." },
     ],
     recommended: ["chemical-peels", "collagen-stimulator", "mesotherapy"],
     ...SHARED,
@@ -145,7 +145,7 @@ export const faceTreatments: FaceTreatment[] = [
     category: "Face",
     tagline: "Resurface the skin to even tone, brighten and refine.",
     eyebrow: "Medical-grade resurfacing",
-    heroSubhead: "A tailored exfoliating treatment that lifts away dull, damaged surface cells to reveal fresher, clearer, more even skin underneath — calibrated to your skin and your goals.",
+    heroSubhead: "A tailored exfoliating treatment that lifts away dull, damaged surface cells to reveal fresher, clearer, more even skin underneath, calibrated to your skin and your goals.",
     heroImage: `${T}/chemical-peels-malta-hero.png`,
     cardImage: "/assets/treatments/chemical-peels-malta-hero.png",
     infoStats: [
@@ -180,7 +180,7 @@ export const faceTreatments: FaceTreatment[] = [
     category: "Face",
     tagline: "Define, hydrate and balance with a result that looks like you.",
     eyebrow: "Subtle lip enhancement",
-    heroSubhead: "Considered enhancement that respects your natural shape — adding definition, hydration and balance without ever tipping into overdone.",
+    heroSubhead: "Considered enhancement that respects your natural shape, adding definition, hydration and balance without ever tipping into overdone.",
     heroImage: `${T}/lip-fillers-malta-hero.png`,
     cardImage: "/assets/treatments/lip-fillers-malta-hero.png",
     infoStats: [
@@ -202,9 +202,9 @@ export const faceTreatments: FaceTreatment[] = [
       notIdeal: ["You are pregnant or breastfeeding", "You have an active cold sore", "You are seeking an extreme, oversized look"],
     },
     faqs: [
-      { q: "Can the result look natural?", a: "Yes — natural balance is the whole point. We add conservatively and keep proportion to your face front of mind, so the result enhances rather than announces itself." },
+      { q: "Can the result look natural?", a: "Yes, natural balance is the whole point. We add conservatively and keep proportion to your face front of mind, so the result enhances rather than announces itself." },
       { q: "Does it hurt?", a: "We use numbing and gentle technique. Most clients find it very manageable, with brief tenderness afterwards." },
-      { q: "What if I do not like it?", a: "Hyaluronic-acid lip filler is adjustable and, if ever needed, dissolvable — which is exactly why it is a reassuring, low-commitment choice." },
+      { q: "What if I do not like it?", a: "Hyaluronic-acid lip filler is adjustable and, if ever needed, dissolvable, which is exactly why it is a reassuring, low-commitment choice." },
     ],
     recommended: ["dermal-fillers", "wrinkle-relaxing", "collagen-stimulator"],
     ...SHARED,
@@ -215,7 +215,7 @@ export const faceTreatments: FaceTreatment[] = [
     category: "Face",
     tagline: "A gradual, structural lift that rebuilds firmness from within.",
     eyebrow: "Bio-stimulating regeneration",
-    heroSubhead: "Rather than simply filling, this treatment prompts your skin to produce its own new collagen — restoring firmness and structure slowly, for a result that looks entirely your own.",
+    heroSubhead: "Rather than simply filling, this treatment prompts your skin to produce its own new collagen, restoring firmness and structure slowly, for a result that looks entirely your own.",
     heroImage: `${T}/collagen-stimulator-malta-hero.png`,
     cardImage: "/assets/treatments/collagen-stimulator-malta-hero.png",
     infoStats: [
@@ -250,7 +250,7 @@ export const faceTreatments: FaceTreatment[] = [
     category: "Face",
     tagline: "Soften dynamic lines while keeping natural expression.",
     eyebrow: "Anti-wrinkle injectables",
-    heroSubhead: "A precise, well-judged treatment that eases the lines created by movement — frown, forehead and crow's feet — while leaving your expression relaxed and entirely your own.",
+    heroSubhead: "A precise, well-judged treatment that eases the lines created by movement, frown, forehead and crow's feet, while leaving your expression relaxed and entirely your own.",
     heroImage: `${T}/wrinkle-relaxing-malta-hero.jpg`,
     cardImage: "/assets/treatments/wrinkle-relaxing-malta-hero.jpg",
     infoStats: [
@@ -272,7 +272,7 @@ export const faceTreatments: FaceTreatment[] = [
       notIdeal: ["You are pregnant or breastfeeding", "You have certain neuromuscular conditions", "You want zero movement, frozen look"],
     },
     faqs: [
-      { q: "Will my face look frozen?", a: "Not with our approach. We dose conservatively to soften lines while preserving natural movement, so you still look expressive — just more rested." },
+      { q: "Will my face look frozen?", a: "Not with our approach. We dose conservatively to soften lines while preserving natural movement, so you still look expressive, just more rested." },
       { q: "How soon does it work?", a: "Most people notice softening within three to seven days, with the full effect by around two weeks." },
       { q: "How long does it last?", a: "Typically three to four months. Regular, well-spaced treatment can make lines less pronounced over time." },
     ],
@@ -285,7 +285,7 @@ export const faceTreatments: FaceTreatment[] = [
     category: "Face",
     tagline: "Micro-infusions of vitamins and hydration for visible glow.",
     eyebrow: "Skin nutrition & glow",
-    heroSubhead: "A nourishing treatment that delivers a bespoke blend of vitamins, antioxidants and hyaluronic acid directly into the skin — reviving radiance, hydration and tone.",
+    heroSubhead: "A nourishing treatment that delivers a bespoke blend of vitamins, antioxidants and hyaluronic acid directly into the skin, reviving radiance, hydration and tone.",
     heroImage: `${T}/mesotherapy-malta-hero.png`,
     cardImage: "/assets/treatments/mesotherapy-malta-hero.png",
     infoStats: [
@@ -306,7 +306,7 @@ export const faceTreatments: FaceTreatment[] = [
       notIdeal: ["You have an active skin infection", "You are pregnant or breastfeeding", "You expect a single-session transformation"],
     },
     faqs: [
-      { q: "What is in the infusion?", a: "A tailored cocktail — typically hyaluronic acid, vitamins and antioxidants — selected for your skin's specific needs at the time of treatment." },
+      { q: "What is in the infusion?", a: "A tailored cocktail, typically hyaluronic acid, vitamins and antioxidants, selected for your skin's specific needs at the time of treatment." },
       { q: "Is there downtime?", a: "Minimal. You may see tiny temporary marks or mild redness that settle within a day, after which your glow develops over the following weeks." },
       { q: "How many sessions are best?", a: "A short initial course gives the most noticeable lift, followed by occasional top-ups to maintain radiance." },
     ],
@@ -319,7 +319,7 @@ export const faceTreatments: FaceTreatment[] = [
     category: "Face",
     tagline: "A non-surgical lift that redefines contour and firmness.",
     eyebrow: "Non-surgical lifting",
-    heroSubhead: "Dissolvable threads gently reposition and support softening tissue, restoring a lifted, defined contour — and stimulating fresh collagen as they work — without surgery or lengthy recovery.",
+    heroSubhead: "Dissolvable threads gently reposition and support softening tissue, restoring a lifted, defined contour, and stimulating fresh collagen as they work, without surgery or lengthy recovery.",
     heroImage: `${T}/thread-lift-malta-hero.avif`,
     cardImage: "/assets/treatments/thread-lift-malta-hero.avif",
     infoStats: [
@@ -362,6 +362,6 @@ export const FACE_LISTING = {
   eyebrow: "Face Treatments",
   title: "Considered facial aesthetics, led by medical expertise",
   subhead:
-    "A curated range of advanced face treatments — from injectable artistry to skin regeneration — each delivered with a careful, doctor-led approach and a single goal: results that look refined, balanced and unmistakably you.",
+    "A curated range of advanced face treatments, from injectable artistry to skin regeneration, each delivered with a careful, doctor-led approach and a single goal: results that look refined, balanced and unmistakably you.",
   gridHeading: "Advanced Face Treatments: Fillers, Botox & Skin Regeneration in Malta",
 };

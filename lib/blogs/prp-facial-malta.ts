@@ -3,7 +3,7 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "prp-facial-malta",
   "title": "PRP Facial in Malta: What the Vampire Facial Actually Does to Your Skin",
-  "metaTitle": "PRP Facial Malta — Vampire Facial Treatment",
+  "metaTitle": "PRP Facial Malta, Vampire Facial Treatment",
   "metaDescription": "PRP facials in Malta: how platelet-rich plasma stimulates skin regeneration. Expert treatment at Carisma Aesthetics. Book your consultation.",
   "category": "Procedures",
   "publishDate": "2026-06-02",

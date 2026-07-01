@@ -22,7 +22,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "Satisfaction with aesthetic treatments isn't just about the outcome—it's about how well that outcome matches your expectations. Unrealistic expectations lead to disappointment, while aligned expectations lead to genuine satisfaction."
+      "html": "Satisfaction with aesthetic treatments isn't just about the outcome, it's about how well that outcome matches your expectations. Unrealistic expectations lead to disappointment, while aligned expectations lead to genuine satisfaction."
     },
     {
       "type": "heading",

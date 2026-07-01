@@ -4,7 +4,7 @@ export const post: BlogPost = {
   "slug": "stay-ahead-emerging-aesthetic-procedures-to-consider",
   "title": "Stay Ahead: Emerging Aesthetic Procedures to Consider",
   "metaTitle": "Emerging Aesthetic Procedures 2025 | Latest Beauty Treatments",
-  "metaDescription": "Stay ahead with 2025's emerging aesthetic procedures: quiet facelifts, regenerative therapies, AI-driven planning, and non-surgical body contouring—all explained.",
+  "metaDescription": "Stay ahead with 2025's emerging aesthetic procedures: quiet facelifts, regenerative therapies, AI-driven planning, and non-surgical body contouring, all explained.",
   "category": "Aesthetics",
   "publishDate": "2025-03-11",
   "readTime": 4,
@@ -69,7 +69,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "Collagen banking is an emerging concept focused on \"prejuvenation\"—taking proactive steps to maintain skin health before significant signs of aging appear. This approach involves stimulating collagen production through treatments like <a href=\"/microneedling-malta\" style=\"color:var(--teal);text-decoration:underline;\">microneedling</a>, laser therapy, and the use of collagen-boosting injectables. By preserving and enhancing the skin's structural proteins early on, individuals can maintain a youthful appearance longer and potentially reduce the need for more invasive procedures in the future."
+      "html": "Collagen banking is an emerging concept focused on \"prejuvenation\", taking proactive steps to maintain skin health before significant signs of aging appear. This approach involves stimulating collagen production through treatments like <a href=\"/microneedling-malta\" style=\"color:var(--teal);text-decoration:underline;\">microneedling</a>, laser therapy, and the use of collagen-boosting injectables. By preserving and enhancing the skin's structural proteins early on, individuals can maintain a youthful appearance longer and potentially reduce the need for more invasive procedures in the future."
     },
     {
       "type": "paragraph",

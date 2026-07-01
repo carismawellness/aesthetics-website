@@ -17,7 +17,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "At Carisma Aesthetics, we help clients prepare for warm-weather confidence with <strong>safe, effective, and comfortable laser treatments</strong>. Let’s dive into why <strong>starting in spring sets you up for smooth success</strong>—just in time for beach season."
+      "html": "At Carisma Aesthetics, we help clients prepare for warm-weather confidence with <strong>safe, effective, and comfortable laser treatments</strong>. Let’s dive into why <strong>starting in spring sets you up for smooth success</strong>, just in time for beach season."
     },
     {
       "type": "heading",
@@ -26,7 +26,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "Laser hair removal isn’t a one-and-done treatment. It works by targeting hair follicles during their <strong>active growth phase</strong>, and not all hairs grow at the same time. That’s why multiple sessions—typically spaced 4 to 6 weeks apart—are needed for optimal, lasting results."
+      "html": "Laser hair removal isn’t a one-and-done treatment. It works by targeting hair follicles during their <strong>active growth phase</strong>, and not all hairs grow at the same time. That’s why multiple sessions, typically spaced 4 to 6 weeks apart, are needed for optimal, lasting results."
     },
     {
       "type": "paragraph",
@@ -39,7 +39,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "After laser treatments, your skin can be more sensitive to sunlight. That’s why <strong>spring is ideal</strong>—the UV levels are milder, and we’re not typically spending all day in direct sun yet."
+      "html": "After laser treatments, your skin can be more sensitive to sunlight. That’s why <strong>spring is ideal</strong>, the UV levels are milder, and we’re not typically spending all day in direct sun yet."
     },
     {
       "type": "paragraph",
@@ -54,7 +54,7 @@ export const post: BlogPost = {
       "type": "list",
       "items": [
         "<strong>Get Ahead of the Curve</strong>: By starting in spring, you avoid the seasonal rush and ensure appointment availability at your preferred times.",
-        "<strong>Smoother Skin, Less Maintenance</strong>: No more razor bumps or ingrown hairs. Laser hair removal delivers long-lasting smoothness—so you're ready for impromptu pool days or weekend getaways without the prep.",
+        "<strong>Smoother Skin, Less Maintenance</strong>: No more razor bumps or ingrown hairs. Laser hair removal delivers long-lasting smoothness, so you're ready for impromptu pool days or weekend getaways without the prep.",
         "<strong>Boost Your Confidence</strong>: Say goodbye to last-minute shaving and the stress of visible stubble. With laser hair removal, your skin feels <strong>effortlessly polished</strong> all season long."
       ]
     },
@@ -105,7 +105,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "It’s a journey—and we make it <strong>relaxing, effective, and confidence-boosting</strong>."
+      "html": "It’s a journey, and we make it <strong>relaxing, effective, and confidence-boosting</strong>."
     },
     {
       "type": "heading",
@@ -114,11 +114,11 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "Smooth, hair-free skin isn’t a luxury—it’s a confidence boost that helps you feel your best. And when you start in spring, you give your body the time it needs to respond beautifully to each session."
+      "html": "Smooth, hair-free skin isn’t a luxury, it’s a confidence boost that helps you feel your best. And when you start in spring, you give your body the time it needs to respond beautifully to each session."
     },
     {
       "type": "paragraph",
-      "html": "So ditch the razors and the wax strips—<strong>this is your season to glow smooth and free.</strong>"
+      "html": "So ditch the razors and the wax strips, <strong>this is your season to glow smooth and free.</strong>"
     },
     {
       "type": "paragraph",

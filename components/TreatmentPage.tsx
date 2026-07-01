@@ -200,13 +200,13 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
               ? {
                   type: "image",
                   src: t.hero.image,
-                  alt: `${t.hero.title} — Carisma Aesthetics Malta`,
+                  alt: `${t.hero.title}, Carisma Aesthetics Malta`,
                   aspect: t.hero.imageRatio,
                 }
               : {
                   type: "image",
                   src: HERO_FALLBACK_IMAGE,
-                  alt: `${t.hero.title} — Carisma Aesthetics Malta`,
+                  alt: `${t.hero.title}, Carisma Aesthetics Malta`,
                 }
         }
         proof={{

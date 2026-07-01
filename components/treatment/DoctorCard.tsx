@@ -110,7 +110,7 @@ export default function DoctorCard({
             >
               <Image
                 src={image}
-                alt={`${name} — ${title} at Carisma Aesthetics, Malta`}
+                alt={`${name}, ${title} at Carisma Aesthetics, Malta`}
                 fill
                 sizes="(max-width: 860px) 320px, 400px"
                 style={{ objectFit: "cover" }}

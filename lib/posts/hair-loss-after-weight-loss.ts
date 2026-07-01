@@ -9,7 +9,7 @@ export const post: BlogPost = {
   "publishDate": "2026-06-20",
   "readTime": 6,
   "coverImage": "https://static.wixstatic.com/media/example.jpg",
-  "excerpt": "Dramatic weight loss triggers a stress response that shifts many hair follicles into the shedding phase simultaneously — this is normal, temporary, and reversible....",
+  "excerpt": "Dramatic weight loss triggers a stress response that shifts many hair follicles into the shedding phase simultaneously, this is normal, temporary, and reversible....",
   "content": [
     {
       "type": "paragraph",

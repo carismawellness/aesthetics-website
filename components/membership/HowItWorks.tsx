@@ -92,8 +92,8 @@ function Card({ s, n }: { s: Step; n: number }) {
           }}
         >
           Example
-        </span>{" "}
-        — {s.eg}
+        </span>
+        , {s.eg}
       </p>
     </div>
   );
@@ -248,7 +248,7 @@ export default function HowItWorks() {
             }}
           >
             Your first month is non-refundable, but it&rsquo;s fully credited
-            toward your second procedure — so every euro keeps working for you.
+            toward your second procedure, so every euro keeps working for you.
           </p>
         </div>
       </div>

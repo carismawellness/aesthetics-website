@@ -3,7 +3,7 @@ import type { BlogPost } from '../blog-types';
 export const post: BlogPost = {
   "slug": "injectables-for-lip-enhancement",
   "title": "Lip Enhancement with Fillers: The Art of Natural-Looking Fuller Lips",
-  "metaTitle": "Lip Fillers Malta — Natural Enhancement | Carisma Aesthetics",
+  "metaTitle": "Lip Fillers Malta, Natural Enhancement | Carisma Aesthetics",
   "metaDescription": "Natural-looking lip fillers in Malta. Add volume, define borders & enhance shape. €350–€600, results last 6–12 months. Expert injections.",
   "category": "Injectables",
   "publishDate": "2026-06-25",
@@ -17,7 +17,7 @@ export const post: BlogPost = {
   "content": [
     {
       "type": "paragraph",
-      "html": "Lip fillers are one of the most requested injectable treatments—and for good reason. Fuller lips enhance facial symmetry, draw attention to your smile, and can create a more youthful appearance. The key to great lip fillers is subtlety and proportion: the goal is to enhance your lips, not to transform them into something unnatural."
+      "html": "Lip fillers are one of the most requested injectable treatments, and for good reason. Fuller lips enhance facial symmetry, draw attention to your smile, and can create a more youthful appearance. The key to great lip fillers is subtlety and proportion: the goal is to enhance your lips, not to transform them into something unnatural."
     },
     {
       "type": "heading",
@@ -96,7 +96,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "The art of lip fillers lies in restraint. A skilled practitioner respects your natural lip shape and proportions, enhancing what you have rather than creating something artificial. Start conservatively—you can always add more at your next appointment, but you cannot subtract."
+      "html": "The art of lip fillers lies in restraint. A skilled practitioner respects your natural lip shape and proportions, enhancing what you have rather than creating something artificial. Start conservatively, you can always add more at your next appointment, but you cannot subtract."
     }
   ]
 };

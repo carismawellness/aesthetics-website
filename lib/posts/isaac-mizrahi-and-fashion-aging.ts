@@ -13,7 +13,7 @@ export const post: BlogPost = {
   "content": [
     {
       "type": "paragraph",
-      "html": "Fashion and aging are not opposing forces—they can work beautifully together."
+      "html": "Fashion and aging are not opposing forces, they can work beautifully together."
     },
     {
       "type": "heading",

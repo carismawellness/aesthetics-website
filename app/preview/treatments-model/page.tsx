@@ -3,7 +3,7 @@ import ServicesMarqueeOverlay from "@/components/home/ServicesMarqueeOverlay";
 import ServicesMarqueeElevated from "@/components/home/ServicesMarqueeElevated";
 
 export const metadata: Metadata = {
-  title: "Treatments Carousel — Overlay Model (Preview)",
+  title: "Treatments Carousel, Overlay Model (Preview)",
   description: "Internal preview: image-forward overlay carousel (Webild med-spa model) vs the current live one.",
   robots: { index: false, follow: false },
 };
@@ -33,12 +33,12 @@ export default function TreatmentsModelPreview() {
         </p>
         <h1 className="font-serif" style={{ color: "var(--teal-deep)", fontSize: "clamp(24px,3.4vw,40px)",
             fontWeight: 400, letterSpacing: "0.04em", lineHeight: 1.15 }}>
-          Treatments Carousel — Overlay Model
+          Treatments Carousel, Overlay Model
         </h1>
         <p style={{ color: "var(--ink-soft)", maxWidth: 660, margin: "16px auto 0", fontSize: 15, lineHeight: 1.65 }}>
           The Webild med-spa pattern rebuilt in Carisma&apos;s brand: tall image cards with the name + descriptor
           over a cool scrim, a peeking row, and a progress-bar + arrows control row. Drag it, use the arrows,
-          or a horizontal trackpad swipe — a vertical wheel still scrolls the page. Compare with the version
+          or a horizontal trackpad swipe, a vertical wheel still scrolls the page. Compare with the version
           currently live below.
         </p>
       </header>

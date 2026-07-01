@@ -9,7 +9,7 @@ export const post: BlogPost = {
   "publishDate": "2026-06-16",
   "readTime": 6,
   "coverImage": "https://static.wixstatic.com/media/example.jpg",
-  "excerpt": "Sensitive skin demands a different approach to hair removal — aggressive techniques trigger redness, ingrown hairs, and post-inflammatory hyperpigmentation....",
+  "excerpt": "Sensitive skin demands a different approach to hair removal, aggressive techniques trigger redness, ingrown hairs, and post-inflammatory hyperpigmentation....",
   "content": [
     {
       "type": "paragraph",

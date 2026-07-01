@@ -27,7 +27,7 @@ const iconProps = {
 const PILLARS: Pillar[] = [
   {
     label: "Delivered Instantly",
-    line: "Sent to their inbox by email the moment you order — no waiting, no postage.",
+    line: "Sent to their inbox by email the moment you order, no waiting, no postage.",
     icon: (
       <svg {...iconProps}>
         <rect x="3" y="5" width="18" height="14" rx="2" />
@@ -37,7 +37,7 @@ const PILLARS: Pillar[] = [
   },
   {
     label: "Valid 12 Months",
-    line: "A full year to book — plenty of time to choose the perfect moment to glow.",
+    line: "A full year to book, plenty of time to choose the perfect moment to glow.",
     icon: (
       <svg {...iconProps}>
         <circle cx="12" cy="12" r="9" />
@@ -56,7 +56,7 @@ const PILLARS: Pillar[] = [
   },
   {
     label: "Beautifully Personal",
-    line: "Add a heartfelt message — gifted with care and presented to feel a little luxurious.",
+    line: "Add a heartfelt message, gifted with care and presented to feel a little luxurious.",
     icon: (
       <svg {...iconProps}>
         <rect x="3" y="8" width="18" height="13" rx="1.5" />

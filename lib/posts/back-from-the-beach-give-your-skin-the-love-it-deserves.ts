@@ -51,7 +51,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "<em>Tip:</em> Give your skin a few days after sun exposure before booking microneedling—gentle timing makes all the difference."
+      "html": "<em>Tip:</em> Give your skin a few days after sun exposure before booking microneedling, gentle timing makes all the difference."
     },
     {
       "type": "heading",
@@ -64,7 +64,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "<a href=\"/chemical-peels-malta\" style=\"color:var(--teal);text-decoration:underline;\"><strong>Chemical Peels</strong></a> or <strong>Laser Rejuvenation</strong> can brighten skin and fade pigment with care. We’ll choose formulas that suit your skin’s condition—especially if it’s feeling a bit sensitive."
+      "html": "<a href=\"/chemical-peels-malta\" style=\"color:var(--teal);text-decoration:underline;\"><strong>Chemical Peels</strong></a> or <strong>Laser Rejuvenation</strong> can brighten skin and fade pigment with care. We’ll choose formulas that suit your skin’s condition, especially if it’s feeling a bit sensitive."
     },
     {
       "type": "paragraph",
@@ -93,7 +93,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "<em>Bonus:</em> It’s not just your skin that needs a break—your mind does, too."
+      "html": "<em>Bonus:</em> It’s not just your skin that needs a break, your mind does, too."
     },
     {
       "type": "heading",
@@ -119,7 +119,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "At <a href=\"/\" style=\"color:var(--teal);text-decoration:underline;\"><strong>Carisma Aesthetics</strong></a>, we believe post-beach skin deserves expert care—not just recovery, but renewal."
+      "html": "At <a href=\"/\" style=\"color:var(--teal);text-decoration:underline;\"><strong>Carisma Aesthetics</strong></a>, we believe post-beach skin deserves expert care, not just recovery, but renewal."
     },
     {
       "type": "paragraph",
@@ -131,7 +131,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "And if you want to stretch that holiday feeling just a little longer, add a moment at <a href=\"https://www.carismaspa.com\" target=\"_blank\" rel=\"noopener\" style=\"color:var(--teal);text-decoration:underline;\"><strong>Carisma Spa &amp; Wellness</strong></a>—where summer self-care meets total body glow."
+      "html": "And if you want to stretch that holiday feeling just a little longer, add a moment at <a href=\"https://www.carismaspa.com\" target=\"_blank\" rel=\"noopener\" style=\"color:var(--teal);text-decoration:underline;\"><strong>Carisma Spa &amp; Wellness</strong></a>, where summer self-care meets total body glow."
     },
     {
       "type": "paragraph",

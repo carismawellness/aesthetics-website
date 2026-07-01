@@ -9,14 +9,14 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://www.carismaaesthetics.com/consultation' },
   openGraph: {
     title: 'Book Your Free Consultation | Carisma Aesthetics Malta',
-    description: 'Free consultation with qualified doctors. No pressure, no obligation — just clarity.',
+    description: 'Free consultation with qualified doctors. No pressure, no obligation, just clarity.',
     url: 'https://www.carismaaesthetics.com/consultation',
     images: [{ url: '/og-aesthetics.jpg', width: 1200, height: 630, alt: 'Free Aesthetics Consultation Malta' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Book Your Free Consultation | Carisma Aesthetics Malta',
-    description: 'Free consultation with qualified doctors. No pressure, no obligation — just clarity.',
+    description: 'Free consultation with qualified doctors. No pressure, no obligation, just clarity.',
     images: ['/og-aesthetics.jpg'],
   },
 };
@@ -161,7 +161,7 @@ const STEPS = [
   {
     num: "01",
     title: "We Listen",
-    body: "Your doctor takes time to understand your goals, concerns, and medical history — with no pressure and no rush.",
+    body: "Your doctor takes time to understand your goals, concerns, and medical history, with no pressure and no rush.",
   },
   {
     num: "02",
@@ -171,7 +171,7 @@ const STEPS = [
   {
     num: "03",
     title: "You Decide",
-    body: "You leave with a clear, honest proposal. There is no obligation — only clarity. When you are ready, we are here.",
+    body: "You leave with a clear, honest proposal. There is no obligation, only clarity. When you are ready, we are here.",
   },
 ];
 
@@ -188,7 +188,7 @@ export default function ConsultationPage() {
             { text: "Book your free" },
             { text: "consultation in Malta", em: true },
           ]}
-          sub="Every consultation begins with listening to your story — then shaping a conservative, personalised plan with one of our doctors."
+          sub="Every consultation begins with listening to your story, then shaping a conservative, personalised plan with one of our doctors."
           primaryCta={{
             text: "Book Instantly on Fresha",
             href: FRESHA_CONSULT,

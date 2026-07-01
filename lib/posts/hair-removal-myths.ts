@@ -9,7 +9,7 @@ export const post: BlogPost = {
   "publishDate": "2026-06-17",
   "readTime": 6,
   "coverImage": "https://static.wixstatic.com/media/example.jpg",
-  "excerpt": "The myth that shaving makes hair grow back thicker has persisted for generations — but the science tells a different story....",
+  "excerpt": "The myth that shaving makes hair grow back thicker has persisted for generations, but the science tells a different story....",
   "content": [
     {
       "type": "paragraph",

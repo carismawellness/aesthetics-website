@@ -40,7 +40,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "The best candidates want a refreshed, natural appearance—not dramatic change. Results appear immediately and improve over two weeks as swelling settles.",
+      "html": "The best candidates want a refreshed, natural appearance, not dramatic change. Results appear immediately and improve over two weeks as swelling settles.",
     },
     {
       "type": "heading",

@@ -11,7 +11,7 @@ const TREATMENTS = [
   {
     id: 'wrinkle-relaxing',
     name: 'Anti-Wrinkle Injections',
-    tagline: "Botulinum toxin is precisely placed into overactive facial muscles — forehead, frown lines and crow's feet — to relax dynamic expression lines and restore a naturally refreshed, well-rested appearance without freezing movement.",
+    tagline: "Botulinum toxin is precisely placed into overactive facial muscles, forehead, frown lines and crow's feet, to relax dynamic expression lines and restore a naturally refreshed, well-rested appearance without freezing movement.",
     image: '/assets/treatments/wrinkle-relaxing-malta-hero.jpg',
     stats: [
       { label: 'Treatment time', value: '15–30 min' },
@@ -23,7 +23,7 @@ const TREATMENTS = [
   {
     id: 'dermal-fillers',
     name: 'Dermal Fillers',
-    tagline: 'Hyaluronic acid — a molecule native to your own skin — is placed by our doctor to instantly restore lost volume, lift the mid-face, soften deep folds and redefine contours with results that are immediate and naturally harmonious.',
+    tagline: 'Hyaluronic acid, a molecule native to your own skin, is placed by our doctor to instantly restore lost volume, lift the mid-face, soften deep folds and redefine contours with results that are immediate and naturally harmonious.',
     image: '/assets/treatments/dermal-fillers-malta-hero.png',
     stats: [
       { label: 'Treatment time', value: '30–45 min' },
@@ -35,7 +35,7 @@ const TREATMENTS = [
   {
     id: 'microneedling',
     name: 'Microneedling',
-    tagline: "Controlled micro-channels in the dermis trigger your skin's own collagen and elastin repair response — progressively remodelling texture, closing enlarged pores and fading atrophic acne scars across a course of treatments.",
+    tagline: "Controlled micro-channels in the dermis trigger your skin's own collagen and elastin repair response, progressively remodelling texture, closing enlarged pores and fading atrophic acne scars across a course of treatments.",
     image: '/assets/treatments/microneedling-malta-hero.png',
     stats: [
       { label: 'Downtime', value: '24–72 hrs' },
@@ -47,7 +47,7 @@ const TREATMENTS = [
   {
     id: 'chemical-peels',
     name: 'Chemical Peels',
-    tagline: "A precisely selected acid — glycolic, salicylic, Jessner's or TCA — exfoliates damaged skin layers to correct pigmentation, clear active acne, even skin tone and reveal visibly clearer, brighter skin beneath.",
+    tagline: "A precisely selected acid, glycolic, salicylic, Jessner's or TCA, exfoliates damaged skin layers to correct pigmentation, clear active acne, even skin tone and reveal visibly clearer, brighter skin beneath.",
     image: '/assets/treatments/chemical-peels-malta-hero.png',
     stats: [
       { label: 'Downtime', value: 'Minimal–7 days' },
@@ -59,7 +59,7 @@ const TREATMENTS = [
   {
     id: 'collagen-stimulator',
     name: 'Collagen Stimulator',
-    tagline: 'Injectable biostimulators — Sculptra (PLLA) or Radiesse (CaHA) — activate your own fibroblasts to produce fresh collagen and restore facial volume gradually, with results that develop over weeks and last up to two years.',
+    tagline: 'Injectable biostimulators, Sculptra (PLLA) or Radiesse (CaHA), activate your own fibroblasts to produce fresh collagen and restore facial volume gradually, with results that develop over weeks and last up to two years.',
     image: '/assets/treatments/collagen-stimulator-malta-hero.png',
     stats: [
       { label: 'Results appear', value: '4–12 weeks' },
@@ -83,7 +83,7 @@ const TREATMENTS = [
   {
     id: 'lip-fillers',
     name: 'Lip Enhancement',
-    tagline: 'Micro-technique hyaluronic acid placement adds natural volume, defines the vermillion border, corrects asymmetry and restores projection — always calibrated to your facial proportions and never overdone.',
+    tagline: 'Micro-technique hyaluronic acid placement adds natural volume, defines the vermillion border, corrects asymmetry and restores projection, always calibrated to your facial proportions and never overdone.',
     image: '/assets/treatments/lip-fillers-malta-hero.png',
     stats: [
       { label: 'Treatment time', value: '20–30 min' },

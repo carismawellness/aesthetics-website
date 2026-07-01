@@ -24,8 +24,8 @@ const BODY       = 'Roboto, sans-serif';
 type StepId = 'concerns' | 'areas' | 'injectableComfort' | 'timeline' | 'referral' | 'contact';
 
 const STEPS: { id: StepId; title: string; sub: string }[] = [
-  { id: 'concerns',          title: 'What would you like to improve?',        sub: 'Choose all that apply — we\'ll match treatments to every concern.' },
-  { id: 'areas',             title: 'Which areas would you like to treat?',   sub: 'Optional — select any areas you have in mind.' },
+  { id: 'concerns',          title: 'What would you like to improve?',        sub: 'Choose all that apply, we\'ll match treatments to every concern.' },
+  { id: 'areas',             title: 'Which areas would you like to treat?',   sub: 'Optional, select any areas you have in mind.' },
   { id: 'injectableComfort', title: 'How do you feel about injectables?',     sub: 'This helps us tailor recommendations around your comfort level.' },
   { id: 'timeline',          title: 'What\'s your timeline?',                 sub: 'Helps us pace a plan that works around your life.' },
   { id: 'referral',          title: 'Where did you hear about us?',           sub: 'Last quick one before your personalised results.' },

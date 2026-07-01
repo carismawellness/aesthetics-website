@@ -39,7 +39,7 @@ export default function MembershipPage() {
         media={{
           type: "image",
           src: `${A}/mem-hero-portrait.jpg`,
-          alt: "Glow Club membership at Carisma Aesthetics Malta — exclusive aesthetics savings programme",
+          alt: "Glow Club membership at Carisma Aesthetics Malta, exclusive aesthetics savings programme",
           fill: true,
           position: "center top",
         }}

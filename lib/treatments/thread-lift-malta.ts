@@ -60,23 +60,23 @@ const t: Treatment = {
       "You can follow aftercare guidance, including avoiding strenuous activity during healing",
     ],
     notIdeal: [
-      "You have very advanced sagging — a surgical facelift may suit you better, and we will tell you honestly",
-      "You need zero downtime this week — there is mild swelling for 1 to 2 weeks as it settles",
-      "You are pregnant or breastfeeding — we will happily welcome you back afterwards",
-      "You are expecting a full surgical-facelift result — threads lift and refresh, they do not replace surgery",
-      "You have very thin or delicate skin — a skin booster or collagen-led plan may be the gentler path for you",
+      "You have very advanced sagging, a surgical facelift may suit you better, and we will tell you honestly",
+      "You need zero downtime this week, there is mild swelling for 1 to 2 weeks as it settles",
+      "You are pregnant or breastfeeding, we will happily welcome you back afterwards",
+      "You are expecting a full surgical-facelift result, threads lift and refresh, they do not replace surgery",
+      "You have very thin or delicate skin, a skin booster or collagen-led plan may be the gentler path for you",
     ],
     personas: [
       { title: "The early-sagging face", desc: "Your cheeks and jowls have begun to soften and drift downward, and creams just are not holding the line anymore." },
-      { title: "The not-ready-for-surgery patient", desc: "You want a real, visible lift but a surgical facelift feels like too much — you want a step in between." },
-      { title: "The natural-result seeker", desc: "You want to look lifted and rested, not pulled or operated on — a subtle change that still looks like you." },
+      { title: "The not-ready-for-surgery patient", desc: "You want a real, visible lift but a surgical facelift feels like too much, you want a step in between." },
+      { title: "The natural-result seeker", desc: "You want to look lifted and rested, not pulled or operated on, a subtle change that still looks like you." },
     ],
   },
   problem: {
     kicker: "The real reason people book",
     title: "Your face has started to slide, and you are not ready for surgery",
     body: [
-      "Doctor-led thread lifting gently lifts and repositions the tissue that has softened with time — so your face looks firmer and rested, without the cut, the cost, or the downtime of a facelift.",
+      "Doctor-led thread lifting gently lifts and repositions the tissue that has softened with time, so your face looks firmer and rested, without the cut, the cost, or the downtime of a facelift.",
     ],
   },
   guarantee: {
@@ -149,7 +149,7 @@ const t: Treatment = {
       { title: "Medically Qualified Practitioners", desc: "Every thread lift treatment is performed by a qualified doctor." },
       { title: "Advanced Facial Anatomy Expertise", desc: "Precision thread lift techniques tailored to your unique facial anatomy." },
       { title: "Personalised Treatment Plans", desc: "Your thread lift plan is designed to enhance, never overcorrect." },
-      { title: "Clinically Approved Products", desc: "Clinically Approved Products — CE-marked, clinically approved thread lift products and evidence-based protocols." },
+      { title: "Clinically Approved Products", desc: "Clinically Approved Products, CE-marked, clinically approved thread lift products and evidence-based protocols." },
       { title: "Thousands of Treatments Performed", desc: "Experience and results you can trust, right here in Malta." },
     ],
   },
@@ -177,9 +177,9 @@ const t: Treatment = {
     kicker: "Your thread lift plan",
     title: "Malta's Doctor-Led Thread Lift Plan",
     benefits: [
-      { icon: "shield", title: "Doctor-Led Precision", desc: "Every thread lift is performed by a medically qualified doctor with advanced facial-anatomy expertise — never a salon, never nurse-only." },
-      { icon: "sparkle", title: "Natural, Lifted Results", desc: "We lift and reposition the areas that have softened while keeping your expression — refreshed and firmer, never pulled." },
-      { icon: "clock", title: "Collagen That Keeps Building", desc: "Your lift improves over the following months as the threads stimulate your own collagen — with a follow-up review included." },
+      { icon: "shield", title: "Doctor-Led Precision", desc: "Every thread lift is performed by a medically qualified doctor with advanced facial-anatomy expertise, never a salon, never nurse-only." },
+      { icon: "sparkle", title: "Natural, Lifted Results", desc: "We lift and reposition the areas that have softened while keeping your expression, refreshed and firmer, never pulled." },
+      { icon: "clock", title: "Collagen That Keeps Building", desc: "Your lift improves over the following months as the threads stimulate your own collagen, with a follow-up review included." },
     ],
     included: [
       { label: "Free doctor-led consultation & suitability assessment" },

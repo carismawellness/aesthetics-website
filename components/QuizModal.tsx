@@ -104,7 +104,7 @@ export default function QuizModal() {
     <div
       role="dialog"
       aria-modal="true"
-      aria-label="Find your personalised aesthetic treatment — quiz"
+      aria-label="Find your personalised aesthetic treatment, quiz"
       className="fixed inset-0 z-[999] flex items-center justify-center p-4"
       style={{ display: isOpen ? 'flex' : 'none' }}
       onKeyDown={onTrapKeyDown}

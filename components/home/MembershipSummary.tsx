@@ -122,11 +122,11 @@ export default function MembershipSummary() {
           className="mx-auto"
           style={{ maxWidth: "760px" }}
           eyebrow="The Glow Club · Membership"
-          title="Glow Club Membership — Save More. Glow More."
+          title="Glow Club Membership, Save More. Glow More."
           subtitle={
             <>
               One simple monthly membership. Save a little each month into your Glow
-              balance, then spend it on the treatments and products you love — with
+              balance, then spend it on the treatments and products you love, with
               exclusive member discounts that apply from day one.
             </>
           }

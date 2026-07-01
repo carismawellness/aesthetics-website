@@ -3,13 +3,13 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "how-to-keep-your-skin-healthy",
   "title": "How to Keep Your Skin Healthy: Daily Habits for Radiant Skin",
-  "metaTitle": "How to Keep Skin Healthy — Daily Skincare & Lifestyle Tips",
+  "metaTitle": "How to Keep Skin Healthy, Daily Skincare & Lifestyle Tips",
   "metaDescription": "Simple daily habits and skincare practices to maintain healthy, radiant skin. Expert advice from Carisma Aesthetics.",
   "category": "Skincare",
   "publishDate": "2026-06-25",
   "readTime": 1,
   "coverImage": "https://static.wixstatic.com/media/healthy_skin.jpg",
-  "excerpt": "Healthy skin is beautiful skin. While genetics play a role, daily habits—from your skincare routine to lifestyle choices—have a profound impact on your skin's health and appearance. Let's explore the foundational practices that keep skin healthy and radiant at any age.",
+  "excerpt": "Healthy skin is beautiful skin. While genetics play a role, daily habits, from your skincare routine to lifestyle choices, have a profound impact on your skin's health and appearance. Let's explore the foundational practices that keep skin healthy and radiant at any age.",
   "content": [
     {
       "type": "heading",

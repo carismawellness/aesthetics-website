@@ -55,14 +55,14 @@ function PairCard({
 }) {
   const treatmentLabel = pair.label ?? title ?? "treatment";
   const getAlt = (lbl: "BEFORE" | "AFTER") =>
-    `${treatmentLabel} — ${lbl.charAt(0) + lbl.slice(1).toLowerCase()} photo (result ${index + 1} of ${total})`;
+    `${treatmentLabel}, ${lbl.charAt(0) + lbl.slice(1).toLowerCase()} photo (result ${index + 1} of ${total})`;
 
   return (
     <figure
       style={{ margin: 0 }}
       // Group the before+after as one labelled item for assistive tech.
       role="group"
-      aria-label={`${treatmentLabel} — before and after (result ${index + 1} of ${total})`}
+      aria-label={`${treatmentLabel}, before and after (result ${index + 1} of ${total})`}
     >
       <div className="grid grid-cols-2 gap-1.5">
         {(["BEFORE", "AFTER"] as const).map((lbl) => {
@@ -101,7 +101,7 @@ function PairCard({
                     padding: "16px",
                   }}
                 >
-                  {`${pair.label ?? ""} ${lbl}`.trim()} photo — drop file in
+                  {`${pair.label ?? ""} ${lbl}`.trim()} photo, drop file in
                 </div>
               )}
               <span

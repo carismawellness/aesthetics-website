@@ -514,7 +514,7 @@ export default function QuizResultsClient({ firstName, concerns, areas, recs }: 
                   </span>
                 </>
               )}
-              {' '}— our doctors have curated{' '}
+              , our doctors have curated{' '}
               <span style={{ color: 'rgba(255,255,255,0.82)' }}>
                 {recs.length} personalised treatment{recs.length !== 1 ? 's' : ''}
               </span>{' '}
@@ -648,7 +648,7 @@ export default function QuizResultsClient({ firstName, concerns, areas, recs }: 
             maxWidth: '420px',
             margin: '0 auto 32px',
           }}>
-            Discuss your personalised plan in person and start your journey toward glowing confidence — completely free, no obligation.
+            Discuss your personalised plan in person and start your journey toward glowing confidence, completely free, no obligation.
           </p>
           <Link
             href="/consultation"

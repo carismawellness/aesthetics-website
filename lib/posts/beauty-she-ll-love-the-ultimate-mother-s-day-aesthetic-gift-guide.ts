@@ -9,15 +9,15 @@ export const post: BlogPost = {
   "publishDate": "2025-05-12",
   "readTime": 3,
   "coverImage": "https://static.wixstatic.com/media/87fc13_714ed51befab4941ab809579a621970e~mv2.jpg",
-  "excerpt": "Mother’s Day is more than just a celebration—it’s a heartfelt opportunity to show your appreciation for the woman who always puts others...",
+  "excerpt": "Mother’s Day is more than just a celebration, it’s a heartfelt opportunity to show your appreciation for the woman who always puts others...",
   "content": [
     {
       "type": "paragraph",
-      "html": "Mother’s Day is more than just a celebration—it’s a heartfelt opportunity to show your appreciation for the woman who always puts others first. This year, skip the flowers and chocolates, and gift her something that truly lasts: <strong>confidence, glow, and self-care</strong>."
+      "html": "Mother’s Day is more than just a celebration, it’s a heartfelt opportunity to show your appreciation for the woman who always puts others first. This year, skip the flowers and chocolates, and gift her something that truly lasts: <strong>confidence, glow, and self-care</strong>."
     },
     {
       "type": "paragraph",
-      "html": "At <a href=\"/\" style=\"color:var(--teal);text-decoration:underline;\"><strong>Carisma Aesthetics</strong></a>, we’ve curated the ultimate aesthetic gift guide for moms who deserve to feel as radiant as they are. Whether she loves pampering or is curious about non-invasive beauty, these <strong>treatments and experiences make thoughtful, luxurious gifts</strong>—just in time for Mother's Day."
+      "html": "At <a href=\"/\" style=\"color:var(--teal);text-decoration:underline;\"><strong>Carisma Aesthetics</strong></a>, we’ve curated the ultimate aesthetic gift guide for moms who deserve to feel as radiant as they are. Whether she loves pampering or is curious about non-invasive beauty, these <strong>treatments and experiences make thoughtful, luxurious gifts</strong>, just in time for Mother's Day."
     },
     {
       "type": "heading",
@@ -38,7 +38,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "It’s the ultimate <strong>“lunchtime facial”</strong>—relaxing, effective, and with zero downtime. A glowing favorite for moms of all ages."
+      "html": "It’s the ultimate <strong>“lunchtime facial”</strong>, relaxing, effective, and with zero downtime. A glowing favorite for moms of all ages."
     },
     {
       "type": "heading",
@@ -127,7 +127,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "Whether it’s a first-time facial, a skin consultation, or a full aesthetic journey—she gets to <strong>decide what self-care looks like</strong>."
+      "html": "Whether it’s a first-time facial, a skin consultation, or a full aesthetic journey, she gets to <strong>decide what self-care looks like</strong>."
     },
     {
       "type": "heading",
@@ -136,7 +136,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "Don’t just give a treatment—give a <strong>moment</strong>. Pair her aesthetic treatment with:"
+      "html": "Don’t just give a treatment, give a <strong>moment</strong>. Pair her aesthetic treatment with:"
     },
     {
       "type": "list",
@@ -148,7 +148,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "She’ll feel celebrated, cherished, and most importantly—<strong>beautiful inside and out</strong>."
+      "html": "She’ll feel celebrated, cherished, and most importantly, <strong>beautiful inside and out</strong>."
     },
     {
       "type": "paragraph",

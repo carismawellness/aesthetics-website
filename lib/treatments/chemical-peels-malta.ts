@@ -4,7 +4,7 @@ const t: Treatment = {
   slug: "chemical-peels-malta",
   category: "Face",
   hero: {
-    title: "Chemical Peels in Malta — Brighter, Smoother Skin",
+    title: "Chemical Peels in Malta, Brighter, Smoother Skin",
     subtitle: "Are you seeking a brighter, smoother, and more youthful complexion?",
     body: "Get a safe and effective Chemical Peel treatment in Malta! Our experienced team uses medical-grade solutions. Inflammatory (TCA and Retinoic) peels deeply and takes 1-10 days to heal, typically done in cold season. Non-inflammatory (Mandelic and Salicylic acid) is gentler and can be done in any season. Book now for even, radiant skin!",
     prices: [
@@ -63,30 +63,30 @@ const t: Treatment = {
       "You are willing to follow a structured pre- and post-care routine",
     ],
     notIdeal: [
-      "You cannot avoid the sun right now — strict SPF during recovery is non-negotiable for a safe result",
-      "You have used isotretinoin (Roaccutane) in the last 6 to 12 months — we will gladly welcome you back once your skin is ready",
-      "You are pregnant or breastfeeding — we will happily plan your peel for afterwards",
-      "You have an active cold sore or breakout in the area — let it settle first and we will pick the perfect window",
-      "Your skin barrier feels raw or compromised right now — we would rather repair it first, then peel",
+      "You cannot avoid the sun right now, strict SPF during recovery is non-negotiable for a safe result",
+      "You have used isotretinoin (Roaccutane) in the last 6 to 12 months, we will gladly welcome you back once your skin is ready",
+      "You are pregnant or breastfeeding, we will happily plan your peel for afterwards",
+      "You have an active cold sore or breakout in the area, let it settle first and we will pick the perfect window",
+      "Your skin barrier feels raw or compromised right now, we would rather repair it first, then peel",
     ],
     personas: [
-      { title: "The dull, tired complexion", desc: "Your skin looks flat, grey, or lacklustre — you want that fresh, lit-from-within glow back." },
+      { title: "The dull, tired complexion", desc: "Your skin looks flat, grey, or lacklustre, you want that fresh, lit-from-within glow back." },
       { title: "The pigmentation concern", desc: "Sun spots, melasma, or post-acne marks are bothering you, and you want a clearer, more even tone." },
       { title: "The breakout-prone skin", desc: "You still get congestion, blemishes, or post-acne texture and want skin that feels smooth and calm." },
     ],
   },
   problem: {
     kicker: "The real reason people book",
-    title: "Your skin looks tired and dull — older than you actually feel",
+    title: "Your skin looks tired and dull, older than you actually feel",
     body: [
-      "A doctor-led medical-grade peel gently lifts away that dull, uneven surface to reveal the brighter, smoother, more radiant skin underneath — so your complexion finally matches how you feel.",
+      "A doctor-led medical-grade peel gently lifts away that dull, uneven surface to reveal the brighter, smoother, more radiant skin underneath, so your complexion finally matches how you feel.",
     ],
   },
   guarantee: {
     kicker: "The Natural Confidence Guarantee",
     title: "Natural Confidence Guarantee",
     paragraphs: [
-      "Every peel starts with a doctor-led skin assessment and a natural-first approach — the right peel, at the right strength, for your skin type — backed by a free follow-up review until you are 100% happy with a result that simply looks like healthier you.",
+      "Every peel starts with a doctor-led skin assessment and a natural-first approach, the right peel, at the right strength, for your skin type, backed by a free follow-up review until you are 100% happy with a result that simply looks like healthier you.",
     ],
     cta: "Book Your Free Consultation",
     points: [
@@ -96,7 +96,7 @@ const t: Treatment = {
     ],
   },
   experience: {
-    title: "How Does a Chemical Peel Work? — Your Treatment Steps", cta: "BOOK YOUR FREE CONSULTATION",
+    title: "How Does a Chemical Peel Work?, Your Treatment Steps", cta: "BOOK YOUR FREE CONSULTATION",
     steps: [
       { title: "Consultation & Skin Assessment", desc: "One of our doctors reviews your skin condition, concerns, and medical history, then designs a peel plan at the right strength and depth for your skin type.", image: "/assets/treatments/chemical-peels-malta-step1.png" },
       { title: "Your Peel Treatment", desc: "Your doctor applies the medical-grade peel solution in precisely controlled layers, quick, comfortable, and tailored to your skin.", image: "/assets/treatments/chemical-peels-malta-step3.png" },
@@ -153,7 +153,7 @@ const t: Treatment = {
     ],
   },
   trusted: {
-    title: "Medically Qualified Practitioners — Safe Chemical Peels in Malta",
+    title: "Medically Qualified Practitioners, Safe Chemical Peels in Malta",
     subtitle: "Doctor-Led Chemical Peel in Malta",
     asSeenOn: ["/assets/press/lovin-malta.jpeg", "/assets/press/malta-daily.png", "/assets/press/bay.jpeg", "/assets/press/times-of-malta.png", "/assets/press/malta-today.jpg"],
     images: ["/assets/treatments/trusted-clinic-collage.png"],
@@ -167,7 +167,7 @@ const t: Treatment = {
   },
   difference: {
     kicker: "The Carisma Difference",
-    title: "Your Chemical Peel Results — What to Expect",
+    title: "Your Chemical Peel Results, What to Expect",
     commitmentTitle: "Our Commitment",
     commitment: [
       "Natural, refined chemical peel results, never overdone, never frozen",
@@ -189,9 +189,9 @@ const t: Treatment = {
     kicker: "Your chemical peel plan",
     title: "Malta's Doctor-Led Chemical Peel Plan",
     benefits: [
-      { icon: "shield", title: "Doctor-Led & Medical-Grade", desc: "Every peel is performed by a medically qualified doctor using clinically approved solutions — never a salon, never guesswork." },
+      { icon: "shield", title: "Doctor-Led & Medical-Grade", desc: "Every peel is performed by a medically qualified doctor using clinically approved solutions, never a salon, never guesswork." },
       { icon: "sparkle", title: "Brighter, Even, Renewed Skin", desc: "We lift away dull, uneven surface skin to reveal a smoother, clearer, more radiant complexion that still looks like you." },
-      { icon: "chart", title: "Tailored to Your Skin Type", desc: "The peel type, strength, and depth are chosen for your skin and concern — for safe, progressive, lasting results." },
+      { icon: "chart", title: "Tailored to Your Skin Type", desc: "The peel type, strength, and depth are chosen for your skin and concern, for safe, progressive, lasting results." },
     ],
     included: [
       { label: "Free doctor-led skin consultation" },

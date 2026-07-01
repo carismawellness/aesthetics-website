@@ -3,7 +3,7 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "acne-scar-treatment-malta",
   "title": "Acne Scar Treatment Malta: Smooth and Restore Your Skin",
-  "metaTitle": "Acne Scar Treatment Malta — Effective Scar Solutions",
+  "metaTitle": "Acne Scar Treatment Malta, Effective Scar Solutions",
   "metaDescription": "Acne scar treatments in Malta: microneedling, laser, chemical peels. Smooth skin and reduce scarring. Carisma Aesthetics. Book your consultation.",
   "category": "Skincare",
   "publishDate": "2026-06-12",

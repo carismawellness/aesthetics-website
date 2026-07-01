@@ -161,7 +161,7 @@ export default function ServicesMarquee() {
               lineHeight: 1.65,
             }}
           >
-            A complete menu of advanced, medically supervised treatments — each
+            A complete menu of advanced, medically supervised treatments, each
             tailored to refresh, restore and let you glow with confidence.
           </p>
           <div

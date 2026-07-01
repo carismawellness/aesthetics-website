@@ -9,7 +9,7 @@ const t: Treatment = {
   hero: {
     title: "Polynucleotides in Malta | Salmon DNA Skin Treatment",
     subtitle: "ARE YOU LOOKING TO RESTORE FIRMER, SMOOTHER, MORE RADIANT SKIN?",
-    body: "Polynucleotides (Salmon DNA) boost hydration, repair damaged skin, and stimulate collagen — giving you smoother texture, improved elasticity, and a naturally refreshed glow.",
+    body: "Polynucleotides (Salmon DNA) boost hydration, repair damaged skin, and stimulate collagen, giving you smoother texture, improved elasticity, and a naturally refreshed glow.",
     prices: [{ label: "1ml", price: "from €249/ml" }],
     cta: "BOOK YOUR SESSION NOW",
     bookHref: "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2800348&oiid=sv%3A25753643&share=true&pId=2708191",
@@ -61,14 +61,14 @@ const t: Treatment = {
       "You are looking for progressive improvement that lasts",
     ],
     notIdeal: [
-      "You want to see the full result from a single session — skin renewal builds gradually over your course",
-      "You are looking to restore volume or reshape features — that is what dermal fillers are for, and we are happy to guide you",
-      "You are pregnant or breastfeeding — we will warmly welcome you back afterwards",
-      "You have an active skin infection in the area — we will treat once your skin has settled",
-      "You take blood-thinning medication — let us know first so we can plan your treatment safely",
+      "You want to see the full result from a single session, skin renewal builds gradually over your course",
+      "You are looking to restore volume or reshape features, that is what dermal fillers are for, and we are happy to guide you",
+      "You are pregnant or breastfeeding, we will warmly welcome you back afterwards",
+      "You have an active skin infection in the area, we will treat once your skin has settled",
+      "You take blood-thinning medication, let us know first so we can plan your treatment safely",
     ],
     personas: [
-      { title: "The tired, depleted complexion", desc: "Your skin looks dull, dehydrated, and lacklustre — it has lost the bounce and glow it once had." },
+      { title: "The tired, depleted complexion", desc: "Your skin looks dull, dehydrated, and lacklustre, it has lost the bounce and glow it once had." },
       { title: "The delicate under-eye", desc: "Crepey, thin, shadowed skin around your eyes makes you look more tired than you feel." },
       { title: "The long-term skin investor", desc: "You care about real skin health over a quick fix, and want a science-led result that builds and lasts." },
     ],
@@ -77,14 +77,14 @@ const t: Treatment = {
     kicker: "The real reason people book",
     title: "Your skin looks tired and depleted, even when you feel well",
     body: [
-      "Polynucleotides work deep in the skin to rebuild hydration and collagen from within — so your complexion looks healthier, brighter, and refreshed, in a way that is unmistakably you.",
+      "Polynucleotides work deep in the skin to rebuild hydration and collagen from within, so your complexion looks healthier, brighter, and refreshed, in a way that is unmistakably you.",
     ],
   },
   guarantee: {
     kicker: "The Natural Confidence Guarantee",
     title: "Natural Confidence Guarantee",
     paragraphs: [
-      "Every plan starts with a doctor-led skin assessment and a natural-first approach that supports your skin's own repair — never overdone, backed by a complimentary review until you are 100% satisfied with a result that still looks like you.",
+      "Every plan starts with a doctor-led skin assessment and a natural-first approach that supports your skin's own repair, never overdone, backed by a complimentary review until you are 100% satisfied with a result that still looks like you.",
     ],
     cta: "Book Your Free Consultation",
     points: [
@@ -97,7 +97,7 @@ const t: Treatment = {
     title: "Your treatment experience",
     steps: [
       { title: "Consultation & Skin Assessment", desc: "We assess your skin condition, concerns, and medical history with one of our doctors, then design a regenerative plan tailored to you.", image: "/assets/treatments/botox-step1.png" },
-      { title: "Targeted Treatment", desc: "Your doctor delivers the polynucleotide solution through fine, precise injections — comfortable, controlled, and with minimal downtime.", image: "/assets/treatments/botox-step2.png" },
+      { title: "Targeted Treatment", desc: "Your doctor delivers the polynucleotide solution through fine, precise injections, comfortable, controlled, and with minimal downtime.", image: "/assets/treatments/botox-step2.png" },
       { title: "Ongoing Review & Renewal", desc: "Your doctor monitors how your skin responds across your course and refines the plan to support natural, lasting renewal.", image: "/assets/treatments/botox-step4.png" },
     ],
     cta: "BOOK YOUR FREE CONSULTATION",
@@ -151,7 +151,7 @@ const t: Treatment = {
       { title: "medically qualified practitioners", desc: "Every salmon dna treatment is performed by a qualified doctor." },
       { title: "Advanced Facial Anatomy Expertise", desc: "Precision salmon dna techniques tailored to your unique facial anatomy." },
       { title: "Personalised Treatment Plans", desc: "Your salmon dna plan is designed to enhance, never overcorrect." },
-      { title: "Clinically Approved Products", desc: "Clinically Approved Products — CE-marked, clinically approved salmon dna and evidence-based protocols." },
+      { title: "Clinically Approved Products", desc: "Clinically Approved Products, CE-marked, clinically approved salmon dna and evidence-based protocols." },
       { title: "Thousands of Treatments Performed", desc: "Experience and results you can trust, right here in Malta." },
     ],
   },
@@ -179,8 +179,8 @@ const t: Treatment = {
     kicker: "Your polynucleotides plan",
     title: "Malta's Doctor-Led Polynucleotides Plan",
     benefits: [
-      { icon: "shield", title: "Doctor-Led Precision", desc: "Every treatment is performed by a medically qualified doctor — never a salon, never nurse-only." },
-      { icon: "sparkle", title: "Natural Skin Renewal", desc: "Polynucleotides rebuild hydration and collagen from within — your skin looks healthier and refreshed, never altered." },
+      { icon: "shield", title: "Doctor-Led Precision", desc: "Every treatment is performed by a medically qualified doctor, never a salon, never nurse-only." },
+      { icon: "sparkle", title: "Natural Skin Renewal", desc: "Polynucleotides rebuild hydration and collagen from within, your skin looks healthier and refreshed, never altered." },
       { icon: "chart", title: "Progressive, Lasting Results", desc: "Results build across your course and can last 6 to 12 months, supported by a personalised maintenance plan." },
     ],
     included: [
@@ -206,15 +206,15 @@ const t: Treatment = {
   },
   faqTitle: "Frequently asked questions",
   faq: [
-    { q: "What exactly are polynucleotides (Salmon DNA)?", a: "Polynucleotides are purified DNA molecules that stimulate skin repair, hydration, and collagen production. They work by helping your skin regenerate naturally — without altering your facial features." },
+    { q: "What exactly are polynucleotides (Salmon DNA)?", a: "Polynucleotides are purified DNA molecules that stimulate skin repair, hydration, and collagen production. They work by helping your skin regenerate naturally, without altering your facial features." },
     { q: "Is the treatment safe?", a: "Yes. Polynucleotides are clinically proven, biocompatible, and widely used in regenerative aesthetics. They are injected in small amounts and are suitable even for delicate areas such as the under-eyes." },
     { q: "Which areas can be treated?", a: "Common treatment areas include under-eyes, face, neck, décolletage, and hands. They are especially effective where the skin is thin, dull, or showing early signs of aging." },
-    { q: "How soon will I see results?", a: "You may notice improved hydration quickly, but the most visible changes — smoother texture, brighter skin, and improved elasticity — develop gradually over 2–6 weeks." },
+    { q: "How soon will I see results?", a: "You may notice improved hydration quickly, but the most visible changes, smoother texture, brighter skin, and improved elasticity, develop gradually over 2–6 weeks." },
     { q: "How many sessions do I need?", a: "A course of 2–4 sessions is typically recommended for best results, spaced 2–3 weeks apart. Maintenance every 6–12 months helps prolong the rejuvenating effects." },
     { q: "Does the treatment hurt?", a: "Most clients find the treatment very tolerable. A topical numbing cream can be applied to ensure comfort, especially for sensitive areas like the under-eyes." },
     { q: "Is there downtime?", a: "Downtime is minimal. You may experience slight redness or puffiness for a few hours, and mild swelling in treated areas for 1–2 days." },
     { q: "Can I combine polynucleotides with other treatments?", a: "Absolutely. They pair beautifully with Hydrafacial, Microneedling, PRP, and Botox for enhanced skin quality and long-lasting rejuvenation." },
-    { q: "Who is a good candidate?", a: "Polynucleotides are ideal for anyone seeking smoother, brighter, healthier-looking skin — especially if you’ve noticed dullness, dehydration, crepey texture, or early aging." },
+    { q: "Who is a good candidate?", a: "Polynucleotides are ideal for anyone seeking smoother, brighter, healthier-looking skin, especially if you’ve noticed dullness, dehydration, crepey texture, or early aging." },
     { q: "How long do the results last?", a: "Most clients enjoy results for 6–12 months, depending on skin condition, lifestyle, and the number of sessions completed." },
   ],
 };

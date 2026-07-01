@@ -47,7 +47,7 @@ export default function GiftCardsSummary() {
                 The effortless way to give a glow they will remember. A Carisma
                 Aesthetics e-voucher is delivered instantly, valid for a full 12
                 months, and redeemable on any treatment at any of our clinics in
-                Malta — a beautiful card for every occasion.
+                Malta, a beautiful card for every occasion.
               </>
             }
             id="gift-summary-heading"

@@ -26,7 +26,7 @@ export default function GiftFinalCta() {
               id="gift-final-cta-heading"
               eyebrow="The Gift of Glow"
               title="Give a gift she’ll never forget"
-              subtitle="One thoughtful voucher, endless ways to glow. She chooses the treatment she’ll love — you give the confidence that comes with it."
+              subtitle="One thoughtful voucher, endless ways to glow. She chooses the treatment she’ll love, you give the confidence that comes with it."
               subtitleMaxWidth={560}
             />
 

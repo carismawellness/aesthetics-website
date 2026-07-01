@@ -55,7 +55,7 @@ const t: Treatment = {
     kicker: "The real reason people book",
     title: "Your skin looks tired and dull, even when you feel fine",
     body: [
-      "Doctor-led mesotherapy feeds your skin hyaluronic acid, vitamins, and nutrients exactly where it has lost them — so you look hydrated, rested, and naturally radiant again.",
+      "Doctor-led mesotherapy feeds your skin hyaluronic acid, vitamins, and nutrients exactly where it has lost them, so you look hydrated, rested, and naturally radiant again.",
     ],
   },
   guarantee: {
@@ -75,7 +75,7 @@ const t: Treatment = {
     title: "Is this suitable for you?",
     intro: "Mesotherapy delivers vitamins, minerals, and hyaluronic acid directly into the skin for targeted nourishment. Results are cumulative, meaning each session builds on the last. A course-based approach delivers the most visible improvement.",
     personas: [
-      { title: "The dull, dehydrated complexion", desc: "Your skin looks tired, flat, and thirsty — you want that lit-from-within glow back without changing your features." },
+      { title: "The dull, dehydrated complexion", desc: "Your skin looks tired, flat, and thirsty, you want that lit-from-within glow back without changing your features." },
       { title: "The early-ageing skin", desc: "Fine lines, crepiness, and a loss of bounce are creeping in, and you want to feed and firm the skin before it progresses." },
       { title: "The targeted-concern patient", desc: "Uneven tone, dark under-eyes, or thinning scalp bother you, and you want a cocktail built around that exact concern." },
     ],
@@ -87,18 +87,18 @@ const t: Treatment = {
       "You want a treatment that can be combined with other skin therapies",
     ],
     notIdeal: [
-      "You are hoping to restore lost volume or lift — that is what dermal fillers and collagen stimulators are for",
-      "You need to see the full result after one session — mesotherapy builds gently over a course",
-      "You are pregnant or breastfeeding — we will happily welcome you back afterwards",
-      "You are on blood-thinning medication — we will simply ask for medical clearance first",
-      "You have a known allergy to common mesotherapy ingredients — your consultation rules this out safely",
+      "You are hoping to restore lost volume or lift, that is what dermal fillers and collagen stimulators are for",
+      "You need to see the full result after one session, mesotherapy builds gently over a course",
+      "You are pregnant or breastfeeding, we will happily welcome you back afterwards",
+      "You are on blood-thinning medication, we will simply ask for medical clearance first",
+      "You have a known allergy to common mesotherapy ingredients, your consultation rules this out safely",
     ],
   },
   experience: {
     title: "Your treatment experience", cta: "BOOK YOUR FREE CONSULTATION",
     steps: [
       { title: "Consultation & Plan", desc: "One of our doctors assesses your skin condition, concerns, and medical history, then designs a personalised cocktail and session course built around your goals.", image: "/assets/treatments/botox-step1.png" },
-      { title: "Targeted Treatment", desc: "Your doctor delivers the active ingredients into the mesoderm with fine, precise microinjections — quick, comfortable, and with minimal downtime.", image: "/assets/treatments/botox-step3.png" },
+      { title: "Targeted Treatment", desc: "Your doctor delivers the active ingredients into the mesoderm with fine, precise microinjections, quick, comfortable, and with minimal downtime.", image: "/assets/treatments/botox-step3.png" },
       { title: "Ongoing Review", desc: "Your doctor monitors how your skin responds across the course and refines the cocktail to keep your results natural and progressive.", image: "/assets/treatments/botox-step4.png" },
     ],
   },
@@ -188,8 +188,8 @@ const t: Treatment = {
     kicker: "Your mesotherapy plan",
     title: "Malta's Doctor-Led Mesotherapy Plan",
     benefits: [
-      { icon: "shield", title: "Doctor-Led Precision", desc: "Every treatment is performed by a medically qualified doctor — never a salon, never a beautician-only service." },
-      { icon: "sparkle", title: "Custom Skin Cocktail", desc: "Your blend of hyaluronic acid, vitamins, and actives is built around your skin assessment — for real hydration and glow." },
+      { icon: "shield", title: "Doctor-Led Precision", desc: "Every treatment is performed by a medically qualified doctor, never a salon, never a beautician-only service." },
+      { icon: "sparkle", title: "Custom Skin Cocktail", desc: "Your blend of hyaluronic acid, vitamins, and actives is built around your skin assessment, for real hydration and glow." },
       { icon: "clock", title: "Course-Based Results", desc: "We plan a progressive course so each session builds on the last, with ongoing review to keep results natural." },
     ],
     included: [

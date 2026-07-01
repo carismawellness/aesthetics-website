@@ -14,7 +14,7 @@ export const post: BlogPost = {
   "content": [
     {
       "type": "paragraph",
-      "html": "The jawline is one of the most visible signs of youth and overall facial attractiveness. As we age, the jawline softens—a result of volume loss, skin laxity, and changes in the underlying bone structure. Fortunately, injectables offer a highly effective non-surgical solution to restore definition and create a sharper, more sculpted jawline."
+      "html": "The jawline is one of the most visible signs of youth and overall facial attractiveness. As we age, the jawline softens, a result of volume loss, skin laxity, and changes in the underlying bone structure. Fortunately, injectables offer a highly effective non-surgical solution to restore definition and create a sharper, more sculpted jawline."
     },
     {
       "type": "heading",

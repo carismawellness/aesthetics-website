@@ -5,8 +5,8 @@ const t: Treatment = {
   category: "Package",
   hero: {
     title: "Ultimate Facelift Malta",
-    subtitle: "Reverse visible aging — no knife, no downtime.",
-    body: "If your skin has lost its lift, your cheeks feel flatter than before, or your jawline has lost its shape, this is your sign to rewind time — naturally. Our Ultimate Facelift Package lifts, tightens, and sculpts using medical-grade threads and bio-stimulation — without surgery, without long recovery days — performed by qualified doctors who specialise in facial anatomy.",
+    subtitle: "Reverse visible aging, no knife, no downtime.",
+    body: "If your skin has lost its lift, your cheeks feel flatter than before, or your jawline has lost its shape, this is your sign to rewind time, naturally. Our Ultimate Facelift Package lifts, tightens, and sculpts using medical-grade threads and bio-stimulation, without surgery, without long recovery days, performed by qualified doctors who specialise in facial anatomy.",
     prices: [
       { label: "2x Threads", price: "€300" },
       { label: "Hyaluronic acid serum", price: "€20" },
@@ -43,7 +43,7 @@ const t: Treatment = {
     { before: "/assets/treatments/ultimate-facelift-ba5-2.jpg", after: "/assets/treatments/ultimate-facelift-ba10-2.jpg", label: "Overall facial laxity", name: "Diane K.", review: "My whole face looks lifted and the folds beside my mouth have settled. People say I look rested rather than asking what I had done." },
   ],
   precision: {
-    title: "YOUR FACELIFT — REDEFINED.",
+    title: "YOUR FACELIFT, REDEFINED.",
     intro: "See how our Ultimate Facelift Package gently lifts, tightens, and sculpts for visibly younger, naturally radiant skin.",
     areas: [
       { name: "Visible Lift & Contour", desc: "Enjoy a firmer, more lifted appearance after your first session." },
@@ -56,7 +56,7 @@ const t: Treatment = {
     kicker: "The real reason people book",
     title: "Your face looks older and more tired than you feel",
     body: [
-      "Doctor-led thread lifting gently lifts the cheeks and redefines the jawline while stimulating your own collagen — so you look rested and refreshed, never pulled or done.",
+      "Doctor-led thread lifting gently lifts the cheeks and redefines the jawline while stimulating your own collagen, so you look rested and refreshed, never pulled or done.",
     ],
   },
   guarantee: {
@@ -74,18 +74,18 @@ const t: Treatment = {
   },
   suitability: {
     title: "Is this suitable for you?",
-    intro: "The Ultimate Facelift is most effective when tailored to your unique facial structure — lifting the areas that have softened while keeping you looking like you. A consultation with one of our doctors helps us understand what will work best for your skin and goals.",
+    intro: "The Ultimate Facelift is most effective when tailored to your unique facial structure, lifting the areas that have softened while keeping you looking like you. A consultation with one of our doctors helps us understand what will work best for your skin and goals.",
     personas: [
       { title: "The midface that has softened", desc: "Your cheeks feel flatter and have started to descend, and your face has lost the definition it once had." },
       { title: "The blurred jawline", desc: "Your jawline and neck contour are no longer as sharp as they were, and it shows most in photos." },
-      { title: "The natural-result patient", desc: "You want a real lift and tightening — but never a pulled, surgical or overdone look." },
+      { title: "The natural-result patient", desc: "You want a real lift and tightening, but never a pulled, surgical or overdone look." },
     ],
     notIdeal: [
-      "You are hoping to restore lost volume on its own — that is what dermal fillers are for; we will happily combine the two if it suits you",
-      "You have advanced, heavy skin laxity that may be better suited to a surgical facelift — your doctor will tell you honestly at consultation",
-      "You are pregnant or breastfeeding — we will warmly welcome you back afterwards",
-      "You need the full result the same day — the lift is immediate, but your collagen keeps improving the skin over the following weeks",
-      "You would rather skip the doctor consultation — it is how we keep your result safe, suitable, and natural",
+      "You are hoping to restore lost volume on its own, that is what dermal fillers are for; we will happily combine the two if it suits you",
+      "You have advanced, heavy skin laxity that may be better suited to a surgical facelift, your doctor will tell you honestly at consultation",
+      "You are pregnant or breastfeeding, we will warmly welcome you back afterwards",
+      "You need the full result the same day, the lift is immediate, but your collagen keeps improving the skin over the following weeks",
+      "You would rather skip the doctor consultation, it is how we keep your result safe, suitable, and natural",
     ],
   },
   experience: {
@@ -125,7 +125,7 @@ const t: Treatment = {
       "/assets/treatments/thread-lift-malta-trusted4.png",
     ],
     points: [
-      { title: "INSTANT LIFT", desc: "Experience a visibly tighter, more lifted look right after your first session — no surgery, no scars." },
+      { title: "INSTANT LIFT", desc: "Experience a visibly tighter, more lifted look right after your first session, no surgery, no scars." },
       { title: "DEEP HYDRATION BOOST", desc: "Our hyaluronic infusion restores plumpness and glow, leaving your skin smooth and radiant." },
       { title: "ADVANCED THREAD TECHNOLOGY", desc: "Medical-grade threads gently lift sagging skin while stimulating natural collagen for long-term results." },
       { title: "SAFE & CLINICALLY CERTIFIED", desc: "Performed by certified medical professionals using EU-approved, clinically proven products." },
@@ -136,10 +136,10 @@ const t: Treatment = {
     title: "35+ years of expertise. Proven, timeless results.",
     commitmentTitle: "OUR COMMITMENT",
     commitment: [
-      "Visible Lift & Contour — A naturally lifted, youthful appearance from your very first session.",
-      "Smooth, Firm Skin — Restores elasticity and reduces sagging with advanced rejuvenation technology.",
-      "No Surgery, No Downtime — Gentle, effective, and non-invasive — perfect for busy schedules.",
-      "Science Meets Aesthetics — Performed by certified professionals using leading EU-approved techniques.",
+      "Visible Lift & Contour, A naturally lifted, youthful appearance from your very first session.",
+      "Smooth, Firm Skin, Restores elasticity and reduces sagging with advanced rejuvenation technology.",
+      "No Surgery, No Downtime, Gentle, effective, and non-invasive, perfect for busy schedules.",
+      "Science Meets Aesthetics, Performed by certified professionals using leading EU-approved techniques.",
     ],
     whyTitle: "WHY MALTA CHOOSES CARISMA AESTHETICS",
     why: [
@@ -155,8 +155,8 @@ const t: Treatment = {
     kicker: "Your facelift plan",
     title: "Malta's Doctor-Led Ultimate Facelift Package",
     benefits: [
-      { icon: "shield", title: "Doctor-Led Precision", desc: "Every lift is performed by a medically qualified doctor with advanced facial-anatomy expertise — never a salon." },
-      { icon: "sparkle", title: "Lifted, Natural Results", desc: "We lift the cheeks and redefine the jawline while keeping you looking like you — refreshed, never pulled." },
+      { icon: "shield", title: "Doctor-Led Precision", desc: "Every lift is performed by a medically qualified doctor with advanced facial-anatomy expertise, never a salon." },
+      { icon: "sparkle", title: "Lifted, Natural Results", desc: "We lift the cheeks and redefine the jawline while keeping you looking like you, refreshed, never pulled." },
       { icon: "clock", title: "Immediate, Lasting Lift", desc: "See the lift the same day, then watch your skin keep improving as your own collagen rebuilds for up to 3-5 years." },
     ],
     included: [
@@ -194,7 +194,7 @@ const t: Treatment = {
       "€25 Aesthetics Credit for your friend",
     ],
     guaranteeChip: "Doctor-led · Non-surgical · Natural-looking results",
-    urgency: "Limited appointment availability — book your consultation today",
+    urgency: "Limited appointment availability, book your consultation today",
     cta: {
       text: "Book My Ultimate Facelift Consultation",
       href: "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2800348&share=true&pId=2708191",
@@ -203,7 +203,7 @@ const t: Treatment = {
   },
   closing: {
     heading: "Ready for Your Ultimate Facelift?",
-    sub: "Full facial rejuvenation — non-surgical, doctor-led, personalised to you. Book your free consultation at Carisma Aesthetics, Malta.",
+    sub: "Full facial rejuvenation, non-surgical, doctor-led, personalised to you. Book your free consultation at Carisma Aesthetics, Malta.",
     ctaLabel: "Book My Facelift Consultation",
     ctaHref: "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2800348&share=true&pId=2708191",
   },
@@ -211,7 +211,7 @@ const t: Treatment = {
   faq: [
     {
       q: "What is the Ultimate Facelift package?",
-      a: "The Ultimate Facelift is a non-surgical lifting package that combines medical-grade threads with a hyaluronic acid skin infusion to lift, tighten, and sculpt the face — without surgery, general anaesthetic, or long recovery. The threads are placed beneath the skin using a fine cannula to reposition softened tissue, while your body's natural healing response stimulates collagen for sustained firmness. Every treatment is performed by a qualified doctor at our Malta clinic.",
+      a: "The Ultimate Facelift is a non-surgical lifting package that combines medical-grade threads with a hyaluronic acid skin infusion to lift, tighten, and sculpt the face, without surgery, general anaesthetic, or long recovery. The threads are placed beneath the skin using a fine cannula to reposition softened tissue, while your body's natural healing response stimulates collagen for sustained firmness. Every treatment is performed by a qualified doctor at our Malta clinic.",
     },
     {
       q: "How is a thread lift different from a surgical facelift?",
@@ -235,11 +235,11 @@ const t: Treatment = {
     },
     {
       q: "Are there any side effects or risks?",
-      a: "As with any medical procedure, there are some potential risks, including mild bruising, swelling, tenderness, or, rarely, thread movement. Choosing a qualified and experienced doctor — as you do at Carisma — significantly reduces these risks. Your suitability is assessed and the procedure is strictly subject to doctor approval.",
+      a: "As with any medical procedure, there are some potential risks, including mild bruising, swelling, tenderness, or, rarely, thread movement. Choosing a qualified and experienced doctor, as you do at Carisma, significantly reduces these risks. Your suitability is assessed and the procedure is strictly subject to doctor approval.",
     },
     {
       q: "Who is a suitable candidate for the Ultimate Facelift?",
-      a: "It is generally suited to healthy adults with mild to moderate sagging who want a more lifted, defined appearance without surgery — softened cheeks, a less-defined jawline, or skin that has lost firmness. Realistic expectations are important. A consultation with one of our doctors will confirm whether you are a suitable candidate based on your skin and goals.",
+      a: "It is generally suited to healthy adults with mild to moderate sagging who want a more lifted, defined appearance without surgery, softened cheeks, a less-defined jawline, or skin that has lost firmness. Realistic expectations are important. A consultation with one of our doctors will confirm whether you are a suitable candidate based on your skin and goals.",
     },
     {
       q: "How much does the Ultimate Facelift cost in Malta?",

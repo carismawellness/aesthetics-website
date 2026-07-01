@@ -13,7 +13,7 @@ export const post: BlogPost = {
   "content": [
     {
       "type": "paragraph",
-      "html": "There's no single \"ideal age\" for anti-wrinkle treatments—it depends on your skin and goals."
+      "html": "There's no single \"ideal age\" for anti-wrinkle treatments, it depends on your skin and goals."
     },
     {
       "type": "heading",

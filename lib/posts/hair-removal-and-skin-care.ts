@@ -9,7 +9,7 @@ export const post: BlogPost = {
   "publishDate": "2026-06-17",
   "readTime": 6,
   "coverImage": "https://static.wixstatic.com/media/example.jpg",
-  "excerpt": "Not all hair removal methods are equal — and using the wrong technique on the wrong skin can lead to dark spots, ingrown hairs, and long-term texture damage....",
+  "excerpt": "Not all hair removal methods are equal, and using the wrong technique on the wrong skin can lead to dark spots, ingrown hairs, and long-term texture damage....",
   "content": [
     {
       "type": "paragraph",

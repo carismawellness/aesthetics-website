@@ -47,7 +47,7 @@ export default function MembershipFaq() {
         <SectionHeading
           eyebrow="Glow Club Questions"
           title="Frequently asked questions"
-          subtitle="Everything you need to feel certain before you join — how the savings work, what your discounts cover, and the freedom you keep every step of the way."
+          subtitle="Everything you need to feel certain before you join, how the savings work, what your discounts cover, and the freedom you keep every step of the way."
           id="membership-faq-heading"
         />
 
@@ -82,7 +82,7 @@ export default function MembershipFaq() {
             }}
           >
             “Still have a question? You can join today and cancel any time after
-            your first month — there is nothing to lose and a beautiful glow to
+            your first month, there is nothing to lose and a beautiful glow to
             gain.”
             <span
               style={{

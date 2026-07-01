@@ -34,7 +34,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "Fine lines and wrinkles become visible when skin cells lose water and shrink. A dehydrated skin cell is like a deflated balloon—it looks flat, thin, and creased. A hydrated skin cell is plump and round—making it look smoother, fuller, and younger. This is why hydration is the foundation of any good skincare routine and why professional hydrating treatments deliver such dramatic results."
+      "html": "Fine lines and wrinkles become visible when skin cells lose water and shrink. A dehydrated skin cell is like a deflated balloon, it looks flat, thin, and creased. A hydrated skin cell is plump and round, making it look smoother, fuller, and younger. This is why hydration is the foundation of any good skincare routine and why professional hydrating treatments deliver such dramatic results."
     },
     {
       "type": "heading",
@@ -48,7 +48,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "HydraFacial is arguably the best professional hydration treatment available. The vortex-fusion technology forces hyaluronic acid deep into the dermis, where it holds water within skin cells and plumps them from within. Results are visible immediately—your skin looks noticeably plumper and more radiant right after the first treatment."
+      "html": "HydraFacial is arguably the best professional hydration treatment available. The vortex-fusion technology forces hyaluronic acid deep into the dermis, where it holds water within skin cells and plumps them from within. Results are visible immediately, your skin looks noticeably plumper and more radiant right after the first treatment."
     },
     {
       "type": "paragraph",
@@ -61,7 +61,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "For deeper lines and more dramatic plumping, injectable fillers use hyaluronic acid (Juvederm, Restylane) or other materials to physically plump and reshape the face. Results are immediate and last 6-12 months depending on the product and area treated. Fillers work synergistically with HydraFacial—use monthly HydraFacials to maintain hydration between filler appointments."
+      "html": "For deeper lines and more dramatic plumping, injectable fillers use hyaluronic acid (Juvederm, Restylane) or other materials to physically plump and reshape the face. Results are immediate and last 6-12 months depending on the product and area treated. Fillers work synergistically with HydraFacial, use monthly HydraFacials to maintain hydration between filler appointments."
     },
     {
       "type": "heading",
@@ -88,7 +88,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "Look for serums with hyaluronic acid molecules of different weights—smaller molecules penetrate deeper, while larger molecules hydrate the surface."
+      "html": "Look for serums with hyaluronic acid molecules of different weights, smaller molecules penetrate deeper, while larger molecules hydrate the surface."
     },
     {
       "type": "heading",
@@ -115,7 +115,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "Occlusives (oils, butters, silicones) seal in hydration by forming a barrier on your skin. Apply them last in your routine to lock in all the hydrating serums underneath. This step is critical—hydration without occlusion just evaporates."
+      "html": "Occlusives (oils, butters, silicones) seal in hydration by forming a barrier on your skin. Apply them last in your routine to lock in all the hydrating serums underneath. This step is critical, hydration without occlusion just evaporates."
     },
     {
       "type": "heading",
@@ -142,11 +142,11 @@ export const post: BlogPost = {
     {
       "type": "list",
       "items": [
-        "Applying hydrating serums to dry skin—they won't absorb properly",
-        "Skipping moisturizer because you used a serum—serums alone don't seal hydration",
-        "Using hot water to cleanse—heat strips away natural oils needed for hydration",
-        "Over-exfoliating—damages the moisture barrier and reduces skin's ability to retain hydration",
-        "Not using SPF—sun damage degrades collagen and reduces skin's hydration capacity"
+        "Applying hydrating serums to dry skin, they won't absorb properly",
+        "Skipping moisturizer because you used a serum, serums alone don't seal hydration",
+        "Using hot water to cleanse, heat strips away natural oils needed for hydration",
+        "Over-exfoliating, damages the moisture barrier and reduces skin's ability to retain hydration",
+        "Not using SPF, sun damage degrades collagen and reduces skin's hydration capacity"
       ]
     },
     {

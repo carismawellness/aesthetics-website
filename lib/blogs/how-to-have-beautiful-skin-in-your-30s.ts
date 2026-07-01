@@ -3,7 +3,7 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "how-to-have-beautiful-skin-in-your-30s",
   "title": "How to Have Beautiful Skin in Your 30s: The Complete Guide",
-  "metaTitle": "Beautiful Skin in Your 30s — Maintain Your Glow",
+  "metaTitle": "Beautiful Skin in Your 30s, Maintain Your Glow",
   "metaDescription": "Discover skincare routines and treatments to maintain beautiful, radiant skin in your 30s. Expert tips at Carisma Aesthetics.",
   "category": "Skincare",
   "publishDate": "2026-06-25",
@@ -48,7 +48,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "Quality sleep and stress management are non-negotiable for beautiful skin. During sleep, your skin repairs itself and collagen production peaks. Aim for 7-9 hours nightly. Chronic stress elevates cortisol, which can trigger inflammation and breakouts — regular <a href=\"https://www.carismaspa.com/massages\" target=\"_blank\" rel=\"noopener noreferrer\">relaxation massages</a> at Carisma Spa can support cortisol reduction alongside your skincare routine.",
+      "html": "Quality sleep and stress management are non-negotiable for beautiful skin. During sleep, your skin repairs itself and collagen production peaks. Aim for 7-9 hours nightly. Chronic stress elevates cortisol, which can trigger inflammation and breakouts, regular <a href=\"https://www.carismaspa.com/massages\" target=\"_blank\" rel=\"noopener noreferrer\">relaxation massages</a> at Carisma Spa can support cortisol reduction alongside your skincare routine.",
     },
     {
       "type": "paragraph",

@@ -125,14 +125,14 @@ const TIERS: Tier[] = [
     name: "Signature Status",
     reward: "Carisma Spa Day for two",
     threshold: "with €1,000+ lifetime spend",
-    blurb: "Your first reward milestone — a shared day of calm, on us.",
+    blurb: "Your first reward milestone, a shared day of calm, on us.",
     tint: SILVER,
   },
   {
     name: "Elite Status",
     reward: "Signature Massage",
     threshold: "with €2,500+ lifetime spend",
-    blurb: "Where most members settle in — bigger rewards, same easy saving.",
+    blurb: "Where most members settle in, bigger rewards, same easy saving.",
     popular: true,
     tint: GOLDEN,
   },
@@ -140,7 +140,7 @@ const TIERS: Tier[] = [
     name: "Platinum Status",
     reward: "€300 Aesthetics Voucher",
     threshold: "with €5,000+ lifetime spend",
-    blurb: "Our highest tier — for the members who glow with us for years.",
+    blurb: "Our highest tier, for the members who glow with us for years.",
     tint: PLATINUM,
   },
 ];
@@ -442,7 +442,7 @@ export default function Tiers() {
           subtitle={
             <>
               One simple monthly membership. The more your lifetime contributions
-              grow, the more you unlock — and your{" "}
+              grow, the more you unlock, and your{" "}
               <b style={{ color: GOLD, fontWeight: 600 }}>
                 10% member discount on every treatment
               </b>{" "}
@@ -666,7 +666,7 @@ export default function Tiers() {
                     width: "100%",
                     justifyContent: "center",
                   }}
-                  aria-label={`Join the Glow Club — ${t.name}`}
+                  aria-label={`Join the Glow Club, ${t.name}`}
                 >
                   Join the Glow Club
                 </Link>
@@ -688,7 +688,7 @@ export default function Tiers() {
         >
           Status is earned on lifetime contributions, so every tier is yours to
           reach. Your first month is non-refundable but fully credited toward
-          your second procedure — so nothing you put in is ever lost.
+          your second procedure, so nothing you put in is ever lost.
         </p>
       </div>
     </section>

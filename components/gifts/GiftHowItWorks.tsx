@@ -12,17 +12,17 @@ const STEPS = [
   {
     n: "01",
     title: "Pick the Occasion",
-    body: "Choose the card that fits the moment — birthday, thank you, Mother's Day and more. One tap takes you to the next page.",
+    body: "Choose the card that fits the moment, birthday, thank you, Mother's Day and more. One tap takes you to the next page.",
   },
   {
     n: "02",
     title: "Personalise It",
-    body: "On the next page, choose the amount and add a heartfelt message — make it feel like it came straight from you.",
+    body: "On the next page, choose the amount and add a heartfelt message, make it feel like it came straight from you.",
   },
   {
     n: "03",
     title: "Delivered Instantly",
-    body: "Your e-voucher arrives by email within moments, beautifully presented and ready to gift — no shipping, no waiting.",
+    body: "Your e-voucher arrives by email within moments, beautifully presented and ready to gift, no shipping, no waiting.",
   },
 ];
 
@@ -42,7 +42,7 @@ export default function GiftHowItWorks() {
             id="gift-how-heading"
             eyebrow="Gifting Made Effortless"
             title="How it works"
-            subtitle="A thoughtful, luxurious gift in three simple steps — done in under a minute."
+            subtitle="A thoughtful, luxurious gift in three simple steps, done in under a minute."
           />
         </Reveal>
 
@@ -183,7 +183,7 @@ export default function GiftHowItWorks() {
                 Redeeming is just as easy.
               </strong>{" "}
               The recipient books any treatment at any Carisma Aesthetics clinic in
-              Malta and presents the voucher — valid for a full 12 months from purchase.
+              Malta and presents the voucher, valid for a full 12 months from purchase.
             </p>
           </div>
         </Reveal>

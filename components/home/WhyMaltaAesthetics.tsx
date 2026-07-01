@@ -22,8 +22,8 @@ const BODY =
 const WIDE = '"Novecento Wide", sans-serif';
 
 const commitmentItems: ReactNode[] = [
-  "Natural-looking results that enhance your features — never overdone, never frozen",
-  "Treatment plans built around your face, your skin and your goals — not a one-size-fits-all menu",
+  "Natural-looking results that enhance your features, never overdone, never frozen",
+  "Treatment plans built around your face, your skin and your goals, not a one-size-fits-all menu",
   "Honest advice on what you actually need: if a treatment is not right for you, we will tell you",
   <>
     Medical-grade injectables, skin and laser treatments delivered by{" "}
@@ -38,7 +38,7 @@ const commitmentItems: ReactNode[] = [
 
 const differenceItems: ReactNode[] = [
   "Created by the team behind Malta's leading spa and medical aesthetics centres",
-  "Doctor-led medical aesthetics, not a beauty salon — your safety and results come first",
+  "Doctor-led medical aesthetics, not a beauty salon, your safety and results come first",
   <>
     A central, easy-to-reach clinic with{" "}
     <Link
@@ -138,7 +138,7 @@ export default function WhyMaltaAesthetics() {
           <div style={{ position: "relative", zIndex: 1 }}>
             <SectionHeading
               eyebrow="the carisma difference"
-              title="Why Choose Carisma Aesthetics — Medically Qualified Team"
+              title="Why Choose Carisma Aesthetics, Medically Qualified Team"
               id="why-malta-aesthetics-heading"
             />
 
@@ -217,7 +217,7 @@ export default function WhyMaltaAesthetics() {
               {/* RIGHT — Google map panel + parking pill */}
               <div style={{ display: "flex", flexDirection: "column" }}>
                 <LazyMap
-                  title="Carisma Aesthetics clinic location — St George's Bay, St Julian's, Malta"
+                  title="Carisma Aesthetics clinic location, St George's Bay, St Julian's, Malta"
                   ariaLabel="Google Maps showing Carisma Aesthetics at St George's Bay, St Julian's, Malta"
                   src="https://maps.google.com/maps?q=Carisma%20Aesthetics%2C%20St%20George%27s%20Bay%2C%20St%20Julian%27s%20STJ%203310%2C%20Malta&z=15&output=embed"
                 />

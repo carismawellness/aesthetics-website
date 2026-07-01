@@ -11,7 +11,7 @@ const t: Treatment = {
   hero: {
     title: "4-in-1 HydraFacial Glow in Malta",
     subtitle: "Clogged pores, dull skin, and products that just don't work? If your glow's gone quiet, you're not alone. This is for Maltese skin that's ready for real results.",
-    body: "With our 4-in-1 Hydrafacial Glow treatment, your skin gets exactly what it needs: deep cleansing, gentle resurfacing, and lasting hydration — all designed for Maltese skin and real-world results. After just one session, you'll see (and feel) the difference: smoother texture, balanced tone, and that luminous glow you thought you'd lost. No filters, no downtime — just confidence that shines through.",
+    body: "With our 4-in-1 Hydrafacial Glow treatment, your skin gets exactly what it needs: deep cleansing, gentle resurfacing, and lasting hydration, all designed for Maltese skin and real-world results. After just one session, you'll see (and feel) the difference: smoother texture, balanced tone, and that luminous glow you thought you'd lost. No filters, no downtime, just confidence that shines through.",
     prices: [
       { label: "Medical-Grade Hydrafacial", price: "€100" },
       { label: "LED Light Therapy", price: "€50" },
@@ -49,7 +49,7 @@ const t: Treatment = {
     kicker: "The real reason people book",
     title: "You miss the skin that used to glow back at you",
     body: [
-      "Our 4-in-1 Hydrafacial Glow deep-cleanses, resurfaces, and rehydrates in one session — so you walk out with the fresh, luminous skin you thought you had lost, not just another facial.",
+      "Our 4-in-1 Hydrafacial Glow deep-cleanses, resurfaces, and rehydrates in one session, so you walk out with the fresh, luminous skin you thought you had lost, not just another facial.",
     ],
   },
   guarantee: {
@@ -66,25 +66,25 @@ const t: Treatment = {
     ],
   },
   precision: {
-    title: "SO YOUR SKIN GLOWS AGAIN — EFFORTLESSLY.",
-    intro: "Do you ever look in the mirror and wonder where your glow went? Your skin feels dull, your pores seem clogged, and every product you try promises more than it delivers. You're not alone — healthy, radiant skin shouldn't feel out of reach. With our 4-in-1 Hydrafacial Glow treatment, your skin gets exactly what it needs: deep cleansing, gentle resurfacing, and lasting hydration — all designed for Maltese skin and real-world results. After just one session, you'll see (and feel) the difference: smoother texture, balanced tone, and that luminous glow you thought you'd lost. No filters, no downtime — just confidence that shines through.",
+    title: "SO YOUR SKIN GLOWS AGAIN, EFFORTLESSLY.",
+    intro: "Do you ever look in the mirror and wonder where your glow went? Your skin feels dull, your pores seem clogged, and every product you try promises more than it delivers. You're not alone, healthy, radiant skin shouldn't feel out of reach. With our 4-in-1 Hydrafacial Glow treatment, your skin gets exactly what it needs: deep cleansing, gentle resurfacing, and lasting hydration, all designed for Maltese skin and real-world results. After just one session, you'll see (and feel) the difference: smoother texture, balanced tone, and that luminous glow you thought you'd lost. No filters, no downtime, just confidence that shines through.",
   },
   suitability: {
     title: "Is the 4-in-1 Hydrafacial Glow right for you?",
-    intro: "Every complexion is different. The 4-in-1 Hydrafacial Glow combines a medical-grade hydrafacial, dermaplaning, LED light therapy, and deep hydration into one tailored session — so we can target dullness, congestion, and dehydration in a single visit. A quick skin assessment helps us personalise it to you.",
+    intro: "Every complexion is different. The 4-in-1 Hydrafacial Glow combines a medical-grade hydrafacial, dermaplaning, LED light therapy, and deep hydration into one tailored session, so we can target dullness, congestion, and dehydration in a single visit. A quick skin assessment helps us personalise it to you.",
     suitableFor: [
-      "Because you want skin that looks luminous, smooth, and deeply refreshed — even without makeup.",
+      "Because you want skin that looks luminous, smooth, and deeply refreshed, even without makeup.",
       "Because you deserve a medical-grade facial that delivers visible results, not just promises.",
       "Because you prefer gentle, non-invasive treatments that respect your skin's balance and beauty.",
       "Because you value self-care and know that radiant skin reflects radiant confidence.",
-      "Because you choose results backed by science — and trusted by Malta's leading aesthetics clinic.",
+      "Because you choose results backed by science, and trusted by Malta's leading aesthetics clinic.",
     ],
     notIdeal: [
-      "You have an active breakout, rash, or open blemish in the treatment area — we'll happily welcome you back once it settles",
-      "You had a chemical peel, laser, or microneedling in the last two weeks — let's give your skin time to recover first",
-      "You have an active cold sore right now — we'll reschedule for when it has cleared",
-      "You want a permanent fix in one visit — the glow is real and immediate, but lasting results come with a simple routine",
-      "You'd rather skip the quick skin assessment — it's how we keep your treatment gentle and right for you",
+      "You have an active breakout, rash, or open blemish in the treatment area, we'll happily welcome you back once it settles",
+      "You had a chemical peel, laser, or microneedling in the last two weeks, let's give your skin time to recover first",
+      "You have an active cold sore right now, we'll reschedule for when it has cleared",
+      "You want a permanent fix in one visit, the glow is real and immediate, but lasting results come with a simple routine",
+      "You'd rather skip the quick skin assessment, it's how we keep your treatment gentle and right for you",
     ],
     personas: [
       { title: "The event-ready glow", desc: "You have a wedding, shoot, or big night coming up and you want fresh, photo-ready skin with zero downtime." },
@@ -102,7 +102,7 @@ const t: Treatment = {
       },
       {
         title: "AT SESSION",
-        desc: "Your med-aesthetician deep-cleanses and resurfaces with dermaplaning, then infuses personalised hydrating serums and LED light therapy deep into the skin — finished with a soothing facial massage to boost circulation and absorption.",
+        desc: "Your med-aesthetician deep-cleanses and resurfaces with dermaplaning, then infuses personalised hydrating serums and LED light therapy deep into the skin, finished with a soothing facial massage to boost circulation and absorption.",
         image: "/assets/treatments/hydrafacial-step2.png",
       },
       {
@@ -128,9 +128,9 @@ const t: Treatment = {
       "/assets/treatments/hydrafacial-trusted-4.png",
     ],
     points: [
-      { title: "INSTANT GLOW", desc: "Experience a visibly brighter, smoother complexion right after your first session — no downtime required." },
+      { title: "INSTANT GLOW", desc: "Experience a visibly brighter, smoother complexion right after your first session, no downtime required." },
       { title: "DEEP DETOX & HYDRATION", desc: "Our medical-grade Hydrafacial deeply cleanses pores while infusing skin with nourishing serums for long-lasting hydration." },
-      { title: "ADVANCED SKIN RENEWAL", desc: "Dermaplaning and LED light therapy rejuvenate dull, tired skin — restoring elasticity and luminosity from within." },
+      { title: "ADVANCED SKIN RENEWAL", desc: "Dermaplaning and LED light therapy rejuvenate dull, tired skin, restoring elasticity and luminosity from within." },
       { title: "SAFE & MEDICAL-GRADE CARE", desc: "Performed by certified aesthetic specialists using clinically proven equipment and protocols for real, visible results." },
     ],
   },
@@ -139,7 +139,7 @@ const t: Treatment = {
     title: "Malta's 4-in-1 Hydrafacial Glow Plan",
     benefits: [
       { icon: "sparkle", title: "Four Treatments In One", desc: "Medical-grade hydrafacial, dermaplaning, LED light therapy, and deep hydration in a single, tailored session." },
-      { icon: "shield", title: "Medical-Grade & Gentle", desc: "Performed by certified aesthetic specialists using clinically proven protocols — never a one-size-fits-all salon facial." },
+      { icon: "shield", title: "Medical-Grade & Gentle", desc: "Performed by certified aesthetic specialists using clinically proven protocols, never a one-size-fits-all salon facial." },
       { icon: "clock", title: "Instant Glow, Zero Downtime", desc: "Walk out with visibly brighter, smoother, deeply hydrated skin you can see the same day." },
     ],
     included: [
@@ -190,11 +190,11 @@ const t: Treatment = {
     { q: "What is included in the 4-in-1 Hydrafacial Glow?", a: "The 4-in-1 Hydrafacial Glow combines four treatments in one session: a medical-grade hydrafacial for deep cleansing and extraction, dermaplaning for gentle resurfacing, LED light therapy to rejuvenate and calm the skin, and deep hydration to restore radiance. It also includes an in-person consultation, a Carisma Spa Day, and a €25 aesthetics credit." },
     { q: "Who can benefit from the Hydrafacial Glow?", a: "Anyone looking to combat dryness, dullness, clogged pores, or tired-looking skin can benefit. The treatment is suitable for most skin types and tones, and is especially popular before weddings, events, and shoots when you want fresh, glowing, photo-ready skin." },
     { q: "How does the Hydrafacial Glow work?", a: "The treatment deep-cleanses and extracts impurities, gently resurfaces the skin with dermaplaning, then infuses hydrating serums and LED light therapy to nourish and renew. Together these steps improve skin texture, tone, hydration, and overall radiance in a single visit." },
-    { q: "What results can I expect?", a: "You can expect hydrated, plump, and glowing skin with smoother texture and a more even tone. Many clients notice a visible difference the same day, with no downtime — just brighter, healthier-looking skin." },
+    { q: "What results can I expect?", a: "You can expect hydrated, plump, and glowing skin with smoother texture and a more even tone. Many clients notice a visible difference the same day, with no downtime, just brighter, healthier-looking skin." },
     { q: "Is there any downtime?", a: "No. The Hydrafacial Glow is gentle and non-invasive, so you can return to your day immediately. Some clients notice mild, temporary redness that settles within a few hours after treatment." },
     { q: "Is the Hydrafacial Glow suitable for sensitive skin?", a: "Yes, the treatment can be tailored to suit sensitive skin types. Our skincare experts customise each step during your assessment to address your concerns while keeping the session gentle and comfortable." },
     { q: "How often should I have the Hydrafacial Glow?", a: "For most skin types, a session every 3 to 4 weeks keeps your skin looking its best. Your med-aesthetician will recommend the ideal frequency based on your skin and your goals." },
-    { q: "Can the Hydrafacial Glow help acne-prone skin?", a: "Yes. The deep cleansing and extraction steps help clear congestion and calm breakouts, while the hydrating and LED steps support healing — leaving acne-prone skin clearer and more balanced." },
+    { q: "Can the Hydrafacial Glow help acne-prone skin?", a: "Yes. The deep cleansing and extraction steps help clear congestion and calm breakouts, while the hydrating and LED steps support healing, leaving acne-prone skin clearer and more balanced." },
     { q: "How long does the treatment take?", a: "The full 4-in-1 session typically takes around 60 to 75 minutes, depending on your skin and the steps included. It is a relaxing experience designed to leave you glowing." },
     { q: "How long do the results last?", a: "Results can last for several weeks, depending on your skin type and home care routine. Regular sessions and a simple skincare routine help prolong and build on the glow over time." },
     { q: "Can I combine the Hydrafacial Glow with other treatments?", a: "Yes, it pairs beautifully with treatments such as microneedling, chemical peels, dermal fillers, or Botox for enhanced results. Our skincare experts can recommend the best combination based on your individual needs during your consultation." },
@@ -212,7 +212,7 @@ const t: Treatment = {
       "In-person skin consultation",
       "€25 aesthetics credit",
     ],
-    urgency: "Limited €99 launch slots released each month — by availability only.",
+    urgency: "Limited €99 launch slots released each month, by availability only.",
     guaranteeChip: "Doctor-led · Medical-grade · No downtime",
     cta: {
       text: "Claim My €99 Glow",
@@ -222,7 +222,7 @@ const t: Treatment = {
   },
   closing: {
     heading: "Ready to Claim Your €99 Glow?",
-    sub: "Secure your 4-in-1 HydraFacial Glow Package while launch slots last — doctor-led, medical-grade, zero downtime.",
+    sub: "Secure your 4-in-1 HydraFacial Glow Package while launch slots last, doctor-led, medical-grade, zero downtime.",
     ctaLabel: "Claim My €99 Glow",
     ctaHref: "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2800348&share=true&pId=2708191",
   },

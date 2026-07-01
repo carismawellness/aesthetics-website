@@ -3,7 +3,7 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "how-to-have-beautiful-skin-in-your-60s",
   "title": "How to Have Beautiful Skin in Your 60s: Timeless Beauty",
-  "metaTitle": "Beautiful Skin in Your 60s — Timeless Radiance Guide",
+  "metaTitle": "Beautiful Skin in Your 60s, Timeless Radiance Guide",
   "metaDescription": "Skincare and aesthetic treatments for beautiful, youthful skin in your 60s. Age gracefully with confidence at Carisma Aesthetics.",
   "category": "Skincare",
   "publishDate": "2026-06-25",

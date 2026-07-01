@@ -18,7 +18,7 @@ export const post: BlogPost = {
   "content": [
     {
       "type": "paragraph",
-      "html": "Injectables have revolutionized aesthetic medicine. Unlike surgery, they're reversible, require minimal downtime, and offer dramatic results. But the number of options—Botox, fillers, skin boosters, threads—can be overwhelming. This guide clarifies every major injectable treatment available today."
+      "html": "Injectables have revolutionized aesthetic medicine. Unlike surgery, they're reversible, require minimal downtime, and offer dramatic results. But the number of options, Botox, fillers, skin boosters, threads, can be overwhelming. This guide clarifies every major injectable treatment available today."
     },
     {
       "type": "heading",
@@ -27,15 +27,15 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "<strong>1. Neuromodulators</strong> — Relax facial muscles to smooth dynamic wrinkles. Examples: Botox, Dysport, Xeomin."
+      "html": "<strong>1. Neuromodulators</strong>, Relax facial muscles to smooth dynamic wrinkles. Examples: Botox, Dysport, Xeomin."
     },
     {
       "type": "paragraph",
-      "html": "<strong>2. Fillers</strong> — Add volume beneath the skin to smooth static wrinkles and enhance features. Examples: Juvederm, Restylane, Radiesse, Sculptra."
+      "html": "<strong>2. Fillers</strong>, Add volume beneath the skin to smooth static wrinkles and enhance features. Examples: Juvederm, Restylane, Radiesse, Sculptra."
     },
     {
       "type": "paragraph",
-      "html": "<strong>3. Skin Boosters</strong> — Deeply hydrate and rejuvenate skin by stimulating collagen. Examples: Profhilo, Jalupro, Skinvive."
+      "html": "<strong>3. Skin Boosters</strong>, Deeply hydrate and rejuvenate skin by stimulating collagen. Examples: Profhilo, Jalupro, Skinvive."
     },
     {
       "type": "heading",
@@ -44,7 +44,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "<strong>What they do:</strong> Block nerve signals to facial muscles, reducing their ability to contract. This softens dynamic wrinkles—lines caused by facial expressions."
+      "html": "<strong>What they do:</strong> Block nerve signals to facial muscles, reducing their ability to contract. This softens dynamic wrinkles, lines caused by facial expressions."
     },
     {
       "type": "paragraph",
@@ -75,10 +75,10 @@ export const post: BlogPost = {
       "type": "list",
       
       "items": [
-        "Hyaluronic acid fillers (Juvederm, Restylane) — Most popular, reversible, 6–12 months",
-        "Calcium hydroxylapatite (Radiesse) — Stimulates collagen, 9–12 months",
-        "Poly-L-lactic acid (Sculptra) — Deep stimulation, 18–24 months",
-        "Hyaluronic with lidocaine — Includes numbing for comfort"
+        "Hyaluronic acid fillers (Juvederm, Restylane), Most popular, reversible, 6–12 months",
+        "Calcium hydroxylapatite (Radiesse), Stimulates collagen, 9–12 months",
+        "Poly-L-lactic acid (Sculptra), Deep stimulation, 18–24 months",
+        "Hyaluronic with lidocaine, Includes numbing for comfort"
       ]
     },
     {

@@ -6,7 +6,7 @@ const t: Treatment = {
   hero: {
     title: "Exosome Glow Lift in Malta",
     subtitle: "Has your skin stopped responding to facials and serums?",
-    body: "When facials stop working and your glow fades, exosomes offer the next step — real regeneration that smooths texture, firms the skin, and restores a healthy, lit-from-within glow. Every Glow Lift is performed by our medical team in Malta, combining microneedling with exosomes, LED therapy, and a glass-skin mask in one session.",
+    body: "When facials stop working and your glow fades, exosomes offer the next step, real regeneration that smooths texture, firms the skin, and restores a healthy, lit-from-within glow. Every Glow Lift is performed by our medical team in Malta, combining microneedling with exosomes, LED therapy, and a glass-skin mask in one session.",
     benefits: [
       "Microneedling with Exosomes (€200)",
       "LED Light Therapy (€50)",
@@ -44,14 +44,14 @@ const t: Treatment = {
     kicker: "The real reason people book",
     title: "Your skin looks dull and tired, no matter what you put on it",
     body: [
-      "The Exosome Glow Lift works deep in the skin to regenerate, repair, and rebuild collagen from within — so your complexion looks smoother, firmer, and genuinely radiant again, in a way that is unmistakably you.",
+      "The Exosome Glow Lift works deep in the skin to regenerate, repair, and rebuild collagen from within, so your complexion looks smoother, firmer, and genuinely radiant again, in a way that is unmistakably you.",
     ],
   },
   guarantee: {
     kicker: "The Natural Confidence Guarantee",
     title: "Natural Confidence Guarantee",
     paragraphs: [
-      "Every Glow Lift starts with a doctor-led skin assessment and a natural-first approach that supports your skin's own regeneration — never overdone, backed by a complimentary review until you are 100% satisfied with skin that still looks like you.",
+      "Every Glow Lift starts with a doctor-led skin assessment and a natural-first approach that supports your skin's own regeneration, never overdone, backed by a complimentary review until you are 100% satisfied with skin that still looks like you.",
     ],
     cta: "Book Your Free Consultation",
     points: [
@@ -71,16 +71,16 @@ const t: Treatment = {
       "You are comfortable with a quick session and minimal downtime",
     ],
     notIdeal: [
-      "You want a complete transformation from one session — your glow builds gradually over the weeks that follow",
-      "You are looking to restore lost volume or reshape features — that is what dermal fillers are for, and we are happy to guide you",
-      "You are pregnant or breastfeeding — we will warmly welcome you back afterwards",
-      "You have an active breakout or skin infection in the area — we will treat once your skin has settled",
-      "You take blood-thinning medication — let us know first so we can plan your session safely",
+      "You want a complete transformation from one session, your glow builds gradually over the weeks that follow",
+      "You are looking to restore lost volume or reshape features, that is what dermal fillers are for, and we are happy to guide you",
+      "You are pregnant or breastfeeding, we will warmly welcome you back afterwards",
+      "You have an active breakout or skin infection in the area, we will treat once your skin has settled",
+      "You take blood-thinning medication, let us know first so we can plan your session safely",
     ],
     personas: [
-      { title: "The plateaued complexion", desc: "Facials and serums used to work, but lately nothing seems to bring your glow back — your skin just looks flat and tired." },
+      { title: "The plateaued complexion", desc: "Facials and serums used to work, but lately nothing seems to bring your glow back, your skin just looks flat and tired." },
       { title: "The texture and scarring concern", desc: "Uneven texture, enlarged pores, or old acne scarring keep catching the light and your confidence." },
-      { title: "The science-led glow seeker", desc: "You want a real, regenerative result that builds and lasts — not a temporary surface fix from another facial." },
+      { title: "The science-led glow seeker", desc: "You want a real, regenerative result that builds and lasts, not a temporary surface fix from another facial." },
     ],
   },
   experience: {
@@ -108,8 +108,8 @@ const t: Treatment = {
     kicker: "Your Exosome Glow Lift",
     title: "Malta's Doctor-Led Exosome Glow Lift",
     benefits: [
-      { icon: "shield", title: "Doctor-Led Precision", desc: "Every Glow Lift is performed by our medical team — never a salon, never an unsupervised therapist." },
-      { icon: "sparkle", title: "Real Skin Regeneration", desc: "Exosomes rebuild collagen and renew skin from within — smoother, firmer, genuinely glowing, never altered." },
+      { icon: "shield", title: "Doctor-Led Precision", desc: "Every Glow Lift is performed by our medical team, never a salon, never an unsupervised therapist." },
+      { icon: "sparkle", title: "Real Skin Regeneration", desc: "Exosomes rebuild collagen and renew skin from within, smoother, firmer, genuinely glowing, never altered." },
       { icon: "chart", title: "Results That Build & Last", desc: "Your glow develops over the weeks after treatment and deepens with each session, supported by a personalised plan." },
     ],
     included: [
@@ -138,7 +138,7 @@ const t: Treatment = {
       "€25 Aesthetics Credit (€25)",
     ],
     guaranteeChip: "Doctor-led · Medical-grade · Natural results",
-    urgency: "Limited consultation slots — secure your appointment today",
+    urgency: "Limited consultation slots, secure your appointment today",
     cta: {
       text: "Book My Exosome Glow Lift",
       href: "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2800348&share=true&pId=2708191",
@@ -147,7 +147,7 @@ const t: Treatment = {
   },
   closing: {
     heading: "Ready for Your Exosome Glow Lift?",
-    sub: "Smoother, firmer, luminous skin — doctor-led microneedling with exosomes and LED therapy at Carisma Aesthetics, Malta.",
+    sub: "Smoother, firmer, luminous skin, doctor-led microneedling with exosomes and LED therapy at Carisma Aesthetics, Malta.",
     ctaLabel: "Book My Glow Lift Consultation",
     ctaHref: "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2800348&share=true&pId=2708191",
   },
@@ -172,7 +172,7 @@ const t: Treatment = {
     },
     {
       q: "How is the Exosome Glow Lift different from a regular facial?",
-      a: "A facial works on the surface of the skin and the results are usually short-lived. The Exosome Glow Lift works at a cellular level — microneedling creates microchannels that drive exosomes deep into the skin to trigger real regeneration and collagen renewal. That is why it is ideal for skin that has plateaued and no longer responds to facials and serums. The improvement builds and lasts rather than fading after a few days.",
+      a: "A facial works on the surface of the skin and the results are usually short-lived. The Exosome Glow Lift works at a cellular level, microneedling creates microchannels that drive exosomes deep into the skin to trigger real regeneration and collagen renewal. That is why it is ideal for skin that has plateaued and no longer responds to facials and serums. The improvement builds and lasts rather than fading after a few days.",
     },
     {
       q: "Is the treatment painful?",
@@ -200,7 +200,7 @@ const t: Treatment = {
     },
     {
       q: "How much does the Exosome Glow Lift cost in Malta?",
-      a: "The Exosome Glow Lift package is €175 at our St. Julian's clinic — a total value of €365 — and includes microneedling with exosomes, LED light therapy, a glass-skin face mask, an in-person skin consultation, and a €25 aesthetics credit. Availability is limited to 15 clients. Book your consultation to claim your spot and receive a personalised recommendation based on your skin concerns and goals.",
+      a: "The Exosome Glow Lift package is €175 at our St. Julian's clinic, a total value of €365, and includes microneedling with exosomes, LED light therapy, a glass-skin face mask, an in-person skin consultation, and a €25 aesthetics credit. Availability is limited to 15 clients. Book your consultation to claim your spot and receive a personalised recommendation based on your skin concerns and goals.",
     },
   ],
 };

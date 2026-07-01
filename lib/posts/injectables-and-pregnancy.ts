@@ -9,7 +9,7 @@ export const post: BlogPost = {
   "publishDate": "2026-06-25",
   "readTime": 5,
   "coverImage": "https://via.placeholder.com/1200x630?text=injectables-and-pregnancy",
-  "excerpt": "Pregnancy changes your body—including your skin. This guide covers the safety of injectables during pregnancy and explains the best timing for treatments before conception and after delivery.",
+  "excerpt": "Pregnancy changes your body, including your skin. This guide covers the safety of injectables during pregnancy and explains the best timing for treatments before conception and after delivery.",
   "internalLinks": [
     {
       "anchorText": "pregnancy-safe skincare",
@@ -25,7 +25,7 @@ export const post: BlogPost = {
   "content": [
     {
       "type": "paragraph",
-      "html": "Pregnancy is a time when many women focus on their health and the safety of their developing baby. If you're considering injectables—or already have regular treatments—you probably have questions about safety during pregnancy and breastfeeding."
+      "html": "Pregnancy is a time when many women focus on their health and the safety of their developing baby. If you're considering injectables, or already have regular treatments, you probably have questions about safety during pregnancy and breastfeeding."
     },
     {
       "type": "heading",

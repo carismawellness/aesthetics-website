@@ -12,7 +12,7 @@ const t: Treatment = {
       { label: "4x access to spa & fitness facilities", price: "(€140)" },
       { label: "Tanita Body Composition Analysis", price: "(€60)" },
       { label: "€25 Carisma Aesthetics credit", price: "(€25)" },
-      { label: "TOTAL VALUE: €550 — TODAY: €199 ONLY", price: "€199" },
+      { label: "TOTAL VALUE: €550, TODAY: €199 ONLY", price: "€199" },
     ],
     cta: "Claim your spot now",
     bookHref: "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2843963&oiid=sv%3A25821439&share=true&pId=2708191",
@@ -66,7 +66,7 @@ const t: Treatment = {
     title: "eligibility criteria",
     intro: "selective by intention successful by design",
     areas: [
-      { name: "STOMACH — BELLY FAT", desc: "" },
+      { name: "STOMACH, BELLY FAT", desc: "" },
       { name: "Love handles", desc: "" },
       { name: "Upper arms", desc: "" },
       { name: "Thighs", desc: "" },
@@ -81,7 +81,7 @@ const t: Treatment = {
     steps: [
       {
         title: "CoolSculpting",
-        desc: "Freezes away up to 20%—25% of treated fat permanently via a process called cryolipolysis and naturally eliminates it from the body. CoolSculpting is an FDA cleared cryolipolysis technology that uses controlled cooling to target only the fat cells under the skin without surgery or needles. The treated fat cells crystallise, die off, and are gradually cleared by your body over the following weeks.",
+        desc: "Freezes away up to 20% to 25% of treated fat permanently via a process called cryolipolysis and naturally eliminates it from the body. CoolSculpting is an FDA cleared cryolipolysis technology that uses controlled cooling to target only the fat cells under the skin without surgery or needles. The treated fat cells crystallise, die off, and are gradually cleared by your body over the following weeks.",
         image: "/assets/treatments/ff-research1.png",
       },
       {
@@ -147,7 +147,7 @@ const t: Treatment = {
       "€25 Carisma Aesthetics credit (€25)",
       "Complimentary Parking Validation",
     ],
-    urgency: "Due to high demand, packages are offered based on availability — book your consultation to secure your place.",
+    urgency: "Due to high demand, packages are offered based on availability, book your consultation to secure your place.",
     guaranteeChip: "Doctor-led · FDA-cleared technology · No surgery",
     cta: { text: "Claim My Fat Freezing Package", href: "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2800348&share=true&pId=2708191", external: true },
   },
@@ -204,7 +204,7 @@ const t: Treatment = {
 
   closing: {
     heading: "Ready to Freeze Away Stubborn Fat?",
-    sub: "CoolSculpting fat freezing in Malta — doctor-led, FDA-cleared, no surgery. Target your trouble spots and book your free consultation at Carisma Aesthetics.",
+    sub: "CoolSculpting fat freezing in Malta, doctor-led, FDA-cleared, no surgery. Target your trouble spots and book your free consultation at Carisma Aesthetics.",
     ctaLabel: "Book My Fat Freezing Consultation",
     ctaHref: "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2800348&share=true&pId=2708191",
   },

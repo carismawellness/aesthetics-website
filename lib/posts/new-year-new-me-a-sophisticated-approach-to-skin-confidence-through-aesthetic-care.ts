@@ -9,7 +9,7 @@ export const post: BlogPost = {
   "publishDate": "2026-01-08",
   "readTime": 4,
   "coverImage": "https://static.wixstatic.com/media/f940f0_a6d514daa81f44ffb9218ed7ee6ed689~mv2.png",
-  "excerpt": "A new year often brings a quiet invitation to reset—not to reinvent who you are, but to reconnect with how you want to feel. In the world of beauty and wellness, \"New Year, New Me\" is no longer about dramatic transformations or chasing trends. Instead, it's about refinement, intention, and choosing treatments that support your skin's natural vitality over time. Modern aesthetic skincare has evolved beautifully. Today's most sought-after treatments focus on skin health first , delivering...",
+  "excerpt": "A new year often brings a quiet invitation to reset, not to reinvent who you are, but to reconnect with how you want to feel. In the world of beauty and wellness, \"New Year, New Me\" is no longer about dramatic transformations or chasing trends. Instead, it's about refinement, intention, and choosing treatments that support your skin's natural vitality over time. Modern aesthetic skincare has evolved beautifully. Today's most sought-after treatments focus on skin health first , delivering...",
   "content": [],
   "internalLinks": []
 };

@@ -53,7 +53,7 @@ export const metadata: Metadata = {
         url: "/og-aesthetics.png",
         width: 1277,
         height: 1330,
-        alt: "Carisma Aesthetics — Glow with Confidence",
+        alt: "Carisma Aesthetics, Glow with Confidence",
       },
     ],
   },

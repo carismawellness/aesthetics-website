@@ -25,7 +25,7 @@ export const post: BlogPost = {
   "content": [
     {
       "type": "paragraph",
-      "html": "If you're considering injectables for the first time, you've probably heard terms like Botox, fillers, dermal fillers, neuromodulators, and skin boosters—often used interchangeably and confusingly. This guide clarifies the differences and helps you understand what each treatment does."
+      "html": "If you're considering injectables for the first time, you've probably heard terms like Botox, fillers, dermal fillers, neuromodulators, and skin boosters, often used interchangeably and confusingly. This guide clarifies the differences and helps you understand what each treatment does."
     },
     {
       "type": "heading",
@@ -39,11 +39,11 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "<strong>1. Neuromodulators (Muscle Relaxants)</strong> — These relax facial muscles to soften dynamic wrinkles caused by repetitive muscle movements. The most common are Botox, Dysport, and Xeomin."
+      "html": "<strong>1. Neuromodulators (Muscle Relaxants)</strong>, These relax facial muscles to soften dynamic wrinkles caused by repetitive muscle movements. The most common are Botox, Dysport, and Xeomin."
     },
     {
       "type": "paragraph",
-      "html": "<strong>2. Fillers (Volume Restoration)</strong> — These add volume beneath the skin to smooth static wrinkles, enhance lips, define cheekbones, and restore lost facial volume. Common fillers use hyaluronic acid, calcium hydroxylapatite, or poly-L-lactic acid."
+      "html": "<strong>2. Fillers (Volume Restoration)</strong>, These add volume beneath the skin to smooth static wrinkles, enhance lips, define cheekbones, and restore lost facial volume. Common fillers use hyaluronic acid, calcium hydroxylapatite, or poly-L-lactic acid."
     },
     {
       "type": "heading",
@@ -52,11 +52,11 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "<strong>Botox treats dynamic wrinkles</strong> — lines created by muscle movement (frown lines, forehead creases, crow's feet). It prevents wrinkles from forming or deepening by reducing muscle activity."
+      "html": "<strong>Botox treats dynamic wrinkles</strong>, lines created by muscle movement (frown lines, forehead creases, crow's feet). It prevents wrinkles from forming or deepening by reducing muscle activity."
     },
     {
       "type": "paragraph",
-      "html": "<strong>Fillers treat static wrinkles and volume loss</strong> — lines present at rest, hollow areas, thin lips, and loss of facial definition. They work by filling the space beneath wrinkles or adding volume where the skin has lost fullness with age."
+      "html": "<strong>Fillers treat static wrinkles and volume loss</strong>, lines present at rest, hollow areas, thin lips, and loss of facial definition. They work by filling the space beneath wrinkles or adding volume where the skin has lost fullness with age."
     },
     {
       "type": "heading",

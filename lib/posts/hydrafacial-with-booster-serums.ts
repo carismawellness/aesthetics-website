@@ -9,7 +9,7 @@ export const post: BlogPost = {
   "publishDate": "2026-06-25",
   "readTime": 5,
   "coverImage": "https://static.wixstatic.com/media/d87add9f-ad57-47b3-a705-d335c7362653/placeholder.jpg",
-  "excerpt": "HydraFacial booster serums are concentrated treatments that customize your facial for your specific skin concerns. Learn which booster is right for you—and why choosing the perfect booster amplifies your results.",
+  "excerpt": "HydraFacial booster serums are concentrated treatments that customize your facial for your specific skin concerns. Learn which booster is right for you, and why choosing the perfect booster amplifies your results.",
   "internalLinks": [
     {
       "anchorText": "HydraFacial treatments",
@@ -20,7 +20,7 @@ export const post: BlogPost = {
   "content": [
     {
       "type": "paragraph",
-      "html": "A standard HydraFacial is excellent, but booster serums elevate the treatment by adding concentrated active ingredients tailored to your specific skin concerns. These boosters are infused during the treatment using the same vortex technology that powers HydraFacial—ensuring deep penetration and maximum effectiveness."
+      "html": "A standard HydraFacial is excellent, but booster serums elevate the treatment by adding concentrated active ingredients tailored to your specific skin concerns. These boosters are infused during the treatment using the same vortex technology that powers HydraFacial, ensuring deep penetration and maximum effectiveness."
     },
     {
       "type": "heading",
@@ -127,23 +127,23 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "<strong>Acne-Prone Skin:</strong> Salicylic acid booster—clear pores and prevent breakouts"
+      "html": "<strong>Acne-Prone Skin:</strong> Salicylic acid booster, clear pores and prevent breakouts"
     },
     {
       "type": "paragraph",
-      "html": "<strong>Dry/Dehydrated:</strong> Hyaluronic acid booster—deep hydration and plumping"
+      "html": "<strong>Dry/Dehydrated:</strong> Hyaluronic acid booster, deep hydration and plumping"
     },
     {
       "type": "paragraph",
-      "html": "<strong>Aging/Mature:</strong> Peptide & antioxidant booster—stimulate collagen and fight aging"
+      "html": "<strong>Aging/Mature:</strong> Peptide & antioxidant booster, stimulate collagen and fight aging"
     },
     {
       "type": "paragraph",
-      "html": "<strong>Dull/Dark Spots:</strong> Brightening booster—even tone and radiance"
+      "html": "<strong>Dull/Dark Spots:</strong> Brightening booster, even tone and radiance"
     },
     {
       "type": "paragraph",
-      "html": "<strong>Combination Skin:</strong> Choose based on your primary concern—we can customize by zone if needed"
+      "html": "<strong>Combination Skin:</strong> Choose based on your primary concern, we can customize by zone if needed"
     },
     {
       "type": "heading",
@@ -161,7 +161,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "Standard HydraFacial provides excellent results, but adding a booster serum amplifies your benefits. Booster serums are an affordable upgrade—typically adding 30-40% to the treatment cost—but they provide dramatically better results for targeted concerns."
+      "html": "Standard HydraFacial provides excellent results, but adding a booster serum amplifies your benefits. Booster serums are an affordable upgrade, typically adding 30-40% to the treatment cost, but they provide dramatically better results for targeted concerns."
     },
     {
       "type": "heading",
@@ -179,7 +179,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "The beauty of HydraFacial boosters is that every treatment can be customized to your exact skin needs. No two people have identical skin—so why should every facial be identical? At Carisma Aesthetics, we design your treatment around your unique concerns."
+      "html": "The beauty of HydraFacial boosters is that every treatment can be customized to your exact skin needs. No two people have identical skin, so why should every facial be identical? At Carisma Aesthetics, we design your treatment around your unique concerns."
     },
     {
       "type": "paragraph",

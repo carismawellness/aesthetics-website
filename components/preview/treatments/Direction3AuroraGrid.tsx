@@ -25,7 +25,7 @@ import { HOME_SERVICES } from "@/lib/site";
 const EYEBROW = "Doctor-Led Treatments";
 const TITLE = "Our Medical Aesthetic Treatments";
 const SUBCOPY =
-  "A complete menu of advanced, medically supervised treatments — each tailored to refresh, restore and let you glow with confidence.";
+  "A complete menu of advanced, medically supervised treatments, each tailored to refresh, restore and let you glow with confidence.";
 
 // Per-card runtime state held in refs (no React re-render in the hot loop).
 type CardRuntime = {

@@ -86,7 +86,7 @@ function BrandsSection() {
               href={brand.href}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label={`${brand.cta} — opens in new tab`}
+              aria-label={`${brand.cta}, opens in new tab`}
               data-brand-card
               style={{ position: 'relative', display: 'block', height: 'clamp(230px, 30vw, 300px)', borderRadius: '20px', overflow: 'hidden', boxShadow: '0 10px 40px rgba(0,0,0,0.12)', textDecoration: 'none' }}
             >
@@ -166,7 +166,7 @@ function FooterBase() {
             <div>
               <p style={{ fontFamily: SERIF, fontSize: '18px', fontWeight: 400, color: INK, letterSpacing: '1px', textTransform: 'uppercase', marginBottom: '12px' }}>Carisma Aesthetics</p>
               <p style={{ fontFamily: BODY, fontSize: '13px', lineHeight: 1.75, color: TEXT, maxWidth: '210px', marginBottom: '20px' }}>
-                Glow with confidence — doctor-led medical aesthetics in Malta. Natural results, delivered with care.
+                Glow with confidence, doctor-led medical aesthetics in Malta. Natural results, delivered with care.
               </p>
               <div style={{ display: 'flex', gap: '14px' }}>
                 {[

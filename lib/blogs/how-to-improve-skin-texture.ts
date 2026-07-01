@@ -3,13 +3,13 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "how-to-improve-skin-texture",
   "title": "How to Improve Skin Texture: Smooth and Refined Skin",
-  "metaTitle": "How to Improve Skin Texture — Achieve Smooth Skin",
+  "metaTitle": "How to Improve Skin Texture, Achieve Smooth Skin",
   "metaDescription": "Professional treatments and skincare tips to improve skin texture. Reduce pores, smooth rough areas, and refine your complexion.",
   "category": "Skincare",
   "publishDate": "2026-06-25",
   "readTime": 1,
   "coverImage": "https://static.wixstatic.com/media/texture_improvement.jpg",
-  "excerpt": "Uneven skin texture—enlarged pores, rough patches, and uneven surface—is one of the most common skincare concerns. Whether your texture issues stem from acne scars, sun damage, or natural pore size, there are multiple effective approaches to smooth and refine your skin.",
+  "excerpt": "Uneven skin texture, enlarged pores, rough patches, and uneven surface, is one of the most common skincare concerns. Whether your texture issues stem from acne scars, sun damage, or natural pore size, there are multiple effective approaches to smooth and refine your skin.",
   "content": [
     {
       "type": "heading",

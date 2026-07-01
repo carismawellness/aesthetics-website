@@ -9,11 +9,11 @@ export const post: BlogPost = {
   "publishDate": "2026-06-24",
   "readTime": 6,
   "coverImage": "https://static.wixstatic.com/media/f940f0_placeholder.jpg",
-  "excerpt": "Your skin exists at the interface between your body and the environment, and external factors—sun, pollution, temperature, humidity—constantly impact its health and appearance. Understanding these effects and implementing protective strategies is essential for long-term skin health...",
+  "excerpt": "Your skin exists at the interface between your body and the environment, and external factors, sun, pollution, temperature, humidity, constantly impact its health and appearance. Understanding these effects and implementing protective strategies is essential for long-term skin health...",
   "content": [
     {
       "type": "paragraph",
-      "html": "Your skin exists at the interface between your body and the environment, and external factors—sun, pollution, temperature, humidity—constantly impact its health and appearance. Understanding these effects and implementing protective strategies is essential for long-term skin health."
+      "html": "Your skin exists at the interface between your body and the environment, and external factors, sun, pollution, temperature, humidity, constantly impact its health and appearance. Understanding these effects and implementing protective strategies is essential for long-term skin health."
     },
     {
       "type": "heading",
@@ -40,7 +40,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "Extreme temperatures, low humidity, and dry weather compromise your skin's barrier function, leading to dehydration, sensitivity, and inflammation. Malta's Mediterranean climate—hot, dry summers and variable winters—requires adaptive skincare routines."
+      "html": "Extreme temperatures, low humidity, and dry weather compromise your skin's barrier function, leading to dehydration, sensitivity, and inflammation. Malta's Mediterranean climate, hot, dry summers and variable winters, requires adaptive skincare routines."
     },
     {
       "type": "heading",

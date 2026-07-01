@@ -36,7 +36,7 @@ export const SEARCH_INDEX: SearchEntry[] = [
   {
     title: 'Membership',
     url: '/membership',
-    description: 'Aesthetics membership — exclusive pricing and perks.',
+    description: 'Aesthetics membership, exclusive pricing and perks.',
     keywords: [
       'membership', 'member', 'subscription', 'plan', 'monthly', 'loyalty',
       'prices', 'price', 'pricing', 'cost', 'how much',
@@ -45,7 +45,7 @@ export const SEARCH_INDEX: SearchEntry[] = [
   {
     title: 'E-Giftcards & Vouchers',
     url: '/e-giftcards-vouchers',
-    description: 'Aesthetics gift cards and vouchers — the perfect glow-up gift.',
+    description: 'Aesthetics gift cards and vouchers, the perfect glow-up gift.',
     keywords: [
       'gift', 'gifts', 'gift card', 'giftcard', 'gift cards', 'voucher',
       'vouchers', 'e-gift', 'egift', 'present', 'gift voucher',
@@ -138,7 +138,7 @@ export const SEARCH_INDEX: SearchEntry[] = [
     keywords: ['hydrafacial', 'hydra facial', 'facial', 'deep cleanse', 'hydration', 'glow facial'],
   },
   {
-    title: 'PRP — Platelet Rich Plasma',
+    title: 'PRP, Platelet Rich Plasma',
     url: '/prp-malta',
     description: 'PRP (platelet-rich plasma) for skin and hair rejuvenation.',
     keywords: ['prp', 'platelet rich plasma', 'vampire facial', 'rejuvenation', 'regenerative', 'blood'],

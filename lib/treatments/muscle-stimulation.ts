@@ -27,8 +27,8 @@ const t: Treatment = {
     title: "The secret to a more defined, confident look",
     subtitle: "SCULPT, TIGHTEN AND DEFINE STUBBORN AREAS WITH PRECISION",
     paragraphs: [
-      "You're eating well, staying active, and making an effort — yet certain areas still feel soft or undefined. Your tummy doesn't feel as firm as it should, your hips or bum lack shape, and your clothes don't reflect the work you're putting in. The scale may move slightly, but your body definition doesn't.",
-      "If this sounds familiar, effort isn't the issue. Some areas need direct muscle activation and targeted fat reduction. EMSculpt Neo uses high-intensity electromagnetic energy combined with radiofrequency to stimulate powerful muscle contractions, reduce local fat, and tighten the skin — helping your body finally look stronger, firmer, and more defined.",
+      "You're eating well, staying active, and making an effort, yet certain areas still feel soft or undefined. Your tummy doesn't feel as firm as it should, your hips or bum lack shape, and your clothes don't reflect the work you're putting in. The scale may move slightly, but your body definition doesn't.",
+      "If this sounds familiar, effort isn't the issue. Some areas need direct muscle activation and targeted fat reduction. EMSculpt Neo uses high-intensity electromagnetic energy combined with radiofrequency to stimulate powerful muscle contractions, reduce local fat, and tighten the skin, helping your body finally look stronger, firmer, and more defined.",
     ],
     image: "/assets/treatments/ms-secret.png",
   },
@@ -122,7 +122,7 @@ const t: Treatment = {
       "€25 Carisma Aesthetics credit (€25)",
       "Complimentary Parking Validation",
     ],
-    urgency: "Limited appointment slots — book your consultation to secure your place",
+    urgency: "Limited appointment slots, book your consultation to secure your place",
     guaranteeChip: "Doctor-supervised · Medical-grade technology · No surgery",
     cta: {
       text: "Claim My EMSculpt Package",
@@ -136,7 +136,7 @@ const t: Treatment = {
     mini: [
       {
         title: "Targeted BODY SCULPTING",
-        body: "EMSculpt Neo sessions are focused on your main problem areas — such as the tummy, hips, bum or thighs — delivering powerful muscle contractions to areas that are hard to tone naturally.",
+        body: "EMSculpt Neo sessions are focused on your main problem areas, such as the tummy, hips, bum or thighs, delivering powerful muscle contractions to areas that are hard to tone naturally.",
       },
       {
         title: "Visible, TRACKABLE DEFINITION",
@@ -165,7 +165,7 @@ const t: Treatment = {
 
   closing: {
     heading: "Ready to Sculpt and Strengthen?",
-    sub: "EMSculpt NEO in Malta — burn fat and build muscle simultaneously with Malta's only dual-technology body sculpting treatment. Book your free consultation.",
+    sub: "EMSculpt NEO in Malta, burn fat and build muscle simultaneously with Malta's only dual-technology body sculpting treatment. Book your free consultation.",
     ctaLabel: "Book My EMSculpt Consultation",
     ctaHref: "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2800348&share=true&pId=2708191",
   },

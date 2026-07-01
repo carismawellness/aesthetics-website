@@ -61,7 +61,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "The <a href=\"/hydrafacial\" style=\"color:var(--teal);text-decoration:underline;\"><strong>HydraFacial</strong></a> is a non-invasive treatment that combines cleansing, exfoliation, extraction, hydration, and antioxidant protection all in one session. Using a special machine, HydraFacial delivers customized serums to the skin, targeting your specific concerns—whether it's hydration, acne, or hyperpigmentation."
+      "html": "The <a href=\"/hydrafacial\" style=\"color:var(--teal);text-decoration:underline;\"><strong>HydraFacial</strong></a> is a non-invasive treatment that combines cleansing, exfoliation, extraction, hydration, and antioxidant protection all in one session. Using a special machine, HydraFacial delivers customized serums to the skin, targeting your specific concerns, whether it's hydration, acne, or hyperpigmentation."
     },
     {
       "type": "paragraph",

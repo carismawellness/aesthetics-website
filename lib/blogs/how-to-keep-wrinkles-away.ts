@@ -3,7 +3,7 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "how-to-keep-wrinkles-away",
   "title": "How to Keep Wrinkles Away: Prevention and Reduction Strategies",
-  "metaTitle": "How to Keep Wrinkles Away — Prevention & Treatment Guide",
+  "metaTitle": "How to Keep Wrinkles Away, Prevention & Treatment Guide",
   "metaDescription": "Prevent and reduce wrinkles with expert skincare and professional treatments. Keep skin youthful and radiant at Carisma Aesthetics.",
   "category": "Anti-Aging",
   "publishDate": "2026-06-25",

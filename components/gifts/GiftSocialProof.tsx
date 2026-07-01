@@ -81,7 +81,7 @@ export default function GiftSocialProof() {
                 margin: "16px auto 0",
               }}
             >
-              Every voucher unlocks the same care our clients rave about — so the
+              Every voucher unlocks the same care our clients rave about, so the
               moment they redeem it feels every bit as thoughtful as the gesture.
             </p>
           </div>

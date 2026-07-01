@@ -495,7 +495,7 @@ export default function Benefits() {
         <SectionHeading
           eyebrow="Everything your membership unlocks"
           title="Your Glow Club benefits"
-          subtitle="Real, lasting perks designed around you — so every visit feels a little more rewarding, and your glow keeps going between appointments."
+          subtitle="Real, lasting perks designed around you, so every visit feels a little more rewarding, and your glow keeps going between appointments."
           id="glow-benefits-heading"
         />
 

@@ -4,7 +4,7 @@ export const post: BlogPost = {
   "slug": "hydration-serums",
   "title": "Hydration Serums: Which Ingredient Works Best for Your Skin?",
   "metaTitle": "Best Hydrating Serums | Hyaluronic Acid, Glycerin & More | Carisma Aesthetics",
-  "metaDescription": "Compare hydration serum ingredients. Learn the differences between hyaluronic acid, glycerin, peptides, and ceramides—and which serum is right for your skin.",
+  "metaDescription": "Compare hydration serum ingredients. Learn the differences between hyaluronic acid, glycerin, peptides, and ceramides, and which serum is right for your skin.",
   "category": "Skincare",
   "publishDate": "2026-06-25",
   "readTime": 6,
@@ -33,7 +33,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "<strong>How It Works:</strong> Hyaluronic acid is a humectant—it pulls moisture from the environment (or your skin) and binds it, preventing water loss. This plumps skin cells and smooths fine lines."
+      "html": "<strong>How It Works:</strong> Hyaluronic acid is a humectant, it pulls moisture from the environment (or your skin) and binds it, preventing water loss. This plumps skin cells and smooths fine lines."
     },
     {
       "type": "paragraph",
@@ -41,7 +41,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "<strong>Pro Tips:</strong> Apply to damp skin for maximum absorption. Use HA molecules of different weights—higher molecular weight HA hydrates the surface, while lower molecular weight penetrates deeper."
+      "html": "<strong>Pro Tips:</strong> Apply to damp skin for maximum absorption. Use HA molecules of different weights, higher molecular weight HA hydrates the surface, while lower molecular weight penetrates deeper."
     },
     {
       "type": "paragraph",
@@ -83,7 +83,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "<strong>How They Work:</strong> Unlike humectants that pull water in from outside, peptides work internally—they tell your skin to make more of its own natural hydration. They strengthen the skin barrier and improve elasticity over time."
+      "html": "<strong>How They Work:</strong> Unlike humectants that pull water in from outside, peptides work internally, they tell your skin to make more of its own natural hydration. They strengthen the skin barrier and improve elasticity over time."
     },
     {
       "type": "paragraph",
@@ -108,7 +108,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "<strong>How They Work:</strong> Ceramides repair the skin barrier, reducing water loss and improving hydration retention. They don't add water—they prevent water from escaping."
+      "html": "<strong>How They Work:</strong> Ceramides repair the skin barrier, reducing water loss and improving hydration retention. They don't add water, they prevent water from escaping."
     },
     {
       "type": "paragraph",
@@ -120,7 +120,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "<strong>Limitations:</strong> Heavy and occlusive—can feel greasy on oily skin. Best used in moisturizers rather than lightweight serums."
+      "html": "<strong>Limitations:</strong> Heavy and occlusive, can feel greasy on oily skin. Best used in moisturizers rather than lightweight serums."
     },
     {
       "type": "heading",

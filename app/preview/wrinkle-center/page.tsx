@@ -16,7 +16,7 @@ const AESTHETICS_FRESHA_BOOK =
 // anywhere. Lets the owner compare the centred hero against the live left-right
 // <PageHero>, with the real downstream sections beneath it for scroll/flow.
 export const metadata: Metadata = {
-  title: "Preview — Center Hero",
+  title: "Preview, Center Hero",
   robots: { index: false, follow: false },
 };
 

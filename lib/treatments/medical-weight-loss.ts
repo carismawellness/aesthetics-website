@@ -17,7 +17,7 @@ const t: Treatment = {
   hero: {
     title: "Medical Weight Loss Malta",
     subtitle: "Tried every diet and the weight keeps coming back?",
-    body: "Doctor-led Ozempic and Mounjaro weight loss in Malta — never a prescription in isolation. Our programme pairs a full medical assessment, GLP-1 prescription support, nutrition guidance, and weekly monitoring to help you lose weight safely and, just as importantly, keep it off.",
+    body: "Doctor-led Ozempic and Mounjaro weight loss in Malta, never a prescription in isolation. Our programme pairs a full medical assessment, GLP-1 prescription support, nutrition guidance, and weekly monitoring to help you lose weight safely and, just as importantly, keep it off.",
     cta: "Book Your Weight Loss Consultation",
     bookHref: BOOK_HREF,
     image: "/assets/treatments/mwl-hero.png",
@@ -32,16 +32,16 @@ const t: Treatment = {
   ],
   problem: {
     kicker: "The real reason people book",
-    title: "It is not that you lack willpower — your biology has been working against you",
+    title: "It is not that you lack willpower, your biology has been working against you",
     body: [
-      "Years of dieting, hormones, stress, and age can leave your appetite and metabolism stacked against you. A doctor-led GLP-1 programme quiets the constant hunger and food noise so consistency finally feels possible — no shame, no crash diets, just a plan built around your body.",
+      "Years of dieting, hormones, stress, and age can leave your appetite and metabolism stacked against you. A doctor-led GLP-1 programme quiets the constant hunger and food noise so consistency finally feels possible, no shame, no crash diets, just a plan built around your body.",
     ],
   },
   guarantee: {
     kicker: "The Natural Confidence Guarantee",
     title: "Natural Confidence Guarantee",
     paragraphs: [
-      "Every programme starts with a doctor-led medical assessment, never a sales pitch — we only prescribe Ozempic or Mounjaro when it is genuinely right for you. If you qualify, complete your programme, and do not reach your target weight, we extend your programme at no extra fee until you do. We are the only clinic in Malta to offer this extended care commitment.",
+      "Every programme starts with a doctor-led medical assessment, never a sales pitch, we only prescribe Ozempic or Mounjaro when it is genuinely right for you. If you qualify, complete your programme, and do not reach your target weight, we extend your programme at no extra fee until you do. We are the only clinic in Malta to offer this extended care commitment.",
     ],
     cta: "Book Your Free Consultation",
     points: [
@@ -53,18 +53,18 @@ const t: Treatment = {
   suitability: {
     title: "Is this right for you?",
     intro:
-      "Ozempic and Mounjaro can be powerful, but only as part of a structured, doctor-supervised programme. Eligibility is decided through a proper medical assessment — blood tests, food-intolerance screening, and safety checks — so your plan is appropriate, monitored, and adjusted responsibly. If we do not believe we can help you, we will tell you honestly.",
+      "Ozempic and Mounjaro can be powerful, but only as part of a structured, doctor-supervised programme. Eligibility is decided through a proper medical assessment, blood tests, food-intolerance screening, and safety checks, so your plan is appropriate, monitored, and adjusted responsibly. If we do not believe we can help you, we will tell you honestly.",
     personas: [
-      { title: "The lifelong dieter", desc: "You have lost and regained the same weight for years. You are not looking for another fad — you want a medical approach that finally addresses the hunger." },
+      { title: "The lifelong dieter", desc: "You have lost and regained the same weight for years. You are not looking for another fad, you want a medical approach that finally addresses the hunger." },
       { title: "The hormonal shift", desc: "Your body changed with age, perimenopause, or menopause, and what used to work simply does not anymore. You want a plan that respects your hormones." },
       { title: "The busy professional or mum", desc: "You have 5–20 kg to lose and no time for crash plans. You want real food, weekly support, and a routine that survives a bad week." },
     ],
     notIdeal: [
-      "You are pregnant, breastfeeding, or trying to conceive — we will warmly welcome you back when the time is right",
-      "You are looking for a rapid, extreme crash-diet fix — our programme is steady and sustainable by design",
-      "You have a history of an eating disorder — your wellbeing comes first, and GLP-1 medication is not the right tool here",
-      "You are very lean already — these medications are for clinically appropriate weight loss, not aesthetic leanness",
-      "You would rather not attend weekly check-ins — the monitoring is how we keep your results safe and on track",
+      "You are pregnant, breastfeeding, or trying to conceive, we will warmly welcome you back when the time is right",
+      "You are looking for a rapid, extreme crash-diet fix, our programme is steady and sustainable by design",
+      "You have a history of an eating disorder, your wellbeing comes first, and GLP-1 medication is not the right tool here",
+      "You are very lean already, these medications are for clinically appropriate weight loss, not aesthetic leanness",
+      "You would rather not attend weekly check-ins, the monitoring is how we keep your results safe and on track",
     ],
   },
   experience: {
@@ -72,12 +72,12 @@ const t: Treatment = {
     steps: [
       {
         title: "Consultation & Medical Assessment",
-        desc: "You meet our doctor for a full review of your health, hormones, history, and goals, plus clinical measurements and a body-composition scan — fat, muscle, and visceral fat, not just the scale. Where appropriate we check thyroid, blood sugar, and cholesterol to confirm Ozempic or Mounjaro is right and safe for you.",
+        desc: "You meet our doctor for a full review of your health, hormones, history, and goals, plus clinical measurements and a body-composition scan, fat, muscle, and visceral fat, not just the scale. Where appropriate we check thyroid, blood sugar, and cholesterol to confirm Ozempic or Mounjaro is right and safe for you.",
         image: "/assets/mwl/step-consultation.png",
       },
       {
         title: "Your Doctor-Led GLP-1 Programme",
-        desc: "If you qualify, we start your prescription with careful dose titration, paired with a Mediterranean-style nutrition plan, protein targets to protect muscle, and movement that fits your life. Weekly check-ins and WhatsApp support mean you are never guessing between visits — and if you go quiet, we reach out first, without judgement.",
+        desc: "If you qualify, we start your prescription with careful dose titration, paired with a Mediterranean-style nutrition plan, protein targets to protect muscle, and movement that fits your life. Weekly check-ins and WhatsApp support mean you are never guessing between visits, and if you go quiet, we reach out first, without judgement.",
         image: "/assets/mwl/step-bodyanalysis.png",
       },
       {
@@ -99,10 +99,10 @@ const t: Treatment = {
     ],
     images: ["/assets/treatments/mwl-drzaid.jpg"],
     points: [
-      { title: "Doctor-First, Not Drug-First", desc: "We start with clinical suitability, not dosage — your full health history, risks, and goals reviewed by a medical doctor." },
+      { title: "Doctor-First, Not Drug-First", desc: "We start with clinical suitability, not dosage, your full health history, risks, and goals reviewed by a medical doctor." },
       { title: "Appetite & Metabolic Support", desc: "Ozempic and Mounjaro quiet hunger and food noise; we titrate carefully and monitor side effects throughout." },
-      { title: "Body Composition, Not Just Weight", desc: "We track fat loss while protecting lean muscle — progress you can see in measurements and strength, not only the scale." },
-      { title: "A Programme, Not a Prescription", desc: "Phases, milestones, and a defined maintenance plan with ongoing medical oversight — never medication in isolation." },
+      { title: "Body Composition, Not Just Weight", desc: "We track fat loss while protecting lean muscle, progress you can see in measurements and strength, not only the scale." },
+      { title: "A Programme, Not a Prescription", desc: "Phases, milestones, and a defined maintenance plan with ongoing medical oversight, never medication in isolation." },
     ],
   },
   planSummary: {
@@ -110,7 +110,7 @@ const t: Treatment = {
     title: "Malta's Doctor-Led GLP-1 Programme",
     benefits: [
       { icon: "shield", title: "Doctor-Led & Monitored", desc: "Full eligibility assessment, safety screening, and regular reviews to manage side effects and adjust your dose." },
-      { icon: "target", title: "Appetite Under Control", desc: "Ozempic and Mounjaro calm hunger and food noise so you feel satisfied with smaller portions — consistency made possible." },
+      { icon: "target", title: "Appetite Under Control", desc: "Ozempic and Mounjaro calm hunger and food noise so you feel satisfied with smaller portions, consistency made possible." },
       { icon: "chart", title: "Built to Last", desc: "Nutrition, movement, accountability, and a maintenance plan so results hold long after the medication ends." },
     ],
     included: [
@@ -151,7 +151,7 @@ const t: Treatment = {
     },
     {
       q: "What exactly happens in the medical assessment? Is it safe if I have existing health issues?",
-      a: "In your assessment you sit with our doctor and go through your medical history, medications, past diets, and any hormonal or metabolic concerns. We take clinical measurements and perform a body-composition scan, and may recommend blood tests, blood-pressure checks, or food-intolerance testing. Many clients already manage conditions like high blood pressure, thyroid issues, or early diabetes — that is exactly why we screen properly and adapt your Ozempic or Mounjaro plan around your safety.",
+      a: "In your assessment you sit with our doctor and go through your medical history, medications, past diets, and any hormonal or metabolic concerns. We take clinical measurements and perform a body-composition scan, and may recommend blood tests, blood-pressure checks, or food-intolerance testing. Many clients already manage conditions like high blood pressure, thyroid issues, or early diabetes, that is exactly why we screen properly and adapt your Ozempic or Mounjaro plan around your safety.",
     },
     {
       q: "Will I have to follow a strict meal plan, or can I still eat bread, pasta, and wine?",
@@ -159,10 +159,10 @@ const t: Treatment = {
     },
     {
       q: "What are the side effects of Ozempic and Mounjaro?",
-      a: "The most common side effects are gastrointestinal — nausea, constipation, diarrhoea, and fatigue — and are usually temporary, occurring in the early weeks as your body adjusts. We manage these through slow dose titration, protein-first nutrition, hydration protocols, and regular doctor reviews. Serious side effects are rare when the medication is prescribed appropriately and monitored closely, which is why ongoing medical supervision is a non-negotiable part of our programme.",
+      a: "The most common side effects are gastrointestinal, nausea, constipation, diarrhoea, and fatigue, and are usually temporary, occurring in the early weeks as your body adjusts. We manage these through slow dose titration, protein-first nutrition, hydration protocols, and regular doctor reviews. Serious side effects are rare when the medication is prescribed appropriately and monitored closely, which is why ongoing medical supervision is a non-negotiable part of our programme.",
     },
     {
-      q: "Mounjaro vs Ozempic — what is the difference?",
+      q: "Mounjaro vs Ozempic, what is the difference?",
       a: "Both are GLP-1 medications used for weight loss, but they work differently. Ozempic (semaglutide) targets GLP-1 receptors only, while Mounjaro (tirzepatide) targets both GLP-1 and GIP receptors, a dual-action mechanism that may offer stronger appetite suppression. In clinical trials, Mounjaro showed average weight loss of 15–22% compared with 10–15% for Ozempic. Our doctor recommends the right medication based on your medical assessment, not marketing trends.",
     },
     {
@@ -187,7 +187,7 @@ const t: Treatment = {
     },
     {
       q: "How is the programme at Carisma different from just getting a prescription?",
-      a: "Getting a prescription is easy; building a programme that delivers lasting results is not. At Carisma, your Ozempic or Mounjaro prescription is one part of a wider system: medical monitoring, personalised nutrition, strength-training guidance, weekly accountability, body-contouring treatments, aesthetics support for Ozempic-face prevention, and a defined exit strategy. We do not prescribe and forget — we guide you through every phase.",
+      a: "Getting a prescription is easy; building a programme that delivers lasting results is not. At Carisma, your Ozempic or Mounjaro prescription is one part of a wider system: medical monitoring, personalised nutrition, strength-training guidance, weekly accountability, body-contouring treatments, aesthetics support for Ozempic-face prevention, and a defined exit strategy. We do not prescribe and forget, we guide you through every phase.",
     },
   ],
   beforeAfterTitle: "MEDICAL WEIGHT LOSS RESULTS",

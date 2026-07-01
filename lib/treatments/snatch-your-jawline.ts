@@ -5,8 +5,8 @@ const t: Treatment = {
   category: "Package",
   hero: {
     title: "Snatch Your Jawline in Malta",
-    subtitle: "For those in Malta ready to redefine their profile — a non-surgical, low-downtime package that melts under-chin fat, softens sagging, and restores lasting jawline definition.",
-    body: "Do you catch your reflection and wish your jawline looked sharper again? A softer chin line, a little sagging, or stubborn fat that resists every diet can quietly change how you feel about your profile. Our doctor-led Snatch Your Jawline package combines fat-dissolving and contouring to bring back that definition — no surgery, no theatre, minimal downtime. The result is a naturally sculpted jawline that still looks like you, only more confident in every photo and every room you walk into.",
+    subtitle: "For those in Malta ready to redefine their profile, a non-surgical, low-downtime package that melts under-chin fat, softens sagging, and restores lasting jawline definition.",
+    body: "Do you catch your reflection and wish your jawline looked sharper again? A softer chin line, a little sagging, or stubborn fat that resists every diet can quietly change how you feel about your profile. Our doctor-led Snatch Your Jawline package combines fat-dissolving and contouring to bring back that definition, no surgery, no theatre, minimal downtime. The result is a naturally sculpted jawline that still looks like you, only more confident in every photo and every room you walk into.",
     prices: [
       { label: "Jawline Sculpting Package", price: "from €149" },
     ],
@@ -37,7 +37,7 @@ const t: Treatment = {
   ],
   problem: {
     kicker: "The real reason people book",
-    title: "It is not about your weight — it is the soft, undefined jawline staring back",
+    title: "It is not about your weight, it is the soft, undefined jawline staring back",
     body: [
       "Our doctor-led package melts the stubborn under-chin fullness and tightens the contour, restoring a sharper, naturally defined jawline that still looks completely like you.",
     ],
@@ -57,7 +57,7 @@ const t: Treatment = {
   },
   precision: {
     title: "PRECISION AREAS OF DEFINITION",
-    intro: "Our Snatch Your Jawline package targets the zones that blur a sharp profile — gently melting fat, tightening skin, and sculpting for a naturally defined jawline.",
+    intro: "Our Snatch Your Jawline package targets the zones that blur a sharp profile, gently melting fat, tightening skin, and sculpting for a naturally defined jawline.",
     areas: [
       { name: "Under-Chin Fat", desc: "Dissolves the stubborn fullness beneath the chin that softens your profile." },
       { name: "Jawline Contour", desc: "Sharpens and defines the line from ear to chin for a sculpted finish." },
@@ -70,11 +70,11 @@ const t: Treatment = {
     intro:
       "Every profile is different. A snatched jawline is most effective when the plan is tailored to your facial structure and the exact area softening your contour. A free consultation with one of our doctors helps us understand what will work for you.",
     notIdeal: [
-      "You are looking to lose overall body weight — this sculpts a specific area, it is not a weight-loss treatment",
-      "You want the full result the same day — fat dissolving settles gently over a few weeks",
-      "You are pregnant or breastfeeding — we will happily welcome you back afterwards",
-      "You have significant skin laxity that needs lifting — we will guide you toward a tightening or thread-lift plan instead",
-      "You would rather skip the quick doctor consultation — it is how we keep your result safe and natural",
+      "You are looking to lose overall body weight, this sculpts a specific area, it is not a weight-loss treatment",
+      "You want the full result the same day, fat dissolving settles gently over a few weeks",
+      "You are pregnant or breastfeeding, we will happily welcome you back afterwards",
+      "You have significant skin laxity that needs lifting, we will guide you toward a tightening or thread-lift plan instead",
+      "You would rather skip the quick doctor consultation, it is how we keep your result safe and natural",
     ],
     personas: [
       { title: "The stubborn double-chin", desc: "You are happy with your weight, but a pocket of fat under the chin softens your profile no matter what you try." },
@@ -86,7 +86,7 @@ const t: Treatment = {
     title: "Your treatment experience",
     steps: [
       { title: "Personalised Consultation", desc: "We assess your facial structure, skin firmness, medical history, and jawline goals with one of our doctors.", image: "/assets/treatments/fat-dissolving-malta-step1.png" },
-      { title: "Targeted Sculpting", desc: "Your doctor performs the fat-dissolving and contouring treatment with fine, precise injections — quick, comfortable, and with minimal downtime.", image: "/assets/treatments/fat-dissolving-malta-step2.png" },
+      { title: "Targeted Sculpting", desc: "Your doctor performs the fat-dissolving and contouring treatment with fine, precise injections, quick, comfortable, and with minimal downtime.", image: "/assets/treatments/fat-dissolving-malta-step2.png" },
       { title: "Ongoing Review & Refinement", desc: "Your doctor reviews your result as it settles and refines the plan to ensure a natural, lasting jawline definition.", image: "/assets/treatments/fat-dissolving-malta-step4.png" },
     ],
   },
@@ -100,7 +100,7 @@ const t: Treatment = {
       "/assets/treatments/fat-dissolving-malta-trusted4.png",
     ],
     points: [
-      { title: "Medically Qualified Practitioners", desc: "Every jawline treatment is performed by a qualified doctor — never a salon." },
+      { title: "Medically Qualified Practitioners", desc: "Every jawline treatment is performed by a qualified doctor, never a salon." },
       { title: "Advanced Facial Anatomy Expertise", desc: "Precise sculpting techniques tailored to your unique facial structure and profile." },
       { title: "Personalised Treatment Plans", desc: "Your jawline plan is designed to define and refine, never to over-sculpt." },
       { title: "Trusted by Thousands in Malta", desc: "A legacy of natural results and client satisfaction you can trust." },
@@ -110,9 +110,9 @@ const t: Treatment = {
     kicker: "Your jawline plan",
     title: "Malta's Doctor-Led Jawline Sculpting Package",
     benefits: [
-      { icon: "shield", title: "Doctor-Led Precision", desc: "Every session is performed by a medically qualified doctor — never a salon, never nurse-only." },
-      { icon: "sparkle", title: "Natural, Defined Results", desc: "We melt the fullness that softens your profile while keeping a result that still looks like you — sharper, never distorted." },
-      { icon: "clock", title: "Complimentary Review", desc: "We review your result as it settles and refine the plan if needed — included free." },
+      { icon: "shield", title: "Doctor-Led Precision", desc: "Every session is performed by a medically qualified doctor, never a salon, never nurse-only." },
+      { icon: "sparkle", title: "Natural, Defined Results", desc: "We melt the fullness that softens your profile while keeping a result that still looks like you, sharper, never distorted." },
+      { icon: "clock", title: "Complimentary Review", desc: "We review your result as it settles and refine the plan if needed, included free." },
     ],
     included: [
       { label: "Free doctor-led consultation" },
@@ -150,7 +150,7 @@ const t: Treatment = {
       "€40 Carisma Aesthetics Credit (€40 value)",
       "In-Person Consultation (€60 value)",
     ],
-    urgency: "Limited consultation slots — book today to secure your appointment",
+    urgency: "Limited consultation slots, book today to secure your appointment",
     guaranteeChip: "Doctor-led · Non-surgical · Minimal downtime",
     cta: {
       text: "Book My Jawline Consultation",
@@ -160,7 +160,7 @@ const t: Treatment = {
   },
   closing: {
     heading: "Ready to Snatch Your Jawline?",
-    sub: "A sharper, more defined profile — non-surgical, doctor-led, minimal downtime. Book your free consultation at Carisma Aesthetics, Malta.",
+    sub: "A sharper, more defined profile, non-surgical, doctor-led, minimal downtime. Book your free consultation at Carisma Aesthetics, Malta.",
     ctaLabel: "Book My Jawline Consultation",
     ctaHref: "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2800348&oiid=sv%3A25781412&share=true&pId=2708191",
   },
@@ -169,7 +169,7 @@ const t: Treatment = {
   faq: [
     {
       q: "How does the Snatch Your Jawline package define my jawline?",
-      a: "The package combines fat-dissolving injections with contouring to target the stubborn fullness under the chin and along the jawline. The solution gently breaks down localised fat cells, which the body then clears naturally, while the contouring approach helps tighten and refine the area. The result is a sharper, more defined jawline and a cleaner side profile — without surgery or downtime.",
+      a: "The package combines fat-dissolving injections with contouring to target the stubborn fullness under the chin and along the jawline. The solution gently breaks down localised fat cells, which the body then clears naturally, while the contouring approach helps tighten and refine the area. The result is a sharper, more defined jawline and a cleaner side profile, without surgery or downtime.",
     },
     {
       q: "Is the treatment painful?",
@@ -181,7 +181,7 @@ const t: Treatment = {
     },
     {
       q: "When will I see my jawline results?",
-      a: "Results develop gradually as your body clears the treated fat. Many patients notice a visible difference within two to four weeks, with the contour continuing to refine over the following weeks. Depending on the area, more than one session may be recommended for the sharpest, most defined result — your doctor will advise during your consultation.",
+      a: "Results develop gradually as your body clears the treated fat. Many patients notice a visible difference within two to four weeks, with the contour continuing to refine over the following weeks. Depending on the area, more than one session may be recommended for the sharpest, most defined result, your doctor will advise during your consultation.",
     },
     {
       q: "How long do the results last?",
@@ -189,7 +189,7 @@ const t: Treatment = {
     },
     {
       q: "Is this a weight-loss treatment?",
-      a: "No. Snatching your jawline is a contouring treatment that targets a specific, stubborn area — it is not a method for overall weight loss. It works best for people who are close to their target weight but have a pocket of under-chin fat or a softened jawline that resists diet and exercise.",
+      a: "No. Snatching your jawline is a contouring treatment that targets a specific, stubborn area, it is not a method for overall weight loss. It works best for people who are close to their target weight but have a pocket of under-chin fat or a softened jawline that resists diet and exercise.",
     },
     {
       q: "Am I a suitable candidate?",

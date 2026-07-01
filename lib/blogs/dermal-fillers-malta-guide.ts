@@ -3,7 +3,7 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "dermal-fillers-malta-guide",
   "title": "Dermal Fillers Malta Guide: Everything You Need to Know",
-  "metaTitle": "Dermal Fillers Malta — Complete Guide & FAQ",
+  "metaTitle": "Dermal Fillers Malta, Complete Guide & FAQ",
   "metaDescription": "Complete guide to dermal fillers in Malta: types, benefits, results, and FAQs. Expert advice from Carisma Aesthetics. Book your consultation.",
   "category": "Injectables",
   "publishDate": "2026-06-05",

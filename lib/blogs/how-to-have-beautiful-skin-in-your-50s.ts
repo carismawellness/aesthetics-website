@@ -3,7 +3,7 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "how-to-have-beautiful-skin-in-your-50s",
   "title": "How to Have Beautiful Skin in Your 50s: Age-Defying Strategies",
-  "metaTitle": "Beautiful Skin in Your 50s — Look Your Best This Decade",
+  "metaTitle": "Beautiful Skin in Your 50s, Look Your Best This Decade",
   "metaDescription": "Complete skincare and treatment guide for beautiful skin in your 50s. Combat aging, sagging skin, and age spots at Carisma Aesthetics.",
   "category": "Skincare",
   "publishDate": "2026-06-25",

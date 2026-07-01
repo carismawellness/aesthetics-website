@@ -9,11 +9,11 @@ export const post: BlogPost = {
   "publishDate": "2025-06-29",
   "readTime": 4,
   "coverImage": "https://static.wixstatic.com/media/11062b_d8e10d1a29194e44828298452026733e~mv2.jpg",
-  "excerpt": "Acne can be frustrating at any age—but even more disheartening than the breakouts themselves are the stubborn marks they leave behind. Acne scars can affect not just your appearance, but also your confidence.",
+  "excerpt": "Acne can be frustrating at any age, but even more disheartening than the breakouts themselves are the stubborn marks they leave behind. Acne scars can affect not just your appearance, but also your confidence.",
   "content": [
     {
       "type": "paragraph",
-      "html": "Acne can be frustrating at any age—but even more disheartening than the breakouts themselves are the stubborn marks they leave behind. Acne scars can affect not just your appearance, but also your confidence."
+      "html": "Acne can be frustrating at any age, but even more disheartening than the breakouts themselves are the stubborn marks they leave behind. Acne scars can affect not just your appearance, but also your confidence."
     },
     {
       "type": "heading",

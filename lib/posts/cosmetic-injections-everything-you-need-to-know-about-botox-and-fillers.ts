@@ -35,7 +35,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "<a href=\"/botox-malta\" style=\"color:var(--teal);text-decoration:underline;\">Botox</a> (botulinum toxin) is a purified protein that temporarily paralyzes the muscles responsible for wrinkle formation. When injected into specific facial muscles, Botox blocks nerve signals, preventing the muscles from contracting. This results in a smoother appearance and helps minimize dynamic wrinkles—those caused by facial expressions such as frowning, squinting, or smiling."
+      "html": "<a href=\"/botox-malta\" style=\"color:var(--teal);text-decoration:underline;\">Botox</a> (botulinum toxin) is a purified protein that temporarily paralyzes the muscles responsible for wrinkle formation. When injected into specific facial muscles, Botox blocks nerve signals, preventing the muscles from contracting. This results in a smoother appearance and helps minimize dynamic wrinkles, those caused by facial expressions such as frowning, squinting, or smiling."
     },
     {
       "type": "paragraph",

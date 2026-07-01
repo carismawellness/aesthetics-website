@@ -39,11 +39,11 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "Botox (onabotulinumtoxin A) has an extremely low allergy profile. True allergic reactions are exceptionally rare—far rarer than reactions to fillers. However, if you have a known allergy to any ingredient in the formulation, you should disclose this."
+      "html": "Botox (onabotulinumtoxin A) has an extremely low allergy profile. True allergic reactions are exceptionally rare, far rarer than reactions to fillers. However, if you have a known allergy to any ingredient in the formulation, you should disclose this."
     },
     {
       "type": "paragraph",
-      "html": "Most reactions people experience after Botox (redness, mild swelling) are not allergic reactions—they are normal inflammatory responses to the injection itself."
+      "html": "Most reactions people experience after Botox (redness, mild swelling) are not allergic reactions, they are normal inflammatory responses to the injection itself."
     },
     {
       "type": "heading",

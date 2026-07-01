@@ -621,7 +621,7 @@ export default function BlogTemplate({
           <SectionHeading
             id="blog-post-cta-heading"
             tone="dark"
-            eyebrow="Carisma Aesthetics — Malta"
+            eyebrow="Carisma Aesthetics, Malta"
             title="Ready to Begin Your Journey?"
             subtitle="Book a free consultation with our medically qualified team and get a personalised plan tailored to your goals."
             subtitleMaxWidth={520}

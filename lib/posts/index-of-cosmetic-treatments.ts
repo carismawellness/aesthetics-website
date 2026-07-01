@@ -3,7 +3,7 @@ import type { BlogPost } from "../blog-types";
 export const post: BlogPost = {
   "slug": "index-of-cosmetic-treatments",
   "title": "Index of Cosmetic Treatments",
-  "metaTitle": "Complete Index of Cosmetic Treatments — Carisma Aesthetics",
+  "metaTitle": "Complete Index of Cosmetic Treatments, Carisma Aesthetics",
   "metaDescription": "Comprehensive guide to all available cosmetic treatments and aesthetic procedures.",
   "category": "Aesthetics",
   "publishDate": "2026-06-25",

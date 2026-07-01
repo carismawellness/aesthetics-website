@@ -164,7 +164,7 @@ export default function JoinPage() {
                     marginBottom: "28px",
                   }}
                 >
-                  No monthly fee — you choose your own monthly contribution from
+                  No monthly fee, you choose your own monthly contribution from
                   €20 to €200, and it’s always yours to spend on the treatments
                   you love.
                 </p>

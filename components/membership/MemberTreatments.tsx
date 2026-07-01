@@ -78,7 +78,7 @@ export default function MemberTreatments() {
           <SectionHeading
             eyebrow="Members glow for less"
             title="Your favourite treatments, at member prices"
-            subtitle="Every Glow Club member enjoys 10% off all aesthetic services and 15% off skincare — so the treatments you already love simply cost less, every single visit."
+            subtitle="Every Glow Club member enjoys 10% off all aesthetic services and 15% off skincare, so the treatments you already love simply cost less, every single visit."
             id="member-treatments-heading"
           />
         </Reveal>
@@ -120,7 +120,7 @@ export default function MemberTreatments() {
                 <Link
                   href={t.href}
                   className="block overflow-hidden card mem-tx-tile"
-                  aria-label={`${t.label} — ${t.member} for Glow Club members. Learn more about this treatment.`}
+                  aria-label={`${t.label}, ${t.member} for Glow Club members. Learn more about this treatment.`}
                   style={{
                     borderRadius: "16px",
                     border: "1px solid #e0e0e0",
@@ -206,7 +206,7 @@ export default function MemberTreatments() {
               }}
             >
               Save a little each month, then spend it on the treatment you
-              choose — your balance never expires, and your member discount
+              choose, your balance never expires, and your member discount
               applies the moment you book.
             </p>
             <Link

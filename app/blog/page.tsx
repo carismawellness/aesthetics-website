@@ -169,7 +169,7 @@ export default function BlogIndexPage() {
           { text: "Aesthetics & Beauty Blog Malta" },
           { text: "Expert Guides from Our Clinic", em: true },
         ]}
-        sub="Expert guides on aesthetic treatments, skin and confidence — from Malta's #1 voted med-aesthetics clinic."
+        sub="Expert guides on aesthetic treatments, skin and confidence, from Malta's #1 voted med-aesthetics clinic."
         primaryCta={{ text: "Book Free Consultation", href: "/consultation" }}
         secondaryCta={{ text: "View Treatments", href: "/face-treatments" }}
         media={{ type: "image", src: heroImage, alt: "Carisma Aesthetics journal" }}

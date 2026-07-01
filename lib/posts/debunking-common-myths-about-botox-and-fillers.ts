@@ -123,7 +123,7 @@ export const post: BlogPost = {
       "items": [
         "<a href=\"/botox-malta\" style=\"color:var(--teal);text-decoration:underline;\">Botox</a> has been <strong>FDA-approved for over 20 years</strong> and is widely used in both aesthetic and medical treatments.",
         "<a href=\"/dermal-fillers-malta\" style=\"color:var(--teal);text-decoration:underline;\">Dermal fillers</a>, particularly those made with <strong>hyaluronic acid</strong>, are biocompatible and naturally absorbed by the body over time.",
-        "Safety concerns arise only when treatments are performed by unqualified individuals—choosing a certified practitioner ensures safe, professional results."
+        "Safety concerns arise only when treatments are performed by unqualified individuals, choosing a certified practitioner ensures safe, professional results."
       ]
     },
     {

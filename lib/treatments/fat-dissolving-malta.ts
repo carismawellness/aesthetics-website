@@ -183,7 +183,7 @@ const t: Treatment = {
       },
       {
         title: "Clinically Approved Products",
-        desc: "Clinically Approved Products — CE-marked, clinically approved botox and evidence-based protocols.",
+        desc: "Clinically Approved Products, CE-marked, clinically approved botox and evidence-based protocols.",
       },
       {
         title: "Thousands of Treatments Performed",

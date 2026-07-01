@@ -45,7 +45,7 @@ const SLUG_SEO: Record<string, { title: string; description: string }> = {
   "hydrafacial": {
     title: "HydraFacial Malta | #1 Award Winning Clinic | Carisma Aesthetics",
     description:
-      "HydraFacial in Malta from €99. Deep cleanse, exfoliation, extraction and hydration in one treatment. Medically supervised — visible results after one session. Book today.",
+      "HydraFacial in Malta from €99. Deep cleanse, exfoliation, extraction and hydration in one treatment. Medically supervised, visible results after one session. Book today.",
   },
   "dermal-fillers-malta": {
     title: "Dermal Fillers Malta | Lips, Cheeks, Jawline | Carisma Aesthetics",
@@ -80,7 +80,7 @@ const SLUG_SEO: Record<string, { title: string; description: string }> = {
   "profhilo": {
     title: "Profhilo Malta | Skin Booster Treatment | Carisma Aesthetics",
     description:
-      "Profhilo bio-remodelling treatment in Malta — the gold standard for skin hydration and laxity. Doctor-led injectable from €299. Natural, long-lasting results. Free consultation.",
+      "Profhilo bio-remodelling treatment in Malta, the gold standard for skin hydration and laxity. Doctor-led injectable from €299. Natural, long-lasting results. Free consultation.",
   },
   "fat-freezing": {
     title: "CoolSculpting Malta | Fat Freezing Treatment | Carisma Aesthetics",
@@ -90,7 +90,7 @@ const SLUG_SEO: Record<string, { title: string; description: string }> = {
   "muscle-stimulation": {
     title: "EMSculpt NEO Malta | Body Sculpting | Carisma Aesthetics",
     description:
-      "EMSculpt NEO in Malta — burn fat and build muscle simultaneously with Malta's only dual-technology body sculpting treatment. Visible results in 4 sessions. Book today.",
+      "EMSculpt NEO in Malta, burn fat and build muscle simultaneously with Malta's only dual-technology body sculpting treatment. Visible results in 4 sessions. Book today.",
   },
   "skin-tightening": {
     title: "VelaShape III Malta | Skin Tightening & Cellulite | Carisma Aesthetics",
@@ -115,7 +115,7 @@ const SLUG_SEO: Record<string, { title: string; description: string }> = {
   "polynucleotides-salmon-dna": {
     title: "Polynucleotides Malta | PDRN Skin Treatment | Carisma Aesthetics",
     description:
-      "Polynucleotides (PDRN) treatment in Malta — regenerative salmon DNA injections to repair and renew skin. Reduces pigmentation, wrinkles and improves elasticity. Free consultation.",
+      "Polynucleotides (PDRN) treatment in Malta, regenerative salmon DNA injections to repair and renew skin. Reduces pigmentation, wrinkles and improves elasticity. Free consultation.",
   },
   "lymphatic-drainage": {
     title: "Lymphatic Drainage Therapy Malta | Carisma Aesthetics",
@@ -125,7 +125,7 @@ const SLUG_SEO: Record<string, { title: string; description: string }> = {
   "thread-lift-malta": {
     title: "Thread Lift Malta | Non-Surgical Lifting | Carisma Aesthetics",
     description:
-      "Thread lift in Malta — non-surgical facial rejuvenation from €239. Doctor-led lifting and repositioning for a refreshed, youthful appearance. Results last 8-12 months. Free consultation.",
+      "Thread lift in Malta, non-surgical facial rejuvenation from €239. Doctor-led lifting and repositioning for a refreshed, youthful appearance. Results last 8-12 months. Free consultation.",
   },
   // ─── Packages ──────────────────────────────────────────────────────────────
   "snatch-your-jawline": {

@@ -33,9 +33,9 @@ export const lymphaticDrainage: ProtocolData = {
     sub: "when hunger, not willpower, is holding you back",
     image: `${A}/lympathic-drainage-secret.png`,
     paragraphs: [
-      "You eat well, try to stay active, and take care of yourself — yet your body still feels bloated, tight, or sluggish. Swelling comes and goes, your skin feels puffy, and recovery feels slower than it should. You know something feels “off,” but it’s hard to explain — and harder to fix on your own.",
+      "You eat well, try to stay active, and take care of yourself, yet your body still feels bloated, tight, or sluggish. Swelling comes and goes, your skin feels puffy, and recovery feels slower than it should. You know something feels “off,” but it’s hard to explain, and harder to fix on your own.",
       "If you’re reading this and thinking, “This sounds like me,” the issue may not be lifestyle or effort. Often, it’s your lymphatic system struggling to drain efficiently. When lymph flow is slow, fluids and toxins can build up in the body.",
-      "Lymphatic Drainage Therapy gently stimulates your lymphatic system, supporting natural detoxification, improved circulation, and reduced fluid retention — helping your body feel lighter, more balanced, and refreshed again.",
+      "Lymphatic Drainage Therapy gently stimulates your lymphatic system, supporting natural detoxification, improved circulation, and reduced fluid retention, helping your body feel lighter, more balanced, and refreshed again.",
     ],
     bullets: [
       "You wake up feeling swollen or heavy",
@@ -52,7 +52,7 @@ export const lymphaticDrainage: ProtocolData = {
     features: [
       { icon: `${A}/lympathic-drainage-feat1.png`, label: "MEDICALLY GUIDED APPROACH", desc: "Your lymphatic drainage treatment is overseen by medical professionals, with careful assessment of your health history to ensure the therapy is safe, appropriate, and effective for your body." },
       { icon: `${A}/lympathic-drainage-feat2.png`, label: "LYMPHATIC FLOW & DETOX SUPPORT", desc: "Gentle, targeted techniques are used to stimulate lymph flow, helping reduce fluid retention, support natural detoxification, and relieve feelings of heaviness and congestion." },
-      { icon: `${A}/lympathic-drainage-feat3.png`, label: "Expert-DESIGNED TREATMENT PLAN", desc: "Your in-person consultation helps determine suitability, treatment frequency, and realistic outcomes — ensuring lymphatic drainage is delivered as part of a structured, personalised wellness plan." },
+      { icon: `${A}/lympathic-drainage-feat3.png`, label: "Expert-DESIGNED TREATMENT PLAN", desc: "Your in-person consultation helps determine suitability, treatment frequency, and realistic outcomes, ensuring lymphatic drainage is delivered as part of a structured, personalised wellness plan." },
       { icon: `${A}/lympathic-drainage-feat4.png`, label: "SAFE AND CLINICALLY CERTIFIED", desc: "All treatments are performed under clinical standards, using medically approved techniques, with professional supervision to prioritise comfort, safety, and results at every stage." },
     ],
   },
@@ -75,13 +75,13 @@ export const lymphaticDrainage: ProtocolData = {
     tag: "",
     tagSub: "",
     baImage: `${A}/lympathic-drainage-consultation.jpg`,
-    intro: "The lymphatic system plays a vital role in fluid balance, detoxification, and immune support. When lymph flow becomes sluggish, fluid and waste can accumulate in the body — leading to bloating, swelling, heaviness, and slow recovery. Lymphatic Drainage Therapy uses gentle, targeted techniques to stimulate lymph flow, helping the body naturally eliminate excess fluids and toxins while supporting circulation and overall wellbeing. At our clinic, lymphatic drainage is used as a therapeutic support, not a cosmetic shortcut:",
+    intro: "The lymphatic system plays a vital role in fluid balance, detoxification, and immune support. When lymph flow becomes sluggish, fluid and waste can accumulate in the body, leading to bloating, swelling, heaviness, and slow recovery. Lymphatic Drainage Therapy uses gentle, targeted techniques to stimulate lymph flow, helping the body naturally eliminate excess fluids and toxins while supporting circulation and overall wellbeing. At our clinic, lymphatic drainage is used as a therapeutic support, not a cosmetic shortcut:",
     bullets: [
       "You begin with a professional consultation to assess your health history, symptoms, and suitability for treatment.",
       "Your practitioner explains how lymphatic drainage works, what results to expect, and how often sessions may be recommended.",
-      "Treatment is delivered using controlled, medically guided techniques — never aggressively or without assessment.",
+      "Treatment is delivered using controlled, medically guided techniques, never aggressively or without assessment.",
       "We monitor your response and adjust frequency or approach as needed, ensuring comfort, safety, and effectiveness.",
-      "If lymphatic drainage is not appropriate for you, we are clear and transparent — and guide you toward alternative therapies that better support your health and goals.",
+      "If lymphatic drainage is not appropriate for you, we are clear and transparent, and guide you toward alternative therapies that better support your health and goals.",
     ],
   },
   difference1: {
@@ -149,7 +149,7 @@ export const lymphaticDrainage: ProtocolData = {
       {
         image: `${A}/lympathic-drainage-research1.png`,
         title: "manual lymphatic drainage (mld) for swelling & fluid retention",
-        whatItDoes: "Manual Lymphatic Drainage uses light, rhythmic techniques to encourage lymph flow and help the body move excess fluid. It’s commonly used to reduce swelling, heaviness, and that “puffy” feeling—especially in legs, abdomen, and face.",
+        whatItDoes: "Manual Lymphatic Drainage uses light, rhythmic techniques to encourage lymph flow and help the body move excess fluid. It’s commonly used to reduce swelling, heaviness, and that “puffy” feeling, especially in legs, abdomen, and face.",
         keyResults: [
           "Clinical literature supports MLD as a helpful approach for managing swelling and improving comfort in people prone to fluid build-up, particularly when performed as part of a structured plan.",
           "Patient-reported outcomes often include reduced limb heaviness, improved mobility, and improved day-to-day comfort when lymphatic techniques are used consistently.",
@@ -171,7 +171,7 @@ export const lymphaticDrainage: ProtocolData = {
       {
         image: `${A}/lympathic-drainage-research3.png`,
         title: "de-bloating & “lightness” effect via improved fluid movement",
-        whatItDoes: "Lymphatic drainage can help reduce the sensation of bloating and puffiness by supporting fluid movement—especially for people affected by travel, inactivity, hormonal cycles, or high-salt intake.",
+        whatItDoes: "Lymphatic drainage can help reduce the sensation of bloating and puffiness by supporting fluid movement, especially for people affected by travel, inactivity, hormonal cycles, or high-salt intake.",
         keyResults: [
           "In practice, many clients experience a visible “de-puffed” look and a lighter feeling shortly after a session, particularly in areas prone to water retention.",
           "When combined with hydration, movement, and consistent sessions, results tend to be more noticeable and longer-lasting.",
@@ -184,8 +184,8 @@ export const lymphaticDrainage: ProtocolData = {
         title: "safety profile of professional lymphatic drainage (when screened properly)",
         whatItDoes: "Lymphatic drainage is typically gentle and well-tolerated. With proper screening (e.g., infection, clot risk, heart/kidney conditions), it’s commonly used as a supportive wellness and recovery approach.",
         keyResults: [
-          "The technique is light-pressure and non-invasive, making it suitable for many people seeking swelling reduction and comfort—provided contraindications are ruled out.",
-          "Most people report it feels relaxing, with common “after effects” being increased urination, lightness, and reduced tightness—especially when well hydrated.",
+          "The technique is light-pressure and non-invasive, making it suitable for many people seeking swelling reduction and comfort, provided contraindications are ruled out.",
+          "Most people report it feels relaxing, with common “after effects” being increased urination, lightness, and reduced tightness, especially when well hydrated.",
           "Gentle & non-invasive", "Requires basic screening", "Comfort-first approach",
         ],
         evidence: "Moderate evidence",

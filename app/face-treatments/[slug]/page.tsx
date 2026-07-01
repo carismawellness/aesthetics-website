@@ -48,7 +48,7 @@ const FACE_SEO: Record<string, { title: string; description: string }> = {
   "thread-lift": {
     title: "Thread Lift Malta | Non-Surgical Face Lift | Carisma Aesthetics",
     description:
-      "Thread lift in Malta — non-surgical face lifting using PDO threads. Lift sagging skin around jawline, cheeks and neck. Doctor-led, natural results. Free consultation.",
+      "Thread lift in Malta, non-surgical face lifting using PDO threads. Lift sagging skin around jawline, cheeks and neck. Doctor-led, natural results. Free consultation.",
   },
   "wrinkle-relaxing": {
     title: "Anti-Wrinkle Injections Malta | Botox | Carisma Aesthetics",

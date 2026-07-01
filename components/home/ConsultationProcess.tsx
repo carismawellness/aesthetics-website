@@ -24,15 +24,15 @@ type TimelineStep = { title: string; desc: string };
 const STEPS: TimelineStep[] = [
   {
     title: 'Book Your Free Consultation',
-    desc: 'Choose a time that suits you and reserve your complimentary consultation — no obligation, no pressure, just a relaxed conversation about your skin and your goals.',
+    desc: 'Choose a time that suits you and reserve your complimentary consultation, no obligation, no pressure, just a relaxed conversation about your skin and your goals.',
   },
   {
     title: 'Meet Your Doctor',
-    desc: 'Your aesthetic doctor listens, examines your skin and discusses what you would love to change — so every recommendation is grounded in your concerns, not a one-size-fits-all menu.',
+    desc: 'Your aesthetic doctor listens, examines your skin and discusses what you would love to change, so every recommendation is grounded in your concerns, not a one-size-fits-all menu.',
   },
   {
     title: 'Your Personalised Treatment Plan',
-    desc: 'Together you map a clear plan: the right treatments, realistic results and transparent pricing — then begin when you are ready, with expert care and ongoing reviews so your confidence keeps growing.',
+    desc: 'Together you map a clear plan: the right treatments, realistic results and transparent pricing, then begin when you are ready, with expert care and ongoing reviews so your confidence keeps growing.',
   },
 ];
 
@@ -150,7 +150,7 @@ export default function ConsultationProcess() {
           className="text-center mx-auto mb-4"
           style={{ maxWidth: '680px', color: '#7a6e52', fontFamily: BODY, fontSize: '15px', fontWeight: 400, lineHeight: '1.7' }}
         >
-          Every treatment at Carisma Aesthetics starts with a complimentary, no-pressure consultation with a doctor — so
+          Every treatment at Carisma Aesthetics starts with a complimentary, no-pressure consultation with a doctor, so
           your plan is built around your skin, your goals and your comfort. Here&rsquo;s exactly what to expect.
         </p>
         <p
@@ -165,7 +165,7 @@ export default function ConsultationProcess() {
             letterSpacing: '1px',
           }}
         >
-          Honest advice first — only the treatments that are genuinely right for you.
+          Honest advice first, only the treatments that are genuinely right for you.
         </p>
 
         {/* Vertical step timeline */}
@@ -185,7 +185,7 @@ export default function ConsultationProcess() {
                 margin: 0,
               }}
             >
-              Your consultation is completely free and entirely yours — a calm space to ask anything and decide in your own
+              Your consultation is completely free and entirely yours, a calm space to ask anything and decide in your own
               time. Glow with confidence.
             </p>
           </blockquote>

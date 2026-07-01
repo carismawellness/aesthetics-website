@@ -9,7 +9,7 @@ export const post: BlogPost = {
   "publishDate": "2026-06-25",
   "readTime": 1,
   "coverImage": "https://static.wixstatic.com/media/elasticity_improvement.jpg",
-  "excerpt": "Skin elasticity—the ability of your skin to stretch and bounce back—naturally decreases with age as collagen and elastin break down. But with the right approach combining skincare, professional treatments, and lifestyle changes, you can significantly improve elasticity and restore that youthful firmness.",
+  "excerpt": "Skin elasticity, the ability of your skin to stretch and bounce back, naturally decreases with age as collagen and elastin break down. But with the right approach combining skincare, professional treatments, and lifestyle changes, you can significantly improve elasticity and restore that youthful firmness.",
   "content": [
     {
       "type": "heading",
@@ -18,7 +18,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "Elasticity is determined by collagen and elastin—two proteins that give skin its structure and resilience. When these proteins are healthy and abundant, skin feels firm, looks plump, and bounces back when stretched. As we age, these proteins break down, resulting in sagging skin and loss of firmness.",
+      "html": "Elasticity is determined by collagen and elastin, two proteins that give skin its structure and resilience. When these proteins are healthy and abundant, skin feels firm, looks plump, and bounces back when stretched. As we age, these proteins break down, resulting in sagging skin and loss of firmness.",
     },
     {
       "type": "heading",

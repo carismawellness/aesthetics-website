@@ -9,7 +9,7 @@ export const post: BlogPost = {
   "publishDate": "2026-06-16",
   "readTime": 6,
   "coverImage": "https://static.wixstatic.com/media/example.jpg",
-  "excerpt": "Hair growth begins from within. Nutritional deficiencies often drive thinning and hair loss — and the right vitamins can reverse it....",
+  "excerpt": "Hair growth begins from within. Nutritional deficiencies often drive thinning and hair loss, and the right vitamins can reverse it....",
   "content": [
     {
       "type": "paragraph",

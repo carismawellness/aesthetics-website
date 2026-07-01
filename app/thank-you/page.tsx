@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 const paragraphs = [
-  "Thank you for reaching out to Carisma Aesthetics — you've taken the first step toward results delivered with genuine care.",
+  "Thank you for reaching out to Carisma Aesthetics, you've taken the first step toward results delivered with genuine care.",
   "One of our medically qualified team will be in touch shortly to answer your questions and help you plan the right treatment for your goals.",
   "In the meantime, feel free to explore our treatments or get in touch directly if there's anything you'd like to ask.",
 ];
@@ -72,7 +72,7 @@ export default function ThankYouPage() {
             margin: "0 0 14px",
           }}
         >
-          Thank You — We&rsquo;ll Be In Touch Shortly
+          Thank You, We&rsquo;ll Be In Touch Shortly
         </h1>
 
         <p

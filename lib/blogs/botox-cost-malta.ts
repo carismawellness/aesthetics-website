@@ -93,14 +93,14 @@ const post: BlogPost = {
     {
       type: 'list',
       items: [
-        'Single area (e.g. forehead): €120 to €180 — the usual entry point.',
-        'Two areas: €280 to €380 — often discounted versus booking separately.',
-        'Three areas: €220 to €450 — the most common booking; varies by units.',
-        'Frown lines (glabella): €120 to €180 — 20 to 25 units typical.',
-        'Crow’s feet: €120 to €180 — around 10 to 12 units per side.',
-        'Lip flip: €80 to €120 — a small dose for a subtle effect.',
-        'Jawline / masseter (jaw slimming): €150 to €450 — needs more units; eases teeth-grinding too.',
-        'Excessive sweating (hyperhidrosis): €350 to €500 — a larger area that needs more product.',
+        'Single area (e.g. forehead): €120 to €180, the usual entry point.',
+        'Two areas: €280 to €380, often discounted versus booking separately.',
+        'Three areas: €220 to €450, the most common booking; varies by units.',
+        'Frown lines (glabella): €120 to €180, 20 to 25 units typical.',
+        'Crow’s feet: €120 to €180, around 10 to 12 units per side.',
+        'Lip flip: €80 to €120, a small dose for a subtle effect.',
+        'Jawline / masseter (jaw slimming): €150 to €450, needs more units; eases teeth-grinding too.',
+        'Excessive sweating (hyperhidrosis): €350 to €500, a larger area that needs more product.',
       ],
     },
     {

@@ -18,7 +18,7 @@ export default function GiftFaq() {
             id="gift-faq-heading"
             eyebrow="Good to Know"
             title="Gifting questions, answered"
-            subtitle="Everything you need to give a Carisma Aesthetics gift with complete confidence — delivery, validity, and how it's redeemed."
+            subtitle="Everything you need to give a Carisma Aesthetics gift with complete confidence, delivery, validity, and how it's redeemed."
             subtitleMaxWidth={560}
           />
         </Reveal>

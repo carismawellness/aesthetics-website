@@ -210,7 +210,7 @@ export default function MemberReviews() {
                 maxWidth: "440px",
               }}
             >
-              Your glow story starts the moment you join — discounts, priority
+              Your glow story starts the moment you join, discounts, priority
               booking and a complimentary yearly consultation, every year.
             </p>
             <Link

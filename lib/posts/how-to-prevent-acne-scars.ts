@@ -32,7 +32,7 @@ export const post: BlogPost = {
     {
       "type": "list",
       "items": [
-        "Don't squeeze or pick at blemishes — this is the single most important rule",
+        "Don't squeeze or pick at blemishes, this is the single most important rule",
         "Use non-comedogenic skincare products",
         "Treat acne early and aggressively",
         "Avoid excessive sun exposure, which worsens existing scars",

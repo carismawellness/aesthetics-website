@@ -116,7 +116,7 @@ export const HOME_SERVICES: Service[] = [
     href: "/thread-lift-malta",
     image: "/assets/service-thread-lift.png",
     photo: "/assets/treatments/thread-lift-malta-hero.avif",
-    blurb: "Gently lift and reposition sagging skin with dissolvable threads — no surgery required.",
+    blurb: "Gently lift and reposition sagging skin with dissolvable threads, no surgery required.",
   },
   {
     label: "Chemical peel",
@@ -169,7 +169,7 @@ export const DOCTORS: Doctor[] = [
     title: "Italian aesthetic doctor at Carisma Aesthetics",
     bio: [
       "Dr. Giovanni is an Italian aesthetic doctor at Carisma Aesthetics, trained and practiced for years in Italy with continued advanced education across leading universities in Rome, Bologna and other centres. He specialises in aesthetic medicine with a particular interest in regenerative approaches such as PRP, stem cells, pairing medical rigour with a calm, human manner.",
-      "His philosophy is restoration, not change: every consultation begins with listening to your story and how you want to feel in your skin, then shaping a conservative, precisely paced plan that prioritises safety, clarity and natural balance. From softening expression lines and refining contour to improving tone, texture and early laxity, his results are subtle and harmonious—refreshed, never overdone.",
+      "His philosophy is restoration, not change: every consultation begins with listening to your story and how you want to feel in your skin, then shaping a conservative, precisely paced plan that prioritises safety, clarity and natural balance. From softening expression lines and refining contour to improving tone, texture and early laxity, his results are subtle and harmonious, refreshed, never overdone.",
       "At our St Julian’s clinic, Dr. Giovanni offers evidence-based treatments including  dermal fillers, collagen stimulators, skin boosters, microneedling with mesotherapy, PRP and medical-grade laser therapies, guiding you thoughtfully through each step so you can glow with confidence.",
     ],
     image: "/assets/doctor-giovanni.png",
@@ -179,7 +179,7 @@ export const DOCTORS: Doctor[] = [
     title: "London-trained aesthetic doctor",
     bio: [
       "Dr. Francesca is a London-trained aesthetic doctor with eight years in medical aesthetics and a foundation in orthopaedic surgery, bringing precise anatomical insight to subtle, balanced results. Her philosophy is restoration, not change: every consultation begins with listening to your story and how you want to feel in your skin before shaping a conservative, personalised plan that prioritises safety, clarity, and natural harmony.",
-      "She leads our Lip Flip enhancements and oversees the majority of our medical-grade laser hair removal care, pairing meticulous technique with advanced protocols for smooth, long-term results. Across anti-wrinkle injections, dermal fillers, skin boosters, PRP/regenerative techniques, microneedling with mesotherapy, and medical-grade lasers, she guides you thoughtfully through each step so the outcome feels authentically you—refreshed, never overdone.",
+      "She leads our Lip Flip enhancements and oversees the majority of our medical-grade laser hair removal care, pairing meticulous technique with advanced protocols for smooth, long-term results. Across anti-wrinkle injections, dermal fillers, skin boosters, PRP/regenerative techniques, microneedling with mesotherapy, and medical-grade lasers, she guides you thoughtfully through each step so the outcome feels authentically you, refreshed, never overdone.",
     ],
     image: "/assets/doctor-francesca.png",
   },

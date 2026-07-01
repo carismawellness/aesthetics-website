@@ -9,7 +9,7 @@ export const post: BlogPost = {
   "publishDate": "2026-06-25",
   "readTime": 5,
   "coverImage": "https://via.placeholder.com/1200x630?text=injectables-for-men",
-  "excerpt": "Injectables aren't just for women. More men are choosing Botox and fillers to maintain a competitive, youthful appearance—without looking 'done.' This guide explains why.",
+  "excerpt": "Injectables aren't just for women. More men are choosing Botox and fillers to maintain a competitive, youthful appearance, without looking 'done.' This guide explains why.",
   "internalLinks": [
     { "anchorText": "Botox", "href": "/wrinkle-relaxing-malta", "context": "Explore Botox treatments for men" },
     { "anchorText": "fillers", "href": "/dermal-fillers-malta", "context": "Learn about dermal fillers for masculine features" }
@@ -55,7 +55,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "<strong>Jaw and chin definition:</strong> Fillers add volume to create a stronger, more defined jawline and chin—enhancing masculine features rather than softening them."
+      "html": "<strong>Jaw and chin definition:</strong> Fillers add volume to create a stronger, more defined jawline and chin, enhancing masculine features rather than softening them."
     },
     {
       "type": "paragraph",

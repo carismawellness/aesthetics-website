@@ -45,7 +45,7 @@ const t: Treatment = {
       },
       {
         title: "4-IN-1 TECHNOLOGY APPROACH",
-        desc: "We focus on the areas that concern you most — tummy, hips, bum or thighs — using targeted technology to improve firmness and skin texture where it matters most.",
+        desc: "We focus on the areas that concern you most, tummy, hips, bum or thighs, using targeted technology to improve firmness and skin texture where it matters most.",
       },
       {
         title: "EXPERT DESIGNED PLAN",
@@ -66,7 +66,7 @@ const t: Treatment = {
       },
       {
         title: "Visible, NOTICEABLE IMPROVEMENT",
-        desc: "Skin feels firmer and smoother over the course of treatments, with improvements you can see in clothes and feel to the touch — not just on a machine.",
+        desc: "Skin feels firmer and smoother over the course of treatments, with improvements you can see in clothes and feel to the touch, not just on a machine.",
       },
       {
         title: "COLLAGEN-STIMULATING TECHNOLOGY",
@@ -149,7 +149,7 @@ const t: Treatment = {
       "€25 Carisma Aesthetics credit (€25)",
       "Complimentary Parking Validation",
     ],
-    urgency: "Limited consultation slots — book today to secure your appointment",
+    urgency: "Limited consultation slots, book today to secure your appointment",
     guaranteeChip: "Doctor-supervised · VelaShape III technology · No downtime",
     cta: {
       text: "Claim My Skin Tightening Package",
@@ -166,7 +166,7 @@ const t: Treatment = {
       },
       {
         title: "Visible, NOTICEABLE IMPROVEMENT",
-        body: "Skin feels firmer and smoother over the course of treatments, with improvements you can see in clothes and feel to the touch — not just on a machine.",
+        body: "Skin feels firmer and smoother over the course of treatments, with improvements you can see in clothes and feel to the touch, not just on a machine.",
       },
       {
         title: "COLLAGEN-STIMULATING TECHNOLOGY",
@@ -190,7 +190,7 @@ const t: Treatment = {
   },
   closing: {
     heading: "Ready for Firmer, Smoother Skin?",
-    sub: "VelaShape III skin tightening and cellulite reduction in Malta — doctor-supervised, non-invasive, visible results. Book your free consultation.",
+    sub: "VelaShape III skin tightening and cellulite reduction in Malta, doctor-supervised, non-invasive, visible results. Book your free consultation.",
     ctaLabel: "Book My Skin Tightening Consultation",
     ctaHref: "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2800348&share=true&pId=2708191",
   },

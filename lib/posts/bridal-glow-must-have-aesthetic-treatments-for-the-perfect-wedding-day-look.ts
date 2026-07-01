@@ -9,11 +9,11 @@ export const post: BlogPost = {
   "publishDate": "2025-08-26",
   "readTime": 4,
   "coverImage": "https://static.wixstatic.com/media/11062b_43167df9a53b474c92fc8bcfcbc1a68c~mv2.jpg",
-  "excerpt": "Your wedding day is one of the most important and photographed days of your life. Every bride deserves to walk down the aisle looking—and feeling—her absolute best. At Carisma Aesthetics, we understand that glowing, flawless skin is the perfect foundation for any bridal look.",
+  "excerpt": "Your wedding day is one of the most important and photographed days of your life. Every bride deserves to walk down the aisle looking, and feeling, her absolute best. At Carisma Aesthetics, we understand that glowing, flawless skin is the perfect foundation for any bridal look.",
   "content": [
     {
       "type": "paragraph",
-      "html": "Your wedding day is one of the most important and photographed days of your life. Every bride deserves to walk down the aisle looking—and feeling—her absolute best. At Carisma Aesthetics, we understand that glowing, flawless skin is the perfect foundation for any bridal look."
+      "html": "Your wedding day is one of the most important and photographed days of your life. Every bride deserves to walk down the aisle looking, and feeling, her absolute best. At Carisma Aesthetics, we understand that glowing, flawless skin is the perfect foundation for any bridal look."
     },
     {
       "type": "heading",

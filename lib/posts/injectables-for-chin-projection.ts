@@ -23,7 +23,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "Facial balance depends on the relationship between the forehead, nose, lips, and chin. When the chin is weak or recessed, the entire face can appear unbalanced—even if other features are proportionate. A stronger chin creates better profile definition, enhances facial angles, and can make you appear slimmer and more confident."
+      "html": "Facial balance depends on the relationship between the forehead, nose, lips, and chin. When the chin is weak or recessed, the entire face can appear unbalanced, even if other features are proportionate. A stronger chin creates better profile definition, enhances facial angles, and can make you appear slimmer and more confident."
     },
     {
       "type": "heading",

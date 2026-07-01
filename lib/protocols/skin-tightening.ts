@@ -97,7 +97,7 @@ export const skinTightening: ProtocolData = {
     heading: "Malta’s most effective 4-in-1 skin tightening starter protocol",
     cols: [
       { title: "Targeted SKIN TIGHTENING", desc: "Four focused VelaShape III sessions designed to treat one or more priority areas such as the tummy, hips, thighs or bum, depending on your goals." },
-      { title: "Visible, NOTICEABLE IMPROVEMENT", desc: "Skin feels firmer and smoother over the course of treatments, with improvements you can see in clothes and feel to the touch — not just on a machine." },
+      { title: "Visible, NOTICEABLE IMPROVEMENT", desc: "Skin feels firmer and smoother over the course of treatments, with improvements you can see in clothes and feel to the touch, not just on a machine." },
       { title: "COLLAGEN-STIMULATING TECHNOLOGY", desc: "Radiofrequency and infrared energy work together with vacuum and mechanical massage to support collagen production and improve skin texture." },
     ],
     items: PACKAGE,

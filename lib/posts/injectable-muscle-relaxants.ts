@@ -23,7 +23,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "Injectable muscle relaxants contain botulinum toxin type A, a purified protein that blocks nerve signals to targeted facial muscles. When these muscles cannot contract as strongly, the lines and wrinkles they create soften or disappear. The results are temporary—typically lasting 3 to 6 months—because the body gradually regenerates the nerve connections."
+      "html": "Injectable muscle relaxants contain botulinum toxin type A, a purified protein that blocks nerve signals to targeted facial muscles. When these muscles cannot contract as strongly, the lines and wrinkles they create soften or disappear. The results are temporary, typically lasting 3 to 6 months, because the body gradually regenerates the nerve connections."
     },
     {
       "type": "heading",
@@ -66,7 +66,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "The appointment takes 15 to 30 minutes. You will feel small pinches as the injections are administered. Results are not immediate—onset occurs around day 3 to 5, with full results by day 14. Plan your treatment 2 weeks before an important event."
+      "html": "The appointment takes 15 to 30 minutes. You will feel small pinches as the injections are administered. Results are not immediate, onset occurs around day 3 to 5, with full results by day 14. Plan your treatment 2 weeks before an important event."
     },
     {
       "type": "heading",

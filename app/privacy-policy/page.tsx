@@ -85,7 +85,7 @@ export default function PrivacyPolicyPage() {
       <LegalHero
         eyebrow="Privacy Policy"
         title="Your Privacy Matters"
-        tagline="We are committed to protecting your personal and health data and being fully transparent about how we collect, use, and safeguard it — in line with the GDPR and Maltese law."
+        tagline="We are committed to protecting your personal and health data and being fully transparent about how we collect, use, and safeguard it, in line with the GDPR and Maltese law."
         lastUpdated={LAST_UPDATED}
       />
 
@@ -161,7 +161,7 @@ export default function PrivacyPolicyPage() {
           items={[
             "Appointment history, treatments received, and consultation notes",
             "Consent forms and pre/post-treatment instructions",
-            "Billing name and address, amounts paid, and payment references (we do not store full card numbers — these are handled by our payment provider)",
+            "Billing name and address, amounts paid, and payment references (we do not store full card numbers, these are handled by our payment provider)",
             "Records of correspondence and enquiries (email, phone, WhatsApp, social media, and contact-form messages)",
           ]}
         />
@@ -192,16 +192,16 @@ export default function PrivacyPolicyPage() {
 
       <SectionBlock id="health-data" number="04" title="Health & Special-Category Data" alt>
         <P>
-          Some of the data we collect — in particular your medical history, the treatments you receive, and
-          clinical photographs — is &ldquo;special-category&rdquo; data under Article 9 of the GDPR. We treat
+          Some of the data we collect, in particular your medical history, the treatments you receive, and
+          clinical photographs, is &ldquo;special-category&rdquo; data under Article 9 of the GDPR. We treat
           this data with additional care.
         </P>
         <P>We rely on the following conditions to process special-category (health) data:</P>
         <BulletList
           items={[
-            <>Article 9(2)(h) GDPR — processing necessary for the provision of healthcare and treatment, and the management of healthcare services, by or under the responsibility of a health professional bound by a duty of confidentiality;</>,
-            <>Article 9(2)(a) GDPR — your explicit consent, for example for the use of clinical photographs beyond direct treatment documentation (such as marketing), which you may withdraw at any time;</>,
-            <>Article 9(2)(c) GDPR — where necessary to protect your vital interests or those of another person, in a medical emergency where you are unable to consent.</>,
+            <>Article 9(2)(h) GDPR, processing necessary for the provision of healthcare and treatment, and the management of healthcare services, by or under the responsibility of a health professional bound by a duty of confidentiality;</>,
+            <>Article 9(2)(a) GDPR, your explicit consent, for example for the use of clinical photographs beyond direct treatment documentation (such as marketing), which you may withdraw at any time;</>,
+            <>Article 9(2)(c) GDPR, where necessary to protect your vital interests or those of another person, in a medical emergency where you are unable to consent.</>,
           ]}
         />
         <P>
@@ -216,11 +216,11 @@ export default function PrivacyPolicyPage() {
         <P>We process your personal data on one or more of the following legal bases under Article 6 of the GDPR:</P>
         <BulletList
           items={[
-            <><strong>Consent (Art. 6(1)(a))</strong> — for marketing communications, non-essential cookies, and optional uses of your data such as testimonials.</>,
-            <><strong>Contract (Art. 6(1)(b))</strong> — to take steps at your request before entering into a contract (e.g. a consultation) and to provide the treatments and services you book.</>,
-            <><strong>Legal obligation (Art. 6(1)(c))</strong> — to comply with healthcare, tax, accounting, consumer-protection, and other legal duties.</>,
-            <><strong>Vital interests (Art. 6(1)(d))</strong> — to protect someone&rsquo;s life or health in an emergency.</>,
-            <><strong>Legitimate interests (Art. 6(1)(f))</strong> — to run, secure, and improve our clinic and website, prevent fraud, and respond to enquiries, where these interests are not overridden by your rights. Where we rely on legitimate interests, you may object (see Section 12).</>,
+            <><strong>Consent (Art. 6(1)(a))</strong>, for marketing communications, non-essential cookies, and optional uses of your data such as testimonials.</>,
+            <><strong>Contract (Art. 6(1)(b))</strong>, to take steps at your request before entering into a contract (e.g. a consultation) and to provide the treatments and services you book.</>,
+            <><strong>Legal obligation (Art. 6(1)(c))</strong>, to comply with healthcare, tax, accounting, consumer-protection, and other legal duties.</>,
+            <><strong>Vital interests (Art. 6(1)(d))</strong>, to protect someone&rsquo;s life or health in an emergency.</>,
+            <><strong>Legitimate interests (Art. 6(1)(f))</strong>, to run, secure, and improve our clinic and website, prevent fraud, and respond to enquiries, where these interests are not overridden by your rights. Where we rely on legitimate interests, you may object (see Section 12).</>,
           ]}
         />
         <P>
@@ -268,7 +268,7 @@ export default function PrivacyPolicyPage() {
         <BulletList
           items={[
             "Our clinicians and authorised staff, who are bound by confidentiality, to deliver your care",
-            "Trusted service providers (data processors) acting on our instructions — for example IT, hosting, booking/CRM, payment processing, email and communications, and analytics providers",
+            "Trusted service providers (data processors) acting on our instructions, for example IT, hosting, booking/CRM, payment processing, email and communications, and analytics providers",
             "Professional advisers such as accountants, insurers, and lawyers, where necessary",
             "Public authorities, regulators, or courts where we are legally required to disclose data",
             "A successor entity in the event of a business sale or reorganisation, subject to this Policy",
@@ -329,12 +329,12 @@ export default function PrivacyPolicyPage() {
             "Have your data erased in certain circumstances (the 'right to be forgotten')",
             "Restrict our processing of your data in certain circumstances",
             "Object to processing based on our legitimate interests, and to direct marketing at any time",
-            "Data portability — to receive certain data in a structured, machine-readable format",
+            "Data portability, to receive certain data in a structured, machine-readable format",
             "Withdraw consent at any time, where we rely on consent (without affecting prior processing)",
           ]}
         />
         <P>
-          Some rights are subject to exemptions — for example, we may be required to retain clinical records
+          Some rights are subject to exemptions, for example, we may be required to retain clinical records
           for legal and safety reasons even if you request erasure. To exercise any right, contact us using the
           details in Section 17. We will respond within one month, as required by law. We do not charge a fee
           unless your request is manifestly unfounded or excessive.
@@ -404,8 +404,8 @@ export default function PrivacyPolicyPage() {
           </p>
         </LegalContactCard>
         <P>
-          You also have the right to lodge a complaint with the supervisory authority in Malta — the
-          Information and Data Protection Commissioner (IDPC), Floriana, Malta —{" "}
+          You also have the right to lodge a complaint with the supervisory authority in Malta, the
+          Information and Data Protection Commissioner (IDPC), Floriana, Malta,{" "}
           <a href="https://idpc.org.mt" target="_blank" rel="noopener noreferrer" style={linkStyle}>
             idpc.org.mt
           </a>

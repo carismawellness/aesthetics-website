@@ -25,7 +25,7 @@ export const post: BlogPost = {
   "content": [
     {
       "type": "paragraph",
-      "html": "HydraFacial is a non-invasive, science-backed skincare treatment that has become one of the most popular facials worldwide. In just 30 minutes, it cleanses, extracts, and hydrates your skin using patented vortex-fusion technology—making it perfect for anyone looking for visible results without downtime."
+      "html": "HydraFacial is a non-invasive, science-backed skincare treatment that has become one of the most popular facials worldwide. In just 30 minutes, it cleanses, extracts, and hydrates your skin using patented vortex-fusion technology, making it perfect for anyone looking for visible results without downtime."
     },
     {
       "type": "heading",
@@ -34,7 +34,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "HydraFacial is an FDA-cleared device treatment that uses a combination of vacuum pressure and patented serum infusion to deeply cleanse and hydrate your skin. Unlike traditional facials, HydraFacial doesn't use harsh abrasion or chemicals—it works with your skin's natural biology to achieve results."
+      "html": "HydraFacial is an FDA-cleared device treatment that uses a combination of vacuum pressure and patented serum infusion to deeply cleanse and hydrate your skin. Unlike traditional facials, HydraFacial doesn't use harsh abrasion or chemicals, it works with your skin's natural biology to achieve results."
     },
     {
       "type": "heading",
@@ -71,7 +71,7 @@ export const post: BlogPost = {
         "Evens skin tone and reduces hyperpigmentation",
         "Minimizes pores",
         "Boosts collagen production",
-        "No downtime—you can return to activities immediately",
+        "No downtime, you can return to activities immediately",
         "Safe for all skin types and tones"
       ]
     },

@@ -5,7 +5,7 @@ import ServicesMarquee from "@/components/home/ServicesMarquee";
 // Internal preview — never indexed. Googlebot may still crawl to see the noindex,
 // so do NOT also Disallow this in robots.ts.
 export const metadata: Metadata = {
-  title: "Treatments Section — Elevated (Preview)",
+  title: "Treatments Section, Elevated (Preview)",
   description: "Internal preview: the subtly elevated treatments carousel vs the current live one.",
   robots: { index: false, follow: false },
 };
@@ -40,11 +40,11 @@ export default function TreatmentsElevatedPreview() {
         </p>
         <h1 className="font-serif" style={{ color: "var(--teal-deep)", fontSize: "clamp(24px,3.4vw,40px)",
             fontWeight: 400, letterSpacing: "0.04em", lineHeight: 1.15 }}>
-          Treatments Carousel — Elevated
+          Treatments Carousel, Elevated
         </h1>
         <p style={{ color: "var(--ink-soft)", maxWidth: 640, margin: "16px auto 0", fontSize: 15, lineHeight: 1.65 }}>
           Same structure as the live carousel, elevated into a calm &ldquo;Treatment Gallery&rdquo;: richer
-          material depth, an editorial catalogue feel, a cohesive teal image grade, and guided motion —
+          material depth, an editorial catalogue feel, a cohesive teal image grade, and guided motion,
           and the wheel-trap scroll bug is fixed (vertical wheel now scrolls the page; drag or the arrows
           move the row). Scroll down to compare against the current live version.
         </p>
@@ -54,7 +54,7 @@ export default function TreatmentsElevatedPreview() {
       <div style={{ position: "relative",
                     background: "linear-gradient(180deg, #ffffff 0%, #fbfdfd 50%, #ffffff 100%)" }}>
         <Label k="Elevated" title="The richer version"
-               note="Drive it with the arrows, drag it, or use a horizontal trackpad swipe. A vertical wheel always scrolls the page — no trapping." />
+               note="Drive it with the arrows, drag it, or use a horizontal trackpad swipe. A vertical wheel always scrolls the page, no trapping." />
         <ServicesMarqueeElevated />
 
         <Label k="Current · live" title="What's on the site today"

@@ -13,7 +13,7 @@ export const post: BlogPost = {
   "content": [
     {
       "type": "paragraph",
-      "html": "The ideal age to start skincare is whenever you begin to think about it—but here's what science suggests."
+      "html": "The ideal age to start skincare is whenever you begin to think about it, but here's what science suggests."
     },
     {
       "type": "heading",

@@ -9,7 +9,7 @@ export const post: BlogPost = {
   "publishDate": "2026-06-20",
   "readTime": 6,
   "coverImage": "https://static.wixstatic.com/media/example.jpg",
-  "excerpt": "The difference between mediocre hair removal results and excellent ones often comes down to preparation — the 48 hours before matters....",
+  "excerpt": "The difference between mediocre hair removal results and excellent ones often comes down to preparation, the 48 hours before matters....",
   "content": [
     {
       "type": "paragraph",

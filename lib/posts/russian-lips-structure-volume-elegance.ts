@@ -9,7 +9,7 @@ export const post: BlogPost = {
   "publishDate": "2026-01-14",
   "readTime": 2,
   "coverImage": "https://static.wixstatic.com/media/f940f0_f7709aa9a5aa490e8535ef96cd5dd7c9~mv2.jpg",
-  "excerpt": "W hen it comes to lip filler , not all techniques are created equal. Some chase volume. Others chase balance. The Russian Lip Technique  is different. It’s all about height, shape, and elegance—drawing inspiration from the soft, heart-shaped pout of classic Russian dolls. At Carisma Aesthetics , we use this technique to create lips that feel structured, lifted, and naturally refined. Never overdone. Always in harmony with your features. Lip Filler What Makes Russian Lips Special? Instead of...",
+  "excerpt": "W hen it comes to lip filler , not all techniques are created equal. Some chase volume. Others chase balance. The Russian Lip Technique  is different. It’s all about height, shape, and elegance, drawing inspiration from the soft, heart-shaped pout of classic Russian dolls. At Carisma Aesthetics , we use this technique to create lips that feel structured, lifted, and naturally refined. Never overdone. Always in harmony with your features. Lip Filler What Makes Russian Lips Special? Instead of...",
   "content": [
     {
       "type": "paragraph",
@@ -17,7 +17,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "The <strong>Russian Lip Technique</strong> is different. It’s all about height, shape, and elegance—drawing inspiration from the soft, heart-shaped pout of classic Russian dolls."
+      "html": "The <strong>Russian Lip Technique</strong> is different. It’s all about height, shape, and elegance, drawing inspiration from the soft, heart-shaped pout of classic Russian dolls."
     },
     {
       "type": "paragraph",
@@ -30,7 +30,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "Instead of adding volume outward, the Russian technique works upward—lifting the centre of the lips to enhance the <strong>Cupid’s bow</strong> and give a clean, doll-like shape."
+      "html": "Instead of adding volume outward, the Russian technique works upward, lifting the centre of the lips to enhance the <strong>Cupid’s bow</strong> and give a clean, doll-like shape."
     },
     {
       "type": "paragraph",
@@ -47,7 +47,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "It’s perfect for anyone who wants shape, not bulk—and elegance over excess."
+      "html": "It’s perfect for anyone who wants shape, not bulk, and elegance over excess."
     },
     {
       "type": "heading",
@@ -68,7 +68,7 @@ export const post: BlogPost = {
         "Uses micro-droplet placement for full control",
         "Shapes the Cupid’s bow with care",
         "Enhances the natural borders of your lips",
-        "Focuses on lift and structure—not just size"
+        "Focuses on lift and structure, not just size"
       ]
     },
     {
@@ -146,7 +146,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "<strong>Glow tip:</strong> Stay hydrated before and after your treatment—it really helps with results and longevity."
+      "html": "<strong>Glow tip:</strong> Stay hydrated before and after your treatment, it really helps with results and longevity."
     },
     {
       "type": "heading",
@@ -159,7 +159,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "Both styles are beautiful—it just depends on the look you love."
+      "html": "Both styles are beautiful, it just depends on the look you love."
     },
     {
       "type": "heading",
@@ -168,7 +168,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "“My lips feel like <em>me</em>—just more polished.”"
+      "html": "“My lips feel like <em>me</em>, just more polished.”"
     },
     {
       "type": "paragraph",
@@ -185,7 +185,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "After your treatment, unwind at <a href=\"https://www.carismaspa.com\" target=\"_blank\" rel=\"noopener\" style=\"color:var(--teal);text-decoration:underline;\">Carisma Spa</a>. Whether it’s a hydrating facial or a full-body massage, it’s the perfect way to reset—inside and out."
+      "html": "After your treatment, unwind at <a href=\"https://www.carismaspa.com\" target=\"_blank\" rel=\"noopener\" style=\"color:var(--teal);text-decoration:underline;\">Carisma Spa</a>. Whether it’s a hydrating facial or a full-body massage, it’s the perfect way to reset, inside and out."
     },
     {
       "type": "paragraph",
@@ -198,11 +198,11 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "The Russian Lip Technique blends structure with softness—ideal for anyone craving balance, definition, and a little glow-up grace."
+      "html": "The Russian Lip Technique blends structure with softness, ideal for anyone craving balance, definition, and a little glow-up grace."
     },
     {
       "type": "paragraph",
-      "html": "<strong>Book your consultation</strong> at Carisma Aesthetics and let’s shape something beautiful—just for you."
+      "html": "<strong>Book your consultation</strong> at Carisma Aesthetics and let’s shape something beautiful, just for you."
     }
   ],
   "internalLinks": [

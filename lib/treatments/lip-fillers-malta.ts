@@ -44,7 +44,7 @@ const t: Treatment = {
     kicker: "The real reason people book",
     title: "You catch yourself hiding your smile in photos",
     body: [
-      "Doctor-led lip enhancement adds gentle, balanced volume that suits your face — so your smile feels like yours again, just more confident.",
+      "Doctor-led lip enhancement adds gentle, balanced volume that suits your face, so your smile feels like yours again, just more confident.",
     ],
   },
   guarantee: {
@@ -83,23 +83,23 @@ const t: Treatment = {
       "You are looking for a treatment that can be adjusted or reversed if needed",
     ],
     notIdeal: [
-      "You want a dramatically different lip shape — we enhance your natural anatomy rather than reinvent it",
-      "You need the final result the same day — gentle swelling settles over 2 weeks, and it is worth the wait",
-      "You are pregnant or breastfeeding — we will happily welcome you back afterwards",
-      "You have an active cold sore right now — we will simply rebook you once it has fully healed",
-      "You would rather avoid injectables — a lip flip with Botox may suit you better, and we are glad to discuss it",
+      "You want a dramatically different lip shape, we enhance your natural anatomy rather than reinvent it",
+      "You need the final result the same day, gentle swelling settles over 2 weeks, and it is worth the wait",
+      "You are pregnant or breastfeeding, we will happily welcome you back afterwards",
+      "You have an active cold sore right now, we will simply rebook you once it has fully healed",
+      "You would rather avoid injectables, a lip flip with Botox may suit you better, and we are glad to discuss it",
     ],
     personas: [
       { title: "The natural enhancer", desc: "Your lips feel a little thin or flat, and you want subtle, balanced volume that still looks completely like you." },
       { title: "The symmetry seeker", desc: "One side sits differently from the other, or your border has softened, and you want a defined, harmonious shape." },
-      { title: "The first-timer", desc: "You are curious but cautious — you want a conservative, doctor-led result you can build on, never an obvious one." },
+      { title: "The first-timer", desc: "You are curious but cautious, you want a conservative, doctor-led result you can build on, never an obvious one." },
     ],
   },
   experience: {
     title: "Your treatment experience", cta: "BOOK YOUR FREE CONSULTATION",
     steps: [
       { title: "Consultation & Plan", desc: "We assess your lip shape, facial proportions, and goals with one of our doctors, then design a medically guided plan tailored to you.", image: "/assets/treatments/botox-step1.png" },
-      { title: "Gentle Treatment", desc: "Your doctor applies a topical numbing cream, then places filler with fine, precise injections — comfortable, measured, and with no downtime.", image: "/assets/treatments/botox-step3.png" },
+      { title: "Gentle Treatment", desc: "Your doctor applies a topical numbing cream, then places filler with fine, precise injections, comfortable, measured, and with no downtime.", image: "/assets/treatments/botox-step3.png" },
       { title: "Ongoing Review & Adjustment", desc: "Your doctor reviews how your lips settle and refines the result if needed, ensuring natural, balanced lip filler results over time.", image: "/assets/treatments/botox-step4.png" },
     ],
   },
@@ -157,7 +157,7 @@ const t: Treatment = {
       { title: "medically qualified practitioners", desc: "Every lip fillers treatment is performed by a qualified doctor." },
       { title: "Advanced Facial Anatomy Expertise", desc: "Precision lip fillers techniques tailored to your unique facial anatomy." },
       { title: "Personalised Treatment Plans", desc: "Your lip fillers plan is designed to enhance, never overcorrect." },
-      { title: "Clinically Approved Products", desc: "Clinically Approved Products — CE-marked, clinically approved lip fillers and evidence-based protocols." },
+      { title: "Clinically Approved Products", desc: "Clinically Approved Products, CE-marked, clinically approved lip fillers and evidence-based protocols." },
       { title: "Thousands of Treatments Performed", desc: "Experience and results you can trust, right here in Malta." },
     ],
   },
@@ -185,9 +185,9 @@ const t: Treatment = {
     kicker: "Your lip filler plan",
     title: "Malta's Doctor-Led Lip Filler Plan",
     benefits: [
-      { icon: "shield", title: "Doctor-Led Precision", desc: "Every lip treatment is performed by a medically qualified doctor — never a salon, never a quick top-up." },
-      { icon: "sparkle", title: "Natural, Balanced Results", desc: "We add subtle volume and definition that suit your face — fuller and refined, never overfilled or obvious." },
-      { icon: "clock", title: "Complimentary 2-Week Review", desc: "We review how your lips settle at two weeks and refine the result if needed — included free." },
+      { icon: "shield", title: "Doctor-Led Precision", desc: "Every lip treatment is performed by a medically qualified doctor, never a salon, never a quick top-up." },
+      { icon: "sparkle", title: "Natural, Balanced Results", desc: "We add subtle volume and definition that suit your face, fuller and refined, never overfilled or obvious." },
+      { icon: "clock", title: "Complimentary 2-Week Review", desc: "We review how your lips settle at two weeks and refine the result if needed, included free." },
     ],
     included: [
       { label: "Free doctor-led consultation & lip assessment" },

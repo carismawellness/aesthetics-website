@@ -405,7 +405,7 @@ export default function Header() {
                 ),
               )}
             </nav>
-            <Link href="/" className="cms-topnav__brand" aria-label="Carisma Aesthetics — home">
+            <Link href="/" className="cms-topnav__brand" aria-label="Carisma Aesthetics, home">
               <img
                 src="/assets/logos/carisma-vertical-lockup.svg"
                 alt="Carisma Aesthetics"

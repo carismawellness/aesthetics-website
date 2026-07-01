@@ -9,11 +9,11 @@ export const post: BlogPost = {
   "publishDate": "2025-06-01",
   "readTime": 3,
   "coverImage": "https://static.wixstatic.com/media/f940f0_cf82df496e12463697f32f558fc780b7~mv2.jpg",
-  "excerpt": "As summer approaches, glowing skin isn’t just a dream—it’s a plan. While most people wait until the heat hits to start prepping their...",
+  "excerpt": "As summer approaches, glowing skin isn’t just a dream, it’s a plan. While most people wait until the heat hits to start prepping their...",
   "content": [
     {
       "type": "paragraph",
-      "html": "<strong>As summer approaches, glowing skin isn’t just a dream—it’s a plan.</strong> While most people wait until the heat hits to start prepping their skin, the truth is: <strong>your summer glow starts in June</strong>. This transitional month is your golden window to refresh, rejuvenate, and ready your skin for sunshine, beach days, and camera-ready moments. Here’s how to get ahead—with the help of science-backed treatments from <a href=\"/\" style=\"color:var(--teal);text-decoration:underline;\">Carisma Aesthetics</a>."
+      "html": "<strong>As summer approaches, glowing skin isn’t just a dream, it’s a plan.</strong> While most people wait until the heat hits to start prepping their skin, the truth is: <strong>your summer glow starts in June</strong>. This transitional month is your golden window to refresh, rejuvenate, and ready your skin for sunshine, beach days, and camera-ready moments. Here’s how to get ahead, with the help of science-backed treatments from <a href=\"/\" style=\"color:var(--teal);text-decoration:underline;\">Carisma Aesthetics</a>."
     },
     {
       "type": "heading",
@@ -22,7 +22,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "June sits at the sweet spot: post-spring renewal and pre-summer exposure. Your skin is still recovering from colder months, and it's now more receptive to deep treatments and hydration boosters. Plus, many aesthetic procedures require a little time to work their magic or heal—so starting now ensures you’re photo-ready for all your summer plans."
+      "html": "June sits at the sweet spot: post-spring renewal and pre-summer exposure. Your skin is still recovering from colder months, and it's now more receptive to deep treatments and hydration boosters. Plus, many aesthetic procedures require a little time to work their magic or heal, so starting now ensures you’re photo-ready for all your summer plans."
     },
     {
       "type": "heading",
@@ -31,7 +31,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "Dryness, dullness, and loss of elasticity from winter can linger into June. Enter <a href=\"/profhilo\" style=\"color:var(--teal);text-decoration:underline;\"><strong>Profhilo</strong></a>—a revolutionary injectable treatment that hydrates from within using hyaluronic acid. Unlike traditional fillers, Profhilo spreads beneath the skin’s surface to boost moisture and stimulate collagen and elastin."
+      "html": "Dryness, dullness, and loss of elasticity from winter can linger into June. Enter <a href=\"/profhilo\" style=\"color:var(--teal);text-decoration:underline;\"><strong>Profhilo</strong></a>, a revolutionary injectable treatment that hydrates from within using hyaluronic acid. Unlike traditional fillers, Profhilo spreads beneath the skin’s surface to boost moisture and stimulate collagen and elastin."
     },
     {
       "type": "paragraph",
@@ -56,7 +56,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "Want that glass-skin glow without makeup? <a href=\"/microneedling-malta\" style=\"color:var(--teal);text-decoration:underline;\"><strong>Microneedling</strong></a> is your go-to. By creating tiny, controlled micro-injuries in the skin, it stimulates natural regeneration—boosting collagen and fading pigmentation, acne scars, and fine lines."
+      "html": "Want that glass-skin glow without makeup? <a href=\"/microneedling-malta\" style=\"color:var(--teal);text-decoration:underline;\"><strong>Microneedling</strong></a> is your go-to. By creating tiny, controlled micro-injuries in the skin, it stimulates natural regeneration, boosting collagen and fading pigmentation, acne scars, and fine lines."
     },
     {
       "type": "paragraph",
@@ -72,7 +72,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "<em><strong>Important:</strong> Be mindful of sun exposure after microneedling—June allows you time to heal and protect your skin before peak UV levels hit in July and August.</em>"
+      "html": "<em><strong>Important:</strong> Be mindful of sun exposure after microneedling, June allows you time to heal and protect your skin before peak UV levels hit in July and August.</em>"
     },
     {
       "type": "heading",
@@ -81,7 +81,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "Tired of shaving or waxing through the heat? <strong>June is the perfect time to start </strong><a href=\"/laser-hair-removal-malta\" style=\"color:var(--teal);text-decoration:underline;\"><strong>laser hair removal</strong></a><strong>.</strong> Most treatments need multiple sessions spaced a few weeks apart—so starting now means smoother skin right when you want it most."
+      "html": "Tired of shaving or waxing through the heat? <strong>June is the perfect time to start </strong><a href=\"/laser-hair-removal-malta\" style=\"color:var(--teal);text-decoration:underline;\"><strong>laser hair removal</strong></a><strong>.</strong> Most treatments need multiple sessions spaced a few weeks apart, so starting now means smoother skin right when you want it most."
     },
     {
       "type": "paragraph",
@@ -106,7 +106,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "If your skin tone isn’t as even as you’d like, or if you’re dealing with dark spots, June is ideal for a targeted peel or treatment plan. Carisma Aesthetics offers a range of options tailored to your skin type—from gentle brightening to deeper resurfacing, depending on your goals."
+      "html": "If your skin tone isn’t as even as you’d like, or if you’re dealing with dark spots, June is ideal for a targeted peel or treatment plan. Carisma Aesthetics offers a range of options tailored to your skin type, from gentle brightening to deeper resurfacing, depending on your goals."
     },
     {
       "type": "paragraph",
@@ -127,11 +127,11 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "Whether you’re sipping iced lattes or heading to a wedding, <strong>natural-looking lips are in</strong>. Our <strong>Russian Lip technique</strong>gives volume and shape while maintaining a defined, elegant look—perfect for minimal summer makeup."
+      "html": "Whether you’re sipping iced lattes or heading to a wedding, <strong>natural-looking lips are in</strong>. Our <strong>Russian Lip technique</strong>gives volume and shape while maintaining a defined, elegant look, perfect for minimal summer makeup."
     },
     {
       "type": "paragraph",
-      "html": "<em><strong>Trending:</strong> Clients are asking for subtle definition, hydration, and balance—just enough to feel confident and fresh.</em>"
+      "html": "<em><strong>Trending:</strong> Clients are asking for subtle definition, hydration, and balance, just enough to feel confident and fresh.</em>"
     },
     {
       "type": "heading",
@@ -178,15 +178,15 @@ export const post: BlogPost = {
     {
       "type": "heading",
       "level": 3,
-      "text": "Wrap-Up: It’s Not Just a Treatment—It’s a Ritual"
+      "text": "Wrap-Up: It’s Not Just a Treatment, It’s a Ritual"
     },
     {
       "type": "paragraph",
-      "html": "Getting your skin ready for summer is more than a checklist—it’s a self-care ritual. By starting in June, you give yourself the time and space to look and feel your best. And remember, skin confidence isn’t about perfection—it’s about radiance, health, and joy."
+      "html": "Getting your skin ready for summer is more than a checklist, it’s a self-care ritual. By starting in June, you give yourself the time and space to look and feel your best. And remember, skin confidence isn’t about perfection, it’s about radiance, health, and joy."
     },
     {
       "type": "paragraph",
-      "html": "<strong>Ready to begin your summer beauty journey? Book your consultation at </strong><a href=\"/\" style=\"color:var(--teal);text-decoration:underline;\"><strong>Carisma Aesthetics</strong></a><strong> and let us help you glow from the inside out. </strong>For the ultimate wellness boost, pair your aesthetic experience with a luxurious spa day at <a href=\"https://www.carismaspa.com/\" target=\"_blank\" rel=\"noopener\" style=\"color:var(--teal);text-decoration:underline;\">Carisma Spa</a>—because glowing skin deserves total relaxation."
+      "html": "<strong>Ready to begin your summer beauty journey? Book your consultation at </strong><a href=\"/\" style=\"color:var(--teal);text-decoration:underline;\"><strong>Carisma Aesthetics</strong></a><strong> and let us help you glow from the inside out. </strong>For the ultimate wellness boost, pair your aesthetic experience with a luxurious spa day at <a href=\"https://www.carismaspa.com/\" target=\"_blank\" rel=\"noopener\" style=\"color:var(--teal);text-decoration:underline;\">Carisma Spa</a>, because glowing skin deserves total relaxation."
     }
   ],
   "internalLinks": [

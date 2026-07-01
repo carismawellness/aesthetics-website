@@ -9,11 +9,11 @@ export const post: BlogPost = {
   "publishDate": "2026-06-24",
   "readTime": 6,
   "coverImage": "https://static.wixstatic.com/media/f940f0_placeholder.jpg",
-  "excerpt": "Skin aging is a complex biological process driven by genetics, lifestyle, and environmental factors. Understanding what actually happens to your skin as you age—and which interventions actually work—can help you make informed decisions about your skin care...",
+  "excerpt": "Skin aging is a complex biological process driven by genetics, lifestyle, and environmental factors. Understanding what actually happens to your skin as you age, and which interventions actually work, can help you make informed decisions about your skin care...",
   "content": [
     {
       "type": "paragraph",
-      "html": "Skin aging is a complex biological process driven by genetics, lifestyle, and environmental factors. Understanding what actually happens to your skin as you age—and which interventions actually work—can help you make informed decisions about your skin care and aesthetic treatments."
+      "html": "Skin aging is a complex biological process driven by genetics, lifestyle, and environmental factors. Understanding what actually happens to your skin as you age, and which interventions actually work, can help you make informed decisions about your skin care and aesthetic treatments."
     },
     {
       "type": "heading",
