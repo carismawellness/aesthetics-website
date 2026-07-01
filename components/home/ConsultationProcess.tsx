@@ -128,7 +128,7 @@ export default function ConsultationProcess() {
   return (
     <section
       aria-labelledby="consultation-process-heading"
-      style={{ background: 'transparent', padding: 'clamp(48px,9vw,128px) 0' }}
+      style={{ background: 'transparent', padding: 'clamp(48px,9vw,128px) 0 clamp(28px,5vw,80px)' }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Eyebrow + heading */}
