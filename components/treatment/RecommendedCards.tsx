@@ -253,7 +253,7 @@ export default function RecommendedCards({
   const rowMaxWidth = Math.round((1120 / 3) * cols);
 
   return (
-    <section style={{ padding: "clamp(44px,9vh,112px) 0", background: "var(--white)" }}>
+    <section style={{ padding: "clamp(44px,8vw,80px) 0", background: "var(--white)" }}>
       <style>{`
         .rec-card__explore-text {
           background-image: linear-gradient(var(--teal-text), var(--teal-text));
