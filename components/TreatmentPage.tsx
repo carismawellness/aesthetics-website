@@ -471,7 +471,7 @@ export default function TreatmentPage({ t }: { t: Treatment }) {
 
       {/* ── Treatment experience — dashed timeline ── */}
       {t.experience && (
-        <section aria-labelledby="experience-heading" style={{ padding: "clamp(44px,8vw,80px) 0" }}>
+        <section aria-labelledby="experience-heading" style={{ padding: "clamp(24px,4vw,80px) 0 clamp(44px,8vw,80px)" }}>
           <div className="container">
             <div style={{ marginBottom: "clamp(28px,4.5vw,56px)" }}>
               <SectionHeader id="experience-heading" title={t.experience.title} />

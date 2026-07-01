@@ -96,7 +96,7 @@ export default function SuitabilityCards({
   return (
     <section
       aria-labelledby="suitability-heading"
-      style={{ padding: "clamp(48px,6vw,88px) 0", background: "#fff" }}
+      style={{ padding: "clamp(48px,6vw,88px) 0 clamp(24px,4vw,56px)", background: "#fff" }}
     >
       <div className="container">
         <SectionHeader id="suitability-heading" kicker={kicker} title={title} sub={sub} />
