@@ -9,11 +9,11 @@ export const post: BlogPost = {
   "publishDate": "2025-09-12",
   "readTime": 2,
   "coverImage": "https://static.wixstatic.com/media/f940f0_39acfb6bbc4f40c3bcc4368c7f406a10~mv2.jpg",
-  "excerpt": "Sun, saltwater, and warm breezes—summer has its charm. But after days spent outside, your skin may be asking for a little care. Dryness....",
+  "excerpt": "Sun, saltwater, and warm breezes, summer has its charm. But after days spent outside, your skin may be asking for a little care. Dryness....",
   "content": [
     {
       "type": "paragraph",
-      "html": "Sun, saltwater, and warm breezes—summer has its charm. But after days spent outside, your skin may be asking for a little care."
+      "html": "Sun, saltwater, and warm breezes, summer has its charm. But after days spent outside, your skin may be asking for a little care."
     },
     {
       "type": "paragraph",
@@ -43,7 +43,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "After sun exposure, your skin needs care—not harsh peels or scrubs."
+      "html": "After sun exposure, your skin needs care, not harsh peels or scrubs."
     },
     {
       "type": "paragraph",

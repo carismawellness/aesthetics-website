@@ -31,7 +31,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "Unlike Botox, fillers address static wrinkles—those that exist even when your face is at rest. They plump the skin and smooth deeper lines.",
+      "html": "Unlike Botox, fillers address static wrinkles, those that exist even when your face is at rest. They plump the skin and smooth deeper lines.",
     },
     {
       "type": "heading",

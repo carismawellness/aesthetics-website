@@ -22,7 +22,7 @@ export const post: BlogPost = {
     },
     {
       "type": "paragraph",
-      "html": "If your wrinkles form from facial expressions—like frown lines between the brows, crow's feet at the eyes, or forehead lines—you're an ideal candidate. Botox relaxes the muscles that create these lines.",
+      "html": "If your wrinkles form from facial expressions, like frown lines between the brows, crow's feet at the eyes, or forehead lines, you're an ideal candidate. Botox relaxes the muscles that create these lines.",
     },
     {
       "type": "heading",
