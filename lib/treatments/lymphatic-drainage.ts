@@ -38,7 +38,7 @@ const t: Treatment = {
       "If you're reading this and thinking, \"This sounds like me,\" the issue may not be lifestyle or effort. Often, it's your lymphatic system struggling to drain efficiently. When lymph flow is slow, fluids and toxins can build up in the body.",
       "Lymphatic Drainage Therapy gently stimulates your lymphatic system, supporting natural detoxification, improved circulation, and reduced fluid retention, helping your body feel lighter, more balanced, and refreshed again.",
     ],
-    image: "/assets/treatments/lympathic-drainage-benefits.png",
+    image: "/assets/treatments/lympathic-drainage-education.jpg",
   },
 
   problem: {
