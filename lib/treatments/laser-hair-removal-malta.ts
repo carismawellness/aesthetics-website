@@ -113,9 +113,9 @@ const t: Treatment = {
   experience: {
     title: "Your treatment experience",
     steps: [
-      { title: "Free Consultation & Patch Test", desc: "We start with a one-on-one consultation to understand your skin type, hair type, and goals, then a free patch test on the Alma Soprano so you can feel the comfort for yourself and confirm compatibility. Takes 15–20 minutes, with no obligation to continue.", image: "/assets/treatments/laser-step1.png" },
-      { title: "Custom Plan & Painless Sessions", desc: "Based on your hair growth and skin tone, we design a tailored plan, typically 6–8 sessions a few weeks apart. Each session uses triple-wavelength SHR® with ICE Plus™ cooling down to –4°C, taking as little as 15–30 minutes with no downtime.", image: "/assets/treatments/laser-step3.png" },
-      { title: "Ongoing Review & Lasting Results", desc: "We monitor your progress throughout the course and fine-tune settings for optimal results. Most clients see visible reduction after just 2–3 sessions, and we aim not just for smooth skin today, but results that genuinely last.", image: "/assets/treatments/laser-step4.png" },
+      { title: "Free Consultation & Patch Test", desc: "We start with a one-on-one consultation to understand your skin type, hair type, and goals, then a free patch test on the Alma Soprano so you can feel the comfort for yourself and confirm compatibility. Takes 15–20 minutes, with no obligation to continue.", image: "/assets/treatments/laser-exp-consult.jpg" },
+      { title: "Custom Plan & Painless Sessions", desc: "Based on your hair growth and skin tone, we design a tailored plan, typically 6–8 sessions a few weeks apart. Each session uses triple-wavelength SHR® with ICE Plus™ cooling down to –4°C, taking as little as 15–30 minutes with no downtime.", image: "/assets/treatments/laser-exp-session.jpg" },
+      { title: "Ongoing Review & Lasting Results", desc: "We monitor your progress throughout the course and fine-tune settings for optimal results. Most clients see visible reduction after just 2–3 sessions, and we aim not just for smooth skin today, but results that genuinely last.", image: "/assets/treatments/laser-exp-review.jpg" },
     ],
   },
   pricingGrid: {
