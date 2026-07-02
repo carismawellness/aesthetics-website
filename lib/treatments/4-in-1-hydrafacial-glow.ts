@@ -24,6 +24,7 @@ const t: Treatment = {
     cta: "CLAIM MY SPOT NOW",
     bookHref: "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2800348&oiid=sv%3A25781423&share=true&pId=2708191",
     note: "Due to high demand, packages are offered based on availability and may not always be guaranteed. Please inquire for current options.",
+    image: "/assets/treatments/hydrafacial-hero.jpg",
   },
   info: [
     { metric: "Procedure Time", detail: "60-75 Minutes" },

@@ -19,6 +19,7 @@ const t: Treatment = {
     cta: "CLAIM MY SPOT NOW",
     bookHref: "https://www.fresha.com/book-now/carisma-aesthetics-q8gqd4z1/services?lid=2800348&oiid=sv%3A25781430&share=true&pId=2708191",
     location: "Carisma Aesthetics, St. Julian's, Malta",
+    image: "/assets/treatments/microneedling-malta-hero.jpg",
   },
   info: [
     { metric: "Procedure Time", detail: "60-75 Minutes" },
