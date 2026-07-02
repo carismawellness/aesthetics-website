@@ -86,17 +86,17 @@ const t: Treatment = {
       {
         title: "Medically guided consultation",
         desc: "Your lymphatic drainage journey begins with a professional assessment of your health history and concerns, so we can confirm suitability and design a plan that's safe and right for your body.",
-        image: "/assets/treatments/lympathic-drainage-feat1.png",
+        image: "/assets/treatments/ld-consult.svg",
       },
       {
         title: "Lymphatic flow & detox support",
         desc: "Gentle, targeted techniques stimulate lymph flow to reduce fluid retention, support natural detoxification, and relieve that feeling of heaviness and congestion.",
-        image: "/assets/treatments/lympathic-drainage-feat2.png",
+        image: "/assets/treatments/ld-flow.svg",
       },
       {
         title: "Ongoing review & guidance",
         desc: "We review how your body responds, recommend the right treatment frequency, and share simple aftercare so your lighter, more balanced feeling lasts.",
-        image: "/assets/treatments/lympathic-drainage-feat3.png",
+        image: "/assets/treatments/ld-review.svg",
       },
     ],
   },
