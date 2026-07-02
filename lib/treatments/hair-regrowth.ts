@@ -146,17 +146,17 @@ const t: Treatment = {
       {
         title: "Consultation & Density Scan",
         desc: "Dr. Giovanni assesses your hair loss pattern and medical history, and an AI scalp scan maps your follicle density to establish your Day-0 baseline.",
-        image: "/assets/treatments/hair-regrowth-consult-tablet-wide.jpg",
+        image: "/assets/treatments/hair-regrowth-exp-consult.jpg",
       },
       {
         title: "Regenerative Treatment",
         desc: "In-clinic PRP and exosome sessions reactivate dormant follicles, paired with your personalised ScalpRx prescription for minoxidil, finasteride, and ketoconazole.",
-        image: "/assets/treatments/hair-regrowth-scalp-injection-wide.jpg",
+        image: "/assets/treatments/hair-regrowth-exp-treatment.jpg",
       },
       {
         title: "Day-90 Review & Maintenance",
         desc: "A follow-up density scan compares your results against baseline in measurable numbers, and we set a maintenance plan to protect and build on your regrowth.",
-        image: "/assets/treatments/hair-regrowth-density-scan-wide.jpg",
+        image: "/assets/treatments/hair-regrowth-exp-review.jpg",
       },
     ],
   },
