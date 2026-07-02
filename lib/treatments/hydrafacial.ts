@@ -33,7 +33,7 @@ const t: Treatment = {
     { before: "/assets/treatments/hydrafacial-ba3-1.jpg", after: "/assets/treatments/hydrafacial-ba8-1.jpg", label: "Hydration and radiance", name: "Claudia P.", review: "The redness around my eyes and cheek is far less angry and my skin holds moisture now. The fine lines near my mouth look softer." },
     { before: "/assets/treatments/hydrafacial-ba2-1.jpg", after: "/assets/treatments/hydrafacial-ba7-1.jpg", label: "Under eye brightening", name: "Nadia T.", review: "The shadowing under my eye looks lighter and the redness on my cheek has settled. People keep telling me I look rested." },
     { before: "/assets/treatments/hydrafacial-ba5-2.jpg", after: "/assets/treatments/hydrafacial-ba9-1.jpg", label: "Fresh, dewy finish", name: "Laura D.", review: "My cheeks were red and my skin looked flat before. Now it has a soft dewy finish and the surface feels clean and hydrated." },
-    { before: "/assets/treatments/hydrafacial-ba5-1.jpg", after: "/assets/treatments/hydrafacial-ba4-1.jpg", label: "Radiance and hydration", name: "Daniela F.", review: "My face looked tired and flushed before. It now has a healthy glow along the cheek and jaw, and the skin feels plumper." },
+    { before: "/assets/treatments/hydrafacial-ba4-before.jpg", after: "/assets/treatments/hydrafacial-ba4-after.jpg", label: "Radiance and hydration", name: "Daniela F.", review: "My face looked tired and flushed before. It now has a healthy glow along the cheek and jaw, and the skin feels plumper." },
   ],
   precision: {
     title: "precision areas of refinement",
