@@ -73,17 +73,17 @@ const t: Treatment = {
       {
         title: "Consultation & Medical Assessment",
         desc: "You meet our doctor for a full review of your health, hormones, history, and goals, plus clinical measurements and a body-composition scan, fat, muscle, and visceral fat, not just the scale. Where appropriate we check thyroid, blood sugar, and cholesterol to confirm Ozempic or Mounjaro is right and safe for you.",
-        image: "/assets/mwl/step-consultation.png",
+        image: "/assets/mwl/exp-consult.jpg",
       },
       {
         title: "Your Doctor-Led GLP-1 Programme",
         desc: "If you qualify, we start your prescription with careful dose titration, paired with a Mediterranean-style nutrition plan, protein targets to protect muscle, and movement that fits your life. Weekly check-ins and WhatsApp support mean you are never guessing between visits, and if you go quiet, we reach out first, without judgement.",
-        image: "/assets/mwl/step-bodyanalysis.png",
+        image: "/assets/mwl/exp-glp1.jpg",
       },
       {
         title: "Refine, Maintain & Sustain",
         desc: "We track fat loss and protect lean mass, adjust your dose, and use body-contouring treatments to shape your results. Every programme includes a defined maintenance phase and exit strategy, so the habits and structure stay with you long after the medication does.",
-        image: "/assets/mwl/step-treatments.png",
+        image: "/assets/mwl/exp-results.jpg",
       },
     ],
   },
