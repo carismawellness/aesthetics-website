@@ -131,7 +131,7 @@ const t: Treatment = {
     items: [
       { label: "Muscle stimulation", href: "/muscle-stimulation", image: "/assets/treatments/ms-feat1.png" },
       { label: "Fat freezing", href: "/fat-freezing", image: "/assets/treatments/ff-feat1.png" },
-      { label: "Skin tightening", href: "/skin-tightening", image: "/assets/treatments/skin-tightening-rec.jpg" },
+      { label: "Skin tightening", href: "/skin-tightening", image: "/assets/treatments/skin-tightening-tone.svg" },
       { label: "Lymphatic drainage", href: "/lymphatic-drainage", image: "/assets/treatments/lympathic-drainage-feat1.png" },
     ],
   },
